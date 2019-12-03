@@ -44,7 +44,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
-     * group for control plane to data plane communication.
+     * group for control-plane-to-data-plane communication.
      * </p>
      */
     private String clusterSecurityGroupId;
@@ -222,12 +222,12 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
-     * group for control plane to data plane communication.
+     * group for control-plane-to-data-plane communication.
      * </p>
      * 
      * @param clusterSecurityGroupId
      *        The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this
-     *        security group for control plane to data plane communication.
+     *        security group for control-plane-to-data-plane communication.
      */
 
     public void setClusterSecurityGroupId(String clusterSecurityGroupId) {
@@ -237,11 +237,11 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
-     * group for control plane to data plane communication.
+     * group for control-plane-to-data-plane communication.
      * </p>
      * 
      * @return The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this
-     *         security group for control plane to data plane communication.
+     *         security group for control-plane-to-data-plane communication.
      */
 
     public String getClusterSecurityGroupId() {
@@ -251,12 +251,12 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this security
-     * group for control plane to data plane communication.
+     * group for control-plane-to-data-plane communication.
      * </p>
      * 
      * @param clusterSecurityGroupId
      *        The cluster security group that was created by Amazon EKS for the cluster. Managed node groups use this
-     *        security group for control plane to data plane communication.
+     *        security group for control-plane-to-data-plane communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

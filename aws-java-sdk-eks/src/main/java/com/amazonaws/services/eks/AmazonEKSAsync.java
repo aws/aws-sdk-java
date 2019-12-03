@@ -162,6 +162,101 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least one Fargate profile in a
+     * cluster to be able to schedule pods on Fargate infrastructure.
+     * </p>
+     * <p>
+     * The Fargate profile allows an administrator to declare which pods run on Fargate infrastructure and specify which
+     * pods run on which Fargate profile. This declaration is done through the profile’s selectors. Each profile can
+     * have up to five selectors that contain a namespace and labels. A namespace is required for every selector. The
+     * label field consists of multiple optional key-value pairs. Pods that match the selectors are scheduled on Fargate
+     * infrastructure. If a to-be-scheduled pod matches any of the selectors in the Fargate profile, then that pod is
+     * scheduled on Fargate infrastructure.
+     * </p>
+     * <p>
+     * When you create a Fargate profile, you must specify a pod execution role to use with the pods that are scheduled
+     * with the profile. This role is added to the cluster's Kubernetes <a
+     * href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access Control</a> (RBAC) for
+     * authorization so that the <code>kubelet</code> that is running on the Fargate infrastructure can register with
+     * your Amazon EKS cluster. This role is what allows Fargate infrastructure to appear in your cluster as nodes. The
+     * pod execution role also provides IAM permissions to the Fargate infrastructure to allow read access to Amazon ECR
+     * image repositories. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+     * <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * Fargate profiles are immutable. However, you can create a new updated profile to replace an existing profile and
+     * then delete the original after the updated profile has finished creating.
+     * </p>
+     * <p>
+     * If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you must wait for that Fargate
+     * profile to finish deleting before you can create any other profiles in that cluster.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+     * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param createFargateProfileRequest
+     * @return A Java Future containing the result of the CreateFargateProfile operation returned by the service.
+     * @sample AmazonEKSAsync.CreateFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFargateProfileResult> createFargateProfileAsync(CreateFargateProfileRequest createFargateProfileRequest);
+
+    /**
+     * <p>
+     * Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least one Fargate profile in a
+     * cluster to be able to schedule pods on Fargate infrastructure.
+     * </p>
+     * <p>
+     * The Fargate profile allows an administrator to declare which pods run on Fargate infrastructure and specify which
+     * pods run on which Fargate profile. This declaration is done through the profile’s selectors. Each profile can
+     * have up to five selectors that contain a namespace and labels. A namespace is required for every selector. The
+     * label field consists of multiple optional key-value pairs. Pods that match the selectors are scheduled on Fargate
+     * infrastructure. If a to-be-scheduled pod matches any of the selectors in the Fargate profile, then that pod is
+     * scheduled on Fargate infrastructure.
+     * </p>
+     * <p>
+     * When you create a Fargate profile, you must specify a pod execution role to use with the pods that are scheduled
+     * with the profile. This role is added to the cluster's Kubernetes <a
+     * href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access Control</a> (RBAC) for
+     * authorization so that the <code>kubelet</code> that is running on the Fargate infrastructure can register with
+     * your Amazon EKS cluster. This role is what allows Fargate infrastructure to appear in your cluster as nodes. The
+     * pod execution role also provides IAM permissions to the Fargate infrastructure to allow read access to Amazon ECR
+     * image repositories. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+     * <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * Fargate profiles are immutable. However, you can create a new updated profile to replace an existing profile and
+     * then delete the original after the updated profile has finished creating.
+     * </p>
+     * <p>
+     * If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you must wait for that Fargate
+     * profile to finish deleting before you can create any other profiles in that cluster.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+     * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param createFargateProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFargateProfile operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.CreateFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFargateProfileResult> createFargateProfileAsync(CreateFargateProfileRequest createFargateProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFargateProfileRequest, CreateFargateProfileResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster
      * that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI
      * release version for the respective minor Kubernetes version of the cluster.
@@ -221,8 +316,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
-     * If you have managed node groups attached to the cluster, you must delete them first. For more information, see
-     * <a>DeleteNodegroup</a>.
+     * If you have managed node groups or Fargate profiles attached to the cluster, you must delete them first. For more
+     * information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
      * </p>
      * 
      * @param deleteClusterRequest
@@ -245,8 +340,8 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
-     * If you have managed node groups attached to the cluster, you must delete them first. For more information, see
-     * <a>DeleteNodegroup</a>.
+     * If you have managed node groups or Fargate profiles attached to the cluster, you must delete them first. For more
+     * information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
      * </p>
      * 
      * @param deleteClusterRequest
@@ -261,6 +356,55 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an AWS Fargate profile.
+     * </p>
+     * <p>
+     * When you delete a Fargate profile, any pods that were scheduled onto Fargate infrastructure with the profile are
+     * deleted. If those pods match another Fargate profile, then they are scheduled on Fargate infrastructure with that
+     * profile. If they no longer match any Fargate profiles, then they are not scheduled on Fargate infrastructure.
+     * </p>
+     * <p>
+     * Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at a time. You must wait for a
+     * Fargate profile to finish deleting before you can delete any other profiles in that cluster.
+     * </p>
+     * 
+     * @param deleteFargateProfileRequest
+     * @return A Java Future containing the result of the DeleteFargateProfile operation returned by the service.
+     * @sample AmazonEKSAsync.DeleteFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFargateProfileResult> deleteFargateProfileAsync(DeleteFargateProfileRequest deleteFargateProfileRequest);
+
+    /**
+     * <p>
+     * Deletes an AWS Fargate profile.
+     * </p>
+     * <p>
+     * When you delete a Fargate profile, any pods that were scheduled onto Fargate infrastructure with the profile are
+     * deleted. If those pods match another Fargate profile, then they are scheduled on Fargate infrastructure with that
+     * profile. If they no longer match any Fargate profiles, then they are not scheduled on Fargate infrastructure.
+     * </p>
+     * <p>
+     * Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at a time. You must wait for a
+     * Fargate profile to finish deleting before you can delete any other profiles in that cluster.
+     * </p>
+     * 
+     * @param deleteFargateProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFargateProfile operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DeleteFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFargateProfileResult> deleteFargateProfileAsync(DeleteFargateProfileRequest deleteFargateProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFargateProfileRequest, DeleteFargateProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -347,6 +491,37 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest describeClusterRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns descriptive information about an AWS Fargate profile.
+     * </p>
+     * 
+     * @param describeFargateProfileRequest
+     * @return A Java Future containing the result of the DescribeFargateProfile operation returned by the service.
+     * @sample AmazonEKSAsync.DescribeFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(DescribeFargateProfileRequest describeFargateProfileRequest);
+
+    /**
+     * <p>
+     * Returns descriptive information about an AWS Fargate profile.
+     * </p>
+     * 
+     * @param describeFargateProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFargateProfile operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DescribeFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(DescribeFargateProfileRequest describeFargateProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFargateProfileRequest, DescribeFargateProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -448,6 +623,37 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the AWS Fargate profiles associated with the specified cluster in your AWS account in the specified Region.
+     * </p>
+     * 
+     * @param listFargateProfilesRequest
+     * @return A Java Future containing the result of the ListFargateProfiles operation returned by the service.
+     * @sample AmazonEKSAsync.ListFargateProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(ListFargateProfilesRequest listFargateProfilesRequest);
+
+    /**
+     * <p>
+     * Lists the AWS Fargate profiles associated with the specified cluster in your AWS account in the specified Region.
+     * </p>
+     * 
+     * @param listFargateProfilesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFargateProfiles operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.ListFargateProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(ListFargateProfilesRequest listFargateProfilesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFargateProfilesRequest, ListFargateProfilesResult> asyncHandler);
 
     /**
      * <p>

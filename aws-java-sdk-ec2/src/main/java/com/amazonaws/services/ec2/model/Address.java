@@ -86,6 +86,24 @@ public class Address implements Serializable, Cloneable {
      * </p>
      */
     private String publicIpv4Pool;
+    /**
+     * <p>
+     * The name of the location from which the IP address is advertised.
+     * </p>
+     */
+    private String networkBorderGroup;
+    /**
+     * <p>
+     * The customer-owned IP address.
+     * </p>
+     */
+    private String customerOwnedIp;
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     */
+    private String customerOwnedIpv4Pool;
 
     /**
      * <p>
@@ -564,6 +582,126 @@ public class Address implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the location from which the IP address is advertised.
+     * </p>
+     * 
+     * @param networkBorderGroup
+     *        The name of the location from which the IP address is advertised.
+     */
+
+    public void setNetworkBorderGroup(String networkBorderGroup) {
+        this.networkBorderGroup = networkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which the IP address is advertised.
+     * </p>
+     * 
+     * @return The name of the location from which the IP address is advertised.
+     */
+
+    public String getNetworkBorderGroup() {
+        return this.networkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which the IP address is advertised.
+     * </p>
+     * 
+     * @param networkBorderGroup
+     *        The name of the location from which the IP address is advertised.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withNetworkBorderGroup(String networkBorderGroup) {
+        setNetworkBorderGroup(networkBorderGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IP address.
+     * </p>
+     * 
+     * @param customerOwnedIp
+     *        The customer-owned IP address.
+     */
+
+    public void setCustomerOwnedIp(String customerOwnedIp) {
+        this.customerOwnedIp = customerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IP address.
+     * </p>
+     * 
+     * @return The customer-owned IP address.
+     */
+
+    public String getCustomerOwnedIp() {
+        return this.customerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IP address.
+     * </p>
+     * 
+     * @param customerOwnedIp
+     *        The customer-owned IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withCustomerOwnedIp(String customerOwnedIp) {
+        setCustomerOwnedIp(customerOwnedIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        The ID of the customer-owned address pool.
+     */
+
+    public void setCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        this.customerOwnedIpv4Pool = customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @return The ID of the customer-owned address pool.
+     */
+
+    public String getCustomerOwnedIpv4Pool() {
+        return this.customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        The ID of the customer-owned address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        setCustomerOwnedIpv4Pool(customerOwnedIpv4Pool);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -594,7 +732,13 @@ public class Address implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getPublicIpv4Pool() != null)
-            sb.append("PublicIpv4Pool: ").append(getPublicIpv4Pool());
+            sb.append("PublicIpv4Pool: ").append(getPublicIpv4Pool()).append(",");
+        if (getNetworkBorderGroup() != null)
+            sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup()).append(",");
+        if (getCustomerOwnedIp() != null)
+            sb.append("CustomerOwnedIp: ").append(getCustomerOwnedIp()).append(",");
+        if (getCustomerOwnedIpv4Pool() != null)
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -649,6 +793,18 @@ public class Address implements Serializable, Cloneable {
             return false;
         if (other.getPublicIpv4Pool() != null && other.getPublicIpv4Pool().equals(this.getPublicIpv4Pool()) == false)
             return false;
+        if (other.getNetworkBorderGroup() == null ^ this.getNetworkBorderGroup() == null)
+            return false;
+        if (other.getNetworkBorderGroup() != null && other.getNetworkBorderGroup().equals(this.getNetworkBorderGroup()) == false)
+            return false;
+        if (other.getCustomerOwnedIp() == null ^ this.getCustomerOwnedIp() == null)
+            return false;
+        if (other.getCustomerOwnedIp() != null && other.getCustomerOwnedIp().equals(this.getCustomerOwnedIp()) == false)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() == null ^ this.getCustomerOwnedIpv4Pool() == null)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
+            return false;
         return true;
     }
 
@@ -667,6 +823,9 @@ public class Address implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPublicIpv4Pool() == null) ? 0 : getPublicIpv4Pool().hashCode());
+        hashCode = prime * hashCode + ((getNetworkBorderGroup() == null) ? 0 : getNetworkBorderGroup().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIp() == null) ? 0 : getCustomerOwnedIp().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
         return hashCode;
     }
 

@@ -100,6 +100,12 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date updatedAt;
     /**
      * <p>
+     * The capacity provider strategy that the deployment is using.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
+    /**
+     * <p>
      * The launch type the tasks in the service are using. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -569,6 +575,79 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The capacity provider strategy that the deployment is using.
+     * </p>
+     * 
+     * @return The capacity provider strategy that the deployment is using.
+     */
+
+    public java.util.List<CapacityProviderStrategyItem> getCapacityProviderStrategy() {
+        if (capacityProviderStrategy == null) {
+            capacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>();
+        }
+        return capacityProviderStrategy;
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy that the deployment is using.
+     * </p>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy that the deployment is using.
+     */
+
+    public void setCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
+        if (capacityProviderStrategy == null) {
+            this.capacityProviderStrategy = null;
+            return;
+        }
+
+        this.capacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(capacityProviderStrategy);
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy that the deployment is using.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCapacityProviderStrategy(java.util.Collection)} or
+     * {@link #withCapacityProviderStrategy(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy that the deployment is using.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withCapacityProviderStrategy(CapacityProviderStrategyItem... capacityProviderStrategy) {
+        if (this.capacityProviderStrategy == null) {
+            setCapacityProviderStrategy(new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(capacityProviderStrategy.length));
+        }
+        for (CapacityProviderStrategyItem ele : capacityProviderStrategy) {
+            this.capacityProviderStrategy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy that the deployment is using.
+     * </p>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy that the deployment is using.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
+        setCapacityProviderStrategy(capacityProviderStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The launch type the tasks in the service are using. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -780,6 +859,8 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getCapacityProviderStrategy() != null)
+            sb.append("CapacityProviderStrategy: ").append(getCapacityProviderStrategy()).append(",");
         if (getLaunchType() != null)
             sb.append("LaunchType: ").append(getLaunchType()).append(",");
         if (getPlatformVersion() != null)
@@ -832,6 +913,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getCapacityProviderStrategy() == null ^ this.getCapacityProviderStrategy() == null)
+            return false;
+        if (other.getCapacityProviderStrategy() != null && other.getCapacityProviderStrategy().equals(this.getCapacityProviderStrategy()) == false)
+            return false;
         if (other.getLaunchType() == null ^ this.getLaunchType() == null)
             return false;
         if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
@@ -860,6 +945,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRunningCount() == null) ? 0 : getRunningCount().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getCapacityProviderStrategy() == null) ? 0 : getCapacityProviderStrategy().hashCode());
         hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());

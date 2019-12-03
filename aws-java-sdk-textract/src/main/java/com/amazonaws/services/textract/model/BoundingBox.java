@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The bounding box around the recognized text, key, value, table or table cell on a document page. The
- * <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates that represent the top and left
- * sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0).
+ * The bounding box around the detected page, text, key-value pair, table, table cell, or selection element on a
+ * document page. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates that
+ * represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin
+ * (0,0).
  * </p>
  * <p>
  * The <code>top</code> and <code>left</code> values returned are ratios of the overall document page size. For example,

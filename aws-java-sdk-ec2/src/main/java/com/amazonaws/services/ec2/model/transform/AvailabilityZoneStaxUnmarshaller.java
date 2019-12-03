@@ -50,6 +50,11 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     continue;
                 }
 
+                if (context.testExpression("optInStatus", targetDepth)) {
+                    availabilityZone.setOptInStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("messageSet", targetDepth)) {
                     availabilityZone.withMessages(new ArrayList<AvailabilityZoneMessage>());
                     continue;
@@ -72,6 +77,16 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
 
                 if (context.testExpression("zoneId", targetDepth)) {
                     availabilityZone.setZoneId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("groupName", targetDepth)) {
+                    availabilityZone.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkBorderGroup", targetDepth)) {
+                    availabilityZone.setNetworkBorderGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

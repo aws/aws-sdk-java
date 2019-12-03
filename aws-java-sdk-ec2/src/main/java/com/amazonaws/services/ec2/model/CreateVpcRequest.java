@@ -54,6 +54,16 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      * </p>
      */
     private String instanceTenancy;
+    /**
+     * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to
+     * this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     */
+    private String ipv6CidrBlockNetworkBorderGroup;
 
     /**
      * Default constructor for CreateVpcRequest object. Callers should use the setter or fluent setter (with...) methods
@@ -347,6 +357,67 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to
+     * this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     * 
+     * @param ipv6CidrBlockNetworkBorderGroup
+     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the
+     *        address to this location.</p>
+     *        <p>
+     *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     */
+
+    public void setIpv6CidrBlockNetworkBorderGroup(String ipv6CidrBlockNetworkBorderGroup) {
+        this.ipv6CidrBlockNetworkBorderGroup = ipv6CidrBlockNetworkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to
+     * this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     * 
+     * @return The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the
+     *         address to this location.</p>
+     *         <p>
+     *         You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     */
+
+    public String getIpv6CidrBlockNetworkBorderGroup() {
+        return this.ipv6CidrBlockNetworkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the address to
+     * this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     * 
+     * @param ipv6CidrBlockNetworkBorderGroup
+     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the
+     *        address to this location.</p>
+     *        <p>
+     *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcRequest withIpv6CidrBlockNetworkBorderGroup(String ipv6CidrBlockNetworkBorderGroup) {
+        setIpv6CidrBlockNetworkBorderGroup(ipv6CidrBlockNetworkBorderGroup);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -374,7 +445,9 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         if (getAmazonProvidedIpv6CidrBlock() != null)
             sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock()).append(",");
         if (getInstanceTenancy() != null)
-            sb.append("InstanceTenancy: ").append(getInstanceTenancy());
+            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
+        if (getIpv6CidrBlockNetworkBorderGroup() != null)
+            sb.append("Ipv6CidrBlockNetworkBorderGroup: ").append(getIpv6CidrBlockNetworkBorderGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -401,6 +474,11 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
             return false;
         if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
             return false;
+        if (other.getIpv6CidrBlockNetworkBorderGroup() == null ^ this.getIpv6CidrBlockNetworkBorderGroup() == null)
+            return false;
+        if (other.getIpv6CidrBlockNetworkBorderGroup() != null
+                && other.getIpv6CidrBlockNetworkBorderGroup().equals(this.getIpv6CidrBlockNetworkBorderGroup()) == false)
+            return false;
         return true;
     }
 
@@ -412,6 +490,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getAmazonProvidedIpv6CidrBlock() == null) ? 0 : getAmazonProvidedIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlockNetworkBorderGroup() == null) ? 0 : getIpv6CidrBlockNetworkBorderGroup().hashCode());
         return hashCode;
     }
 

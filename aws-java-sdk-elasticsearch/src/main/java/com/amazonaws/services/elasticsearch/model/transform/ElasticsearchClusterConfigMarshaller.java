@@ -41,6 +41,12 @@ public class ElasticsearchClusterConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DedicatedMasterType").build();
     private static final MarshallingInfo<Integer> DEDICATEDMASTERCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DedicatedMasterCount").build();
+    private static final MarshallingInfo<Boolean> WARMENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmEnabled").build();
+    private static final MarshallingInfo<String> WARMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WarmType").build();
+    private static final MarshallingInfo<Integer> WARMCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmCount").build();
 
     private static final ElasticsearchClusterConfigMarshaller instance = new ElasticsearchClusterConfigMarshaller();
 
@@ -65,6 +71,9 @@ public class ElasticsearchClusterConfigMarshaller {
             protocolMarshaller.marshall(elasticsearchClusterConfig.getZoneAwarenessConfig(), ZONEAWARENESSCONFIG_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getDedicatedMasterType(), DEDICATEDMASTERTYPE_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getDedicatedMasterCount(), DEDICATEDMASTERCOUNT_BINDING);
+            protocolMarshaller.marshall(elasticsearchClusterConfig.getWarmEnabled(), WARMENABLED_BINDING);
+            protocolMarshaller.marshall(elasticsearchClusterConfig.getWarmType(), WARMTYPE_BINDING);
+            protocolMarshaller.marshall(elasticsearchClusterConfig.getWarmCount(), WARMCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

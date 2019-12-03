@@ -34,7 +34,19 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> clusters;
     /**
      * <p>
-     * Additional information about your clusters to be separated by launch type, including:
+     * Whether to include additional information about your clusters in the response. If this field is omitted, the
+     * attachments, statistics, and tags are not included.
+     * </p>
+     * <p>
+     * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
+     * are included.
+     * </p>
+     * <p>
+     * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     * </p>
+     * <p>
+     * If <code>STATISTICS</code> is specified, the following additional information, separated by launch type, is
+     * included:
      * </p>
      * <ul>
      * <li>
@@ -78,6 +90,9 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> include;
 
@@ -164,7 +179,19 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Additional information about your clusters to be separated by launch type, including:
+     * Whether to include additional information about your clusters in the response. If this field is omitted, the
+     * attachments, statistics, and tags are not included.
+     * </p>
+     * <p>
+     * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
+     * are included.
+     * </p>
+     * <p>
+     * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     * </p>
+     * <p>
+     * If <code>STATISTICS</code> is specified, the following additional information, separated by launch type, is
+     * included:
      * </p>
      * <ul>
      * <li>
@@ -208,8 +235,23 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
+     * </p>
      * 
-     * @return Additional information about your clusters to be separated by launch type, including:</p>
+     * @return Whether to include additional information about your clusters in the response. If this field is omitted,
+     *         the attachments, statistics, and tags are not included.</p>
+     *         <p>
+     *         If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
+     *         cluster are included.
+     *         </p>
+     *         <p>
+     *         If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     *         </p>
+     *         <p>
+     *         If <code>STATISTICS</code> is specified, the following additional information, separated by launch type,
+     *         is included:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -251,6 +293,9 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *         drainingFargateServiceCount
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
      * @see ClusterField
      */
 
@@ -263,7 +308,19 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Additional information about your clusters to be separated by launch type, including:
+     * Whether to include additional information about your clusters in the response. If this field is omitted, the
+     * attachments, statistics, and tags are not included.
+     * </p>
+     * <p>
+     * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
+     * are included.
+     * </p>
+     * <p>
+     * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     * </p>
+     * <p>
+     * If <code>STATISTICS</code> is specified, the following additional information, separated by launch type, is
+     * included:
      * </p>
      * <ul>
      * <li>
@@ -307,9 +364,24 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
+     * </p>
      * 
      * @param include
-     *        Additional information about your clusters to be separated by launch type, including:</p>
+     *        Whether to include additional information about your clusters in the response. If this field is omitted,
+     *        the attachments, statistics, and tags are not included.</p>
+     *        <p>
+     *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
+     *        cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>STATISTICS</code> is specified, the following additional information, separated by launch type,
+     *        is included:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -351,6 +423,9 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        drainingFargateServiceCount
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
      * @see ClusterField
      */
 
@@ -365,7 +440,19 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Additional information about your clusters to be separated by launch type, including:
+     * Whether to include additional information about your clusters in the response. If this field is omitted, the
+     * attachments, statistics, and tags are not included.
+     * </p>
+     * <p>
+     * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
+     * are included.
+     * </p>
+     * <p>
+     * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     * </p>
+     * <p>
+     * If <code>STATISTICS</code> is specified, the following additional information, separated by launch type, is
+     * included:
      * </p>
      * <ul>
      * <li>
@@ -410,13 +497,28 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
+     * If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInclude(java.util.Collection)} or {@link #withInclude(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param include
-     *        Additional information about your clusters to be separated by launch type, including:</p>
+     *        Whether to include additional information about your clusters in the response. If this field is omitted,
+     *        the attachments, statistics, and tags are not included.</p>
+     *        <p>
+     *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
+     *        cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>STATISTICS</code> is specified, the following additional information, separated by launch type,
+     *        is included:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -458,6 +560,9 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        drainingFargateServiceCount
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterField
      */
@@ -474,7 +579,19 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Additional information about your clusters to be separated by launch type, including:
+     * Whether to include additional information about your clusters in the response. If this field is omitted, the
+     * attachments, statistics, and tags are not included.
+     * </p>
+     * <p>
+     * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
+     * are included.
+     * </p>
+     * <p>
+     * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     * </p>
+     * <p>
+     * If <code>STATISTICS</code> is specified, the following additional information, separated by launch type, is
+     * included:
      * </p>
      * <ul>
      * <li>
@@ -518,9 +635,24 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
+     * </p>
      * 
      * @param include
-     *        Additional information about your clusters to be separated by launch type, including:</p>
+     *        Whether to include additional information about your clusters in the response. If this field is omitted,
+     *        the attachments, statistics, and tags are not included.</p>
+     *        <p>
+     *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
+     *        cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>STATISTICS</code> is specified, the following additional information, separated by launch type,
+     *        is included:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -562,6 +694,9 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        drainingFargateServiceCount
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterField
      */
@@ -573,7 +708,19 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Additional information about your clusters to be separated by launch type, including:
+     * Whether to include additional information about your clusters in the response. If this field is omitted, the
+     * attachments, statistics, and tags are not included.
+     * </p>
+     * <p>
+     * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
+     * are included.
+     * </p>
+     * <p>
+     * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     * </p>
+     * <p>
+     * If <code>STATISTICS</code> is specified, the following additional information, separated by launch type, is
+     * included:
      * </p>
      * <ul>
      * <li>
@@ -617,9 +764,24 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
+     * </p>
      * 
      * @param include
-     *        Additional information about your clusters to be separated by launch type, including:</p>
+     *        Whether to include additional information about your clusters in the response. If this field is omitted,
+     *        the attachments, statistics, and tags are not included.</p>
+     *        <p>
+     *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
+     *        cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+     *        </p>
+     *        <p>
+     *        If <code>STATISTICS</code> is specified, the following additional information, separated by launch type,
+     *        is included:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -661,6 +823,9 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        drainingFargateServiceCount
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If <code>TAGS</code> is specified, the metadata tags associated with the cluster are included.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ClusterField
      */

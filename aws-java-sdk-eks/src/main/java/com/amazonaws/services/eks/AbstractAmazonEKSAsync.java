@@ -40,6 +40,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFargateProfileResult> createFargateProfileAsync(CreateFargateProfileRequest request) {
+
+        return createFargateProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFargateProfileResult> createFargateProfileAsync(CreateFargateProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFargateProfileRequest, CreateFargateProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest request) {
 
         return createNodegroupAsync(request, null);
@@ -66,6 +79,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFargateProfileResult> deleteFargateProfileAsync(DeleteFargateProfileRequest request) {
+
+        return deleteFargateProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFargateProfileResult> deleteFargateProfileAsync(DeleteFargateProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFargateProfileRequest, DeleteFargateProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNodegroupResult> deleteNodegroupAsync(DeleteNodegroupRequest request) {
 
         return deleteNodegroupAsync(request, null);
@@ -87,6 +113,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(DescribeFargateProfileRequest request) {
+
+        return describeFargateProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(DescribeFargateProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFargateProfileRequest, DescribeFargateProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -126,6 +165,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(ListFargateProfilesRequest request) {
+
+        return listFargateProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(ListFargateProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFargateProfilesRequest, ListFargateProfilesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

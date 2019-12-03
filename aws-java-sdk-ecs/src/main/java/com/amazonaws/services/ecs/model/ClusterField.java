@@ -20,6 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ClusterField {
 
+    ATTACHMENTS("ATTACHMENTS"),
+    SETTINGS("SETTINGS"),
     STATISTICS("STATISTICS"),
     TAGS("TAGS");
 

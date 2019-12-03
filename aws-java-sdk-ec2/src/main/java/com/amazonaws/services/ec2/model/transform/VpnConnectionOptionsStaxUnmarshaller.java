@@ -45,6 +45,11 @@ public class VpnConnectionOptionsStaxUnmarshaller implements Unmarshaller<VpnCon
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("enableAcceleration", targetDepth)) {
+                    vpnConnectionOptions.setEnableAcceleration(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("staticRoutesOnly", targetDepth)) {
                     vpnConnectionOptions.setStaticRoutesOnly(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

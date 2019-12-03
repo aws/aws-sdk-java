@@ -60,6 +60,11 @@ public class VolumeStatusItemStaxUnmarshaller implements Unmarshaller<VolumeStat
                     continue;
                 }
 
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    volumeStatusItem.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("eventsSet", targetDepth)) {
                     volumeStatusItem.withEvents(new ArrayList<VolumeStatusEvent>());
                     continue;

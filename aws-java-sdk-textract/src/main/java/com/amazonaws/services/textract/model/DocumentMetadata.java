@@ -30,18 +30,18 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of pages detected in the document.
+     * The number of pages that are detected in the document.
      * </p>
      */
     private Integer pages;
 
     /**
      * <p>
-     * The number of pages detected in the document.
+     * The number of pages that are detected in the document.
      * </p>
      * 
      * @param pages
-     *        The number of pages detected in the document.
+     *        The number of pages that are detected in the document.
      */
 
     public void setPages(Integer pages) {
@@ -50,10 +50,10 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of pages detected in the document.
+     * The number of pages that are detected in the document.
      * </p>
      * 
-     * @return The number of pages detected in the document.
+     * @return The number of pages that are detected in the document.
      */
 
     public Integer getPages() {
@@ -62,11 +62,11 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of pages detected in the document.
+     * The number of pages that are detected in the document.
      * </p>
      * 
      * @param pages
-     *        The number of pages detected in the document.
+     *        The number of pages that are detected in the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,33 +55,30 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String taskDefinition;
     /**
      * <p>
+     * The capacity provider strategy to update the service to use.
+     * </p>
+     * <p>
+     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
+     * one or more capacity providers. However, when a service is using a non-default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider strategy.
+     * </p>
+     * <p/>
+     */
+    private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
+    /**
+     * <p>
      * Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping
      * and starting tasks.
      * </p>
      */
     private DeploymentConfiguration deploymentConfiguration;
-    /**
-     * <p>
-     * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
-     * the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
-     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
-     * the network configuration, this does not trigger a new service deployment.
-     * </p>
-     * </note>
-     */
+
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
      * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
+     * version is used by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -102,8 +99,9 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
      * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
+     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
+     * up.
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
@@ -297,6 +295,126 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The capacity provider strategy to update the service to use.
+     * </p>
+     * <p>
+     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
+     * one or more capacity providers. However, when a service is using a non-default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider strategy.
+     * </p>
+     * <p/>
+     * 
+     * @return The capacity provider strategy to update the service to use.
+     *         </p>
+     *         <p>
+     *         If the service is using the default capacity provider strategy for the cluster, the service can be
+     *         updated to use one or more capacity providers. However, when a service is using a non-default capacity
+     *         provider strategy, the service cannot be updated to use the cluster's default capacity provider strategy.
+     *         </p>
+     */
+
+    public java.util.List<CapacityProviderStrategyItem> getCapacityProviderStrategy() {
+        if (capacityProviderStrategy == null) {
+            capacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>();
+        }
+        return capacityProviderStrategy;
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy to update the service to use.
+     * </p>
+     * <p>
+     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
+     * one or more capacity providers. However, when a service is using a non-default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider strategy.
+     * </p>
+     * <p/>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy to update the service to use.
+     *        </p>
+     *        <p>
+     *        If the service is using the default capacity provider strategy for the cluster, the service can be updated
+     *        to use one or more capacity providers. However, when a service is using a non-default capacity provider
+     *        strategy, the service cannot be updated to use the cluster's default capacity provider strategy.
+     *        </p>
+     */
+
+    public void setCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
+        if (capacityProviderStrategy == null) {
+            this.capacityProviderStrategy = null;
+            return;
+        }
+
+        this.capacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(capacityProviderStrategy);
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy to update the service to use.
+     * </p>
+     * <p>
+     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
+     * one or more capacity providers. However, when a service is using a non-default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider strategy.
+     * </p>
+     * <p/>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCapacityProviderStrategy(java.util.Collection)} or
+     * {@link #withCapacityProviderStrategy(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy to update the service to use.</p>
+     *        <p>
+     *        If the service is using the default capacity provider strategy for the cluster, the service can be updated
+     *        to use one or more capacity providers. However, when a service is using a non-default capacity provider
+     *        strategy, the service cannot be updated to use the cluster's default capacity provider strategy.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withCapacityProviderStrategy(CapacityProviderStrategyItem... capacityProviderStrategy) {
+        if (this.capacityProviderStrategy == null) {
+            setCapacityProviderStrategy(new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(capacityProviderStrategy.length));
+        }
+        for (CapacityProviderStrategyItem ele : capacityProviderStrategy) {
+            this.capacityProviderStrategy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy to update the service to use.
+     * </p>
+     * <p>
+     * If the service is using the default capacity provider strategy for the cluster, the service can be updated to use
+     * one or more capacity providers. However, when a service is using a non-default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider strategy.
+     * </p>
+     * <p/>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy to update the service to use.
+     *        </p>
+     *        <p>
+     *        If the service is using the default capacity provider strategy for the cluster, the service can be updated
+     *        to use one or more capacity providers. However, when a service is using a non-default capacity provider
+     *        strategy, the service cannot be updated to use the cluster's default capacity provider strategy.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
+        setCapacityProviderStrategy(capacityProviderStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
      * Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping
      * and starting tasks.
      * </p>
@@ -342,32 +460,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p>
-     * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
-     * the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
-     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
-     * the network configuration, this does not trigger a new service deployment.
-     * </p>
-     * </note>
-     * 
      * @param networkConfiguration
-     *        The network configuration for the service. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
-     *        for other network modes. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-     *        <p>
-     *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
-     *        For example, if your network configuration change is to keep the existing subnets and simply add another
-     *        subnet to the network configuration, this does not trigger a new service deployment.
-     *        </p>
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -375,31 +468,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p>
-     * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
-     * the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
-     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
-     * the network configuration, this does not trigger a new service deployment.
-     * </p>
-     * </note>
-     * 
-     * @return The network configuration for the service. This parameter is required for task definitions that use the
-     *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
-     *         for other network modes. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-     *         <p>
-     *         Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
-     *         For example, if your network configuration change is to keep the existing subnets and simply add another
-     *         subnet to the network configuration, this does not trigger a new service deployment.
-     *         </p>
+     * @return
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -407,32 +476,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p>
-     * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
-     * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
-     * the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For
-     * example, if your network configuration change is to keep the existing subnets and simply add another subnet to
-     * the network configuration, this does not trigger a new service deployment.
-     * </p>
-     * </note>
-     * 
      * @param networkConfiguration
-     *        The network configuration for the service. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
-     *        for other network modes. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
-     *        <p>
-     *        Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment.
-     *        For example, if your network configuration change is to keep the existing subnets and simply add another
-     *        subnet to the network configuration, this does not trigger a new service deployment.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,16 +488,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
+     * version is used by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
      *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code>
+     *        platform version is used by default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -465,15 +509,15 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
+     * version is used by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The platform version on which your tasks in the service are running. A platform version is only specified
-     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
-     *         version is used by default. For more information, see <a
+     *         for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code>
+     *         platform version is used by default. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
@@ -485,16 +529,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The platform version on which your tasks in the service are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
+     * tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code> platform
+     * version is used by default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
      *        The platform version on which your tasks in the service are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        for tasks using the Fargate launch type. If a platform version is not specified, the <code>LATEST</code>
+     *        platform version is used by default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -587,8 +631,9 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
      * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
+     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
+     * up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
@@ -596,8 +641,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
      *        Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.
-     *        During that time, the ECS service scheduler ignores the Elastic Load Balancing health check status. This
-     *        grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them
+     *        During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status.
+     *        This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them
      *        before they have time to come up.
      */
 
@@ -611,17 +656,18 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
      * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
+     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
+     * up.
      * </p>
      * 
      * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
      *         Load Balancing target health checks after a task has first started. This is only valid if your service is
      *         configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
      *         Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.
-     *         During that time, the ECS service scheduler ignores the Elastic Load Balancing health check status. This
-     *         grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them
-     *         before they have time to come up.
+     *         During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check
+     *         status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
+     *         stopping them before they have time to come up.
      */
 
     public Integer getHealthCheckGracePeriodSeconds() {
@@ -634,8 +680,9 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
      * health checks, you can specify a health check grace period of up to 2,147,483,647 seconds. During that time, the
-     * ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the
-     * ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * Amazon ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can
+     * prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come
+     * up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
@@ -643,8 +690,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
      *        Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.
-     *        During that time, the ECS service scheduler ignores the Elastic Load Balancing health check status. This
-     *        grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them
+     *        During that time, the Amazon ECS service scheduler ignores the Elastic Load Balancing health check status.
+     *        This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them
      *        before they have time to come up.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -674,6 +721,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("DesiredCount: ").append(getDesiredCount()).append(",");
         if (getTaskDefinition() != null)
             sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
+        if (getCapacityProviderStrategy() != null)
+            sb.append("CapacityProviderStrategy: ").append(getCapacityProviderStrategy()).append(",");
         if (getDeploymentConfiguration() != null)
             sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration()).append(",");
         if (getNetworkConfiguration() != null)
@@ -714,6 +763,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTaskDefinition() != null && other.getTaskDefinition().equals(this.getTaskDefinition()) == false)
             return false;
+        if (other.getCapacityProviderStrategy() == null ^ this.getCapacityProviderStrategy() == null)
+            return false;
+        if (other.getCapacityProviderStrategy() != null && other.getCapacityProviderStrategy().equals(this.getCapacityProviderStrategy()) == false)
+            return false;
         if (other.getDeploymentConfiguration() == null ^ this.getDeploymentConfiguration() == null)
             return false;
         if (other.getDeploymentConfiguration() != null && other.getDeploymentConfiguration().equals(this.getDeploymentConfiguration()) == false)
@@ -747,6 +800,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
         hashCode = prime * hashCode + ((getDesiredCount() == null) ? 0 : getDesiredCount().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
+        hashCode = prime * hashCode + ((getCapacityProviderStrategy() == null) ? 0 : getCapacityProviderStrategy().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());

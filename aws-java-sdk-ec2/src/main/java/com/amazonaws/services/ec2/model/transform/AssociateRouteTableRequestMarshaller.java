@@ -48,6 +48,10 @@ public class AssociateRouteTableRequestMarshaller implements Marshaller<Request<
             request.addParameter("SubnetId", StringUtils.fromString(associateRouteTableRequest.getSubnetId()));
         }
 
+        if (associateRouteTableRequest.getGatewayId() != null) {
+            request.addParameter("GatewayId", StringUtils.fromString(associateRouteTableRequest.getGatewayId()));
+        }
+
         return request;
     }
 

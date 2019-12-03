@@ -34,6 +34,12 @@ public class InstanceStatus implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
      * Any scheduled events associated with the instance.
      * </p>
      */
@@ -102,6 +108,46 @@ public class InstanceStatus implements Serializable, Cloneable {
 
     public InstanceStatus withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceStatus withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
         return this;
     }
 
@@ -367,6 +413,8 @@ public class InstanceStatus implements Serializable, Cloneable {
         sb.append("{");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getEvents() != null)
             sb.append("Events: ").append(getEvents()).append(",");
         if (getInstanceId() != null)
@@ -394,6 +442,10 @@ public class InstanceStatus implements Serializable, Cloneable {
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
             return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
@@ -424,6 +476,7 @@ public class InstanceStatus implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceState() == null) ? 0 : getInstanceState().hashCode());

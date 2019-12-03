@@ -57,8 +57,8 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If a previous update fails because pods could not be drained, you can force the update after it fails to
-     * terminate the old node regardless of whether or not any pods are running on the node.
+     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
+     * old node whether or not any pods are running on the node.
      * </p>
      */
     private Boolean force;
@@ -262,14 +262,14 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If a previous update fails because pods could not be drained, you can force the update after it fails to
-     * terminate the old node regardless of whether or not any pods are running on the node.
+     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
+     * old node whether or not any pods are running on the node.
      * </p>
      * 
      * @param force
      *        Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget
-     *        issue. If a previous update fails because pods could not be drained, you can force the update after it
-     *        fails to terminate the old node regardless of whether or not any pods are running on the node.
+     *        issue. If an update fails because pods could not be drained, you can force the update after it fails to
+     *        terminate the old node whether or not any pods are running on the node.
      */
 
     public void setForce(Boolean force) {
@@ -279,13 +279,13 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If a previous update fails because pods could not be drained, you can force the update after it fails to
-     * terminate the old node regardless of whether or not any pods are running on the node.
+     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
+     * old node whether or not any pods are running on the node.
      * </p>
      * 
      * @return Force the update if the existing node group's pods are unable to be drained due to a pod disruption
-     *         budget issue. If a previous update fails because pods could not be drained, you can force the update
-     *         after it fails to terminate the old node regardless of whether or not any pods are running on the node.
+     *         budget issue. If an update fails because pods could not be drained, you can force the update after it
+     *         fails to terminate the old node whether or not any pods are running on the node.
      */
 
     public Boolean getForce() {
@@ -295,14 +295,14 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If a previous update fails because pods could not be drained, you can force the update after it fails to
-     * terminate the old node regardless of whether or not any pods are running on the node.
+     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
+     * old node whether or not any pods are running on the node.
      * </p>
      * 
      * @param force
      *        Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget
-     *        issue. If a previous update fails because pods could not be drained, you can force the update after it
-     *        fails to terminate the old node regardless of whether or not any pods are running on the node.
+     *        issue. If an update fails because pods could not be drained, you can force the update after it fails to
+     *        terminate the old node whether or not any pods are running on the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,13 +314,13 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If a previous update fails because pods could not be drained, you can force the update after it fails to
-     * terminate the old node regardless of whether or not any pods are running on the node.
+     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
+     * old node whether or not any pods are running on the node.
      * </p>
      * 
      * @return Force the update if the existing node group's pods are unable to be drained due to a pod disruption
-     *         budget issue. If a previous update fails because pods could not be drained, you can force the update
-     *         after it fails to terminate the old node regardless of whether or not any pods are running on the node.
+     *         budget issue. If an update fails because pods could not be drained, you can force the update after it
+     *         fails to terminate the old node whether or not any pods are running on the node.
      */
 
     public Boolean isForce() {

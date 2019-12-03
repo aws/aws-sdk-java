@@ -184,6 +184,54 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterSetting> settings;
+    /**
+     * <p>
+     * The capacity providers associated with the cluster.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> capacityProviders;
+    /**
+     * <p>
+     * The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no
+     * launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> defaultCapacityProviderStrategy;
+    /**
+     * <p>
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
+     * created will be returned as a cluster attachment.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Attachment> attachments;
+    /**
+     * <p>
+     * The status of the capacity providers associated with the cluster. The following are the states that will be
+     * returned:
+     * </p>
+     * <dl>
+     * <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
+     * provisioning or deprovisioning.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity providers have successfully updated.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider updates failed.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String attachmentsStatus;
 
     /**
      * <p>
@@ -1423,6 +1471,411 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The capacity providers associated with the cluster.
+     * </p>
+     * 
+     * @return The capacity providers associated with the cluster.
+     */
+
+    public java.util.List<String> getCapacityProviders() {
+        if (capacityProviders == null) {
+            capacityProviders = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return capacityProviders;
+    }
+
+    /**
+     * <p>
+     * The capacity providers associated with the cluster.
+     * </p>
+     * 
+     * @param capacityProviders
+     *        The capacity providers associated with the cluster.
+     */
+
+    public void setCapacityProviders(java.util.Collection<String> capacityProviders) {
+        if (capacityProviders == null) {
+            this.capacityProviders = null;
+            return;
+        }
+
+        this.capacityProviders = new com.amazonaws.internal.SdkInternalList<String>(capacityProviders);
+    }
+
+    /**
+     * <p>
+     * The capacity providers associated with the cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCapacityProviders(java.util.Collection)} or {@link #withCapacityProviders(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param capacityProviders
+     *        The capacity providers associated with the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withCapacityProviders(String... capacityProviders) {
+        if (this.capacityProviders == null) {
+            setCapacityProviders(new com.amazonaws.internal.SdkInternalList<String>(capacityProviders.length));
+        }
+        for (String ele : capacityProviders) {
+            this.capacityProviders.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity providers associated with the cluster.
+     * </p>
+     * 
+     * @param capacityProviders
+     *        The capacity providers associated with the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withCapacityProviders(java.util.Collection<String> capacityProviders) {
+        setCapacityProviders(capacityProviders);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no
+     * launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     * </p>
+     * 
+     * @return The default capacity provider strategy for the cluster. When services or tasks are run in the cluster
+     *         with no launch type or capacity provider strategy specified, the default capacity provider strategy is
+     *         used.
+     */
+
+    public java.util.List<CapacityProviderStrategyItem> getDefaultCapacityProviderStrategy() {
+        if (defaultCapacityProviderStrategy == null) {
+            defaultCapacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>();
+        }
+        return defaultCapacityProviderStrategy;
+    }
+
+    /**
+     * <p>
+     * The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no
+     * launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     * </p>
+     * 
+     * @param defaultCapacityProviderStrategy
+     *        The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with
+     *        no launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     */
+
+    public void setDefaultCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> defaultCapacityProviderStrategy) {
+        if (defaultCapacityProviderStrategy == null) {
+            this.defaultCapacityProviderStrategy = null;
+            return;
+        }
+
+        this.defaultCapacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(defaultCapacityProviderStrategy);
+    }
+
+    /**
+     * <p>
+     * The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no
+     * launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDefaultCapacityProviderStrategy(java.util.Collection)} or
+     * {@link #withDefaultCapacityProviderStrategy(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param defaultCapacityProviderStrategy
+     *        The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with
+     *        no launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDefaultCapacityProviderStrategy(CapacityProviderStrategyItem... defaultCapacityProviderStrategy) {
+        if (this.defaultCapacityProviderStrategy == null) {
+            setDefaultCapacityProviderStrategy(new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(defaultCapacityProviderStrategy.length));
+        }
+        for (CapacityProviderStrategyItem ele : defaultCapacityProviderStrategy) {
+            this.defaultCapacityProviderStrategy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with no
+     * launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     * </p>
+     * 
+     * @param defaultCapacityProviderStrategy
+     *        The default capacity provider strategy for the cluster. When services or tasks are run in the cluster with
+     *        no launch type or capacity provider strategy specified, the default capacity provider strategy is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withDefaultCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> defaultCapacityProviderStrategy) {
+        setDefaultCapacityProviderStrategy(defaultCapacityProviderStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
+     * created will be returned as a cluster attachment.
+     * </p>
+     * 
+     * @return The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
+     *         that is created will be returned as a cluster attachment.
+     */
+
+    public java.util.List<Attachment> getAttachments() {
+        if (attachments == null) {
+            attachments = new com.amazonaws.internal.SdkInternalList<Attachment>();
+        }
+        return attachments;
+    }
+
+    /**
+     * <p>
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
+     * created will be returned as a cluster attachment.
+     * </p>
+     * 
+     * @param attachments
+     *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
+     *        that is created will be returned as a cluster attachment.
+     */
+
+    public void setAttachments(java.util.Collection<Attachment> attachments) {
+        if (attachments == null) {
+            this.attachments = null;
+            return;
+        }
+
+        this.attachments = new com.amazonaws.internal.SdkInternalList<Attachment>(attachments);
+    }
+
+    /**
+     * <p>
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
+     * created will be returned as a cluster attachment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param attachments
+     *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
+     *        that is created will be returned as a cluster attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withAttachments(Attachment... attachments) {
+        if (this.attachments == null) {
+            setAttachments(new com.amazonaws.internal.SdkInternalList<Attachment>(attachments.length));
+        }
+        for (Attachment ele : attachments) {
+            this.attachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan that is
+     * created will be returned as a cluster attachment.
+     * </p>
+     * 
+     * @param attachments
+     *        The resources attached to a cluster. When using a capacity provider with a cluster, the Auto Scaling plan
+     *        that is created will be returned as a cluster attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withAttachments(java.util.Collection<Attachment> attachments) {
+        setAttachments(attachments);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the capacity providers associated with the cluster. The following are the states that will be
+     * returned:
+     * </p>
+     * <dl>
+     * <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
+     * provisioning or deprovisioning.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity providers have successfully updated.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider updates failed.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param attachmentsStatus
+     *        The status of the capacity providers associated with the cluster. The following are the states that will
+     *        be returned:</p>
+     *        <dl>
+     *        <dt>UPDATE_IN_PROGRESS</dt>
+     *        <dd>
+     *        <p>
+     *        The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
+     *        provisioning or deprovisioning.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity providers have successfully updated.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider updates failed.
+     *        </p>
+     *        </dd>
+     */
+
+    public void setAttachmentsStatus(String attachmentsStatus) {
+        this.attachmentsStatus = attachmentsStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the capacity providers associated with the cluster. The following are the states that will be
+     * returned:
+     * </p>
+     * <dl>
+     * <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
+     * provisioning or deprovisioning.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity providers have successfully updated.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider updates failed.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The status of the capacity providers associated with the cluster. The following are the states that will
+     *         be returned:</p>
+     *         <dl>
+     *         <dt>UPDATE_IN_PROGRESS</dt>
+     *         <dd>
+     *         <p>
+     *         The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
+     *         provisioning or deprovisioning.
+     *         </p>
+     *         </dd>
+     *         <dt>UPDATE_COMPLETE</dt>
+     *         <dd>
+     *         <p>
+     *         The capacity providers have successfully updated.
+     *         </p>
+     *         </dd>
+     *         <dt>UPDATE_FAILED</dt>
+     *         <dd>
+     *         <p>
+     *         The capacity provider updates failed.
+     *         </p>
+     *         </dd>
+     */
+
+    public String getAttachmentsStatus() {
+        return this.attachmentsStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the capacity providers associated with the cluster. The following are the states that will be
+     * returned:
+     * </p>
+     * <dl>
+     * <dt>UPDATE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
+     * provisioning or deprovisioning.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity providers have successfully updated.
+     * </p>
+     * </dd>
+     * <dt>UPDATE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider updates failed.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param attachmentsStatus
+     *        The status of the capacity providers associated with the cluster. The following are the states that will
+     *        be returned:</p>
+     *        <dl>
+     *        <dt>UPDATE_IN_PROGRESS</dt>
+     *        <dd>
+     *        <p>
+     *        The available capacity providers for the cluster are updating. This occurs when the Auto Scaling plan is
+     *        provisioning or deprovisioning.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity providers have successfully updated.
+     *        </p>
+     *        </dd>
+     *        <dt>UPDATE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider updates failed.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withAttachmentsStatus(String attachmentsStatus) {
+        setAttachmentsStatus(attachmentsStatus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1453,7 +1906,15 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSettings() != null)
-            sb.append("Settings: ").append(getSettings());
+            sb.append("Settings: ").append(getSettings()).append(",");
+        if (getCapacityProviders() != null)
+            sb.append("CapacityProviders: ").append(getCapacityProviders()).append(",");
+        if (getDefaultCapacityProviderStrategy() != null)
+            sb.append("DefaultCapacityProviderStrategy: ").append(getDefaultCapacityProviderStrategy()).append(",");
+        if (getAttachments() != null)
+            sb.append("Attachments: ").append(getAttachments()).append(",");
+        if (getAttachmentsStatus() != null)
+            sb.append("AttachmentsStatus: ").append(getAttachmentsStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1509,6 +1970,23 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getCapacityProviders() == null ^ this.getCapacityProviders() == null)
+            return false;
+        if (other.getCapacityProviders() != null && other.getCapacityProviders().equals(this.getCapacityProviders()) == false)
+            return false;
+        if (other.getDefaultCapacityProviderStrategy() == null ^ this.getDefaultCapacityProviderStrategy() == null)
+            return false;
+        if (other.getDefaultCapacityProviderStrategy() != null
+                && other.getDefaultCapacityProviderStrategy().equals(this.getDefaultCapacityProviderStrategy()) == false)
+            return false;
+        if (other.getAttachments() == null ^ this.getAttachments() == null)
+            return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
+        if (other.getAttachmentsStatus() == null ^ this.getAttachmentsStatus() == null)
+            return false;
+        if (other.getAttachmentsStatus() != null && other.getAttachmentsStatus().equals(this.getAttachmentsStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1527,6 +2005,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getCapacityProviders() == null) ? 0 : getCapacityProviders().hashCode());
+        hashCode = prime * hashCode + ((getDefaultCapacityProviderStrategy() == null) ? 0 : getDefaultCapacityProviderStrategy().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentsStatus() == null) ? 0 : getAttachmentsStatus().hashCode());
         return hashCode;
     }
 

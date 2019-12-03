@@ -111,8 +111,20 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket containing the desired object.
+     *            The name of the bucket, or access point ARN, containing the desired object.
      * @param key
      *            The key in the specified bucket under which the object is
      *            stored.
@@ -127,8 +139,20 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket containing the desired object.
+     *            The name of the bucket, or access point ARN, containing the desired object.
      * @param key
      *            The key in the specified bucket under which the object is
      *            stored.
@@ -153,8 +177,20 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * Constructs a new {@link GetObjectRequest} with all the required
      * parameters.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket containing the desired object.
+     *            The name of the bucket, or access point ARN, containing the desired object.
      * @param key
      *            The key in the specified bucket under which the object is
      *            stored.
@@ -189,8 +225,20 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
     /**
      * Sets the name of the bucket containing the object to be downloaded.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket containing the object to be downloaded.
+     *            The name of the bucket, or access point ARN, containing the object to be downloaded.
      *
      * @see GetObjectRequest#getBucketName()
      * @see GetObjectRequest#withBucketName(String)
@@ -204,8 +252,20 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * Returns this {@link GetObjectRequest}, enabling additional method
      * calls to be chained together.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket containing the object to be downloaded.
+     *            The name of the bucket, or access point ARN, containing the object to be downloaded.
      *
      * @return This {@link GetObjectRequest}, enabling additional method
      *         calls to be chained together.

@@ -59,6 +59,10 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
         VpnConnectionOptionsSpecification options = createVpnConnectionRequest.getOptions();
         if (options != null) {
 
+            if (options.getEnableAcceleration() != null) {
+                request.addParameter("Options.EnableAcceleration", StringUtils.fromBoolean(options.getEnableAcceleration()));
+            }
+
             if (options.getStaticRoutesOnly() != null) {
                 request.addParameter("Options.StaticRoutesOnly", StringUtils.fromBoolean(options.getStaticRoutesOnly()));
             }

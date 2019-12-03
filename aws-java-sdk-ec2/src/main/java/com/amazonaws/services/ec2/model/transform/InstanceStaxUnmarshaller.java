@@ -226,6 +226,11 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    instance.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("rootDeviceName", targetDepth)) {
                     instance.setRootDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

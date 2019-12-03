@@ -25,24 +25,26 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Metadata about the document. Contains the number of pages that are detected in the document.
+     * Metadata about the document. It contains the number of pages that are detected in the document.
      * </p>
      */
     private DocumentMetadata documentMetadata;
     /**
      * <p>
-     * An array of Block objects containing the text detected in the document.
+     * An array of <code>Block</code> objects that contain the text that's detected in the document.
      * </p>
      */
     private java.util.List<Block> blocks;
+    /** <p/> */
+    private String detectDocumentTextModelVersion;
 
     /**
      * <p>
-     * Metadata about the document. Contains the number of pages that are detected in the document.
+     * Metadata about the document. It contains the number of pages that are detected in the document.
      * </p>
      * 
      * @param documentMetadata
-     *        Metadata about the document. Contains the number of pages that are detected in the document.
+     *        Metadata about the document. It contains the number of pages that are detected in the document.
      */
 
     public void setDocumentMetadata(DocumentMetadata documentMetadata) {
@@ -51,10 +53,10 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Metadata about the document. Contains the number of pages that are detected in the document.
+     * Metadata about the document. It contains the number of pages that are detected in the document.
      * </p>
      * 
-     * @return Metadata about the document. Contains the number of pages that are detected in the document.
+     * @return Metadata about the document. It contains the number of pages that are detected in the document.
      */
 
     public DocumentMetadata getDocumentMetadata() {
@@ -63,11 +65,11 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Metadata about the document. Contains the number of pages that are detected in the document.
+     * Metadata about the document. It contains the number of pages that are detected in the document.
      * </p>
      * 
      * @param documentMetadata
-     *        Metadata about the document. Contains the number of pages that are detected in the document.
+     *        Metadata about the document. It contains the number of pages that are detected in the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +80,10 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of Block objects containing the text detected in the document.
+     * An array of <code>Block</code> objects that contain the text that's detected in the document.
      * </p>
      * 
-     * @return An array of Block objects containing the text detected in the document.
+     * @return An array of <code>Block</code> objects that contain the text that's detected in the document.
      */
 
     public java.util.List<Block> getBlocks() {
@@ -90,11 +92,11 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of Block objects containing the text detected in the document.
+     * An array of <code>Block</code> objects that contain the text that's detected in the document.
      * </p>
      * 
      * @param blocks
-     *        An array of Block objects containing the text detected in the document.
+     *        An array of <code>Block</code> objects that contain the text that's detected in the document.
      */
 
     public void setBlocks(java.util.Collection<Block> blocks) {
@@ -108,7 +110,7 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of Block objects containing the text detected in the document.
+     * An array of <code>Block</code> objects that contain the text that's detected in the document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +119,7 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param blocks
-     *        An array of Block objects containing the text detected in the document.
+     *        An array of <code>Block</code> objects that contain the text that's detected in the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,16 +135,48 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An array of Block objects containing the text detected in the document.
+     * An array of <code>Block</code> objects that contain the text that's detected in the document.
      * </p>
      * 
      * @param blocks
-     *        An array of Block objects containing the text detected in the document.
+     *        An array of <code>Block</code> objects that contain the text that's detected in the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DetectDocumentTextResult withBlocks(java.util.Collection<Block> blocks) {
         setBlocks(blocks);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param detectDocumentTextModelVersion
+     */
+
+    public void setDetectDocumentTextModelVersion(String detectDocumentTextModelVersion) {
+        this.detectDocumentTextModelVersion = detectDocumentTextModelVersion;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getDetectDocumentTextModelVersion() {
+        return this.detectDocumentTextModelVersion;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param detectDocumentTextModelVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectDocumentTextResult withDetectDocumentTextModelVersion(String detectDocumentTextModelVersion) {
+        setDetectDocumentTextModelVersion(detectDocumentTextModelVersion);
         return this;
     }
 
@@ -161,7 +195,9 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
         if (getDocumentMetadata() != null)
             sb.append("DocumentMetadata: ").append(getDocumentMetadata()).append(",");
         if (getBlocks() != null)
-            sb.append("Blocks: ").append(getBlocks());
+            sb.append("Blocks: ").append(getBlocks()).append(",");
+        if (getDetectDocumentTextModelVersion() != null)
+            sb.append("DetectDocumentTextModelVersion: ").append(getDetectDocumentTextModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -184,6 +220,11 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getBlocks() != null && other.getBlocks().equals(this.getBlocks()) == false)
             return false;
+        if (other.getDetectDocumentTextModelVersion() == null ^ this.getDetectDocumentTextModelVersion() == null)
+            return false;
+        if (other.getDetectDocumentTextModelVersion() != null
+                && other.getDetectDocumentTextModelVersion().equals(this.getDetectDocumentTextModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -194,6 +235,7 @@ public class DetectDocumentTextResult extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getDocumentMetadata() == null) ? 0 : getDocumentMetadata().hashCode());
         hashCode = prime * hashCode + ((getBlocks() == null) ? 0 : getBlocks().hashCode());
+        hashCode = prime * hashCode + ((getDetectDocumentTextModelVersion() == null) ? 0 : getDetectDocumentTextModelVersion().hashCode());
         return hashCode;
     }
 

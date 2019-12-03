@@ -52,29 +52,30 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
-     * MB. The document bytes must be in PNG or JPG format.
+     * A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPEG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
      * the <code>Bytes</code> field.
      * </p>
      */
     private java.nio.ByteBuffer bytes;
     /**
      * <p>
-     * Identifies an S3 object as the document source. The maximum size of a document stored in an S3 bucket is 5 MB.
+     * Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5
+     * MB.
      * </p>
      */
     private S3Object s3Object;
 
     /**
      * <p>
-     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
-     * MB. The document bytes must be in PNG or JPG format.
+     * A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPEG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
      * the <code>Bytes</code> field.
      * </p>
      * <p>
@@ -89,11 +90,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bytes
-     *        A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of
-     *        bytes is 5 MB. The document bytes must be in PNG or JPG format.</p>
+     *        A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes
+     *        is 5 MB. The document bytes must be in PNG or JPEG format.</p>
      *        <p>
-     *        If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     *        passed using the <code>Bytes</code> field.
+     *        If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed
+     *        using the <code>Bytes</code> field.
      */
 
     public void setBytes(java.nio.ByteBuffer bytes) {
@@ -102,11 +103,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
-     * MB. The document bytes must be in PNG or JPG format.
+     * A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPEG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
      * the <code>Bytes</code> field.
      * </p>
      * <p>
@@ -117,10 +118,10 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of
-     *         bytes is 5 MB. The document bytes must be in PNG or JPG format.</p>
+     * @return A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of
+     *         bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
      *         <p>
-     *         If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
+     *         If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
      *         passed using the <code>Bytes</code> field.
      */
 
@@ -130,11 +131,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
-     * MB. The document bytes must be in PNG or JPG format.
+     * A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPEG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
      * the <code>Bytes</code> field.
      * </p>
      * <p>
@@ -149,11 +150,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bytes
-     *        A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of
-     *        bytes is 5 MB. The document bytes must be in PNG or JPG format.</p>
+     *        A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes
+     *        is 5 MB. The document bytes must be in PNG or JPEG format.</p>
      *        <p>
-     *        If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     *        passed using the <code>Bytes</code> field.
+     *        If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed
+     *        using the <code>Bytes</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,12 +165,13 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an S3 object as the document source. The maximum size of a document stored in an S3 bucket is 5 MB.
+     * Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5
+     * MB.
      * </p>
      * 
      * @param s3Object
-     *        Identifies an S3 object as the document source. The maximum size of a document stored in an S3 bucket is 5
-     *        MB.
+     *        Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3
+     *        bucket is 5 MB.
      */
 
     public void setS3Object(S3Object s3Object) {
@@ -178,11 +180,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an S3 object as the document source. The maximum size of a document stored in an S3 bucket is 5 MB.
+     * Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5
+     * MB.
      * </p>
      * 
-     * @return Identifies an S3 object as the document source. The maximum size of a document stored in an S3 bucket is
-     *         5 MB.
+     * @return Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3
+     *         bucket is 5 MB.
      */
 
     public S3Object getS3Object() {
@@ -191,12 +194,13 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an S3 object as the document source. The maximum size of a document stored in an S3 bucket is 5 MB.
+     * Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5
+     * MB.
      * </p>
      * 
      * @param s3Object
-     *        Identifies an S3 object as the document source. The maximum size of a document stored in an S3 bucket is 5
-     *        MB.
+     *        Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3
+     *        bucket is 5 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

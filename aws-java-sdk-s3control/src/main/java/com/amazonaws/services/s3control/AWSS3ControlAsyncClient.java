@@ -62,6 +62,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessPointResult> createAccessPointAsync(CreateAccessPointRequest request) {
+
+        return createAccessPointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPointResult> createAccessPointAsync(final CreateAccessPointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccessPointRequest, CreateAccessPointResult> asyncHandler) {
+        final CreateAccessPointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccessPointResult>() {
+            @Override
+            public CreateAccessPointResult call() throws Exception {
+                CreateAccessPointResult result = null;
+
+                try {
+                    result = executeCreateAccessPoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request) {
 
         return createJobAsync(request, null);
@@ -79,6 +112,72 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executeCreateJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessPointResult> deleteAccessPointAsync(DeleteAccessPointRequest request) {
+
+        return deleteAccessPointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessPointResult> deleteAccessPointAsync(final DeleteAccessPointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessPointRequest, DeleteAccessPointResult> asyncHandler) {
+        final DeleteAccessPointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessPointResult>() {
+            @Override
+            public DeleteAccessPointResult call() throws Exception {
+                DeleteAccessPointResult result = null;
+
+                try {
+                    result = executeDeleteAccessPoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessPointPolicyResult> deleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest request) {
+
+        return deleteAccessPointPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessPointPolicyResult> deleteAccessPointPolicyAsync(final DeleteAccessPointPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessPointPolicyRequest, DeleteAccessPointPolicyResult> asyncHandler) {
+        final DeleteAccessPointPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessPointPolicyResult>() {
+            @Override
+            public DeleteAccessPointPolicyResult call() throws Exception {
+                DeleteAccessPointPolicyResult result = null;
+
+                try {
+                    result = executeDeleteAccessPointPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -161,6 +260,105 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessPointResult> getAccessPointAsync(GetAccessPointRequest request) {
+
+        return getAccessPointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointResult> getAccessPointAsync(final GetAccessPointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccessPointRequest, GetAccessPointResult> asyncHandler) {
+        final GetAccessPointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccessPointResult>() {
+            @Override
+            public GetAccessPointResult call() throws Exception {
+                GetAccessPointResult result = null;
+
+                try {
+                    result = executeGetAccessPoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyResult> getAccessPointPolicyAsync(GetAccessPointPolicyRequest request) {
+
+        return getAccessPointPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyResult> getAccessPointPolicyAsync(final GetAccessPointPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyRequest, GetAccessPointPolicyResult> asyncHandler) {
+        final GetAccessPointPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccessPointPolicyResult>() {
+            @Override
+            public GetAccessPointPolicyResult call() throws Exception {
+                GetAccessPointPolicyResult result = null;
+
+                try {
+                    result = executeGetAccessPointPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyStatusResult> getAccessPointPolicyStatusAsync(GetAccessPointPolicyStatusRequest request) {
+
+        return getAccessPointPolicyStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyStatusResult> getAccessPointPolicyStatusAsync(final GetAccessPointPolicyStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyStatusRequest, GetAccessPointPolicyStatusResult> asyncHandler) {
+        final GetAccessPointPolicyStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccessPointPolicyStatusResult>() {
+            @Override
+            public GetAccessPointPolicyStatusResult call() throws Exception {
+                GetAccessPointPolicyStatusResult result = null;
+
+                try {
+                    result = executeGetAccessPointPolicyStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPublicAccessBlockResult> getPublicAccessBlockAsync(GetPublicAccessBlockRequest request) {
 
         return getPublicAccessBlockAsync(request, null);
@@ -194,6 +392,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<ListAccessPointsResult> listAccessPointsAsync(ListAccessPointsRequest request) {
+
+        return listAccessPointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPointsResult> listAccessPointsAsync(final ListAccessPointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessPointsRequest, ListAccessPointsResult> asyncHandler) {
+        final ListAccessPointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessPointsResult>() {
+            @Override
+            public ListAccessPointsResult call() throws Exception {
+                ListAccessPointsResult result = null;
+
+                try {
+                    result = executeListAccessPoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request) {
 
         return listJobsAsync(request, null);
@@ -211,6 +442,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executeListJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest request) {
+
+        return putAccessPointPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(final PutAccessPointPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyRequest, PutAccessPointPolicyResult> asyncHandler) {
+        final PutAccessPointPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccessPointPolicyResult>() {
+            @Override
+            public PutAccessPointPolicyResult call() throws Exception {
+                PutAccessPointPolicyResult result = null;
+
+                try {
+                    result = executePutAccessPointPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

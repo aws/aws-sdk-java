@@ -29,7 +29,11 @@ public class ResourceLimitExceededException extends com.amazonaws.services.eks.m
      * </p>
      */
     private String clusterName;
-
+    /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     */
     private String nodegroupName;
 
     /**
@@ -85,7 +89,12 @@ public class ResourceLimitExceededException extends com.amazonaws.services.eks.m
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -94,7 +103,11 @@ public class ResourceLimitExceededException extends com.amazonaws.services.eks.m
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
+     * @return The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -103,7 +116,12 @@ public class ResourceLimitExceededException extends com.amazonaws.services.eks.m
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

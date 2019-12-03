@@ -45,6 +45,11 @@ public class VpnConnectionOptionsSpecificationStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("EnableAcceleration", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setEnableAcceleration(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("staticRoutesOnly", targetDepth)) {
                     vpnConnectionOptionsSpecification.setStaticRoutesOnly(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

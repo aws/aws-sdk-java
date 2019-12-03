@@ -37,6 +37,12 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     */
+    private String gatewayId;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of the internet gateway or virtual private gateway.
+     */
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     * 
+     * @return The ID of the internet gateway or virtual private gateway.
+     */
+
+    public String getGatewayId() {
+        return this.gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of the internet gateway or virtual private gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRouteTableRequest withGatewayId(String gatewayId) {
+        setGatewayId(gatewayId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -144,7 +190,9 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
         if (getRouteTableId() != null)
             sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getGatewayId() != null)
+            sb.append("GatewayId: ").append(getGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -167,6 +215,10 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getGatewayId() == null ^ this.getGatewayId() == null)
+            return false;
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
         return true;
     }
 
@@ -177,6 +229,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
 
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         return hashCode;
     }
 

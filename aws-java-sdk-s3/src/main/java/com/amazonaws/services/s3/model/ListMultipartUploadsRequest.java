@@ -27,7 +27,21 @@ import com.amazonaws.services.s3.AmazonS3;
  */
 public class ListMultipartUploadsRequest extends AmazonWebServiceRequest implements Serializable {
 
-    /** The name of the bucket containing the uploads to list. */
+    /**
+     * The name of the bucket containing the uploads to list.
+     *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     */
     private String bucketName;
 
 	/**
@@ -95,8 +109,20 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
      * Constructs a new ListMultipartUploadsRequest to list the multipart
      * uploads from the specified bucket.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket containing the uploads to list.
+     *            The name of the bucket, or access point ARN, containing the uploads to list.
      */
     public ListMultipartUploadsRequest(String bucketName) {
         this.bucketName = bucketName;
@@ -115,8 +141,20 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
     /**
      * Sets the name of the bucket containing the multipart uploads to list.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket containing the uploads to list.
+     *            The name of the bucket, or access point ARN, containing the uploads to list.
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;

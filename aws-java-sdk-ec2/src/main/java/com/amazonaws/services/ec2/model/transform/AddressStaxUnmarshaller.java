@@ -99,6 +99,21 @@ public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmars
                     address.setPublicIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("networkBorderGroup", targetDepth)) {
+                    address.setNetworkBorderGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("customerOwnedIp", targetDepth)) {
+                    address.setCustomerOwnedIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("customerOwnedIpv4Pool", targetDepth)) {
+                    address.setCustomerOwnedIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return address;

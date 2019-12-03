@@ -111,6 +111,12 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      */
     private String subnetArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     */
+    private String outpostArn;
 
     /**
      * <p>
@@ -822,6 +828,46 @@ public class Subnet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subnet withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -860,7 +906,9 @@ public class Subnet implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSubnetArn() != null)
-            sb.append("SubnetArn: ").append(getSubnetArn());
+            sb.append("SubnetArn: ").append(getSubnetArn()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -931,6 +979,10 @@ public class Subnet implements Serializable, Cloneable {
             return false;
         if (other.getSubnetArn() != null && other.getSubnetArn().equals(this.getSubnetArn()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         return true;
     }
 
@@ -953,6 +1005,7 @@ public class Subnet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpv6CidrBlockAssociationSet() == null) ? 0 : getIpv6CidrBlockAssociationSet().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSubnetArn() == null) ? 0 : getSubnetArn().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         return hashCode;
     }
 

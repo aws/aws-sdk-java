@@ -47,6 +47,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String availabilityZone;
     /**
      * <p>
+     * The capacity provider associated with the task.
+     * </p>
+     */
+    private String capacityProviderName;
+    /**
+     * <p>
      * The ARN of the cluster that hosts the task.
      * </p>
      */
@@ -561,6 +567,46 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     public Task withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity provider associated with the task.
+     * </p>
+     * 
+     * @param capacityProviderName
+     *        The capacity provider associated with the task.
+     */
+
+    public void setCapacityProviderName(String capacityProviderName) {
+        this.capacityProviderName = capacityProviderName;
+    }
+
+    /**
+     * <p>
+     * The capacity provider associated with the task.
+     * </p>
+     * 
+     * @return The capacity provider associated with the task.
+     */
+
+    public String getCapacityProviderName() {
+        return this.capacityProviderName;
+    }
+
+    /**
+     * <p>
+     * The capacity provider associated with the task.
+     * </p>
+     * 
+     * @param capacityProviderName
+     *        The capacity provider associated with the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withCapacityProviderName(String capacityProviderName) {
+        setCapacityProviderName(capacityProviderName);
         return this;
     }
 
@@ -2950,6 +2996,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getCapacityProviderName() != null)
+            sb.append("CapacityProviderName: ").append(getCapacityProviderName()).append(",");
         if (getClusterArn() != null)
             sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getConnectivity() != null)
@@ -3033,6 +3081,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
+        if (other.getCapacityProviderName() == null ^ this.getCapacityProviderName() == null)
+            return false;
+        if (other.getCapacityProviderName() != null && other.getCapacityProviderName().equals(this.getCapacityProviderName()) == false)
             return false;
         if (other.getClusterArn() == null ^ this.getClusterArn() == null)
             return false;
@@ -3161,6 +3213,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getCapacityProviderName() == null) ? 0 : getCapacityProviderName().hashCode());
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         hashCode = prime * hashCode + ((getConnectivity() == null) ? 0 : getConnectivity().hashCode());
         hashCode = prime * hashCode + ((getConnectivityAt() == null) ? 0 : getConnectivityAt().hashCode());

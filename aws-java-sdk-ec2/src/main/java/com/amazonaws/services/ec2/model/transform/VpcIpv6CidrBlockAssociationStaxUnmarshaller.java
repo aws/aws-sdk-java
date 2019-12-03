@@ -57,6 +57,11 @@ public class VpcIpv6CidrBlockAssociationStaxUnmarshaller implements Unmarshaller
                     vpcIpv6CidrBlockAssociation.setIpv6CidrBlockState(VpcCidrBlockStateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("networkBorderGroup", targetDepth)) {
+                    vpcIpv6CidrBlockAssociation.setNetworkBorderGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcIpv6CidrBlockAssociation;

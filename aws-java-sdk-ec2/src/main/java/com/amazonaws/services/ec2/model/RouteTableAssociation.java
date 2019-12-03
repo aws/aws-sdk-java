@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an association between a route table and a subnet.
+ * Describes an association between a route table and a subnet or gateway.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteTableAssociation" target="_top">AWS API
@@ -34,7 +34,7 @@ public class RouteTableAssociation implements Serializable, Cloneable {
     private Boolean main;
     /**
      * <p>
-     * The ID of the association between a route table and a subnet.
+     * The ID of the association.
      * </p>
      */
     private String routeTableAssociationId;
@@ -50,6 +50,18 @@ public class RouteTableAssociation implements Serializable, Cloneable {
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     */
+    private String gatewayId;
+    /**
+     * <p>
+     * The state of the association.
+     * </p>
+     */
+    private RouteTableAssociationState associationState;
 
     /**
      * <p>
@@ -105,11 +117,11 @@ public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the association between a route table and a subnet.
+     * The ID of the association.
      * </p>
      * 
      * @param routeTableAssociationId
-     *        The ID of the association between a route table and a subnet.
+     *        The ID of the association.
      */
 
     public void setRouteTableAssociationId(String routeTableAssociationId) {
@@ -118,10 +130,10 @@ public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the association between a route table and a subnet.
+     * The ID of the association.
      * </p>
      * 
-     * @return The ID of the association between a route table and a subnet.
+     * @return The ID of the association.
      */
 
     public String getRouteTableAssociationId() {
@@ -130,11 +142,11 @@ public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the association between a route table and a subnet.
+     * The ID of the association.
      * </p>
      * 
      * @param routeTableAssociationId
-     *        The ID of the association between a route table and a subnet.
+     *        The ID of the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,6 +236,86 @@ public class RouteTableAssociation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of the internet gateway or virtual private gateway.
+     */
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     * 
+     * @return The ID of the internet gateway or virtual private gateway.
+     */
+
+    public String getGatewayId() {
+        return this.gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the internet gateway or virtual private gateway.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of the internet gateway or virtual private gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteTableAssociation withGatewayId(String gatewayId) {
+        setGatewayId(gatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the association.
+     * </p>
+     * 
+     * @param associationState
+     *        The state of the association.
+     */
+
+    public void setAssociationState(RouteTableAssociationState associationState) {
+        this.associationState = associationState;
+    }
+
+    /**
+     * <p>
+     * The state of the association.
+     * </p>
+     * 
+     * @return The state of the association.
+     */
+
+    public RouteTableAssociationState getAssociationState() {
+        return this.associationState;
+    }
+
+    /**
+     * <p>
+     * The state of the association.
+     * </p>
+     * 
+     * @param associationState
+     *        The state of the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteTableAssociation withAssociationState(RouteTableAssociationState associationState) {
+        setAssociationState(associationState);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -242,7 +334,11 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         if (getRouteTableId() != null)
             sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getGatewayId() != null)
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
+        if (getAssociationState() != null)
+            sb.append("AssociationState: ").append(getAssociationState());
         sb.append("}");
         return sb.toString();
     }
@@ -273,6 +369,14 @@ public class RouteTableAssociation implements Serializable, Cloneable {
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getGatewayId() == null ^ this.getGatewayId() == null)
+            return false;
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
+        if (other.getAssociationState() == null ^ this.getAssociationState() == null)
+            return false;
+        if (other.getAssociationState() != null && other.getAssociationState().equals(this.getAssociationState()) == false)
+            return false;
         return true;
     }
 
@@ -285,6 +389,8 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRouteTableAssociationId() == null) ? 0 : getRouteTableAssociationId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getAssociationState() == null) ? 0 : getAssociationState().hashCode());
         return hashCode;
     }
 

@@ -27,7 +27,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The instance type for an Elasticsearch cluster.
+     * The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.
      * </p>
      */
     private String instanceType;
@@ -71,14 +71,33 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * </p>
      */
     private Integer dedicatedMasterCount;
+    /**
+     * <p>
+     * True to enable warm storage.
+     * </p>
+     */
+    private Boolean warmEnabled;
+    /**
+     * <p>
+     * The instance type for the Elasticsearch cluster's warm nodes.
+     * </p>
+     */
+    private String warmType;
+    /**
+     * <p>
+     * The number of warm nodes in the cluster.
+     * </p>
+     */
+    private Integer warmCount;
 
     /**
      * <p>
-     * The instance type for an Elasticsearch cluster.
+     * The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an Elasticsearch cluster.
+     *        The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data
+     *        instances.
      * @see ESPartitionInstanceType
      */
 
@@ -88,10 +107,11 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The instance type for an Elasticsearch cluster.
+     * The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.
      * </p>
      * 
-     * @return The instance type for an Elasticsearch cluster.
+     * @return The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data
+     *         instances.
      * @see ESPartitionInstanceType
      */
 
@@ -101,11 +121,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The instance type for an Elasticsearch cluster.
+     * The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an Elasticsearch cluster.
+     *        The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data
+     *        instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ESPartitionInstanceType
      */
@@ -117,11 +138,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The instance type for an Elasticsearch cluster.
+     * The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an Elasticsearch cluster.
+     *        The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data
+     *        instances.
      * @see ESPartitionInstanceType
      */
 
@@ -131,11 +153,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The instance type for an Elasticsearch cluster.
+     * The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data instances.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an Elasticsearch cluster.
+     *        The instance type for an Elasticsearch cluster. UltraWarm instance types are not supported for data
+     *        instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ESPartitionInstanceType
      */
@@ -475,6 +498,171 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * True to enable warm storage.
+     * </p>
+     * 
+     * @param warmEnabled
+     *        True to enable warm storage.
+     */
+
+    public void setWarmEnabled(Boolean warmEnabled) {
+        this.warmEnabled = warmEnabled;
+    }
+
+    /**
+     * <p>
+     * True to enable warm storage.
+     * </p>
+     * 
+     * @return True to enable warm storage.
+     */
+
+    public Boolean getWarmEnabled() {
+        return this.warmEnabled;
+    }
+
+    /**
+     * <p>
+     * True to enable warm storage.
+     * </p>
+     * 
+     * @param warmEnabled
+     *        True to enable warm storage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchClusterConfig withWarmEnabled(Boolean warmEnabled) {
+        setWarmEnabled(warmEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True to enable warm storage.
+     * </p>
+     * 
+     * @return True to enable warm storage.
+     */
+
+    public Boolean isWarmEnabled() {
+        return this.warmEnabled;
+    }
+
+    /**
+     * <p>
+     * The instance type for the Elasticsearch cluster's warm nodes.
+     * </p>
+     * 
+     * @param warmType
+     *        The instance type for the Elasticsearch cluster's warm nodes.
+     * @see ESWarmPartitionInstanceType
+     */
+
+    public void setWarmType(String warmType) {
+        this.warmType = warmType;
+    }
+
+    /**
+     * <p>
+     * The instance type for the Elasticsearch cluster's warm nodes.
+     * </p>
+     * 
+     * @return The instance type for the Elasticsearch cluster's warm nodes.
+     * @see ESWarmPartitionInstanceType
+     */
+
+    public String getWarmType() {
+        return this.warmType;
+    }
+
+    /**
+     * <p>
+     * The instance type for the Elasticsearch cluster's warm nodes.
+     * </p>
+     * 
+     * @param warmType
+     *        The instance type for the Elasticsearch cluster's warm nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ESWarmPartitionInstanceType
+     */
+
+    public ElasticsearchClusterConfig withWarmType(String warmType) {
+        setWarmType(warmType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type for the Elasticsearch cluster's warm nodes.
+     * </p>
+     * 
+     * @param warmType
+     *        The instance type for the Elasticsearch cluster's warm nodes.
+     * @see ESWarmPartitionInstanceType
+     */
+
+    public void setWarmType(ESWarmPartitionInstanceType warmType) {
+        withWarmType(warmType);
+    }
+
+    /**
+     * <p>
+     * The instance type for the Elasticsearch cluster's warm nodes.
+     * </p>
+     * 
+     * @param warmType
+     *        The instance type for the Elasticsearch cluster's warm nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ESWarmPartitionInstanceType
+     */
+
+    public ElasticsearchClusterConfig withWarmType(ESWarmPartitionInstanceType warmType) {
+        this.warmType = warmType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of warm nodes in the cluster.
+     * </p>
+     * 
+     * @param warmCount
+     *        The number of warm nodes in the cluster.
+     */
+
+    public void setWarmCount(Integer warmCount) {
+        this.warmCount = warmCount;
+    }
+
+    /**
+     * <p>
+     * The number of warm nodes in the cluster.
+     * </p>
+     * 
+     * @return The number of warm nodes in the cluster.
+     */
+
+    public Integer getWarmCount() {
+        return this.warmCount;
+    }
+
+    /**
+     * <p>
+     * The number of warm nodes in the cluster.
+     * </p>
+     * 
+     * @param warmCount
+     *        The number of warm nodes in the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchClusterConfig withWarmCount(Integer warmCount) {
+        setWarmCount(warmCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -499,7 +687,13 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
         if (getDedicatedMasterType() != null)
             sb.append("DedicatedMasterType: ").append(getDedicatedMasterType()).append(",");
         if (getDedicatedMasterCount() != null)
-            sb.append("DedicatedMasterCount: ").append(getDedicatedMasterCount());
+            sb.append("DedicatedMasterCount: ").append(getDedicatedMasterCount()).append(",");
+        if (getWarmEnabled() != null)
+            sb.append("WarmEnabled: ").append(getWarmEnabled()).append(",");
+        if (getWarmType() != null)
+            sb.append("WarmType: ").append(getWarmType()).append(",");
+        if (getWarmCount() != null)
+            sb.append("WarmCount: ").append(getWarmCount());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +736,18 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
             return false;
         if (other.getDedicatedMasterCount() != null && other.getDedicatedMasterCount().equals(this.getDedicatedMasterCount()) == false)
             return false;
+        if (other.getWarmEnabled() == null ^ this.getWarmEnabled() == null)
+            return false;
+        if (other.getWarmEnabled() != null && other.getWarmEnabled().equals(this.getWarmEnabled()) == false)
+            return false;
+        if (other.getWarmType() == null ^ this.getWarmType() == null)
+            return false;
+        if (other.getWarmType() != null && other.getWarmType().equals(this.getWarmType()) == false)
+            return false;
+        if (other.getWarmCount() == null ^ this.getWarmCount() == null)
+            return false;
+        if (other.getWarmCount() != null && other.getWarmCount().equals(this.getWarmCount()) == false)
+            return false;
         return true;
     }
 
@@ -557,6 +763,9 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getZoneAwarenessConfig() == null) ? 0 : getZoneAwarenessConfig().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterType() == null) ? 0 : getDedicatedMasterType().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterCount() == null) ? 0 : getDedicatedMasterCount().hashCode());
+        hashCode = prime * hashCode + ((getWarmEnabled() == null) ? 0 : getWarmEnabled().hashCode());
+        hashCode = prime * hashCode + ((getWarmType() == null) ? 0 : getWarmType().hashCode());
+        hashCode = prime * hashCode + ((getWarmCount() == null) ? 0 : getWarmCount().hashCode());
         return hashCode;
     }
 

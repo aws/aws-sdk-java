@@ -42,6 +42,18 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
     /**
      * The name of the bucket in which to create the new multipart upload, and
      * hence, the eventual object created from the multipart upload.
+     *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
      */
     private String bucketName;
 
@@ -110,8 +122,20 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * Constructs a request to initiate a new multipart upload in the specified
      * bucket, stored by the specified key.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket in which to create the new multipart
+     *            The name of the bucket, or access point ARN, in which to create the new multipart
      *            upload, and hence, the eventual object created from the
      *            multipart upload.
      * @param key
@@ -128,8 +152,20 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * bucket, stored by the specified key, and with the additional specified
      * object metadata.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket in which to create the new multipart
+     *            The name of the bucket, or access point ARN, in which to create the new multipart
      *            upload, and hence, the eventual object created from the
      *            multipart upload.
      * @param key
@@ -162,8 +198,20 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * Sets the name of the bucket in which to create the new multipart upload,
      * and hence, the eventual object created from the multipart upload.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket in which to create the new multipart
+     *            The name of the bucket, or access point ARN, in which to create the new multipart
      *            upload, and hence, the eventual object created from the
      *            multipart upload.
      */
@@ -178,8 +226,20 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
      * Returns this updated InitiateMultipartUploadRequest object so that
      * additional method calls can be chained together.
      *
+     * <p>
+     * When using this API with an access point, you must direct requests
+     * to the access point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * </p>
+     * <p>
+     * When using this operation using an access point through the AWS SDKs, you provide
+     * the access point ARN in place of the bucket name. For more information about access point
+     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
+     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     *
      * @param bucketName
-     *            The name of the bucket in which to create the new multipart
+     *            The name of the bucket, or access point ARN, in which to create the new multipart
      *            upload, and hence, the eventual object created from the
      *            multipart upload.
      *

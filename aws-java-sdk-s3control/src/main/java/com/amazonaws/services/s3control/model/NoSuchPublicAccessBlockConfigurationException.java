@@ -15,7 +15,10 @@ package com.amazonaws.services.s3control.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request against an account that
+ * doesn't have a <code>PublicAccessBlockConfiguration</code> set.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoSuchPublicAccessBlockConfigurationException extends com.amazonaws.services.s3control.model.AWSS3ControlException {

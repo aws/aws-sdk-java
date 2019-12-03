@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The document can't be processed because it's too large. The maximum document size for synchronous operations 5 MB.
- * The maximum document size for asynchronous operations is 500 MB for PDF format files.
+ * The maximum document size for asynchronous operations is 500 MB for PDF files.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -20,10 +20,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A <code>Block</code> represents items that are recognized in a document within a group of pixels close to each other.
- * The information returned in a <code>Block</code> depends on the type of operation. In document-text detection (for
- * example <a>DetectDocumentText</a>), you get information about the detected words and lines of text. In text analysis
- * (for example <a>AnalyzeDocument</a>), you can also get information about the fields, tables and selection elements
- * that are detected in the document.
+ * The information returned in a <code>Block</code> object depends on the type of operation. In text detection for
+ * documents (for example <a>DetectDocumentText</a>), you get information about the detected words and lines of text. In
+ * text analysis (for example <a>AnalyzeDocument</a>), you can also get information about the fields, tables, and
+ * selection elements that are detected in the document.
  * </p>
  * <p>
  * An array of <code>Block</code> objects is returned by both synchronous and asynchronous operations. In synchronous
@@ -43,12 +43,12 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of text that's recognized in a block. In text-detection operations, the following types are returned:
+     * The type of text item that's recognized. In operations for text detection, the following types are returned:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
@@ -59,7 +59,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * </ul>
@@ -69,31 +69,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document page. Use
-     * the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object or a VALUE Block
-     * object.
+     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a
+     * document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     * <code>Block</code> object or a VALUE <code>Block</code> object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that
-     * aren't separated by spaces that's detected on a document page.
+     * <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters
+     * that aren't separated by spaces.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or more
-     * rows or columns with a cell span of 1 row and 1 column each.
+     * <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more
+     * rows or columns, with a cell span of one row and one column each.
      * </p>
      * </li>
      * <li>
@@ -104,8 +104,9 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a document
-     * page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.
+     * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's
+     * detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the
+     * selection element.
      * </p>
      * </li>
      * </ul>
@@ -113,8 +114,8 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
     private String blockType;
     /**
      * <p>
-     * The confidence that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry
-     * points around the recognized text.
+     * The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the
+     * geometry points around the recognized text.
      * </p>
      */
     private Float confidence;
@@ -140,15 +141,17 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
     private Integer columnIndex;
     /**
      * <p>
-     * The number of rows that a table spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned
+     * is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.
      * </p>
      */
     private Integer rowSpan;
     /**
      * <p>
-     * The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by
-     * <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+     * The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns
+     * spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <code>GetDocumentTextDetection</code>.
      * </p>
      */
     private Integer columnSpan;
@@ -167,7 +170,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * A list of child blocks of the current block. For example a LINE object has child blocks for each WORD block
+     * A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block
      * that's part of the line of text. There aren't Relationship objects in the list for relationships that don't
      * exist, such as when the current block has no child blocks. The list size can be the following:
      * </p>
@@ -209,29 +212,29 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> entityTypes;
     /**
      * <p>
-     * The selection status of a selectable element such as a radio button or checkbox.
+     * The selection status of a selection element, such as an option button or check box.
      * </p>
      */
     private String selectionStatus;
     /**
      * <p>
-     * The page in which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
-     * greater than 1 are only returned for multi-page documents that are in PDF format. A scanned image (JPG/PNG), even
-     * if it contains multiple document pages, is always considered to be a single-page document and the value of
-     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> as every input document is
-     * considered to be a single-page document.
+     * The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
+     * greater than 1 are only returned for multipage documents that are in PDF format. A scanned image (JPEG/PNG), even
+     * if it contains multiple document pages, is considered to be a single-page document. The value of
+     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because every input document
+     * is considered to be a single-page document.
      * </p>
      */
     private Integer page;
 
     /**
      * <p>
-     * The type of text that's recognized in a block. In text-detection operations, the following types are returned:
+     * The type of text item that's recognized. In operations for text detection, the following types are returned:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
@@ -242,7 +245,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * </ul>
@@ -252,31 +255,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document page. Use
-     * the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object or a VALUE Block
-     * object.
+     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a
+     * document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     * <code>Block</code> object or a VALUE <code>Block</code> object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that
-     * aren't separated by spaces that's detected on a document page.
+     * <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters
+     * that aren't separated by spaces.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or more
-     * rows or columns with a cell span of 1 row and 1 column each.
+     * <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more
+     * rows or columns, with a cell span of one row and one column each.
      * </p>
      * </li>
      * <li>
@@ -287,19 +290,20 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a document
-     * page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.
+     * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's
+     * detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the
+     * selection element.
      * </p>
      * </li>
      * </ul>
      * 
      * @param blockType
-     *        The type of text that's recognized in a block. In text-detection operations, the following types are
+     *        The type of text item that's recognized. In operations for text detection, the following types are
      *        returned:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     *        <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
@@ -310,7 +314,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *        <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *        </p>
      *        </li>
      *        </ul>
@@ -320,31 +324,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     *        <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document
-     *        page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object
-     *        or a VALUE Block object.
+     *        <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected
+     *        on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     *        <code>Block</code> object or a VALUE <code>Block</code> object.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters
-     *        that aren't separated by spaces that's detected on a document page.
+     *        <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script
+     *        characters that aren't separated by spaces.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *        <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or
-     *        more rows or columns with a cell span of 1 row and 1 column each.
+     *        <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or
+     *        more rows or columns, with a cell span of one row and one column each.
      *        </p>
      *        </li>
      *        <li>
@@ -355,9 +359,9 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a
-     *        document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection
-     *        element.
+     *        <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box
+     *        that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status
+     *        of the selection element.
      *        </p>
      *        </li>
      * @see BlockType
@@ -369,12 +373,12 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of text that's recognized in a block. In text-detection operations, the following types are returned:
+     * The type of text item that's recognized. In operations for text detection, the following types are returned:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
@@ -385,7 +389,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * </ul>
@@ -395,31 +399,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document page. Use
-     * the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object or a VALUE Block
-     * object.
+     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a
+     * document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     * <code>Block</code> object or a VALUE <code>Block</code> object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that
-     * aren't separated by spaces that's detected on a document page.
+     * <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters
+     * that aren't separated by spaces.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or more
-     * rows or columns with a cell span of 1 row and 1 column each.
+     * <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more
+     * rows or columns, with a cell span of one row and one column each.
      * </p>
      * </li>
      * <li>
@@ -430,18 +434,20 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a document
-     * page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.
+     * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's
+     * detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the
+     * selection element.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The type of text that's recognized in a block. In text-detection operations, the following types are
+     * @return The type of text item that's recognized. In operations for text detection, the following types are
      *         returned:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     *         <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document
+     *         page.
      *         </p>
      *         </li>
      *         <li>
@@ -452,7 +458,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *         <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *         </p>
      *         </li>
      *         </ul>
@@ -462,31 +468,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     *         <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document
-     *         page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object
-     *         or a VALUE Block object.
+     *         <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's
+     *         detected on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object
+     *         is a KEY <code>Block</code> object or a VALUE <code>Block</code> object.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters
-     *         that aren't separated by spaces that's detected on a document page.
+     *         <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script
+     *         characters that aren't separated by spaces.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *         <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2
-     *         or more rows or columns with a cell span of 1 row and 1 column each.
+     *         <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or
+     *         more rows or columns, with a cell span of one row and one column each.
      *         </p>
      *         </li>
      *         <li>
@@ -497,9 +503,9 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a
-     *         document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection
-     *         element.
+     *         <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box
+     *         that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status
+     *         of the selection element.
      *         </p>
      *         </li>
      * @see BlockType
@@ -511,12 +517,12 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of text that's recognized in a block. In text-detection operations, the following types are returned:
+     * The type of text item that's recognized. In operations for text detection, the following types are returned:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
@@ -527,7 +533,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * </ul>
@@ -537,31 +543,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document page. Use
-     * the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object or a VALUE Block
-     * object.
+     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a
+     * document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     * <code>Block</code> object or a VALUE <code>Block</code> object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that
-     * aren't separated by spaces that's detected on a document page.
+     * <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters
+     * that aren't separated by spaces.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or more
-     * rows or columns with a cell span of 1 row and 1 column each.
+     * <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more
+     * rows or columns, with a cell span of one row and one column each.
      * </p>
      * </li>
      * <li>
@@ -572,19 +578,20 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a document
-     * page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.
+     * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's
+     * detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the
+     * selection element.
      * </p>
      * </li>
      * </ul>
      * 
      * @param blockType
-     *        The type of text that's recognized in a block. In text-detection operations, the following types are
+     *        The type of text item that's recognized. In operations for text detection, the following types are
      *        returned:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     *        <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
@@ -595,7 +602,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *        <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *        </p>
      *        </li>
      *        </ul>
@@ -605,31 +612,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     *        <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document
-     *        page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object
-     *        or a VALUE Block object.
+     *        <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected
+     *        on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     *        <code>Block</code> object or a VALUE <code>Block</code> object.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters
-     *        that aren't separated by spaces that's detected on a document page.
+     *        <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script
+     *        characters that aren't separated by spaces.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *        <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or
-     *        more rows or columns with a cell span of 1 row and 1 column each.
+     *        <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or
+     *        more rows or columns, with a cell span of one row and one column each.
      *        </p>
      *        </li>
      *        <li>
@@ -640,9 +647,9 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a
-     *        document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection
-     *        element.
+     *        <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box
+     *        that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status
+     *        of the selection element.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -656,12 +663,12 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of text that's recognized in a block. In text-detection operations, the following types are returned:
+     * The type of text item that's recognized. In operations for text detection, the following types are returned:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
@@ -672,7 +679,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * </ul>
@@ -682,31 +689,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     * <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document page. Use
-     * the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object or a VALUE Block
-     * object.
+     * <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected on a
+     * document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     * <code>Block</code> object or a VALUE <code>Block</code> object.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters that
-     * aren't separated by spaces that's detected on a document page.
+     * <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script characters
+     * that aren't separated by spaces.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     * <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or more
-     * rows or columns with a cell span of 1 row and 1 column each.
+     * <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or more
+     * rows or columns, with a cell span of one row and one column each.
      * </p>
      * </li>
      * <li>
@@ -717,19 +724,20 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a document
-     * page. Use the value of <code>SelectionStatus</code> to determine the status of the selection element.
+     * <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box that's
+     * detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status of the
+     * selection element.
      * </p>
      * </li>
      * </ul>
      * 
      * @param blockType
-     *        The type of text that's recognized in a block. In text-detection operations, the following types are
+     *        The type of text item that's recognized. In operations for text detection, the following types are
      *        returned:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>PAGE</i> - Contains a list of the LINE Block objects that are detected on a document page.
+     *        <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
@@ -740,7 +748,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *        <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *        </p>
      *        </li>
      *        </ul>
@@ -750,31 +758,31 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>PAGE</i> - Contains a list of child Block objects that are detected on a document page.
+     *        <i>PAGE</i> - Contains a list of child <code>Block</code> objects that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE Block objects for a field that's detected on a document
-     *        page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY Block object
-     *        or a VALUE Block object.
+     *        <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code> objects for linked text that's detected
+     *        on a document page. Use the <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+     *        <code>Block</code> object or a VALUE <code>Block</code> object.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>WORD</i> - A word detected on a document page. A word is one or more ISO basic Latin script characters
-     *        that aren't separated by spaces that's detected on a document page.
+     *        <i>WORD</i> - A word that's detected on a document page. A word is one or more ISO basic Latin script
+     *        characters that aren't separated by spaces.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>LINE</i> - A string of tab-delimited, contiguous words that's detected on a document page.
+     *        <i>LINE</i> - A string of tab-delimited, contiguous words that are detected on a document page.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>TABLE</i> - A table that's detected on a document page. A table is any grid-based information with 2 or
-     *        more rows or columns with a cell span of 1 row and 1 column each.
+     *        <i>TABLE</i> - A table that's detected on a document page. A table is grid-based information with two or
+     *        more rows or columns, with a cell span of one row and one column each.
      *        </p>
      *        </li>
      *        <li>
@@ -785,9 +793,9 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <i>SELECTION_ELEMENT</i> - A selectable element such as a radio button or checkbox that's detected on a
-     *        document page. Use the value of <code>SelectionStatus</code> to determine the status of the selection
-     *        element.
+     *        <i>SELECTION_ELEMENT</i> - A selection element such as an option button (radio button) or a check box
+     *        that's detected on a document page. Use the value of <code>SelectionStatus</code> to determine the status
+     *        of the selection element.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -801,13 +809,13 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry
-     * points around the recognized text.
+     * The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the
+     * geometry points around the recognized text.
      * </p>
      * 
      * @param confidence
-     *        The confidence that Amazon Textract has in the accuracy of the recognized text and the accuracy of the
-     *        geometry points around the recognized text.
+     *        The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of
+     *        the geometry points around the recognized text.
      */
 
     public void setConfidence(Float confidence) {
@@ -816,12 +824,12 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry
-     * points around the recognized text.
+     * The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the
+     * geometry points around the recognized text.
      * </p>
      * 
-     * @return The confidence that Amazon Textract has in the accuracy of the recognized text and the accuracy of the
-     *         geometry points around the recognized text.
+     * @return The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of
+     *         the geometry points around the recognized text.
      */
 
     public Float getConfidence() {
@@ -830,13 +838,13 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence that Amazon Textract has in the accuracy of the recognized text and the accuracy of the geometry
-     * points around the recognized text.
+     * The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of the
+     * geometry points around the recognized text.
      * </p>
      * 
      * @param confidence
-     *        The confidence that Amazon Textract has in the accuracy of the recognized text and the accuracy of the
-     *        geometry points around the recognized text.
+     *        The confidence score that Amazon Textract has in the accuracy of the recognized text and the accuracy of
+     *        the geometry points around the recognized text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -979,13 +987,15 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of rows that a table spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned
+     * is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.
      * </p>
      * 
      * @param rowSpan
-     *        The number of rows that a table spans. <code>RowSpan</code> isn't returned by
-     *        <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+     *        The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows
+     *        spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     *        <code>GetDocumentTextDetection</code>.
      */
 
     public void setRowSpan(Integer rowSpan) {
@@ -994,12 +1004,14 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of rows that a table spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned
+     * is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.
      * </p>
      * 
-     * @return The number of rows that a table spans. <code>RowSpan</code> isn't returned by
-     *         <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+     * @return The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows
+     *         spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     *         <code>GetDocumentTextDetection</code>.
      */
 
     public Integer getRowSpan() {
@@ -1008,13 +1020,15 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of rows that a table spans. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows spanned
+     * is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.
      * </p>
      * 
      * @param rowSpan
-     *        The number of rows that a table spans. <code>RowSpan</code> isn't returned by
-     *        <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+     *        The number of rows that a table cell spans. Currently this value is always 1, even if the number of rows
+     *        spanned is greater than 1. <code>RowSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     *        <code>GetDocumentTextDetection</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1025,12 +1039,14 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by
-     * <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+     * The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns
+     * spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <code>GetDocumentTextDetection</code>.
      * </p>
      * 
      * @param columnSpan
-     *        The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by
+     *        The number of columns that a table cell spans. Currently this value is always 1, even if the number of
+     *        columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
      *        <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
      */
 
@@ -1040,11 +1056,13 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by
-     * <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+     * The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns
+     * spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <code>GetDocumentTextDetection</code>.
      * </p>
      * 
-     * @return The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by
+     * @return The number of columns that a table cell spans. Currently this value is always 1, even if the number of
+     *         columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
      *         <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
      */
 
@@ -1054,12 +1072,14 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by
-     * <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
+     * The number of columns that a table cell spans. Currently this value is always 1, even if the number of columns
+     * spanned is greater than 1. <code>ColumnSpan</code> isn't returned by <code>DetectDocumentText</code> and
+     * <code>GetDocumentTextDetection</code>.
      * </p>
      * 
      * @param columnSpan
-     *        The number of columns that a table cell spans. <code>ColumnSpan</code> isn't returned by
+     *        The number of columns that a table cell spans. Currently this value is always 1, even if the number of
+     *        columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
      *        <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1157,7 +1177,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of child blocks of the current block. For example a LINE object has child blocks for each WORD block
+     * A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block
      * that's part of the line of text. There aren't Relationship objects in the list for relationships that don't
      * exist, such as when the current block has no child blocks. The list size can be the following:
      * </p>
@@ -1174,7 +1194,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return A list of child blocks of the current block. For example a LINE object has child blocks for each WORD
+     * @return A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD
      *         block that's part of the line of text. There aren't Relationship objects in the list for relationships
      *         that don't exist, such as when the current block has no child blocks. The list size can be the
      *         following:</p>
@@ -1197,7 +1217,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of child blocks of the current block. For example a LINE object has child blocks for each WORD block
+     * A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block
      * that's part of the line of text. There aren't Relationship objects in the list for relationships that don't
      * exist, such as when the current block has no child blocks. The list size can be the following:
      * </p>
@@ -1215,7 +1235,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param relationships
-     *        A list of child blocks of the current block. For example a LINE object has child blocks for each WORD
+     *        A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD
      *        block that's part of the line of text. There aren't Relationship objects in the list for relationships
      *        that don't exist, such as when the current block has no child blocks. The list size can be the
      *        following:</p>
@@ -1243,7 +1263,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of child blocks of the current block. For example a LINE object has child blocks for each WORD block
+     * A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block
      * that's part of the line of text. There aren't Relationship objects in the list for relationships that don't
      * exist, such as when the current block has no child blocks. The list size can be the following:
      * </p>
@@ -1266,7 +1286,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param relationships
-     *        A list of child blocks of the current block. For example a LINE object has child blocks for each WORD
+     *        A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD
      *        block that's part of the line of text. There aren't Relationship objects in the list for relationships
      *        that don't exist, such as when the current block has no child blocks. The list size can be the
      *        following:</p>
@@ -1296,7 +1316,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of child blocks of the current block. For example a LINE object has child blocks for each WORD block
+     * A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD block
      * that's part of the line of text. There aren't Relationship objects in the list for relationships that don't
      * exist, such as when the current block has no child blocks. The list size can be the following:
      * </p>
@@ -1314,7 +1334,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param relationships
-     *        A list of child blocks of the current block. For example a LINE object has child blocks for each WORD
+     *        A list of child blocks of the current block. For example, a LINE object has child blocks for each WORD
      *        block that's part of the line of text. There aren't Relationship objects in the list for relationships
      *        that don't exist, such as when the current block has no child blocks. The list size can be the
      *        following:</p>
@@ -1592,11 +1612,11 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The selection status of a selectable element such as a radio button or checkbox.
+     * The selection status of a selection element, such as an option button or check box.
      * </p>
      * 
      * @param selectionStatus
-     *        The selection status of a selectable element such as a radio button or checkbox.
+     *        The selection status of a selection element, such as an option button or check box.
      * @see SelectionStatus
      */
 
@@ -1606,10 +1626,10 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The selection status of a selectable element such as a radio button or checkbox.
+     * The selection status of a selection element, such as an option button or check box.
      * </p>
      * 
-     * @return The selection status of a selectable element such as a radio button or checkbox.
+     * @return The selection status of a selection element, such as an option button or check box.
      * @see SelectionStatus
      */
 
@@ -1619,11 +1639,11 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The selection status of a selectable element such as a radio button or checkbox.
+     * The selection status of a selection element, such as an option button or check box.
      * </p>
      * 
      * @param selectionStatus
-     *        The selection status of a selectable element such as a radio button or checkbox.
+     *        The selection status of a selection element, such as an option button or check box.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SelectionStatus
      */
@@ -1635,11 +1655,11 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The selection status of a selectable element such as a radio button or checkbox.
+     * The selection status of a selection element, such as an option button or check box.
      * </p>
      * 
      * @param selectionStatus
-     *        The selection status of a selectable element such as a radio button or checkbox.
+     *        The selection status of a selection element, such as an option button or check box.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SelectionStatus
      */
@@ -1651,18 +1671,18 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The page in which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
-     * greater than 1 are only returned for multi-page documents that are in PDF format. A scanned image (JPG/PNG), even
-     * if it contains multiple document pages, is always considered to be a single-page document and the value of
-     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> as every input document is
-     * considered to be a single-page document.
+     * The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
+     * greater than 1 are only returned for multipage documents that are in PDF format. A scanned image (JPEG/PNG), even
+     * if it contains multiple document pages, is considered to be a single-page document. The value of
+     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because every input document
+     * is considered to be a single-page document.
      * </p>
      * 
      * @param page
-     *        The page in which a block was detected. <code>Page</code> is returned by asynchronous operations. Page
-     *        values greater than 1 are only returned for multi-page documents that are in PDF format. A scanned image
-     *        (JPG/PNG), even if it contains multiple document pages, is always considered to be a single-page document
-     *        and the value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> as
+     *        The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page
+     *        values greater than 1 are only returned for multipage documents that are in PDF format. A scanned image
+     *        (JPEG/PNG), even if it contains multiple document pages, is considered to be a single-page document. The
+     *        value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because
      *        every input document is considered to be a single-page document.
      */
 
@@ -1672,17 +1692,17 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The page in which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
-     * greater than 1 are only returned for multi-page documents that are in PDF format. A scanned image (JPG/PNG), even
-     * if it contains multiple document pages, is always considered to be a single-page document and the value of
-     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> as every input document is
-     * considered to be a single-page document.
+     * The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
+     * greater than 1 are only returned for multipage documents that are in PDF format. A scanned image (JPEG/PNG), even
+     * if it contains multiple document pages, is considered to be a single-page document. The value of
+     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because every input document
+     * is considered to be a single-page document.
      * </p>
      * 
-     * @return The page in which a block was detected. <code>Page</code> is returned by asynchronous operations. Page
-     *         values greater than 1 are only returned for multi-page documents that are in PDF format. A scanned image
-     *         (JPG/PNG), even if it contains multiple document pages, is always considered to be a single-page document
-     *         and the value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> as
+     * @return The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page
+     *         values greater than 1 are only returned for multipage documents that are in PDF format. A scanned image
+     *         (JPEG/PNG), even if it contains multiple document pages, is considered to be a single-page document. The
+     *         value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because
      *         every input document is considered to be a single-page document.
      */
 
@@ -1692,18 +1712,18 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The page in which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
-     * greater than 1 are only returned for multi-page documents that are in PDF format. A scanned image (JPG/PNG), even
-     * if it contains multiple document pages, is always considered to be a single-page document and the value of
-     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> as every input document is
-     * considered to be a single-page document.
+     * The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page values
+     * greater than 1 are only returned for multipage documents that are in PDF format. A scanned image (JPEG/PNG), even
+     * if it contains multiple document pages, is considered to be a single-page document. The value of
+     * <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because every input document
+     * is considered to be a single-page document.
      * </p>
      * 
      * @param page
-     *        The page in which a block was detected. <code>Page</code> is returned by asynchronous operations. Page
-     *        values greater than 1 are only returned for multi-page documents that are in PDF format. A scanned image
-     *        (JPG/PNG), even if it contains multiple document pages, is always considered to be a single-page document
-     *        and the value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> as
+     *        The page on which a block was detected. <code>Page</code> is returned by asynchronous operations. Page
+     *        values greater than 1 are only returned for multipage documents that are in PDF format. A scanned image
+     *        (JPEG/PNG), even if it contains multiple document pages, is considered to be a single-page document. The
+     *        value of <code>Page</code> is always 1. Synchronous operations don't return <code>Page</code> because
      *        every input document is considered to be a single-page document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

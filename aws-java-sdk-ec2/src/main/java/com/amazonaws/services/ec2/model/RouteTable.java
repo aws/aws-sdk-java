@@ -28,7 +28,7 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The associations between the route table and one or more subnets.
+     * The associations between the route table and one or more subnets or a gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RouteTableAssociation> associations;
@@ -71,10 +71,10 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The associations between the route table and one or more subnets.
+     * The associations between the route table and one or more subnets or a gateway.
      * </p>
      * 
-     * @return The associations between the route table and one or more subnets.
+     * @return The associations between the route table and one or more subnets or a gateway.
      */
 
     public java.util.List<RouteTableAssociation> getAssociations() {
@@ -86,11 +86,11 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The associations between the route table and one or more subnets.
+     * The associations between the route table and one or more subnets or a gateway.
      * </p>
      * 
      * @param associations
-     *        The associations between the route table and one or more subnets.
+     *        The associations between the route table and one or more subnets or a gateway.
      */
 
     public void setAssociations(java.util.Collection<RouteTableAssociation> associations) {
@@ -104,7 +104,7 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The associations between the route table and one or more subnets.
+     * The associations between the route table and one or more subnets or a gateway.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -113,7 +113,7 @@ public class RouteTable implements Serializable, Cloneable {
      * </p>
      * 
      * @param associations
-     *        The associations between the route table and one or more subnets.
+     *        The associations between the route table and one or more subnets or a gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class RouteTable implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The associations between the route table and one or more subnets.
+     * The associations between the route table and one or more subnets or a gateway.
      * </p>
      * 
      * @param associations
-     *        The associations between the route table and one or more subnets.
+     *        The associations between the route table and one or more subnets or a gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -116,9 +116,7 @@ public class S3RequestEndpointResolver {
             request.setResourcePath(SdkHttpUtils.urlEncode(getHostStyleResourcePath(), true));
         } else {
             request.setEndpoint(endpoint);
-            if (bucketName != null) {
-                request.setResourcePath(SdkHttpUtils.urlEncode(getPathStyleResourcePath(), true));
-            }
+            request.setResourcePath(SdkHttpUtils.urlEncode(getPathStyleResourcePath(), true));
         }
     }
 
@@ -141,6 +139,10 @@ public class S3RequestEndpointResolver {
     }
 
     private String getPathStyleResourcePath() {
+        if (bucketName == null) {
+            return key;
+        }
+
         return bucketName + "/" + (key != null ? key : "");
     }
 }

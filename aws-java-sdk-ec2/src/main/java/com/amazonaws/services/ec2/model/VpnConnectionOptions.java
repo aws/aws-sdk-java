@@ -28,6 +28,12 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether acceleration is enabled for the VPN connection.
+     * </p>
+     */
+    private Boolean enableAcceleration;
+    /**
+     * <p>
      * Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't
      * support BGP.
      * </p>
@@ -39,6 +45,58 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TunnelOption> tunnelOptions;
+
+    /**
+     * <p>
+     * Indicates whether acceleration is enabled for the VPN connection.
+     * </p>
+     * 
+     * @param enableAcceleration
+     *        Indicates whether acceleration is enabled for the VPN connection.
+     */
+
+    public void setEnableAcceleration(Boolean enableAcceleration) {
+        this.enableAcceleration = enableAcceleration;
+    }
+
+    /**
+     * <p>
+     * Indicates whether acceleration is enabled for the VPN connection.
+     * </p>
+     * 
+     * @return Indicates whether acceleration is enabled for the VPN connection.
+     */
+
+    public Boolean getEnableAcceleration() {
+        return this.enableAcceleration;
+    }
+
+    /**
+     * <p>
+     * Indicates whether acceleration is enabled for the VPN connection.
+     * </p>
+     * 
+     * @param enableAcceleration
+     *        Indicates whether acceleration is enabled for the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptions withEnableAcceleration(Boolean enableAcceleration) {
+        setEnableAcceleration(enableAcceleration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether acceleration is enabled for the VPN connection.
+     * </p>
+     * 
+     * @return Indicates whether acceleration is enabled for the VPN connection.
+     */
+
+    public Boolean isEnableAcceleration() {
+        return this.enableAcceleration;
+    }
 
     /**
      * <p>
@@ -185,6 +243,8 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEnableAcceleration() != null)
+            sb.append("EnableAcceleration: ").append(getEnableAcceleration()).append(",");
         if (getStaticRoutesOnly() != null)
             sb.append("StaticRoutesOnly: ").append(getStaticRoutesOnly()).append(",");
         if (getTunnelOptions() != null)
@@ -203,6 +263,10 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
         if (obj instanceof VpnConnectionOptions == false)
             return false;
         VpnConnectionOptions other = (VpnConnectionOptions) obj;
+        if (other.getEnableAcceleration() == null ^ this.getEnableAcceleration() == null)
+            return false;
+        if (other.getEnableAcceleration() != null && other.getEnableAcceleration().equals(this.getEnableAcceleration()) == false)
+            return false;
         if (other.getStaticRoutesOnly() == null ^ this.getStaticRoutesOnly() == null)
             return false;
         if (other.getStaticRoutesOnly() != null && other.getStaticRoutesOnly().equals(this.getStaticRoutesOnly()) == false)
@@ -219,6 +283,7 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEnableAcceleration() == null) ? 0 : getEnableAcceleration().hashCode());
         hashCode = prime * hashCode + ((getStaticRoutesOnly() == null) ? 0 : getStaticRoutesOnly().hashCode());
         hashCode = prime * hashCode + ((getTunnelOptions() == null) ? 0 : getTunnelOptions().hashCode());
         return hashCode;

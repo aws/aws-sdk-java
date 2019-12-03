@@ -31,10 +31,22 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
     private DocumentMetadata documentMetadata;
     /**
      * <p>
-     * The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     * The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      * </p>
      */
     private java.util.List<Block> blocks;
+    /**
+     * <p>
+     * Shows the results of the human in the loop evaluation.
+     * </p>
+     */
+    private HumanLoopActivationOutput humanLoopActivationOutput;
+    /**
+     * <p>
+     * The version of the model used to analyze the document.
+     * </p>
+     */
+    private String analyzeDocumentModelVersion;
 
     /**
      * <p>
@@ -78,10 +90,10 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     * The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      * </p>
      * 
-     * @return The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     * @return The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      */
 
     public java.util.List<Block> getBlocks() {
@@ -90,11 +102,11 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     * The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      * </p>
      * 
      * @param blocks
-     *        The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     *        The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      */
 
     public void setBlocks(java.util.Collection<Block> blocks) {
@@ -108,7 +120,7 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     * The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +129,7 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param blocks
-     *        The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     *        The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,16 +145,96 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     * The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      * </p>
      * 
      * @param blocks
-     *        The text that's detected and analyzed by <code>AnalyzeDocument</code>.
+     *        The items that are detected and analyzed by <code>AnalyzeDocument</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AnalyzeDocumentResult withBlocks(java.util.Collection<Block> blocks) {
         setBlocks(blocks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows the results of the human in the loop evaluation.
+     * </p>
+     * 
+     * @param humanLoopActivationOutput
+     *        Shows the results of the human in the loop evaluation.
+     */
+
+    public void setHumanLoopActivationOutput(HumanLoopActivationOutput humanLoopActivationOutput) {
+        this.humanLoopActivationOutput = humanLoopActivationOutput;
+    }
+
+    /**
+     * <p>
+     * Shows the results of the human in the loop evaluation.
+     * </p>
+     * 
+     * @return Shows the results of the human in the loop evaluation.
+     */
+
+    public HumanLoopActivationOutput getHumanLoopActivationOutput() {
+        return this.humanLoopActivationOutput;
+    }
+
+    /**
+     * <p>
+     * Shows the results of the human in the loop evaluation.
+     * </p>
+     * 
+     * @param humanLoopActivationOutput
+     *        Shows the results of the human in the loop evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzeDocumentResult withHumanLoopActivationOutput(HumanLoopActivationOutput humanLoopActivationOutput) {
+        setHumanLoopActivationOutput(humanLoopActivationOutput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the model used to analyze the document.
+     * </p>
+     * 
+     * @param analyzeDocumentModelVersion
+     *        The version of the model used to analyze the document.
+     */
+
+    public void setAnalyzeDocumentModelVersion(String analyzeDocumentModelVersion) {
+        this.analyzeDocumentModelVersion = analyzeDocumentModelVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the model used to analyze the document.
+     * </p>
+     * 
+     * @return The version of the model used to analyze the document.
+     */
+
+    public String getAnalyzeDocumentModelVersion() {
+        return this.analyzeDocumentModelVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the model used to analyze the document.
+     * </p>
+     * 
+     * @param analyzeDocumentModelVersion
+     *        The version of the model used to analyze the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzeDocumentResult withAnalyzeDocumentModelVersion(String analyzeDocumentModelVersion) {
+        setAnalyzeDocumentModelVersion(analyzeDocumentModelVersion);
         return this;
     }
 
@@ -161,7 +253,11 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
         if (getDocumentMetadata() != null)
             sb.append("DocumentMetadata: ").append(getDocumentMetadata()).append(",");
         if (getBlocks() != null)
-            sb.append("Blocks: ").append(getBlocks());
+            sb.append("Blocks: ").append(getBlocks()).append(",");
+        if (getHumanLoopActivationOutput() != null)
+            sb.append("HumanLoopActivationOutput: ").append(getHumanLoopActivationOutput()).append(",");
+        if (getAnalyzeDocumentModelVersion() != null)
+            sb.append("AnalyzeDocumentModelVersion: ").append(getAnalyzeDocumentModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -184,6 +280,14 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getBlocks() != null && other.getBlocks().equals(this.getBlocks()) == false)
             return false;
+        if (other.getHumanLoopActivationOutput() == null ^ this.getHumanLoopActivationOutput() == null)
+            return false;
+        if (other.getHumanLoopActivationOutput() != null && other.getHumanLoopActivationOutput().equals(this.getHumanLoopActivationOutput()) == false)
+            return false;
+        if (other.getAnalyzeDocumentModelVersion() == null ^ this.getAnalyzeDocumentModelVersion() == null)
+            return false;
+        if (other.getAnalyzeDocumentModelVersion() != null && other.getAnalyzeDocumentModelVersion().equals(this.getAnalyzeDocumentModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -194,6 +298,8 @@ public class AnalyzeDocumentResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getDocumentMetadata() == null) ? 0 : getDocumentMetadata().hashCode());
         hashCode = prime * hashCode + ((getBlocks() == null) ? 0 : getBlocks().hashCode());
+        hashCode = prime * hashCode + ((getHumanLoopActivationOutput() == null) ? 0 : getHumanLoopActivationOutput().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzeDocumentModelVersion() == null) ? 0 : getAnalyzeDocumentModelVersion().hashCode());
         return hashCode;
     }
 

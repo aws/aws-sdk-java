@@ -98,8 +98,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * specified for <code>LogDestinationType</code>.
      * </p>
      * <p>
-     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
-     * of the CloudWatch Logs log group.
+     * If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource
+     * Name (ARN) of the CloudWatch Logs log group. For example, to publish to a log group called <code>my-logs</code>,
+     * specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>. Alternatively, use
+     * <code>LogGroupName</code> instead.
      * </p>
      * <p>
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
@@ -724,8 +726,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * specified for <code>LogDestinationType</code>.
      * </p>
      * <p>
-     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
-     * of the CloudWatch Logs log group.
+     * If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource
+     * Name (ARN) of the CloudWatch Logs log group. For example, to publish to a log group called <code>my-logs</code>,
+     * specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>. Alternatively, use
+     * <code>LogGroupName</code> instead.
      * </p>
      * <p>
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
@@ -740,8 +744,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        a CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the
      *        value specified for <code>LogDestinationType</code>.</p>
      *        <p>
-     *        If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
-     *        (ARN) of the CloudWatch Logs log group.
+     *        If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>, specify the Amazon
+     *        Resource Name (ARN) of the CloudWatch Logs log group. For example, to publish to a log group called
+     *        <code>my-logs</code>, specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>.
+     *        Alternatively, use <code>LogGroupName</code> instead.
      *        </p>
      *        <p>
      *        If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
@@ -762,8 +768,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * specified for <code>LogDestinationType</code>.
      * </p>
      * <p>
-     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
-     * of the CloudWatch Logs log group.
+     * If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource
+     * Name (ARN) of the CloudWatch Logs log group. For example, to publish to a log group called <code>my-logs</code>,
+     * specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>. Alternatively, use
+     * <code>LogGroupName</code> instead.
      * </p>
      * <p>
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
@@ -777,8 +785,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *         to a CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on
      *         the value specified for <code>LogDestinationType</code>.</p>
      *         <p>
-     *         If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
-     *         (ARN) of the CloudWatch Logs log group.
+     *         If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>, specify the Amazon
+     *         Resource Name (ARN) of the CloudWatch Logs log group. For example, to publish to a log group called
+     *         <code>my-logs</code>, specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>.
+     *         Alternatively, use <code>LogGroupName</code> instead.
      *         </p>
      *         <p>
      *         If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
@@ -800,8 +810,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * specified for <code>LogDestinationType</code>.
      * </p>
      * <p>
-     * If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name (ARN)
-     * of the CloudWatch Logs log group.
+     * If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource
+     * Name (ARN) of the CloudWatch Logs log group. For example, to publish to a log group called <code>my-logs</code>,
+     * specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>. Alternatively, use
+     * <code>LogGroupName</code> instead.
      * </p>
      * <p>
      * If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a
@@ -816,8 +828,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        a CloudWatch Logs log group or an Amazon S3 bucket. The value specified for this parameter depends on the
      *        value specified for <code>LogDestinationType</code>.</p>
      *        <p>
-     *        If LogDestinationType is not specified or <code>cloud-watch-logs</code>, specify the Amazon Resource Name
-     *        (ARN) of the CloudWatch Logs log group.
+     *        If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>, specify the Amazon
+     *        Resource Name (ARN) of the CloudWatch Logs log group. For example, to publish to a log group called
+     *        <code>my-logs</code>, specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>.
+     *        Alternatively, use <code>LogGroupName</code> instead.
      *        </p>
      *        <p>
      *        If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket. You can also specify a

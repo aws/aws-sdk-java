@@ -56,6 +56,14 @@ public class AnalyzeDocumentResultJsonUnmarshaller implements Unmarshaller<Analy
                     context.nextToken();
                     analyzeDocumentResult.setBlocks(new ListUnmarshaller<Block>(BlockJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("HumanLoopActivationOutput", targetDepth)) {
+                    context.nextToken();
+                    analyzeDocumentResult.setHumanLoopActivationOutput(HumanLoopActivationOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AnalyzeDocumentModelVersion", targetDepth)) {
+                    context.nextToken();
+                    analyzeDocumentResult.setAnalyzeDocumentModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

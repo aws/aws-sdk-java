@@ -70,6 +70,10 @@ public class CreateTransitGatewayRequestMarshaller implements Marshaller<Request
             if (options.getDnsSupport() != null) {
                 request.addParameter("Options.DnsSupport", StringUtils.fromString(options.getDnsSupport()));
             }
+
+            if (options.getMulticastSupport() != null) {
+                request.addParameter("Options.MulticastSupport", StringUtils.fromString(options.getMulticastSupport()));
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<TagSpecification> createTransitGatewayRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createTransitGatewayRequest

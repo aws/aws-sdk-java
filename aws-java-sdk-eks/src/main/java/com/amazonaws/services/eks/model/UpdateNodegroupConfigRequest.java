@@ -45,7 +45,7 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     private UpdateLabelsPayload labels;
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group after the update.
+     * The scaling configuration details for the Auto Scaling group after the update.
      * </p>
      */
     private NodegroupScalingConfig scalingConfig;
@@ -178,11 +178,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group after the update.
+     * The scaling configuration details for the Auto Scaling group after the update.
      * </p>
      * 
      * @param scalingConfig
-     *        The scaling configuration details for the AutoScaling group after the update.
+     *        The scaling configuration details for the Auto Scaling group after the update.
      */
 
     public void setScalingConfig(NodegroupScalingConfig scalingConfig) {
@@ -191,10 +191,10 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group after the update.
+     * The scaling configuration details for the Auto Scaling group after the update.
      * </p>
      * 
-     * @return The scaling configuration details for the AutoScaling group after the update.
+     * @return The scaling configuration details for the Auto Scaling group after the update.
      */
 
     public NodegroupScalingConfig getScalingConfig() {
@@ -203,11 +203,11 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group after the update.
+     * The scaling configuration details for the Auto Scaling group after the update.
      * </p>
      * 
      * @param scalingConfig
-     *        The scaling configuration details for the AutoScaling group after the update.
+     *        The scaling configuration details for the Auto Scaling group after the update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

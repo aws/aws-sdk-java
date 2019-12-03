@@ -27,18 +27,21 @@ public class DeletePublicAccessBlockRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The account ID for the AWS account whose block public access configuration you want to delete.
+     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
+     * remove.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * The account ID for the AWS account whose block public access configuration you want to delete.
+     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
+     * remove.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the AWS account whose block public access configuration you want to delete.
+     *        The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you
+     *        want to remove.
      */
 
     public void setAccountId(String accountId) {
@@ -47,10 +50,12 @@ public class DeletePublicAccessBlockRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The account ID for the AWS account whose block public access configuration you want to delete.
+     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
+     * remove.
      * </p>
      * 
-     * @return The account ID for the AWS account whose block public access configuration you want to delete.
+     * @return The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you
+     *         want to remove.
      */
 
     public String getAccountId() {
@@ -59,11 +64,13 @@ public class DeletePublicAccessBlockRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The account ID for the AWS account whose block public access configuration you want to delete.
+     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
+     * remove.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the AWS account whose block public access configuration you want to delete.
+     *        The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you
+     *        want to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

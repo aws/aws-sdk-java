@@ -44,6 +44,7 @@ public abstract class AmazonS3Builder<Subclass extends AmazonS3Builder, TypeToBu
     private Boolean payloadSigningEnabled;
     private Boolean dualstackEnabled;
     private Boolean forceGlobalBucketAccessEnabled;
+    private Boolean useArnRegionEnabled;
 
     protected AmazonS3Builder() {
         super(CLIENT_CONFIG_FACTORY);
@@ -400,6 +401,23 @@ public abstract class AmazonS3Builder<Subclass extends AmazonS3Builder, TypeToBu
         return getSubclass();
     }
 
+    /**
+     * @return The current setting for useArnRegion mode configured in the builder.
+     */
+    public Boolean isUseArnRegionEnabled() {
+        return useArnRegionEnabled;
+    }
+
+    /**
+     * <p>Enables using the region from ARNs on clients built with the builder.</p>
+
+     * @return This object for method chaining.
+     */
+    public Subclass enableUseArnRegion() {
+        this.useArnRegionEnabled = true;
+        return getSubclass();
+    }
+
     protected S3ClientOptions resolveS3ClientOptions() {
         final S3ClientOptions.Builder builder = S3ClientOptions.builder();
         if (Boolean.TRUE.equals(this.chunkedEncodingDisabled)) {
@@ -419,6 +437,9 @@ public abstract class AmazonS3Builder<Subclass extends AmazonS3Builder, TypeToBu
         }
         if(Boolean.TRUE.equals(this.forceGlobalBucketAccessEnabled)) {
             builder.enableForceGlobalBucketAccess();
+        }
+        if(Boolean.TRUE.equals(this.useArnRegionEnabled)) {
+            builder.enableUseArnRegion();
         }
         return builder.build();
     }

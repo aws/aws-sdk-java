@@ -71,6 +71,12 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String transitGatewayId;
     /**
      * <p>
+     * The ID of the local gateway.
+     * </p>
+     */
+    private String localGatewayId;
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      */
@@ -385,6 +391,46 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of the local gateway.
+     */
+
+    public void setLocalGatewayId(String localGatewayId) {
+        this.localGatewayId = localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @return The ID of the local gateway.
+     */
+
+    public String getLocalGatewayId() {
+        return this.localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of the local gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withLocalGatewayId(String localGatewayId) {
+        setLocalGatewayId(localGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      * 
@@ -540,6 +586,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
+        if (getLocalGatewayId() != null)
+            sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getRouteTableId() != null)
@@ -588,6 +636,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
             return false;
+        if (other.getLocalGatewayId() == null ^ this.getLocalGatewayId() == null)
+            return false;
+        if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -615,6 +667,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());

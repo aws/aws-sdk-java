@@ -44,6 +44,8 @@ public class CreateServiceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
     private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchType").build();
+    private static final MarshallingInfo<List> CAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityProviderStrategy").build();
     private static final MarshallingInfo<String> PLATFORMVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -93,6 +95,7 @@ public class CreateServiceRequestMarshaller {
             protocolMarshaller.marshall(createServiceRequest.getDesiredCount(), DESIREDCOUNT_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getLaunchType(), LAUNCHTYPE_BINDING);
+            protocolMarshaller.marshall(createServiceRequest.getCapacityProviderStrategy(), CAPACITYPROVIDERSTRATEGY_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getDeploymentConfiguration(), DEPLOYMENTCONFIGURATION_BINDING);

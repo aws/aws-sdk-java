@@ -28,7 +28,7 @@ public class GetDocumentTextDetectionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A unique identifier for the text detection job. The <code>JobId</code> is returned from
-     * <code>StartDocumentTextDetection</code>.
+     * <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      */
     private String jobId;
@@ -50,12 +50,12 @@ public class GetDocumentTextDetectionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A unique identifier for the text detection job. The <code>JobId</code> is returned from
-     * <code>StartDocumentTextDetection</code>.
+     * <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      * 
      * @param jobId
      *        A unique identifier for the text detection job. The <code>JobId</code> is returned from
-     *        <code>StartDocumentTextDetection</code>.
+     *        <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.
      */
 
     public void setJobId(String jobId) {
@@ -65,11 +65,11 @@ public class GetDocumentTextDetectionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A unique identifier for the text detection job. The <code>JobId</code> is returned from
-     * <code>StartDocumentTextDetection</code>.
+     * <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      * 
      * @return A unique identifier for the text detection job. The <code>JobId</code> is returned from
-     *         <code>StartDocumentTextDetection</code>.
+     *         <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.
      */
 
     public String getJobId() {
@@ -79,12 +79,12 @@ public class GetDocumentTextDetectionRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A unique identifier for the text detection job. The <code>JobId</code> is returned from
-     * <code>StartDocumentTextDetection</code>.
+     * <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      * 
      * @param jobId
      *        A unique identifier for the text detection job. The <code>JobId</code> is returned from
-     *        <code>StartDocumentTextDetection</code>.
+     *        <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

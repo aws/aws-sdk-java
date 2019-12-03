@@ -60,6 +60,10 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("capacityProviderName", targetDepth)) {
+                    context.nextToken();
+                    task.setCapacityProviderName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("clusterArn", targetDepth)) {
                     context.nextToken();
                     task.setClusterArn(context.getUnmarshaller(String.class).unmarshall(context));

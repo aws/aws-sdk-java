@@ -58,8 +58,23 @@ public class AllocateAddressResultStaxUnmarshaller implements Unmarshaller<Alloc
                     continue;
                 }
 
+                if (context.testExpression("networkBorderGroup", targetDepth)) {
+                    allocateAddressResult.setNetworkBorderGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("domain", targetDepth)) {
                     allocateAddressResult.setDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("customerOwnedIp", targetDepth)) {
+                    allocateAddressResult.setCustomerOwnedIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("customerOwnedIpv4Pool", targetDepth)) {
+                    allocateAddressResult.setCustomerOwnedIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -100,6 +100,11 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    networkInterface.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ownerId", targetDepth)) {
                     networkInterface.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

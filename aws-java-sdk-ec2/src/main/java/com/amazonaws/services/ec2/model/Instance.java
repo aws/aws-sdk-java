@@ -223,6 +223,12 @@ public class Instance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterface> networkInterfaces;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
      * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      */
@@ -1985,6 +1991,46 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The device name of the root device volume (for example, <code>/dev/sda1</code>).
      * </p>
      * 
@@ -2874,6 +2920,8 @@ public class Instance implements Serializable, Cloneable {
             sb.append("ElasticInferenceAcceleratorAssociations: ").append(getElasticInferenceAcceleratorAssociations()).append(",");
         if (getNetworkInterfaces() != null)
             sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getRootDeviceName() != null)
             sb.append("RootDeviceName: ").append(getRootDeviceName()).append(",");
         if (getRootDeviceType() != null)
@@ -3043,6 +3091,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getRootDeviceName() == null ^ this.getRootDeviceName() == null)
             return false;
         if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
@@ -3143,6 +3195,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getElasticGpuAssociations() == null) ? 0 : getElasticGpuAssociations().hashCode());
         hashCode = prime * hashCode + ((getElasticInferenceAcceleratorAssociations() == null) ? 0 : getElasticInferenceAcceleratorAssociations().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode());
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());

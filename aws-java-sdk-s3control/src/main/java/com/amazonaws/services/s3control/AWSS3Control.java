@@ -43,6 +43,19 @@ public interface AWSS3Control {
 
     /**
      * <p>
+     * Creates an access point and associates it with the specified bucket.
+     * </p>
+     * 
+     * @param createAccessPointRequest
+     * @return Result of the CreateAccessPoint operation returned by the service.
+     * @sample AWSS3Control.CreateAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateAccessPointResult createAccessPoint(CreateAccessPointRequest createAccessPointRequest);
+
+    /**
+     * <p>
      * Creates an Amazon S3 batch operations job.
      * </p>
      * 
@@ -60,7 +73,33 @@ public interface AWSS3Control {
 
     /**
      * <p>
-     * Deletes the block public access configuration for the specified account.
+     * Deletes the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointRequest
+     * @return Result of the DeleteAccessPoint operation returned by the service.
+     * @sample AWSS3Control.DeleteAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAccessPointResult deleteAccessPoint(DeleteAccessPointRequest deleteAccessPointRequest);
+
+    /**
+     * <p>
+     * Deletes the access point policy for the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointPolicyRequest
+     * @return Result of the DeleteAccessPointPolicy operation returned by the service.
+     * @sample AWSS3Control.DeleteAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAccessPointPolicyResult deleteAccessPointPolicy(DeleteAccessPointPolicyRequest deleteAccessPointPolicyRequest);
+
+    /**
+     * <p>
+     * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
      * @param deletePublicAccessBlockRequest
@@ -89,16 +128,78 @@ public interface AWSS3Control {
     DescribeJobResult describeJob(DescribeJobRequest describeJobRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Returns configuration information about the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointRequest
+     * @return Result of the GetAccessPoint operation returned by the service.
+     * @sample AWSS3Control.GetAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAccessPointResult getAccessPoint(GetAccessPointRequest getAccessPointRequest);
+
+    /**
+     * <p>
+     * Returns the access point policy associated with the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointPolicyRequest
+     * @return Result of the GetAccessPointPolicy operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetAccessPointPolicyResult getAccessPointPolicy(GetAccessPointPolicyRequest getAccessPointPolicyRequest);
+
+    /**
+     * <p>
+     * Indicates whether the specified access point currently has a policy that allows public access. For more
+     * information about public access through access points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAccessPointPolicyStatusRequest
+     * @return Result of the GetAccessPointPolicyStatus operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointPolicyStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAccessPointPolicyStatusResult getAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest getAccessPointPolicyStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param getPublicAccessBlockRequest
      * @return Result of the GetPublicAccessBlock operation returned by the service.
      * @throws NoSuchPublicAccessBlockConfigurationException
+     *         Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request against an
+     *         account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.
      * @sample AWSS3Control.GetPublicAccessBlock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock" target="_top">AWS
      *      API Documentation</a>
      */
     GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest getPublicAccessBlockRequest);
+
+    /**
+     * <p>
+     * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
+     * access points per call. If the specified bucket has more than 1000 access points (or the number specified in
+     * <code>maxResults</code>, whichever is less), then the response will include a continuation token that you can use
+     * to list the additional access points.
+     * </p>
+     * 
+     * @param listAccessPointsRequest
+     * @return Result of the ListAccessPoints operation returned by the service.
+     * @sample AWSS3Control.ListAccessPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAccessPointsResult listAccessPoints(ListAccessPointsRequest listAccessPointsRequest);
 
     /**
      * <p>
@@ -117,7 +218,23 @@ public interface AWSS3Control {
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Associates an access policy with the specified access point. Each access point can have only one policy, so a
+     * request made to this API replaces any existing policy associated with the specified access point.
+     * </p>
+     * 
+     * @param putAccessPointPolicyRequest
+     * @return Result of the PutAccessPointPolicy operation returned by the service.
+     * @sample AWSS3Control.PutAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutAccessPointPolicyResult putAccessPointPolicy(PutAccessPointPolicyRequest putAccessPointPolicyRequest);
+
+    /**
+     * <p>
+     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param putPublicAccessBlockRequest
      * @return Result of the PutPublicAccessBlock operation returned by the service.

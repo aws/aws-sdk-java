@@ -32,6 +32,8 @@ public class AnalyzeDocumentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Document").build();
     private static final MarshallingInfo<List> FEATURETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FeatureTypes").build();
+    private static final MarshallingInfo<StructuredPojo> HUMANLOOPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HumanLoopConfig").build();
 
     private static final AnalyzeDocumentRequestMarshaller instance = new AnalyzeDocumentRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class AnalyzeDocumentRequestMarshaller {
         try {
             protocolMarshaller.marshall(analyzeDocumentRequest.getDocument(), DOCUMENT_BINDING);
             protocolMarshaller.marshall(analyzeDocumentRequest.getFeatureTypes(), FEATURETYPES_BINDING);
+            protocolMarshaller.marshall(analyzeDocumentRequest.getHumanLoopConfig(), HUMANLOOPCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

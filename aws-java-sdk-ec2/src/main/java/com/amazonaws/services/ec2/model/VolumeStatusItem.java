@@ -40,6 +40,12 @@ public class VolumeStatusItem implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
      * A list of events associated with the volume.
      * </p>
      */
@@ -167,6 +173,46 @@ public class VolumeStatusItem implements Serializable, Cloneable {
 
     public VolumeStatusItem withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeStatusItem withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
         return this;
     }
 
@@ -339,6 +385,8 @@ public class VolumeStatusItem implements Serializable, Cloneable {
             sb.append("Actions: ").append(getActions()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getEvents() != null)
             sb.append("Events: ").append(getEvents()).append(",");
         if (getVolumeId() != null)
@@ -367,6 +415,10 @@ public class VolumeStatusItem implements Serializable, Cloneable {
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getEvents() == null ^ this.getEvents() == null)
             return false;
         if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
@@ -389,6 +441,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());

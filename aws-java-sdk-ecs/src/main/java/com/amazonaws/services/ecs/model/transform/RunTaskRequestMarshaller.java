@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RunTaskRequestMarshaller {
 
+    private static final MarshallingInfo<List> CAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityProviderStrategy").build();
     private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("cluster").build();
     private static final MarshallingInfo<Integer> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class RunTaskRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(runTaskRequest.getCapacityProviderStrategy(), CAPACITYPROVIDERSTRATEGY_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getCount(), COUNT_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getEnableECSManagedTags(), ENABLEECSMANAGEDTAGS_BINDING);

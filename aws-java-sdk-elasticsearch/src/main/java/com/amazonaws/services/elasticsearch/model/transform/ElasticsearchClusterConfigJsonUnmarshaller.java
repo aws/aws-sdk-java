@@ -76,6 +76,18 @@ public class ElasticsearchClusterConfigJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     elasticsearchClusterConfig.setDedicatedMasterCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("WarmEnabled", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchClusterConfig.setWarmEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("WarmType", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchClusterConfig.setWarmType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("WarmCount", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchClusterConfig.setWarmCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

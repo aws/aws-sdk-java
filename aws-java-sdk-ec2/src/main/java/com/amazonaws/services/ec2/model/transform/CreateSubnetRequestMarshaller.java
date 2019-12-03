@@ -56,6 +56,10 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
             request.addParameter("Ipv6CidrBlock", StringUtils.fromString(createSubnetRequest.getIpv6CidrBlock()));
         }
 
+        if (createSubnetRequest.getOutpostArn() != null) {
+            request.addParameter("OutpostArn", StringUtils.fromString(createSubnetRequest.getOutpostArn()));
+        }
+
         if (createSubnetRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(createSubnetRequest.getVpcId()));
         }

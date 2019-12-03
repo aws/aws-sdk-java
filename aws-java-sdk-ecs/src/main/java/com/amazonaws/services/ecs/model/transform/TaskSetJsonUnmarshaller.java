@@ -104,6 +104,11 @@ public class TaskSetJsonUnmarshaller implements Unmarshaller<TaskSet, JsonUnmars
                     context.nextToken();
                     taskSet.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("capacityProviderStrategy", targetDepth)) {
+                    context.nextToken();
+                    taskSet.setCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("platformVersion", targetDepth)) {
                     context.nextToken();
                     taskSet.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));

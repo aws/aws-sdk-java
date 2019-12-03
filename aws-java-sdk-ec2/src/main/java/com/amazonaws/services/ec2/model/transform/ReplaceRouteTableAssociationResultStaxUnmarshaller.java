@@ -47,6 +47,11 @@ public class ReplaceRouteTableAssociationResultStaxUnmarshaller implements Unmar
                     replaceRouteTableAssociationResult.setNewAssociationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("associationState", targetDepth)) {
+                    replaceRouteTableAssociationResult.setAssociationState(RouteTableAssociationStateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replaceRouteTableAssociationResult;

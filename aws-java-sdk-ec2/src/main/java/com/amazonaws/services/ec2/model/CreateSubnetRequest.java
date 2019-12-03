@@ -27,17 +27,23 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone for the subnet.
+     * The Availability Zone or Local Zone for the subnet.
      * </p>
      * <p>
-     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we may not necessarily select a
+     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we do not necessarily select a
      * different zone for each subnet.
+     * </p>
+     * <p>
+     * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
+     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String availabilityZone;
     /**
      * <p>
-     * The AZ ID of the subnet.
+     * The AZ ID or the Local Zone ID of the subnet.
      * </p>
      */
     private String availabilityZoneId;
@@ -53,6 +59,12 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private String ipv6CidrBlock;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     */
+    private String outpostArn;
     /**
      * <p>
      * The ID of the VPC.
@@ -83,18 +95,30 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone for the subnet.
+     * The Availability Zone or Local Zone for the subnet.
      * </p>
      * <p>
-     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we may not necessarily select a
+     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we do not necessarily select a
      * different zone for each subnet.
+     * </p>
+     * <p>
+     * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
+     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the subnet.</p>
+     *        The Availability Zone or Local Zone for the subnet.</p>
      *        <p>
-     *        Default: AWS selects one for you. If you create more than one subnet in your VPC, we may not necessarily
+     *        Default: AWS selects one for you. If you create more than one subnet in your VPC, we do not necessarily
      *        select a different zone for each subnet.
+     *        </p>
+     *        <p>
+     *        To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
+     *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -103,17 +127,29 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone for the subnet.
+     * The Availability Zone or Local Zone for the subnet.
      * </p>
      * <p>
-     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we may not necessarily select a
+     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we do not necessarily select a
      * different zone for each subnet.
      * </p>
+     * <p>
+     * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
+     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
-     * @return The Availability Zone for the subnet.</p>
+     * @return The Availability Zone or Local Zone for the subnet.</p>
      *         <p>
-     *         Default: AWS selects one for you. If you create more than one subnet in your VPC, we may not necessarily
+     *         Default: AWS selects one for you. If you create more than one subnet in your VPC, we do not necessarily
      *         select a different zone for each subnet.
+     *         </p>
+     *         <p>
+     *         To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+     *         <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
+     *         >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getAvailabilityZone() {
@@ -122,18 +158,30 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The Availability Zone for the subnet.
+     * The Availability Zone or Local Zone for the subnet.
      * </p>
      * <p>
-     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we may not necessarily select a
+     * Default: AWS selects one for you. If you create more than one subnet in your VPC, we do not necessarily select a
      * different zone for each subnet.
+     * </p>
+     * <p>
+     * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
+     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone for the subnet.</p>
+     *        The Availability Zone or Local Zone for the subnet.</p>
      *        <p>
-     *        Default: AWS selects one for you. If you create more than one subnet in your VPC, we may not necessarily
+     *        Default: AWS selects one for you. If you create more than one subnet in your VPC, we do not necessarily
      *        select a different zone for each subnet.
+     *        </p>
+     *        <p>
+     *        To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
+     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
+     *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +192,11 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The AZ ID of the subnet.
+     * The AZ ID or the Local Zone ID of the subnet.
      * </p>
      * 
      * @param availabilityZoneId
-     *        The AZ ID of the subnet.
+     *        The AZ ID or the Local Zone ID of the subnet.
      */
 
     public void setAvailabilityZoneId(String availabilityZoneId) {
@@ -157,10 +205,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The AZ ID of the subnet.
+     * The AZ ID or the Local Zone ID of the subnet.
      * </p>
      * 
-     * @return The AZ ID of the subnet.
+     * @return The AZ ID or the Local Zone ID of the subnet.
      */
 
     public String getAvailabilityZoneId() {
@@ -169,11 +217,11 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The AZ ID of the subnet.
+     * The AZ ID or the Local Zone ID of the subnet.
      * </p>
      * 
      * @param availabilityZoneId
-     *        The AZ ID of the subnet.
+     *        The AZ ID or the Local Zone ID of the subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,6 +312,46 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the VPC.
      * </p>
      * 
@@ -333,6 +421,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getIpv6CidrBlock() != null)
             sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
@@ -365,6 +455,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
@@ -381,6 +475,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }

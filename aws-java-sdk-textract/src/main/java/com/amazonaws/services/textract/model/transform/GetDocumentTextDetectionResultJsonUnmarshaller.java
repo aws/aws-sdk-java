@@ -72,6 +72,10 @@ public class GetDocumentTextDetectionResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     getDocumentTextDetectionResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DetectDocumentTextModelVersion", targetDepth)) {
+                    context.nextToken();
+                    getDocumentTextDetectionResult.setDetectDocumentTextModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

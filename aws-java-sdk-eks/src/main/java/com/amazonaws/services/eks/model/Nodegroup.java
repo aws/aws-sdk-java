@@ -80,7 +80,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is associated with your node group.
+     * The scaling configuration details for the Auto Scaling group that is associated with your node group.
      * </p>
      */
     private NodegroupScalingConfig scalingConfig;
@@ -92,7 +92,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> instanceTypes;
     /**
      * <p>
-     * The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must have
+     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
      * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
      * with the name of your cluster.
      * </p>
@@ -107,7 +107,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      */
@@ -137,7 +137,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> labels;
     /**
      * <p>
-     * The resources associated with the nodegroup, such as AutoScaling groups and security groups for remote access.
+     * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      */
     private NodegroupResources resources;
@@ -155,7 +155,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private NodegroupHealth health;
     /**
      * <p>
-     * The metadata applied the node group to assist with categorization and organization. Each tag consists of a key
+     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
      * and an optional value, both of which you define. Node group tags do not propagate to any other resources
      * associated with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
@@ -515,11 +515,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is associated with your node group.
+     * The scaling configuration details for the Auto Scaling group that is associated with your node group.
      * </p>
      * 
      * @param scalingConfig
-     *        The scaling configuration details for the AutoScaling group that is associated with your node group.
+     *        The scaling configuration details for the Auto Scaling group that is associated with your node group.
      */
 
     public void setScalingConfig(NodegroupScalingConfig scalingConfig) {
@@ -528,10 +528,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is associated with your node group.
+     * The scaling configuration details for the Auto Scaling group that is associated with your node group.
      * </p>
      * 
-     * @return The scaling configuration details for the AutoScaling group that is associated with your node group.
+     * @return The scaling configuration details for the Auto Scaling group that is associated with your node group.
      */
 
     public NodegroupScalingConfig getScalingConfig() {
@@ -540,11 +540,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is associated with your node group.
+     * The scaling configuration details for the Auto Scaling group that is associated with your node group.
      * </p>
      * 
      * @param scalingConfig
-     *        The scaling configuration details for the AutoScaling group that is associated with your node group.
+     *        The scaling configuration details for the Auto Scaling group that is associated with your node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -625,14 +625,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must have
+     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
      * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
      * with the name of your cluster.
      * </p>
      * 
-     * @return The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must
-     *         have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     *         is replaced with the name of your cluster.
+     * @return The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets
+     *         must have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where
+     *         <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      */
 
     public java.util.List<String> getSubnets() {
@@ -641,13 +641,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must have
+     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
      * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
      * with the name of your cluster.
      * </p>
      * 
      * @param subnets
-     *        The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must
+     *        The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must
      *        have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      *        is replaced with the name of your cluster.
      */
@@ -663,7 +663,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must have
+     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
      * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
      * with the name of your cluster.
      * </p>
@@ -674,7 +674,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnets
-     *        The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must
+     *        The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must
      *        have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      *        is replaced with the name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -692,13 +692,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must have
+     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
      * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
      * with the name of your cluster.
      * </p>
      * 
      * @param subnets
-     *        The subnets allowed for the AutoScaling group that is associated with your node group. These subnets must
+     *        The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must
      *        have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      *        is replaced with the name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -752,14 +752,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @param amiType
      *        The AMI type associated with your node group. GPU instance types should use the
-     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support;
-     *        non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
+     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
+     *        Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
      *        Linux AMI.
      * @see AMITypes
      */
@@ -771,13 +771,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @return The AMI type associated with your node group. GPU instance types should use the
-     *         <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support;
-     *         non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
+     *         <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
+     *         Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
      *         Linux AMI.
      * @see AMITypes
      */
@@ -789,14 +789,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @param amiType
      *        The AMI type associated with your node group. GPU instance types should use the
-     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support;
-     *        non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
+     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
+     *        Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
      *        Linux AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AMITypes
@@ -810,14 +810,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @param amiType
      *        The AMI type associated with your node group. GPU instance types should use the
-     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support;
-     *        non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
+     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
+     *        Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
      *        Linux AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AMITypes
@@ -994,11 +994,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources associated with the nodegroup, such as AutoScaling groups and security groups for remote access.
+     * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      * 
      * @param resources
-     *        The resources associated with the nodegroup, such as AutoScaling groups and security groups for remote
+     *        The resources associated with the node group, such as Auto Scaling groups and security groups for remote
      *        access.
      */
 
@@ -1008,10 +1008,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources associated with the nodegroup, such as AutoScaling groups and security groups for remote access.
+     * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      * 
-     * @return The resources associated with the nodegroup, such as AutoScaling groups and security groups for remote
+     * @return The resources associated with the node group, such as Auto Scaling groups and security groups for remote
      *         access.
      */
 
@@ -1021,11 +1021,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resources associated with the nodegroup, such as AutoScaling groups and security groups for remote access.
+     * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      * 
      * @param resources
-     *        The resources associated with the nodegroup, such as AutoScaling groups and security groups for remote
+     *        The resources associated with the node group, such as Auto Scaling groups and security groups for remote
      *        access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1120,13 +1120,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata applied the node group to assist with categorization and organization. Each tag consists of a key
+     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
      * and an optional value, both of which you define. Node group tags do not propagate to any other resources
      * associated with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
-     * @return The metadata applied the node group to assist with categorization and organization. Each tag consists of
-     *         a key and an optional value, both of which you define. Node group tags do not propagate to any other
+     * @return The metadata applied to the node group to assist with categorization and organization. Each tag consists
+     *         of a key and an optional value, both of which you define. Node group tags do not propagate to any other
      *         resources associated with the node group, such as the Amazon EC2 instances or subnets.
      */
 
@@ -1136,14 +1136,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata applied the node group to assist with categorization and organization. Each tag consists of a key
+     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
      * and an optional value, both of which you define. Node group tags do not propagate to any other resources
      * associated with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @param tags
-     *        The metadata applied the node group to assist with categorization and organization. Each tag consists of a
-     *        key and an optional value, both of which you define. Node group tags do not propagate to any other
+     *        The metadata applied to the node group to assist with categorization and organization. Each tag consists
+     *        of a key and an optional value, both of which you define. Node group tags do not propagate to any other
      *        resources associated with the node group, such as the Amazon EC2 instances or subnets.
      */
 
@@ -1153,14 +1153,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata applied the node group to assist with categorization and organization. Each tag consists of a key
+     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
      * and an optional value, both of which you define. Node group tags do not propagate to any other resources
      * associated with the node group, such as the Amazon EC2 instances or subnets.
      * </p>
      * 
      * @param tags
-     *        The metadata applied the node group to assist with categorization and organization. Each tag consists of a
-     *        key and an optional value, both of which you define. Node group tags do not propagate to any other
+     *        The metadata applied to the node group to assist with categorization and organization. Each tag consists
+     *        of a key and an optional value, both of which you define. Node group tags do not propagate to any other
      *        resources associated with the node group, such as the Amazon EC2 instances or subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

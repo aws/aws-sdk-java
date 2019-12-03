@@ -287,6 +287,108 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
+     * Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at least one Fargate profile in a
+     * cluster to be able to schedule pods on Fargate infrastructure.
+     * </p>
+     * <p>
+     * The Fargate profile allows an administrator to declare which pods run on Fargate infrastructure and specify which
+     * pods run on which Fargate profile. This declaration is done through the profile’s selectors. Each profile can
+     * have up to five selectors that contain a namespace and labels. A namespace is required for every selector. The
+     * label field consists of multiple optional key-value pairs. Pods that match the selectors are scheduled on Fargate
+     * infrastructure. If a to-be-scheduled pod matches any of the selectors in the Fargate profile, then that pod is
+     * scheduled on Fargate infrastructure.
+     * </p>
+     * <p>
+     * When you create a Fargate profile, you must specify a pod execution role to use with the pods that are scheduled
+     * with the profile. This role is added to the cluster's Kubernetes <a
+     * href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access Control</a> (RBAC) for
+     * authorization so that the <code>kubelet</code> that is running on the Fargate infrastructure can register with
+     * your Amazon EKS cluster. This role is what allows Fargate infrastructure to appear in your cluster as nodes. The
+     * pod execution role also provides IAM permissions to the Fargate infrastructure to allow read access to Amazon ECR
+     * image repositories. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+     * <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * Fargate profiles are immutable. However, you can create a new updated profile to replace an existing profile and
+     * then delete the original after the updated profile has finished creating.
+     * </p>
+     * <p>
+     * If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you must wait for that Fargate
+     * profile to finish deleting before you can create any other profiles in that cluster.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+     * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param createFargateProfileRequest
+     * @return Result of the CreateFargateProfile operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidRequestException
+     *         The request is invalid given the state of the cluster. Check the state of the cluster and the associated
+     *         operations.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceLimitExceededException
+     *         You have encountered a service limit on the specified resource.
+     * @throws UnsupportedAvailabilityZoneException
+     *         At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon
+     *         EKS. The exception output specifies the supported Availability Zones for your account, from which you can
+     *         choose subnets for your cluster.
+     * @sample AmazonEKS.CreateFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFargateProfileResult createFargateProfile(CreateFargateProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFargateProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateFargateProfileResult executeCreateFargateProfile(CreateFargateProfileRequest createFargateProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFargateProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFargateProfileRequest> request = null;
+        Response<CreateFargateProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFargateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFargateProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFargateProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFargateProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFargateProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster
      * that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI
      * release version for the respective minor Kubernetes version of the cluster.
@@ -376,8 +478,8 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
-     * If you have managed node groups attached to the cluster, you must delete them first. For more information, see
-     * <a>DeleteNodegroup</a>.
+     * If you have managed node groups or Fargate profiles attached to the cluster, you must delete them first. For more
+     * information, see <a>DeleteNodegroup</a> and<a>DeleteFargateProfile</a>.
      * </p>
      * 
      * @param deleteClusterRequest
@@ -432,6 +534,80 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteClusterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an AWS Fargate profile.
+     * </p>
+     * <p>
+     * When you delete a Fargate profile, any pods that were scheduled onto Fargate infrastructure with the profile are
+     * deleted. If those pods match another Fargate profile, then they are scheduled on Fargate infrastructure with that
+     * profile. If they no longer match any Fargate profiles, then they are not scheduled on Fargate infrastructure.
+     * </p>
+     * <p>
+     * Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at a time. You must wait for a
+     * Fargate profile to finish deleting before you can delete any other profiles in that cluster.
+     * </p>
+     * 
+     * @param deleteFargateProfileRequest
+     * @return Result of the DeleteFargateProfile operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @sample AmazonEKS.DeleteFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFargateProfileResult deleteFargateProfile(DeleteFargateProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFargateProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFargateProfileResult executeDeleteFargateProfile(DeleteFargateProfileRequest deleteFargateProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFargateProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFargateProfileRequest> request = null;
+        Response<DeleteFargateProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFargateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFargateProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFargateProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFargateProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFargateProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -578,6 +754,72 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeClusterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns descriptive information about an AWS Fargate profile.
+     * </p>
+     * 
+     * @param describeFargateProfileRequest
+     * @return Result of the DescribeFargateProfile operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @sample AmazonEKS.DescribeFargateProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeFargateProfileResult describeFargateProfile(DescribeFargateProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFargateProfile(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFargateProfileResult executeDescribeFargateProfile(DescribeFargateProfileRequest describeFargateProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFargateProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFargateProfileRequest> request = null;
+        Response<DescribeFargateProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFargateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFargateProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFargateProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFargateProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFargateProfileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -777,6 +1019,71 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListClustersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListClustersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the AWS Fargate profiles associated with the specified cluster in your AWS account in the specified Region.
+     * </p>
+     * 
+     * @param listFargateProfilesRequest
+     * @return Result of the ListFargateProfiles operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws ClientException
+     *         These errors are usually caused by a client action. Actions can include using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource or specifying an identifier
+     *         that is not valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonEKS.ListFargateProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListFargateProfilesResult listFargateProfiles(ListFargateProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFargateProfiles(request);
+    }
+
+    @SdkInternalApi
+    final ListFargateProfilesResult executeListFargateProfiles(ListFargateProfilesRequest listFargateProfilesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFargateProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFargateProfilesRequest> request = null;
+        Response<ListFargateProfilesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFargateProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFargateProfilesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFargateProfiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFargateProfilesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFargateProfilesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

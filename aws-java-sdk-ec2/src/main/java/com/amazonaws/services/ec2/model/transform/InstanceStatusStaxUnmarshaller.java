@@ -50,6 +50,11 @@ public class InstanceStatusStaxUnmarshaller implements Unmarshaller<InstanceStat
                     continue;
                 }
 
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    instanceStatus.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("eventsSet", targetDepth)) {
                     instanceStatus.withEvents(new ArrayList<InstanceStatusEvent>());
                     continue;

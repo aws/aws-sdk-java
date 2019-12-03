@@ -52,6 +52,10 @@ public class AssociateVpcCidrBlockRequestMarshaller implements Marshaller<Reques
             request.addParameter("VpcId", StringUtils.fromString(associateVpcCidrBlockRequest.getVpcId()));
         }
 
+        if (associateVpcCidrBlockRequest.getIpv6CidrBlockNetworkBorderGroup() != null) {
+            request.addParameter("Ipv6CidrBlockNetworkBorderGroup", StringUtils.fromString(associateVpcCidrBlockRequest.getIpv6CidrBlockNetworkBorderGroup()));
+        }
+
         return request;
     }
 

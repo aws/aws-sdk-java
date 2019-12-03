@@ -59,8 +59,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node group does
-     * not match the version that Amazon EKS created. You may be able to revert to the Amazon EKS-created version to
-     * recover.
+     * not match the version that Amazon EKS created. You may be able to revert to the version that Amazon EKS created
+     * to recover.
      * </p>
      * </li>
      * <li>
@@ -83,6 +83,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     * permissions or lack of outbound internet access for the nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
      * type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
@@ -95,8 +103,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with your
-     * cluster API server.
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
+     * API server.
      * </p>
      * </li>
      * <li>
@@ -152,8 +160,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node group does
-     * not match the version that Amazon EKS created. You may be able to revert to the Amazon EKS-created version to
-     * recover.
+     * not match the version that Amazon EKS created. You may be able to revert to the version that Amazon EKS created
+     * to recover.
      * </p>
      * </li>
      * <li>
@@ -176,6 +184,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     * permissions or lack of outbound internet access for the nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
      * type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
@@ -188,8 +204,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with your
-     * cluster API server.
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
+     * API server.
      * </p>
      * </li>
      * <li>
@@ -229,8 +245,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node
-     *        group does not match the version that Amazon EKS created. You may be able to revert to the Amazon
-     *        EKS-created version to recover.
+     *        group does not match the version that Amazon EKS created. You may be able to revert to the version that
+     *        Amazon EKS created to recover.
      *        </p>
      *        </li>
      *        <li>
@@ -253,6 +269,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *        Common causes of this failure are insufficient <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     *        permissions or lack of outbound internet access for the nodes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
      *        instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *        </p>
@@ -265,8 +289,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with
-     *        your cluster API server.
+     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
+     *        cluster API server.
      *        </p>
      *        </li>
      *        <li>
@@ -313,8 +337,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node group does
-     * not match the version that Amazon EKS created. You may be able to revert to the Amazon EKS-created version to
-     * recover.
+     * not match the version that Amazon EKS created. You may be able to revert to the version that Amazon EKS created
+     * to recover.
      * </p>
      * </li>
      * <li>
@@ -337,6 +361,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     * permissions or lack of outbound internet access for the nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
      * type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
@@ -349,8 +381,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with your
-     * cluster API server.
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
+     * API server.
      * </p>
      * </li>
      * <li>
@@ -389,8 +421,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node
-     *         group does not match the version that Amazon EKS created. You may be able to revert to the Amazon
-     *         EKS-created version to recover.
+     *         group does not match the version that Amazon EKS created. You may be able to revert to the version that
+     *         Amazon EKS created to recover.
      *         </p>
      *         </li>
      *         <li>
@@ -413,6 +445,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
+     *         <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *         Common causes of this failure are insufficient <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM
+     *         role</a> permissions or lack of outbound internet access for the nodes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
      *         instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *         </p>
@@ -425,8 +465,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with
-     *         your cluster API server.
+     *         <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
+     *         cluster API server.
      *         </p>
      *         </li>
      *         <li>
@@ -473,8 +513,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node group does
-     * not match the version that Amazon EKS created. You may be able to revert to the Amazon EKS-created version to
-     * recover.
+     * not match the version that Amazon EKS created. You may be able to revert to the version that Amazon EKS created
+     * to recover.
      * </p>
      * </li>
      * <li>
@@ -497,6 +537,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     * permissions or lack of outbound internet access for the nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
      * type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
@@ -509,8 +557,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with your
-     * cluster API server.
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
+     * API server.
      * </p>
      * </li>
      * <li>
@@ -550,8 +598,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node
-     *        group does not match the version that Amazon EKS created. You may be able to revert to the Amazon
-     *        EKS-created version to recover.
+     *        group does not match the version that Amazon EKS created. You may be able to revert to the version that
+     *        Amazon EKS created to recover.
      *        </p>
      *        </li>
      *        <li>
@@ -574,6 +622,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *        Common causes of this failure are insufficient <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     *        permissions or lack of outbound internet access for the nodes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
      *        instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *        </p>
@@ -586,8 +642,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with
-     *        your cluster API server.
+     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
+     *        cluster API server.
      *        </p>
      *        </li>
      *        <li>
@@ -636,8 +692,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node group does
-     * not match the version that Amazon EKS created. You may be able to revert to the Amazon EKS-created version to
-     * recover.
+     * not match the version that Amazon EKS created. You may be able to revert to the version that Amazon EKS created
+     * to recover.
      * </p>
      * </li>
      * <li>
@@ -660,6 +716,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     * permissions or lack of outbound internet access for the nodes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified instance
      * type. You may be able to request an Amazon EC2 instance limit increase to recover.
      * </p>
@@ -672,8 +736,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with your
-     * cluster API server.
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
+     * API server.
      * </p>
      * </li>
      * <li>
@@ -713,8 +777,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for your managed node
-     *        group does not match the version that Amazon EKS created. You may be able to revert to the Amazon
-     *        EKS-created version to recover.
+     *        group does not match the version that Amazon EKS created. You may be able to revert to the version that
+     *        Amazon EKS created to recover.
      *        </p>
      *        </li>
      *        <li>
@@ -737,6 +801,14 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *        Common causes of this failure are insufficient <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
+     *        permissions or lack of outbound internet access for the nodes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances of the specified
      *        instance type. You may be able to request an Amazon EC2 instance limit increase to recover.
      *        </p>
@@ -749,8 +821,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: Amazon EKS and or one or more of your managed nodes is unable to communicate with
-     *        your cluster API server.
+     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
+     *        cluster API server.
      *        </p>
      *        </li>
      *        <li>

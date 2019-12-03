@@ -44,6 +44,8 @@ public class CreateTaskSetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRegistries").build();
     private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchType").build();
+    private static final MarshallingInfo<List> CAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityProviderStrategy").build();
     private static final MarshallingInfo<String> PLATFORMVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
     private static final MarshallingInfo<StructuredPojo> SCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -75,6 +77,7 @@ public class CreateTaskSetRequestMarshaller {
             protocolMarshaller.marshall(createTaskSetRequest.getLoadBalancers(), LOADBALANCERS_BINDING);
             protocolMarshaller.marshall(createTaskSetRequest.getServiceRegistries(), SERVICEREGISTRIES_BINDING);
             protocolMarshaller.marshall(createTaskSetRequest.getLaunchType(), LAUNCHTYPE_BINDING);
+            protocolMarshaller.marshall(createTaskSetRequest.getCapacityProviderStrategy(), CAPACITYPROVIDERSTRATEGY_BINDING);
             protocolMarshaller.marshall(createTaskSetRequest.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(createTaskSetRequest.getScale(), SCALE_BINDING);
             protocolMarshaller.marshall(createTaskSetRequest.getClientToken(), CLIENTTOKEN_BINDING);

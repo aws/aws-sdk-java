@@ -62,6 +62,16 @@ public class RouteTableAssociationStaxUnmarshaller implements Unmarshaller<Route
                     routeTableAssociation.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("gatewayId", targetDepth)) {
+                    routeTableAssociation.setGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("associationState", targetDepth)) {
+                    routeTableAssociation.setAssociationState(RouteTableAssociationStateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return routeTableAssociation;

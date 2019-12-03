@@ -132,6 +132,12 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private PlacementGroupInfo placementGroupInfo;
     /**
      * <p>
+     * Describes the Inference accelerator settings for the instance type.
+     * </p>
+     */
+    private InferenceAcceleratorInfo inferenceAcceleratorInfo;
+    /**
+     * <p>
      * Indicates whether On-Demand hibernation is supported.
      * </p>
      */
@@ -1063,6 +1069,46 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Describes the Inference accelerator settings for the instance type.
+     * </p>
+     * 
+     * @param inferenceAcceleratorInfo
+     *        Describes the Inference accelerator settings for the instance type.
+     */
+
+    public void setInferenceAcceleratorInfo(InferenceAcceleratorInfo inferenceAcceleratorInfo) {
+        this.inferenceAcceleratorInfo = inferenceAcceleratorInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Inference accelerator settings for the instance type.
+     * </p>
+     * 
+     * @return Describes the Inference accelerator settings for the instance type.
+     */
+
+    public InferenceAcceleratorInfo getInferenceAcceleratorInfo() {
+        return this.inferenceAcceleratorInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Inference accelerator settings for the instance type.
+     * </p>
+     * 
+     * @param inferenceAcceleratorInfo
+     *        Describes the Inference accelerator settings for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceTypeInfo withInferenceAcceleratorInfo(InferenceAcceleratorInfo inferenceAcceleratorInfo) {
+        setInferenceAcceleratorInfo(inferenceAcceleratorInfo);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates whether On-Demand hibernation is supported.
      * </p>
      * 
@@ -1315,6 +1361,8 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             sb.append("FpgaInfo: ").append(getFpgaInfo()).append(",");
         if (getPlacementGroupInfo() != null)
             sb.append("PlacementGroupInfo: ").append(getPlacementGroupInfo()).append(",");
+        if (getInferenceAcceleratorInfo() != null)
+            sb.append("InferenceAcceleratorInfo: ").append(getInferenceAcceleratorInfo()).append(",");
         if (getHibernationSupported() != null)
             sb.append("HibernationSupported: ").append(getHibernationSupported()).append(",");
         if (getBurstablePerformanceSupported() != null)
@@ -1405,6 +1453,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             return false;
         if (other.getPlacementGroupInfo() != null && other.getPlacementGroupInfo().equals(this.getPlacementGroupInfo()) == false)
             return false;
+        if (other.getInferenceAcceleratorInfo() == null ^ this.getInferenceAcceleratorInfo() == null)
+            return false;
+        if (other.getInferenceAcceleratorInfo() != null && other.getInferenceAcceleratorInfo().equals(this.getInferenceAcceleratorInfo()) == false)
+            return false;
         if (other.getHibernationSupported() == null ^ this.getHibernationSupported() == null)
             return false;
         if (other.getHibernationSupported() != null && other.getHibernationSupported().equals(this.getHibernationSupported()) == false)
@@ -1447,6 +1499,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getGpuInfo() == null) ? 0 : getGpuInfo().hashCode());
         hashCode = prime * hashCode + ((getFpgaInfo() == null) ? 0 : getFpgaInfo().hashCode());
         hashCode = prime * hashCode + ((getPlacementGroupInfo() == null) ? 0 : getPlacementGroupInfo().hashCode());
+        hashCode = prime * hashCode + ((getInferenceAcceleratorInfo() == null) ? 0 : getInferenceAcceleratorInfo().hashCode());
         hashCode = prime * hashCode + ((getHibernationSupported() == null) ? 0 : getHibernationSupported().hashCode());
         hashCode = prime * hashCode + ((getBurstablePerformanceSupported() == null) ? 0 : getBurstablePerformanceSupported().hashCode());
         hashCode = prime * hashCode + ((getDedicatedHostsSupported() == null) ? 0 : getDedicatedHostsSupported().hashCode());

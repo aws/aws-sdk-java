@@ -135,6 +135,59 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Creates an access point and associates it with the specified bucket.
+     * </p>
+     * 
+     * @param createAccessPointRequest
+     * @return Result of the CreateAccessPoint operation returned by the service.
+     * @sample AWSS3Control.CreateAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateAccessPointResult createAccessPoint(CreateAccessPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccessPoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccessPointResult executeCreateAccessPoint(CreateAccessPointRequest createAccessPointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAccessPointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAccessPointRequest> request = null;
+        Response<CreateAccessPointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAccessPointRequestMarshaller().marshall(super.beforeMarshalling(createAccessPointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessPoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateAccessPointResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<CreateAccessPointResult>(
+                    new CreateAccessPointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an Amazon S3 batch operations job.
      * </p>
      * 
@@ -192,7 +245,113 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Deletes the block public access configuration for the specified account.
+     * Deletes the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointRequest
+     * @return Result of the DeleteAccessPoint operation returned by the service.
+     * @sample AWSS3Control.DeleteAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteAccessPointResult deleteAccessPoint(DeleteAccessPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessPoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessPointResult executeDeleteAccessPoint(DeleteAccessPointRequest deleteAccessPointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessPointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessPointRequest> request = null;
+        Response<DeleteAccessPointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessPointRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessPointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteAccessPointResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteAccessPointResult>(
+                    new DeleteAccessPointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the access point policy for the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointPolicyRequest
+     * @return Result of the DeleteAccessPointPolicy operation returned by the service.
+     * @sample AWSS3Control.DeleteAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAccessPointPolicyResult deleteAccessPointPolicy(DeleteAccessPointPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessPointPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessPointPolicyResult executeDeleteAccessPointPolicy(DeleteAccessPointPolicyRequest deleteAccessPointPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessPointPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessPointPolicyRequest> request = null;
+        Response<DeleteAccessPointPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessPointPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPointPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteAccessPointPolicyResult>(
+                    new DeleteAccessPointPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
      * @param deletePublicAccessBlockRequest
@@ -301,11 +460,177 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     }
 
     /**
-     * <p/>
+     * <p>
+     * Returns configuration information about the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointRequest
+     * @return Result of the GetAccessPoint operation returned by the service.
+     * @sample AWSS3Control.GetAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAccessPointResult getAccessPoint(GetAccessPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPoint(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPointResult executeGetAccessPoint(GetAccessPointRequest getAccessPointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPointRequest> request = null;
+        Response<GetAccessPointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPointRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAccessPointResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointResult>(
+                    new GetAccessPointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the access point policy associated with the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointPolicyRequest
+     * @return Result of the GetAccessPointPolicy operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAccessPointPolicyResult getAccessPointPolicy(GetAccessPointPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPointPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPointPolicyResult executeGetAccessPointPolicy(GetAccessPointPolicyRequest getAccessPointPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPointPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPointPolicyRequest> request = null;
+        Response<GetAccessPointPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointPolicyResult>(
+                    new GetAccessPointPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Indicates whether the specified access point currently has a policy that allows public access. For more
+     * information about public access through access points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAccessPointPolicyStatusRequest
+     * @return Result of the GetAccessPointPolicyStatus operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointPolicyStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccessPointPolicyStatusResult getAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPointPolicyStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPointPolicyStatusResult executeGetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest getAccessPointPolicyStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPointPolicyStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPointPolicyStatusRequest> request = null;
+        Response<GetAccessPointPolicyStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPointPolicyStatusRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointPolicyStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointPolicyStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAccessPointPolicyStatusResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointPolicyStatusResult>(
+                    new GetAccessPointPolicyStatusResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param getPublicAccessBlockRequest
      * @return Result of the GetPublicAccessBlock operation returned by the service.
      * @throws NoSuchPublicAccessBlockConfigurationException
+     *         Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request against an
+     *         account that doesn't have a <code>PublicAccessBlockConfiguration</code> set.
      * @sample AWSS3Control.GetPublicAccessBlock
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock" target="_top">AWS
      *      API Documentation</a>
@@ -342,6 +667,62 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
             StaxResponseHandler<GetPublicAccessBlockResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetPublicAccessBlockResult>(
                     new GetPublicAccessBlockResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
+     * access points per call. If the specified bucket has more than 1000 access points (or the number specified in
+     * <code>maxResults</code>, whichever is less), then the response will include a continuation token that you can use
+     * to list the additional access points.
+     * </p>
+     * 
+     * @param listAccessPointsRequest
+     * @return Result of the ListAccessPoints operation returned by the service.
+     * @sample AWSS3Control.ListAccessPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAccessPointsResult listAccessPoints(ListAccessPointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccessPoints(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessPointsResult executeListAccessPoints(ListAccessPointsRequest listAccessPointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccessPointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccessPointsRequest> request = null;
+        Response<ListAccessPointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccessPointsRequestMarshaller().marshall(super.beforeMarshalling(listAccessPointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessPoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListAccessPointsResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<ListAccessPointsResult>(
+                    new ListAccessPointsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -409,7 +790,63 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     }
 
     /**
-     * <p/>
+     * <p>
+     * Associates an access policy with the specified access point. Each access point can have only one policy, so a
+     * request made to this API replaces any existing policy associated with the specified access point.
+     * </p>
+     * 
+     * @param putAccessPointPolicyRequest
+     * @return Result of the PutAccessPointPolicy operation returned by the service.
+     * @sample AWSS3Control.PutAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutAccessPointPolicyResult putAccessPointPolicy(PutAccessPointPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAccessPointPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutAccessPointPolicyResult executePutAccessPointPolicy(PutAccessPointPolicyRequest putAccessPointPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAccessPointPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAccessPointPolicyRequest> request = null;
+        Response<PutAccessPointPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(putAccessPointPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccessPointPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutAccessPointPolicyResult>(
+                    new PutAccessPointPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param putPublicAccessBlockRequest
      * @return Result of the PutPublicAccessBlock operation returned by the service.

@@ -39,7 +39,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     private String nodegroupName;
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is created for your node group.
+     * The scaling configuration details for the Auto Scaling group that is created for your node group.
      * </p>
      */
     private NodegroupScalingConfig scalingConfig;
@@ -51,8 +51,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer diskSize;
     /**
      * <p>
-     * The subnets to use for the AutoScaling group that is created for your node group. These subnets must have the tag
-     * key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
+     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
+     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      * <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      * </p>
      */
@@ -68,7 +68,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which
-     * uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      */
@@ -209,11 +209,11 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is created for your node group.
+     * The scaling configuration details for the Auto Scaling group that is created for your node group.
      * </p>
      * 
      * @param scalingConfig
-     *        The scaling configuration details for the AutoScaling group that is created for your node group.
+     *        The scaling configuration details for the Auto Scaling group that is created for your node group.
      */
 
     public void setScalingConfig(NodegroupScalingConfig scalingConfig) {
@@ -222,10 +222,10 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is created for your node group.
+     * The scaling configuration details for the Auto Scaling group that is created for your node group.
      * </p>
      * 
-     * @return The scaling configuration details for the AutoScaling group that is created for your node group.
+     * @return The scaling configuration details for the Auto Scaling group that is created for your node group.
      */
 
     public NodegroupScalingConfig getScalingConfig() {
@@ -234,11 +234,11 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The scaling configuration details for the AutoScaling group that is created for your node group.
+     * The scaling configuration details for the Auto Scaling group that is created for your node group.
      * </p>
      * 
      * @param scalingConfig
-     *        The scaling configuration details for the AutoScaling group that is created for your node group.
+     *        The scaling configuration details for the Auto Scaling group that is created for your node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,14 +289,14 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the AutoScaling group that is created for your node group. These subnets must have the tag
-     * key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
+     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
+     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      * <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      * </p>
      * 
-     * @return The subnets to use for the AutoScaling group that is created for your node group. These subnets must have
-     *         the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     *         <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
+     * @return The subnets to use for the Auto Scaling group that is created for your node group. These subnets must
+     *         have the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>,
+     *         where <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      */
 
     public java.util.List<String> getSubnets() {
@@ -305,13 +305,13 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the AutoScaling group that is created for your node group. These subnets must have the tag
-     * key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
+     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
+     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      * <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      * </p>
      * 
      * @param subnets
-     *        The subnets to use for the AutoScaling group that is created for your node group. These subnets must have
+     *        The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have
      *        the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      *        <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      */
@@ -327,8 +327,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the AutoScaling group that is created for your node group. These subnets must have the tag
-     * key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
+     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
+     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      * <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      * </p>
      * <p>
@@ -338,7 +338,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param subnets
-     *        The subnets to use for the AutoScaling group that is created for your node group. These subnets must have
+     *        The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have
      *        the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      *        <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -356,13 +356,13 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the AutoScaling group that is created for your node group. These subnets must have the tag
-     * key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
+     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
+     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      * <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      * </p>
      * 
      * @param subnets
-     *        The subnets to use for the AutoScaling group that is created for your node group. These subnets must have
+     *        The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have
      *        the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
      *        <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -462,13 +462,13 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which
-     * uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @param amiType
      *        The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type,
-     *        which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     *        which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      *        <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * @see AMITypes
      */
@@ -480,12 +480,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which
-     * uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @return The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type,
-     *         which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     *         which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      *         <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * @see AMITypes
      */
@@ -497,13 +497,13 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which
-     * uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @param amiType
      *        The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type,
-     *        which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     *        which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      *        <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AMITypes
@@ -517,13 +517,13 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type, which
-     * uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     * uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * </p>
      * 
      * @param amiType
      *        The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type,
-     *        which uses the Amazon EKS-optimized Linux AMI with GPU support; non-GPU instances should use the
+     *        which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
      *        <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AMITypes

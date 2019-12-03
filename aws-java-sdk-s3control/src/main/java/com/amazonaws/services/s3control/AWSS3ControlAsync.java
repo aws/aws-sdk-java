@@ -34,6 +34,37 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Creates an access point and associates it with the specified bucket.
+     * </p>
+     * 
+     * @param createAccessPointRequest
+     * @return A Java Future containing the result of the CreateAccessPoint operation returned by the service.
+     * @sample AWSS3ControlAsync.CreateAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPointResult> createAccessPointAsync(CreateAccessPointRequest createAccessPointRequest);
+
+    /**
+     * <p>
+     * Creates an access point and associates it with the specified bucket.
+     * </p>
+     * 
+     * @param createAccessPointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessPoint operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.CreateAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPointResult> createAccessPointAsync(CreateAccessPointRequest createAccessPointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessPointRequest, CreateAccessPointResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Amazon S3 batch operations job.
      * </p>
      * 
@@ -65,7 +96,69 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Deletes the block public access configuration for the specified account.
+     * Deletes the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointRequest
+     * @return A Java Future containing the result of the DeleteAccessPoint operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointResult> deleteAccessPointAsync(DeleteAccessPointRequest deleteAccessPointRequest);
+
+    /**
+     * <p>
+     * Deletes the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessPoint operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointResult> deleteAccessPointAsync(DeleteAccessPointRequest deleteAccessPointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessPointRequest, DeleteAccessPointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the access point policy for the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointPolicyRequest
+     * @return A Java Future containing the result of the DeleteAccessPointPolicy operation returned by the service.
+     * @sample AWSS3ControlAsync.DeleteAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointPolicyResult> deleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest deleteAccessPointPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the access point policy for the specified access point.
+     * </p>
+     * 
+     * @param deleteAccessPointPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessPointPolicy operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointPolicyResult> deleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest deleteAccessPointPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessPointPolicyRequest, DeleteAccessPointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
      * @param deletePublicAccessBlockRequest
@@ -78,7 +171,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
-     * Deletes the block public access configuration for the specified account.
+     * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
      * </p>
      * 
      * @param deletePublicAccessBlockRequest
@@ -126,7 +219,110 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler);
 
     /**
-     * <p/>
+     * <p>
+     * Returns configuration information about the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointRequest
+     * @return A Java Future containing the result of the GetAccessPoint operation returned by the service.
+     * @sample AWSS3ControlAsync.GetAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointResult> getAccessPointAsync(GetAccessPointRequest getAccessPointRequest);
+
+    /**
+     * <p>
+     * Returns configuration information about the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPoint operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointResult> getAccessPointAsync(GetAccessPointRequest getAccessPointRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointRequest, GetAccessPointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the access point policy associated with the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointPolicyRequest
+     * @return A Java Future containing the result of the GetAccessPointPolicy operation returned by the service.
+     * @sample AWSS3ControlAsync.GetAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyResult> getAccessPointPolicyAsync(GetAccessPointPolicyRequest getAccessPointPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the access point policy associated with the specified access point.
+     * </p>
+     * 
+     * @param getAccessPointPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPointPolicy operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyResult> getAccessPointPolicyAsync(GetAccessPointPolicyRequest getAccessPointPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyRequest, GetAccessPointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Indicates whether the specified access point currently has a policy that allows public access. For more
+     * information about public access through access points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAccessPointPolicyStatusRequest
+     * @return A Java Future containing the result of the GetAccessPointPolicyStatus operation returned by the service.
+     * @sample AWSS3ControlAsync.GetAccessPointPolicyStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyStatusResult> getAccessPointPolicyStatusAsync(
+            GetAccessPointPolicyStatusRequest getAccessPointPolicyStatusRequest);
+
+    /**
+     * <p>
+     * Indicates whether the specified access point currently has a policy that allows public access. For more
+     * information about public access through access points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param getAccessPointPolicyStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPointPolicyStatus operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessPointPolicyStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyStatusResult> getAccessPointPolicyStatusAsync(
+            GetAccessPointPolicyStatusRequest getAccessPointPolicyStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyStatusRequest, GetAccessPointPolicyStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param getPublicAccessBlockRequest
      * @return A Java Future containing the result of the GetPublicAccessBlock operation returned by the service.
@@ -137,7 +333,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<GetPublicAccessBlockResult> getPublicAccessBlockAsync(GetPublicAccessBlockRequest getPublicAccessBlockRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param getPublicAccessBlockRequest
      * @param asyncHandler
@@ -151,6 +349,43 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      */
     java.util.concurrent.Future<GetPublicAccessBlockResult> getPublicAccessBlockAsync(GetPublicAccessBlockRequest getPublicAccessBlockRequest,
             com.amazonaws.handlers.AsyncHandler<GetPublicAccessBlockRequest, GetPublicAccessBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
+     * access points per call. If the specified bucket has more than 1000 access points (or the number specified in
+     * <code>maxResults</code>, whichever is less), then the response will include a continuation token that you can use
+     * to list the additional access points.
+     * </p>
+     * 
+     * @param listAccessPointsRequest
+     * @return A Java Future containing the result of the ListAccessPoints operation returned by the service.
+     * @sample AWSS3ControlAsync.ListAccessPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPointsResult> listAccessPointsAsync(ListAccessPointsRequest listAccessPointsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
+     * access points per call. If the specified bucket has more than 1000 access points (or the number specified in
+     * <code>maxResults</code>, whichever is less), then the response will include a continuation token that you can use
+     * to list the additional access points.
+     * </p>
+     * 
+     * @param listAccessPointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessPoints operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.ListAccessPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPointsResult> listAccessPointsAsync(ListAccessPointsRequest listAccessPointsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPointsRequest, ListAccessPointsResult> asyncHandler);
 
     /**
      * <p>
@@ -184,7 +419,42 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler);
 
     /**
-     * <p/>
+     * <p>
+     * Associates an access policy with the specified access point. Each access point can have only one policy, so a
+     * request made to this API replaces any existing policy associated with the specified access point.
+     * </p>
+     * 
+     * @param putAccessPointPolicyRequest
+     * @return A Java Future containing the result of the PutAccessPointPolicy operation returned by the service.
+     * @sample AWSS3ControlAsync.PutAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest putAccessPointPolicyRequest);
+
+    /**
+     * <p>
+     * Associates an access policy with the specified access point. Each access point can have only one policy, so a
+     * request made to this API replaces any existing policy associated with the specified access point.
+     * </p>
+     * 
+     * @param putAccessPointPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccessPointPolicy operation returned by the service.
+     * @sample AWSS3ControlAsyncHandler.PutAccessPointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest putAccessPointPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyRequest, PutAccessPointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param putPublicAccessBlockRequest
      * @return A Java Future containing the result of the PutPublicAccessBlock operation returned by the service.
@@ -195,7 +465,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<PutPublicAccessBlockResult> putPublicAccessBlockAsync(PutPublicAccessBlockRequest putPublicAccessBlockRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * </p>
      * 
      * @param putPublicAccessBlockRequest
      * @param asyncHandler

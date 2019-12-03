@@ -111,16 +111,45 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in
+     * capacity provider strategies to facilitate cluster auto scaling.
+     * </p>
+     * <p>
+     * Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks on AWS Fargate use the
+     * <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers which are already created and available to
+     * all accounts in Regions supported by AWS Fargate.
+     * </p>
+     * 
+     * @param createCapacityProviderRequest
+     * @return Result of the CreateCapacityProvider operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws LimitExceededException
+     *         The limit for the resource has been exceeded.
+     * @sample AmazonECS.CreateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateCapacityProviderResult createCapacityProvider(CreateCapacityProviderRequest createCapacityProviderRequest);
+
+    /**
+     * <p>
      * Creates a new Amazon ECS cluster. By default, your account receives a <code>default</code> cluster when you
      * launch your first container instance. However, you can create your own cluster with a unique name with the
      * <code>CreateCluster</code> action.
      * </p>
      * <note>
      * <p>
-     * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the service-linked role for
-     * your account so that required resources in other AWS services can be managed on your behalf. However, if the IAM
-     * user that makes the call does not have permissions to create the service-linked role, it is not created. For more
-     * information, see <a
+     * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS service-linked
+     * role for your account so that required resources in other AWS services can be managed on your behalf. However, if
+     * the IAM user that makes the call does not have permissions to create the service-linked role, it is not created.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -409,6 +438,11 @@ public interface AmazonECS {
      *         <a>DeleteService</a>.
      * @throws ClusterContainsTasksException
      *         You cannot delete a cluster that has active tasks.
+     * @throws UpdateInProgressException
+     *         There is already a current Amazon ECS container agent update in progress on the specified container
+     *         instance. If the container agent becomes disconnected while it is in a transitional stage, such as
+     *         <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However,
+     *         when the agent reconnects, it resumes where it stopped previously.
      * @sample AmazonECS.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -493,7 +527,7 @@ public interface AmazonECS {
      *         The specified service is not active. You can't update a service that is inactive. If you have previously
      *         deleted a service, you can re-create it with <a>CreateService</a>.
      * @throws TaskSetNotFoundException
-     *         The specified task set could not be found. You can view your available container instances with
+     *         The specified task set could not be found. You can view your available task sets with
      *         <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
      * @sample AmazonECS.DeleteTaskSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet" target="_top">AWS API
@@ -578,6 +612,27 @@ public interface AmazonECS {
      *      API Documentation</a>
      */
     DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your capacity providers.
+     * </p>
+     * 
+     * @param describeCapacityProvidersRequest
+     * @return Result of the DescribeCapacityProviders operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.DescribeCapacityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeCapacityProvidersResult describeCapacityProviders(DescribeCapacityProvidersRequest describeCapacityProvidersRequest);
 
     /**
      * <p>
@@ -1140,6 +1195,51 @@ public interface AmazonECS {
      *      Documentation</a>
      */
     PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest);
+
+    /**
+     * <p>
+     * Modifies the available capacity providers and the default capacity provider strategy for a cluster.
+     * </p>
+     * <p>
+     * You must specify both the available capacity providers and a default capacity provider strategy for the cluster.
+     * If the specified cluster has existing capacity providers associated with it, you must specify all existing
+     * capacity providers in addition to any new ones you want to add. Any existing capacity providers associated with a
+     * cluster that are omitted from a <a>PutClusterCapacityProviders</a> API call will be disassociated with the
+     * cluster. You can only disassociate an existing capacity provider from a cluster if it's not being used by any
+     * existing tasks.
+     * </p>
+     * <p>
+     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified, then
+     * the cluster's default capacity provider strategy is used. It is recommended to define a default capacity provider
+     * strategy for your cluster, however you may specify an empty array (<code>[]</code>) to bypass defining a default
+     * strategy.
+     * </p>
+     * 
+     * @param putClusterCapacityProvidersRequest
+     * @return Result of the PutClusterCapacityProviders operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws ResourceInUseException
+     *         The specified resource is in-use and cannot be removed.
+     * @throws UpdateInProgressException
+     *         There is already a current Amazon ECS container agent update in progress on the specified container
+     *         instance. If the container agent becomes disconnected while it is in a transitional stage, such as
+     *         <code>PENDING</code> or <code>STAGING</code>, the update process can get stuck in that state. However,
+     *         when the agent reconnects, it resumes where it stopped previously.
+     * @sample AmazonECS.PutClusterCapacityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutClusterCapacityProvidersResult putClusterCapacityProviders(PutClusterCapacityProvidersRequest putClusterCapacityProvidersRequest);
 
     /**
      * <note>
@@ -1821,8 +1921,6 @@ public interface AmazonECS {
      *         Amazon ECS clusters are Region-specific.
      * @throws UnsupportedFeatureException
      *         The specified task is not supported in this Region.
-     * @throws AccessDeniedException
-     *         You do not have authorization to perform the requested action.
      * @throws ServiceNotFoundException
      *         The specified service could not be found. You can view your available services with <a>ListServices</a>.
      *         Amazon ECS services are cluster-specific and Region-specific.
@@ -1830,7 +1928,7 @@ public interface AmazonECS {
      *         The specified service is not active. You can't update a service that is inactive. If you have previously
      *         deleted a service, you can re-create it with <a>CreateService</a>.
      * @throws TaskSetNotFoundException
-     *         The specified task set could not be found. You can view your available container instances with
+     *         The specified task set could not be found. You can view your available task sets with
      *         <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
      * @throws AccessDeniedException
      *         You do not have authorization to perform the requested action.
@@ -1872,7 +1970,7 @@ public interface AmazonECS {
      *         The specified service is not active. You can't update a service that is inactive. If you have previously
      *         deleted a service, you can re-create it with <a>CreateService</a>.
      * @throws TaskSetNotFoundException
-     *         The specified task set could not be found. You can view your available container instances with
+     *         The specified task set could not be found. You can view your available task sets with
      *         <a>DescribeTaskSets</a>. Task sets are specific to each cluster, service and Region.
      * @sample AmazonECS.UpdateTaskSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet" target="_top">AWS API

@@ -104,6 +104,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFargateProfileResult> createFargateProfileAsync(CreateFargateProfileRequest request) {
+
+        return createFargateProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFargateProfileResult> createFargateProfileAsync(final CreateFargateProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFargateProfileRequest, CreateFargateProfileResult> asyncHandler) {
+        final CreateFargateProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFargateProfileResult>() {
+            @Override
+            public CreateFargateProfileResult call() throws Exception {
+                CreateFargateProfileResult result = null;
+
+                try {
+                    result = executeCreateFargateProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest request) {
 
         return createNodegroupAsync(request, null);
@@ -170,6 +203,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFargateProfileResult> deleteFargateProfileAsync(DeleteFargateProfileRequest request) {
+
+        return deleteFargateProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFargateProfileResult> deleteFargateProfileAsync(final DeleteFargateProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFargateProfileRequest, DeleteFargateProfileResult> asyncHandler) {
+        final DeleteFargateProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFargateProfileResult>() {
+            @Override
+            public DeleteFargateProfileResult call() throws Exception {
+                DeleteFargateProfileResult result = null;
+
+                try {
+                    result = executeDeleteFargateProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNodegroupResult> deleteNodegroupAsync(DeleteNodegroupRequest request) {
 
         return deleteNodegroupAsync(request, null);
@@ -220,6 +286,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeDescribeCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(DescribeFargateProfileRequest request) {
+
+        return describeFargateProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(final DescribeFargateProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFargateProfileRequest, DescribeFargateProfileResult> asyncHandler) {
+        final DescribeFargateProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFargateProfileResult>() {
+            @Override
+            public DescribeFargateProfileResult call() throws Exception {
+                DescribeFargateProfileResult result = null;
+
+                try {
+                    result = executeDescribeFargateProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -319,6 +418,39 @@ public class AmazonEKSAsyncClient extends AmazonEKSClient implements AmazonEKSAs
 
                 try {
                     result = executeListClusters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(ListFargateProfilesRequest request) {
+
+        return listFargateProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(final ListFargateProfilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFargateProfilesRequest, ListFargateProfilesResult> asyncHandler) {
+        final ListFargateProfilesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFargateProfilesResult>() {
+            @Override
+            public ListFargateProfilesResult call() throws Exception {
+                ListFargateProfilesResult result = null;
+
+                try {
+                    result = executeListFargateProfiles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

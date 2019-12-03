@@ -33,29 +33,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>message</code> - Information about the Availability Zone.
+     * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
+     * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
-     * ).
+     * <code>message</code> - The Availability Zone or Local Zone message.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     * <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
+     * <code>us-east-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     * <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
+     * (for example, use <code>usw2-lax1-az1</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
+     * Zone (for example, use <code>us-west-2-lax-1a</code>).
      * </p>
      * </li>
      * </ul>
@@ -63,16 +77,26 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The names of the Availability Zones.
+     * The names of the Availability Zones and Local Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> zoneNames;
     /**
      * <p>
-     * The IDs of the Availability Zones.
+     * The IDs of the Availability Zones and Local Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> zoneIds;
+    /**
+     * <p>
+     * Include all Availability Zones and Local Zones regardless of your opt in status.
+     * </p>
+     * <p>
+     * If you do not use this parameter, the results include only the zones for the Regions where you have chosen the
+     * option to opt in.
+     * </p>
+     */
+    private Boolean allAvailabilityZones;
 
     /**
      * <p>
@@ -81,29 +105,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>message</code> - Information about the Availability Zone.
+     * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
+     * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
-     * ).
+     * <code>message</code> - The Availability Zone or Local Zone message.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     * <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
+     * <code>us-east-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     * <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
+     * (for example, use <code>usw2-lax1-az1</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
+     * Zone (for example, use <code>us-west-2-lax-1a</code>).
      * </p>
      * </li>
      * </ul>
@@ -112,29 +150,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>message</code> - Information about the Availability Zone.
+     *         <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
+     *         the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>region-name</code> - The name of the Region for the Availability Zone (for example,
+     *         <code>message</code> - The Availability Zone or Local Zone message.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *         <code>opt-in-not-required</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
      *         <code>us-east-1</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the Availability Zone (<code>available</code> |
+     *         <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
      *         <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     *         <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local
+     *         Zone (for example, use <code>usw2-lax1-az1</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *         <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
+     *         Local Zone (for example, use <code>us-west-2-lax-1a</code>).
      *         </p>
      *         </li>
      */
@@ -153,29 +205,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>message</code> - Information about the Availability Zone.
+     * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
+     * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
-     * ).
+     * <code>message</code> - The Availability Zone or Local Zone message.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     * <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
+     * <code>us-east-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     * <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
+     * (for example, use <code>usw2-lax1-az1</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
+     * Zone (for example, use <code>us-west-2-lax-1a</code>).
      * </p>
      * </li>
      * </ul>
@@ -185,29 +251,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>message</code> - Information about the Availability Zone.
+     *        <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
+     *        the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
+     *        <code>message</code> - The Availability Zone or Local Zone message.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *        <code>opt-in-not-required</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code>
-     *        | <code>impaired</code> | <code>unavailable</code>).
+     *        <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     *        <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     *        <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local
+     *        Zone (for example, use <code>usw2-lax1-az1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
+     *        Local Zone (for example, use <code>us-west-2-lax-1a</code>).
      *        </p>
      *        </li>
      */
@@ -228,29 +308,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>message</code> - Information about the Availability Zone.
+     * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
+     * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
-     * ).
+     * <code>message</code> - The Availability Zone or Local Zone message.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     * <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
+     * <code>us-east-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     * <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
+     * (for example, use <code>usw2-lax1-az1</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
+     * Zone (for example, use <code>us-west-2-lax-1a</code>).
      * </p>
      * </li>
      * </ul>
@@ -265,29 +359,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>message</code> - Information about the Availability Zone.
+     *        <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
+     *        the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
+     *        <code>message</code> - The Availability Zone or Local Zone message.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *        <code>opt-in-not-required</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code>
-     *        | <code>impaired</code> | <code>unavailable</code>).
+     *        <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     *        <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     *        <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local
+     *        Zone (for example, use <code>usw2-lax1-az1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
+     *        Local Zone (for example, use <code>us-west-2-lax-1a</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -310,29 +418,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>message</code> - Information about the Availability Zone.
+     * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
+     * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>region-name</code> - The name of the Region for the Availability Zone (for example, <code>us-east-1</code>
-     * ).
+     * <code>message</code> - The Availability Zone or Local Zone message.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code> |
-     * <code>impaired</code> | <code>unavailable</code>).
+     * <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     * <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
+     * <code>us-east-1</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     * <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     * <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local Zone
+     * (for example, use <code>usw2-lax1-az1</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the Local
+     * Zone (for example, use <code>us-west-2-lax-1a</code>).
      * </p>
      * </li>
      * </ul>
@@ -342,29 +464,43 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>message</code> - Information about the Availability Zone.
+     *        <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
+     *        the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>region-name</code> - The name of the Region for the Availability Zone (for example,
+     *        <code>message</code> - The Availability Zone or Local Zone message.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>opt-in-status</code> - The opt in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *        <code>opt-in-not-required</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>region-name</code> - The name of the Region for the Availability Zone or Local Zone (for example,
      *        <code>us-east-1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the Availability Zone (<code>available</code> | <code>information</code>
-     *        | <code>impaired</code> | <code>unavailable</code>).
+     *        <code>state</code> - The state of the Availability Zone or Local Zone (<code>available</code> |
+     *        <code>information</code> | <code>impaired</code> | <code>unavailable</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+     *        <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>) or the Local
+     *        Zone (for example, use <code>usw2-lax1-az1</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
+     *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>) or the
+     *        Local Zone (for example, use <code>us-west-2-lax-1a</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -377,10 +513,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of the Availability Zones.
+     * The names of the Availability Zones and Local Zones.
      * </p>
      * 
-     * @return The names of the Availability Zones.
+     * @return The names of the Availability Zones and Local Zones.
      */
 
     public java.util.List<String> getZoneNames() {
@@ -392,11 +528,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of the Availability Zones.
+     * The names of the Availability Zones and Local Zones.
      * </p>
      * 
      * @param zoneNames
-     *        The names of the Availability Zones.
+     *        The names of the Availability Zones and Local Zones.
      */
 
     public void setZoneNames(java.util.Collection<String> zoneNames) {
@@ -410,7 +546,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of the Availability Zones.
+     * The names of the Availability Zones and Local Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -419,7 +555,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param zoneNames
-     *        The names of the Availability Zones.
+     *        The names of the Availability Zones and Local Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,11 +571,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of the Availability Zones.
+     * The names of the Availability Zones and Local Zones.
      * </p>
      * 
      * @param zoneNames
-     *        The names of the Availability Zones.
+     *        The names of the Availability Zones and Local Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,10 +586,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Availability Zones.
+     * The IDs of the Availability Zones and Local Zones.
      * </p>
      * 
-     * @return The IDs of the Availability Zones.
+     * @return The IDs of the Availability Zones and Local Zones.
      */
 
     public java.util.List<String> getZoneIds() {
@@ -465,11 +601,11 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Availability Zones.
+     * The IDs of the Availability Zones and Local Zones.
      * </p>
      * 
      * @param zoneIds
-     *        The IDs of the Availability Zones.
+     *        The IDs of the Availability Zones and Local Zones.
      */
 
     public void setZoneIds(java.util.Collection<String> zoneIds) {
@@ -483,7 +619,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Availability Zones.
+     * The IDs of the Availability Zones and Local Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -492,7 +628,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param zoneIds
-     *        The IDs of the Availability Zones.
+     *        The IDs of the Availability Zones and Local Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,17 +644,97 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Availability Zones.
+     * The IDs of the Availability Zones and Local Zones.
      * </p>
      * 
      * @param zoneIds
-     *        The IDs of the Availability Zones.
+     *        The IDs of the Availability Zones and Local Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAvailabilityZonesRequest withZoneIds(java.util.Collection<String> zoneIds) {
         setZoneIds(zoneIds);
         return this;
+    }
+
+    /**
+     * <p>
+     * Include all Availability Zones and Local Zones regardless of your opt in status.
+     * </p>
+     * <p>
+     * If you do not use this parameter, the results include only the zones for the Regions where you have chosen the
+     * option to opt in.
+     * </p>
+     * 
+     * @param allAvailabilityZones
+     *        Include all Availability Zones and Local Zones regardless of your opt in status.</p>
+     *        <p>
+     *        If you do not use this parameter, the results include only the zones for the Regions where you have chosen
+     *        the option to opt in.
+     */
+
+    public void setAllAvailabilityZones(Boolean allAvailabilityZones) {
+        this.allAvailabilityZones = allAvailabilityZones;
+    }
+
+    /**
+     * <p>
+     * Include all Availability Zones and Local Zones regardless of your opt in status.
+     * </p>
+     * <p>
+     * If you do not use this parameter, the results include only the zones for the Regions where you have chosen the
+     * option to opt in.
+     * </p>
+     * 
+     * @return Include all Availability Zones and Local Zones regardless of your opt in status.</p>
+     *         <p>
+     *         If you do not use this parameter, the results include only the zones for the Regions where you have
+     *         chosen the option to opt in.
+     */
+
+    public Boolean getAllAvailabilityZones() {
+        return this.allAvailabilityZones;
+    }
+
+    /**
+     * <p>
+     * Include all Availability Zones and Local Zones regardless of your opt in status.
+     * </p>
+     * <p>
+     * If you do not use this parameter, the results include only the zones for the Regions where you have chosen the
+     * option to opt in.
+     * </p>
+     * 
+     * @param allAvailabilityZones
+     *        Include all Availability Zones and Local Zones regardless of your opt in status.</p>
+     *        <p>
+     *        If you do not use this parameter, the results include only the zones for the Regions where you have chosen
+     *        the option to opt in.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAvailabilityZonesRequest withAllAvailabilityZones(Boolean allAvailabilityZones) {
+        setAllAvailabilityZones(allAvailabilityZones);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Include all Availability Zones and Local Zones regardless of your opt in status.
+     * </p>
+     * <p>
+     * If you do not use this parameter, the results include only the zones for the Regions where you have chosen the
+     * option to opt in.
+     * </p>
+     * 
+     * @return Include all Availability Zones and Local Zones regardless of your opt in status.</p>
+     *         <p>
+     *         If you do not use this parameter, the results include only the zones for the Regions where you have
+     *         chosen the option to opt in.
+     */
+
+    public Boolean isAllAvailabilityZones() {
+        return this.allAvailabilityZones;
     }
 
     /**
@@ -549,7 +765,9 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
         if (getZoneNames() != null)
             sb.append("ZoneNames: ").append(getZoneNames()).append(",");
         if (getZoneIds() != null)
-            sb.append("ZoneIds: ").append(getZoneIds());
+            sb.append("ZoneIds: ").append(getZoneIds()).append(",");
+        if (getAllAvailabilityZones() != null)
+            sb.append("AllAvailabilityZones: ").append(getAllAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }
@@ -576,6 +794,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
             return false;
         if (other.getZoneIds() != null && other.getZoneIds().equals(this.getZoneIds()) == false)
             return false;
+        if (other.getAllAvailabilityZones() == null ^ this.getAllAvailabilityZones() == null)
+            return false;
+        if (other.getAllAvailabilityZones() != null && other.getAllAvailabilityZones().equals(this.getAllAvailabilityZones()) == false)
+            return false;
         return true;
     }
 
@@ -587,6 +809,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getZoneNames() == null) ? 0 : getZoneNames().hashCode());
         hashCode = prime * hashCode + ((getZoneIds() == null) ? 0 : getZoneIds().hashCode());
+        hashCode = prime * hashCode + ((getAllAvailabilityZones() == null) ? 0 : getAllAvailabilityZones().hashCode());
         return hashCode;
     }
 

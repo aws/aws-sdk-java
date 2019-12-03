@@ -101,6 +101,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String launchType;
     /**
      * <p>
+     * The capacity provider strategy associated with the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
+    /**
+     * <p>
      * The platform version on which to run your service. A platform version is only specified for tasks using the
      * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
      * more information, see <a
@@ -860,6 +866,79 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     public Service withLaunchType(LaunchType launchType) {
         this.launchType = launchType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy associated with the service.
+     * </p>
+     * 
+     * @return The capacity provider strategy associated with the service.
+     */
+
+    public java.util.List<CapacityProviderStrategyItem> getCapacityProviderStrategy() {
+        if (capacityProviderStrategy == null) {
+            capacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>();
+        }
+        return capacityProviderStrategy;
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy associated with the service.
+     * </p>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy associated with the service.
+     */
+
+    public void setCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
+        if (capacityProviderStrategy == null) {
+            this.capacityProviderStrategy = null;
+            return;
+        }
+
+        this.capacityProviderStrategy = new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(capacityProviderStrategy);
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy associated with the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCapacityProviderStrategy(java.util.Collection)} or
+     * {@link #withCapacityProviderStrategy(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy associated with the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withCapacityProviderStrategy(CapacityProviderStrategyItem... capacityProviderStrategy) {
+        if (this.capacityProviderStrategy == null) {
+            setCapacityProviderStrategy(new com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem>(capacityProviderStrategy.length));
+        }
+        for (CapacityProviderStrategyItem ele : capacityProviderStrategy) {
+            this.capacityProviderStrategy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity provider strategy associated with the service.
+     * </p>
+     * 
+     * @param capacityProviderStrategy
+     *        The capacity provider strategy associated with the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
+        setCapacityProviderStrategy(capacityProviderStrategy);
         return this;
     }
 
@@ -2507,6 +2586,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("PendingCount: ").append(getPendingCount()).append(",");
         if (getLaunchType() != null)
             sb.append("LaunchType: ").append(getLaunchType()).append(",");
+        if (getCapacityProviderStrategy() != null)
+            sb.append("CapacityProviderStrategy: ").append(getCapacityProviderStrategy()).append(",");
         if (getPlatformVersion() != null)
             sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getTaskDefinition() != null)
@@ -2596,6 +2677,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (other.getLaunchType() == null ^ this.getLaunchType() == null)
             return false;
         if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
+            return false;
+        if (other.getCapacityProviderStrategy() == null ^ this.getCapacityProviderStrategy() == null)
+            return false;
+        if (other.getCapacityProviderStrategy() != null && other.getCapacityProviderStrategy().equals(this.getCapacityProviderStrategy()) == false)
             return false;
         if (other.getPlatformVersion() == null ^ this.getPlatformVersion() == null)
             return false;
@@ -2688,6 +2773,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRunningCount() == null) ? 0 : getRunningCount().hashCode());
         hashCode = prime * hashCode + ((getPendingCount() == null) ? 0 : getPendingCount().hashCode());
         hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
+        hashCode = prime * hashCode + ((getCapacityProviderStrategy() == null) ? 0 : getCapacityProviderStrategy().hashCode());
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfiguration() == null) ? 0 : getDeploymentConfiguration().hashCode());

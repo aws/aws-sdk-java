@@ -47,6 +47,7 @@ public enum ResourceType {
     TrafficMirrorTarget("traffic-mirror-target"),
     TransitGateway("transit-gateway"),
     TransitGatewayAttachment("transit-gateway-attachment"),
+    TransitGatewayMulticastDomain("transit-gateway-multicast-domain"),
     TransitGatewayRouteTable("transit-gateway-route-table"),
     Volume("volume"),
     Vpc("vpc"),

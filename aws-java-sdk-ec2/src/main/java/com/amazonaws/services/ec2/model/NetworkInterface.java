@@ -82,6 +82,12 @@ public class NetworkInterface implements Serializable, Cloneable {
     private String networkInterfaceId;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
      * The AWS account ID of the owner of the network interface.
      * </p>
      */
@@ -604,6 +610,46 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     public NetworkInterface withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
         return this;
     }
 
@@ -1206,6 +1252,8 @@ public class NetworkInterface implements Serializable, Cloneable {
             sb.append("MacAddress: ").append(getMacAddress()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getOwnerId() != null)
             sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getPrivateDnsName() != null)
@@ -1278,6 +1326,10 @@ public class NetworkInterface implements Serializable, Cloneable {
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getOwnerId() == null ^ this.getOwnerId() == null)
             return false;
         if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
@@ -1339,6 +1391,7 @@ public class NetworkInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
         hashCode = prime * hashCode + ((getMacAddress() == null) ? 0 : getMacAddress().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());

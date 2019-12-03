@@ -49,16 +49,59 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in
+     * capacity provider strategies to facilitate cluster auto scaling.
+     * </p>
+     * <p>
+     * Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks on AWS Fargate use the
+     * <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers which are already created and available to
+     * all accounts in Regions supported by AWS Fargate.
+     * </p>
+     * 
+     * @param createCapacityProviderRequest
+     * @return A Java Future containing the result of the CreateCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsync.CreateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCapacityProviderResult> createCapacityProviderAsync(CreateCapacityProviderRequest createCapacityProviderRequest);
+
+    /**
+     * <p>
+     * Creates a new capacity provider. Capacity providers are associated with an Amazon ECS cluster and are used in
+     * capacity provider strategies to facilitate cluster auto scaling.
+     * </p>
+     * <p>
+     * Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks on AWS Fargate use the
+     * <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers which are already created and available to
+     * all accounts in Regions supported by AWS Fargate.
+     * </p>
+     * 
+     * @param createCapacityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsyncHandler.CreateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCapacityProviderResult> createCapacityProviderAsync(CreateCapacityProviderRequest createCapacityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCapacityProviderRequest, CreateCapacityProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Amazon ECS cluster. By default, your account receives a <code>default</code> cluster when you
      * launch your first container instance. However, you can create your own cluster with a unique name with the
      * <code>CreateCluster</code> action.
      * </p>
      * <note>
      * <p>
-     * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the service-linked role for
-     * your account so that required resources in other AWS services can be managed on your behalf. However, if the IAM
-     * user that makes the call does not have permissions to create the service-linked role, it is not created. For more
-     * information, see <a
+     * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS service-linked
+     * role for your account so that required resources in other AWS services can be managed on your behalf. However, if
+     * the IAM user that makes the call does not have permissions to create the service-linked role, it is not created.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -80,10 +123,10 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <note>
      * <p>
-     * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the service-linked role for
-     * your account so that required resources in other AWS services can be managed on your behalf. However, if the IAM
-     * user that makes the call does not have permissions to create the service-linked role, it is not created. For more
-     * information, see <a
+     * When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS service-linked
+     * role for your account so that required resources in other AWS services can be managed on your behalf. However, if
+     * the IAM user that makes the call does not have permissions to create the service-linked role, it is not created.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -747,6 +790,39 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<DeregisterTaskDefinitionResult> deregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterTaskDefinitionRequest, DeregisterTaskDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more of your capacity providers.
+     * </p>
+     * 
+     * @param describeCapacityProvidersRequest
+     * @return A Java Future containing the result of the DescribeCapacityProviders operation returned by the service.
+     * @sample AmazonECSAsync.DescribeCapacityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCapacityProvidersResult> describeCapacityProvidersAsync(
+            DescribeCapacityProvidersRequest describeCapacityProvidersRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your capacity providers.
+     * </p>
+     * 
+     * @param describeCapacityProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCapacityProviders operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DescribeCapacityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCapacityProvidersResult> describeCapacityProvidersAsync(
+            DescribeCapacityProvidersRequest describeCapacityProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCapacityProvidersRequest, DescribeCapacityProvidersResult> asyncHandler);
 
     /**
      * <p>
@@ -1601,6 +1677,67 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest putAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<PutAttributesRequest, PutAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the available capacity providers and the default capacity provider strategy for a cluster.
+     * </p>
+     * <p>
+     * You must specify both the available capacity providers and a default capacity provider strategy for the cluster.
+     * If the specified cluster has existing capacity providers associated with it, you must specify all existing
+     * capacity providers in addition to any new ones you want to add. Any existing capacity providers associated with a
+     * cluster that are omitted from a <a>PutClusterCapacityProviders</a> API call will be disassociated with the
+     * cluster. You can only disassociate an existing capacity provider from a cluster if it's not being used by any
+     * existing tasks.
+     * </p>
+     * <p>
+     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified, then
+     * the cluster's default capacity provider strategy is used. It is recommended to define a default capacity provider
+     * strategy for your cluster, however you may specify an empty array (<code>[]</code>) to bypass defining a default
+     * strategy.
+     * </p>
+     * 
+     * @param putClusterCapacityProvidersRequest
+     * @return A Java Future containing the result of the PutClusterCapacityProviders operation returned by the service.
+     * @sample AmazonECSAsync.PutClusterCapacityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutClusterCapacityProvidersResult> putClusterCapacityProvidersAsync(
+            PutClusterCapacityProvidersRequest putClusterCapacityProvidersRequest);
+
+    /**
+     * <p>
+     * Modifies the available capacity providers and the default capacity provider strategy for a cluster.
+     * </p>
+     * <p>
+     * You must specify both the available capacity providers and a default capacity provider strategy for the cluster.
+     * If the specified cluster has existing capacity providers associated with it, you must specify all existing
+     * capacity providers in addition to any new ones you want to add. Any existing capacity providers associated with a
+     * cluster that are omitted from a <a>PutClusterCapacityProviders</a> API call will be disassociated with the
+     * cluster. You can only disassociate an existing capacity provider from a cluster if it's not being used by any
+     * existing tasks.
+     * </p>
+     * <p>
+     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified, then
+     * the cluster's default capacity provider strategy is used. It is recommended to define a default capacity provider
+     * strategy for your cluster, however you may specify an empty array (<code>[]</code>) to bypass defining a default
+     * strategy.
+     * </p>
+     * 
+     * @param putClusterCapacityProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutClusterCapacityProviders operation returned by the service.
+     * @sample AmazonECSAsyncHandler.PutClusterCapacityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutClusterCapacityProvidersResult> putClusterCapacityProvidersAsync(
+            PutClusterCapacityProvidersRequest putClusterCapacityProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<PutClusterCapacityProvidersRequest, PutClusterCapacityProvidersResult> asyncHandler);
 
     /**
      * <note>

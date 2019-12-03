@@ -28,39 +28,46 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract
-     * operations, you can't pass image bytes. The document must be an image in JPG or PNG format.
+     * operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
-     * the <code>Bytes</code> field.
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are
+     * passed using the <code>Bytes</code> field.
      * </p>
      */
     private Document document;
     /**
      * <p>
-     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     * detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
+     * are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis,
+     * add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in
+     * the response (including text that isn't related to the value of <code>FeatureTypes</code>).
      * </p>
      */
     private java.util.List<String> featureTypes;
+    /**
+     * <p>
+     * Sets the configuration for the human in the loop workflow for analyzing documents.
+     * </p>
+     */
+    private HumanLoopConfig humanLoopConfig;
 
     /**
      * <p>
      * The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract
-     * operations, you can't pass image bytes. The document must be an image in JPG or PNG format.
+     * operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
-     * the <code>Bytes</code> field.
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are
+     * passed using the <code>Bytes</code> field.
      * </p>
      * 
      * @param document
      *        The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon
-     *        Textract operations, you can't pass image bytes. The document must be an image in JPG or PNG format.</p>
+     *        Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
      *        <p>
-     *        If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     *        passed using the <code>Bytes</code> field.
+     *        If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that
+     *        are passed using the <code>Bytes</code> field.
      */
 
     public void setDocument(Document document) {
@@ -70,18 +77,18 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract
-     * operations, you can't pass image bytes. The document must be an image in JPG or PNG format.
+     * operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
-     * the <code>Bytes</code> field.
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are
+     * passed using the <code>Bytes</code> field.
      * </p>
      * 
      * @return The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon
-     *         Textract operations, you can't pass image bytes. The document must be an image in JPG or PNG format.</p>
+     *         Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
      *         <p>
-     *         If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     *         passed using the <code>Bytes</code> field.
+     *         If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that
+     *         are passed using the <code>Bytes</code> field.
      */
 
     public Document getDocument() {
@@ -91,19 +98,19 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract
-     * operations, you can't pass image bytes. The document must be an image in JPG or PNG format.
+     * operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.
      * </p>
      * <p>
-     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
-     * the <code>Bytes</code> field.
+     * If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are
+     * passed using the <code>Bytes</code> field.
      * </p>
      * 
      * @param document
      *        The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon
-     *        Textract operations, you can't pass image bytes. The document must be an image in JPG or PNG format.</p>
+     *        Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.</p>
      *        <p>
-     *        If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     *        passed using the <code>Bytes</code> field.
+     *        If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that
+     *        are passed using the <code>Bytes</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,14 +121,17 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     * detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
+     * are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis,
+     * add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in
+     * the response (including text that isn't related to the value of <code>FeatureTypes</code>).
      * </p>
      * 
      * @return A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     *         detected in the input document. Add FORMS to return detected fields and the associated text. To perform
-     *         both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *         that are detected in the input document. Add FORMS to return detected form data. To perform both types of
+     *         analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     *         are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>
+     *         ).
      * @see FeatureType
      */
 
@@ -131,15 +141,18 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     * detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
+     * are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis,
+     * add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in
+     * the response (including text that isn't related to the value of <code>FeatureTypes</code>).
      * </p>
      * 
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     *        detected in the input document. Add FORMS to return detected fields and the associated text. To perform
-     *        both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        that are detected in the input document. Add FORMS to return detected form data. To perform both types of
+     *        analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     *        are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>
+     *        ).
      * @see FeatureType
      */
 
@@ -154,9 +167,10 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     * detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
+     * are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis,
+     * add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in
+     * the response (including text that isn't related to the value of <code>FeatureTypes</code>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -166,8 +180,10 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     *        detected in the input document. Add FORMS to return detected fields and the associated text. To perform
-     *        both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        that are detected in the input document. Add FORMS to return detected form data. To perform both types of
+     *        analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     *        are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>
+     *        ).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeatureType
      */
@@ -184,15 +200,18 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     * detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
+     * are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis,
+     * add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in
+     * the response (including text that isn't related to the value of <code>FeatureTypes</code>).
      * </p>
      * 
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     *        detected in the input document. Add FORMS to return detected fields and the associated text. To perform
-     *        both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        that are detected in the input document. Add FORMS to return detected form data. To perform both types of
+     *        analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     *        are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>
+     *        ).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeatureType
      */
@@ -204,15 +223,18 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     * detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
+     * are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis,
+     * add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document are included in
+     * the response (including text that isn't related to the value of <code>FeatureTypes</code>).
      * </p>
      * 
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
-     *        detected in the input document. Add FORMS to return detected fields and the associated text. To perform
-     *        both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        that are detected in the input document. Add FORMS to return detected form data. To perform both types of
+     *        analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     *        are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>
+     *        ).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeatureType
      */
@@ -231,6 +253,46 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Sets the configuration for the human in the loop workflow for analyzing documents.
+     * </p>
+     * 
+     * @param humanLoopConfig
+     *        Sets the configuration for the human in the loop workflow for analyzing documents.
+     */
+
+    public void setHumanLoopConfig(HumanLoopConfig humanLoopConfig) {
+        this.humanLoopConfig = humanLoopConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the configuration for the human in the loop workflow for analyzing documents.
+     * </p>
+     * 
+     * @return Sets the configuration for the human in the loop workflow for analyzing documents.
+     */
+
+    public HumanLoopConfig getHumanLoopConfig() {
+        return this.humanLoopConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the configuration for the human in the loop workflow for analyzing documents.
+     * </p>
+     * 
+     * @param humanLoopConfig
+     *        Sets the configuration for the human in the loop workflow for analyzing documents.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzeDocumentRequest withHumanLoopConfig(HumanLoopConfig humanLoopConfig) {
+        setHumanLoopConfig(humanLoopConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -245,7 +307,9 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
         if (getDocument() != null)
             sb.append("Document: ").append(getDocument()).append(",");
         if (getFeatureTypes() != null)
-            sb.append("FeatureTypes: ").append(getFeatureTypes());
+            sb.append("FeatureTypes: ").append(getFeatureTypes()).append(",");
+        if (getHumanLoopConfig() != null)
+            sb.append("HumanLoopConfig: ").append(getHumanLoopConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -268,6 +332,10 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getFeatureTypes() != null && other.getFeatureTypes().equals(this.getFeatureTypes()) == false)
             return false;
+        if (other.getHumanLoopConfig() == null ^ this.getHumanLoopConfig() == null)
+            return false;
+        if (other.getHumanLoopConfig() != null && other.getHumanLoopConfig().equals(this.getHumanLoopConfig()) == false)
+            return false;
         return true;
     }
 
@@ -278,6 +346,7 @@ public class AnalyzeDocumentRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getDocument() == null) ? 0 : getDocument().hashCode());
         hashCode = prime * hashCode + ((getFeatureTypes() == null) ? 0 : getFeatureTypes().hashCode());
+        hashCode = prime * hashCode + ((getHumanLoopConfig() == null) ? 0 : getHumanLoopConfig().hashCode());
         return hashCode;
     }
 

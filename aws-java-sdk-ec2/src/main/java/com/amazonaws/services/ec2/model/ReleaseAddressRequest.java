@@ -37,6 +37,24 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String publicIp;
+    /**
+     * <p>
+     * The location that the IP address is released from.
+     * </p>
+     * <p>
+     * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you will
+     * receive an <code>InvalidParameterCombination</code> error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * </note>
+     */
+    private String networkBorderGroup;
 
     /**
      * Default constructor for ReleaseAddressRequest object. Callers should use the setter or fluent setter (with...)
@@ -137,6 +155,115 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * The location that the IP address is released from.
+     * </p>
+     * <p>
+     * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you will
+     * receive an <code>InvalidParameterCombination</code> error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * </note>
+     * 
+     * @param networkBorderGroup
+     *        The location that the IP address is released from.</p>
+     *        <p>
+     *        If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code>
+     *        error. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you
+     *        will receive an <code>InvalidParameterCombination</code> error. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     *        </p>
+     */
+
+    public void setNetworkBorderGroup(String networkBorderGroup) {
+        this.networkBorderGroup = networkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The location that the IP address is released from.
+     * </p>
+     * <p>
+     * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you will
+     * receive an <code>InvalidParameterCombination</code> error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * </note>
+     * 
+     * @return The location that the IP address is released from.</p>
+     *         <p>
+     *         If you provide an incorrect network border group, you will receive an
+     *         <code>InvalidAddress.NotFound</code> error. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you
+     *         will receive an <code>InvalidParameterCombination</code> error. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     *         </p>
+     */
+
+    public String getNetworkBorderGroup() {
+        return this.networkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The location that the IP address is released from.
+     * </p>
+     * <p>
+     * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you will
+     * receive an <code>InvalidParameterCombination</code> error. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     * </p>
+     * </note>
+     * 
+     * @param networkBorderGroup
+     *        The location that the IP address is released from.</p>
+     *        <p>
+     *        If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code>
+     *        error. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 classic, you
+     *        will receive an <code>InvalidParameterCombination</code> error. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReleaseAddressRequest withNetworkBorderGroup(String networkBorderGroup) {
+        setNetworkBorderGroup(networkBorderGroup);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -162,7 +289,9 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
         if (getAllocationId() != null)
             sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getNetworkBorderGroup() != null)
+            sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -185,6 +314,10 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
+        if (other.getNetworkBorderGroup() == null ^ this.getNetworkBorderGroup() == null)
+            return false;
+        if (other.getNetworkBorderGroup() != null && other.getNetworkBorderGroup().equals(this.getNetworkBorderGroup()) == false)
+            return false;
         return true;
     }
 
@@ -195,6 +328,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
 
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getNetworkBorderGroup() == null) ? 0 : getNetworkBorderGroup().hashCode());
         return hashCode;
     }
 

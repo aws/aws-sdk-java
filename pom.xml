@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.686-SNAPSHOT</version>
+  <version>1.11.686</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,14 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-augmentedairuntime</module>
+    <module>aws-java-sdk-outposts</module>
+    <module>aws-java-sdk-codeguruprofiler</module>
+    <module>aws-java-sdk-codegurureviewer</module>
+    <module>aws-java-sdk-frauddetector</module>
+    <module>aws-java-sdk-kendra</module>
+    <module>aws-java-sdk-networkmanager</module>
+    <module>aws-java-sdk-computeoptimizer</module>
     <module>aws-java-sdk-accessanalyzer</module>
     <module>aws-java-sdk-schemas</module>
     <module>aws-java-sdk-imagebuilder</module>

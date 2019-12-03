@@ -29,6 +29,12 @@ public class ReplaceRouteTableAssociationResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String newAssociationId;
+    /**
+     * <p>
+     * The state of the association.
+     * </p>
+     */
+    private RouteTableAssociationState associationState;
 
     /**
      * <p>
@@ -71,6 +77,46 @@ public class ReplaceRouteTableAssociationResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The state of the association.
+     * </p>
+     * 
+     * @param associationState
+     *        The state of the association.
+     */
+
+    public void setAssociationState(RouteTableAssociationState associationState) {
+        this.associationState = associationState;
+    }
+
+    /**
+     * <p>
+     * The state of the association.
+     * </p>
+     * 
+     * @return The state of the association.
+     */
+
+    public RouteTableAssociationState getAssociationState() {
+        return this.associationState;
+    }
+
+    /**
+     * <p>
+     * The state of the association.
+     * </p>
+     * 
+     * @param associationState
+     *        The state of the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceRouteTableAssociationResult withAssociationState(RouteTableAssociationState associationState) {
+        setAssociationState(associationState);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +129,9 @@ public class ReplaceRouteTableAssociationResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNewAssociationId() != null)
-            sb.append("NewAssociationId: ").append(getNewAssociationId());
+            sb.append("NewAssociationId: ").append(getNewAssociationId()).append(",");
+        if (getAssociationState() != null)
+            sb.append("AssociationState: ").append(getAssociationState());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +150,10 @@ public class ReplaceRouteTableAssociationResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getNewAssociationId() != null && other.getNewAssociationId().equals(this.getNewAssociationId()) == false)
             return false;
+        if (other.getAssociationState() == null ^ this.getAssociationState() == null)
+            return false;
+        if (other.getAssociationState() != null && other.getAssociationState().equals(this.getAssociationState()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +163,7 @@ public class ReplaceRouteTableAssociationResult extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNewAssociationId() == null) ? 0 : getNewAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getAssociationState() == null) ? 0 : getAssociationState().hashCode());
         return hashCode;
     }
 

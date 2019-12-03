@@ -30,7 +30,11 @@ public class ClientException extends com.amazonaws.services.eks.model.AmazonEKSE
      * </p>
      */
     private String clusterName;
-
+    /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     */
     private String nodegroupName;
 
     /**
@@ -86,7 +90,12 @@ public class ClientException extends com.amazonaws.services.eks.model.AmazonEKSE
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -95,7 +104,11 @@ public class ClientException extends com.amazonaws.services.eks.model.AmazonEKSE
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
+     * @return The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -104,7 +117,12 @@ public class ClientException extends com.amazonaws.services.eks.model.AmazonEKSE
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

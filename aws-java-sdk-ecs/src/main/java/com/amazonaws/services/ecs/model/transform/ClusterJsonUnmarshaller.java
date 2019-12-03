@@ -88,6 +88,23 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setSettings(new ListUnmarshaller<ClusterSetting>(ClusterSettingJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("capacityProviders", targetDepth)) {
+                    context.nextToken();
+                    cluster.setCapacityProviders(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("defaultCapacityProviderStrategy", targetDepth)) {
+                    context.nextToken();
+                    cluster.setDefaultCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("attachments", targetDepth)) {
+                    context.nextToken();
+                    cluster.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("attachmentsStatus", targetDepth)) {
+                    context.nextToken();
+                    cluster.setAttachmentsStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

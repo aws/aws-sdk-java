@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a message about an Availability Zone.
+ * Describes a message about an Availability Zone or Local Zone.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailabilityZoneMessage" target="_top">AWS API
@@ -28,18 +28,18 @@ public class AvailabilityZoneMessage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message about the Availability Zone.
+     * The message about the Availability Zone or Local Zone.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The message about the Availability Zone.
+     * The message about the Availability Zone or Local Zone.
      * </p>
      * 
      * @param message
-     *        The message about the Availability Zone.
+     *        The message about the Availability Zone or Local Zone.
      */
 
     public void setMessage(String message) {
@@ -48,10 +48,10 @@ public class AvailabilityZoneMessage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message about the Availability Zone.
+     * The message about the Availability Zone or Local Zone.
      * </p>
      * 
-     * @return The message about the Availability Zone.
+     * @return The message about the Availability Zone or Local Zone.
      */
 
     public String getMessage() {
@@ -60,11 +60,11 @@ public class AvailabilityZoneMessage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The message about the Availability Zone.
+     * The message about the Availability Zone or Local Zone.
      * </p>
      * 
      * @param message
-     *        The message about the Availability Zone.
+     *        The message about the Availability Zone or Local Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

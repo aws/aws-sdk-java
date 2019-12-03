@@ -88,6 +88,11 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("localGatewayId", targetDepth)) {
+                    route.setLocalGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("networkInterfaceId", targetDepth)) {
                     route.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

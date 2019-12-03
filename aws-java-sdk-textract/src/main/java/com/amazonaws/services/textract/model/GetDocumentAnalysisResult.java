@@ -45,22 +45,24 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
     private String nextToken;
     /**
      * <p>
-     * The results of the text analysis operation.
+     * The results of the text-analysis operation.
      * </p>
      */
     private java.util.List<Block> blocks;
     /**
      * <p>
-     * A list of warnings that occurred during the document analysis operation.
+     * A list of warnings that occurred during the document-analysis operation.
      * </p>
      */
     private java.util.List<Warning> warnings;
     /**
      * <p>
-     * The current status of an asynchronous document analysis operation.
+     * The current status of an asynchronous document-analysis operation.
      * </p>
      */
     private String statusMessage;
+    /** <p/> */
+    private String analyzeDocumentModelVersion;
 
     /**
      * <p>
@@ -215,10 +217,10 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The results of the text analysis operation.
+     * The results of the text-analysis operation.
      * </p>
      * 
-     * @return The results of the text analysis operation.
+     * @return The results of the text-analysis operation.
      */
 
     public java.util.List<Block> getBlocks() {
@@ -227,11 +229,11 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The results of the text analysis operation.
+     * The results of the text-analysis operation.
      * </p>
      * 
      * @param blocks
-     *        The results of the text analysis operation.
+     *        The results of the text-analysis operation.
      */
 
     public void setBlocks(java.util.Collection<Block> blocks) {
@@ -245,7 +247,7 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The results of the text analysis operation.
+     * The results of the text-analysis operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -254,7 +256,7 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param blocks
-     *        The results of the text analysis operation.
+     *        The results of the text-analysis operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +272,11 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The results of the text analysis operation.
+     * The results of the text-analysis operation.
      * </p>
      * 
      * @param blocks
-     *        The results of the text analysis operation.
+     *        The results of the text-analysis operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,10 +287,10 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of warnings that occurred during the document analysis operation.
+     * A list of warnings that occurred during the document-analysis operation.
      * </p>
      * 
-     * @return A list of warnings that occurred during the document analysis operation.
+     * @return A list of warnings that occurred during the document-analysis operation.
      */
 
     public java.util.List<Warning> getWarnings() {
@@ -297,11 +299,11 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of warnings that occurred during the document analysis operation.
+     * A list of warnings that occurred during the document-analysis operation.
      * </p>
      * 
      * @param warnings
-     *        A list of warnings that occurred during the document analysis operation.
+     *        A list of warnings that occurred during the document-analysis operation.
      */
 
     public void setWarnings(java.util.Collection<Warning> warnings) {
@@ -315,7 +317,7 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of warnings that occurred during the document analysis operation.
+     * A list of warnings that occurred during the document-analysis operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -324,7 +326,7 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param warnings
-     *        A list of warnings that occurred during the document analysis operation.
+     *        A list of warnings that occurred during the document-analysis operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,11 +342,11 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of warnings that occurred during the document analysis operation.
+     * A list of warnings that occurred during the document-analysis operation.
      * </p>
      * 
      * @param warnings
-     *        A list of warnings that occurred during the document analysis operation.
+     *        A list of warnings that occurred during the document-analysis operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +357,11 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current status of an asynchronous document analysis operation.
+     * The current status of an asynchronous document-analysis operation.
      * </p>
      * 
      * @param statusMessage
-     *        The current status of an asynchronous document analysis operation.
+     *        The current status of an asynchronous document-analysis operation.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -368,10 +370,10 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current status of an asynchronous document analysis operation.
+     * The current status of an asynchronous document-analysis operation.
      * </p>
      * 
-     * @return The current status of an asynchronous document analysis operation.
+     * @return The current status of an asynchronous document-analysis operation.
      */
 
     public String getStatusMessage() {
@@ -380,16 +382,48 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The current status of an asynchronous document analysis operation.
+     * The current status of an asynchronous document-analysis operation.
      * </p>
      * 
      * @param statusMessage
-     *        The current status of an asynchronous document analysis operation.
+     *        The current status of an asynchronous document-analysis operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDocumentAnalysisResult withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param analyzeDocumentModelVersion
+     */
+
+    public void setAnalyzeDocumentModelVersion(String analyzeDocumentModelVersion) {
+        this.analyzeDocumentModelVersion = analyzeDocumentModelVersion;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getAnalyzeDocumentModelVersion() {
+        return this.analyzeDocumentModelVersion;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param analyzeDocumentModelVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentAnalysisResult withAnalyzeDocumentModelVersion(String analyzeDocumentModelVersion) {
+        setAnalyzeDocumentModelVersion(analyzeDocumentModelVersion);
         return this;
     }
 
@@ -416,7 +450,9 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
         if (getWarnings() != null)
             sb.append("Warnings: ").append(getWarnings()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getAnalyzeDocumentModelVersion() != null)
+            sb.append("AnalyzeDocumentModelVersion: ").append(getAnalyzeDocumentModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -455,6 +491,10 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getAnalyzeDocumentModelVersion() == null ^ this.getAnalyzeDocumentModelVersion() == null)
+            return false;
+        if (other.getAnalyzeDocumentModelVersion() != null && other.getAnalyzeDocumentModelVersion().equals(this.getAnalyzeDocumentModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -469,6 +509,7 @@ public class GetDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getBlocks() == null) ? 0 : getBlocks().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzeDocumentModelVersion() == null) ? 0 : getAnalyzeDocumentModelVersion().hashCode());
         return hashCode;
     }
 

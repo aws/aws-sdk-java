@@ -94,6 +94,10 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
             }
         }
 
+        if (describeAvailabilityZonesRequest.getAllAvailabilityZones() != null) {
+            request.addParameter("AllAvailabilityZones", StringUtils.fromBoolean(describeAvailabilityZonesRequest.getAllAvailabilityZones()));
+        }
+
         return request;
     }
 

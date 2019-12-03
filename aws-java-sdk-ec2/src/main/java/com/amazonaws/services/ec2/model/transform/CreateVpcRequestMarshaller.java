@@ -52,6 +52,10 @@ public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcR
             request.addParameter("InstanceTenancy", StringUtils.fromString(createVpcRequest.getInstanceTenancy()));
         }
 
+        if (createVpcRequest.getIpv6CidrBlockNetworkBorderGroup() != null) {
+            request.addParameter("Ipv6CidrBlockNetworkBorderGroup", StringUtils.fromString(createVpcRequest.getIpv6CidrBlockNetworkBorderGroup()));
+        }
+
         return request;
     }
 

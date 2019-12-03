@@ -50,7 +50,7 @@ public class S3SignerProvider extends SignerProvider {
             return signer;
         }
 
-        if (signer instanceof RegionAwareSigner) {
+        if (signer instanceof RegionAwareSigner && !isAccessPointUri(uri)) {
             // Parse region name from the host component of the URL and
             // assign it to the signer
             RegionAwareSigner regionSigner = (RegionAwareSigner) signer;
@@ -66,6 +66,10 @@ public class S3SignerProvider extends SignerProvider {
         }
 
         return signer;
+    }
+
+    private boolean isAccessPointUri(URI uri) {
+        return uri.toASCIIString().contains(".s3-accesspoint.");
     }
 
     private boolean isSignerRegionOverrideSet() {

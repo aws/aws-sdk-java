@@ -124,6 +124,11 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     subnet.setSubnetArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    subnet.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return subnet;

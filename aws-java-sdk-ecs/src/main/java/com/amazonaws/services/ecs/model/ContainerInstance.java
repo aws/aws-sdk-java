@@ -45,6 +45,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private String ec2InstanceId;
     /**
      * <p>
+     * The capacity provider associated with the container instance.
+     * </p>
+     */
+    private String capacityProviderName;
+    /**
+     * <p>
      * The version counter for the container instance. Every time a container instance experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are replicating your Amazon ECS container
      * instance state with CloudWatch Events, you can compare the version of a container instance reported by the Amazon
@@ -302,6 +308,46 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     public ContainerInstance withEc2InstanceId(String ec2InstanceId) {
         setEc2InstanceId(ec2InstanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity provider associated with the container instance.
+     * </p>
+     * 
+     * @param capacityProviderName
+     *        The capacity provider associated with the container instance.
+     */
+
+    public void setCapacityProviderName(String capacityProviderName) {
+        this.capacityProviderName = capacityProviderName;
+    }
+
+    /**
+     * <p>
+     * The capacity provider associated with the container instance.
+     * </p>
+     * 
+     * @return The capacity provider associated with the container instance.
+     */
+
+    public String getCapacityProviderName() {
+        return this.capacityProviderName;
+    }
+
+    /**
+     * <p>
+     * The capacity provider associated with the container instance.
+     * </p>
+     * 
+     * @param capacityProviderName
+     *        The capacity provider associated with the container instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerInstance withCapacityProviderName(String capacityProviderName) {
+        setCapacityProviderName(capacityProviderName);
         return this;
     }
 
@@ -1681,6 +1727,8 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
             sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
         if (getEc2InstanceId() != null)
             sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
+        if (getCapacityProviderName() != null)
+            sb.append("CapacityProviderName: ").append(getCapacityProviderName()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getVersionInfo() != null)
@@ -1730,6 +1778,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
         if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null)
             return false;
         if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false)
+            return false;
+        if (other.getCapacityProviderName() == null ^ this.getCapacityProviderName() == null)
+            return false;
+        if (other.getCapacityProviderName() != null && other.getCapacityProviderName().equals(this.getCapacityProviderName()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
@@ -1797,6 +1849,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode());
+        hashCode = prime * hashCode + ((getCapacityProviderName() == null) ? 0 : getCapacityProviderName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode());
         hashCode = prime * hashCode + ((getRemainingResources() == null) ? 0 : getRemainingResources().hashCode());

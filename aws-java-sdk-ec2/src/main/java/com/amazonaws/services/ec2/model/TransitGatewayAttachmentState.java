@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TransitGatewayAttachmentState {
 
+    Initiating("initiating"),
     PendingAcceptance("pendingAcceptance"),
     RollingBack("rollingBack"),
     Pending("pending"),

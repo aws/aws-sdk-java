@@ -75,6 +75,11 @@ public class VolumeStaxUnmarshaller implements Unmarshaller<Volume, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("outpostArn", targetDepth)) {
+                    volume.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("size", targetDepth)) {
                     volume.setSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

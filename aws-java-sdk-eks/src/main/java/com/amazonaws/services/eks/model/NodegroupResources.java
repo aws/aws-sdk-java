@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the resources associated with the nodegroup, such as AutoScaling groups and security groups
+ * An object representing the resources associated with the node group, such as Auto Scaling groups and security groups
  * for remote access.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The autoscaling groups associated with the node group.
+     * The Auto Scaling groups associated with the node group.
      * </p>
      */
     private java.util.List<AutoScalingGroup> autoScalingGroups;
@@ -45,10 +45,10 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The autoscaling groups associated with the node group.
+     * The Auto Scaling groups associated with the node group.
      * </p>
      * 
-     * @return The autoscaling groups associated with the node group.
+     * @return The Auto Scaling groups associated with the node group.
      */
 
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
@@ -57,11 +57,11 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The autoscaling groups associated with the node group.
+     * The Auto Scaling groups associated with the node group.
      * </p>
      * 
      * @param autoScalingGroups
-     *        The autoscaling groups associated with the node group.
+     *        The Auto Scaling groups associated with the node group.
      */
 
     public void setAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
@@ -75,7 +75,7 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The autoscaling groups associated with the node group.
+     * The Auto Scaling groups associated with the node group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param autoScalingGroups
-     *        The autoscaling groups associated with the node group.
+     *        The Auto Scaling groups associated with the node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class NodegroupResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The autoscaling groups associated with the node group.
+     * The Auto Scaling groups associated with the node group.
      * </p>
      * 
      * @param autoScalingGroups
-     *        The autoscaling groups associated with the node group.
+     *        The Auto Scaling groups associated with the node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,7 +26,7 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
-     * call to <code>GetDocumentAnalysis</code>.
+     * call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      */
     private String jobId;
@@ -34,12 +34,12 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
-     * call to <code>GetDocumentAnalysis</code>.
+     * call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      * 
      * @param jobId
      *        The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a
-     *        subsequent call to <code>GetDocumentAnalysis</code>.
+     *        subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.
      */
 
     public void setJobId(String jobId) {
@@ -49,11 +49,11 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
-     * call to <code>GetDocumentAnalysis</code>.
+     * call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      * 
      * @return The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a
-     *         subsequent call to <code>GetDocumentAnalysis</code>.
+     *         subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.
      */
 
     public String getJobId() {
@@ -63,12 +63,12 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
-     * call to <code>GetDocumentAnalysis</code>.
+     * call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.
      * </p>
      * 
      * @param jobId
      *        The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a
-     *        subsequent call to <code>GetDocumentAnalysis</code>.
+     *        subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

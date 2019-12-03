@@ -48,6 +48,10 @@ public class ReleaseAddressRequestMarshaller implements Marshaller<Request<Relea
             request.addParameter("PublicIp", StringUtils.fromString(releaseAddressRequest.getPublicIp()));
         }
 
+        if (releaseAddressRequest.getNetworkBorderGroup() != null) {
+            request.addParameter("NetworkBorderGroup", StringUtils.fromString(releaseAddressRequest.getNetworkBorderGroup()));
+        }
+
         return request;
     }
 

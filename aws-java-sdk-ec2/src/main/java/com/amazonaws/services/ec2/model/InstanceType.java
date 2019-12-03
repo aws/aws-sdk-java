@@ -286,7 +286,11 @@ public enum InstanceType {
     R5n8xlarge("r5n.8xlarge"),
     R5n12xlarge("r5n.12xlarge"),
     R5n16xlarge("r5n.16xlarge"),
-    R5n24xlarge("r5n.24xlarge");
+    R5n24xlarge("r5n.24xlarge"),
+    Inf1Xlarge("inf1.xlarge"),
+    Inf12xlarge("inf1.2xlarge"),
+    Inf16xlarge("inf1.6xlarge"),
+    Inf124xlarge("inf1.24xlarge");
 
     private String value;
 

@@ -72,6 +72,10 @@ public class GetDocumentAnalysisResultJsonUnmarshaller implements Unmarshaller<G
                     context.nextToken();
                     getDocumentAnalysisResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AnalyzeDocumentModelVersion", targetDepth)) {
+                    context.nextToken();
+                    getDocumentAnalysisResult.setAnalyzeDocumentModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

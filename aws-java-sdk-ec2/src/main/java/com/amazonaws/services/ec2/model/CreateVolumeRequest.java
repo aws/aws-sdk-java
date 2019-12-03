@@ -101,6 +101,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String kmsKeyId;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
      * The size of the volume, in GiBs.
      * </p>
      * <p>
@@ -686,6 +692,46 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVolumeRequest withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The size of the volume, in GiBs.
      * </p>
      * <p>
@@ -1091,6 +1137,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
             sb.append("Iops: ").append(getIops()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getSize() != null)
             sb.append("Size: ").append(getSize()).append(",");
         if (getSnapshotId() != null)
@@ -1129,6 +1177,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getSize() == null ^ this.getSize() == null)
             return false;
         if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
@@ -1157,6 +1209,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());

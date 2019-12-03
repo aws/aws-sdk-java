@@ -24,13 +24,20 @@ import javax.annotation.Generated;
 public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.s3control.S3ControlResponseMetadata> implements
         Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * </p>
+     */
     private PublicAccessBlockConfiguration publicAccessBlockConfiguration;
 
     /**
-     * <p/>
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * </p>
      * 
      * @param publicAccessBlockConfiguration
+     *        The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
      */
 
     public void setPublicAccessBlockConfiguration(PublicAccessBlockConfiguration publicAccessBlockConfiguration) {
@@ -38,9 +45,12 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * </p>
      * 
-     * @return
+     * @return The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services
+     *         account.
      */
 
     public PublicAccessBlockConfiguration getPublicAccessBlockConfiguration() {
@@ -48,9 +58,12 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * </p>
      * 
      * @param publicAccessBlockConfiguration
+     *        The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

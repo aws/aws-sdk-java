@@ -56,6 +56,8 @@ public class TaskSetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchType").build();
+    private static final MarshallingInfo<List> CAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityProviderStrategy").build();
     private static final MarshallingInfo<String> PLATFORMVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -101,6 +103,7 @@ public class TaskSetMarshaller {
             protocolMarshaller.marshall(taskSet.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(taskSet.getUpdatedAt(), UPDATEDAT_BINDING);
             protocolMarshaller.marshall(taskSet.getLaunchType(), LAUNCHTYPE_BINDING);
+            protocolMarshaller.marshall(taskSet.getCapacityProviderStrategy(), CAPACITYPROVIDERSTRATEGY_BINDING);
             protocolMarshaller.marshall(taskSet.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(taskSet.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(taskSet.getLoadBalancers(), LOADBALANCERS_BINDING);

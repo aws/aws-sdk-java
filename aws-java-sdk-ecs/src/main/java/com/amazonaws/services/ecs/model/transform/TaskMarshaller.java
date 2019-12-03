@@ -34,6 +34,8 @@ public class TaskMarshaller {
             .marshallLocationName("attributes").build();
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
+    private static final MarshallingInfo<String> CAPACITYPROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityProviderName").build();
     private static final MarshallingInfo<String> CLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clusterArn").build();
     private static final MarshallingInfo<String> CONNECTIVITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -112,6 +114,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getAttachments(), ATTACHMENTS_BINDING);
             protocolMarshaller.marshall(task.getAttributes(), ATTRIBUTES_BINDING);
             protocolMarshaller.marshall(task.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(task.getCapacityProviderName(), CAPACITYPROVIDERNAME_BINDING);
             protocolMarshaller.marshall(task.getClusterArn(), CLUSTERARN_BINDING);
             protocolMarshaller.marshall(task.getConnectivity(), CONNECTIVITY_BINDING);
             protocolMarshaller.marshall(task.getConnectivityAt(), CONNECTIVITYAT_BINDING);

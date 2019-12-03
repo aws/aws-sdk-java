@@ -140,6 +140,11 @@ public class InstanceTypeInfoStaxUnmarshaller implements Unmarshaller<InstanceTy
                     continue;
                 }
 
+                if (context.testExpression("inferenceAcceleratorInfo", targetDepth)) {
+                    instanceTypeInfo.setInferenceAcceleratorInfo(InferenceAcceleratorInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("hibernationSupported", targetDepth)) {
                     instanceTypeInfo.setHibernationSupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

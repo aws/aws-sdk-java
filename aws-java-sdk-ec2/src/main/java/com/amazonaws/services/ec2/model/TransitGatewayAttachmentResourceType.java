@@ -22,7 +22,8 @@ public enum TransitGatewayAttachmentResourceType {
 
     Vpc("vpc"),
     Vpn("vpn"),
-    DirectConnectGateway("direct-connect-gateway");
+    DirectConnectGateway("direct-connect-gateway"),
+    TgwPeering("tgw-peering");
 
     private String value;
 

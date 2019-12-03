@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing the scaling configuration details for the AutoScaling group that is associated with your node
+ * An object representing the scaling configuration details for the Auto Scaling group that is associated with your node
  * group.
  * </p>
  * 

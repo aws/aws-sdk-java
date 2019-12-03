@@ -144,6 +144,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Accepts a transit gateway peering attachment request. The peering attachment must be in the
+     * <code>pendingAcceptance</code> state.
+     * </p>
+     * 
+     * @param acceptTransitGatewayPeeringAttachmentRequest
+     * @return Result of the AcceptTransitGatewayPeeringAttachment operation returned by the service.
+     * @sample AmazonEC2.AcceptTransitGatewayPeeringAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AcceptTransitGatewayPeeringAttachmentResult acceptTransitGatewayPeeringAttachment(
+            AcceptTransitGatewayPeeringAttachmentRequest acceptTransitGatewayPeeringAttachmentRequest);
+
+    /**
+     * <p>
      * Accepts a request to attach a VPC to a transit gateway.
      * </p>
      * <p>
@@ -446,10 +461,10 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association
-     * causes traffic originating from the subnet to be routed according to the routes in the route table. The action
-     * returns an association ID, which you need in order to disassociate the route table from the subnet later. A route
-     * table can be associated with multiple subnets.
+     * Associates a subnet in your VPC or an internet gateway or virtual private gateway attached to your VPC with a
+     * route table in your VPC. This association causes traffic from the subnet or gateway to be routed according to the
+     * routes in the route table. The action returns an association ID, which you need in order to disassociate the
+     * route table later. A route table can be associated with multiple subnets.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
@@ -477,6 +492,26 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     AssociateSubnetCidrBlockResult associateSubnetCidrBlock(AssociateSubnetCidrBlockRequest associateSubnetCidrBlockRequest);
+
+    /**
+     * <p>
+     * Associates the specified subnets and transit gateway attachments with the specified transit gateway multicast
+     * domain.
+     * </p>
+     * <p>
+     * The transit gateway attachment must be in the available state before you can add a resource. Use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html"
+     * >DescribeTransitGatewayAttachments</a> to see the state of the attachment.
+     * </p>
+     * 
+     * @param associateTransitGatewayMulticastDomainRequest
+     * @return Result of the AssociateTransitGatewayMulticastDomain operation returned by the service.
+     * @sample AmazonEC2.AssociateTransitGatewayMulticastDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateTransitGatewayMulticastDomainResult associateTransitGatewayMulticastDomain(
+            AssociateTransitGatewayMulticastDomainRequest associateTransitGatewayMulticastDomainRequest);
 
     /**
      * <p>
@@ -536,8 +571,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Attaches an internet gateway to a VPC, enabling connectivity between the internet and the VPC. For more
-     * information about your VPC and internet gateway, see the <a
+     * Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity between the internet
+     * and the VPC. For more information about your VPC and internet gateway, see the <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
      * </p>
      * 
@@ -1390,6 +1425,33 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Creates a static route for the specified local gateway route table.
+     * </p>
+     * 
+     * @param createLocalGatewayRouteRequest
+     * @return Result of the CreateLocalGatewayRoute operation returned by the service.
+     * @sample AmazonEC2.CreateLocalGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateLocalGatewayRouteResult createLocalGatewayRoute(CreateLocalGatewayRouteRequest createLocalGatewayRouteRequest);
+
+    /**
+     * <p>
+     * Associates the specified VPC with the specified local gateway route table.
+     * </p>
+     * 
+     * @param createLocalGatewayRouteTableVpcAssociationRequest
+     * @return Result of the CreateLocalGatewayRouteTableVpcAssociation operation returned by the service.
+     * @sample AmazonEC2.CreateLocalGatewayRouteTableVpcAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLocalGatewayRouteTableVpcAssociationResult createLocalGatewayRouteTableVpcAssociation(
+            CreateLocalGatewayRouteTableVpcAssociationRequest createLocalGatewayRouteTableVpcAssociationRequest);
+
+    /**
+     * <p>
      * Creates a NAT gateway in the specified public subnet. This action creates a network interface in the specified
      * subnet with a private IP address from the IP address range of the subnet. Internet-bound traffic from a private
      * subnet can be routed to the NAT gateway, therefore enabling instances in the private subnet to connect to the
@@ -1561,7 +1623,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * You must specify one of the following targets: internet gateway or virtual private gateway, NAT instance, NAT
-     * gateway, VPC peering connection, network interface, or egress-only internet gateway.
+     * gateway, VPC peering connection, network interface, egress-only internet gateway, or transit gateway.
      * </p>
      * <p>
      * When determining how to route traffic, we use the route with the most specific match. For example, traffic is
@@ -1929,6 +1991,45 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     CreateTransitGatewayResult createTransitGateway(CreateTransitGatewayRequest createTransitGatewayRequest);
+
+    /**
+     * <p>
+     * Creates a multicast domain using the specified transit gateway.
+     * </p>
+     * <p>
+     * The transit gateway must be in the available state before you create a domain. Use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html"
+     * >DescribeTransitGateways</a> to see the state of transit gateway.
+     * </p>
+     * 
+     * @param createTransitGatewayMulticastDomainRequest
+     * @return Result of the CreateTransitGatewayMulticastDomain operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayMulticastDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTransitGatewayMulticastDomainResult createTransitGatewayMulticastDomain(
+            CreateTransitGatewayMulticastDomainRequest createTransitGatewayMulticastDomainRequest);
+
+    /**
+     * <p>
+     * Requests a transit gateway peering attachment between the specified transit gateway (requester) and a peer
+     * transit gateway (accepter). The transit gateways must be in different Regions. The peer transit gateway can be in
+     * your account or a different AWS account.
+     * </p>
+     * <p>
+     * After you create the peering attachment, the owner of the accepter transit gateway must accept the attachment
+     * request.
+     * </p>
+     * 
+     * @param createTransitGatewayPeeringAttachmentRequest
+     * @return Result of the CreateTransitGatewayPeeringAttachment operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayPeeringAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTransitGatewayPeeringAttachmentResult createTransitGatewayPeeringAttachment(
+            CreateTransitGatewayPeeringAttachmentRequest createTransitGatewayPeeringAttachmentRequest);
 
     /**
      * <p>
@@ -2400,6 +2501,33 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the specified route from the specified local gateway route table.
+     * </p>
+     * 
+     * @param deleteLocalGatewayRouteRequest
+     * @return Result of the DeleteLocalGatewayRoute operation returned by the service.
+     * @sample AmazonEC2.DeleteLocalGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteLocalGatewayRouteResult deleteLocalGatewayRoute(DeleteLocalGatewayRouteRequest deleteLocalGatewayRouteRequest);
+
+    /**
+     * <p>
+     * Deletes the specified association between a VPC and local gateway route table.
+     * </p>
+     * 
+     * @param deleteLocalGatewayRouteTableVpcAssociationRequest
+     * @return Result of the DeleteLocalGatewayRouteTableVpcAssociation operation returned by the service.
+     * @sample AmazonEC2.DeleteLocalGatewayRouteTableVpcAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLocalGatewayRouteTableVpcAssociationResult deleteLocalGatewayRouteTableVpcAssociation(
+            DeleteLocalGatewayRouteTableVpcAssociationRequest deleteLocalGatewayRouteTableVpcAssociationRequest);
+
+    /**
+     * <p>
      * Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic IP address, but does not
      * release the address from your account. Deleting a NAT gateway does not delete any NAT gateway routes in your
      * route tables.
@@ -2698,6 +2826,34 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the specified transit gateway multicast domain.
+     * </p>
+     * 
+     * @param deleteTransitGatewayMulticastDomainRequest
+     * @return Result of the DeleteTransitGatewayMulticastDomain operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayMulticastDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTransitGatewayMulticastDomainResult deleteTransitGatewayMulticastDomain(
+            DeleteTransitGatewayMulticastDomainRequest deleteTransitGatewayMulticastDomainRequest);
+
+    /**
+     * <p>
+     * Deletes a transit gateway peering attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayPeeringAttachmentRequest
+     * @return Result of the DeleteTransitGatewayPeeringAttachment operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayPeeringAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTransitGatewayPeeringAttachmentResult deleteTransitGatewayPeeringAttachment(
+            DeleteTransitGatewayPeeringAttachmentRequest deleteTransitGatewayPeeringAttachmentRequest);
+
+    /**
+     * <p>
      * Deletes the specified route from the specified transit gateway route table.
      * </p>
      * 
@@ -2931,6 +3087,36 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deregisters the specified members (network interfaces) from the transit gateway multicast group.
+     * </p>
+     * 
+     * @param deregisterTransitGatewayMulticastGroupMembersRequest
+     * @return Result of the DeregisterTransitGatewayMulticastGroupMembers operation returned by the service.
+     * @sample AmazonEC2.DeregisterTransitGatewayMulticastGroupMembers
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeregisterTransitGatewayMulticastGroupMembersResult deregisterTransitGatewayMulticastGroupMembers(
+            DeregisterTransitGatewayMulticastGroupMembersRequest deregisterTransitGatewayMulticastGroupMembersRequest);
+
+    /**
+     * <p>
+     * Deregisters the specified sources (network interfaces) from the transit gateway multicast group.
+     * </p>
+     * 
+     * @param deregisterTransitGatewayMulticastGroupSourcesRequest
+     * @return Result of the DeregisterTransitGatewayMulticastGroupSources operation returned by the service.
+     * @sample AmazonEC2.DeregisterTransitGatewayMulticastGroupSources
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeregisterTransitGatewayMulticastGroupSourcesResult deregisterTransitGatewayMulticastGroupSources(
+            DeregisterTransitGatewayMulticastGroupSourcesRequest deregisterTransitGatewayMulticastGroupSourcesRequest);
+
+    /**
+     * <p>
      * Describes attributes of your AWS account. The following are the supported account attributes:
      * </p>
      * <ul>
@@ -3042,12 +3228,12 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Availability Zones that are available to you. The results include zones only for the Region you're
-     * currently using. If there is an event impacting an Availability Zone, you can use this request to view the state
-     * and any provided message for that Availability Zone.
+     * Describes the Availability Zones and Local Zones that are available to you. If there is an event impacting an
+     * Availability Zone or Local Zone, you can use this request to view the state and any provided messages for that
+     * Availability Zone or Local Zone.
      * </p>
      * <p>
-     * For more information, see <a
+     * For more information about Availability Zones and Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
      * Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -3213,6 +3399,19 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeClientVpnTargetNetworksResult describeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest describeClientVpnTargetNetworksRequest);
+
+    /**
+     * <p>
+     * Describes the specified customer-owned address pools or all of your customer-owned address pools.
+     * </p>
+     * 
+     * @param describeCoipPoolsRequest
+     * @return Result of the DescribeCoipPools operation returned by the service.
+     * @sample AmazonEC2.DescribeCoipPools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeCoipPoolsResult describeCoipPools(DescribeCoipPoolsRequest describeCoipPoolsRequest);
 
     /**
      * <p>
@@ -3926,6 +4125,93 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     DescribeLaunchTemplatesResult describeLaunchTemplates(DescribeLaunchTemplatesRequest describeLaunchTemplatesRequest);
+
+    /**
+     * <p>
+     * Describes the associations between virtual interface groups and local gateway route tables.
+     * </p>
+     * 
+     * @param describeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest
+     * @return Result of the DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations operation returned by the
+     *         service.
+     * @sample AmazonEC2.DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult describeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(
+            DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest describeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest);
+
+    /**
+     * <p>
+     * Describes the specified associations between VPCs and local gateway route tables.
+     * </p>
+     * 
+     * @param describeLocalGatewayRouteTableVpcAssociationsRequest
+     * @return Result of the DescribeLocalGatewayRouteTableVpcAssociations operation returned by the service.
+     * @sample AmazonEC2.DescribeLocalGatewayRouteTableVpcAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocalGatewayRouteTableVpcAssociationsResult describeLocalGatewayRouteTableVpcAssociations(
+            DescribeLocalGatewayRouteTableVpcAssociationsRequest describeLocalGatewayRouteTableVpcAssociationsRequest);
+
+    /**
+     * <p>
+     * Describes one or more local gateway route tables. By default, all local gateway route tables are described.
+     * Alternatively, you can filter the results.
+     * </p>
+     * 
+     * @param describeLocalGatewayRouteTablesRequest
+     * @return Result of the DescribeLocalGatewayRouteTables operation returned by the service.
+     * @sample AmazonEC2.DescribeLocalGatewayRouteTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocalGatewayRouteTablesResult describeLocalGatewayRouteTables(DescribeLocalGatewayRouteTablesRequest describeLocalGatewayRouteTablesRequest);
+
+    /**
+     * <p>
+     * Describes the specified local gateway virtual interface groups.
+     * </p>
+     * 
+     * @param describeLocalGatewayVirtualInterfaceGroupsRequest
+     * @return Result of the DescribeLocalGatewayVirtualInterfaceGroups operation returned by the service.
+     * @sample AmazonEC2.DescribeLocalGatewayVirtualInterfaceGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocalGatewayVirtualInterfaceGroupsResult describeLocalGatewayVirtualInterfaceGroups(
+            DescribeLocalGatewayVirtualInterfaceGroupsRequest describeLocalGatewayVirtualInterfaceGroupsRequest);
+
+    /**
+     * <p>
+     * Describes the specified local gateway virtual interfaces.
+     * </p>
+     * 
+     * @param describeLocalGatewayVirtualInterfacesRequest
+     * @return Result of the DescribeLocalGatewayVirtualInterfaces operation returned by the service.
+     * @sample AmazonEC2.DescribeLocalGatewayVirtualInterfaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocalGatewayVirtualInterfacesResult describeLocalGatewayVirtualInterfaces(
+            DescribeLocalGatewayVirtualInterfacesRequest describeLocalGatewayVirtualInterfacesRequest);
+
+    /**
+     * <p>
+     * Describes one or more local gateways. By default, all local gateways are described. Alternatively, you can filter
+     * the results.
+     * </p>
+     * 
+     * @param describeLocalGatewaysRequest
+     * @return Result of the DescribeLocalGateways operation returned by the service.
+     * @sample AmazonEC2.DescribeLocalGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeLocalGatewaysResult describeLocalGateways(DescribeLocalGatewaysRequest describeLocalGatewaysRequest);
 
     /**
      * <p>
@@ -4753,6 +5039,34 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes one or more transit gateway multicast domains.
+     * </p>
+     * 
+     * @param describeTransitGatewayMulticastDomainsRequest
+     * @return Result of the DescribeTransitGatewayMulticastDomains operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayMulticastDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTransitGatewayMulticastDomainsResult describeTransitGatewayMulticastDomains(
+            DescribeTransitGatewayMulticastDomainsRequest describeTransitGatewayMulticastDomainsRequest);
+
+    /**
+     * <p>
+     * Describes your transit gateway peering attachments.
+     * </p>
+     * 
+     * @param describeTransitGatewayPeeringAttachmentsRequest
+     * @return Result of the DescribeTransitGatewayPeeringAttachments operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayPeeringAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTransitGatewayPeeringAttachmentsResult describeTransitGatewayPeeringAttachments(
+            DescribeTransitGatewayPeeringAttachmentsRequest describeTransitGatewayPeeringAttachmentsRequest);
+
+    /**
+     * <p>
      * Describes one or more transit gateway route tables. By default, all transit gateway route tables are described.
      * Alternatively, you can filter the results.
      * </p>
@@ -5460,6 +5774,20 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Disassociates the specified subnets from the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param disassociateTransitGatewayMulticastDomainRequest
+     * @return Result of the DisassociateTransitGatewayMulticastDomain operation returned by the service.
+     * @sample AmazonEC2.DisassociateTransitGatewayMulticastDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateTransitGatewayMulticastDomainResult disassociateTransitGatewayMulticastDomain(
+            DisassociateTransitGatewayMulticastDomainRequest disassociateTransitGatewayMulticastDomainRequest);
+
+    /**
+     * <p>
      * Disassociates a resource attachment from a transit gateway route table.
      * </p>
      * 
@@ -5696,6 +6024,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes the allocations from the specified customer-owned address pool.
+     * </p>
+     * 
+     * @param getCoipPoolUsageRequest
+     * @return Result of the GetCoipPoolUsage operation returned by the service.
+     * @sample AmazonEC2.GetCoipPoolUsage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCoipPoolUsageResult getCoipPoolUsage(GetCoipPoolUsageRequest getCoipPoolUsageRequest);
+
+    /**
+     * <p>
      * Gets the console output for the specified instance. For Linux instances, the instance console output displays the
      * exact console output that would normally be displayed on a physical monitor attached to a computer. For Windows
      * instances, the instance console output includes the last three system event log errors.
@@ -5887,6 +6228,20 @@ public interface AmazonEC2 {
      */
     GetTransitGatewayAttachmentPropagationsResult getTransitGatewayAttachmentPropagations(
             GetTransitGatewayAttachmentPropagationsRequest getTransitGatewayAttachmentPropagationsRequest);
+
+    /**
+     * <p>
+     * Gets information about the associations for the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param getTransitGatewayMulticastDomainAssociationsRequest
+     * @return Result of the GetTransitGatewayMulticastDomainAssociations operation returned by the service.
+     * @sample AmazonEC2.GetTransitGatewayMulticastDomainAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTransitGatewayMulticastDomainAssociationsResult getTransitGatewayMulticastDomainAssociations(
+            GetTransitGatewayMulticastDomainAssociationsRequest getTransitGatewayMulticastDomainAssociationsRequest);
 
     /**
      * <p>
@@ -7177,6 +7532,69 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Registers members (network interfaces) with the transit gateway multicast group. A member is a network interface
+     * associated with a supported EC2 instance that receives multicast traffic. For information about supported
+     * instances, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+     * Consideration</a> in <i>Amazon VPC Transit Gateways</i>.
+     * </p>
+     * <p>
+     * After you add the members, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html"
+     * >SearchTransitGatewayMulticastGroups</a> to verify that the members were added to the transit gateway multicast
+     * group.
+     * </p>
+     * 
+     * @param registerTransitGatewayMulticastGroupMembersRequest
+     * @return Result of the RegisterTransitGatewayMulticastGroupMembers operation returned by the service.
+     * @sample AmazonEC2.RegisterTransitGatewayMulticastGroupMembers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RegisterTransitGatewayMulticastGroupMembersResult registerTransitGatewayMulticastGroupMembers(
+            RegisterTransitGatewayMulticastGroupMembersRequest registerTransitGatewayMulticastGroupMembersRequest);
+
+    /**
+     * <p>
+     * Registers sources (network interfaces) with the specified transit gateway multicast group.
+     * </p>
+     * <p>
+     * A multicast source is a network interface attached to a supported instance that sends multicast traffic. For
+     * information about supported instances, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+     * Considerations</a> in <i>Amazon VPC Transit Gateways</i>.
+     * </p>
+     * <p>
+     * After you add the source, use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html"
+     * >SearchTransitGatewayMulticastGroups</a> to verify that the source was added to the multicast group.
+     * </p>
+     * 
+     * @param registerTransitGatewayMulticastGroupSourcesRequest
+     * @return Result of the RegisterTransitGatewayMulticastGroupSources operation returned by the service.
+     * @sample AmazonEC2.RegisterTransitGatewayMulticastGroupSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RegisterTransitGatewayMulticastGroupSourcesResult registerTransitGatewayMulticastGroupSources(
+            RegisterTransitGatewayMulticastGroupSourcesRequest registerTransitGatewayMulticastGroupSourcesRequest);
+
+    /**
+     * <p>
+     * Rejects a transit gateway peering attachment request.
+     * </p>
+     * 
+     * @param rejectTransitGatewayPeeringAttachmentRequest
+     * @return Result of the RejectTransitGatewayPeeringAttachment operation returned by the service.
+     * @sample AmazonEC2.RejectTransitGatewayPeeringAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RejectTransitGatewayPeeringAttachmentResult rejectTransitGatewayPeeringAttachment(
+            RejectTransitGatewayPeeringAttachmentRequest rejectTransitGatewayPeeringAttachmentRequest);
+
+    /**
+     * <p>
      * Rejects a request to attach a VPC to a transit gateway.
      * </p>
      * <p>
@@ -7332,8 +7750,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Replaces an existing route within a route table in a VPC. You must provide only one of the following: internet
-     * gateway or virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
-     * egress-only internet gateway.
+     * gateway, virtual private gateway, NAT instance, NAT gateway, VPC peering connection, network interface,
+     * egress-only internet gateway, or transit gateway.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
@@ -7350,14 +7768,14 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Changes the route table associated with a given subnet in a VPC. After the operation completes, the subnet uses
-     * the routes in the new route table it's associated with. For more information about route tables, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * Changes the route table associated with a given subnet, internet gateway, or virtual private gateway in a VPC.
+     * After the operation completes, the subnet or gateway uses the routes in the new route table. For more information
+     * about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
+     * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can also use ReplaceRouteTableAssociation to change which table is the main route table in the VPC. You just
-     * specify the main route table's association ID and the route table to be the new main route table.
+     * You can also use this operation to change which table is the main route table in the VPC. Specify the main route
+     * table's association ID and the route table ID of the new main route table.
      * </p>
      * 
      * @param replaceRouteTableAssociationRequest
@@ -7770,6 +8188,33 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     RunScheduledInstancesResult runScheduledInstances(RunScheduledInstancesRequest runScheduledInstancesRequest);
+
+    /**
+     * <p>
+     * Searches for routes in the specified local gateway route table.
+     * </p>
+     * 
+     * @param searchLocalGatewayRoutesRequest
+     * @return Result of the SearchLocalGatewayRoutes operation returned by the service.
+     * @sample AmazonEC2.SearchLocalGatewayRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SearchLocalGatewayRoutesResult searchLocalGatewayRoutes(SearchLocalGatewayRoutesRequest searchLocalGatewayRoutesRequest);
+
+    /**
+     * <p>
+     * Searches one or more transit gateway multicast groups and returns the group membership information.
+     * </p>
+     * 
+     * @param searchTransitGatewayMulticastGroupsRequest
+     * @return Result of the SearchTransitGatewayMulticastGroups operation returned by the service.
+     * @sample AmazonEC2.SearchTransitGatewayMulticastGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchTransitGatewayMulticastGroupsResult searchTransitGatewayMulticastGroups(
+            SearchTransitGatewayMulticastGroupsRequest searchTransitGatewayMulticastGroupsRequest);
 
     /**
      * <p>

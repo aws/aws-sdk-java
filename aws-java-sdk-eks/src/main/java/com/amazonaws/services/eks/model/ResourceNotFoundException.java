@@ -31,8 +31,18 @@ public class ResourceNotFoundException extends com.amazonaws.services.eks.model.
      * </p>
      */
     private String clusterName;
-
+    /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     */
     private String nodegroupName;
+    /**
+     * <p>
+     * The Fargate profile associated with the exception.
+     * </p>
+     */
+    private String fargateProfileName;
 
     /**
      * Constructs a new ResourceNotFoundException with the specified error message.
@@ -87,7 +97,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.eks.model.
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -96,7 +111,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.eks.model.
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
+     * @return The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -105,12 +124,59 @@ public class ResourceNotFoundException extends com.amazonaws.services.eks.model.
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceNotFoundException withNodegroupName(String nodegroupName) {
         setNodegroupName(nodegroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Fargate profile associated with the exception.
+     * </p>
+     * 
+     * @param fargateProfileName
+     *        The Fargate profile associated with the exception.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("fargateProfileName")
+    public void setFargateProfileName(String fargateProfileName) {
+        this.fargateProfileName = fargateProfileName;
+    }
+
+    /**
+     * <p>
+     * The Fargate profile associated with the exception.
+     * </p>
+     * 
+     * @return The Fargate profile associated with the exception.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("fargateProfileName")
+    public String getFargateProfileName() {
+        return this.fargateProfileName;
+    }
+
+    /**
+     * <p>
+     * The Fargate profile associated with the exception.
+     * </p>
+     * 
+     * @param fargateProfileName
+     *        The Fargate profile associated with the exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceNotFoundException withFargateProfileName(String fargateProfileName) {
+        setFargateProfileName(fargateProfileName);
         return this;
     }
 

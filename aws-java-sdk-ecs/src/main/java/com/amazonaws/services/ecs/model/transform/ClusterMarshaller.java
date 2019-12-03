@@ -48,6 +48,14 @@ public class ClusterMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("settings").build();
+    private static final MarshallingInfo<List> CAPACITYPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityProviders").build();
+    private static final MarshallingInfo<List> DEFAULTCAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultCapacityProviderStrategy").build();
+    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attachments").build();
+    private static final MarshallingInfo<String> ATTACHMENTSSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attachmentsStatus").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -75,6 +83,10 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getStatistics(), STATISTICS_BINDING);
             protocolMarshaller.marshall(cluster.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(cluster.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(cluster.getCapacityProviders(), CAPACITYPROVIDERS_BINDING);
+            protocolMarshaller.marshall(cluster.getDefaultCapacityProviderStrategy(), DEFAULTCAPACITYPROVIDERSTRATEGY_BINDING);
+            protocolMarshaller.marshall(cluster.getAttachments(), ATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(cluster.getAttachmentsStatus(), ATTACHMENTSSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

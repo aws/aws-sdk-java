@@ -59,6 +59,12 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
     private String instanceId;
     /**
      * <p>
+     * Specifies whether to reset the local route to its default target (<code>local</code>).
+     * </p>
+     */
+    private Boolean localTarget;
+    /**
+     * <p>
      * [IPv4 traffic only] The ID of a NAT gateway.
      * </p>
      */
@@ -69,6 +75,12 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private String transitGatewayId;
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     */
+    private String localGatewayId;
     /**
      * <p>
      * The ID of a network interface.
@@ -302,6 +314,58 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * Specifies whether to reset the local route to its default target (<code>local</code>).
+     * </p>
+     * 
+     * @param localTarget
+     *        Specifies whether to reset the local route to its default target (<code>local</code>).
+     */
+
+    public void setLocalTarget(Boolean localTarget) {
+        this.localTarget = localTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to reset the local route to its default target (<code>local</code>).
+     * </p>
+     * 
+     * @return Specifies whether to reset the local route to its default target (<code>local</code>).
+     */
+
+    public Boolean getLocalTarget() {
+        return this.localTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to reset the local route to its default target (<code>local</code>).
+     * </p>
+     * 
+     * @param localTarget
+     *        Specifies whether to reset the local route to its default target (<code>local</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceRouteRequest withLocalTarget(Boolean localTarget) {
+        setLocalTarget(localTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to reset the local route to its default target (<code>local</code>).
+     * </p>
+     * 
+     * @return Specifies whether to reset the local route to its default target (<code>local</code>).
+     */
+
+    public Boolean isLocalTarget() {
+        return this.localTarget;
+    }
+
+    /**
+     * <p>
      * [IPv4 traffic only] The ID of a NAT gateway.
      * </p>
      * 
@@ -377,6 +441,46 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     public ReplaceRouteRequest withTransitGatewayId(String transitGatewayId) {
         setTransitGatewayId(transitGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of the local gateway.
+     */
+
+    public void setLocalGatewayId(String localGatewayId) {
+        this.localGatewayId = localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @return The ID of the local gateway.
+     */
+
+    public String getLocalGatewayId() {
+        return this.localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of the local gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceRouteRequest withLocalGatewayId(String localGatewayId) {
+        setLocalGatewayId(localGatewayId);
         return this;
     }
 
@@ -533,10 +637,14 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
             sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getLocalTarget() != null)
+            sb.append("LocalTarget: ").append(getLocalTarget()).append(",");
         if (getNatGatewayId() != null)
             sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
+        if (getLocalGatewayId() != null)
+            sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getRouteTableId() != null)
@@ -577,6 +685,10 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
+        if (other.getLocalTarget() == null ^ this.getLocalTarget() == null)
+            return false;
+        if (other.getLocalTarget() != null && other.getLocalTarget().equals(this.getLocalTarget()) == false)
+            return false;
         if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
             return false;
         if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
@@ -584,6 +696,10 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         if (other.getTransitGatewayId() == null ^ this.getTransitGatewayId() == null)
             return false;
         if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
+            return false;
+        if (other.getLocalGatewayId() == null ^ this.getLocalGatewayId() == null)
+            return false;
+        if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
             return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
@@ -610,8 +726,10 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getLocalTarget() == null) ? 0 : getLocalTarget().hashCode());
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());

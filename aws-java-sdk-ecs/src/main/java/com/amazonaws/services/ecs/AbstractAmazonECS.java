@@ -39,6 +39,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public CreateCapacityProviderResult createCapacityProvider(CreateCapacityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClusterResult createCluster(CreateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +95,11 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCapacityProvidersResult describeCapacityProviders(DescribeCapacityProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -225,6 +235,11 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public PutAttributesResult putAttributes(PutAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutClusterCapacityProvidersResult putClusterCapacityProviders(PutClusterCapacityProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

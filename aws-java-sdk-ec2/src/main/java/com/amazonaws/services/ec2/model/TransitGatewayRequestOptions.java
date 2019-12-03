@@ -65,6 +65,12 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
      * </p>
      */
     private String dnsSupport;
+    /**
+     * <p>
+     * Indicates whether multicast is enabled on the transit gateway
+     * </p>
+     */
+    private String multicastSupport;
 
     /**
      * <p>
@@ -424,6 +430,65 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether multicast is enabled on the transit gateway
+     * </p>
+     * 
+     * @param multicastSupport
+     *        Indicates whether multicast is enabled on the transit gateway
+     * @see MulticastSupportValue
+     */
+
+    public void setMulticastSupport(String multicastSupport) {
+        this.multicastSupport = multicastSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether multicast is enabled on the transit gateway
+     * </p>
+     * 
+     * @return Indicates whether multicast is enabled on the transit gateway
+     * @see MulticastSupportValue
+     */
+
+    public String getMulticastSupport() {
+        return this.multicastSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether multicast is enabled on the transit gateway
+     * </p>
+     * 
+     * @param multicastSupport
+     *        Indicates whether multicast is enabled on the transit gateway
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MulticastSupportValue
+     */
+
+    public TransitGatewayRequestOptions withMulticastSupport(String multicastSupport) {
+        setMulticastSupport(multicastSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether multicast is enabled on the transit gateway
+     * </p>
+     * 
+     * @param multicastSupport
+     *        Indicates whether multicast is enabled on the transit gateway
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MulticastSupportValue
+     */
+
+    public TransitGatewayRequestOptions withMulticastSupport(MulticastSupportValue multicastSupport) {
+        this.multicastSupport = multicastSupport.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -446,7 +511,9 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
         if (getVpnEcmpSupport() != null)
             sb.append("VpnEcmpSupport: ").append(getVpnEcmpSupport()).append(",");
         if (getDnsSupport() != null)
-            sb.append("DnsSupport: ").append(getDnsSupport());
+            sb.append("DnsSupport: ").append(getDnsSupport()).append(",");
+        if (getMulticastSupport() != null)
+            sb.append("MulticastSupport: ").append(getMulticastSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -485,6 +552,10 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
             return false;
         if (other.getDnsSupport() != null && other.getDnsSupport().equals(this.getDnsSupport()) == false)
             return false;
+        if (other.getMulticastSupport() == null ^ this.getMulticastSupport() == null)
+            return false;
+        if (other.getMulticastSupport() != null && other.getMulticastSupport().equals(this.getMulticastSupport()) == false)
+            return false;
         return true;
     }
 
@@ -499,6 +570,7 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDefaultRouteTablePropagation() == null) ? 0 : getDefaultRouteTablePropagation().hashCode());
         hashCode = prime * hashCode + ((getVpnEcmpSupport() == null) ? 0 : getVpnEcmpSupport().hashCode());
         hashCode = prime * hashCode + ((getDnsSupport() == null) ? 0 : getDnsSupport().hashCode());
+        hashCode = prime * hashCode + ((getMulticastSupport() == null) ? 0 : getMulticastSupport().hashCode());
         return hashCode;
     }
 

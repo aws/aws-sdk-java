@@ -56,6 +56,10 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
             request.addParameter("KmsKeyId", StringUtils.fromString(createVolumeRequest.getKmsKeyId()));
         }
 
+        if (createVolumeRequest.getOutpostArn() != null) {
+            request.addParameter("OutpostArn", StringUtils.fromString(createVolumeRequest.getOutpostArn()));
+        }
+
         if (createVolumeRequest.getSize() != null) {
             request.addParameter("Size", StringUtils.fromInteger(createVolumeRequest.getSize()));
         }

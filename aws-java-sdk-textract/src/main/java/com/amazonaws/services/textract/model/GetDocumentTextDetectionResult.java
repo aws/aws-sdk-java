@@ -51,16 +51,18 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
     private java.util.List<Block> blocks;
     /**
      * <p>
-     * A list of warnings that occurred during the document text-detection operation.
+     * A list of warnings that occurred during the text-detection operation for the document.
      * </p>
      */
     private java.util.List<Warning> warnings;
     /**
      * <p>
-     * The current status of an asynchronous document text-detection operation.
+     * The current status of an asynchronous text-detection operation for the document.
      * </p>
      */
     private String statusMessage;
+    /** <p/> */
+    private String detectDocumentTextModelVersion;
 
     /**
      * <p>
@@ -285,10 +287,10 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of warnings that occurred during the document text-detection operation.
+     * A list of warnings that occurred during the text-detection operation for the document.
      * </p>
      * 
-     * @return A list of warnings that occurred during the document text-detection operation.
+     * @return A list of warnings that occurred during the text-detection operation for the document.
      */
 
     public java.util.List<Warning> getWarnings() {
@@ -297,11 +299,11 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of warnings that occurred during the document text-detection operation.
+     * A list of warnings that occurred during the text-detection operation for the document.
      * </p>
      * 
      * @param warnings
-     *        A list of warnings that occurred during the document text-detection operation.
+     *        A list of warnings that occurred during the text-detection operation for the document.
      */
 
     public void setWarnings(java.util.Collection<Warning> warnings) {
@@ -315,7 +317,7 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of warnings that occurred during the document text-detection operation.
+     * A list of warnings that occurred during the text-detection operation for the document.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -324,7 +326,7 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param warnings
-     *        A list of warnings that occurred during the document text-detection operation.
+     *        A list of warnings that occurred during the text-detection operation for the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,11 +342,11 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of warnings that occurred during the document text-detection operation.
+     * A list of warnings that occurred during the text-detection operation for the document.
      * </p>
      * 
      * @param warnings
-     *        A list of warnings that occurred during the document text-detection operation.
+     *        A list of warnings that occurred during the text-detection operation for the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +357,11 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of an asynchronous document text-detection operation.
+     * The current status of an asynchronous text-detection operation for the document.
      * </p>
      * 
      * @param statusMessage
-     *        The current status of an asynchronous document text-detection operation.
+     *        The current status of an asynchronous text-detection operation for the document.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -368,10 +370,10 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of an asynchronous document text-detection operation.
+     * The current status of an asynchronous text-detection operation for the document.
      * </p>
      * 
-     * @return The current status of an asynchronous document text-detection operation.
+     * @return The current status of an asynchronous text-detection operation for the document.
      */
 
     public String getStatusMessage() {
@@ -380,16 +382,48 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of an asynchronous document text-detection operation.
+     * The current status of an asynchronous text-detection operation for the document.
      * </p>
      * 
      * @param statusMessage
-     *        The current status of an asynchronous document text-detection operation.
+     *        The current status of an asynchronous text-detection operation for the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDocumentTextDetectionResult withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param detectDocumentTextModelVersion
+     */
+
+    public void setDetectDocumentTextModelVersion(String detectDocumentTextModelVersion) {
+        this.detectDocumentTextModelVersion = detectDocumentTextModelVersion;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getDetectDocumentTextModelVersion() {
+        return this.detectDocumentTextModelVersion;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param detectDocumentTextModelVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentTextDetectionResult withDetectDocumentTextModelVersion(String detectDocumentTextModelVersion) {
+        setDetectDocumentTextModelVersion(detectDocumentTextModelVersion);
         return this;
     }
 
@@ -416,7 +450,9 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
         if (getWarnings() != null)
             sb.append("Warnings: ").append(getWarnings()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getDetectDocumentTextModelVersion() != null)
+            sb.append("DetectDocumentTextModelVersion: ").append(getDetectDocumentTextModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -455,6 +491,11 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getDetectDocumentTextModelVersion() == null ^ this.getDetectDocumentTextModelVersion() == null)
+            return false;
+        if (other.getDetectDocumentTextModelVersion() != null
+                && other.getDetectDocumentTextModelVersion().equals(this.getDetectDocumentTextModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -469,6 +510,7 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getBlocks() == null) ? 0 : getBlocks().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getDetectDocumentTextModelVersion() == null) ? 0 : getDetectDocumentTextModelVersion().hashCode());
         return hashCode;
     }
 

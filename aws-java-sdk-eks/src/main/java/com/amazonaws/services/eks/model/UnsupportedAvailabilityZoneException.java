@@ -31,7 +31,11 @@ public class UnsupportedAvailabilityZoneException extends com.amazonaws.services
      * </p>
      */
     private String clusterName;
-
+    /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     */
     private String nodegroupName;
     /**
      * <p>
@@ -93,7 +97,12 @@ public class UnsupportedAvailabilityZoneException extends com.amazonaws.services
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -102,7 +111,11 @@ public class UnsupportedAvailabilityZoneException extends com.amazonaws.services
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
+     * @return The Amazon EKS managed node group associated with the exception.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("nodegroupName")
@@ -111,7 +124,12 @@ public class UnsupportedAvailabilityZoneException extends com.amazonaws.services
     }
 
     /**
+     * <p>
+     * The Amazon EKS managed node group associated with the exception.
+     * </p>
+     * 
      * @param nodegroupName
+     *        The Amazon EKS managed node group associated with the exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

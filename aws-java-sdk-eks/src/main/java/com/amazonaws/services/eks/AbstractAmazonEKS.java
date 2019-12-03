@@ -34,6 +34,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public CreateFargateProfileResult createFargateProfile(CreateFargateProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNodegroupResult createNodegroup(CreateNodegroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,12 +49,22 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public DeleteFargateProfileResult deleteFargateProfile(DeleteFargateProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNodegroupResult deleteNodegroup(DeleteNodegroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFargateProfileResult describeFargateProfile(DescribeFargateProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,6 +80,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public ListClustersResult listClusters(ListClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFargateProfilesResult listFargateProfiles(ListFargateProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

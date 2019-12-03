@@ -52,6 +52,14 @@ public class AllocateAddressRequestMarshaller implements Marshaller<Request<Allo
             request.addParameter("PublicIpv4Pool", StringUtils.fromString(allocateAddressRequest.getPublicIpv4Pool()));
         }
 
+        if (allocateAddressRequest.getNetworkBorderGroup() != null) {
+            request.addParameter("NetworkBorderGroup", StringUtils.fromString(allocateAddressRequest.getNetworkBorderGroup()));
+        }
+
+        if (allocateAddressRequest.getCustomerOwnedIpv4Pool() != null) {
+            request.addParameter("CustomerOwnedIpv4Pool", StringUtils.fromString(allocateAddressRequest.getCustomerOwnedIpv4Pool()));
+        }
+
         return request;
     }
 

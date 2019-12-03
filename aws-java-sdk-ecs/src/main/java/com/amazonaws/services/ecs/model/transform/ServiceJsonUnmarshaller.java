@@ -88,6 +88,11 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setLaunchType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("capacityProviderStrategy", targetDepth)) {
+                    context.nextToken();
+                    service.setCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("platformVersion", targetDepth)) {
                     context.nextToken();
                     service.setPlatformVersion(context.getUnmarshaller(String.class).unmarshall(context));

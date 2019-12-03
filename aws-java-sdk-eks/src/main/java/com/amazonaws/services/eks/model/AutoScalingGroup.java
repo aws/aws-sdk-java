@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AutoScaling group that is associated with an Amazon EKS managed node group.
+ * An Auto Scaling group that is associated with an Amazon EKS managed node group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AutoScalingGroup" target="_top">AWS API
@@ -30,18 +30,18 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the AutoScaling group associated with an Amazon EKS managed node group.
+     * The name of the Auto Scaling group associated with an Amazon EKS managed node group.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the AutoScaling group associated with an Amazon EKS managed node group.
+     * The name of the Auto Scaling group associated with an Amazon EKS managed node group.
      * </p>
      * 
      * @param name
-     *        The name of the AutoScaling group associated with an Amazon EKS managed node group.
+     *        The name of the Auto Scaling group associated with an Amazon EKS managed node group.
      */
 
     public void setName(String name) {
@@ -50,10 +50,10 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the AutoScaling group associated with an Amazon EKS managed node group.
+     * The name of the Auto Scaling group associated with an Amazon EKS managed node group.
      * </p>
      * 
-     * @return The name of the AutoScaling group associated with an Amazon EKS managed node group.
+     * @return The name of the Auto Scaling group associated with an Amazon EKS managed node group.
      */
 
     public String getName() {
@@ -62,11 +62,11 @@ public class AutoScalingGroup implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the AutoScaling group associated with an Amazon EKS managed node group.
+     * The name of the Auto Scaling group associated with an Amazon EKS managed node group.
      * </p>
      * 
      * @param name
-     *        The name of the AutoScaling group associated with an Amazon EKS managed node group.
+     *        The name of the Auto Scaling group associated with an Amazon EKS managed node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

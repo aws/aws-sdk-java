@@ -81,6 +81,12 @@ public class Route implements Serializable, Cloneable {
     private String transitGatewayId;
     /**
      * <p>
+     * The ID of the local gateway.
+     * </p>
+     */
+    private String localGatewayId;
+    /**
+     * <p>
      * The ID of the network interface.
      * </p>
      */
@@ -479,6 +485,46 @@ public class Route implements Serializable, Cloneable {
 
     public Route withTransitGatewayId(String transitGatewayId) {
         setTransitGatewayId(transitGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of the local gateway.
+     */
+
+    public void setLocalGatewayId(String localGatewayId) {
+        this.localGatewayId = localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @return The ID of the local gateway.
+     */
+
+    public String getLocalGatewayId() {
+        return this.localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of the local gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Route withLocalGatewayId(String localGatewayId) {
+        setLocalGatewayId(localGatewayId);
         return this;
     }
 
@@ -918,6 +964,8 @@ public class Route implements Serializable, Cloneable {
             sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
+        if (getLocalGatewayId() != null)
+            sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getOrigin() != null)
@@ -976,6 +1024,10 @@ public class Route implements Serializable, Cloneable {
             return false;
         if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
             return false;
+        if (other.getLocalGatewayId() == null ^ this.getLocalGatewayId() == null)
+            return false;
+        if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -1009,6 +1061,7 @@ public class Route implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

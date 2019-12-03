@@ -33,6 +33,8 @@ public class S3ClientOptions {
     public static final boolean DEFAULT_DUALSTACK_ENABLED = false;
     /** By default, clients should be created with a region. */
     public static final boolean DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED = false;
+    /** By default, clients will not allow a call to a different region that has been specified in an ARN */
+    public static final boolean DEFAULT_USE_ARN_REGION = false;
 
     /*
      * TODO: make it final after we remove the deprecated setters.
@@ -43,6 +45,7 @@ public class S3ClientOptions {
     private final boolean payloadSigningEnabled;
     private final boolean dualstackEnabled;
     private final boolean forceGlobalBucketAccessEnabled;
+    private final boolean useArnRegion;
 
     /**
      * @return a new S3ClientOptions builder.
@@ -60,6 +63,7 @@ public class S3ClientOptions {
         private boolean payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
         private boolean dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
         private boolean forceGlobalBucketAccessEnabled = DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED;
+        private Boolean useArnRegion = null;
 
         private Builder() {}
 
@@ -70,8 +74,7 @@ public class S3ClientOptions {
                                              + "and cannot be enabled together. Please disable one of them");
             }
 
-            return new S3ClientOptions(pathStyleAccess, chunkedEncodingDisabled, accelerateModeEnabled,
-                                       payloadSigningEnabled, dualstackEnabled, forceGlobalBucketAccessEnabled);
+            return new S3ClientOptions(this);
         }
         /**
          * <p>
@@ -193,6 +196,20 @@ public class S3ClientOptions {
             this.forceGlobalBucketAccessEnabled = true;
             return this;
         }
+
+        /**
+         * <p>
+         * If global bucket access is not enabled, this setting will enable the client to make calls to a region
+         * specified in an ARN that represents an S3 resource even if that region is different to the region the client
+         * was initialized with. This setting is disabled by default.
+         * </p>
+         *
+         * @return this Builder instance that can be used for method chaining
+         */
+        public Builder enableUseArnRegion() {
+            this.useArnRegion = true;
+            return this;
+        }
     }
 
     /**
@@ -207,6 +224,7 @@ public class S3ClientOptions {
         this.payloadSigningEnabled = DEFAULT_PAYLOAD_SIGNING_ENABLED;
         this.dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
         this.forceGlobalBucketAccessEnabled = DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED;
+        this.useArnRegion = DEFAULT_USE_ARN_REGION;
     }
 
     /**
@@ -221,16 +239,17 @@ public class S3ClientOptions {
         this.payloadSigningEnabled = other.payloadSigningEnabled;
         this.dualstackEnabled = other.dualstackEnabled;
         this.forceGlobalBucketAccessEnabled = other.forceGlobalBucketAccessEnabled;
+        this.useArnRegion = other.useArnRegion;
     }
 
-    private S3ClientOptions(boolean pathStyleAccess, boolean chunkedEncodingDisabled, boolean accelerateModeEnabled,
-                            boolean payloadSigningEnabled, boolean dualstackEnabled, boolean forceGlobalBucketAccessEnabled) {
-        this.pathStyleAccess = pathStyleAccess;
-        this.chunkedEncodingDisabled = chunkedEncodingDisabled;
-        this.accelerateModeEnabled = accelerateModeEnabled;
-        this.payloadSigningEnabled = payloadSigningEnabled;
-        this.dualstackEnabled = dualstackEnabled;
-        this.forceGlobalBucketAccessEnabled = forceGlobalBucketAccessEnabled;
+    private S3ClientOptions(Builder b) {
+        this.pathStyleAccess = b.pathStyleAccess;
+        this.chunkedEncodingDisabled = b.chunkedEncodingDisabled;
+        this.accelerateModeEnabled = b.accelerateModeEnabled;
+        this.payloadSigningEnabled = b.payloadSigningEnabled;
+        this.dualstackEnabled = b.dualstackEnabled;
+        this.forceGlobalBucketAccessEnabled = b.forceGlobalBucketAccessEnabled;
+        this.useArnRegion = Boolean.TRUE.equals(b.useArnRegion);
     }
 
     /**
@@ -335,6 +354,16 @@ public class S3ClientOptions {
      */
     public boolean isForceGlobalBucketAccessEnabled() {
         return this.forceGlobalBucketAccessEnabled;
+    }
+
+    /**
+     * <p>
+     * Returns whether the client should be configured to allow calls to different regions specified in an ARN.
+     * </p>
+     * @see Builder#enableUseArnRegion()
+     */
+    public boolean isUseArnRegion() {
+        return this.useArnRegion;
     }
 
     /**
