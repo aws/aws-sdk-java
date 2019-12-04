@@ -136,7 +136,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI
      * instance type can be associated with a notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
      * </p>
      */
     private java.util.List<String> acceleratorTypes;
@@ -993,12 +993,13 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI
      * instance type can be associated with a notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
      * </p>
      * 
      * @return A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently
      *         only one EI instance type can be associated with a notebook instance. For more information, see <a
-     *         href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *         SageMaker</a>.
      * @see NotebookInstanceAcceleratorType
      */
 
@@ -1010,13 +1011,14 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI
      * instance type can be associated with a notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
      * </p>
      * 
      * @param acceleratorTypes
      *        A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only
      *        one EI instance type can be associated with a notebook instance. For more information, see <a
-     *        href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
      * @see NotebookInstanceAcceleratorType
      */
 
@@ -1033,7 +1035,7 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI
      * instance type can be associated with a notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1044,7 +1046,8 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * @param acceleratorTypes
      *        A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only
      *        one EI instance type can be associated with a notebook instance. For more information, see <a
-     *        href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotebookInstanceAcceleratorType
      */
@@ -1063,13 +1066,14 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI
      * instance type can be associated with a notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
      * </p>
      * 
      * @param acceleratorTypes
      *        A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only
      *        one EI instance type can be associated with a notebook instance. For more information, see <a
-     *        href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotebookInstanceAcceleratorType
      */
@@ -1083,13 +1087,14 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
      * <p>
      * A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only one EI
      * instance type can be associated with a notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
      * </p>
      * 
      * @param acceleratorTypes
      *        A list of the Elastic Inference (EI) instance types associated with this notebook instance. Currently only
      *        one EI instance type can be associated with a notebook instance. For more information, see <a
-     *        href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
+     *        SageMaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotebookInstanceAcceleratorType
      */

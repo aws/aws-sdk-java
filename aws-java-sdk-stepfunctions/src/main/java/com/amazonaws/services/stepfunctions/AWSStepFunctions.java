@@ -178,6 +178,7 @@ public interface AWSStepFunctions {
      *         The provided Amazon States Language definition is invalid.
      * @throws InvalidNameException
      *         The provided name is invalid.
+     * @throws InvalidLoggingConfigurationException
      * @throws StateMachineAlreadyExistsException
      *         A state machine with the same name but a different definition or role ARN already exists.
      * @throws StateMachineDeletingException
@@ -185,6 +186,7 @@ public interface AWSStepFunctions {
      * @throws StateMachineLimitExceededException
      *         The maximum number of state machines has been reached. Existing state machines must be deleted before a
      *         new state machine can be created.
+     * @throws StateMachineTypeNotSupportedException
      * @throws TooManyTagsException
      *         You've exceeded the number of tags allowed for a resource. See the <a
      *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
@@ -438,6 +440,7 @@ public interface AWSStepFunctions {
      *         The provided token is invalid.
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
+     * @throws StateMachineTypeNotSupportedException
      * @sample AWSStepFunctions.ListExecutions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions" target="_top">AWS API
      *      Documentation</a>
@@ -691,6 +694,7 @@ public interface AWSStepFunctions {
      *         The provided Amazon Resource Name (ARN) is invalid.
      * @throws InvalidDefinitionException
      *         The provided Amazon States Language definition is invalid.
+     * @throws InvalidLoggingConfigurationException
      * @throws MissingRequiredParameterException
      *         Request is missing a required parameter. This error occurs if both <code>definition</code> and
      *         <code>roleArn</code> are not specified.

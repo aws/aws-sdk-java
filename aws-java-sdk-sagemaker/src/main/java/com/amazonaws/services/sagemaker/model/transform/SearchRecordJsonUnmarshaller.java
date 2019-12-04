@@ -52,6 +52,18 @@ public class SearchRecordJsonUnmarshaller implements Unmarshaller<SearchRecord, 
                     context.nextToken();
                     searchRecord.setTrainingJob(TrainingJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Experiment", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setExperiment(ExperimentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Trial", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setTrial(TrialJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TrialComponent", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setTrialComponent(TrialComponentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

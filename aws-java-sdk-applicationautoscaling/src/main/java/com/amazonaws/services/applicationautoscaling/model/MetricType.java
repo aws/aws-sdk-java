@@ -32,7 +32,8 @@ public enum MetricType {
     ECSServiceAverageCPUUtilization("ECSServiceAverageCPUUtilization"),
     ECSServiceAverageMemoryUtilization("ECSServiceAverageMemoryUtilization"),
     AppStreamAverageCapacityUtilization("AppStreamAverageCapacityUtilization"),
-    ComprehendInferenceUtilization("ComprehendInferenceUtilization");
+    ComprehendInferenceUtilization("ComprehendInferenceUtilization"),
+    LambdaProvisionedConcurrencyUtilization("LambdaProvisionedConcurrencyUtilization");
 
     private String value;
 

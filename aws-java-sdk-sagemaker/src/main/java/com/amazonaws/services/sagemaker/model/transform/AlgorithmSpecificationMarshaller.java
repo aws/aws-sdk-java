@@ -36,6 +36,8 @@ public class AlgorithmSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingInputMode").build();
     private static final MarshallingInfo<List> METRICDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricDefinitions").build();
+    private static final MarshallingInfo<Boolean> ENABLESAGEMAKERMETRICSTIMESERIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableSageMakerMetricsTimeSeries").build();
 
     private static final AlgorithmSpecificationMarshaller instance = new AlgorithmSpecificationMarshaller();
 
@@ -57,6 +59,7 @@ public class AlgorithmSpecificationMarshaller {
             protocolMarshaller.marshall(algorithmSpecification.getAlgorithmName(), ALGORITHMNAME_BINDING);
             protocolMarshaller.marshall(algorithmSpecification.getTrainingInputMode(), TRAININGINPUTMODE_BINDING);
             protocolMarshaller.marshall(algorithmSpecification.getMetricDefinitions(), METRICDEFINITIONS_BINDING);
+            protocolMarshaller.marshall(algorithmSpecification.getEnableSageMakerMetricsTimeSeries(), ENABLESAGEMAKERMETRICSTIMESERIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

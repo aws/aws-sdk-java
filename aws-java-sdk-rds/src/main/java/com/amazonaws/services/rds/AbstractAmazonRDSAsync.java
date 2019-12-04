@@ -287,6 +287,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDBProxyResult> createDBProxyAsync(CreateDBProxyRequest request) {
+
+        return createDBProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDBProxyResult> createDBProxyAsync(CreateDBProxyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDBProxyRequest, CreateDBProxyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBSecurityGroup> createDBSecurityGroupAsync(CreateDBSecurityGroupRequest request) {
 
         return createDBSecurityGroupAsync(request, null);
@@ -469,6 +482,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(DeleteDBProxyRequest request) {
+
+        return deleteDBProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(DeleteDBProxyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBProxyRequest, DeleteDBProxyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDBSecurityGroupResult> deleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest request) {
 
         return deleteDBSecurityGroupAsync(request, null);
@@ -555,6 +581,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     @Override
     public java.util.concurrent.Future<DeleteOptionGroupResult> deleteOptionGroupAsync(DeleteOptionGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteOptionGroupRequest, DeleteOptionGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterDBProxyTargetsResult> deregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest request) {
+
+        return deregisterDBProxyTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterDBProxyTargetsResult> deregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterDBProxyTargetsRequest, DeregisterDBProxyTargetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -956,6 +995,45 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     @Override
     public java.util.concurrent.Future<DescribeDBParametersResult> describeDBParametersAsync(DescribeDBParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDBParametersRequest, DescribeDBParametersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(DescribeDBProxiesRequest request) {
+
+        return describeDBProxiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(DescribeDBProxiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBProxiesRequest, DescribeDBProxiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetGroupsResult> describeDBProxyTargetGroupsAsync(DescribeDBProxyTargetGroupsRequest request) {
+
+        return describeDBProxyTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetGroupsResult> describeDBProxyTargetGroupsAsync(DescribeDBProxyTargetGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBProxyTargetGroupsRequest, DescribeDBProxyTargetGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetsResult> describeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest request) {
+
+        return describeDBProxyTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetsResult> describeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBProxyTargetsRequest, DescribeDBProxyTargetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1637,6 +1715,32 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(ModifyDBProxyRequest request) {
+
+        return modifyDBProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(ModifyDBProxyRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBProxyRequest, ModifyDBProxyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDBProxyTargetGroupResult> modifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request) {
+
+        return modifyDBProxyTargetGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDBProxyTargetGroupResult> modifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBProxyTargetGroupRequest, ModifyDBProxyTargetGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBSnapshot> modifyDBSnapshotAsync(ModifyDBSnapshotRequest request) {
 
         return modifyDBSnapshotAsync(request, null);
@@ -1762,6 +1866,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     @Override
     public java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDBProxyTargetsResult> registerDBProxyTargetsAsync(RegisterDBProxyTargetsRequest request) {
+
+        return registerDBProxyTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDBProxyTargetsResult> registerDBProxyTargetsAsync(RegisterDBProxyTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterDBProxyTargetsRequest, RegisterDBProxyTargetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -29,6 +29,12 @@ public class SearchRecordMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> TRAININGJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJob").build();
+    private static final MarshallingInfo<StructuredPojo> EXPERIMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Experiment").build();
+    private static final MarshallingInfo<StructuredPojo> TRIAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Trial").build();
+    private static final MarshallingInfo<StructuredPojo> TRIALCOMPONENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrialComponent").build();
 
     private static final SearchRecordMarshaller instance = new SearchRecordMarshaller();
 
@@ -47,6 +53,9 @@ public class SearchRecordMarshaller {
 
         try {
             protocolMarshaller.marshall(searchRecord.getTrainingJob(), TRAININGJOB_BINDING);
+            protocolMarshaller.marshall(searchRecord.getExperiment(), EXPERIMENT_BINDING);
+            protocolMarshaller.marshall(searchRecord.getTrial(), TRIAL_BINDING);
+            protocolMarshaller.marshall(searchRecord.getTrialComponent(), TRIALCOMPONENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

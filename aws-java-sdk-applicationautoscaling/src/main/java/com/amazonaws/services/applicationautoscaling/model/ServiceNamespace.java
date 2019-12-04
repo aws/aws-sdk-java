@@ -28,7 +28,8 @@ public enum ServiceNamespace {
     Rds("rds"),
     Sagemaker("sagemaker"),
     CustomResource("custom-resource"),
-    Comprehend("comprehend");
+    Comprehend("comprehend"),
+    Lambda("lambda");
 
     private String value;
 

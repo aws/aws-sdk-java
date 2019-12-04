@@ -32,6 +32,8 @@ public class CreateEndpointConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointConfigName").build();
     private static final MarshallingInfo<List> PRODUCTIONVARIANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductionVariants").build();
+    private static final MarshallingInfo<StructuredPojo> DATACAPTURECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCaptureConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class CreateEndpointConfigRequestMarshaller {
         try {
             protocolMarshaller.marshall(createEndpointConfigRequest.getEndpointConfigName(), ENDPOINTCONFIGNAME_BINDING);
             protocolMarshaller.marshall(createEndpointConfigRequest.getProductionVariants(), PRODUCTIONVARIANTS_BINDING);
+            protocolMarshaller.marshall(createEndpointConfigRequest.getDataCaptureConfig(), DATACAPTURECONFIG_BINDING);
             protocolMarshaller.marshall(createEndpointConfigRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createEndpointConfigRequest.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {

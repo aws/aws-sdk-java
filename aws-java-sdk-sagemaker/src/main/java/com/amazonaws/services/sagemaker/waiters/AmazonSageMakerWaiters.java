@@ -113,6 +113,21 @@ public class AmazonSageMakerWaiters {
     }
 
     /**
+     * Builds a ProcessingJobCompletedOrStopped waiter by using custom parameters waiterParameters and other parameters
+     * defined in the waiters specification, and then polls until it determines whether the resource entered the desired
+     * state or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeProcessingJobRequest> processingJobCompletedOrStopped() {
+
+        return new WaiterBuilder<DescribeProcessingJobRequest, DescribeProcessingJobResult>()
+                .withSdkFunction(new DescribeProcessingJobFunction(client))
+                .withAcceptors(new ProcessingJobCompletedOrStopped.IsCompletedMatcher(), new ProcessingJobCompletedOrStopped.IsStoppedMatcher(),
+                        new ProcessingJobCompletedOrStopped.IsFailedMatcher(), new ProcessingJobCompletedOrStopped.IsValidationExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(60)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a TransformJobCompletedOrStopped waiter by using custom parameters waiterParameters and other parameters
      * defined in the waiters specification, and then polls until it determines whether the resource entered the desired
      * state or not, where polling criteria is bound by either default polling strategy or custom polling strategy.

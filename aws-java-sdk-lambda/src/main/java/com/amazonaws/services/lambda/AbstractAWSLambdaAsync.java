@@ -172,6 +172,21 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteProvisionedConcurrencyConfigResult> deleteProvisionedConcurrencyConfigAsync(
+            DeleteProvisionedConcurrencyConfigRequest request) {
+
+        return deleteProvisionedConcurrencyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProvisionedConcurrencyConfigResult> deleteProvisionedConcurrencyConfigAsync(
+            DeleteProvisionedConcurrencyConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteProvisionedConcurrencyConfigRequest, DeleteProvisionedConcurrencyConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest request) {
 
         return getAccountSettingsAsync(request, null);
@@ -219,6 +234,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionConcurrencyResult> getFunctionConcurrencyAsync(GetFunctionConcurrencyRequest request) {
+
+        return getFunctionConcurrencyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionConcurrencyResult> getFunctionConcurrencyAsync(GetFunctionConcurrencyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionConcurrencyRequest, GetFunctionConcurrencyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -297,6 +325,21 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProvisionedConcurrencyConfigResult> getProvisionedConcurrencyConfigAsync(
+            GetProvisionedConcurrencyConfigRequest request) {
+
+        return getProvisionedConcurrencyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProvisionedConcurrencyConfigResult> getProvisionedConcurrencyConfigAsync(
+            GetProvisionedConcurrencyConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetProvisionedConcurrencyConfigRequest, GetProvisionedConcurrencyConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -454,6 +497,21 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     }
 
     @Override
+    public java.util.concurrent.Future<ListProvisionedConcurrencyConfigsResult> listProvisionedConcurrencyConfigsAsync(
+            ListProvisionedConcurrencyConfigsRequest request) {
+
+        return listProvisionedConcurrencyConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProvisionedConcurrencyConfigsResult> listProvisionedConcurrencyConfigsAsync(
+            ListProvisionedConcurrencyConfigsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListProvisionedConcurrencyConfigsRequest, ListProvisionedConcurrencyConfigsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -527,6 +585,21 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<PutFunctionEventInvokeConfigResult> putFunctionEventInvokeConfigAsync(PutFunctionEventInvokeConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<PutFunctionEventInvokeConfigRequest, PutFunctionEventInvokeConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutProvisionedConcurrencyConfigResult> putProvisionedConcurrencyConfigAsync(
+            PutProvisionedConcurrencyConfigRequest request) {
+
+        return putProvisionedConcurrencyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutProvisionedConcurrencyConfigResult> putProvisionedConcurrencyConfigAsync(
+            PutProvisionedConcurrencyConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutProvisionedConcurrencyConfigRequest, PutProvisionedConcurrencyConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

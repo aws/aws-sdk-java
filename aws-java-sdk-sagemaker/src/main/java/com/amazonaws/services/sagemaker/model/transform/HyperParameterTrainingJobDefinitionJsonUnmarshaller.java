@@ -48,6 +48,18 @@ public class HyperParameterTrainingJobDefinitionJsonUnmarshaller implements Unma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("DefinitionName", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobDefinition.setDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TuningObjective", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobDefinition.setTuningObjective(HyperParameterTuningJobObjectiveJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("HyperParameterRanges", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobDefinition.setHyperParameterRanges(ParameterRangesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("StaticHyperParameters", targetDepth)) {
                     context.nextToken();
                     hyperParameterTrainingJobDefinition.setStaticHyperParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class),

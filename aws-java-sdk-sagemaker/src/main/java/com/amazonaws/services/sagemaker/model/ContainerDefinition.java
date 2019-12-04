@@ -33,7 +33,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.
      * </p>
      * <p>
-     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of ths parameter uniquely
+     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely
      * identifies the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics
      * to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a
@@ -58,7 +58,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String image;
     /**
      * <p>
-     * Specifies whether the container hosts a single model or multiple models.
+     * Whether the container hosts a single model or multiple models.
      * </p>
      */
     private String mode;
@@ -105,7 +105,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.
      * </p>
      * <p>
-     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of ths parameter uniquely
+     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely
      * identifies the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics
      * to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a
@@ -119,7 +119,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param containerHostname
      *        This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
      *        <p>
-     *        When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of ths parameter
+     *        When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter
      *        uniquely identifies the container for the purposes of logging and metrics. For information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and
      *        Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a
@@ -139,7 +139,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.
      * </p>
      * <p>
-     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of ths parameter uniquely
+     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely
      * identifies the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics
      * to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a
@@ -152,7 +152,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @return This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
      *         <p>
-     *         When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of ths parameter
+     *         When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter
      *         uniquely identifies the container for the purposes of logging and metrics. For information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and
      *         Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a
@@ -172,7 +172,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.
      * </p>
      * <p>
-     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of ths parameter uniquely
+     * When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely
      * identifies the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics
      * to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a
@@ -186,7 +186,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param containerHostname
      *        This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
      *        <p>
-     *        When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of ths parameter
+     *        When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter
      *        uniquely identifies the container for the purposes of logging and metrics. For information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and
      *        Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a
@@ -275,11 +275,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the container hosts a single model or multiple models.
+     * Whether the container hosts a single model or multiple models.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the container hosts a single model or multiple models.
+     *        Whether the container hosts a single model or multiple models.
      * @see ContainerMode
      */
 
@@ -289,10 +289,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the container hosts a single model or multiple models.
+     * Whether the container hosts a single model or multiple models.
      * </p>
      * 
-     * @return Specifies whether the container hosts a single model or multiple models.
+     * @return Whether the container hosts a single model or multiple models.
      * @see ContainerMode
      */
 
@@ -302,11 +302,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the container hosts a single model or multiple models.
+     * Whether the container hosts a single model or multiple models.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the container hosts a single model or multiple models.
+     *        Whether the container hosts a single model or multiple models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerMode
      */
@@ -318,11 +318,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the container hosts a single model or multiple models.
+     * Whether the container hosts a single model or multiple models.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the container hosts a single model or multiple models.
+     *        Whether the container hosts a single model or multiple models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerMode
      */

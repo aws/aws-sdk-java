@@ -37,6 +37,8 @@ public class HyperParameterTuningJobConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParameterRanges").build();
     private static final MarshallingInfo<String> TRAININGJOBEARLYSTOPPINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobEarlyStoppingType").build();
+    private static final MarshallingInfo<StructuredPojo> TUNINGJOBCOMPLETIONCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TuningJobCompletionCriteria").build();
 
     private static final HyperParameterTuningJobConfigMarshaller instance = new HyperParameterTuningJobConfigMarshaller();
 
@@ -59,6 +61,7 @@ public class HyperParameterTuningJobConfigMarshaller {
             protocolMarshaller.marshall(hyperParameterTuningJobConfig.getResourceLimits(), RESOURCELIMITS_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobConfig.getParameterRanges(), PARAMETERRANGES_BINDING);
             protocolMarshaller.marshall(hyperParameterTuningJobConfig.getTrainingJobEarlyStoppingType(), TRAININGJOBEARLYSTOPPINGTYPE_BINDING);
+            protocolMarshaller.marshall(hyperParameterTuningJobConfig.getTuningJobCompletionCriteria(), TUNINGJOBCOMPLETIONCRITERIA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

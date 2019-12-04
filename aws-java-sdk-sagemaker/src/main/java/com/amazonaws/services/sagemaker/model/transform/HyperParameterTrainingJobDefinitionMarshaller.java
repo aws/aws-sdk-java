@@ -29,6 +29,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HyperParameterTrainingJobDefinitionMarshaller {
 
+    private static final MarshallingInfo<String> DEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefinitionName").build();
+    private static final MarshallingInfo<StructuredPojo> TUNINGOBJECTIVE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TuningObjective").build();
+    private static final MarshallingInfo<StructuredPojo> HYPERPARAMETERRANGES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HyperParameterRanges").build();
     private static final MarshallingInfo<Map> STATICHYPERPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StaticHyperParameters").build();
     private static final MarshallingInfo<StructuredPojo> ALGORITHMSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -70,6 +76,9 @@ public class HyperParameterTrainingJobDefinitionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getDefinitionName(), DEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getTuningObjective(), TUNINGOBJECTIVE_BINDING);
+            protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getHyperParameterRanges(), HYPERPARAMETERRANGES_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getStaticHyperParameters(), STATICHYPERPARAMETERS_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getAlgorithmSpecification(), ALGORITHMSPECIFICATION_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getRoleArn(), ROLEARN_BINDING);

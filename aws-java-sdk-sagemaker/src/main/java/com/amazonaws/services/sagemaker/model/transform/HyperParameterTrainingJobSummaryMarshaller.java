@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HyperParameterTrainingJobSummaryMarshaller {
 
+    private static final MarshallingInfo<String> TRAININGJOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobDefinitionName").build();
     private static final MarshallingInfo<String> TRAININGJOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJobName").build();
     private static final MarshallingInfo<String> TRAININGJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class HyperParameterTrainingJobSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTrainingJobDefinitionName(), TRAININGJOBDEFINITIONNAME_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTrainingJobName(), TRAININGJOBNAME_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTrainingJobArn(), TRAININGJOBARN_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobSummary.getTuningJobName(), TUNINGJOBNAME_BINDING);

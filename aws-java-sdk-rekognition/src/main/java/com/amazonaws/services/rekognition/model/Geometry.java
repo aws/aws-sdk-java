@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about where the text detected by <a>DetectText</a> is located on an image.
+ * Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An axis-aligned coarse representation of the detected text's location on the image.
+     * An axis-aligned coarse representation of the detected item's location on the image.
      * </p>
      */
     private BoundingBox boundingBox;
     /**
      * <p>
-     * Within the bounding box, a fine-grained polygon around the detected text.
+     * Within the bounding box, a fine-grained polygon around the detected item.
      * </p>
      */
     private java.util.List<Point> polygon;
 
     /**
      * <p>
-     * An axis-aligned coarse representation of the detected text's location on the image.
+     * An axis-aligned coarse representation of the detected item's location on the image.
      * </p>
      * 
      * @param boundingBox
-     *        An axis-aligned coarse representation of the detected text's location on the image.
+     *        An axis-aligned coarse representation of the detected item's location on the image.
      */
 
     public void setBoundingBox(BoundingBox boundingBox) {
@@ -53,10 +53,10 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An axis-aligned coarse representation of the detected text's location on the image.
+     * An axis-aligned coarse representation of the detected item's location on the image.
      * </p>
      * 
-     * @return An axis-aligned coarse representation of the detected text's location on the image.
+     * @return An axis-aligned coarse representation of the detected item's location on the image.
      */
 
     public BoundingBox getBoundingBox() {
@@ -65,11 +65,11 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An axis-aligned coarse representation of the detected text's location on the image.
+     * An axis-aligned coarse representation of the detected item's location on the image.
      * </p>
      * 
      * @param boundingBox
-     *        An axis-aligned coarse representation of the detected text's location on the image.
+     *        An axis-aligned coarse representation of the detected item's location on the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Within the bounding box, a fine-grained polygon around the detected text.
+     * Within the bounding box, a fine-grained polygon around the detected item.
      * </p>
      * 
-     * @return Within the bounding box, a fine-grained polygon around the detected text.
+     * @return Within the bounding box, a fine-grained polygon around the detected item.
      */
 
     public java.util.List<Point> getPolygon() {
@@ -92,11 +92,11 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Within the bounding box, a fine-grained polygon around the detected text.
+     * Within the bounding box, a fine-grained polygon around the detected item.
      * </p>
      * 
      * @param polygon
-     *        Within the bounding box, a fine-grained polygon around the detected text.
+     *        Within the bounding box, a fine-grained polygon around the detected item.
      */
 
     public void setPolygon(java.util.Collection<Point> polygon) {
@@ -110,7 +110,7 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Within the bounding box, a fine-grained polygon around the detected text.
+     * Within the bounding box, a fine-grained polygon around the detected item.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param polygon
-     *        Within the bounding box, a fine-grained polygon around the detected text.
+     *        Within the bounding box, a fine-grained polygon around the detected item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class Geometry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Within the bounding box, a fine-grained polygon around the detected text.
+     * Within the bounding box, a fine-grained polygon around the detected item.
      * </p>
      * 
      * @param polygon
-     *        Within the bounding box, a fine-grained polygon around the detected text.
+     *        Within the bounding box, a fine-grained polygon around the detected item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

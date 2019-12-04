@@ -974,6 +974,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDBProxyResult> createDBProxyAsync(CreateDBProxyRequest request) {
+
+        return createDBProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDBProxyResult> createDBProxyAsync(final CreateDBProxyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDBProxyRequest, CreateDBProxyResult> asyncHandler) {
+        final CreateDBProxyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDBProxyResult>() {
+            @Override
+            public CreateDBProxyResult call() throws Exception {
+                CreateDBProxyResult result = null;
+
+                try {
+                    result = executeCreateDBProxy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBSecurityGroup> createDBSecurityGroupAsync(CreateDBSecurityGroupRequest request) {
 
         return createDBSecurityGroupAsync(request, null);
@@ -1437,6 +1470,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(DeleteDBProxyRequest request) {
+
+        return deleteDBProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(final DeleteDBProxyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDBProxyRequest, DeleteDBProxyResult> asyncHandler) {
+        final DeleteDBProxyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDBProxyResult>() {
+            @Override
+            public DeleteDBProxyResult call() throws Exception {
+                DeleteDBProxyResult result = null;
+
+                try {
+                    result = executeDeleteDBProxy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDBSecurityGroupResult> deleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest request) {
 
         return deleteDBSecurityGroupAsync(request, null);
@@ -1652,6 +1718,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
 
                 try {
                     result = executeDeleteOptionGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterDBProxyTargetsResult> deregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest request) {
+
+        return deregisterDBProxyTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterDBProxyTargetsResult> deregisterDBProxyTargetsAsync(final DeregisterDBProxyTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterDBProxyTargetsRequest, DeregisterDBProxyTargetsResult> asyncHandler) {
+        final DeregisterDBProxyTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterDBProxyTargetsResult>() {
+            @Override
+            public DeregisterDBProxyTargetsResult call() throws Exception {
+                DeregisterDBProxyTargetsResult result = null;
+
+                try {
+                    result = executeDeregisterDBProxyTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2373,6 +2472,105 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
 
                 try {
                     result = executeDescribeDBParameters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(DescribeDBProxiesRequest request) {
+
+        return describeDBProxiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(final DescribeDBProxiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDBProxiesRequest, DescribeDBProxiesResult> asyncHandler) {
+        final DescribeDBProxiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDBProxiesResult>() {
+            @Override
+            public DescribeDBProxiesResult call() throws Exception {
+                DescribeDBProxiesResult result = null;
+
+                try {
+                    result = executeDescribeDBProxies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetGroupsResult> describeDBProxyTargetGroupsAsync(DescribeDBProxyTargetGroupsRequest request) {
+
+        return describeDBProxyTargetGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetGroupsResult> describeDBProxyTargetGroupsAsync(final DescribeDBProxyTargetGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDBProxyTargetGroupsRequest, DescribeDBProxyTargetGroupsResult> asyncHandler) {
+        final DescribeDBProxyTargetGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDBProxyTargetGroupsResult>() {
+            @Override
+            public DescribeDBProxyTargetGroupsResult call() throws Exception {
+                DescribeDBProxyTargetGroupsResult result = null;
+
+                try {
+                    result = executeDescribeDBProxyTargetGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetsResult> describeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest request) {
+
+        return describeDBProxyTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBProxyTargetsResult> describeDBProxyTargetsAsync(final DescribeDBProxyTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDBProxyTargetsRequest, DescribeDBProxyTargetsResult> asyncHandler) {
+        final DescribeDBProxyTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDBProxyTargetsResult>() {
+            @Override
+            public DescribeDBProxyTargetsResult call() throws Exception {
+                DescribeDBProxyTargetsResult result = null;
+
+                try {
+                    result = executeDescribeDBProxyTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3667,6 +3865,72 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(ModifyDBProxyRequest request) {
+
+        return modifyDBProxyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(final ModifyDBProxyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyDBProxyRequest, ModifyDBProxyResult> asyncHandler) {
+        final ModifyDBProxyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyDBProxyResult>() {
+            @Override
+            public ModifyDBProxyResult call() throws Exception {
+                ModifyDBProxyResult result = null;
+
+                try {
+                    result = executeModifyDBProxy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDBProxyTargetGroupResult> modifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request) {
+
+        return modifyDBProxyTargetGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyDBProxyTargetGroupResult> modifyDBProxyTargetGroupAsync(final ModifyDBProxyTargetGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyDBProxyTargetGroupRequest, ModifyDBProxyTargetGroupResult> asyncHandler) {
+        final ModifyDBProxyTargetGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyDBProxyTargetGroupResult>() {
+            @Override
+            public ModifyDBProxyTargetGroupResult call() throws Exception {
+                ModifyDBProxyTargetGroupResult result = null;
+
+                try {
+                    result = executeModifyDBProxyTargetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBSnapshot> modifyDBSnapshotAsync(ModifyDBSnapshotRequest request) {
 
         return modifyDBSnapshotAsync(request, null);
@@ -3981,6 +4245,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
 
                 try {
                     result = executeRebootDBInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDBProxyTargetsResult> registerDBProxyTargetsAsync(RegisterDBProxyTargetsRequest request) {
+
+        return registerDBProxyTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterDBProxyTargetsResult> registerDBProxyTargetsAsync(final RegisterDBProxyTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterDBProxyTargetsRequest, RegisterDBProxyTargetsResult> asyncHandler) {
+        final RegisterDBProxyTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterDBProxyTargetsResult>() {
+            @Override
+            public RegisterDBProxyTargetsResult call() throws Exception {
+                RegisterDBProxyTargetsResult result = null;
+
+                try {
+                    result = executeRegisterDBProxyTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

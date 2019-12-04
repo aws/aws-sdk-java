@@ -77,6 +77,18 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     private String roleArn;
     /**
      * <p>
+     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * Defines what execution history events are logged and where they are logged.
+     * </p>
+     */
+    private LoggingConfiguration loggingConfiguration;
+    /**
+     * <p>
      * Tags to be added when creating a state machine.
      * </p>
      * <p>
@@ -437,6 +449,105 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * </p>
+     * 
+     * @param type
+     *        Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * @see StateMachineType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * </p>
+     * 
+     * @return Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * @see StateMachineType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * </p>
+     * 
+     * @param type
+     *        Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateMachineType
+     */
+
+    public CreateStateMachineRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * </p>
+     * 
+     * @param type
+     *        Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateMachineType
+     */
+
+    public CreateStateMachineRequest withType(StateMachineType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines what execution history events are logged and where they are logged.
+     * </p>
+     * 
+     * @param loggingConfiguration
+     *        Defines what execution history events are logged and where they are logged.
+     */
+
+    public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        this.loggingConfiguration = loggingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Defines what execution history events are logged and where they are logged.
+     * </p>
+     * 
+     * @return Defines what execution history events are logged and where they are logged.
+     */
+
+    public LoggingConfiguration getLoggingConfiguration() {
+        return this.loggingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Defines what execution history events are logged and where they are logged.
+     * </p>
+     * 
+     * @param loggingConfiguration
+     *        Defines what execution history events are logged and where they are logged.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineRequest withLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        setLoggingConfiguration(loggingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Tags to be added when creating a state machine.
      * </p>
      * <p>
@@ -600,6 +711,10 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("Definition: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getLoggingConfiguration() != null)
+            sb.append("LoggingConfiguration: ").append(getLoggingConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -628,6 +743,14 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getLoggingConfiguration() == null ^ this.getLoggingConfiguration() == null)
+            return false;
+        if (other.getLoggingConfiguration() != null && other.getLoggingConfiguration().equals(this.getLoggingConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -643,6 +766,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

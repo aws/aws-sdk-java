@@ -94,6 +94,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public DeleteProvisionedConcurrencyConfigResult deleteProvisionedConcurrencyConfig(DeleteProvisionedConcurrencyConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +115,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public GetFunctionResult getFunction(GetFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFunctionConcurrencyResult getFunctionConcurrency(GetFunctionConcurrencyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,6 +150,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public GetPolicyResult getPolicy(GetPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetProvisionedConcurrencyConfigResult getProvisionedConcurrencyConfig(GetProvisionedConcurrencyConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -195,6 +210,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public ListProvisionedConcurrencyConfigsResult listProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsResult listTags(ListTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -221,6 +241,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public PutFunctionEventInvokeConfigResult putFunctionEventInvokeConfig(PutFunctionEventInvokeConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutProvisionedConcurrencyConfigResult putProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

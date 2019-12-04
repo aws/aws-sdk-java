@@ -30,6 +30,16 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
+     * The job definition name.
+     * </p>
+     */
+    private String definitionName;
+
+    private HyperParameterTuningJobObjective tuningObjective;
+
+    private ParameterRanges hyperParameterRanges;
+    /**
+     * <p>
      * Specifies the values of hyperparameters that do not change for the tuning job.
      * </p>
      */
@@ -121,6 +131,98 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     private Boolean enableManagedSpotTraining;
 
     private CheckpointConfig checkpointConfig;
+
+    /**
+     * <p>
+     * The job definition name.
+     * </p>
+     * 
+     * @param definitionName
+     *        The job definition name.
+     */
+
+    public void setDefinitionName(String definitionName) {
+        this.definitionName = definitionName;
+    }
+
+    /**
+     * <p>
+     * The job definition name.
+     * </p>
+     * 
+     * @return The job definition name.
+     */
+
+    public String getDefinitionName() {
+        return this.definitionName;
+    }
+
+    /**
+     * <p>
+     * The job definition name.
+     * </p>
+     * 
+     * @param definitionName
+     *        The job definition name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobDefinition withDefinitionName(String definitionName) {
+        setDefinitionName(definitionName);
+        return this;
+    }
+
+    /**
+     * @param tuningObjective
+     */
+
+    public void setTuningObjective(HyperParameterTuningJobObjective tuningObjective) {
+        this.tuningObjective = tuningObjective;
+    }
+
+    /**
+     * @return
+     */
+
+    public HyperParameterTuningJobObjective getTuningObjective() {
+        return this.tuningObjective;
+    }
+
+    /**
+     * @param tuningObjective
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobDefinition withTuningObjective(HyperParameterTuningJobObjective tuningObjective) {
+        setTuningObjective(tuningObjective);
+        return this;
+    }
+
+    /**
+     * @param hyperParameterRanges
+     */
+
+    public void setHyperParameterRanges(ParameterRanges hyperParameterRanges) {
+        this.hyperParameterRanges = hyperParameterRanges;
+    }
+
+    /**
+     * @return
+     */
+
+    public ParameterRanges getHyperParameterRanges() {
+        return this.hyperParameterRanges;
+    }
+
+    /**
+     * @param hyperParameterRanges
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobDefinition withHyperParameterRanges(ParameterRanges hyperParameterRanges) {
+        setHyperParameterRanges(hyperParameterRanges);
+        return this;
+    }
 
     /**
      * <p>
@@ -866,6 +968,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDefinitionName() != null)
+            sb.append("DefinitionName: ").append(getDefinitionName()).append(",");
+        if (getTuningObjective() != null)
+            sb.append("TuningObjective: ").append(getTuningObjective()).append(",");
+        if (getHyperParameterRanges() != null)
+            sb.append("HyperParameterRanges: ").append(getHyperParameterRanges()).append(",");
         if (getStaticHyperParameters() != null)
             sb.append("StaticHyperParameters: ").append(getStaticHyperParameters()).append(",");
         if (getAlgorithmSpecification() != null)
@@ -904,6 +1012,18 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
         if (obj instanceof HyperParameterTrainingJobDefinition == false)
             return false;
         HyperParameterTrainingJobDefinition other = (HyperParameterTrainingJobDefinition) obj;
+        if (other.getDefinitionName() == null ^ this.getDefinitionName() == null)
+            return false;
+        if (other.getDefinitionName() != null && other.getDefinitionName().equals(this.getDefinitionName()) == false)
+            return false;
+        if (other.getTuningObjective() == null ^ this.getTuningObjective() == null)
+            return false;
+        if (other.getTuningObjective() != null && other.getTuningObjective().equals(this.getTuningObjective()) == false)
+            return false;
+        if (other.getHyperParameterRanges() == null ^ this.getHyperParameterRanges() == null)
+            return false;
+        if (other.getHyperParameterRanges() != null && other.getHyperParameterRanges().equals(this.getHyperParameterRanges()) == false)
+            return false;
         if (other.getStaticHyperParameters() == null ^ this.getStaticHyperParameters() == null)
             return false;
         if (other.getStaticHyperParameters() != null && other.getStaticHyperParameters().equals(this.getStaticHyperParameters()) == false)
@@ -961,6 +1081,9 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDefinitionName() == null) ? 0 : getDefinitionName().hashCode());
+        hashCode = prime * hashCode + ((getTuningObjective() == null) ? 0 : getTuningObjective().hashCode());
+        hashCode = prime * hashCode + ((getHyperParameterRanges() == null) ? 0 : getHyperParameterRanges().hashCode());
         hashCode = prime * hashCode + ((getStaticHyperParameters() == null) ? 0 : getStaticHyperParameters().hashCode());
         hashCode = prime * hashCode + ((getAlgorithmSpecification() == null) ? 0 : getAlgorithmSpecification().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

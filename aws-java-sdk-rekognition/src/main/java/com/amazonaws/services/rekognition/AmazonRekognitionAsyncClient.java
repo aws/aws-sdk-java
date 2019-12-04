@@ -311,6 +311,72 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request) {
+
+        return createProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(final CreateProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult> asyncHandler) {
+        final CreateProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateProjectResult>() {
+            @Override
+            public CreateProjectResult call() throws Exception {
+                CreateProjectResult result = null;
+
+                try {
+                    result = executeCreateProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProjectVersionResult> createProjectVersionAsync(CreateProjectVersionRequest request) {
+
+        return createProjectVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProjectVersionResult> createProjectVersionAsync(final CreateProjectVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateProjectVersionRequest, CreateProjectVersionResult> asyncHandler) {
+        final CreateProjectVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateProjectVersionResult>() {
+            @Override
+            public CreateProjectVersionResult call() throws Exception {
+                CreateProjectVersionResult result = null;
+
+                try {
+                    result = executeCreateProjectVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStreamProcessorResult> createStreamProcessorAsync(CreateStreamProcessorRequest request) {
 
         return createStreamProcessorAsync(request, null);
@@ -476,6 +542,72 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeProjectVersionsResult> describeProjectVersionsAsync(DescribeProjectVersionsRequest request) {
+
+        return describeProjectVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProjectVersionsResult> describeProjectVersionsAsync(final DescribeProjectVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProjectVersionsRequest, DescribeProjectVersionsResult> asyncHandler) {
+        final DescribeProjectVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProjectVersionsResult>() {
+            @Override
+            public DescribeProjectVersionsResult call() throws Exception {
+                DescribeProjectVersionsResult result = null;
+
+                try {
+                    result = executeDescribeProjectVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProjectsResult> describeProjectsAsync(DescribeProjectsRequest request) {
+
+        return describeProjectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProjectsResult> describeProjectsAsync(final DescribeProjectsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProjectsRequest, DescribeProjectsResult> asyncHandler) {
+        final DescribeProjectsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProjectsResult>() {
+            @Override
+            public DescribeProjectsResult call() throws Exception {
+                DescribeProjectsResult result = null;
+
+                try {
+                    result = executeDescribeProjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStreamProcessorResult> describeStreamProcessorAsync(DescribeStreamProcessorRequest request) {
 
         return describeStreamProcessorAsync(request, null);
@@ -493,6 +625,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeDescribeStreamProcessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectCustomLabelsResult> detectCustomLabelsAsync(DetectCustomLabelsRequest request) {
+
+        return detectCustomLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectCustomLabelsResult> detectCustomLabelsAsync(final DetectCustomLabelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectCustomLabelsRequest, DetectCustomLabelsResult> asyncHandler) {
+        final DetectCustomLabelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectCustomLabelsResult>() {
+            @Override
+            public DetectCustomLabelsResult call() throws Exception {
+                DetectCustomLabelsResult result = null;
+
+                try {
+                    result = executeDetectCustomLabels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1301,6 +1466,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<StartProjectVersionResult> startProjectVersionAsync(StartProjectVersionRequest request) {
+
+        return startProjectVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartProjectVersionResult> startProjectVersionAsync(final StartProjectVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartProjectVersionRequest, StartProjectVersionResult> asyncHandler) {
+        final StartProjectVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartProjectVersionResult>() {
+            @Override
+            public StartProjectVersionResult call() throws Exception {
+                StartProjectVersionResult result = null;
+
+                try {
+                    result = executeStartProjectVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartStreamProcessorResult> startStreamProcessorAsync(StartStreamProcessorRequest request) {
 
         return startStreamProcessorAsync(request, null);
@@ -1318,6 +1516,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeStartStreamProcessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopProjectVersionResult> stopProjectVersionAsync(StopProjectVersionRequest request) {
+
+        return stopProjectVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopProjectVersionResult> stopProjectVersionAsync(final StopProjectVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopProjectVersionRequest, StopProjectVersionResult> asyncHandler) {
+        final StopProjectVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopProjectVersionResult>() {
+            @Override
+            public StopProjectVersionResult call() throws Exception {
+                StopProjectVersionResult result = null;
+
+                try {
+                    result = executeStopProjectVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

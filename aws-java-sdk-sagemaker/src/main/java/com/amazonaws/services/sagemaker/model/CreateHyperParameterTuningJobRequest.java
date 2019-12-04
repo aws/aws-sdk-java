@@ -49,6 +49,8 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private HyperParameterTrainingJobDefinition trainingJobDefinition;
+    /** <p/> */
+    private java.util.List<HyperParameterTrainingJobDefinition> trainingJobDefinitions;
     /**
      * <p>
      * Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as
@@ -74,8 +76,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -243,6 +244,65 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public java.util.List<HyperParameterTrainingJobDefinition> getTrainingJobDefinitions() {
+        return trainingJobDefinitions;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param trainingJobDefinitions
+     */
+
+    public void setTrainingJobDefinitions(java.util.Collection<HyperParameterTrainingJobDefinition> trainingJobDefinitions) {
+        if (trainingJobDefinitions == null) {
+            this.trainingJobDefinitions = null;
+            return;
+        }
+
+        this.trainingJobDefinitions = new java.util.ArrayList<HyperParameterTrainingJobDefinition>(trainingJobDefinitions);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTrainingJobDefinitions(java.util.Collection)} or
+     * {@link #withTrainingJobDefinitions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param trainingJobDefinitions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateHyperParameterTuningJobRequest withTrainingJobDefinitions(HyperParameterTrainingJobDefinition... trainingJobDefinitions) {
+        if (this.trainingJobDefinitions == null) {
+            setTrainingJobDefinitions(new java.util.ArrayList<HyperParameterTrainingJobDefinition>(trainingJobDefinitions.length));
+        }
+        for (HyperParameterTrainingJobDefinition ele : trainingJobDefinitions) {
+            this.trainingJobDefinitions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param trainingJobDefinitions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateHyperParameterTuningJobRequest withTrainingJobDefinitions(java.util.Collection<HyperParameterTrainingJobDefinition> trainingJobDefinitions) {
+        setTrainingJobDefinitions(trainingJobDefinitions);
+        return this;
+    }
+
+    /**
      * <p>
      * Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as
      * a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
@@ -373,17 +433,16 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * </p>
      * 
      * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *         example, by purpose, owner, or environment. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/"
-     *         >AWS Tagging Strategies</a>.</p>
+     *         example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *         Strategies</a>.</p>
      *         <p>
      *         Tags that you specify for the tuning job are also added to all training jobs that the tuning job
      *         launches.
@@ -397,8 +456,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -406,9 +464,9 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * 
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     *        Tagging Strategies</a>.</p>
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
      *        <p>
      *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      */
@@ -426,8 +484,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -440,9 +497,9 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * 
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     *        Tagging Strategies</a>.</p>
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
      *        <p>
      *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -462,8 +519,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     * Tagging Strategies</a>.
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -471,9 +527,9 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * 
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
-     *        example, by purpose, owner, or environment. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-     *        Tagging Strategies</a>.</p>
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     *        Strategies</a>.</p>
      *        <p>
      *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -502,6 +558,8 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
             sb.append("HyperParameterTuningJobConfig: ").append(getHyperParameterTuningJobConfig()).append(",");
         if (getTrainingJobDefinition() != null)
             sb.append("TrainingJobDefinition: ").append(getTrainingJobDefinition()).append(",");
+        if (getTrainingJobDefinitions() != null)
+            sb.append("TrainingJobDefinitions: ").append(getTrainingJobDefinitions()).append(",");
         if (getWarmStartConfig() != null)
             sb.append("WarmStartConfig: ").append(getWarmStartConfig()).append(",");
         if (getTags() != null)
@@ -533,6 +591,10 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getTrainingJobDefinition() != null && other.getTrainingJobDefinition().equals(this.getTrainingJobDefinition()) == false)
             return false;
+        if (other.getTrainingJobDefinitions() == null ^ this.getTrainingJobDefinitions() == null)
+            return false;
+        if (other.getTrainingJobDefinitions() != null && other.getTrainingJobDefinitions().equals(this.getTrainingJobDefinitions()) == false)
+            return false;
         if (other.getWarmStartConfig() == null ^ this.getWarmStartConfig() == null)
             return false;
         if (other.getWarmStartConfig() != null && other.getWarmStartConfig().equals(this.getWarmStartConfig()) == false)
@@ -552,6 +614,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getHyperParameterTuningJobName() == null) ? 0 : getHyperParameterTuningJobName().hashCode());
         hashCode = prime * hashCode + ((getHyperParameterTuningJobConfig() == null) ? 0 : getHyperParameterTuningJobConfig().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobDefinition() == null) ? 0 : getTrainingJobDefinition().hashCode());
+        hashCode = prime * hashCode + ((getTrainingJobDefinitions() == null) ? 0 : getTrainingJobDefinitions().hashCode());
         hashCode = prime * hashCode + ((getWarmStartConfig() == null) ? 0 : getWarmStartConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

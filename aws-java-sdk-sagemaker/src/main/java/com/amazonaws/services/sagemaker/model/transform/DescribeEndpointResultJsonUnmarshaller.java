@@ -65,6 +65,10 @@ public class DescribeEndpointResultJsonUnmarshaller implements Unmarshaller<Desc
                     describeEndpointResult.setProductionVariants(new ListUnmarshaller<ProductionVariantSummary>(ProductionVariantSummaryJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("DataCaptureConfig", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointResult.setDataCaptureConfig(DataCaptureConfigSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("EndpointStatus", targetDepth)) {
                     context.nextToken();
                     describeEndpointResult.setEndpointStatus(context.getUnmarshaller(String.class).unmarshall(context));

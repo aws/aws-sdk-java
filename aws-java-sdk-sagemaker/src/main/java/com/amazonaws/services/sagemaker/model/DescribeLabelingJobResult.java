@@ -101,8 +101,21 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
     private String roleArn;
     /**
      * <p>
-     * The S3 location of the JSON file that defines the categories used to label data objects.
+     * The S3 location of the JSON file that defines the categories used to label data objects. Please note the
+     * following label-category limits:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Semantic segmentation labeling jobs using automated labeling: 20 labels
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Box bounding labeling jobs (all): 10 lables
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The file is a JSON structure in the following format:
      * </p>
@@ -712,8 +725,21 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The S3 location of the JSON file that defines the categories used to label data objects.
+     * The S3 location of the JSON file that defines the categories used to label data objects. Please note the
+     * following label-category limits:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Semantic segmentation labeling jobs using automated labeling: 20 labels
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Box bounding labeling jobs (all): 10 lables
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The file is a JSON structure in the following format:
      * </p>
@@ -764,7 +790,20 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 location of the JSON file that defines the categories used to label data objects.</p>
+     *        The S3 location of the JSON file that defines the categories used to label data objects. Please note the
+     *        following label-category limits:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Semantic segmentation labeling jobs using automated labeling: 20 labels
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Box bounding labeling jobs (all): 10 lables
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The file is a JSON structure in the following format:
      *        </p>
@@ -820,8 +859,21 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The S3 location of the JSON file that defines the categories used to label data objects.
+     * The S3 location of the JSON file that defines the categories used to label data objects. Please note the
+     * following label-category limits:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Semantic segmentation labeling jobs using automated labeling: 20 labels
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Box bounding labeling jobs (all): 10 lables
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The file is a JSON structure in the following format:
      * </p>
@@ -871,7 +923,20 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <code>}</code>
      * </p>
      * 
-     * @return The S3 location of the JSON file that defines the categories used to label data objects.</p>
+     * @return The S3 location of the JSON file that defines the categories used to label data objects. Please note the
+     *         following label-category limits:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Semantic segmentation labeling jobs using automated labeling: 20 labels
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Box bounding labeling jobs (all): 10 lables
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         The file is a JSON structure in the following format:
      *         </p>
@@ -927,8 +992,21 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The S3 location of the JSON file that defines the categories used to label data objects.
+     * The S3 location of the JSON file that defines the categories used to label data objects. Please note the
+     * following label-category limits:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Semantic segmentation labeling jobs using automated labeling: 20 labels
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Box bounding labeling jobs (all): 10 lables
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * The file is a JSON structure in the following format:
      * </p>
@@ -979,7 +1057,20 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 location of the JSON file that defines the categories used to label data objects.</p>
+     *        The S3 location of the JSON file that defines the categories used to label data objects. Please note the
+     *        following label-category limits:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Semantic segmentation labeling jobs using automated labeling: 20 labels
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Box bounding labeling jobs (all): 10 lables
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        The file is a JSON structure in the following format:
      *        </p>

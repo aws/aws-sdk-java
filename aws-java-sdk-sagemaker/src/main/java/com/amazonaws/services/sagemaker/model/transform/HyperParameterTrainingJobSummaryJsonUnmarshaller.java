@@ -48,6 +48,10 @@ public class HyperParameterTrainingJobSummaryJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("TrainingJobDefinitionName", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobSummary.setTrainingJobDefinitionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TrainingJobName", targetDepth)) {
                     context.nextToken();
                     hyperParameterTrainingJobSummary.setTrainingJobName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -30,6 +30,12 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
+     * The training job definition name.
+     * </p>
+     */
+    private String trainingJobDefinitionName;
+    /**
+     * <p>
      * The name of the training job.
      * </p>
      */
@@ -121,6 +127,46 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
      * </ul>
      */
     private String objectiveStatus;
+
+    /**
+     * <p>
+     * The training job definition name.
+     * </p>
+     * 
+     * @param trainingJobDefinitionName
+     *        The training job definition name.
+     */
+
+    public void setTrainingJobDefinitionName(String trainingJobDefinitionName) {
+        this.trainingJobDefinitionName = trainingJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The training job definition name.
+     * </p>
+     * 
+     * @return The training job definition name.
+     */
+
+    public String getTrainingJobDefinitionName() {
+        return this.trainingJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The training job definition name.
+     * </p>
+     * 
+     * @param trainingJobDefinitionName
+     *        The training job definition name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobSummary withTrainingJobDefinitionName(String trainingJobDefinitionName) {
+        setTrainingJobDefinitionName(trainingJobDefinitionName);
+        return this;
+    }
 
     /**
      * <p>
@@ -842,6 +888,8 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTrainingJobDefinitionName() != null)
+            sb.append("TrainingJobDefinitionName: ").append(getTrainingJobDefinitionName()).append(",");
         if (getTrainingJobName() != null)
             sb.append("TrainingJobName: ").append(getTrainingJobName()).append(",");
         if (getTrainingJobArn() != null)
@@ -878,6 +926,10 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
         if (obj instanceof HyperParameterTrainingJobSummary == false)
             return false;
         HyperParameterTrainingJobSummary other = (HyperParameterTrainingJobSummary) obj;
+        if (other.getTrainingJobDefinitionName() == null ^ this.getTrainingJobDefinitionName() == null)
+            return false;
+        if (other.getTrainingJobDefinitionName() != null && other.getTrainingJobDefinitionName().equals(this.getTrainingJobDefinitionName()) == false)
+            return false;
         if (other.getTrainingJobName() == null ^ this.getTrainingJobName() == null)
             return false;
         if (other.getTrainingJobName() != null && other.getTrainingJobName().equals(this.getTrainingJobName()) == false)
@@ -931,6 +983,7 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getTrainingJobDefinitionName() == null) ? 0 : getTrainingJobDefinitionName().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobName() == null) ? 0 : getTrainingJobName().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobArn() == null) ? 0 : getTrainingJobArn().hashCode());
         hashCode = prime * hashCode + ((getTuningJobName() == null) ? 0 : getTuningJobName().hashCode());

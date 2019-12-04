@@ -31,7 +31,8 @@ public enum ScalableDimension {
     RdsClusterReadReplicaCount("rds:cluster:ReadReplicaCount"),
     SagemakerVariantDesiredInstanceCount("sagemaker:variant:DesiredInstanceCount"),
     CustomResourceResourceTypeProperty("custom-resource:ResourceType:Property"),
-    ComprehendDocumentClassifierEndpointDesiredInferenceUnits("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
+    ComprehendDocumentClassifierEndpointDesiredInferenceUnits("comprehend:document-classifier-endpoint:DesiredInferenceUnits"),
+    LambdaFunctionProvisionedConcurrency("lambda:function:ProvisionedConcurrency");
 
     private String value;
 

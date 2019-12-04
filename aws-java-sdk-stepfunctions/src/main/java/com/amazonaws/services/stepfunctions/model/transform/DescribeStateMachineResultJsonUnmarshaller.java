@@ -68,9 +68,17 @@ public class DescribeStateMachineResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeStateMachineResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    describeStateMachineResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
                     describeStateMachineResult.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("loggingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeStateMachineResult.setLoggingConfiguration(LoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

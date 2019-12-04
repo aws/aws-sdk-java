@@ -49,6 +49,8 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
      * </p>
      */
     private HyperParameterTrainingJobDefinition trainingJobDefinition;
+    /** <p/> */
+    private java.util.List<HyperParameterTrainingJobDefinition> trainingJobDefinitions;
     /**
      * <p>
      * The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.
@@ -281,6 +283,65 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     public DescribeHyperParameterTuningJobResult withTrainingJobDefinition(HyperParameterTrainingJobDefinition trainingJobDefinition) {
         setTrainingJobDefinition(trainingJobDefinition);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public java.util.List<HyperParameterTrainingJobDefinition> getTrainingJobDefinitions() {
+        return trainingJobDefinitions;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param trainingJobDefinitions
+     */
+
+    public void setTrainingJobDefinitions(java.util.Collection<HyperParameterTrainingJobDefinition> trainingJobDefinitions) {
+        if (trainingJobDefinitions == null) {
+            this.trainingJobDefinitions = null;
+            return;
+        }
+
+        this.trainingJobDefinitions = new java.util.ArrayList<HyperParameterTrainingJobDefinition>(trainingJobDefinitions);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTrainingJobDefinitions(java.util.Collection)} or
+     * {@link #withTrainingJobDefinitions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param trainingJobDefinitions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHyperParameterTuningJobResult withTrainingJobDefinitions(HyperParameterTrainingJobDefinition... trainingJobDefinitions) {
+        if (this.trainingJobDefinitions == null) {
+            setTrainingJobDefinitions(new java.util.ArrayList<HyperParameterTrainingJobDefinition>(trainingJobDefinitions.length));
+        }
+        for (HyperParameterTrainingJobDefinition ele : trainingJobDefinitions) {
+            this.trainingJobDefinitions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param trainingJobDefinitions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHyperParameterTuningJobResult withTrainingJobDefinitions(java.util.Collection<HyperParameterTrainingJobDefinition> trainingJobDefinitions) {
+        setTrainingJobDefinitions(trainingJobDefinitions);
         return this;
     }
 
@@ -771,6 +832,8 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
             sb.append("HyperParameterTuningJobConfig: ").append(getHyperParameterTuningJobConfig()).append(",");
         if (getTrainingJobDefinition() != null)
             sb.append("TrainingJobDefinition: ").append(getTrainingJobDefinition()).append(",");
+        if (getTrainingJobDefinitions() != null)
+            sb.append("TrainingJobDefinitions: ").append(getTrainingJobDefinitions()).append(",");
         if (getHyperParameterTuningJobStatus() != null)
             sb.append("HyperParameterTuningJobStatus: ").append(getHyperParameterTuningJobStatus()).append(",");
         if (getCreationTime() != null)
@@ -821,6 +884,10 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
         if (other.getTrainingJobDefinition() == null ^ this.getTrainingJobDefinition() == null)
             return false;
         if (other.getTrainingJobDefinition() != null && other.getTrainingJobDefinition().equals(this.getTrainingJobDefinition()) == false)
+            return false;
+        if (other.getTrainingJobDefinitions() == null ^ this.getTrainingJobDefinitions() == null)
+            return false;
+        if (other.getTrainingJobDefinitions() != null && other.getTrainingJobDefinitions().equals(this.getTrainingJobDefinitions()) == false)
             return false;
         if (other.getHyperParameterTuningJobStatus() == null ^ this.getHyperParameterTuningJobStatus() == null)
             return false;
@@ -875,6 +942,7 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getHyperParameterTuningJobArn() == null) ? 0 : getHyperParameterTuningJobArn().hashCode());
         hashCode = prime * hashCode + ((getHyperParameterTuningJobConfig() == null) ? 0 : getHyperParameterTuningJobConfig().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobDefinition() == null) ? 0 : getTrainingJobDefinition().hashCode());
+        hashCode = prime * hashCode + ((getTrainingJobDefinitions() == null) ? 0 : getTrainingJobDefinitions().hashCode());
         hashCode = prime * hashCode + ((getHyperParameterTuningJobStatus() == null) ? 0 : getHyperParameterTuningJobStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getHyperParameterTuningEndTime() == null) ? 0 : getHyperParameterTuningEndTime().hashCode());

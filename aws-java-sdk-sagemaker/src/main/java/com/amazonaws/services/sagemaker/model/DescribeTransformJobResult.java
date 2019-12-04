@@ -132,8 +132,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String labelingJobArn;
+    /** <p/> */
+    private String autoMLJobArn;
 
     private DataProcessing dataProcessing;
+
+    private ExperimentConfig experimentConfig;
 
     /**
      * <p>
@@ -931,6 +935,38 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
+     * @param autoMLJobArn
+     */
+
+    public void setAutoMLJobArn(String autoMLJobArn) {
+        this.autoMLJobArn = autoMLJobArn;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getAutoMLJobArn() {
+        return this.autoMLJobArn;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param autoMLJobArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTransformJobResult withAutoMLJobArn(String autoMLJobArn) {
+        setAutoMLJobArn(autoMLJobArn);
+        return this;
+    }
+
+    /**
      * @param dataProcessing
      */
 
@@ -953,6 +989,32 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     public DescribeTransformJobResult withDataProcessing(DataProcessing dataProcessing) {
         setDataProcessing(dataProcessing);
+        return this;
+    }
+
+    /**
+     * @param experimentConfig
+     */
+
+    public void setExperimentConfig(ExperimentConfig experimentConfig) {
+        this.experimentConfig = experimentConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ExperimentConfig getExperimentConfig() {
+        return this.experimentConfig;
+    }
+
+    /**
+     * @param experimentConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTransformJobResult withExperimentConfig(ExperimentConfig experimentConfig) {
+        setExperimentConfig(experimentConfig);
         return this;
     }
 
@@ -1000,8 +1062,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("TransformEndTime: ").append(getTransformEndTime()).append(",");
         if (getLabelingJobArn() != null)
             sb.append("LabelingJobArn: ").append(getLabelingJobArn()).append(",");
+        if (getAutoMLJobArn() != null)
+            sb.append("AutoMLJobArn: ").append(getAutoMLJobArn()).append(",");
         if (getDataProcessing() != null)
-            sb.append("DataProcessing: ").append(getDataProcessing());
+            sb.append("DataProcessing: ").append(getDataProcessing()).append(",");
+        if (getExperimentConfig() != null)
+            sb.append("ExperimentConfig: ").append(getExperimentConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1080,9 +1146,17 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getLabelingJobArn() != null && other.getLabelingJobArn().equals(this.getLabelingJobArn()) == false)
             return false;
+        if (other.getAutoMLJobArn() == null ^ this.getAutoMLJobArn() == null)
+            return false;
+        if (other.getAutoMLJobArn() != null && other.getAutoMLJobArn().equals(this.getAutoMLJobArn()) == false)
+            return false;
         if (other.getDataProcessing() == null ^ this.getDataProcessing() == null)
             return false;
         if (other.getDataProcessing() != null && other.getDataProcessing().equals(this.getDataProcessing()) == false)
+            return false;
+        if (other.getExperimentConfig() == null ^ this.getExperimentConfig() == null)
+            return false;
+        if (other.getExperimentConfig() != null && other.getExperimentConfig().equals(this.getExperimentConfig()) == false)
             return false;
         return true;
     }
@@ -1108,7 +1182,9 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getTransformStartTime() == null) ? 0 : getTransformStartTime().hashCode());
         hashCode = prime * hashCode + ((getTransformEndTime() == null) ? 0 : getTransformEndTime().hashCode());
         hashCode = prime * hashCode + ((getLabelingJobArn() == null) ? 0 : getLabelingJobArn().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLJobArn() == null) ? 0 : getAutoMLJobArn().hashCode());
         hashCode = prime * hashCode + ((getDataProcessing() == null) ? 0 : getDataProcessing().hashCode());
+        hashCode = prime * hashCode + ((getExperimentConfig() == null) ? 0 : getExperimentConfig().hashCode());
         return hashCode;
     }
 

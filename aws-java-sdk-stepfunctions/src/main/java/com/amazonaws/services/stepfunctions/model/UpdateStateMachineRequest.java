@@ -45,6 +45,8 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String roleArn;
+    /** <p/> */
+    private LoggingConfiguration loggingConfiguration;
 
     /**
      * <p>
@@ -179,6 +181,38 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p/>
+     * 
+     * @param loggingConfiguration
+     */
+
+    public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        this.loggingConfiguration = loggingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public LoggingConfiguration getLoggingConfiguration() {
+        return this.loggingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param loggingConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStateMachineRequest withLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        setLoggingConfiguration(loggingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -195,7 +229,9 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDefinition() != null)
             sb.append("Definition: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getLoggingConfiguration() != null)
+            sb.append("LoggingConfiguration: ").append(getLoggingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +258,10 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getLoggingConfiguration() == null ^ this.getLoggingConfiguration() == null)
+            return false;
+        if (other.getLoggingConfiguration() != null && other.getLoggingConfiguration().equals(this.getLoggingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +273,7 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getStateMachineArn() == null) ? 0 : getStateMachineArn().hashCode());
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         return hashCode;
     }
 

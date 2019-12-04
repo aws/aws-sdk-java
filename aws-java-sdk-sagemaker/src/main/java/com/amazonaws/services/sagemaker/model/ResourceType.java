@@ -20,7 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
-    TrainingJob("TrainingJob");
+    TrainingJob("TrainingJob"),
+    Experiment("Experiment"),
+    ExperimentTrial("ExperimentTrial"),
+    ExperimentTrialComponent("ExperimentTrialComponent");
 
     private String value;
 

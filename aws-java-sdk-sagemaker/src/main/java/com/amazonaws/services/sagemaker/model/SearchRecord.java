@@ -34,6 +34,24 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TrainingJob trainingJob;
+    /**
+     * <p>
+     * A summary of the properties of an experiment.
+     * </p>
+     */
+    private Experiment experiment;
+    /**
+     * <p>
+     * A summary of the properties of a trial.
+     * </p>
+     */
+    private Trial trial;
+    /**
+     * <p>
+     * A summary of the properties of a trial component.
+     * </p>
+     */
+    private TrialComponent trialComponent;
 
     /**
      * <p>
@@ -76,6 +94,126 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A summary of the properties of an experiment.
+     * </p>
+     * 
+     * @param experiment
+     *        A summary of the properties of an experiment.
+     */
+
+    public void setExperiment(Experiment experiment) {
+        this.experiment = experiment;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of an experiment.
+     * </p>
+     * 
+     * @return A summary of the properties of an experiment.
+     */
+
+    public Experiment getExperiment() {
+        return this.experiment;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of an experiment.
+     * </p>
+     * 
+     * @param experiment
+     *        A summary of the properties of an experiment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withExperiment(Experiment experiment) {
+        setExperiment(experiment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of a trial.
+     * </p>
+     * 
+     * @param trial
+     *        A summary of the properties of a trial.
+     */
+
+    public void setTrial(Trial trial) {
+        this.trial = trial;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of a trial.
+     * </p>
+     * 
+     * @return A summary of the properties of a trial.
+     */
+
+    public Trial getTrial() {
+        return this.trial;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of a trial.
+     * </p>
+     * 
+     * @param trial
+     *        A summary of the properties of a trial.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withTrial(Trial trial) {
+        setTrial(trial);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of a trial component.
+     * </p>
+     * 
+     * @param trialComponent
+     *        A summary of the properties of a trial component.
+     */
+
+    public void setTrialComponent(TrialComponent trialComponent) {
+        this.trialComponent = trialComponent;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of a trial component.
+     * </p>
+     * 
+     * @return A summary of the properties of a trial component.
+     */
+
+    public TrialComponent getTrialComponent() {
+        return this.trialComponent;
+    }
+
+    /**
+     * <p>
+     * A summary of the properties of a trial component.
+     * </p>
+     * 
+     * @param trialComponent
+     *        A summary of the properties of a trial component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchRecord withTrialComponent(TrialComponent trialComponent) {
+        setTrialComponent(trialComponent);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +226,13 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrainingJob() != null)
-            sb.append("TrainingJob: ").append(getTrainingJob());
+            sb.append("TrainingJob: ").append(getTrainingJob()).append(",");
+        if (getExperiment() != null)
+            sb.append("Experiment: ").append(getExperiment()).append(",");
+        if (getTrial() != null)
+            sb.append("Trial: ").append(getTrial()).append(",");
+        if (getTrialComponent() != null)
+            sb.append("TrialComponent: ").append(getTrialComponent());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +251,18 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTrainingJob() != null && other.getTrainingJob().equals(this.getTrainingJob()) == false)
             return false;
+        if (other.getExperiment() == null ^ this.getExperiment() == null)
+            return false;
+        if (other.getExperiment() != null && other.getExperiment().equals(this.getExperiment()) == false)
+            return false;
+        if (other.getTrial() == null ^ this.getTrial() == null)
+            return false;
+        if (other.getTrial() != null && other.getTrial().equals(this.getTrial()) == false)
+            return false;
+        if (other.getTrialComponent() == null ^ this.getTrialComponent() == null)
+            return false;
+        if (other.getTrialComponent() != null && other.getTrialComponent().equals(this.getTrialComponent()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +272,9 @@ public class SearchRecord implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTrainingJob() == null) ? 0 : getTrainingJob().hashCode());
+        hashCode = prime * hashCode + ((getExperiment() == null) ? 0 : getExperiment().hashCode());
+        hashCode = prime * hashCode + ((getTrial() == null) ? 0 : getTrial().hashCode());
+        hashCode = prime * hashCode + ((getTrialComponent() == null) ? 0 : getTrialComponent().hashCode());
         return hashCode;
     }
 

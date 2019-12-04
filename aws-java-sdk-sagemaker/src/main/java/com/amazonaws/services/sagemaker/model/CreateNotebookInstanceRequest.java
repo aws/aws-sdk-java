@@ -54,7 +54,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role to
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
-     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissionsto
+     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
@@ -134,10 +134,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     * repositories are cloned at the same level as the default repository of your notebook instance. For more
-     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      */
     private java.util.List<String> additionalCodeRepositories;
@@ -380,7 +381,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role to
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
-     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissionsto
+     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
@@ -395,7 +396,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role
      *        to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
      *        perform these tasks. The policy must allow the Amazon SageMaker service principal
-     *        (sagemaker.amazonaws.com) permissionsto to assume this role. For more information, see <a
+     *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
@@ -412,7 +413,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role to
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
-     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissionsto
+     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
@@ -426,7 +427,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * @return When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this
      *         role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker
      *         can perform these tasks. The policy must allow the Amazon SageMaker service principal
-     *         (sagemaker.amazonaws.com) permissionsto to assume this role. For more information, see <a
+     *         (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *         </p> <note>
      *         <p>
@@ -443,7 +444,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role to
      * perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform
-     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissionsto
+     * these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions
      * to assume this role. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
@@ -458,7 +459,7 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role
      *        to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can
      *        perform these tasks. The policy must allow the Amazon SageMaker service principal
-     *        (sagemaker.amazonaws.com) permissionsto to assume this role. For more information, see <a
+     *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      *        </p> <note>
      *        <p>
@@ -1034,18 +1035,20 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     * repositories are cloned at the same level as the default repository of your notebook instance. For more
-     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @return An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *         names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *         href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     *         repositories are cloned at the same level as the default repository of your notebook instance. For more
-     *         information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     *         Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *         other Git repository. These repositories are cloned at the same level as the default repository of your
+     *         notebook instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
+     *         with Amazon SageMaker Notebook Instances</a>.
      */
 
     public java.util.List<String> getAdditionalCodeRepositories() {
@@ -1056,19 +1059,21 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     * repositories are cloned at the same level as the default repository of your notebook instance. For more
-     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @param additionalCodeRepositories
      *        An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *        href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     *        repositories are cloned at the same level as the default repository of your notebook instance. For more
-     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     *        Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     *        href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        other Git repository. These repositories are cloned at the same level as the default repository of your
+     *        notebook instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
      */
 
     public void setAdditionalCodeRepositories(java.util.Collection<String> additionalCodeRepositories) {
@@ -1084,10 +1089,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     * repositories are cloned at the same level as the default repository of your notebook instance. For more
-     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1098,10 +1104,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * @param additionalCodeRepositories
      *        An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *        href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     *        repositories are cloned at the same level as the default repository of your notebook instance. For more
-     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     *        Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     *        href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        other Git repository. These repositories are cloned at the same level as the default repository of your
+     *        notebook instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1119,19 +1126,21 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * An array of up to three Git repositories to associate with the notebook instance. These can be either the names
      * of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     * repositories are cloned at the same level as the default repository of your notebook instance. For more
-     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-     * Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @param additionalCodeRepositories
      *        An array of up to three Git repositories to associate with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *        href="codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git repository. These
-     *        repositories are cloned at the same level as the default repository of your notebook instance. For more
-     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     *        Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     *        href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        other Git repository. These repositories are cloned at the same level as the default repository of your
+     *        notebook instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        Amazon SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

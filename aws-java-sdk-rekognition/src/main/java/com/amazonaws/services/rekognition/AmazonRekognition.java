@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.rekognition.model.*;
+import com.amazonaws.services.rekognition.waiters.AmazonRekognitionWaiters;
 
 /**
  * Interface for accessing Amazon Rekognition.
@@ -129,10 +130,9 @@ public interface AmazonRekognition {
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>CompareFaces</code>
-     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
-     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to
+     * filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -223,6 +223,83 @@ public interface AmazonRekognition {
      * @sample AmazonRekognition.CreateCollection
      */
     CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Rekognition Custom Labels project. A project is a logical grouping of resources (images,
+     * Labels, models) and operations (training, evaluation and detection).
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.
+     * </p>
+     * 
+     * @param createProjectRequest
+     * @return Result of the CreateProject operation returned by the service.
+     * @throws ResourceInUseException
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.CreateProject
+     */
+    CreateProjectResult createProject(CreateProjectRequest createProjectRequest);
+
+    /**
+     * <p>
+     * Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom
+     * Labels project. You can specify one training dataset and one testing dataset. The response from
+     * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the version of the model.
+     * </p>
+     * <p>
+     * Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once training has successfully completed, call <a>DescribeProjectVersions</a> to get the training results and
+     * evaluate the model.
+     * </p>
+     * <p>
+     * After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.
+     * </p>
+     * 
+     * @param createProjectVersionRequest
+     * @return Result of the CreateProjectVersion operation returned by the service.
+     * @throws ResourceInUseException
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.CreateProjectVersion
+     */
+    CreateProjectVersionResult createProjectVersion(CreateProjectVersionRequest createProjectVersionRequest);
 
     /**
      * <p>
@@ -381,6 +458,64 @@ public interface AmazonRekognition {
 
     /**
      * <p>
+     * Lists and describes the models in an Amazon Rekognition Custom Labels project. You can specify up to 10 model
+     * versions in <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for all models are
+     * returned.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code> action.
+     * </p>
+     * 
+     * @param describeProjectVersionsRequest
+     * @return Result of the DescribeProjectVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DescribeProjectVersions
+     */
+    DescribeProjectVersionsResult describeProjectVersions(DescribeProjectVersionsRequest describeProjectVersionsRequest);
+
+    /**
+     * <p>
+     * Lists and gets information about your Amazon Rekognition Custom Labels projects.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.
+     * </p>
+     * 
+     * @param describeProjectsRequest
+     * @return Result of the DescribeProjects operation returned by the service.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DescribeProjects
+     */
+    DescribeProjectsResult describeProjects(DescribeProjectsRequest describeProjectsRequest);
+
+    /**
+     * <p>
      * Provides information about a stream processor created by <a>CreateStreamProcessor</a>. You can get information
      * about the input and output streams, the input parameters for the face recognition being performed, and the
      * current status of the stream processor.
@@ -404,6 +539,76 @@ public interface AmazonRekognition {
      * @sample AmazonRekognition.DescribeStreamProcessor
      */
     DescribeStreamProcessorResult describeStreamProcessor(DescribeStreamProcessorRequest describeStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model.
+     * </p>
+     * <p>
+     * You specify which version of a model version to use by using the <code>ProjectVersionArn</code> input parameter.
+     * </p>
+     * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
+     * you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must
+     * be either a PNG or JPEG formatted file.
+     * </p>
+     * <p>
+     * For each object that the model version detects on an image, the API returns a (<code>CustomLabel</code>) object
+     * in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the label name (
+     * <code>Name</code>), the level of confidence that the image contains the object (<code>Confidence</code>), and
+     * object location information, if it exists, for the label on the image (<code>Geometry</code>).
+     * </p>
+     * <p>
+     * During training model calculates a threshold value that determines if a prediction for a label is true. By
+     * default, <code>DetectCustomLabels</code> doesn't return labels whose confidence value is below the model's
+     * calculated threshold value. To filter labels that are returned, specify a value for <code>MinConfidence</code>
+     * that is higher than the model's calculated threshold. You can get the model's calculated threshold from the
+     * model's training results shown in the Amazon Rekognition Custom Labels console. To get all labels, regardless of
+     * confidence, specify a <code>MinConfidence</code> value of 0.
+     * </p>
+     * <p>
+     * You can also add the <code>MaxResults</code> parameter to limit the number of labels returned.
+     * </p>
+     * <p>
+     * This is a stateless API operation. That is, the operation does not persist any data.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DetectCustomLabels</code> action.
+     * </p>
+     * 
+     * @param detectCustomLabelsRequest
+     * @return Result of the DetectCustomLabels operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceNotReadyException
+     *         The requested resource isn't ready. For example, this exception occurs when you call
+     *         <code>DetectCustomLabels</code> with a model version that isn't deployed.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ImageTooLargeException
+     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         the Amazon Rekognition Developer Guide.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
+     * @sample AmazonRekognition.DetectCustomLabels
+     */
+    DetectCustomLabelsResult detectCustomLabels(DetectCustomLabelsRequest detectCustomLabelsRequest);
 
     /**
      * <p>
@@ -603,6 +808,8 @@ public interface AmazonRekognition {
      *         Rekognition.
      * @throws InvalidImageFormatException
      *         The provided image format is not supported.
+     * @throws HumanLoopQuotaExceededException
+     *         The number of in-progress human reviews you have has exceeded the number allowed.
      * @sample AmazonRekognition.DetectModerationLabels
      */
     DetectModerationLabelsResult detectModerationLabels(DetectModerationLabelsRequest detectModerationLabelsRequest);
@@ -1438,11 +1645,9 @@ public interface AmazonRekognition {
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, Amazon Rekognition chooses
-     * the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar for filtering by specifying <code>LOW</code>,
-     * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>
-     * .
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do
+     * not want to filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -1774,6 +1979,49 @@ public interface AmazonRekognition {
 
     /**
      * <p>
+     * Starts the running of the version of a model. Starting a model takes a while to complete. To check the current
+     * state of the model, use <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once the model is running, you can detect custom labels in new images by calling <a>DetectCustomLabels</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You are charged for the amount of time that the model is running. To stop a running model, call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
+     * </p>
+     * 
+     * @param startProjectVersionRequest
+     * @return Result of the StartProjectVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.StartProjectVersion
+     */
+    StartProjectVersionResult startProjectVersion(StartProjectVersionRequest startProjectVersionRequest);
+
+    /**
+     * <p>
      * Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>. To
      * tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code>
      * field specified in the call to <code>CreateStreamProcessor</code>.
@@ -1798,6 +2046,32 @@ public interface AmazonRekognition {
      * @sample AmazonRekognition.StartStreamProcessor
      */
     StartStreamProcessorResult startStreamProcessor(StartStreamProcessorRequest startStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Stops a running model. The operation might take a while to complete. To check the current status, call
+     * <a>DescribeProjectVersions</a>.
+     * </p>
+     * 
+     * @param stopProjectVersionRequest
+     * @return Result of the StopProjectVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.StopProjectVersion
+     */
+    StopProjectVersionResult stopProjectVersion(StopProjectVersionRequest stopProjectVersionRequest);
 
     /**
      * <p>
@@ -1846,5 +2120,7 @@ public interface AmazonRekognition {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AmazonRekognitionWaiters waiters();
 
 }

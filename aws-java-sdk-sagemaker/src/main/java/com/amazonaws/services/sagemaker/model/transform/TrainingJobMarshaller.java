@@ -37,6 +37,8 @@ public class TrainingJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TuningJobArn").build();
     private static final MarshallingInfo<String> LABELINGJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelingJobArn").build();
+    private static final MarshallingInfo<String> AUTOMLJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoMLJobArn").build();
     private static final MarshallingInfo<StructuredPojo> MODELARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelArtifacts").build();
     private static final MarshallingInfo<String> TRAININGJOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -77,6 +79,24 @@ public class TrainingJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNetworkIsolation").build();
     private static final MarshallingInfo<Boolean> ENABLEINTERCONTAINERTRAFFICENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableInterContainerTrafficEncryption").build();
+    private static final MarshallingInfo<Boolean> ENABLEMANAGEDSPOTTRAINING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableManagedSpotTraining").build();
+    private static final MarshallingInfo<StructuredPojo> CHECKPOINTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CheckpointConfig").build();
+    private static final MarshallingInfo<Integer> TRAININGTIMEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingTimeInSeconds").build();
+    private static final MarshallingInfo<Integer> BILLABLETIMEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillableTimeInSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> DEBUGHOOKCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DebugHookConfig").build();
+    private static final MarshallingInfo<StructuredPojo> EXPERIMENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExperimentConfig").build();
+    private static final MarshallingInfo<List> DEBUGRULECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DebugRuleConfigurations").build();
+    private static final MarshallingInfo<StructuredPojo> TENSORBOARDOUTPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TensorBoardOutputConfig").build();
+    private static final MarshallingInfo<List> DEBUGRULEEVALUATIONSTATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DebugRuleEvaluationStatuses").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -100,6 +120,7 @@ public class TrainingJobMarshaller {
             protocolMarshaller.marshall(trainingJob.getTrainingJobArn(), TRAININGJOBARN_BINDING);
             protocolMarshaller.marshall(trainingJob.getTuningJobArn(), TUNINGJOBARN_BINDING);
             protocolMarshaller.marshall(trainingJob.getLabelingJobArn(), LABELINGJOBARN_BINDING);
+            protocolMarshaller.marshall(trainingJob.getAutoMLJobArn(), AUTOMLJOBARN_BINDING);
             protocolMarshaller.marshall(trainingJob.getModelArtifacts(), MODELARTIFACTS_BINDING);
             protocolMarshaller.marshall(trainingJob.getTrainingJobStatus(), TRAININGJOBSTATUS_BINDING);
             protocolMarshaller.marshall(trainingJob.getSecondaryStatus(), SECONDARYSTATUS_BINDING);
@@ -120,6 +141,15 @@ public class TrainingJobMarshaller {
             protocolMarshaller.marshall(trainingJob.getFinalMetricDataList(), FINALMETRICDATALIST_BINDING);
             protocolMarshaller.marshall(trainingJob.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
             protocolMarshaller.marshall(trainingJob.getEnableInterContainerTrafficEncryption(), ENABLEINTERCONTAINERTRAFFICENCRYPTION_BINDING);
+            protocolMarshaller.marshall(trainingJob.getEnableManagedSpotTraining(), ENABLEMANAGEDSPOTTRAINING_BINDING);
+            protocolMarshaller.marshall(trainingJob.getCheckpointConfig(), CHECKPOINTCONFIG_BINDING);
+            protocolMarshaller.marshall(trainingJob.getTrainingTimeInSeconds(), TRAININGTIMEINSECONDS_BINDING);
+            protocolMarshaller.marshall(trainingJob.getBillableTimeInSeconds(), BILLABLETIMEINSECONDS_BINDING);
+            protocolMarshaller.marshall(trainingJob.getDebugHookConfig(), DEBUGHOOKCONFIG_BINDING);
+            protocolMarshaller.marshall(trainingJob.getExperimentConfig(), EXPERIMENTCONFIG_BINDING);
+            protocolMarshaller.marshall(trainingJob.getDebugRuleConfigurations(), DEBUGRULECONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(trainingJob.getTensorBoardOutputConfig(), TENSORBOARDOUTPUTCONFIG_BINDING);
+            protocolMarshaller.marshall(trainingJob.getDebugRuleEvaluationStatuses(), DEBUGRULEEVALUATIONSTATUSES_BINDING);
             protocolMarshaller.marshall(trainingJob.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -41,6 +41,8 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<ProductionVariant> productionVariants;
+
+    private DataCaptureConfig dataCaptureConfig;
     /**
      * <p>
      * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
@@ -210,6 +212,32 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @param dataCaptureConfig
+     */
+
+    public void setDataCaptureConfig(DataCaptureConfig dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DataCaptureConfig getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withDataCaptureConfig(DataCaptureConfig dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
+        return this;
+    }
+
+    /**
      * <p>
      * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
      * instance.
@@ -313,6 +341,8 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
             sb.append("EndpointConfigArn: ").append(getEndpointConfigArn()).append(",");
         if (getProductionVariants() != null)
             sb.append("ProductionVariants: ").append(getProductionVariants()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getCreationTime() != null)
@@ -343,6 +373,10 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getProductionVariants() != null && other.getProductionVariants().equals(this.getProductionVariants()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
@@ -362,6 +396,7 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfigArn() == null) ? 0 : getEndpointConfigArn().hashCode());
         hashCode = prime * hashCode + ((getProductionVariants() == null) ? 0 : getProductionVariants().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;

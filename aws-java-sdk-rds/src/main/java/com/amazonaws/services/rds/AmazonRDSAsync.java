@@ -1267,6 +1267,47 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<CreateDBParameterGroupRequest, DBParameterGroup> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new DB proxy.
+     * </p>
+     * 
+     * @param createDBProxyRequest
+     * @return A Java Future containing the result of the CreateDBProxy operation returned by the service.
+     * @sample AmazonRDSAsync.CreateDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBProxyResult> createDBProxyAsync(CreateDBProxyRequest createDBProxyRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new DB proxy.
+     * </p>
+     * 
+     * @param createDBProxyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDBProxy operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.CreateDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBProxyResult> createDBProxyAsync(CreateDBProxyRequest createDBProxyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDBProxyRequest, CreateDBProxyResult> asyncHandler);
+
+    /**
      * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
@@ -1971,6 +2012,47 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<DeleteDBParameterGroupRequest, DeleteDBParameterGroupResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes an existing proxy.
+     * </p>
+     * 
+     * @param deleteDBProxyRequest
+     * @return A Java Future containing the result of the DeleteDBProxy operation returned by the service.
+     * @sample AmazonRDSAsync.DeleteDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(DeleteDBProxyRequest deleteDBProxyRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes an existing proxy.
+     * </p>
+     * 
+     * @param deleteDBProxyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDBProxy operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DeleteDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(DeleteDBProxyRequest deleteDBProxyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBProxyRequest, DeleteDBProxyResult> asyncHandler);
+
+    /**
      * <p>
      * Deletes a DB security group.
      * </p>
@@ -2230,6 +2312,49 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DeleteOptionGroupResult> deleteOptionGroupAsync(DeleteOptionGroupRequest deleteOptionGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteOptionGroupRequest, DeleteOptionGroupResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
+     * <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param deregisterDBProxyTargetsRequest
+     * @return A Java Future containing the result of the DeregisterDBProxyTargets operation returned by the service.
+     * @sample AmazonRDSAsync.DeregisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterDBProxyTargetsResult> deregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest deregisterDBProxyTargetsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
+     * <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param deregisterDBProxyTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterDBProxyTargets operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DeregisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterDBProxyTargetsResult> deregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest deregisterDBProxyTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterDBProxyTargetsRequest, DeregisterDBProxyTargetsResult> asyncHandler);
 
     /**
      * <p>
@@ -3061,6 +3186,131 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DescribeDBParametersResult> describeDBParametersAsync(DescribeDBParametersRequest describeDBParametersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDBParametersRequest, DescribeDBParametersResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxies.
+     * </p>
+     * 
+     * @param describeDBProxiesRequest
+     * @return A Java Future containing the result of the DescribeDBProxies operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeDBProxies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(DescribeDBProxiesRequest describeDBProxiesRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxies.
+     * </p>
+     * 
+     * @param describeDBProxiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBProxies operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBProxies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(DescribeDBProxiesRequest describeDBProxiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBProxiesRequest, DescribeDBProxiesResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
+     * </p>
+     * 
+     * @param describeDBProxyTargetGroupsRequest
+     * @return A Java Future containing the result of the DescribeDBProxyTargetGroups operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeDBProxyTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxyTargetGroupsResult> describeDBProxyTargetGroupsAsync(
+            DescribeDBProxyTargetGroupsRequest describeDBProxyTargetGroupsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
+     * </p>
+     * 
+     * @param describeDBProxyTargetGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBProxyTargetGroups operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBProxyTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxyTargetGroupsResult> describeDBProxyTargetGroupsAsync(
+            DescribeDBProxyTargetGroupsRequest describeDBProxyTargetGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBProxyTargetGroupsRequest, DescribeDBProxyTargetGroupsResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+     * </p>
+     * 
+     * @param describeDBProxyTargetsRequest
+     * @return A Java Future containing the result of the DescribeDBProxyTargets operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxyTargetsResult> describeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest describeDBProxyTargetsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+     * </p>
+     * 
+     * @param describeDBProxyTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBProxyTargets operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxyTargetsResult> describeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest describeDBProxyTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBProxyTargetsRequest, DescribeDBProxyTargetsResult> asyncHandler);
 
     /**
      * <p>
@@ -4584,6 +4834,88 @@ public interface AmazonRDSAsync extends AmazonRDS {
             com.amazonaws.handlers.AsyncHandler<ModifyDBParameterGroupRequest, ModifyDBParameterGroupResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Changes the settings for an existing DB proxy.
+     * </p>
+     * 
+     * @param modifyDBProxyRequest
+     * @return A Java Future containing the result of the ModifyDBProxy operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(ModifyDBProxyRequest modifyDBProxyRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Changes the settings for an existing DB proxy.
+     * </p>
+     * 
+     * @param modifyDBProxyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyDBProxy operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(ModifyDBProxyRequest modifyDBProxyRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBProxyRequest, ModifyDBProxyResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Modifies the properties of a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param modifyDBProxyTargetGroupRequest
+     * @return A Java Future containing the result of the ModifyDBProxyTargetGroup operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyDBProxyTargetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBProxyTargetGroupResult> modifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest modifyDBProxyTargetGroupRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Modifies the properties of a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param modifyDBProxyTargetGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyDBProxyTargetGroup operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyDBProxyTargetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBProxyTargetGroupResult> modifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest modifyDBProxyTargetGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBProxyTargetGroupRequest, ModifyDBProxyTargetGroupResult> asyncHandler);
+
+    /**
      * <p>
      * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
      * </p>
@@ -5030,6 +5362,47 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest rebootDBInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param registerDBProxyTargetsRequest
+     * @return A Java Future containing the result of the RegisterDBProxyTargets operation returned by the service.
+     * @sample AmazonRDSAsync.RegisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterDBProxyTargetsResult> registerDBProxyTargetsAsync(RegisterDBProxyTargetsRequest registerDBProxyTargetsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param registerDBProxyTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterDBProxyTargets operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.RegisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterDBProxyTargetsResult> registerDBProxyTargetsAsync(RegisterDBProxyTargetsRequest registerDBProxyTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterDBProxyTargetsRequest, RegisterDBProxyTargetsResult> asyncHandler);
 
     /**
      * <p>

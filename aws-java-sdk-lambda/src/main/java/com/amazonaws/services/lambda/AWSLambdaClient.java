@@ -128,6 +128,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRuntimeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.InvalidRuntimeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedConcurrencyConfigNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ProvisionedConcurrencyConfigNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -826,6 +829,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The AWS Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @sample AWSLambda.DeleteAlias
@@ -1208,6 +1213,72 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
+     * Deletes the provisioned concurrency configuration for a function.
+     * </p>
+     * 
+     * @param deleteProvisionedConcurrencyConfigRequest
+     * @return Result of the DeleteProvisionedConcurrencyConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.DeleteProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteProvisionedConcurrencyConfigResult deleteProvisionedConcurrencyConfig(DeleteProvisionedConcurrencyConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProvisionedConcurrencyConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProvisionedConcurrencyConfigResult executeDeleteProvisionedConcurrencyConfig(
+            DeleteProvisionedConcurrencyConfigRequest deleteProvisionedConcurrencyConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProvisionedConcurrencyConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProvisionedConcurrencyConfigRequest> request = null;
+        Response<DeleteProvisionedConcurrencyConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProvisionedConcurrencyConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteProvisionedConcurrencyConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisionedConcurrencyConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProvisionedConcurrencyConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteProvisionedConcurrencyConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves details about your account's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.
      * </p>
@@ -1442,6 +1513,69 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns details about the concurrency configuration for a function. To set a concurrency limit for a function,
+     * use <a>PutFunctionConcurrency</a>.
+     * </p>
+     * 
+     * @param getFunctionConcurrencyRequest
+     * @return Result of the GetFunctionConcurrency operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.GetFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetFunctionConcurrencyResult getFunctionConcurrency(GetFunctionConcurrencyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFunctionConcurrency(request);
+    }
+
+    @SdkInternalApi
+    final GetFunctionConcurrencyResult executeGetFunctionConcurrency(GetFunctionConcurrencyRequest getFunctionConcurrencyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFunctionConcurrencyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFunctionConcurrencyRequest> request = null;
+        Response<GetFunctionConcurrencyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFunctionConcurrencyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionConcurrencyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionConcurrency");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFunctionConcurrencyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetFunctionConcurrencyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1828,6 +1962,72 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<GetPolicyResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the provisioned concurrency configuration for a function's alias or version.
+     * </p>
+     * 
+     * @param getProvisionedConcurrencyConfigRequest
+     * @return Result of the GetProvisionedConcurrencyConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ProvisionedConcurrencyConfigNotFoundException
+     *         The specified configuration does not exist.
+     * @sample AWSLambda.GetProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetProvisionedConcurrencyConfigResult getProvisionedConcurrencyConfig(GetProvisionedConcurrencyConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetProvisionedConcurrencyConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetProvisionedConcurrencyConfigResult executeGetProvisionedConcurrencyConfig(
+            GetProvisionedConcurrencyConfigRequest getProvisionedConcurrencyConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getProvisionedConcurrencyConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetProvisionedConcurrencyConfigRequest> request = null;
+        Response<GetProvisionedConcurrencyConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetProvisionedConcurrencyConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getProvisionedConcurrencyConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProvisionedConcurrencyConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetProvisionedConcurrencyConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetProvisionedConcurrencyConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2445,6 +2645,70 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
+     * Retrieves a list of provisioned concurrency configurations for a function.
+     * </p>
+     * 
+     * @param listProvisionedConcurrencyConfigsRequest
+     * @return Result of the ListProvisionedConcurrencyConfigs operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.ListProvisionedConcurrencyConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListProvisionedConcurrencyConfigsResult listProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProvisionedConcurrencyConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListProvisionedConcurrencyConfigsResult executeListProvisionedConcurrencyConfigs(
+            ListProvisionedConcurrencyConfigsRequest listProvisionedConcurrencyConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProvisionedConcurrencyConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProvisionedConcurrencyConfigsRequest> request = null;
+        Response<ListProvisionedConcurrencyConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProvisionedConcurrencyConfigsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listProvisionedConcurrencyConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisionedConcurrencyConfigs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProvisionedConcurrencyConfigsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListProvisionedConcurrencyConfigsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can also
      * view tags with <a>GetFunction</a>.
      * </p>
@@ -2729,7 +2993,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * setting for a function.
      * </p>
      * <p>
-     * Use <a>GetAccountSettings</a> to see your regional concurrency limit. You can reserve concurrency for as many
+     * Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many
      * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
      * aren't configured with a per-function limit. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
@@ -2854,6 +3118,72 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
             HttpResponseHandler<AmazonWebServiceResponse<PutFunctionEventInvokeConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutFunctionEventInvokeConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a provisioned concurrency configuration to a function's alias or version.
+     * </p>
+     * 
+     * @param putProvisionedConcurrencyConfigRequest
+     * @return Result of the PutProvisionedConcurrencyConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.PutProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutProvisionedConcurrencyConfigResult putProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executePutProvisionedConcurrencyConfig(request);
+    }
+
+    @SdkInternalApi
+    final PutProvisionedConcurrencyConfigResult executePutProvisionedConcurrencyConfig(
+            PutProvisionedConcurrencyConfigRequest putProvisionedConcurrencyConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putProvisionedConcurrencyConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutProvisionedConcurrencyConfigRequest> request = null;
+        Response<PutProvisionedConcurrencyConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutProvisionedConcurrencyConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putProvisionedConcurrencyConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutProvisionedConcurrencyConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutProvisionedConcurrencyConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutProvisionedConcurrencyConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

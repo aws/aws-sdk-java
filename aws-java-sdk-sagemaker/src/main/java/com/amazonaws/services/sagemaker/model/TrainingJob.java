@@ -55,6 +55,12 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private String labelingJobArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     */
+    private String autoMLJobArn;
+    /**
+     * <p>
      * Information about the Amazon S3 location that is configured for storing model artifacts.
      * </p>
      */
@@ -332,6 +338,45 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableInterContainerTrafficEncryption;
     /**
      * <p>
+     * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * </p>
+     */
+    private Boolean enableManagedSpotTraining;
+
+    private CheckpointConfig checkpointConfig;
+    /**
+     * <p>
+     * The training time in seconds.
+     * </p>
+     */
+    private Integer trainingTimeInSeconds;
+    /**
+     * <p>
+     * The billable time in seconds.
+     * </p>
+     */
+    private Integer billableTimeInSeconds;
+
+    private DebugHookConfig debugHookConfig;
+
+    private ExperimentConfig experimentConfig;
+    /**
+     * <p>
+     * Information about the debug rule configuration.
+     * </p>
+     */
+    private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
+
+    private TensorBoardOutputConfig tensorBoardOutputConfig;
+    /**
+     * <p>
+     * Information about the evaluation status of the rules for the training job.
+     * </p>
+     */
+    private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
+    /**
+     * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
@@ -502,6 +547,46 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     public TrainingJob withLabelingJobArn(String labelingJobArn) {
         setLabelingJobArn(labelingJobArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     */
+
+    public void setAutoMLJobArn(String autoMLJobArn) {
+        this.autoMLJobArn = autoMLJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the job.
+     */
+
+    public String getAutoMLJobArn() {
+        return this.autoMLJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withAutoMLJobArn(String autoMLJobArn) {
+        setAutoMLJobArn(autoMLJobArn);
         return this;
     }
 
@@ -2703,6 +2788,390 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * </p>
+     * 
+     * @param enableManagedSpotTraining
+     *        When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     *        on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     */
+
+    public void setEnableManagedSpotTraining(Boolean enableManagedSpotTraining) {
+        this.enableManagedSpotTraining = enableManagedSpotTraining;
+    }
+
+    /**
+     * <p>
+     * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * </p>
+     * 
+     * @return When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     *         on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     */
+
+    public Boolean getEnableManagedSpotTraining() {
+        return this.enableManagedSpotTraining;
+    }
+
+    /**
+     * <p>
+     * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * </p>
+     * 
+     * @param enableManagedSpotTraining
+     *        When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     *        on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withEnableManagedSpotTraining(Boolean enableManagedSpotTraining) {
+        setEnableManagedSpotTraining(enableManagedSpotTraining);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     * on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     * </p>
+     * 
+     * @return When true, enables managed spot training using Amazon EC2 Spot instances to run training jobs instead of
+     *         on-demand instances. For more information, see <a>model-managed-spot-training</a>.
+     */
+
+    public Boolean isEnableManagedSpotTraining() {
+        return this.enableManagedSpotTraining;
+    }
+
+    /**
+     * @param checkpointConfig
+     */
+
+    public void setCheckpointConfig(CheckpointConfig checkpointConfig) {
+        this.checkpointConfig = checkpointConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public CheckpointConfig getCheckpointConfig() {
+        return this.checkpointConfig;
+    }
+
+    /**
+     * @param checkpointConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withCheckpointConfig(CheckpointConfig checkpointConfig) {
+        setCheckpointConfig(checkpointConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The training time in seconds.
+     * </p>
+     * 
+     * @param trainingTimeInSeconds
+     *        The training time in seconds.
+     */
+
+    public void setTrainingTimeInSeconds(Integer trainingTimeInSeconds) {
+        this.trainingTimeInSeconds = trainingTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The training time in seconds.
+     * </p>
+     * 
+     * @return The training time in seconds.
+     */
+
+    public Integer getTrainingTimeInSeconds() {
+        return this.trainingTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The training time in seconds.
+     * </p>
+     * 
+     * @param trainingTimeInSeconds
+     *        The training time in seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withTrainingTimeInSeconds(Integer trainingTimeInSeconds) {
+        setTrainingTimeInSeconds(trainingTimeInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The billable time in seconds.
+     * </p>
+     * 
+     * @param billableTimeInSeconds
+     *        The billable time in seconds.
+     */
+
+    public void setBillableTimeInSeconds(Integer billableTimeInSeconds) {
+        this.billableTimeInSeconds = billableTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The billable time in seconds.
+     * </p>
+     * 
+     * @return The billable time in seconds.
+     */
+
+    public Integer getBillableTimeInSeconds() {
+        return this.billableTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The billable time in seconds.
+     * </p>
+     * 
+     * @param billableTimeInSeconds
+     *        The billable time in seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withBillableTimeInSeconds(Integer billableTimeInSeconds) {
+        setBillableTimeInSeconds(billableTimeInSeconds);
+        return this;
+    }
+
+    /**
+     * @param debugHookConfig
+     */
+
+    public void setDebugHookConfig(DebugHookConfig debugHookConfig) {
+        this.debugHookConfig = debugHookConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DebugHookConfig getDebugHookConfig() {
+        return this.debugHookConfig;
+    }
+
+    /**
+     * @param debugHookConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withDebugHookConfig(DebugHookConfig debugHookConfig) {
+        setDebugHookConfig(debugHookConfig);
+        return this;
+    }
+
+    /**
+     * @param experimentConfig
+     */
+
+    public void setExperimentConfig(ExperimentConfig experimentConfig) {
+        this.experimentConfig = experimentConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ExperimentConfig getExperimentConfig() {
+        return this.experimentConfig;
+    }
+
+    /**
+     * @param experimentConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withExperimentConfig(ExperimentConfig experimentConfig) {
+        setExperimentConfig(experimentConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the debug rule configuration.
+     * </p>
+     * 
+     * @return Information about the debug rule configuration.
+     */
+
+    public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
+        return debugRuleConfigurations;
+    }
+
+    /**
+     * <p>
+     * Information about the debug rule configuration.
+     * </p>
+     * 
+     * @param debugRuleConfigurations
+     *        Information about the debug rule configuration.
+     */
+
+    public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
+        if (debugRuleConfigurations == null) {
+            this.debugRuleConfigurations = null;
+            return;
+        }
+
+        this.debugRuleConfigurations = new java.util.ArrayList<DebugRuleConfiguration>(debugRuleConfigurations);
+    }
+
+    /**
+     * <p>
+     * Information about the debug rule configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDebugRuleConfigurations(java.util.Collection)} or
+     * {@link #withDebugRuleConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param debugRuleConfigurations
+     *        Information about the debug rule configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withDebugRuleConfigurations(DebugRuleConfiguration... debugRuleConfigurations) {
+        if (this.debugRuleConfigurations == null) {
+            setDebugRuleConfigurations(new java.util.ArrayList<DebugRuleConfiguration>(debugRuleConfigurations.length));
+        }
+        for (DebugRuleConfiguration ele : debugRuleConfigurations) {
+            this.debugRuleConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the debug rule configuration.
+     * </p>
+     * 
+     * @param debugRuleConfigurations
+     *        Information about the debug rule configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
+        setDebugRuleConfigurations(debugRuleConfigurations);
+        return this;
+    }
+
+    /**
+     * @param tensorBoardOutputConfig
+     */
+
+    public void setTensorBoardOutputConfig(TensorBoardOutputConfig tensorBoardOutputConfig) {
+        this.tensorBoardOutputConfig = tensorBoardOutputConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public TensorBoardOutputConfig getTensorBoardOutputConfig() {
+        return this.tensorBoardOutputConfig;
+    }
+
+    /**
+     * @param tensorBoardOutputConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withTensorBoardOutputConfig(TensorBoardOutputConfig tensorBoardOutputConfig) {
+        setTensorBoardOutputConfig(tensorBoardOutputConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the evaluation status of the rules for the training job.
+     * </p>
+     * 
+     * @return Information about the evaluation status of the rules for the training job.
+     */
+
+    public java.util.List<DebugRuleEvaluationStatus> getDebugRuleEvaluationStatuses() {
+        return debugRuleEvaluationStatuses;
+    }
+
+    /**
+     * <p>
+     * Information about the evaluation status of the rules for the training job.
+     * </p>
+     * 
+     * @param debugRuleEvaluationStatuses
+     *        Information about the evaluation status of the rules for the training job.
+     */
+
+    public void setDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
+        if (debugRuleEvaluationStatuses == null) {
+            this.debugRuleEvaluationStatuses = null;
+            return;
+        }
+
+        this.debugRuleEvaluationStatuses = new java.util.ArrayList<DebugRuleEvaluationStatus>(debugRuleEvaluationStatuses);
+    }
+
+    /**
+     * <p>
+     * Information about the evaluation status of the rules for the training job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDebugRuleEvaluationStatuses(java.util.Collection)} or
+     * {@link #withDebugRuleEvaluationStatuses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param debugRuleEvaluationStatuses
+     *        Information about the evaluation status of the rules for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus... debugRuleEvaluationStatuses) {
+        if (this.debugRuleEvaluationStatuses == null) {
+            setDebugRuleEvaluationStatuses(new java.util.ArrayList<DebugRuleEvaluationStatus>(debugRuleEvaluationStatuses.length));
+        }
+        for (DebugRuleEvaluationStatus ele : debugRuleEvaluationStatuses) {
+            this.debugRuleEvaluationStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the evaluation status of the rules for the training job.
+     * </p>
+     * 
+     * @param debugRuleEvaluationStatuses
+     *        Information about the evaluation status of the rules for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
+        setDebugRuleEvaluationStatuses(debugRuleEvaluationStatuses);
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
@@ -2807,6 +3276,8 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("TuningJobArn: ").append(getTuningJobArn()).append(",");
         if (getLabelingJobArn() != null)
             sb.append("LabelingJobArn: ").append(getLabelingJobArn()).append(",");
+        if (getAutoMLJobArn() != null)
+            sb.append("AutoMLJobArn: ").append(getAutoMLJobArn()).append(",");
         if (getModelArtifacts() != null)
             sb.append("ModelArtifacts: ").append(getModelArtifacts()).append(",");
         if (getTrainingJobStatus() != null)
@@ -2847,6 +3318,24 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation()).append(",");
         if (getEnableInterContainerTrafficEncryption() != null)
             sb.append("EnableInterContainerTrafficEncryption: ").append(getEnableInterContainerTrafficEncryption()).append(",");
+        if (getEnableManagedSpotTraining() != null)
+            sb.append("EnableManagedSpotTraining: ").append(getEnableManagedSpotTraining()).append(",");
+        if (getCheckpointConfig() != null)
+            sb.append("CheckpointConfig: ").append(getCheckpointConfig()).append(",");
+        if (getTrainingTimeInSeconds() != null)
+            sb.append("TrainingTimeInSeconds: ").append(getTrainingTimeInSeconds()).append(",");
+        if (getBillableTimeInSeconds() != null)
+            sb.append("BillableTimeInSeconds: ").append(getBillableTimeInSeconds()).append(",");
+        if (getDebugHookConfig() != null)
+            sb.append("DebugHookConfig: ").append(getDebugHookConfig()).append(",");
+        if (getExperimentConfig() != null)
+            sb.append("ExperimentConfig: ").append(getExperimentConfig()).append(",");
+        if (getDebugRuleConfigurations() != null)
+            sb.append("DebugRuleConfigurations: ").append(getDebugRuleConfigurations()).append(",");
+        if (getTensorBoardOutputConfig() != null)
+            sb.append("TensorBoardOutputConfig: ").append(getTensorBoardOutputConfig()).append(",");
+        if (getDebugRuleEvaluationStatuses() != null)
+            sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -2878,6 +3367,10 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
         if (other.getLabelingJobArn() == null ^ this.getLabelingJobArn() == null)
             return false;
         if (other.getLabelingJobArn() != null && other.getLabelingJobArn().equals(this.getLabelingJobArn()) == false)
+            return false;
+        if (other.getAutoMLJobArn() == null ^ this.getAutoMLJobArn() == null)
+            return false;
+        if (other.getAutoMLJobArn() != null && other.getAutoMLJobArn().equals(this.getAutoMLJobArn()) == false)
             return false;
         if (other.getModelArtifacts() == null ^ this.getModelArtifacts() == null)
             return false;
@@ -2960,6 +3453,42 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
         if (other.getEnableInterContainerTrafficEncryption() != null
                 && other.getEnableInterContainerTrafficEncryption().equals(this.getEnableInterContainerTrafficEncryption()) == false)
             return false;
+        if (other.getEnableManagedSpotTraining() == null ^ this.getEnableManagedSpotTraining() == null)
+            return false;
+        if (other.getEnableManagedSpotTraining() != null && other.getEnableManagedSpotTraining().equals(this.getEnableManagedSpotTraining()) == false)
+            return false;
+        if (other.getCheckpointConfig() == null ^ this.getCheckpointConfig() == null)
+            return false;
+        if (other.getCheckpointConfig() != null && other.getCheckpointConfig().equals(this.getCheckpointConfig()) == false)
+            return false;
+        if (other.getTrainingTimeInSeconds() == null ^ this.getTrainingTimeInSeconds() == null)
+            return false;
+        if (other.getTrainingTimeInSeconds() != null && other.getTrainingTimeInSeconds().equals(this.getTrainingTimeInSeconds()) == false)
+            return false;
+        if (other.getBillableTimeInSeconds() == null ^ this.getBillableTimeInSeconds() == null)
+            return false;
+        if (other.getBillableTimeInSeconds() != null && other.getBillableTimeInSeconds().equals(this.getBillableTimeInSeconds()) == false)
+            return false;
+        if (other.getDebugHookConfig() == null ^ this.getDebugHookConfig() == null)
+            return false;
+        if (other.getDebugHookConfig() != null && other.getDebugHookConfig().equals(this.getDebugHookConfig()) == false)
+            return false;
+        if (other.getExperimentConfig() == null ^ this.getExperimentConfig() == null)
+            return false;
+        if (other.getExperimentConfig() != null && other.getExperimentConfig().equals(this.getExperimentConfig()) == false)
+            return false;
+        if (other.getDebugRuleConfigurations() == null ^ this.getDebugRuleConfigurations() == null)
+            return false;
+        if (other.getDebugRuleConfigurations() != null && other.getDebugRuleConfigurations().equals(this.getDebugRuleConfigurations()) == false)
+            return false;
+        if (other.getTensorBoardOutputConfig() == null ^ this.getTensorBoardOutputConfig() == null)
+            return false;
+        if (other.getTensorBoardOutputConfig() != null && other.getTensorBoardOutputConfig().equals(this.getTensorBoardOutputConfig()) == false)
+            return false;
+        if (other.getDebugRuleEvaluationStatuses() == null ^ this.getDebugRuleEvaluationStatuses() == null)
+            return false;
+        if (other.getDebugRuleEvaluationStatuses() != null && other.getDebugRuleEvaluationStatuses().equals(this.getDebugRuleEvaluationStatuses()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -2976,6 +3505,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTrainingJobArn() == null) ? 0 : getTrainingJobArn().hashCode());
         hashCode = prime * hashCode + ((getTuningJobArn() == null) ? 0 : getTuningJobArn().hashCode());
         hashCode = prime * hashCode + ((getLabelingJobArn() == null) ? 0 : getLabelingJobArn().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLJobArn() == null) ? 0 : getAutoMLJobArn().hashCode());
         hashCode = prime * hashCode + ((getModelArtifacts() == null) ? 0 : getModelArtifacts().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobStatus() == null) ? 0 : getTrainingJobStatus().hashCode());
         hashCode = prime * hashCode + ((getSecondaryStatus() == null) ? 0 : getSecondaryStatus().hashCode());
@@ -2996,6 +3526,15 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFinalMetricDataList() == null) ? 0 : getFinalMetricDataList().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         hashCode = prime * hashCode + ((getEnableInterContainerTrafficEncryption() == null) ? 0 : getEnableInterContainerTrafficEncryption().hashCode());
+        hashCode = prime * hashCode + ((getEnableManagedSpotTraining() == null) ? 0 : getEnableManagedSpotTraining().hashCode());
+        hashCode = prime * hashCode + ((getCheckpointConfig() == null) ? 0 : getCheckpointConfig().hashCode());
+        hashCode = prime * hashCode + ((getTrainingTimeInSeconds() == null) ? 0 : getTrainingTimeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getBillableTimeInSeconds() == null) ? 0 : getBillableTimeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getDebugHookConfig() == null) ? 0 : getDebugHookConfig().hashCode());
+        hashCode = prime * hashCode + ((getExperimentConfig() == null) ? 0 : getExperimentConfig().hashCode());
+        hashCode = prime * hashCode + ((getDebugRuleConfigurations() == null) ? 0 : getDebugRuleConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getTensorBoardOutputConfig() == null) ? 0 : getTensorBoardOutputConfig().hashCode());
+        hashCode = prime * hashCode + ((getDebugRuleEvaluationStatuses() == null) ? 0 : getDebugRuleEvaluationStatuses().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -26,7 +26,9 @@ public enum Operator {
     GreaterThanOrEqualTo("GreaterThanOrEqualTo"),
     LessThan("LessThan"),
     LessThanOrEqualTo("LessThanOrEqualTo"),
-    Contains("Contains");
+    Contains("Contains"),
+    Exists("Exists"),
+    NotExists("NotExists");
 
     private String value;
 

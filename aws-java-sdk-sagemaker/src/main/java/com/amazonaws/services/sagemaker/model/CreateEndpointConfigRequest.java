@@ -38,6 +38,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<ProductionVariant> productionVariants;
+
+    private DataCaptureConfig dataCaptureConfig;
     /**
      * <p>
      * A list of key-value pairs. For more information, see <a
@@ -192,6 +194,32 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     public CreateEndpointConfigRequest withProductionVariants(java.util.Collection<ProductionVariant> productionVariants) {
         setProductionVariants(productionVariants);
+        return this;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     */
+
+    public void setDataCaptureConfig(DataCaptureConfig dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DataCaptureConfig getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withDataCaptureConfig(DataCaptureConfig dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
         return this;
     }
 
@@ -457,6 +485,8 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("EndpointConfigName: ").append(getEndpointConfigName()).append(",");
         if (getProductionVariants() != null)
             sb.append("ProductionVariants: ").append(getProductionVariants()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getKmsKeyId() != null)
@@ -483,6 +513,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getProductionVariants() != null && other.getProductionVariants().equals(this.getProductionVariants()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -501,6 +535,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
         hashCode = prime * hashCode + ((getProductionVariants() == null) ? 0 : getProductionVariants().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;

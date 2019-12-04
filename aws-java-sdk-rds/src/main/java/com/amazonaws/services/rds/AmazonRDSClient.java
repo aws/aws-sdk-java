@@ -336,104 +336,111 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     private void init() {
-        exceptionUnmarshallers.add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterRoleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InstallationMediaAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new OptionGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CustomAvailabilityZoneAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterRoleQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBInstanceStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterBacktrackNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBLogFileNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOptionGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBSubnetGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupNotSupportedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InsufficientDBClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSubnetStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBSubnetGroupNotAllowedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSecurityGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BackupPolicyNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidS3BucketExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ReservedDBInstanceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBSubnetGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StorageTypeNotSupportedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientDBInstanceCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBUpgradeDependencyFailureExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new KMSKeyNotAccessibleExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterEndpointNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientStorageClusterCapacityExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new GlobalClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstanceAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PointInTimeRestoreNotEnabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InstallationMediaNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBInstanceAutomatedBackupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CustomAvailabilityZoneNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterEndpointQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InstanceQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAutomatedBackupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new GlobalClusterQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new GlobalClusterAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyTargetAlreadyRegisteredExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceRoleQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBClusterEndpointStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidGlobalClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAutomatedBackupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceRoleNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSubnetGroupExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CustomAvailabilityZoneQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBInstanceRoleAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstancesOfferingNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DomainNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OptionGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyTargetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CustomAvailabilityZoneAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterRoleQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBInstanceStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBSubnetGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InsufficientDBClusterCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBSubnetGroupNotAllowedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBSnapshotStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidS3BucketExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ReservedDBInstanceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBSubnetGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new StorageTypeNotSupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KMSKeyNotAccessibleExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBClusterCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new GlobalClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new GlobalClusterAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBClusterEndpointStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidGlobalClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBProxyStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyTargetNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBInstanceRoleAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterEndpointAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.rds.model.AmazonRDSException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -2003,6 +2010,70 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new DB proxy.
+     * </p>
+     * 
+     * @param createDBProxyRequest
+     * @return Result of the CreateDBProxy operation returned by the service.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws DBProxyAlreadyExistsException
+     *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyQuotaExceededException
+     *         Your AWS account already has the maximum number of proxies in the specified AWS Region.
+     * @sample AmazonRDS.CreateDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateDBProxyResult createDBProxy(CreateDBProxyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBProxy(request);
+    }
+
+    @SdkInternalApi
+    final CreateDBProxyResult executeCreateDBProxy(CreateDBProxyRequest createDBProxyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDBProxyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDBProxyRequest> request = null;
+        Response<CreateDBProxyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDBProxyRequestMarshaller().marshall(super.beforeMarshalling(createDBProxyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBProxy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateDBProxyResult> responseHandler = new StaxResponseHandler<CreateDBProxyResult>(new CreateDBProxyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
@@ -2966,6 +3037,68 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes an existing proxy.
+     * </p>
+     * 
+     * @param deleteDBProxyRequest
+     * @return Result of the DeleteDBProxy operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.DeleteDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteDBProxyResult deleteDBProxy(DeleteDBProxyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBProxy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBProxyResult executeDeleteDBProxy(DeleteDBProxyRequest deleteDBProxyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDBProxyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDBProxyRequest> request = null;
+        Response<DeleteDBProxyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBProxyRequestMarshaller().marshall(super.beforeMarshalling(deleteDBProxyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBProxy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteDBProxyResult> responseHandler = new StaxResponseHandler<DeleteDBProxyResult>(new DeleteDBProxyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Deletes a DB security group.
      * </p>
@@ -3371,6 +3504,74 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteOptionGroupResult> responseHandler = new StaxResponseHandler<DeleteOptionGroupResult>(
                     new DeleteOptionGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
+     * <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param deregisterDBProxyTargetsRequest
+     * @return Result of the DeregisterDBProxyTargets operation returned by the service.
+     * @throws DBProxyTargetNotFoundException
+     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DeregisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeregisterDBProxyTargetsResult deregisterDBProxyTargets(DeregisterDBProxyTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterDBProxyTargets(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterDBProxyTargetsResult executeDeregisterDBProxyTargets(DeregisterDBProxyTargetsRequest deregisterDBProxyTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterDBProxyTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterDBProxyTargetsRequest> request = null;
+        Response<DeregisterDBProxyTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterDBProxyTargetsRequestMarshaller().marshall(super.beforeMarshalling(deregisterDBProxyTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterDBProxyTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeregisterDBProxyTargetsResult> responseHandler = new StaxResponseHandler<DeregisterDBProxyTargetsResult>(
+                    new DeregisterDBProxyTargetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4388,6 +4589,195 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBParametersResult> responseHandler = new StaxResponseHandler<DescribeDBParametersResult>(
                     new DescribeDBParametersResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxies.
+     * </p>
+     * 
+     * @param describeDBProxiesRequest
+     * @return Result of the DescribeDBProxies operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DescribeDBProxies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeDBProxiesResult describeDBProxies(DescribeDBProxiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBProxies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBProxiesResult executeDescribeDBProxies(DescribeDBProxiesRequest describeDBProxiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBProxiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBProxiesRequest> request = null;
+        Response<DescribeDBProxiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBProxiesRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDBProxiesResult> responseHandler = new StaxResponseHandler<DescribeDBProxiesResult>(
+                    new DescribeDBProxiesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
+     * </p>
+     * 
+     * @param describeDBProxyTargetGroupsRequest
+     * @return Result of the DescribeDBProxyTargetGroups operation returned by the service.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DescribeDBProxyTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDBProxyTargetGroupsResult describeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBProxyTargetGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBProxyTargetGroupsResult executeDescribeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest describeDBProxyTargetGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBProxyTargetGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBProxyTargetGroupsRequest> request = null;
+        Response<DescribeDBProxyTargetGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBProxyTargetGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxyTargetGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxyTargetGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDBProxyTargetGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBProxyTargetGroupsResult>(
+                    new DescribeDBProxyTargetGroupsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+     * </p>
+     * 
+     * @param describeDBProxyTargetsRequest
+     * @return Result of the DescribeDBProxyTargets operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetNotFoundException
+     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DescribeDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeDBProxyTargetsResult describeDBProxyTargets(DescribeDBProxyTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBProxyTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBProxyTargetsResult executeDescribeDBProxyTargets(DescribeDBProxyTargetsRequest describeDBProxyTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBProxyTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBProxyTargetsRequest> request = null;
+        Response<DescribeDBProxyTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBProxyTargetsRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxyTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxyTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDBProxyTargetsResult> responseHandler = new StaxResponseHandler<DescribeDBProxyTargetsResult>(
+                    new DescribeDBProxyTargetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6376,6 +6766,135 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Changes the settings for an existing DB proxy.
+     * </p>
+     * 
+     * @param modifyDBProxyRequest
+     * @return Result of the ModifyDBProxy operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyAlreadyExistsException
+     *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.ModifyDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyDBProxyResult modifyDBProxy(ModifyDBProxyRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBProxy(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBProxyResult executeModifyDBProxy(ModifyDBProxyRequest modifyDBProxyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyDBProxyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDBProxyRequest> request = null;
+        Response<ModifyDBProxyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDBProxyRequestMarshaller().marshall(super.beforeMarshalling(modifyDBProxyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBProxy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyDBProxyResult> responseHandler = new StaxResponseHandler<ModifyDBProxyResult>(new ModifyDBProxyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Modifies the properties of a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param modifyDBProxyTargetGroupRequest
+     * @return Result of the ModifyDBProxyTargetGroup operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.ModifyDBProxyTargetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyDBProxyTargetGroupResult modifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBProxyTargetGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBProxyTargetGroupResult executeModifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest modifyDBProxyTargetGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyDBProxyTargetGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDBProxyTargetGroupRequest> request = null;
+        Response<ModifyDBProxyTargetGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDBProxyTargetGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyDBProxyTargetGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBProxyTargetGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyDBProxyTargetGroupResult> responseHandler = new StaxResponseHandler<ModifyDBProxyTargetGroupResult>(
+                    new ModifyDBProxyTargetGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
      * </p>
@@ -7009,6 +7528,80 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param registerDBProxyTargetsRequest
+     * @return Result of the RegisterDBProxyTargets operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws DBProxyTargetAlreadyRegisteredException
+     *         The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonRDS.RegisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RegisterDBProxyTargetsResult registerDBProxyTargets(RegisterDBProxyTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDBProxyTargets(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDBProxyTargetsResult executeRegisterDBProxyTargets(RegisterDBProxyTargetsRequest registerDBProxyTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerDBProxyTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterDBProxyTargetsRequest> request = null;
+        Response<RegisterDBProxyTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterDBProxyTargetsRequestMarshaller().marshall(super.beforeMarshalling(registerDBProxyTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDBProxyTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RegisterDBProxyTargetsResult> responseHandler = new StaxResponseHandler<RegisterDBProxyTargetsResult>(
+                    new RegisterDBProxyTargetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

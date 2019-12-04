@@ -44,9 +44,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     private Integer instanceCount;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code> can be
-     * any of the following formats:
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
+     * volume attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -184,9 +184,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code> can be
-     * any of the following formats:
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
+     * volume attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -208,8 +208,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the batch transform job. The
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the
+     *        storage volume attached to the ML compute instance(s) that run the batch transform job. The
      *        <code>VolumeKmsKeyId</code> can be any of the following formats:</p>
      *        <ul>
      *        <li>
@@ -236,9 +236,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code> can be
-     * any of the following formats:
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
+     * volume attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -259,8 +259,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * </li>
      * </ul>
      * 
-     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *         volume attached to the ML compute instance(s) that run the batch transform job. The
+     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the
+     *         storage volume attached to the ML compute instance(s) that run the batch transform job. The
      *         <code>VolumeKmsKeyId</code> can be any of the following formats:</p>
      *         <ul>
      *         <li>
@@ -287,9 +287,9 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code> can be
-     * any of the following formats:
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the storage
+     * volume attached to the ML compute instance(s) that run the batch transform job. The <code>VolumeKmsKeyId</code>
+     * can be any of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -311,8 +311,8 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the batch transform job. The
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt model data on the
+     *        storage volume attached to the ML compute instance(s) that run the batch transform job. The
      *        <code>VolumeKmsKeyId</code> can be any of the following formats:</p>
      *        <ul>
      *        <li>

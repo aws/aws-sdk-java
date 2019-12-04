@@ -86,12 +86,16 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String roleArn;
+    /** <p/> */
+    private String type;
     /**
      * <p>
      * The date the state machine is created.
      * </p>
      */
     private java.util.Date creationDate;
+    /** <p/> */
+    private LoggingConfiguration loggingConfiguration;
 
     /**
      * <p>
@@ -522,6 +526,65 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
+     * @param type
+     * @see StateMachineType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     * @see StateMachineType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param type
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateMachineType
+     */
+
+    public DescribeStateMachineResult withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param type
+     * @see StateMachineType
+     */
+
+    public void setType(StateMachineType type) {
+        withType(type);
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param type
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateMachineType
+     */
+
+    public DescribeStateMachineResult withType(StateMachineType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * <p>
      * The date the state machine is created.
      * </p>
@@ -562,6 +625,38 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
+     * @param loggingConfiguration
+     */
+
+    public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        this.loggingConfiguration = loggingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public LoggingConfiguration getLoggingConfiguration() {
+        return this.loggingConfiguration;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param loggingConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineResult withLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        setLoggingConfiguration(loggingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -583,8 +678,12 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("Definition: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: ").append(getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getLoggingConfiguration() != null)
+            sb.append("LoggingConfiguration: ").append(getLoggingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -619,9 +718,17 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getLoggingConfiguration() == null ^ this.getLoggingConfiguration() == null)
+            return false;
+        if (other.getLoggingConfiguration() != null && other.getLoggingConfiguration().equals(this.getLoggingConfiguration()) == false)
             return false;
         return true;
     }
@@ -636,7 +743,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         return hashCode;
     }
 

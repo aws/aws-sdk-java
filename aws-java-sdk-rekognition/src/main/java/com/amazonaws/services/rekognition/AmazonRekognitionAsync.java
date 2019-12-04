@@ -68,10 +68,9 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>CompareFaces</code>
-     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
-     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to
+     * filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -141,10 +140,9 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>CompareFaces</code>
-     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
-     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to
+     * filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -241,6 +239,98 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<CreateCollectionResult> createCollectionAsync(CreateCollectionRequest createCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCollectionRequest, CreateCollectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Amazon Rekognition Custom Labels project. A project is a logical grouping of resources (images,
+     * Labels, models) and operations (training, evaluation and detection).
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.
+     * </p>
+     * 
+     * @param createProjectRequest
+     * @return A Java Future containing the result of the CreateProject operation returned by the service.
+     * @sample AmazonRekognitionAsync.CreateProject
+     */
+    java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest createProjectRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Rekognition Custom Labels project. A project is a logical grouping of resources (images,
+     * Labels, models) and operations (training, evaluation and detection).
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.
+     * </p>
+     * 
+     * @param createProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProject operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.CreateProject
+     */
+    java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest createProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProjectRequest, CreateProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom
+     * Labels project. You can specify one training dataset and one testing dataset. The response from
+     * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the version of the model.
+     * </p>
+     * <p>
+     * Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once training has successfully completed, call <a>DescribeProjectVersions</a> to get the training results and
+     * evaluate the model.
+     * </p>
+     * <p>
+     * After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.
+     * </p>
+     * 
+     * @param createProjectVersionRequest
+     * @return A Java Future containing the result of the CreateProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsync.CreateProjectVersion
+     */
+    java.util.concurrent.Future<CreateProjectVersionResult> createProjectVersionAsync(CreateProjectVersionRequest createProjectVersionRequest);
+
+    /**
+     * <p>
+     * Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom
+     * Labels project. You can specify one training dataset and one testing dataset. The response from
+     * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the version of the model.
+     * </p>
+     * <p>
+     * Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once training has successfully completed, call <a>DescribeProjectVersions</a> to get the training results and
+     * evaluate the model.
+     * </p>
+     * <p>
+     * After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.
+     * </p>
+     * 
+     * @param createProjectVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.CreateProjectVersion
+     */
+    java.util.concurrent.Future<CreateProjectVersionResult> createProjectVersionAsync(CreateProjectVersionRequest createProjectVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProjectVersionRequest, CreateProjectVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -439,6 +529,76 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Lists and describes the models in an Amazon Rekognition Custom Labels project. You can specify up to 10 model
+     * versions in <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for all models are
+     * returned.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code> action.
+     * </p>
+     * 
+     * @param describeProjectVersionsRequest
+     * @return A Java Future containing the result of the DescribeProjectVersions operation returned by the service.
+     * @sample AmazonRekognitionAsync.DescribeProjectVersions
+     */
+    java.util.concurrent.Future<DescribeProjectVersionsResult> describeProjectVersionsAsync(DescribeProjectVersionsRequest describeProjectVersionsRequest);
+
+    /**
+     * <p>
+     * Lists and describes the models in an Amazon Rekognition Custom Labels project. You can specify up to 10 model
+     * versions in <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for all models are
+     * returned.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code> action.
+     * </p>
+     * 
+     * @param describeProjectVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProjectVersions operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DescribeProjectVersions
+     */
+    java.util.concurrent.Future<DescribeProjectVersionsResult> describeProjectVersionsAsync(DescribeProjectVersionsRequest describeProjectVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProjectVersionsRequest, DescribeProjectVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists and gets information about your Amazon Rekognition Custom Labels projects.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.
+     * </p>
+     * 
+     * @param describeProjectsRequest
+     * @return A Java Future containing the result of the DescribeProjects operation returned by the service.
+     * @sample AmazonRekognitionAsync.DescribeProjects
+     */
+    java.util.concurrent.Future<DescribeProjectsResult> describeProjectsAsync(DescribeProjectsRequest describeProjectsRequest);
+
+    /**
+     * <p>
+     * Lists and gets information about your Amazon Rekognition Custom Labels projects.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.
+     * </p>
+     * 
+     * @param describeProjectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProjects operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DescribeProjects
+     */
+    java.util.concurrent.Future<DescribeProjectsResult> describeProjectsAsync(DescribeProjectsRequest describeProjectsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProjectsRequest, DescribeProjectsResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides information about a stream processor created by <a>CreateStreamProcessor</a>. You can get information
      * about the input and output streams, the input parameters for the face recognition being performed, and the
      * current status of the stream processor.
@@ -467,6 +627,95 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<DescribeStreamProcessorResult> describeStreamProcessorAsync(DescribeStreamProcessorRequest describeStreamProcessorRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeStreamProcessorRequest, DescribeStreamProcessorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model.
+     * </p>
+     * <p>
+     * You specify which version of a model version to use by using the <code>ProjectVersionArn</code> input parameter.
+     * </p>
+     * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
+     * you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must
+     * be either a PNG or JPEG formatted file.
+     * </p>
+     * <p>
+     * For each object that the model version detects on an image, the API returns a (<code>CustomLabel</code>) object
+     * in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the label name (
+     * <code>Name</code>), the level of confidence that the image contains the object (<code>Confidence</code>), and
+     * object location information, if it exists, for the label on the image (<code>Geometry</code>).
+     * </p>
+     * <p>
+     * During training model calculates a threshold value that determines if a prediction for a label is true. By
+     * default, <code>DetectCustomLabels</code> doesn't return labels whose confidence value is below the model's
+     * calculated threshold value. To filter labels that are returned, specify a value for <code>MinConfidence</code>
+     * that is higher than the model's calculated threshold. You can get the model's calculated threshold from the
+     * model's training results shown in the Amazon Rekognition Custom Labels console. To get all labels, regardless of
+     * confidence, specify a <code>MinConfidence</code> value of 0.
+     * </p>
+     * <p>
+     * You can also add the <code>MaxResults</code> parameter to limit the number of labels returned.
+     * </p>
+     * <p>
+     * This is a stateless API operation. That is, the operation does not persist any data.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DetectCustomLabels</code> action.
+     * </p>
+     * 
+     * @param detectCustomLabelsRequest
+     * @return A Java Future containing the result of the DetectCustomLabels operation returned by the service.
+     * @sample AmazonRekognitionAsync.DetectCustomLabels
+     */
+    java.util.concurrent.Future<DetectCustomLabelsResult> detectCustomLabelsAsync(DetectCustomLabelsRequest detectCustomLabelsRequest);
+
+    /**
+     * <p>
+     * Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model.
+     * </p>
+     * <p>
+     * You specify which version of a model version to use by using the <code>ProjectVersionArn</code> input parameter.
+     * </p>
+     * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
+     * you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must
+     * be either a PNG or JPEG formatted file.
+     * </p>
+     * <p>
+     * For each object that the model version detects on an image, the API returns a (<code>CustomLabel</code>) object
+     * in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the label name (
+     * <code>Name</code>), the level of confidence that the image contains the object (<code>Confidence</code>), and
+     * object location information, if it exists, for the label on the image (<code>Geometry</code>).
+     * </p>
+     * <p>
+     * During training model calculates a threshold value that determines if a prediction for a label is true. By
+     * default, <code>DetectCustomLabels</code> doesn't return labels whose confidence value is below the model's
+     * calculated threshold value. To filter labels that are returned, specify a value for <code>MinConfidence</code>
+     * that is higher than the model's calculated threshold. You can get the model's calculated threshold from the
+     * model's training results shown in the Amazon Rekognition Custom Labels console. To get all labels, regardless of
+     * confidence, specify a <code>MinConfidence</code> value of 0.
+     * </p>
+     * <p>
+     * You can also add the <code>MaxResults</code> parameter to limit the number of labels returned.
+     * </p>
+     * <p>
+     * This is a stateless API operation. That is, the operation does not persist any data.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DetectCustomLabels</code> action.
+     * </p>
+     * 
+     * @param detectCustomLabelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetectCustomLabels operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DetectCustomLabels
+     */
+    java.util.concurrent.Future<DetectCustomLabelsResult> detectCustomLabelsAsync(DetectCustomLabelsRequest detectCustomLabelsRequest,
+            com.amazonaws.handlers.AsyncHandler<DetectCustomLabelsRequest, DetectCustomLabelsResult> asyncHandler);
 
     /**
      * <p>
@@ -2045,11 +2294,9 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, Amazon Rekognition chooses
-     * the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar for filtering by specifying <code>LOW</code>,
-     * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>
-     * .
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do
+     * not want to filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -2099,11 +2346,9 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, Amazon Rekognition chooses
-     * the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar for filtering by specifying <code>LOW</code>,
-     * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>
-     * .
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do
+     * not want to filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -2452,6 +2697,59 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Starts the running of the version of a model. Starting a model takes a while to complete. To check the current
+     * state of the model, use <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once the model is running, you can detect custom labels in new images by calling <a>DetectCustomLabels</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You are charged for the amount of time that the model is running. To stop a running model, call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
+     * </p>
+     * 
+     * @param startProjectVersionRequest
+     * @return A Java Future containing the result of the StartProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartProjectVersion
+     */
+    java.util.concurrent.Future<StartProjectVersionResult> startProjectVersionAsync(StartProjectVersionRequest startProjectVersionRequest);
+
+    /**
+     * <p>
+     * Starts the running of the version of a model. Starting a model takes a while to complete. To check the current
+     * state of the model, use <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once the model is running, you can detect custom labels in new images by calling <a>DetectCustomLabels</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You are charged for the amount of time that the model is running. To stop a running model, call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
+     * </p>
+     * 
+     * @param startProjectVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartProjectVersion
+     */
+    java.util.concurrent.Future<StartProjectVersionResult> startProjectVersionAsync(StartProjectVersionRequest startProjectVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartProjectVersionRequest, StartProjectVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>. To
      * tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code>
      * field specified in the call to <code>CreateStreamProcessor</code>.
@@ -2480,6 +2778,35 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<StartStreamProcessorResult> startStreamProcessorAsync(StartStreamProcessorRequest startStreamProcessorRequest,
             com.amazonaws.handlers.AsyncHandler<StartStreamProcessorRequest, StartStreamProcessorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a running model. The operation might take a while to complete. To check the current status, call
+     * <a>DescribeProjectVersions</a>.
+     * </p>
+     * 
+     * @param stopProjectVersionRequest
+     * @return A Java Future containing the result of the StopProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsync.StopProjectVersion
+     */
+    java.util.concurrent.Future<StopProjectVersionResult> stopProjectVersionAsync(StopProjectVersionRequest stopProjectVersionRequest);
+
+    /**
+     * <p>
+     * Stops a running model. The operation might take a while to complete. To check the current status, call
+     * <a>DescribeProjectVersions</a>.
+     * </p>
+     * 
+     * @param stopProjectVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopProjectVersion operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StopProjectVersion
+     */
+    java.util.concurrent.Future<StopProjectVersionResult> stopProjectVersionAsync(StopProjectVersionRequest stopProjectVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopProjectVersionRequest, StopProjectVersionResult> asyncHandler);
 
     /**
      * <p>

@@ -649,6 +649,41 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Deletes the provisioned concurrency configuration for a function.
+     * </p>
+     * 
+     * @param deleteProvisionedConcurrencyConfigRequest
+     * @return A Java Future containing the result of the DeleteProvisionedConcurrencyConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.DeleteProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProvisionedConcurrencyConfigResult> deleteProvisionedConcurrencyConfigAsync(
+            DeleteProvisionedConcurrencyConfigRequest deleteProvisionedConcurrencyConfigRequest);
+
+    /**
+     * <p>
+     * Deletes the provisioned concurrency configuration for a function.
+     * </p>
+     * 
+     * @param deleteProvisionedConcurrencyConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProvisionedConcurrencyConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.DeleteProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProvisionedConcurrencyConfigResult> deleteProvisionedConcurrencyConfigAsync(
+            DeleteProvisionedConcurrencyConfigRequest deleteProvisionedConcurrencyConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProvisionedConcurrencyConfigRequest, DeleteProvisionedConcurrencyConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves details about your account's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.
      * </p>
@@ -780,6 +815,39 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns details about the concurrency configuration for a function. To set a concurrency limit for a function,
+     * use <a>PutFunctionConcurrency</a>.
+     * </p>
+     * 
+     * @param getFunctionConcurrencyRequest
+     * @return A Java Future containing the result of the GetFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsync.GetFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionConcurrencyResult> getFunctionConcurrencyAsync(GetFunctionConcurrencyRequest getFunctionConcurrencyRequest);
+
+    /**
+     * <p>
+     * Returns details about the concurrency configuration for a function. To set a concurrency limit for a function,
+     * use <a>PutFunctionConcurrency</a>.
+     * </p>
+     * 
+     * @param getFunctionConcurrencyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFunctionConcurrency operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionConcurrencyResult> getFunctionConcurrencyAsync(GetFunctionConcurrencyRequest getFunctionConcurrencyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionConcurrencyRequest, GetFunctionConcurrencyResult> asyncHandler);
 
     /**
      * <p>
@@ -1000,6 +1068,41 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest getPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the provisioned concurrency configuration for a function's alias or version.
+     * </p>
+     * 
+     * @param getProvisionedConcurrencyConfigRequest
+     * @return A Java Future containing the result of the GetProvisionedConcurrencyConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.GetProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProvisionedConcurrencyConfigResult> getProvisionedConcurrencyConfigAsync(
+            GetProvisionedConcurrencyConfigRequest getProvisionedConcurrencyConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves the provisioned concurrency configuration for a function's alias or version.
+     * </p>
+     * 
+     * @param getProvisionedConcurrencyConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProvisionedConcurrencyConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.GetProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProvisionedConcurrencyConfigResult> getProvisionedConcurrencyConfigAsync(
+            GetProvisionedConcurrencyConfigRequest getProvisionedConcurrencyConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProvisionedConcurrencyConfigRequest, GetProvisionedConcurrencyConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1403,6 +1506,41 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Retrieves a list of provisioned concurrency configurations for a function.
+     * </p>
+     * 
+     * @param listProvisionedConcurrencyConfigsRequest
+     * @return A Java Future containing the result of the ListProvisionedConcurrencyConfigs operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.ListProvisionedConcurrencyConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProvisionedConcurrencyConfigsResult> listProvisionedConcurrencyConfigsAsync(
+            ListProvisionedConcurrencyConfigsRequest listProvisionedConcurrencyConfigsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of provisioned concurrency configurations for a function.
+     * </p>
+     * 
+     * @param listProvisionedConcurrencyConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProvisionedConcurrencyConfigs operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.ListProvisionedConcurrencyConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProvisionedConcurrencyConfigsResult> listProvisionedConcurrencyConfigsAsync(
+            ListProvisionedConcurrencyConfigsRequest listProvisionedConcurrencyConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProvisionedConcurrencyConfigsRequest, ListProvisionedConcurrencyConfigsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can also
      * view tags with <a>GetFunction</a>.
      * </p>
@@ -1571,7 +1709,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * setting for a function.
      * </p>
      * <p>
-     * Use <a>GetAccountSettings</a> to see your regional concurrency limit. You can reserve concurrency for as many
+     * Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many
      * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
      * aren't configured with a per-function limit. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
@@ -1597,7 +1735,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * setting for a function.
      * </p>
      * <p>
-     * Use <a>GetAccountSettings</a> to see your regional concurrency limit. You can reserve concurrency for as many
+     * Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many
      * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
      * aren't configured with a per-function limit. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
@@ -1664,6 +1802,41 @@ public interface AWSLambdaAsync extends AWSLambda {
     java.util.concurrent.Future<PutFunctionEventInvokeConfigResult> putFunctionEventInvokeConfigAsync(
             PutFunctionEventInvokeConfigRequest putFunctionEventInvokeConfigRequest,
             com.amazonaws.handlers.AsyncHandler<PutFunctionEventInvokeConfigRequest, PutFunctionEventInvokeConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a provisioned concurrency configuration to a function's alias or version.
+     * </p>
+     * 
+     * @param putProvisionedConcurrencyConfigRequest
+     * @return A Java Future containing the result of the PutProvisionedConcurrencyConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.PutProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutProvisionedConcurrencyConfigResult> putProvisionedConcurrencyConfigAsync(
+            PutProvisionedConcurrencyConfigRequest putProvisionedConcurrencyConfigRequest);
+
+    /**
+     * <p>
+     * Adds a provisioned concurrency configuration to a function's alias or version.
+     * </p>
+     * 
+     * @param putProvisionedConcurrencyConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutProvisionedConcurrencyConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.PutProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutProvisionedConcurrencyConfigResult> putProvisionedConcurrencyConfigAsync(
+            PutProvisionedConcurrencyConfigRequest putProvisionedConcurrencyConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<PutProvisionedConcurrencyConfigRequest, PutProvisionedConcurrencyConfigResult> asyncHandler);
 
     /**
      * <p>

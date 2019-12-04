@@ -56,6 +56,10 @@ public class StateMachineListItemJsonUnmarshaller implements Unmarshaller<StateM
                     context.nextToken();
                     stateMachineListItem.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    stateMachineListItem.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
                     stateMachineListItem.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

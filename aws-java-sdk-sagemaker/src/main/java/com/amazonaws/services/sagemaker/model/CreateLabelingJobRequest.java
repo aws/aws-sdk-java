@@ -131,7 +131,8 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private LabelingJobAlgorithmsConfig labelingJobAlgorithmsConfig;
     /**
      * <p>
-     * Configures the information required for human workers to complete a labeling task.
+     * Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords,
+     * and batch size (task count).
      * </p>
      */
     private HumanTaskConfig humanTaskConfig;
@@ -799,11 +800,13 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the information required for human workers to complete a labeling task.
+     * Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords,
+     * and batch size (task count).
      * </p>
      * 
      * @param humanTaskConfig
-     *        Configures the information required for human workers to complete a labeling task.
+     *        Configures the labeling task and how it is presented to workers; including, but not limited to price,
+     *        keywords, and batch size (task count).
      */
 
     public void setHumanTaskConfig(HumanTaskConfig humanTaskConfig) {
@@ -812,10 +815,12 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the information required for human workers to complete a labeling task.
+     * Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords,
+     * and batch size (task count).
      * </p>
      * 
-     * @return Configures the information required for human workers to complete a labeling task.
+     * @return Configures the labeling task and how it is presented to workers; including, but not limited to price,
+     *         keywords, and batch size (task count).
      */
 
     public HumanTaskConfig getHumanTaskConfig() {
@@ -824,11 +829,13 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures the information required for human workers to complete a labeling task.
+     * Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords,
+     * and batch size (task count).
      * </p>
      * 
      * @param humanTaskConfig
-     *        Configures the information required for human workers to complete a labeling task.
+     *        Configures the labeling task and how it is presented to workers; including, but not limited to price,
+     *        keywords, and batch size (task count).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -118,6 +118,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
+     * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -190,6 +197,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
      * Amazon Comprehend document classification endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
      * </ul>
@@ -478,6 +490,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
+     * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -545,6 +564,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified
      *        using the endpoint ARN. Example:
      *        <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
+     *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      *        </p>
      *        </li>
      */
@@ -622,6 +648,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
+     * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -689,6 +722,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         Amazon Comprehend document classification endpoint - The resource type and unique identifier are
      *         specified using the endpoint ARN. Example:
      *         <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
+     *         the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     *         <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      *         </p>
      *         </li>
      */
@@ -766,6 +806,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
+     * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -833,6 +880,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified
      *        using the endpoint ARN. Example:
      *        <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
+     *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -914,6 +968,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Amazon Comprehend document classification endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -984,6 +1043,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1064,6 +1128,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Amazon Comprehend document classification endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1133,6 +1202,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference
      *         units for an Amazon Comprehend document classification endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1213,6 +1287,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Amazon Comprehend document classification endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1283,6 +1362,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1365,6 +1449,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Amazon Comprehend document classification endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1435,6 +1524,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1515,6 +1609,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Amazon Comprehend document classification endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1585,6 +1684,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

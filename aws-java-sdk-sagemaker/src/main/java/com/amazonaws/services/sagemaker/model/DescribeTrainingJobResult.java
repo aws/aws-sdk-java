@@ -49,6 +49,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String labelingJobArn;
+    /** <p/> */
+    private String autoMLJobArn;
     /**
      * <p>
      * Information about the Amazon S3 location that is configured for storing model artifacts.
@@ -370,6 +372,24 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      */
     private Integer billableTimeInSeconds;
 
+    private DebugHookConfig debugHookConfig;
+
+    private ExperimentConfig experimentConfig;
+    /**
+     * <p>
+     * Configuration information for debugging rules.
+     * </p>
+     */
+    private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
+
+    private TensorBoardOutputConfig tensorBoardOutputConfig;
+    /**
+     * <p>
+     * Status about the debug rule evaluation.
+     * </p>
+     */
+    private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
+
     /**
      * <p>
      * Name of the model training job.
@@ -539,6 +559,38 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     public DescribeTrainingJobResult withLabelingJobArn(String labelingJobArn) {
         setLabelingJobArn(labelingJobArn);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param autoMLJobArn
+     */
+
+    public void setAutoMLJobArn(String autoMLJobArn) {
+        this.autoMLJobArn = autoMLJobArn;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getAutoMLJobArn() {
+        return this.autoMLJobArn;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param autoMLJobArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withAutoMLJobArn(String autoMLJobArn) {
+        setAutoMLJobArn(autoMLJobArn);
         return this;
     }
 
@@ -3065,6 +3117,224 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * @param debugHookConfig
+     */
+
+    public void setDebugHookConfig(DebugHookConfig debugHookConfig) {
+        this.debugHookConfig = debugHookConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DebugHookConfig getDebugHookConfig() {
+        return this.debugHookConfig;
+    }
+
+    /**
+     * @param debugHookConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withDebugHookConfig(DebugHookConfig debugHookConfig) {
+        setDebugHookConfig(debugHookConfig);
+        return this;
+    }
+
+    /**
+     * @param experimentConfig
+     */
+
+    public void setExperimentConfig(ExperimentConfig experimentConfig) {
+        this.experimentConfig = experimentConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ExperimentConfig getExperimentConfig() {
+        return this.experimentConfig;
+    }
+
+    /**
+     * @param experimentConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withExperimentConfig(ExperimentConfig experimentConfig) {
+        setExperimentConfig(experimentConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for debugging rules.
+     * </p>
+     * 
+     * @return Configuration information for debugging rules.
+     */
+
+    public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
+        return debugRuleConfigurations;
+    }
+
+    /**
+     * <p>
+     * Configuration information for debugging rules.
+     * </p>
+     * 
+     * @param debugRuleConfigurations
+     *        Configuration information for debugging rules.
+     */
+
+    public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
+        if (debugRuleConfigurations == null) {
+            this.debugRuleConfigurations = null;
+            return;
+        }
+
+        this.debugRuleConfigurations = new java.util.ArrayList<DebugRuleConfiguration>(debugRuleConfigurations);
+    }
+
+    /**
+     * <p>
+     * Configuration information for debugging rules.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDebugRuleConfigurations(java.util.Collection)} or
+     * {@link #withDebugRuleConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param debugRuleConfigurations
+     *        Configuration information for debugging rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withDebugRuleConfigurations(DebugRuleConfiguration... debugRuleConfigurations) {
+        if (this.debugRuleConfigurations == null) {
+            setDebugRuleConfigurations(new java.util.ArrayList<DebugRuleConfiguration>(debugRuleConfigurations.length));
+        }
+        for (DebugRuleConfiguration ele : debugRuleConfigurations) {
+            this.debugRuleConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for debugging rules.
+     * </p>
+     * 
+     * @param debugRuleConfigurations
+     *        Configuration information for debugging rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
+        setDebugRuleConfigurations(debugRuleConfigurations);
+        return this;
+    }
+
+    /**
+     * @param tensorBoardOutputConfig
+     */
+
+    public void setTensorBoardOutputConfig(TensorBoardOutputConfig tensorBoardOutputConfig) {
+        this.tensorBoardOutputConfig = tensorBoardOutputConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public TensorBoardOutputConfig getTensorBoardOutputConfig() {
+        return this.tensorBoardOutputConfig;
+    }
+
+    /**
+     * @param tensorBoardOutputConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withTensorBoardOutputConfig(TensorBoardOutputConfig tensorBoardOutputConfig) {
+        setTensorBoardOutputConfig(tensorBoardOutputConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status about the debug rule evaluation.
+     * </p>
+     * 
+     * @return Status about the debug rule evaluation.
+     */
+
+    public java.util.List<DebugRuleEvaluationStatus> getDebugRuleEvaluationStatuses() {
+        return debugRuleEvaluationStatuses;
+    }
+
+    /**
+     * <p>
+     * Status about the debug rule evaluation.
+     * </p>
+     * 
+     * @param debugRuleEvaluationStatuses
+     *        Status about the debug rule evaluation.
+     */
+
+    public void setDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
+        if (debugRuleEvaluationStatuses == null) {
+            this.debugRuleEvaluationStatuses = null;
+            return;
+        }
+
+        this.debugRuleEvaluationStatuses = new java.util.ArrayList<DebugRuleEvaluationStatus>(debugRuleEvaluationStatuses);
+    }
+
+    /**
+     * <p>
+     * Status about the debug rule evaluation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDebugRuleEvaluationStatuses(java.util.Collection)} or
+     * {@link #withDebugRuleEvaluationStatuses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param debugRuleEvaluationStatuses
+     *        Status about the debug rule evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus... debugRuleEvaluationStatuses) {
+        if (this.debugRuleEvaluationStatuses == null) {
+            setDebugRuleEvaluationStatuses(new java.util.ArrayList<DebugRuleEvaluationStatus>(debugRuleEvaluationStatuses.length));
+        }
+        for (DebugRuleEvaluationStatus ele : debugRuleEvaluationStatuses) {
+            this.debugRuleEvaluationStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status about the debug rule evaluation.
+     * </p>
+     * 
+     * @param debugRuleEvaluationStatuses
+     *        Status about the debug rule evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
+        setDebugRuleEvaluationStatuses(debugRuleEvaluationStatuses);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3084,6 +3354,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("TuningJobArn: ").append(getTuningJobArn()).append(",");
         if (getLabelingJobArn() != null)
             sb.append("LabelingJobArn: ").append(getLabelingJobArn()).append(",");
+        if (getAutoMLJobArn() != null)
+            sb.append("AutoMLJobArn: ").append(getAutoMLJobArn()).append(",");
         if (getModelArtifacts() != null)
             sb.append("ModelArtifacts: ").append(getModelArtifacts()).append(",");
         if (getTrainingJobStatus() != null)
@@ -3131,7 +3403,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getTrainingTimeInSeconds() != null)
             sb.append("TrainingTimeInSeconds: ").append(getTrainingTimeInSeconds()).append(",");
         if (getBillableTimeInSeconds() != null)
-            sb.append("BillableTimeInSeconds: ").append(getBillableTimeInSeconds());
+            sb.append("BillableTimeInSeconds: ").append(getBillableTimeInSeconds()).append(",");
+        if (getDebugHookConfig() != null)
+            sb.append("DebugHookConfig: ").append(getDebugHookConfig()).append(",");
+        if (getExperimentConfig() != null)
+            sb.append("ExperimentConfig: ").append(getExperimentConfig()).append(",");
+        if (getDebugRuleConfigurations() != null)
+            sb.append("DebugRuleConfigurations: ").append(getDebugRuleConfigurations()).append(",");
+        if (getTensorBoardOutputConfig() != null)
+            sb.append("TensorBoardOutputConfig: ").append(getTensorBoardOutputConfig()).append(",");
+        if (getDebugRuleEvaluationStatuses() != null)
+            sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses());
         sb.append("}");
         return sb.toString();
     }
@@ -3161,6 +3443,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getLabelingJobArn() == null ^ this.getLabelingJobArn() == null)
             return false;
         if (other.getLabelingJobArn() != null && other.getLabelingJobArn().equals(this.getLabelingJobArn()) == false)
+            return false;
+        if (other.getAutoMLJobArn() == null ^ this.getAutoMLJobArn() == null)
+            return false;
+        if (other.getAutoMLJobArn() != null && other.getAutoMLJobArn().equals(this.getAutoMLJobArn()) == false)
             return false;
         if (other.getModelArtifacts() == null ^ this.getModelArtifacts() == null)
             return false;
@@ -3259,6 +3545,26 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getBillableTimeInSeconds() != null && other.getBillableTimeInSeconds().equals(this.getBillableTimeInSeconds()) == false)
             return false;
+        if (other.getDebugHookConfig() == null ^ this.getDebugHookConfig() == null)
+            return false;
+        if (other.getDebugHookConfig() != null && other.getDebugHookConfig().equals(this.getDebugHookConfig()) == false)
+            return false;
+        if (other.getExperimentConfig() == null ^ this.getExperimentConfig() == null)
+            return false;
+        if (other.getExperimentConfig() != null && other.getExperimentConfig().equals(this.getExperimentConfig()) == false)
+            return false;
+        if (other.getDebugRuleConfigurations() == null ^ this.getDebugRuleConfigurations() == null)
+            return false;
+        if (other.getDebugRuleConfigurations() != null && other.getDebugRuleConfigurations().equals(this.getDebugRuleConfigurations()) == false)
+            return false;
+        if (other.getTensorBoardOutputConfig() == null ^ this.getTensorBoardOutputConfig() == null)
+            return false;
+        if (other.getTensorBoardOutputConfig() != null && other.getTensorBoardOutputConfig().equals(this.getTensorBoardOutputConfig()) == false)
+            return false;
+        if (other.getDebugRuleEvaluationStatuses() == null ^ this.getDebugRuleEvaluationStatuses() == null)
+            return false;
+        if (other.getDebugRuleEvaluationStatuses() != null && other.getDebugRuleEvaluationStatuses().equals(this.getDebugRuleEvaluationStatuses()) == false)
+            return false;
         return true;
     }
 
@@ -3271,6 +3577,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getTrainingJobArn() == null) ? 0 : getTrainingJobArn().hashCode());
         hashCode = prime * hashCode + ((getTuningJobArn() == null) ? 0 : getTuningJobArn().hashCode());
         hashCode = prime * hashCode + ((getLabelingJobArn() == null) ? 0 : getLabelingJobArn().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLJobArn() == null) ? 0 : getAutoMLJobArn().hashCode());
         hashCode = prime * hashCode + ((getModelArtifacts() == null) ? 0 : getModelArtifacts().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobStatus() == null) ? 0 : getTrainingJobStatus().hashCode());
         hashCode = prime * hashCode + ((getSecondaryStatus() == null) ? 0 : getSecondaryStatus().hashCode());
@@ -3295,6 +3602,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getCheckpointConfig() == null) ? 0 : getCheckpointConfig().hashCode());
         hashCode = prime * hashCode + ((getTrainingTimeInSeconds() == null) ? 0 : getTrainingTimeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getBillableTimeInSeconds() == null) ? 0 : getBillableTimeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getDebugHookConfig() == null) ? 0 : getDebugHookConfig().hashCode());
+        hashCode = prime * hashCode + ((getExperimentConfig() == null) ? 0 : getExperimentConfig().hashCode());
+        hashCode = prime * hashCode + ((getDebugRuleConfigurations() == null) ? 0 : getDebugRuleConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getTensorBoardOutputConfig() == null) ? 0 : getTensorBoardOutputConfig().hashCode());
+        hashCode = prime * hashCode + ((getDebugRuleEvaluationStatuses() == null) ? 0 : getDebugRuleEvaluationStatuses().hashCode());
         return hashCode;
     }
 

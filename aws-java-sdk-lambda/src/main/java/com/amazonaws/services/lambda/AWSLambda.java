@@ -357,6 +357,8 @@ public interface AWSLambda {
      *         The AWS Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
      *         One of the parameters in the request is invalid.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
      * @sample AWSLambda.DeleteAlias
@@ -492,6 +494,30 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Deletes the provisioned concurrency configuration for a function.
+     * </p>
+     * 
+     * @param deleteProvisionedConcurrencyConfigRequest
+     * @return Result of the DeleteProvisionedConcurrencyConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.DeleteProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteProvisionedConcurrencyConfigResult deleteProvisionedConcurrencyConfig(
+            DeleteProvisionedConcurrencyConfigRequest deleteProvisionedConcurrencyConfigRequest);
+
+    /**
+     * <p>
      * Retrieves details about your account's <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.
      * </p>
@@ -574,6 +600,28 @@ public interface AWSLambda {
      *      Documentation</a>
      */
     GetFunctionResult getFunction(GetFunctionRequest getFunctionRequest);
+
+    /**
+     * <p>
+     * Returns details about the concurrency configuration for a function. To set a concurrency limit for a function,
+     * use <a>PutFunctionConcurrency</a>.
+     * </p>
+     * 
+     * @param getFunctionConcurrencyRequest
+     * @return Result of the GetFunctionConcurrency operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.GetFunctionConcurrency
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetFunctionConcurrencyResult getFunctionConcurrency(GetFunctionConcurrencyRequest getFunctionConcurrencyRequest);
 
     /**
      * <p>
@@ -715,6 +763,29 @@ public interface AWSLambda {
      *      Documentation</a>
      */
     GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the provisioned concurrency configuration for a function's alias or version.
+     * </p>
+     * 
+     * @param getProvisionedConcurrencyConfigRequest
+     * @return Result of the GetProvisionedConcurrencyConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ProvisionedConcurrencyConfigNotFoundException
+     *         The specified configuration does not exist.
+     * @sample AWSLambda.GetProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetProvisionedConcurrencyConfigResult getProvisionedConcurrencyConfig(GetProvisionedConcurrencyConfigRequest getProvisionedConcurrencyConfigRequest);
 
     /**
      * <p>
@@ -1002,6 +1073,27 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Retrieves a list of provisioned concurrency configurations for a function.
+     * </p>
+     * 
+     * @param listProvisionedConcurrencyConfigsRequest
+     * @return Result of the ListProvisionedConcurrencyConfigs operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.ListProvisionedConcurrencyConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListProvisionedConcurrencyConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListProvisionedConcurrencyConfigsResult listProvisionedConcurrencyConfigs(ListProvisionedConcurrencyConfigsRequest listProvisionedConcurrencyConfigsRequest);
+
+    /**
+     * <p>
      * Returns a function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>. You can also
      * view tags with <a>GetFunction</a>.
      * </p>
@@ -1125,7 +1217,7 @@ public interface AWSLambda {
      * setting for a function.
      * </p>
      * <p>
-     * Use <a>GetAccountSettings</a> to see your regional concurrency limit. You can reserve concurrency for as many
+     * Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many
      * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
      * aren't configured with a per-function limit. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
@@ -1176,6 +1268,29 @@ public interface AWSLambda {
      *      target="_top">AWS API Documentation</a>
      */
     PutFunctionEventInvokeConfigResult putFunctionEventInvokeConfig(PutFunctionEventInvokeConfigRequest putFunctionEventInvokeConfigRequest);
+
+    /**
+     * <p>
+     * Adds a provisioned concurrency configuration to a function's alias or version.
+     * </p>
+     * 
+     * @param putProvisionedConcurrencyConfigRequest
+     * @return Result of the PutProvisionedConcurrencyConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @sample AWSLambda.PutProvisionedConcurrencyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutProvisionedConcurrencyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutProvisionedConcurrencyConfigResult putProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest putProvisionedConcurrencyConfigRequest);
 
     /**
      * <p>

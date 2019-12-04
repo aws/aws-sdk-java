@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.rekognition.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.rekognition.waiters.AmazonRekognitionWaiters;
 
 /**
  * Abstract implementation of {@code AmazonRekognition}. Convenient method forms pass through to the corresponding
@@ -48,6 +49,16 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public CreateProjectResult createProject(CreateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProjectVersionResult createProjectVersion(CreateProjectVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateStreamProcessorResult createStreamProcessor(CreateStreamProcessorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,7 +84,22 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public DescribeProjectVersionsResult describeProjectVersions(DescribeProjectVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeProjectsResult describeProjects(DescribeProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeStreamProcessorResult describeStreamProcessor(DescribeStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetectCustomLabelsResult detectCustomLabels(DetectCustomLabelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -198,7 +224,17 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public StartProjectVersionResult startProjectVersion(StartProjectVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartStreamProcessorResult startStreamProcessor(StartStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopProjectVersionResult stopProjectVersion(StopProjectVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,6 +250,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonRekognitionWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

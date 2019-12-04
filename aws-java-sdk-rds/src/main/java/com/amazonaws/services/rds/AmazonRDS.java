@@ -930,6 +930,31 @@ public interface AmazonRDS {
     DBParameterGroup createDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new DB proxy.
+     * </p>
+     * 
+     * @param createDBProxyRequest
+     * @return Result of the CreateDBProxy operation returned by the service.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws DBProxyAlreadyExistsException
+     *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyQuotaExceededException
+     *         Your AWS account already has the maximum number of proxies in the specified AWS Region.
+     * @sample AmazonRDS.CreateDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDBProxyResult createDBProxy(CreateDBProxyRequest createDBProxyRequest);
+
+    /**
      * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
@@ -1342,6 +1367,29 @@ public interface AmazonRDS {
     DeleteDBParameterGroupResult deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes an existing proxy.
+     * </p>
+     * 
+     * @param deleteDBProxyRequest
+     * @return Result of the DeleteDBProxy operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.DeleteDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteDBProxyResult deleteDBProxy(DeleteDBProxyRequest deleteDBProxyRequest);
+
+    /**
      * <p>
      * Deletes a DB security group.
      * </p>
@@ -1479,6 +1527,34 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DeleteOptionGroupResult deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
+     * <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param deregisterDBProxyTargetsRequest
+     * @return Result of the DeregisterDBProxyTargets operation returned by the service.
+     * @throws DBProxyTargetNotFoundException
+     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DeregisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeregisterDBProxyTargetsResult deregisterDBProxyTargets(DeregisterDBProxyTargetsRequest deregisterDBProxyTargetsRequest);
 
     /**
      * <p>
@@ -1867,6 +1943,75 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxies.
+     * </p>
+     * 
+     * @param describeDBProxiesRequest
+     * @return Result of the DescribeDBProxies operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DescribeDBProxies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeDBProxiesResult describeDBProxies(DescribeDBProxiesRequest describeDBProxiesRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
+     * </p>
+     * 
+     * @param describeDBProxyTargetGroupsRequest
+     * @return Result of the DescribeDBProxyTargetGroups operation returned by the service.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DescribeDBProxyTargetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDBProxyTargetGroupsResult describeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest describeDBProxyTargetGroupsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
+     * </p>
+     * 
+     * @param describeDBProxyTargetsRequest
+     * @return Result of the DescribeDBProxyTargets operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetNotFoundException
+     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.DescribeDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeDBProxyTargetsResult describeDBProxyTargets(DescribeDBProxyTargetsRequest describeDBProxyTargetsRequest);
 
     /**
      * <p>
@@ -2668,6 +2813,56 @@ public interface AmazonRDS {
     ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest);
 
     /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Changes the settings for an existing DB proxy.
+     * </p>
+     * 
+     * @param modifyDBProxyRequest
+     * @return Result of the ModifyDBProxy operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyAlreadyExistsException
+     *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.ModifyDBProxy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyDBProxyResult modifyDBProxy(ModifyDBProxyRequest modifyDBProxyRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Modifies the properties of a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param modifyDBProxyTargetGroupRequest
+     * @return Result of the ModifyDBProxyTargetGroup operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @sample AmazonRDS.ModifyDBProxyTargetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyDBProxyTargetGroupResult modifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest modifyDBProxyTargetGroupRequest);
+
+    /**
      * <p>
      * Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new engine version.
      * </p>
@@ -2918,6 +3113,40 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest);
+
+    /**
+     * <note>
+     * <p>
+     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * </p>
+     * </note>
+     * <p>
+     * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+     * </p>
+     * 
+     * @param registerDBProxyTargetsRequest
+     * @return Result of the RegisterDBProxyTargets operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
+     * @throws DBProxyTargetGroupNotFoundException
+     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws DBProxyTargetAlreadyRegisteredException
+     *         The proxy is already associated with the specified RDS DB instance or Aurora DB cluster.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonRDS.RegisterDBProxyTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RegisterDBProxyTargetsResult registerDBProxyTargets(RegisterDBProxyTargetsRequest registerDBProxyTargetsRequest);
 
     /**
      * <p>

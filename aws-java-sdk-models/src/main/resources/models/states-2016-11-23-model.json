@@ -41,9 +41,11 @@
         {"shape":"InvalidArn"},
         {"shape":"InvalidDefinition"},
         {"shape":"InvalidName"},
+        {"shape":"InvalidLoggingConfiguration"},
         {"shape":"StateMachineAlreadyExists"},
         {"shape":"StateMachineDeleting"},
         {"shape":"StateMachineLimitExceeded"},
+        {"shape":"StateMachineTypeNotSupported"},
         {"shape":"TooManyTags"}
       ],
       "documentation":"<p>Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured language.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine <code>name</code> and <code>definition</code>. If a following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.</p> </note>",
@@ -185,7 +187,8 @@
       "errors":[
         {"shape":"InvalidArn"},
         {"shape":"InvalidToken"},
-        {"shape":"StateMachineDoesNotExist"}
+        {"shape":"StateMachineDoesNotExist"},
+        {"shape":"StateMachineTypeNotSupported"}
       ],
       "documentation":"<p>Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the most recent execution first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
@@ -336,6 +339,7 @@
       "errors":[
         {"shape":"InvalidArn"},
         {"shape":"InvalidDefinition"},
+        {"shape":"InvalidLoggingConfiguration"},
         {"shape":"MissingRequiredParameter"},
         {"shape":"StateMachineDeleting"},
         {"shape":"StateMachineDoesNotExist"}
@@ -488,6 +492,16 @@
       "max":256,
       "min":1
     },
+    "CloudWatchLogsLogGroup":{
+      "type":"structure",
+      "members":{
+        "logGroupArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with <code>:*</code> </p>"
+        }
+      },
+      "documentation":"<p/>"
+    },
     "ConnectorParameters":{
       "type":"string",
       "max":32768,
@@ -544,6 +558,14 @@
         "roleArn":{
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>"
+        },
+        "type":{
+          "shape":"StateMachineType",
+          "documentation":"<p>Determines whether a Standard or Express state machine is created. If not set, Standard is created.</p>"
+        },
+        "loggingConfiguration":{
+          "shape":"LoggingConfiguration",
+          "documentation":"<p>Defines what execution history events are logged and where they are logged.</p>"
         },
         "tags":{
           "shape":"TagList",
@@ -749,6 +771,7 @@
         "name",
         "definition",
         "roleArn",
+        "type",
         "creationDate"
       ],
       "members":{
@@ -772,9 +795,17 @@
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role used when creating this state machine. (The IAM role maintains security by granting Step Functions access to AWS resources.)</p>"
         },
+        "type":{
+          "shape":"StateMachineType",
+          "documentation":"<p/>"
+        },
         "creationDate":{
           "shape":"Timestamp",
           "documentation":"<p>The date the state machine is created.</p>"
+        },
+        "loggingConfiguration":{
+          "shape":"LoggingConfiguration",
+          "documentation":"<p/>"
         }
       }
     },
@@ -1160,6 +1191,7 @@
       "type":"string",
       "max":256
     },
+    "IncludeExecutionData":{"type":"boolean"},
     "InvalidArn":{
       "type":"structure",
       "members":{
@@ -1182,6 +1214,14 @@
         "message":{"shape":"ErrorMessage"}
       },
       "documentation":"<p>The provided JSON input data is invalid.</p>",
+      "exception":true
+    },
+    "InvalidLoggingConfiguration":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p/>",
       "exception":true
     },
     "InvalidName":{
@@ -1404,6 +1444,47 @@
           "documentation":"<p>An array of tags associated with the resource.</p>"
         }
       }
+    },
+    "LogDestination":{
+      "type":"structure",
+      "members":{
+        "cloudWatchLogsLogGroup":{
+          "shape":"CloudWatchLogsLogGroup",
+          "documentation":"<p>An object describing a CloudWatch log group. For more information, see <a href=\"https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html\">AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.</p>"
+        }
+      },
+      "documentation":"<p/>"
+    },
+    "LogDestinationList":{
+      "type":"list",
+      "member":{"shape":"LogDestination"}
+    },
+    "LogLevel":{
+      "type":"string",
+      "enum":[
+        "ALL",
+        "ERROR",
+        "FATAL",
+        "OFF"
+      ]
+    },
+    "LoggingConfiguration":{
+      "type":"structure",
+      "members":{
+        "level":{
+          "shape":"LogLevel",
+          "documentation":"<p>Defines which category of execution history events are logged.</p>"
+        },
+        "includeExecutionData":{
+          "shape":"IncludeExecutionData",
+          "documentation":"<p>Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is excluded.</p>"
+        },
+        "destinations":{
+          "shape":"LogDestinationList",
+          "documentation":"<p>An object that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>"
+        }
+      },
+      "documentation":"<p/>"
     },
     "MapIterationEventDetails":{
       "type":"structure",
@@ -1650,6 +1731,7 @@
       "required":[
         "stateMachineArn",
         "name",
+        "type",
         "creationDate"
       ],
       "members":{
@@ -1660,6 +1742,10 @@
         "name":{
           "shape":"Name",
           "documentation":"<p>The name of the state machine.</p> <p>A name must <i>not</i> contain:</p> <ul> <li> <p>white space</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special characters <code>\" # % \\ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> </ul>"
+        },
+        "type":{
+          "shape":"StateMachineType",
+          "documentation":"<p/>"
         },
         "creationDate":{
           "shape":"Timestamp",
@@ -1674,6 +1760,21 @@
         "ACTIVE",
         "DELETING"
       ]
+    },
+    "StateMachineType":{
+      "type":"string",
+      "enum":[
+        "STANDARD",
+        "EXPRESS"
+      ]
+    },
+    "StateMachineTypeNotSupported":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p/>",
+      "exception":true
     },
     "StopExecutionInput":{
       "type":"structure",
@@ -2027,6 +2128,10 @@
         "roleArn":{
           "shape":"Arn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>"
+        },
+        "loggingConfiguration":{
+          "shape":"LoggingConfiguration",
+          "documentation":"<p/>"
         }
       }
     },

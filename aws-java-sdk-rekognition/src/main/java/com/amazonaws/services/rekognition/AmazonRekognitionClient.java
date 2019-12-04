@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.rekognition.AmazonRekognitionClientBuilder;
+import com.amazonaws.services.rekognition.waiters.AmazonRekognitionWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -66,6 +67,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "rekognition";
 
+    private volatile AmazonRekognitionWaiters waiters;
+
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
@@ -83,11 +86,17 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotReadyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.ResourceNotReadyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidImageFormatException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.InvalidImageFormatExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.rekognition.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.InvalidS3ObjectExceptionUnmarshaller.getInstance()))
@@ -359,10 +368,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, <code>CompareFaces</code>
-     * chooses the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
-     * <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>.
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to
+     * filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -524,6 +532,163 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateCollectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCollectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon Rekognition Custom Labels project. A project is a logical grouping of resources (images,
+     * Labels, models) and operations (training, evaluation and detection).
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProject</code> action.
+     * </p>
+     * 
+     * @param createProjectRequest
+     * @return Result of the CreateProject operation returned by the service.
+     * @throws ResourceInUseException
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.CreateProject
+     */
+    @Override
+    public CreateProjectResult createProject(CreateProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProject(request);
+    }
+
+    @SdkInternalApi
+    final CreateProjectResult executeCreateProject(CreateProjectRequest createProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProjectRequest> request = null;
+        Response<CreateProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProjectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom
+     * Labels project. You can specify one training dataset and one testing dataset. The response from
+     * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the version of the model.
+     * </p>
+     * <p>
+     * Training takes a while to complete. You can get the current status by calling <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once training has successfully completed, call <a>DescribeProjectVersions</a> to get the training results and
+     * evaluate the model.
+     * </p>
+     * <p>
+     * After evaluating the model, you start the model by calling <a>StartProjectVersion</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code> action.
+     * </p>
+     * 
+     * @param createProjectVersionRequest
+     * @return Result of the CreateProjectVersion operation returned by the service.
+     * @throws ResourceInUseException
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.CreateProjectVersion
+     */
+    @Override
+    public CreateProjectVersionResult createProjectVersion(CreateProjectVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProjectVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateProjectVersionResult executeCreateProjectVersion(CreateProjectVersionRequest createProjectVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProjectVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProjectVersionRequest> request = null;
+        Response<CreateProjectVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProjectVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProjectVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProjectVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProjectVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -893,6 +1058,146 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Lists and describes the models in an Amazon Rekognition Custom Labels project. You can specify up to 10 model
+     * versions in <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for all models are
+     * returned.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code> action.
+     * </p>
+     * 
+     * @param describeProjectVersionsRequest
+     * @return Result of the DescribeProjectVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DescribeProjectVersions
+     */
+    @Override
+    public DescribeProjectVersionsResult describeProjectVersions(DescribeProjectVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProjectVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProjectVersionsResult executeDescribeProjectVersions(DescribeProjectVersionsRequest describeProjectVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProjectVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProjectVersionsRequest> request = null;
+        Response<DescribeProjectVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProjectVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeProjectVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProjectVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProjectVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProjectVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists and gets information about your Amazon Rekognition Custom Labels projects.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.
+     * </p>
+     * 
+     * @param describeProjectsRequest
+     * @return Result of the DescribeProjects operation returned by the service.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.DescribeProjects
+     */
+    @Override
+    public DescribeProjectsResult describeProjects(DescribeProjectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProjects(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProjectsResult executeDescribeProjects(DescribeProjectsRequest describeProjectsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProjectsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProjectsRequest> request = null;
+        Response<DescribeProjectsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProjectsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProjects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProjectsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides information about a stream processor created by <a>CreateStreamProcessor</a>. You can get information
      * about the input and output streams, the input parameters for the face recognition being performed, and the
      * current status of the stream processor.
@@ -949,6 +1254,116 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DescribeStreamProcessorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeStreamProcessorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model.
+     * </p>
+     * <p>
+     * You specify which version of a model version to use by using the <code>ProjectVersionArn</code> input parameter.
+     * </p>
+     * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
+     * you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must
+     * be either a PNG or JPEG formatted file.
+     * </p>
+     * <p>
+     * For each object that the model version detects on an image, the API returns a (<code>CustomLabel</code>) object
+     * in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the label name (
+     * <code>Name</code>), the level of confidence that the image contains the object (<code>Confidence</code>), and
+     * object location information, if it exists, for the label on the image (<code>Geometry</code>).
+     * </p>
+     * <p>
+     * During training model calculates a threshold value that determines if a prediction for a label is true. By
+     * default, <code>DetectCustomLabels</code> doesn't return labels whose confidence value is below the model's
+     * calculated threshold value. To filter labels that are returned, specify a value for <code>MinConfidence</code>
+     * that is higher than the model's calculated threshold. You can get the model's calculated threshold from the
+     * model's training results shown in the Amazon Rekognition Custom Labels console. To get all labels, regardless of
+     * confidence, specify a <code>MinConfidence</code> value of 0.
+     * </p>
+     * <p>
+     * You can also add the <code>MaxResults</code> parameter to limit the number of labels returned.
+     * </p>
+     * <p>
+     * This is a stateless API operation. That is, the operation does not persist any data.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DetectCustomLabels</code> action.
+     * </p>
+     * 
+     * @param detectCustomLabelsRequest
+     * @return Result of the DetectCustomLabels operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceNotReadyException
+     *         The requested resource isn't ready. For example, this exception occurs when you call
+     *         <code>DetectCustomLabels</code> with a model version that isn't deployed.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ImageTooLargeException
+     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         the Amazon Rekognition Developer Guide.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
+     * @sample AmazonRekognition.DetectCustomLabels
+     */
+    @Override
+    public DetectCustomLabelsResult detectCustomLabels(DetectCustomLabelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectCustomLabels(request);
+    }
+
+    @SdkInternalApi
+    final DetectCustomLabelsResult executeDetectCustomLabels(DetectCustomLabelsRequest detectCustomLabelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detectCustomLabelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetectCustomLabelsRequest> request = null;
+        Response<DetectCustomLabelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetectCustomLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectCustomLabelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectCustomLabels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetectCustomLabelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetectCustomLabelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1237,6 +1652,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         Rekognition.
      * @throws InvalidImageFormatException
      *         The provided image format is not supported.
+     * @throws HumanLoopQuotaExceededException
+     *         The number of in-progress human reviews you have has exceeded the number allowed.
      * @sample AmazonRekognition.DetectModerationLabels
      */
     @Override
@@ -2675,11 +3092,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * The <code>QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a required
-     * quality bar. The quality bar is based on a variety of common use cases. By default, Amazon Rekognition chooses
-     * the quality bar that's used to filter faces. You can also explicitly choose the quality bar. Use
-     * <code>QualityFilter</code>, to set the quality bar for filtering by specifying <code>LOW</code>,
-     * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected faces, specify <code>NONE</code>
-     * .
+     * quality bar. The quality bar is based on a variety of common use cases. Use <code>QualityFilter</code> to set the
+     * quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do
+     * not want to filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
      * <note>
      * <p>
@@ -3294,6 +3709,89 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Starts the running of the version of a model. Starting a model takes a while to complete. To check the current
+     * state of the model, use <a>DescribeProjectVersions</a>.
+     * </p>
+     * <p>
+     * Once the model is running, you can detect custom labels in new images by calling <a>DetectCustomLabels</a>.
+     * </p>
+     * <note>
+     * <p>
+     * You are charged for the amount of time that the model is running. To stop a running model, call
+     * <a>StopProjectVersion</a>.
+     * </p>
+     * </note>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code> action.
+     * </p>
+     * 
+     * @param startProjectVersionRequest
+     * @return Result of the StartProjectVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.StartProjectVersion
+     */
+    @Override
+    public StartProjectVersionResult startProjectVersion(StartProjectVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartProjectVersion(request);
+    }
+
+    @SdkInternalApi
+    final StartProjectVersionResult executeStartProjectVersion(StartProjectVersionRequest startProjectVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startProjectVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartProjectVersionRequest> request = null;
+        Response<StartProjectVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartProjectVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startProjectVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartProjectVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartProjectVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartProjectVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>. To
      * tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code>
      * field specified in the call to <code>CreateStreamProcessor</code>.
@@ -3349,6 +3847,72 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<StartStreamProcessorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartStreamProcessorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a running model. The operation might take a while to complete. To check the current status, call
+     * <a>DescribeProjectVersions</a>.
+     * </p>
+     * 
+     * @param stopProjectVersionRequest
+     * @return Result of the StopProjectVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ResourceInUseException
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.StopProjectVersion
+     */
+    @Override
+    public StopProjectVersionResult stopProjectVersion(StopProjectVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopProjectVersion(request);
+    }
+
+    @SdkInternalApi
+    final StopProjectVersionResult executeStopProjectVersion(StopProjectVersionRequest stopProjectVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopProjectVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopProjectVersionRequest> request = null;
+        Response<StopProjectVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopProjectVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopProjectVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Rekognition");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopProjectVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopProjectVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopProjectVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3498,6 +4062,26 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AmazonRekognitionWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonRekognitionWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

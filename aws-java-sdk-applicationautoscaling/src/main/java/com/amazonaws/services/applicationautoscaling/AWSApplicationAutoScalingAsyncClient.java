@@ -79,6 +79,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Amazon Comprehend document classification endpoints
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * AWS Lambda function provisioned concurrency
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>API Summary</b>

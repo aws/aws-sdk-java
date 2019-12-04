@@ -47,6 +47,8 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.List<ProductionVariantSummary> productionVariants;
+
+    private DataCaptureConfigSummary dataCaptureConfig;
     /**
      * <p>
      * The status of the endpoint.
@@ -309,6 +311,32 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
 
     public DescribeEndpointResult withProductionVariants(java.util.Collection<ProductionVariantSummary> productionVariants) {
         setProductionVariants(productionVariants);
+        return this;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     */
+
+    public void setDataCaptureConfig(DataCaptureConfigSummary dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DataCaptureConfigSummary getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointResult withDataCaptureConfig(DataCaptureConfigSummary dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
         return this;
     }
 
@@ -911,6 +939,8 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("EndpointConfigName: ").append(getEndpointConfigName()).append(",");
         if (getProductionVariants() != null)
             sb.append("ProductionVariants: ").append(getProductionVariants()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig()).append(",");
         if (getEndpointStatus() != null)
             sb.append("EndpointStatus: ").append(getEndpointStatus()).append(",");
         if (getFailureReason() != null)
@@ -949,6 +979,10 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getProductionVariants() != null && other.getProductionVariants().equals(this.getProductionVariants()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         if (other.getEndpointStatus() == null ^ this.getEndpointStatus() == null)
             return false;
         if (other.getEndpointStatus() != null && other.getEndpointStatus().equals(this.getEndpointStatus()) == false)
@@ -977,6 +1011,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
         hashCode = prime * hashCode + ((getProductionVariants() == null) ? 0 : getProductionVariants().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         hashCode = prime * hashCode + ((getEndpointStatus() == null) ? 0 : getEndpointStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
