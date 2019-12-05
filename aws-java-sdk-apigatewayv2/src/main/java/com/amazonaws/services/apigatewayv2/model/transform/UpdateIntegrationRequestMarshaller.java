@@ -51,6 +51,8 @@ public class UpdateIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationUri").build();
     private static final MarshallingInfo<String> PASSTHROUGHBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("passthroughBehavior").build();
+    private static final MarshallingInfo<String> PAYLOADFORMATVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payloadFormatVersion").build();
     private static final MarshallingInfo<Map> REQUESTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestParameters").build();
     private static final MarshallingInfo<Map> REQUESTTEMPLATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -87,6 +89,7 @@ public class UpdateIntegrationRequestMarshaller {
             protocolMarshaller.marshall(updateIntegrationRequest.getIntegrationType(), INTEGRATIONTYPE_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getIntegrationUri(), INTEGRATIONURI_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getPassthroughBehavior(), PASSTHROUGHBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(updateIntegrationRequest.getPayloadFormatVersion(), PAYLOADFORMATVERSION_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
             protocolMarshaller.marshall(updateIntegrationRequest.getTemplateSelectionExpression(), TEMPLATESELECTIONEXPRESSION_BINDING);

@@ -48,6 +48,10 @@ public class IntegrationJsonUnmarshaller implements Unmarshaller<Integration, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    context.nextToken();
+                    integration.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("connectionId", targetDepth)) {
                     context.nextToken();
                     integration.setConnectionId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +95,10 @@ public class IntegrationJsonUnmarshaller implements Unmarshaller<Integration, Js
                 if (context.testExpression("passthroughBehavior", targetDepth)) {
                     context.nextToken();
                     integration.setPassthroughBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("payloadFormatVersion", targetDepth)) {
+                    context.nextToken();
+                    integration.setPayloadFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
                     context.nextToken();

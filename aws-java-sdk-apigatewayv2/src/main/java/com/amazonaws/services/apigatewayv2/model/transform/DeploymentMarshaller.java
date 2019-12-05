@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeploymentMarshaller {
 
+    private static final MarshallingInfo<Boolean> AUTODEPLOYED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoDeployed").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class DeploymentMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deployment.getAutoDeployed(), AUTODEPLOYED_BINDING);
             protocolMarshaller.marshall(deployment.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(deployment.getDeploymentId(), DEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(deployment.getDeploymentStatus(), DEPLOYMENTSTATUS_BINDING);

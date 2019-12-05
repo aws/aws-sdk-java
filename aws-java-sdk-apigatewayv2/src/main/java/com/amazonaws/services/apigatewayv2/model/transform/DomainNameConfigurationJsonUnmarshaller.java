@@ -64,6 +64,14 @@ public class DomainNameConfigurationJsonUnmarshaller implements Unmarshaller<Dom
                     context.nextToken();
                     domainNameConfiguration.setCertificateUploadDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("domainNameStatus", targetDepth)) {
+                    context.nextToken();
+                    domainNameConfiguration.setDomainNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("domainNameStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    domainNameConfiguration.setDomainNameStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("endpointType", targetDepth)) {
                     context.nextToken();
                     domainNameConfiguration.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,14 +83,6 @@ public class DomainNameConfigurationJsonUnmarshaller implements Unmarshaller<Dom
                 if (context.testExpression("securityPolicy", targetDepth)) {
                     context.nextToken();
                     domainNameConfiguration.setSecurityPolicy(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("domainNameStatus", targetDepth)) {
-                    context.nextToken();
-                    domainNameConfiguration.setDomainNameStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("domainNameStatusMessage", targetDepth)) {
-                    context.nextToken();
-                    domainNameConfiguration.setDomainNameStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -48,6 +48,10 @@ public class GetRouteResultJsonUnmarshaller implements Unmarshaller<GetRouteResu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    context.nextToken();
+                    getRouteResult.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
                     context.nextToken();
                     getRouteResult.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));

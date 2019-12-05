@@ -20,7 +20,7 @@ public class CreateRouteResponseResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      */
     private String modelSelectionExpression;
@@ -51,11 +51,11 @@ public class CreateRouteResponseResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param modelSelectionExpression
-     *        Represents the model selection expression of a route response.
+     *        Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      */
 
     public void setModelSelectionExpression(String modelSelectionExpression) {
@@ -64,10 +64,10 @@ public class CreateRouteResponseResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Represents the model selection expression of a route response.
+     * @return Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      */
 
     public String getModelSelectionExpression() {
@@ -76,11 +76,11 @@ public class CreateRouteResponseResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param modelSelectionExpression
-     *        Represents the model selection expression of a route response.
+     *        Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,8 +20,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -76,8 +76,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -91,8 +91,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param contentHandlingStrategy
-     *        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *        and CONVERT_TO_TEXT, with the following behaviors:</p>
+     *        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *        Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *        <p>
      *        CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *        blob.
@@ -112,8 +112,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -126,8 +126,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * route response or method response without modification.
      * </p>
      * 
-     * @return Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *         and CONVERT_TO_TEXT, with the following behaviors:</p>
+     * @return Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *         Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *         <p>
      *         CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *         blob.
@@ -147,8 +147,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -162,8 +162,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param contentHandlingStrategy
-     *        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *        and CONVERT_TO_TEXT, with the following behaviors:</p>
+     *        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *        Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *        <p>
      *        CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *        blob.
@@ -185,8 +185,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -200,8 +200,8 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param contentHandlingStrategy
-     *        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *        and CONVERT_TO_TEXT, with the following behaviors:</p>
+     *        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *        Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *        <p>
      *        CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *        blob.

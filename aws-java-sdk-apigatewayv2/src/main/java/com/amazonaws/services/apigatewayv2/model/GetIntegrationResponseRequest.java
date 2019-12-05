@@ -32,7 +32,11 @@ public class GetIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String integrationId;
-    /** The integration response ID. */
+    /**
+     * <p>
+     * The integration response ID.
+     * </p>
+     */
     private String integrationResponseId;
 
     /**
@@ -116,7 +120,9 @@ public class GetIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * The integration response ID.
+     * </p>
      * 
      * @param integrationResponseId
      *        The integration response ID.
@@ -127,7 +133,9 @@ public class GetIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * The integration response ID.
+     * </p>
      * 
      * @return The integration response ID.
      */
@@ -137,7 +145,9 @@ public class GetIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * The integration response ID.
+     * </p>
      * 
      * @param integrationResponseId
      *        The integration response ID.

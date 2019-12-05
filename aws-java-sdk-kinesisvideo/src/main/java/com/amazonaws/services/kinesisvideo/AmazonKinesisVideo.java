@@ -41,6 +41,36 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
+     * Creates a signaling channel.
+     * </p>
+     * <p>
+     * <code>CreateSignalingChannel</code> is an asynchronous operation.
+     * </p>
+     * 
+     * @param createSignalingChannelRequest
+     * @return Result of the CreateSignalingChannel operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws AccountChannelLimitExceededException
+     *         You have reached the maximum limit of active signaling channels for this AWS account in this region.
+     * @throws ResourceInUseException
+     *         The stream is currently not available for this operation.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws TagsPerResourceExceededLimitException
+     *         You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams
+     *         support up to 50 tags.
+     * @sample AmazonKinesisVideo.CreateSignalingChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateSignalingChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSignalingChannelResult createSignalingChannel(CreateSignalingChannelRequest createSignalingChannelRequest);
+
+    /**
+     * <p>
      * Creates a new Kinesis video stream.
      * </p>
      * <p>
@@ -84,6 +114,34 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
+     * Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is an asynchronous operation. If you
+     * don't specify the channel's current version, the most recent version is deleted.
+     * </p>
+     * 
+     * @param deleteSignalingChannelRequest
+     * @return Result of the DeleteSignalingChannel operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws VersionMismatchException
+     *         The stream version that you specified is not the latest version. To get the latest version, use the <a
+     *         href
+     *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
+     *         API.
+     * @sample AmazonKinesisVideo.DeleteSignalingChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSignalingChannelResult deleteSignalingChannel(DeleteSignalingChannelRequest deleteSignalingChannelRequest);
+
+    /**
+     * <p>
      * Deletes a Kinesis video stream and the data contained in the stream.
      * </p>
      * <p>
@@ -121,6 +179,29 @@ public interface AmazonKinesisVideo {
      *      Documentation</a>
      */
     DeleteStreamResult deleteStream(DeleteStreamRequest deleteStreamRequest);
+
+    /**
+     * <p>
+     * Returns the most current information about the signaling channel. You must specify either the name or the ARN of
+     * the channel that you want to describe.
+     * </p>
+     * 
+     * @param describeSignalingChannelRequest
+     * @return Result of the DescribeSignalingChannel operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @sample AmazonKinesisVideo.DescribeSignalingChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeSignalingChannelResult describeSignalingChannel(DescribeSignalingChannelRequest describeSignalingChannelRequest);
 
     /**
      * <p>
@@ -180,6 +261,64 @@ public interface AmazonKinesisVideo {
 
     /**
      * <p>
+     * Provides an endpoint for the specified signaling channel to send and receive messages. This API uses the
+     * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which consists of the
+     * <code>Protocols</code> and <code>Role</code> properties.
+     * </p>
+     * <p>
+     * <code>Protocols</code> is used to determine the communication mechanism. For example, specifying <code>WSS</code>
+     * as the protocol, results in this API producing a secure websocket endpoint, and specifying <code>HTTPS</code> as
+     * the protocol, results in this API generating an HTTPS endpoint.
+     * </p>
+     * <p>
+     * <code>Role</code> determines the messaging permissions. A <code>MASTER</code> role results in this API generating
+     * an endpoint that a client can use to communicate with any of the viewers on the channel. A <code>VIEWER</code>
+     * role results in this API generating an endpoint that a client can use to communicate only with a
+     * <code>MASTER</code>.
+     * </p>
+     * 
+     * @param getSignalingChannelEndpointRequest
+     * @return Result of the GetSignalingChannelEndpoint operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws ResourceInUseException
+     *         The stream is currently not available for this operation.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @sample AmazonKinesisVideo.GetSignalingChannelEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSignalingChannelEndpointResult getSignalingChannelEndpoint(GetSignalingChannelEndpointRequest getSignalingChannelEndpointRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>ChannelInfo</code> objects. Each object describes a signaling channel. To retrieve only
+     * those channels that satisfy a specific condition, you can specify a <code>ChannelNameCondition</code>.
+     * </p>
+     * 
+     * @param listSignalingChannelsRequest
+     * @return Result of the ListSignalingChannels operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @sample AmazonKinesisVideo.ListSignalingChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListSignalingChannels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSignalingChannelsResult listSignalingChannels(ListSignalingChannelsRequest listSignalingChannelsRequest);
+
+    /**
+     * <p>
      * Returns an array of <code>StreamInfo</code> objects. Each object describes a stream. To retrieve only streams
      * that satisfy a specific condition, you can specify a <code>StreamNameCondition</code>.
      * </p>
@@ -196,6 +335,28 @@ public interface AmazonKinesisVideo {
      *      Documentation</a>
      */
     ListStreamsResult listStreams(ListStreamsRequest listStreamsRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags associated with the specified signaling channel.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @sample AmazonKinesisVideo.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -223,6 +384,35 @@ public interface AmazonKinesisVideo {
      *      API Documentation</a>
      */
     ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest listTagsForStreamRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the value is optional) that you
+     * can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with
+     * the value that you specify in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws TagsPerResourceExceededLimitException
+     *         You have exceeded the limit of tags that you can associate with the resource. Kinesis video streams
+     *         support up to 50 tags.
+     * @sample AmazonKinesisVideo.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
      * <p>
@@ -263,6 +453,29 @@ public interface AmazonKinesisVideo {
      *      Documentation</a>
      */
     TagStreamResult tagStream(TagStreamRequest tagStreamRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from a signaling channel. In the request, specify only a tag key or keys; don't specify
+     * the value. If you specify a tag key that does not exist, it's ignored.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @sample AmazonKinesisVideo.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>
@@ -349,6 +562,40 @@ public interface AmazonKinesisVideo {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateDataRetentionResult updateDataRetention(UpdateDataRetentionRequest updateDataRetentionRequest);
+
+    /**
+     * <p>
+     * Updates the existing signaling channel. This is an asynchronous operation and takes time to complete.
+     * </p>
+     * <p>
+     * If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced), then it only applies to new
+     * messages sent via this channel after it's been updated. Existing messages are still expire as per the previous
+     * <code>MessageTtlSeconds</code> value.
+     * </p>
+     * 
+     * @param updateSignalingChannelRequest
+     * @return Result of the UpdateSignalingChannel operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws ResourceInUseException
+     *         The stream is currently not available for this operation.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws VersionMismatchException
+     *         The stream version that you specified is not the latest version. To get the latest version, use the <a
+     *         href
+     *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
+     *         API.
+     * @sample AmazonKinesisVideo.UpdateSignalingChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSignalingChannelResult updateSignalingChannel(UpdateSignalingChannelRequest updateSignalingChannelRequest);
 
     /**
      * <p>

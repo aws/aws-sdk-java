@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class IntegrationMarshaller {
 
+    private static final MarshallingInfo<Boolean> APIGATEWAYMANAGED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiGatewayManaged").build();
     private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
     private static final MarshallingInfo<String> CONNECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,8 @@ public class IntegrationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationUri").build();
     private static final MarshallingInfo<String> PASSTHROUGHBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("passthroughBehavior").build();
+    private static final MarshallingInfo<String> PAYLOADFORMATVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payloadFormatVersion").build();
     private static final MarshallingInfo<Map> REQUESTPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestParameters").build();
     private static final MarshallingInfo<Map> REQUESTTEMPLATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -76,6 +80,7 @@ public class IntegrationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(integration.getApiGatewayManaged(), APIGATEWAYMANAGED_BINDING);
             protocolMarshaller.marshall(integration.getConnectionId(), CONNECTIONID_BINDING);
             protocolMarshaller.marshall(integration.getConnectionType(), CONNECTIONTYPE_BINDING);
             protocolMarshaller.marshall(integration.getContentHandlingStrategy(), CONTENTHANDLINGSTRATEGY_BINDING);
@@ -87,6 +92,7 @@ public class IntegrationMarshaller {
             protocolMarshaller.marshall(integration.getIntegrationType(), INTEGRATIONTYPE_BINDING);
             protocolMarshaller.marshall(integration.getIntegrationUri(), INTEGRATIONURI_BINDING);
             protocolMarshaller.marshall(integration.getPassthroughBehavior(), PASSTHROUGHBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(integration.getPayloadFormatVersion(), PAYLOADFORMATVERSION_BINDING);
             protocolMarshaller.marshall(integration.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(integration.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
             protocolMarshaller.marshall(integration.getTemplateSelectionExpression(), TEMPLATESELECTIONEXPRESSION_BINDING);

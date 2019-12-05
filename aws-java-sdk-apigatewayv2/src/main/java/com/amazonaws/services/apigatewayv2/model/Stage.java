@@ -33,7 +33,20 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private AccessLogSettings accessLogSettings;
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage
+     * is managed by API Gateway. You can't modify the $default stage.
+     * </p>
+     */
+    private Boolean apiGatewayManaged;
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     */
+    private Boolean autoDeploy;
+    /**
+     * <p>
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      */
     private String clientCertificateId;
@@ -51,7 +64,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private RouteSettings defaultRouteSettings;
     /**
      * <p>
-     * The identifier of the Deployment that the Stage is associated with.
+     * The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.
      * </p>
      */
     private String deploymentId;
@@ -63,13 +76,19 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
+     * Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.
+     * </p>
+     */
+    private String lastDeploymentStatusMessage;
+    /**
+     * <p>
      * The timestamp when the stage was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      */
     private java.util.Map<String, RouteSettings> routeSettings;
@@ -82,14 +101,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      */
     private java.util.Map<String, String> stageVariables;
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -136,11 +154,123 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage
+     * is managed by API Gateway. You can't modify the $default stage.
+     * </p>
+     * 
+     * @param apiGatewayManaged
+     *        Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the
+     *        $default stage is managed by API Gateway. You can't modify the $default stage.
+     */
+
+    public void setApiGatewayManaged(Boolean apiGatewayManaged) {
+        this.apiGatewayManaged = apiGatewayManaged;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage
+     * is managed by API Gateway. You can't modify the $default stage.
+     * </p>
+     * 
+     * @return Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the
+     *         $default stage is managed by API Gateway. You can't modify the $default stage.
+     */
+
+    public Boolean getApiGatewayManaged() {
+        return this.apiGatewayManaged;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage
+     * is managed by API Gateway. You can't modify the $default stage.
+     * </p>
+     * 
+     * @param apiGatewayManaged
+     *        Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the
+     *        $default stage is managed by API Gateway. You can't modify the $default stage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stage withApiGatewayManaged(Boolean apiGatewayManaged) {
+        setApiGatewayManaged(apiGatewayManaged);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage
+     * is managed by API Gateway. You can't modify the $default stage.
+     * </p>
+     * 
+     * @return Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the
+     *         $default stage is managed by API Gateway. You can't modify the $default stage.
+     */
+
+    public Boolean isApiGatewayManaged() {
+        return this.apiGatewayManaged;
+    }
+
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @param autoDeploy
+     *        Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     */
+
+    public void setAutoDeploy(Boolean autoDeploy) {
+        this.autoDeploy = autoDeploy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @return Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     */
+
+    public Boolean getAutoDeploy() {
+        return this.autoDeploy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @param autoDeploy
+     *        Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stage withAutoDeploy(Boolean autoDeploy) {
+        setAutoDeploy(autoDeploy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @return Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     */
+
+    public Boolean isAutoDeploy() {
+        return this.autoDeploy;
+    }
+
+    /**
+     * <p>
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of a client certificate for a Stage.
+     *        The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -149,10 +279,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return The identifier of a client certificate for a Stage.
+     * @return The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      */
 
     public String getClientCertificateId() {
@@ -161,11 +291,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of a client certificate for a Stage.
+     *        The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,11 +386,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the Deployment that the Stage is associated with.
+     * The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the Deployment that the Stage is associated with.
+     *        The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is
+     *        enabled.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -269,10 +400,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the Deployment that the Stage is associated with.
+     * The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.
      * </p>
      * 
-     * @return The identifier of the Deployment that the Stage is associated with.
+     * @return The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is
+     *         enabled.
      */
 
     public String getDeploymentId() {
@@ -281,11 +413,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the Deployment that the Stage is associated with.
+     * The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.
      * </p>
      * 
      * @param deploymentId
-     *        The identifier of the Deployment that the Stage is associated with.
+     *        The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is
+     *        enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,6 +469,47 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.
+     * </p>
+     * 
+     * @param lastDeploymentStatusMessage
+     *        Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.
+     */
+
+    public void setLastDeploymentStatusMessage(String lastDeploymentStatusMessage) {
+        this.lastDeploymentStatusMessage = lastDeploymentStatusMessage;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.
+     * </p>
+     * 
+     * @return Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy
+     *         enabled.
+     */
+
+    public String getLastDeploymentStatusMessage() {
+        return this.lastDeploymentStatusMessage;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.
+     * </p>
+     * 
+     * @param lastDeploymentStatusMessage
+     *        Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stage withLastDeploymentStatusMessage(String lastDeploymentStatusMessage) {
+        setLastDeploymentStatusMessage(lastDeploymentStatusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp when the stage was last updated.
      * </p>
      * 
@@ -376,10 +550,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      * 
-     * @return Route settings for the stage.
+     * @return Route settings for the stage, by routeKey.
      */
 
     public java.util.Map<String, RouteSettings> getRouteSettings() {
@@ -388,11 +562,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      * 
      * @param routeSettings
-     *        Route settings for the stage.
+     *        Route settings for the stage, by routeKey.
      */
 
     public void setRouteSettings(java.util.Map<String, RouteSettings> routeSettings) {
@@ -401,11 +575,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      * 
      * @param routeSettings
-     *        Route settings for the stage.
+     *        Route settings for the stage, by routeKey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,11 +652,12 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      * 
      * @return A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and
-     *         underscore characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     *         underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for
+     *         WebSocket APIs.
      */
 
     public java.util.Map<String, String> getStageVariables() {
@@ -492,12 +667,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param stageVariables
      *        A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and
-     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket
+     *        APIs.
      */
 
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
@@ -507,12 +683,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param stageVariables
      *        A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and
-     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     *        underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket
+     *        APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,12 +721,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
-     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *         characters and must not start with aws:. The tag value can be up to 256 characters..
+     * @return The collection of tags. Each tag element is associated with a given resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -558,13 +733,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags. Each tag element is associated with a given resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -573,13 +746,11 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags. Each tag element is associated with a given resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,6 +794,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAccessLogSettings() != null)
             sb.append("AccessLogSettings: ").append(getAccessLogSettings()).append(",");
+        if (getApiGatewayManaged() != null)
+            sb.append("ApiGatewayManaged: ").append(getApiGatewayManaged()).append(",");
+        if (getAutoDeploy() != null)
+            sb.append("AutoDeploy: ").append(getAutoDeploy()).append(",");
         if (getClientCertificateId() != null)
             sb.append("ClientCertificateId: ").append(getClientCertificateId()).append(",");
         if (getCreatedDate() != null)
@@ -633,6 +808,8 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
             sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getLastDeploymentStatusMessage() != null)
+            sb.append("LastDeploymentStatusMessage: ").append(getLastDeploymentStatusMessage()).append(",");
         if (getLastUpdatedDate() != null)
             sb.append("LastUpdatedDate: ").append(getLastUpdatedDate()).append(",");
         if (getRouteSettings() != null)
@@ -661,6 +838,14 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccessLogSettings() != null && other.getAccessLogSettings().equals(this.getAccessLogSettings()) == false)
             return false;
+        if (other.getApiGatewayManaged() == null ^ this.getApiGatewayManaged() == null)
+            return false;
+        if (other.getApiGatewayManaged() != null && other.getApiGatewayManaged().equals(this.getApiGatewayManaged()) == false)
+            return false;
+        if (other.getAutoDeploy() == null ^ this.getAutoDeploy() == null)
+            return false;
+        if (other.getAutoDeploy() != null && other.getAutoDeploy().equals(this.getAutoDeploy()) == false)
+            return false;
         if (other.getClientCertificateId() == null ^ this.getClientCertificateId() == null)
             return false;
         if (other.getClientCertificateId() != null && other.getClientCertificateId().equals(this.getClientCertificateId()) == false)
@@ -680,6 +865,10 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getLastDeploymentStatusMessage() == null ^ this.getLastDeploymentStatusMessage() == null)
+            return false;
+        if (other.getLastDeploymentStatusMessage() != null && other.getLastDeploymentStatusMessage().equals(this.getLastDeploymentStatusMessage()) == false)
             return false;
         if (other.getLastUpdatedDate() == null ^ this.getLastUpdatedDate() == null)
             return false;
@@ -710,11 +899,14 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
+        hashCode = prime * hashCode + ((getApiGatewayManaged() == null) ? 0 : getApiGatewayManaged().hashCode());
+        hashCode = prime * hashCode + ((getAutoDeploy() == null) ? 0 : getAutoDeploy().hashCode());
         hashCode = prime * hashCode + ((getClientCertificateId() == null) ? 0 : getClientCertificateId().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getDefaultRouteSettings() == null) ? 0 : getDefaultRouteSettings().hashCode());
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getLastDeploymentStatusMessage() == null) ? 0 : getLastDeploymentStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         hashCode = prime * hashCode + ((getRouteSettings() == null) ? 0 : getRouteSettings().hashCode());
         hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());

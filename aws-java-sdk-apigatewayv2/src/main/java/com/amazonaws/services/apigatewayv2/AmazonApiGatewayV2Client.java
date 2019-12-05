@@ -81,6 +81,9 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.apigatewayv2.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.apigatewayv2.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.apigatewayv2.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -143,6 +146,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createApiRequest
+     *        Creates a new Api resource to represent an API.
      * @return Result of the CreateApi operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -202,6 +206,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createApiMappingRequest
+     *        Creates a new ApiMapping resource to represent an API mapping.
      * @return Result of the CreateApiMapping operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -261,6 +266,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createAuthorizerRequest
+     *        Creates a new Authorizer resource to represent an authorizer.
      * @return Result of the CreateAuthorizer operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -320,6 +326,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createDeploymentRequest
+     *        Creates a new Deployment resource to represent a deployment.
      * @return Result of the CreateDeployment operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -379,6 +386,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createDomainNameRequest
+     *        Creates a new DomainName resource to represent a domain name.
      * @return Result of the CreateDomainName operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -388,6 +396,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      *         One of the parameters in the request is invalid.
      * @throws ConflictException
      *         The resource already exists.
+     * @throws AccessDeniedException
      * @sample AmazonApiGatewayV2.CreateDomainName
      */
     @Override
@@ -438,6 +447,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createIntegrationRequest
+     *        Creates a new Integration resource to represent an integration.
      * @return Result of the CreateIntegration operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -497,6 +507,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createIntegrationResponseRequest
+     *        Creates a new IntegrationResponse resource to represent an integration response.
      * @return Result of the CreateIntegrationResponse operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -558,6 +569,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createModelRequest
+     *        Creates a new Model.
      * @return Result of the CreateModel operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -617,6 +629,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createRouteRequest
+     *        Creates a new Route resource to represent a route.
      * @return Result of the CreateRoute operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -676,6 +689,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createRouteResponseRequest
+     *        Creates a new RouteResponse resource to represent a route response.
      * @return Result of the CreateRouteResponse operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -735,6 +749,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param createStageRequest
+     *        Creates a new Stage resource to represent a stage.
      * @return Result of the CreateStage operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -945,6 +960,63 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAuthorizerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a CORS configuration.
+     * </p>
+     * 
+     * @param deleteCorsConfigurationRequest
+     * @return Result of the DeleteCorsConfiguration operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteCorsConfiguration
+     */
+    @Override
+    public DeleteCorsConfigurationResult deleteCorsConfiguration(DeleteCorsConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCorsConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCorsConfigurationResult executeDeleteCorsConfiguration(DeleteCorsConfigurationRequest deleteCorsConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCorsConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCorsConfigurationRequest> request = null;
+        Response<DeleteCorsConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCorsConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCorsConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCorsConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCorsConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCorsConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1344,6 +1416,61 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Deletes the RouteSettings for a stage.
+     * </p>
+     * 
+     * @param deleteRouteSettingsRequest
+     * @return Result of the DeleteRouteSettings operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.DeleteRouteSettings
+     */
+    @Override
+    public DeleteRouteSettingsResult deleteRouteSettings(DeleteRouteSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRouteSettings(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRouteSettingsResult executeDeleteRouteSettings(DeleteRouteSettingsRequest deleteRouteSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRouteSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRouteSettingsRequest> request = null;
+        Response<DeleteRouteSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRouteSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRouteSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRouteSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRouteSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRouteSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a Stage.
      * </p>
      * 
@@ -1454,7 +1581,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * The API mapping.
+     * Gets an API mapping.
      * </p>
      * 
      * @param getApiMappingRequest
@@ -1511,7 +1638,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * The API mappings.
+     * Gets API mappings.
      * </p>
      * 
      * @param getApiMappingsRequest
@@ -2691,7 +2818,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Gets the Tags for an API.
+     * Gets a collection of Tag resources.
      * </p>
      * 
      * @param getTagsRequest
@@ -2750,10 +2877,129 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Tag an APIGW resource
+     * Imports an API.
+     * </p>
+     * 
+     * @param importApiRequest
+     * @return Result of the ImportApi operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws ConflictException
+     *         The resource already exists.
+     * @sample AmazonApiGatewayV2.ImportApi
+     */
+    @Override
+    public ImportApiResult importApi(ImportApiRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportApi(request);
+    }
+
+    @SdkInternalApi
+    final ImportApiResult executeImportApi(ImportApiRequest importApiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportApiRequest> request = null;
+        Response<ImportApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportApiResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Puts an Api resource.
+     * </p>
+     * 
+     * @param reimportApiRequest
+     * @return Result of the ReimportApi operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @throws BadRequestException
+     *         One of the parameters in the request is invalid.
+     * @throws ConflictException
+     *         The resource already exists.
+     * @sample AmazonApiGatewayV2.ReimportApi
+     */
+    @Override
+    public ReimportApiResult reimportApi(ReimportApiRequest request) {
+        request = beforeClientExecution(request);
+        return executeReimportApi(request);
+    }
+
+    @SdkInternalApi
+    final ReimportApiResult executeReimportApi(ReimportApiRequest reimportApiRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(reimportApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReimportApiRequest> request = null;
+        Response<ReimportApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReimportApiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(reimportApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReimportApi");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ReimportApiResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReimportApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Tag resource to represent a tag.
      * </p>
      * 
      * @param tagResourceRequest
+     *        Creates a new Tag resource to represent a tag.
      * @return Result of the TagResource operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -2809,7 +3055,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Untag an APIGW resource
+     * Deletes a Tag.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2872,6 +3118,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateApiRequest
+     *        Updates an Api.
      * @return Result of the UpdateApi operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -2931,6 +3178,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateApiMappingRequest
+     *        Updates an ApiMapping.
      * @return Result of the UpdateApiMapping operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -2990,6 +3238,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateAuthorizerRequest
+     *        Updates an Authorizer.
      * @return Result of the UpdateAuthorizer operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3049,6 +3298,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateDeploymentRequest
+     *        Updates a Deployment.
      * @return Result of the UpdateDeployment operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3108,6 +3358,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateDomainNameRequest
+     *        Updates a DomainName.
      * @return Result of the UpdateDomainName operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3167,6 +3418,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateIntegrationRequest
+     *        Updates an Integration.
      * @return Result of the UpdateIntegration operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3226,6 +3478,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateIntegrationResponseRequest
+     *        Updates an IntegrationResponses.
      * @return Result of the UpdateIntegrationResponse operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3287,6 +3540,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateModelRequest
+     *        Updates a Model.
      * @return Result of the UpdateModel operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3346,6 +3600,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateRouteRequest
+     *        Updates a Route.
      * @return Result of the UpdateRoute operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3405,6 +3660,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateRouteResponseRequest
+     *        Updates a RouteResponse.
      * @return Result of the UpdateRouteResponse operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.
@@ -3464,6 +3720,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
      * </p>
      * 
      * @param updateStageRequest
+     *        Updates a Stage.
      * @return Result of the UpdateStage operation returned by the service.
      * @throws NotFoundException
      *         The resource specified in the request was not found.

@@ -76,13 +76,13 @@ public class CreateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createAuthorizerResult.setIdentityValidationExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jwtConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createAuthorizerResult.setJwtConfiguration(JWTConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     createAuthorizerResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("providerArns", targetDepth)) {
-                    context.nextToken();
-                    createAuthorizerResult.setProviderArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -210,6 +210,19 @@ public class AbstractAmazonApiGatewayV2Async extends AbstractAmazonApiGatewayV2 
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCorsConfigurationResult> deleteCorsConfigurationAsync(DeleteCorsConfigurationRequest request) {
+
+        return deleteCorsConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCorsConfigurationResult> deleteCorsConfigurationAsync(DeleteCorsConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCorsConfigurationRequest, DeleteCorsConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest request) {
 
         return deleteDeploymentAsync(request, null);
@@ -296,6 +309,19 @@ public class AbstractAmazonApiGatewayV2Async extends AbstractAmazonApiGatewayV2 
     @Override
     public java.util.concurrent.Future<DeleteRouteResponseResult> deleteRouteResponseAsync(DeleteRouteResponseRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRouteResponseRequest, DeleteRouteResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteSettingsResult> deleteRouteSettingsAsync(DeleteRouteSettingsRequest request) {
+
+        return deleteRouteSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteSettingsResult> deleteRouteSettingsAsync(DeleteRouteSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteSettingsRequest, DeleteRouteSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -621,6 +647,32 @@ public class AbstractAmazonApiGatewayV2Async extends AbstractAmazonApiGatewayV2 
     @Override
     public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTagsRequest, GetTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiResult> importApiAsync(ImportApiRequest request) {
+
+        return importApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiResult> importApiAsync(ImportApiRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportApiRequest, ImportApiResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReimportApiResult> reimportApiAsync(ReimportApiRequest request) {
+
+        return reimportApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReimportApiResult> reimportApiAsync(ReimportApiRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReimportApiRequest, ReimportApiResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

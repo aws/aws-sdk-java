@@ -28,6 +28,12 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies whether a deployment was automatically released.
+     * </p>
+     */
+    private Boolean autoDeployed;
+    /**
+     * <p>
      * The date and time when the Deployment resource was created.
      * </p>
      */
@@ -56,6 +62,58 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+
+    /**
+     * <p>
+     * Specifies whether a deployment was automatically released.
+     * </p>
+     * 
+     * @param autoDeployed
+     *        Specifies whether a deployment was automatically released.
+     */
+
+    public void setAutoDeployed(Boolean autoDeployed) {
+        this.autoDeployed = autoDeployed;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a deployment was automatically released.
+     * </p>
+     * 
+     * @return Specifies whether a deployment was automatically released.
+     */
+
+    public Boolean getAutoDeployed() {
+        return this.autoDeployed;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a deployment was automatically released.
+     * </p>
+     * 
+     * @param autoDeployed
+     *        Specifies whether a deployment was automatically released.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withAutoDeployed(Boolean autoDeployed) {
+        setAutoDeployed(autoDeployed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a deployment was automatically released.
+     * </p>
+     * 
+     * @return Specifies whether a deployment was automatically released.
+     */
+
+    public Boolean isAutoDeployed() {
+        return this.autoDeployed;
+    }
 
     /**
      * <p>
@@ -288,6 +346,8 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAutoDeployed() != null)
+            sb.append("AutoDeployed: ").append(getAutoDeployed()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getDeploymentId() != null)
@@ -312,6 +372,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Deployment == false)
             return false;
         Deployment other = (Deployment) obj;
+        if (other.getAutoDeployed() == null ^ this.getAutoDeployed() == null)
+            return false;
+        if (other.getAutoDeployed() != null && other.getAutoDeployed().equals(this.getAutoDeployed()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -340,6 +404,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAutoDeployed() == null) ? 0 : getAutoDeployed().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());

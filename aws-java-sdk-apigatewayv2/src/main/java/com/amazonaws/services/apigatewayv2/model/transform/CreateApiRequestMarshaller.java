@@ -31,6 +31,10 @@ public class CreateApiRequestMarshaller {
 
     private static final MarshallingInfo<String> APIKEYSELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeySelectionExpression").build();
+    private static final MarshallingInfo<StructuredPojo> CORSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("corsConfiguration").build();
+    private static final MarshallingInfo<String> CREDENTIALSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("credentialsArn").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Boolean> DISABLESCHEMAVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -39,12 +43,16 @@ public class CreateApiRequestMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> PROTOCOLTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("protocolType").build();
+    private static final MarshallingInfo<String> ROUTEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("routeKey").build();
     private static final MarshallingInfo<String> ROUTESELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("routeSelectionExpression").build();
-    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("version").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("target").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("version").build();
 
     private static final CreateApiRequestMarshaller instance = new CreateApiRequestMarshaller();
 
@@ -63,13 +71,17 @@ public class CreateApiRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createApiRequest.getApiKeySelectionExpression(), APIKEYSELECTIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(createApiRequest.getCorsConfiguration(), CORSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createApiRequest.getCredentialsArn(), CREDENTIALSARN_BINDING);
             protocolMarshaller.marshall(createApiRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createApiRequest.getDisableSchemaValidation(), DISABLESCHEMAVALIDATION_BINDING);
             protocolMarshaller.marshall(createApiRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createApiRequest.getProtocolType(), PROTOCOLTYPE_BINDING);
+            protocolMarshaller.marshall(createApiRequest.getRouteKey(), ROUTEKEY_BINDING);
             protocolMarshaller.marshall(createApiRequest.getRouteSelectionExpression(), ROUTESELECTIONEXPRESSION_BINDING);
-            protocolMarshaller.marshall(createApiRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createApiRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createApiRequest.getTarget(), TARGET_BINDING);
+            protocolMarshaller.marshall(createApiRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

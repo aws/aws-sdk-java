@@ -28,6 +28,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSignalingChannelResult> createSignalingChannelAsync(CreateSignalingChannelRequest request) {
+
+        return createSignalingChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSignalingChannelResult> createSignalingChannelAsync(CreateSignalingChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSignalingChannelRequest, CreateSignalingChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStreamResult> createStreamAsync(CreateStreamRequest request) {
 
         return createStreamAsync(request, null);
@@ -41,6 +54,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSignalingChannelResult> deleteSignalingChannelAsync(DeleteSignalingChannelRequest request) {
+
+        return deleteSignalingChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSignalingChannelResult> deleteSignalingChannelAsync(DeleteSignalingChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSignalingChannelRequest, DeleteSignalingChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest request) {
 
         return deleteStreamAsync(request, null);
@@ -49,6 +75,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     @Override
     public java.util.concurrent.Future<DeleteStreamResult> deleteStreamAsync(DeleteStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamRequest, DeleteStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSignalingChannelResult> describeSignalingChannelAsync(DescribeSignalingChannelRequest request) {
+
+        return describeSignalingChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSignalingChannelResult> describeSignalingChannelAsync(DescribeSignalingChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSignalingChannelRequest, DescribeSignalingChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -80,6 +119,32 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     }
 
     @Override
+    public java.util.concurrent.Future<GetSignalingChannelEndpointResult> getSignalingChannelEndpointAsync(GetSignalingChannelEndpointRequest request) {
+
+        return getSignalingChannelEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSignalingChannelEndpointResult> getSignalingChannelEndpointAsync(GetSignalingChannelEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSignalingChannelEndpointRequest, GetSignalingChannelEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSignalingChannelsResult> listSignalingChannelsAsync(ListSignalingChannelsRequest request) {
+
+        return listSignalingChannelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSignalingChannelsResult> listSignalingChannelsAsync(ListSignalingChannelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSignalingChannelsRequest, ListSignalingChannelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest request) {
 
         return listStreamsAsync(request, null);
@@ -88,6 +153,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListStreamsRequest, ListStreamsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,6 +184,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagStreamResult> tagStreamAsync(TagStreamRequest request) {
 
         return tagStreamAsync(request, null);
@@ -114,6 +205,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     @Override
     public java.util.concurrent.Future<TagStreamResult> tagStreamAsync(TagStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<TagStreamRequest, TagStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -140,6 +244,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     @Override
     public java.util.concurrent.Future<UpdateDataRetentionResult> updateDataRetentionAsync(UpdateDataRetentionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDataRetentionRequest, UpdateDataRetentionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSignalingChannelResult> updateSignalingChannelAsync(UpdateSignalingChannelRequest request) {
+
+        return updateSignalingChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSignalingChannelResult> updateSignalingChannelAsync(UpdateSignalingChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSignalingChannelRequest, UpdateSignalingChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

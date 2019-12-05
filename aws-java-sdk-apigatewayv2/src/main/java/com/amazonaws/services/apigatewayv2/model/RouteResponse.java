@@ -27,7 +27,7 @@ public class RouteResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      */
     private String modelSelectionExpression;
@@ -58,11 +58,11 @@ public class RouteResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param modelSelectionExpression
-     *        Represents the model selection expression of a route response.
+     *        Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      */
 
     public void setModelSelectionExpression(String modelSelectionExpression) {
@@ -71,10 +71,10 @@ public class RouteResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Represents the model selection expression of a route response.
+     * @return Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      */
 
     public String getModelSelectionExpression() {
@@ -83,11 +83,11 @@ public class RouteResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the model selection expression of a route response.
+     * Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param modelSelectionExpression
-     *        Represents the model selection expression of a route response.
+     *        Represents the model selection expression of a route response. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

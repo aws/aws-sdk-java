@@ -42,10 +42,10 @@ public class CreateAuthorizerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identitySource").build();
     private static final MarshallingInfo<String> IDENTITYVALIDATIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identityValidationExpression").build();
+    private static final MarshallingInfo<StructuredPojo> JWTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jwtConfiguration").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
-    private static final MarshallingInfo<List> PROVIDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("providerArns").build();
 
     private static final CreateAuthorizerRequestMarshaller instance = new CreateAuthorizerRequestMarshaller();
 
@@ -70,8 +70,8 @@ public class CreateAuthorizerRequestMarshaller {
             protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerUri(), AUTHORIZERURI_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getIdentitySource(), IDENTITYSOURCE_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getIdentityValidationExpression(), IDENTITYVALIDATIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getJwtConfiguration(), JWTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(createAuthorizerRequest.getProviderArns(), PROVIDERARNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

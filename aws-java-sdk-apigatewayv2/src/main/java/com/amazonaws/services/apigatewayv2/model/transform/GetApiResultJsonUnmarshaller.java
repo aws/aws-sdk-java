@@ -60,6 +60,10 @@ public class GetApiResultJsonUnmarshaller implements Unmarshaller<GetApiResult, 
                     context.nextToken();
                     getApiResult.setApiKeySelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("corsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getApiResult.setCorsConfiguration(CorsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     getApiResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -71,6 +75,10 @@ public class GetApiResultJsonUnmarshaller implements Unmarshaller<GetApiResult, 
                 if (context.testExpression("disableSchemaValidation", targetDepth)) {
                     context.nextToken();
                     getApiResult.setDisableSchemaValidation(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("importInfo", targetDepth)) {
+                    context.nextToken();
+                    getApiResult.setImportInfo(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
@@ -84,6 +92,11 @@ public class GetApiResultJsonUnmarshaller implements Unmarshaller<GetApiResult, 
                     context.nextToken();
                     getApiResult.setRouteSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    getApiResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
                     getApiResult.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,11 +104,6 @@ public class GetApiResultJsonUnmarshaller implements Unmarshaller<GetApiResult, 
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();
                     getApiResult.setWarnings(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("tags", targetDepth)) {
-                    context.nextToken();
-                    getApiResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
-                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

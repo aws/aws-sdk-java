@@ -28,7 +28,8 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String apiId;
     /**
      * <p>
-     * The stage name.
+     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
+     * 128 characters.
      * </p>
      */
     private String stageName;
@@ -75,11 +76,13 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The stage name.
+     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
+     * 128 characters.
      * </p>
      * 
      * @param stageName
-     *        The stage name.
+     *        The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum
+     *        length is 128 characters.
      */
 
     public void setStageName(String stageName) {
@@ -88,10 +91,12 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The stage name.
+     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
+     * 128 characters.
      * </p>
      * 
-     * @return The stage name.
+     * @return The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum
+     *         length is 128 characters.
      */
 
     public String getStageName() {
@@ -100,11 +105,13 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The stage name.
+     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
+     * 128 characters.
      * </p>
      * 
      * @param stageName
-     *        The stage name.
+     *        The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum
+     *        length is 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

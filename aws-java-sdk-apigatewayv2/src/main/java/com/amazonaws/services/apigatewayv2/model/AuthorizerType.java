@@ -16,14 +16,15 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request
- * parameters.
+ * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For
+ * HTTP APIs, specify JWT to use JSON Web Tokens.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AuthorizerType {
 
-    REQUEST("REQUEST");
+    REQUEST("REQUEST"),
+    JWT("JWT");
 
     private String value;
 

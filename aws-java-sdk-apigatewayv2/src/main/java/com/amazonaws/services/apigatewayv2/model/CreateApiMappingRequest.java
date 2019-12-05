@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Creates a new ApiMapping resource to represent an API mapping.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateApiMappingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -26,7 +31,7 @@ public class CreateApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String apiId;
-
+    /** The API mapping key. */
     private String apiMappingKey;
     /**
      * <p>
@@ -82,7 +87,10 @@ public class CreateApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The API mapping key.
+     * 
      * @param apiMappingKey
+     *        The API mapping key.
      */
 
     public void setApiMappingKey(String apiMappingKey) {
@@ -90,7 +98,9 @@ public class CreateApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * The API mapping key.
+     * 
+     * @return The API mapping key.
      */
 
     public String getApiMappingKey() {
@@ -98,7 +108,10 @@ public class CreateApiMappingRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The API mapping key.
+     * 
      * @param apiMappingKey
+     *        The API mapping key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

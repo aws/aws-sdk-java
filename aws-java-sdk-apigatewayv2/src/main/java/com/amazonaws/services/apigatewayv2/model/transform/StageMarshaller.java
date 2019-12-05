@@ -31,6 +31,10 @@ public class StageMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ACCESSLOGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessLogSettings").build();
+    private static final MarshallingInfo<Boolean> APIGATEWAYMANAGED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiGatewayManaged").build();
+    private static final MarshallingInfo<Boolean> AUTODEPLOY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoDeploy").build();
     private static final MarshallingInfo<String> CLIENTCERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientCertificateId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -41,6 +45,8 @@ public class StageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> LASTDEPLOYMENTSTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastDeploymentStatusMessage").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Map> ROUTESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -69,11 +75,14 @@ public class StageMarshaller {
 
         try {
             protocolMarshaller.marshall(stage.getAccessLogSettings(), ACCESSLOGSETTINGS_BINDING);
+            protocolMarshaller.marshall(stage.getApiGatewayManaged(), APIGATEWAYMANAGED_BINDING);
+            protocolMarshaller.marshall(stage.getAutoDeploy(), AUTODEPLOY_BINDING);
             protocolMarshaller.marshall(stage.getClientCertificateId(), CLIENTCERTIFICATEID_BINDING);
             protocolMarshaller.marshall(stage.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(stage.getDefaultRouteSettings(), DEFAULTROUTESETTINGS_BINDING);
             protocolMarshaller.marshall(stage.getDeploymentId(), DEPLOYMENTID_BINDING);
             protocolMarshaller.marshall(stage.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(stage.getLastDeploymentStatusMessage(), LASTDEPLOYMENTSTATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(stage.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
             protocolMarshaller.marshall(stage.getRouteSettings(), ROUTESETTINGS_BINDING);
             protocolMarshaller.marshall(stage.getStageName(), STAGENAME_BINDING);

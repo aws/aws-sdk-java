@@ -28,7 +28,7 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the
-     * log entries pushed to Amazon CloudWatch Logs.
+     * log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      */
     private Boolean dataTraceEnabled;
@@ -40,20 +40,20 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
     private Boolean detailedMetricsEnabled;
     /**
      * <p>
-     * Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries pushed to
-     * Amazon CloudWatch Logs.
+     * Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to
+     * Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      */
     private String loggingLevel;
     /**
      * <p>
-     * Specifies the throttling burst limit.
+     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
      * </p>
      */
     private Integer throttlingBurstLimit;
     /**
      * <p>
-     * Specifies the throttling rate limit.
+     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
      * </p>
      */
     private Double throttlingRateLimit;
@@ -61,12 +61,12 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the
-     * log entries pushed to Amazon CloudWatch Logs.
+     * log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param dataTraceEnabled
      *        Specifies whether (true) or not (false) data trace logging is enabled for this route. This property
-     *        affects the log entries pushed to Amazon CloudWatch Logs.
+     *        affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      */
 
     public void setDataTraceEnabled(Boolean dataTraceEnabled) {
@@ -76,11 +76,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the
-     * log entries pushed to Amazon CloudWatch Logs.
+     * log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
      * @return Specifies whether (true) or not (false) data trace logging is enabled for this route. This property
-     *         affects the log entries pushed to Amazon CloudWatch Logs.
+     *         affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      */
 
     public Boolean getDataTraceEnabled() {
@@ -90,12 +90,12 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the
-     * log entries pushed to Amazon CloudWatch Logs.
+     * log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param dataTraceEnabled
      *        Specifies whether (true) or not (false) data trace logging is enabled for this route. This property
-     *        affects the log entries pushed to Amazon CloudWatch Logs.
+     *        affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the
-     * log entries pushed to Amazon CloudWatch Logs.
+     * log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
      * @return Specifies whether (true) or not (false) data trace logging is enabled for this route. This property
-     *         affects the log entries pushed to Amazon CloudWatch Logs.
+     *         affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      */
 
     public Boolean isDataTraceEnabled() {
@@ -172,13 +172,13 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries pushed to
-     * Amazon CloudWatch Logs.
+     * Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to
+     * Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param loggingLevel
-     *        Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries
-     *        pushed to Amazon CloudWatch Logs.
+     *        Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries
+     *        pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * @see LoggingLevel
      */
 
@@ -188,12 +188,12 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries pushed to
-     * Amazon CloudWatch Logs.
+     * Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to
+     * Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries
-     *         pushed to Amazon CloudWatch Logs.
+     * @return Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries
+     *         pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * @see LoggingLevel
      */
 
@@ -203,13 +203,13 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries pushed to
-     * Amazon CloudWatch Logs.
+     * Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to
+     * Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param loggingLevel
-     *        Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries
-     *        pushed to Amazon CloudWatch Logs.
+     *        Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries
+     *        pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */
@@ -221,13 +221,13 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries pushed to
-     * Amazon CloudWatch Logs.
+     * Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to
+     * Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param loggingLevel
-     *        Specifies the logging level for this route: DEBUG, INFO, or WARN. This property affects the log entries
-     *        pushed to Amazon CloudWatch Logs.
+     *        Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries
+     *        pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */
@@ -239,11 +239,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit.
+     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param throttlingBurstLimit
-     *        Specifies the throttling burst limit.
+     *        Specifies the throttling burst limit. Supported only for WebSocket APIs.
      */
 
     public void setThrottlingBurstLimit(Integer throttlingBurstLimit) {
@@ -252,10 +252,10 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit.
+     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Specifies the throttling burst limit.
+     * @return Specifies the throttling burst limit. Supported only for WebSocket APIs.
      */
 
     public Integer getThrottlingBurstLimit() {
@@ -264,11 +264,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling burst limit.
+     * Specifies the throttling burst limit. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param throttlingBurstLimit
-     *        Specifies the throttling burst limit.
+     *        Specifies the throttling burst limit. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit.
+     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param throttlingRateLimit
-     *        Specifies the throttling rate limit.
+     *        Specifies the throttling rate limit. Supported only for WebSocket APIs.
      */
 
     public void setThrottlingRateLimit(Double throttlingRateLimit) {
@@ -292,10 +292,10 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit.
+     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Specifies the throttling rate limit.
+     * @return Specifies the throttling rate limit. Supported only for WebSocket APIs.
      */
 
     public Double getThrottlingRateLimit() {
@@ -304,11 +304,11 @@ public class RouteSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the throttling rate limit.
+     * Specifies the throttling rate limit. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param throttlingRateLimit
-     *        Specifies the throttling rate limit.
+     *        Specifies the throttling rate limit. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

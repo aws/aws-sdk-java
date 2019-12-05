@@ -525,6 +525,39 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCorsConfigurationResult> deleteCorsConfigurationAsync(DeleteCorsConfigurationRequest request) {
+
+        return deleteCorsConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCorsConfigurationResult> deleteCorsConfigurationAsync(final DeleteCorsConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCorsConfigurationRequest, DeleteCorsConfigurationResult> asyncHandler) {
+        final DeleteCorsConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCorsConfigurationResult>() {
+            @Override
+            public DeleteCorsConfigurationResult call() throws Exception {
+                DeleteCorsConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteCorsConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDeploymentResult> deleteDeploymentAsync(DeleteDeploymentRequest request) {
 
         return deleteDeploymentAsync(request, null);
@@ -740,6 +773,39 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
 
                 try {
                     result = executeDeleteRouteResponse(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteSettingsResult> deleteRouteSettingsAsync(DeleteRouteSettingsRequest request) {
+
+        return deleteRouteSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteSettingsResult> deleteRouteSettingsAsync(final DeleteRouteSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRouteSettingsRequest, DeleteRouteSettingsResult> asyncHandler) {
+        final DeleteRouteSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRouteSettingsResult>() {
+            @Override
+            public DeleteRouteSettingsResult call() throws Exception {
+                DeleteRouteSettingsResult result = null;
+
+                try {
+                    result = executeDeleteRouteSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1565,6 +1631,72 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
 
                 try {
                     result = executeGetTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiResult> importApiAsync(ImportApiRequest request) {
+
+        return importApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportApiResult> importApiAsync(final ImportApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportApiRequest, ImportApiResult> asyncHandler) {
+        final ImportApiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportApiResult>() {
+            @Override
+            public ImportApiResult call() throws Exception {
+                ImportApiResult result = null;
+
+                try {
+                    result = executeImportApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReimportApiResult> reimportApiAsync(ReimportApiRequest request) {
+
+        return reimportApiAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReimportApiResult> reimportApiAsync(final ReimportApiRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReimportApiRequest, ReimportApiResult> asyncHandler) {
+        final ReimportApiRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReimportApiResult>() {
+            @Override
+            public ReimportApiResult call() throws Exception {
+                ReimportApiResult result = null;
+
+                try {
+                    result = executeReimportApi(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

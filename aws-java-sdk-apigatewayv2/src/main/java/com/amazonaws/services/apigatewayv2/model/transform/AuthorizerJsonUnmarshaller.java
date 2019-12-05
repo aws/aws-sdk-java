@@ -76,13 +76,13 @@ public class AuthorizerJsonUnmarshaller implements Unmarshaller<Authorizer, Json
                     context.nextToken();
                     authorizer.setIdentityValidationExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jwtConfiguration", targetDepth)) {
+                    context.nextToken();
+                    authorizer.setJwtConfiguration(JWTConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     authorizer.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("providerArns", targetDepth)) {
-                    context.nextToken();
-                    authorizer.setProviderArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

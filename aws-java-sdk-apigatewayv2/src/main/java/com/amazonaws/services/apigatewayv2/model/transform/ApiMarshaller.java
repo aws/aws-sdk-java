@@ -35,24 +35,28 @@ public class ApiMarshaller {
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> APIKEYSELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeySelectionExpression").build();
+    private static final MarshallingInfo<StructuredPojo> CORSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("corsConfiguration").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Boolean> DISABLESCHEMAVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableSchemaValidation").build();
+    private static final MarshallingInfo<List> IMPORTINFO_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("importInfo").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> PROTOCOLTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("protocolType").build();
     private static final MarshallingInfo<String> ROUTESELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("routeSelectionExpression").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
     private static final MarshallingInfo<List> WARNINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("warnings").build();
-    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
 
     private static final ApiMarshaller instance = new ApiMarshaller();
 
@@ -73,15 +77,17 @@ public class ApiMarshaller {
             protocolMarshaller.marshall(api.getApiEndpoint(), APIENDPOINT_BINDING);
             protocolMarshaller.marshall(api.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(api.getApiKeySelectionExpression(), APIKEYSELECTIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(api.getCorsConfiguration(), CORSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(api.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(api.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(api.getDisableSchemaValidation(), DISABLESCHEMAVALIDATION_BINDING);
+            protocolMarshaller.marshall(api.getImportInfo(), IMPORTINFO_BINDING);
             protocolMarshaller.marshall(api.getName(), NAME_BINDING);
             protocolMarshaller.marshall(api.getProtocolType(), PROTOCOLTYPE_BINDING);
             protocolMarshaller.marshall(api.getRouteSelectionExpression(), ROUTESELECTIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(api.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(api.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(api.getWarnings(), WARNINGS_BINDING);
-            protocolMarshaller.marshall(api.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

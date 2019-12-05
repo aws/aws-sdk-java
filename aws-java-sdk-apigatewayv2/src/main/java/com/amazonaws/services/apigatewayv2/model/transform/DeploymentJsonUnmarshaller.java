@@ -48,6 +48,10 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("autoDeployed", targetDepth)) {
+                    context.nextToken();
+                    deployment.setAutoDeployed(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
                     deployment.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

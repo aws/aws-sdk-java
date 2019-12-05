@@ -38,8 +38,7 @@ public class CreateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.List<DomainNameConfiguration> domainNameConfigurations;
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags associated with a domain name.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -196,12 +195,10 @@ public class CreateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags associated with a domain name.
      * </p>
      * 
-     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *         characters and must not start with aws:. The tag value can be up to 256 characters..
+     * @return The collection of tags associated with a domain name.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -210,13 +207,11 @@ public class CreateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags associated with a domain name.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags associated with a domain name.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -225,13 +220,11 @@ public class CreateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags associated with a domain name.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags associated with a domain name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

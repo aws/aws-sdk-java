@@ -15,12 +15,13 @@ package com.amazonaws.services.apigatewayv2.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * Represents a protocol type.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProtocolType {
 
-    WEBSOCKET("WEBSOCKET");
+    WEBSOCKET("WEBSOCKET"),
+    HTTP("HTTP");
 
     private String value;
 

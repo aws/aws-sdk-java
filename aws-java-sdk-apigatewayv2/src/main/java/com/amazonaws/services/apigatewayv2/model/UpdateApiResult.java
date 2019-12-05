@@ -33,12 +33,18 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String apiId;
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      */
     private String apiKeySelectionExpression;
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     */
+    private Cors corsConfiguration;
     /**
      * <p>
      * The timestamp when the API was created.
@@ -53,10 +59,17 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String description;
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      */
     private Boolean disableSchemaValidation;
+    /**
+     * <p>
+     * The validation information during API import. This may include particular properties of your OpenAPI definition
+     * which are ignored during import. Supported only for HTTP APIs.
+     * </p>
+     */
+    private java.util.List<String> importInfo;
     /**
      * <p>
      * The name of the API.
@@ -65,16 +78,24 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String name;
     /**
      * <p>
-     * The API protocol: Currently only WEBSOCKET is supported.
+     * The API protocol.
      * </p>
      */
     private String protocolType;
     /**
      * <p>
-     * The route selection expression for the API.
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      */
     private String routeSelectionExpression;
+    /**
+     * <p>
+     * A collection of tags associated with the API.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * A version identifier for the API.
@@ -87,13 +108,6 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private java.util.List<String> warnings;
-    /**
-     * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
-     * </p>
-     */
-    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -183,13 +197,13 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      * 
      * @param apiKeySelectionExpression
-     *        An API key selection expression. See <a href=
+     *        An API key selection expression. Supported only for WebSocket APIs. See <a href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      *        >API Key Selection Expressions</a>.
      */
@@ -200,12 +214,12 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      * 
-     * @return An API key selection expression. See <a href=
+     * @return An API key selection expression. Supported only for WebSocket APIs. See <a href=
      *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      *         >API Key Selection Expressions</a>.
      */
@@ -216,13 +230,13 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      * 
      * @param apiKeySelectionExpression
-     *        An API key selection expression. See <a href=
+     *        An API key selection expression. Supported only for WebSocket APIs. See <a href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      *        >API Key Selection Expressions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -230,6 +244,46 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     public UpdateApiResult withApiKeySelectionExpression(String apiKeySelectionExpression) {
         setApiKeySelectionExpression(apiKeySelectionExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param corsConfiguration
+     *        A CORS configuration. Supported only for HTTP APIs.
+     */
+
+    public void setCorsConfiguration(Cors corsConfiguration) {
+        this.corsConfiguration = corsConfiguration;
+    }
+
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @return A CORS configuration. Supported only for HTTP APIs.
+     */
+
+    public Cors getCorsConfiguration() {
+        return this.corsConfiguration;
+    }
+
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param corsConfiguration
+     *        A CORS configuration. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiResult withCorsConfiguration(Cors corsConfiguration) {
+        setCorsConfiguration(corsConfiguration);
         return this;
     }
 
@@ -315,11 +369,11 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param disableSchemaValidation
-     *        Avoid validating models when creating a deployment.
+     *        Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      */
 
     public void setDisableSchemaValidation(Boolean disableSchemaValidation) {
@@ -328,10 +382,10 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Avoid validating models when creating a deployment.
+     * @return Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      */
 
     public Boolean getDisableSchemaValidation() {
@@ -340,11 +394,11 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param disableSchemaValidation
-     *        Avoid validating models when creating a deployment.
+     *        Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,14 +409,92 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Avoid validating models when creating a deployment.
+     * @return Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      */
 
     public Boolean isDisableSchemaValidation() {
         return this.disableSchemaValidation;
+    }
+
+    /**
+     * <p>
+     * The validation information during API import. This may include particular properties of your OpenAPI definition
+     * which are ignored during import. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @return The validation information during API import. This may include particular properties of your OpenAPI
+     *         definition which are ignored during import. Supported only for HTTP APIs.
+     */
+
+    public java.util.List<String> getImportInfo() {
+        return importInfo;
+    }
+
+    /**
+     * <p>
+     * The validation information during API import. This may include particular properties of your OpenAPI definition
+     * which are ignored during import. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param importInfo
+     *        The validation information during API import. This may include particular properties of your OpenAPI
+     *        definition which are ignored during import. Supported only for HTTP APIs.
+     */
+
+    public void setImportInfo(java.util.Collection<String> importInfo) {
+        if (importInfo == null) {
+            this.importInfo = null;
+            return;
+        }
+
+        this.importInfo = new java.util.ArrayList<String>(importInfo);
+    }
+
+    /**
+     * <p>
+     * The validation information during API import. This may include particular properties of your OpenAPI definition
+     * which are ignored during import. Supported only for HTTP APIs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImportInfo(java.util.Collection)} or {@link #withImportInfo(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param importInfo
+     *        The validation information during API import. This may include particular properties of your OpenAPI
+     *        definition which are ignored during import. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiResult withImportInfo(String... importInfo) {
+        if (this.importInfo == null) {
+            setImportInfo(new java.util.ArrayList<String>(importInfo.length));
+        }
+        for (String ele : importInfo) {
+            this.importInfo.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The validation information during API import. This may include particular properties of your OpenAPI definition
+     * which are ignored during import. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param importInfo
+     *        The validation information during API import. This may include particular properties of your OpenAPI
+     *        definition which are ignored during import. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiResult withImportInfo(java.util.Collection<String> importInfo) {
+        setImportInfo(importInfo);
+        return this;
     }
 
     /**
@@ -407,11 +539,11 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The API protocol: Currently only WEBSOCKET is supported.
+     * The API protocol.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: Currently only WEBSOCKET is supported.
+     *        The API protocol.
      * @see ProtocolType
      */
 
@@ -421,10 +553,10 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The API protocol: Currently only WEBSOCKET is supported.
+     * The API protocol.
      * </p>
      * 
-     * @return The API protocol: Currently only WEBSOCKET is supported.
+     * @return The API protocol.
      * @see ProtocolType
      */
 
@@ -434,11 +566,11 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The API protocol: Currently only WEBSOCKET is supported.
+     * The API protocol.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: Currently only WEBSOCKET is supported.
+     *        The API protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolType
      */
@@ -450,11 +582,11 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The API protocol: Currently only WEBSOCKET is supported.
+     * The API protocol.
      * </p>
      * 
      * @param protocolType
-     *        The API protocol: Currently only WEBSOCKET is supported.
+     *        The API protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolType
      */
@@ -466,11 +598,15 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The route selection expression for the API.
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      * 
      * @param routeSelectionExpression
-     *        The route selection expression for the API.
+     *        The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be
+     *        ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property
+     *        is required for WebSocket APIs.
      */
 
     public void setRouteSelectionExpression(String routeSelectionExpression) {
@@ -479,10 +615,14 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The route selection expression for the API.
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      * 
-     * @return The route selection expression for the API.
+     * @return The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be
+     *         ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property
+     *         is required for WebSocket APIs.
      */
 
     public String getRouteSelectionExpression() {
@@ -491,16 +631,81 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The route selection expression for the API.
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      * 
      * @param routeSelectionExpression
-     *        The route selection expression for the API.
+     *        The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be
+     *        ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property
+     *        is required for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateApiResult withRouteSelectionExpression(String routeSelectionExpression) {
         setRouteSelectionExpression(routeSelectionExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of tags associated with the API.
+     * </p>
+     * 
+     * @return A collection of tags associated with the API.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A collection of tags associated with the API.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of tags associated with the API.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A collection of tags associated with the API.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of tags associated with the API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public UpdateApiResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiResult clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -615,73 +820,6 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
-     * </p>
-     * 
-     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *         characters and must not start with aws:. The tag value can be up to 256 characters..
-     */
-
-    public java.util.Map<String, String> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
-     * </p>
-     * 
-     * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
-     */
-
-    public void setTags(java.util.Map<String, String> tags) {
-        this.tags = tags;
-    }
-
-    /**
-     * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
-     * </p>
-     * 
-     * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateApiResult withTags(java.util.Map<String, String> tags) {
-        setTags(tags);
-        return this;
-    }
-
-    public UpdateApiResult addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String, String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Tags.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateApiResult clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -699,24 +837,28 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
             sb.append("ApiId: ").append(getApiId()).append(",");
         if (getApiKeySelectionExpression() != null)
             sb.append("ApiKeySelectionExpression: ").append(getApiKeySelectionExpression()).append(",");
+        if (getCorsConfiguration() != null)
+            sb.append("CorsConfiguration: ").append(getCorsConfiguration()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisableSchemaValidation() != null)
             sb.append("DisableSchemaValidation: ").append(getDisableSchemaValidation()).append(",");
+        if (getImportInfo() != null)
+            sb.append("ImportInfo: ").append(getImportInfo()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getProtocolType() != null)
             sb.append("ProtocolType: ").append(getProtocolType()).append(",");
         if (getRouteSelectionExpression() != null)
             sb.append("RouteSelectionExpression: ").append(getRouteSelectionExpression()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getWarnings() != null)
-            sb.append("Warnings: ").append(getWarnings()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }
@@ -743,6 +885,10 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getApiKeySelectionExpression() != null && other.getApiKeySelectionExpression().equals(this.getApiKeySelectionExpression()) == false)
             return false;
+        if (other.getCorsConfiguration() == null ^ this.getCorsConfiguration() == null)
+            return false;
+        if (other.getCorsConfiguration() != null && other.getCorsConfiguration().equals(this.getCorsConfiguration()) == false)
+            return false;
         if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
             return false;
         if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
@@ -754,6 +900,10 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (other.getDisableSchemaValidation() == null ^ this.getDisableSchemaValidation() == null)
             return false;
         if (other.getDisableSchemaValidation() != null && other.getDisableSchemaValidation().equals(this.getDisableSchemaValidation()) == false)
+            return false;
+        if (other.getImportInfo() == null ^ this.getImportInfo() == null)
+            return false;
+        if (other.getImportInfo() != null && other.getImportInfo().equals(this.getImportInfo()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -767,6 +917,10 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getRouteSelectionExpression() != null && other.getRouteSelectionExpression().equals(this.getRouteSelectionExpression()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
@@ -774,10 +928,6 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (other.getWarnings() == null ^ this.getWarnings() == null)
             return false;
         if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
-            return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -790,15 +940,17 @@ public class UpdateApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getApiEndpoint() == null) ? 0 : getApiEndpoint().hashCode());
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getApiKeySelectionExpression() == null) ? 0 : getApiKeySelectionExpression().hashCode());
+        hashCode = prime * hashCode + ((getCorsConfiguration() == null) ? 0 : getCorsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisableSchemaValidation() == null) ? 0 : getDisableSchemaValidation().hashCode());
+        hashCode = prime * hashCode + ((getImportInfo() == null) ? 0 : getImportInfo().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtocolType() == null) ? 0 : getProtocolType().hashCode());
         hashCode = prime * hashCode + ((getRouteSelectionExpression() == null) ? 0 : getRouteSelectionExpression().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

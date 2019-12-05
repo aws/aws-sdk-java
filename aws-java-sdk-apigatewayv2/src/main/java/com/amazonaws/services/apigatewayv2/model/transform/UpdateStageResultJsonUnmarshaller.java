@@ -52,6 +52,14 @@ public class UpdateStageResultJsonUnmarshaller implements Unmarshaller<UpdateSta
                     context.nextToken();
                     updateStageResult.setAccessLogSettings(AccessLogSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    context.nextToken();
+                    updateStageResult.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("autoDeploy", targetDepth)) {
+                    context.nextToken();
+                    updateStageResult.setAutoDeploy(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("clientCertificateId", targetDepth)) {
                     context.nextToken();
                     updateStageResult.setClientCertificateId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +79,10 @@ public class UpdateStageResultJsonUnmarshaller implements Unmarshaller<UpdateSta
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     updateStageResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastDeploymentStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    updateStageResult.setLastDeploymentStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();

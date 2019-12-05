@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Updates an Api.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -28,12 +33,29 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String apiId;
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      */
     private String apiKeySelectionExpression;
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     */
+    private Cors corsConfiguration;
+    /**
+     * <p>
+     * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
+     * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
+     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
+     * quick create integration. Supported only for HTTP APIs.
+     * </p>
+     */
+    private String credentialsArn;
     /**
      * <p>
      * The description of the API.
@@ -42,7 +64,7 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String description;
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      */
     private Boolean disableSchemaValidation;
@@ -54,10 +76,29 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String name;
     /**
      * <p>
-     * The route selection expression for the API.
+     * This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise,
+     * this value replaces the route key of the quick create route. Additional routes may still be added after the API
+     * is updated. Supported only for HTTP APIs.
+     * </p>
+     */
+    private String routeKey;
+    /**
+     * <p>
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      */
     private String routeSelectionExpression;
+    /**
+     * <p>
+     * This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda
+     * integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively.
+     * The value provided updates the integration URI and integration type. You can update a quick-created target, but
+     * you can't remove it from an API. Supported only for HTTP APIs.
+     * </p>
+     */
+    private String target;
     /**
      * <p>
      * A version identifier for the API.
@@ -107,13 +148,13 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      * 
      * @param apiKeySelectionExpression
-     *        An API key selection expression. See <a href=
+     *        An API key selection expression. Supported only for WebSocket APIs. See <a href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      *        >API Key Selection Expressions</a>.
      */
@@ -124,12 +165,12 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      * 
-     * @return An API key selection expression. See <a href=
+     * @return An API key selection expression. Supported only for WebSocket APIs. See <a href=
      *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      *         >API Key Selection Expressions</a>.
      */
@@ -140,13 +181,13 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An API key selection expression. See <a href=
+     * An API key selection expression. Supported only for WebSocket APIs. See <a href=
      * "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      * >API Key Selection Expressions</a>.
      * </p>
      * 
      * @param apiKeySelectionExpression
-     *        An API key selection expression. See <a href=
+     *        An API key selection expression. Supported only for WebSocket APIs. See <a href=
      *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions"
      *        >API Key Selection Expressions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -154,6 +195,116 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public UpdateApiRequest withApiKeySelectionExpression(String apiKeySelectionExpression) {
         setApiKeySelectionExpression(apiKeySelectionExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param corsConfiguration
+     *        A CORS configuration. Supported only for HTTP APIs.
+     */
+
+    public void setCorsConfiguration(Cors corsConfiguration) {
+        this.corsConfiguration = corsConfiguration;
+    }
+
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @return A CORS configuration. Supported only for HTTP APIs.
+     */
+
+    public Cors getCorsConfiguration() {
+        return this.corsConfiguration;
+    }
+
+    /**
+     * <p>
+     * A CORS configuration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param corsConfiguration
+     *        A CORS configuration. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiRequest withCorsConfiguration(Cors corsConfiguration) {
+        setCorsConfiguration(corsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
+     * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
+     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
+     * quick create integration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param credentialsArn
+     *        This property is part of quick create. It specifies the credentials required for the integration, if any.
+     *        For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
+     *        use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
+     *        the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
+     *        specify null. Currently, this property is not used for HTTP integrations. If provided, this value replaces
+     *        the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     */
+
+    public void setCredentialsArn(String credentialsArn) {
+        this.credentialsArn = credentialsArn;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
+     * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
+     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
+     * quick create integration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @return This property is part of quick create. It specifies the credentials required for the integration, if any.
+     *         For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
+     *         use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
+     *         the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
+     *         specify null. Currently, this property is not used for HTTP integrations. If provided, this value
+     *         replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     */
+
+    public String getCredentialsArn() {
+        return this.credentialsArn;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
+     * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
+     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
+     * quick create integration. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param credentialsArn
+     *        This property is part of quick create. It specifies the credentials required for the integration, if any.
+     *        For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
+     *        use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
+     *        the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
+     *        specify null. Currently, this property is not used for HTTP integrations. If provided, this value replaces
+     *        the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiRequest withCredentialsArn(String credentialsArn) {
+        setCredentialsArn(credentialsArn);
         return this;
     }
 
@@ -199,11 +350,11 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param disableSchemaValidation
-     *        Avoid validating models when creating a deployment.
+     *        Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      */
 
     public void setDisableSchemaValidation(Boolean disableSchemaValidation) {
@@ -212,10 +363,10 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Avoid validating models when creating a deployment.
+     * @return Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      */
 
     public Boolean getDisableSchemaValidation() {
@@ -224,11 +375,11 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param disableSchemaValidation
-     *        Avoid validating models when creating a deployment.
+     *        Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,10 +390,10 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Avoid validating models when creating a deployment.
+     * Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return Avoid validating models when creating a deployment.
+     * @return Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
      */
 
     public Boolean isDisableSchemaValidation() {
@@ -291,11 +442,67 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The route selection expression for the API.
+     * This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise,
+     * this value replaces the route key of the quick create route. Additional routes may still be added after the API
+     * is updated. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param routeKey
+     *        This property is part of quick create. If not specified, the route created using quick create is kept.
+     *        Otherwise, this value replaces the route key of the quick create route. Additional routes may still be
+     *        added after the API is updated. Supported only for HTTP APIs.
+     */
+
+    public void setRouteKey(String routeKey) {
+        this.routeKey = routeKey;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise,
+     * this value replaces the route key of the quick create route. Additional routes may still be added after the API
+     * is updated. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @return This property is part of quick create. If not specified, the route created using quick create is kept.
+     *         Otherwise, this value replaces the route key of the quick create route. Additional routes may still be
+     *         added after the API is updated. Supported only for HTTP APIs.
+     */
+
+    public String getRouteKey() {
+        return this.routeKey;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise,
+     * this value replaces the route key of the quick create route. Additional routes may still be added after the API
+     * is updated. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param routeKey
+     *        This property is part of quick create. If not specified, the route created using quick create is kept.
+     *        Otherwise, this value replaces the route key of the quick create route. Additional routes may still be
+     *        added after the API is updated. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiRequest withRouteKey(String routeKey) {
+        setRouteKey(routeKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      * 
      * @param routeSelectionExpression
-     *        The route selection expression for the API.
+     *        The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be
+     *        ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property
+     *        is required for WebSocket APIs.
      */
 
     public void setRouteSelectionExpression(String routeSelectionExpression) {
@@ -304,10 +511,14 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The route selection expression for the API.
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      * 
-     * @return The route selection expression for the API.
+     * @return The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be
+     *         ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property
+     *         is required for WebSocket APIs.
      */
 
     public String getRouteSelectionExpression() {
@@ -316,16 +527,78 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The route selection expression for the API.
+     * The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method}
+     * ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket
+     * APIs.
      * </p>
      * 
      * @param routeSelectionExpression
-     *        The route selection expression for the API.
+     *        The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be
+     *        ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property
+     *        is required for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateApiRequest withRouteSelectionExpression(String routeSelectionExpression) {
         setRouteSelectionExpression(routeSelectionExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda
+     * integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively.
+     * The value provided updates the integration URI and integration type. You can update a quick-created target, but
+     * you can't remove it from an API. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param target
+     *        This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda
+     *        integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY,
+     *        respectively. The value provided updates the integration URI and integration type. You can update a
+     *        quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.
+     */
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda
+     * integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively.
+     * The value provided updates the integration URI and integration type. You can update a quick-created target, but
+     * you can't remove it from an API. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @return This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda
+     *         integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY,
+     *         respectively. The value provided updates the integration URI and integration type. You can update a
+     *         quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.
+     */
+
+    public String getTarget() {
+        return this.target;
+    }
+
+    /**
+     * <p>
+     * This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda
+     * integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively.
+     * The value provided updates the integration URI and integration type. You can update a quick-created target, but
+     * you can't remove it from an API. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param target
+     *        This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda
+     *        integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY,
+     *        respectively. The value provided updates the integration URI and integration type. You can update a
+     *        quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiRequest withTarget(String target) {
+        setTarget(target);
         return this;
     }
 
@@ -385,14 +658,22 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("ApiId: ").append(getApiId()).append(",");
         if (getApiKeySelectionExpression() != null)
             sb.append("ApiKeySelectionExpression: ").append(getApiKeySelectionExpression()).append(",");
+        if (getCorsConfiguration() != null)
+            sb.append("CorsConfiguration: ").append(getCorsConfiguration()).append(",");
+        if (getCredentialsArn() != null)
+            sb.append("CredentialsArn: ").append(getCredentialsArn()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisableSchemaValidation() != null)
             sb.append("DisableSchemaValidation: ").append(getDisableSchemaValidation()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRouteKey() != null)
+            sb.append("RouteKey: ").append(getRouteKey()).append(",");
         if (getRouteSelectionExpression() != null)
             sb.append("RouteSelectionExpression: ").append(getRouteSelectionExpression()).append(",");
+        if (getTarget() != null)
+            sb.append("Target: ").append(getTarget()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion());
         sb.append("}");
@@ -417,6 +698,14 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getApiKeySelectionExpression() != null && other.getApiKeySelectionExpression().equals(this.getApiKeySelectionExpression()) == false)
             return false;
+        if (other.getCorsConfiguration() == null ^ this.getCorsConfiguration() == null)
+            return false;
+        if (other.getCorsConfiguration() != null && other.getCorsConfiguration().equals(this.getCorsConfiguration()) == false)
+            return false;
+        if (other.getCredentialsArn() == null ^ this.getCredentialsArn() == null)
+            return false;
+        if (other.getCredentialsArn() != null && other.getCredentialsArn().equals(this.getCredentialsArn()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -429,9 +718,17 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRouteKey() == null ^ this.getRouteKey() == null)
+            return false;
+        if (other.getRouteKey() != null && other.getRouteKey().equals(this.getRouteKey()) == false)
+            return false;
         if (other.getRouteSelectionExpression() == null ^ this.getRouteSelectionExpression() == null)
             return false;
         if (other.getRouteSelectionExpression() != null && other.getRouteSelectionExpression().equals(this.getRouteSelectionExpression()) == false)
+            return false;
+        if (other.getTarget() == null ^ this.getTarget() == null)
+            return false;
+        if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
@@ -447,10 +744,14 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getApiKeySelectionExpression() == null) ? 0 : getApiKeySelectionExpression().hashCode());
+        hashCode = prime * hashCode + ((getCorsConfiguration() == null) ? 0 : getCorsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCredentialsArn() == null) ? 0 : getCredentialsArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisableSchemaValidation() == null) ? 0 : getDisableSchemaValidation().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRouteKey() == null) ? 0 : getRouteKey().hashCode());
         hashCode = prime * hashCode + ((getRouteSelectionExpression() == null) ? 0 : getRouteSelectionExpression().hashCode());
+        hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }

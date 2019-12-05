@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents passthrough behavior for an integration response.
+ * Represents passthrough behavior for an integration response. Supported only for WebSocket APIs.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

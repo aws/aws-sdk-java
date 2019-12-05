@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Specifies how to handle response payload content type conversions.
+ * Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

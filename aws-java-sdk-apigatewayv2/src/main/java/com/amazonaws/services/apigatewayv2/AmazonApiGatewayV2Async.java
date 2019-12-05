@@ -38,6 +38,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createApiRequest
+     *        Creates a new Api resource to represent an API.
      * @return A Java Future containing the result of the CreateApi operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateApi
      */
@@ -49,6 +50,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createApiRequest
+     *        Creates a new Api resource to represent an API.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -65,6 +67,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createApiMappingRequest
+     *        Creates a new ApiMapping resource to represent an API mapping.
      * @return A Java Future containing the result of the CreateApiMapping operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateApiMapping
      */
@@ -76,6 +79,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createApiMappingRequest
+     *        Creates a new ApiMapping resource to represent an API mapping.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -92,6 +96,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createAuthorizerRequest
+     *        Creates a new Authorizer resource to represent an authorizer.
      * @return A Java Future containing the result of the CreateAuthorizer operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateAuthorizer
      */
@@ -103,6 +108,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createAuthorizerRequest
+     *        Creates a new Authorizer resource to represent an authorizer.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -119,6 +125,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createDeploymentRequest
+     *        Creates a new Deployment resource to represent a deployment.
      * @return A Java Future containing the result of the CreateDeployment operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateDeployment
      */
@@ -130,6 +137,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createDeploymentRequest
+     *        Creates a new Deployment resource to represent a deployment.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -146,6 +154,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createDomainNameRequest
+     *        Creates a new DomainName resource to represent a domain name.
      * @return A Java Future containing the result of the CreateDomainName operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateDomainName
      */
@@ -157,6 +166,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createDomainNameRequest
+     *        Creates a new DomainName resource to represent a domain name.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -173,6 +183,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createIntegrationRequest
+     *        Creates a new Integration resource to represent an integration.
      * @return A Java Future containing the result of the CreateIntegration operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateIntegration
      */
@@ -184,6 +195,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createIntegrationRequest
+     *        Creates a new Integration resource to represent an integration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -200,6 +212,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createIntegrationResponseRequest
+     *        Creates a new IntegrationResponse resource to represent an integration response.
      * @return A Java Future containing the result of the CreateIntegrationResponse operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateIntegrationResponse
      */
@@ -212,6 +225,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createIntegrationResponseRequest
+     *        Creates a new IntegrationResponse resource to represent an integration response.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -229,6 +243,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createModelRequest
+     *        Creates a new Model.
      * @return A Java Future containing the result of the CreateModel operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateModel
      */
@@ -240,6 +255,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createModelRequest
+     *        Creates a new Model.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -256,6 +272,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createRouteRequest
+     *        Creates a new Route resource to represent a route.
      * @return A Java Future containing the result of the CreateRoute operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateRoute
      */
@@ -267,6 +284,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createRouteRequest
+     *        Creates a new Route resource to represent a route.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -283,6 +301,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createRouteResponseRequest
+     *        Creates a new RouteResponse resource to represent a route response.
      * @return A Java Future containing the result of the CreateRouteResponse operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateRouteResponse
      */
@@ -294,6 +313,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createRouteResponseRequest
+     *        Creates a new RouteResponse resource to represent a route response.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -310,6 +330,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createStageRequest
+     *        Creates a new Stage resource to represent a stage.
      * @return A Java Future containing the result of the CreateStage operation returned by the service.
      * @sample AmazonApiGatewayV2Async.CreateStage
      */
@@ -321,6 +342,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param createStageRequest
+     *        Creates a new Stage resource to represent a stage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -411,6 +433,33 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      */
     java.util.concurrent.Future<DeleteAuthorizerResult> deleteAuthorizerAsync(DeleteAuthorizerRequest deleteAuthorizerRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAuthorizerRequest, DeleteAuthorizerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a CORS configuration.
+     * </p>
+     * 
+     * @param deleteCorsConfigurationRequest
+     * @return A Java Future containing the result of the DeleteCorsConfiguration operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.DeleteCorsConfiguration
+     */
+    java.util.concurrent.Future<DeleteCorsConfigurationResult> deleteCorsConfigurationAsync(DeleteCorsConfigurationRequest deleteCorsConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a CORS configuration.
+     * </p>
+     * 
+     * @param deleteCorsConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCorsConfiguration operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.DeleteCorsConfiguration
+     */
+    java.util.concurrent.Future<DeleteCorsConfigurationResult> deleteCorsConfigurationAsync(DeleteCorsConfigurationRequest deleteCorsConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCorsConfigurationRequest, DeleteCorsConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -605,6 +654,33 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Deletes the RouteSettings for a stage.
+     * </p>
+     * 
+     * @param deleteRouteSettingsRequest
+     * @return A Java Future containing the result of the DeleteRouteSettings operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.DeleteRouteSettings
+     */
+    java.util.concurrent.Future<DeleteRouteSettingsResult> deleteRouteSettingsAsync(DeleteRouteSettingsRequest deleteRouteSettingsRequest);
+
+    /**
+     * <p>
+     * Deletes the RouteSettings for a stage.
+     * </p>
+     * 
+     * @param deleteRouteSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRouteSettings operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.DeleteRouteSettings
+     */
+    java.util.concurrent.Future<DeleteRouteSettingsResult> deleteRouteSettingsAsync(DeleteRouteSettingsRequest deleteRouteSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteSettingsRequest, DeleteRouteSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a Stage.
      * </p>
      * 
@@ -659,7 +735,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * The API mapping.
+     * Gets an API mapping.
      * </p>
      * 
      * @param getApiMappingRequest
@@ -670,7 +746,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * The API mapping.
+     * Gets an API mapping.
      * </p>
      * 
      * @param getApiMappingRequest
@@ -686,7 +762,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * The API mappings.
+     * Gets API mappings.
      * </p>
      * 
      * @param getApiMappingsRequest
@@ -697,7 +773,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * The API mappings.
+     * Gets API mappings.
      * </p>
      * 
      * @param getApiMappingsRequest
@@ -1253,7 +1329,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Gets the Tags for an API.
+     * Gets a collection of Tag resources.
      * </p>
      * 
      * @param getTagsRequest
@@ -1264,7 +1340,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Gets the Tags for an API.
+     * Gets a collection of Tag resources.
      * </p>
      * 
      * @param getTagsRequest
@@ -1280,10 +1356,65 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Tag an APIGW resource
+     * Imports an API.
+     * </p>
+     * 
+     * @param importApiRequest
+     * @return A Java Future containing the result of the ImportApi operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.ImportApi
+     */
+    java.util.concurrent.Future<ImportApiResult> importApiAsync(ImportApiRequest importApiRequest);
+
+    /**
+     * <p>
+     * Imports an API.
+     * </p>
+     * 
+     * @param importApiRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportApi operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.ImportApi
+     */
+    java.util.concurrent.Future<ImportApiResult> importApiAsync(ImportApiRequest importApiRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportApiRequest, ImportApiResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts an Api resource.
+     * </p>
+     * 
+     * @param reimportApiRequest
+     * @return A Java Future containing the result of the ReimportApi operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.ReimportApi
+     */
+    java.util.concurrent.Future<ReimportApiResult> reimportApiAsync(ReimportApiRequest reimportApiRequest);
+
+    /**
+     * <p>
+     * Puts an Api resource.
+     * </p>
+     * 
+     * @param reimportApiRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReimportApi operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.ReimportApi
+     */
+    java.util.concurrent.Future<ReimportApiResult> reimportApiAsync(ReimportApiRequest reimportApiRequest,
+            com.amazonaws.handlers.AsyncHandler<ReimportApiRequest, ReimportApiResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Tag resource to represent a tag.
      * </p>
      * 
      * @param tagResourceRequest
+     *        Creates a new Tag resource to represent a tag.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonApiGatewayV2Async.TagResource
      */
@@ -1291,10 +1422,11 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Tag an APIGW resource
+     * Creates a new Tag resource to represent a tag.
      * </p>
      * 
      * @param tagResourceRequest
+     *        Creates a new Tag resource to represent a tag.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1307,7 +1439,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Untag an APIGW resource
+     * Deletes a Tag.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1318,7 +1450,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
-     * Untag an APIGW resource
+     * Deletes a Tag.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1338,6 +1470,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateApiRequest
+     *        Updates an Api.
      * @return A Java Future containing the result of the UpdateApi operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateApi
      */
@@ -1349,6 +1482,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateApiRequest
+     *        Updates an Api.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1365,6 +1499,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateApiMappingRequest
+     *        Updates an ApiMapping.
      * @return A Java Future containing the result of the UpdateApiMapping operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateApiMapping
      */
@@ -1376,6 +1511,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateApiMappingRequest
+     *        Updates an ApiMapping.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1392,6 +1528,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateAuthorizerRequest
+     *        Updates an Authorizer.
      * @return A Java Future containing the result of the UpdateAuthorizer operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateAuthorizer
      */
@@ -1403,6 +1540,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateAuthorizerRequest
+     *        Updates an Authorizer.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1419,6 +1557,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateDeploymentRequest
+     *        Updates a Deployment.
      * @return A Java Future containing the result of the UpdateDeployment operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateDeployment
      */
@@ -1430,6 +1569,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateDeploymentRequest
+     *        Updates a Deployment.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1446,6 +1586,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateDomainNameRequest
+     *        Updates a DomainName.
      * @return A Java Future containing the result of the UpdateDomainName operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateDomainName
      */
@@ -1457,6 +1598,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateDomainNameRequest
+     *        Updates a DomainName.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1473,6 +1615,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateIntegrationRequest
+     *        Updates an Integration.
      * @return A Java Future containing the result of the UpdateIntegration operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateIntegration
      */
@@ -1484,6 +1627,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateIntegrationRequest
+     *        Updates an Integration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1500,6 +1644,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateIntegrationResponseRequest
+     *        Updates an IntegrationResponses.
      * @return A Java Future containing the result of the UpdateIntegrationResponse operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateIntegrationResponse
      */
@@ -1512,6 +1657,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateIntegrationResponseRequest
+     *        Updates an IntegrationResponses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1529,6 +1675,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateModelRequest
+     *        Updates a Model.
      * @return A Java Future containing the result of the UpdateModel operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateModel
      */
@@ -1540,6 +1687,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateModelRequest
+     *        Updates a Model.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1556,6 +1704,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateRouteRequest
+     *        Updates a Route.
      * @return A Java Future containing the result of the UpdateRoute operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateRoute
      */
@@ -1567,6 +1716,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateRouteRequest
+     *        Updates a Route.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1583,6 +1733,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateRouteResponseRequest
+     *        Updates a RouteResponse.
      * @return A Java Future containing the result of the UpdateRouteResponse operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateRouteResponse
      */
@@ -1594,6 +1745,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateRouteResponseRequest
+     *        Updates a RouteResponse.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1610,6 +1762,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateStageRequest
+     *        Updates a Stage.
      * @return A Java Future containing the result of the UpdateStage operation returned by the service.
      * @sample AmazonApiGatewayV2Async.UpdateStage
      */
@@ -1621,6 +1774,7 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      * </p>
      * 
      * @param updateStageRequest
+     *        Updates a Stage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

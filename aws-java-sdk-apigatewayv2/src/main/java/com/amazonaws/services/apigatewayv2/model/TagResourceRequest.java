@@ -17,30 +17,34 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Creates a new Tag resource to represent a tag.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * AWS resource arn
+     * The resource ARN for the tag.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * AWS resource arn
+     * The resource ARN for the tag.
      * </p>
      * 
      * @param resourceArn
-     *        AWS resource arn
+     *        The resource ARN for the tag.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -49,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * AWS resource arn
+     * The resource ARN for the tag.
      * </p>
      * 
-     * @return AWS resource arn
+     * @return The resource ARN for the tag.
      */
 
     public String getResourceArn() {
@@ -61,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * AWS resource arn
+     * The resource ARN for the tag.
      * </p>
      * 
      * @param resourceArn
-     *        AWS resource arn
+     *        The resource ARN for the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,12 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
-     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *         characters and must not start with aws:. The tag value can be up to 256 characters..
+     * @return The collection of tags. Each tag element is associated with a given resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -90,13 +92,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags. Each tag element is associated with a given resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,13 +105,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags. Each tag element is associated with a given resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

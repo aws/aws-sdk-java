@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Creates a new IntegrationResponse resource to represent an integration response.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateIntegrationResponseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -77,7 +82,7 @@ public class CreateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     private java.util.Map<String, String> responseTemplates;
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      */
     private String templateSelectionExpression;
@@ -522,11 +527,11 @@ public class CreateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param templateSelectionExpression
-     *        The template selection expression for the integration response.
+     *        The template selection expression for the integration response. Supported only for WebSocket APIs.
      */
 
     public void setTemplateSelectionExpression(String templateSelectionExpression) {
@@ -535,10 +540,10 @@ public class CreateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return The template selection expression for the integration response.
+     * @return The template selection expression for the integration response. Supported only for WebSocket APIs.
      */
 
     public String getTemplateSelectionExpression() {
@@ -547,11 +552,11 @@ public class CreateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param templateSelectionExpression
-     *        The template selection expression for the integration response.
+     *        The template selection expression for the integration response. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

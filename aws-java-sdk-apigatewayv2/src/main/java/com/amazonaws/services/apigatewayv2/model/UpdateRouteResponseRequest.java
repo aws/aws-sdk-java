@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Updates a RouteResponse.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateRouteResponseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -28,7 +33,7 @@ public class UpdateRouteResponseRequest extends com.amazonaws.AmazonWebServiceRe
     private String apiId;
     /**
      * <p>
-     * The model selection expression for the route response.
+     * The model selection expression for the route response. Supported only for WebSocket APIs.
      * </p>
      */
     private String modelSelectionExpression;
@@ -105,11 +110,11 @@ public class UpdateRouteResponseRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The model selection expression for the route response.
+     * The model selection expression for the route response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param modelSelectionExpression
-     *        The model selection expression for the route response.
+     *        The model selection expression for the route response. Supported only for WebSocket APIs.
      */
 
     public void setModelSelectionExpression(String modelSelectionExpression) {
@@ -118,10 +123,10 @@ public class UpdateRouteResponseRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The model selection expression for the route response.
+     * The model selection expression for the route response. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return The model selection expression for the route response.
+     * @return The model selection expression for the route response. Supported only for WebSocket APIs.
      */
 
     public String getModelSelectionExpression() {
@@ -130,11 +135,11 @@ public class UpdateRouteResponseRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The model selection expression for the route response.
+     * The model selection expression for the route response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param modelSelectionExpression
-     *        The model selection expression for the route response.
+     *        The model selection expression for the route response. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

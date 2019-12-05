@@ -1,4 +1,17 @@
-# __1.11.687__ __2019-12-04__
+# __1.11.688__ __2019-12-05__
+## __Amazon Kinesis Video Signaling Channels__
+  - ### Features
+    - Announcing support for WebRTC in Kinesis Video Streams, as fully managed capability. You can now use simple APIs to enable your connected devices, web, and mobile apps with real-time two-way media streaming capabilities.
+
+## __Amazon Kinesis Video Streams__
+  - ### Features
+    - Introduces management of signaling channels for Kinesis Video Streams.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - Amazon API Gateway now supports HTTP APIs (beta), enabling customers to quickly build high performance RESTful APIs that are up to 71% cheaper than REST APIs also available from API Gateway. HTTP APIs are optimized for building APIs that proxy to AWS Lambda functions or HTTP backends, making them ideal for serverless workloads. Using HTTP APIs, you can secure your APIs using OIDC and OAuth 2 out of box, quickly build web applications using a simple CORS experience, and get started immediately with automatic deployment and simple create workflows.
+
+# __1.11.687__ __2019-12-03__
 ## __AWS Lambda__
   - ### Features
     - - Added the ProvisionedConcurrency type and operations. Allocate provisioned concurrency to enable your function to scale up without fluctuations in latency. Use PutProvisionedConcurrencyConfig to configure provisioned concurrency on a version of a function, or on an alias.

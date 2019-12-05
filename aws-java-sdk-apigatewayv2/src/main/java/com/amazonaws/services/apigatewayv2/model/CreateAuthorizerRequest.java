@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Creates a new Authorizer resource to represent an authorizer.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -30,22 +35,20 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
      * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * the Lambda function, specify null. Supported only for REQUEST authorizers.
      * </p>
      */
     private String authorizerCredentialsArn;
     /**
      * <p>
-     * The time to live (TTL), in seconds, of cached authorizer results. If it equals 0, authorization caching is
-     * disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the
-     * default value is 300. The maximum value is 3600, or 1 hour.
+     * Authorizer caching is not currently supported. Don't specify this value for authorizers.
      * </p>
      */
     private Integer authorizerResultTtlInSeconds;
     /**
      * <p>
-     * The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request
-     * parameters.
+     * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters.
+     * For HTTP APIs, specify JWT to use JSON Web Tokens.
      * </p>
      */
     private String authorizerType;
@@ -54,11 +57,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda
      * function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:
-     * {account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form:
-     * arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting the
-     * Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the
-     * resource, including the initial /. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
+     * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable> ,
+     * where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates
+     * that the remaining substring in the URI should be treated as the path to the resource, including the initial /.
+     * For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only
+     * for REQUEST authorizers.
      * </p>
      */
     private String authorizerUri;
@@ -67,36 +72,41 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The identity source for which authorization is requested.
      * </p>
      * <p>
-     * For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
-     * Auth header and a Name query string parameters are defined as identity sources, this value is
-     * method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive the
-     * authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the
-     * identity-related request parameters are present, not null, and non-empty. Only when this is true does the
-     * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without
-     * calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified
-     * request parameters. When the authorization caching is not enabled, this property is optional.
+     * For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     * specified request parameters. Currently, the identity source can be headers, query string parameters, stage
+     * variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined
+     * as identity sources, this value is route.request.header.Auth, route.request.querystring.Name. These parameters
+     * will be used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only when this is true does the
+     * authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without
+     * calling the Lambda function.
+     * </p>
+     * <p>
+     * For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests. Currently
+     * only header-based and query parameter-based selections are supported, for example
+     * "$request.header.Authorization".
      * </p>
      */
     private java.util.List<String> identitySource;
     /**
      * <p>
-     * The validation expression does not apply to the REQUEST authorizer.
+     * This parameter is not used.
      * </p>
      */
     private String identityValidationExpression;
+    /**
+     * <p>
+     * Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP
+     * APIs.
+     * </p>
+     */
+    private JWTConfiguration jwtConfiguration;
     /**
      * <p>
      * The name of the authorizer.
      * </p>
      */
     private String name;
-    /**
-     * <p>
-     * For REQUEST authorizer, this is not defined.
-     * </p>
-     */
-    private java.util.List<String> providerArns;
 
     /**
      * <p>
@@ -142,13 +152,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
      * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * the Lambda function, specify null. Supported only for REQUEST authorizers.
      * </p>
      * 
      * @param authorizerCredentialsArn
      *        Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an
      *        IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
-     *        permissions on the Lambda function, specify null.
+     *        permissions on the Lambda function, specify null. Supported only for REQUEST authorizers.
      */
 
     public void setAuthorizerCredentialsArn(String authorizerCredentialsArn) {
@@ -159,12 +169,12 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
      * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * the Lambda function, specify null. Supported only for REQUEST authorizers.
      * </p>
      * 
      * @return Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an
      *         IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
-     *         permissions on the Lambda function, specify null.
+     *         permissions on the Lambda function, specify null. Supported only for REQUEST authorizers.
      */
 
     public String getAuthorizerCredentialsArn() {
@@ -175,13 +185,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM
      * role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on
-     * the Lambda function, specify null.
+     * the Lambda function, specify null. Supported only for REQUEST authorizers.
      * </p>
      * 
      * @param authorizerCredentialsArn
      *        Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an
      *        IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based
-     *        permissions on the Lambda function, specify null.
+     *        permissions on the Lambda function, specify null. Supported only for REQUEST authorizers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,15 +202,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The time to live (TTL), in seconds, of cached authorizer results. If it equals 0, authorization caching is
-     * disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the
-     * default value is 300. The maximum value is 3600, or 1 hour.
+     * Authorizer caching is not currently supported. Don't specify this value for authorizers.
      * </p>
      * 
      * @param authorizerResultTtlInSeconds
-     *        The time to live (TTL), in seconds, of cached authorizer results. If it equals 0, authorization caching is
-     *        disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set,
-     *        the default value is 300. The maximum value is 3600, or 1 hour.
+     *        Authorizer caching is not currently supported. Don't specify this value for authorizers.
      */
 
     public void setAuthorizerResultTtlInSeconds(Integer authorizerResultTtlInSeconds) {
@@ -209,14 +215,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The time to live (TTL), in seconds, of cached authorizer results. If it equals 0, authorization caching is
-     * disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the
-     * default value is 300. The maximum value is 3600, or 1 hour.
+     * Authorizer caching is not currently supported. Don't specify this value for authorizers.
      * </p>
      * 
-     * @return The time to live (TTL), in seconds, of cached authorizer results. If it equals 0, authorization caching
-     *         is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not
-     *         set, the default value is 300. The maximum value is 3600, or 1 hour.
+     * @return Authorizer caching is not currently supported. Don't specify this value for authorizers.
      */
 
     public Integer getAuthorizerResultTtlInSeconds() {
@@ -225,15 +227,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The time to live (TTL), in seconds, of cached authorizer results. If it equals 0, authorization caching is
-     * disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the
-     * default value is 300. The maximum value is 3600, or 1 hour.
+     * Authorizer caching is not currently supported. Don't specify this value for authorizers.
      * </p>
      * 
      * @param authorizerResultTtlInSeconds
-     *        The time to live (TTL), in seconds, of cached authorizer results. If it equals 0, authorization caching is
-     *        disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set,
-     *        the default value is 300. The maximum value is 3600, or 1 hour.
+     *        Authorizer caching is not currently supported. Don't specify this value for authorizers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,13 +242,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request
-     * parameters.
+     * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters.
+     * For HTTP APIs, specify JWT to use JSON Web Tokens.
      * </p>
      * 
      * @param authorizerType
-     *        The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming
-     *        request parameters.
+     *        The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request
+     *        parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
      * @see AuthorizerType
      */
 
@@ -260,12 +258,12 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request
-     * parameters.
+     * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters.
+     * For HTTP APIs, specify JWT to use JSON Web Tokens.
      * </p>
      * 
-     * @return The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming
-     *         request parameters.
+     * @return The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request
+     *         parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
      * @see AuthorizerType
      */
 
@@ -275,13 +273,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request
-     * parameters.
+     * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters.
+     * For HTTP APIs, specify JWT to use JSON Web Tokens.
      * </p>
      * 
      * @param authorizerType
-     *        The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming
-     *        request parameters.
+     *        The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request
+     *        parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthorizerType
      */
@@ -293,13 +291,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming request
-     * parameters.
+     * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters.
+     * For HTTP APIs, specify JWT to use JSON Web Tokens.
      * </p>
      * 
      * @param authorizerType
-     *        The authorizer type. Currently the only valid value is REQUEST, for a Lambda function using incoming
-     *        request parameters.
+     *        The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request
+     *        parameters. For HTTP APIs, specify JWT to use JSON Web Tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthorizerType
      */
@@ -314,22 +312,27 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda
      * function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:
-     * {account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form:
-     * arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting the
-     * Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the
-     * resource, including the initial /. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
+     * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable> ,
+     * where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates
+     * that the remaining substring in the URI should be treated as the path to the resource, including the initial /.
+     * For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only
+     * for REQUEST authorizers.
      * </p>
      * 
      * @param authorizerUri
      *        The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed
      *        Lambda function URI, for example,
      *        arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda
-     *        :us-west-2:{account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form:
-     *        arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting
-     *        the Lambda function, path indicates that the remaining substring in the URI should be treated as the path
-     *        to the resource, including the initial /. For Lambda functions, this is usually of the form
-     *        /2015-03-31/functions/[FunctionARN]/invocations.
+     *        :us-west-2:<replaceable>{account_id
+     *        }</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the
+     *        URI has this form:
+     *        arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api
+     *        }</replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda
+     *        function, path indicates that the remaining substring in the URI should be treated as the path to the
+     *        resource, including the initial /. For Lambda functions, this is usually of the form
+     *        /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.
      */
 
     public void setAuthorizerUri(String authorizerUri) {
@@ -341,21 +344,26 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda
      * function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:
-     * {account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form:
-     * arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting the
-     * Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the
-     * resource, including the initial /. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
+     * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable> ,
+     * where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates
+     * that the remaining substring in the URI should be treated as the path to the resource, including the initial /.
+     * For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only
+     * for REQUEST authorizers.
      * </p>
      * 
      * @return The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed
      *         Lambda function URI, for example,
      *         arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda
-     *         :us-west-2:{account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form:
-     *         arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting
-     *         the Lambda function, path indicates that the remaining substring in the URI should be treated as the path
-     *         to the resource, including the initial /. For Lambda functions, this is usually of the form
-     *         /2015-03-31/functions/[FunctionARN]/invocations.
+     *         :us-west-2:<replaceable>{account_id
+     *         }</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the
+     *         URI has this form:
+     *         arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api
+     *         }</replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda
+     *         function, path indicates that the remaining substring in the URI should be treated as the path to the
+     *         resource, including the initial /. For Lambda functions, this is usually of the form
+     *         /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.
      */
 
     public String getAuthorizerUri() {
@@ -367,22 +375,27 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda
      * function URI, for example,
      * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:
-     * {account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form:
-     * arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting the
-     * Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the
-     * resource, including the initial /. For Lambda functions, this is usually of the form
-     * /2015-03-31/functions/[FunctionARN]/invocations.
+     * <replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
+     * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable> ,
+     * where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates
+     * that the remaining substring in the URI should be treated as the path to the resource, including the initial /.
+     * For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only
+     * for REQUEST authorizers.
      * </p>
      * 
      * @param authorizerUri
      *        The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed
      *        Lambda function URI, for example,
      *        arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda
-     *        :us-west-2:{account_id}:function:{lambda_function_name}/invocations. In general, the URI has this form:
-     *        arn:aws:apigateway:{region}:lambda:path/{service_api} , where {region} is the same as the region hosting
-     *        the Lambda function, path indicates that the remaining substring in the URI should be treated as the path
-     *        to the resource, including the initial /. For Lambda functions, this is usually of the form
-     *        /2015-03-31/functions/[FunctionARN]/invocations.
+     *        :us-west-2:<replaceable>{account_id
+     *        }</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the
+     *        URI has this form:
+     *        arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api
+     *        }</replaceable> , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda
+     *        function, path indicates that the remaining substring in the URI should be treated as the path to the
+     *        resource, including the initial /. For Lambda functions, this is usually of the form
+     *        /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,29 +409,36 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The identity source for which authorization is requested.
      * </p>
      * <p>
-     * For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
-     * Auth header and a Name query string parameters are defined as identity sources, this value is
-     * method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive the
-     * authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the
-     * identity-related request parameters are present, not null, and non-empty. Only when this is true does the
-     * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without
-     * calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified
-     * request parameters. When the authorization caching is not enabled, this property is optional.
+     * For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     * specified request parameters. Currently, the identity source can be headers, query string parameters, stage
+     * variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined
+     * as identity sources, this value is route.request.header.Auth, route.request.querystring.Name. These parameters
+     * will be used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only when this is true does the
+     * authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without
+     * calling the Lambda function.
+     * </p>
+     * <p>
+     * For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests. Currently
+     * only header-based and query parameter-based selections are supported, for example
+     * "$request.header.Authorization".
      * </p>
      * 
      * @return The identity source for which authorization is requested.</p>
      *         <p>
-     *         For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     *         comma-separated string of one or more mapping expressions of the specified request parameters. For
-     *         example, if an Auth header and a Name query string parameters are defined as identity sources, this value
-     *         is method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive
-     *         the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying
-     *         all of the identity-related request parameters are present, not null, and non-empty. Only when this is
-     *         true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     *         response without calling the Lambda function. The valid value is a string of comma-separated mapping
-     *         expressions of the specified request parameters. When the authorization caching is not enabled, this
-     *         property is optional.
+     *         For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     *         specified request parameters. Currently, the identity source can be headers, query string parameters,
+     *         stage variables, and context parameters. For example, if an Auth header and a Name query string parameter
+     *         are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name.
+     *         These parameters will be used to perform runtime validation for Lambda-based authorizers by verifying all
+     *         of the identity-related request parameters are present in the request, not null, and non-empty. Only when
+     *         this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401
+     *         Unauthorized response without calling the Lambda function.
+     *         </p>
+     *         <p>
+     *         For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests.
+     *         Currently only header-based and query parameter-based selections are supported, for example
+     *         "$request.header.Authorization".
      */
 
     public java.util.List<String> getIdentitySource() {
@@ -430,30 +450,37 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The identity source for which authorization is requested.
      * </p>
      * <p>
-     * For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
-     * Auth header and a Name query string parameters are defined as identity sources, this value is
-     * method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive the
-     * authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the
-     * identity-related request parameters are present, not null, and non-empty. Only when this is true does the
-     * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without
-     * calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified
-     * request parameters. When the authorization caching is not enabled, this property is optional.
+     * For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     * specified request parameters. Currently, the identity source can be headers, query string parameters, stage
+     * variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined
+     * as identity sources, this value is route.request.header.Auth, route.request.querystring.Name. These parameters
+     * will be used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only when this is true does the
+     * authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without
+     * calling the Lambda function.
+     * </p>
+     * <p>
+     * For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests. Currently
+     * only header-based and query parameter-based selections are supported, for example
+     * "$request.header.Authorization".
      * </p>
      * 
      * @param identitySource
      *        The identity source for which authorization is requested.</p>
      *        <p>
-     *        For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     *        comma-separated string of one or more mapping expressions of the specified request parameters. For
-     *        example, if an Auth header and a Name query string parameters are defined as identity sources, this value
-     *        is method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive
-     *        the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all
-     *        of the identity-related request parameters are present, not null, and non-empty. Only when this is true
-     *        does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     *        response without calling the Lambda function. The valid value is a string of comma-separated mapping
-     *        expressions of the specified request parameters. When the authorization caching is not enabled, this
-     *        property is optional.
+     *        For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     *        specified request parameters. Currently, the identity source can be headers, query string parameters,
+     *        stage variables, and context parameters. For example, if an Auth header and a Name query string parameter
+     *        are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name.
+     *        These parameters will be used to perform runtime validation for Lambda-based authorizers by verifying all
+     *        of the identity-related request parameters are present in the request, not null, and non-empty. Only when
+     *        this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401
+     *        Unauthorized response without calling the Lambda function.
+     *        </p>
+     *        <p>
+     *        For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests.
+     *        Currently only header-based and query parameter-based selections are supported, for example
+     *        "$request.header.Authorization".
      */
 
     public void setIdentitySource(java.util.Collection<String> identitySource) {
@@ -470,15 +497,19 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The identity source for which authorization is requested.
      * </p>
      * <p>
-     * For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
-     * Auth header and a Name query string parameters are defined as identity sources, this value is
-     * method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive the
-     * authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the
-     * identity-related request parameters are present, not null, and non-empty. Only when this is true does the
-     * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without
-     * calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified
-     * request parameters. When the authorization caching is not enabled, this property is optional.
+     * For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     * specified request parameters. Currently, the identity source can be headers, query string parameters, stage
+     * variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined
+     * as identity sources, this value is route.request.header.Auth, route.request.querystring.Name. These parameters
+     * will be used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only when this is true does the
+     * authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without
+     * calling the Lambda function.
+     * </p>
+     * <p>
+     * For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests. Currently
+     * only header-based and query parameter-based selections are supported, for example
+     * "$request.header.Authorization".
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -489,16 +520,19 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * @param identitySource
      *        The identity source for which authorization is requested.</p>
      *        <p>
-     *        For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     *        comma-separated string of one or more mapping expressions of the specified request parameters. For
-     *        example, if an Auth header and a Name query string parameters are defined as identity sources, this value
-     *        is method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive
-     *        the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all
-     *        of the identity-related request parameters are present, not null, and non-empty. Only when this is true
-     *        does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     *        response without calling the Lambda function. The valid value is a string of comma-separated mapping
-     *        expressions of the specified request parameters. When the authorization caching is not enabled, this
-     *        property is optional.
+     *        For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     *        specified request parameters. Currently, the identity source can be headers, query string parameters,
+     *        stage variables, and context parameters. For example, if an Auth header and a Name query string parameter
+     *        are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name.
+     *        These parameters will be used to perform runtime validation for Lambda-based authorizers by verifying all
+     *        of the identity-related request parameters are present in the request, not null, and non-empty. Only when
+     *        this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401
+     *        Unauthorized response without calling the Lambda function.
+     *        </p>
+     *        <p>
+     *        For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests.
+     *        Currently only header-based and query parameter-based selections are supported, for example
+     *        "$request.header.Authorization".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,30 +551,37 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * The identity source for which authorization is requested.
      * </p>
      * <p>
-     * For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     * comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an
-     * Auth header and a Name query string parameters are defined as identity sources, this value is
-     * method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive the
-     * authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all of the
-     * identity-related request parameters are present, not null, and non-empty. Only when this is true does the
-     * authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without
-     * calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified
-     * request parameters. When the authorization caching is not enabled, this property is optional.
+     * For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     * specified request parameters. Currently, the identity source can be headers, query string parameters, stage
+     * variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined
+     * as identity sources, this value is route.request.header.Auth, route.request.querystring.Name. These parameters
+     * will be used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only when this is true does the
+     * authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without
+     * calling the Lambda function.
+     * </p>
+     * <p>
+     * For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests. Currently
+     * only header-based and query parameter-based selections are supported, for example
+     * "$request.header.Authorization".
      * </p>
      * 
      * @param identitySource
      *        The identity source for which authorization is requested.</p>
      *        <p>
-     *        For the REQUEST authorizer, this is required when authorization caching is enabled. The value is a
-     *        comma-separated string of one or more mapping expressions of the specified request parameters. For
-     *        example, if an Auth header and a Name query string parameters are defined as identity sources, this value
-     *        is method.request.header.Auth, method.request.querystring.Name. These parameters will be used to derive
-     *        the authorization caching key and to perform runtime validation of the REQUEST authorizer by verifying all
-     *        of the identity-related request parameters are present, not null, and non-empty. Only when this is true
-     *        does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-     *        response without calling the Lambda function. The valid value is a string of comma-separated mapping
-     *        expressions of the specified request parameters. When the authorization caching is not enabled, this
-     *        property is optional.
+     *        For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the
+     *        specified request parameters. Currently, the identity source can be headers, query string parameters,
+     *        stage variables, and context parameters. For example, if an Auth header and a Name query string parameter
+     *        are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name.
+     *        These parameters will be used to perform runtime validation for Lambda-based authorizers by verifying all
+     *        of the identity-related request parameters are present in the request, not null, and non-empty. Only when
+     *        this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401
+     *        Unauthorized response without calling the Lambda function.
+     *        </p>
+     *        <p>
+     *        For JWT, a single entry that specifies where to extract the JSON Web Token (JWT )from inbound requests.
+     *        Currently only header-based and query parameter-based selections are supported, for example
+     *        "$request.header.Authorization".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -551,11 +592,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The validation expression does not apply to the REQUEST authorizer.
+     * This parameter is not used.
      * </p>
      * 
      * @param identityValidationExpression
-     *        The validation expression does not apply to the REQUEST authorizer.
+     *        This parameter is not used.
      */
 
     public void setIdentityValidationExpression(String identityValidationExpression) {
@@ -564,10 +605,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The validation expression does not apply to the REQUEST authorizer.
+     * This parameter is not used.
      * </p>
      * 
-     * @return The validation expression does not apply to the REQUEST authorizer.
+     * @return This parameter is not used.
      */
 
     public String getIdentityValidationExpression() {
@@ -576,16 +617,62 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The validation expression does not apply to the REQUEST authorizer.
+     * This parameter is not used.
      * </p>
      * 
      * @param identityValidationExpression
-     *        The validation expression does not apply to the REQUEST authorizer.
+     *        This parameter is not used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateAuthorizerRequest withIdentityValidationExpression(String identityValidationExpression) {
         setIdentityValidationExpression(identityValidationExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP
+     * APIs.
+     * </p>
+     * 
+     * @param jwtConfiguration
+     *        Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for
+     *        HTTP APIs.
+     */
+
+    public void setJwtConfiguration(JWTConfiguration jwtConfiguration) {
+        this.jwtConfiguration = jwtConfiguration;
+    }
+
+    /**
+     * <p>
+     * Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP
+     * APIs.
+     * </p>
+     * 
+     * @return Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only
+     *         for HTTP APIs.
+     */
+
+    public JWTConfiguration getJwtConfiguration() {
+        return this.jwtConfiguration;
+    }
+
+    /**
+     * <p>
+     * Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP
+     * APIs.
+     * </p>
+     * 
+     * @param jwtConfiguration
+     *        Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for
+     *        HTTP APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAuthorizerRequest withJwtConfiguration(JWTConfiguration jwtConfiguration) {
+        setJwtConfiguration(jwtConfiguration);
         return this;
     }
 
@@ -630,76 +717,6 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p>
-     * For REQUEST authorizer, this is not defined.
-     * </p>
-     * 
-     * @return For REQUEST authorizer, this is not defined.
-     */
-
-    public java.util.List<String> getProviderArns() {
-        return providerArns;
-    }
-
-    /**
-     * <p>
-     * For REQUEST authorizer, this is not defined.
-     * </p>
-     * 
-     * @param providerArns
-     *        For REQUEST authorizer, this is not defined.
-     */
-
-    public void setProviderArns(java.util.Collection<String> providerArns) {
-        if (providerArns == null) {
-            this.providerArns = null;
-            return;
-        }
-
-        this.providerArns = new java.util.ArrayList<String>(providerArns);
-    }
-
-    /**
-     * <p>
-     * For REQUEST authorizer, this is not defined.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setProviderArns(java.util.Collection)} or {@link #withProviderArns(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param providerArns
-     *        For REQUEST authorizer, this is not defined.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAuthorizerRequest withProviderArns(String... providerArns) {
-        if (this.providerArns == null) {
-            setProviderArns(new java.util.ArrayList<String>(providerArns.length));
-        }
-        for (String ele : providerArns) {
-            this.providerArns.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * For REQUEST authorizer, this is not defined.
-     * </p>
-     * 
-     * @param providerArns
-     *        For REQUEST authorizer, this is not defined.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAuthorizerRequest withProviderArns(java.util.Collection<String> providerArns) {
-        setProviderArns(providerArns);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -725,10 +742,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("IdentitySource: ").append(getIdentitySource()).append(",");
         if (getIdentityValidationExpression() != null)
             sb.append("IdentityValidationExpression: ").append(getIdentityValidationExpression()).append(",");
+        if (getJwtConfiguration() != null)
+            sb.append("JwtConfiguration: ").append(getJwtConfiguration()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getProviderArns() != null)
-            sb.append("ProviderArns: ").append(getProviderArns());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -771,13 +788,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getIdentityValidationExpression() != null && other.getIdentityValidationExpression().equals(this.getIdentityValidationExpression()) == false)
             return false;
+        if (other.getJwtConfiguration() == null ^ this.getJwtConfiguration() == null)
+            return false;
+        if (other.getJwtConfiguration() != null && other.getJwtConfiguration().equals(this.getJwtConfiguration()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        if (other.getProviderArns() == null ^ this.getProviderArns() == null)
-            return false;
-        if (other.getProviderArns() != null && other.getProviderArns().equals(this.getProviderArns()) == false)
             return false;
         return true;
     }
@@ -794,8 +811,8 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAuthorizerUri() == null) ? 0 : getAuthorizerUri().hashCode());
         hashCode = prime * hashCode + ((getIdentitySource() == null) ? 0 : getIdentitySource().hashCode());
         hashCode = prime * hashCode + ((getIdentityValidationExpression() == null) ? 0 : getIdentityValidationExpression().hashCode());
+        hashCode = prime * hashCode + ((getJwtConfiguration() == null) ? 0 : getJwtConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getProviderArns() == null) ? 0 : getProviderArns().hashCode());
         return hashCode;
     }
 

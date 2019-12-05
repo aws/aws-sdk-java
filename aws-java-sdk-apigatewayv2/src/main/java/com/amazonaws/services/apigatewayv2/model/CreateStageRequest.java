@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Creates a new Stage resource to represent a stage.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -34,7 +39,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String apiId;
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     */
+    private Boolean autoDeploy;
+    /**
+     * <p>
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      */
     private String clientCertificateId;
@@ -58,7 +69,7 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      */
     private java.util.Map<String, RouteSettings> routeSettings;
@@ -71,14 +82,13 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      */
     private java.util.Map<String, String> stageVariables;
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -165,11 +175,63 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @param autoDeploy
+     *        Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     */
+
+    public void setAutoDeploy(Boolean autoDeploy) {
+        this.autoDeploy = autoDeploy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @return Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     */
+
+    public Boolean getAutoDeploy() {
+        return this.autoDeploy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @param autoDeploy
+     *        Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStageRequest withAutoDeploy(Boolean autoDeploy) {
+        setAutoDeploy(autoDeploy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     * </p>
+     * 
+     * @return Specifies whether updates to an API automatically trigger a new deployment. The default value is false.
+     */
+
+    public Boolean isAutoDeploy() {
+        return this.autoDeploy;
+    }
+
+    /**
+     * <p>
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of a client certificate for a Stage.
+     *        The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -178,10 +240,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return The identifier of a client certificate for a Stage.
+     * @return The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      */
 
     public String getClientCertificateId() {
@@ -190,11 +252,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of a client certificate for a Stage.
+     * The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of a client certificate for a Stage.
+     *        The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,10 +387,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      * 
-     * @return Route settings for the stage.
+     * @return Route settings for the stage, by routeKey.
      */
 
     public java.util.Map<String, RouteSettings> getRouteSettings() {
@@ -337,11 +399,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      * 
      * @param routeSettings
-     *        Route settings for the stage.
+     *        Route settings for the stage, by routeKey.
      */
 
     public void setRouteSettings(java.util.Map<String, RouteSettings> routeSettings) {
@@ -350,11 +412,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Route settings for the stage.
+     * Route settings for the stage, by routeKey.
      * </p>
      * 
      * @param routeSettings
-     *        Route settings for the stage.
+     *        Route settings for the stage, by routeKey.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,11 +489,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      * 
      * @return A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore
-     *         characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     *         characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      */
 
     public java.util.Map<String, String> getStageVariables() {
@@ -441,12 +503,12 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param stageVariables
      *        A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore
-     *        characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     *        characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      */
 
     public void setStageVariables(java.util.Map<String, String> stageVariables) {
@@ -456,12 +518,12 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore
-     * characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     * characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param stageVariables
      *        A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore
-     *        characters, and the values must match [A-Za-z0-9-._~:/?#&=,]+.
+     *        characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,12 +555,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
-     * @return The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *         characters and must not start with aws:. The tag value can be up to 256 characters..
+     * @return The collection of tags. Each tag element is associated with a given resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -507,13 +567,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags. Each tag element is associated with a given resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -522,13 +580,11 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters
-     * and must not start with aws:. The tag value can be up to 256 characters..
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
-     *        characters and must not start with aws:. The tag value can be up to 256 characters..
+     *        The collection of tags. Each tag element is associated with a given resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,6 +630,8 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("AccessLogSettings: ").append(getAccessLogSettings()).append(",");
         if (getApiId() != null)
             sb.append("ApiId: ").append(getApiId()).append(",");
+        if (getAutoDeploy() != null)
+            sb.append("AutoDeploy: ").append(getAutoDeploy()).append(",");
         if (getClientCertificateId() != null)
             sb.append("ClientCertificateId: ").append(getClientCertificateId()).append(",");
         if (getDefaultRouteSettings() != null)
@@ -611,6 +669,10 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getApiId() == null ^ this.getApiId() == null)
             return false;
         if (other.getApiId() != null && other.getApiId().equals(this.getApiId()) == false)
+            return false;
+        if (other.getAutoDeploy() == null ^ this.getAutoDeploy() == null)
+            return false;
+        if (other.getAutoDeploy() != null && other.getAutoDeploy().equals(this.getAutoDeploy()) == false)
             return false;
         if (other.getClientCertificateId() == null ^ this.getClientCertificateId() == null)
             return false;
@@ -654,6 +716,7 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getAccessLogSettings() == null) ? 0 : getAccessLogSettings().hashCode());
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
+        hashCode = prime * hashCode + ((getAutoDeploy() == null) ? 0 : getAutoDeploy().hashCode());
         hashCode = prime * hashCode + ((getClientCertificateId() == null) ? 0 : getClientCertificateId().hashCode());
         hashCode = prime * hashCode + ((getDefaultRouteSettings() == null) ? 0 : getDefaultRouteSettings().hashCode());
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());

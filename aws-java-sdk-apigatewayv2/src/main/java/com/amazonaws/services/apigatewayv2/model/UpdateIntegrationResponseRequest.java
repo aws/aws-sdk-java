@@ -17,6 +17,11 @@ import javax.annotation.Generated;
 
 import com.amazonaws.AmazonWebServiceRequest;
 
+/**
+ * <p>
+ * Updates an IntegrationResponses.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -28,8 +33,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     private String apiId;
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -49,7 +54,11 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String integrationId;
-    /** The integration response ID. */
+    /**
+     * <p>
+     * The integration response ID.
+     * </p>
+     */
     private String integrationResponseId;
     /**
      * <p>
@@ -62,10 +71,12 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * A key-value map specifying response parameters that are passed to the method response from the backend. The key
      * is a method response header parameter name and the mapped value is an integration response header value, a static
      * value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The
-     * mapping key must match the pattern of method.response.header.{name} , where name is a valid and unique header
-     * name. The mapped non-static value must match the pattern of integration.response.header.{name} or
-     * integration.response.body.{JSON-expression} , where {name} is a valid and unique response header name and
-     * {JSON-expression} is a valid JSON expression without the $ prefix.
+     * mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable> , where name is a
+     * valid and unique header name. The mapped non-static value must match the pattern of
+     * integration.response.header.<replaceable>{name}</replaceable> or
+     * integration.response.body.<replaceable>{JSON-expression}</replaceable> , where <replaceable>{name}</replaceable>
+     * is a valid and unique response header name and <replaceable>{JSON-expression}</replaceable> is a valid JSON
+     * expression without the $ prefix.
      * </p>
      */
     private java.util.Map<String, String> responseParameters;
@@ -79,7 +90,7 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     private java.util.Map<String, String> responseTemplates;
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      */
     private String templateSelectionExpression;
@@ -126,8 +137,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -141,8 +152,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param contentHandlingStrategy
-     *        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *        and CONVERT_TO_TEXT, with the following behaviors:</p>
+     *        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *        Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *        <p>
      *        CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *        blob.
@@ -162,8 +173,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -176,8 +187,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * route response or method response without modification.
      * </p>
      * 
-     * @return Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *         and CONVERT_TO_TEXT, with the following behaviors:</p>
+     * @return Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *         Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *         <p>
      *         CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *         blob.
@@ -197,8 +208,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -212,8 +223,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param contentHandlingStrategy
-     *        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *        and CONVERT_TO_TEXT, with the following behaviors:</p>
+     *        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *        Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *        <p>
      *        CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *        blob.
@@ -235,8 +246,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and
-     * CONVERT_TO_TEXT, with the following behaviors:
+     * Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported
+     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
      * </p>
      * <p>
      * CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -250,8 +261,8 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param contentHandlingStrategy
-     *        Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY
-     *        and CONVERT_TO_TEXT, with the following behaviors:</p>
+     *        Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions.
+     *        Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p>
      *        <p>
      *        CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary
      *        blob.
@@ -312,7 +323,9 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The integration response ID.
+     * </p>
      * 
      * @param integrationResponseId
      *        The integration response ID.
@@ -323,7 +336,9 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The integration response ID.
+     * </p>
      * 
      * @return The integration response ID.
      */
@@ -333,7 +348,9 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
      * The integration response ID.
+     * </p>
      * 
      * @param integrationResponseId
      *        The integration response ID.
@@ -390,20 +407,24 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * A key-value map specifying response parameters that are passed to the method response from the backend. The key
      * is a method response header parameter name and the mapped value is an integration response header value, a static
      * value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The
-     * mapping key must match the pattern of method.response.header.{name} , where name is a valid and unique header
-     * name. The mapped non-static value must match the pattern of integration.response.header.{name} or
-     * integration.response.body.{JSON-expression} , where {name} is a valid and unique response header name and
-     * {JSON-expression} is a valid JSON expression without the $ prefix.
+     * mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable> , where name is a
+     * valid and unique header name. The mapped non-static value must match the pattern of
+     * integration.response.header.<replaceable>{name}</replaceable> or
+     * integration.response.body.<replaceable>{JSON-expression}</replaceable> , where <replaceable>{name}</replaceable>
+     * is a valid and unique response header name and <replaceable>{JSON-expression}</replaceable> is a valid JSON
+     * expression without the $ prefix.
      * </p>
      * 
      * @return A key-value map specifying response parameters that are passed to the method response from the backend.
      *         The key is a method response header parameter name and the mapped value is an integration response header
      *         value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration
-     *         response body. The mapping key must match the pattern of method.response.header.{name} , where name is a
-     *         valid and unique header name. The mapped non-static value must match the pattern of
-     *         integration.response.header.{name} or integration.response.body.{JSON-expression} , where {name} is a
-     *         valid and unique response header name and {JSON-expression} is a valid JSON expression without the $
-     *         prefix.
+     *         response body. The mapping key must match the pattern of
+     *         method.response.header.<replaceable>{name}</replaceable> , where name is a valid and unique header name.
+     *         The mapped non-static value must match the pattern of
+     *         integration.response.header.<replaceable>{name}</replaceable> or
+     *         integration.response.body.<replaceable>{JSON-expression}</replaceable> , where
+     *         <replaceable>{name}</replaceable> is a valid and unique response header name and
+     *         <replaceable>{JSON-expression}</replaceable> is a valid JSON expression without the $ prefix.
      */
 
     public java.util.Map<String, String> getResponseParameters() {
@@ -415,21 +436,25 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * A key-value map specifying response parameters that are passed to the method response from the backend. The key
      * is a method response header parameter name and the mapped value is an integration response header value, a static
      * value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The
-     * mapping key must match the pattern of method.response.header.{name} , where name is a valid and unique header
-     * name. The mapped non-static value must match the pattern of integration.response.header.{name} or
-     * integration.response.body.{JSON-expression} , where {name} is a valid and unique response header name and
-     * {JSON-expression} is a valid JSON expression without the $ prefix.
+     * mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable> , where name is a
+     * valid and unique header name. The mapped non-static value must match the pattern of
+     * integration.response.header.<replaceable>{name}</replaceable> or
+     * integration.response.body.<replaceable>{JSON-expression}</replaceable> , where <replaceable>{name}</replaceable>
+     * is a valid and unique response header name and <replaceable>{JSON-expression}</replaceable> is a valid JSON
+     * expression without the $ prefix.
      * </p>
      * 
      * @param responseParameters
      *        A key-value map specifying response parameters that are passed to the method response from the backend.
      *        The key is a method response header parameter name and the mapped value is an integration response header
      *        value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration
-     *        response body. The mapping key must match the pattern of method.response.header.{name} , where name is a
-     *        valid and unique header name. The mapped non-static value must match the pattern of
-     *        integration.response.header.{name} or integration.response.body.{JSON-expression} , where {name} is a
-     *        valid and unique response header name and {JSON-expression} is a valid JSON expression without the $
-     *        prefix.
+     *        response body. The mapping key must match the pattern of
+     *        method.response.header.<replaceable>{name}</replaceable> , where name is a valid and unique header name.
+     *        The mapped non-static value must match the pattern of
+     *        integration.response.header.<replaceable>{name}</replaceable> or
+     *        integration.response.body.<replaceable>{JSON-expression}</replaceable> , where
+     *        <replaceable>{name}</replaceable> is a valid and unique response header name and
+     *        <replaceable>{JSON-expression}</replaceable> is a valid JSON expression without the $ prefix.
      */
 
     public void setResponseParameters(java.util.Map<String, String> responseParameters) {
@@ -441,21 +466,25 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
      * A key-value map specifying response parameters that are passed to the method response from the backend. The key
      * is a method response header parameter name and the mapped value is an integration response header value, a static
      * value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The
-     * mapping key must match the pattern of method.response.header.{name} , where name is a valid and unique header
-     * name. The mapped non-static value must match the pattern of integration.response.header.{name} or
-     * integration.response.body.{JSON-expression} , where {name} is a valid and unique response header name and
-     * {JSON-expression} is a valid JSON expression without the $ prefix.
+     * mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable> , where name is a
+     * valid and unique header name. The mapped non-static value must match the pattern of
+     * integration.response.header.<replaceable>{name}</replaceable> or
+     * integration.response.body.<replaceable>{JSON-expression}</replaceable> , where <replaceable>{name}</replaceable>
+     * is a valid and unique response header name and <replaceable>{JSON-expression}</replaceable> is a valid JSON
+     * expression without the $ prefix.
      * </p>
      * 
      * @param responseParameters
      *        A key-value map specifying response parameters that are passed to the method response from the backend.
      *        The key is a method response header parameter name and the mapped value is an integration response header
      *        value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration
-     *        response body. The mapping key must match the pattern of method.response.header.{name} , where name is a
-     *        valid and unique header name. The mapped non-static value must match the pattern of
-     *        integration.response.header.{name} or integration.response.body.{JSON-expression} , where {name} is a
-     *        valid and unique response header name and {JSON-expression} is a valid JSON expression without the $
-     *        prefix.
+     *        response body. The mapping key must match the pattern of
+     *        method.response.header.<replaceable>{name}</replaceable> , where name is a valid and unique header name.
+     *        The mapped non-static value must match the pattern of
+     *        integration.response.header.<replaceable>{name}</replaceable> or
+     *        integration.response.body.<replaceable>{JSON-expression}</replaceable> , where
+     *        <replaceable>{name}</replaceable> is a valid and unique response header name and
+     *        <replaceable>{JSON-expression}</replaceable> is a valid JSON expression without the $ prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,11 +589,11 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param templateSelectionExpression
-     *        The template selection expression for the integration response.
+     *        The template selection expression for the integration response. Supported only for WebSocket APIs.
      */
 
     public void setTemplateSelectionExpression(String templateSelectionExpression) {
@@ -573,10 +602,10 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      * 
-     * @return The template selection expression for the integration response.
+     * @return The template selection expression for the integration response. Supported only for WebSocket APIs.
      */
 
     public String getTemplateSelectionExpression() {
@@ -585,11 +614,11 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The template selection expression for the integration response.
+     * The template selection expression for the integration response. Supported only for WebSocket APIs.
      * </p>
      * 
      * @param templateSelectionExpression
-     *        The template selection expression for the integration response.
+     *        The template selection expression for the integration response. Supported only for WebSocket APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
