@@ -474,7 +474,10 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * <p>
      * The first byte in an object has
      * position 0; as an example, the object is of 10 bytes in length, the last
-     * 4 bytes can be downloaded by specifying the start range as 6.
+     * 4 bytes can be downloaded by specifying the start range as 6. Positions
+     * may also be specified as a negative number counting from the end of the
+     * object. Therefore, start = -4 will get the last four bytes of the
+     * object regardless of its length.
      * </p>
      * <p>
      * If no byte range is specified, this request downloads the entire
@@ -534,7 +537,10 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * <p>
      * The first byte in an object has
      * position 0; as an example, the object is of 10 bytes in length, the last
-     * 4 bytes can be downloaded by specifying the start range as 6.
+     * 4 bytes can be downloaded by specifying the start range as 6. Positions
+     * may also be specified as a negative number counting from the end of the
+     * object. Therefore, start = -4 will get the last four bytes of the
+     * object regardless of its length.
      * </p>
      * <p>
      * If no byte range is specified, this request downloads the entire
