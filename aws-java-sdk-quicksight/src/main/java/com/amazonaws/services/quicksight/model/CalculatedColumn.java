@@ -36,8 +36,8 @@ public class CalculatedColumn implements Serializable, Cloneable, StructuredPojo
     private String columnName;
     /**
      * <p>
-     * A unique ID to identify a calculated column. During dataset update, if the column ID of a calculated column
-     * matches that of an existing calculated column, QuickSight preserves the existing calculated column.
+     * A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column
+     * matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.
      * </p>
      */
     private String columnId;
@@ -90,13 +90,14 @@ public class CalculatedColumn implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A unique ID to identify a calculated column. During dataset update, if the column ID of a calculated column
-     * matches that of an existing calculated column, QuickSight preserves the existing calculated column.
+     * A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column
+     * matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.
      * </p>
      * 
      * @param columnId
-     *        A unique ID to identify a calculated column. During dataset update, if the column ID of a calculated
-     *        column matches that of an existing calculated column, QuickSight preserves the existing calculated column.
+     *        A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated
+     *        column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated
+     *        column.
      */
 
     public void setColumnId(String columnId) {
@@ -105,12 +106,12 @@ public class CalculatedColumn implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A unique ID to identify a calculated column. During dataset update, if the column ID of a calculated column
-     * matches that of an existing calculated column, QuickSight preserves the existing calculated column.
+     * A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column
+     * matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.
      * </p>
      * 
-     * @return A unique ID to identify a calculated column. During dataset update, if the column ID of a calculated
-     *         column matches that of an existing calculated column, QuickSight preserves the existing calculated
+     * @return A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated
+     *         column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated
      *         column.
      */
 
@@ -120,13 +121,14 @@ public class CalculatedColumn implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A unique ID to identify a calculated column. During dataset update, if the column ID of a calculated column
-     * matches that of an existing calculated column, QuickSight preserves the existing calculated column.
+     * A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated column
+     * matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated column.
      * </p>
      * 
      * @param columnId
-     *        A unique ID to identify a calculated column. During dataset update, if the column ID of a calculated
-     *        column matches that of an existing calculated column, QuickSight preserves the existing calculated column.
+     *        A unique ID to identify a calculated column. During a dataset update, if the column ID of a calculated
+     *        column matches that of an existing calculated column, Amazon QuickSight preserves the existing calculated
+     *        column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

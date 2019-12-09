@@ -49,6 +49,8 @@ public class ClusterInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionInfo").build();
     private static final MarshallingInfo<String> ENHANCEDMONITORING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedMonitoring").build();
+    private static final MarshallingInfo<StructuredPojo> OPENMONITORING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("openMonitoring").build();
     private static final MarshallingInfo<Integer> NUMBEROFBROKERNODES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfBrokerNodes").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class ClusterInfoMarshaller {
             protocolMarshaller.marshall(clusterInfo.getCurrentVersion(), CURRENTVERSION_BINDING);
             protocolMarshaller.marshall(clusterInfo.getEncryptionInfo(), ENCRYPTIONINFO_BINDING);
             protocolMarshaller.marshall(clusterInfo.getEnhancedMonitoring(), ENHANCEDMONITORING_BINDING);
+            protocolMarshaller.marshall(clusterInfo.getOpenMonitoring(), OPENMONITORING_BINDING);
             protocolMarshaller.marshall(clusterInfo.getNumberOfBrokerNodes(), NUMBEROFBROKERNODES_BINDING);
             protocolMarshaller.marshall(clusterInfo.getState(), STATE_BINDING);
             protocolMarshaller.marshall(clusterInfo.getTags(), TAGS_BINDING);

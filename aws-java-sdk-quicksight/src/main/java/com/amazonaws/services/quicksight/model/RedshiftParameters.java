@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are
- * both set, and the other way around.
+ * Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code>
+ * are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is
+ * set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RedshiftParameters" target="_top">AWS API
@@ -31,13 +32,13 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Host. This can be blank if the <code>ClusterId</code> is provided.
+     * Host. This field can be blank if <code>ClusterId</code> is provided.
      * </p>
      */
     private String host;
     /**
      * <p>
-     * Port. This can be blank if the <code>ClusterId</code> is provided.
+     * Port. This field can be blank if the <code>ClusterId</code> is provided.
      * </p>
      */
     private Integer port;
@@ -49,18 +50,18 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
     private String database;
     /**
      * <p>
-     * Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+     * Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.
      * </p>
      */
     private String clusterId;
 
     /**
      * <p>
-     * Host. This can be blank if the <code>ClusterId</code> is provided.
+     * Host. This field can be blank if <code>ClusterId</code> is provided.
      * </p>
      * 
      * @param host
-     *        Host. This can be blank if the <code>ClusterId</code> is provided.
+     *        Host. This field can be blank if <code>ClusterId</code> is provided.
      */
 
     public void setHost(String host) {
@@ -69,10 +70,10 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Host. This can be blank if the <code>ClusterId</code> is provided.
+     * Host. This field can be blank if <code>ClusterId</code> is provided.
      * </p>
      * 
-     * @return Host. This can be blank if the <code>ClusterId</code> is provided.
+     * @return Host. This field can be blank if <code>ClusterId</code> is provided.
      */
 
     public String getHost() {
@@ -81,11 +82,11 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Host. This can be blank if the <code>ClusterId</code> is provided.
+     * Host. This field can be blank if <code>ClusterId</code> is provided.
      * </p>
      * 
      * @param host
-     *        Host. This can be blank if the <code>ClusterId</code> is provided.
+     *        Host. This field can be blank if <code>ClusterId</code> is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +97,11 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Port. This can be blank if the <code>ClusterId</code> is provided.
+     * Port. This field can be blank if the <code>ClusterId</code> is provided.
      * </p>
      * 
      * @param port
-     *        Port. This can be blank if the <code>ClusterId</code> is provided.
+     *        Port. This field can be blank if the <code>ClusterId</code> is provided.
      */
 
     public void setPort(Integer port) {
@@ -109,10 +110,10 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Port. This can be blank if the <code>ClusterId</code> is provided.
+     * Port. This field can be blank if the <code>ClusterId</code> is provided.
      * </p>
      * 
-     * @return Port. This can be blank if the <code>ClusterId</code> is provided.
+     * @return Port. This field can be blank if the <code>ClusterId</code> is provided.
      */
 
     public Integer getPort() {
@@ -121,11 +122,11 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Port. This can be blank if the <code>ClusterId</code> is provided.
+     * Port. This field can be blank if the <code>ClusterId</code> is provided.
      * </p>
      * 
      * @param port
-     *        Port. This can be blank if the <code>ClusterId</code> is provided.
+     *        Port. This field can be blank if the <code>ClusterId</code> is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +177,11 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+     * Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.
      * </p>
      * 
      * @param clusterId
-     *        Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+     *        Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.
      */
 
     public void setClusterId(String clusterId) {
@@ -189,10 +190,10 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+     * Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.
      * </p>
      * 
-     * @return Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+     * @return Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.
      */
 
     public String getClusterId() {
@@ -201,11 +202,11 @@ public class RedshiftParameters implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+     * Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.
      * </p>
      * 
      * @param clusterId
-     *        Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code> are provided.
+     *        Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

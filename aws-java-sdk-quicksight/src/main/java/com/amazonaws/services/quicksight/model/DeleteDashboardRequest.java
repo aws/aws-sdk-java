@@ -27,7 +27,7 @@ public class DeleteDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are deleting.
+     * The ID of the AWS account that contains the dashboard that you're deleting.
      * </p>
      */
     private String awsAccountId;
@@ -39,19 +39,19 @@ public class DeleteDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     private String dashboardId;
     /**
      * <p>
-     * The version number of the dashboard. If version number property is provided, only the specified version of the
-     * dashboard is deleted.
+     * The version number of the dashboard. If the version number property is provided, only the specified version of
+     * the dashboard is deleted.
      * </p>
      */
     private Long versionNumber;
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are deleting.
+     * The ID of the AWS account that contains the dashboard that you're deleting.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are deleting.
+     *        The ID of the AWS account that contains the dashboard that you're deleting.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -60,10 +60,10 @@ public class DeleteDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are deleting.
+     * The ID of the AWS account that contains the dashboard that you're deleting.
      * </p>
      * 
-     * @return AWS account ID that contains the dashboard you are deleting.
+     * @return The ID of the AWS account that contains the dashboard that you're deleting.
      */
 
     public String getAwsAccountId() {
@@ -72,11 +72,11 @@ public class DeleteDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are deleting.
+     * The ID of the AWS account that contains the dashboard that you're deleting.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are deleting.
+     *        The ID of the AWS account that contains the dashboard that you're deleting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +127,13 @@ public class DeleteDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the dashboard. If version number property is provided, only the specified version of the
-     * dashboard is deleted.
+     * The version number of the dashboard. If the version number property is provided, only the specified version of
+     * the dashboard is deleted.
      * </p>
      * 
      * @param versionNumber
-     *        The version number of the dashboard. If version number property is provided, only the specified version of
-     *        the dashboard is deleted.
+     *        The version number of the dashboard. If the version number property is provided, only the specified
+     *        version of the dashboard is deleted.
      */
 
     public void setVersionNumber(Long versionNumber) {
@@ -142,12 +142,12 @@ public class DeleteDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the dashboard. If version number property is provided, only the specified version of the
-     * dashboard is deleted.
+     * The version number of the dashboard. If the version number property is provided, only the specified version of
+     * the dashboard is deleted.
      * </p>
      * 
-     * @return The version number of the dashboard. If version number property is provided, only the specified version
-     *         of the dashboard is deleted.
+     * @return The version number of the dashboard. If the version number property is provided, only the specified
+     *         version of the dashboard is deleted.
      */
 
     public Long getVersionNumber() {
@@ -156,13 +156,13 @@ public class DeleteDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the dashboard. If version number property is provided, only the specified version of the
-     * dashboard is deleted.
+     * The version number of the dashboard. If the version number property is provided, only the specified version of
+     * the dashboard is deleted.
      * </p>
      * 
      * @param versionNumber
-     *        The version number of the dashboard. If version number property is provided, only the specified version of
-     *        the dashboard is deleted.
+     *        The version number of the dashboard. If the version number property is provided, only the specified
+     *        version of the dashboard is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

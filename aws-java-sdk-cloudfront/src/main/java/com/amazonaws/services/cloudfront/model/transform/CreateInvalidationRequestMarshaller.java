@@ -60,26 +60,28 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
             if (invalidationBatch != null) {
                 xmlWriter.startElement("InvalidationBatch");
 
-                Paths paths = invalidationBatch.getPaths();
-                if (paths != null) {
-                    xmlWriter.startElement("Paths");
+                {
+                    Paths paths = invalidationBatch.getPaths();
+                    if (paths != null) {
+                        xmlWriter.startElement("Paths");
 
-                    if (paths.getQuantity() != null) {
-                        xmlWriter.startElement("Quantity").value(paths.getQuantity()).endElement();
-                    }
+                        if (paths.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(paths.getQuantity()).endElement();
+                        }
 
-                    com.amazonaws.internal.SdkInternalList<String> pathsItemsList = (com.amazonaws.internal.SdkInternalList<String>) paths.getItems();
-                    if (!pathsItemsList.isEmpty() || !pathsItemsList.isAutoConstruct()) {
-                        xmlWriter.startElement("Items");
+                        com.amazonaws.internal.SdkInternalList<String> pathsItemsList = (com.amazonaws.internal.SdkInternalList<String>) paths.getItems();
+                        if (!pathsItemsList.isEmpty() || !pathsItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
 
-                        for (String pathsItemsListValue : pathsItemsList) {
-                            xmlWriter.startElement("Path");
-                            xmlWriter.value(pathsItemsListValue);
+                            for (String pathsItemsListValue : pathsItemsList) {
+                                xmlWriter.startElement("Path");
+                                xmlWriter.value(pathsItemsListValue);
+                                xmlWriter.endElement();
+                            }
                             xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
                 if (invalidationBatch.getCallerReference() != null) {

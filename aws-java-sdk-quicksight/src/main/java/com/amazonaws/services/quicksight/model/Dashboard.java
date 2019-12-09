@@ -36,7 +36,7 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
     private String dashboardId;
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String arn;
@@ -54,19 +54,19 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
     private DashboardVersion version;
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The last time this was published.
+     * The last time that this dataset was published.
      * </p>
      */
     private java.util.Date lastPublishedTime;
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -113,11 +113,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setArn(String arn) {
@@ -126,10 +126,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getArn() {
@@ -138,11 +138,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dataset was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -246,10 +246,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
-     * @return The time this was created.
+     * @return The time that this dataset was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -258,11 +258,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dataset was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was published.
+     * The last time that this dataset was published.
      * </p>
      * 
      * @param lastPublishedTime
-     *        The last time this was published.
+     *        The last time that this dataset was published.
      */
 
     public void setLastPublishedTime(java.util.Date lastPublishedTime) {
@@ -286,10 +286,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was published.
+     * The last time that this dataset was published.
      * </p>
      * 
-     * @return The last time this was published.
+     * @return The last time that this dataset was published.
      */
 
     public java.util.Date getLastPublishedTime() {
@@ -298,11 +298,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was published.
+     * The last time that this dataset was published.
      * </p>
      * 
      * @param lastPublishedTime
-     *        The last time this was published.
+     *        The last time that this dataset was published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this dataset was updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -326,10 +326,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
-     * @return The last time this was updated.
+     * @return The last time that this dataset was updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -338,11 +338,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this dataset was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

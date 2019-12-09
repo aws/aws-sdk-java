@@ -68,14 +68,14 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API.
+     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API operation.
      * </p>
      * <p>
-     * A dashboard is an entity in QuickSight which identifies Quicksight reports, created from analyses. QuickSight
-     * dashboards are sharable. With the right permissions, you can create scheduled email reports from them. The
-     * <code>CreateDashboard</code>, <code>DescribeDashboard</code> and <code>ListDashboardsByUser</code> APIs act on
-     * the dashboard entity. If you have the correct permissions, you can create a dashboard from a template that exists
-     * in a different AWS account.
+     * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
+     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. The
+     * <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
+     * operations act on the dashboard entity. If you have the correct permissions, you can create a dashboard from a
+     * template that exists in a different AWS account.
      * </p>
      * 
      * @param createDashboardRequest
@@ -88,14 +88,14 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API.
+     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API operation.
      * </p>
      * <p>
-     * A dashboard is an entity in QuickSight which identifies Quicksight reports, created from analyses. QuickSight
-     * dashboards are sharable. With the right permissions, you can create scheduled email reports from them. The
-     * <code>CreateDashboard</code>, <code>DescribeDashboard</code> and <code>ListDashboardsByUser</code> APIs act on
-     * the dashboard entity. If you have the correct permissions, you can create a dashboard from a template that exists
-     * in a different AWS account.
+     * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
+     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. The
+     * <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
+     * operations act on the dashboard entity. If you have the correct permissions, you can create a dashboard from a
+     * template that exists in a different AWS account.
      * </p>
      * 
      * @param createDashboardRequest
@@ -255,8 +255,9 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an assignment with one specified IAM policy Amazon Resource Name (ARN) and will assigned to specified
-     * groups or users of QuickSight. Users and groups need to be in the same namespace.
+     * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy
+     * will be assigned to specified groups or users of Amazon QuickSight. The users and groups need to be in the same
+     * namespace.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -270,8 +271,9 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an assignment with one specified IAM policy Amazon Resource Name (ARN) and will assigned to specified
-     * groups or users of QuickSight. Users and groups need to be in the same namespace.
+     * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy
+     * will be assigned to specified groups or users of Amazon QuickSight. The users and groups need to be in the same
+     * namespace.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -333,14 +335,14 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a template from an existing QuickSight analysis or template. The resulting template can be used to create
+     * Creates a template from an existing QuickSight analysis or template. You can use the resulting template to create
      * a dashboard.
      * </p>
      * <p>
-     * A template is an entity in QuickSight which encapsulates the metadata required to create an analysis that can be
-     * used to create dashboard. It adds a layer of abstraction by use placeholders to replace the dataset associated
-     * with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets
-     * which follow the same schema that was used to create the source analysis and template.
+     * A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and
+     * that you can use to create s dashboard. A template adds a layer of abstraction by using placeholders to replace
+     * the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset
+     * placeholders with datasets that follow the same schema that was used to create the source analysis and template.
      * </p>
      * 
      * @param createTemplateRequest
@@ -353,14 +355,14 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a template from an existing QuickSight analysis or template. The resulting template can be used to create
+     * Creates a template from an existing QuickSight analysis or template. You can use the resulting template to create
      * a dashboard.
      * </p>
      * <p>
-     * A template is an entity in QuickSight which encapsulates the metadata required to create an analysis that can be
-     * used to create dashboard. It adds a layer of abstraction by use placeholders to replace the dataset associated
-     * with the analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets
-     * which follow the same schema that was used to create the source analysis and template.
+     * A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and
+     * that you can use to create s dashboard. A template adds a layer of abstraction by using placeholders to replace
+     * the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset
+     * placeholders with datasets that follow the same schema that was used to create the source analysis and template.
      * </p>
      * 
      * @param createTemplateRequest
@@ -564,7 +566,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes an existing assignment.
+     * Deletes an existing IAM policy assignment.
      * </p>
      * 
      * @param deleteIAMPolicyAssignmentRequest
@@ -578,7 +580,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes an existing assignment.
+     * Deletes an existing IAM policy assignment.
      * </p>
      * 
      * @param deleteIAMPolicyAssignmentRequest
@@ -628,7 +630,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Update template alias of given template.
+     * Deletes the item that the specified template alias points to. If you provide a specific alias, you delete the
+     * version of the template that the alias points to.
      * </p>
      * 
      * @param deleteTemplateAliasRequest
@@ -641,7 +644,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Update template alias of given template.
+     * Deletes the item that the specified template alias points to. If you provide a specific alias, you delete the
+     * version of the template that the alias points to.
      * </p>
      * 
      * @param deleteTemplateAliasRequest
@@ -754,7 +758,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes read and write permissions on a dashboard.
+     * Describes read and write permissions for a dashboard.
      * </p>
      * 
      * @param describeDashboardPermissionsRequest
@@ -769,7 +773,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes read and write permissions on a dashboard.
+     * Describes read and write permissions for a dashboard.
      * </p>
      * 
      * @param describeDashboardPermissionsRequest
@@ -956,7 +960,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes an existing IAMPolicy Assignment by specified assignment name.
+     * Describes an existing IAM policy assignment, as specified by the assignment name.
      * </p>
      * 
      * @param describeIAMPolicyAssignmentRequest
@@ -970,7 +974,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes an existing IAMPolicy Assignment by specified assignment name.
+     * Describes an existing IAM policy assignment, as specified by the assignment name.
      * </p>
      * 
      * @param describeIAMPolicyAssignmentRequest
@@ -1051,7 +1055,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes the template aliases of a template.
+     * Describes the template alias for a template.
      * </p>
      * 
      * @param describeTemplateAliasRequest
@@ -1064,7 +1068,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes the template aliases of a template.
+     * Describes the template alias for a template.
      * </p>
      * 
      * @param describeTemplateAliasRequest
@@ -1146,12 +1150,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a server-side embeddable URL and authorization code. Before this can work properly, first you need to
-     * configure the dashboards and user permissions. For more information, see the Amazon QuickSight User Guide section
-     * on <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
-     * QuickSight Dashboards</a> or see the Amazon QuickSight API Reference section on <a
+     * Generates a server-side embeddable URL and authorization code. For this process to work properly, first configure
+     * the dashboards and user permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
+     * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-     * Amazon QuickSight Dashboards</a> .
+     * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
@@ -1167,12 +1171,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a server-side embeddable URL and authorization code. Before this can work properly, first you need to
-     * configure the dashboards and user permissions. For more information, see the Amazon QuickSight User Guide section
-     * on <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
-     * QuickSight Dashboards</a> or see the Amazon QuickSight API Reference section on <a
+     * Generates a server-side embeddable URL and authorization code. For this process to work properly, first configure
+     * the dashboards and user permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
+     * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-     * Amazon QuickSight Dashboards</a> .
+     * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
@@ -1193,7 +1197,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the versions of the dashboards in the Quicksight subscription.
+     * Lists all the versions of the dashboards in the QuickSight subscription.
      * </p>
      * 
      * @param listDashboardVersionsRequest
@@ -1206,7 +1210,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the versions of the dashboards in the Quicksight subscription.
+     * Lists all the versions of the dashboards in the QuickSight subscription.
      * </p>
      * 
      * @param listDashboardVersionsRequest
@@ -1224,7 +1228,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists dashboards in the AWS account.
+     * Lists dashboards in an AWS account.
      * </p>
      * 
      * @param listDashboardsRequest
@@ -1237,7 +1241,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists dashboards in the AWS account.
+     * Lists dashboards in an AWS account.
      * </p>
      * 
      * @param listDashboardsRequest
@@ -1255,7 +1259,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all of the datasets belonging to this account in an AWS region.
+     * Lists all of the datasets belonging to the current AWS account in an AWS Region.
      * </p>
      * <p>
      * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
@@ -1271,7 +1275,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all of the datasets belonging to this account in an AWS region.
+     * Lists all of the datasets belonging to the current AWS account in an AWS Region.
      * </p>
      * <p>
      * The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
@@ -1385,7 +1389,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists assignments in current QuickSight account.
+     * Lists IAM policy assignments in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
@@ -1398,7 +1402,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists assignments in current QuickSight account.
+     * Lists IAM policy assignments in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
@@ -1416,8 +1420,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the assignments and the Amazon Resource Names (ARNs) for the associated IAM policies assigned to the
-     * specified user and the group or groups that the user belongs to.
+     * Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM policies assigned to
+     * the specified user and group or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -1432,8 +1436,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the assignments and the Amazon Resource Names (ARNs) for the associated IAM policies assigned to the
-     * specified user and the group or groups that the user belongs to.
+     * Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM policies assigned to
+     * the specified user and group or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -1546,7 +1550,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the versions of the templates in the Quicksight account.
+     * Lists all the versions of the templates in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listTemplateVersionsRequest
@@ -1559,7 +1563,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the versions of the templates in the Quicksight account.
+     * Lists all the versions of the templates in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listTemplateVersionsRequest
@@ -1577,7 +1581,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the templates in the QuickSight account.
+     * Lists all the templates in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listTemplatesRequest
@@ -1590,7 +1594,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the templates in the QuickSight account.
+     * Lists all the templates in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listTemplatesRequest
@@ -1821,7 +1825,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates a dashboard in the AWS account.
+     * Updates a dashboard in an AWS account.
      * </p>
      * 
      * @param updateDashboardRequest
@@ -1834,7 +1838,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates a dashboard in the AWS account.
+     * Updates a dashboard in an AWS account.
      * </p>
      * 
      * @param updateDashboardRequest
@@ -2083,8 +2087,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates an existing assignment. This operation updates only the optional parameter or parameters that are
-     * specified in the request.
+     * Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that
+     * are specified in the request.
      * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest
@@ -2098,8 +2102,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates an existing assignment. This operation updates only the optional parameter or parameters that are
-     * specified in the request.
+     * Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that
+     * are specified in the request.
      * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest
@@ -2118,7 +2122,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates a template from an existing QuickSight analysis.
+     * Updates a template from an existing Amazon QuickSight analysis or another template.
      * </p>
      * 
      * @param updateTemplateRequest
@@ -2131,7 +2135,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates a template from an existing QuickSight analysis.
+     * Updates a template from an existing Amazon QuickSight analysis or another template.
      * </p>
      * 
      * @param updateTemplateRequest
@@ -2180,7 +2184,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the permissions on a template.
+     * Updates the resource permissions for a template.
      * </p>
      * 
      * @param updateTemplatePermissionsRequest
@@ -2194,7 +2198,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the permissions on a template.
+     * Updates the resource permissions for a template.
      * </p>
      * 
      * @param updateTemplatePermissionsRequest

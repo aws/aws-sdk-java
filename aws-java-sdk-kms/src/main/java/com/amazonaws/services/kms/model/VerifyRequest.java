@@ -27,8 +27,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Identifies the asymmetric CMK that will be used to verify the signature. This must be the same CMK that was used
-     * to generate the signature. If you specify a different CMK, the value of the <code>SignatureValid</code> field in
-     * the response will be <code>False</code>.
+     * to generate the signature. If you specify a different CMK, the signature verification fails.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -72,8 +71,8 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * a larger message, provide a hash digest of the message.
      * </p>
      * <p>
-     * If the digest of the message specified here is different from the message digest that was signed, the
-     * <code>SignatureValid</code> value in the response will be <code>False</code>.
+     * If the digest of the message specified here is different from the message digest that was signed, the signature
+     * verification fails.
      * </p>
      */
     private java.nio.ByteBuffer message;
@@ -92,8 +91,8 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private java.nio.ByteBuffer signature;
     /**
      * <p>
-     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of the
-     * <code>SignatureValid</code> field in the response will be <code>False</code>.
+     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature
+     * verification fails.
      * </p>
      */
     private String signingAlgorithm;
@@ -112,8 +111,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Identifies the asymmetric CMK that will be used to verify the signature. This must be the same CMK that was used
-     * to generate the signature. If you specify a different CMK, the value of the <code>SignatureValid</code> field in
-     * the response will be <code>False</code>.
+     * to generate the signature. If you specify a different CMK, the signature verification fails.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -152,8 +150,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * 
      * @param keyId
      *        Identifies the asymmetric CMK that will be used to verify the signature. This must be the same CMK that
-     *        was used to generate the signature. If you specify a different CMK, the value of the
-     *        <code>SignatureValid</code> field in the response will be <code>False</code>.</p>
+     *        was used to generate the signature. If you specify a different CMK, the signature verification fails.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -196,8 +193,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Identifies the asymmetric CMK that will be used to verify the signature. This must be the same CMK that was used
-     * to generate the signature. If you specify a different CMK, the value of the <code>SignatureValid</code> field in
-     * the response will be <code>False</code>.
+     * to generate the signature. If you specify a different CMK, the signature verification fails.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -235,8 +231,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @return Identifies the asymmetric CMK that will be used to verify the signature. This must be the same CMK that
-     *         was used to generate the signature. If you specify a different CMK, the value of the
-     *         <code>SignatureValid</code> field in the response will be <code>False</code>.</p>
+     *         was used to generate the signature. If you specify a different CMK, the signature verification fails.</p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -279,8 +274,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Identifies the asymmetric CMK that will be used to verify the signature. This must be the same CMK that was used
-     * to generate the signature. If you specify a different CMK, the value of the <code>SignatureValid</code> field in
-     * the response will be <code>False</code>.
+     * to generate the signature. If you specify a different CMK, the signature verification fails.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -319,8 +313,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * 
      * @param keyId
      *        Identifies the asymmetric CMK that will be used to verify the signature. This must be the same CMK that
-     *        was used to generate the signature. If you specify a different CMK, the value of the
-     *        <code>SignatureValid</code> field in the response will be <code>False</code>.</p>
+     *        was used to generate the signature. If you specify a different CMK, the signature verification fails.</p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
@@ -368,8 +361,8 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * a larger message, provide a hash digest of the message.
      * </p>
      * <p>
-     * If the digest of the message specified here is different from the message digest that was signed, the
-     * <code>SignatureValid</code> value in the response will be <code>False</code>.
+     * If the digest of the message specified here is different from the message digest that was signed, the signature
+     * verification fails.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -387,7 +380,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        verify a larger message, provide a hash digest of the message.</p>
      *        <p>
      *        If the digest of the message specified here is different from the message digest that was signed, the
-     *        <code>SignatureValid</code> value in the response will be <code>False</code>.
+     *        signature verification fails.
      */
 
     public void setMessage(java.nio.ByteBuffer message) {
@@ -400,8 +393,8 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * a larger message, provide a hash digest of the message.
      * </p>
      * <p>
-     * If the digest of the message specified here is different from the message digest that was signed, the
-     * <code>SignatureValid</code> value in the response will be <code>False</code>.
+     * If the digest of the message specified here is different from the message digest that was signed, the signature
+     * verification fails.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -415,7 +408,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         verify a larger message, provide a hash digest of the message.</p>
      *         <p>
      *         If the digest of the message specified here is different from the message digest that was signed, the
-     *         <code>SignatureValid</code> value in the response will be <code>False</code>.
+     *         signature verification fails.
      */
 
     public java.nio.ByteBuffer getMessage() {
@@ -428,8 +421,8 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * a larger message, provide a hash digest of the message.
      * </p>
      * <p>
-     * If the digest of the message specified here is different from the message digest that was signed, the
-     * <code>SignatureValid</code> value in the response will be <code>False</code>.
+     * If the digest of the message specified here is different from the message digest that was signed, the signature
+     * verification fails.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -447,7 +440,7 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        verify a larger message, provide a hash digest of the message.</p>
      *        <p>
      *        If the digest of the message specified here is different from the message digest that was signed, the
-     *        <code>SignatureValid</code> value in the response will be <code>False</code>.
+     *        signature verification fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,13 +585,13 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of the
-     * <code>SignatureValid</code> field in the response will be <code>False</code>.
+     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature
+     * verification fails.
      * </p>
      * 
      * @param signingAlgorithm
-     *        The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of
-     *        the <code>SignatureValid</code> field in the response will be <code>False</code>.
+     *        The signing algorithm that was used to sign the message. If you submit a different algorithm, the
+     *        signature verification fails.
      * @see SigningAlgorithmSpec
      */
 
@@ -608,12 +601,12 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of the
-     * <code>SignatureValid</code> field in the response will be <code>False</code>.
+     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature
+     * verification fails.
      * </p>
      * 
-     * @return The signing algorithm that was used to sign the message. If you submit a different algorithm, the value
-     *         of the <code>SignatureValid</code> field in the response will be <code>False</code>.
+     * @return The signing algorithm that was used to sign the message. If you submit a different algorithm, the
+     *         signature verification fails.
      * @see SigningAlgorithmSpec
      */
 
@@ -623,13 +616,13 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of the
-     * <code>SignatureValid</code> field in the response will be <code>False</code>.
+     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature
+     * verification fails.
      * </p>
      * 
      * @param signingAlgorithm
-     *        The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of
-     *        the <code>SignatureValid</code> field in the response will be <code>False</code>.
+     *        The signing algorithm that was used to sign the message. If you submit a different algorithm, the
+     *        signature verification fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithmSpec
      */
@@ -641,13 +634,13 @@ public class VerifyRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of the
-     * <code>SignatureValid</code> field in the response will be <code>False</code>.
+     * The signing algorithm that was used to sign the message. If you submit a different algorithm, the signature
+     * verification fails.
      * </p>
      * 
      * @param signingAlgorithm
-     *        The signing algorithm that was used to sign the message. If you submit a different algorithm, the value of
-     *        the <code>SignatureValid</code> field in the response will be <code>False</code>.
+     *        The signing algorithm that was used to sign the message. If you submit a different algorithm, the
+     *        signature verification fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithmSpec
      */

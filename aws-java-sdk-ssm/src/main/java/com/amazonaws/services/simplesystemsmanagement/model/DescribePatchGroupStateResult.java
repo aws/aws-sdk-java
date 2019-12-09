@@ -43,8 +43,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithInstalledOtherPatches;
     /**
      * <p>
-     * The number of instances with patches installed that have not been rebooted after the patch installation. The
-     * status of these instances is NON_COMPLIANT.
+     * Reserved for future use.
      * </p>
      */
     private Integer instancesWithInstalledPendingRebootPatches;
@@ -209,13 +208,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that have not been rebooted after the patch installation. The
-     * status of these instances is NON_COMPLIANT.
+     * Reserved for future use.
      * </p>
      * 
      * @param instancesWithInstalledPendingRebootPatches
-     *        The number of instances with patches installed that have not been rebooted after the patch installation.
-     *        The status of these instances is NON_COMPLIANT.
+     *        Reserved for future use.
      */
 
     public void setInstancesWithInstalledPendingRebootPatches(Integer instancesWithInstalledPendingRebootPatches) {
@@ -224,12 +221,10 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that have not been rebooted after the patch installation. The
-     * status of these instances is NON_COMPLIANT.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The number of instances with patches installed that have not been rebooted after the patch installation.
-     *         The status of these instances is NON_COMPLIANT.
+     * @return Reserved for future use.
      */
 
     public Integer getInstancesWithInstalledPendingRebootPatches() {
@@ -238,13 +233,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that have not been rebooted after the patch installation. The
-     * status of these instances is NON_COMPLIANT.
+     * Reserved for future use.
      * </p>
      * 
      * @param instancesWithInstalledPendingRebootPatches
-     *        The number of instances with patches installed that have not been rebooted after the patch installation.
-     *        The status of these instances is NON_COMPLIANT.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

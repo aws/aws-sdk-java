@@ -45,6 +45,7 @@ public abstract class AmazonS3Builder<Subclass extends AmazonS3Builder, TypeToBu
     private Boolean dualstackEnabled;
     private Boolean forceGlobalBucketAccessEnabled;
     private Boolean useArnRegionEnabled;
+    private Boolean regionalUsEast1EndpointEnabled;
 
     protected AmazonS3Builder() {
         super(CLIENT_CONFIG_FACTORY);
@@ -418,6 +419,65 @@ public abstract class AmazonS3Builder<Subclass extends AmazonS3Builder, TypeToBu
         return getSubclass();
     }
 
+    /**
+     * @return Whether us-east-1 should resolve to its regional endpoint or the default global endpoint.
+     * @see #setRegionalUsEast1EndpointEnabled(Boolean)
+     */
+    public Boolean isRegionalUsEast1EndpointEnabled() {
+        return regionalUsEast1EndpointEnabled;
+    }
+
+    /**
+     * <p>Configures the client to resolve region us-east-1 region to its regional endpoint instead of the
+     * global endpoint for all requests.</p>
+     *
+     * <p>The default value for this value is false, configuring this region resolve to the global s3 endpoint.</p>
+     *
+     * <p>
+     * There are three ways to enable this option. In order of precedence:
+     * <ol>
+     *     <li>Configuring the S3 client directly through this builder,
+     *     using {@link #setRegionalUsEast1EndpointEnabled(Boolean)}</li>
+     *     <li>Setting the environment variable AWS_S3_US_EAST_1_REGIONAL_ENDPOINT to <i>regional</i></li>
+     *     <li>Setting the shared config/profile file option s3_us_east_1_regional_endpoint <i>regional</i></li>
+     * </ol>
+     * Environment variable options override config values and direct configurations override environment variable
+     * settings. The accepted values for environment variable and config option are <i>regional</i> and <i>legacy</i>.
+     * Setting the values to <i>legacy</i> does not affect any change in behavior unless the intention is for the
+     * environment variable to override a regional setting in the config file.
+     * </p>
+     *
+     * @param regionalUsEast1EndpointEnabled True to enable us-east-1 regional mode.
+     * @return This object for method chaining.
+     */
+    public void setRegionalUsEast1EndpointEnabled(Boolean regionalUsEast1EndpointEnabled) {
+        this.regionalUsEast1EndpointEnabled = regionalUsEast1EndpointEnabled;
+    }
+
+    /**
+     * <p>Configures the client to resolve region us-east-1 region to its regional endpoint instead of the
+     * global endpoint for all requests.</p>
+     *
+     * @param regionalUsEast1EndpointEnabled True to enable us-east-1 regional mode.
+     * @return This object for method chaining.
+     * @see #setRegionalUsEast1EndpointEnabled(Boolean)
+     */
+    public Subclass withRegionalUsEast1EndpointEnabled(Boolean regionalUsEast1EndpointEnabled) {
+        setRegionalUsEast1EndpointEnabled(regionalUsEast1EndpointEnabled);
+        return getSubclass();
+    }
+
+    /**
+     * <p>Enables us-east-1 regional mode on clients built with the builder.</p>
+
+     * @return This object for method chaining.
+     */
+    public Subclass enableRegionalUsEast1Endpoint() {
+        setRegionalUsEast1EndpointEnabled(Boolean.TRUE);
+        return getSubclass();
+    }
+
+
     protected S3ClientOptions resolveS3ClientOptions() {
         final S3ClientOptions.Builder builder = S3ClientOptions.builder();
         if (Boolean.TRUE.equals(this.chunkedEncodingDisabled)) {
@@ -440,6 +500,9 @@ public abstract class AmazonS3Builder<Subclass extends AmazonS3Builder, TypeToBu
         }
         if(Boolean.TRUE.equals(this.useArnRegionEnabled)) {
             builder.enableUseArnRegion();
+        }
+        if(Boolean.TRUE.equals(this.regionalUsEast1EndpointEnabled)) {
+            builder.enableRegionalUsEast1Endpoint();
         }
         return builder.build();
     }

@@ -67,36 +67,40 @@ public class CreateAccessPointRequestMarshaller implements Marshaller<Request<Cr
                     xmlWriter.startElement("Bucket").value(createAccessPointRequest.getBucket()).endElement();
                 }
 
-                VpcConfiguration vpcConfiguration = createAccessPointRequest.getVpcConfiguration();
-                if (vpcConfiguration != null) {
-                    xmlWriter.startElement("VpcConfiguration");
+                {
+                    VpcConfiguration vpcConfiguration = createAccessPointRequest.getVpcConfiguration();
+                    if (vpcConfiguration != null) {
+                        xmlWriter.startElement("VpcConfiguration");
 
-                    if (vpcConfiguration.getVpcId() != null) {
-                        xmlWriter.startElement("VpcId").value(vpcConfiguration.getVpcId()).endElement();
+                        if (vpcConfiguration.getVpcId() != null) {
+                            xmlWriter.startElement("VpcId").value(vpcConfiguration.getVpcId()).endElement();
+                        }
+                        xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
-                PublicAccessBlockConfiguration publicAccessBlockConfiguration = createAccessPointRequest.getPublicAccessBlockConfiguration();
-                if (publicAccessBlockConfiguration != null) {
-                    xmlWriter.startElement("PublicAccessBlockConfiguration");
+                {
+                    PublicAccessBlockConfiguration publicAccessBlockConfiguration = createAccessPointRequest.getPublicAccessBlockConfiguration();
+                    if (publicAccessBlockConfiguration != null) {
+                        xmlWriter.startElement("PublicAccessBlockConfiguration");
 
-                    if (publicAccessBlockConfiguration.getBlockPublicAcls() != null) {
-                        xmlWriter.startElement("BlockPublicAcls").value(publicAccessBlockConfiguration.getBlockPublicAcls()).endElement();
-                    }
+                        if (publicAccessBlockConfiguration.getBlockPublicAcls() != null) {
+                            xmlWriter.startElement("BlockPublicAcls").value(publicAccessBlockConfiguration.getBlockPublicAcls()).endElement();
+                        }
 
-                    if (publicAccessBlockConfiguration.getIgnorePublicAcls() != null) {
-                        xmlWriter.startElement("IgnorePublicAcls").value(publicAccessBlockConfiguration.getIgnorePublicAcls()).endElement();
-                    }
+                        if (publicAccessBlockConfiguration.getIgnorePublicAcls() != null) {
+                            xmlWriter.startElement("IgnorePublicAcls").value(publicAccessBlockConfiguration.getIgnorePublicAcls()).endElement();
+                        }
 
-                    if (publicAccessBlockConfiguration.getBlockPublicPolicy() != null) {
-                        xmlWriter.startElement("BlockPublicPolicy").value(publicAccessBlockConfiguration.getBlockPublicPolicy()).endElement();
-                    }
+                        if (publicAccessBlockConfiguration.getBlockPublicPolicy() != null) {
+                            xmlWriter.startElement("BlockPublicPolicy").value(publicAccessBlockConfiguration.getBlockPublicPolicy()).endElement();
+                        }
 
-                    if (publicAccessBlockConfiguration.getRestrictPublicBuckets() != null) {
-                        xmlWriter.startElement("RestrictPublicBuckets").value(publicAccessBlockConfiguration.getRestrictPublicBuckets()).endElement();
+                        if (publicAccessBlockConfiguration.getRestrictPublicBuckets() != null) {
+                            xmlWriter.startElement("RestrictPublicBuckets").value(publicAccessBlockConfiguration.getRestrictPublicBuckets()).endElement();
+                        }
+                        xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
             }
             xmlWriter.endElement();

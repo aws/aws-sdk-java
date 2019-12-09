@@ -87,12 +87,14 @@
     xmlWriter.endElement();
  }
 <#else>
-    <#local variable = member.variable />
-    ${variable.variableType} ${variable.variableName} = ${getMember}();
-    if (${variable.variableName} != null) {
-        xmlWriter.startElement("${http.marshallLocationName}");
-        <@MemberMarshallerMacro.content customConfig variable.simpleType variable.variableName shapes/>
-        xmlWriter.endElement();
+    {
+        <#local variable = member.variable />
+        ${variable.variableType} ${variable.variableName} = ${getMember}();
+        if (${variable.variableName} != null) {
+            xmlWriter.startElement("${http.marshallLocationName}");
+            <@MemberMarshallerMacro.content customConfig variable.simpleType variable.variableName shapes/>
+            xmlWriter.endElement();
+        }
     }
 </#if>
 </#if>

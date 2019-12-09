@@ -37,7 +37,7 @@ public class UpdateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
     private String arn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template, including the version information of the first version.
+     * The ARN for the template, including the version information of the first version.
      * </p>
      */
     private String versionArn;
@@ -142,11 +142,11 @@ public class UpdateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template, including the version information of the first version.
+     * The ARN for the template, including the version information of the first version.
      * </p>
      * 
      * @param versionArn
-     *        The Amazon Resource Name (ARN) for the template, including the version information of the first version.
+     *        The ARN for the template, including the version information of the first version.
      */
 
     public void setVersionArn(String versionArn) {
@@ -155,10 +155,10 @@ public class UpdateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template, including the version information of the first version.
+     * The ARN for the template, including the version information of the first version.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the template, including the version information of the first version.
+     * @return The ARN for the template, including the version information of the first version.
      */
 
     public String getVersionArn() {
@@ -167,11 +167,11 @@ public class UpdateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template, including the version information of the first version.
+     * The ARN for the template, including the version information of the first version.
      * </p>
      * 
      * @param versionArn
-     *        The Amazon Resource Name (ARN) for the template, including the version information of the first version.
+     *        The ARN for the template, including the version information of the first version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

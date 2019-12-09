@@ -30,7 +30,7 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      */
     private String arn;
@@ -48,36 +48,36 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      */
     private String importMode;
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      */
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the dataset.
+     *        The Amazon Resource Name (ARN) of the dataset.
      */
 
     public void setArn(String arn) {
@@ -86,10 +86,10 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) of the dataset.
+     * @return The Amazon Resource Name (ARN) of the dataset.
      */
 
     public String getArn() {
@@ -98,11 +98,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the dataset.
+     * The Amazon Resource Name (ARN) of the dataset.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the dataset.
+     *        The Amazon Resource Name (ARN) of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dataset was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -206,10 +206,10 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
-     * @return The time this was created.
+     * @return The time that this dataset was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -218,11 +218,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dataset was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this dataset was updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -246,10 +246,10 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
-     * @return The last time this was updated.
+     * @return The last time that this dataset was updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -258,11 +258,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this dataset was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -287,10 +287,10 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
-     * @return Indicates whether or not you want to import the data into SPICE.
+     * @return Indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -300,11 +300,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -316,11 +316,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -332,11 +332,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      * 
      * @param rowLevelPermissionDataSet
-     *        Row-level security configuration on the dataset.
+     *        The row-level security configuration for the dataset.
      */
 
     public void setRowLevelPermissionDataSet(RowLevelPermissionDataSet rowLevelPermissionDataSet) {
@@ -345,10 +345,10 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      * 
-     * @return Row-level security configuration on the dataset.
+     * @return The row-level security configuration for the dataset.
      */
 
     public RowLevelPermissionDataSet getRowLevelPermissionDataSet() {
@@ -357,11 +357,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      * 
      * @param rowLevelPermissionDataSet
-     *        Row-level security configuration on the dataset.
+     *        The row-level security configuration for the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

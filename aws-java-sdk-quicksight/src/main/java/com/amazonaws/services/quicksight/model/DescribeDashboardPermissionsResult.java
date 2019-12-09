@@ -37,7 +37,7 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
     private String dashboardArn;
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard.
+     * A structure that contains the permissions for the dashboard.
      * </p>
      */
     private java.util.List<ResourcePermission> permissions;
@@ -136,10 +136,10 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard.
+     * A structure that contains the permissions for the dashboard.
      * </p>
      * 
-     * @return A structure that contains the permissions of the dashboard.
+     * @return A structure that contains the permissions for the dashboard.
      */
 
     public java.util.List<ResourcePermission> getPermissions() {
@@ -148,11 +148,11 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard.
+     * A structure that contains the permissions for the dashboard.
      * </p>
      * 
      * @param permissions
-     *        A structure that contains the permissions of the dashboard.
+     *        A structure that contains the permissions for the dashboard.
      */
 
     public void setPermissions(java.util.Collection<ResourcePermission> permissions) {
@@ -166,7 +166,7 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard.
+     * A structure that contains the permissions for the dashboard.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -175,7 +175,7 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param permissions
-     *        A structure that contains the permissions of the dashboard.
+     *        A structure that contains the permissions for the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +191,11 @@ public class DescribeDashboardPermissionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard.
+     * A structure that contains the permissions for the dashboard.
      * </p>
      * 
      * @param permissions
-     *        A structure that contains the permissions of the dashboard.
+     *        A structure that contains the permissions for the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

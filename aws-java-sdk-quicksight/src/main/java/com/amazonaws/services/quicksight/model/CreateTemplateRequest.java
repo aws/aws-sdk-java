@@ -34,7 +34,7 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     private String awsAccountId;
     /**
      * <p>
-     * An ID for the template you want to create. This is unique per AWS region per AWS account.
+     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
      * </p>
      */
     private String templateId;
@@ -52,9 +52,9 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
-     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
-     * dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Currently, you can
+     * create a template from an analysis or another template. If the ARN is for an analysis, include its dataset
+     * references.
      * </p>
      */
     private TemplateSourceEntity sourceEntity;
@@ -66,9 +66,9 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being created. This API operation creates the first version of the
+     * template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the
+     * template maintains a description of the version in the <code>VersionDescription</code> field.
      * </p>
      */
     private String versionDescription;
@@ -121,11 +121,12 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An ID for the template you want to create. This is unique per AWS region per AWS account.
+     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template you want to create. This is unique per AWS region per AWS account.
+     *        An ID for the template that you want to create. This template is unique per AWS Region in each AWS
+     *        account.
      */
 
     public void setTemplateId(String templateId) {
@@ -134,10 +135,11 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An ID for the template you want to create. This is unique per AWS region per AWS account.
+     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
      * </p>
      * 
-     * @return An ID for the template you want to create. This is unique per AWS region per AWS account.
+     * @return An ID for the template that you want to create. This template is unique per AWS Region in each AWS
+     *         account.
      */
 
     public String getTemplateId() {
@@ -146,11 +148,12 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An ID for the template you want to create. This is unique per AWS region per AWS account.
+     * An ID for the template that you want to create. This template is unique per AWS Region in each AWS account.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template you want to create. This is unique per AWS region per AWS account.
+     *        An ID for the template that you want to create. This template is unique per AWS Region in each AWS
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,15 +274,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
-     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
-     * dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Currently, you can
+     * create a template from an analysis or another template. If the ARN is for an analysis, include its dataset
+     * references.
      * </p>
      * 
      * @param sourceEntity
-     *        The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates
-     *        can be currently created from an analysis or another template. If the ARN is for an analysis, you must
-     *        include its dataset references.
+     *        The Amazon Resource Name (ARN) of the source entity from which this template is being created. Currently,
+     *        you can create a template from an analysis or another template. If the ARN is for an analysis, include its
+     *        dataset references.
      */
 
     public void setSourceEntity(TemplateSourceEntity sourceEntity) {
@@ -288,14 +291,14 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
-     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
-     * dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Currently, you can
+     * create a template from an analysis or another template. If the ARN is for an analysis, include its dataset
+     * references.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates
-     *         can be currently created from an analysis or another template. If the ARN is for an analysis, you must
-     *         include its dataset references.
+     * @return The Amazon Resource Name (ARN) of the source entity from which this template is being created. Currently,
+     *         you can create a template from an analysis or another template. If the ARN is for an analysis, include
+     *         its dataset references.
      */
 
     public TemplateSourceEntity getSourceEntity() {
@@ -304,15 +307,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates can be
-     * currently created from an analysis or another template. If the ARN is for an analysis, you must include its
-     * dataset references.
+     * The Amazon Resource Name (ARN) of the source entity from which this template is being created. Currently, you can
+     * create a template from an analysis or another template. If the ARN is for an analysis, include its dataset
+     * references.
      * </p>
      * 
      * @param sourceEntity
-     *        The Amazon Resource Name (ARN) of the source entity from which this template is being created. Templates
-     *        can be currently created from an analysis or another template. If the ARN is for an analysis, you must
-     *        include its dataset references.
+     *        The Amazon Resource Name (ARN) of the source entity from which this template is being created. Currently,
+     *        you can create a template from an analysis or another template. If the ARN is for an analysis, include its
+     *        dataset references.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,15 +396,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being created. This API operation creates the first version of the
+     * template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the
+     * template maintains a description of the version in the <code>VersionDescription</code> field.
      * </p>
      * 
      * @param versionDescription
-     *        A description of the current template version being created. This API created the first version of the
-     *        template. Every time UpdateTemplate is called a new version is created. Each version of the template
-     *        maintains a description of the version in the VersionDescription field.
+     *        A description of the current template version being created. This API operation creates the first version
+     *        of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version
+     *        of the template maintains a description of the version in the <code>VersionDescription</code> field.
      */
 
     public void setVersionDescription(String versionDescription) {
@@ -410,14 +413,14 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being created. This API operation creates the first version of the
+     * template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the
+     * template maintains a description of the version in the <code>VersionDescription</code> field.
      * </p>
      * 
-     * @return A description of the current template version being created. This API created the first version of the
-     *         template. Every time UpdateTemplate is called a new version is created. Each version of the template
-     *         maintains a description of the version in the VersionDescription field.
+     * @return A description of the current template version being created. This API operation creates the first version
+     *         of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version
+     *         of the template maintains a description of the version in the <code>VersionDescription</code> field.
      */
 
     public String getVersionDescription() {
@@ -426,15 +429,15 @@ public class CreateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being created. This API created the first version of the template.
-     * Every time UpdateTemplate is called a new version is created. Each version of the template maintains a
-     * description of the version in the VersionDescription field.
+     * A description of the current template version being created. This API operation creates the first version of the
+     * template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the
+     * template maintains a description of the version in the <code>VersionDescription</code> field.
      * </p>
      * 
      * @param versionDescription
-     *        A description of the current template version being created. This API created the first version of the
-     *        template. Every time UpdateTemplate is called a new version is created. Each version of the template
-     *        maintains a description of the version in the VersionDescription field.
+     *        A description of the current template version being created. This API operation creates the first version
+     *        of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version
+     *        of the template maintains a description of the version in the <code>VersionDescription</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

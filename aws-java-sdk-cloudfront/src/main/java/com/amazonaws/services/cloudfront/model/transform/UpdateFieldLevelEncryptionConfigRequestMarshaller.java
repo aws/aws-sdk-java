@@ -74,90 +74,98 @@ public class UpdateFieldLevelEncryptionConfigRequestMarshaller implements
                     xmlWriter.startElement("Comment").value(fieldLevelEncryptionConfig.getComment()).endElement();
                 }
 
-                QueryArgProfileConfig queryArgProfileConfig = fieldLevelEncryptionConfig.getQueryArgProfileConfig();
-                if (queryArgProfileConfig != null) {
-                    xmlWriter.startElement("QueryArgProfileConfig");
+                {
+                    QueryArgProfileConfig queryArgProfileConfig = fieldLevelEncryptionConfig.getQueryArgProfileConfig();
+                    if (queryArgProfileConfig != null) {
+                        xmlWriter.startElement("QueryArgProfileConfig");
 
-                    if (queryArgProfileConfig.getForwardWhenQueryArgProfileIsUnknown() != null) {
-                        xmlWriter.startElement("ForwardWhenQueryArgProfileIsUnknown").value(queryArgProfileConfig.getForwardWhenQueryArgProfileIsUnknown())
-                                .endElement();
-                    }
-
-                    QueryArgProfiles queryArgProfiles = queryArgProfileConfig.getQueryArgProfiles();
-                    if (queryArgProfiles != null) {
-                        xmlWriter.startElement("QueryArgProfiles");
-
-                        if (queryArgProfiles.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(queryArgProfiles.getQuantity()).endElement();
+                        if (queryArgProfileConfig.getForwardWhenQueryArgProfileIsUnknown() != null) {
+                            xmlWriter.startElement("ForwardWhenQueryArgProfileIsUnknown").value(queryArgProfileConfig.getForwardWhenQueryArgProfileIsUnknown())
+                                    .endElement();
                         }
 
-                        com.amazonaws.internal.SdkInternalList<QueryArgProfile> queryArgProfilesItemsList = (com.amazonaws.internal.SdkInternalList<QueryArgProfile>) queryArgProfiles
-                                .getItems();
-                        if (!queryArgProfilesItemsList.isEmpty() || !queryArgProfilesItemsList.isAutoConstruct()) {
-                            xmlWriter.startElement("Items");
+                        {
+                            QueryArgProfiles queryArgProfiles = queryArgProfileConfig.getQueryArgProfiles();
+                            if (queryArgProfiles != null) {
+                                xmlWriter.startElement("QueryArgProfiles");
 
-                            for (QueryArgProfile queryArgProfilesItemsListValue : queryArgProfilesItemsList) {
-                                xmlWriter.startElement("QueryArgProfile");
-
-                                if (queryArgProfilesItemsListValue.getQueryArg() != null) {
-                                    xmlWriter.startElement("QueryArg").value(queryArgProfilesItemsListValue.getQueryArg()).endElement();
+                                if (queryArgProfiles.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(queryArgProfiles.getQuantity()).endElement();
                                 }
 
-                                if (queryArgProfilesItemsListValue.getProfileId() != null) {
-                                    xmlWriter.startElement("ProfileId").value(queryArgProfilesItemsListValue.getProfileId()).endElement();
+                                com.amazonaws.internal.SdkInternalList<QueryArgProfile> queryArgProfilesItemsList = (com.amazonaws.internal.SdkInternalList<QueryArgProfile>) queryArgProfiles
+                                        .getItems();
+                                if (!queryArgProfilesItemsList.isEmpty() || !queryArgProfilesItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (QueryArgProfile queryArgProfilesItemsListValue : queryArgProfilesItemsList) {
+                                        xmlWriter.startElement("QueryArgProfile");
+
+                                        if (queryArgProfilesItemsListValue.getQueryArg() != null) {
+                                            xmlWriter.startElement("QueryArg").value(queryArgProfilesItemsListValue.getQueryArg()).endElement();
+                                        }
+
+                                        if (queryArgProfilesItemsListValue.getProfileId() != null) {
+                                            xmlWriter.startElement("ProfileId").value(queryArgProfilesItemsListValue.getProfileId()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
-                            xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
-                ContentTypeProfileConfig contentTypeProfileConfig = fieldLevelEncryptionConfig.getContentTypeProfileConfig();
-                if (contentTypeProfileConfig != null) {
-                    xmlWriter.startElement("ContentTypeProfileConfig");
+                {
+                    ContentTypeProfileConfig contentTypeProfileConfig = fieldLevelEncryptionConfig.getContentTypeProfileConfig();
+                    if (contentTypeProfileConfig != null) {
+                        xmlWriter.startElement("ContentTypeProfileConfig");
 
-                    if (contentTypeProfileConfig.getForwardWhenContentTypeIsUnknown() != null) {
-                        xmlWriter.startElement("ForwardWhenContentTypeIsUnknown").value(contentTypeProfileConfig.getForwardWhenContentTypeIsUnknown())
-                                .endElement();
-                    }
-
-                    ContentTypeProfiles contentTypeProfiles = contentTypeProfileConfig.getContentTypeProfiles();
-                    if (contentTypeProfiles != null) {
-                        xmlWriter.startElement("ContentTypeProfiles");
-
-                        if (contentTypeProfiles.getQuantity() != null) {
-                            xmlWriter.startElement("Quantity").value(contentTypeProfiles.getQuantity()).endElement();
+                        if (contentTypeProfileConfig.getForwardWhenContentTypeIsUnknown() != null) {
+                            xmlWriter.startElement("ForwardWhenContentTypeIsUnknown").value(contentTypeProfileConfig.getForwardWhenContentTypeIsUnknown())
+                                    .endElement();
                         }
 
-                        com.amazonaws.internal.SdkInternalList<ContentTypeProfile> contentTypeProfilesItemsList = (com.amazonaws.internal.SdkInternalList<ContentTypeProfile>) contentTypeProfiles
-                                .getItems();
-                        if (!contentTypeProfilesItemsList.isEmpty() || !contentTypeProfilesItemsList.isAutoConstruct()) {
-                            xmlWriter.startElement("Items");
+                        {
+                            ContentTypeProfiles contentTypeProfiles = contentTypeProfileConfig.getContentTypeProfiles();
+                            if (contentTypeProfiles != null) {
+                                xmlWriter.startElement("ContentTypeProfiles");
 
-                            for (ContentTypeProfile contentTypeProfilesItemsListValue : contentTypeProfilesItemsList) {
-                                xmlWriter.startElement("ContentTypeProfile");
-
-                                if (contentTypeProfilesItemsListValue.getFormat() != null) {
-                                    xmlWriter.startElement("Format").value(contentTypeProfilesItemsListValue.getFormat()).endElement();
+                                if (contentTypeProfiles.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(contentTypeProfiles.getQuantity()).endElement();
                                 }
 
-                                if (contentTypeProfilesItemsListValue.getProfileId() != null) {
-                                    xmlWriter.startElement("ProfileId").value(contentTypeProfilesItemsListValue.getProfileId()).endElement();
-                                }
+                                com.amazonaws.internal.SdkInternalList<ContentTypeProfile> contentTypeProfilesItemsList = (com.amazonaws.internal.SdkInternalList<ContentTypeProfile>) contentTypeProfiles
+                                        .getItems();
+                                if (!contentTypeProfilesItemsList.isEmpty() || !contentTypeProfilesItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
 
-                                if (contentTypeProfilesItemsListValue.getContentType() != null) {
-                                    xmlWriter.startElement("ContentType").value(contentTypeProfilesItemsListValue.getContentType()).endElement();
+                                    for (ContentTypeProfile contentTypeProfilesItemsListValue : contentTypeProfilesItemsList) {
+                                        xmlWriter.startElement("ContentTypeProfile");
+
+                                        if (contentTypeProfilesItemsListValue.getFormat() != null) {
+                                            xmlWriter.startElement("Format").value(contentTypeProfilesItemsListValue.getFormat()).endElement();
+                                        }
+
+                                        if (contentTypeProfilesItemsListValue.getProfileId() != null) {
+                                            xmlWriter.startElement("ProfileId").value(contentTypeProfilesItemsListValue.getProfileId()).endElement();
+                                        }
+
+                                        if (contentTypeProfilesItemsListValue.getContentType() != null) {
+                                            xmlWriter.startElement("ContentType").value(contentTypeProfilesItemsListValue.getContentType()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
-                            xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
                 xmlWriter.endElement();
             }

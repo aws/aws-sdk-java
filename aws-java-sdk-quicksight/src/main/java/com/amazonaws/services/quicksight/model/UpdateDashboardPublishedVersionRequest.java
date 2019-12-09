@@ -27,7 +27,7 @@ public class UpdateDashboardPublishedVersionRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      */
     private String awsAccountId;
@@ -46,11 +46,11 @@ public class UpdateDashboardPublishedVersionRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are updating.
+     *        The ID of the AWS account that contains the dashboard that you're updating.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -59,10 +59,10 @@ public class UpdateDashboardPublishedVersionRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      * 
-     * @return AWS account ID that contains the dashboard you are updating.
+     * @return The ID of the AWS account that contains the dashboard that you're updating.
      */
 
     public String getAwsAccountId() {
@@ -71,11 +71,11 @@ public class UpdateDashboardPublishedVersionRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are updating.
+     *        The ID of the AWS account that contains the dashboard that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

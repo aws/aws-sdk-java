@@ -58,120 +58,130 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
             xmlWriter.startElement("ChangeResourceRecordSetsRequest");
             if (changeResourceRecordSetsRequest != null) {
 
-                ChangeBatch changeBatch = changeResourceRecordSetsRequest.getChangeBatch();
-                if (changeBatch != null) {
-                    xmlWriter.startElement("ChangeBatch");
+                {
+                    ChangeBatch changeBatch = changeResourceRecordSetsRequest.getChangeBatch();
+                    if (changeBatch != null) {
+                        xmlWriter.startElement("ChangeBatch");
 
-                    if (changeBatch.getComment() != null) {
-                        xmlWriter.startElement("Comment").value(changeBatch.getComment()).endElement();
-                    }
+                        if (changeBatch.getComment() != null) {
+                            xmlWriter.startElement("Comment").value(changeBatch.getComment()).endElement();
+                        }
 
-                    com.amazonaws.internal.SdkInternalList<Change> changeBatchChangesList = (com.amazonaws.internal.SdkInternalList<Change>) changeBatch
-                            .getChanges();
-                    if (!changeBatchChangesList.isEmpty() || !changeBatchChangesList.isAutoConstruct()) {
-                        xmlWriter.startElement("Changes");
+                        com.amazonaws.internal.SdkInternalList<Change> changeBatchChangesList = (com.amazonaws.internal.SdkInternalList<Change>) changeBatch
+                                .getChanges();
+                        if (!changeBatchChangesList.isEmpty() || !changeBatchChangesList.isAutoConstruct()) {
+                            xmlWriter.startElement("Changes");
 
-                        for (Change changeBatchChangesListValue : changeBatchChangesList) {
-                            xmlWriter.startElement("Change");
+                            for (Change changeBatchChangesListValue : changeBatchChangesList) {
+                                xmlWriter.startElement("Change");
 
-                            if (changeBatchChangesListValue.getAction() != null) {
-                                xmlWriter.startElement("Action").value(changeBatchChangesListValue.getAction()).endElement();
-                            }
-
-                            ResourceRecordSet resourceRecordSet = changeBatchChangesListValue.getResourceRecordSet();
-                            if (resourceRecordSet != null) {
-                                xmlWriter.startElement("ResourceRecordSet");
-
-                                if (resourceRecordSet.getName() != null) {
-                                    xmlWriter.startElement("Name").value(resourceRecordSet.getName()).endElement();
+                                if (changeBatchChangesListValue.getAction() != null) {
+                                    xmlWriter.startElement("Action").value(changeBatchChangesListValue.getAction()).endElement();
                                 }
 
-                                if (resourceRecordSet.getType() != null) {
-                                    xmlWriter.startElement("Type").value(resourceRecordSet.getType()).endElement();
-                                }
+                                {
+                                    ResourceRecordSet resourceRecordSet = changeBatchChangesListValue.getResourceRecordSet();
+                                    if (resourceRecordSet != null) {
+                                        xmlWriter.startElement("ResourceRecordSet");
 
-                                if (resourceRecordSet.getSetIdentifier() != null) {
-                                    xmlWriter.startElement("SetIdentifier").value(resourceRecordSet.getSetIdentifier()).endElement();
-                                }
+                                        if (resourceRecordSet.getName() != null) {
+                                            xmlWriter.startElement("Name").value(resourceRecordSet.getName()).endElement();
+                                        }
 
-                                if (resourceRecordSet.getWeight() != null) {
-                                    xmlWriter.startElement("Weight").value(resourceRecordSet.getWeight()).endElement();
-                                }
+                                        if (resourceRecordSet.getType() != null) {
+                                            xmlWriter.startElement("Type").value(resourceRecordSet.getType()).endElement();
+                                        }
 
-                                if (resourceRecordSet.getRegion() != null) {
-                                    xmlWriter.startElement("Region").value(resourceRecordSet.getRegion()).endElement();
-                                }
+                                        if (resourceRecordSet.getSetIdentifier() != null) {
+                                            xmlWriter.startElement("SetIdentifier").value(resourceRecordSet.getSetIdentifier()).endElement();
+                                        }
 
-                                GeoLocation geoLocation = resourceRecordSet.getGeoLocation();
-                                if (geoLocation != null) {
-                                    xmlWriter.startElement("GeoLocation");
+                                        if (resourceRecordSet.getWeight() != null) {
+                                            xmlWriter.startElement("Weight").value(resourceRecordSet.getWeight()).endElement();
+                                        }
 
-                                    if (geoLocation.getContinentCode() != null) {
-                                        xmlWriter.startElement("ContinentCode").value(geoLocation.getContinentCode()).endElement();
-                                    }
+                                        if (resourceRecordSet.getRegion() != null) {
+                                            xmlWriter.startElement("Region").value(resourceRecordSet.getRegion()).endElement();
+                                        }
 
-                                    if (geoLocation.getCountryCode() != null) {
-                                        xmlWriter.startElement("CountryCode").value(geoLocation.getCountryCode()).endElement();
-                                    }
+                                        {
+                                            GeoLocation geoLocation = resourceRecordSet.getGeoLocation();
+                                            if (geoLocation != null) {
+                                                xmlWriter.startElement("GeoLocation");
 
-                                    if (geoLocation.getSubdivisionCode() != null) {
-                                        xmlWriter.startElement("SubdivisionCode").value(geoLocation.getSubdivisionCode()).endElement();
-                                    }
-                                    xmlWriter.endElement();
-                                }
+                                                if (geoLocation.getContinentCode() != null) {
+                                                    xmlWriter.startElement("ContinentCode").value(geoLocation.getContinentCode()).endElement();
+                                                }
 
-                                if (resourceRecordSet.getFailover() != null) {
-                                    xmlWriter.startElement("Failover").value(resourceRecordSet.getFailover()).endElement();
-                                }
+                                                if (geoLocation.getCountryCode() != null) {
+                                                    xmlWriter.startElement("CountryCode").value(geoLocation.getCountryCode()).endElement();
+                                                }
 
-                                if (resourceRecordSet.getMultiValueAnswer() != null) {
-                                    xmlWriter.startElement("MultiValueAnswer").value(resourceRecordSet.getMultiValueAnswer()).endElement();
-                                }
+                                                if (geoLocation.getSubdivisionCode() != null) {
+                                                    xmlWriter.startElement("SubdivisionCode").value(geoLocation.getSubdivisionCode()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
 
-                                if (resourceRecordSet.getTTL() != null) {
-                                    xmlWriter.startElement("TTL").value(resourceRecordSet.getTTL()).endElement();
-                                }
+                                        if (resourceRecordSet.getFailover() != null) {
+                                            xmlWriter.startElement("Failover").value(resourceRecordSet.getFailover()).endElement();
+                                        }
 
-                                com.amazonaws.internal.SdkInternalList<ResourceRecord> resourceRecordSetResourceRecordsList = (com.amazonaws.internal.SdkInternalList<ResourceRecord>) resourceRecordSet
-                                        .getResourceRecords();
-                                if (!resourceRecordSetResourceRecordsList.isEmpty() || !resourceRecordSetResourceRecordsList.isAutoConstruct()) {
-                                    xmlWriter.startElement("ResourceRecords");
+                                        if (resourceRecordSet.getMultiValueAnswer() != null) {
+                                            xmlWriter.startElement("MultiValueAnswer").value(resourceRecordSet.getMultiValueAnswer()).endElement();
+                                        }
 
-                                    for (ResourceRecord resourceRecordSetResourceRecordsListValue : resourceRecordSetResourceRecordsList) {
-                                        xmlWriter.startElement("ResourceRecord");
+                                        if (resourceRecordSet.getTTL() != null) {
+                                            xmlWriter.startElement("TTL").value(resourceRecordSet.getTTL()).endElement();
+                                        }
 
-                                        if (resourceRecordSetResourceRecordsListValue.getValue() != null) {
-                                            xmlWriter.startElement("Value").value(resourceRecordSetResourceRecordsListValue.getValue()).endElement();
+                                        com.amazonaws.internal.SdkInternalList<ResourceRecord> resourceRecordSetResourceRecordsList = (com.amazonaws.internal.SdkInternalList<ResourceRecord>) resourceRecordSet
+                                                .getResourceRecords();
+                                        if (!resourceRecordSetResourceRecordsList.isEmpty() || !resourceRecordSetResourceRecordsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("ResourceRecords");
+
+                                            for (ResourceRecord resourceRecordSetResourceRecordsListValue : resourceRecordSetResourceRecordsList) {
+                                                xmlWriter.startElement("ResourceRecord");
+
+                                                if (resourceRecordSetResourceRecordsListValue.getValue() != null) {
+                                                    xmlWriter.startElement("Value").value(resourceRecordSetResourceRecordsListValue.getValue()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+
+                                        {
+                                            AliasTarget aliasTarget = resourceRecordSet.getAliasTarget();
+                                            if (aliasTarget != null) {
+                                                xmlWriter.startElement("AliasTarget");
+
+                                                if (aliasTarget.getHostedZoneId() != null) {
+                                                    xmlWriter.startElement("HostedZoneId").value(aliasTarget.getHostedZoneId()).endElement();
+                                                }
+
+                                                if (aliasTarget.getDNSName() != null) {
+                                                    xmlWriter.startElement("DNSName").value(aliasTarget.getDNSName()).endElement();
+                                                }
+
+                                                if (aliasTarget.getEvaluateTargetHealth() != null) {
+                                                    xmlWriter.startElement("EvaluateTargetHealth").value(aliasTarget.getEvaluateTargetHealth()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        if (resourceRecordSet.getHealthCheckId() != null) {
+                                            xmlWriter.startElement("HealthCheckId").value(resourceRecordSet.getHealthCheckId()).endElement();
+                                        }
+
+                                        if (resourceRecordSet.getTrafficPolicyInstanceId() != null) {
+                                            xmlWriter.startElement("TrafficPolicyInstanceId").value(resourceRecordSet.getTrafficPolicyInstanceId())
+                                                    .endElement();
                                         }
                                         xmlWriter.endElement();
                                     }
-                                    xmlWriter.endElement();
-                                }
-
-                                AliasTarget aliasTarget = resourceRecordSet.getAliasTarget();
-                                if (aliasTarget != null) {
-                                    xmlWriter.startElement("AliasTarget");
-
-                                    if (aliasTarget.getHostedZoneId() != null) {
-                                        xmlWriter.startElement("HostedZoneId").value(aliasTarget.getHostedZoneId()).endElement();
-                                    }
-
-                                    if (aliasTarget.getDNSName() != null) {
-                                        xmlWriter.startElement("DNSName").value(aliasTarget.getDNSName()).endElement();
-                                    }
-
-                                    if (aliasTarget.getEvaluateTargetHealth() != null) {
-                                        xmlWriter.startElement("EvaluateTargetHealth").value(aliasTarget.getEvaluateTargetHealth()).endElement();
-                                    }
-                                    xmlWriter.endElement();
-                                }
-
-                                if (resourceRecordSet.getHealthCheckId() != null) {
-                                    xmlWriter.startElement("HealthCheckId").value(resourceRecordSet.getHealthCheckId()).endElement();
-                                }
-
-                                if (resourceRecordSet.getTrafficPolicyInstanceId() != null) {
-                                    xmlWriter.startElement("TrafficPolicyInstanceId").value(resourceRecordSet.getTrafficPolicyInstanceId()).endElement();
                                 }
                                 xmlWriter.endElement();
                             }
@@ -179,7 +189,6 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                         }
                         xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
             }
             xmlWriter.endElement();

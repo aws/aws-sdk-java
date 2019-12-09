@@ -27,19 +27,19 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are describing.
+     * The ID of the AWS account that contains the template alias that you're describing.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      */
     private String templateId;
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * The name of the template alias that you want to describe. If you name a specific alias, you describe the version
      * that the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
@@ -49,11 +49,11 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are describing.
+     * The ID of the AWS account that contains the template alias that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template alias you are describing.
+     *        The ID of the AWS account that contains the template alias that you're describing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -62,10 +62,10 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are describing.
+     * The ID of the AWS account that contains the template alias that you're describing.
      * </p>
      * 
-     * @return AWS account ID that contains the template alias you are describing.
+     * @return The ID of the AWS account that contains the template alias that you're describing.
      */
 
     public String getAwsAccountId() {
@@ -74,11 +74,11 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are describing.
+     * The ID of the AWS account that contains the template alias that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template alias you are describing.
+     *        The ID of the AWS account that contains the template alias that you're describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        The ID for the template.
      */
 
     public void setTemplateId(String templateId) {
@@ -102,10 +102,10 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      * 
-     * @return An ID for the template.
+     * @return The ID for the template.
      */
 
     public String getTemplateId() {
@@ -114,11 +114,11 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        The ID for the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,14 +129,14 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * The name of the template alias that you want to describe. If you name a specific alias, you describe the version
      * that the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     *        The name of the template alias that you want to describe. If you name a specific alias, you describe the
      *        version that the alias points to. You can specify the latest version of the template by providing the
      *        keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
      *        doesn't apply to templates.
@@ -148,13 +148,13 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * The name of the template alias that you want to describe. If you name a specific alias, you describe the version
      * that the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
      * </p>
      * 
-     * @return The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     * @return The name of the template alias that you want to describe. If you name a specific alias, you describe the
      *         version that the alias points to. You can specify the latest version of the template by providing the
      *         keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
      *         doesn't apply to templates.
@@ -166,14 +166,14 @@ public class DescribeTemplateAliasRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
+     * The name of the template alias that you want to describe. If you name a specific alias, you describe the version
      * that the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     *        The name of the template alias that you want to describe. If you name a specific alias, you describe the
      *        version that the alias points to. You can specify the latest version of the template by providing the
      *        keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
      *        doesn't apply to templates.

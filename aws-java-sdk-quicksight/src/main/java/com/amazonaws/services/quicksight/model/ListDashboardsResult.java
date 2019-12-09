@@ -25,8 +25,8 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     * dashboards.
+     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * about the dashboards.
      * </p>
      */
     private java.util.List<DashboardSummary> dashboardSummaryList;
@@ -51,12 +51,12 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     * dashboards.
+     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * about the dashboards.
      * </p>
      * 
-     * @return A structure that contains all of the dashboards shared with the user. Provides basic information about
-     *         the dashboards.
+     * @return A structure that contains all of the dashboards shared with the user. This structure provides basic
+     *         information about the dashboards.
      */
 
     public java.util.List<DashboardSummary> getDashboardSummaryList() {
@@ -65,13 +65,13 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     * dashboards.
+     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * about the dashboards.
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     *        dashboards.
+     *        A structure that contains all of the dashboards shared with the user. This structure provides basic
+     *        information about the dashboards.
      */
 
     public void setDashboardSummaryList(java.util.Collection<DashboardSummary> dashboardSummaryList) {
@@ -85,8 +85,8 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     * dashboards.
+     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * about the dashboards.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,8 +95,8 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     *        dashboards.
+     *        A structure that contains all of the dashboards shared with the user. This structure provides basic
+     *        information about the dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListDashboardsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     * dashboards.
+     * A structure that contains all of the dashboards shared with the user. This structure provides basic information
+     * about the dashboards.
      * </p>
      * 
      * @param dashboardSummaryList
-     *        A structure that contains all of the dashboards shared with the user. Provides basic information about the
-     *        dashboards.
+     *        A structure that contains all of the dashboards shared with the user. This structure provides basic
+     *        information about the dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

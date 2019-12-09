@@ -27,7 +27,7 @@ public class ListDashboardVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are listing.
+     * The ID of the AWS account that contains the dashboard that you're listing versions for.
      * </p>
      */
     private String awsAccountId;
@@ -52,11 +52,11 @@ public class ListDashboardVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are listing.
+     * The ID of the AWS account that contains the dashboard that you're listing versions for.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are listing.
+     *        The ID of the AWS account that contains the dashboard that you're listing versions for.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -65,10 +65,10 @@ public class ListDashboardVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are listing.
+     * The ID of the AWS account that contains the dashboard that you're listing versions for.
      * </p>
      * 
-     * @return AWS account ID that contains the dashboard you are listing.
+     * @return The ID of the AWS account that contains the dashboard that you're listing versions for.
      */
 
     public String getAwsAccountId() {
@@ -77,11 +77,11 @@ public class ListDashboardVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are listing.
+     * The ID of the AWS account that contains the dashboard that you're listing versions for.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are listing.
+     *        The ID of the AWS account that contains the dashboard that you're listing versions for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

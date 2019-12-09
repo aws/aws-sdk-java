@@ -42,8 +42,8 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
     private String newColumnType;
     /**
      * <p>
-     * When casting a column from string to datetime type, you can supply a QuickSight supported format string to denote
-     * the source data format.
+     * When casting a column from string to datetime type, you can supply a string in a format supported by Amazon
+     * QuickSight to denote the source data format.
      * </p>
      */
     private String format;
@@ -149,13 +149,13 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * When casting a column from string to datetime type, you can supply a QuickSight supported format string to denote
-     * the source data format.
+     * When casting a column from string to datetime type, you can supply a string in a format supported by Amazon
+     * QuickSight to denote the source data format.
      * </p>
      * 
      * @param format
-     *        When casting a column from string to datetime type, you can supply a QuickSight supported format string to
-     *        denote the source data format.
+     *        When casting a column from string to datetime type, you can supply a string in a format supported by
+     *        Amazon QuickSight to denote the source data format.
      */
 
     public void setFormat(String format) {
@@ -164,12 +164,12 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * When casting a column from string to datetime type, you can supply a QuickSight supported format string to denote
-     * the source data format.
+     * When casting a column from string to datetime type, you can supply a string in a format supported by Amazon
+     * QuickSight to denote the source data format.
      * </p>
      * 
-     * @return When casting a column from string to datetime type, you can supply a QuickSight supported format string
-     *         to denote the source data format.
+     * @return When casting a column from string to datetime type, you can supply a string in a format supported by
+     *         Amazon QuickSight to denote the source data format.
      */
 
     public String getFormat() {
@@ -178,13 +178,13 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * When casting a column from string to datetime type, you can supply a QuickSight supported format string to denote
-     * the source data format.
+     * When casting a column from string to datetime type, you can supply a string in a format supported by Amazon
+     * QuickSight to denote the source data format.
      * </p>
      * 
      * @param format
-     *        When casting a column from string to datetime type, you can supply a QuickSight supported format string to
-     *        denote the source data format.
+     *        When casting a column from string to datetime type, you can supply a string in a format supported by
+     *        Amazon QuickSight to denote the source data format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

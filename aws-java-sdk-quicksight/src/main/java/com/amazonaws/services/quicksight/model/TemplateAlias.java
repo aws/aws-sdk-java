@@ -36,7 +36,7 @@ public class TemplateAlias implements Serializable, Cloneable, StructuredPojo {
     private String aliasName;
     /**
      * <p>
-     * The ARN of the template alias.
+     * The Amazon Resource Name (ARN) of the template alias.
      * </p>
      */
     private String arn;
@@ -89,11 +89,11 @@ public class TemplateAlias implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the template alias.
+     * The Amazon Resource Name (ARN) of the template alias.
      * </p>
      * 
      * @param arn
-     *        The ARN of the template alias.
+     *        The Amazon Resource Name (ARN) of the template alias.
      */
 
     public void setArn(String arn) {
@@ -102,10 +102,10 @@ public class TemplateAlias implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the template alias.
+     * The Amazon Resource Name (ARN) of the template alias.
      * </p>
      * 
-     * @return The ARN of the template alias.
+     * @return The Amazon Resource Name (ARN) of the template alias.
      */
 
     public String getArn() {
@@ -114,11 +114,11 @@ public class TemplateAlias implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the template alias.
+     * The Amazon Resource Name (ARN) of the template alias.
      * </p>
      * 
      * @param arn
-     *        The ARN of the template alias.
+     *        The Amazon Resource Name (ARN) of the template alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

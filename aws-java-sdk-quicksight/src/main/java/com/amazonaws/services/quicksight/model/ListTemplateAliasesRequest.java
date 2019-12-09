@@ -27,7 +27,7 @@ public class ListTemplateAliasesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are listing.
+     * The ID of the AWS account that contains the template aliases that you're listing.
      * </p>
      */
     private String awsAccountId;
@@ -52,11 +52,11 @@ public class ListTemplateAliasesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are listing.
+     * The ID of the AWS account that contains the template aliases that you're listing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template aliases you are listing.
+     *        The ID of the AWS account that contains the template aliases that you're listing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -65,10 +65,10 @@ public class ListTemplateAliasesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are listing.
+     * The ID of the AWS account that contains the template aliases that you're listing.
      * </p>
      * 
-     * @return AWS account ID that contains the template aliases you are listing.
+     * @return The ID of the AWS account that contains the template aliases that you're listing.
      */
 
     public String getAwsAccountId() {
@@ -77,11 +77,11 @@ public class ListTemplateAliasesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are listing.
+     * The ID of the AWS account that contains the template aliases that you're listing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template aliases you are listing.
+     *        The ID of the AWS account that contains the template aliases that you're listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

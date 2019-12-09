@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Row-level security configuration on the dataset.
+ * The row-level security configuration for the dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionDataSet"
@@ -30,7 +30,7 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the permission dataset.
      * </p>
      */
     private String arn;
@@ -43,11 +43,11 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the permission dataset.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the permission dataset.
+     *        The Amazon Resource Name (ARN) of the permission dataset.
      */
 
     public void setArn(String arn) {
@@ -56,10 +56,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the permission dataset.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) of the permission dataset.
+     * @return The Amazon Resource Name (ARN) of the permission dataset.
      */
 
     public String getArn() {
@@ -68,11 +68,11 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the permission dataset.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the permission dataset.
+     *        The Amazon Resource Name (ARN) of the permission dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The identity type specified is not supported. Supported identity types include IAM and QUICKSIGHT.
+ * The identity type specified isn't supported. Supported identity types include <code>IAM</code> and
+ * <code>QUICKSIGHT</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

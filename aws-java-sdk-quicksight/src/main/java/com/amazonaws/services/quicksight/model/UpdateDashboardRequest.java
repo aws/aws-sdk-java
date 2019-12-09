@@ -27,7 +27,7 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      */
     private String awsAccountId;
@@ -45,10 +45,10 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * The template or analysis from which the dashboard is created. The SouceTemplate entity accepts the Arn of the
-     * template and also references to replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * The template or analysis from which the dashboard is created. The <code>SouceTemplate</code> entity accepts the
+     * Amazon Resource Name (ARN) of the template and also references to replacement datasets for the placeholders set
+     * when creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      */
     private DashboardSourceEntity sourceEntity;
@@ -66,26 +66,29 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     private String versionDescription;
     /**
      * <p>
-     * Publishing options when creating a dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
@@ -94,11 +97,11 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are updating.
+     *        The ID of the AWS account that contains the dashboard that you're updating.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -107,10 +110,10 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      * 
-     * @return AWS account ID that contains the dashboard you are updating.
+     * @return The ID of the AWS account that contains the dashboard that you're updating.
      */
 
     public String getAwsAccountId() {
@@ -119,11 +122,11 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are updating.
+     * The ID of the AWS account that contains the dashboard that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are updating.
+     *        The ID of the AWS account that contains the dashboard that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,17 +217,17 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The template or analysis from which the dashboard is created. The SouceTemplate entity accepts the Arn of the
-     * template and also references to replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * The template or analysis from which the dashboard is created. The <code>SouceTemplate</code> entity accepts the
+     * Amazon Resource Name (ARN) of the template and also references to replacement datasets for the placeholders set
+     * when creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      * 
      * @param sourceEntity
-     *        The template or analysis from which the dashboard is created. The SouceTemplate entity accepts the Arn of
-     *        the template and also references to replacement datasets for the placeholders set when creating the
-     *        template. The replacement datasets need to follow the same schema as the datasets for which placeholders
-     *        were created when creating the template.
+     *        The template or analysis from which the dashboard is created. The <code>SouceTemplate</code> entity
+     *        accepts the Amazon Resource Name (ARN) of the template and also references to replacement datasets for the
+     *        placeholders set when creating the template. The replacement datasets need to follow the same schema as
+     *        the datasets for which placeholders were created when creating the template.
      */
 
     public void setSourceEntity(DashboardSourceEntity sourceEntity) {
@@ -233,16 +236,16 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The template or analysis from which the dashboard is created. The SouceTemplate entity accepts the Arn of the
-     * template and also references to replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * The template or analysis from which the dashboard is created. The <code>SouceTemplate</code> entity accepts the
+     * Amazon Resource Name (ARN) of the template and also references to replacement datasets for the placeholders set
+     * when creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      * 
-     * @return The template or analysis from which the dashboard is created. The SouceTemplate entity accepts the Arn of
-     *         the template and also references to replacement datasets for the placeholders set when creating the
-     *         template. The replacement datasets need to follow the same schema as the datasets for which placeholders
-     *         were created when creating the template.
+     * @return The template or analysis from which the dashboard is created. The <code>SouceTemplate</code> entity
+     *         accepts the Amazon Resource Name (ARN) of the template and also references to replacement datasets for
+     *         the placeholders set when creating the template. The replacement datasets need to follow the same schema
+     *         as the datasets for which placeholders were created when creating the template.
      */
 
     public DashboardSourceEntity getSourceEntity() {
@@ -251,17 +254,17 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The template or analysis from which the dashboard is created. The SouceTemplate entity accepts the Arn of the
-     * template and also references to replacement datasets for the placeholders set when creating the template. The
-     * replacement datasets need to follow the same schema as the datasets for which placeholders were created when
-     * creating the template.
+     * The template or analysis from which the dashboard is created. The <code>SouceTemplate</code> entity accepts the
+     * Amazon Resource Name (ARN) of the template and also references to replacement datasets for the placeholders set
+     * when creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      * 
      * @param sourceEntity
-     *        The template or analysis from which the dashboard is created. The SouceTemplate entity accepts the Arn of
-     *        the template and also references to replacement datasets for the placeholders set when creating the
-     *        template. The replacement datasets need to follow the same schema as the datasets for which placeholders
-     *        were created when creating the template.
+     *        The template or analysis from which the dashboard is created. The <code>SouceTemplate</code> entity
+     *        accepts the Amazon Resource Name (ARN) of the template and also references to replacement datasets for the
+     *        placeholders set when creating the template. The replacement datasets need to follow the same schema as
+     *        the datasets for which placeholders were created when creating the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,52 +355,56 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Publishing options when creating a dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dashboardPublishOptions
-     *        Publishing options when creating a dashboard.</p>
+     *        Options for publishing the dashboard when you create it:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. When This is set to set to <code>DISABLED</code>, QuickSight disables the left
-     *        filter pane on the published dashboard, which can be used for AdHoc filtering. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight
+     *        disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time)
+     *        filtering. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. The visual option to export data to CSV is disabled when this is set to
-     *        <code>DISABLED</code>. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or
-     *        <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to true. Collapsed by
-     *        default.
+     *        <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     *        to true. This option is <code>COLLAPSED</code> by default.
      *        </p>
      *        </li>
      */
@@ -408,51 +415,55 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Publishing options when creating a dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Publishing options when creating a dashboard.</p>
+     * @return Options for publishing the dashboard when you create it:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or
-     *         <code>DISABLED</code>. When This is set to set to <code>DISABLED</code>, QuickSight disables the left
-     *         filter pane on the published dashboard, which can be used for AdHoc filtering. Enabled by default.
+     *         <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     *         <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight
+     *         disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time)
+     *         filtering. This option is <code>ENABLED</code> by default.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or
-     *         <code>DISABLED</code>. The visual option to export data to CSV is disabled when this is set to
-     *         <code>DISABLED</code>. Enabled by default.
+     *         <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     *         <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *         enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or
-     *         <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to true. Collapsed by
-     *         default.
+     *         <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     *         <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     *         to true. This option is <code>COLLAPSED</code> by default.
      *         </p>
      *         </li>
      */
@@ -463,52 +474,56 @@ public class UpdateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Publishing options when creating a dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dashboardPublishOptions
-     *        Publishing options when creating a dashboard.</p>
+     *        Options for publishing the dashboard when you create it:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. When This is set to set to <code>DISABLED</code>, QuickSight disables the left
-     *        filter pane on the published dashboard, which can be used for AdHoc filtering. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight
+     *        disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time)
+     *        filtering. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. The visual option to export data to CSV is disabled when this is set to
-     *        <code>DISABLED</code>. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or
-     *        <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to true. Collapsed by
-     *        default.
+     *        <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     *        to true. This option is <code>COLLAPSED</code> by default.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

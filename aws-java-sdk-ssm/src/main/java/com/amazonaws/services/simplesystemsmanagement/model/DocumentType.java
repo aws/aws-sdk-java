@@ -27,7 +27,8 @@ public enum DocumentType {
     Package("Package"),
     ApplicationConfiguration("ApplicationConfiguration"),
     ApplicationConfigurationSchema("ApplicationConfigurationSchema"),
-    DeploymentStrategy("DeploymentStrategy");
+    DeploymentStrategy("DeploymentStrategy"),
+    ChangeCalendar("ChangeCalendar");
 
     private String value;
 

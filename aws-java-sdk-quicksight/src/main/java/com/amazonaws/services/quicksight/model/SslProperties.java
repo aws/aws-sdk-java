@@ -30,18 +30,18 @@ public class SslProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean flag to control whether SSL should be disabled.
+     * A Boolean option to control whether SSL should be disabled.
      * </p>
      */
     private Boolean disableSsl;
 
     /**
      * <p>
-     * A boolean flag to control whether SSL should be disabled.
+     * A Boolean option to control whether SSL should be disabled.
      * </p>
      * 
      * @param disableSsl
-     *        A boolean flag to control whether SSL should be disabled.
+     *        A Boolean option to control whether SSL should be disabled.
      */
 
     public void setDisableSsl(Boolean disableSsl) {
@@ -50,10 +50,10 @@ public class SslProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean flag to control whether SSL should be disabled.
+     * A Boolean option to control whether SSL should be disabled.
      * </p>
      * 
-     * @return A boolean flag to control whether SSL should be disabled.
+     * @return A Boolean option to control whether SSL should be disabled.
      */
 
     public Boolean getDisableSsl() {
@@ -62,11 +62,11 @@ public class SslProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean flag to control whether SSL should be disabled.
+     * A Boolean option to control whether SSL should be disabled.
      * </p>
      * 
      * @param disableSsl
-     *        A boolean flag to control whether SSL should be disabled.
+     *        A Boolean option to control whether SSL should be disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +77,10 @@ public class SslProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean flag to control whether SSL should be disabled.
+     * A Boolean option to control whether SSL should be disabled.
      * </p>
      * 
-     * @return A boolean flag to control whether SSL should be disabled.
+     * @return A Boolean option to control whether SSL should be disabled.
      */
 
     public Boolean isDisableSsl() {

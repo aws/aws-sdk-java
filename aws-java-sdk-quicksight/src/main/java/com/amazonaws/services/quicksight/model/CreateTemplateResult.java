@@ -25,7 +25,7 @@ public class CreateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template.
+     * The ARN for the template.
      * </p>
      */
     private String arn;
@@ -62,11 +62,11 @@ public class CreateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template.
+     * The ARN for the template.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the template.
+     *        The ARN for the template.
      */
 
     public void setArn(String arn) {
@@ -75,10 +75,10 @@ public class CreateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template.
+     * The ARN for the template.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the template.
+     * @return The ARN for the template.
      */
 
     public String getArn() {
@@ -87,11 +87,11 @@ public class CreateTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the template.
+     * The ARN for the template.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the template.
+     *        The ARN for the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

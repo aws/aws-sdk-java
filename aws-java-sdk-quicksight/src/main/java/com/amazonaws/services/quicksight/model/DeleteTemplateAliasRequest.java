@@ -27,32 +27,32 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are deleting.
+     * The ID of the AWS account that contains the item to delete.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template that the specified alias is for.
      * </p>
      */
     private String templateId;
     /**
      * <p>
-     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
+     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
+     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
+     * <code>AliasName</code> parameter.
      * </p>
      */
     private String aliasName;
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are deleting.
+     * The ID of the AWS account that contains the item to delete.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template alias you are deleting.
+     *        The ID of the AWS account that contains the item to delete.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -61,10 +61,10 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are deleting.
+     * The ID of the AWS account that contains the item to delete.
      * </p>
      * 
-     * @return AWS account ID that contains the template alias you are deleting.
+     * @return The ID of the AWS account that contains the item to delete.
      */
 
     public String getAwsAccountId() {
@@ -73,11 +73,11 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template alias you are deleting.
+     * The ID of the AWS account that contains the item to delete.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template alias you are deleting.
+     *        The ID of the AWS account that contains the item to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template that the specified alias is for.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        The ID for the template that the specified alias is for.
      */
 
     public void setTemplateId(String templateId) {
@@ -101,10 +101,10 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template that the specified alias is for.
      * </p>
      * 
-     * @return An ID for the template.
+     * @return The ID for the template that the specified alias is for.
      */
 
     public String getTemplateId() {
@@ -113,11 +113,11 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template that the specified alias is for.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        The ID for the template that the specified alias is for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,14 +128,14 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
+     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
+     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
+     * <code>AliasName</code> parameter.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to delete. If you provide a specific alias, you delete the version
-     *        that the alias points to. You can specify the latest version of the template by providing the keyword
+     *        The name for the template alias. If you name a specific alias, you delete the version that the alias
+     *        points to. You can specify the latest version of the template by providing the keyword
      *        <code>$LATEST</code> in the <code>AliasName</code> parameter.
      */
 
@@ -145,14 +145,14 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
+     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
+     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
+     * <code>AliasName</code> parameter.
      * </p>
      * 
-     * @return The alias of the template that you want to delete. If you provide a specific alias, you delete the
-     *         version that the alias points to. You can specify the latest version of the template by providing the
-     *         keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
+     * @return The name for the template alias. If you name a specific alias, you delete the version that the alias
+     *         points to. You can specify the latest version of the template by providing the keyword
+     *         <code>$LATEST</code> in the <code>AliasName</code> parameter.
      */
 
     public String getAliasName() {
@@ -161,14 +161,14 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template that you want to delete. If you provide a specific alias, you delete the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
+     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
+     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
+     * <code>AliasName</code> parameter.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to delete. If you provide a specific alias, you delete the version
-     *        that the alias points to. You can specify the latest version of the template by providing the keyword
+     *        The name for the template alias. If you name a specific alias, you delete the version that the alias
+     *        points to. You can specify the latest version of the template by providing the keyword
      *        <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

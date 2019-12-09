@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A resource is already in an "actionable" state that must complete before a new update can be applied.
+ * A resource is already in a state that indicates an action is happening that must complete before a new update can be
+ * applied.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

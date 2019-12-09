@@ -61,18 +61,20 @@ public class DisassociateVPCFromHostedZoneRequestMarshaller implements
             xmlWriter.startElement("DisassociateVPCFromHostedZoneRequest");
             if (disassociateVPCFromHostedZoneRequest != null) {
 
-                VPC vPC = disassociateVPCFromHostedZoneRequest.getVPC();
-                if (vPC != null) {
-                    xmlWriter.startElement("VPC");
+                {
+                    VPC vPC = disassociateVPCFromHostedZoneRequest.getVPC();
+                    if (vPC != null) {
+                        xmlWriter.startElement("VPC");
 
-                    if (vPC.getVPCRegion() != null) {
-                        xmlWriter.startElement("VPCRegion").value(vPC.getVPCRegion()).endElement();
-                    }
+                        if (vPC.getVPCRegion() != null) {
+                            xmlWriter.startElement("VPCRegion").value(vPC.getVPCRegion()).endElement();
+                        }
 
-                    if (vPC.getVPCId() != null) {
-                        xmlWriter.startElement("VPCId").value(vPC.getVPCId()).endElement();
+                        if (vPC.getVPCId() != null) {
+                            xmlWriter.startElement("VPCId").value(vPC.getVPCId()).endElement();
+                        }
+                        xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
                 if (disassociateVPCFromHostedZoneRequest.getComment() != null) {

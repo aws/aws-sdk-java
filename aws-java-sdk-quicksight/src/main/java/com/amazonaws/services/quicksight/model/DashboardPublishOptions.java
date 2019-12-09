@@ -30,13 +30,13 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Ad hoc filtering option.
+     * Ad hoc (one-time) filtering option.
      * </p>
      */
     private AdHocFilteringOption adHocFilteringOption;
     /**
      * <p>
-     * Export to CSV option.
+     * Export to .csv option.
      * </p>
      */
     private ExportToCSVOption exportToCSVOption;
@@ -49,11 +49,11 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Ad hoc filtering option.
+     * Ad hoc (one-time) filtering option.
      * </p>
      * 
      * @param adHocFilteringOption
-     *        Ad hoc filtering option.
+     *        Ad hoc (one-time) filtering option.
      */
 
     public void setAdHocFilteringOption(AdHocFilteringOption adHocFilteringOption) {
@@ -62,10 +62,10 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Ad hoc filtering option.
+     * Ad hoc (one-time) filtering option.
      * </p>
      * 
-     * @return Ad hoc filtering option.
+     * @return Ad hoc (one-time) filtering option.
      */
 
     public AdHocFilteringOption getAdHocFilteringOption() {
@@ -74,11 +74,11 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Ad hoc filtering option.
+     * Ad hoc (one-time) filtering option.
      * </p>
      * 
      * @param adHocFilteringOption
-     *        Ad hoc filtering option.
+     *        Ad hoc (one-time) filtering option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Export to CSV option.
+     * Export to .csv option.
      * </p>
      * 
      * @param exportToCSVOption
-     *        Export to CSV option.
+     *        Export to .csv option.
      */
 
     public void setExportToCSVOption(ExportToCSVOption exportToCSVOption) {
@@ -102,10 +102,10 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Export to CSV option.
+     * Export to .csv option.
      * </p>
      * 
-     * @return Export to CSV option.
+     * @return Export to .csv option.
      */
 
     public ExportToCSVOption getExportToCSVOption() {
@@ -114,11 +114,11 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Export to CSV option.
+     * Export to .csv option.
      * </p>
      * 
      * @param exportToCSVOption
-     *        Export to CSV option.
+     *        Export to .csv option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

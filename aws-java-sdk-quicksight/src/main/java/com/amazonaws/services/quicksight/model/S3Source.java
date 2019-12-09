@@ -30,13 +30,13 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Data source ARN.
+     * The amazon Resource Name (ARN) for the data source.
      * </p>
      */
     private String dataSourceArn;
     /**
      * <p>
-     * Information on the S3 source file(s) format.
+     * Information about the format for the S3 source file or files.
      * </p>
      */
     private UploadSettings uploadSettings;
@@ -49,11 +49,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Data source ARN.
+     * The amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        Data source ARN.
+     *        The amazon Resource Name (ARN) for the data source.
      */
 
     public void setDataSourceArn(String dataSourceArn) {
@@ -62,10 +62,10 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Data source ARN.
+     * The amazon Resource Name (ARN) for the data source.
      * </p>
      * 
-     * @return Data source ARN.
+     * @return The amazon Resource Name (ARN) for the data source.
      */
 
     public String getDataSourceArn() {
@@ -74,11 +74,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Data source ARN.
+     * The amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        Data source ARN.
+     *        The amazon Resource Name (ARN) for the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on the S3 source file(s) format.
+     * Information about the format for the S3 source file or files.
      * </p>
      * 
      * @param uploadSettings
-     *        Information on the S3 source file(s) format.
+     *        Information about the format for the S3 source file or files.
      */
 
     public void setUploadSettings(UploadSettings uploadSettings) {
@@ -102,10 +102,10 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on the S3 source file(s) format.
+     * Information about the format for the S3 source file or files.
      * </p>
      * 
-     * @return Information on the S3 source file(s) format.
+     * @return Information about the format for the S3 source file or files.
      */
 
     public UploadSettings getUploadSettings() {
@@ -114,11 +114,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information on the S3 source file(s) format.
+     * Information about the format for the S3 source file or files.
      * </p>
      * 
      * @param uploadSettings
-     *        Information on the S3 source file(s) format.
+     *        Information about the format for the S3 source file or files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String arn;
@@ -48,13 +48,13 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -78,7 +78,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<OutputColumn> outputColumns;
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      */
     private String importMode;
@@ -90,25 +90,25 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     private Long consumedSpiceCapacityInBytes;
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
-     * supported.
+     * Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
+     * hierarchy is supported.
      * </p>
      */
     private java.util.List<ColumnGroup> columnGroups;
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      */
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setArn(String arn) {
@@ -117,10 +117,10 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getArn() {
@@ -129,11 +129,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +224,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dataset was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -237,10 +237,10 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
-     * @return The time this was created.
+     * @return The time that this dataset was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -249,11 +249,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dataset was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dataset was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +264,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this dataset was updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -277,10 +277,10 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
-     * @return The last time this was updated.
+     * @return The last time that this dataset was updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -289,11 +289,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this dataset was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this dataset was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -500,11 +500,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -514,10 +514,10 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
-     * @return Indicates whether or not you want to import the data into SPICE.
+     * @return Indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -527,11 +527,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -543,11 +543,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -599,11 +599,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
-     * supported.
+     * Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
+     * hierarchy is supported.
      * </p>
      * 
-     * @return Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
+     * @return Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
      *         hierarchy is supported.
      */
 
@@ -613,12 +613,12 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
-     * supported.
+     * Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
+     * hierarchy is supported.
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
+     *        Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      */
 
@@ -633,8 +633,8 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
-     * supported.
+     * Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
+     * hierarchy is supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -643,7 +643,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
+     *        Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -660,12 +660,12 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Groupings of columns that work together in certain QuickSight features. Currently, only geospatial hierarchy is
-     * supported.
+     * Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
+     * hierarchy is supported.
      * </p>
      * 
      * @param columnGroups
-     *        Groupings of columns that work together in certain QuickSight features. Currently, only geospatial
+     *        Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial
      *        hierarchy is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -677,11 +677,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      * 
      * @param rowLevelPermissionDataSet
-     *        Row-level security configuration on the dataset.
+     *        The row-level security configuration for the dataset.
      */
 
     public void setRowLevelPermissionDataSet(RowLevelPermissionDataSet rowLevelPermissionDataSet) {
@@ -690,10 +690,10 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      * 
-     * @return Row-level security configuration on the dataset.
+     * @return The row-level security configuration for the dataset.
      */
 
     public RowLevelPermissionDataSet getRowLevelPermissionDataSet() {
@@ -702,11 +702,11 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Row-level security configuration on the dataset.
+     * The row-level security configuration for the dataset.
      * </p>
      * 
      * @param rowLevelPermissionDataSet
-     *        Row-level security configuration on the dataset.
+     *        The row-level security configuration for the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

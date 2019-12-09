@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The keys of the key-value pairs for the resource tag or tags assigned to the resource.
+ * The key or keys of the key-value pairs for the resource tag or tags assigned to the resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Tag" target="_top">AWS API

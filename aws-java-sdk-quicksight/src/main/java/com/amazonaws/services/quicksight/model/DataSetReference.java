@@ -36,7 +36,7 @@ public class DataSetReference implements Serializable, Cloneable, StructuredPojo
     private String dataSetPlaceholder;
     /**
      * <p>
-     * Dataset ARN.
+     * Dataset Amazon Resource Name (ARN).
      * </p>
      */
     private String dataSetArn;
@@ -83,11 +83,11 @@ public class DataSetReference implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Dataset ARN.
+     * Dataset Amazon Resource Name (ARN).
      * </p>
      * 
      * @param dataSetArn
-     *        Dataset ARN.
+     *        Dataset Amazon Resource Name (ARN).
      */
 
     public void setDataSetArn(String dataSetArn) {
@@ -96,10 +96,10 @@ public class DataSetReference implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Dataset ARN.
+     * Dataset Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return Dataset ARN.
+     * @return Dataset Amazon Resource Name (ARN).
      */
 
     public String getDataSetArn() {
@@ -108,11 +108,11 @@ public class DataSetReference implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Dataset ARN.
+     * Dataset Amazon Resource Name (ARN).
      * </p>
      * 
      * @param dataSetArn
-     *        Dataset ARN.
+     *        Dataset Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

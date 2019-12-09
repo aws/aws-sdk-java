@@ -61,6 +61,14 @@ public class MutableClusterInfoJsonUnmarshaller implements Unmarshaller<MutableC
                     context.nextToken();
                     mutableClusterInfo.setNumberOfBrokerNodes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("enhancedMonitoring", targetDepth)) {
+                    context.nextToken();
+                    mutableClusterInfo.setEnhancedMonitoring(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("openMonitoring", targetDepth)) {
+                    context.nextToken();
+                    mutableClusterInfo.setOpenMonitoring(OpenMonitoringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

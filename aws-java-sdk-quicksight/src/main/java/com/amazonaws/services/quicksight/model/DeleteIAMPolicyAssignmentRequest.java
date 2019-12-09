@@ -27,7 +27,7 @@ public class DeleteIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS account ID where you want to delete an IAM policy assignment.
+     * The AWS account ID where you want to delete the IAM policy assignment.
      * </p>
      */
     private String awsAccountId;
@@ -46,11 +46,11 @@ public class DeleteIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS account ID where you want to delete an IAM policy assignment.
+     * The AWS account ID where you want to delete the IAM policy assignment.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID where you want to delete an IAM policy assignment.
+     *        The AWS account ID where you want to delete the IAM policy assignment.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -59,10 +59,10 @@ public class DeleteIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS account ID where you want to delete an IAM policy assignment.
+     * The AWS account ID where you want to delete the IAM policy assignment.
      * </p>
      * 
-     * @return The AWS account ID where you want to delete an IAM policy assignment.
+     * @return The AWS account ID where you want to delete the IAM policy assignment.
      */
 
     public String getAwsAccountId() {
@@ -71,11 +71,11 @@ public class DeleteIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The AWS account ID where you want to delete an IAM policy assignment.
+     * The AWS account ID where you want to delete the IAM policy assignment.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID where you want to delete an IAM policy assignment.
+     *        The AWS account ID where you want to delete the IAM policy assignment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

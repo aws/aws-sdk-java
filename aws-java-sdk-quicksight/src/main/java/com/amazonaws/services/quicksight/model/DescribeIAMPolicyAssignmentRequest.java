@@ -27,7 +27,7 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID that contains the assignment you want to describe.
+     * The ID of the AWS account that contains the assignment that you want to describe.
      * </p>
      */
     private String awsAccountId;
@@ -46,11 +46,11 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID that contains the assignment you want to describe.
+     * The ID of the AWS account that contains the assignment that you want to describe.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID that contains the assignment you want to describe.
+     *        The ID of the AWS account that contains the assignment that you want to describe.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -59,10 +59,10 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID that contains the assignment you want to describe.
+     * The ID of the AWS account that contains the assignment that you want to describe.
      * </p>
      * 
-     * @return The AWS account ID that contains the assignment you want to describe.
+     * @return The ID of the AWS account that contains the assignment that you want to describe.
      */
 
     public String getAwsAccountId() {
@@ -71,11 +71,11 @@ public class DescribeIAMPolicyAssignmentRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS account ID that contains the assignment you want to describe.
+     * The ID of the AWS account that contains the assignment that you want to describe.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID that contains the assignment you want to describe.
+     *        The ID of the AWS account that contains the assignment that you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

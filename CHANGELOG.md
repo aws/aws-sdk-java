@@ -1,4 +1,21 @@
-# __1.11.688__ __2019-12-05__
+# __1.11.689__ __2019-12-09__
+## __AWS Key Management Service__
+  - ### Features
+    - The Verify operation now returns KMSInvalidSignatureException on invalid signatures. The Sign and Verify operations now return KMSInvalidStateException when a request is made against a CMK pending deletion.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Documentation updates for QuickSight
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Adds the SSM GetCalendarState API and ChangeCalendar SSM Document type. These features enable the forthcoming Systems Manager Change Calendar feature, which will allow you to schedule events during which actions should (or should not) be performed.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - AWS MSK has added support for Open Monitoring with Prometheus.
+
+# __1.11.688__ __2019-12-04__
 ## __Amazon Kinesis Video Signaling Channels__
   - ### Features
     - Announcing support for WebRTC in Kinesis Video Streams, as fully managed capability. You can now use simple APIs to enable your connected devices, web, and mobile apps with real-time two-way media streaming capabilities.

@@ -27,7 +27,7 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      */
     private String awsAccountId;
@@ -46,11 +46,11 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The AWS account ID.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -59,10 +59,10 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
-     * @return The AWS Account ID.
+     * @return The AWS account ID.
      */
 
     public String getAwsAccountId() {
@@ -71,11 +71,11 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

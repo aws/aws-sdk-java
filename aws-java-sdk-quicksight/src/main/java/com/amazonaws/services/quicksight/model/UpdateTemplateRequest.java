@@ -27,7 +27,7 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are updating.
+     * The ID of the AWS account that contains the template that you're updating.
      * </p>
      */
     private String awsAccountId;
@@ -39,16 +39,16 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     private String templateId;
     /**
      * <p>
-     * The source QuickSight entity from which this template is being created. Templates can be currently created from
+     * The source QuickSight entity from which this template is being updated. You can currently update templates from
      * an Analysis or another template.
      * </p>
      */
     private TemplateSourceEntity sourceEntity;
     /**
      * <p>
-     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
-     * create a new version. Each version of the template maintains a description of the version in the
-     * <code>VersionDescription</code> field.
+     * A description of the current template version that is being updated. Every time you call
+     * <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a
+     * description of the version in the <code>VersionDescription</code> field.
      * </p>
      */
     private String versionDescription;
@@ -61,11 +61,11 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are updating.
+     * The ID of the AWS account that contains the template that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are updating.
+     *        The ID of the AWS account that contains the template that you're updating.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -74,10 +74,10 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are updating.
+     * The ID of the AWS account that contains the template that you're updating.
      * </p>
      * 
-     * @return AWS account ID that contains the template you are updating.
+     * @return The ID of the AWS account that contains the template that you're updating.
      */
 
     public String getAwsAccountId() {
@@ -86,11 +86,11 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are updating.
+     * The ID of the AWS account that contains the template that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are updating.
+     *        The ID of the AWS account that contains the template that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +141,12 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The source QuickSight entity from which this template is being created. Templates can be currently created from
+     * The source QuickSight entity from which this template is being updated. You can currently update templates from
      * an Analysis or another template.
      * </p>
      * 
      * @param sourceEntity
-     *        The source QuickSight entity from which this template is being created. Templates can be currently created
+     *        The source QuickSight entity from which this template is being updated. You can currently update templates
      *        from an Analysis or another template.
      */
 
@@ -156,12 +156,12 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The source QuickSight entity from which this template is being created. Templates can be currently created from
+     * The source QuickSight entity from which this template is being updated. You can currently update templates from
      * an Analysis or another template.
      * </p>
      * 
-     * @return The source QuickSight entity from which this template is being created. Templates can be currently
-     *         created from an Analysis or another template.
+     * @return The source QuickSight entity from which this template is being updated. You can currently update
+     *         templates from an Analysis or another template.
      */
 
     public TemplateSourceEntity getSourceEntity() {
@@ -170,12 +170,12 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The source QuickSight entity from which this template is being created. Templates can be currently created from
+     * The source QuickSight entity from which this template is being updated. You can currently update templates from
      * an Analysis or another template.
      * </p>
      * 
      * @param sourceEntity
-     *        The source QuickSight entity from which this template is being created. Templates can be currently created
+     *        The source QuickSight entity from which this template is being updated. You can currently update templates
      *        from an Analysis or another template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -187,15 +187,15 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
-     * create a new version. Each version of the template maintains a description of the version in the
-     * <code>VersionDescription</code> field.
+     * A description of the current template version that is being updated. Every time you call
+     * <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a
+     * description of the version in the <code>VersionDescription</code> field.
      * </p>
      * 
      * @param versionDescription
-     *        A description of the current template version being updated. Every time you cal
-     *        <code>UpdateTemplate</code> you create a new version. Each version of the template maintains a description
-     *        of the version in the <code>VersionDescription</code> field.
+     *        A description of the current template version that is being updated. Every time you call
+     *        <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template
+     *        maintains a description of the version in the <code>VersionDescription</code> field.
      */
 
     public void setVersionDescription(String versionDescription) {
@@ -204,14 +204,14 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
-     * create a new version. Each version of the template maintains a description of the version in the
-     * <code>VersionDescription</code> field.
+     * A description of the current template version that is being updated. Every time you call
+     * <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a
+     * description of the version in the <code>VersionDescription</code> field.
      * </p>
      * 
-     * @return A description of the current template version being updated. Every time you cal
-     *         <code>UpdateTemplate</code> you create a new version. Each version of the template maintains a
-     *         description of the version in the <code>VersionDescription</code> field.
+     * @return A description of the current template version that is being updated. Every time you call
+     *         <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template
+     *         maintains a description of the version in the <code>VersionDescription</code> field.
      */
 
     public String getVersionDescription() {
@@ -220,15 +220,15 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description of the current template version being updated. Every time you cal <code>UpdateTemplate</code> you
-     * create a new version. Each version of the template maintains a description of the version in the
-     * <code>VersionDescription</code> field.
+     * A description of the current template version that is being updated. Every time you call
+     * <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a
+     * description of the version in the <code>VersionDescription</code> field.
      * </p>
      * 
      * @param versionDescription
-     *        A description of the current template version being updated. Every time you cal
-     *        <code>UpdateTemplate</code> you create a new version. Each version of the template maintains a description
-     *        of the version in the <code>VersionDescription</code> field.
+     *        A description of the current template version that is being updated. Every time you call
+     *        <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template
+     *        maintains a description of the version in the <code>VersionDescription</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class DescribeTemplatePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      */
     private String awsAccountId;
@@ -40,11 +40,11 @@ public class DescribeTemplatePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are describing.
+     *        The ID of the AWS account that contains the template that you're describing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -53,10 +53,10 @@ public class DescribeTemplatePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      * 
-     * @return AWS account ID that contains the template you are describing.
+     * @return The ID of the AWS account that contains the template that you're describing.
      */
 
     public String getAwsAccountId() {
@@ -65,11 +65,11 @@ public class DescribeTemplatePermissionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are describing.
+     *        The ID of the AWS account that contains the template that you're describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

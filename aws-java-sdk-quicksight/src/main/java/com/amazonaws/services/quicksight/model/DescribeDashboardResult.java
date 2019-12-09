@@ -31,7 +31,7 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
     private Dashboard dashboard;
     /**
      * <p>
-     * The http status of this request.
+     * The HTTP status of this request.
      * </p>
      */
     private Integer status;
@@ -84,11 +84,11 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The http status of this request.
+     * The HTTP status of this request.
      * </p>
      * 
      * @param status
-     *        The http status of this request.
+     *        The HTTP status of this request.
      */
 
     public void setStatus(Integer status) {
@@ -97,10 +97,10 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The http status of this request.
+     * The HTTP status of this request.
      * </p>
      * 
-     * @return The http status of this request.
+     * @return The HTTP status of this request.
      */
 
     public Integer getStatus() {
@@ -109,11 +109,11 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The http status of this request.
+     * The HTTP status of this request.
      * </p>
      * 
      * @param status
-     *        The http status of this request.
+     *        The HTTP status of this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

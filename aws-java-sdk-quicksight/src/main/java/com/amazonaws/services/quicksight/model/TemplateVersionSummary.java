@@ -42,7 +42,7 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
     private Long versionNumber;
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      */
     private java.util.Date createdTime;
@@ -54,7 +54,7 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
     private String status;
     /**
      * <p>
-     * The desription of the template version.
+     * The description of the template version.
      * </p>
      */
     private String description;
@@ -141,11 +141,11 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this template version was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -154,10 +154,10 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      * 
-     * @return The time this was created.
+     * @return The time that this template version was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -166,11 +166,11 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this template version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +240,11 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The desription of the template version.
+     * The description of the template version.
      * </p>
      * 
      * @param description
-     *        The desription of the template version.
+     *        The description of the template version.
      */
 
     public void setDescription(String description) {
@@ -253,10 +253,10 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The desription of the template version.
+     * The description of the template version.
      * </p>
      * 
-     * @return The desription of the template version.
+     * @return The description of the template version.
      */
 
     public String getDescription() {
@@ -265,11 +265,11 @@ public class TemplateVersionSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The desription of the template version.
+     * The description of the template version.
      * </p>
      * 
      * @param description
-     *        The desription of the template version.
+     *        The description of the template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

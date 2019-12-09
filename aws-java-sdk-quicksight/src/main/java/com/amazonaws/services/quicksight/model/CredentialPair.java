@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The combination of username and password that are used as credentials.
+ * The combination of user name and password that are used as credentials.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CredentialPair" target="_top">AWS API
@@ -30,7 +30,7 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Username.
+     * User name.
      * </p>
      */
     private String username;
@@ -43,11 +43,11 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Username.
+     * User name.
      * </p>
      * 
      * @param username
-     *        Username.
+     *        User name.
      */
 
     public void setUsername(String username) {
@@ -56,10 +56,10 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Username.
+     * User name.
      * </p>
      * 
-     * @return Username.
+     * @return User name.
      */
 
     public String getUsername() {
@@ -68,11 +68,11 @@ public class CredentialPair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Username.
+     * User name.
      * </p>
      * 
      * @param username
-     *        Username.
+     *        User name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

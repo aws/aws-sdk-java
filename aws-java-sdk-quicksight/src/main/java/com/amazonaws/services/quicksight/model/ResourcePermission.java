@@ -30,28 +30,28 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
-     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
-     * .
+     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
+     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
+     * user or group. .
      * </p>
      */
     private String principal;
     /**
      * <p>
-     * The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      */
     private java.util.List<String> actions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
-     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
-     * .
+     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
+     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
+     * user or group. .
      * </p>
      * 
      * @param principal
-     *        The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using
+     *        The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
      *        cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
      *        QuickSight user or group. .
      */
@@ -62,12 +62,12 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
-     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
-     * .
+     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
+     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
+     * user or group. .
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using
+     * @return The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
      *         cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
      *         QuickSight user or group. .
      */
@@ -78,13 +78,13 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using cross-account
-     * resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight user or group.
-     * .
+     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
+     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
+     * user or group. .
      * </p>
      * 
      * @param principal
-     *        The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN. If you are using
+     *        The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
      *        cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
      *        QuickSight user or group. .
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -97,10 +97,10 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * 
-     * @return The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     * @return The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      */
 
     public java.util.List<String> getActions() {
@@ -109,11 +109,11 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      */
 
     public void setActions(java.util.Collection<String> actions) {
@@ -127,7 +127,7 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -136,7 +136,7 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +152,11 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on. For example, "quicksight:DescribeDashboard".
+     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

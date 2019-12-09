@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Metadata on a column that is used as the input of a transform operation.
+ * Metadata for a column that is used as the input of a transform operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/InputColumn" target="_top">AWS API

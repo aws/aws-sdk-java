@@ -27,27 +27,27 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      */
     private String templateId;
     /**
      * <p>
-     * This is an optional field, when a version number is provided the corresponding version is describe, if it's not
-     * provided the latest version of the template is described.
+     * (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't
+     * provided, the latest version of the template is described.
      * </p>
      */
     private Long versionNumber;
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
-     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * The alias of the template that you want to describe. If you name a specific alias, you describe the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
      * </p>
@@ -56,11 +56,11 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are describing.
+     *        The ID of the AWS account that contains the template that you're describing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -69,10 +69,10 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      * 
-     * @return AWS account ID that contains the template you are describing.
+     * @return The ID of the AWS account that contains the template that you're describing.
      */
 
     public String getAwsAccountId() {
@@ -81,11 +81,11 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * AWS account ID that contains the template you are describing.
+     * The ID of the AWS account that contains the template that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are describing.
+     *        The ID of the AWS account that contains the template that you're describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        The ID for the template.
      */
 
     public void setTemplateId(String templateId) {
@@ -109,10 +109,10 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      * 
-     * @return An ID for the template.
+     * @return The ID for the template.
      */
 
     public String getTemplateId() {
@@ -121,11 +121,11 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An ID for the template.
+     * The ID for the template.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        The ID for the template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +136,13 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This is an optional field, when a version number is provided the corresponding version is describe, if it's not
-     * provided the latest version of the template is described.
+     * (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't
+     * provided, the latest version of the template is described.
      * </p>
      * 
      * @param versionNumber
-     *        This is an optional field, when a version number is provided the corresponding version is describe, if
-     *        it's not provided the latest version of the template is described.
+     *        (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't
+     *        provided, the latest version of the template is described.
      */
 
     public void setVersionNumber(Long versionNumber) {
@@ -151,12 +151,12 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This is an optional field, when a version number is provided the corresponding version is describe, if it's not
-     * provided the latest version of the template is described.
+     * (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't
+     * provided, the latest version of the template is described.
      * </p>
      * 
-     * @return This is an optional field, when a version number is provided the corresponding version is describe, if
-     *         it's not provided the latest version of the template is described.
+     * @return (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't
+     *         provided, the latest version of the template is described.
      */
 
     public Long getVersionNumber() {
@@ -165,13 +165,13 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * This is an optional field, when a version number is provided the corresponding version is describe, if it's not
-     * provided the latest version of the template is described.
+     * (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't
+     * provided, the latest version of the template is described.
      * </p>
      * 
      * @param versionNumber
-     *        This is an optional field, when a version number is provided the corresponding version is describe, if
-     *        it's not provided the latest version of the template is described.
+     *        (Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't
+     *        provided, the latest version of the template is described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,14 +182,14 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
-     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * The alias of the template that you want to describe. If you name a specific alias, you describe the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     *        The alias of the template that you want to describe. If you name a specific alias, you describe the
      *        version that the alias points to. You can specify the latest version of the template by providing the
      *        keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
      *        doesn't apply to templates.
@@ -201,13 +201,13 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
-     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * The alias of the template that you want to describe. If you name a specific alias, you describe the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
      * </p>
      * 
-     * @return The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     * @return The alias of the template that you want to describe. If you name a specific alias, you describe the
      *         version that the alias points to. You can specify the latest version of the template by providing the
      *         keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
      *         doesn't apply to templates.
@@ -219,14 +219,14 @@ public class DescribeTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The alias of the template that you want to describe. If you provide a specific alias, you describe the version
-     * that the alias points to. You can specify the latest version of the template by providing the keyword
+     * The alias of the template that you want to describe. If you name a specific alias, you describe the version that
+     * the alias points to. You can specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
      * to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to describe. If you provide a specific alias, you describe the
+     *        The alias of the template that you want to describe. If you name a specific alias, you describe the
      *        version that the alias points to. You can specify the latest version of the template by providing the
      *        keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
      *        doesn't apply to templates.

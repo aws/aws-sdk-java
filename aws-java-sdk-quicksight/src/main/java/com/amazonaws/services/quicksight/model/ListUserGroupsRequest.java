@@ -33,7 +33,7 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String userName;
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * The AWS account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
      * QuickSight account.
      * </p>
      */
@@ -99,12 +99,12 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * The AWS account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
      * QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your
+     *        The AWS account ID that the user is in. Currently, you use the ID for the AWS account that contains your
      *        Amazon QuickSight account.
      */
 
@@ -114,11 +114,11 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * The AWS account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
      * QuickSight account.
      * </p>
      * 
-     * @return The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your
+     * @return The AWS account ID that the user is in. Currently, you use the ID for the AWS account that contains your
      *         Amazon QuickSight account.
      */
 
@@ -128,12 +128,12 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * The AWS account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
      * QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your
+     *        The AWS account ID that the user is in. Currently, you use the ID for the AWS account that contains your
      *        Amazon QuickSight account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

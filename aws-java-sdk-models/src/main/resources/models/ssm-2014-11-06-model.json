@@ -874,6 +874,22 @@
       ],
       "documentation":"<p>Get detailed information about a particular Automation execution.</p>"
     },
+    "GetCalendarState":{
+      "name":"GetCalendarState",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetCalendarStateRequest"},
+      "output":{"shape":"GetCalendarStateResponse"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"InvalidDocument"},
+        {"shape":"InvalidDocumentType"},
+        {"shape":"UnsupportedCalendarException"}
+      ],
+      "documentation":"<p>Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time. If you specify a time, <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code> assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html\">AWS Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
+    },
     "GetCommandInvocation":{
       "name":"GetCommandInvocation",
       "http":{
@@ -3095,6 +3111,18 @@
     },
     "BatchErrorMessage":{"type":"string"},
     "Boolean":{"type":"boolean"},
+    "CalendarNameOrARN":{"type":"string"},
+    "CalendarNameOrARNList":{
+      "type":"list",
+      "member":{"shape":"CalendarNameOrARN"}
+    },
+    "CalendarState":{
+      "type":"string",
+      "enum":[
+        "OPEN",
+        "CLOSED"
+      ]
+    },
     "CancelCommandRequest":{
       "type":"structure",
       "required":["CommandId"],
@@ -3605,11 +3633,7 @@
       "max":10000,
       "min":0
     },
-    "ComplianceItemId":{
-      "type":"string",
-      "max":100,
-      "min":1
-    },
+    "ComplianceItemId":{"type":"string"},
     "ComplianceItemList":{
       "type":"list",
       "member":{"shape":"ComplianceItem"}
@@ -5570,7 +5594,7 @@
         },
         "InstancesWithInstalledPendingRebootPatches":{
           "shape":"InstancesCount",
-          "documentation":"<p>The number of instances with patches installed that have not been rebooted after the patch installation. The status of these instances is NON_COMPLIANT.</p>",
+          "documentation":"<p>Reserved for future use. </p>",
           "box":true
         },
         "InstancesWithInstalledRejectedPatches":{
@@ -5876,7 +5900,8 @@
       "type":"string",
       "enum":[
         "YAML",
-        "JSON"
+        "JSON",
+        "TEXT"
       ]
     },
     "DocumentHash":{
@@ -6086,7 +6111,8 @@
         "Package",
         "ApplicationConfiguration",
         "ApplicationConfigurationSchema",
-        "DeploymentStrategy"
+        "DeploymentStrategy",
+        "ChangeCalendar"
       ]
     },
     "DocumentVersion":{
@@ -6293,6 +6319,37 @@
         "AutomationExecution":{
           "shape":"AutomationExecution",
           "documentation":"<p>Detailed information about the current state of an automation execution.</p>"
+        }
+      }
+    },
+    "GetCalendarStateRequest":{
+      "type":"structure",
+      "required":["CalendarNames"],
+      "members":{
+        "CalendarNames":{
+          "shape":"CalendarNameOrARNList",
+          "documentation":"<p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar entries for which you want to get the state.</p>"
+        },
+        "AtTime":{
+          "shape":"ISO8601String",
+          "documentation":"<p>(Optional) The specific time for which you want to get calendar state information, in <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">ISO 8601</a> format. If you do not add <code>AtTime</code>, the current time is assumed.</p>"
+        }
+      }
+    },
+    "GetCalendarStateResponse":{
+      "type":"structure",
+      "members":{
+        "State":{
+          "shape":"CalendarState",
+          "documentation":"<p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions are not allowed to proceed.</p>"
+        },
+        "AtTime":{
+          "shape":"ISO8601String",
+          "documentation":"<p>The time, as an <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">ISO 8601</a> string, that you specified in your command. If you did not specify a time, <code>GetCalendarState</code> uses the current time.</p>"
+        },
+        "NextTransitionTime":{
+          "shape":"ISO8601String",
+          "documentation":"<p>The time, as an <a href=\"https://en.wikipedia.org/wiki/ISO_8601\">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>"
         }
       }
     },
@@ -7318,6 +7375,7 @@
       "max":46,
       "min":1
     },
+    "ISO8601String":{"type":"string"},
     "IamRole":{
       "type":"string",
       "max":64
@@ -7696,7 +7754,7 @@
         },
         "InstalledPendingRebootCount":{
           "shape":"PatchInstalledPendingRebootCount",
-          "documentation":"<p>The number of patches installed since the last time the instance was rebooted.</p>",
+          "documentation":"<p>Reserved for future use.</p>",
           "box":true
         },
         "InstalledRejectedCount":{
@@ -7735,11 +7793,11 @@
         },
         "LastNoRebootInstallOperationTime":{
           "shape":"DateTime",
-          "documentation":"<p>The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot option.</p>"
+          "documentation":"<p>Reserved for future use. </p>"
         },
         "RebootOption":{
           "shape":"RebootOption",
-          "documentation":"<p>Indicates the reboot option specified in the patch baseline.</p> <note> <p>Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li> <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is performed.</p> </li> </ul>"
+          "documentation":"<p>Reserved for future use. </p>"
         }
       },
       "documentation":"<p>Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.</p>"
@@ -7952,6 +8010,14 @@
         "Message":{"shape":"String"}
       },
       "documentation":"<p>The version of the document schema is not supported.</p>",
+      "exception":true
+    },
+    "InvalidDocumentType":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The document type is not valid. Valid document types are described in the <code>DocumentType</code> property.</p>",
       "exception":true
     },
     "InvalidDocumentVersion":{
@@ -13195,6 +13261,14 @@
         "Message":{"shape":"String"}
       },
       "documentation":"<p>The size of inventory data has exceeded the total size limit for the resource.</p>",
+      "exception":true
+    },
+    "UnsupportedCalendarException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The calendar entry contained in the specified Systems Manager document is not supported.</p>",
       "exception":true
     },
     "UnsupportedFeatureRequiredException":{

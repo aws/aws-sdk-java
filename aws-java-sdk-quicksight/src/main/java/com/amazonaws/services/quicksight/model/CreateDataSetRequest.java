@@ -27,7 +27,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      */
     private String awsAccountId;
@@ -57,7 +57,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.Map<String, LogicalTable> logicalTableMap;
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      */
     private String importMode;
@@ -76,7 +76,7 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * Row-level security configuration on the data you want to create.
+     * The row-level security configuration for the data that you want to create.
      * </p>
      */
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
@@ -89,11 +89,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The AWS account ID.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -102,10 +102,10 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
-     * @return The AWS Account ID.
+     * @return The AWS account ID.
      */
 
     public String getAwsAccountId() {
@@ -114,11 +114,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Account ID.
+     * The AWS account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID.
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,11 +331,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -345,10 +345,10 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
-     * @return Indicates whether or not you want to import the data into SPICE.
+     * @return Indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -358,11 +358,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -374,11 +374,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether or not you want to import the data into SPICE.
+     * Indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether or not you want to import the data into SPICE.
+     *        Indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -538,11 +538,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Row-level security configuration on the data you want to create.
+     * The row-level security configuration for the data that you want to create.
      * </p>
      * 
      * @param rowLevelPermissionDataSet
-     *        Row-level security configuration on the data you want to create.
+     *        The row-level security configuration for the data that you want to create.
      */
 
     public void setRowLevelPermissionDataSet(RowLevelPermissionDataSet rowLevelPermissionDataSet) {
@@ -551,10 +551,10 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Row-level security configuration on the data you want to create.
+     * The row-level security configuration for the data that you want to create.
      * </p>
      * 
-     * @return Row-level security configuration on the data you want to create.
+     * @return The row-level security configuration for the data that you want to create.
      */
 
     public RowLevelPermissionDataSet getRowLevelPermissionDataSet() {
@@ -563,11 +563,11 @@ public class CreateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Row-level security configuration on the data you want to create.
+     * The row-level security configuration for the data that you want to create.
      * </p>
      * 
      * @param rowLevelPermissionDataSet
-     *        Row-level security configuration on the data you want to create.
+     *        The row-level security configuration for the data that you want to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

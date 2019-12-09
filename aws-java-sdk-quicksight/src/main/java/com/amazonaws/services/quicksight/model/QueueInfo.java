@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on queued dataset SPICE ingestion.
+ * Information about a queued dataset SPICE ingestion.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/QueueInfo" target="_top">AWS API

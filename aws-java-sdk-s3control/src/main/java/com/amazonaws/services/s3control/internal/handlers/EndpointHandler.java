@@ -24,6 +24,8 @@ import com.amazonaws.client.builder.AdvancedConfig;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.services.s3control.S3ControlClientOptions;
+import com.amazonaws.util.SdkHttpUtils;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -75,7 +77,8 @@ public final class EndpointHandler extends RequestHandler2 {
             host = host.replace(ENDPOINT_PREFIX, String.format("%s-%s", ENDPOINT_PREFIX, "fips"));
 
         }
-        return String.format("%s.%s", accountId, host);
+        
+        return String.format("%s.%s", SdkHttpUtils.urlEncode(accountId, false), host);
     }
 
     private boolean isDualstackEnabled(Request<?> request) {

@@ -31,7 +31,7 @@ public class GroupMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the group member (user).
+     * The Amazon Resource Name (ARN) for the group member (user).
      * </p>
      */
     private String arn;
@@ -44,11 +44,11 @@ public class GroupMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the group member (user).
+     * The Amazon Resource Name (ARN) for the group member (user).
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) for the group member (user).
+     *        The Amazon Resource Name (ARN) for the group member (user).
      */
 
     public void setArn(String arn) {
@@ -57,10 +57,10 @@ public class GroupMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the group member (user).
+     * The Amazon Resource Name (ARN) for the group member (user).
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) for the group member (user).
+     * @return The Amazon Resource Name (ARN) for the group member (user).
      */
 
     public String getArn() {
@@ -69,11 +69,11 @@ public class GroupMember implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the group member (user).
+     * The Amazon Resource Name (ARN) for the group member (user).
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) for the group member (user).
+     *        The Amazon Resource Name (ARN) for the group member (user).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -324,6 +324,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public GetCalendarStateResult getCalendarState(GetCalendarStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

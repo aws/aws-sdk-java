@@ -27,7 +27,7 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template you are aliasing.
+     * The ID of the AWS account that contains the template that you creating an alias for.
      * </p>
      */
     private String awsAccountId;
@@ -39,8 +39,8 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
     private String templateId;
     /**
      * <p>
-     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
-     * are reserved by QuickSight.
+     * The name that you want to give to the template alias that you're creating. Don't start the alias name with the
+     * <code>$</code> character. Alias names that start with <code>$</code> are reserved by QuickSight.
      * </p>
      */
     private String aliasName;
@@ -53,11 +53,11 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template you are aliasing.
+     * The ID of the AWS account that contains the template that you creating an alias for.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are aliasing.
+     *        The ID of the AWS account that contains the template that you creating an alias for.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -66,10 +66,10 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template you are aliasing.
+     * The ID of the AWS account that contains the template that you creating an alias for.
      * </p>
      * 
-     * @return AWS account ID that contains the template you are aliasing.
+     * @return The ID of the AWS account that contains the template that you creating an alias for.
      */
 
     public String getAwsAccountId() {
@@ -78,11 +78,11 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template you are aliasing.
+     * The ID of the AWS account that contains the template that you creating an alias for.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are aliasing.
+     *        The ID of the AWS account that contains the template that you creating an alias for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,13 +133,13 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
-     * are reserved by QuickSight.
+     * The name that you want to give to the template alias that you're creating. Don't start the alias name with the
+     * <code>$</code> character. Alias names that start with <code>$</code> are reserved by QuickSight.
      * </p>
      * 
      * @param aliasName
-     *        The name that you want to give to the template alias that you're creating. Aliases that start with
-     *        <code>$</code> are reserved by QuickSight.
+     *        The name that you want to give to the template alias that you're creating. Don't start the alias name with
+     *        the <code>$</code> character. Alias names that start with <code>$</code> are reserved by QuickSight.
      */
 
     public void setAliasName(String aliasName) {
@@ -148,12 +148,12 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
-     * are reserved by QuickSight.
+     * The name that you want to give to the template alias that you're creating. Don't start the alias name with the
+     * <code>$</code> character. Alias names that start with <code>$</code> are reserved by QuickSight.
      * </p>
      * 
-     * @return The name that you want to give to the template alias that you're creating. Aliases that start with
-     *         <code>$</code> are reserved by QuickSight.
+     * @return The name that you want to give to the template alias that you're creating. Don't start the alias name
+     *         with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by QuickSight.
      */
 
     public String getAliasName() {
@@ -162,13 +162,13 @@ public class CreateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name that you want to give to the template alias that you're creating. Aliases that start with <code>$</code>
-     * are reserved by QuickSight.
+     * The name that you want to give to the template alias that you're creating. Don't start the alias name with the
+     * <code>$</code> character. Alias names that start with <code>$</code> are reserved by QuickSight.
      * </p>
      * 
      * @param aliasName
-     *        The name that you want to give to the template alias that you're creating. Aliases that start with
-     *        <code>$</code> are reserved by QuickSight.
+     *        The name that you want to give to the template alias that you're creating. Don't start the alias name with
+     *        the <code>$</code> character. Alias names that start with <code>$</code> are reserved by QuickSight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

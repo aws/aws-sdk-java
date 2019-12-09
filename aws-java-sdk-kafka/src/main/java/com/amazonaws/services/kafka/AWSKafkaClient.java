@@ -1540,6 +1540,82 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
     }
 
     /**
+     * <p>
+     * Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics
+     * you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with
+     * Prometheus.
+     * </p>
+     * 
+     * @param updateMonitoringRequest
+     *        Request body for UpdateMonitoring.
+     * @return Result of the UpdateMonitoring operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     *         </p>
+     * @throws BadRequestException
+     *         <p>
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     *         </p>
+     * @sample AWSKafka.UpdateMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateMonitoringResult updateMonitoring(UpdateMonitoringRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMonitoring(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMonitoringResult executeUpdateMonitoring(UpdateMonitoringRequest updateMonitoringRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMonitoringRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMonitoringRequest> request = null;
+        Response<UpdateMonitoringResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMonitoringRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMonitoringRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMonitoring");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMonitoringResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateMonitoringResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
      * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
      * operation, so it's available through this separate, diagnostic interface.

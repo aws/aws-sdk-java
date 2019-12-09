@@ -36,13 +36,13 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
     private String dataSourceArn;
     /**
      * <p>
-     * The schema name. Applies to certain relational database engines.
+     * The schema name. This name applies to certain relational database engines.
      * </p>
      */
     private String schema;
     /**
      * <p>
-     * Name of the relational table.
+     * The name of the relational table.
      * </p>
      */
     private String name;
@@ -95,11 +95,11 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The schema name. Applies to certain relational database engines.
+     * The schema name. This name applies to certain relational database engines.
      * </p>
      * 
      * @param schema
-     *        The schema name. Applies to certain relational database engines.
+     *        The schema name. This name applies to certain relational database engines.
      */
 
     public void setSchema(String schema) {
@@ -108,10 +108,10 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The schema name. Applies to certain relational database engines.
+     * The schema name. This name applies to certain relational database engines.
      * </p>
      * 
-     * @return The schema name. Applies to certain relational database engines.
+     * @return The schema name. This name applies to certain relational database engines.
      */
 
     public String getSchema() {
@@ -120,11 +120,11 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The schema name. Applies to certain relational database engines.
+     * The schema name. This name applies to certain relational database engines.
      * </p>
      * 
      * @param schema
-     *        The schema name. Applies to certain relational database engines.
+     *        The schema name. This name applies to certain relational database engines.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the relational table.
+     * The name of the relational table.
      * </p>
      * 
      * @param name
-     *        Name of the relational table.
+     *        The name of the relational table.
      */
 
     public void setName(String name) {
@@ -148,10 +148,10 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the relational table.
+     * The name of the relational table.
      * </p>
      * 
-     * @return Name of the relational table.
+     * @return The name of the relational table.
      */
 
     public String getName() {
@@ -160,11 +160,11 @@ public class RelationalTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the relational table.
+     * The name of the relational table.
      * </p>
      * 
      * @param name
-     *        Name of the relational table.
+     *        The name of the relational table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

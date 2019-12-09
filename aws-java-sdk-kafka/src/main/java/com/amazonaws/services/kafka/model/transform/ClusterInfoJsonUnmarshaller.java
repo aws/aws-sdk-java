@@ -88,6 +88,10 @@ public class ClusterInfoJsonUnmarshaller implements Unmarshaller<ClusterInfo, Js
                     context.nextToken();
                     clusterInfo.setEnhancedMonitoring(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("openMonitoring", targetDepth)) {
+                    context.nextToken();
+                    clusterInfo.setOpenMonitoring(OpenMonitoringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("numberOfBrokerNodes", targetDepth)) {
                     context.nextToken();
                     clusterInfo.setNumberOfBrokerNodes(context.getUnmarshaller(Integer.class).unmarshall(context));

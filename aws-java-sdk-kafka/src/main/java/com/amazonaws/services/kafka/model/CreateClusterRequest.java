@@ -64,6 +64,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String enhancedMonitoring;
     /**
      * <p>
+     * The settings for open monitoring.
+     * </p>
+     */
+    private OpenMonitoringInfo openMonitoring;
+    /**
+     * <p>
      * The version of Apache Kafka.
      * </p>
      */
@@ -388,6 +394,52 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The settings for open monitoring.
+     * </p>
+     * 
+     * @param openMonitoring
+     *        <p>
+     *        The settings for open monitoring.
+     *        </p>
+     */
+
+    public void setOpenMonitoring(OpenMonitoringInfo openMonitoring) {
+        this.openMonitoring = openMonitoring;
+    }
+
+    /**
+     * <p>
+     * The settings for open monitoring.
+     * </p>
+     * 
+     * @return <p>
+     *         The settings for open monitoring.
+     *         </p>
+     */
+
+    public OpenMonitoringInfo getOpenMonitoring() {
+        return this.openMonitoring;
+    }
+
+    /**
+     * <p>
+     * The settings for open monitoring.
+     * </p>
+     * 
+     * @param openMonitoring
+     *        <p>
+     *        The settings for open monitoring.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withOpenMonitoring(OpenMonitoringInfo openMonitoring) {
+        setOpenMonitoring(openMonitoring);
+        return this;
+    }
+
+    /**
+     * <p>
      * The version of Apache Kafka.
      * </p>
      * 
@@ -569,6 +621,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("EncryptionInfo: ").append(getEncryptionInfo()).append(",");
         if (getEnhancedMonitoring() != null)
             sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring()).append(",");
+        if (getOpenMonitoring() != null)
+            sb.append("OpenMonitoring: ").append(getOpenMonitoring()).append(",");
         if (getKafkaVersion() != null)
             sb.append("KafkaVersion: ").append(getKafkaVersion()).append(",");
         if (getNumberOfBrokerNodes() != null)
@@ -613,6 +667,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getEnhancedMonitoring() != null && other.getEnhancedMonitoring().equals(this.getEnhancedMonitoring()) == false)
             return false;
+        if (other.getOpenMonitoring() == null ^ this.getOpenMonitoring() == null)
+            return false;
+        if (other.getOpenMonitoring() != null && other.getOpenMonitoring().equals(this.getOpenMonitoring()) == false)
+            return false;
         if (other.getKafkaVersion() == null ^ this.getKafkaVersion() == null)
             return false;
         if (other.getKafkaVersion() != null && other.getKafkaVersion().equals(this.getKafkaVersion()) == false)
@@ -639,6 +697,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getConfigurationInfo() == null) ? 0 : getConfigurationInfo().hashCode());
         hashCode = prime * hashCode + ((getEncryptionInfo() == null) ? 0 : getEncryptionInfo().hashCode());
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getOpenMonitoring() == null) ? 0 : getOpenMonitoring().hashCode());
         hashCode = prime * hashCode + ((getKafkaVersion() == null) ? 0 : getKafkaVersion().hashCode());
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

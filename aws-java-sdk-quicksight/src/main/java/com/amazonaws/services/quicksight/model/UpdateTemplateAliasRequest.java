@@ -27,7 +27,7 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are updating.
+     * The ID of the AWS account that contains the template alias that you're updating.
      * </p>
      */
     private String awsAccountId;
@@ -39,10 +39,9 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
     private String templateId;
     /**
      * <p>
-     * The alias of the template that you want to update. If you provide a specific alias, you update the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
-     * to templates.
+     * The alias of the template that you want to update. If you name a specific alias, you update the version that the
+     * alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code>
+     * in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
      * </p>
      */
     private String aliasName;
@@ -55,11 +54,11 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are updating.
+     * The ID of the AWS account that contains the template alias that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template aliases you are updating.
+     *        The ID of the AWS account that contains the template alias that you're updating.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -68,10 +67,10 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are updating.
+     * The ID of the AWS account that contains the template alias that you're updating.
      * </p>
      * 
-     * @return AWS account ID that contains the template aliases you are updating.
+     * @return The ID of the AWS account that contains the template alias that you're updating.
      */
 
     public String getAwsAccountId() {
@@ -80,11 +79,11 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * AWS account ID that contains the template aliases you are updating.
+     * The ID of the AWS account that contains the template alias that you're updating.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template aliases you are updating.
+     *        The ID of the AWS account that contains the template alias that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,14 +134,13 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template that you want to update. If you provide a specific alias, you update the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
-     * to templates.
+     * The alias of the template that you want to update. If you name a specific alias, you update the version that the
+     * alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code>
+     * in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to update. If you provide a specific alias, you update the version
+     *        The alias of the template that you want to update. If you name a specific alias, you update the version
      *        that the alias points to. You can specify the latest version of the template by providing the keyword
      *        <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't
      *        apply to templates.
@@ -154,16 +152,15 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template that you want to update. If you provide a specific alias, you update the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
-     * to templates.
+     * The alias of the template that you want to update. If you name a specific alias, you update the version that the
+     * alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code>
+     * in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
      * </p>
      * 
-     * @return The alias of the template that you want to update. If you provide a specific alias, you update the
-     *         version that the alias points to. You can specify the latest version of the template by providing the
-     *         keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
-     *         doesn't apply to templates.
+     * @return The alias of the template that you want to update. If you name a specific alias, you update the version
+     *         that the alias points to. You can specify the latest version of the template by providing the keyword
+     *         <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't
+     *         apply to templates.
      */
 
     public String getAliasName() {
@@ -172,14 +169,13 @@ public class UpdateTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The alias of the template that you want to update. If you provide a specific alias, you update the version that
-     * the alias points to. You can specify the latest version of the template by providing the keyword
-     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply
-     * to templates.
+     * The alias of the template that you want to update. If you name a specific alias, you update the version that the
+     * alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code>
+     * in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
      * </p>
      * 
      * @param aliasName
-     *        The alias of the template that you want to update. If you provide a specific alias, you update the version
+     *        The alias of the template that you want to update. If you name a specific alias, you update the version
      *        that the alias points to. You can specify the latest version of the template by providing the keyword
      *        <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't
      *        apply to templates.

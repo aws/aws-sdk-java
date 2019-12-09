@@ -37,34 +37,34 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
     private String assignmentId;
     /**
      * <p>
-     * The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+     * The ARN for the IAM policy applied to the QuickSight users and groups specified in this assignment.
      * </p>
      */
     private String policyArn;
     /**
      * <p>
-     * QuickSight users and/or groups that are assigned to this IAM policy.
+     * The QuickSight users, groups, or both that the IAM policy is assigned to.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> identities;
     /**
      * <p>
-     * The status of the assignment:
+     * The status of the assignment. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ENABLED - Anything specified in this assignment is used while creating the data source.
+     * <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DISABLED - This assignment isn't used while creating the data source.
+     * <code>DISABLED</code> - This assignment isn't used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      * </p>
      * </li>
      * </ul>
@@ -165,11 +165,11 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+     * The ARN for the IAM policy applied to the QuickSight users and groups specified in this assignment.
      * </p>
      * 
      * @param policyArn
-     *        The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+     *        The ARN for the IAM policy applied to the QuickSight users and groups specified in this assignment.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -178,10 +178,10 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+     * The ARN for the IAM policy applied to the QuickSight users and groups specified in this assignment.
      * </p>
      * 
-     * @return The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+     * @return The ARN for the IAM policy applied to the QuickSight users and groups specified in this assignment.
      */
 
     public String getPolicyArn() {
@@ -190,11 +190,11 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+     * The ARN for the IAM policy applied to the QuickSight users and groups specified in this assignment.
      * </p>
      * 
      * @param policyArn
-     *        The IAM policy ARN assigned to the QuickSight users and groups specified in this request.
+     *        The ARN for the IAM policy applied to the QuickSight users and groups specified in this assignment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,10 +205,10 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * QuickSight users and/or groups that are assigned to this IAM policy.
+     * The QuickSight users, groups, or both that the IAM policy is assigned to.
      * </p>
      * 
-     * @return QuickSight users and/or groups that are assigned to this IAM policy.
+     * @return The QuickSight users, groups, or both that the IAM policy is assigned to.
      */
 
     public java.util.Map<String, java.util.List<String>> getIdentities() {
@@ -217,11 +217,11 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * QuickSight users and/or groups that are assigned to this IAM policy.
+     * The QuickSight users, groups, or both that the IAM policy is assigned to.
      * </p>
      * 
      * @param identities
-     *        QuickSight users and/or groups that are assigned to this IAM policy.
+     *        The QuickSight users, groups, or both that the IAM policy is assigned to.
      */
 
     public void setIdentities(java.util.Map<String, java.util.List<String>> identities) {
@@ -230,11 +230,11 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * QuickSight users and/or groups that are assigned to this IAM policy.
+     * The QuickSight users, groups, or both that the IAM policy is assigned to.
      * </p>
      * 
      * @param identities
-     *        QuickSight users and/or groups that are assigned to this IAM policy.
+     *        The QuickSight users, groups, or both that the IAM policy is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,42 +266,42 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment:
+     * The status of the assignment. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ENABLED - Anything specified in this assignment is used while creating the data source.
+     * <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DISABLED - This assignment isn't used while creating the data source.
+     * <code>DISABLED</code> - This assignment isn't used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      * </p>
      * </li>
      * </ul>
      * 
      * @param assignmentStatus
-     *        The status of the assignment:</p>
+     *        The status of the assignment. Possible values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ENABLED - Anything specified in this assignment is used while creating the data source.
+     *        <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DISABLED - This assignment isn't used while creating the data source.
+     *        <code>DISABLED</code> - This assignment isn't used when creating the data source.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     *        <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      *        </p>
      *        </li>
      * @see AssignmentStatus
@@ -313,41 +313,41 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment:
+     * The status of the assignment. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ENABLED - Anything specified in this assignment is used while creating the data source.
+     * <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DISABLED - This assignment isn't used while creating the data source.
+     * <code>DISABLED</code> - This assignment isn't used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The status of the assignment:</p>
+     * @return The status of the assignment. Possible values are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         ENABLED - Anything specified in this assignment is used while creating the data source.
+     *         <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DISABLED - This assignment isn't used while creating the data source.
+     *         <code>DISABLED</code> - This assignment isn't used when creating the data source.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     *         <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      *         </p>
      *         </li>
      * @see AssignmentStatus
@@ -359,42 +359,42 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment:
+     * The status of the assignment. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ENABLED - Anything specified in this assignment is used while creating the data source.
+     * <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DISABLED - This assignment isn't used while creating the data source.
+     * <code>DISABLED</code> - This assignment isn't used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      * </p>
      * </li>
      * </ul>
      * 
      * @param assignmentStatus
-     *        The status of the assignment:</p>
+     *        The status of the assignment. Possible values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ENABLED - Anything specified in this assignment is used while creating the data source.
+     *        <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DISABLED - This assignment isn't used while creating the data source.
+     *        <code>DISABLED</code> - This assignment isn't used when creating the data source.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     *        <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -408,42 +408,42 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment:
+     * The status of the assignment. Possible values are as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ENABLED - Anything specified in this assignment is used while creating the data source.
+     * <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DISABLED - This assignment isn't used while creating the data source.
+     * <code>DISABLED</code> - This assignment isn't used when creating the data source.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      * </p>
      * </li>
      * </ul>
      * 
      * @param assignmentStatus
-     *        The status of the assignment:</p>
+     *        The status of the assignment. Possible values are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ENABLED - Anything specified in this assignment is used while creating the data source.
+     *        <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DISABLED - This assignment isn't used while creating the data source.
+     *        <code>DISABLED</code> - This assignment isn't used when creating the data source.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DRAFT - Assignment is an unfinished draft and isn't used while creating the data source.
+     *        <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

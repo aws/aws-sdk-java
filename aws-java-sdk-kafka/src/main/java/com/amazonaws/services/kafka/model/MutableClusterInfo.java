@@ -47,6 +47,18 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Integer numberOfBrokerNodes;
+    /**
+     * <p>
+     * Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     * </p>
+     */
+    private String enhancedMonitoring;
+    /**
+     * <p>
+     * The settings for open monitoring.
+     * </p>
+     */
+    private OpenMonitoring openMonitoring;
 
     /**
      * <p>
@@ -220,6 +232,119 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     * </p>
+     * 
+     * @param enhancedMonitoring
+     *        <p>
+     *        Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     *        </p>
+     * @see EnhancedMonitoring
+     */
+
+    public void setEnhancedMonitoring(String enhancedMonitoring) {
+        this.enhancedMonitoring = enhancedMonitoring;
+    }
+
+    /**
+     * <p>
+     * Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     * </p>
+     * 
+     * @return <p>
+     *         Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     *         </p>
+     * @see EnhancedMonitoring
+     */
+
+    public String getEnhancedMonitoring() {
+        return this.enhancedMonitoring;
+    }
+
+    /**
+     * <p>
+     * Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     * </p>
+     * 
+     * @param enhancedMonitoring
+     *        <p>
+     *        Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnhancedMonitoring
+     */
+
+    public MutableClusterInfo withEnhancedMonitoring(String enhancedMonitoring) {
+        setEnhancedMonitoring(enhancedMonitoring);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     * </p>
+     * 
+     * @param enhancedMonitoring
+     *        <p>
+     *        Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnhancedMonitoring
+     */
+
+    public MutableClusterInfo withEnhancedMonitoring(EnhancedMonitoring enhancedMonitoring) {
+        this.enhancedMonitoring = enhancedMonitoring.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for open monitoring.
+     * </p>
+     * 
+     * @param openMonitoring
+     *        <p>
+     *        The settings for open monitoring.
+     *        </p>
+     */
+
+    public void setOpenMonitoring(OpenMonitoring openMonitoring) {
+        this.openMonitoring = openMonitoring;
+    }
+
+    /**
+     * <p>
+     * The settings for open monitoring.
+     * </p>
+     * 
+     * @return <p>
+     *         The settings for open monitoring.
+     *         </p>
+     */
+
+    public OpenMonitoring getOpenMonitoring() {
+        return this.openMonitoring;
+    }
+
+    /**
+     * <p>
+     * The settings for open monitoring.
+     * </p>
+     * 
+     * @param openMonitoring
+     *        <p>
+     *        The settings for open monitoring.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MutableClusterInfo withOpenMonitoring(OpenMonitoring openMonitoring) {
+        setOpenMonitoring(openMonitoring);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -236,7 +361,11 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         if (getConfigurationInfo() != null)
             sb.append("ConfigurationInfo: ").append(getConfigurationInfo()).append(",");
         if (getNumberOfBrokerNodes() != null)
-            sb.append("NumberOfBrokerNodes: ").append(getNumberOfBrokerNodes());
+            sb.append("NumberOfBrokerNodes: ").append(getNumberOfBrokerNodes()).append(",");
+        if (getEnhancedMonitoring() != null)
+            sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring()).append(",");
+        if (getOpenMonitoring() != null)
+            sb.append("OpenMonitoring: ").append(getOpenMonitoring());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +392,14 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getNumberOfBrokerNodes() != null && other.getNumberOfBrokerNodes().equals(this.getNumberOfBrokerNodes()) == false)
             return false;
+        if (other.getEnhancedMonitoring() == null ^ this.getEnhancedMonitoring() == null)
+            return false;
+        if (other.getEnhancedMonitoring() != null && other.getEnhancedMonitoring().equals(this.getEnhancedMonitoring()) == false)
+            return false;
+        if (other.getOpenMonitoring() == null ^ this.getOpenMonitoring() == null)
+            return false;
+        if (other.getOpenMonitoring() != null && other.getOpenMonitoring().equals(this.getOpenMonitoring()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +411,8 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getBrokerEBSVolumeInfo() == null) ? 0 : getBrokerEBSVolumeInfo().hashCode());
         hashCode = prime * hashCode + ((getConfigurationInfo() == null) ? 0 : getConfigurationInfo().hashCode());
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
+        hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getOpenMonitoring() == null) ? 0 : getOpenMonitoring().hashCode());
         return hashCode;
     }
 

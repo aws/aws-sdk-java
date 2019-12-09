@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The domain specified is not on the allowlist. All domains for embedded dashboards must be added to the approved list
+ * The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list
  * by an Amazon QuickSight admin.
  * </p>
  */

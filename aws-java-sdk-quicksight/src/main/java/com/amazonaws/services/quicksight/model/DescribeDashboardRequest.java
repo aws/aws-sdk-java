@@ -27,7 +27,7 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are describing.
+     * The ID of the AWS account that contains the dashboard that you're describing.
      * </p>
      */
     private String awsAccountId;
@@ -39,7 +39,7 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
     private String dashboardId;
     /**
      * <p>
-     * The version number for the dashboard. If version number isn’t passed the latest published dashboard version is
+     * The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is
      * described.
      * </p>
      */
@@ -53,11 +53,11 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are describing.
+     * The ID of the AWS account that contains the dashboard that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are describing.
+     *        The ID of the AWS account that contains the dashboard that you're describing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -66,10 +66,10 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are describing.
+     * The ID of the AWS account that contains the dashboard that you're describing.
      * </p>
      * 
-     * @return AWS account ID that contains the dashboard you are describing.
+     * @return The ID of the AWS account that contains the dashboard that you're describing.
      */
 
     public String getAwsAccountId() {
@@ -78,11 +78,11 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS account ID that contains the dashboard you are describing.
+     * The ID of the AWS account that contains the dashboard that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the dashboard you are describing.
+     *        The ID of the AWS account that contains the dashboard that you're describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,12 +133,12 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number for the dashboard. If version number isn’t passed the latest published dashboard version is
+     * The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is
      * described.
      * </p>
      * 
      * @param versionNumber
-     *        The version number for the dashboard. If version number isn’t passed the latest published dashboard
+     *        The version number for the dashboard. If a version number isn't passed, the latest published dashboard
      *        version is described.
      */
 
@@ -148,11 +148,11 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number for the dashboard. If version number isn’t passed the latest published dashboard version is
+     * The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is
      * described.
      * </p>
      * 
-     * @return The version number for the dashboard. If version number isn’t passed the latest published dashboard
+     * @return The version number for the dashboard. If a version number isn't passed, the latest published dashboard
      *         version is described.
      */
 
@@ -162,12 +162,12 @@ public class DescribeDashboardRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number for the dashboard. If version number isn’t passed the latest published dashboard version is
+     * The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is
      * described.
      * </p>
      * 
      * @param versionNumber
-     *        The version number for the dashboard. If version number isn’t passed the latest published dashboard
+     *        The version number for the dashboard. If a version number isn't passed, the latest published dashboard
      *        version is described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

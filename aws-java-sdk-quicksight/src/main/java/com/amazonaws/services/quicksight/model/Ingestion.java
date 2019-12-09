@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on the SPICE ingestion for a dataset.
+ * Information about the SPICE ingestion for a dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Ingestion" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String arn;
@@ -58,19 +58,19 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
     private QueueInfo queueInfo;
     /**
      * <p>
-     * The time this ingestion started.
+     * The time that this ingestion started.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The time this ingestion took, measured in seconds.
+     * The time that this ingestion took, measured in seconds.
      * </p>
      */
     private Long ingestionTimeInSeconds;
     /**
      * <p>
-     * Size of the data ingested in bytes.
+     * The size of the data ingested, in bytes.
      * </p>
      */
     private Long ingestionSizeInBytes;
@@ -89,11 +89,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setArn(String arn) {
@@ -102,10 +102,10 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getArn() {
@@ -114,11 +114,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,11 +320,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this ingestion started.
+     * The time that this ingestion started.
      * </p>
      * 
      * @param createdTime
-     *        The time this ingestion started.
+     *        The time that this ingestion started.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -333,10 +333,10 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this ingestion started.
+     * The time that this ingestion started.
      * </p>
      * 
-     * @return The time this ingestion started.
+     * @return The time that this ingestion started.
      */
 
     public java.util.Date getCreatedTime() {
@@ -345,11 +345,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this ingestion started.
+     * The time that this ingestion started.
      * </p>
      * 
      * @param createdTime
-     *        The time this ingestion started.
+     *        The time that this ingestion started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,11 +360,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this ingestion took, measured in seconds.
+     * The time that this ingestion took, measured in seconds.
      * </p>
      * 
      * @param ingestionTimeInSeconds
-     *        The time this ingestion took, measured in seconds.
+     *        The time that this ingestion took, measured in seconds.
      */
 
     public void setIngestionTimeInSeconds(Long ingestionTimeInSeconds) {
@@ -373,10 +373,10 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this ingestion took, measured in seconds.
+     * The time that this ingestion took, measured in seconds.
      * </p>
      * 
-     * @return The time this ingestion took, measured in seconds.
+     * @return The time that this ingestion took, measured in seconds.
      */
 
     public Long getIngestionTimeInSeconds() {
@@ -385,11 +385,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this ingestion took, measured in seconds.
+     * The time that this ingestion took, measured in seconds.
      * </p>
      * 
      * @param ingestionTimeInSeconds
-     *        The time this ingestion took, measured in seconds.
+     *        The time that this ingestion took, measured in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,11 +400,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size of the data ingested in bytes.
+     * The size of the data ingested, in bytes.
      * </p>
      * 
      * @param ingestionSizeInBytes
-     *        Size of the data ingested in bytes.
+     *        The size of the data ingested, in bytes.
      */
 
     public void setIngestionSizeInBytes(Long ingestionSizeInBytes) {
@@ -413,10 +413,10 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size of the data ingested in bytes.
+     * The size of the data ingested, in bytes.
      * </p>
      * 
-     * @return Size of the data ingested in bytes.
+     * @return The size of the data ingested, in bytes.
      */
 
     public Long getIngestionSizeInBytes() {
@@ -425,11 +425,11 @@ public class Ingestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size of the data ingested in bytes.
+     * The size of the data ingested, in bytes.
      * </p>
      * 
      * @param ingestionSizeInBytes
-     *        Size of the data ingested in bytes.
+     *        The size of the data ingested, in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -2180,6 +2180,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<GetCalendarStateResult> getCalendarStateAsync(GetCalendarStateRequest request) {
+
+        return getCalendarStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalendarStateResult> getCalendarStateAsync(final GetCalendarStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCalendarStateRequest, GetCalendarStateResult> asyncHandler) {
+        final GetCalendarStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCalendarStateResult>() {
+            @Override
+            public GetCalendarStateResult call() throws Exception {
+                GetCalendarStateResult result = null;
+
+                try {
+                    result = executeGetCalendarState(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest request) {
 
         return getCommandInvocationAsync(request, null);

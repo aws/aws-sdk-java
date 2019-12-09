@@ -31,13 +31,13 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
     private Integer status;
     /**
      * <p>
-     * An ID for the template.
+     * An ID for the template associated with the deletion.
      * </p>
      */
     private String templateId;
     /**
      * <p>
-     * The name of the alias.
+     * The name for the template alias.
      * </p>
      */
     private String aliasName;
@@ -96,11 +96,11 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An ID for the template.
+     * An ID for the template associated with the deletion.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        An ID for the template associated with the deletion.
      */
 
     public void setTemplateId(String templateId) {
@@ -109,10 +109,10 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An ID for the template.
+     * An ID for the template associated with the deletion.
      * </p>
      * 
-     * @return An ID for the template.
+     * @return An ID for the template associated with the deletion.
      */
 
     public String getTemplateId() {
@@ -121,11 +121,11 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An ID for the template.
+     * An ID for the template associated with the deletion.
      * </p>
      * 
      * @param templateId
-     *        An ID for the template.
+     *        An ID for the template associated with the deletion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the alias.
+     * The name for the template alias.
      * </p>
      * 
      * @param aliasName
-     *        The name of the alias.
+     *        The name for the template alias.
      */
 
     public void setAliasName(String aliasName) {
@@ -149,10 +149,10 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the alias.
+     * The name for the template alias.
      * </p>
      * 
-     * @return The name of the alias.
+     * @return The name for the template alias.
      */
 
     public String getAliasName() {
@@ -161,11 +161,11 @@ public class DeleteTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the alias.
+     * The name for the template alias.
      * </p>
      * 
      * @param aliasName
-     *        The name of the alias.
+     *        The name for the template alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

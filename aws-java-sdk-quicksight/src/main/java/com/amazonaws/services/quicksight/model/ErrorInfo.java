@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Error information on a data set SPICE ingestion.
+ * Error information for the SPICE ingestion of a dataset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ErrorInfo" target="_top">AWS API
@@ -36,7 +36,7 @@ public class ErrorInfo implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * Error essage.
+     * Error message.
      * </p>
      */
     private String message;
@@ -102,11 +102,11 @@ public class ErrorInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error essage.
+     * Error message.
      * </p>
      * 
      * @param message
-     *        Error essage.
+     *        Error message.
      */
 
     public void setMessage(String message) {
@@ -115,10 +115,10 @@ public class ErrorInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error essage.
+     * Error message.
      * </p>
      * 
-     * @return Error essage.
+     * @return Error message.
      */
 
     public String getMessage() {
@@ -127,11 +127,11 @@ public class ErrorInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error essage.
+     * Error message.
      * </p>
      * 
      * @param message
-     *        Error essage.
+     *        Error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

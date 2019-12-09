@@ -801,6 +801,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<GetCalendarStateResult> getCalendarStateAsync(GetCalendarStateRequest request) {
+
+        return getCalendarStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalendarStateResult> getCalendarStateAsync(GetCalendarStateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCalendarStateRequest, GetCalendarStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest request) {
 
         return getCommandInvocationAsync(request, null);

@@ -27,19 +27,19 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS account ID that contains this IAM policy assignment.
+     * The ID of the AWS account that contains these IAM policy assignments.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The status of the assignment.
+     * The status of the assignments.
      * </p>
      */
     private String assignmentStatus;
     /**
      * <p>
-     * The namespace for this assignment.
+     * The namespace for the assignments.
      * </p>
      */
     private String namespace;
@@ -58,11 +58,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS account ID that contains this IAM policy assignment.
+     * The ID of the AWS account that contains these IAM policy assignments.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID that contains this IAM policy assignment.
+     *        The ID of the AWS account that contains these IAM policy assignments.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -71,10 +71,10 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS account ID that contains this IAM policy assignment.
+     * The ID of the AWS account that contains these IAM policy assignments.
      * </p>
      * 
-     * @return The AWS account ID that contains this IAM policy assignment.
+     * @return The ID of the AWS account that contains these IAM policy assignments.
      */
 
     public String getAwsAccountId() {
@@ -83,11 +83,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS account ID that contains this IAM policy assignment.
+     * The ID of the AWS account that contains these IAM policy assignments.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID that contains this IAM policy assignment.
+     *        The ID of the AWS account that contains these IAM policy assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment.
+     * The status of the assignments.
      * </p>
      * 
      * @param assignmentStatus
-     *        The status of the assignment.
+     *        The status of the assignments.
      * @see AssignmentStatus
      */
 
@@ -112,10 +112,10 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment.
+     * The status of the assignments.
      * </p>
      * 
-     * @return The status of the assignment.
+     * @return The status of the assignments.
      * @see AssignmentStatus
      */
 
@@ -125,11 +125,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment.
+     * The status of the assignments.
      * </p>
      * 
      * @param assignmentStatus
-     *        The status of the assignment.
+     *        The status of the assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignmentStatus
      */
@@ -141,11 +141,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of the assignment.
+     * The status of the assignments.
      * </p>
      * 
      * @param assignmentStatus
-     *        The status of the assignment.
+     *        The status of the assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignmentStatus
      */
@@ -157,11 +157,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The namespace for this assignment.
+     * The namespace for the assignments.
      * </p>
      * 
      * @param namespace
-     *        The namespace for this assignment.
+     *        The namespace for the assignments.
      */
 
     public void setNamespace(String namespace) {
@@ -170,10 +170,10 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The namespace for this assignment.
+     * The namespace for the assignments.
      * </p>
      * 
-     * @return The namespace for this assignment.
+     * @return The namespace for the assignments.
      */
 
     public String getNamespace() {
@@ -182,11 +182,11 @@ public class ListIAMPolicyAssignmentsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The namespace for this assignment.
+     * The namespace for the assignments.
      * </p>
      * 
      * @param namespace
-     *        The namespace for this assignment.
+     *        The namespace for the assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,13 +30,13 @@ public class DashboardVersionSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The time this was created.
+     * The time that this dashboard version was created.
      * </p>
      */
     private java.util.Date createdTime;
@@ -67,11 +67,11 @@ public class DashboardVersionSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setArn(String arn) {
@@ -80,10 +80,10 @@ public class DashboardVersionSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getArn() {
@@ -92,11 +92,11 @@ public class DashboardVersionSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class DashboardVersionSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dashboard version was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dashboard version was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -120,10 +120,10 @@ public class DashboardVersionSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dashboard version was created.
      * </p>
      * 
-     * @return The time this was created.
+     * @return The time that this dashboard version was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -132,11 +132,11 @@ public class DashboardVersionSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this dashboard version was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this dashboard version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

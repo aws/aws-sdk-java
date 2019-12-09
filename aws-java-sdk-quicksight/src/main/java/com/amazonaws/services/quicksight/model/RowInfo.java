@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on rows during a data set SPICE ingestion.
+ * Information about rows for a data set SPICE ingestion.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowInfo" target="_top">AWS API

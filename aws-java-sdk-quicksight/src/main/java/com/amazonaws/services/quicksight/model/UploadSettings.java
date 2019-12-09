@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on source file(s) format.
+ * Information about the format for a source file or files.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UploadSettings" target="_top">AWS API
@@ -42,7 +42,7 @@ public class UploadSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer startFromRow;
     /**
      * <p>
-     * Whether or not the file(s) has a header row.
+     * Whether the file has a header row, or the files each have a header row.
      * </p>
      */
     private Boolean containsHeader;
@@ -160,11 +160,11 @@ public class UploadSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the file(s) has a header row.
+     * Whether the file has a header row, or the files each have a header row.
      * </p>
      * 
      * @param containsHeader
-     *        Whether or not the file(s) has a header row.
+     *        Whether the file has a header row, or the files each have a header row.
      */
 
     public void setContainsHeader(Boolean containsHeader) {
@@ -173,10 +173,10 @@ public class UploadSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the file(s) has a header row.
+     * Whether the file has a header row, or the files each have a header row.
      * </p>
      * 
-     * @return Whether or not the file(s) has a header row.
+     * @return Whether the file has a header row, or the files each have a header row.
      */
 
     public Boolean getContainsHeader() {
@@ -185,11 +185,11 @@ public class UploadSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the file(s) has a header row.
+     * Whether the file has a header row, or the files each have a header row.
      * </p>
      * 
      * @param containsHeader
-     *        Whether or not the file(s) has a header row.
+     *        Whether the file has a header row, or the files each have a header row.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,10 +200,10 @@ public class UploadSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether or not the file(s) has a header row.
+     * Whether the file has a header row, or the files each have a header row.
      * </p>
      * 
-     * @return Whether or not the file(s) has a header row.
+     * @return Whether the file has a header row, or the files each have a header row.
      */
 
     public Boolean isContainsHeader() {

@@ -70,89 +70,97 @@ public class UpdateStreamingDistributionRequestMarshaller implements
                     xmlWriter.startElement("CallerReference").value(streamingDistributionConfig.getCallerReference()).endElement();
                 }
 
-                S3Origin s3Origin = streamingDistributionConfig.getS3Origin();
-                if (s3Origin != null) {
-                    xmlWriter.startElement("S3Origin");
+                {
+                    S3Origin s3Origin = streamingDistributionConfig.getS3Origin();
+                    if (s3Origin != null) {
+                        xmlWriter.startElement("S3Origin");
 
-                    if (s3Origin.getDomainName() != null) {
-                        xmlWriter.startElement("DomainName").value(s3Origin.getDomainName()).endElement();
-                    }
+                        if (s3Origin.getDomainName() != null) {
+                            xmlWriter.startElement("DomainName").value(s3Origin.getDomainName()).endElement();
+                        }
 
-                    if (s3Origin.getOriginAccessIdentity() != null) {
-                        xmlWriter.startElement("OriginAccessIdentity").value(s3Origin.getOriginAccessIdentity()).endElement();
+                        if (s3Origin.getOriginAccessIdentity() != null) {
+                            xmlWriter.startElement("OriginAccessIdentity").value(s3Origin.getOriginAccessIdentity()).endElement();
+                        }
+                        xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
-                Aliases aliases = streamingDistributionConfig.getAliases();
-                if (aliases != null) {
-                    xmlWriter.startElement("Aliases");
+                {
+                    Aliases aliases = streamingDistributionConfig.getAliases();
+                    if (aliases != null) {
+                        xmlWriter.startElement("Aliases");
 
-                    if (aliases.getQuantity() != null) {
-                        xmlWriter.startElement("Quantity").value(aliases.getQuantity()).endElement();
-                    }
+                        if (aliases.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(aliases.getQuantity()).endElement();
+                        }
 
-                    com.amazonaws.internal.SdkInternalList<String> aliasesItemsList = (com.amazonaws.internal.SdkInternalList<String>) aliases.getItems();
-                    if (!aliasesItemsList.isEmpty() || !aliasesItemsList.isAutoConstruct()) {
-                        xmlWriter.startElement("Items");
+                        com.amazonaws.internal.SdkInternalList<String> aliasesItemsList = (com.amazonaws.internal.SdkInternalList<String>) aliases.getItems();
+                        if (!aliasesItemsList.isEmpty() || !aliasesItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
 
-                        for (String aliasesItemsListValue : aliasesItemsList) {
-                            xmlWriter.startElement("CNAME");
-                            xmlWriter.value(aliasesItemsListValue);
+                            for (String aliasesItemsListValue : aliasesItemsList) {
+                                xmlWriter.startElement("CNAME");
+                                xmlWriter.value(aliasesItemsListValue);
+                                xmlWriter.endElement();
+                            }
                             xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
                 if (streamingDistributionConfig.getComment() != null) {
                     xmlWriter.startElement("Comment").value(streamingDistributionConfig.getComment()).endElement();
                 }
 
-                StreamingLoggingConfig logging = streamingDistributionConfig.getLogging();
-                if (logging != null) {
-                    xmlWriter.startElement("Logging");
+                {
+                    StreamingLoggingConfig logging = streamingDistributionConfig.getLogging();
+                    if (logging != null) {
+                        xmlWriter.startElement("Logging");
 
-                    if (logging.getEnabled() != null) {
-                        xmlWriter.startElement("Enabled").value(logging.getEnabled()).endElement();
-                    }
+                        if (logging.getEnabled() != null) {
+                            xmlWriter.startElement("Enabled").value(logging.getEnabled()).endElement();
+                        }
 
-                    if (logging.getBucket() != null) {
-                        xmlWriter.startElement("Bucket").value(logging.getBucket()).endElement();
-                    }
+                        if (logging.getBucket() != null) {
+                            xmlWriter.startElement("Bucket").value(logging.getBucket()).endElement();
+                        }
 
-                    if (logging.getPrefix() != null) {
-                        xmlWriter.startElement("Prefix").value(logging.getPrefix()).endElement();
+                        if (logging.getPrefix() != null) {
+                            xmlWriter.startElement("Prefix").value(logging.getPrefix()).endElement();
+                        }
+                        xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
-                TrustedSigners trustedSigners = streamingDistributionConfig.getTrustedSigners();
-                if (trustedSigners != null) {
-                    xmlWriter.startElement("TrustedSigners");
+                {
+                    TrustedSigners trustedSigners = streamingDistributionConfig.getTrustedSigners();
+                    if (trustedSigners != null) {
+                        xmlWriter.startElement("TrustedSigners");
 
-                    if (trustedSigners.getEnabled() != null) {
-                        xmlWriter.startElement("Enabled").value(trustedSigners.getEnabled()).endElement();
-                    }
+                        if (trustedSigners.getEnabled() != null) {
+                            xmlWriter.startElement("Enabled").value(trustedSigners.getEnabled()).endElement();
+                        }
 
-                    if (trustedSigners.getQuantity() != null) {
-                        xmlWriter.startElement("Quantity").value(trustedSigners.getQuantity()).endElement();
-                    }
+                        if (trustedSigners.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(trustedSigners.getQuantity()).endElement();
+                        }
 
-                    com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
-                            .getItems();
-                    if (!trustedSignersItemsList.isEmpty() || !trustedSignersItemsList.isAutoConstruct()) {
-                        xmlWriter.startElement("Items");
+                        com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
+                                .getItems();
+                        if (!trustedSignersItemsList.isEmpty() || !trustedSignersItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
 
-                        for (String trustedSignersItemsListValue : trustedSignersItemsList) {
-                            xmlWriter.startElement("AwsAccountNumber");
-                            xmlWriter.value(trustedSignersItemsListValue);
+                            for (String trustedSignersItemsListValue : trustedSignersItemsList) {
+                                xmlWriter.startElement("AwsAccountNumber");
+                                xmlWriter.value(trustedSignersItemsListValue);
+                                xmlWriter.endElement();
+                            }
                             xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
                     }
-                    xmlWriter.endElement();
                 }
 
                 if (streamingDistributionConfig.getPriceClass() != null) {

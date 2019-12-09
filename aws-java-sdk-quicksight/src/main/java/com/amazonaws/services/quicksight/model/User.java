@@ -31,7 +31,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the user.
+     * The Amazon Resource Name (ARN) for the user.
      * </p>
      */
     private String arn;
@@ -88,8 +88,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String identityType;
     /**
      * <p>
-     * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password.
+     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      */
     private Boolean active;
@@ -102,11 +102,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the user.
+     * The Amazon Resource Name (ARN) for the user.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) for the user.
+     *        The Amazon Resource Name (ARN) for the user.
      */
 
     public void setArn(String arn) {
@@ -115,10 +115,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the user.
+     * The Amazon Resource Name (ARN) for the user.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) for the user.
+     * @return The Amazon Resource Name (ARN) for the user.
      */
 
     public String getArn() {
@@ -127,11 +127,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) for the user.
+     * The Amazon Resource Name (ARN) for the user.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) for the user.
+     *        The Amazon Resource Name (ARN) for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,13 +552,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password.
+     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
      * @param active
-     *        Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *        that user is inactive until they sign in and provide a password.
+     *        The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     *        Directory user, that user is inactive until they sign in and provide a password.
      */
 
     public void setActive(Boolean active) {
@@ -567,12 +567,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password.
+     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
-     * @return Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *         that user is inactive until they sign in and provide a password.
+     * @return The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     *         Directory user, that user is inactive until they sign in and provide a password.
      */
 
     public Boolean getActive() {
@@ -581,13 +581,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password.
+     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
      * @param active
-     *        Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *        that user is inactive until they sign in and provide a password.
+     *        The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     *        Directory user, that user is inactive until they sign in and provide a password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,12 +598,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user, that user
-     * is inactive until they sign in and provide a password.
+     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
-     * @return Active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an AD user,
-     *         that user is inactive until they sign in and provide a password.
+     * @return The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     *         Directory user, that user is inactive until they sign in and provide a password.
      */
 
     public Boolean isActive() {

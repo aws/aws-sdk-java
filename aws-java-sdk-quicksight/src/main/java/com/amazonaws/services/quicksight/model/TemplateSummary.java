@@ -36,7 +36,7 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
-     * The ID of the template. This is unique per AWS Region for each AWS account.
+     * The ID of the template. This ID is unique per AWS Region for each AWS account.
      * </p>
      */
     private String templateId;
@@ -54,13 +54,13 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
     private Long latestVersionNumber;
     /**
      * <p>
-     * The last time this was created.
+     * The last time that this template was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this template was updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
@@ -107,11 +107,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the template. This is unique per AWS Region for each AWS account.
+     * The ID of the template. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param templateId
-     *        The ID of the template. This is unique per AWS Region for each AWS account.
+     *        The ID of the template. This ID is unique per AWS Region for each AWS account.
      */
 
     public void setTemplateId(String templateId) {
@@ -120,10 +120,10 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the template. This is unique per AWS Region for each AWS account.
+     * The ID of the template. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
-     * @return The ID of the template. This is unique per AWS Region for each AWS account.
+     * @return The ID of the template. This ID is unique per AWS Region for each AWS account.
      */
 
     public String getTemplateId() {
@@ -132,11 +132,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the template. This is unique per AWS Region for each AWS account.
+     * The ID of the template. This ID is unique per AWS Region for each AWS account.
      * </p>
      * 
      * @param templateId
-     *        The ID of the template. This is unique per AWS Region for each AWS account.
+     *        The ID of the template. This ID is unique per AWS Region for each AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time this was created.
+     * The last time that this template was created.
      * </p>
      * 
      * @param createdTime
-     *        The last time this was created.
+     *        The last time that this template was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -240,10 +240,10 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time this was created.
+     * The last time that this template was created.
      * </p>
      * 
-     * @return The last time this was created.
+     * @return The last time that this template was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -252,11 +252,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time this was created.
+     * The last time that this template was created.
      * </p>
      * 
      * @param createdTime
-     *        The last time this was created.
+     *        The last time that this template was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +267,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this template was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this template was updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -280,10 +280,10 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this template was updated.
      * </p>
      * 
-     * @return The last time this was updated.
+     * @return The last time that this template was updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -292,11 +292,11 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this template was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this template was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,6 +35,8 @@ public class S3ClientOptions {
     public static final boolean DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED = false;
     /** By default, clients will not allow a call to a different region that has been specified in an ARN */
     public static final boolean DEFAULT_USE_ARN_REGION = false;
+    /** By default, region us-east-1 translates to the global endpoint */
+    public static final boolean DEFAULT_US_EAST_1_REGION_ENDPOINT_ENABLED = false;
 
     /*
      * TODO: make it final after we remove the deprecated setters.
@@ -46,6 +48,7 @@ public class S3ClientOptions {
     private final boolean dualstackEnabled;
     private final boolean forceGlobalBucketAccessEnabled;
     private final boolean useArnRegion;
+    private final boolean regionalUsEast1EndpointEnabled;
 
     /**
      * @return a new S3ClientOptions builder.
@@ -64,6 +67,7 @@ public class S3ClientOptions {
         private boolean dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
         private boolean forceGlobalBucketAccessEnabled = DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED;
         private Boolean useArnRegion = null;
+        private boolean regionalUsEast1EndpointEnabled = DEFAULT_US_EAST_1_REGION_ENDPOINT_ENABLED;
 
         private Builder() {}
 
@@ -210,6 +214,21 @@ public class S3ClientOptions {
             this.useArnRegion = true;
             return this;
         }
+
+        /**
+         * <p>
+         * Enable resolving region us-east-1 as a regional endpoint instead of defaulting to the global endpoint.
+         * </p>
+         *
+         * @see AmazonS3ClientBuilder#setRegionalUsEast1EndpointEnabled(Boolean)
+         * @return this Builder instance that can be used for method chaining
+         */
+        public Builder enableRegionalUsEast1Endpoint()
+        {
+            this.regionalUsEast1EndpointEnabled = true;
+            return this;
+        }
+
     }
 
     /**
@@ -225,6 +244,7 @@ public class S3ClientOptions {
         this.dualstackEnabled = DEFAULT_DUALSTACK_ENABLED;
         this.forceGlobalBucketAccessEnabled = DEFAULT_FORCE_GLOBAL_BUCKET_ACCESS_ENABLED;
         this.useArnRegion = DEFAULT_USE_ARN_REGION;
+        this.regionalUsEast1EndpointEnabled = DEFAULT_US_EAST_1_REGION_ENDPOINT_ENABLED;
     }
 
     /**
@@ -240,6 +260,7 @@ public class S3ClientOptions {
         this.dualstackEnabled = other.dualstackEnabled;
         this.forceGlobalBucketAccessEnabled = other.forceGlobalBucketAccessEnabled;
         this.useArnRegion = other.useArnRegion;
+        this.regionalUsEast1EndpointEnabled = other.regionalUsEast1EndpointEnabled;
     }
 
     private S3ClientOptions(Builder b) {
@@ -250,6 +271,7 @@ public class S3ClientOptions {
         this.dualstackEnabled = b.dualstackEnabled;
         this.forceGlobalBucketAccessEnabled = b.forceGlobalBucketAccessEnabled;
         this.useArnRegion = Boolean.TRUE.equals(b.useArnRegion);
+        this.regionalUsEast1EndpointEnabled = b.regionalUsEast1EndpointEnabled;
     }
 
     /**
@@ -364,6 +386,17 @@ public class S3ClientOptions {
      */
     public boolean isUseArnRegion() {
         return this.useArnRegion;
+    }
+
+    /**
+     * <p>
+     * Returns whether the client has enabled resolving us-east-1 to a regional endpoint.
+     * </p>
+     *
+     * @return True if regional endpoint translation is enabled
+     */
+    public boolean isRegionalUsEast1EndpointEnabled() {
+        return this.regionalUsEast1EndpointEnabled;
     }
 
     /**

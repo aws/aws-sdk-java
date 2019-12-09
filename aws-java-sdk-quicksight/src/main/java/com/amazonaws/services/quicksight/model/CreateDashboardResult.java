@@ -43,7 +43,7 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
     private String dashboardId;
     /**
      * <p>
-     * The creation status of the dashboard create request.
+     * The status of the dashboard creation request.
      * </p>
      */
     private String creationStatus;
@@ -182,11 +182,11 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The creation status of the dashboard create request.
+     * The status of the dashboard creation request.
      * </p>
      * 
      * @param creationStatus
-     *        The creation status of the dashboard create request.
+     *        The status of the dashboard creation request.
      * @see ResourceStatus
      */
 
@@ -196,10 +196,10 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The creation status of the dashboard create request.
+     * The status of the dashboard creation request.
      * </p>
      * 
-     * @return The creation status of the dashboard create request.
+     * @return The status of the dashboard creation request.
      * @see ResourceStatus
      */
 
@@ -209,11 +209,11 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The creation status of the dashboard create request.
+     * The status of the dashboard creation request.
      * </p>
      * 
      * @param creationStatus
-     *        The creation status of the dashboard create request.
+     *        The status of the dashboard creation request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */
@@ -225,11 +225,11 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The creation status of the dashboard create request.
+     * The status of the dashboard creation request.
      * </p>
      * 
      * @param creationStatus
-     *        The creation status of the dashboard create request.
+     *        The status of the dashboard creation request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At most
- * one of the attributes should be non-null for this structure to be valid.
+ * The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type
+ * structure. For this structure to be valid, only one of the attributes can be non-null.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceParameters" target="_top">AWS
@@ -31,19 +31,19 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Amazon Elasticsearch parameters.
+     * Amazon Elasticsearch Service parameters.
      * </p>
      */
     private AmazonElasticsearchParameters amazonElasticsearchParameters;
     /**
      * <p>
-     * Athena parameters.
+     * Amazon Athena parameters.
      * </p>
      */
     private AthenaParameters athenaParameters;
     /**
      * <p>
-     * Aurora MySQL parameters.
+     * Amazon Aurora MySQL parameters.
      * </p>
      */
     private AuroraParameters auroraParameters;
@@ -91,13 +91,13 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     private PrestoParameters prestoParameters;
     /**
      * <p>
-     * RDS parameters.
+     * Amazon RDS parameters.
      * </p>
      */
     private RdsParameters rdsParameters;
     /**
      * <p>
-     * Redshift parameters.
+     * Amazon Redshift parameters.
      * </p>
      */
     private RedshiftParameters redshiftParameters;
@@ -146,11 +146,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Amazon Elasticsearch parameters.
+     * Amazon Elasticsearch Service parameters.
      * </p>
      * 
      * @param amazonElasticsearchParameters
-     *        Amazon Elasticsearch parameters.
+     *        Amazon Elasticsearch Service parameters.
      */
 
     public void setAmazonElasticsearchParameters(AmazonElasticsearchParameters amazonElasticsearchParameters) {
@@ -159,10 +159,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Amazon Elasticsearch parameters.
+     * Amazon Elasticsearch Service parameters.
      * </p>
      * 
-     * @return Amazon Elasticsearch parameters.
+     * @return Amazon Elasticsearch Service parameters.
      */
 
     public AmazonElasticsearchParameters getAmazonElasticsearchParameters() {
@@ -171,11 +171,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Amazon Elasticsearch parameters.
+     * Amazon Elasticsearch Service parameters.
      * </p>
      * 
      * @param amazonElasticsearchParameters
-     *        Amazon Elasticsearch parameters.
+     *        Amazon Elasticsearch Service parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +186,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Athena parameters.
+     * Amazon Athena parameters.
      * </p>
      * 
      * @param athenaParameters
-     *        Athena parameters.
+     *        Amazon Athena parameters.
      */
 
     public void setAthenaParameters(AthenaParameters athenaParameters) {
@@ -199,10 +199,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Athena parameters.
+     * Amazon Athena parameters.
      * </p>
      * 
-     * @return Athena parameters.
+     * @return Amazon Athena parameters.
      */
 
     public AthenaParameters getAthenaParameters() {
@@ -211,11 +211,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Athena parameters.
+     * Amazon Athena parameters.
      * </p>
      * 
      * @param athenaParameters
-     *        Athena parameters.
+     *        Amazon Athena parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +226,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Aurora MySQL parameters.
+     * Amazon Aurora MySQL parameters.
      * </p>
      * 
      * @param auroraParameters
-     *        Aurora MySQL parameters.
+     *        Amazon Aurora MySQL parameters.
      */
 
     public void setAuroraParameters(AuroraParameters auroraParameters) {
@@ -239,10 +239,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Aurora MySQL parameters.
+     * Amazon Aurora MySQL parameters.
      * </p>
      * 
-     * @return Aurora MySQL parameters.
+     * @return Amazon Aurora MySQL parameters.
      */
 
     public AuroraParameters getAuroraParameters() {
@@ -251,11 +251,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Aurora MySQL parameters.
+     * Amazon Aurora MySQL parameters.
      * </p>
      * 
      * @param auroraParameters
-     *        Aurora MySQL parameters.
+     *        Amazon Aurora MySQL parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -546,11 +546,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * RDS parameters.
+     * Amazon RDS parameters.
      * </p>
      * 
      * @param rdsParameters
-     *        RDS parameters.
+     *        Amazon RDS parameters.
      */
 
     public void setRdsParameters(RdsParameters rdsParameters) {
@@ -559,10 +559,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * RDS parameters.
+     * Amazon RDS parameters.
      * </p>
      * 
-     * @return RDS parameters.
+     * @return Amazon RDS parameters.
      */
 
     public RdsParameters getRdsParameters() {
@@ -571,11 +571,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * RDS parameters.
+     * Amazon RDS parameters.
      * </p>
      * 
      * @param rdsParameters
-     *        RDS parameters.
+     *        Amazon RDS parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,11 +586,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Redshift parameters.
+     * Amazon Redshift parameters.
      * </p>
      * 
      * @param redshiftParameters
-     *        Redshift parameters.
+     *        Amazon Redshift parameters.
      */
 
     public void setRedshiftParameters(RedshiftParameters redshiftParameters) {
@@ -599,10 +599,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Redshift parameters.
+     * Amazon Redshift parameters.
      * </p>
      * 
-     * @return Redshift parameters.
+     * @return Amazon Redshift parameters.
      */
 
     public RedshiftParameters getRedshiftParameters() {
@@ -611,11 +611,11 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Redshift parameters.
+     * Amazon Redshift parameters.
      * </p>
      * 
      * @param redshiftParameters
-     *        Redshift parameters.
+     *        Amazon Redshift parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

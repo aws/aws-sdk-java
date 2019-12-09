@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DocumentFormat {
 
     YAML("YAML"),
-    JSON("JSON");
+    JSON("JSON"),
+    TEXT("TEXT");
 
     private String value;
 

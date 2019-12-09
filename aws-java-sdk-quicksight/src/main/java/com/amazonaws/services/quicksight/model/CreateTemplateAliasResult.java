@@ -25,7 +25,7 @@ public class CreateTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information on the template alias.
+     * Information about the template alias.
      * </p>
      */
     private TemplateAlias templateAlias;
@@ -44,11 +44,11 @@ public class CreateTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information on the template alias.
+     * Information about the template alias.
      * </p>
      * 
      * @param templateAlias
-     *        Information on the template alias.
+     *        Information about the template alias.
      */
 
     public void setTemplateAlias(TemplateAlias templateAlias) {
@@ -57,10 +57,10 @@ public class CreateTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information on the template alias.
+     * Information about the template alias.
      * </p>
      * 
-     * @return Information on the template alias.
+     * @return Information about the template alias.
      */
 
     public TemplateAlias getTemplateAlias() {
@@ -69,11 +69,11 @@ public class CreateTemplateAliasResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information on the template alias.
+     * Information about the template alias.
      * </p>
      * 
      * @param templateAlias
-     *        Information on the template alias.
+     *        Information about the template alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

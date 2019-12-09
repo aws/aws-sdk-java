@@ -662,6 +662,42 @@ public interface AWSKafka {
     UpdateClusterConfigurationResult updateClusterConfiguration(UpdateClusterConfigurationRequest updateClusterConfigurationRequest);
 
     /**
+     * <p>
+     * Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics
+     * you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with
+     * Prometheus.
+     * </p>
+     * 
+     * @param updateMonitoringRequest
+     *        Request body for UpdateMonitoring.
+     * @return Result of the UpdateMonitoring operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     *         </p>
+     * @throws BadRequestException
+     *         <p>
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     *         </p>
+     * @sample AWSKafka.UpdateMonitoring
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateMonitoringResult updateMonitoring(UpdateMonitoringRequest updateMonitoringRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

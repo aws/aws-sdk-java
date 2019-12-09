@@ -2311,6 +2311,49 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time. If you specify a time,
+     * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
+     * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
+     * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
+     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+     * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param getCalendarStateRequest
+     * @return A Java Future containing the result of the GetCalendarState operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetCalendarState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalendarStateResult> getCalendarStateAsync(GetCalendarStateRequest getCalendarStateRequest);
+
+    /**
+     * <p>
+     * Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time. If you specify a time,
+     * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
+     * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
+     * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
+     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+     * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param getCalendarStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCalendarState operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetCalendarState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalendarStateResult> getCalendarStateAsync(GetCalendarStateRequest getCalendarStateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCalendarStateRequest, GetCalendarStateResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns detailed information about command execution for an invocation or plugin.
      * </p>
      * 

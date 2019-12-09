@@ -25,7 +25,7 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The template structure of the object you want to describe.
+     * The template structure for the object you want to describe.
      * </p>
      */
     private Template template;
@@ -38,11 +38,11 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The template structure of the object you want to describe.
+     * The template structure for the object you want to describe.
      * </p>
      * 
      * @param template
-     *        The template structure of the object you want to describe.
+     *        The template structure for the object you want to describe.
      */
 
     public void setTemplate(Template template) {
@@ -51,10 +51,10 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The template structure of the object you want to describe.
+     * The template structure for the object you want to describe.
      * </p>
      * 
-     * @return The template structure of the object you want to describe.
+     * @return The template structure for the object you want to describe.
      */
 
     public Template getTemplate() {
@@ -63,11 +63,11 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The template structure of the object you want to describe.
+     * The template structure for the object you want to describe.
      * </p>
      * 
      * @param template
-     *        The template structure of the object you want to describe.
+     *        The template structure for the object you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

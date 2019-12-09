@@ -36,7 +36,7 @@ public class ColumnGroupSchema implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * A structure containing the list of column group column schemas.
+     * A structure containing the list of schemas for column group columns.
      * </p>
      */
     private java.util.List<ColumnGroupColumnSchema> columnGroupColumnSchemaList;
@@ -83,10 +83,10 @@ public class ColumnGroupSchema implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A structure containing the list of column group column schemas.
+     * A structure containing the list of schemas for column group columns.
      * </p>
      * 
-     * @return A structure containing the list of column group column schemas.
+     * @return A structure containing the list of schemas for column group columns.
      */
 
     public java.util.List<ColumnGroupColumnSchema> getColumnGroupColumnSchemaList() {
@@ -95,11 +95,11 @@ public class ColumnGroupSchema implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A structure containing the list of column group column schemas.
+     * A structure containing the list of schemas for column group columns.
      * </p>
      * 
      * @param columnGroupColumnSchemaList
-     *        A structure containing the list of column group column schemas.
+     *        A structure containing the list of schemas for column group columns.
      */
 
     public void setColumnGroupColumnSchemaList(java.util.Collection<ColumnGroupColumnSchema> columnGroupColumnSchemaList) {
@@ -113,7 +113,7 @@ public class ColumnGroupSchema implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A structure containing the list of column group column schemas.
+     * A structure containing the list of schemas for column group columns.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class ColumnGroupSchema implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param columnGroupColumnSchemaList
-     *        A structure containing the list of column group column schemas.
+     *        A structure containing the list of schemas for column group columns.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class ColumnGroupSchema implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A structure containing the list of column group column schemas.
+     * A structure containing the list of schemas for column group columns.
      * </p>
      * 
      * @param columnGroupColumnSchemaList
-     *        A structure containing the list of column group column schemas.
+     *        A structure containing the list of schemas for column group columns.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

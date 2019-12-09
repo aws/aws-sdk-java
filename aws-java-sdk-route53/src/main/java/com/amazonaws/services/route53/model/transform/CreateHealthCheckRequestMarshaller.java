@@ -61,106 +61,110 @@ public class CreateHealthCheckRequestMarshaller implements Marshaller<Request<Cr
                     xmlWriter.startElement("CallerReference").value(createHealthCheckRequest.getCallerReference()).endElement();
                 }
 
-                HealthCheckConfig healthCheckConfig = createHealthCheckRequest.getHealthCheckConfig();
-                if (healthCheckConfig != null) {
-                    xmlWriter.startElement("HealthCheckConfig");
+                {
+                    HealthCheckConfig healthCheckConfig = createHealthCheckRequest.getHealthCheckConfig();
+                    if (healthCheckConfig != null) {
+                        xmlWriter.startElement("HealthCheckConfig");
 
-                    if (healthCheckConfig.getIPAddress() != null) {
-                        xmlWriter.startElement("IPAddress").value(healthCheckConfig.getIPAddress()).endElement();
-                    }
+                        if (healthCheckConfig.getIPAddress() != null) {
+                            xmlWriter.startElement("IPAddress").value(healthCheckConfig.getIPAddress()).endElement();
+                        }
 
-                    if (healthCheckConfig.getPort() != null) {
-                        xmlWriter.startElement("Port").value(healthCheckConfig.getPort()).endElement();
-                    }
+                        if (healthCheckConfig.getPort() != null) {
+                            xmlWriter.startElement("Port").value(healthCheckConfig.getPort()).endElement();
+                        }
 
-                    if (healthCheckConfig.getType() != null) {
-                        xmlWriter.startElement("Type").value(healthCheckConfig.getType()).endElement();
-                    }
+                        if (healthCheckConfig.getType() != null) {
+                            xmlWriter.startElement("Type").value(healthCheckConfig.getType()).endElement();
+                        }
 
-                    if (healthCheckConfig.getResourcePath() != null) {
-                        xmlWriter.startElement("ResourcePath").value(healthCheckConfig.getResourcePath()).endElement();
-                    }
+                        if (healthCheckConfig.getResourcePath() != null) {
+                            xmlWriter.startElement("ResourcePath").value(healthCheckConfig.getResourcePath()).endElement();
+                        }
 
-                    if (healthCheckConfig.getFullyQualifiedDomainName() != null) {
-                        xmlWriter.startElement("FullyQualifiedDomainName").value(healthCheckConfig.getFullyQualifiedDomainName()).endElement();
-                    }
+                        if (healthCheckConfig.getFullyQualifiedDomainName() != null) {
+                            xmlWriter.startElement("FullyQualifiedDomainName").value(healthCheckConfig.getFullyQualifiedDomainName()).endElement();
+                        }
 
-                    if (healthCheckConfig.getSearchString() != null) {
-                        xmlWriter.startElement("SearchString").value(healthCheckConfig.getSearchString()).endElement();
-                    }
+                        if (healthCheckConfig.getSearchString() != null) {
+                            xmlWriter.startElement("SearchString").value(healthCheckConfig.getSearchString()).endElement();
+                        }
 
-                    if (healthCheckConfig.getRequestInterval() != null) {
-                        xmlWriter.startElement("RequestInterval").value(healthCheckConfig.getRequestInterval()).endElement();
-                    }
+                        if (healthCheckConfig.getRequestInterval() != null) {
+                            xmlWriter.startElement("RequestInterval").value(healthCheckConfig.getRequestInterval()).endElement();
+                        }
 
-                    if (healthCheckConfig.getFailureThreshold() != null) {
-                        xmlWriter.startElement("FailureThreshold").value(healthCheckConfig.getFailureThreshold()).endElement();
-                    }
+                        if (healthCheckConfig.getFailureThreshold() != null) {
+                            xmlWriter.startElement("FailureThreshold").value(healthCheckConfig.getFailureThreshold()).endElement();
+                        }
 
-                    if (healthCheckConfig.getMeasureLatency() != null) {
-                        xmlWriter.startElement("MeasureLatency").value(healthCheckConfig.getMeasureLatency()).endElement();
-                    }
+                        if (healthCheckConfig.getMeasureLatency() != null) {
+                            xmlWriter.startElement("MeasureLatency").value(healthCheckConfig.getMeasureLatency()).endElement();
+                        }
 
-                    if (healthCheckConfig.getInverted() != null) {
-                        xmlWriter.startElement("Inverted").value(healthCheckConfig.getInverted()).endElement();
-                    }
+                        if (healthCheckConfig.getInverted() != null) {
+                            xmlWriter.startElement("Inverted").value(healthCheckConfig.getInverted()).endElement();
+                        }
 
-                    if (healthCheckConfig.getDisabled() != null) {
-                        xmlWriter.startElement("Disabled").value(healthCheckConfig.getDisabled()).endElement();
-                    }
+                        if (healthCheckConfig.getDisabled() != null) {
+                            xmlWriter.startElement("Disabled").value(healthCheckConfig.getDisabled()).endElement();
+                        }
 
-                    if (healthCheckConfig.getHealthThreshold() != null) {
-                        xmlWriter.startElement("HealthThreshold").value(healthCheckConfig.getHealthThreshold()).endElement();
-                    }
+                        if (healthCheckConfig.getHealthThreshold() != null) {
+                            xmlWriter.startElement("HealthThreshold").value(healthCheckConfig.getHealthThreshold()).endElement();
+                        }
 
-                    com.amazonaws.internal.SdkInternalList<String> healthCheckConfigChildHealthChecksList = (com.amazonaws.internal.SdkInternalList<String>) healthCheckConfig
-                            .getChildHealthChecks();
-                    if (!healthCheckConfigChildHealthChecksList.isEmpty() || !healthCheckConfigChildHealthChecksList.isAutoConstruct()) {
-                        xmlWriter.startElement("ChildHealthChecks");
+                        com.amazonaws.internal.SdkInternalList<String> healthCheckConfigChildHealthChecksList = (com.amazonaws.internal.SdkInternalList<String>) healthCheckConfig
+                                .getChildHealthChecks();
+                        if (!healthCheckConfigChildHealthChecksList.isEmpty() || !healthCheckConfigChildHealthChecksList.isAutoConstruct()) {
+                            xmlWriter.startElement("ChildHealthChecks");
 
-                        for (String healthCheckConfigChildHealthChecksListValue : healthCheckConfigChildHealthChecksList) {
-                            xmlWriter.startElement("ChildHealthCheck");
-                            xmlWriter.value(healthCheckConfigChildHealthChecksListValue);
+                            for (String healthCheckConfigChildHealthChecksListValue : healthCheckConfigChildHealthChecksList) {
+                                xmlWriter.startElement("ChildHealthCheck");
+                                xmlWriter.value(healthCheckConfigChildHealthChecksListValue);
+                                xmlWriter.endElement();
+                            }
                             xmlWriter.endElement();
                         }
-                        xmlWriter.endElement();
-                    }
 
-                    if (healthCheckConfig.getEnableSNI() != null) {
-                        xmlWriter.startElement("EnableSNI").value(healthCheckConfig.getEnableSNI()).endElement();
-                    }
+                        if (healthCheckConfig.getEnableSNI() != null) {
+                            xmlWriter.startElement("EnableSNI").value(healthCheckConfig.getEnableSNI()).endElement();
+                        }
 
-                    com.amazonaws.internal.SdkInternalList<String> healthCheckConfigRegionsList = (com.amazonaws.internal.SdkInternalList<String>) healthCheckConfig
-                            .getRegions();
-                    if (!healthCheckConfigRegionsList.isEmpty() || !healthCheckConfigRegionsList.isAutoConstruct()) {
-                        xmlWriter.startElement("Regions");
+                        com.amazonaws.internal.SdkInternalList<String> healthCheckConfigRegionsList = (com.amazonaws.internal.SdkInternalList<String>) healthCheckConfig
+                                .getRegions();
+                        if (!healthCheckConfigRegionsList.isEmpty() || !healthCheckConfigRegionsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Regions");
 
-                        for (String healthCheckConfigRegionsListValue : healthCheckConfigRegionsList) {
-                            xmlWriter.startElement("Region");
-                            xmlWriter.value(healthCheckConfigRegionsListValue);
+                            for (String healthCheckConfigRegionsListValue : healthCheckConfigRegionsList) {
+                                xmlWriter.startElement("Region");
+                                xmlWriter.value(healthCheckConfigRegionsListValue);
+                                xmlWriter.endElement();
+                            }
                             xmlWriter.endElement();
                         }
-                        xmlWriter.endElement();
-                    }
 
-                    AlarmIdentifier alarmIdentifier = healthCheckConfig.getAlarmIdentifier();
-                    if (alarmIdentifier != null) {
-                        xmlWriter.startElement("AlarmIdentifier");
+                        {
+                            AlarmIdentifier alarmIdentifier = healthCheckConfig.getAlarmIdentifier();
+                            if (alarmIdentifier != null) {
+                                xmlWriter.startElement("AlarmIdentifier");
 
-                        if (alarmIdentifier.getRegion() != null) {
-                            xmlWriter.startElement("Region").value(alarmIdentifier.getRegion()).endElement();
+                                if (alarmIdentifier.getRegion() != null) {
+                                    xmlWriter.startElement("Region").value(alarmIdentifier.getRegion()).endElement();
+                                }
+
+                                if (alarmIdentifier.getName() != null) {
+                                    xmlWriter.startElement("Name").value(alarmIdentifier.getName()).endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
                         }
 
-                        if (alarmIdentifier.getName() != null) {
-                            xmlWriter.startElement("Name").value(alarmIdentifier.getName()).endElement();
+                        if (healthCheckConfig.getInsufficientDataHealthStatus() != null) {
+                            xmlWriter.startElement("InsufficientDataHealthStatus").value(healthCheckConfig.getInsufficientDataHealthStatus()).endElement();
                         }
                         xmlWriter.endElement();
                     }
-
-                    if (healthCheckConfig.getInsufficientDataHealthStatus() != null) {
-                        xmlWriter.startElement("InsufficientDataHealthStatus").value(healthCheckConfig.getInsufficientDataHealthStatus()).endElement();
-                    }
-                    xmlWriter.endElement();
                 }
             }
             xmlWriter.endElement();

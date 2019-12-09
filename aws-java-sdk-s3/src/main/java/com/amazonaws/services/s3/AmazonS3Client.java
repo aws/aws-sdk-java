@@ -90,6 +90,7 @@ import com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.ObjectExpirationHeaderHandler;
+import com.amazonaws.services.s3.internal.RegionalEndpointsOptionResolver;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
 import com.amazonaws.services.s3.internal.S3AbortableInputStream;
 import com.amazonaws.services.s3.internal.S3AccessPointBuilder;
@@ -444,6 +445,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     private volatile String clientRegion;
 
+    private static RegionalEndpointsOptionResolver REGIONAL_ENDPOINTS_OPTION_RESOLVER = new RegionalEndpointsOptionResolver();
+
     private static final int BUCKET_REGION_CACHE_SIZE = 300;
 
     private static final Map<String, String> bucketRegionCache =
@@ -710,7 +713,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
     }
 
-
     /**
      * @deprecated use {@link AmazonS3ClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)}
      */
@@ -737,6 +739,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     @Override
     @Deprecated
     public synchronized void setRegion(com.amazonaws.regions.Region region) {
+        if (region.getName().equalsIgnoreCase("us-east-1")) {
+            if (clientOptions.isRegionalUsEast1EndpointEnabled() || REGIONAL_ENDPOINTS_OPTION_RESOLVER.useRegionalMode()) {
+                region = RegionUtils.getRegion("us-east-1-regional");
+            }
+        }
+
         super.setRegion(region);
         /*
          * We need to preserve the user provided region. This is because the

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A view of a data source. Contains information on the shape of the data in the underlying source. This is a variant
- * type structure. No more than one of the attributes can be non-null for this structure to be valid.
+ * A view of a data source that contains information about the shape of the data in the underlying source. This is a
+ * variant type structure. For this structure to be valid, only one of the attributes can be non-null.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PhysicalTable" target="_top">AWS API

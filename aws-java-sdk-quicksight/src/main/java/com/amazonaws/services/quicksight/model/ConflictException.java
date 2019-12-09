@@ -25,7 +25,7 @@ public class ConflictException extends com.amazonaws.services.quicksight.model.A
 
     /**
      * <p>
-     * The AWS request id for this request.
+     * The AWS request ID for this request.
      * </p>
      */
     private String requestId;
@@ -42,11 +42,11 @@ public class ConflictException extends com.amazonaws.services.quicksight.model.A
 
     /**
      * <p>
-     * The AWS request id for this request.
+     * The AWS request ID for this request.
      * </p>
      * 
      * @param requestId
-     *        The AWS request id for this request.
+     *        The AWS request ID for this request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -56,10 +56,10 @@ public class ConflictException extends com.amazonaws.services.quicksight.model.A
 
     /**
      * <p>
-     * The AWS request id for this request.
+     * The AWS request ID for this request.
      * </p>
      * 
-     * @return The AWS request id for this request.
+     * @return The AWS request ID for this request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RequestId")
@@ -69,11 +69,11 @@ public class ConflictException extends com.amazonaws.services.quicksight.model.A
 
     /**
      * <p>
-     * The AWS request id for this request.
+     * The AWS request ID for this request.
      * </p>
      * 
      * @param requestId
-     *        The AWS request id for this request.
+     *        The AWS request ID for this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

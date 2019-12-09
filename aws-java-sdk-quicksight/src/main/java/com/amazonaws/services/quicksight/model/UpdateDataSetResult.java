@@ -37,13 +37,13 @@ public class UpdateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
     private String dataSetId;
     /**
      * <p>
-     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      */
     private String ingestionArn;
     /**
      * <p>
-     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      */
     private String ingestionId;
@@ -142,11 +142,11 @@ public class UpdateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      * 
      * @param ingestionArn
-     *        The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     *        The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      */
 
     public void setIngestionArn(String ingestionArn) {
@@ -155,10 +155,11 @@ public class UpdateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      * 
-     * @return The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * @return The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is
+     *         SPICE.
      */
 
     public String getIngestionArn() {
@@ -167,11 +168,11 @@ public class UpdateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      * 
      * @param ingestionArn
-     *        The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     *        The ARN for the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +183,11 @@ public class UpdateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      * 
      * @param ingestionId
-     *        The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     *        The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      */
 
     public void setIngestionId(String ingestionId) {
@@ -195,10 +196,10 @@ public class UpdateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      * 
-     * @return The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * @return The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      */
 
     public String getIngestionId() {
@@ -207,11 +208,11 @@ public class UpdateDataSetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     * The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * </p>
      * 
      * @param ingestionId
-     *        The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE
+     *        The ID of the ingestion, which is triggered as a result of dataset creation if the import mode is SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

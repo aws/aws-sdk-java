@@ -26,7 +26,7 @@ public class ListIAMPolicyAssignmentsForUserResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Active assignments for this user.
+     * The active assignments for this user.
      * </p>
      */
     private java.util.List<ActiveIAMPolicyAssignment> activeAssignments;
@@ -51,10 +51,10 @@ public class ListIAMPolicyAssignmentsForUserResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Active assignments for this user.
+     * The active assignments for this user.
      * </p>
      * 
-     * @return Active assignments for this user.
+     * @return The active assignments for this user.
      */
 
     public java.util.List<ActiveIAMPolicyAssignment> getActiveAssignments() {
@@ -63,11 +63,11 @@ public class ListIAMPolicyAssignmentsForUserResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Active assignments for this user.
+     * The active assignments for this user.
      * </p>
      * 
      * @param activeAssignments
-     *        Active assignments for this user.
+     *        The active assignments for this user.
      */
 
     public void setActiveAssignments(java.util.Collection<ActiveIAMPolicyAssignment> activeAssignments) {
@@ -81,7 +81,7 @@ public class ListIAMPolicyAssignmentsForUserResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Active assignments for this user.
+     * The active assignments for this user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,7 +90,7 @@ public class ListIAMPolicyAssignmentsForUserResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param activeAssignments
-     *        Active assignments for this user.
+     *        The active assignments for this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +106,11 @@ public class ListIAMPolicyAssignmentsForUserResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Active assignments for this user.
+     * The active assignments for this user.
      * </p>
      * 
      * @param activeAssignments
-     *        Active assignments for this user.
+     *        The active assignments for this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

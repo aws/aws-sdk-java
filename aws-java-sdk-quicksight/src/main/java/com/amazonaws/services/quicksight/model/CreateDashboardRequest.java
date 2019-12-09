@@ -27,13 +27,13 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID where you want to create the dashboard.
+     * The ID of the AWS account where you want to create the dashboard.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The ID for the dashboard, also added to IAM policy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      */
     private String dashboardId;
@@ -46,24 +46,25 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters and some parameters might accept multiple values. You could use the
-     * following structure to override two string parameters that accept multiple values:
+     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string parameters that accept multiple
+     * values.
      * </p>
      */
     private Parameters parameters;
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     * principal and action information.
+     * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
+     * with principal and action information.
      * </p>
      */
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
-     * source template or analysis and also references the replacement datasets for the placeholders set when creating
-     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
-     * created when creating the template.
+     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
+     * of the source template or analysis and also references the replacement datasets for the placeholders set when
+     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
@@ -85,26 +86,29 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     private String versionDescription;
     /**
      * <p>
-     * Publishing options when creating dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
@@ -113,11 +117,11 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID where you want to create the dashboard.
+     * The ID of the AWS account where you want to create the dashboard.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID where you want to create the dashboard.
+     *        The ID of the AWS account where you want to create the dashboard.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -126,10 +130,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID where you want to create the dashboard.
+     * The ID of the AWS account where you want to create the dashboard.
      * </p>
      * 
-     * @return AWS account ID where you want to create the dashboard.
+     * @return The ID of the AWS account where you want to create the dashboard.
      */
 
     public String getAwsAccountId() {
@@ -138,11 +142,11 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * AWS account ID where you want to create the dashboard.
+     * The ID of the AWS account where you want to create the dashboard.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID where you want to create the dashboard.
+     *        The ID of the AWS account where you want to create the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +157,11 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID for the dashboard, also added to IAM policy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to IAM policy.
+     *        The ID for the dashboard, also added to the IAM policy.
      */
 
     public void setDashboardId(String dashboardId) {
@@ -166,10 +170,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID for the dashboard, also added to IAM policy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      * 
-     * @return The ID for the dashboard, also added to IAM policy.
+     * @return The ID for the dashboard, also added to the IAM policy.
      */
 
     public String getDashboardId() {
@@ -178,11 +182,11 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID for the dashboard, also added to IAM policy.
+     * The ID for the dashboard, also added to the IAM policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to IAM policy.
+     *        The ID for the dashboard, also added to the IAM policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,14 +238,16 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters and some parameters might accept multiple values. You could use the
-     * following structure to override two string parameters that accept multiple values:
+     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string parameters that accept multiple
+     * values.
      * </p>
      * 
      * @param parameters
      *        A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard.
-     *        A dashboard can have any type of parameters and some parameters might accept multiple values. You could
-     *        use the following structure to override two string parameters that accept multiple values:
+     *        A dashboard can have any type of parameters, and some parameters might accept multiple values. You can use
+     *        the dashboard permissions structure described following to override two string parameters that accept
+     *        multiple values.
      */
 
     public void setParameters(Parameters parameters) {
@@ -251,13 +257,15 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters and some parameters might accept multiple values. You could use the
-     * following structure to override two string parameters that accept multiple values:
+     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string parameters that accept multiple
+     * values.
      * </p>
      * 
      * @return A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard.
-     *         A dashboard can have any type of parameters and some parameters might accept multiple values. You could
-     *         use the following structure to override two string parameters that accept multiple values:
+     *         A dashboard can have any type of parameters, and some parameters might accept multiple values. You can
+     *         use the dashboard permissions structure described following to override two string parameters that accept
+     *         multiple values.
      */
 
     public Parameters getParameters() {
@@ -267,14 +275,16 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters and some parameters might accept multiple values. You could use the
-     * following structure to override two string parameters that accept multiple values:
+     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string parameters that accept multiple
+     * values.
      * </p>
      * 
      * @param parameters
      *        A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard.
-     *        A dashboard can have any type of parameters and some parameters might accept multiple values. You could
-     *        use the following structure to override two string parameters that accept multiple values:
+     *        A dashboard can have any type of parameters, and some parameters might accept multiple values. You can use
+     *        the dashboard permissions structure described following to override two string parameters that accept
+     *        multiple values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,12 +295,12 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     * principal and action information.
+     * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
+     * with principal and action information.
      * </p>
      * 
-     * @return A structure that contains the permissions of the dashboard. You can use this for granting permissions
-     *         with principal and action information.
+     * @return A structure that contains the permissions of the dashboard. You can use this structure for granting
+     *         permissions with principal and action information.
      */
 
     public java.util.List<ResourcePermission> getPermissions() {
@@ -299,13 +309,13 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     * principal and action information.
+     * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
+     * with principal and action information.
      * </p>
      * 
      * @param permissions
-     *        A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     *        principal and action information.
+     *        A structure that contains the permissions of the dashboard. You can use this structure for granting
+     *        permissions with principal and action information.
      */
 
     public void setPermissions(java.util.Collection<ResourcePermission> permissions) {
@@ -319,8 +329,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     * principal and action information.
+     * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
+     * with principal and action information.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -329,8 +339,8 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param permissions
-     *        A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     *        principal and action information.
+     *        A structure that contains the permissions of the dashboard. You can use this structure for granting
+     *        permissions with principal and action information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,13 +356,13 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     * principal and action information.
+     * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
+     * with principal and action information.
      * </p>
      * 
      * @param permissions
-     *        A structure that contains the permissions of the dashboard. You can use this for granting permissions with
-     *        principal and action information.
+     *        A structure that contains the permissions of the dashboard. You can use this structure for granting
+     *        permissions with principal and action information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,10 +373,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
-     * source template or analysis and also references the replacement datasets for the placeholders set when creating
-     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
-     * created when creating the template.
+     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
+     * of the source template or analysis and also references the replacement datasets for the placeholders set when
+     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
@@ -374,10 +384,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param sourceEntity
-     *        Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN)
-     *        of the source template or analysis and also references the replacement datasets for the placeholders set
-     *        when creating the template. The replacement datasets need to follow the same schema as the datasets for
-     *        which placeholders were created when creating the template. </p>
+     *        The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name
+     *        (ARN) of the source template or analysis and also references the replacement datasets for the placeholders
+     *        set when creating the template. The replacement datasets need to follow the same schema as the datasets
+     *        for which placeholders were created when creating the template. </p>
      *        <p>
      *        If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
      *        template.
@@ -389,17 +399,17 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
-     * source template or analysis and also references the replacement datasets for the placeholders set when creating
-     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
-     * created when creating the template.
+     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
+     * of the source template or analysis and also references the replacement datasets for the placeholders set when
+     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
      * template.
      * </p>
      * 
-     * @return Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name
+     * @return The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name
      *         (ARN) of the source template or analysis and also references the replacement datasets for the
      *         placeholders set when creating the template. The replacement datasets need to follow the same schema as
      *         the datasets for which placeholders were created when creating the template. </p>
@@ -414,10 +424,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN) of the
-     * source template or analysis and also references the replacement datasets for the placeholders set when creating
-     * the template. The replacement datasets need to follow the same schema as the datasets for which placeholders were
-     * created when creating the template.
+     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
+     * of the source template or analysis and also references the replacement datasets for the placeholders set when
+     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
+     * placeholders were created when creating the template.
      * </p>
      * <p>
      * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
@@ -425,10 +435,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param sourceEntity
-     *        Source entity from which the dashboard is created. The souce entity accepts the Amazon Resource Name (ARN)
-     *        of the source template or analysis and also references the replacement datasets for the placeholders set
-     *        when creating the template. The replacement datasets need to follow the same schema as the datasets for
-     *        which placeholders were created when creating the template. </p>
+     *        The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name
+     *        (ARN) of the source template or analysis and also references the replacement datasets for the placeholders
+     *        set when creating the template. The replacement datasets need to follow the same schema as the datasets
+     *        for which placeholders were created when creating the template. </p>
      *        <p>
      *        If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
      *        template.
@@ -552,52 +562,56 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Publishing options when creating dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dashboardPublishOptions
-     *        Publishing options when creating dashboard.</p>
+     *        Options for publishing the dashboard when you create it:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. When This is set to set to <code>DISABLED</code>, QuickSight disables the left
-     *        filter pane on the published dashboard, which can be used for AdHoc filtering. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight
+     *        disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time)
+     *        filtering. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. The visual option to export data to CSV is disabled when this is set to
-     *        <code>DISABLED</code>. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or
-     *        <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to true. Collapsed by
-     *        default.
+     *        <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     *        to true. This option is <code>COLLAPSED</code> by default.
      *        </p>
      *        </li>
      */
@@ -608,51 +622,55 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Publishing options when creating dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Publishing options when creating dashboard.</p>
+     * @return Options for publishing the dashboard when you create it:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or
-     *         <code>DISABLED</code>. When This is set to set to <code>DISABLED</code>, QuickSight disables the left
-     *         filter pane on the published dashboard, which can be used for AdHoc filtering. Enabled by default.
+     *         <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     *         <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight
+     *         disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time)
+     *         filtering. This option is <code>ENABLED</code> by default.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or
-     *         <code>DISABLED</code>. The visual option to export data to CSV is disabled when this is set to
-     *         <code>DISABLED</code>. Enabled by default.
+     *         <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     *         <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *         enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or
-     *         <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to true. Collapsed by
-     *         default.
+     *         <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     *         <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     *         to true. This option is <code>COLLAPSED</code> by default.
      *         </p>
      *         </li>
      */
@@ -663,52 +681,56 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Publishing options when creating dashboard.
+     * Options for publishing the dashboard when you create it:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>.
-     * When This is set to set to <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight disables the
+     * left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is
+     * <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or <code>DISABLED</code>. The
-     * visual option to export data to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by default.
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The
-     * sheet controls pane is collapsed by default when set to true. Collapsed by default.
+     * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
+     * true. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dashboardPublishOptions
-     *        Publishing options when creating dashboard.</p>
+     *        Options for publishing the dashboard when you create it:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for AdHocFilteringOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. When This is set to set to <code>DISABLED</code>, QuickSight disables the left
-     *        filter pane on the published dashboard, which can be used for AdHoc filtering. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, QuickSight
+     *        disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time)
+     *        filtering. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AvailabilityStatus for ExportToCSVOption - This can be either <code>ENABLED</code> or
-     *        <code>DISABLED</code>. The visual option to export data to CSV is disabled when this is set to
-     *        <code>DISABLED</code>. Enabled by default.
+     *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        VisibilityState for SheetControlsOption - This can be either <code>COLLAPSED</code> or
-     *        <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to true. Collapsed by
-     *        default.
+     *        <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
+     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     *        to true. This option is <code>COLLAPSED</code> by default.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

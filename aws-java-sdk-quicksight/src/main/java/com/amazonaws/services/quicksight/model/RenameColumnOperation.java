@@ -30,24 +30,24 @@ public class RenameColumnOperation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Name of the column to be renamed.
+     * The name of the column to be renamed.
      * </p>
      */
     private String columnName;
     /**
      * <p>
-     * New name for the column.
+     * The new name for the column.
      * </p>
      */
     private String newColumnName;
 
     /**
      * <p>
-     * Name of the column to be renamed.
+     * The name of the column to be renamed.
      * </p>
      * 
      * @param columnName
-     *        Name of the column to be renamed.
+     *        The name of the column to be renamed.
      */
 
     public void setColumnName(String columnName) {
@@ -56,10 +56,10 @@ public class RenameColumnOperation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Name of the column to be renamed.
+     * The name of the column to be renamed.
      * </p>
      * 
-     * @return Name of the column to be renamed.
+     * @return The name of the column to be renamed.
      */
 
     public String getColumnName() {
@@ -68,11 +68,11 @@ public class RenameColumnOperation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Name of the column to be renamed.
+     * The name of the column to be renamed.
      * </p>
      * 
      * @param columnName
-     *        Name of the column to be renamed.
+     *        The name of the column to be renamed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class RenameColumnOperation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * New name for the column.
+     * The new name for the column.
      * </p>
      * 
      * @param newColumnName
-     *        New name for the column.
+     *        The new name for the column.
      */
 
     public void setNewColumnName(String newColumnName) {
@@ -96,10 +96,10 @@ public class RenameColumnOperation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * New name for the column.
+     * The new name for the column.
      * </p>
      * 
-     * @return New name for the column.
+     * @return The new name for the column.
      */
 
     public String getNewColumnName() {
@@ -108,11 +108,11 @@ public class RenameColumnOperation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * New name for the column.
+     * The new name for the column.
      * </p>
      * 
      * @param newColumnName
-     *        New name for the column.
+     *        The new name for the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

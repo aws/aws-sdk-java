@@ -1619,6 +1619,34 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time. If you specify a time,
+     * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
+     * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
+     * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
+     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+     * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param getCalendarStateRequest
+     * @return Result of the GetCalendarState operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentTypeException
+     *         The document type is not valid. Valid document types are described in the <code>DocumentType</code>
+     *         property.
+     * @throws UnsupportedCalendarException
+     *         The calendar entry contained in the specified Systems Manager document is not supported.
+     * @sample AWSSimpleSystemsManagement.GetCalendarState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCalendarStateResult getCalendarState(GetCalendarStateRequest getCalendarStateRequest);
+
+    /**
+     * <p>
      * Returns detailed information about command execution for an invocation or plugin.
      * </p>
      * 

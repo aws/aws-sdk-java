@@ -30,7 +30,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      */
     private String arn;
@@ -48,7 +48,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The type of the data source. This indicates which database engine the data source connects to.
+     * The type of the data source. This type indicates which database engine the data source connects to.
      * </p>
      */
     private String type;
@@ -60,20 +60,20 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The time this was created.
+     * The time that this data source was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this data source was updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
-     * most one of the attributes should be non-null for this structure to be valid.
+     * The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type
+     * structure. For this structure to be valid, only one of the attributes can be non-null.
      * </p>
      */
     private DataSourceParameters dataSourceParameters;
@@ -99,11 +99,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      */
 
     public void setArn(String arn) {
@@ -112,10 +112,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
-     * @return The Amazon Resource name (ARN) of the data source.
+     * @return The Amazon Resource Name (ARN) of the data source.
      */
 
     public String getArn() {
@@ -124,11 +124,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource name (ARN) of the data source.
+     * The Amazon Resource Name (ARN) of the data source.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource name (ARN) of the data source.
+     *        The Amazon Resource Name (ARN) of the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +219,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the data source. This indicates which database engine the data source connects to.
+     * The type of the data source. This type indicates which database engine the data source connects to.
      * </p>
      * 
      * @param type
-     *        The type of the data source. This indicates which database engine the data source connects to.
+     *        The type of the data source. This type indicates which database engine the data source connects to.
      * @see DataSourceType
      */
 
@@ -233,10 +233,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the data source. This indicates which database engine the data source connects to.
+     * The type of the data source. This type indicates which database engine the data source connects to.
      * </p>
      * 
-     * @return The type of the data source. This indicates which database engine the data source connects to.
+     * @return The type of the data source. This type indicates which database engine the data source connects to.
      * @see DataSourceType
      */
 
@@ -246,11 +246,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the data source. This indicates which database engine the data source connects to.
+     * The type of the data source. This type indicates which database engine the data source connects to.
      * </p>
      * 
      * @param type
-     *        The type of the data source. This indicates which database engine the data source connects to.
+     *        The type of the data source. This type indicates which database engine the data source connects to.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -262,11 +262,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the data source. This indicates which database engine the data source connects to.
+     * The type of the data source. This type indicates which database engine the data source connects to.
      * </p>
      * 
      * @param type
-     *        The type of the data source. This indicates which database engine the data source connects to.
+     *        The type of the data source. This type indicates which database engine the data source connects to.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -337,11 +337,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this data source was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this data source was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -350,10 +350,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this data source was created.
      * </p>
      * 
-     * @return The time this was created.
+     * @return The time that this data source was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -362,11 +362,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this data source was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this data source was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,11 +377,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this data source was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this data source was updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -390,10 +390,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this data source was updated.
      * </p>
      * 
-     * @return The last time this was updated.
+     * @return The last time that this data source was updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -402,11 +402,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time this was updated.
+     * The last time that this data source was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time this was updated.
+     *        The last time that this data source was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,13 +417,13 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
-     * most one of the attributes should be non-null for this structure to be valid.
+     * The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type
+     * structure. For this structure to be valid, only one of the attributes can be non-null.
      * </p>
      * 
      * @param dataSourceParameters
-     *        The parameters that QuickSight uses to connect to your underlying source. This is a variant type
-     *        structure. At most one of the attributes should be non-null for this structure to be valid.
+     *        The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type
+     *        structure. For this structure to be valid, only one of the attributes can be non-null.
      */
 
     public void setDataSourceParameters(DataSourceParameters dataSourceParameters) {
@@ -432,12 +432,12 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
-     * most one of the attributes should be non-null for this structure to be valid.
+     * The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type
+     * structure. For this structure to be valid, only one of the attributes can be non-null.
      * </p>
      * 
-     * @return The parameters that QuickSight uses to connect to your underlying source. This is a variant type
-     *         structure. At most one of the attributes should be non-null for this structure to be valid.
+     * @return The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type
+     *         structure. For this structure to be valid, only one of the attributes can be non-null.
      */
 
     public DataSourceParameters getDataSourceParameters() {
@@ -446,13 +446,13 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parameters that QuickSight uses to connect to your underlying source. This is a variant type structure. At
-     * most one of the attributes should be non-null for this structure to be valid.
+     * The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type
+     * structure. For this structure to be valid, only one of the attributes can be non-null.
      * </p>
      * 
      * @param dataSourceParameters
-     *        The parameters that QuickSight uses to connect to your underlying source. This is a variant type
-     *        structure. At most one of the attributes should be non-null for this structure to be valid.
+     *        The parameters that Amazon QuickSight uses to connect to your underlying source. This is a variant type
+     *        structure. For this structure to be valid, only one of the attributes can be non-null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

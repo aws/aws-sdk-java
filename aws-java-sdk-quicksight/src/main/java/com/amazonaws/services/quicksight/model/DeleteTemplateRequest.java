@@ -27,7 +27,7 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are deleting.
+     * The ID of the AWS account that contains the template that you're deleting.
      * </p>
      */
     private String awsAccountId;
@@ -47,11 +47,11 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are deleting.
+     * The ID of the AWS account that contains the template that you're deleting.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are deleting.
+     *        The ID of the AWS account that contains the template that you're deleting.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -60,10 +60,10 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are deleting.
+     * The ID of the AWS account that contains the template that you're deleting.
      * </p>
      * 
-     * @return AWS account ID that contains the template you are deleting.
+     * @return The ID of the AWS account that contains the template that you're deleting.
      */
 
     public String getAwsAccountId() {
@@ -72,11 +72,11 @@ public class DeleteTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * AWS account ID that contains the template you are deleting.
+     * The ID of the AWS account that contains the template that you're deleting.
      * </p>
      * 
      * @param awsAccountId
-     *        AWS account ID that contains the template you are deleting.
+     *        The ID of the AWS account that contains the template that you're deleting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

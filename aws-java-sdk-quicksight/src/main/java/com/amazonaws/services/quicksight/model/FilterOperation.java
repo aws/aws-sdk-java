@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A transform operation that filters rows based on some condition.
+ * A transform operation that filters rows based on a condition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterOperation" target="_top">AWS API
@@ -30,21 +30,21 @@ public class FilterOperation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An expression that must evaluate to a boolean value. Rows for which the expression is evaluated to true are kept
-     * in the dataset.
+     * An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in
+     * the dataset.
      * </p>
      */
     private String conditionExpression;
 
     /**
      * <p>
-     * An expression that must evaluate to a boolean value. Rows for which the expression is evaluated to true are kept
-     * in the dataset.
+     * An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in
+     * the dataset.
      * </p>
      * 
      * @param conditionExpression
-     *        An expression that must evaluate to a boolean value. Rows for which the expression is evaluated to true
-     *        are kept in the dataset.
+     *        An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are
+     *        kept in the dataset.
      */
 
     public void setConditionExpression(String conditionExpression) {
@@ -53,12 +53,12 @@ public class FilterOperation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An expression that must evaluate to a boolean value. Rows for which the expression is evaluated to true are kept
-     * in the dataset.
+     * An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in
+     * the dataset.
      * </p>
      * 
-     * @return An expression that must evaluate to a boolean value. Rows for which the expression is evaluated to true
-     *         are kept in the dataset.
+     * @return An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are
+     *         kept in the dataset.
      */
 
     public String getConditionExpression() {
@@ -67,13 +67,13 @@ public class FilterOperation implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An expression that must evaluate to a boolean value. Rows for which the expression is evaluated to true are kept
-     * in the dataset.
+     * An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are kept in
+     * the dataset.
      * </p>
      * 
      * @param conditionExpression
-     *        An expression that must evaluate to a boolean value. Rows for which the expression is evaluated to true
-     *        are kept in the dataset.
+     *        An expression that must evaluate to a Boolean value. Rows for which the expression evaluates to true are
+     *        kept in the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

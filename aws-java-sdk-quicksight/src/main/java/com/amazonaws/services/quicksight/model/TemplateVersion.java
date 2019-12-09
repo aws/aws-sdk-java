@@ -30,7 +30,7 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      */
     private java.util.Date createdTime;
@@ -74,11 +74,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this template version was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -87,10 +87,10 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      * 
-     * @return The time this was created.
+     * @return The time that this template version was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -99,11 +99,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time this was created.
+     * The time that this template version was created.
      * </p>
      * 
      * @param createdTime
-     *        The time this was created.
+     *        The time that this template version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

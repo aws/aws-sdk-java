@@ -31,7 +31,7 @@ public class DeleteDashboardResult extends com.amazonaws.AmazonWebServiceResult<
     private Integer status;
     /**
      * <p>
-     * The Secure Socket Layer (SSL) properties that apply. of the resource.
+     * The Secure Socket Layer (SSL) properties that apply for the resource.
      * </p>
      */
     private String arn;
@@ -90,11 +90,11 @@ public class DeleteDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Secure Socket Layer (SSL) properties that apply. of the resource.
+     * The Secure Socket Layer (SSL) properties that apply for the resource.
      * </p>
      * 
      * @param arn
-     *        The Secure Socket Layer (SSL) properties that apply. of the resource.
+     *        The Secure Socket Layer (SSL) properties that apply for the resource.
      */
 
     public void setArn(String arn) {
@@ -103,10 +103,10 @@ public class DeleteDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Secure Socket Layer (SSL) properties that apply. of the resource.
+     * The Secure Socket Layer (SSL) properties that apply for the resource.
      * </p>
      * 
-     * @return The Secure Socket Layer (SSL) properties that apply. of the resource.
+     * @return The Secure Socket Layer (SSL) properties that apply for the resource.
      */
 
     public String getArn() {
@@ -115,11 +115,11 @@ public class DeleteDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Secure Socket Layer (SSL) properties that apply. of the resource.
+     * The Secure Socket Layer (SSL) properties that apply for the resource.
      * </p>
      * 
      * @param arn
-     *        The Secure Socket Layer (SSL) properties that apply. of the resource.
+     *        The Secure Socket Layer (SSL) properties that apply for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
