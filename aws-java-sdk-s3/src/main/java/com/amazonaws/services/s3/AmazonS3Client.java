@@ -76,7 +76,6 @@ import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.services.s3.internal.AWSS3V4Signer;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
-import com.amazonaws.services.s3.internal.CompleteMultipartUploadRetryCondition;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectTaggingHeaderHandler;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
@@ -464,9 +463,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private final SkipMd5CheckStrategy skipMd5CheckStrategy;
-
-    private final CompleteMultipartUploadRetryCondition
-            completeMultipartUploadRetryCondition = new CompleteMultipartUploadRetryCondition();
 
     /**
      * Constructs a new client to invoke service methods on Amazon S3. A
@@ -3504,7 +3500,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             return false;
         }
 
-        return completeMultipartUploadRetryCondition.shouldRetry
+        return retryPolicy.getRetryCondition().shouldRetry
                 (originalRequest, exception, retriesAttempted);
     }
 
