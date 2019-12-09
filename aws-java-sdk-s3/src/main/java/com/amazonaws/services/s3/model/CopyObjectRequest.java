@@ -174,6 +174,15 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
     private String objectLockLegalHoldStatus;
 
     /**
+     * Constructs a new {@link CopyObjectRequest} object.
+     * The caller must populate the object fields before the request is ready to be executed.
+     *
+     * @see CopyObjectRequest#CopyObjectRequest(String, String, String, String)
+     * @see CopyObjectRequest#CopyObjectRequest(String, String, String, String, String)
+     */
+    public CopyObjectRequest() {}
+
+    /**
      * <p>
      * Constructs with basic options.
      * </p>
