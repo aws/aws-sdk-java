@@ -1,3 +1,8 @@
+# __1.11.690__ __2019-12-10__
+## __AWSKendraFrontendService__
+  - ### Features
+    - 1. Adding DocumentTitleFieldName as an optional configuration for SharePoint. 2. updating s3 object pattern to  support all s3 keys.
+
 # __1.11.689__ __2019-12-09__
 ## __AWS Key Management Service__
   - ### Features

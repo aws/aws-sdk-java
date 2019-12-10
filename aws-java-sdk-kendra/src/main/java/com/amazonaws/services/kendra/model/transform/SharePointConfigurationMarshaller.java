@@ -40,6 +40,8 @@ public class SharePointConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfiguration").build();
     private static final MarshallingInfo<List> FIELDMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FieldMappings").build();
+    private static final MarshallingInfo<String> DOCUMENTTITLEFIELDNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentTitleFieldName").build();
 
     private static final SharePointConfigurationMarshaller instance = new SharePointConfigurationMarshaller();
 
@@ -63,6 +65,7 @@ public class SharePointConfigurationMarshaller {
             protocolMarshaller.marshall(sharePointConfiguration.getCrawlAttachments(), CRAWLATTACHMENTS_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(sharePointConfiguration.getFieldMappings(), FIELDMAPPINGS_BINDING);
+            protocolMarshaller.marshall(sharePointConfiguration.getDocumentTitleFieldName(), DOCUMENTTITLEFIELDNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

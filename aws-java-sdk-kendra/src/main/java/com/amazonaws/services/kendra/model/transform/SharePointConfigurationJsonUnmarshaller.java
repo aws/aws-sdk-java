@@ -73,6 +73,10 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                     sharePointConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("DocumentTitleFieldName", targetDepth)) {
+                    context.nextToken();
+                    sharePointConfiguration.setDocumentTitleFieldName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

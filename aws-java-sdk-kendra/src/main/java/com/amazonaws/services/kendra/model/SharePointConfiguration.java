@@ -69,6 +69,12 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.util.List<DataSourceToIndexFieldMapping> fieldMappings;
+    /**
+     * <p>
+     * The Microsoft SharePoint attribute field that contains the title of the document.
+     * </p>
+     */
+    private String documentTitleFieldName;
 
     /**
      * <p>
@@ -450,6 +456,46 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The Microsoft SharePoint attribute field that contains the title of the document.
+     * </p>
+     * 
+     * @param documentTitleFieldName
+     *        The Microsoft SharePoint attribute field that contains the title of the document.
+     */
+
+    public void setDocumentTitleFieldName(String documentTitleFieldName) {
+        this.documentTitleFieldName = documentTitleFieldName;
+    }
+
+    /**
+     * <p>
+     * The Microsoft SharePoint attribute field that contains the title of the document.
+     * </p>
+     * 
+     * @return The Microsoft SharePoint attribute field that contains the title of the document.
+     */
+
+    public String getDocumentTitleFieldName() {
+        return this.documentTitleFieldName;
+    }
+
+    /**
+     * <p>
+     * The Microsoft SharePoint attribute field that contains the title of the document.
+     * </p>
+     * 
+     * @param documentTitleFieldName
+     *        The Microsoft SharePoint attribute field that contains the title of the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withDocumentTitleFieldName(String documentTitleFieldName) {
+        setDocumentTitleFieldName(documentTitleFieldName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -472,7 +518,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         if (getVpcConfiguration() != null)
             sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getFieldMappings() != null)
-            sb.append("FieldMappings: ").append(getFieldMappings());
+            sb.append("FieldMappings: ").append(getFieldMappings()).append(",");
+        if (getDocumentTitleFieldName() != null)
+            sb.append("DocumentTitleFieldName: ").append(getDocumentTitleFieldName());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +559,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getFieldMappings() != null && other.getFieldMappings().equals(this.getFieldMappings()) == false)
             return false;
+        if (other.getDocumentTitleFieldName() == null ^ this.getDocumentTitleFieldName() == null)
+            return false;
+        if (other.getDocumentTitleFieldName() != null && other.getDocumentTitleFieldName().equals(this.getDocumentTitleFieldName()) == false)
+            return false;
         return true;
     }
 
@@ -525,6 +577,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getCrawlAttachments() == null) ? 0 : getCrawlAttachments().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFieldMappings() == null) ? 0 : getFieldMappings().hashCode());
+        hashCode = prime * hashCode + ((getDocumentTitleFieldName() == null) ? 0 : getDocumentTitleFieldName().hashCode());
         return hashCode;
     }
 

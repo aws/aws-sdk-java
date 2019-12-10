@@ -41,7 +41,8 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String roleArn;
     /**
      * <p>
-     * The identifier of the KMS key to use to encrypt data indexed by Amazon Kendra.
+     * The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon
+     * Kendra doesn't support asymmetric CMKs.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
@@ -146,11 +147,13 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the KMS key to use to encrypt data indexed by Amazon Kendra.
+     * The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon
+     * Kendra doesn't support asymmetric CMKs.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The identifier of the KMS key to use to encrypt data indexed by Amazon Kendra.
+     *        The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed by Amazon Kendra.
+     *        Amazon Kendra doesn't support asymmetric CMKs.
      */
 
     public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
@@ -159,10 +162,12 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the KMS key to use to encrypt data indexed by Amazon Kendra.
+     * The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon
+     * Kendra doesn't support asymmetric CMKs.
      * </p>
      * 
-     * @return The identifier of the KMS key to use to encrypt data indexed by Amazon Kendra.
+     * @return The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed by Amazon Kendra.
+     *         Amazon Kendra doesn't support asymmetric CMKs.
      */
 
     public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
@@ -171,11 +176,13 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the KMS key to use to encrypt data indexed by Amazon Kendra.
+     * The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed by Amazon Kendra. Amazon
+     * Kendra doesn't support asymmetric CMKs.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The identifier of the KMS key to use to encrypt data indexed by Amazon Kendra.
+     *        The identifier of the AWS KMS customer managed key (CMK) to use to encrypt data indexed by Amazon Kendra.
+     *        Amazon Kendra doesn't support asymmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
