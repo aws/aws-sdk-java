@@ -253,6 +253,10 @@ public class ClientConfigurationTest {
         config = new ClientConfiguration();
         assertNull(config.getProxyHost());
 
+        environmentVariableHelper.set("https_proxy", "");
+        config = new ClientConfiguration();
+        assertNull(config.getProxyHost());
+
         environmentVariableHelper.set("https_proxy", "bad-url");
         config = new ClientConfiguration();
         assertNull(config.getProxyHost());
@@ -303,6 +307,10 @@ public class ClientConfigurationTest {
         EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
         ClientConfiguration config;
 
+        config = new ClientConfiguration();
+        assertEquals(-1, config.getProxyPort());
+
+        environmentVariableHelper.set("https_proxy", "");
         config = new ClientConfiguration();
         assertEquals(-1, config.getProxyPort());
 
@@ -359,6 +367,10 @@ public class ClientConfigurationTest {
         config = new ClientConfiguration();
         assertNull(config.getProxyUsername());
 
+        environmentVariableHelper.set("https_proxy", "");
+        config = new ClientConfiguration();
+        assertNull(config.getProxyUsername());
+
         environmentVariableHelper.set("https_proxy", "bad-url");
         config = new ClientConfiguration();
         assertNull(config.getProxyUsername());
@@ -409,6 +421,10 @@ public class ClientConfigurationTest {
         EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
         ClientConfiguration config;
 
+        config = new ClientConfiguration();
+        assertNull(config.getProxyPassword());
+
+        environmentVariableHelper.set("https_proxy", "");
         config = new ClientConfiguration();
         assertNull(config.getProxyPassword());
 
@@ -636,6 +652,21 @@ public class ClientConfigurationTest {
         cfg.setProtocol(Protocol.HTTP);
         assertThat(cfg.getProxyHost(), equalTo("http-proxy"));
 
+        environmentVariableHelper.reset();
+    }
+
+    @Test
+    public void getProxyHost_envVarSet_emptyUrl_doesNotThrow() {
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+
+        environmentVariableHelper.set("https_proxy", "");
+        ClientConfiguration config = new ClientConfiguration();
+        assertNull(config.getProxyHost());
+        environmentVariableHelper.reset();
+
+        environmentVariableHelper.set("http_proxy", "");
+        config = new ClientConfiguration();
+        assertNull(config.getProxyHost());
         environmentVariableHelper.reset();
     }
 

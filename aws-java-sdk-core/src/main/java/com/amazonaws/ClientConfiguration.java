@@ -637,7 +637,8 @@ public class ClientConfiguration {
      * Returns the value for the given environment variable.
      */
     private String getEnvironmentVariable(String environmentVariable) {
-        return System.getenv(environmentVariable);
+        String value = System.getenv(environmentVariable);
+        return value != null && !value.trim().isEmpty() ? value : null;
     }
 
     /**
