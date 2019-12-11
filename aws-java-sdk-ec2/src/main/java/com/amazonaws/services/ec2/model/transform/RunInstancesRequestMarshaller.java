@@ -398,6 +398,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("ElasticInferenceAccelerator." + elasticInferenceAcceleratorsListIndex + ".Type",
                             StringUtils.fromString(runInstancesRequestElasticInferenceAcceleratorsListValue.getType()));
                 }
+
+                if (runInstancesRequestElasticInferenceAcceleratorsListValue.getCount() != null) {
+                    request.addParameter("ElasticInferenceAccelerator." + elasticInferenceAcceleratorsListIndex + ".Count",
+                            StringUtils.fromInteger(runInstancesRequestElasticInferenceAcceleratorsListValue.getCount()));
+                }
                 elasticInferenceAcceleratorsListIndex++;
             }
         }

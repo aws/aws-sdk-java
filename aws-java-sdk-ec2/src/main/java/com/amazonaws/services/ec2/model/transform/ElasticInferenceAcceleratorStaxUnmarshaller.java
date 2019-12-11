@@ -47,6 +47,11 @@ public class ElasticInferenceAcceleratorStaxUnmarshaller implements Unmarshaller
                     elasticInferenceAccelerator.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Count", targetDepth)) {
+                    elasticInferenceAccelerator.setCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return elasticInferenceAccelerator;

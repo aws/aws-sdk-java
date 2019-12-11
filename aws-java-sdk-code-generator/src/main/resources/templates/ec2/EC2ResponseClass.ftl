@@ -29,7 +29,7 @@ public class ${shape.shapeName} extends ${baseClassFqcn}
      */
     public String getDecodedOutput() {
         byte[] bytes = com.amazonaws.util.BinaryUtils.fromBase64(output);
-        return new String(bytes, com.amazonaws.util.StringUtils.UTF8);
+        return bytes == null ? null : new String(bytes, com.amazonaws.util.StringUtils.UTF8);
     }
     </#if>
 

@@ -32,6 +32,13 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
+     * allowed. If not specified defaults to 1.
+     * </p>
+     */
+    private Integer count;
 
     /**
      * <p>
@@ -77,6 +84,52 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
     }
 
     /**
+     * <p>
+     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
+     * allowed. If not specified defaults to 1.
+     * </p>
+     * 
+     * @param count
+     *        The number of elastic inference accelerators of given type to be attached to the instance. Only positive
+     *        values allowed. If not specified defaults to 1.
+     */
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    /**
+     * <p>
+     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
+     * allowed. If not specified defaults to 1.
+     * </p>
+     * 
+     * @return The number of elastic inference accelerators of given type to be attached to the instance. Only positive
+     *         values allowed. If not specified defaults to 1.
+     */
+
+    public Integer getCount() {
+        return this.count;
+    }
+
+    /**
+     * <p>
+     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
+     * allowed. If not specified defaults to 1.
+     * </p>
+     * 
+     * @param count
+     *        The number of elastic inference accelerators of given type to be attached to the instance. Only positive
+     *        values allowed. If not specified defaults to 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateElasticInferenceAccelerator withCount(Integer count) {
+        setCount(count);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +142,9 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getCount() != null)
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +163,10 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getCount() == null ^ this.getCount() == null)
+            return false;
+        if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +176,7 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         return hashCode;
     }
 

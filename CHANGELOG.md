@@ -1,3 +1,8 @@
+# __1.11.691__ __2019-12-11__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release allows customers to attach multiple Elastic Inference Accelerators to a single EC2 instance. It adds support for a Count parameter for each Elastic Inference Accelerator type you specify on the RunInstances and LaunchTemplate APIs.
+
 # __1.11.690__ __2019-12-10__
 ## __AWSKendraFrontendService__
   - ### Features

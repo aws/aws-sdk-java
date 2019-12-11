@@ -172,7 +172,7 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
      */
     public String getDecodedOutput() {
         byte[] bytes = com.amazonaws.util.BinaryUtils.fromBase64(output);
-        return new String(bytes, com.amazonaws.util.StringUtils.UTF8);
+        return bytes == null ? null : new String(bytes, com.amazonaws.util.StringUtils.UTF8);
     }
 
     /**

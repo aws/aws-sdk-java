@@ -396,6 +396,11 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                         request.addParameter("LaunchTemplateData.ElasticInferenceAccelerator." + elasticInferenceAcceleratorsListIndex + ".Type",
                                 StringUtils.fromString(requestLaunchTemplateDataElasticInferenceAcceleratorsListValue.getType()));
                     }
+
+                    if (requestLaunchTemplateDataElasticInferenceAcceleratorsListValue.getCount() != null) {
+                        request.addParameter("LaunchTemplateData.ElasticInferenceAccelerator." + elasticInferenceAcceleratorsListIndex + ".Count",
+                                StringUtils.fromInteger(requestLaunchTemplateDataElasticInferenceAcceleratorsListValue.getCount()));
+                    }
                     elasticInferenceAcceleratorsListIndex++;
                 }
             }
