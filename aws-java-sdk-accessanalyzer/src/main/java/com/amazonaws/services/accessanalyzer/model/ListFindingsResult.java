@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resposne to the request.
+ * The response to the request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindings" target="_top">AWS API

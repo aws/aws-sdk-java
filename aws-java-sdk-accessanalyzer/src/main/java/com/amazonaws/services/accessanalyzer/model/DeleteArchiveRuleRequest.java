@@ -30,7 +30,7 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the analyzer that was deleted.
+     * The name of the analyzer that associated with the archive rule to delete.
      * </p>
      */
     private String analyzerName;
@@ -49,11 +49,11 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the analyzer that was deleted.
+     * The name of the analyzer that associated with the archive rule to delete.
      * </p>
      * 
      * @param analyzerName
-     *        The name of the analyzer that was deleted.
+     *        The name of the analyzer that associated with the archive rule to delete.
      */
 
     public void setAnalyzerName(String analyzerName) {
@@ -62,10 +62,10 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the analyzer that was deleted.
+     * The name of the analyzer that associated with the archive rule to delete.
      * </p>
      * 
-     * @return The name of the analyzer that was deleted.
+     * @return The name of the analyzer that associated with the archive rule to delete.
      */
 
     public String getAnalyzerName() {
@@ -74,11 +74,11 @@ public class DeleteArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the analyzer that was deleted.
+     * The name of the analyzer that associated with the archive rule to delete.
      * </p>
      * 
      * @param analyzerName
-     *        The name of the analyzer that was deleted.
+     *        The name of the analyzer that associated with the archive rule to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

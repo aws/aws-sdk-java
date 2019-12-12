@@ -32,11 +32,11 @@ public class AnalyzerSummaryMarshaller {
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> LASTRESOURCEANALYZED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastResourceAnalyzed").build();
     private static final MarshallingInfo<java.util.Date> LASTRESOURCEANALYZEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastResourceAnalyzedAt").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastResourceAnalyzedAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)

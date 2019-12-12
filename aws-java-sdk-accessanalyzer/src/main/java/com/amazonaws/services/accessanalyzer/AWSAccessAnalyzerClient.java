@@ -51,7 +51,16 @@ import com.amazonaws.services.accessanalyzer.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS IAM Access Analyzer API Reference
+ * AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that
+ * grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies
+ * in your AWS environment. An external principal can be another AWS account, a root user, an IAM user or role, a
+ * federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access Analyzer operations
+ * that you can call programmatically. For general information about Access Analyzer, see the <a
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer section
+ * of the IAM User Guide</a>.
+ * </p>
+ * <p>
+ * To start using Access Analyzer, you first need to create an analyzer.
  * </p>
  */
 @ThreadSafe
@@ -148,7 +157,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates an analyzer with a zone of trust set to your account.
+     * Creates an analyzer for your account.
      * </p>
      * 
      * @param createAnalyzerRequest
@@ -214,7 +223,8 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates an archive rule for the specified analyzer.
+     * Creates an archive rule for the specified analyzer. Archive rules automatically archive findings that meet the
+     * criteria you define when you create the rule.
      * </p>
      * 
      * @param createArchiveRuleRequest
@@ -412,7 +422,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves information about an analyzed resource.
+     * Retrieves information about a resource that was analyzed.
      * </p>
      * 
      * @param getAnalyzedResourceRequest
@@ -668,7 +678,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves a list of resources that have been analyzed.
+     * Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..
      * </p>
      * 
      * @param listAnalyzedResourcesRequest
@@ -985,7 +995,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Starts a scan of the policies applied to the specified resource.
+     * Immediately starts a scan of the policies applied to the specified resource.
      * </p>
      * 
      * @param startResourceScanRequest
@@ -1177,7 +1187,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates the specified archive rule.
+     * Updates the criteria and values for the specified archive rule.
      * </p>
      * 
      * @param updateArchiveRuleRequest
@@ -1241,7 +1251,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates findings with the new values provided in the request.
+     * Updates the status for the specified findings.
      * </p>
      * 
      * @param updateFindingsRequest

@@ -42,7 +42,7 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nextToken;
     /**
      * <p>
-     * The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     * The type of analyzer.
      * </p>
      */
     private String type;
@@ -129,11 +129,11 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     * The type of analyzer.
      * </p>
      * 
      * @param type
-     *        The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     *        The type of analyzer.
      * @see Type
      */
 
@@ -143,10 +143,10 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     * The type of analyzer.
      * </p>
      * 
-     * @return The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     * @return The type of analyzer.
      * @see Type
      */
 
@@ -156,11 +156,11 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     * The type of analyzer.
      * </p>
      * 
      * @param type
-     *        The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     *        The type of analyzer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -172,11 +172,11 @@ public class ListAnalyzersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     * The type of analyzer.
      * </p>
      * 
      * @param type
-     *        The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.
+     *        The type of analyzer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */

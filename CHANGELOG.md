@@ -1,3 +1,8 @@
+# __1.11.692__ __2019-12-12__
+## __Access Analyzer__
+  - ### Features
+    - This release includes improvements and fixes bugs for the IAM Access Analyzer feature.
+
 # __1.11.691__ __2019-12-11__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

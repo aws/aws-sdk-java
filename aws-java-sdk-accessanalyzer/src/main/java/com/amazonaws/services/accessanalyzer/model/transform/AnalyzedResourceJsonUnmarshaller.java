@@ -54,11 +54,11 @@ public class AnalyzedResourceJsonUnmarshaller implements Unmarshaller<AnalyzedRe
                 }
                 if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    analyzedResource.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    analyzedResource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
@@ -86,7 +86,7 @@ public class AnalyzedResourceJsonUnmarshaller implements Unmarshaller<AnalyzedRe
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    analyzedResource.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    analyzedResource.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

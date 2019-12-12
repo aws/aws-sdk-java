@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The criteria to use in the filter that defines the rule.
+ * The criteria to use in the filter that defines the archive rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Criterion" target="_top">AWS API

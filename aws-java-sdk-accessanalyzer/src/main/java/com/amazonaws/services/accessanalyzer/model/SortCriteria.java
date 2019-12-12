@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The sort criteria.
+ * The criteria used to sort.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/SortCriteria" target="_top">AWS API

@@ -50,7 +50,7 @@ public class ArchiveRuleSummaryJsonUnmarshaller implements Unmarshaller<ArchiveR
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    archiveRuleSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    archiveRuleSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("filter", targetDepth)) {
                     context.nextToken();
@@ -63,7 +63,7 @@ public class ArchiveRuleSummaryJsonUnmarshaller implements Unmarshaller<ArchiveR
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    archiveRuleSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    archiveRuleSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

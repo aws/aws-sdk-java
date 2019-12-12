@@ -36,7 +36,8 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String analyzerName;
     /**
      * <p>
-     * Specifies the archive rules to add for the analyzer.
+     * Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the
+     * criteria you define for the rule.
      * </p>
      */
     private java.util.List<InlineArchiveRule> archiveRules;
@@ -54,7 +55,8 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     * account per Region.
      * </p>
      */
     private String type;
@@ -101,10 +103,12 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the archive rules to add for the analyzer.
+     * Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the
+     * criteria you define for the rule.
      * </p>
      * 
-     * @return Specifies the archive rules to add for the analyzer.
+     * @return Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that
+     *         meet the criteria you define for the rule.
      */
 
     public java.util.List<InlineArchiveRule> getArchiveRules() {
@@ -113,11 +117,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the archive rules to add for the analyzer.
+     * Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the
+     * criteria you define for the rule.
      * </p>
      * 
      * @param archiveRules
-     *        Specifies the archive rules to add for the analyzer.
+     *        Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that
+     *        meet the criteria you define for the rule.
      */
 
     public void setArchiveRules(java.util.Collection<InlineArchiveRule> archiveRules) {
@@ -131,7 +137,8 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the archive rules to add for the analyzer.
+     * Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the
+     * criteria you define for the rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -140,7 +147,8 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param archiveRules
-     *        Specifies the archive rules to add for the analyzer.
+     *        Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that
+     *        meet the criteria you define for the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +164,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the archive rules to add for the analyzer.
+     * Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the
+     * criteria you define for the rule.
      * </p>
      * 
      * @param archiveRules
-     *        Specifies the archive rules to add for the analyzer.
+     *        Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that
+     *        meet the criteria you define for the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,11 +282,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     * account per Region.
      * </p>
      * 
      * @param type
-     *        The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     *        The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     *        account per Region.
      * @see Type
      */
 
@@ -286,10 +298,12 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     * account per Region.
      * </p>
      * 
-     * @return The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     * @return The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer
+     *         per account per Region.
      * @see Type
      */
 
@@ -299,11 +313,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     * account per Region.
      * </p>
      * 
      * @param type
-     *        The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     *        The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     *        account per Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -315,11 +331,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     * account per Region.
      * </p>
      * 
      * @param type
-     *        The zone of trust for the analyzer. You can create only one analyzer per account per Region.
+     *        The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
+     *        account per Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */

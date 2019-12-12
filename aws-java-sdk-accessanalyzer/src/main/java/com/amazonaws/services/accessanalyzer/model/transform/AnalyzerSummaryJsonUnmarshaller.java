@@ -54,7 +54,7 @@ public class AnalyzerSummaryJsonUnmarshaller implements Unmarshaller<AnalyzerSum
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    analyzerSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    analyzerSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("lastResourceAnalyzed", targetDepth)) {
                     context.nextToken();
@@ -62,7 +62,7 @@ public class AnalyzerSummaryJsonUnmarshaller implements Unmarshaller<AnalyzerSum
                 }
                 if (context.testExpression("lastResourceAnalyzedAt", targetDepth)) {
                     context.nextToken();
-                    analyzerSummary.setLastResourceAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    analyzerSummary.setLastResourceAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

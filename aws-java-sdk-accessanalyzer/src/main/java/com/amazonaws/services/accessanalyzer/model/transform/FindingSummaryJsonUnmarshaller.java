@@ -54,7 +54,7 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
                 }
                 if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    findingSummary.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
                     context.nextToken();
@@ -63,7 +63,7 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    findingSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
@@ -96,7 +96,7 @@ public class FindingSummaryJsonUnmarshaller implements Unmarshaller<FindingSumma
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    findingSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    findingSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

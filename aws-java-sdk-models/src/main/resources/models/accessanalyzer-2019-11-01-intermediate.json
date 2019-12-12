@@ -55,7 +55,7 @@
     "defaultEndpoint" : "access-analyzer.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "access-analyzer.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>AWS IAM Access Analyzer API Reference</p>",
+    "documentation" : "<p>AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies in your AWS environment. An external principal can be another AWS account, a root user, an IAM user or role, a federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access Analyzer operations that you can call programmatically. For general information about Access Analyzer, see the <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html\">AWS IAM Access Analyzer section of the IAM User Guide</a>.</p> <p>To start using Access Analyzer, you first need to create an analyzer.</p>",
     "endpointPrefix" : "access-analyzer",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -91,7 +91,7 @@
       "asyncReturnType" : "CreateAnalyzerResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an analyzer with a zone of trust set to your account.</p>",
+      "documentation" : "<p>Creates an analyzer for your account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -147,7 +147,7 @@
       "asyncReturnType" : "CreateArchiveRuleResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an archive rule for the specified analyzer.</p>",
+      "documentation" : "<p>Creates an archive rule for the specified analyzer. Archive rules automatically archive findings that meet the criteria you define when you create the rule.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -311,7 +311,7 @@
       "asyncReturnType" : "GetAnalyzedResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves information about an analyzed resource.</p>",
+      "documentation" : "<p>Retrieves information about a resource that was analyzed.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -508,7 +508,7 @@
       "operationName" : "GetFinding",
       "returnType" : {
         "returnType" : "GetFindingResult",
-        "documentation" : "<p>The resposne to the request.</p>"
+        "documentation" : "<p>The response to the request.</p>"
       },
       "syncReturnType" : "GetFindingResult"
     },
@@ -519,7 +519,7 @@
       "asyncReturnType" : "ListAnalyzedResourcesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves a list of resources that have been analyzed.</p>",
+      "documentation" : "<p>Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -708,7 +708,7 @@
       "operationName" : "ListFindings",
       "returnType" : {
         "returnType" : "ListFindingsResult",
-        "documentation" : "<p>The resposne to the request.</p>"
+        "documentation" : "<p>The response to the request.</p>"
       },
       "syncReturnType" : "ListFindingsResult"
     },
@@ -771,7 +771,7 @@
       "asyncReturnType" : "StartResourceScanResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Starts a scan of the policies applied to the specified resource.</p>",
+      "documentation" : "<p>Immediately starts a scan of the policies applied to the specified resource.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -916,7 +916,7 @@
       "operationName" : "UntagResource",
       "returnType" : {
         "returnType" : "UntagResourceResult",
-        "documentation" : "<p>The response tot he request.</p>"
+        "documentation" : "<p>The response to the request.</p>"
       },
       "syncReturnType" : "UntagResourceResult"
     },
@@ -927,7 +927,7 @@
       "asyncReturnType" : "UpdateArchiveRuleResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates the specified archive rule.</p>",
+      "documentation" : "<p>Updates the criteria and values for the specified archive rule.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -979,7 +979,7 @@
       "asyncReturnType" : "UpdateFindingsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates findings with the new values provided in the request.</p>",
+      "documentation" : "<p>Updates the status for the specified findings.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -1289,7 +1289,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the resource was analyzed.</p>\n@param analyzedAt The time at which the resource was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "analyzedAt",
           "variableType" : "java.util.Date",
@@ -1356,7 +1356,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the finding was created.</p>\n@param createdAt The time at which the finding was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -1907,7 +1907,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the finding was updated.</p>\n@param updatedAt The time at which the finding was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedAt",
           "variableType" : "java.util.Date",
@@ -2126,7 +2126,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the resource was analyzed.</p>\n@param analyzedAt The time at which the resource was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "analyzedAt",
             "variableType" : "java.util.Date",
@@ -2194,7 +2194,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the finding was created.</p>\n@param createdAt The time at which the finding was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -2752,7 +2752,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the finding was updated.</p>\n@param updatedAt The time at which the finding was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedAt",
             "variableType" : "java.util.Date",
@@ -3239,7 +3239,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A timestamp for the time at which the analyzer was created.</p>\n@param createdAt A timestamp for the time at which the analyzer was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -3373,7 +3373,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the most recently analyzed resource was analyzed.</p>\n@param lastResourceAnalyzedAt The time at which the most recently analyzed resource was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "lastResourceAnalyzedAt",
           "variableType" : "java.util.Date",
@@ -3793,7 +3793,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A timestamp for the time at which the analyzer was created.</p>\n@param createdAt A timestamp for the time at which the analyzer was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -3929,7 +3929,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the most recently analyzed resource was analyzed.</p>\n@param lastResourceAnalyzedAt The time at which the most recently analyzed resource was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "lastResourceAnalyzedAt",
             "variableType" : "java.util.Date",
@@ -4323,7 +4323,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the archive rule was created.</p>\n@param createdAt The time at which the archive rule was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -4606,7 +4606,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the archive rule was last updated.</p>\n@param updatedAt The time at which the archive rule was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedAt",
           "variableType" : "java.util.Date",
@@ -4675,7 +4675,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the archive rule was created.</p>\n@param createdAt The time at which the archive rule was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -4961,7 +4961,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the archive rule was last updated.</p>\n@param updatedAt The time at which the archive rule was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedAt",
             "variableType" : "java.util.Date",
@@ -5398,11 +5398,11 @@
         "c2jName" : "archiveRules",
         "c2jShape" : "InlineArchiveRulesList",
         "deprecated" : false,
-        "documentation" : "<p>Specifies the archive rules to add for the analyzer.</p>",
+        "documentation" : "<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withArchiveRules",
-        "getterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n@return Specifies the archive rules to add for the analyzer.*/",
+        "getterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n@return Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.*/",
         "getterMethodName" : "getArchiveRules",
         "getterModel" : {
           "returnType" : "java.util.List<InlineArchiveRule>",
@@ -5518,7 +5518,7 @@
         "marshallingType" : "LIST",
         "name" : "ArchiveRules",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer.*/",
+        "setterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.*/",
         "setterMethodName" : "setArchiveRules",
         "setterModel" : {
           "timestampFormat" : null,
@@ -5532,13 +5532,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArchiveRules(java.util.Collection)} or {@link #withArchiveRules(java.util.Collection)} if you want to override the existing values.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArchiveRules(java.util.Collection)} or {@link #withArchiveRules(java.util.Collection)} if you want to override the existing values.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<InlineArchiveRule>",
           "variableName" : "archiveRules",
           "variableType" : "java.util.List<InlineArchiveRule>",
-          "documentation" : "<p>Specifies the archive rules to add for the analyzer.</p>",
+          "documentation" : "<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>",
           "simpleType" : "List<InlineArchiveRule>",
           "variableSetterType" : "java.util.Collection<InlineArchiveRule>"
         },
@@ -5763,11 +5763,11 @@
         "c2jName" : "type",
         "c2jShape" : "Type",
         "deprecated" : false,
-        "documentation" : "<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>",
+        "documentation" : "<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>",
         "enumType" : "Type",
-        "fluentSetterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@param type The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+        "fluentSetterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@param type The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
         "fluentSetterMethodName" : "withType",
-        "getterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@return The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@see Type*/",
+        "getterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@return The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@see Type*/",
         "getterMethodName" : "getType",
         "getterModel" : {
           "returnType" : "String",
@@ -5801,7 +5801,7 @@
         "marshallingType" : "STRING",
         "name" : "Type",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@param type The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@see Type*/",
+        "setterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@param type The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@see Type*/",
         "setterMethodName" : "setType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -5815,13 +5815,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@param type The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+        "varargSetterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@param type The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
-          "documentation" : "<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>",
+          "documentation" : "<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5900,11 +5900,11 @@
           "c2jName" : "archiveRules",
           "c2jShape" : "InlineArchiveRulesList",
           "deprecated" : false,
-          "documentation" : "<p>Specifies the archive rules to add for the analyzer.</p>",
+          "documentation" : "<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withArchiveRules",
-          "getterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n@return Specifies the archive rules to add for the analyzer.*/",
+          "getterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n@return Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.*/",
           "getterMethodName" : "getArchiveRules",
           "getterModel" : {
             "returnType" : "java.util.List<InlineArchiveRule>",
@@ -6020,7 +6020,7 @@
           "marshallingType" : "LIST",
           "name" : "ArchiveRules",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer.*/",
+          "setterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.*/",
           "setterMethodName" : "setArchiveRules",
           "setterModel" : {
             "timestampFormat" : null,
@@ -6034,13 +6034,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArchiveRules(java.util.Collection)} or {@link #withArchiveRules(java.util.Collection)} if you want to override the existing values.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArchiveRules(java.util.Collection)} or {@link #withArchiveRules(java.util.Collection)} if you want to override the existing values.</p>\n@param archiveRules Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<InlineArchiveRule>",
             "variableName" : "archiveRules",
             "variableType" : "java.util.List<InlineArchiveRule>",
-            "documentation" : "<p>Specifies the archive rules to add for the analyzer.</p>",
+            "documentation" : "<p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>",
             "simpleType" : "List<InlineArchiveRule>",
             "variableSetterType" : "java.util.Collection<InlineArchiveRule>"
           },
@@ -6268,11 +6268,11 @@
           "c2jName" : "type",
           "c2jShape" : "Type",
           "deprecated" : false,
-          "documentation" : "<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>",
+          "documentation" : "<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>",
           "enumType" : "Type",
-          "fluentSetterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@param type The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+          "fluentSetterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@param type The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
           "fluentSetterMethodName" : "withType",
-          "getterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@return The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@see Type*/",
+          "getterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@return The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@see Type*/",
           "getterMethodName" : "getType",
           "getterModel" : {
             "returnType" : "String",
@@ -6306,7 +6306,7 @@
           "marshallingType" : "STRING",
           "name" : "Type",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@param type The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@see Type*/",
+          "setterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@param type The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@see Type*/",
           "setterMethodName" : "setType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -6320,13 +6320,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>\n@param type The zone of trust for the analyzer. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+          "varargSetterDocumentation" : "/**<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>\n@param type The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
-            "documentation" : "<p>The zone of trust for the analyzer. You can create only one analyzer per account per Region.</p>",
+            "documentation" : "<p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7328,7 +7328,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The criteria to use in the filter that defines the rule.</p>",
+      "documentation" : "<p>The criteria to use in the filter that defines the archive rule.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8779,11 +8779,11 @@
         "c2jName" : "analyzerName",
         "c2jShape" : "Name",
         "deprecated" : false,
-        "documentation" : "<p>The name of the analyzer that was deleted.</p>",
+        "documentation" : "<p>The name of the analyzer that associated with the archive rule to delete.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@param analyzerName The name of the analyzer that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@param analyzerName The name of the analyzer that associated with the archive rule to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withAnalyzerName",
-        "getterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@return The name of the analyzer that was deleted.*/",
+        "getterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@return The name of the analyzer that associated with the archive rule to delete.*/",
         "getterMethodName" : "getAnalyzerName",
         "getterModel" : {
           "returnType" : "String",
@@ -8817,7 +8817,7 @@
         "marshallingType" : "STRING",
         "name" : "AnalyzerName",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@param analyzerName The name of the analyzer that was deleted.*/",
+        "setterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@param analyzerName The name of the analyzer that associated with the archive rule to delete.*/",
         "setterMethodName" : "setAnalyzerName",
         "setterModel" : {
           "timestampFormat" : null,
@@ -8831,13 +8831,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@param analyzerName The name of the analyzer that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@param analyzerName The name of the analyzer that associated with the archive rule to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "analyzerName",
           "variableType" : "String",
-          "documentation" : "<p>The name of the analyzer that was deleted.</p>",
+          "documentation" : "<p>The name of the analyzer that associated with the archive rule to delete.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8982,11 +8982,11 @@
           "c2jName" : "analyzerName",
           "c2jShape" : "Name",
           "deprecated" : false,
-          "documentation" : "<p>The name of the analyzer that was deleted.</p>",
+          "documentation" : "<p>The name of the analyzer that associated with the archive rule to delete.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@param analyzerName The name of the analyzer that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@param analyzerName The name of the analyzer that associated with the archive rule to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withAnalyzerName",
-          "getterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@return The name of the analyzer that was deleted.*/",
+          "getterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@return The name of the analyzer that associated with the archive rule to delete.*/",
           "getterMethodName" : "getAnalyzerName",
           "getterModel" : {
             "returnType" : "String",
@@ -9020,7 +9020,7 @@
           "marshallingType" : "STRING",
           "name" : "AnalyzerName",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@param analyzerName The name of the analyzer that was deleted.*/",
+          "setterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@param analyzerName The name of the analyzer that associated with the archive rule to delete.*/",
           "setterMethodName" : "setAnalyzerName",
           "setterModel" : {
             "timestampFormat" : null,
@@ -9034,13 +9034,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the analyzer that was deleted.</p>\n@param analyzerName The name of the analyzer that was deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the analyzer that associated with the archive rule to delete.</p>\n@param analyzerName The name of the analyzer that associated with the archive rule to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "analyzerName",
             "variableType" : "String",
-            "documentation" : "<p>The name of the analyzer that was deleted.</p>",
+            "documentation" : "<p>The name of the analyzer that associated with the archive rule to delete.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9467,7 +9467,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the resource was analyzed.</p>\n@param analyzedAt The time at which the resource was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "analyzedAt",
           "variableType" : "java.util.Date",
@@ -9683,7 +9683,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the finding was generated.</p>\n@param createdAt The time at which the finding was generated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -10301,7 +10301,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the finding was updated.</p>\n@param updatedAt The time at which the finding was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedAt",
           "variableType" : "java.util.Date",
@@ -10520,7 +10520,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the resource was analyzed.</p>\n@param analyzedAt The time at which the resource was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "analyzedAt",
             "variableType" : "java.util.Date",
@@ -10738,7 +10738,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the finding was generated.</p>\n@param createdAt The time at which the finding was generated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -11364,7 +11364,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the finding was updated.</p>\n@param updatedAt The time at which the finding was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedAt",
             "variableType" : "java.util.Date",
@@ -11718,7 +11718,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the resource-based policy that generated the finding was analyzed.</p>\n@param analyzedAt The time at which the resource-based policy that generated the finding was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "analyzedAt",
           "variableType" : "java.util.Date",
@@ -11934,7 +11934,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the finding was created.</p>\n@param createdAt The time at which the finding was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createdAt",
           "variableType" : "java.util.Date",
@@ -12552,7 +12552,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the finding was most recently updated.</p>\n@param updatedAt The time at which the finding was most recently updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "updatedAt",
           "variableType" : "java.util.Date",
@@ -12771,7 +12771,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the resource-based policy that generated the finding was analyzed.</p>\n@param analyzedAt The time at which the resource-based policy that generated the finding was analyzed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "analyzedAt",
             "variableType" : "java.util.Date",
@@ -12989,7 +12989,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the finding was created.</p>\n@param createdAt The time at which the finding was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createdAt",
             "variableType" : "java.util.Date",
@@ -13615,7 +13615,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the finding was most recently updated.</p>\n@param updatedAt The time at which the finding was most recently updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "updatedAt",
             "variableType" : "java.util.Date",
@@ -15316,7 +15316,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The resposne to the request.</p>",
+      "documentation" : "<p>The response to the request.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15493,7 +15493,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>An inline archive rule.</p>",
+      "documentation" : "<p>An criterion statement in an archive rule. Each archive rule may have multiple criteria.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15506,11 +15506,11 @@
         "c2jName" : "filter",
         "c2jShape" : "FilterCriteriaMap",
         "deprecated" : false,
-        "documentation" : "<p>The criteria for the rule.</p>",
+        "documentation" : "<p>The condition and values for a criterion.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The criteria for the rule.</p>\n@param filter The criteria for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@param filter The condition and values for a criterion.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFilter",
-        "getterDocumentation" : "/**<p>The criteria for the rule.</p>\n@return The criteria for the rule.*/",
+        "getterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@return The condition and values for a criterion.*/",
         "getterMethodName" : "getFilter",
         "getterModel" : {
           "returnType" : "java.util.Map<String,Criterion>",
@@ -15626,7 +15626,7 @@
         "marshallingType" : "MAP",
         "name" : "Filter",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The criteria for the rule.</p>\n@param filter The criteria for the rule.*/",
+        "setterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@param filter The condition and values for a criterion.*/",
         "setterMethodName" : "setFilter",
         "setterModel" : {
           "timestampFormat" : null,
@@ -15640,13 +15640,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The criteria for the rule.</p>\n@param filter The criteria for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@param filter The condition and values for a criterion.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,Criterion>",
           "variableName" : "filter",
           "variableType" : "java.util.Map<String,Criterion>",
-          "documentation" : "<p>The criteria for the rule.</p>",
+          "documentation" : "<p>The condition and values for a criterion.</p>",
           "simpleType" : "Map<String,Criterion>",
           "variableSetterType" : "java.util.Map<String,Criterion>"
         },
@@ -15724,11 +15724,11 @@
           "c2jName" : "filter",
           "c2jShape" : "FilterCriteriaMap",
           "deprecated" : false,
-          "documentation" : "<p>The criteria for the rule.</p>",
+          "documentation" : "<p>The condition and values for a criterion.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The criteria for the rule.</p>\n@param filter The criteria for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@param filter The condition and values for a criterion.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFilter",
-          "getterDocumentation" : "/**<p>The criteria for the rule.</p>\n@return The criteria for the rule.*/",
+          "getterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@return The condition and values for a criterion.*/",
           "getterMethodName" : "getFilter",
           "getterModel" : {
             "returnType" : "java.util.Map<String,Criterion>",
@@ -15844,7 +15844,7 @@
           "marshallingType" : "MAP",
           "name" : "Filter",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The criteria for the rule.</p>\n@param filter The criteria for the rule.*/",
+          "setterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@param filter The condition and values for a criterion.*/",
           "setterMethodName" : "setFilter",
           "setterModel" : {
             "timestampFormat" : null,
@@ -15858,13 +15858,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The criteria for the rule.</p>\n@param filter The criteria for the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The condition and values for a criterion.</p>\n@param filter The condition and values for a criterion.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,Criterion>",
             "variableName" : "filter",
             "variableType" : "java.util.Map<String,Criterion>",
-            "documentation" : "<p>The criteria for the rule.</p>",
+            "documentation" : "<p>The condition and values for a criterion.</p>",
             "simpleType" : "Map<String,Criterion>",
             "variableSetterType" : "java.util.Map<String,Criterion>"
           },
@@ -17359,11 +17359,11 @@
         "c2jName" : "type",
         "c2jShape" : "Type",
         "deprecated" : false,
-        "documentation" : "<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>",
+        "documentation" : "<p>The type of analyzer.</p>",
         "enumType" : "Type",
-        "fluentSetterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@param type The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+        "fluentSetterDocumentation" : "/**<p>The type of analyzer.</p>\n@param type The type of analyzer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
         "fluentSetterMethodName" : "withType",
-        "getterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@return The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@see Type*/",
+        "getterDocumentation" : "/**<p>The type of analyzer.</p>\n@return The type of analyzer.\n@see Type*/",
         "getterMethodName" : "getType",
         "getterModel" : {
           "returnType" : "String",
@@ -17397,7 +17397,7 @@
         "marshallingType" : "STRING",
         "name" : "Type",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@param type The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@see Type*/",
+        "setterDocumentation" : "/**<p>The type of analyzer.</p>\n@param type The type of analyzer.\n@see Type*/",
         "setterMethodName" : "setType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17411,13 +17411,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@param type The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+        "varargSetterDocumentation" : "/**<p>The type of analyzer.</p>\n@param type The type of analyzer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
-          "documentation" : "<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>",
+          "documentation" : "<p>The type of analyzer.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -17564,11 +17564,11 @@
           "c2jName" : "type",
           "c2jShape" : "Type",
           "deprecated" : false,
-          "documentation" : "<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>",
+          "documentation" : "<p>The type of analyzer.</p>",
           "enumType" : "Type",
-          "fluentSetterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@param type The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+          "fluentSetterDocumentation" : "/**<p>The type of analyzer.</p>\n@param type The type of analyzer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
           "fluentSetterMethodName" : "withType",
-          "getterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@return The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@see Type*/",
+          "getterDocumentation" : "/**<p>The type of analyzer.</p>\n@return The type of analyzer.\n@see Type*/",
           "getterMethodName" : "getType",
           "getterModel" : {
             "returnType" : "String",
@@ -17602,7 +17602,7 @@
           "marshallingType" : "STRING",
           "name" : "Type",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@param type The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@see Type*/",
+          "setterDocumentation" : "/**<p>The type of analyzer.</p>\n@param type The type of analyzer.\n@see Type*/",
           "setterMethodName" : "setType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -17616,13 +17616,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>\n@param type The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
+          "varargSetterDocumentation" : "/**<p>The type of analyzer.</p>\n@param type The type of analyzer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Type*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
-            "documentation" : "<p>The type of analyzer, which corresponds to the zone of trust selected when the analyzer was created.</p>",
+            "documentation" : "<p>The type of analyzer.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -19944,7 +19944,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The resposne to the request.</p>",
+      "documentation" : "<p>The response to the request.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -21666,7 +21666,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The sort criteria.</p>",
+      "documentation" : "<p>The criteria used to sort.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -23554,7 +23554,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The response tot he request.</p>",
+      "documentation" : "<p>The response to the request.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

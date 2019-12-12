@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An inline archive rule.
+ * An criterion statement in an archive rule. Each archive rule may have multiple criteria.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/InlineArchiveRule" target="_top">AWS
@@ -30,7 +30,7 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The criteria for the rule.
+     * The condition and values for a criterion.
      * </p>
      */
     private java.util.Map<String, Criterion> filter;
@@ -43,10 +43,10 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The criteria for the rule.
+     * The condition and values for a criterion.
      * </p>
      * 
-     * @return The criteria for the rule.
+     * @return The condition and values for a criterion.
      */
 
     public java.util.Map<String, Criterion> getFilter() {
@@ -55,11 +55,11 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The criteria for the rule.
+     * The condition and values for a criterion.
      * </p>
      * 
      * @param filter
-     *        The criteria for the rule.
+     *        The condition and values for a criterion.
      */
 
     public void setFilter(java.util.Map<String, Criterion> filter) {
@@ -68,11 +68,11 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The criteria for the rule.
+     * The condition and values for a criterion.
      * </p>
      * 
      * @param filter
-     *        The criteria for the rule.
+     *        The condition and values for a criterion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

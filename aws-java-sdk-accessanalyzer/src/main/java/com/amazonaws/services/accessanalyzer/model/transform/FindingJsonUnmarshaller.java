@@ -54,7 +54,7 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                 }
                 if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
-                    finding.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    finding.setAnalyzedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("condition", targetDepth)) {
                     context.nextToken();
@@ -63,7 +63,7 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    finding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    finding.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
@@ -96,7 +96,7 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    finding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    finding.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
