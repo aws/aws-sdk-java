@@ -91,7 +91,8 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private Boolean sendingEnabled;
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the email address suppression preferences for your account in the
+     * current AWS Region.
      * </p>
      */
     private SuppressionAttributes suppressionAttributes;
@@ -549,11 +550,13 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the email address suppression preferences for your account in the
+     * current AWS Region.
      * </p>
      * 
      * @param suppressionAttributes
-     *        An object that contains information about your account's suppression preferences.
+     *        An object that contains information about the email address suppression preferences for your account in
+     *        the current AWS Region.
      */
 
     public void setSuppressionAttributes(SuppressionAttributes suppressionAttributes) {
@@ -562,10 +565,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the email address suppression preferences for your account in the
+     * current AWS Region.
      * </p>
      * 
-     * @return An object that contains information about your account's suppression preferences.
+     * @return An object that contains information about the email address suppression preferences for your account in
+     *         the current AWS Region.
      */
 
     public SuppressionAttributes getSuppressionAttributes() {
@@ -574,11 +579,13 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the email address suppression preferences for your account in the
+     * current AWS Region.
      * </p>
      * 
      * @param suppressionAttributes
-     *        An object that contains information about your account's suppression preferences.
+     *        An object that contains information about the email address suppression preferences for your account in
+     *        the current AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

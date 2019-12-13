@@ -60,16 +60,6 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
- * <code>BatchGetReportGroups</code>: Returns an array of report groups.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReports</code>: Returns an array of reports.
- * </p>
- * </li>
- * <li>
- * <p>
  * <code>CreateProject</code>: Creates a build project.
  * </p>
  * </li>
@@ -102,6 +92,11 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -115,6 +110,11 @@ import com.amazonaws.services.codebuild.model.*;
  * <li>
  * <p>
  * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.
  * </p>
  * </li>
  * <li>
@@ -168,9 +168,27 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the current AWS account or
+ * user.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared with the current AWS
+ * account or user
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code> or
+ * <code>ReportGroup</code> object.
  * </p>
  * </li>
  * <li>
@@ -582,6 +600,37 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
+     * Deletes a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSCodeBuildAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
      * </p>
      * 
@@ -674,6 +723,37 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      */
     java.util.concurrent.Future<DescribeTestCasesResult> describeTestCasesAsync(DescribeTestCasesRequest describeTestCasesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTestCasesRequest, DescribeTestCasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSCodeBuildAsync.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Gets a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -964,6 +1044,68 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
 
     /**
      * <p>
+     * Gets a list of projects that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedProjectsRequest
+     * @return A Java Future containing the result of the ListSharedProjects operation returned by the service.
+     * @sample AWSCodeBuildAsync.ListSharedProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSharedProjectsResult> listSharedProjectsAsync(ListSharedProjectsRequest listSharedProjectsRequest);
+
+    /**
+     * <p>
+     * Gets a list of projects that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedProjectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSharedProjects operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.ListSharedProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSharedProjectsResult> listSharedProjectsAsync(ListSharedProjectsRequest listSharedProjectsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSharedProjectsRequest, ListSharedProjectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of report groups that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedReportGroupsRequest
+     * @return A Java Future containing the result of the ListSharedReportGroups operation returned by the service.
+     * @sample AWSCodeBuildAsync.ListSharedReportGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSharedReportGroupsResult> listSharedReportGroupsAsync(ListSharedReportGroupsRequest listSharedReportGroupsRequest);
+
+    /**
+     * <p>
+     * Gets a list of report groups that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedReportGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSharedReportGroups operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.ListSharedReportGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSharedReportGroupsResult> listSharedReportGroupsAsync(ListSharedReportGroupsRequest listSharedReportGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSharedReportGroupsRequest, ListSharedReportGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of <code>SourceCredentialsInfo</code> objects.
      * </p>
      * 
@@ -992,6 +1134,37 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      */
     java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest listSourceCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<ListSourceCredentialsRequest, ListSourceCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code> object.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSCodeBuildAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code> object.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>

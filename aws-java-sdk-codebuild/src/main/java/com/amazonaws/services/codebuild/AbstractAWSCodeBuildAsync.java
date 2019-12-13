@@ -171,6 +171,19 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSourceCredentialsResult> deleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request) {
 
         return deleteSourceCredentialsAsync(request, null);
@@ -205,6 +218,19 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     @Override
     public java.util.concurrent.Future<DescribeTestCasesResult> describeTestCasesAsync(DescribeTestCasesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTestCasesRequest, DescribeTestCasesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -327,6 +353,32 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListSharedProjectsResult> listSharedProjectsAsync(ListSharedProjectsRequest request) {
+
+        return listSharedProjectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharedProjectsResult> listSharedProjectsAsync(ListSharedProjectsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSharedProjectsRequest, ListSharedProjectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharedReportGroupsResult> listSharedReportGroupsAsync(ListSharedReportGroupsRequest request) {
+
+        return listSharedReportGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharedReportGroupsResult> listSharedReportGroupsAsync(ListSharedReportGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSharedReportGroupsRequest, ListSharedReportGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest request) {
 
         return listSourceCredentialsAsync(request, null);
@@ -335,6 +387,19 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     @Override
     public java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSourceCredentialsRequest, ListSourceCredentialsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

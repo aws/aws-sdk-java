@@ -36,10 +36,9 @@ public class Content implements Serializable, Cloneable, StructuredPojo {
     private String data;
     /**
      * <p>
-     * The character set for the content. Because of the constraints of the SMTP protocol, the Amazon SES API v2 uses
-     * 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a
-     * character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
-     * <code>Shift_JIS</code>.
+     * The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII
+     * by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.
      * </p>
      */
     private String charset;
@@ -86,16 +85,15 @@ public class Content implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The character set for the content. Because of the constraints of the SMTP protocol, the Amazon SES API v2 uses
-     * 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a
-     * character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
-     * <code>Shift_JIS</code>.
+     * The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII
+     * by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.
      * </p>
      * 
      * @param charset
-     *        The character set for the content. Because of the constraints of the SMTP protocol, the Amazon SES API v2
-     *        uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to
-     *        specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     *        The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit
+     *        ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a
+     *        character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
      *        <code>Shift_JIS</code>.
      */
 
@@ -105,15 +103,14 @@ public class Content implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The character set for the content. Because of the constraints of the SMTP protocol, the Amazon SES API v2 uses
-     * 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a
-     * character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
-     * <code>Shift_JIS</code>.
+     * The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII
+     * by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.
      * </p>
      * 
-     * @return The character set for the content. Because of the constraints of the SMTP protocol, the Amazon SES API v2
-     *         uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to
-     *         specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * @return The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit
+     *         ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a
+     *         character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
      *         <code>Shift_JIS</code>.
      */
 
@@ -123,16 +120,15 @@ public class Content implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The character set for the content. Because of the constraints of the SMTP protocol, the Amazon SES API v2 uses
-     * 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a
-     * character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
-     * <code>Shift_JIS</code>.
+     * The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit ASCII
+     * by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.
      * </p>
      * 
      * @param charset
-     *        The character set for the content. Because of the constraints of the SMTP protocol, the Amazon SES API v2
-     *        uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to
-     *        specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     *        The character set for the content. Because of the constraints of the SMTP protocol, Amazon SES uses 7-bit
+     *        ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a
+     *        character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
      *        <code>Shift_JIS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

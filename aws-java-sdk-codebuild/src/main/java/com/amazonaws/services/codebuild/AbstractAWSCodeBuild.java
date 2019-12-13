@@ -93,6 +93,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSourceCredentialsResult deleteSourceCredentials(DeleteSourceCredentialsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
 
     @Override
     public DescribeTestCasesResult describeTestCases(DescribeTestCasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -153,7 +163,22 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public ListSharedProjectsResult listSharedProjects(ListSharedProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSharedReportGroupsResult listSharedReportGroups(ListSharedReportGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSourceCredentialsResult listSourceCredentials(ListSourceCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

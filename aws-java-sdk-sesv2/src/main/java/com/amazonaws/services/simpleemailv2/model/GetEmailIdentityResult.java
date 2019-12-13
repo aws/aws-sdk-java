@@ -59,8 +59,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
     private Boolean verifiedForSendingStatus;
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      */
     private DkimAttributes dkimAttributes;
@@ -346,14 +345,11 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      * 
      * @param dkimAttributes
-     *        An object that contains information about the DKIM attributes for the identity. This object includes the
-     *        tokens that you use to create the CNAME records that are required to complete the DKIM verification
-     *        process.
+     *        An object that contains information about the DKIM attributes for the identity.
      */
 
     public void setDkimAttributes(DkimAttributes dkimAttributes) {
@@ -362,13 +358,10 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      * 
-     * @return An object that contains information about the DKIM attributes for the identity. This object includes the
-     *         tokens that you use to create the CNAME records that are required to complete the DKIM verification
-     *         process.
+     * @return An object that contains information about the DKIM attributes for the identity.
      */
 
     public DkimAttributes getDkimAttributes() {
@@ -377,14 +370,11 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      * 
      * @param dkimAttributes
-     *        An object that contains information about the DKIM attributes for the identity. This object includes the
-     *        tokens that you use to create the CNAME records that are required to complete the DKIM verification
-     *        process.
+     *        An object that contains information about the DKIM attributes for the identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

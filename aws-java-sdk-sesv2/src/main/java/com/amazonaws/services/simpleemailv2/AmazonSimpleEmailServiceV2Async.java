@@ -189,9 +189,9 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your
      * messages will be handled by various email providers around the world. When you perform a predictive inbox
      * placement test, you provide a sample message that contains the content that you plan to send to your customers.
-     * Amazon SES API v2 then sends that message to special email addresses spread across several major email providers.
-     * After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
-     * operation to view the results of the test.
+     * Amazon SES then sends that message to special email addresses spread across several major email providers. After
+     * about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to
+     * view the results of the test.
      * </p>
      * 
      * @param createDeliverabilityTestReportRequest
@@ -215,9 +215,9 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your
      * messages will be handled by various email providers around the world. When you perform a predictive inbox
      * placement test, you provide a sample message that contains the content that you plan to send to your customers.
-     * Amazon SES API v2 then sends that message to special email addresses spread across several major email providers.
-     * After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
-     * operation to view the results of the test.
+     * Amazon SES then sends that message to special email addresses spread across several major email providers. After
+     * about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to
+     * view the results of the test.
      * </p>
      * 
      * @param createDeliverabilityTestReportRequest
@@ -253,10 +253,18 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * soon as you follow the link in the verification email.
      * </p>
      * <p>
-     * When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens.
-     * You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES
-     * detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or
-     * more to complete the domain verification process.
+     * When you verify a domain without specifying the <code>DkimSigningAttributes</code> object, this operation
+     * provides a set of DKIM tokens. You can convert these tokens into CNAME records, which you then add to the DNS
+     * configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS
+     * configuration for your domain. This verification method is known as <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * <p>
+     * Alternatively, you can perform the verification process by providing your own public-private key pair. This
+     * verification method is known as Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the
+     * <code>CreateEmailIdentity</code> operation has to include the <code>DkimSigningAttributes</code> object. When you
+     * specify this object, you provide a selector (a component of the DNS record name that identifies the public key
+     * that you want to use for DKIM authentication) and a private key.
      * </p>
      * 
      * @param createEmailIdentityRequest
@@ -280,10 +288,18 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * soon as you follow the link in the verification email.
      * </p>
      * <p>
-     * When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens.
-     * You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES
-     * detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or
-     * more to complete the domain verification process.
+     * When you verify a domain without specifying the <code>DkimSigningAttributes</code> object, this operation
+     * provides a set of DKIM tokens. You can convert these tokens into CNAME records, which you then add to the DNS
+     * configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS
+     * configuration for your domain. This verification method is known as <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * <p>
+     * Alternatively, you can perform the verification process by providing your own public-private key pair. This
+     * verification method is known as Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the
+     * <code>CreateEmailIdentity</code> operation has to include the <code>DkimSigningAttributes</code> object. When you
+     * specify this object, you provide a selector (a component of the DNS record name that identifies the public key
+     * that you want to use for DKIM authentication) and a private key.
      * </p>
      * 
      * @param createEmailIdentityRequest
@@ -464,11 +480,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Used to delete a suppressed email destination from your suppression list.
+     * Removes an email address from the suppression list for your account.
      * </p>
      * 
      * @param deleteSuppressedDestinationRequest
-     *        A request to delete a suppressed email destination.
+     *        A request to remove an email address from the suppression list for your account.
      * @return A Java Future containing the result of the DeleteSuppressedDestination operation returned by the service.
      * @sample AmazonSimpleEmailServiceV2Async.DeleteSuppressedDestination
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination"
@@ -479,11 +495,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Used to delete a suppressed email destination from your suppression list.
+     * Removes an email address from the suppression list for your account.
      * </p>
      * 
      * @param deleteSuppressedDestinationRequest
-     *        A request to delete a suppressed email destination.
+     *        A request to remove an email address from the suppression list for your account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -736,8 +752,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <p>
      * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
      * that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a
-     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
-     * Pricing</a>.
+     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
      * </p>
      * 
      * @param getDeliverabilityDashboardOptionsRequest
@@ -767,8 +782,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <p>
      * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
      * that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a
-     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
-     * Pricing</a>.
+     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
      * </p>
      * 
      * @param getDeliverabilityDashboardOptionsRequest
@@ -944,11 +958,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Used to fetch a single suppressed email destination from your suppression list.
+     * Retrieves information about a specific email address that's on the suppression list for your account.
      * </p>
      * 
      * @param getSuppressedDestinationRequest
-     *        A request to get a suppressed email destination.
+     *        A request to retrieve information about an email address that's on the suppression list for your account.
      * @return A Java Future containing the result of the GetSuppressedDestination operation returned by the service.
      * @sample AmazonSimpleEmailServiceV2Async.GetSuppressedDestination
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination" target="_top">AWS
@@ -958,11 +972,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Used to fetch a single suppressed email destination from your suppression list.
+     * Retrieves information about a specific email address that's on the suppression list for your account.
      * </p>
      * 
      * @param getSuppressedDestinationRequest
-     *        A request to get a suppressed email destination.
+     *        A request to retrieve information about an email address that's on the suppression list for your account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1178,11 +1192,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Used to fetch a list suppressed email destinations from your suppression list.
+     * Retrieves a list of email addresses that are on the suppression list for your account.
      * </p>
      * 
      * @param listSuppressedDestinationsRequest
-     *        A request to obtain a list of suppressed email destinations.
+     *        A request to obtain a list of email destinations that are on the suppression list for your account.
      * @return A Java Future containing the result of the ListSuppressedDestinations operation returned by the service.
      * @sample AmazonSimpleEmailServiceV2Async.ListSuppressedDestinations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations"
@@ -1193,11 +1207,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Used to fetch a list suppressed email destinations from your suppression list.
+     * Retrieves a list of email addresses that are on the suppression list for your account.
      * </p>
      * 
      * @param listSuppressedDestinationsRequest
-     *        A request to obtain a list of suppressed email destinations.
+     *        A request to obtain a list of email destinations that are on the suppression list for your account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1322,7 +1336,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Change your account's suppression preferences for your account.
+     * Change the settings for the account-level suppression list.
      * </p>
      * 
      * @param putAccountSuppressionAttributesRequest
@@ -1338,7 +1352,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Change your account's suppression preferences for your account.
+     * Change the settings for the account-level suppression list.
      * </p>
      * 
      * @param putAccountSuppressionAttributesRequest
@@ -1476,11 +1490,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Specify your account's suppression preferences for a configuration set.
+     * Specify the account suppression list preferences for a configuration set.
      * </p>
      * 
      * @param putConfigurationSetSuppressionOptionsRequest
-     *        A request to change your account's suppression preferences for an specific configuration set.
+     *        A request to change the account suppression list preferences for a specific configuration set.
      * @return A Java Future containing the result of the PutConfigurationSetSuppressionOptions operation returned by
      *         the service.
      * @sample AmazonSimpleEmailServiceV2Async.PutConfigurationSetSuppressionOptions
@@ -1492,11 +1506,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Specify your account's suppression preferences for a configuration set.
+     * Specify the account suppression list preferences for a configuration set.
      * </p>
      * 
      * @param putConfigurationSetSuppressionOptionsRequest
-     *        A request to change your account's suppression preferences for an specific configuration set.
+     *        A request to change the account suppression list preferences for a specific configuration set.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1643,8 +1657,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <p>
      * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
      * that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a
-     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
-     * Pricing</a>.
+     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
      * </p>
      * 
      * @param putDeliverabilityDashboardOptionRequest
@@ -1674,8 +1687,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <p>
      * When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees
      * that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a
-     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
-     * Pricing</a>.
+     * Deliverability dashboard subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.
      * </p>
      * 
      * @param putDeliverabilityDashboardOptionRequest
@@ -1737,6 +1749,99 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<PutEmailIdentityDkimAttributesResult> putEmailIdentityDkimAttributesAsync(
             PutEmailIdentityDkimAttributesRequest putEmailIdentityDkimAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<PutEmailIdentityDkimAttributesRequest, PutEmailIdentityDkimAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used to configure or change the DKIM authentication settings for an email domain identity. You can use this
+     * operation to do any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using no DKIM authentication to using Easy DKIM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using no DKIM authentication to using BYODKIM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using Easy DKIM to using BYODKIM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using BYODKIM to using Easy DKIM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putEmailIdentityDkimSigningAttributesRequest
+     *        A request to change the DKIM attributes for an email identity.
+     * @return A Java Future containing the result of the PutEmailIdentityDkimSigningAttributes operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutEmailIdentityDkimSigningAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEmailIdentityDkimSigningAttributesResult> putEmailIdentityDkimSigningAttributesAsync(
+            PutEmailIdentityDkimSigningAttributesRequest putEmailIdentityDkimSigningAttributesRequest);
+
+    /**
+     * <p>
+     * Used to configure or change the DKIM authentication settings for an email domain identity. You can use this
+     * operation to do any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using no DKIM authentication to using Easy DKIM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using no DKIM authentication to using BYODKIM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using Easy DKIM to using BYODKIM.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change from using BYODKIM to using Easy DKIM.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putEmailIdentityDkimSigningAttributesRequest
+     *        A request to change the DKIM attributes for an email identity.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEmailIdentityDkimSigningAttributes operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutEmailIdentityDkimSigningAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEmailIdentityDkimSigningAttributesResult> putEmailIdentityDkimSigningAttributesAsync(
+            PutEmailIdentityDkimSigningAttributesRequest putEmailIdentityDkimSigningAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEmailIdentityDkimSigningAttributesRequest, PutEmailIdentityDkimSigningAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -1836,11 +1941,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Puts (overwrites) an email destination in your suppression list.
+     * Adds an email address to the suppression list for your account.
      * </p>
      * 
      * @param putSuppressedDestinationRequest
-     *        A request to suppress an email destination.
+     *        A request to add an email destination to the suppression list for your account.
      * @return A Java Future containing the result of the PutSuppressedDestination operation returned by the service.
      * @sample AmazonSimpleEmailServiceV2Async.PutSuppressedDestination
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination" target="_top">AWS
@@ -1850,11 +1955,11 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Puts (overwrites) an email destination in your suppression list.
+     * Adds an email address to the suppression list for your account.
      * </p>
      * 
      * @param putSuppressedDestinationRequest
-     *        A request to suppress an email destination.
+     *        A request to add an email destination to the suppression list for your account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1875,7 +1980,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <li>
      * <p>
      * <b>Simple</b> – A standard email message. When you create this type of message, you specify the sender, the
-     * recipient, and the message body, and the Amazon SES API v2 assembles the message for you.
+     * recipient, and the message body, and Amazon SES assembles the message for you.
      * </p>
      * </li>
      * <li>
@@ -1904,7 +2009,7 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * <li>
      * <p>
      * <b>Simple</b> – A standard email message. When you create this type of message, you specify the sender, the
-     * recipient, and the message body, and the Amazon SES API v2 assembles the message for you.
+     * recipient, and the message body, and Amazon SES assembles the message for you.
      * </p>
      * </li>
      * <li>

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to get a suppressed email destination.
+ * A request to retrieve information about an email address that's on the suppression list for your account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination" target="_top">AWS API
@@ -30,18 +30,18 @@ public class GetSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Email destination to fetch from the suppression list.
+     * The email address that's on the account suppression list.
      * </p>
      */
     private String emailAddress;
 
     /**
      * <p>
-     * Email destination to fetch from the suppression list.
+     * The email address that's on the account suppression list.
      * </p>
      * 
      * @param emailAddress
-     *        Email destination to fetch from the suppression list.
+     *        The email address that's on the account suppression list.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -50,10 +50,10 @@ public class GetSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Email destination to fetch from the suppression list.
+     * The email address that's on the account suppression list.
      * </p>
      * 
-     * @return Email destination to fetch from the suppression list.
+     * @return The email address that's on the account suppression list.
      */
 
     public String getEmailAddress() {
@@ -62,11 +62,11 @@ public class GetSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Email destination to fetch from the suppression list.
+     * The email address that's on the account suppression list.
      * </p>
      * 
      * @param emailAddress
-     *        Email destination to fetch from the suppression list.
+     *        The email address that's on the account suppression list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

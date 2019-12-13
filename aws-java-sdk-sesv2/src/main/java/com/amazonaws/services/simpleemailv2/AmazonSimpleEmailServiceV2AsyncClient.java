@@ -1474,6 +1474,41 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<PutEmailIdentityDkimSigningAttributesResult> putEmailIdentityDkimSigningAttributesAsync(
+            PutEmailIdentityDkimSigningAttributesRequest request) {
+
+        return putEmailIdentityDkimSigningAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEmailIdentityDkimSigningAttributesResult> putEmailIdentityDkimSigningAttributesAsync(
+            final PutEmailIdentityDkimSigningAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEmailIdentityDkimSigningAttributesRequest, PutEmailIdentityDkimSigningAttributesResult> asyncHandler) {
+        final PutEmailIdentityDkimSigningAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEmailIdentityDkimSigningAttributesResult>() {
+            @Override
+            public PutEmailIdentityDkimSigningAttributesResult call() throws Exception {
+                PutEmailIdentityDkimSigningAttributesResult result = null;
+
+                try {
+                    result = executePutEmailIdentityDkimSigningAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutEmailIdentityFeedbackAttributesResult> putEmailIdentityFeedbackAttributesAsync(
             PutEmailIdentityFeedbackAttributesRequest request) {
 

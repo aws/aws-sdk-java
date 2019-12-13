@@ -61,16 +61,6 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
- * <code>BatchGetReportGroups</code>: Returns an array of report groups.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReports</code>: Returns an array of reports.
- * </p>
- * </li>
- * <li>
- * <p>
  * <code>CreateProject</code>: Creates a build project.
  * </p>
  * </li>
@@ -103,6 +93,11 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -116,6 +111,11 @@ import com.amazonaws.services.codebuild.model.*;
  * <li>
  * <p>
  * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.
  * </p>
  * </li>
  * <li>
@@ -169,9 +169,27 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the current AWS account or
+ * user.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared with the current AWS
+ * account or user
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code> or
+ * <code>ReportGroup</code> object.
  * </p>
  * </li>
  * <li>
@@ -466,6 +484,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Deletes a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
      * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
      * </p>
      * 
@@ -517,6 +550,23 @@ public interface AWSCodeBuild {
      *      API Documentation</a>
      */
     DescribeTestCasesResult describeTestCases(DescribeTestCasesRequest describeTestCasesRequest);
+
+    /**
+     * <p>
+     * Gets a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest);
 
     /**
      * <p>
@@ -665,6 +715,36 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Gets a list of projects that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedProjectsRequest
+     * @return Result of the ListSharedProjects operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListSharedProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListSharedProjectsResult listSharedProjects(ListSharedProjectsRequest listSharedProjectsRequest);
+
+    /**
+     * <p>
+     * Gets a list of report groups that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedReportGroupsRequest
+     * @return Result of the ListSharedReportGroups operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListSharedReportGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSharedReportGroupsResult listSharedReportGroups(ListSharedReportGroupsRequest listSharedReportGroupsRequest);
+
+    /**
+     * <p>
      * Returns a list of <code>SourceCredentialsInfo</code> objects.
      * </p>
      * 
@@ -675,6 +755,23 @@ public interface AWSCodeBuild {
      *      target="_top">AWS API Documentation</a>
      */
     ListSourceCredentialsResult listSourceCredentials(ListSourceCredentialsRequest listSourceCredentialsRequest);
+
+    /**
+     * <p>
+     * Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code> object.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest);
 
     /**
      * <p>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a dedicated IP address that is associated with your Amazon SES API v2 account.
+ * Contains information about a dedicated IP address that is associated with your Amazon SES account.
  * </p>
  * <p>
  * To learn more about requesting dedicated IP addresses, see <a

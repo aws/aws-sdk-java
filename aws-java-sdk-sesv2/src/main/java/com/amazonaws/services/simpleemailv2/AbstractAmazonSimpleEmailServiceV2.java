@@ -233,6 +233,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public PutEmailIdentityDkimSigningAttributesResult putEmailIdentityDkimSigningAttributes(PutEmailIdentityDkimSigningAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutEmailIdentityFeedbackAttributesResult putEmailIdentityFeedbackAttributes(PutEmailIdentityFeedbackAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

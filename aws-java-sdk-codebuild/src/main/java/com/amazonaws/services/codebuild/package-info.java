@@ -47,16 +47,6 @@
  * </li>
  * <li>
  * <p>
- * <code>BatchGetReportGroups</code>: Returns an array of report groups.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReports</code>: Returns an array of reports.
- * </p>
- * </li>
- * <li>
- * <p>
  * <code>CreateProject</code>: Creates a build project.
  * </p>
  * </li>
@@ -89,6 +79,11 @@
  * </li>
  * <li>
  * <p>
+ * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -102,6 +97,11 @@
  * <li>
  * <p>
  * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.
  * </p>
  * </li>
  * <li>
@@ -155,9 +155,27 @@
  * </li>
  * <li>
  * <p>
+ * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the current AWS account or
+ * user.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared with the current AWS
+ * account or user
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code> or
+ * <code>ReportGroup</code> object.
  * </p>
  * </li>
  * <li>

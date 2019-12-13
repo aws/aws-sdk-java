@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to suppress an email destination.
+ * A request to add an email destination to the suppression list for your account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination" target="_top">AWS API
@@ -30,24 +30,24 @@ public class PutSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Email destination to be suppressed.
+     * The email address that should be added to the suppression list for your account.
      * </p>
      */
     private String emailAddress;
     /**
      * <p>
-     * Reason for which the email destination is suppressed.
+     * The factors that should cause the email address to be added to the suppression list for your account.
      * </p>
      */
     private String reason;
 
     /**
      * <p>
-     * Email destination to be suppressed.
+     * The email address that should be added to the suppression list for your account.
      * </p>
      * 
      * @param emailAddress
-     *        Email destination to be suppressed.
+     *        The email address that should be added to the suppression list for your account.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -56,10 +56,10 @@ public class PutSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Email destination to be suppressed.
+     * The email address that should be added to the suppression list for your account.
      * </p>
      * 
-     * @return Email destination to be suppressed.
+     * @return The email address that should be added to the suppression list for your account.
      */
 
     public String getEmailAddress() {
@@ -68,11 +68,11 @@ public class PutSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Email destination to be suppressed.
+     * The email address that should be added to the suppression list for your account.
      * </p>
      * 
      * @param emailAddress
-     *        Email destination to be suppressed.
+     *        The email address that should be added to the suppression list for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class PutSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Reason for which the email destination is suppressed.
+     * The factors that should cause the email address to be added to the suppression list for your account.
      * </p>
      * 
      * @param reason
-     *        Reason for which the email destination is suppressed.
+     *        The factors that should cause the email address to be added to the suppression list for your account.
      * @see SuppressionListReason
      */
 
@@ -97,10 +97,10 @@ public class PutSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Reason for which the email destination is suppressed.
+     * The factors that should cause the email address to be added to the suppression list for your account.
      * </p>
      * 
-     * @return Reason for which the email destination is suppressed.
+     * @return The factors that should cause the email address to be added to the suppression list for your account.
      * @see SuppressionListReason
      */
 
@@ -110,11 +110,11 @@ public class PutSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Reason for which the email destination is suppressed.
+     * The factors that should cause the email address to be added to the suppression list for your account.
      * </p>
      * 
      * @param reason
-     *        Reason for which the email destination is suppressed.
+     *        The factors that should cause the email address to be added to the suppression list for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuppressionListReason
      */
@@ -126,11 +126,11 @@ public class PutSuppressedDestinationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Reason for which the email destination is suppressed.
+     * The factors that should cause the email address to be added to the suppression list for your account.
      * </p>
      * 
      * @param reason
-     *        Reason for which the email destination is suppressed.
+     *        The factors that should cause the email address to be added to the suppression list for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuppressionListReason
      */

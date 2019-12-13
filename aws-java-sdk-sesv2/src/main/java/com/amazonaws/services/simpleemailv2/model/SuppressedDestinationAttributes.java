@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object containing additional attributes related to a suppressed destination.
+ * An object that contains additional attributes that are related an email address that is on the suppression list for
+ * your account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressedDestinationAttributes"
@@ -30,24 +31,27 @@ public class SuppressedDestinationAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A unique identifier of the message that caused the suppression of the email destination.
+     * The unique identifier of the email message that caused the email address to be added to the suppression list for
+     * your account.
      * </p>
      */
     private String messageId;
     /**
      * <p>
-     * A unique identifier of the suppression cause.
+     * A unique identifier that's generated when an email address is added to the suppression list for your account.
      * </p>
      */
     private String feedbackId;
 
     /**
      * <p>
-     * A unique identifier of the message that caused the suppression of the email destination.
+     * The unique identifier of the email message that caused the email address to be added to the suppression list for
+     * your account.
      * </p>
      * 
      * @param messageId
-     *        A unique identifier of the message that caused the suppression of the email destination.
+     *        The unique identifier of the email message that caused the email address to be added to the suppression
+     *        list for your account.
      */
 
     public void setMessageId(String messageId) {
@@ -56,10 +60,12 @@ public class SuppressedDestinationAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A unique identifier of the message that caused the suppression of the email destination.
+     * The unique identifier of the email message that caused the email address to be added to the suppression list for
+     * your account.
      * </p>
      * 
-     * @return A unique identifier of the message that caused the suppression of the email destination.
+     * @return The unique identifier of the email message that caused the email address to be added to the suppression
+     *         list for your account.
      */
 
     public String getMessageId() {
@@ -68,11 +74,13 @@ public class SuppressedDestinationAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A unique identifier of the message that caused the suppression of the email destination.
+     * The unique identifier of the email message that caused the email address to be added to the suppression list for
+     * your account.
      * </p>
      * 
      * @param messageId
-     *        A unique identifier of the message that caused the suppression of the email destination.
+     *        The unique identifier of the email message that caused the email address to be added to the suppression
+     *        list for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +91,12 @@ public class SuppressedDestinationAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A unique identifier of the suppression cause.
+     * A unique identifier that's generated when an email address is added to the suppression list for your account.
      * </p>
      * 
      * @param feedbackId
-     *        A unique identifier of the suppression cause.
+     *        A unique identifier that's generated when an email address is added to the suppression list for your
+     *        account.
      */
 
     public void setFeedbackId(String feedbackId) {
@@ -96,10 +105,11 @@ public class SuppressedDestinationAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A unique identifier of the suppression cause.
+     * A unique identifier that's generated when an email address is added to the suppression list for your account.
      * </p>
      * 
-     * @return A unique identifier of the suppression cause.
+     * @return A unique identifier that's generated when an email address is added to the suppression list for your
+     *         account.
      */
 
     public String getFeedbackId() {
@@ -108,11 +118,12 @@ public class SuppressedDestinationAttributes implements Serializable, Cloneable,
 
     /**
      * <p>
-     * A unique identifier of the suppression cause.
+     * A unique identifier that's generated when an email address is added to the suppression list for your account.
      * </p>
      * 
      * @param feedbackId
-     *        A unique identifier of the suppression cause.
+     *        A unique identifier that's generated when an email address is added to the suppression list for your
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

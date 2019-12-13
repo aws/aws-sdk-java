@@ -34,6 +34,8 @@ public class DkimAttributesMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<List> TOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tokens").build();
+    private static final MarshallingInfo<String> SIGNINGATTRIBUTESORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningAttributesOrigin").build();
 
     private static final DkimAttributesMarshaller instance = new DkimAttributesMarshaller();
 
@@ -54,6 +56,7 @@ public class DkimAttributesMarshaller {
             protocolMarshaller.marshall(dkimAttributes.getSigningEnabled(), SIGNINGENABLED_BINDING);
             protocolMarshaller.marshall(dkimAttributes.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(dkimAttributes.getTokens(), TOKENS_BINDING);
+            protocolMarshaller.marshall(dkimAttributes.getSigningAttributesOrigin(), SIGNINGATTRIBUTESORIGIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -19,7 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that contains information about the DKIM configuration for an email identity.
+ * An object that contains information about the DKIM authentication status for an email identity.
+ * </p>
+ * <p>
+ * Amazon SES determines the authentication status by searching for specific records in the DNS configuration for the
+ * domain. If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to
+ * set up DKIM authentication, Amazon SES tries to find three unique CNAME records in the DNS configuration for your
+ * domain. If you provided a public key to perform DKIM authentication, Amazon SES tries to find a TXT record that uses
+ * the selector that you specified. The value of the TXT record must be a public key that's paired with the private key
+ * that you specified in the process of creating the identity
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DkimAttributes" target="_top">AWS API
@@ -43,32 +51,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain,
-     * but will continue to attempt to locate them.
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     * records in the DNS configuration for the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and determined
-     * that they're correct. You can now send DKIM-signed email from the identity.
+     * <code>SUCCESS</code> – The verification process completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the domain, and
-     * won't continue to search for them.
+     * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the
+     * DKIM records in the DNS configuration of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the DKIM
-     * status for the domain.
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     * authentication status of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM records for
-     * the domain.
+     * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      * </p>
      * </li>
      * </ul>
@@ -76,13 +82,41 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for
-     * your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM
-     * authentication process is complete. Amazon SES usually detects these records within about 72 hours of adding them
-     * to the DNS configuration for your domain.
+     * If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to
+     * configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to
+     * create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects
+     * these records in the DNS configuration for your domain, the DKIM authentication process is complete.
+     * </p>
+     * <p>
+     * If you configured DKIM authentication for the domain by providing your own public-private key pair, then this
+     * object contains the selector for the public key.
+     * </p>
+     * <p>
+     * Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS
+     * configuration of the domain for up to 72 hours.
      * </p>
      */
     private java.util.List<String> tokens;
+    /**
+     * <p>
+     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     * (BYODKIM).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String signingAttributesOrigin;
 
     /**
      * <p>
@@ -156,32 +190,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain,
-     * but will continue to attempt to locate them.
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     * records in the DNS configuration for the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and determined
-     * that they're correct. You can now send DKIM-signed email from the identity.
+     * <code>SUCCESS</code> – The verification process completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the domain, and
-     * won't continue to search for them.
+     * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the
+     * DKIM records in the DNS configuration of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the DKIM
-     * status for the domain.
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     * authentication status of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM records for
-     * the domain.
+     * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      * </p>
      * </li>
      * </ul>
@@ -192,32 +224,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the
-     *        domain, but will continue to attempt to locate them.
+     *        <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     *        records in the DNS configuration for the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and
-     *        determined that they're correct. You can now send DKIM-signed email from the identity.
+     *        <code>SUCCESS</code> – The verification process completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the
-     *        domain, and won't continue to search for them.
+     *        <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find
+     *        the DKIM records in the DNS configuration of the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining
-     *        the DKIM status for the domain.
+     *        <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     *        authentication status of the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM
-     *        records for the domain.
+     *        <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      *        </p>
      *        </li>
      * @see DkimStatus
@@ -235,32 +265,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain,
-     * but will continue to attempt to locate them.
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     * records in the DNS configuration for the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and determined
-     * that they're correct. You can now send DKIM-signed email from the identity.
+     * <code>SUCCESS</code> – The verification process completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the domain, and
-     * won't continue to search for them.
+     * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the
+     * DKIM records in the DNS configuration of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the DKIM
-     * status for the domain.
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     * authentication status of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM records for
-     * the domain.
+     * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      * </p>
      * </li>
      * </ul>
@@ -270,32 +298,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the
-     *         domain, but will continue to attempt to locate them.
+     *         <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the
+     *         DKIM records in the DNS configuration for the domain.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and
-     *         determined that they're correct. You can now send DKIM-signed email from the identity.
+     *         <code>SUCCESS</code> – The verification process completed successfully.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the
-     *         domain, and won't continue to search for them.
+     *         <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to
+     *         find the DKIM records in the DNS configuration of the domain.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining
-     *         the DKIM status for the domain.
+     *         <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     *         authentication status of the domain.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM
-     *         records for the domain.
+     *         <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      *         </p>
      *         </li>
      * @see DkimStatus
@@ -313,32 +339,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain,
-     * but will continue to attempt to locate them.
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     * records in the DNS configuration for the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and determined
-     * that they're correct. You can now send DKIM-signed email from the identity.
+     * <code>SUCCESS</code> – The verification process completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the domain, and
-     * won't continue to search for them.
+     * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the
+     * DKIM records in the DNS configuration of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the DKIM
-     * status for the domain.
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     * authentication status of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM records for
-     * the domain.
+     * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      * </p>
      * </li>
      * </ul>
@@ -349,32 +373,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the
-     *        domain, but will continue to attempt to locate them.
+     *        <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     *        records in the DNS configuration for the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and
-     *        determined that they're correct. You can now send DKIM-signed email from the identity.
+     *        <code>SUCCESS</code> – The verification process completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the
-     *        domain, and won't continue to search for them.
+     *        <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find
+     *        the DKIM records in the DNS configuration of the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining
-     *        the DKIM status for the domain.
+     *        <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     *        authentication status of the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM
-     *        records for the domain.
+     *        <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -394,32 +416,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain,
-     * but will continue to attempt to locate them.
+     * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     * records in the DNS configuration for the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and determined
-     * that they're correct. You can now send DKIM-signed email from the identity.
+     * <code>SUCCESS</code> – The verification process completed successfully.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the domain, and
-     * won't continue to search for them.
+     * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the
+     * DKIM records in the DNS configuration of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the DKIM
-     * status for the domain.
+     * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     * authentication status of the domain.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM records for
-     * the domain.
+     * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      * </p>
      * </li>
      * </ul>
@@ -430,32 +450,30 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> – Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the
-     *        domain, but will continue to attempt to locate them.
+     *        <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM
+     *        records in the DNS configuration for the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SUCCESS</code> – Amazon SES located the DKIM records in the DNS configuration for the domain and
-     *        determined that they're correct. You can now send DKIM-signed email from the identity.
+     *        <code>SUCCESS</code> – The verification process completed successfully.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FAILED</code> – Amazon SES wasn't able to locate the DKIM records in the DNS settings for the
-     *        domain, and won't continue to search for them.
+     *        <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find
+     *        the DKIM records in the DNS configuration of the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining
-     *        the DKIM status for the domain.
+     *        <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM
+     *        authentication status of the domain.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NOT_STARTED</code> – Amazon SES hasn't yet started searching for the DKIM records in the DKIM
-     *        records for the domain.
+     *        <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -469,16 +487,32 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for
-     * your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM
-     * authentication process is complete. Amazon SES usually detects these records within about 72 hours of adding them
-     * to the DNS configuration for your domain.
+     * If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to
+     * configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to
+     * create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects
+     * these records in the DNS configuration for your domain, the DKIM authentication process is complete.
+     * </p>
+     * <p>
+     * If you configured DKIM authentication for the domain by providing your own public-private key pair, then this
+     * object contains the selector for the public key.
+     * </p>
+     * <p>
+     * Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS
+     * configuration of the domain for up to 72 hours.
      * </p>
      * 
-     * @return A set of unique strings that you use to create a set of CNAME records that you add to the DNS
-     *         configuration for your domain. When Amazon SES detects these records in the DNS configuration for your
-     *         domain, the DKIM authentication process is complete. Amazon SES usually detects these records within
-     *         about 72 hours of adding them to the DNS configuration for your domain.
+     * @return If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>
+     *         to configure DKIM authentication for the domain, then this object contains a set of unique strings that
+     *         you use to create a set of CNAME records that you add to the DNS configuration for your domain. When
+     *         Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication
+     *         process is complete.</p>
+     *         <p>
+     *         If you configured DKIM authentication for the domain by providing your own public-private key pair, then
+     *         this object contains the selector for the public key.
+     *         </p>
+     *         <p>
+     *         Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in
+     *         the DNS configuration of the domain for up to 72 hours.
      */
 
     public java.util.List<String> getTokens() {
@@ -487,17 +521,33 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for
-     * your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM
-     * authentication process is complete. Amazon SES usually detects these records within about 72 hours of adding them
-     * to the DNS configuration for your domain.
+     * If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to
+     * configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to
+     * create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects
+     * these records in the DNS configuration for your domain, the DKIM authentication process is complete.
+     * </p>
+     * <p>
+     * If you configured DKIM authentication for the domain by providing your own public-private key pair, then this
+     * object contains the selector for the public key.
+     * </p>
+     * <p>
+     * Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS
+     * configuration of the domain for up to 72 hours.
      * </p>
      * 
      * @param tokens
-     *        A set of unique strings that you use to create a set of CNAME records that you add to the DNS
-     *        configuration for your domain. When Amazon SES detects these records in the DNS configuration for your
-     *        domain, the DKIM authentication process is complete. Amazon SES usually detects these records within about
-     *        72 hours of adding them to the DNS configuration for your domain.
+     *        If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>
+     *        to configure DKIM authentication for the domain, then this object contains a set of unique strings that
+     *        you use to create a set of CNAME records that you add to the DNS configuration for your domain. When
+     *        Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process
+     *        is complete.</p>
+     *        <p>
+     *        If you configured DKIM authentication for the domain by providing your own public-private key pair, then
+     *        this object contains the selector for the public key.
+     *        </p>
+     *        <p>
+     *        Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in
+     *        the DNS configuration of the domain for up to 72 hours.
      */
 
     public void setTokens(java.util.Collection<String> tokens) {
@@ -511,10 +561,18 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for
-     * your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM
-     * authentication process is complete. Amazon SES usually detects these records within about 72 hours of adding them
-     * to the DNS configuration for your domain.
+     * If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to
+     * configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to
+     * create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects
+     * these records in the DNS configuration for your domain, the DKIM authentication process is complete.
+     * </p>
+     * <p>
+     * If you configured DKIM authentication for the domain by providing your own public-private key pair, then this
+     * object contains the selector for the public key.
+     * </p>
+     * <p>
+     * Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS
+     * configuration of the domain for up to 72 hours.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -523,10 +581,18 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tokens
-     *        A set of unique strings that you use to create a set of CNAME records that you add to the DNS
-     *        configuration for your domain. When Amazon SES detects these records in the DNS configuration for your
-     *        domain, the DKIM authentication process is complete. Amazon SES usually detects these records within about
-     *        72 hours of adding them to the DNS configuration for your domain.
+     *        If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>
+     *        to configure DKIM authentication for the domain, then this object contains a set of unique strings that
+     *        you use to create a set of CNAME records that you add to the DNS configuration for your domain. When
+     *        Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process
+     *        is complete.</p>
+     *        <p>
+     *        If you configured DKIM authentication for the domain by providing your own public-private key pair, then
+     *        this object contains the selector for the public key.
+     *        </p>
+     *        <p>
+     *        Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in
+     *        the DNS configuration of the domain for up to 72 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -542,22 +608,205 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for
-     * your domain. When Amazon SES detects these records in the DNS configuration for your domain, the DKIM
-     * authentication process is complete. Amazon SES usually detects these records within about 72 hours of adding them
-     * to the DNS configuration for your domain.
+     * If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a> to
+     * configure DKIM authentication for the domain, then this object contains a set of unique strings that you use to
+     * create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon SES detects
+     * these records in the DNS configuration for your domain, the DKIM authentication process is complete.
+     * </p>
+     * <p>
+     * If you configured DKIM authentication for the domain by providing your own public-private key pair, then this
+     * object contains the selector for the public key.
+     * </p>
+     * <p>
+     * Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in the DNS
+     * configuration of the domain for up to 72 hours.
      * </p>
      * 
      * @param tokens
-     *        A set of unique strings that you use to create a set of CNAME records that you add to the DNS
-     *        configuration for your domain. When Amazon SES detects these records in the DNS configuration for your
-     *        domain, the DKIM authentication process is complete. Amazon SES usually detects these records within about
-     *        72 hours of adding them to the DNS configuration for your domain.
+     *        If you used <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>
+     *        to configure DKIM authentication for the domain, then this object contains a set of unique strings that
+     *        you use to create a set of CNAME records that you add to the DNS configuration for your domain. When
+     *        Amazon SES detects these records in the DNS configuration for your domain, the DKIM authentication process
+     *        is complete.</p>
+     *        <p>
+     *        If you configured DKIM authentication for the domain by providing your own public-private key pair, then
+     *        this object contains the selector for the public key.
+     *        </p>
+     *        <p>
+     *        Regardless of the DKIM authentication method you use, Amazon SES searches for the appropriate records in
+     *        the DNS configuration of the domain for up to 72 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DkimAttributes withTokens(java.util.Collection<String> tokens) {
         setTokens(tokens);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     * (BYODKIM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param signingAttributesOrigin
+     *        A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     *        (BYODKIM).
+     *        </p>
+     *        </li>
+     * @see DkimSigningAttributesOrigin
+     */
+
+    public void setSigningAttributesOrigin(String signingAttributesOrigin) {
+        this.signingAttributesOrigin = signingAttributesOrigin;
+    }
+
+    /**
+     * <p>
+     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     * (BYODKIM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     *         (BYODKIM).
+     *         </p>
+     *         </li>
+     * @see DkimSigningAttributesOrigin
+     */
+
+    public String getSigningAttributesOrigin() {
+        return this.signingAttributesOrigin;
+    }
+
+    /**
+     * <p>
+     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     * (BYODKIM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param signingAttributesOrigin
+     *        A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     *        (BYODKIM).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningAttributesOrigin
+     */
+
+    public DkimAttributes withSigningAttributesOrigin(String signingAttributesOrigin) {
+        setSigningAttributesOrigin(signingAttributesOrigin);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A string that indicates how DKIM was configured for the identity. There are two possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     * (BYODKIM).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param signingAttributesOrigin
+     *        A string that indicates how DKIM was configured for the identity. There are two possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using Bring Your Own DKIM
+     *        (BYODKIM).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DkimSigningAttributesOrigin
+     */
+
+    public DkimAttributes withSigningAttributesOrigin(DkimSigningAttributesOrigin signingAttributesOrigin) {
+        this.signingAttributesOrigin = signingAttributesOrigin.toString();
         return this;
     }
 
@@ -578,7 +827,9 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTokens() != null)
-            sb.append("Tokens: ").append(getTokens());
+            sb.append("Tokens: ").append(getTokens()).append(",");
+        if (getSigningAttributesOrigin() != null)
+            sb.append("SigningAttributesOrigin: ").append(getSigningAttributesOrigin());
         sb.append("}");
         return sb.toString();
     }
@@ -605,6 +856,10 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTokens() != null && other.getTokens().equals(this.getTokens()) == false)
             return false;
+        if (other.getSigningAttributesOrigin() == null ^ this.getSigningAttributesOrigin() == null)
+            return false;
+        if (other.getSigningAttributesOrigin() != null && other.getSigningAttributesOrigin().equals(this.getSigningAttributesOrigin()) == false)
+            return false;
         return true;
     }
 
@@ -616,6 +871,7 @@ public class DkimAttributes implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSigningEnabled() == null) ? 0 : getSigningEnabled().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTokens() == null) ? 0 : getTokens().hashCode());
+        hashCode = prime * hashCode + ((getSigningAttributesOrigin() == null) ? 0 : getSigningAttributesOrigin().hashCode());
         return hashCode;
     }
 

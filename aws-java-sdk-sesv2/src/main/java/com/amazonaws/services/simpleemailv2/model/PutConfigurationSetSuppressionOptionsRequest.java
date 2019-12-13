@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to change your account's suppression preferences for an specific configuration set.
+ * A request to change the account suppression list preferences for a specific configuration set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions"
@@ -30,23 +30,26 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set that you want to change the suppression list preferences for.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * A list of reasons to suppress email addresses. The only valid reasons are:
+     * A list that contains the reasons that email addresses are automatically added to the suppression list for your
+     * account. This list can contain any or all of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     * <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a complaint.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     * <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a hard bounce.
      * </p>
      * </li>
      * </ul>
@@ -55,11 +58,11 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set that you want to change the suppression list preferences for.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to enable or disable email sending for.
+     *        The name of the configuration set that you want to change the suppression list preferences for.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -68,10 +71,10 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set that you want to change the suppression list preferences for.
      * </p>
      * 
-     * @return The name of the configuration set that you want to enable or disable email sending for.
+     * @return The name of the configuration set that you want to change the suppression list preferences for.
      */
 
     public String getConfigurationSetName() {
@@ -80,11 +83,11 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The name of the configuration set that you want to enable or disable email sending for.
+     * The name of the configuration set that you want to change the suppression list preferences for.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to enable or disable email sending for.
+     *        The name of the configuration set that you want to change the suppression list preferences for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,31 +98,37 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A list of reasons to suppress email addresses. The only valid reasons are:
+     * A list that contains the reasons that email addresses are automatically added to the suppression list for your
+     * account. This list can contain any or all of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     * <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a complaint.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     * <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a hard bounce.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A list of reasons to suppress email addresses. The only valid reasons are:</p>
+     * @return A list that contains the reasons that email addresses are automatically added to the suppression list for
+     *         your account. This list can contain any or all of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     *         <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *         message sent to that address results in a complaint.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     *         <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *         message sent to that address results in a hard bounce.
      *         </p>
      *         </li>
      * @see SuppressionListReason
@@ -131,32 +140,38 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A list of reasons to suppress email addresses. The only valid reasons are:
+     * A list that contains the reasons that email addresses are automatically added to the suppression list for your
+     * account. This list can contain any or all of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     * <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a complaint.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     * <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a hard bounce.
      * </p>
      * </li>
      * </ul>
      * 
      * @param suppressedReasons
-     *        A list of reasons to suppress email addresses. The only valid reasons are:</p>
+     *        A list that contains the reasons that email addresses are automatically added to the suppression list for
+     *        your account. This list can contain any or all of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     *        <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a complaint.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     *        <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a hard bounce.
      *        </p>
      *        </li>
      * @see SuppressionListReason
@@ -173,17 +188,20 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A list of reasons to suppress email addresses. The only valid reasons are:
+     * A list that contains the reasons that email addresses are automatically added to the suppression list for your
+     * account. This list can contain any or all of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     * <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a complaint.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     * <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a hard bounce.
      * </p>
      * </li>
      * </ul>
@@ -194,16 +212,19 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
      * </p>
      * 
      * @param suppressedReasons
-     *        A list of reasons to suppress email addresses. The only valid reasons are:</p>
+     *        A list that contains the reasons that email addresses are automatically added to the suppression list for
+     *        your account. This list can contain any or all of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     *        <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a complaint.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     *        <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a hard bounce.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -222,32 +243,38 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A list of reasons to suppress email addresses. The only valid reasons are:
+     * A list that contains the reasons that email addresses are automatically added to the suppression list for your
+     * account. This list can contain any or all of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     * <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a complaint.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     * <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a hard bounce.
      * </p>
      * </li>
      * </ul>
      * 
      * @param suppressedReasons
-     *        A list of reasons to suppress email addresses. The only valid reasons are:</p>
+     *        A list that contains the reasons that email addresses are automatically added to the suppression list for
+     *        your account. This list can contain any or all of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     *        <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a complaint.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     *        <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a hard bounce.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -261,32 +288,38 @@ public class PutConfigurationSetSuppressionOptionsRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A list of reasons to suppress email addresses. The only valid reasons are:
+     * A list that contains the reasons that email addresses are automatically added to the suppression list for your
+     * account. This list can contain any or all of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     * <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a complaint.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     * <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message
+     * sent to that address results in a hard bounce.
      * </p>
      * </li>
      * </ul>
      * 
      * @param suppressedReasons
-     *        A list of reasons to suppress email addresses. The only valid reasons are:</p>
+     *        A list that contains the reasons that email addresses are automatically added to the suppression list for
+     *        your account. This list can contain any or all of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>COMPLAINT</code> – Amazon SES will suppress an email address that receives a complaint.
+     *        <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a complaint.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+     *        <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a
+     *        message sent to that address results in a hard bounce.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

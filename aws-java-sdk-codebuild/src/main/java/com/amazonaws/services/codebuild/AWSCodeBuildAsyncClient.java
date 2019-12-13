@@ -65,16 +65,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <code>BatchGetReportGroups</code>: Returns an array of report groups.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReports</code>: Returns an array of reports.
- * </p>
- * </li>
- * <li>
- * <p>
  * <code>CreateProject</code>: Creates a build project.
  * </p>
  * </li>
@@ -107,6 +97,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -120,6 +115,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.
  * </p>
  * </li>
  * <li>
@@ -173,9 +173,27 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the current AWS account or
+ * user.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared with the current AWS
+ * account or user
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code> or
+ * <code>ReportGroup</code> object.
  * </p>
  * </li>
  * <li>
@@ -778,6 +796,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(final DeleteResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+        final DeleteResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyResult>() {
+            @Override
+            public DeleteResourcePolicyResult call() throws Exception {
+                DeleteResourcePolicyResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSourceCredentialsResult> deleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request) {
 
         return deleteSourceCredentialsAsync(request, null);
@@ -861,6 +912,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeDescribeTestCases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(final GetResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+        final GetResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourcePolicyResult>() {
+            @Override
+            public GetResourcePolicyResult call() throws Exception {
+                GetResourcePolicyResult result = null;
+
+                try {
+                    result = executeGetResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1174,6 +1258,72 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<ListSharedProjectsResult> listSharedProjectsAsync(ListSharedProjectsRequest request) {
+
+        return listSharedProjectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharedProjectsResult> listSharedProjectsAsync(final ListSharedProjectsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSharedProjectsRequest, ListSharedProjectsResult> asyncHandler) {
+        final ListSharedProjectsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSharedProjectsResult>() {
+            @Override
+            public ListSharedProjectsResult call() throws Exception {
+                ListSharedProjectsResult result = null;
+
+                try {
+                    result = executeListSharedProjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharedReportGroupsResult> listSharedReportGroupsAsync(ListSharedReportGroupsRequest request) {
+
+        return listSharedReportGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSharedReportGroupsResult> listSharedReportGroupsAsync(final ListSharedReportGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSharedReportGroupsRequest, ListSharedReportGroupsResult> asyncHandler) {
+        final ListSharedReportGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSharedReportGroupsResult>() {
+            @Override
+            public ListSharedReportGroupsResult call() throws Exception {
+                ListSharedReportGroupsResult result = null;
+
+                try {
+                    result = executeListSharedReportGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest request) {
 
         return listSourceCredentialsAsync(request, null);
@@ -1191,6 +1341,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeListSourceCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(final PutResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+        final PutResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResourcePolicyResult>() {
+            @Override
+            public PutResourcePolicyResult call() throws Exception {
+                PutResourcePolicyResult result = null;
+
+                try {
+                    result = executePutResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

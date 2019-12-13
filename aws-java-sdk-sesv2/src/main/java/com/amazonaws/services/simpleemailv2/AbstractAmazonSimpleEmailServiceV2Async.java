@@ -589,6 +589,21 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<PutEmailIdentityDkimSigningAttributesResult> putEmailIdentityDkimSigningAttributesAsync(
+            PutEmailIdentityDkimSigningAttributesRequest request) {
+
+        return putEmailIdentityDkimSigningAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEmailIdentityDkimSigningAttributesResult> putEmailIdentityDkimSigningAttributesAsync(
+            PutEmailIdentityDkimSigningAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutEmailIdentityDkimSigningAttributesRequest, PutEmailIdentityDkimSigningAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutEmailIdentityFeedbackAttributesResult> putEmailIdentityFeedbackAttributesAsync(
             PutEmailIdentityFeedbackAttributesRequest request) {
 

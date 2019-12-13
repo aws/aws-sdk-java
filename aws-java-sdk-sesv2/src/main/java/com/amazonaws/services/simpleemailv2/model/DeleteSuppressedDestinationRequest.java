@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to delete a suppressed email destination.
+ * A request to remove an email address from the suppression list for your account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination" target="_top">AWS
@@ -30,18 +30,18 @@ public class DeleteSuppressedDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The suppressed email destination to delete.
+     * The suppressed email destination to remove from the account suppression list.
      * </p>
      */
     private String emailAddress;
 
     /**
      * <p>
-     * The suppressed email destination to delete.
+     * The suppressed email destination to remove from the account suppression list.
      * </p>
      * 
      * @param emailAddress
-     *        The suppressed email destination to delete.
+     *        The suppressed email destination to remove from the account suppression list.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -50,10 +50,10 @@ public class DeleteSuppressedDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The suppressed email destination to delete.
+     * The suppressed email destination to remove from the account suppression list.
      * </p>
      * 
-     * @return The suppressed email destination to delete.
+     * @return The suppressed email destination to remove from the account suppression list.
      */
 
     public String getEmailAddress() {
@@ -62,11 +62,11 @@ public class DeleteSuppressedDestinationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The suppressed email destination to delete.
+     * The suppressed email destination to remove from the account suppression list.
      * </p>
      * 
      * @param emailAddress
-     *        The suppressed email destination to delete.
+     *        The suppressed email destination to remove from the account suppression list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

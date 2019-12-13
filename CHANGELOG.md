@@ -1,3 +1,16 @@
+# __1.11.693__ __2019-12-13__
+## __AWS CodeBuild__
+  - ### Features
+    - CodeBuild adds support for cross account
+
+## __Amazon Detective__
+  - ### Features
+    - This is the initial release of Amazon Detective.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - Added the ability to use your own public-private key pair to configure DKIM authentication for a domain identity.
+
 # __1.11.692__ __2019-12-12__
 ## __Access Analyzer__
   - ### Features

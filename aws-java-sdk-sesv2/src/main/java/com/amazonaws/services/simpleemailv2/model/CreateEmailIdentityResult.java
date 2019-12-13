@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * If the email identity is a domain, this object contains tokens that you can use to create a set of CNAME records. To
- * sucessfully verify your domain, you have to add these records to the DNS configuration for your domain.
+ * If the email identity is a domain, this object contains information about the DKIM verification status for the
+ * domain.
  * </p>
  * <p>
  * If the email identity is an email address, this object is empty.
@@ -47,8 +47,7 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
     private Boolean verifiedForSendingStatus;
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      */
     private DkimAttributes dkimAttributes;
@@ -190,14 +189,11 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      * 
      * @param dkimAttributes
-     *        An object that contains information about the DKIM attributes for the identity. This object includes the
-     *        tokens that you use to create the CNAME records that are required to complete the DKIM verification
-     *        process.
+     *        An object that contains information about the DKIM attributes for the identity.
      */
 
     public void setDkimAttributes(DkimAttributes dkimAttributes) {
@@ -206,13 +202,10 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      * 
-     * @return An object that contains information about the DKIM attributes for the identity. This object includes the
-     *         tokens that you use to create the CNAME records that are required to complete the DKIM verification
-     *         process.
+     * @return An object that contains information about the DKIM attributes for the identity.
      */
 
     public DkimAttributes getDkimAttributes() {
@@ -221,14 +214,11 @@ public class CreateEmailIdentityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains information about the DKIM attributes for the identity. This object includes the tokens
-     * that you use to create the CNAME records that are required to complete the DKIM verification process.
+     * An object that contains information about the DKIM attributes for the identity.
      * </p>
      * 
      * @param dkimAttributes
-     *        An object that contains information about the DKIM attributes for the identity. This object includes the
-     *        tokens that you use to create the CNAME records that are required to complete the DKIM verification
-     *        process.
+     *        An object that contains information about the DKIM attributes for the identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to obtain a list of suppressed email destinations.
+ * A request to obtain a list of email destinations that are on the suppression list for your account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations" target="_top">AWS
@@ -30,26 +30,28 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed by the given reasons.
+     * The factors that caused the email address to be added to .
      * </p>
      */
     private java.util.List<String> reasons;
     /**
      * <p>
-     * Filters email destinations suppressed before the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list after a specific date. The date that you specify should be in Unix time format.
      * </p>
      */
     private java.util.Date startDate;
     /**
      * <p>
-     * Filters email destinations suppressed after the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list before a specific date. The date that you specify should be in Unix time format.
      * </p>
      */
     private java.util.Date endDate;
     /**
      * <p>
      * A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the
-     * list of suppressed email destinations.
+     * list of suppressed email addresses.
      * </p>
      */
     private String nextToken;
@@ -64,10 +66,10 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed by the given reasons.
+     * The factors that caused the email address to be added to .
      * </p>
      * 
-     * @return Filters email destinations suppressed by the given reasons.
+     * @return The factors that caused the email address to be added to .
      * @see SuppressionListReason
      */
 
@@ -77,11 +79,11 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed by the given reasons.
+     * The factors that caused the email address to be added to .
      * </p>
      * 
      * @param reasons
-     *        Filters email destinations suppressed by the given reasons.
+     *        The factors that caused the email address to be added to .
      * @see SuppressionListReason
      */
 
@@ -96,7 +98,7 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed by the given reasons.
+     * The factors that caused the email address to be added to .
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -105,7 +107,7 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param reasons
-     *        Filters email destinations suppressed by the given reasons.
+     *        The factors that caused the email address to be added to .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuppressionListReason
      */
@@ -122,11 +124,11 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed by the given reasons.
+     * The factors that caused the email address to be added to .
      * </p>
      * 
      * @param reasons
-     *        Filters email destinations suppressed by the given reasons.
+     *        The factors that caused the email address to be added to .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuppressionListReason
      */
@@ -138,11 +140,11 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed by the given reasons.
+     * The factors that caused the email address to be added to .
      * </p>
      * 
      * @param reasons
-     *        Filters email destinations suppressed by the given reasons.
+     *        The factors that caused the email address to be added to .
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuppressionListReason
      */
@@ -162,11 +164,13 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed before the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list after a specific date. The date that you specify should be in Unix time format.
      * </p>
      * 
      * @param startDate
-     *        Filters email destinations suppressed before the given time.
+     *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
+     *        added to the list after a specific date. The date that you specify should be in Unix time format.
      */
 
     public void setStartDate(java.util.Date startDate) {
@@ -175,10 +179,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed before the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list after a specific date. The date that you specify should be in Unix time format.
      * </p>
      * 
-     * @return Filters email destinations suppressed before the given time.
+     * @return Used to filter the list of suppressed email destinations so that it only includes addresses that were
+     *         added to the list after a specific date. The date that you specify should be in Unix time format.
      */
 
     public java.util.Date getStartDate() {
@@ -187,11 +193,13 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed before the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list after a specific date. The date that you specify should be in Unix time format.
      * </p>
      * 
      * @param startDate
-     *        Filters email destinations suppressed before the given time.
+     *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
+     *        added to the list after a specific date. The date that you specify should be in Unix time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +210,13 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed after the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list before a specific date. The date that you specify should be in Unix time format.
      * </p>
      * 
      * @param endDate
-     *        Filters email destinations suppressed after the given time.
+     *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
+     *        added to the list before a specific date. The date that you specify should be in Unix time format.
      */
 
     public void setEndDate(java.util.Date endDate) {
@@ -215,10 +225,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed after the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list before a specific date. The date that you specify should be in Unix time format.
      * </p>
      * 
-     * @return Filters email destinations suppressed after the given time.
+     * @return Used to filter the list of suppressed email destinations so that it only includes addresses that were
+     *         added to the list before a specific date. The date that you specify should be in Unix time format.
      */
 
     public java.util.Date getEndDate() {
@@ -227,11 +239,13 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Filters email destinations suppressed after the given time.
+     * Used to filter the list of suppressed email destinations so that it only includes addresses that were added to
+     * the list before a specific date. The date that you specify should be in Unix time format.
      * </p>
      * 
      * @param endDate
-     *        Filters email destinations suppressed after the given time.
+     *        Used to filter the list of suppressed email destinations so that it only includes addresses that were
+     *        added to the list before a specific date. The date that you specify should be in Unix time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,12 +257,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the
-     * list of suppressed email destinations.
+     * list of suppressed email addresses.
      * </p>
      * 
      * @param nextToken
      *        A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position
-     *        in the list of suppressed email destinations.
+     *        in the list of suppressed email addresses.
      */
 
     public void setNextToken(String nextToken) {
@@ -258,11 +272,11 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the
-     * list of suppressed email destinations.
+     * list of suppressed email addresses.
      * </p>
      * 
      * @return A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position
-     *         in the list of suppressed email destinations.
+     *         in the list of suppressed email addresses.
      */
 
     public String getNextToken() {
@@ -272,12 +286,12 @@ public class ListSuppressedDestinationsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position in the
-     * list of suppressed email destinations.
+     * list of suppressed email addresses.
      * </p>
      * 
      * @param nextToken
      *        A token returned from a previous call to <code>ListSuppressedDestinations</code> to indicate the position
-     *        in the list of suppressed email destinations.
+     *        in the list of suppressed email addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

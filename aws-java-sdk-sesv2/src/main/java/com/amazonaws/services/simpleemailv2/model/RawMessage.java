@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The raw email message.
+ * Represents the raw content of an email message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/RawMessage" target="_top">AWS API
@@ -50,7 +50,7 @@ public class RawMessage implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Attachments must be in a file format that the Amazon SES API v2 supports.
+     * Attachments must be in a file format that the Amazon SES supports.
      * </p>
      * </li>
      * <li>
@@ -96,7 +96,7 @@ public class RawMessage implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Attachments must be in a file format that the Amazon SES API v2 supports.
+     * Attachments must be in a file format that the Amazon SES supports.
      * </p>
      * </li>
      * <li>
@@ -148,7 +148,7 @@ public class RawMessage implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Attachments must be in a file format that the Amazon SES API v2 supports.
+     *        Attachments must be in a file format that the Amazon SES supports.
      *        </p>
      *        </li>
      *        <li>
@@ -197,7 +197,7 @@ public class RawMessage implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Attachments must be in a file format that the Amazon SES API v2 supports.
+     * Attachments must be in a file format that the Amazon SES supports.
      * </p>
      * </li>
      * <li>
@@ -245,7 +245,7 @@ public class RawMessage implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Attachments must be in a file format that the Amazon SES API v2 supports.
+     *         Attachments must be in a file format that the Amazon SES supports.
      *         </p>
      *         </li>
      *         <li>
@@ -294,7 +294,7 @@ public class RawMessage implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Attachments must be in a file format that the Amazon SES API v2 supports.
+     * Attachments must be in a file format that the Amazon SES supports.
      * </p>
      * </li>
      * <li>
@@ -346,7 +346,7 @@ public class RawMessage implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Attachments must be in a file format that the Amazon SES API v2 supports.
+     *        Attachments must be in a file format that the Amazon SES supports.
      *        </p>
      *        </li>
      *        <li>

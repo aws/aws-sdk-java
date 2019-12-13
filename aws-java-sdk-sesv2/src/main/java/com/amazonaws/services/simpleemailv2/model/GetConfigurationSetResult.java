@@ -66,7 +66,7 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the suppression list preferences for your account.
      * </p>
      */
     private SuppressionOptions suppressionOptions;
@@ -360,11 +360,11 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the suppression list preferences for your account.
      * </p>
      * 
      * @param suppressionOptions
-     *        An object that contains information about your account's suppression preferences.
+     *        An object that contains information about the suppression list preferences for your account.
      */
 
     public void setSuppressionOptions(SuppressionOptions suppressionOptions) {
@@ -373,10 +373,10 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the suppression list preferences for your account.
      * </p>
      * 
-     * @return An object that contains information about your account's suppression preferences.
+     * @return An object that contains information about the suppression list preferences for your account.
      */
 
     public SuppressionOptions getSuppressionOptions() {
@@ -385,11 +385,11 @@ public class GetConfigurationSetResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object that contains information about your account's suppression preferences.
+     * An object that contains information about the suppression list preferences for your account.
      * </p>
      * 
      * @param suppressionOptions
-     *        An object that contains information about your account's suppression preferences.
+     *        An object that contains information about the suppression list preferences for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

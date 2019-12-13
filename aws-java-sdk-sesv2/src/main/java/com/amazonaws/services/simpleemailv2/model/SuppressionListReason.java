@@ -16,17 +16,20 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A string representing the cause for suppression for an email destination. It can be one of the following:
+ * The reason that the address was added to the suppression list for your account. The value can be one of the
+ * following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <code>COMPLAINT</code> – Amazon SES will suppress an email address that receive a complaint.
+ * <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message
+ * sent to that address results in a complaint.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>BOUNCE</code> – Amazon SES will suppress an email address that hard bounces.
+ * <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message
+ * sent to that address results in a hard bounce.
  * </p>
  * </li>
  * </ul>

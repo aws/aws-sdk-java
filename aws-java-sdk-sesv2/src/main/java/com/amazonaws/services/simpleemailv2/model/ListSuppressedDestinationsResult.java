@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of suppressed email destinations.
+ * A list of suppressed email addresses.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations" target="_top">AWS
@@ -34,9 +34,9 @@ public class ListSuppressedDestinationsResult extends com.amazonaws.AmazonWebSer
     private java.util.List<SuppressedDestinationSummary> suppressedDestinationSummaries;
     /**
      * <p>
-     * A token that indicates that there are additional suppressed destinations to list. To view additional suppressed
-     * destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.
+     * A token that indicates that there are additional email addresses on the suppression list for your account. To
+     * view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass
+     * this token in the <code>NextToken</code> parameter.
      * </p>
      */
     private String nextToken;
@@ -113,15 +113,15 @@ public class ListSuppressedDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token that indicates that there are additional suppressed destinations to list. To view additional suppressed
-     * destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.
+     * A token that indicates that there are additional email addresses on the suppression list for your account. To
+     * view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass
+     * this token in the <code>NextToken</code> parameter.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates that there are additional suppressed destinations to list. To view additional
-     *        suppressed destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this
-     *        token in the <code>NextToken</code> parameter.
+     *        A token that indicates that there are additional email addresses on the suppression list for your account.
+     *        To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>,
+     *        and pass this token in the <code>NextToken</code> parameter.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,14 +130,14 @@ public class ListSuppressedDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token that indicates that there are additional suppressed destinations to list. To view additional suppressed
-     * destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.
+     * A token that indicates that there are additional email addresses on the suppression list for your account. To
+     * view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass
+     * this token in the <code>NextToken</code> parameter.
      * </p>
      * 
-     * @return A token that indicates that there are additional suppressed destinations to list. To view additional
-     *         suppressed destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this
-     *         token in the <code>NextToken</code> parameter.
+     * @return A token that indicates that there are additional email addresses on the suppression list for your
+     *         account. To view additional suppressed addresses, issue another request to
+     *         <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.
      */
 
     public String getNextToken() {
@@ -146,15 +146,15 @@ public class ListSuppressedDestinationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A token that indicates that there are additional suppressed destinations to list. To view additional suppressed
-     * destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.
+     * A token that indicates that there are additional email addresses on the suppression list for your account. To
+     * view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass
+     * this token in the <code>NextToken</code> parameter.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates that there are additional suppressed destinations to list. To view additional
-     *        suppressed destinations, issue another request to <code>ListSuppressedDestinations</code>, and pass this
-     *        token in the <code>NextToken</code> parameter.
+     *        A token that indicates that there are additional email addresses on the suppression list for your account.
+     *        To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>,
+     *        and pass this token in the <code>NextToken</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

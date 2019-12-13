@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified request includes an invalid or expired token. Please attempt to get a new token.
+ * The specified request includes an invalid or expired token.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -40,6 +40,17 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
+     * DKIM authentication purposes, as opposed to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * <p>
+     * You can only specify this object if the email identity is a domain, as opposed to an address.
+     * </p>
+     */
+    private DkimSigningAttributes dkimSigningAttributes;
 
     /**
      * <p>
@@ -156,6 +167,73 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
+     * DKIM authentication purposes, as opposed to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * <p>
+     * You can only specify this object if the email identity is a domain, as opposed to an address.
+     * </p>
+     * 
+     * @param dkimSigningAttributes
+     *        If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM
+     *        (BYODKIM) for DKIM authentication purposes, as opposed to the default method, <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+     *        <p>
+     *        You can only specify this object if the email identity is a domain, as opposed to an address.
+     */
+
+    public void setDkimSigningAttributes(DkimSigningAttributes dkimSigningAttributes) {
+        this.dkimSigningAttributes = dkimSigningAttributes;
+    }
+
+    /**
+     * <p>
+     * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
+     * DKIM authentication purposes, as opposed to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * <p>
+     * You can only specify this object if the email identity is a domain, as opposed to an address.
+     * </p>
+     * 
+     * @return If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM
+     *         (BYODKIM) for DKIM authentication purposes, as opposed to the default method, <a
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+     *         <p>
+     *         You can only specify this object if the email identity is a domain, as opposed to an address.
+     */
+
+    public DkimSigningAttributes getDkimSigningAttributes() {
+        return this.dkimSigningAttributes;
+    }
+
+    /**
+     * <p>
+     * If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for
+     * DKIM authentication purposes, as opposed to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
+     * </p>
+     * <p>
+     * You can only specify this object if the email identity is a domain, as opposed to an address.
+     * </p>
+     * 
+     * @param dkimSigningAttributes
+     *        If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM
+     *        (BYODKIM) for DKIM authentication purposes, as opposed to the default method, <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.</p>
+     *        <p>
+     *        You can only specify this object if the email identity is a domain, as opposed to an address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEmailIdentityRequest withDkimSigningAttributes(DkimSigningAttributes dkimSigningAttributes) {
+        setDkimSigningAttributes(dkimSigningAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -170,7 +248,9 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
         if (getEmailIdentity() != null)
             sb.append("EmailIdentity: ").append(getEmailIdentity()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDkimSigningAttributes() != null)
+            sb.append("DkimSigningAttributes: ").append(getDkimSigningAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -193,6 +273,10 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDkimSigningAttributes() == null ^ this.getDkimSigningAttributes() == null)
+            return false;
+        if (other.getDkimSigningAttributes() != null && other.getDkimSigningAttributes().equals(this.getDkimSigningAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -203,6 +287,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getEmailIdentity() == null) ? 0 : getEmailIdentity().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDkimSigningAttributes() == null) ? 0 : getDkimSigningAttributes().hashCode());
         return hashCode;
     }
 

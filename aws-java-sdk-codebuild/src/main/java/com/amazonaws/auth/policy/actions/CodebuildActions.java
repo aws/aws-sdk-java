@@ -47,12 +47,16 @@ public enum CodebuildActions implements Action {
     DeleteReport("codebuild:DeleteReport"),
     /** Action for the DeleteReportGroup operation. */
     DeleteReportGroup("codebuild:DeleteReportGroup"),
+    /** Action for the DeleteResourcePolicy operation. */
+    DeleteResourcePolicy("codebuild:DeleteResourcePolicy"),
     /** Action for the DeleteSourceCredentials operation. */
     DeleteSourceCredentials("codebuild:DeleteSourceCredentials"),
     /** Action for the DeleteWebhook operation. */
     DeleteWebhook("codebuild:DeleteWebhook"),
     /** Action for the DescribeTestCases operation. */
     DescribeTestCases("codebuild:DescribeTestCases"),
+    /** Action for the GetResourcePolicy operation. */
+    GetResourcePolicy("codebuild:GetResourcePolicy"),
     /** Action for the ImportSourceCredentials operation. */
     ImportSourceCredentials("codebuild:ImportSourceCredentials"),
     /** Action for the InvalidateProjectCache operation. */
@@ -71,8 +75,14 @@ public enum CodebuildActions implements Action {
     ListReports("codebuild:ListReports"),
     /** Action for the ListReportsForReportGroup operation. */
     ListReportsForReportGroup("codebuild:ListReportsForReportGroup"),
+    /** Action for the ListSharedProjects operation. */
+    ListSharedProjects("codebuild:ListSharedProjects"),
+    /** Action for the ListSharedReportGroups operation. */
+    ListSharedReportGroups("codebuild:ListSharedReportGroups"),
     /** Action for the ListSourceCredentials operation. */
     ListSourceCredentials("codebuild:ListSourceCredentials"),
+    /** Action for the PutResourcePolicy operation. */
+    PutResourcePolicy("codebuild:PutResourcePolicy"),
     /** Action for the StartBuild operation. */
     StartBuild("codebuild:StartBuild"),
     /** Action for the StopBuild operation. */

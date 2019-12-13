@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about the suppressed email destination.
+ * Information about the suppressed email address.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination" target="_top">AWS API
@@ -28,18 +28,18 @@ public class GetSuppressedDestinationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An object containing information about the suppressed email destination.
+     * An object containing information about the suppressed email address.
      * </p>
      */
     private SuppressedDestination suppressedDestination;
 
     /**
      * <p>
-     * An object containing information about the suppressed email destination.
+     * An object containing information about the suppressed email address.
      * </p>
      * 
      * @param suppressedDestination
-     *        An object containing information about the suppressed email destination.
+     *        An object containing information about the suppressed email address.
      */
 
     public void setSuppressedDestination(SuppressedDestination suppressedDestination) {
@@ -48,10 +48,10 @@ public class GetSuppressedDestinationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An object containing information about the suppressed email destination.
+     * An object containing information about the suppressed email address.
      * </p>
      * 
-     * @return An object containing information about the suppressed email destination.
+     * @return An object containing information about the suppressed email address.
      */
 
     public SuppressedDestination getSuppressedDestination() {
@@ -60,11 +60,11 @@ public class GetSuppressedDestinationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An object containing information about the suppressed email destination.
+     * An object containing information about the suppressed email address.
      * </p>
      * 
      * @param suppressedDestination
-     *        An object containing information about the suppressed email destination.
+     *        An object containing information about the suppressed email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

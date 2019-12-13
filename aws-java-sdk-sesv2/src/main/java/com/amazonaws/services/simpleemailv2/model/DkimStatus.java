@@ -21,19 +21,19 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * <code>PENDING</code> – The DKIM verification process was initiated, and Amazon SES hasn't yet detected the CNAME
- * records in the DNS configuration for the domain.
+ * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in
+ * the DNS configuration for the domain.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>SUCCESS</code> – The DKIM authentication process completed successfully.
+ * <code>SUCCESS</code> – The verification process completed successfully.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon SES fails to find the
- * required CNAME records in the DNS configuration of the domain.
+ * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM
+ * records in the DNS configuration of the domain.
  * </p>
  * </li>
  * <li>

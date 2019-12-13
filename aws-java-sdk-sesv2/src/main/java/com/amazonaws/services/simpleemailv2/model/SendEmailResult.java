@@ -32,9 +32,9 @@ public class SendEmailResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * <note>
      * <p>
-     * It is possible for the Amazon SES API v2 to accept a message without sending it. This can happen when the message
-     * that you're trying to send has an attachment contains a virus, or when you send a templated email that contains
-     * invalid personalization content, for example.
+     * It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're
+     * trying to send has an attachment contains a virus, or when you send a templated email that contains invalid
+     * personalization content, for example.
      * </p>
      * </note>
      */
@@ -46,18 +46,18 @@ public class SendEmailResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * <note>
      * <p>
-     * It is possible for the Amazon SES API v2 to accept a message without sending it. This can happen when the message
-     * that you're trying to send has an attachment contains a virus, or when you send a templated email that contains
-     * invalid personalization content, for example.
+     * It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're
+     * trying to send has an attachment contains a virus, or when you send a templated email that contains invalid
+     * personalization content, for example.
      * </p>
      * </note>
      * 
      * @param messageId
      *        A unique identifier for the message that is generated when the message is accepted.</p> <note>
      *        <p>
-     *        It is possible for the Amazon SES API v2 to accept a message without sending it. This can happen when the
-     *        message that you're trying to send has an attachment contains a virus, or when you send a templated email
-     *        that contains invalid personalization content, for example.
+     *        It's possible for Amazon SES to accept a message without sending it. This can happen when the message that
+     *        you're trying to send has an attachment contains a virus, or when you send a templated email that contains
+     *        invalid personalization content, for example.
      *        </p>
      */
 
@@ -71,17 +71,17 @@ public class SendEmailResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * <note>
      * <p>
-     * It is possible for the Amazon SES API v2 to accept a message without sending it. This can happen when the message
-     * that you're trying to send has an attachment contains a virus, or when you send a templated email that contains
-     * invalid personalization content, for example.
+     * It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're
+     * trying to send has an attachment contains a virus, or when you send a templated email that contains invalid
+     * personalization content, for example.
      * </p>
      * </note>
      * 
      * @return A unique identifier for the message that is generated when the message is accepted.</p> <note>
      *         <p>
-     *         It is possible for the Amazon SES API v2 to accept a message without sending it. This can happen when the
-     *         message that you're trying to send has an attachment contains a virus, or when you send a templated email
-     *         that contains invalid personalization content, for example.
+     *         It's possible for Amazon SES to accept a message without sending it. This can happen when the message
+     *         that you're trying to send has an attachment contains a virus, or when you send a templated email that
+     *         contains invalid personalization content, for example.
      *         </p>
      */
 
@@ -95,18 +95,18 @@ public class SendEmailResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * <note>
      * <p>
-     * It is possible for the Amazon SES API v2 to accept a message without sending it. This can happen when the message
-     * that you're trying to send has an attachment contains a virus, or when you send a templated email that contains
-     * invalid personalization content, for example.
+     * It's possible for Amazon SES to accept a message without sending it. This can happen when the message that you're
+     * trying to send has an attachment contains a virus, or when you send a templated email that contains invalid
+     * personalization content, for example.
      * </p>
      * </note>
      * 
      * @param messageId
      *        A unique identifier for the message that is generated when the message is accepted.</p> <note>
      *        <p>
-     *        It is possible for the Amazon SES API v2 to accept a message without sending it. This can happen when the
-     *        message that you're trying to send has an attachment contains a virus, or when you send a templated email
-     *        that contains invalid personalization content, for example.
+     *        It's possible for Amazon SES to accept a message without sending it. This can happen when the message that
+     *        you're trying to send has an attachment contains a virus, or when you send a templated email that contains
+     *        invalid personalization content, for example.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

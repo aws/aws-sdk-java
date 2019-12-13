@@ -85,16 +85,6 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <code>BatchGetReportGroups</code>: Returns an array of report groups.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReports</code>: Returns an array of reports.
- * </p>
- * </li>
- * <li>
- * <p>
  * <code>CreateProject</code>: Creates a build project.
  * </p>
  * </li>
@@ -127,6 +117,11 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
  * </p>
  * </li>
@@ -140,6 +135,11 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <li>
  * <p>
  * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.
  * </p>
  * </li>
  * <li>
@@ -193,9 +193,27 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the current AWS account or
+ * user.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared with the current AWS
+ * account or user
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
  * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
  * for one set of credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code> or
+ * <code>ReportGroup</code> object.
  * </p>
  * </li>
  * <li>
@@ -1105,6 +1123,61 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
+     * Deletes a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourcePolicyRequest> request = null;
+        Response<DeleteResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
      * </p>
      * 
@@ -1269,6 +1342,63 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTestCasesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTestCasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a resource policy that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePolicyResult executeGetResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePolicyRequest> request = null;
+        Response<GetResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1793,6 +1923,117 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
+     * Gets a list of projects that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedProjectsRequest
+     * @return Result of the ListSharedProjects operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListSharedProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSharedProjectsResult listSharedProjects(ListSharedProjectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSharedProjects(request);
+    }
+
+    @SdkInternalApi
+    final ListSharedProjectsResult executeListSharedProjects(ListSharedProjectsRequest listSharedProjectsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSharedProjectsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSharedProjectsRequest> request = null;
+        Response<ListSharedProjectsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSharedProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSharedProjectsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSharedProjects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSharedProjectsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSharedProjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of report groups that are shared with other AWS accounts or users.
+     * </p>
+     * 
+     * @param listSharedReportGroupsRequest
+     * @return Result of the ListSharedReportGroups operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListSharedReportGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSharedReportGroupsResult listSharedReportGroups(ListSharedReportGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSharedReportGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListSharedReportGroupsResult executeListSharedReportGroups(ListSharedReportGroupsRequest listSharedReportGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSharedReportGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSharedReportGroupsRequest> request = null;
+        Response<ListSharedReportGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSharedReportGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSharedReportGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSharedReportGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSharedReportGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSharedReportGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of <code>SourceCredentialsInfo</code> objects.
      * </p>
      * 
@@ -1835,6 +2076,63 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
             HttpResponseHandler<AmazonWebServiceResponse<ListSourceCredentialsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListSourceCredentialsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code> object.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourcePolicyRequest> request = null;
+        Response<PutResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

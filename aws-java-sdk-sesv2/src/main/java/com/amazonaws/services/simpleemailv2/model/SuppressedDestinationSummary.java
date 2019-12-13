@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary for the suppressed email destination.
+ * A summary that describes the suppressed email address.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressedDestinationSummary" target="_top">AWS
@@ -30,30 +30,30 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The suppressed email destination.
+     * The email address that's on the suppression list for your account.
      * </p>
      */
     private String emailAddress;
     /**
      * <p>
-     * The reason for which the email destination is suppressed.
+     * The reason that the address was added to the suppression list for your account.
      * </p>
      */
     private String reason;
     /**
      * <p>
-     * The last time the suppressed destination was updated.
+     * The date and time when the suppressed destination was last updated, shown in Unix time format.
      * </p>
      */
     private java.util.Date lastUpdateTime;
 
     /**
      * <p>
-     * The suppressed email destination.
+     * The email address that's on the suppression list for your account.
      * </p>
      * 
      * @param emailAddress
-     *        The suppressed email destination.
+     *        The email address that's on the suppression list for your account.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -62,10 +62,10 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The suppressed email destination.
+     * The email address that's on the suppression list for your account.
      * </p>
      * 
-     * @return The suppressed email destination.
+     * @return The email address that's on the suppression list for your account.
      */
 
     public String getEmailAddress() {
@@ -74,11 +74,11 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The suppressed email destination.
+     * The email address that's on the suppression list for your account.
      * </p>
      * 
      * @param emailAddress
-     *        The suppressed email destination.
+     *        The email address that's on the suppression list for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The reason for which the email destination is suppressed.
+     * The reason that the address was added to the suppression list for your account.
      * </p>
      * 
      * @param reason
-     *        The reason for which the email destination is suppressed.
+     *        The reason that the address was added to the suppression list for your account.
      * @see SuppressionListReason
      */
 
@@ -103,10 +103,10 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The reason for which the email destination is suppressed.
+     * The reason that the address was added to the suppression list for your account.
      * </p>
      * 
-     * @return The reason for which the email destination is suppressed.
+     * @return The reason that the address was added to the suppression list for your account.
      * @see SuppressionListReason
      */
 
@@ -116,11 +116,11 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The reason for which the email destination is suppressed.
+     * The reason that the address was added to the suppression list for your account.
      * </p>
      * 
      * @param reason
-     *        The reason for which the email destination is suppressed.
+     *        The reason that the address was added to the suppression list for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuppressionListReason
      */
@@ -132,11 +132,11 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The reason for which the email destination is suppressed.
+     * The reason that the address was added to the suppression list for your account.
      * </p>
      * 
      * @param reason
-     *        The reason for which the email destination is suppressed.
+     *        The reason that the address was added to the suppression list for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuppressionListReason
      */
@@ -148,11 +148,11 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The last time the suppressed destination was updated.
+     * The date and time when the suppressed destination was last updated, shown in Unix time format.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The last time the suppressed destination was updated.
+     *        The date and time when the suppressed destination was last updated, shown in Unix time format.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -161,10 +161,10 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The last time the suppressed destination was updated.
+     * The date and time when the suppressed destination was last updated, shown in Unix time format.
      * </p>
      * 
-     * @return The last time the suppressed destination was updated.
+     * @return The date and time when the suppressed destination was last updated, shown in Unix time format.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -173,11 +173,11 @@ public class SuppressedDestinationSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The last time the suppressed destination was updated.
+     * The date and time when the suppressed destination was last updated, shown in Unix time format.
      * </p>
      * 
      * @param lastUpdateTime
-     *        The last time the suppressed destination was updated.
+     *        The date and time when the suppressed destination was last updated, shown in Unix time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
