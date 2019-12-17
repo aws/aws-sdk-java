@@ -38,6 +38,13 @@ public class OnDemandOptions implements Serializable, Cloneable {
     private String allocationStrategy;
     /**
      * <p>
+     * The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Only available for fleets
+     * of type <code>instant</code>.
+     * </p>
+     */
+    private CapacityReservationOptions capacityReservationOptions;
+    /**
+     * <p>
      * Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.
      * </p>
      */
@@ -150,6 +157,52 @@ public class OnDemandOptions implements Serializable, Cloneable {
 
     public OnDemandOptions withAllocationStrategy(FleetOnDemandAllocationStrategy allocationStrategy) {
         this.allocationStrategy = allocationStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Only available for fleets
+     * of type <code>instant</code>.
+     * </p>
+     * 
+     * @param capacityReservationOptions
+     *        The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Only available for
+     *        fleets of type <code>instant</code>.
+     */
+
+    public void setCapacityReservationOptions(CapacityReservationOptions capacityReservationOptions) {
+        this.capacityReservationOptions = capacityReservationOptions;
+    }
+
+    /**
+     * <p>
+     * The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Only available for fleets
+     * of type <code>instant</code>.
+     * </p>
+     * 
+     * @return The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Only available for
+     *         fleets of type <code>instant</code>.
+     */
+
+    public CapacityReservationOptions getCapacityReservationOptions() {
+        return this.capacityReservationOptions;
+    }
+
+    /**
+     * <p>
+     * The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Only available for fleets
+     * of type <code>instant</code>.
+     * </p>
+     * 
+     * @param capacityReservationOptions
+     *        The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Only available for
+     *        fleets of type <code>instant</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OnDemandOptions withCapacityReservationOptions(CapacityReservationOptions capacityReservationOptions) {
+        setCapacityReservationOptions(capacityReservationOptions);
         return this;
     }
 
@@ -357,6 +410,8 @@ public class OnDemandOptions implements Serializable, Cloneable {
         sb.append("{");
         if (getAllocationStrategy() != null)
             sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
+        if (getCapacityReservationOptions() != null)
+            sb.append("CapacityReservationOptions: ").append(getCapacityReservationOptions()).append(",");
         if (getSingleInstanceType() != null)
             sb.append("SingleInstanceType: ").append(getSingleInstanceType()).append(",");
         if (getSingleAvailabilityZone() != null)
@@ -383,6 +438,10 @@ public class OnDemandOptions implements Serializable, Cloneable {
             return false;
         if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false)
             return false;
+        if (other.getCapacityReservationOptions() == null ^ this.getCapacityReservationOptions() == null)
+            return false;
+        if (other.getCapacityReservationOptions() != null && other.getCapacityReservationOptions().equals(this.getCapacityReservationOptions()) == false)
+            return false;
         if (other.getSingleInstanceType() == null ^ this.getSingleInstanceType() == null)
             return false;
         if (other.getSingleInstanceType() != null && other.getSingleInstanceType().equals(this.getSingleInstanceType()) == false)
@@ -408,6 +467,7 @@ public class OnDemandOptions implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationOptions() == null) ? 0 : getCapacityReservationOptions().hashCode());
         hashCode = prime * hashCode + ((getSingleInstanceType() == null) ? 0 : getSingleInstanceType().hashCode());
         hashCode = prime * hashCode + ((getSingleAvailabilityZone() == null) ? 0 : getSingleAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getMinTargetCapacity() == null) ? 0 : getMinTargetCapacity().hashCode());

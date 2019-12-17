@@ -39,6 +39,8 @@ public class DescribeBrokerInstanceOptionsRequest extends com.amazonaws.AmazonWe
      * nextToken empty.
      */
     private String nextToken;
+    /** Filter response by storage type. */
+    private String storageType;
 
     /**
      * Filter response by engine type.
@@ -189,6 +191,40 @@ public class DescribeBrokerInstanceOptionsRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * Filter response by storage type.
+     * 
+     * @param storageType
+     *        Filter response by storage type.
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * Filter response by storage type.
+     * 
+     * @return Filter response by storage type.
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * Filter response by storage type.
+     * 
+     * @param storageType
+     *        Filter response by storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerInstanceOptionsRequest withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -207,7 +243,9 @@ public class DescribeBrokerInstanceOptionsRequest extends com.amazonaws.AmazonWe
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -238,6 +276,10 @@ public class DescribeBrokerInstanceOptionsRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +292,7 @@ public class DescribeBrokerInstanceOptionsRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

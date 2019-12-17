@@ -1,3 +1,16 @@
+# __1.11.694__ __2019-12-16__
+## __AWS Comprehend Medical__
+  - ### Features
+    - New Ontology linking APIs will provides medication concepts normalization and Diagnoses codes from input text. In this release we will provide two APIs -  RxNorm and ICD10-CM. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - You can now configure your EC2 Fleet to preferentially use EC2 Capacity Reservations for launching On-Demand instances, enabling you to fully utilize the available (and unused) Capacity Reservations before launching On-Demand instances on net new capacity.
+
+## __AmazonMQ__
+  - ### Features
+    - Amazon MQ now supports throughput-optimized message brokers, backed by Amazon EBS.
+
 # __1.11.693__ __2019-12-13__
 ## __AWS CodeBuild__
   - ### Features

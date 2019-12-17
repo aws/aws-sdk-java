@@ -27,7 +27,7 @@ public class DiskInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the disk in GiB.
+     * The size of the disk in GB.
      * </p>
      */
     private Long sizeInGB;
@@ -46,11 +46,11 @@ public class DiskInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the disk in GiB.
+     * The size of the disk in GB.
      * </p>
      * 
      * @param sizeInGB
-     *        The size of the disk in GiB.
+     *        The size of the disk in GB.
      */
 
     public void setSizeInGB(Long sizeInGB) {
@@ -59,10 +59,10 @@ public class DiskInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the disk in GiB.
+     * The size of the disk in GB.
      * </p>
      * 
-     * @return The size of the disk in GiB.
+     * @return The size of the disk in GB.
      */
 
     public Long getSizeInGB() {
@@ -71,11 +71,11 @@ public class DiskInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size of the disk in GiB.
+     * The size of the disk in GB.
      * </p>
      * 
      * @param sizeInGB
-     *        The size of the disk in GiB.
+     *        The size of the disk in GB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

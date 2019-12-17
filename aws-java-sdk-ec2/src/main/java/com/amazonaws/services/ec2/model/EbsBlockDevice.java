@@ -80,8 +80,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     * supports.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter. If you
+     * set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -469,16 +470,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     * supports.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter. If you
+     * set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     *        supports.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter.
+     *        If you set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you
+     *        must omit the <b>Iops</b> parameter.</p>
      *        <p>
      *        Default: <code>gp2</code>
      * @see VolumeType
@@ -490,15 +493,17 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     * supports.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter. If you
+     * set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
-     * @return The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     *         supports.</p>
+     * @return The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b>
+     *         parameter. If you set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
+     *         <code>standard</code>, you must omit the <b>Iops</b> parameter.</p>
      *         <p>
      *         Default: <code>gp2</code>
      * @see VolumeType
@@ -510,16 +515,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     * supports.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter. If you
+     * set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     *        supports.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter.
+     *        If you set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you
+     *        must omit the <b>Iops</b> parameter.</p>
      *        <p>
      *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -533,16 +540,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     * supports.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter. If you
+     * set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     *        supports.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter.
+     *        If you set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you
+     *        must omit the <b>Iops</b> parameter.</p>
      *        <p>
      *        Default: <code>gp2</code>
      * @see VolumeType
@@ -554,16 +563,18 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     * supports.
+     * The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter. If you
+     * set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. If you set the type to <code>io1</code>, you must also specify the IOPS that the volume
-     *        supports.</p>
+     *        The volume type. If you set the type to <code>io1</code>, you must also specify the <b>Iops</b> parameter.
+     *        If you set the type to <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you
+     *        must omit the <b>Iops</b> parameter.</p>
      *        <p>
      *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.

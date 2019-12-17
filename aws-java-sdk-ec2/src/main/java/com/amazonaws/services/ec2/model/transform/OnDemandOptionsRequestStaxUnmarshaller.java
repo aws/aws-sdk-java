@@ -48,6 +48,11 @@ public class OnDemandOptionsRequestStaxUnmarshaller implements Unmarshaller<OnDe
                     continue;
                 }
 
+                if (context.testExpression("CapacityReservationOptions", targetDepth)) {
+                    onDemandOptionsRequest.setCapacityReservationOptions(CapacityReservationOptionsRequestStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SingleInstanceType", targetDepth)) {
                     onDemandOptionsRequest.setSingleInstanceType(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

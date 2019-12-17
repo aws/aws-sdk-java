@@ -115,6 +115,10 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -629,6 +633,10 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -1115,7 +1123,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as
-     *         an ARN. <code>image-id</code> - The ID of the image used to launch the instance.
+     *         an ARN.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>image-id</code> - The ID of the image used to launch the instance.
      *         </p>
      *         </li>
      *         <li>
@@ -1618,6 +1631,10 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -2105,7 +2122,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an
-     *        ARN. <code>image-id</code> - The ID of the image used to launch the instance.
+     *        ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -2609,6 +2631,10 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -3101,7 +3127,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an
-     *        ARN. <code>image-id</code> - The ID of the image used to launch the instance.
+     *        ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -3607,6 +3638,10 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -4094,7 +4129,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>iam-instance-profile.arn</code> - The instance profile associated with the instance. Specified as an
-     *        ARN. <code>image-id</code> - The ID of the image used to launch the instance.
+     *        ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
      *        <li>

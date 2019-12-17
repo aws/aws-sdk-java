@@ -232,6 +232,72 @@ public class AWSComprehendMedicalAsyncClient extends AWSComprehendMedicalClient 
     }
 
     @Override
+    public java.util.concurrent.Future<InferICD10CMResult> inferICD10CMAsync(InferICD10CMRequest request) {
+
+        return inferICD10CMAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InferICD10CMResult> inferICD10CMAsync(final InferICD10CMRequest request,
+            final com.amazonaws.handlers.AsyncHandler<InferICD10CMRequest, InferICD10CMResult> asyncHandler) {
+        final InferICD10CMRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<InferICD10CMResult>() {
+            @Override
+            public InferICD10CMResult call() throws Exception {
+                InferICD10CMResult result = null;
+
+                try {
+                    result = executeInferICD10CM(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<InferRxNormResult> inferRxNormAsync(InferRxNormRequest request) {
+
+        return inferRxNormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InferRxNormResult> inferRxNormAsync(final InferRxNormRequest request,
+            final com.amazonaws.handlers.AsyncHandler<InferRxNormRequest, InferRxNormResult> asyncHandler) {
+        final InferRxNormRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<InferRxNormResult>() {
+            @Override
+            public InferRxNormResult call() throws Exception {
+                InferRxNormResult result = null;
+
+                try {
+                    result = executeInferRxNorm(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEntitiesDetectionV2JobsResult> listEntitiesDetectionV2JobsAsync(ListEntitiesDetectionV2JobsRequest request) {
 
         return listEntitiesDetectionV2JobsAsync(request, null);

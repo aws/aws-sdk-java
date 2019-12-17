@@ -83,6 +83,15 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                 request.addParameter("OnDemandOptions.AllocationStrategy", StringUtils.fromString(onDemandOptions.getAllocationStrategy()));
             }
 
+            CapacityReservationOptionsRequest capacityReservationOptions = onDemandOptions.getCapacityReservationOptions();
+            if (capacityReservationOptions != null) {
+
+                if (capacityReservationOptions.getUsageStrategy() != null) {
+                    request.addParameter("OnDemandOptions.CapacityReservationOptions.UsageStrategy",
+                            StringUtils.fromString(capacityReservationOptions.getUsageStrategy()));
+                }
+            }
+
             if (onDemandOptions.getSingleInstanceType() != null) {
                 request.addParameter("OnDemandOptions.SingleInstanceType", StringUtils.fromBoolean(onDemandOptions.getSingleInstanceType()));
             }

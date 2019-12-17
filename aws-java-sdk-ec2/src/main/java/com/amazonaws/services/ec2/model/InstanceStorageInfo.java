@@ -28,7 +28,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the disks, in GiB.
+     * The total size of the disks, in GB.
      * </p>
      */
     private Long totalSizeInGB;
@@ -41,11 +41,11 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the disks, in GiB.
+     * The total size of the disks, in GB.
      * </p>
      * 
      * @param totalSizeInGB
-     *        The total size of the disks, in GiB.
+     *        The total size of the disks, in GB.
      */
 
     public void setTotalSizeInGB(Long totalSizeInGB) {
@@ -54,10 +54,10 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the disks, in GiB.
+     * The total size of the disks, in GB.
      * </p>
      * 
-     * @return The total size of the disks, in GiB.
+     * @return The total size of the disks, in GB.
      */
 
     public Long getTotalSizeInGB() {
@@ -66,11 +66,11 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the disks, in GiB.
+     * The total size of the disks, in GB.
      * </p>
      * 
      * @param totalSizeInGB
-     *        The total size of the disks, in GiB.
+     *        The total size of the disks, in GB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

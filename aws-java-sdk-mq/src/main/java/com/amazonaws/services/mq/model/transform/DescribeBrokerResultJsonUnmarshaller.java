@@ -113,13 +113,13 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setPendingEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("pendingSecurityGroups", targetDepth)) {
-                    context.nextToken();
-                    describeBrokerResult.setPendingSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
-                }
                 if (context.testExpression("pendingHostInstanceType", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setPendingHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pendingSecurityGroups", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
                     context.nextToken();
@@ -128,6 +128,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("storageType", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("subnetIds", targetDepth)) {
                     context.nextToken();

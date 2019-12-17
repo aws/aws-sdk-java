@@ -95,6 +95,32 @@ public class AbstractAWSComprehendMedicalAsync extends AbstractAWSComprehendMedi
     }
 
     @Override
+    public java.util.concurrent.Future<InferICD10CMResult> inferICD10CMAsync(InferICD10CMRequest request) {
+
+        return inferICD10CMAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InferICD10CMResult> inferICD10CMAsync(InferICD10CMRequest request,
+            com.amazonaws.handlers.AsyncHandler<InferICD10CMRequest, InferICD10CMResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<InferRxNormResult> inferRxNormAsync(InferRxNormRequest request) {
+
+        return inferRxNormAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<InferRxNormResult> inferRxNormAsync(InferRxNormRequest request,
+            com.amazonaws.handlers.AsyncHandler<InferRxNormRequest, InferRxNormResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEntitiesDetectionV2JobsResult> listEntitiesDetectionV2JobsAsync(ListEntitiesDetectionV2JobsRequest request) {
 
         return listEntitiesDetectionV2JobsAsync(request, null);

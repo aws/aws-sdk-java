@@ -54,6 +54,16 @@ public class AbstractAWSComprehendMedical implements AWSComprehendMedical {
     }
 
     @Override
+    public InferICD10CMResult inferICD10CM(InferICD10CMRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public InferRxNormResult inferRxNorm(InferRxNormRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEntitiesDetectionV2JobsResult listEntitiesDetectionV2Jobs(ListEntitiesDetectionV2JobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

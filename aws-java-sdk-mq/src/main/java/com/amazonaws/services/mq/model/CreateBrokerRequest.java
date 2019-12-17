@@ -64,8 +64,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private WeeklyStartTime maintenanceWindowStartTime;
     /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
     private Boolean publiclyAccessible;
-    /** The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers. */
+    /** The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers. */
     private java.util.List<String> securityGroups;
+    /** The broker's storage type. */
+    private String storageType;
     /**
      * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
      * Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An
@@ -582,9 +584,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * 
-     * @return The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * @return The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -592,10 +594,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -608,7 +610,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -616,7 +618,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -631,15 +633,66 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateBrokerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
+        return this;
+    }
+
+    /**
+     * The broker's storage type.
+     * 
+     * @param storageType
+     *        The broker's storage type.
+     * @see BrokerStorageType
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * The broker's storage type.
+     * 
+     * @return The broker's storage type.
+     * @see BrokerStorageType
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * The broker's storage type.
+     * 
+     * @param storageType
+     *        The broker's storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BrokerStorageType
+     */
+
+    public CreateBrokerRequest withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * The broker's storage type.
+     * 
+     * @param storageType
+     *        The broker's storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BrokerStorageType
+     */
+
+    public CreateBrokerRequest withStorageType(BrokerStorageType storageType) {
+        this.storageType = storageType.toString();
         return this;
     }
 
@@ -892,6 +945,8 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType()).append(",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getTags() != null)
@@ -964,6 +1019,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
         if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
@@ -997,6 +1056,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUsers() == null) ? 0 : getUsers().hashCode());

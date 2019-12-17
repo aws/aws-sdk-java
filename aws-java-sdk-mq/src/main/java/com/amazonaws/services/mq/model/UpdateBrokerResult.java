@@ -41,7 +41,7 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     private String hostInstanceType;
     /** The list of information about logs to be enabled for the specified broker. */
     private Logs logs;
-    /** The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers. */
+    /** The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers. */
     private java.util.List<String> securityGroups;
 
     /**
@@ -271,9 +271,9 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * 
-     * @return The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * @return The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -281,10 +281,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -297,7 +297,7 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -305,7 +305,7 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,10 +320,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * 
      * @param securityGroups
-     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

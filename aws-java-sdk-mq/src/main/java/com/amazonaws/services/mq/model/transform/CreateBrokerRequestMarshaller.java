@@ -58,6 +58,8 @@ public class CreateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publiclyAccessible").build();
     private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroups").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageType").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("subnetIds").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -94,6 +96,7 @@ public class CreateBrokerRequestMarshaller {
             protocolMarshaller.marshall(createBrokerRequest.getMaintenanceWindowStartTime(), MAINTENANCEWINDOWSTARTTIME_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
+            protocolMarshaller.marshall(createBrokerRequest.getStorageType(), STORAGETYPE_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getUsers(), USERS_BINDING);

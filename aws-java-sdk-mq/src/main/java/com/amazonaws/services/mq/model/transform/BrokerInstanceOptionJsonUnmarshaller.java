@@ -61,6 +61,14 @@ public class BrokerInstanceOptionJsonUnmarshaller implements Unmarshaller<Broker
                     context.nextToken();
                     brokerInstanceOption.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("storageType", targetDepth)) {
+                    context.nextToken();
+                    brokerInstanceOption.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("supportedDeploymentModes", targetDepth)) {
+                    context.nextToken();
+                    brokerInstanceOption.setSupportedDeploymentModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("supportedEngineVersions", targetDepth)) {
                     context.nextToken();
                     brokerInstanceOption.setSupportedEngineVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

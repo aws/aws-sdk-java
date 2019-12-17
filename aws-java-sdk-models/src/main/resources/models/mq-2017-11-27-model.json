@@ -753,6 +753,16 @@
           "locationName" : "hostInstanceType",
           "documentation" : "The type of broker instance."
         },
+        "StorageType" : {
+          "shape" : "BrokerStorageType",
+          "locationName" : "storageType",
+          "documentation" : "The broker's storage type."
+        },
+        "SupportedDeploymentModes" : {
+          "shape" : "__listOfDeploymentMode",
+          "locationName" : "supportedDeploymentModes",
+          "documentation" : "The list of supported deployment modes."
+        },
         "SupportedEngineVersions" : {
           "shape" : "__listOf__string",
           "locationName" : "supportedEngineVersions",
@@ -786,6 +796,11 @@
       "type" : "string",
       "documentation" : "The status of the broker.",
       "enum" : [ "CREATION_IN_PROGRESS", "CREATION_FAILED", "DELETION_IN_PROGRESS", "RUNNING", "REBOOT_IN_PROGRESS" ]
+    },
+    "BrokerStorageType" : {
+      "type" : "string",
+      "documentation" : "The storage type of the broker.",
+      "enum" : [ "EBS", "EFS" ]
     },
     "BrokerSummary" : {
       "type" : "structure",
@@ -1029,7 +1044,12 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
+        },
+        "StorageType" : {
+          "shape" : "BrokerStorageType",
+          "locationName" : "storageType",
+          "documentation" : "The broker's storage type."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -1047,7 +1067,7 @@
           "documentation" : "Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
         }
       },
-      "documentation" : "Required. The time period during which Amazon MQ applies pending updates or patches to the broker."
+      "documentation" : "Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html"
     },
     "CreateBrokerOutput" : {
       "type" : "structure",
@@ -1132,7 +1152,12 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
+        },
+        "StorageType" : {
+          "shape" : "BrokerStorageType",
+          "locationName" : "storageType",
+          "documentation" : "The broker's storage type."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -1508,6 +1533,12 @@
           "location" : "querystring",
           "locationName" : "nextToken",
           "documentation" : "The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty."
+        },
+        "StorageType" : {
+          "shape" : "__string",
+          "location" : "querystring",
+          "locationName" : "storageType",
+          "documentation" : "Filter response by storage type."
         }
       }
     },
@@ -1614,15 +1645,15 @@
           "locationName" : "pendingEngineVersion",
           "documentation" : "The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html"
         },
-        "PendingSecurityGroups" : {
-          "shape" : "__listOf__string",
-          "locationName" : "pendingSecurityGroups",
-          "documentation" : "The list of pending security groups to authorize connections to brokers."
-        },
         "PendingHostInstanceType" : {
           "shape" : "__string",
           "locationName" : "pendingHostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
+        },
+        "PendingSecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "pendingSecurityGroups",
+          "documentation" : "The list of pending security groups to authorize connections to brokers."
         },
         "PubliclyAccessible" : {
           "shape" : "__boolean",
@@ -1632,7 +1663,12 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
+        },
+        "StorageType" : {
+          "shape" : "BrokerStorageType",
+          "locationName" : "storageType",
+          "documentation" : "The broker's storage type."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -1747,15 +1783,15 @@
           "locationName" : "pendingEngineVersion",
           "documentation" : "The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html"
         },
-        "PendingSecurityGroups" : {
-          "shape" : "__listOf__string",
-          "locationName" : "pendingSecurityGroups",
-          "documentation" : "The list of pending security groups to authorize connections to brokers."
-        },
         "PendingHostInstanceType" : {
           "shape" : "__string",
           "locationName" : "pendingHostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
+        },
+        "PendingSecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "pendingSecurityGroups",
+          "documentation" : "The list of pending security groups to authorize connections to brokers."
         },
         "PubliclyAccessible" : {
           "shape" : "__boolean",
@@ -1765,7 +1801,12 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
+        },
+        "StorageType" : {
+          "shape" : "BrokerStorageType",
+          "locationName" : "storageType",
+          "documentation" : "The broker's storage type."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -2553,7 +2594,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
         }
       },
       "documentation" : "Updates the broker using the specified properties."
@@ -2594,7 +2635,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
         }
       },
       "documentation" : "Returns information about the updated broker."
@@ -2636,7 +2677,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
         }
       },
       "documentation" : "Updates the broker using the specified properties.",
@@ -2678,7 +2719,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers."
         }
       }
     },
@@ -2995,6 +3036,12 @@
       "type" : "list",
       "member" : {
         "shape" : "ConfigurationRevision"
+      }
+    },
+    "__listOfDeploymentMode" : {
+      "type" : "list",
+      "member" : {
+        "shape" : "DeploymentMode"
       }
     },
     "__listOfEngineVersion" : {
