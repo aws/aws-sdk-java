@@ -41,8 +41,12 @@ public class OTAUpdateInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("targets").build();
+    private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("protocols").build();
     private static final MarshallingInfo<StructuredPojo> AWSJOBEXECUTIONSROLLOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobExecutionsRolloutConfig").build();
+    private static final MarshallingInfo<StructuredPojo> AWSJOBPRESIGNEDURLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobPresignedUrlConfig").build();
     private static final MarshallingInfo<String> TARGETSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetSelection").build();
     private static final MarshallingInfo<List> OTAUPDATEFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -80,7 +84,9 @@ public class OTAUpdateInfoMarshaller {
             protocolMarshaller.marshall(oTAUpdateInfo.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(oTAUpdateInfo.getProtocols(), PROTOCOLS_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getAwsJobExecutionsRolloutConfig(), AWSJOBEXECUTIONSROLLOUTCONFIG_BINDING);
+            protocolMarshaller.marshall(oTAUpdateInfo.getAwsJobPresignedUrlConfig(), AWSJOBPRESIGNEDURLCONFIG_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getTargetSelection(), TARGETSELECTION_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getOtaUpdateFiles(), OTAUPDATEFILES_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getOtaUpdateStatus(), OTAUPDATESTATUS_BINDING);

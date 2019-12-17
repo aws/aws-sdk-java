@@ -19,9 +19,9 @@ import javax.annotation.Generated;
  * Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline, doesn't exist.
  * </p>
  * <p>
- * For information about resource limits in Systems Manager, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems Manager
- * Limits</a>.
+ * For information about resource quotas in Systems Manager, see <a
+ * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service Quotas</a> in the
+ * <i>AWS General Reference</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

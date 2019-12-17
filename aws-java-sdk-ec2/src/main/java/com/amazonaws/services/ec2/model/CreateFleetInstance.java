@@ -28,8 +28,8 @@ public class CreateFleetInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      */
     private LaunchTemplateAndOverridesResponse launchTemplateAndOverrides;
@@ -53,20 +53,20 @@ public class CreateFleetInstance implements Serializable, Cloneable {
     private String instanceType;
     /**
      * <p>
-     * The value is <code>Windows</code> for Windows instances; otherwise blank.
+     * The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * </p>
      */
     private String platform;
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      * 
      * @param launchTemplateAndOverrides
-     *        The launch templates and overrides that were used for launching the instances. Any parameters that you
-     *        specify in the Overrides override the same parameters in the launch template.
+     *        The launch templates and overrides that were used for launching the instances. The values that you specify
+     *        in the Overrides replace the values in the launch template.
      */
 
     public void setLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse launchTemplateAndOverrides) {
@@ -75,12 +75,12 @@ public class CreateFleetInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      * 
-     * @return The launch templates and overrides that were used for launching the instances. Any parameters that you
-     *         specify in the Overrides override the same parameters in the launch template.
+     * @return The launch templates and overrides that were used for launching the instances. The values that you
+     *         specify in the Overrides replace the values in the launch template.
      */
 
     public LaunchTemplateAndOverridesResponse getLaunchTemplateAndOverrides() {
@@ -89,13 +89,13 @@ public class CreateFleetInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      * 
      * @param launchTemplateAndOverrides
-     *        The launch templates and overrides that were used for launching the instances. Any parameters that you
-     *        specify in the Overrides override the same parameters in the launch template.
+     *        The launch templates and overrides that were used for launching the instances. The values that you specify
+     *        in the Overrides replace the values in the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,11 +297,11 @@ public class CreateFleetInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value is <code>Windows</code> for Windows instances; otherwise blank.
+     * The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * </p>
      * 
      * @param platform
-     *        The value is <code>Windows</code> for Windows instances; otherwise blank.
+     *        The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * @see PlatformValues
      */
 
@@ -311,10 +311,10 @@ public class CreateFleetInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value is <code>Windows</code> for Windows instances; otherwise blank.
+     * The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * </p>
      * 
-     * @return The value is <code>Windows</code> for Windows instances; otherwise blank.
+     * @return The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * @see PlatformValues
      */
 
@@ -324,11 +324,11 @@ public class CreateFleetInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value is <code>Windows</code> for Windows instances; otherwise blank.
+     * The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * </p>
      * 
      * @param platform
-     *        The value is <code>Windows</code> for Windows instances; otherwise blank.
+     *        The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */
@@ -340,11 +340,11 @@ public class CreateFleetInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value is <code>Windows</code> for Windows instances; otherwise blank.
+     * The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * </p>
      * 
      * @param platform
-     *        The value is <code>Windows</code> for Windows instances; otherwise blank.
+     *        The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlatformValues
      */

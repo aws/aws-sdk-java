@@ -31,6 +31,8 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
      * milliseconds, as specified by captureIntervalUnits.
      */
     private Integer captureInterval;
+    /** Unit for the frame capture interval. */
+    private String captureIntervalUnits;
 
     /**
      * The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or
@@ -73,6 +75,57 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Unit for the frame capture interval.
+     * 
+     * @param captureIntervalUnits
+     *        Unit for the frame capture interval.
+     * @see FrameCaptureIntervalUnit
+     */
+
+    public void setCaptureIntervalUnits(String captureIntervalUnits) {
+        this.captureIntervalUnits = captureIntervalUnits;
+    }
+
+    /**
+     * Unit for the frame capture interval.
+     * 
+     * @return Unit for the frame capture interval.
+     * @see FrameCaptureIntervalUnit
+     */
+
+    public String getCaptureIntervalUnits() {
+        return this.captureIntervalUnits;
+    }
+
+    /**
+     * Unit for the frame capture interval.
+     * 
+     * @param captureIntervalUnits
+     *        Unit for the frame capture interval.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FrameCaptureIntervalUnit
+     */
+
+    public FrameCaptureSettings withCaptureIntervalUnits(String captureIntervalUnits) {
+        setCaptureIntervalUnits(captureIntervalUnits);
+        return this;
+    }
+
+    /**
+     * Unit for the frame capture interval.
+     * 
+     * @param captureIntervalUnits
+     *        Unit for the frame capture interval.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FrameCaptureIntervalUnit
+     */
+
+    public FrameCaptureSettings withCaptureIntervalUnits(FrameCaptureIntervalUnit captureIntervalUnits) {
+        this.captureIntervalUnits = captureIntervalUnits.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +138,9 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaptureInterval() != null)
-            sb.append("CaptureInterval: ").append(getCaptureInterval());
+            sb.append("CaptureInterval: ").append(getCaptureInterval()).append(",");
+        if (getCaptureIntervalUnits() != null)
+            sb.append("CaptureIntervalUnits: ").append(getCaptureIntervalUnits());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +159,10 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getCaptureInterval() != null && other.getCaptureInterval().equals(this.getCaptureInterval()) == false)
             return false;
+        if (other.getCaptureIntervalUnits() == null ^ this.getCaptureIntervalUnits() == null)
+            return false;
+        if (other.getCaptureIntervalUnits() != null && other.getCaptureIntervalUnits().equals(this.getCaptureIntervalUnits()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +172,7 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCaptureInterval() == null) ? 0 : getCaptureInterval().hashCode());
+        hashCode = prime * hashCode + ((getCaptureIntervalUnits() == null) ? 0 : getCaptureIntervalUnits().hashCode());
         return hashCode;
     }
 

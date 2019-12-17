@@ -21,35 +21,32 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * MultiplexValidationErrorMarshaller
+ * HlsId3SegmentTaggingScheduleActionSettingsMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class MultiplexValidationErrorMarshaller {
+public class HlsId3SegmentTaggingScheduleActionSettingsMarshaller {
 
-    private static final MarshallingInfo<String> ELEMENTPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("elementPath").build();
-    private static final MarshallingInfo<String> ERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorMessage").build();
+    private static final MarshallingInfo<String> TAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tag").build();
 
-    private static final MultiplexValidationErrorMarshaller instance = new MultiplexValidationErrorMarshaller();
+    private static final HlsId3SegmentTaggingScheduleActionSettingsMarshaller instance = new HlsId3SegmentTaggingScheduleActionSettingsMarshaller();
 
-    public static MultiplexValidationErrorMarshaller getInstance() {
+    public static HlsId3SegmentTaggingScheduleActionSettingsMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(MultiplexValidationError multiplexValidationError, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(HlsId3SegmentTaggingScheduleActionSettings hlsId3SegmentTaggingScheduleActionSettings, ProtocolMarshaller protocolMarshaller) {
 
-        if (multiplexValidationError == null) {
+        if (hlsId3SegmentTaggingScheduleActionSettings == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(multiplexValidationError.getElementPath(), ELEMENTPATH_BINDING);
-            protocolMarshaller.marshall(multiplexValidationError.getErrorMessage(), ERRORMESSAGE_BINDING);
+            protocolMarshaller.marshall(hlsId3SegmentTaggingScheduleActionSettings.getTag(), TAG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

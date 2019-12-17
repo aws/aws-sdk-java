@@ -35,14 +35,14 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      */
     private String assetId;
     /**
      * <p>
      * The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      */
     private String propertyId;
@@ -110,12 +110,12 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      * 
      * @param assetId
      *        The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an
-     *        <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     *        <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      */
 
     public void setAssetId(String assetId) {
@@ -125,11 +125,11 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      * 
      * @return The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an
-     *         <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     *         <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      */
 
     public String getAssetId() {
@@ -139,12 +139,12 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      * 
      * @param assetId
      *        The ID of the AWS IoT SiteWise asset. You must specify either a <code>propertyAlias</code> or both an
-     *        <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     *        <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,12 +156,12 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      * 
      * @param propertyId
      *        The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an
-     *        <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     *        <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      */
 
     public void setPropertyId(String propertyId) {
@@ -171,11 +171,11 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      * 
      * @return The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an
-     *         <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     *         <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      */
 
     public String getPropertyId() {
@@ -185,12 +185,12 @@ public class PutAssetPropertyValueEntry implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an
-     * <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     * <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * </p>
      * 
      * @param propertyId
      *        The ID of the asset's property. You must specify either a <code>propertyAlias</code> or both an
-     *        <code>analiasId</code> and a <code>propertyId</code>. Accepts substitution templates.
+     *        <code>aliasId</code> and a <code>propertyId</code>. Accepts substitution templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

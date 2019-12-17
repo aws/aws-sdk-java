@@ -204,9 +204,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @sample AWSSimpleSystemsManagement.CancelMaintenanceWindowExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution"
      *      target="_top">AWS API Documentation</a>
@@ -396,12 +396,12 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
      * @throws ResourceLimitExceededException
-     *         Error returned when the caller has exceeded the default resource limits. For example, too many
+     *         Error returned when the caller has exceeded the default resource quotas. For example, too many
      *         maintenance windows or patch baselines have been created.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreateMaintenanceWindow
@@ -431,7 +431,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemAlreadyExistsException
      *         The OpsItem already exists.
      * @throws OpsItemLimitExceededException
-     *         The request caused OpsItems to exceed one or more limits. For information about OpsItem limits, see <a
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
      *         href=
      *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
      *         >What are the resource limits for OpsCenter?</a>.
@@ -461,12 +461,12 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
      * @throws ResourceLimitExceededException
-     *         Error returned when the caller has exceeded the default resource limits. For example, too many
+     *         Error returned when the caller has exceeded the default resource quotas. For example, too many
      *         maintenance windows or patch baselines have been created.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.CreatePatchBaseline
@@ -782,9 +782,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws TargetInUseException
@@ -808,9 +808,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterTaskFromMaintenanceWindow
@@ -1067,9 +1067,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
      *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
@@ -1261,9 +1261,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTaskInvocations
@@ -1285,9 +1285,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTasks
@@ -1327,9 +1327,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -1347,9 +1347,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTargets
@@ -1369,9 +1369,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTasks
@@ -1819,9 +1819,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindow
@@ -1841,9 +1841,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecution
@@ -1863,9 +1863,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTask
@@ -1885,9 +1885,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTaskInvocation
@@ -1908,9 +1908,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowTask
@@ -2077,9 +2077,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
@@ -2775,9 +2775,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterDefaultPatchBaseline
@@ -2800,19 +2800,19 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws ResourceLimitExceededException
-     *         Error returned when the caller has exceeded the default resource limits. For example, too many
+     *         Error returned when the caller has exceeded the default resource quotas. For example, too many
      *         maintenance windows or patch baselines have been created.
      *         </p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterPatchBaselineForPatchGroup
@@ -2836,17 +2836,17 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws ResourceLimitExceededException
-     *         Error returned when the caller has exceeded the default resource limits. For example, too many
+     *         Error returned when the caller has exceeded the default resource quotas. For example, too many
      *         maintenance windows or patch baselines have been created.
      *         </p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterTargetWithMaintenanceWindow
@@ -2870,17 +2870,17 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws ResourceLimitExceededException
-     *         Error returned when the caller has exceeded the default resource limits. For example, too many
+     *         Error returned when the caller has exceeded the default resource quotas. For example, too many
      *         maintenance windows or patch baselines have been created.
      *         </p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws FeatureNotAvailableException
      *         You attempted to register a LAMBDA or STEP_FUNCTIONS task in a region where the corresponding service is
      *         not available.
@@ -2967,9 +2967,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.ResumeSession
@@ -3167,9 +3167,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.TerminateSession
@@ -3346,9 +3346,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindow
@@ -3406,9 +3406,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindowTarget
@@ -3466,9 +3466,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindowTask
@@ -3529,7 +3529,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws OpsItemAlreadyExistsException
      *         The OpsItem already exists.
      * @throws OpsItemLimitExceededException
-     *         The request caused OpsItems to exceed one or more limits. For information about OpsItem limits, see <a
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
      *         href=
      *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
      *         >What are the resource limits for OpsCenter?</a>.
@@ -3559,9 +3559,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource, such as a maintenance window or Patch baseline,
      *         doesn't exist.</p>
      *         <p>
-     *         For information about resource limits in Systems Manager, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_ssm">AWS Systems
-     *         Manager Limits</a>.
+     *         For information about resource quotas in Systems Manager, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm">Systems Manager Service
+     *         Quotas</a> in the <i>AWS General Reference</i>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdatePatchBaseline

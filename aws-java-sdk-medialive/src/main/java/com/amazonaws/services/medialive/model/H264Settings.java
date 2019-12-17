@@ -145,6 +145,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
+     * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
      */
     private String rateControlMode;
     /** Sets the scan type of the output to progressive or top-field-first interlaced. */
@@ -1549,6 +1553,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @param rateControlMode
      *        Rate control mode.
      * 
@@ -1560,6 +1568,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *        CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *        devices that cannot handle variable bitrates.
+     * 
+     *        Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to
+     *        a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within
+     *        the Multiplex Program.
      * @see H264RateControlMode
      */
 
@@ -1579,6 +1591,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @return Rate control mode.
      * 
      *         QVBR: Quality will match the specified quality level except when it is constrained by the maximum
@@ -1589,6 +1605,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *         CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *         devices that cannot handle variable bitrates.
+     * 
+     *         Multiplex: This rate control mode is only supported (and is required) when the video is being delivered
+     *         to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties
+     *         within the Multiplex Program.
      * @see H264RateControlMode
      */
 
@@ -1608,6 +1628,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @param rateControlMode
      *        Rate control mode.
      * 
@@ -1619,6 +1643,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *        CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *        devices that cannot handle variable bitrates.
+     * 
+     *        Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to
+     *        a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within
+     *        the Multiplex Program.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264RateControlMode
      */
@@ -1640,6 +1668,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @param rateControlMode
      *        Rate control mode.
      * 
@@ -1651,6 +1683,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *        CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *        devices that cannot handle variable bitrates.
+     * 
+     *        Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to
+     *        a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within
+     *        the Multiplex Program.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264RateControlMode
      */

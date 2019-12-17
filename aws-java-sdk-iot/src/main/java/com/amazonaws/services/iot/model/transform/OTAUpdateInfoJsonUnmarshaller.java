@@ -72,9 +72,17 @@ public class OTAUpdateInfoJsonUnmarshaller implements Unmarshaller<OTAUpdateInfo
                     context.nextToken();
                     oTAUpdateInfo.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("protocols", targetDepth)) {
+                    context.nextToken();
+                    oTAUpdateInfo.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("awsJobExecutionsRolloutConfig", targetDepth)) {
                     context.nextToken();
                     oTAUpdateInfo.setAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("awsJobPresignedUrlConfig", targetDepth)) {
+                    context.nextToken();
+                    oTAUpdateInfo.setAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("targetSelection", targetDepth)) {
                     context.nextToken();

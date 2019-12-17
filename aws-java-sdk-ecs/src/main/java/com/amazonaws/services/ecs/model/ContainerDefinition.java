@@ -620,6 +620,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * not valid for containers in tasks using the Fargate launch type.
      * </p>
      * <p>
+     * With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     * container for Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
      * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--security-opt</code>
@@ -632,10 +638,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * containers placed on that instance can use these security options. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
      * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
-     * </note> <note>
-     * <p>
-     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -5174,6 +5176,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * not valid for containers in tasks using the Fargate launch type.
      * </p>
      * <p>
+     * With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     * container for Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
      * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--security-opt</code>
@@ -5187,14 +5195,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
      * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note> <note>
-     * <p>
-     * This parameter is not supported for Windows containers.
-     * </p>
      * </note>
      * 
      * @return A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
      *         field is not valid for containers in tasks using the Fargate launch type.</p>
+     *         <p>
+     *         With Windows containers, this parameter can be used to reference a credential spec file when configuring
+     *         a container for Active Directory authentication. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *         Windows Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
      *         <p>
      *         This parameter maps to <code>SecurityOpt</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
@@ -5209,10 +5219,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         before containers placed on that instance can use these security options. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
      *         Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *         </p>
-     *         </note> <note>
-     *         <p>
-     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -5229,6 +5235,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * not valid for containers in tasks using the Fargate launch type.
      * </p>
      * <p>
+     * With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     * container for Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
      * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--security-opt</code>
@@ -5242,15 +5254,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
      * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note> <note>
-     * <p>
-     * This parameter is not supported for Windows containers.
-     * </p>
      * </note>
      * 
      * @param dockerSecurityOptions
      *        A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
      *        field is not valid for containers in tasks using the Fargate launch type.</p>
+     *        <p>
+     *        With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     *        container for Active Directory authentication. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *        Windows Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
      *        <p>
      *        This parameter maps to <code>SecurityOpt</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
@@ -5265,10 +5279,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        before containers placed on that instance can use these security options. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
      *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        </note> <note>
-     *        <p>
-     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -5287,6 +5297,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * not valid for containers in tasks using the Fargate launch type.
      * </p>
      * <p>
+     * With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     * container for Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
      * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--security-opt</code>
@@ -5300,10 +5316,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
      * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note> <note>
-     * <p>
-     * This parameter is not supported for Windows containers.
-     * </p>
      * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -5314,6 +5326,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @param dockerSecurityOptions
      *        A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
      *        field is not valid for containers in tasks using the Fargate launch type.</p>
+     *        <p>
+     *        With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     *        container for Active Directory authentication. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *        Windows Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
      *        <p>
      *        This parameter maps to <code>SecurityOpt</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
@@ -5328,10 +5346,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        before containers placed on that instance can use these security options. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
      *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        </note> <note>
-     *        <p>
-     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5352,6 +5366,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * not valid for containers in tasks using the Fargate launch type.
      * </p>
      * <p>
+     * With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     * container for Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for Windows
+     * Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
      * This parameter maps to <code>SecurityOpt</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--security-opt</code>
@@ -5365,15 +5385,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
      * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
-     * </note> <note>
-     * <p>
-     * This parameter is not supported for Windows containers.
-     * </p>
      * </note>
      * 
      * @param dockerSecurityOptions
      *        A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems. This
      *        field is not valid for containers in tasks using the Fargate launch type.</p>
+     *        <p>
+     *        With Windows containers, this parameter can be used to reference a credential spec file when configuring a
+     *        container for Active Directory authentication. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using gMSAs for
+     *        Windows Containers</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
      *        <p>
      *        This parameter maps to <code>SecurityOpt</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
@@ -5388,10 +5410,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        before containers placed on that instance can use these security options. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
      *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     *        </p>
-     *        </note> <note>
-     *        <p>
-     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

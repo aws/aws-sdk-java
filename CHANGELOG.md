@@ -1,3 +1,28 @@
+# __1.11.695__ __2019-12-17__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports HLS ID3 segment tagging, HLS redundant manifests for CDNs that support different publishing/viewing endpoints, fragmented MP4 (fMP4), and frame capture intervals specified in milliseconds.
+
+## __AWS IoT__
+  - ### Features
+    - Added a new Over-the-Air (OTA) Update feature that allows you to use different, or multiple, protocols to transfer an image from the AWS cloud to IoT devices.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation updates for Amazon ECS.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Documentation updates for Amazon EC2
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Data Analytics service now supports running Java applications using Flink 1.8.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Added support for Cloud Watch Output and Document Version to the Run Command tasks in Maintenance Windows.
+
 # __1.11.694__ __2019-12-16__
 ## __AWS Comprehend Medical__
   - ### Features

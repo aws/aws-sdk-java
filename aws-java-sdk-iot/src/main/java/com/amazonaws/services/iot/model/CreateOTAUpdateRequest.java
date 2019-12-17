@@ -40,6 +40,13 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> targets;
     /**
      * <p>
+     * The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP
+     * and MQTT are specified, the target device can choose the protocol.
+     * </p>
+     */
+    private java.util.List<String> protocols;
+    /**
+     * <p>
      * Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
      * specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing
      * when a change is detected in a target. For example, an update will run on a thing when the thing is added to a
@@ -54,6 +61,12 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig;
+    /**
+     * <p>
+     * Configuration information for pre-signed URLs.
+     * </p>
+     */
+    private AwsJobPresignedUrlConfig awsJobPresignedUrlConfig;
     /**
      * <p>
      * The files to be streamed by the OTA update.
@@ -231,6 +244,114 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP
+     * and MQTT are specified, the target device can choose the protocol.
+     * </p>
+     * 
+     * @return The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When
+     *         both HTTP and MQTT are specified, the target device can choose the protocol.
+     * @see Protocol
+     */
+
+    public java.util.List<String> getProtocols() {
+        return protocols;
+    }
+
+    /**
+     * <p>
+     * The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP
+     * and MQTT are specified, the target device can choose the protocol.
+     * </p>
+     * 
+     * @param protocols
+     *        The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When
+     *        both HTTP and MQTT are specified, the target device can choose the protocol.
+     * @see Protocol
+     */
+
+    public void setProtocols(java.util.Collection<String> protocols) {
+        if (protocols == null) {
+            this.protocols = null;
+            return;
+        }
+
+        this.protocols = new java.util.ArrayList<String>(protocols);
+    }
+
+    /**
+     * <p>
+     * The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP
+     * and MQTT are specified, the target device can choose the protocol.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param protocols
+     *        The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When
+     *        both HTTP and MQTT are specified, the target device can choose the protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public CreateOTAUpdateRequest withProtocols(String... protocols) {
+        if (this.protocols == null) {
+            setProtocols(new java.util.ArrayList<String>(protocols.length));
+        }
+        for (String ele : protocols) {
+            this.protocols.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP
+     * and MQTT are specified, the target device can choose the protocol.
+     * </p>
+     * 
+     * @param protocols
+     *        The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When
+     *        both HTTP and MQTT are specified, the target device can choose the protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public CreateOTAUpdateRequest withProtocols(java.util.Collection<String> protocols) {
+        setProtocols(protocols);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP
+     * and MQTT are specified, the target device can choose the protocol.
+     * </p>
+     * 
+     * @param protocols
+     *        The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When
+     *        both HTTP and MQTT are specified, the target device can choose the protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public CreateOTAUpdateRequest withProtocols(Protocol... protocols) {
+        java.util.ArrayList<String> protocolsCopy = new java.util.ArrayList<String>(protocols.length);
+        for (Protocol value : protocols) {
+            protocolsCopy.add(value.toString());
+        }
+        if (getProtocols() == null) {
+            setProtocols(protocolsCopy);
+        } else {
+            getProtocols().addAll(protocolsCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things
      * specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing
      * when a change is detected in a target. For example, an update will run on a thing when the thing is added to a
@@ -357,6 +478,46 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateOTAUpdateRequest withAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig) {
         setAwsJobExecutionsRolloutConfig(awsJobExecutionsRolloutConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for pre-signed URLs.
+     * </p>
+     * 
+     * @param awsJobPresignedUrlConfig
+     *        Configuration information for pre-signed URLs.
+     */
+
+    public void setAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfig awsJobPresignedUrlConfig) {
+        this.awsJobPresignedUrlConfig = awsJobPresignedUrlConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for pre-signed URLs.
+     * </p>
+     * 
+     * @return Configuration information for pre-signed URLs.
+     */
+
+    public AwsJobPresignedUrlConfig getAwsJobPresignedUrlConfig() {
+        return this.awsJobPresignedUrlConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for pre-signed URLs.
+     * </p>
+     * 
+     * @param awsJobPresignedUrlConfig
+     *        Configuration information for pre-signed URLs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOTAUpdateRequest withAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfig awsJobPresignedUrlConfig) {
+        setAwsJobPresignedUrlConfig(awsJobPresignedUrlConfig);
         return this;
     }
 
@@ -619,10 +780,14 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
+        if (getProtocols() != null)
+            sb.append("Protocols: ").append(getProtocols()).append(",");
         if (getTargetSelection() != null)
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
         if (getAwsJobExecutionsRolloutConfig() != null)
             sb.append("AwsJobExecutionsRolloutConfig: ").append(getAwsJobExecutionsRolloutConfig()).append(",");
+        if (getAwsJobPresignedUrlConfig() != null)
+            sb.append("AwsJobPresignedUrlConfig: ").append(getAwsJobPresignedUrlConfig()).append(",");
         if (getFiles() != null)
             sb.append("Files: ").append(getFiles()).append(",");
         if (getRoleArn() != null)
@@ -657,6 +822,10 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
+        if (other.getProtocols() == null ^ this.getProtocols() == null)
+            return false;
+        if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
+            return false;
         if (other.getTargetSelection() == null ^ this.getTargetSelection() == null)
             return false;
         if (other.getTargetSelection() != null && other.getTargetSelection().equals(this.getTargetSelection()) == false)
@@ -665,6 +834,10 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAwsJobExecutionsRolloutConfig() != null
                 && other.getAwsJobExecutionsRolloutConfig().equals(this.getAwsJobExecutionsRolloutConfig()) == false)
+            return false;
+        if (other.getAwsJobPresignedUrlConfig() == null ^ this.getAwsJobPresignedUrlConfig() == null)
+            return false;
+        if (other.getAwsJobPresignedUrlConfig() != null && other.getAwsJobPresignedUrlConfig().equals(this.getAwsJobPresignedUrlConfig()) == false)
             return false;
         if (other.getFiles() == null ^ this.getFiles() == null)
             return false;
@@ -693,8 +866,10 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getOtaUpdateId() == null) ? 0 : getOtaUpdateId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
         hashCode = prime * hashCode + ((getAwsJobExecutionsRolloutConfig() == null) ? 0 : getAwsJobExecutionsRolloutConfig().hashCode());
+        hashCode = prime * hashCode + ((getAwsJobPresignedUrlConfig() == null) ? 0 : getAwsJobPresignedUrlConfig().hashCode());
         hashCode = prime * hashCode + ((getFiles() == null) ? 0 : getFiles().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getAdditionalParameters() == null) ? 0 : getAdditionalParameters().hashCode());

@@ -48,6 +48,11 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("hlsId3SegmentTaggingSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setHlsId3SegmentTaggingSettings(HlsId3SegmentTaggingScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
                 if (context.testExpression("hlsTimedMetadataSettings", targetDepth)) {
                     context.nextToken();
                     scheduleActionSettings

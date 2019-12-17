@@ -52,6 +52,10 @@ public class HlsSettingsJsonUnmarshaller implements Unmarshaller<HlsSettings, Js
                     context.nextToken();
                     hlsSettings.setAudioOnlyHlsSettings(AudioOnlyHlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("fmp4HlsSettings", targetDepth)) {
+                    context.nextToken();
+                    hlsSettings.setFmp4HlsSettings(Fmp4HlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("standardHlsSettings", targetDepth)) {
                     context.nextToken();
                     hlsSettings.setStandardHlsSettings(StandardHlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));

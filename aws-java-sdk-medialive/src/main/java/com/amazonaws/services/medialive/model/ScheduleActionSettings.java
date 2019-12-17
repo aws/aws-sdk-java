@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Action to insert HLS ID3 segment tagging */
+    private HlsId3SegmentTaggingScheduleActionSettings hlsId3SegmentTaggingSettings;
     /** Action to insert HLS metadata */
     private HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings;
     /** Action to switch the input */
@@ -42,6 +44,40 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     private StaticImageActivateScheduleActionSettings staticImageActivateSettings;
     /** Action to deactivate a static image overlay */
     private StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings;
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     * 
+     * @param hlsId3SegmentTaggingSettings
+     *        Action to insert HLS ID3 segment tagging
+     */
+
+    public void setHlsId3SegmentTaggingSettings(HlsId3SegmentTaggingScheduleActionSettings hlsId3SegmentTaggingSettings) {
+        this.hlsId3SegmentTaggingSettings = hlsId3SegmentTaggingSettings;
+    }
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     * 
+     * @return Action to insert HLS ID3 segment tagging
+     */
+
+    public HlsId3SegmentTaggingScheduleActionSettings getHlsId3SegmentTaggingSettings() {
+        return this.hlsId3SegmentTaggingSettings;
+    }
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     * 
+     * @param hlsId3SegmentTaggingSettings
+     *        Action to insert HLS ID3 segment tagging
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withHlsId3SegmentTaggingSettings(HlsId3SegmentTaggingScheduleActionSettings hlsId3SegmentTaggingSettings) {
+        setHlsId3SegmentTaggingSettings(hlsId3SegmentTaggingSettings);
+        return this;
+    }
 
     /**
      * Action to insert HLS metadata
@@ -327,6 +363,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getHlsId3SegmentTaggingSettings() != null)
+            sb.append("HlsId3SegmentTaggingSettings: ").append(getHlsId3SegmentTaggingSettings()).append(",");
         if (getHlsTimedMetadataSettings() != null)
             sb.append("HlsTimedMetadataSettings: ").append(getHlsTimedMetadataSettings()).append(",");
         if (getInputSwitchSettings() != null)
@@ -357,6 +395,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         if (obj instanceof ScheduleActionSettings == false)
             return false;
         ScheduleActionSettings other = (ScheduleActionSettings) obj;
+        if (other.getHlsId3SegmentTaggingSettings() == null ^ this.getHlsId3SegmentTaggingSettings() == null)
+            return false;
+        if (other.getHlsId3SegmentTaggingSettings() != null && other.getHlsId3SegmentTaggingSettings().equals(this.getHlsId3SegmentTaggingSettings()) == false)
+            return false;
         if (other.getHlsTimedMetadataSettings() == null ^ this.getHlsTimedMetadataSettings() == null)
             return false;
         if (other.getHlsTimedMetadataSettings() != null && other.getHlsTimedMetadataSettings().equals(this.getHlsTimedMetadataSettings()) == false)
@@ -399,6 +441,7 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getHlsId3SegmentTaggingSettings() == null) ? 0 : getHlsId3SegmentTaggingSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsTimedMetadataSettings() == null) ? 0 : getHlsTimedMetadataSettings().hashCode());
         hashCode = prime * hashCode + ((getInputSwitchSettings() == null) ? 0 : getInputSwitchSettings().hashCode());
         hashCode = prime * hashCode + ((getPauseStateSettings() == null) ? 0 : getPauseStateSettings().hashCode());

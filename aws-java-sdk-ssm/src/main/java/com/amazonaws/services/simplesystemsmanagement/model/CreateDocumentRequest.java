@@ -89,7 +89,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private String documentType;
     /**
      * <p>
-     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default
      * format.
      * </p>
      */
@@ -628,12 +628,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default
      * format.
      * </p>
      * 
      * @param documentFormat
-     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the
      *        default format.
      * @see DocumentFormat
      */
@@ -644,11 +644,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default
      * format.
      * </p>
      * 
-     * @return Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     * @return Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the
      *         default format.
      * @see DocumentFormat
      */
@@ -659,12 +659,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default
      * format.
      * </p>
      * 
      * @param documentFormat
-     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the
      *        default format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentFormat
@@ -677,12 +677,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default
      * format.
      * </p>
      * 
      * @param documentFormat
-     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the
      *        default format.
      * @see DocumentFormat
      */
@@ -693,12 +693,12 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify the document format for the request. The document format can be either JSON or YAML. JSON is the default
+     * Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default
      * format.
      * </p>
      * 
      * @param documentFormat
-     *        Specify the document format for the request. The document format can be either JSON or YAML. JSON is the
+     *        Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the
      *        default format.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentFormat

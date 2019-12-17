@@ -28,8 +28,8 @@ public class DescribeFleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      */
     private LaunchTemplateAndOverridesResponse launchTemplateAndOverrides;
@@ -49,7 +49,7 @@ public class DescribeFleetError implements Serializable, Cloneable {
     /**
      * <p>
      * The error message that describes why the instance could not be launched. For more information about error
-     * messages, see ee <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.
      * </p>
      */
@@ -57,13 +57,13 @@ public class DescribeFleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      * 
      * @param launchTemplateAndOverrides
-     *        The launch templates and overrides that were used for launching the instances. Any parameters that you
-     *        specify in the Overrides override the same parameters in the launch template.
+     *        The launch templates and overrides that were used for launching the instances. The values that you specify
+     *        in the Overrides replace the values in the launch template.
      */
 
     public void setLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse launchTemplateAndOverrides) {
@@ -72,12 +72,12 @@ public class DescribeFleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      * 
-     * @return The launch templates and overrides that were used for launching the instances. Any parameters that you
-     *         specify in the Overrides override the same parameters in the launch template.
+     * @return The launch templates and overrides that were used for launching the instances. The values that you
+     *         specify in the Overrides replace the values in the launch template.
      */
 
     public LaunchTemplateAndOverridesResponse getLaunchTemplateAndOverrides() {
@@ -86,13 +86,13 @@ public class DescribeFleetError implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch templates and overrides that were used for launching the instances. Any parameters that you specify in
-     * the Overrides override the same parameters in the launch template.
+     * The launch templates and overrides that were used for launching the instances. The values that you specify in the
+     * Overrides replace the values in the launch template.
      * </p>
      * 
      * @param launchTemplateAndOverrides
-     *        The launch templates and overrides that were used for launching the instances. Any parameters that you
-     *        specify in the Overrides override the same parameters in the launch template.
+     *        The launch templates and overrides that were used for launching the instances. The values that you specify
+     *        in the Overrides replace the values in the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,13 +212,13 @@ public class DescribeFleetError implements Serializable, Cloneable {
     /**
      * <p>
      * The error message that describes why the instance could not be launched. For more information about error
-     * messages, see ee <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.
      * </p>
      * 
      * @param errorMessage
      *        The error message that describes why the instance could not be launched. For more information about error
-     *        messages, see ee <a
+     *        messages, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
      */
 
@@ -229,12 +229,12 @@ public class DescribeFleetError implements Serializable, Cloneable {
     /**
      * <p>
      * The error message that describes why the instance could not be launched. For more information about error
-     * messages, see ee <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.
      * </p>
      * 
      * @return The error message that describes why the instance could not be launched. For more information about error
-     *         messages, see ee <a
+     *         messages, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
      */
 
@@ -245,13 +245,13 @@ public class DescribeFleetError implements Serializable, Cloneable {
     /**
      * <p>
      * The error message that describes why the instance could not be launched. For more information about error
-     * messages, see ee <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
+     * messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.
      * </p>
      * 
      * @param errorMessage
      *        The error message that describes why the instance could not be launched. For more information about error
-     *        messages, see ee <a
+     *        messages, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error Codes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

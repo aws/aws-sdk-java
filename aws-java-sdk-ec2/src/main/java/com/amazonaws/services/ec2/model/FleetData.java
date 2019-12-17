@@ -55,8 +55,9 @@ public class FleetData implements Serializable, Cloneable {
     private String fleetState;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
@@ -107,7 +108,7 @@ public class FleetData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
      * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests; it does not attempt to replenish instances if capacity is diminished, and does not submit
+     * required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit
      * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
      * interrupted Spot Instances. Default: <code>maintain</code>.
@@ -393,8 +394,9 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
@@ -402,7 +404,7 @@ public class FleetData implements Serializable, Cloneable {
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.</p>
@@ -416,15 +418,16 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
      * Constraints: Maximum 64 ASCII characters
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a>.</p>
@@ -438,8 +441,9 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
@@ -447,7 +451,7 @@ public class FleetData implements Serializable, Cloneable {
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.</p>
@@ -792,7 +796,7 @@ public class FleetData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
      * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests; it does not attempt to replenish instances if capacity is diminished, and does not submit
+     * required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit
      * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
      * interrupted Spot Instances. Default: <code>maintain</code>.
@@ -801,8 +805,8 @@ public class FleetData implements Serializable, Cloneable {
      * @param type
      *        The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
      *        also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places
-     *        the required requests; it does not attempt to replenish instances if capacity is diminished, and does not
-     *        submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
+     *        the required requests; it does not attempt to replenish instances if capacity is diminished, and it does
+     *        not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
      *        capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically
      *        replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
      * @see FleetType
@@ -816,7 +820,7 @@ public class FleetData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
      * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests; it does not attempt to replenish instances if capacity is diminished, and does not submit
+     * required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit
      * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
      * interrupted Spot Instances. Default: <code>maintain</code>.
@@ -825,8 +829,8 @@ public class FleetData implements Serializable, Cloneable {
      * @return The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
      *         also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only
      *         places the required requests; it does not attempt to replenish instances if capacity is diminished, and
-     *         does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain
-     *         target capacity, EC2 Fleet places the required requests to meet this target capacity. It also
+     *         it does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a
+     *         certain target capacity, EC2 Fleet places the required requests to meet this target capacity. It also
      *         automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
      * @see FleetType
      */
@@ -839,7 +843,7 @@ public class FleetData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
      * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests; it does not attempt to replenish instances if capacity is diminished, and does not submit
+     * required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit
      * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
      * interrupted Spot Instances. Default: <code>maintain</code>.
@@ -848,8 +852,8 @@ public class FleetData implements Serializable, Cloneable {
      * @param type
      *        The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
      *        also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places
-     *        the required requests; it does not attempt to replenish instances if capacity is diminished, and does not
-     *        submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
+     *        the required requests; it does not attempt to replenish instances if capacity is diminished, and it does
+     *        not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
      *        capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically
      *        replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -865,7 +869,7 @@ public class FleetData implements Serializable, Cloneable {
      * <p>
      * The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or also
      * attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places the
-     * required requests; it does not attempt to replenish instances if capacity is diminished, and does not submit
+     * required requests; it does not attempt to replenish instances if capacity is diminished, and it does not submit
      * requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also automatically replenishes any
      * interrupted Spot Instances. Default: <code>maintain</code>.
@@ -874,8 +878,8 @@ public class FleetData implements Serializable, Cloneable {
      * @param type
      *        The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the target capacity, or
      *        also attempts to <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet only places
-     *        the required requests; it does not attempt to replenish instances if capacity is diminished, and does not
-     *        submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
+     *        the required requests; it does not attempt to replenish instances if capacity is diminished, and it does
+     *        not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target
      *        capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically
      *        replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

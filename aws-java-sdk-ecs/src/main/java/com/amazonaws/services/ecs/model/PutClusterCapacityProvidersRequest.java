@@ -34,8 +34,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
     private String cluster;
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     * cluster.
+     * The name of one or more capacity providers to associate with the cluster.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
@@ -122,8 +121,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     * cluster.
+     * The name of one or more capacity providers to associate with the cluster.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
@@ -135,8 +133,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
      * associated with a cluster to be used.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     *         cluster.</p>
+     * @return The name of one or more capacity providers to associate with the cluster.</p>
      *         <p>
      *         If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
      *         created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
@@ -156,8 +153,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     * cluster.
+     * The name of one or more capacity providers to associate with the cluster.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
@@ -170,8 +166,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param capacityProviders
-     *        The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     *        cluster.</p>
+     *        The name of one or more capacity providers to associate with the cluster.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
      *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
@@ -193,8 +188,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     * cluster.
+     * The name of one or more capacity providers to associate with the cluster.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
@@ -212,8 +206,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param capacityProviders
-     *        The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     *        cluster.</p>
+     *        The name of one or more capacity providers to associate with the cluster.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
      *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
@@ -237,8 +230,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     * cluster.
+     * The name of one or more capacity providers to associate with the cluster.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
@@ -251,8 +243,7 @@ public class PutClusterCapacityProvidersRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param capacityProviders
-     *        The short name or full Amazon Resource Name (ARN) of one or more capacity providers to associate with the
-     *        cluster.</p>
+     *        The name of one or more capacity providers to associate with the cluster.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
      *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.

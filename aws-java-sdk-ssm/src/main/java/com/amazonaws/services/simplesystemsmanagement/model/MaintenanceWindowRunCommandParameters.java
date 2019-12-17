@@ -56,6 +56,8 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
      * </p>
      */
     private String comment;
+
+    private CloudWatchOutputConfig cloudWatchOutputConfig;
     /**
      * <p>
      * The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.
@@ -68,6 +70,23 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
      * </p>
      */
     private String documentHashType;
+    /**
+     * <p>
+     * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
+     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
+     * specify a version number, then you don't need to use the backslash. For example:
+     * </p>
+     * <p>
+     * --document-version "\$DEFAULT"
+     * </p>
+     * <p>
+     * --document-version "\$LATEST"
+     * </p>
+     * <p>
+     * --document-version "3"
+     * </p>
+     */
+    private String documentVersion;
     /**
      * <p>
      * Configurations for sending notifications about command status changes on a per-instance basis.
@@ -143,6 +162,32 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     public MaintenanceWindowRunCommandParameters withComment(String comment) {
         setComment(comment);
+        return this;
+    }
+
+    /**
+     * @param cloudWatchOutputConfig
+     */
+
+    public void setCloudWatchOutputConfig(CloudWatchOutputConfig cloudWatchOutputConfig) {
+        this.cloudWatchOutputConfig = cloudWatchOutputConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public CloudWatchOutputConfig getCloudWatchOutputConfig() {
+        return this.cloudWatchOutputConfig;
+    }
+
+    /**
+     * @param cloudWatchOutputConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowRunCommandParameters withCloudWatchOutputConfig(CloudWatchOutputConfig cloudWatchOutputConfig) {
+        setCloudWatchOutputConfig(cloudWatchOutputConfig);
         return this;
     }
 
@@ -245,6 +290,109 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     public MaintenanceWindowRunCommandParameters withDocumentHashType(DocumentHashType documentHashType) {
         this.documentHashType = documentHashType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
+     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
+     * specify a version number, then you don't need to use the backslash. For example:
+     * </p>
+     * <p>
+     * --document-version "\$DEFAULT"
+     * </p>
+     * <p>
+     * --document-version "\$LATEST"
+     * </p>
+     * <p>
+     * --document-version "3"
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version
+     *        number. If you run commands by using the AWS CLI, then you must escape the first two options by using a
+     *        backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
+     *        <p>
+     *        --document-version "\$DEFAULT"
+     *        </p>
+     *        <p>
+     *        --document-version "\$LATEST"
+     *        </p>
+     *        <p>
+     *        --document-version "3"
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
+     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
+     * specify a version number, then you don't need to use the backslash. For example:
+     * </p>
+     * <p>
+     * --document-version "\$DEFAULT"
+     * </p>
+     * <p>
+     * --document-version "\$LATEST"
+     * </p>
+     * <p>
+     * --document-version "3"
+     * </p>
+     * 
+     * @return The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version
+     *         number. If you run commands by using the AWS CLI, then you must escape the first two options by using a
+     *         backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
+     *         <p>
+     *         --document-version "\$DEFAULT"
+     *         </p>
+     *         <p>
+     *         --document-version "\$LATEST"
+     *         </p>
+     *         <p>
+     *         --document-version "3"
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number.
+     * If you run commands by using the AWS CLI, then you must escape the first two options by using a backslash. If you
+     * specify a version number, then you don't need to use the backslash. For example:
+     * </p>
+     * <p>
+     * --document-version "\$DEFAULT"
+     * </p>
+     * <p>
+     * --document-version "\$LATEST"
+     * </p>
+     * <p>
+     * --document-version "3"
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version
+     *        number. If you run commands by using the AWS CLI, then you must escape the first two options by using a
+     *        backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
+     *        <p>
+     *        --document-version "\$DEFAULT"
+     *        </p>
+     *        <p>
+     *        --document-version "\$LATEST"
+     *        </p>
+     *        <p>
+     *        --document-version "3"
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowRunCommandParameters withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
         return this;
     }
 
@@ -529,10 +677,14 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
         sb.append("{");
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
+        if (getCloudWatchOutputConfig() != null)
+            sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig()).append(",");
         if (getDocumentHash() != null)
             sb.append("DocumentHash: ").append(getDocumentHash()).append(",");
         if (getDocumentHashType() != null)
             sb.append("DocumentHashType: ").append(getDocumentHashType()).append(",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getNotificationConfig() != null)
             sb.append("NotificationConfig: ").append(getNotificationConfig()).append(",");
         if (getOutputS3BucketName() != null)
@@ -563,6 +715,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
             return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
             return false;
+        if (other.getCloudWatchOutputConfig() == null ^ this.getCloudWatchOutputConfig() == null)
+            return false;
+        if (other.getCloudWatchOutputConfig() != null && other.getCloudWatchOutputConfig().equals(this.getCloudWatchOutputConfig()) == false)
+            return false;
         if (other.getDocumentHash() == null ^ this.getDocumentHash() == null)
             return false;
         if (other.getDocumentHash() != null && other.getDocumentHash().equals(this.getDocumentHash()) == false)
@@ -570,6 +726,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
         if (other.getDocumentHashType() == null ^ this.getDocumentHashType() == null)
             return false;
         if (other.getDocumentHashType() != null && other.getDocumentHashType().equals(this.getDocumentHashType()) == false)
+            return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
         if (other.getNotificationConfig() == null ^ this.getNotificationConfig() == null)
             return false;
@@ -604,8 +764,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchOutputConfig() == null) ? 0 : getCloudWatchOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getDocumentHash() == null) ? 0 : getDocumentHash().hashCode());
         hashCode = prime * hashCode + ((getDocumentHashType() == null) ? 0 : getDocumentHashType().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputS3BucketName() == null) ? 0 : getOutputS3BucketName().hashCode());
         hashCode = prime * hashCode + ((getOutputS3KeyPrefix() == null) ? 0 : getOutputS3KeyPrefix().hashCode());

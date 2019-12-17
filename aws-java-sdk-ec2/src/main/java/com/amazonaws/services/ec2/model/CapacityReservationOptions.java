@@ -27,7 +27,9 @@ import javax.annotation.Generated;
  * <p>
  * For more information about Capacity Reservations, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand Capacity
- * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For examples of using Capacity Reservations
+ * in an EC2 Fleet, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html">EC2 Fleet
+ * Example Configurations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationOptions" target="_top">AWS API
@@ -42,13 +44,15 @@ public class CapacityReservationOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to
-     * fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity Reservations is
-     * less than the On-Demand target capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand allocation strategy (
-     * <code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     * fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity
+     * Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining
+     * On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>
+     * or <code>prioritized</code>).
      * </p>
      * <p>
-     * If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     * If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     * allocation strategy.
      * </p>
      */
     private String usageStrategy;
@@ -59,26 +63,30 @@ public class CapacityReservationOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to
-     * fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity Reservations is
-     * less than the On-Demand target capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand allocation strategy (
-     * <code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     * fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity
+     * Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining
+     * On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>
+     * or <code>prioritized</code>).
      * </p>
      * <p>
-     * If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     * If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     * allocation strategy.
      * </p>
      * 
      * @param usageStrategy
      *        Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
      *        <p>
      *        If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations
-     *        to fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity
-     *        Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is
-     *        launched as usual. When unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand
-     *        allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     *        to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused
+     *        Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or
+     *        <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the
+     *        On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand
+     *        allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).
      *        </p>
      *        <p>
-     *        If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     *        If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     *        allocation strategy.
      * @see FleetCapacityReservationUsageStrategy
      */
 
@@ -92,25 +100,29 @@ public class CapacityReservationOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to
-     * fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity Reservations is
-     * less than the On-Demand target capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand allocation strategy (
-     * <code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     * fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity
+     * Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining
+     * On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>
+     * or <code>prioritized</code>).
      * </p>
      * <p>
-     * If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     * If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     * allocation strategy.
      * </p>
      * 
      * @return Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
      *         <p>
      *         If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations
-     *         to fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity
-     *         Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is
-     *         launched as usual. When unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand
-     *         allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     *         to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused
+     *         Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or
+     *         <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the
+     *         On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand
+     *         allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).
      *         </p>
      *         <p>
-     *         If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     *         If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     *         allocation strategy.
      * @see FleetCapacityReservationUsageStrategy
      */
 
@@ -124,26 +136,30 @@ public class CapacityReservationOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to
-     * fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity Reservations is
-     * less than the On-Demand target capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand allocation strategy (
-     * <code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     * fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity
+     * Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining
+     * On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>
+     * or <code>prioritized</code>).
      * </p>
      * <p>
-     * If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     * If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     * allocation strategy.
      * </p>
      * 
      * @param usageStrategy
      *        Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
      *        <p>
      *        If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations
-     *        to fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity
-     *        Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is
-     *        launched as usual. When unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand
-     *        allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     *        to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused
+     *        Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or
+     *        <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the
+     *        On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand
+     *        allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).
      *        </p>
      *        <p>
-     *        If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     *        If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     *        allocation strategy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetCapacityReservationUsageStrategy
      */
@@ -159,26 +175,30 @@ public class CapacityReservationOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations to
-     * fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity Reservations is
-     * less than the On-Demand target capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand allocation strategy (
-     * <code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     * fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused Capacity
+     * Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the On-Demand target capacity, the remaining
+     * On-Demand target capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>
+     * or <code>prioritized</code>).
      * </p>
      * <p>
-     * If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     * If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     * allocation strategy.
      * </p>
      * 
      * @param usageStrategy
      *        Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</p>
      *        <p>
      *        If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity Reservations
-     *        to fulfill On-Demand capacity up to the target On-Demand capacity. If the number of unused Capacity
-     *        Reservations is less than the On-Demand target capacity, the remaining On-Demand target capacity is
-     *        launched as usual. When unused Capacity Reservations are used to fulfil On-Demand capacity, the On-Demand
-     *        allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied to them.
+     *        to fulfill On-Demand capacity up to the target On-Demand capacity. If multiple instance pools have unused
+     *        Capacity Reservations, the On-Demand allocation strategy (<code>lowest-price</code> or
+     *        <code>prioritized</code>) is applied. If the number of unused Capacity Reservations is less than the
+     *        On-Demand target capacity, the remaining On-Demand target capacity is launched according to the On-Demand
+     *        allocation strategy (<code>lowest-price</code> or <code>prioritized</code>).
      *        </p>
      *        <p>
-     *        If you do not specify a value, the fleet fulfils the On-Demand capacity as usual.
+     *        If you do not specify a value, the fleet fulfils the On-Demand capacity according to the chosen On-Demand
+     *        allocation strategy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetCapacityReservationUsageStrategy
      */

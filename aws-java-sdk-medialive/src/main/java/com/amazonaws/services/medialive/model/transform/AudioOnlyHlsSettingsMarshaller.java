@@ -33,6 +33,8 @@ public class AudioOnlyHlsSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioOnlyImage").build();
     private static final MarshallingInfo<String> AUDIOTRACKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioTrackType").build();
+    private static final MarshallingInfo<String> SEGMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentType").build();
 
     private static final AudioOnlyHlsSettingsMarshaller instance = new AudioOnlyHlsSettingsMarshaller();
 
@@ -53,6 +55,7 @@ public class AudioOnlyHlsSettingsMarshaller {
             protocolMarshaller.marshall(audioOnlyHlsSettings.getAudioGroupId(), AUDIOGROUPID_BINDING);
             protocolMarshaller.marshall(audioOnlyHlsSettings.getAudioOnlyImage(), AUDIOONLYIMAGE_BINDING);
             protocolMarshaller.marshall(audioOnlyHlsSettings.getAudioTrackType(), AUDIOTRACKTYPE_BINDING);
+            protocolMarshaller.marshall(audioOnlyHlsSettings.getSegmentType(), SEGMENTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

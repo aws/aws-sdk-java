@@ -26,6 +26,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HlsOutputSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     */
+    private String h265PackagingType;
     /** Settings regarding the underlying stream. These settings are different for audio-only outputs. */
     private HlsSettings hlsSettings;
     /**
@@ -35,6 +40,65 @@ public class HlsOutputSettings implements Serializable, Cloneable, StructuredPoj
     private String nameModifier;
     /** String concatenated to end of segment filenames. */
     private String segmentModifier;
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @param h265PackagingType
+     *        Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments
+     *        should be packaged as HEV1 or HVC1.
+     * @see HlsH265PackagingType
+     */
+
+    public void setH265PackagingType(String h265PackagingType) {
+        this.h265PackagingType = h265PackagingType;
+    }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @return Only applicable when this output is referencing an H.265 video description. Specifies whether MP4
+     *         segments should be packaged as HEV1 or HVC1.
+     * @see HlsH265PackagingType
+     */
+
+    public String getH265PackagingType() {
+        return this.h265PackagingType;
+    }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @param h265PackagingType
+     *        Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments
+     *        should be packaged as HEV1 or HVC1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsH265PackagingType
+     */
+
+    public HlsOutputSettings withH265PackagingType(String h265PackagingType) {
+        setH265PackagingType(h265PackagingType);
+        return this;
+    }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @param h265PackagingType
+     *        Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments
+     *        should be packaged as HEV1 or HVC1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsH265PackagingType
+     */
+
+    public HlsOutputSettings withH265PackagingType(HlsH265PackagingType h265PackagingType) {
+        this.h265PackagingType = h265PackagingType.toString();
+        return this;
+    }
 
     /**
      * Settings regarding the underlying stream. These settings are different for audio-only outputs.
@@ -156,6 +220,8 @@ public class HlsOutputSettings implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getH265PackagingType() != null)
+            sb.append("H265PackagingType: ").append(getH265PackagingType()).append(",");
         if (getHlsSettings() != null)
             sb.append("HlsSettings: ").append(getHlsSettings()).append(",");
         if (getNameModifier() != null)
@@ -176,6 +242,10 @@ public class HlsOutputSettings implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof HlsOutputSettings == false)
             return false;
         HlsOutputSettings other = (HlsOutputSettings) obj;
+        if (other.getH265PackagingType() == null ^ this.getH265PackagingType() == null)
+            return false;
+        if (other.getH265PackagingType() != null && other.getH265PackagingType().equals(this.getH265PackagingType()) == false)
+            return false;
         if (other.getHlsSettings() == null ^ this.getHlsSettings() == null)
             return false;
         if (other.getHlsSettings() != null && other.getHlsSettings().equals(this.getHlsSettings()) == false)
@@ -196,6 +266,7 @@ public class HlsOutputSettings implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getH265PackagingType() == null) ? 0 : getH265PackagingType().hashCode());
         hashCode = prime * hashCode + ((getHlsSettings() == null) ? 0 : getHlsSettings().hashCode());
         hashCode = prime * hashCode + ((getNameModifier() == null) ? 0 : getNameModifier().hashCode());
         hashCode = prime * hashCode + ((getSegmentModifier() == null) ? 0 : getSegmentModifier().hashCode());

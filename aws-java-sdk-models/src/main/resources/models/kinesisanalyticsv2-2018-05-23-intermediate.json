@@ -54194,6 +54194,9 @@
       }, {
         "name" : "FLINK1_6",
         "value" : "FLINK-1_6"
+      }, {
+        "name" : "FLINK1_8",
+        "value" : "FLINK-1_8"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

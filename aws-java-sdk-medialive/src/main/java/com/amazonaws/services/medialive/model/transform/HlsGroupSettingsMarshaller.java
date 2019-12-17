@@ -32,8 +32,12 @@ public class HlsGroupSettingsMarshaller {
             .marshallLocationName("adMarkers").build();
     private static final MarshallingInfo<String> BASEURLCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("baseUrlContent").build();
+    private static final MarshallingInfo<String> BASEURLCONTENT1_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("baseUrlContent1").build();
     private static final MarshallingInfo<String> BASEURLMANIFEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("baseUrlManifest").build();
+    private static final MarshallingInfo<String> BASEURLMANIFEST1_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("baseUrlManifest1").build();
     private static final MarshallingInfo<List> CAPTIONLANGUAGEMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionLanguageMappings").build();
     private static final MarshallingInfo<String> CAPTIONLANGUAGESETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +56,8 @@ public class HlsGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionType").build();
     private static final MarshallingInfo<StructuredPojo> HLSCDNSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsCdnSettings").build();
+    private static final MarshallingInfo<String> HLSID3SEGMENTTAGGING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsId3SegmentTagging").build();
     private static final MarshallingInfo<String> IFRAMEONLYPLAYLISTS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iFrameOnlyPlaylists").build();
     private static final MarshallingInfo<Integer> INDEXNSEGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -121,7 +127,9 @@ public class HlsGroupSettingsMarshaller {
         try {
             protocolMarshaller.marshall(hlsGroupSettings.getAdMarkers(), ADMARKERS_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getBaseUrlContent(), BASEURLCONTENT_BINDING);
+            protocolMarshaller.marshall(hlsGroupSettings.getBaseUrlContent1(), BASEURLCONTENT1_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getBaseUrlManifest(), BASEURLMANIFEST_BINDING);
+            protocolMarshaller.marshall(hlsGroupSettings.getBaseUrlManifest1(), BASEURLMANIFEST1_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getCaptionLanguageMappings(), CAPTIONLANGUAGEMAPPINGS_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getCaptionLanguageSetting(), CAPTIONLANGUAGESETTING_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getClientCache(), CLIENTCACHE_BINDING);
@@ -131,6 +139,7 @@ public class HlsGroupSettingsMarshaller {
             protocolMarshaller.marshall(hlsGroupSettings.getDirectoryStructure(), DIRECTORYSTRUCTURE_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getEncryptionType(), ENCRYPTIONTYPE_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getHlsCdnSettings(), HLSCDNSETTINGS_BINDING);
+            protocolMarshaller.marshall(hlsGroupSettings.getHlsId3SegmentTagging(), HLSID3SEGMENTTAGGING_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getIFrameOnlyPlaylists(), IFRAMEONLYPLAYLISTS_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getIndexNSegments(), INDEXNSEGMENTS_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getInputLossAction(), INPUTLOSSACTION_BINDING);

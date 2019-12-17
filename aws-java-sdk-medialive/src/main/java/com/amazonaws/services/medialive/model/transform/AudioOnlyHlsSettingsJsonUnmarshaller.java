@@ -60,6 +60,10 @@ public class AudioOnlyHlsSettingsJsonUnmarshaller implements Unmarshaller<AudioO
                     context.nextToken();
                     audioOnlyHlsSettings.setAudioTrackType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("segmentType", targetDepth)) {
+                    context.nextToken();
+                    audioOnlyHlsSettings.setSegmentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

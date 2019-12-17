@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * MultiplexValidationError JSON Unmarshaller
+ * Fmp4HlsSettings JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MultiplexValidationErrorJsonUnmarshaller implements Unmarshaller<MultiplexValidationError, JsonUnmarshallerContext> {
+public class Fmp4HlsSettingsJsonUnmarshaller implements Unmarshaller<Fmp4HlsSettings, JsonUnmarshallerContext> {
 
-    public MultiplexValidationError unmarshall(JsonUnmarshallerContext context) throws Exception {
-        MultiplexValidationError multiplexValidationError = new MultiplexValidationError();
+    public Fmp4HlsSettings unmarshall(JsonUnmarshallerContext context) throws Exception {
+        Fmp4HlsSettings fmp4HlsSettings = new Fmp4HlsSettings();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,13 +48,9 @@ public class MultiplexValidationErrorJsonUnmarshaller implements Unmarshaller<Mu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("elementPath", targetDepth)) {
+                if (context.testExpression("audioRenditionSets", targetDepth)) {
                     context.nextToken();
-                    multiplexValidationError.setElementPath(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("errorMessage", targetDepth)) {
-                    context.nextToken();
-                    multiplexValidationError.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                    fmp4HlsSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -65,14 +61,14 @@ public class MultiplexValidationErrorJsonUnmarshaller implements Unmarshaller<Mu
             token = context.nextToken();
         }
 
-        return multiplexValidationError;
+        return fmp4HlsSettings;
     }
 
-    private static MultiplexValidationErrorJsonUnmarshaller instance;
+    private static Fmp4HlsSettingsJsonUnmarshaller instance;
 
-    public static MultiplexValidationErrorJsonUnmarshaller getInstance() {
+    public static Fmp4HlsSettingsJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new MultiplexValidationErrorJsonUnmarshaller();
+            instance = new Fmp4HlsSettingsJsonUnmarshaller();
         return instance;
     }
 }

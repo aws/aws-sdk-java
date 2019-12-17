@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ScheduleActionSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> HLSID3SEGMENTTAGGINGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsId3SegmentTaggingSettings").build();
     private static final MarshallingInfo<StructuredPojo> HLSTIMEDMETADATASETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsTimedMetadataSettings").build();
     private static final MarshallingInfo<StructuredPojo> INPUTSWITCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,7 @@ public class ScheduleActionSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(scheduleActionSettings.getHlsId3SegmentTaggingSettings(), HLSID3SEGMENTTAGGINGSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getHlsTimedMetadataSettings(), HLSTIMEDMETADATASETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getInputSwitchSettings(), INPUTSWITCHSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getPauseStateSettings(), PAUSESTATESETTINGS_BINDING);

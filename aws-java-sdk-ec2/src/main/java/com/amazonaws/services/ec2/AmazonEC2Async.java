@@ -6945,7 +6945,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>max-instances</code>: The maximum number of On-Demand Instances that you can run.
+     * <code>max-instances</code>: This attribute is no longer supported. The returned value does not reflect your
+     * actual vCPU limit for running On-Demand Instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits"
+     * >On-Demand Instance Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -6995,7 +6998,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>max-instances</code>: The maximum number of On-Demand Instances that you can run.
+     * <code>max-instances</code>: This attribute is no longer supported. The returned value does not reflect your
+     * actual vCPU limit for running On-Demand Instances. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits"
+     * >On-Demand Instance Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -8044,7 +8050,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified EC2 Fleets or all your EC2 Fleets.
+     * Describes the specified EC2 Fleets or all of your EC2 Fleets.
      * </p>
      * 
      * @param describeFleetsRequest
@@ -8057,7 +8063,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified EC2 Fleets or all your EC2 Fleets.
+     * Describes the specified EC2 Fleets or all of your EC2 Fleets.
      * </p>
      * 
      * @param describeFleetsRequest

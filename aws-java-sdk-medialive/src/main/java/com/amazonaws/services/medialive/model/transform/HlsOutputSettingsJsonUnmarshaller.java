@@ -48,6 +48,10 @@ public class HlsOutputSettingsJsonUnmarshaller implements Unmarshaller<HlsOutput
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("h265PackagingType", targetDepth)) {
+                    context.nextToken();
+                    hlsOutputSettings.setH265PackagingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hlsSettings", targetDepth)) {
                     context.nextToken();
                     hlsOutputSettings.setHlsSettings(HlsSettingsJsonUnmarshaller.getInstance().unmarshall(context));

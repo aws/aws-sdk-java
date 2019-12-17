@@ -52,6 +52,10 @@ public class MaintenanceWindowRunCommandParametersJsonUnmarshaller implements Un
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setComment(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchOutputConfig", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowRunCommandParameters.setCloudWatchOutputConfig(CloudWatchOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DocumentHash", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setDocumentHash(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +63,10 @@ public class MaintenanceWindowRunCommandParametersJsonUnmarshaller implements Un
                 if (context.testExpression("DocumentHashType", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowRunCommandParameters.setDocumentHashType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowRunCommandParameters.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationConfig", targetDepth)) {
                     context.nextToken();

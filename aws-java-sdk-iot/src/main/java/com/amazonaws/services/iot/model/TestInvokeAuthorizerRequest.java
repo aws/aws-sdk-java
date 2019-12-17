@@ -46,7 +46,7 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     private HttpContext httpContext;
     /**
      * <p>
-     * Specifies a test MQTT authorization request.&gt;
+     * Specifies a test MQTT authorization request.
      * </p>
      */
     private MqttContext mqttContext;
@@ -219,11 +219,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test MQTT authorization request.&gt;
+     * Specifies a test MQTT authorization request.
      * </p>
      * 
      * @param mqttContext
-     *        Specifies a test MQTT authorization request.&gt;
+     *        Specifies a test MQTT authorization request.
      */
 
     public void setMqttContext(MqttContext mqttContext) {
@@ -232,10 +232,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test MQTT authorization request.&gt;
+     * Specifies a test MQTT authorization request.
      * </p>
      * 
-     * @return Specifies a test MQTT authorization request.&gt;
+     * @return Specifies a test MQTT authorization request.
      */
 
     public MqttContext getMqttContext() {
@@ -244,11 +244,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test MQTT authorization request.&gt;
+     * Specifies a test MQTT authorization request.
      * </p>
      * 
      * @param mqttContext
-     *        Specifies a test MQTT authorization request.&gt;
+     *        Specifies a test MQTT authorization request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,7 +22,7 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
     private static final long serialVersionUID = 1L;
 
     /** A collection of validation error responses. */
-    private java.util.List<MultiplexValidationError> validationErrors;
+    private java.util.List<ValidationError> validationErrors;
 
     /**
      * Constructs a new UnprocessableEntityException with the specified error message.
@@ -41,7 +41,7 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("validationErrors")
-    public java.util.List<MultiplexValidationError> getValidationErrors() {
+    public java.util.List<ValidationError> getValidationErrors() {
         return validationErrors;
     }
 
@@ -53,13 +53,13 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("validationErrors")
-    public void setValidationErrors(java.util.Collection<MultiplexValidationError> validationErrors) {
+    public void setValidationErrors(java.util.Collection<ValidationError> validationErrors) {
         if (validationErrors == null) {
             this.validationErrors = null;
             return;
         }
 
-        this.validationErrors = new java.util.ArrayList<MultiplexValidationError>(validationErrors);
+        this.validationErrors = new java.util.ArrayList<ValidationError>(validationErrors);
     }
 
     /**
@@ -75,11 +75,11 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UnprocessableEntityException withValidationErrors(MultiplexValidationError... validationErrors) {
+    public UnprocessableEntityException withValidationErrors(ValidationError... validationErrors) {
         if (this.validationErrors == null) {
-            setValidationErrors(new java.util.ArrayList<MultiplexValidationError>(validationErrors.length));
+            setValidationErrors(new java.util.ArrayList<ValidationError>(validationErrors.length));
         }
-        for (MultiplexValidationError ele : validationErrors) {
+        for (ValidationError ele : validationErrors) {
             this.validationErrors.add(ele);
         }
         return this;
@@ -93,7 +93,7 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UnprocessableEntityException withValidationErrors(java.util.Collection<MultiplexValidationError> validationErrors) {
+    public UnprocessableEntityException withValidationErrors(java.util.Collection<ValidationError> validationErrors) {
         setValidationErrors(validationErrors);
         return this;
     }

@@ -18,24 +18,20 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for MultiplexValidationError
+ * Placeholder documentation for ValidationError
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexValidationError" target="_top">AWS
- *      API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ValidationError" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MultiplexValidationError implements Serializable, Cloneable, StructuredPojo {
+public class ValidationError implements Serializable, Cloneable, StructuredPojo {
 
-    /** Path to the source of the error. */
     private String elementPath;
-    /** The error message. */
+
     private String errorMessage;
 
     /**
-     * Path to the source of the error.
-     * 
      * @param elementPath
-     *        Path to the source of the error.
      */
 
     public void setElementPath(String elementPath) {
@@ -43,9 +39,7 @@ public class MultiplexValidationError implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Path to the source of the error.
-     * 
-     * @return Path to the source of the error.
+     * @return
      */
 
     public String getElementPath() {
@@ -53,23 +47,17 @@ public class MultiplexValidationError implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Path to the source of the error.
-     * 
      * @param elementPath
-     *        Path to the source of the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MultiplexValidationError withElementPath(String elementPath) {
+    public ValidationError withElementPath(String elementPath) {
         setElementPath(elementPath);
         return this;
     }
 
     /**
-     * The error message.
-     * 
      * @param errorMessage
-     *        The error message.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -77,9 +65,7 @@ public class MultiplexValidationError implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The error message.
-     * 
-     * @return The error message.
+     * @return
      */
 
     public String getErrorMessage() {
@@ -87,14 +73,11 @@ public class MultiplexValidationError implements Serializable, Cloneable, Struct
     }
 
     /**
-     * The error message.
-     * 
      * @param errorMessage
-     *        The error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public MultiplexValidationError withErrorMessage(String errorMessage) {
+    public ValidationError withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;
     }
@@ -126,9 +109,9 @@ public class MultiplexValidationError implements Serializable, Cloneable, Struct
         if (obj == null)
             return false;
 
-        if (obj instanceof MultiplexValidationError == false)
+        if (obj instanceof ValidationError == false)
             return false;
-        MultiplexValidationError other = (MultiplexValidationError) obj;
+        ValidationError other = (ValidationError) obj;
         if (other.getElementPath() == null ^ this.getElementPath() == null)
             return false;
         if (other.getElementPath() != null && other.getElementPath().equals(this.getElementPath()) == false)
@@ -151,9 +134,9 @@ public class MultiplexValidationError implements Serializable, Cloneable, Struct
     }
 
     @Override
-    public MultiplexValidationError clone() {
+    public ValidationError clone() {
         try {
-            return (MultiplexValidationError) super.clone();
+            return (ValidationError) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
@@ -162,6 +145,6 @@ public class MultiplexValidationError implements Serializable, Cloneable, Struct
     @com.amazonaws.annotation.SdkInternalApi
     @Override
     public void marshall(ProtocolMarshaller protocolMarshaller) {
-        com.amazonaws.services.medialive.model.transform.MultiplexValidationErrorMarshaller.getInstance().marshall(this, protocolMarshaller);
+        com.amazonaws.services.medialive.model.transform.ValidationErrorMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

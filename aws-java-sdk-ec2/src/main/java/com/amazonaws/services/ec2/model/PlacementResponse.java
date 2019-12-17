@@ -28,18 +28,18 @@ public class PlacementResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group the instance is in.
+     * The name of the placement group that the instance is in.
      * </p>
      */
     private String groupName;
 
     /**
      * <p>
-     * The name of the placement group the instance is in.
+     * The name of the placement group that the instance is in.
      * </p>
      * 
      * @param groupName
-     *        The name of the placement group the instance is in.
+     *        The name of the placement group that the instance is in.
      */
 
     public void setGroupName(String groupName) {
@@ -48,10 +48,10 @@ public class PlacementResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group the instance is in.
+     * The name of the placement group that the instance is in.
      * </p>
      * 
-     * @return The name of the placement group the instance is in.
+     * @return The name of the placement group that the instance is in.
      */
 
     public String getGroupName() {
@@ -60,11 +60,11 @@ public class PlacementResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the placement group the instance is in.
+     * The name of the placement group that the instance is in.
      * </p>
      * 
      * @param groupName
-     *        The name of the placement group the instance is in.
+     *        The name of the placement group that the instance is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
