@@ -63,8 +63,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid ICP
-     * recordal number.
+     * <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the
+     * distribution because there was an error in trying to determine the status. You can try again to see if the error
+     * is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      * </p>
      * </li>
      * </ul>
@@ -134,8 +135,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid ICP
-     * recordal number.
+     * <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the
+     * distribution because there was an error in trying to determine the status. You can try again to see if the error
+     * is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      * </p>
      * </li>
      * </ul>
@@ -162,8 +164,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid
-     *        ICP recordal number.
+     *        <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated
+     *        with the distribution because there was an error in trying to determine the status. You can try again to
+     *        see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      *        </p>
      *        </li>
      * @see ICPRecordalStatus
@@ -196,8 +199,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid ICP
-     * recordal number.
+     * <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the
+     * distribution because there was an error in trying to determine the status. You can try again to see if the error
+     * is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      * </p>
      * </li>
      * </ul>
@@ -223,8 +227,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid
-     *         ICP recordal number.
+     *         <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated
+     *         with the distribution because there was an error in trying to determine the status. You can try again to
+     *         see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      *         </p>
      *         </li>
      * @see ICPRecordalStatus
@@ -257,8 +262,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid ICP
-     * recordal number.
+     * <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the
+     * distribution because there was an error in trying to determine the status. You can try again to see if the error
+     * is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      * </p>
      * </li>
      * </ul>
@@ -285,8 +291,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid
-     *        ICP recordal number.
+     *        <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated
+     *        with the distribution because there was an error in trying to determine the status. You can try again to
+     *        see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -321,8 +328,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid ICP
-     * recordal number.
+     * <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated with the
+     * distribution because there was an error in trying to determine the status. You can try again to see if the error
+     * is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      * </p>
      * </li>
      * </ul>
@@ -349,8 +357,9 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b> indicates that at least one CNAME associated with the distribution does not have a valid
-     *        ICP recordal number.
+     *        <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the CNAME associated
+     *        with the distribution because there was an error in trying to determine the status. You can try again to
+     *        see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

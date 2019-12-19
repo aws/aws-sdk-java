@@ -789,10 +789,49 @@ public interface AWSOpsWorksCMAsync extends AWSOpsWorksCM {
 
     /**
      * <p>
+     * Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate or AWS OpsWorks for
+     * Puppet Enterprise servers or backups.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSOpsWorksCMAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate or AWS OpsWorks for
+     * Puppet Enterprise servers or backups.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSOpsWorksCMAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
      * <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When you run RestoreServer, the
      * server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing
      * server endpoint, so configuration management of the server's client devices (nodes) should continue to work.
+     * </p>
+     * <p>
+     * Restoring from a backup is performed by creating a new EC2 instance. If restoration is successful, and the server
+     * is in a <code>HEALTHY</code> state, AWS OpsWorks CM switches traffic over to the new instance. After restoration
+     * is finished, the old EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code> state, but is
+     * eventually terminated.
      * </p>
      * <p>
      * This operation is asynchronous.
@@ -817,6 +856,12 @@ public interface AWSOpsWorksCMAsync extends AWSOpsWorksCM {
      * <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When you run RestoreServer, the
      * server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing
      * server endpoint, so configuration management of the server's client devices (nodes) should continue to work.
+     * </p>
+     * <p>
+     * Restoring from a backup is performed by creating a new EC2 instance. If restoration is successful, and the server
+     * is in a <code>HEALTHY</code> state, AWS OpsWorks CM switches traffic over to the new instance. After restoration
+     * is finished, the old EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code> state, but is
+     * eventually terminated.
      * </p>
      * <p>
      * This operation is asynchronous.
@@ -884,6 +929,70 @@ public interface AWSOpsWorksCMAsync extends AWSOpsWorksCM {
      */
     java.util.concurrent.Future<StartMaintenanceResult> startMaintenanceAsync(StartMaintenanceRequest startMaintenanceRequest,
             com.amazonaws.handlers.AsyncHandler<StartMaintenanceRequest, StartMaintenanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server, or to server
+     * backups.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSOpsWorksCMAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server, or to server
+     * backups.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSOpsWorksCMAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes specified tags from an AWS OpsWorks-CM server or backup.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSOpsWorksCMAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes specified tags from an AWS OpsWorks-CM server or backup.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSOpsWorksCMAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

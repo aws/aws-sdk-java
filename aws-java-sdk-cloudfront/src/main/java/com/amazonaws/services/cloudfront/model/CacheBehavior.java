@@ -87,7 +87,7 @@ public class CacheBehavior implements Serializable, Cloneable {
     private String targetOriginId;
     /**
      * <p>
-     * A complex type that specifies how CloudFront handles query strings and cookies.
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      */
     private ForwardedValues forwardedValues;
@@ -421,11 +421,11 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies how CloudFront handles query strings and cookies.
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      * 
      * @param forwardedValues
-     *        A complex type that specifies how CloudFront handles query strings and cookies.
+     *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      */
 
     public void setForwardedValues(ForwardedValues forwardedValues) {
@@ -434,10 +434,10 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies how CloudFront handles query strings and cookies.
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      * 
-     * @return A complex type that specifies how CloudFront handles query strings and cookies.
+     * @return A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      */
 
     public ForwardedValues getForwardedValues() {
@@ -446,11 +446,11 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that specifies how CloudFront handles query strings and cookies.
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      * 
      * @param forwardedValues
-     *        A complex type that specifies how CloudFront handles query strings and cookies.
+     *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66,6 +66,8 @@ public class CreateServerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubnetIds").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> BACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("BackupId").build();
 
@@ -104,6 +106,7 @@ public class CreateServerRequestMarshaller {
             protocolMarshaller.marshall(createServerRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(createServerRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
             protocolMarshaller.marshall(createServerRequest.getSubnetIds(), SUBNETIDS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createServerRequest.getBackupId(), BACKUPID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

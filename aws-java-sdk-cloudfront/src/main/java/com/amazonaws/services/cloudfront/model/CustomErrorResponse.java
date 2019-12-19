@@ -75,8 +75,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for
-     * <code>ResponseCode</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+     * <code>ResponseCode</code>.
      * </p>
      * <p>
      * We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP
@@ -114,8 +113,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponseCode&gt;</code>, in the XML document.
+     * <code>ResponsePagePath</code>.
      * </p>
      */
     private String responseCode;
@@ -124,10 +122,6 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified in
      * <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see whether the
      * problem that caused the error has been resolved and the requested object is now available.
-     * </p>
-     * <p>
-     * If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>, in the
-     * XML document.
      * </p>
      * <p>
      * For more information, see <a
@@ -202,8 +196,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for
-     * <code>ResponseCode</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+     * <code>ResponseCode</code>.
      * </p>
      * <p>
      * We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP
@@ -235,8 +228,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for
-     *        <code>ResponseCode</code>. If you don't want to specify a value, include an empty element,
-     *        <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+     *        <code>ResponseCode</code>.
      *        </p>
      *        <p>
      *        We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on
@@ -273,8 +265,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for
-     * <code>ResponseCode</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+     * <code>ResponseCode</code>.
      * </p>
      * <p>
      * We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP
@@ -305,8 +296,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for
-     *         <code>ResponseCode</code>. If you don't want to specify a value, include an empty element,
-     *         <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+     *         <code>ResponseCode</code>.
      *         </p>
      *         <p>
      *         We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on
@@ -343,8 +333,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for
-     * <code>ResponseCode</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+     * <code>ResponseCode</code>.
      * </p>
      * <p>
      * We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on an HTTP
@@ -376,8 +365,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If you specify a value for <code>ResponsePagePath</code>, you must also specify a value for
-     *        <code>ResponseCode</code>. If you don't want to specify a value, include an empty element,
-     *        <code>&lt;ResponsePagePath&gt;</code>, in the XML document.
+     *        <code>ResponseCode</code>.
      *        </p>
      *        <p>
      *        We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom error pages on
@@ -420,8 +408,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponseCode&gt;</code>, in the XML document.
+     * <code>ResponsePagePath</code>.
      * </p>
      * 
      * @param responseCode
@@ -451,8 +438,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If you specify a value for <code>ResponseCode</code>, you must also specify a value for
-     *        <code>ResponsePagePath</code>. If you don't want to specify a value, include an empty element,
-     *        <code>&lt;ResponseCode&gt;</code>, in the XML document.
+     *        <code>ResponsePagePath</code>.
      */
 
     public void setResponseCode(String responseCode) {
@@ -488,8 +474,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponseCode&gt;</code>, in the XML document.
+     * <code>ResponsePagePath</code>.
      * </p>
      * 
      * @return The HTTP status code that you want CloudFront to return to the viewer along with the custom error page.
@@ -518,8 +503,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         If you specify a value for <code>ResponseCode</code>, you must also specify a value for
-     *         <code>ResponsePagePath</code>. If you don't want to specify a value, include an empty element,
-     *         <code>&lt;ResponseCode&gt;</code>, in the XML document.
+     *         <code>ResponsePagePath</code>.
      */
 
     public String getResponseCode() {
@@ -555,8 +539,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If you specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an empty element,
-     * <code>&lt;ResponseCode&gt;</code>, in the XML document.
+     * <code>ResponsePagePath</code>.
      * </p>
      * 
      * @param responseCode
@@ -586,8 +569,7 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If you specify a value for <code>ResponseCode</code>, you must also specify a value for
-     *        <code>ResponsePagePath</code>. If you don't want to specify a value, include an empty element,
-     *        <code>&lt;ResponseCode&gt;</code>, in the XML document.
+     *        <code>ResponsePagePath</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -603,10 +585,6 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * problem that caused the error has been resolved and the requested object is now available.
      * </p>
      * <p>
-     * If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>, in the
-     * XML document.
-     * </p>
-     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -616,10 +594,6 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified
      *        in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see
      *        whether the problem that caused the error has been resolved and the requested object is now available.</p>
-     *        <p>
-     *        If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>,
-     *        in the XML document.
-     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
@@ -637,10 +611,6 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * problem that caused the error has been resolved and the requested object is now available.
      * </p>
      * <p>
-     * If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>, in the
-     * XML document.
-     * </p>
-     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -650,10 +620,6 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *         in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see
      *         whether the problem that caused the error has been resolved and the requested object is now
      *         available.</p>
-     *         <p>
-     *         If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>,
-     *         in the XML document.
-     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"
@@ -671,10 +637,6 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      * problem that caused the error has been resolved and the requested object is now available.
      * </p>
      * <p>
-     * If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>, in the
-     * XML document.
-     * </p>
-     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -684,10 +646,6 @@ public class CustomErrorResponse implements Serializable, Cloneable {
      *        The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified
      *        in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your origin to see
      *        whether the problem that caused the error has been resolved and the requested object is now available.</p>
-     *        <p>
-     *        If you don't want to specify a value, include an empty element, <code>&lt;ErrorCachingMinTTL&gt;</code>,
-     *        in the XML document.
-     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html"

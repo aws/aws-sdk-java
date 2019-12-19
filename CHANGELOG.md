@@ -1,3 +1,24 @@
+# __1.11.696__ __2019-12-18__
+## __AWS OpsWorks CM__
+  - ### Features
+    - AWS OpsWorks CM now supports tagging, and tag-based access control, of servers and backups.
+
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - Documentation updates for resourcegroupstaggingapi
+
+## __Amazon CloudFront__
+  - ### Features
+    - Documentation updates for CloudFront
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release introduces the ability to tag Elastic Graphics accelerators. You can use tags to organize and identify your accelerators for cost allocation.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Updates Amazon S3 endpoints allowing you to configure your client to opt-in to using S3 with the us-east-1 regional endpoint, instead of global.
+
 # __1.11.695__ __2019-12-17__
 ## __AWS Elemental MediaLive__
   - ### Features
@@ -6,6 +27,10 @@
 ## __AWS IoT__
   - ### Features
     - Added a new Over-the-Air (OTA) Update feature that allows you to use different, or multiple, protocols to transfer an image from the AWS cloud to IoT devices.
+
+## __Amazon DynamoDB__
+  - ### Bugfixes
+    - Fixed an issue where statically initializing SaveBehavior, ConsistentReads, PaginationLoadingStrategy, DefaultTableNameResolver, DefaultBatchWriteRetryStrategy, DefaultBatchLoadRetryStrategy or NoRetryBatchLoadRetryStrategy before DynamoDBMapperConfig could result in an invalidly-configured DynamoDBMapperConfig.DEFAULT.
 
 ## __Amazon EC2 Container Service__
   - ### Features

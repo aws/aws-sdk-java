@@ -37,6 +37,41 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key cannot be empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leading and trailing white spaces are trimmed from both the key and value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -119,6 +154,304 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key cannot be empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leading and trailing white spaces are trimmed from both the key and value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key cannot be empty.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
+     *         or the following special characters: <code>+ - = . _ : /</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
+     *         the following special characters: <code>+ - = . _ : /</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Leading and trailing white spaces are trimmed from both the key and value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key cannot be empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leading and trailing white spaces are trimmed from both the key and value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The key cannot be empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
+     *        or the following special characters: <code>+ - = . _ : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
+     *        the following special characters: <code>+ - = . _ : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Leading and trailing white spaces are trimmed from both the key and value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key cannot be empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leading and trailing white spaces are trimmed from both the key and value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The key cannot be empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
+     *        or the following special characters: <code>+ - = . _ : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
+     *        the following special characters: <code>+ - = . _ : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Leading and trailing white spaces are trimmed from both the key and value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBackupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key cannot be empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leading and trailing white spaces are trimmed from both the key and value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The key cannot be empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators,
+     *        or the following special characters: <code>+ - = . _ : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or
+     *        the following special characters: <code>+ - = . _ : /</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Leading and trailing white spaces are trimmed from both the key and value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBackupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +466,9 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getServerName() != null)
             sb.append("ServerName: ").append(getServerName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +491,10 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +505,7 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

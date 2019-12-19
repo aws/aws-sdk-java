@@ -31,13 +31,14 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag key is noncompliant with the effective tag policy.
+     * These tag keys on the resource are noncompliant with the effective tag policy.
      * </p>
      */
     private java.util.List<String> noncompliantKeys;
     /**
      * <p>
-     * The tag value is noncompliant with the effective tag policy.
+     * These are keys defined in the effective policy that are on the resource with either incorrect case treatment or
+     * noncompliant values.
      * </p>
      */
     private java.util.List<String> keysWithNoncompliantValues;
@@ -50,10 +51,10 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag key is noncompliant with the effective tag policy.
+     * These tag keys on the resource are noncompliant with the effective tag policy.
      * </p>
      * 
-     * @return The tag key is noncompliant with the effective tag policy.
+     * @return These tag keys on the resource are noncompliant with the effective tag policy.
      */
 
     public java.util.List<String> getNoncompliantKeys() {
@@ -62,11 +63,11 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag key is noncompliant with the effective tag policy.
+     * These tag keys on the resource are noncompliant with the effective tag policy.
      * </p>
      * 
      * @param noncompliantKeys
-     *        The tag key is noncompliant with the effective tag policy.
+     *        These tag keys on the resource are noncompliant with the effective tag policy.
      */
 
     public void setNoncompliantKeys(java.util.Collection<String> noncompliantKeys) {
@@ -80,7 +81,7 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag key is noncompliant with the effective tag policy.
+     * These tag keys on the resource are noncompliant with the effective tag policy.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +90,7 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param noncompliantKeys
-     *        The tag key is noncompliant with the effective tag policy.
+     *        These tag keys on the resource are noncompliant with the effective tag policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +106,11 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag key is noncompliant with the effective tag policy.
+     * These tag keys on the resource are noncompliant with the effective tag policy.
      * </p>
      * 
      * @param noncompliantKeys
-     *        The tag key is noncompliant with the effective tag policy.
+     *        These tag keys on the resource are noncompliant with the effective tag policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +121,12 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag value is noncompliant with the effective tag policy.
+     * These are keys defined in the effective policy that are on the resource with either incorrect case treatment or
+     * noncompliant values.
      * </p>
      * 
-     * @return The tag value is noncompliant with the effective tag policy.
+     * @return These are keys defined in the effective policy that are on the resource with either incorrect case
+     *         treatment or noncompliant values.
      */
 
     public java.util.List<String> getKeysWithNoncompliantValues() {
@@ -132,11 +135,13 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag value is noncompliant with the effective tag policy.
+     * These are keys defined in the effective policy that are on the resource with either incorrect case treatment or
+     * noncompliant values.
      * </p>
      * 
      * @param keysWithNoncompliantValues
-     *        The tag value is noncompliant with the effective tag policy.
+     *        These are keys defined in the effective policy that are on the resource with either incorrect case
+     *        treatment or noncompliant values.
      */
 
     public void setKeysWithNoncompliantValues(java.util.Collection<String> keysWithNoncompliantValues) {
@@ -150,7 +155,8 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag value is noncompliant with the effective tag policy.
+     * These are keys defined in the effective policy that are on the resource with either incorrect case treatment or
+     * noncompliant values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +165,8 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param keysWithNoncompliantValues
-     *        The tag value is noncompliant with the effective tag policy.
+     *        These are keys defined in the effective policy that are on the resource with either incorrect case
+     *        treatment or noncompliant values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +182,13 @@ public class ComplianceDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The tag value is noncompliant with the effective tag policy.
+     * These are keys defined in the effective policy that are on the resource with either incorrect case treatment or
+     * noncompliant values.
      * </p>
      * 
      * @param keysWithNoncompliantValues
-     *        The tag value is noncompliant with the effective tag policy.
+     *        These are keys defined in the effective policy that are on the resource with either incorrect case
+     *        treatment or noncompliant values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

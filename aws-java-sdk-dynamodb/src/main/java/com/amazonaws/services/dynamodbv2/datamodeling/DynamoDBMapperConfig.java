@@ -481,9 +481,8 @@ public class DynamoDBMapperConfig {
          */
         APPEND_SET;
 
-        private final DynamoDBMapperConfig config = builder().withSaveBehavior(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withSaveBehavior(this).build();
         }
     };
 
@@ -500,9 +499,8 @@ public class DynamoDBMapperConfig {
         CONSISTENT,
         EVENTUAL;
 
-        private final DynamoDBMapperConfig config = builder().withConsistentReads(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withConsistentReads(this).build();
         }
     };
 
@@ -540,9 +538,8 @@ public class DynamoDBMapperConfig {
          */
         EAGER_LOADING;
 
-        private final DynamoDBMapperConfig config = builder().withPaginationLoadingStrategy(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withPaginationLoadingStrategy(this).build();
         }
     }
 
@@ -607,9 +604,8 @@ public class DynamoDBMapperConfig {
             return tableNamePrefix;
         }
 
-        private final DynamoDBMapperConfig config = builder().withTableNameOverride(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withTableNameOverride(this).build();
         }
     }
 
@@ -687,9 +683,8 @@ public class DynamoDBMapperConfig {
             return prefix == null ? beans.properties().tableName() : prefix + beans.properties().tableName();
         }
 
-        private final DynamoDBMapperConfig config = builder().withTableNameResolver(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withTableNameResolver(this).build();
         }
     }
 
@@ -789,9 +784,8 @@ public class DynamoDBMapperConfig {
             return -1;
         }
 
-        private final DynamoDBMapperConfig config = builder().withBatchLoadRetryStrategy(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withBatchLoadRetryStrategy(this).build();
         }
     }
 
@@ -834,9 +828,8 @@ public class DynamoDBMapperConfig {
             return (unprocessedKeys != null && unprocessedKeys.size() > 0 && batchLoadContext.getRetriesAttempted() < MAX_RETRIES);
         }
 
-        private final DynamoDBMapperConfig config = builder().withBatchLoadRetryStrategy(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withBatchLoadRetryStrategy(this).build();
         }
     }
 
@@ -885,9 +878,8 @@ public class DynamoDBMapperConfig {
             return Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
         }
 
-        private final DynamoDBMapperConfig config = builder().withBatchWriteRetryStrategy(this).build();
         public final DynamoDBMapperConfig config() {
-            return this.config;
+            return builder().withBatchWriteRetryStrategy(this).build();
         }
     }
 

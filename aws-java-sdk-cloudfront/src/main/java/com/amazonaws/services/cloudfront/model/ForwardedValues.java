@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that specifies how CloudFront handles query strings and cookies.
+ * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ForwardedValues" target="_top">AWS API
