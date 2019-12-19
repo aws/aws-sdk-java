@@ -31,19 +31,19 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for a fleet containing the instance being accessed.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for an instance being accessed.
+     * A unique identifier for an instance being accessed.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      */
     private String ipAddress;
@@ -62,11 +62,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for a fleet containing the instance being accessed.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet containing the instance being accessed.
+     *        A unique identifier for a fleet containing the instance being accessed.
      */
 
     public void setFleetId(String fleetId) {
@@ -75,10 +75,10 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for a fleet containing the instance being accessed.
      * </p>
      * 
-     * @return Unique identifier for a fleet containing the instance being accessed.
+     * @return A unique identifier for a fleet containing the instance being accessed.
      */
 
     public String getFleetId() {
@@ -87,11 +87,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for a fleet containing the instance being accessed.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet containing the instance being accessed.
+     *        A unique identifier for a fleet containing the instance being accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for an instance being accessed.
+     * A unique identifier for an instance being accessed.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for an instance being accessed.
+     *        A unique identifier for an instance being accessed.
      */
 
     public void setInstanceId(String instanceId) {
@@ -115,10 +115,10 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for an instance being accessed.
+     * A unique identifier for an instance being accessed.
      * </p>
      * 
-     * @return Unique identifier for an instance being accessed.
+     * @return A unique identifier for an instance being accessed.
      */
 
     public String getInstanceId() {
@@ -127,11 +127,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for an instance being accessed.
+     * A unique identifier for an instance being accessed.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for an instance being accessed.
+     *        A unique identifier for an instance being accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      * 
      * @param ipAddress
-     *        IP address assigned to the instance.
+     *        IP address that is assigned to the instance.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -155,10 +155,10 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      * 
-     * @return IP address assigned to the instance.
+     * @return IP address that is assigned to the instance.
      */
 
     public String getIpAddress() {
@@ -167,11 +167,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      * 
      * @param ipAddress
-     *        IP address assigned to the instance.
+     *        IP address that is assigned to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

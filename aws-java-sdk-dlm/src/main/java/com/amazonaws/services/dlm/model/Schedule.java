@@ -56,7 +56,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Tag> variableTags;
     /**
      * <p>
-     * The create rule.
+     * The creation rule.
      * </p>
      */
     private CreateRule createRule;
@@ -68,10 +68,16 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private RetainRule retainRule;
     /**
      * <p>
-     * Enable fast snapshot restore.
+     * The rule for enabling fast snapshot restore.
      * </p>
      */
     private FastRestoreRule fastRestoreRule;
+    /**
+     * <p>
+     * The rule for cross-Region snapshot copies.
+     * </p>
+     */
+    private java.util.List<CrossRegionCopyRule> crossRegionCopyRules;
 
     /**
      * <p>
@@ -335,11 +341,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The create rule.
+     * The creation rule.
      * </p>
      * 
      * @param createRule
-     *        The create rule.
+     *        The creation rule.
      */
 
     public void setCreateRule(CreateRule createRule) {
@@ -348,10 +354,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The create rule.
+     * The creation rule.
      * </p>
      * 
-     * @return The create rule.
+     * @return The creation rule.
      */
 
     public CreateRule getCreateRule() {
@@ -360,11 +366,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The create rule.
+     * The creation rule.
      * </p>
      * 
      * @param createRule
-     *        The create rule.
+     *        The creation rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +421,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable fast snapshot restore.
+     * The rule for enabling fast snapshot restore.
      * </p>
      * 
      * @param fastRestoreRule
-     *        Enable fast snapshot restore.
+     *        The rule for enabling fast snapshot restore.
      */
 
     public void setFastRestoreRule(FastRestoreRule fastRestoreRule) {
@@ -428,10 +434,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable fast snapshot restore.
+     * The rule for enabling fast snapshot restore.
      * </p>
      * 
-     * @return Enable fast snapshot restore.
+     * @return The rule for enabling fast snapshot restore.
      */
 
     public FastRestoreRule getFastRestoreRule() {
@@ -440,16 +446,86 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enable fast snapshot restore.
+     * The rule for enabling fast snapshot restore.
      * </p>
      * 
      * @param fastRestoreRule
-     *        Enable fast snapshot restore.
+     *        The rule for enabling fast snapshot restore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Schedule withFastRestoreRule(FastRestoreRule fastRestoreRule) {
         setFastRestoreRule(fastRestoreRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rule for cross-Region snapshot copies.
+     * </p>
+     * 
+     * @return The rule for cross-Region snapshot copies.
+     */
+
+    public java.util.List<CrossRegionCopyRule> getCrossRegionCopyRules() {
+        return crossRegionCopyRules;
+    }
+
+    /**
+     * <p>
+     * The rule for cross-Region snapshot copies.
+     * </p>
+     * 
+     * @param crossRegionCopyRules
+     *        The rule for cross-Region snapshot copies.
+     */
+
+    public void setCrossRegionCopyRules(java.util.Collection<CrossRegionCopyRule> crossRegionCopyRules) {
+        if (crossRegionCopyRules == null) {
+            this.crossRegionCopyRules = null;
+            return;
+        }
+
+        this.crossRegionCopyRules = new java.util.ArrayList<CrossRegionCopyRule>(crossRegionCopyRules);
+    }
+
+    /**
+     * <p>
+     * The rule for cross-Region snapshot copies.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCrossRegionCopyRules(java.util.Collection)} or {@link #withCrossRegionCopyRules(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param crossRegionCopyRules
+     *        The rule for cross-Region snapshot copies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withCrossRegionCopyRules(CrossRegionCopyRule... crossRegionCopyRules) {
+        if (this.crossRegionCopyRules == null) {
+            setCrossRegionCopyRules(new java.util.ArrayList<CrossRegionCopyRule>(crossRegionCopyRules.length));
+        }
+        for (CrossRegionCopyRule ele : crossRegionCopyRules) {
+            this.crossRegionCopyRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rule for cross-Region snapshot copies.
+     * </p>
+     * 
+     * @param crossRegionCopyRules
+     *        The rule for cross-Region snapshot copies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withCrossRegionCopyRules(java.util.Collection<CrossRegionCopyRule> crossRegionCopyRules) {
+        setCrossRegionCopyRules(crossRegionCopyRules);
         return this;
     }
 
@@ -478,7 +554,9 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         if (getRetainRule() != null)
             sb.append("RetainRule: ").append(getRetainRule()).append(",");
         if (getFastRestoreRule() != null)
-            sb.append("FastRestoreRule: ").append(getFastRestoreRule());
+            sb.append("FastRestoreRule: ").append(getFastRestoreRule()).append(",");
+        if (getCrossRegionCopyRules() != null)
+            sb.append("CrossRegionCopyRules: ").append(getCrossRegionCopyRules());
         sb.append("}");
         return sb.toString();
     }
@@ -521,6 +599,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFastRestoreRule() != null && other.getFastRestoreRule().equals(this.getFastRestoreRule()) == false)
             return false;
+        if (other.getCrossRegionCopyRules() == null ^ this.getCrossRegionCopyRules() == null)
+            return false;
+        if (other.getCrossRegionCopyRules() != null && other.getCrossRegionCopyRules().equals(this.getCrossRegionCopyRules()) == false)
+            return false;
         return true;
     }
 
@@ -536,6 +618,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreateRule() == null) ? 0 : getCreateRule().hashCode());
         hashCode = prime * hashCode + ((getRetainRule() == null) ? 0 : getRetainRule().hashCode());
         hashCode = prime * hashCode + ((getFastRestoreRule() == null) ? 0 : getFastRestoreRule().hashCode());
+        hashCode = prime * hashCode + ((getCrossRegionCopyRules() == null) ? 0 : getCrossRegionCopyRules().hashCode());
         return hashCode;
     }
 

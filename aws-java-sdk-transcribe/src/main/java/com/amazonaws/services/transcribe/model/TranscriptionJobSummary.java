@@ -42,6 +42,12 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
     private java.util.Date creationTime;
     /**
      * <p>
+     * A timestamp that shows when the job started processing.
+     * </p>
+     */
+    private java.util.Date startTime;
+    /**
+     * <p>
      * A timestamp that shows when the job was completed.
      * </p>
      */
@@ -158,6 +164,46 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
 
     public TranscriptionJobSummary withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the job started processing.
+     * </p>
+     * 
+     * @param startTime
+     *        A timestamp that shows when the job started processing.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the job started processing.
+     * </p>
+     * 
+     * @return A timestamp that shows when the job started processing.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * A timestamp that shows when the job started processing.
+     * </p>
+     * 
+     * @param startTime
+     *        A timestamp that shows when the job started processing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJobSummary withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
         return this;
     }
 
@@ -514,6 +560,8 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
             sb.append("TranscriptionJobName: ").append(getTranscriptionJobName()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getCompletionTime() != null)
             sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
         if (getLanguageCode() != null)
@@ -546,6 +594,10 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
         if (other.getCompletionTime() == null ^ this.getCompletionTime() == null)
             return false;
         if (other.getCompletionTime() != null && other.getCompletionTime().equals(this.getCompletionTime()) == false)
@@ -576,6 +628,7 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getTranscriptionJobName() == null) ? 0 : getTranscriptionJobName().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getTranscriptionJobStatus() == null) ? 0 : getTranscriptionJobStatus().hashCode());

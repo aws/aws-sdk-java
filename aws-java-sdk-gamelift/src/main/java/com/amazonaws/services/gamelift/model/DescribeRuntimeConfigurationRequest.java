@@ -30,18 +30,21 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the run-time configuration for.
+     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the run-time configuration for.
+     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to get the run-time configuration for.
+     *        A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or
+     *        ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -50,10 +53,12 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the run-time configuration for.
+     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to get the run-time configuration for.
+     * @return A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or
+     *         ARN value.
      */
 
     public String getFleetId() {
@@ -62,11 +67,13 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the run-time configuration for.
+     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to get the run-time configuration for.
+     *        A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or
+     *        ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

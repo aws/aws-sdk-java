@@ -76,6 +76,10 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                     context.nextToken();
                     transcriptionJob.setTranscript(TranscriptJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("StartTime", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     transcriptionJob.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -91,6 +95,10 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                 if (context.testExpression("Settings", targetDepth)) {
                     context.nextToken();
                     transcriptionJob.setSettings(SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobExecutionSettings", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setJobExecutionSettings(JobExecutionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateBuildRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageLocation").build();
     private static final MarshallingInfo<String> OPERATINGSYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperatingSystem").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateBuildRequestMarshaller instance = new CreateBuildRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateBuildRequestMarshaller {
             protocolMarshaller.marshall(createBuildRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createBuildRequest.getStorageLocation(), STORAGELOCATION_BINDING);
             protocolMarshaller.marshall(createBuildRequest.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
+            protocolMarshaller.marshall(createBuildRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

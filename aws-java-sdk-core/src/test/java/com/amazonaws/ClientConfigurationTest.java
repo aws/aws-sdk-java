@@ -42,7 +42,6 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.mockito.Mockito;
 import utils.EnvironmentVariableHelper;

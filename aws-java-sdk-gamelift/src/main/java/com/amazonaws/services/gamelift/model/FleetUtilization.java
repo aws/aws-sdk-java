@@ -39,72 +39,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * Describe fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
  * <a>DescribeFleetAttributes</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetCapacity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetUtilization</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeRuntimeConfiguration</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEC2InstanceLimits</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetEvents</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Update fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
  * <a>UpdateFleetAttributes</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetCapacity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateRuntimeConfiguration</a>
- * </p>
- * </li>
- * </ul>
  * </li>
  * <li>
  * <p>
@@ -133,7 +74,7 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      */
     private String fleetId;
@@ -157,18 +98,19 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
     private Integer currentPlayerSessionCount;
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
+     * fleet.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        A unique identifier for a fleet.
      */
 
     public void setFleetId(String fleetId) {
@@ -177,10 +119,10 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      * 
-     * @return Unique identifier for a fleet.
+     * @return A unique identifier for a fleet.
      */
 
     public String getFleetId() {
@@ -189,11 +131,11 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        A unique identifier for a fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,11 +269,13 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
+     * fleet.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     *        The maximum number of players allowed across all game sessions currently being hosted on all instances in
+     *        the fleet.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -340,10 +284,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
+     * fleet.
      * </p>
      * 
-     * @return Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     * @return The maximum number of players allowed across all game sessions currently being hosted on all instances in
+     *         the fleet.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -352,11 +298,13 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
+     * fleet.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum players allowed across all game sessions currently being hosted on all instances in the fleet.
+     *        The maximum number of players allowed across all game sessions currently being hosted on all instances in
+     *        the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

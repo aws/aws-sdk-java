@@ -30,6 +30,8 @@ public class MatchmakingConfigurationMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> CONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationArn").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<List> GAMESESSIONQUEUEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -42,6 +44,8 @@ public class MatchmakingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptanceRequired").build();
     private static final MarshallingInfo<String> RULESETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleSetName").build();
+    private static final MarshallingInfo<String> RULESETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleSetArn").build();
     private static final MarshallingInfo<String> NOTIFICATIONTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationTarget").build();
     private static final MarshallingInfo<Integer> ADDITIONALPLAYERCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -74,12 +78,14 @@ public class MatchmakingConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(matchmakingConfiguration.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(matchmakingConfiguration.getConfigurationArn(), CONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getGameSessionQueueArns(), GAMESESSIONQUEUEARNS_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getRequestTimeoutSeconds(), REQUESTTIMEOUTSECONDS_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getAcceptanceTimeoutSeconds(), ACCEPTANCETIMEOUTSECONDS_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getAcceptanceRequired(), ACCEPTANCEREQUIRED_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getRuleSetName(), RULESETNAME_BINDING);
+            protocolMarshaller.marshall(matchmakingConfiguration.getRuleSetArn(), RULESETARN_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getNotificationTarget(), NOTIFICATIONTARGET_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getAdditionalPlayerCount(), ADDITIONALPLAYERCOUNT_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getCustomEventData(), CUSTOMEVENTDATA_BINDING);

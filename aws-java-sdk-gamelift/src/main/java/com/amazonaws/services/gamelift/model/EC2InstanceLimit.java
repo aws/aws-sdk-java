@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon EC2) instance type. Instance
- * limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
+ * The maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon EC2) instance type.
+ * Instance limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit" target="_top">AWS API

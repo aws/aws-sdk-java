@@ -30,27 +30,27 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to create a game session in. Each request must reference either a fleet ID or alias
-     * ID, but not both.
+     * A unique identifier for a fleet to create a game session in. You can use either the fleet ID or ARN value. Each
+     * request must reference either a fleet ID or alias ID, but not both.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to create a game session in. Each request must reference
-     * either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to create a game session in. You can use either the
+     * alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      */
     private String aliasId;
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      */
     private String name;
@@ -65,7 +65,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * Unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
+     * A unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
      * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
      * </p>
      */
@@ -102,13 +102,13 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to create a game session in. Each request must reference either a fleet ID or alias
-     * ID, but not both.
+     * A unique identifier for a fleet to create a game session in. You can use either the fleet ID or ARN value. Each
+     * request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to create a game session in. Each request must reference either a fleet ID
-     *        or alias ID, but not both.
+     *        A unique identifier for a fleet to create a game session in. You can use either the fleet ID or ARN value.
+     *        Each request must reference either a fleet ID or alias ID, but not both.
      */
 
     public void setFleetId(String fleetId) {
@@ -117,12 +117,12 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to create a game session in. Each request must reference either a fleet ID or alias
-     * ID, but not both.
+     * A unique identifier for a fleet to create a game session in. You can use either the fleet ID or ARN value. Each
+     * request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
-     * @return Unique identifier for a fleet to create a game session in. Each request must reference either a fleet ID
-     *         or alias ID, but not both.
+     * @return A unique identifier for a fleet to create a game session in. You can use either the fleet ID or ARN
+     *         value. Each request must reference either a fleet ID or alias ID, but not both.
      */
 
     public String getFleetId() {
@@ -131,13 +131,13 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to create a game session in. Each request must reference either a fleet ID or alias
-     * ID, but not both.
+     * A unique identifier for a fleet to create a game session in. You can use either the fleet ID or ARN value. Each
+     * request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to create a game session in. Each request must reference either a fleet ID
-     *        or alias ID, but not both.
+     *        A unique identifier for a fleet to create a game session in. You can use either the fleet ID or ARN value.
+     *        Each request must reference either a fleet ID or alias ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,13 +148,13 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to create a game session in. Each request must reference
-     * either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to create a game session in. You can use either the
+     * alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for an alias associated with the fleet to create a game session in. Each request must
-     *        reference either a fleet ID or alias ID, but not both.
+     *        A unique identifier for an alias associated with the fleet to create a game session in. You can use either
+     *        the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      */
 
     public void setAliasId(String aliasId) {
@@ -163,12 +163,13 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to create a game session in. Each request must reference
-     * either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to create a game session in. You can use either the
+     * alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
-     * @return Unique identifier for an alias associated with the fleet to create a game session in. Each request must
-     *         reference either a fleet ID or alias ID, but not both.
+     * @return A unique identifier for an alias associated with the fleet to create a game session in. You can use
+     *         either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not
+     *         both.
      */
 
     public String getAliasId() {
@@ -177,13 +178,13 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to create a game session in. Each request must reference
-     * either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to create a game session in. You can use either the
+     * alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for an alias associated with the fleet to create a game session in. Each request must
-     *        reference either a fleet ID or alias ID, but not both.
+     *        A unique identifier for an alias associated with the fleet to create a game session in. You can use either
+     *        the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +195,11 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -207,10 +208,10 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
-     * @return Maximum number of players that can be connected simultaneously to the game session.
+     * @return The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -219,11 +220,11 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +235,11 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -247,10 +248,10 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * @return A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public String getName() {
@@ -259,11 +260,11 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,14 +373,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
+     * A unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
      * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
      * </p>
      * 
      * @param creatorId
-     *        Unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
-     *        protection policy (if one exists) that limits the number of concurrent active game sessions one player can
-     *        have.
+     *        A unique identifier for a player or entity creating the game session. This ID is used to enforce a
+     *        resource protection policy (if one exists) that limits the number of concurrent active game sessions one
+     *        player can have.
      */
 
     public void setCreatorId(String creatorId) {
@@ -388,13 +389,13 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
+     * A unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
      * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
      * </p>
      * 
-     * @return Unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
-     *         protection policy (if one exists) that limits the number of concurrent active game sessions one player
-     *         can have.
+     * @return A unique identifier for a player or entity creating the game session. This ID is used to enforce a
+     *         resource protection policy (if one exists) that limits the number of concurrent active game sessions one
+     *         player can have.
      */
 
     public String getCreatorId() {
@@ -403,14 +404,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
+     * A unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
      * protection policy (if one exists) that limits the number of concurrent active game sessions one player can have.
      * </p>
      * 
      * @param creatorId
-     *        Unique identifier for a player or entity creating the game session. This ID is used to enforce a resource
-     *        protection policy (if one exists) that limits the number of concurrent active game sessions one player can
-     *        have.
+     *        A unique identifier for a player or entity creating the game session. This ID is used to enforce a
+     *        resource protection policy (if one exists) that limits the number of concurrent active game sessions one
+     *        player can have.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

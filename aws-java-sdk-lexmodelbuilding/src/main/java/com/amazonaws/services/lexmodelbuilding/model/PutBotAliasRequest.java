@@ -65,6 +65,12 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String checksum;
+    /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     */
+    private ConversationLogsRequest conversationLogs;
 
     /**
      * <p>
@@ -324,6 +330,46 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     * 
+     * @param conversationLogs
+     *        Settings that determine how Amazon Lex uses conversation logs for the alias.
+     */
+
+    public void setConversationLogs(ConversationLogsRequest conversationLogs) {
+        this.conversationLogs = conversationLogs;
+    }
+
+    /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     * 
+     * @return Settings that determine how Amazon Lex uses conversation logs for the alias.
+     */
+
+    public ConversationLogsRequest getConversationLogs() {
+        return this.conversationLogs;
+    }
+
+    /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     * 
+     * @param conversationLogs
+     *        Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotAliasRequest withConversationLogs(ConversationLogsRequest conversationLogs) {
+        setConversationLogs(conversationLogs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -344,7 +390,9 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getBotName() != null)
             sb.append("BotName: ").append(getBotName()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: ").append(getChecksum());
+            sb.append("Checksum: ").append(getChecksum()).append(",");
+        if (getConversationLogs() != null)
+            sb.append("ConversationLogs: ").append(getConversationLogs());
         sb.append("}");
         return sb.toString();
     }
@@ -379,6 +427,10 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
             return false;
+        if (other.getConversationLogs() == null ^ this.getConversationLogs() == null)
+            return false;
+        if (other.getConversationLogs() != null && other.getConversationLogs().equals(this.getConversationLogs()) == false)
+            return false;
         return true;
     }
 
@@ -392,6 +444,7 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getBotName() == null) ? 0 : getBotName().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getConversationLogs() == null) ? 0 : getConversationLogs().hashCode());
         return hashCode;
     }
 

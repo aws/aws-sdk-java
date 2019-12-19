@@ -29,6 +29,8 @@ public class ScriptMarshaller {
 
     private static final MarshallingInfo<String> SCRIPTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ScriptId").build();
+    private static final MarshallingInfo<String> SCRIPTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ScriptArn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +59,7 @@ public class ScriptMarshaller {
 
         try {
             protocolMarshaller.marshall(script.getScriptId(), SCRIPTID_BINDING);
+            protocolMarshaller.marshall(script.getScriptArn(), SCRIPTARN_BINDING);
             protocolMarshaller.marshall(script.getName(), NAME_BINDING);
             protocolMarshaller.marshall(script.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(script.getSizeOnDisk(), SIZEONDISK_BINDING);

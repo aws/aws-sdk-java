@@ -41,4 +41,9 @@ public interface ClientExecutionAbortTask extends Runnable {
      *         disabled for this request
      */
     public boolean isEnabled();
+
+    /**
+     * Cancel the task
+     */
+    void cancel();
 }

@@ -28,6 +28,9 @@ public class ClientExecutionAbortTaskImpl implements ClientExecutionAbortTask {
     private volatile boolean hasTaskExecuted;
     private HttpRequestBase currentHttpRequest;
     private final Thread thread;
+    private volatile boolean isCancelled;
+
+    private final Object lock = new Object();
 
     public ClientExecutionAbortTaskImpl(Thread thread) {
         this.thread = thread;
@@ -35,12 +38,17 @@ public class ClientExecutionAbortTaskImpl implements ClientExecutionAbortTask {
 
     @Override
     public void run() {
-        hasTaskExecuted = true;
-        if (!thread.isInterrupted()) {
-            thread.interrupt();
-        }
-        if (!currentHttpRequest.isAborted()) {
-            currentHttpRequest.abort();
+        synchronized (this.lock) {
+            if (isCancelled) {
+                return;
+            }
+            hasTaskExecuted = true;
+            if (!thread.isInterrupted()) {
+                thread.interrupt();
+            }
+            if (!currentHttpRequest.isAborted()) {
+                currentHttpRequest.abort();
+            }
         }
     }
 
@@ -49,12 +57,25 @@ public class ClientExecutionAbortTaskImpl implements ClientExecutionAbortTask {
     }
 
     public boolean hasClientExecutionAborted() {
-        return hasTaskExecuted;
+        synchronized (this.lock) {
+            return hasTaskExecuted;
+        }
     }
 
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    /**
+     * Cancels this task. Once this returns, it's guaranteed that hasExecuted() will not change its value, and that this
+     * task won't interrupt the threadToInterrupt this task was created with.
+     */
+    @Override
+    public void cancel() {
+        synchronized (this.lock) {
+            isCancelled = true;
+        }
     }
 
 }

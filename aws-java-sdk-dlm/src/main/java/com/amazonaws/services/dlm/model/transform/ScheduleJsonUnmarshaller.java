@@ -76,6 +76,11 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                     context.nextToken();
                     schedule.setFastRestoreRule(FastRestoreRuleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CrossRegionCopyRules", targetDepth)) {
+                    context.nextToken();
+                    schedule.setCrossRegionCopyRules(new ListUnmarshaller<CrossRegionCopyRule>(CrossRegionCopyRuleJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -52,6 +52,10 @@ public class MatchmakingRuleSetJsonUnmarshaller implements Unmarshaller<Matchmak
                     context.nextToken();
                     matchmakingRuleSet.setRuleSetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RuleSetArn", targetDepth)) {
+                    context.nextToken();
+                    matchmakingRuleSet.setRuleSetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RuleSetBody", targetDepth)) {
                     context.nextToken();
                     matchmakingRuleSet.setRuleSetBody(context.getUnmarshaller(String.class).unmarshall(context));

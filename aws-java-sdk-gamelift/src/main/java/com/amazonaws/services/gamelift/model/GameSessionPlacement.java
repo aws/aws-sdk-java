@@ -51,13 +51,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a game session placement.
+     * A unique identifier for a game session placement.
      * </p>
      */
     private String placementId;
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      */
     private String gameSessionQueueName;
@@ -88,6 +88,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * resubmit the placement request as needed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the
+     * game session terminated before the placement process was completed, or an unexpected internal error.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -102,19 +108,19 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      */
     private String gameSessionName;
     /**
      * <p>
-     * Unique identifier for the game session. This value is set once the new game session is placed (placement status
+     * A unique identifier for the game session. This value is set once the new game session is placed (placement status
      * is <code>FULFILLED</code>).
      * </p>
      */
@@ -122,14 +128,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Identifier for the game session created by this placement request. This value is set once the new game session is
-     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all regions. You can use
+     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all Regions. You can use
      * this value as a <code>GameSessionId</code> value as needed.
      * </p>
      */
     private String gameSessionArn;
     /**
      * <p>
-     * Name of the region where the game session created by this placement request is running. This value is set once
+     * Name of the Region where the game session created by this placement request is running. This value is set once
      * the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      */
@@ -137,7 +143,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions.
+     * connected to AWS Regions.
      * </p>
      */
     private java.util.List<PlayerLatency> playerLatencies;
@@ -156,12 +162,35 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private java.util.Date endTime;
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
+     * session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      */
     private String ipAddress;
-
+    /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     */
     private String dnsName;
     /**
      * <p>
@@ -173,7 +202,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private Integer port;
     /**
      * <p>
-     * Collection of information on player sessions created in response to the game session placement request. These
+     * A collection of information on player sessions created in response to the game session placement request. These
      * player sessions are created only once a new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the
      * corresponding player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a> with the
@@ -203,11 +232,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a game session placement.
+     * A unique identifier for a game session placement.
      * </p>
      * 
      * @param placementId
-     *        Unique identifier for a game session placement.
+     *        A unique identifier for a game session placement.
      */
 
     public void setPlacementId(String placementId) {
@@ -216,10 +245,10 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a game session placement.
+     * A unique identifier for a game session placement.
      * </p>
      * 
-     * @return Unique identifier for a game session placement.
+     * @return A unique identifier for a game session placement.
      */
 
     public String getPlacementId() {
@@ -228,11 +257,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a game session placement.
+     * A unique identifier for a game session placement.
      * </p>
      * 
      * @param placementId
-     *        Unique identifier for a game session placement.
+     *        A unique identifier for a game session placement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,12 +272,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
      * @param gameSessionQueueName
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region.
      */
 
     public void setGameSessionQueueName(String gameSessionQueueName) {
@@ -257,11 +286,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
-     * @return Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *         region.
+     * @return A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *         Region.
      */
 
     public String getGameSessionQueueName() {
@@ -270,12 +299,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
      * @param gameSessionQueueName
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,6 +340,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * resubmit the placement request as needed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the
+     * game session terminated before the placement process was completed, or an unexpected internal error.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -336,6 +371,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      *        <p>
      *        <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can
      *        resubmit the placement request as needed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons
+     *        are the game session terminated before the placement process was completed, or an unexpected internal
+     *        error.
      *        </p>
      *        </li>
      * @see GameSessionPlacementState
@@ -372,6 +414,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * resubmit the placement request as needed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the
+     * game session terminated before the placement process was completed, or an unexpected internal error.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Current status of the game session placement request.</p>
@@ -396,6 +444,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      *         <p>
      *         <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You
      *         can resubmit the placement request as needed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons
+     *         are the game session terminated before the placement process was completed, or an unexpected internal
+     *         error.
      *         </p>
      *         </li>
      * @see GameSessionPlacementState
@@ -432,6 +487,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * resubmit the placement request as needed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the
+     * game session terminated before the placement process was completed, or an unexpected internal error.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -457,6 +518,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      *        <p>
      *        <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can
      *        resubmit the placement request as needed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons
+     *        are the game session terminated before the placement process was completed, or an unexpected internal
+     *        error.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -495,6 +563,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * resubmit the placement request as needed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the
+     * game session terminated before the placement process was completed, or an unexpected internal error.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -520,6 +594,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      *        <p>
      *        <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can
      *        resubmit the placement request as needed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons
+     *        are the game session terminated before the placement process was completed, or an unexpected internal
+     *        error.
      *        </p>
      *        </li>
      * @see GameSessionPlacementState
@@ -556,6 +637,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * resubmit the placement request as needed.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons are the
+     * game session terminated before the placement process was completed, or an unexpected internal error.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -581,6 +668,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      *        <p>
      *        <b>TIMED_OUT</b> -- A new game session was not successfully created before the time limit expired. You can
      *        resubmit the placement request as needed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>FAILED</b> -- GameLift is not able to complete the process of placing the game session. Common reasons
+     *        are the game session terminated before the placement process was completed, or an unexpected internal
+     *        error.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -692,11 +786,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -705,10 +799,10 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
-     * @return Maximum number of players that can be connected simultaneously to the game session.
+     * @return The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -717,11 +811,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -732,11 +826,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param gameSessionName
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public void setGameSessionName(String gameSessionName) {
@@ -745,10 +839,10 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * @return A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public String getGameSessionName() {
@@ -757,11 +851,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param gameSessionName
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -772,12 +866,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for the game session. This value is set once the new game session is placed (placement status
+     * A unique identifier for the game session. This value is set once the new game session is placed (placement status
      * is <code>FULFILLED</code>).
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session. This value is set once the new game session is placed (placement
+     *        A unique identifier for the game session. This value is set once the new game session is placed (placement
      *        status is <code>FULFILLED</code>).
      */
 
@@ -787,12 +881,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for the game session. This value is set once the new game session is placed (placement status
+     * A unique identifier for the game session. This value is set once the new game session is placed (placement status
      * is <code>FULFILLED</code>).
      * </p>
      * 
-     * @return Unique identifier for the game session. This value is set once the new game session is placed (placement
-     *         status is <code>FULFILLED</code>).
+     * @return A unique identifier for the game session. This value is set once the new game session is placed
+     *         (placement status is <code>FULFILLED</code>).
      */
 
     public String getGameSessionId() {
@@ -801,12 +895,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for the game session. This value is set once the new game session is placed (placement status
+     * A unique identifier for the game session. This value is set once the new game session is placed (placement status
      * is <code>FULFILLED</code>).
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session. This value is set once the new game session is placed (placement
+     *        A unique identifier for the game session. This value is set once the new game session is placed (placement
      *        status is <code>FULFILLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -819,14 +913,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Identifier for the game session created by this placement request. This value is set once the new game session is
-     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all regions. You can use
+     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all Regions. You can use
      * this value as a <code>GameSessionId</code> value as needed.
      * </p>
      * 
      * @param gameSessionArn
      *        Identifier for the game session created by this placement request. This value is set once the new game
      *        session is placed (placement status is <code>FULFILLED</code>). This identifier is unique across all
-     *        regions. You can use this value as a <code>GameSessionId</code> value as needed.
+     *        Regions. You can use this value as a <code>GameSessionId</code> value as needed.
      */
 
     public void setGameSessionArn(String gameSessionArn) {
@@ -836,13 +930,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Identifier for the game session created by this placement request. This value is set once the new game session is
-     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all regions. You can use
+     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all Regions. You can use
      * this value as a <code>GameSessionId</code> value as needed.
      * </p>
      * 
      * @return Identifier for the game session created by this placement request. This value is set once the new game
      *         session is placed (placement status is <code>FULFILLED</code>). This identifier is unique across all
-     *         regions. You can use this value as a <code>GameSessionId</code> value as needed.
+     *         Regions. You can use this value as a <code>GameSessionId</code> value as needed.
      */
 
     public String getGameSessionArn() {
@@ -852,14 +946,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Identifier for the game session created by this placement request. This value is set once the new game session is
-     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all regions. You can use
+     * placed (placement status is <code>FULFILLED</code>). This identifier is unique across all Regions. You can use
      * this value as a <code>GameSessionId</code> value as needed.
      * </p>
      * 
      * @param gameSessionArn
      *        Identifier for the game session created by this placement request. This value is set once the new game
      *        session is placed (placement status is <code>FULFILLED</code>). This identifier is unique across all
-     *        regions. You can use this value as a <code>GameSessionId</code> value as needed.
+     *        Regions. You can use this value as a <code>GameSessionId</code> value as needed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -870,12 +964,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Name of the region where the game session created by this placement request is running. This value is set once
+     * Name of the Region where the game session created by this placement request is running. This value is set once
      * the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param gameSessionRegion
-     *        Name of the region where the game session created by this placement request is running. This value is set
+     *        Name of the Region where the game session created by this placement request is running. This value is set
      *        once the new game session is placed (placement status is <code>FULFILLED</code>).
      */
 
@@ -885,11 +979,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Name of the region where the game session created by this placement request is running. This value is set once
+     * Name of the Region where the game session created by this placement request is running. This value is set once
      * the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
-     * @return Name of the region where the game session created by this placement request is running. This value is set
+     * @return Name of the Region where the game session created by this placement request is running. This value is set
      *         once the new game session is placed (placement status is <code>FULFILLED</code>).
      */
 
@@ -899,12 +993,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Name of the region where the game session created by this placement request is running. This value is set once
+     * Name of the Region where the game session created by this placement request is running. This value is set once
      * the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param gameSessionRegion
-     *        Name of the region where the game session created by this placement request is running. This value is set
+     *        Name of the Region where the game session created by this placement request is running. This value is set
      *        once the new game session is placed (placement status is <code>FULFILLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -917,11 +1011,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions.
+     * connected to AWS Regions.
      * </p>
      * 
      * @return Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *         connected to AWS regions.
+     *         connected to AWS Regions.
      */
 
     public java.util.List<PlayerLatency> getPlayerLatencies() {
@@ -931,12 +1025,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions.
+     * connected to AWS Regions.
      * </p>
      * 
      * @param playerLatencies
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions.
+     *        connected to AWS Regions.
      */
 
     public void setPlayerLatencies(java.util.Collection<PlayerLatency> playerLatencies) {
@@ -951,7 +1045,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions.
+     * connected to AWS Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -961,7 +1055,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * 
      * @param playerLatencies
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions.
+     *        connected to AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -978,12 +1072,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions.
+     * connected to AWS Regions.
      * </p>
      * 
      * @param playerLatencies
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions.
+     *        connected to AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1080,14 +1174,15 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
+     * session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *        address and port number. This value is set once the new game session is placed (placement status is
-     *        <code>FULFILLED</code>).
+     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *        server, a client needs to reference an IP address (or DNS name) and port number. This value is set once
+     *        the new game session is placed (placement status is <code>FULFILLED</code>).
      */
 
     public void setIpAddress(String ipAddress) {
@@ -1096,13 +1191,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
+     * session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
-     * @return IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *         address and port number. This value is set once the new game session is placed (placement status is
-     *         <code>FULFILLED</code>).
+     * @return IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *         server, a client needs to reference an IP address (or DNS name) and port number. This value is set once
+     *         the new game session is placed (placement status is <code>FULFILLED</code>).
      */
 
     public String getIpAddress() {
@@ -1111,14 +1207,15 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
+     * session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *        address and port number. This value is set once the new game session is placed (placement status is
-     *        <code>FULFILLED</code>).
+     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *        server, a client needs to reference an IP address (or DNS name) and port number. This value is set once
+     *        the new game session is placed (placement status is <code>FULFILLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1128,7 +1225,48 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      */
 
     public void setDnsName(String dnsName) {
@@ -1136,7 +1274,47 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
+     * @return DNS identifier assigned to the instance that is running the game session. Values have the following
+     *         format:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *         >Amazon EC2 Instance IP Addressing</a>.)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *         the IP address.
      */
 
     public String getDnsName() {
@@ -1144,7 +1322,48 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1207,14 +1426,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of information on player sessions created in response to the game session placement request. These
+     * A collection of information on player sessions created in response to the game session placement request. These
      * player sessions are created only once a new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the
      * corresponding player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a> with the
      * player session ID.
      * </p>
      * 
-     * @return Collection of information on player sessions created in response to the game session placement request.
+     * @return A collection of information on player sessions created in response to the game session placement request.
      *         These player sessions are created only once a new game session is successfully placed (placement status
      *         is <code>FULFILLED</code>). This information includes the player ID (as provided in the placement
      *         request) and the corresponding player session ID. Retrieve full player sessions by calling
@@ -1227,7 +1446,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of information on player sessions created in response to the game session placement request. These
+     * A collection of information on player sessions created in response to the game session placement request. These
      * player sessions are created only once a new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the
      * corresponding player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a> with the
@@ -1235,7 +1454,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param placedPlayerSessions
-     *        Collection of information on player sessions created in response to the game session placement request.
+     *        A collection of information on player sessions created in response to the game session placement request.
      *        These player sessions are created only once a new game session is successfully placed (placement status is
      *        <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request)
      *        and the corresponding player session ID. Retrieve full player sessions by calling
@@ -1253,7 +1472,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of information on player sessions created in response to the game session placement request. These
+     * A collection of information on player sessions created in response to the game session placement request. These
      * player sessions are created only once a new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the
      * corresponding player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a> with the
@@ -1266,7 +1485,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param placedPlayerSessions
-     *        Collection of information on player sessions created in response to the game session placement request.
+     *        A collection of information on player sessions created in response to the game session placement request.
      *        These player sessions are created only once a new game session is successfully placed (placement status is
      *        <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request)
      *        and the corresponding player session ID. Retrieve full player sessions by calling
@@ -1286,7 +1505,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of information on player sessions created in response to the game session placement request. These
+     * A collection of information on player sessions created in response to the game session placement request. These
      * player sessions are created only once a new game session is successfully placed (placement status is
      * <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request) and the
      * corresponding player session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a> with the
@@ -1294,7 +1513,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param placedPlayerSessions
-     *        Collection of information on player sessions created in response to the game session placement request.
+     *        A collection of information on player sessions created in response to the game session placement request.
      *        These player sessions are created only once a new game session is successfully placed (placement status is
      *        <code>FULFILLED</code>). This information includes the player ID (as provided in the placement request)
      *        and the corresponding player session ID. Retrieve full player sessions by calling

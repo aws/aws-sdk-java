@@ -28,7 +28,7 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The newly created build record, including a unique build ID and status.
+     * The newly created build record, including a unique build IDs and status.
      * </p>
      */
     private Build build;
@@ -49,11 +49,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The newly created build record, including a unique build ID and status.
+     * The newly created build record, including a unique build IDs and status.
      * </p>
      * 
      * @param build
-     *        The newly created build record, including a unique build ID and status.
+     *        The newly created build record, including a unique build IDs and status.
      */
 
     public void setBuild(Build build) {
@@ -62,10 +62,10 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The newly created build record, including a unique build ID and status.
+     * The newly created build record, including a unique build IDs and status.
      * </p>
      * 
-     * @return The newly created build record, including a unique build ID and status.
+     * @return The newly created build record, including a unique build IDs and status.
      */
 
     public Build getBuild() {
@@ -74,11 +74,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The newly created build record, including a unique build ID and status.
+     * The newly created build record, including a unique build IDs and status.
      * </p>
      * 
      * @param build
-     *        The newly created build record, including a unique build ID and status.
+     *        The newly created build record, including a unique build IDs and status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

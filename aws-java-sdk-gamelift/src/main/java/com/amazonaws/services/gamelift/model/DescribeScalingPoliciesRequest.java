@@ -30,7 +30,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve scaling policies for.
+     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
@@ -80,8 +80,8 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     private String statusFilter;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      */
     private Integer limit;
@@ -95,11 +95,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve scaling policies for.
+     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve scaling policies for.
+     *        A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
+     *        value.
      */
 
     public void setFleetId(String fleetId) {
@@ -108,10 +109,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve scaling policies for.
+     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to retrieve scaling policies for.
+     * @return A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
+     *         value.
      */
 
     public String getFleetId() {
@@ -120,11 +122,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve scaling policies for.
+     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve scaling policies for.
+     *        A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,13 +586,13 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -598,12 +601,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -612,13 +615,13 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

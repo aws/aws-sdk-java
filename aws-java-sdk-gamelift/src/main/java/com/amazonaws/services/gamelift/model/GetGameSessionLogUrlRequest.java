@@ -30,18 +30,18 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to get logs for.
+     * A unique identifier for the game session to get logs for.
      * </p>
      */
     private String gameSessionId;
 
     /**
      * <p>
-     * Unique identifier for the game session to get logs for.
+     * A unique identifier for the game session to get logs for.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to get logs for.
+     *        A unique identifier for the game session to get logs for.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -50,10 +50,10 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to get logs for.
+     * A unique identifier for the game session to get logs for.
      * </p>
      * 
-     * @return Unique identifier for the game session to get logs for.
+     * @return A unique identifier for the game session to get logs for.
      */
 
     public String getGameSessionId() {
@@ -62,11 +62,11 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to get logs for.
+     * A unique identifier for the game session to get logs for.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to get logs for.
+     *        A unique identifier for the game session to get logs for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

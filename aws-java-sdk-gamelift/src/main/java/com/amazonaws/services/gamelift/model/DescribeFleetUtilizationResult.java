@@ -28,7 +28,7 @@ public class DescribeFleetUtilizationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of objects containing utilization information for each requested fleet ID.
+     * A collection of objects containing utilization information for each requested fleet ID.
      * </p>
      */
     private java.util.List<FleetUtilization> fleetUtilization;
@@ -42,10 +42,10 @@ public class DescribeFleetUtilizationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of objects containing utilization information for each requested fleet ID.
+     * A collection of objects containing utilization information for each requested fleet ID.
      * </p>
      * 
-     * @return Collection of objects containing utilization information for each requested fleet ID.
+     * @return A collection of objects containing utilization information for each requested fleet ID.
      */
 
     public java.util.List<FleetUtilization> getFleetUtilization() {
@@ -54,11 +54,11 @@ public class DescribeFleetUtilizationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of objects containing utilization information for each requested fleet ID.
+     * A collection of objects containing utilization information for each requested fleet ID.
      * </p>
      * 
      * @param fleetUtilization
-     *        Collection of objects containing utilization information for each requested fleet ID.
+     *        A collection of objects containing utilization information for each requested fleet ID.
      */
 
     public void setFleetUtilization(java.util.Collection<FleetUtilization> fleetUtilization) {
@@ -72,7 +72,7 @@ public class DescribeFleetUtilizationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of objects containing utilization information for each requested fleet ID.
+     * A collection of objects containing utilization information for each requested fleet ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeFleetUtilizationResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param fleetUtilization
-     *        Collection of objects containing utilization information for each requested fleet ID.
+     *        A collection of objects containing utilization information for each requested fleet ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeFleetUtilizationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of objects containing utilization information for each requested fleet ID.
+     * A collection of objects containing utilization information for each requested fleet ID.
      * </p>
      * 
      * @param fleetUtilization
-     *        Collection of objects containing utilization information for each requested fleet ID.
+     *        A collection of objects containing utilization information for each requested fleet ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

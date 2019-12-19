@@ -71,6 +71,12 @@ public class BotAliasMetadata implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String checksum;
+    /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     */
+    private ConversationLogsResponse conversationLogs;
 
     /**
      * <p>
@@ -359,6 +365,46 @@ public class BotAliasMetadata implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     * 
+     * @param conversationLogs
+     *        Settings that determine how Amazon Lex uses conversation logs for the alias.
+     */
+
+    public void setConversationLogs(ConversationLogsResponse conversationLogs) {
+        this.conversationLogs = conversationLogs;
+    }
+
+    /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     * 
+     * @return Settings that determine how Amazon Lex uses conversation logs for the alias.
+     */
+
+    public ConversationLogsResponse getConversationLogs() {
+        return this.conversationLogs;
+    }
+
+    /**
+     * <p>
+     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * </p>
+     * 
+     * @param conversationLogs
+     *        Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BotAliasMetadata withConversationLogs(ConversationLogsResponse conversationLogs) {
+        setConversationLogs(conversationLogs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -383,7 +429,9 @@ public class BotAliasMetadata implements Serializable, Cloneable, StructuredPojo
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: ").append(getChecksum());
+            sb.append("Checksum: ").append(getChecksum()).append(",");
+        if (getConversationLogs() != null)
+            sb.append("ConversationLogs: ").append(getConversationLogs());
         sb.append("}");
         return sb.toString();
     }
@@ -426,6 +474,10 @@ public class BotAliasMetadata implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
             return false;
+        if (other.getConversationLogs() == null ^ this.getConversationLogs() == null)
+            return false;
+        if (other.getConversationLogs() != null && other.getConversationLogs().equals(this.getConversationLogs()) == false)
+            return false;
         return true;
     }
 
@@ -441,6 +493,7 @@ public class BotAliasMetadata implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getConversationLogs() == null) ? 0 : getConversationLogs().hashCode());
         return hashCode;
     }
 

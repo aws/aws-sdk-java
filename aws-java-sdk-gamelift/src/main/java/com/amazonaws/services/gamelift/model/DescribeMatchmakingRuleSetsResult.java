@@ -28,24 +28,24 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Collection of requested matchmaking rule set objects.
+     * A collection of requested matchmaking rule set objects.
      * </p>
      */
     private java.util.List<MatchmakingRuleSet> ruleSets;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Collection of requested matchmaking rule set objects.
+     * A collection of requested matchmaking rule set objects.
      * </p>
      * 
-     * @return Collection of requested matchmaking rule set objects.
+     * @return A collection of requested matchmaking rule set objects.
      */
 
     public java.util.List<MatchmakingRuleSet> getRuleSets() {
@@ -54,11 +54,11 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Collection of requested matchmaking rule set objects.
+     * A collection of requested matchmaking rule set objects.
      * </p>
      * 
      * @param ruleSets
-     *        Collection of requested matchmaking rule set objects.
+     *        A collection of requested matchmaking rule set objects.
      */
 
     public void setRuleSets(java.util.Collection<MatchmakingRuleSet> ruleSets) {
@@ -72,7 +72,7 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Collection of requested matchmaking rule set objects.
+     * A collection of requested matchmaking rule set objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param ruleSets
-     *        Collection of requested matchmaking rule set objects.
+     *        A collection of requested matchmaking rule set objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Collection of requested matchmaking rule set objects.
+     * A collection of requested matchmaking rule set objects.
      * </p>
      * 
      * @param ruleSets
-     *        Collection of requested matchmaking rule set objects.
+     *        A collection of requested matchmaking rule set objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,12 +112,12 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -127,11 +127,11 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * @return A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *         returned, these results represent the end of the list.
      */
 
@@ -141,12 +141,12 @@ public class DescribeMatchmakingRuleSetsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

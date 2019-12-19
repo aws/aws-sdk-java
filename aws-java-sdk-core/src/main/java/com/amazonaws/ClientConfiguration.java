@@ -20,6 +20,7 @@ import com.amazonaws.http.SystemPropertyTlsKeyManagersProvider;
 import com.amazonaws.http.TlsKeyManagersProvider;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
+import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.util.VersionInfoUtils;
 import java.net.InetAddress;
@@ -637,8 +638,8 @@ public class ClientConfiguration {
      * Returns the value for the given environment variable.
      */
     private String getEnvironmentVariable(String environmentVariable) {
-        String value = System.getenv(environmentVariable);
-        return value != null && !value.trim().isEmpty() ? value : null;
+        String value = StringUtils.trim(System.getenv(environmentVariable));
+        return StringUtils.hasValue(value) ? value : null;
     }
 
     /**
@@ -646,9 +647,8 @@ public class ClientConfiguration {
      * the lowercase version of variable.
      */
     private String getEnvironmentVariableCaseInsensitive(String environmentVariable) {
-        return getEnvironmentVariable(environmentVariable) != null
-                ? getEnvironmentVariable(environmentVariable)
-                : getEnvironmentVariable(environmentVariable.toLowerCase());
+        String result = getEnvironmentVariable(environmentVariable);
+        return result != null ? result : getEnvironmentVariable(environmentVariable.toLowerCase());
     }
 
     /**

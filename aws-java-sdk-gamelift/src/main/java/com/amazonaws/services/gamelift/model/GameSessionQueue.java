@@ -74,52 +74,53 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
-     * is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      */
     private String gameSessionQueueArn;
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      */
     private Integer timeoutInSeconds;
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement.
      * </p>
      */
     private java.util.List<PlayerLatencyPolicy> playerLatencyPolicies;
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      */
     private java.util.List<GameSessionQueueDestination> destinations;
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region.
      */
 
     public void setName(String name) {
@@ -128,11 +129,11 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
-     * @return Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *         region.
+     * @return A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *         Region.
      */
 
     public String getName() {
@@ -141,12 +142,12 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,16 +158,17 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
-     * is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
      * @param gameSessionQueueArn
      *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        game session queue and uniquely identifies it. Format is
-     *        <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     *        Regions. In a GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      */
 
     public void setGameSessionQueueArn(String gameSessionQueueArn) {
@@ -175,15 +177,16 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
-     * is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
      * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *         game session queue and uniquely identifies it. Format is
-     *         <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *         assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     *         Regions. In a GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      */
 
     public String getGameSessionQueueArn() {
@@ -192,16 +195,17 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
-     * is assigned to a game session queue and uniquely identifies it. Format is
-     * <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
      * @param gameSessionQueueArn
      *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        game session queue and uniquely identifies it. Format is
-     *        <code>arn:aws:gamelift:&lt;region&gt;:&lt;aws account&gt;:gamesessionqueue/&lt;queue name&gt;</code>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     *        Regions. In a GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,13 +216,13 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *        exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      */
 
     public void setTimeoutInSeconds(Integer timeoutInSeconds) {
@@ -227,12 +231,12 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
-     * @return Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *         exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * @return The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *         request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      */
 
     public Integer getTimeoutInSeconds() {
@@ -241,13 +245,13 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *        exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,17 +262,17 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement.
      * </p>
      * 
-     * @return Collection of latency policies to apply when processing game sessions placement requests with player
+     * @return A collection of latency policies to apply when processing game sessions placement requests with player
      *         latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *         the lowest latency values. With just one policy, it is enforced at the start of the game session
+     *         the lowest latency values. With just one policy, the policy is enforced at the start of the game session
      *         placement for the duration period. With multiple policies, each policy is enforced consecutively for its
      *         duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
      *         and then no policy for the remainder of the placement.
@@ -280,21 +284,21 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement.
      */
 
     public void setPlayerLatencyPolicies(java.util.Collection<PlayerLatencyPolicy> playerLatencyPolicies) {
@@ -308,12 +312,12 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -322,12 +326,12 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,21 +347,21 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,11 +372,11 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * 
-     * @return List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     * @return A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *         identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *         order.
      */
@@ -383,12 +387,12 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order.
      */
@@ -404,8 +408,8 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -414,7 +418,7 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -432,12 +436,12 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order.
      * @return Returns a reference to this object so that method calls can be chained together.

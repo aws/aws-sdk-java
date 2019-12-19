@@ -32,7 +32,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      */
     private String ticketId;
@@ -43,6 +43,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String configurationName;
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift matchmaking configuration resource that is used with this ticket.
+     * </p>
+     */
+    private String configurationArn;
     /**
      * <p>
      * Current status of the matchmaking request.
@@ -156,11 +164,11 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket.
+     *        A unique identifier for a matchmaking ticket.
      */
 
     public void setTicketId(String ticketId) {
@@ -169,10 +177,10 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      * 
-     * @return Unique identifier for a matchmaking ticket.
+     * @return A unique identifier for a matchmaking ticket.
      */
 
     public String getTicketId() {
@@ -181,11 +189,11 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket.
+     *        A unique identifier for a matchmaking ticket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,6 +245,58 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     public MatchmakingTicket withConfigurationName(String configurationName) {
         setConfigurationName(configurationName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift matchmaking configuration resource that is used with this ticket.
+     * </p>
+     * 
+     * @param configurationArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift matchmaking configuration resource that is used with this ticket.
+     */
+
+    public void setConfigurationArn(String configurationArn) {
+        this.configurationArn = configurationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift matchmaking configuration resource that is used with this ticket.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
+     *         with the GameLift matchmaking configuration resource that is used with this ticket.
+     */
+
+    public String getConfigurationArn() {
+        return this.configurationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift matchmaking configuration resource that is used with this ticket.
+     * </p>
+     * 
+     * @param configurationArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift matchmaking configuration resource that is used with this ticket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MatchmakingTicket withConfigurationArn(String configurationArn) {
+        setConfigurationArn(configurationArn);
         return this;
     }
 
@@ -1107,6 +1167,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
             sb.append("TicketId: ").append(getTicketId()).append(",");
         if (getConfigurationName() != null)
             sb.append("ConfigurationName: ").append(getConfigurationName()).append(",");
+        if (getConfigurationArn() != null)
+            sb.append("ConfigurationArn: ").append(getConfigurationArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
@@ -1144,6 +1206,10 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
         if (other.getConfigurationName() == null ^ this.getConfigurationName() == null)
             return false;
         if (other.getConfigurationName() != null && other.getConfigurationName().equals(this.getConfigurationName()) == false)
+            return false;
+        if (other.getConfigurationArn() == null ^ this.getConfigurationArn() == null)
+            return false;
+        if (other.getConfigurationArn() != null && other.getConfigurationArn().equals(this.getConfigurationArn()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -1187,6 +1253,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getTicketId() == null) ? 0 : getTicketId().hashCode());
         hashCode = prime * hashCode + ((getConfigurationName() == null) ? 0 : getConfigurationName().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationArn() == null) ? 0 : getConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());

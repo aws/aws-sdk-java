@@ -19,16 +19,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Policy that limits the number of game sessions a player can create on the same fleet. This optional policy gives game
- * owners control over how players can consume available game server resources. A resource creation policy makes the
- * following statement:
+ * A policy that limits the number of game sessions a player can create on the same fleet. This optional policy gives
+ * game owners control over how players can consume available game server resources. A resource creation policy makes
+ * the following statement:
  * "An individual player can create a maximum number of new game sessions within a specified time period".
  * </p>
  * <p>
- * The policy is evaluated when a player tries to create a new game session. For example, with a policy of 10 new game
- * sessions and a time period of 60 minutes, on receiving a <code>CreateGameSession</code> request, Amazon GameLift
- * checks that the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60
- * minutes.
+ * The policy is evaluated when a player tries to create a new game session. For example: Assume you have a policy of 10
+ * new game sessions and a time period of 60 minutes. On receiving a <code>CreateGameSession</code> request, Amazon
+ * GameLift checks that the player (identified by <code>CreatorId</code>) has created fewer than 10 game sessions in the
+ * past 60 minutes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResourceCreationLimitPolicy"
@@ -39,24 +39,24 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Maximum number of game sessions that an individual can create during the policy period.
+     * The maximum number of game sessions that an individual can create during the policy period.
      * </p>
      */
     private Integer newGameSessionsPerCreator;
     /**
      * <p>
-     * Time span used in evaluating the resource creation limit policy.
+     * The time span used in evaluating the resource creation limit policy.
      * </p>
      */
     private Integer policyPeriodInMinutes;
 
     /**
      * <p>
-     * Maximum number of game sessions that an individual can create during the policy period.
+     * The maximum number of game sessions that an individual can create during the policy period.
      * </p>
      * 
      * @param newGameSessionsPerCreator
-     *        Maximum number of game sessions that an individual can create during the policy period.
+     *        The maximum number of game sessions that an individual can create during the policy period.
      */
 
     public void setNewGameSessionsPerCreator(Integer newGameSessionsPerCreator) {
@@ -65,10 +65,10 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Maximum number of game sessions that an individual can create during the policy period.
+     * The maximum number of game sessions that an individual can create during the policy period.
      * </p>
      * 
-     * @return Maximum number of game sessions that an individual can create during the policy period.
+     * @return The maximum number of game sessions that an individual can create during the policy period.
      */
 
     public Integer getNewGameSessionsPerCreator() {
@@ -77,11 +77,11 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Maximum number of game sessions that an individual can create during the policy period.
+     * The maximum number of game sessions that an individual can create during the policy period.
      * </p>
      * 
      * @param newGameSessionsPerCreator
-     *        Maximum number of game sessions that an individual can create during the policy period.
+     *        The maximum number of game sessions that an individual can create during the policy period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Time span used in evaluating the resource creation limit policy.
+     * The time span used in evaluating the resource creation limit policy.
      * </p>
      * 
      * @param policyPeriodInMinutes
-     *        Time span used in evaluating the resource creation limit policy.
+     *        The time span used in evaluating the resource creation limit policy.
      */
 
     public void setPolicyPeriodInMinutes(Integer policyPeriodInMinutes) {
@@ -105,10 +105,10 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Time span used in evaluating the resource creation limit policy.
+     * The time span used in evaluating the resource creation limit policy.
      * </p>
      * 
-     * @return Time span used in evaluating the resource creation limit policy.
+     * @return The time span used in evaluating the resource creation limit policy.
      */
 
     public Integer getPolicyPeriodInMinutes() {
@@ -117,11 +117,11 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Time span used in evaluating the resource creation limit policy.
+     * The time span used in evaluating the resource creation limit policy.
      * </p>
      * 
      * @param policyPeriodInMinutes
-     *        Time span used in evaluating the resource creation limit policy.
+     *        The time span used in evaluating the resource creation limit policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

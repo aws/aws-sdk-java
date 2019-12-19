@@ -51,10 +51,18 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
     private String userId;
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 100.
+     * The number of results to return. The default is 25. The maximum is 500.
      * </p>
      */
     private Integer numResults;
+    /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     */
+    private java.util.Map<String, String> context;
 
     /**
      * <p>
@@ -208,11 +216,11 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 100.
+     * The number of results to return. The default is 25. The maximum is 500.
      * </p>
      * 
      * @param numResults
-     *        The number of results to return. The default is 25. The maximum is 100.
+     *        The number of results to return. The default is 25. The maximum is 500.
      */
 
     public void setNumResults(Integer numResults) {
@@ -221,10 +229,10 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 100.
+     * The number of results to return. The default is 25. The maximum is 500.
      * </p>
      * 
-     * @return The number of results to return. The default is 25. The maximum is 100.
+     * @return The number of results to return. The default is 25. The maximum is 500.
      */
 
     public Integer getNumResults() {
@@ -233,16 +241,89 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of results to return. The default is 25. The maximum is 100.
+     * The number of results to return. The default is 25. The maximum is 500.
      * </p>
      * 
      * @param numResults
-     *        The number of results to return. The default is 25. The maximum is 100.
+     *        The number of results to return. The default is 25. The maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetRecommendationsRequest withNumResults(Integer numResults) {
         setNumResults(numResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     * 
+     * @return The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     *         information that might be relevant when getting a user's recommendations, such as the user's current
+     *         location or device type. For more information, see Contextual Metadata.
+     */
+
+    public java.util.Map<String, String> getContext() {
+        return context;
+    }
+
+    /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     * 
+     * @param context
+     *        The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     *        information that might be relevant when getting a user's recommendations, such as the user's current
+     *        location or device type. For more information, see Contextual Metadata.
+     */
+
+    public void setContext(java.util.Map<String, String> context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     * 
+     * @param context
+     *        The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     *        information that might be relevant when getting a user's recommendations, such as the user's current
+     *        location or device type. For more information, see Contextual Metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest withContext(java.util.Map<String, String> context) {
+        setContext(context);
+        return this;
+    }
+
+    public GetRecommendationsRequest addContextEntry(String key, String value) {
+        if (null == this.context) {
+            this.context = new java.util.HashMap<String, String>();
+        }
+        if (this.context.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.context.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Context.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsRequest clearContextEntries() {
+        this.context = null;
         return this;
     }
 
@@ -265,7 +346,9 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId()).append(",");
         if (getNumResults() != null)
-            sb.append("NumResults: ").append(getNumResults());
+            sb.append("NumResults: ").append(getNumResults()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +379,10 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNumResults() != null && other.getNumResults().equals(this.getNumResults()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -308,6 +395,7 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getItemId() == null) ? 0 : getItemId().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getNumResults() == null) ? 0 : getNumResults().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

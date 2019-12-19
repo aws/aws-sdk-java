@@ -25,17 +25,17 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of items in order of most likely interest to the user.
+     * A list of items in order of most likely interest to the user. The maximum is 500.
      * </p>
      */
     private java.util.List<PredictedItem> personalizedRanking;
 
     /**
      * <p>
-     * A list of items in order of most likely interest to the user.
+     * A list of items in order of most likely interest to the user. The maximum is 500.
      * </p>
      * 
-     * @return A list of items in order of most likely interest to the user.
+     * @return A list of items in order of most likely interest to the user. The maximum is 500.
      */
 
     public java.util.List<PredictedItem> getPersonalizedRanking() {
@@ -44,11 +44,11 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of items in order of most likely interest to the user.
+     * A list of items in order of most likely interest to the user. The maximum is 500.
      * </p>
      * 
      * @param personalizedRanking
-     *        A list of items in order of most likely interest to the user.
+     *        A list of items in order of most likely interest to the user. The maximum is 500.
      */
 
     public void setPersonalizedRanking(java.util.Collection<PredictedItem> personalizedRanking) {
@@ -62,7 +62,7 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of items in order of most likely interest to the user.
+     * A list of items in order of most likely interest to the user. The maximum is 500.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param personalizedRanking
-     *        A list of items in order of most likely interest to the user.
+     *        A list of items in order of most likely interest to the user. The maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of items in order of most likely interest to the user.
+     * A list of items in order of most likely interest to the user. The maximum is 500.
      * </p>
      * 
      * @param personalizedRanking
-     *        A list of items in order of most likely interest to the user.
+     *        A list of items in order of most likely interest to the user. The maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

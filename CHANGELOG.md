@@ -1,3 +1,36 @@
+# __1.11.697__ __2019-12-19__
+## __AWS CodeStar connections__
+  - ### Features
+    - Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - You can now copy snapshots across regions using Data Lifecycle Manager (DLM). You can enable policies which, along with create, can now also copy snapshots to one or more AWS region(s). Copies can be scheduled for up to three regions from a single policy and retention periods are set for each region separately. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - We are updating the supportedRootDevices field to supportedRootDeviceTypes for DescribeInstanceTypes API to ensure that the actual value is returned, correcting a previous error in the model.
+
+## __Amazon GameLift__
+  - ### Features
+    - Amazon GameLift now supports ARNs for all key GameLift resources, tagging for GameLift resource authorization management, and updated documentation that articulates GameLift's resource authorization strategy.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex now supports conversation logs and slot obfuscation.
+
+## __Amazon Personalize Runtime__
+  - ### Features
+    - Add context map to get-recommendations and get-personalized-ranking request objects to provide contextual metadata at inference time
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release allows customers to add tags to Automation execution, enabling them to sort and filter executions in different ways, such as by resource, purpose, owner, or environment.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Amazon Transcribe supports job queuing for the StartTranscriptionJob API.
+
 # __1.11.696__ __2019-12-18__
 ## __AWS OpsWorks CM__
   - ### Features
@@ -7,6 +40,11 @@
   - ### Features
     - Documentation updates for resourcegroupstaggingapi
 
+## __AWS SDK for Java__
+  - ### Features
+    - HTTP proxy configuration environment variables are now trimmed of whitespace.
+    - HTTP proxy configuration environment variables that are empty are now treated as if they weren't configured.
+
 ## __Amazon CloudFront__
   - ### Features
     - Documentation updates for CloudFront
@@ -14,6 +52,10 @@
 ## __Amazon Elastic Compute Cloud__
   - ### Features
     - This release introduces the ability to tag Elastic Graphics accelerators. You can use tags to organize and identify your accelerators for cost allocation.
+
+## __Amazon S3__
+  - ### Features
+    - Adds a zero-arg CopyObjectRequest constructor. Users must still populate all required fields before the request is valid.
 
 ## __Amazon Simple Storage Service__
   - ### Features

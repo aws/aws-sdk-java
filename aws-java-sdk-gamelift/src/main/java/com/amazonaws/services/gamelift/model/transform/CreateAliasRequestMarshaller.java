@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateAliasRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<StructuredPojo> ROUTINGSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingStrategy").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateAliasRequestMarshaller instance = new CreateAliasRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class CreateAliasRequestMarshaller {
             protocolMarshaller.marshall(createAliasRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createAliasRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createAliasRequest.getRoutingStrategy(), ROUTINGSTRATEGY_BINDING);
+            protocolMarshaller.marshall(createAliasRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -30,19 +30,19 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve player sessions for.
+     * A unique identifier for the game session to retrieve player sessions for.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Unique identifier for a player to retrieve player sessions for.
+     * A unique identifier for a player to retrieve player sessions for.
      * </p>
      */
     private String playerId;
     /**
      * <p>
-     * Unique identifier for a player session to retrieve.
+     * A unique identifier for a player session to retrieve.
      * </p>
      */
     private String playerSessionId;
@@ -81,8 +81,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     private String playerSessionStatusFilter;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. If a player session ID is specified, this parameter is ignored.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. If a player session ID is specified, this parameter is ignored.
      * </p>
      */
     private Integer limit;
@@ -97,11 +97,11 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve player sessions for.
+     * A unique identifier for the game session to retrieve player sessions for.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to retrieve player sessions for.
+     *        A unique identifier for the game session to retrieve player sessions for.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -110,10 +110,10 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve player sessions for.
+     * A unique identifier for the game session to retrieve player sessions for.
      * </p>
      * 
-     * @return Unique identifier for the game session to retrieve player sessions for.
+     * @return A unique identifier for the game session to retrieve player sessions for.
      */
 
     public String getGameSessionId() {
@@ -122,11 +122,11 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve player sessions for.
+     * A unique identifier for the game session to retrieve player sessions for.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to retrieve player sessions for.
+     *        A unique identifier for the game session to retrieve player sessions for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for a player to retrieve player sessions for.
+     * A unique identifier for a player to retrieve player sessions for.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player to retrieve player sessions for.
+     *        A unique identifier for a player to retrieve player sessions for.
      */
 
     public void setPlayerId(String playerId) {
@@ -150,10 +150,10 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for a player to retrieve player sessions for.
+     * A unique identifier for a player to retrieve player sessions for.
      * </p>
      * 
-     * @return Unique identifier for a player to retrieve player sessions for.
+     * @return A unique identifier for a player to retrieve player sessions for.
      */
 
     public String getPlayerId() {
@@ -162,11 +162,11 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for a player to retrieve player sessions for.
+     * A unique identifier for a player to retrieve player sessions for.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player to retrieve player sessions for.
+     *        A unique identifier for a player to retrieve player sessions for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +177,11 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for a player session to retrieve.
+     * A unique identifier for a player session to retrieve.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session to retrieve.
+     *        A unique identifier for a player session to retrieve.
      */
 
     public void setPlayerSessionId(String playerSessionId) {
@@ -190,10 +190,10 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for a player session to retrieve.
+     * A unique identifier for a player session to retrieve.
      * </p>
      * 
-     * @return Unique identifier for a player session to retrieve.
+     * @return A unique identifier for a player session to retrieve.
      */
 
     public String getPlayerSessionId() {
@@ -202,11 +202,11 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique identifier for a player session to retrieve.
+     * A unique identifier for a player session to retrieve.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session to retrieve.
+     *        A unique identifier for a player session to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -416,13 +416,13 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. If a player session ID is specified, this parameter is ignored.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. If a player session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages. If a player session ID is specified, this parameter is ignored.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages. If a player session ID is specified, this parameter is ignored.
      */
 
     public void setLimit(Integer limit) {
@@ -431,12 +431,12 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. If a player session ID is specified, this parameter is ignored.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. If a player session ID is specified, this parameter is ignored.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages. If a player session ID is specified, this parameter is ignored.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages. If a player session ID is specified, this parameter is ignored.
      */
 
     public Integer getLimit() {
@@ -445,13 +445,13 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. If a player session ID is specified, this parameter is ignored.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. If a player session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages. If a player session ID is specified, this parameter is ignored.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages. If a player session ID is specified, this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

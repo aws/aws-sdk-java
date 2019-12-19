@@ -28,18 +28,18 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object that describes the newly created alias record.
+     * The newly created alias resource.
      * </p>
      */
     private Alias alias;
 
     /**
      * <p>
-     * Object that describes the newly created alias record.
+     * The newly created alias resource.
      * </p>
      * 
      * @param alias
-     *        Object that describes the newly created alias record.
+     *        The newly created alias resource.
      */
 
     public void setAlias(Alias alias) {
@@ -48,10 +48,10 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object that describes the newly created alias record.
+     * The newly created alias resource.
      * </p>
      * 
-     * @return Object that describes the newly created alias record.
+     * @return The newly created alias resource.
      */
 
     public Alias getAlias() {
@@ -60,11 +60,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object that describes the newly created alias record.
+     * The newly created alias resource.
      * </p>
      * 
      * @param alias
-     *        Object that describes the newly created alias record.
+     *        The newly created alias resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

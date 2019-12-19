@@ -28,17 +28,17 @@ public class DescribeMatchmakingResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Collection of existing matchmaking ticket objects matching the request.
+     * A collection of existing matchmaking ticket objects matching the request.
      * </p>
      */
     private java.util.List<MatchmakingTicket> ticketList;
 
     /**
      * <p>
-     * Collection of existing matchmaking ticket objects matching the request.
+     * A collection of existing matchmaking ticket objects matching the request.
      * </p>
      * 
-     * @return Collection of existing matchmaking ticket objects matching the request.
+     * @return A collection of existing matchmaking ticket objects matching the request.
      */
 
     public java.util.List<MatchmakingTicket> getTicketList() {
@@ -47,11 +47,11 @@ public class DescribeMatchmakingResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Collection of existing matchmaking ticket objects matching the request.
+     * A collection of existing matchmaking ticket objects matching the request.
      * </p>
      * 
      * @param ticketList
-     *        Collection of existing matchmaking ticket objects matching the request.
+     *        A collection of existing matchmaking ticket objects matching the request.
      */
 
     public void setTicketList(java.util.Collection<MatchmakingTicket> ticketList) {
@@ -65,7 +65,7 @@ public class DescribeMatchmakingResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Collection of existing matchmaking ticket objects matching the request.
+     * A collection of existing matchmaking ticket objects matching the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeMatchmakingResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param ticketList
-     *        Collection of existing matchmaking ticket objects matching the request.
+     *        A collection of existing matchmaking ticket objects matching the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeMatchmakingResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Collection of existing matchmaking ticket objects matching the request.
+     * A collection of existing matchmaking ticket objects matching the request.
      * </p>
      * 
      * @param ticketList
-     *        Collection of existing matchmaking ticket objects matching the request.
+     *        A collection of existing matchmaking ticket objects matching the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

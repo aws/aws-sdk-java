@@ -30,18 +30,18 @@ public class ValidateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Collection of matchmaking rules to validate, formatted as a JSON string.
+     * A collection of matchmaking rules to validate, formatted as a JSON string.
      * </p>
      */
     private String ruleSetBody;
 
     /**
      * <p>
-     * Collection of matchmaking rules to validate, formatted as a JSON string.
+     * A collection of matchmaking rules to validate, formatted as a JSON string.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules to validate, formatted as a JSON string.
+     *        A collection of matchmaking rules to validate, formatted as a JSON string.
      */
 
     public void setRuleSetBody(String ruleSetBody) {
@@ -50,10 +50,10 @@ public class ValidateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Collection of matchmaking rules to validate, formatted as a JSON string.
+     * A collection of matchmaking rules to validate, formatted as a JSON string.
      * </p>
      * 
-     * @return Collection of matchmaking rules to validate, formatted as a JSON string.
+     * @return A collection of matchmaking rules to validate, formatted as a JSON string.
      */
 
     public String getRuleSetBody() {
@@ -62,11 +62,11 @@ public class ValidateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Collection of matchmaking rules to validate, formatted as a JSON string.
+     * A collection of matchmaking rules to validate, formatted as a JSON string.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules to validate, formatted as a JSON string.
+     *        A collection of matchmaking rules to validate, formatted as a JSON string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

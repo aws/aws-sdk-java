@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateScriptRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageLocation").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> ZIPFILE_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ZipFile").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateScriptRequestMarshaller instance = new CreateScriptRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateScriptRequestMarshaller {
             protocolMarshaller.marshall(createScriptRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createScriptRequest.getStorageLocation(), STORAGELOCATION_BINDING);
             protocolMarshaller.marshall(createScriptRequest.getZipFile(), ZIPFILE_BINDING);
+            protocolMarshaller.marshall(createScriptRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

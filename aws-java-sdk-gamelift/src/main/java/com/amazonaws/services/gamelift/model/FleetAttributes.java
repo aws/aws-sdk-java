@@ -39,72 +39,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * Describe fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
  * <a>DescribeFleetAttributes</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetCapacity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetUtilization</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeRuntimeConfiguration</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEC2InstanceLimits</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetEvents</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Update fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
  * <a>UpdateFleetAttributes</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetCapacity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateRuntimeConfiguration</a>
- * </p>
- * </li>
- * </ul>
  * </li>
  * <li>
  * <p>
@@ -133,13 +74,16 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Identifier for a fleet that is unique across all regions.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift fleet ARN,
+     * the resource ID matches the <i>FleetId</i> value.
      * </p>
      */
     private String fleetArn;
@@ -166,7 +110,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private String description;
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
@@ -228,16 +172,34 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      */
     private String buildId;
     /**
      * <p>
-     * Unique identifier for a Realtime script.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID
+     * matches the <i>BuildId</i> value.
+     * </p>
+     */
+    private String buildArn;
+    /**
+     * <p>
+     * A unique identifier for a Realtime script.
      * </p>
      */
     private String scriptId;
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID
+     * matches the <i>ScriptId</i> value.
+     * </p>
+     */
+    private String scriptArn;
     /**
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created before 2016-08-04 (or AWS SDK
@@ -267,7 +229,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> logPaths;
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in the fleet.
+     * The type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
      * <li>
@@ -313,9 +275,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> stoppedActions;
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
@@ -323,16 +285,20 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String instanceRoleArn;
-
+    /**
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * </p>
+     */
     private CertificateConfiguration certificateConfiguration;
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        A unique identifier for a fleet.
      */
 
     public void setFleetId(String fleetId) {
@@ -341,10 +307,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      * 
-     * @return Unique identifier for a fleet.
+     * @return A unique identifier for a fleet.
      */
 
     public String getFleetId() {
@@ -353,11 +319,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * A unique identifier for a fleet.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        A unique identifier for a fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,11 +334,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Identifier for a fleet that is unique across all regions.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift fleet ARN,
+     * the resource ID matches the <i>FleetId</i> value.
      * </p>
      * 
      * @param fleetArn
-     *        Identifier for a fleet that is unique across all regions.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     *        GameLift fleet ARN, the resource ID matches the <i>FleetId</i> value.
      */
 
     public void setFleetArn(String fleetArn) {
@@ -381,10 +353,16 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Identifier for a fleet that is unique across all regions.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift fleet ARN,
+     * the resource ID matches the <i>FleetId</i> value.
      * </p>
      * 
-     * @return Identifier for a fleet that is unique across all regions.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *         assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. In
+     *         a GameLift fleet ARN, the resource ID matches the <i>FleetId</i> value.
      */
 
     public String getFleetArn() {
@@ -393,11 +371,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Identifier for a fleet that is unique across all regions.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift fleet ARN,
+     * the resource ID matches the <i>FleetId</i> value.
      * </p>
      * 
      * @param fleetArn
-     *        Identifier for a fleet that is unique across all regions.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     *        GameLift fleet ARN, the resource ID matches the <i>FleetId</i> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -624,11 +608,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     *        A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -637,10 +621,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * @return A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -649,11 +633,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     *        A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1184,11 +1168,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build.
+     *        A unique identifier for a build.
      */
 
     public void setBuildId(String buildId) {
@@ -1197,10 +1181,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      * 
-     * @return Unique identifier for a build.
+     * @return A unique identifier for a build.
      */
 
     public String getBuildId() {
@@ -1209,11 +1193,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build.
+     *        A unique identifier for a build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1224,11 +1208,69 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a Realtime script.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID
+     * matches the <i>BuildId</i> value.
+     * </p>
+     * 
+     * @param buildArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the
+     *        resource ID matches the <i>BuildId</i> value.
+     */
+
+    public void setBuildArn(String buildArn) {
+        this.buildArn = buildArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID
+     * matches the <i>BuildId</i> value.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
+     *         with the GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN,
+     *         the resource ID matches the <i>BuildId</i> value.
+     */
+
+    public String getBuildArn() {
+        return this.buildArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the resource ID
+     * matches the <i>BuildId</i> value.
+     * </p>
+     * 
+     * @param buildArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift build resource that is deployed on instances in this fleet. In a GameLift build ARN, the
+     *        resource ID matches the <i>BuildId</i> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withBuildArn(String buildArn) {
+        setBuildArn(buildArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for a Realtime script.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script.
+     *        A unique identifier for a Realtime script.
      */
 
     public void setScriptId(String scriptId) {
@@ -1237,10 +1279,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a Realtime script.
+     * A unique identifier for a Realtime script.
      * </p>
      * 
-     * @return Unique identifier for a Realtime script.
+     * @return A unique identifier for a Realtime script.
      */
 
     public String getScriptId() {
@@ -1249,16 +1291,74 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a Realtime script.
+     * A unique identifier for a Realtime script.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script.
+     *        A unique identifier for a Realtime script.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withScriptId(String scriptId) {
         setScriptId(scriptId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID
+     * matches the <i>ScriptId</i> value.
+     * </p>
+     * 
+     * @param scriptArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the
+     *        resource ID matches the <i>ScriptId</i> value.
+     */
+
+    public void setScriptArn(String scriptArn) {
+        this.scriptArn = scriptArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID
+     * matches the <i>ScriptId</i> value.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
+     *         with the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN,
+     *         the resource ID matches the <i>ScriptId</i> value.
+     */
+
+    public String getScriptArn() {
+        return this.scriptArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the resource ID
+     * matches the <i>ScriptId</i> value.
+     * </p>
+     * 
+     * @param scriptArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift script resource that is deployed on instances in this fleet. In a GameLift script ARN, the
+     *        resource ID matches the <i>ScriptId</i> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withScriptArn(String scriptArn) {
+        setScriptArn(scriptArn);
         return this;
     }
 
@@ -1483,7 +1583,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in the fleet.
+     * The type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
      * <li>
@@ -1500,7 +1600,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances started in the fleet.</p>
+     *        The type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1522,7 +1622,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in the fleet.
+     * The type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
      * <li>
@@ -1538,7 +1638,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return Type of game session protection to set for all new instances started in the fleet.</p>
+     * @return The type of game session protection to set for all new instances started in the fleet.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1560,7 +1660,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in the fleet.
+     * The type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
      * <li>
@@ -1577,7 +1677,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances started in the fleet.</p>
+     *        The type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1601,7 +1701,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in the fleet.
+     * The type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
      * <li>
@@ -1618,7 +1718,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances started in the fleet.</p>
+     *        The type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1640,7 +1740,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of game session protection to set for all new instances started in the fleet.
+     * The type of game session protection to set for all new instances started in the fleet.
      * </p>
      * <ul>
      * <li>
@@ -1657,7 +1757,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Type of game session protection to set for all new instances started in the fleet.</p>
+     *        The type of game session protection to set for all new instances started in the fleet.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1988,9 +2088,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
@@ -1998,11 +2098,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
-     *        set, any application that runs on an instance in this fleet can assume the role, including install
-     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
-     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
-     *        about using on-box credentials for your game servers at <a
+     *        A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
+     *        ARN set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
+     *        the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
+     *        more about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
      */
@@ -2013,18 +2113,18 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
-     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
-     *         set, any application that runs on an instance in this fleet can assume the role, including install
-     *         scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using
+     * @return A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
+     *         ARN set, any application that runs on an instance in this fleet can assume the role, including install
+     *         scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
      *         the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
      *         more about using on-box credentials for your game servers at <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
@@ -2037,9 +2137,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
@@ -2047,11 +2147,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
-     *        set, any application that runs on an instance in this fleet can assume the role, including install
-     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
-     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
-     *        about using on-box credentials for your game servers at <a
+     *        A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
+     *        ARN set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
+     *        the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
+     *        more about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2063,7 +2163,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * </p>
+     * 
      * @param certificateConfiguration
+     *        Indicates whether a TLS/SSL certificate was generated for the fleet.
      */
 
     public void setCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
@@ -2071,7 +2176,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * </p>
+     * 
+     * @return Indicates whether a TLS/SSL certificate was generated for the fleet.
      */
 
     public CertificateConfiguration getCertificateConfiguration() {
@@ -2079,7 +2188,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * </p>
+     * 
      * @param certificateConfiguration
+     *        Indicates whether a TLS/SSL certificate was generated for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2120,8 +2234,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             sb.append("Status: ").append(getStatus()).append(",");
         if (getBuildId() != null)
             sb.append("BuildId: ").append(getBuildId()).append(",");
+        if (getBuildArn() != null)
+            sb.append("BuildArn: ").append(getBuildArn()).append(",");
         if (getScriptId() != null)
             sb.append("ScriptId: ").append(getScriptId()).append(",");
+        if (getScriptArn() != null)
+            sb.append("ScriptArn: ").append(getScriptArn()).append(",");
         if (getServerLaunchPath() != null)
             sb.append("ServerLaunchPath: ").append(getServerLaunchPath()).append(",");
         if (getServerLaunchParameters() != null)
@@ -2196,9 +2314,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getBuildId() != null && other.getBuildId().equals(this.getBuildId()) == false)
             return false;
+        if (other.getBuildArn() == null ^ this.getBuildArn() == null)
+            return false;
+        if (other.getBuildArn() != null && other.getBuildArn().equals(this.getBuildArn()) == false)
+            return false;
         if (other.getScriptId() == null ^ this.getScriptId() == null)
             return false;
         if (other.getScriptId() != null && other.getScriptId().equals(this.getScriptId()) == false)
+            return false;
+        if (other.getScriptArn() == null ^ this.getScriptArn() == null)
+            return false;
+        if (other.getScriptArn() != null && other.getScriptArn().equals(this.getScriptArn()) == false)
             return false;
         if (other.getServerLaunchPath() == null ^ this.getServerLaunchPath() == null)
             return false;
@@ -2259,7 +2385,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTerminationTime() == null) ? 0 : getTerminationTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
+        hashCode = prime * hashCode + ((getBuildArn() == null) ? 0 : getBuildArn().hashCode());
         hashCode = prime * hashCode + ((getScriptId() == null) ? 0 : getScriptId().hashCode());
+        hashCode = prime * hashCode + ((getScriptArn() == null) ? 0 : getScriptArn().hashCode());
         hashCode = prime * hashCode + ((getServerLaunchPath() == null) ? 0 : getServerLaunchPath().hashCode());
         hashCode = prime * hashCode + ((getServerLaunchParameters() == null) ? 0 : getServerLaunchParameters().hashCode());
         hashCode = prime * hashCode + ((getLogPaths() == null) ? 0 : getLogPaths().hashCode());

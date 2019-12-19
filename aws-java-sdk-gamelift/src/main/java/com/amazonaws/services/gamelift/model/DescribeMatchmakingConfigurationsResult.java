@@ -29,24 +29,24 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Collection of requested matchmaking configuration objects.
+     * A collection of requested matchmaking configurations.
      * </p>
      */
     private java.util.List<MatchmakingConfiguration> configurations;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Collection of requested matchmaking configuration objects.
+     * A collection of requested matchmaking configurations.
      * </p>
      * 
-     * @return Collection of requested matchmaking configuration objects.
+     * @return A collection of requested matchmaking configurations.
      */
 
     public java.util.List<MatchmakingConfiguration> getConfigurations() {
@@ -55,11 +55,11 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Collection of requested matchmaking configuration objects.
+     * A collection of requested matchmaking configurations.
      * </p>
      * 
      * @param configurations
-     *        Collection of requested matchmaking configuration objects.
+     *        A collection of requested matchmaking configurations.
      */
 
     public void setConfigurations(java.util.Collection<MatchmakingConfiguration> configurations) {
@@ -73,7 +73,7 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Collection of requested matchmaking configuration objects.
+     * A collection of requested matchmaking configurations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param configurations
-     *        Collection of requested matchmaking configuration objects.
+     *        A collection of requested matchmaking configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Collection of requested matchmaking configuration objects.
+     * A collection of requested matchmaking configurations.
      * </p>
      * 
      * @param configurations
-     *        Collection of requested matchmaking configuration objects.
+     *        A collection of requested matchmaking configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,12 +113,12 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -128,11 +128,11 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * @return A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *         returned, these results represent the end of the list.
      */
 
@@ -142,12 +142,12 @@ public class DescribeMatchmakingConfigurationsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -127,6 +127,8 @@ public enum GameliftActions implements Action {
     ListFleets("gamelift:ListFleets"),
     /** Action for the ListScripts operation. */
     ListScripts("gamelift:ListScripts"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("gamelift:ListTagsForResource"),
     /** Action for the PutScalingPolicy operation. */
     PutScalingPolicy("gamelift:PutScalingPolicy"),
     /** Action for the RequestUploadCredentials operation. */
@@ -149,6 +151,10 @@ public enum GameliftActions implements Action {
     StopGameSessionPlacement("gamelift:StopGameSessionPlacement"),
     /** Action for the StopMatchmaking operation. */
     StopMatchmaking("gamelift:StopMatchmaking"),
+    /** Action for the TagResource operation. */
+    TagResource("gamelift:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("gamelift:UntagResource"),
     /** Action for the UpdateAlias operation. */
     UpdateAlias("gamelift:UpdateAlias"),
     /** Action for the UpdateBuild operation. */

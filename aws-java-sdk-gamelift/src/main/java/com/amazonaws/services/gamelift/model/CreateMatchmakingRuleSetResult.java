@@ -28,18 +28,18 @@ public class CreateMatchmakingRuleSetResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the newly created matchmaking rule set.
+     * The newly created matchmaking rule set.
      * </p>
      */
     private MatchmakingRuleSet ruleSet;
 
     /**
      * <p>
-     * Object that describes the newly created matchmaking rule set.
+     * The newly created matchmaking rule set.
      * </p>
      * 
      * @param ruleSet
-     *        Object that describes the newly created matchmaking rule set.
+     *        The newly created matchmaking rule set.
      */
 
     public void setRuleSet(MatchmakingRuleSet ruleSet) {
@@ -48,10 +48,10 @@ public class CreateMatchmakingRuleSetResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the newly created matchmaking rule set.
+     * The newly created matchmaking rule set.
      * </p>
      * 
-     * @return Object that describes the newly created matchmaking rule set.
+     * @return The newly created matchmaking rule set.
      */
 
     public MatchmakingRuleSet getRuleSet() {
@@ -60,11 +60,11 @@ public class CreateMatchmakingRuleSetResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the newly created matchmaking rule set.
+     * The newly created matchmaking rule set.
      * </p>
      * 
      * @param ruleSet
-     *        Object that describes the newly created matchmaking rule set.
+     *        The newly created matchmaking rule set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

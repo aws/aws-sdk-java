@@ -28,7 +28,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Collection of objects containing properties for each instance returned.
+     * A collection of objects containing properties for each instance returned.
      * </p>
      */
     private java.util.List<Instance> instances;
@@ -42,10 +42,10 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Collection of objects containing properties for each instance returned.
+     * A collection of objects containing properties for each instance returned.
      * </p>
      * 
-     * @return Collection of objects containing properties for each instance returned.
+     * @return A collection of objects containing properties for each instance returned.
      */
 
     public java.util.List<Instance> getInstances() {
@@ -54,11 +54,11 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Collection of objects containing properties for each instance returned.
+     * A collection of objects containing properties for each instance returned.
      * </p>
      * 
      * @param instances
-     *        Collection of objects containing properties for each instance returned.
+     *        A collection of objects containing properties for each instance returned.
      */
 
     public void setInstances(java.util.Collection<Instance> instances) {
@@ -72,7 +72,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Collection of objects containing properties for each instance returned.
+     * A collection of objects containing properties for each instance returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param instances
-     *        Collection of objects containing properties for each instance returned.
+     *        A collection of objects containing properties for each instance returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Collection of objects containing properties for each instance returned.
+     * A collection of objects containing properties for each instance returned.
      * </p>
      * 
      * @param instances
-     *        Collection of objects containing properties for each instance returned.
+     *        A collection of objects containing properties for each instance returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

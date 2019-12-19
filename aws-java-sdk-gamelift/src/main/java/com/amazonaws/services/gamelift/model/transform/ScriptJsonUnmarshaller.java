@@ -52,6 +52,10 @@ public class ScriptJsonUnmarshaller implements Unmarshaller<Script, JsonUnmarsha
                     context.nextToken();
                     script.setScriptId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ScriptArn", targetDepth)) {
+                    context.nextToken();
+                    script.setScriptArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     script.setName(context.getUnmarshaller(String.class).unmarshall(context));

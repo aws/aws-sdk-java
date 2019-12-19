@@ -30,13 +30,13 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for the game session to add a player to.
+     * A unique identifier for the game session to add a player to.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Unique identifier for a player. Player IDs are developer-defined.
+     * A unique identifier for a player. Player IDs are developer-defined.
      * </p>
      */
     private String playerId;
@@ -50,11 +50,11 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for the game session to add a player to.
+     * A unique identifier for the game session to add a player to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to add a player to.
+     *        A unique identifier for the game session to add a player to.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -63,10 +63,10 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for the game session to add a player to.
+     * A unique identifier for the game session to add a player to.
      * </p>
      * 
-     * @return Unique identifier for the game session to add a player to.
+     * @return A unique identifier for the game session to add a player to.
      */
 
     public String getGameSessionId() {
@@ -75,11 +75,11 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for the game session to add a player to.
+     * A unique identifier for the game session to add a player to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to add a player to.
+     *        A unique identifier for the game session to add a player to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a player. Player IDs are developer-defined.
+     * A unique identifier for a player. Player IDs are developer-defined.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player. Player IDs are developer-defined.
+     *        A unique identifier for a player. Player IDs are developer-defined.
      */
 
     public void setPlayerId(String playerId) {
@@ -103,10 +103,10 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a player. Player IDs are developer-defined.
+     * A unique identifier for a player. Player IDs are developer-defined.
      * </p>
      * 
-     * @return Unique identifier for a player. Player IDs are developer-defined.
+     * @return A unique identifier for a player. Player IDs are developer-defined.
      */
 
     public String getPlayerId() {
@@ -115,11 +115,11 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a player. Player IDs are developer-defined.
+     * A unique identifier for a player. Player IDs are developer-defined.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player. Player IDs are developer-defined.
+     *        A unique identifier for a player. Player IDs are developer-defined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,6 +60,10 @@ public class GameSessionJsonUnmarshaller implements Unmarshaller<GameSession, Js
                     context.nextToken();
                     gameSession.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    gameSession.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     gameSession.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

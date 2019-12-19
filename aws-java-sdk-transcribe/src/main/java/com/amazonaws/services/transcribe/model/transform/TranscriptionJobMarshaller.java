@@ -41,6 +41,8 @@ public class TranscriptionJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Media").build();
     private static final MarshallingInfo<StructuredPojo> TRANSCRIPT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Transcript").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COMPLETIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -49,6 +51,8 @@ public class TranscriptionJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
+    private static final MarshallingInfo<StructuredPojo> JOBEXECUTIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobExecutionSettings").build();
 
     private static final TranscriptionJobMarshaller instance = new TranscriptionJobMarshaller();
 
@@ -73,10 +77,12 @@ public class TranscriptionJobMarshaller {
             protocolMarshaller.marshall(transcriptionJob.getMediaFormat(), MEDIAFORMAT_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getMedia(), MEDIA_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getTranscript(), TRANSCRIPT_BINDING);
+            protocolMarshaller.marshall(transcriptionJob.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getCompletionTime(), COMPLETIONTIME_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(transcriptionJob.getJobExecutionSettings(), JOBEXECUTIONSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

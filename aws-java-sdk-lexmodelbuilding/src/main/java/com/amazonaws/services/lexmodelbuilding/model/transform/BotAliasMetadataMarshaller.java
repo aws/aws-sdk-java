@@ -41,6 +41,8 @@ public class BotAliasMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CHECKSUM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("checksum").build();
+    private static final MarshallingInfo<StructuredPojo> CONVERSATIONLOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversationLogs").build();
 
     private static final BotAliasMetadataMarshaller instance = new BotAliasMetadataMarshaller();
 
@@ -65,6 +67,7 @@ public class BotAliasMetadataMarshaller {
             protocolMarshaller.marshall(botAliasMetadata.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
             protocolMarshaller.marshall(botAliasMetadata.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(botAliasMetadata.getChecksum(), CHECKSUM_BINDING);
+            protocolMarshaller.marshall(botAliasMetadata.getConversationLogs(), CONVERSATIONLOGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

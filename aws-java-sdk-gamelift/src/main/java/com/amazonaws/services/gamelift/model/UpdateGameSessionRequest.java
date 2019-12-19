@@ -30,19 +30,19 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for the game session to update.
+     * A unique identifier for the game session to update.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      */
     private String name;
@@ -74,11 +74,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for the game session to update.
+     * A unique identifier for the game session to update.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to update.
+     *        A unique identifier for the game session to update.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -87,10 +87,10 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for the game session to update.
+     * A unique identifier for the game session to update.
      * </p>
      * 
-     * @return Unique identifier for the game session to update.
+     * @return A unique identifier for the game session to update.
      */
 
     public String getGameSessionId() {
@@ -99,11 +99,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for the game session to update.
+     * A unique identifier for the game session to update.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to update.
+     *        A unique identifier for the game session to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -127,10 +127,10 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
-     * @return Maximum number of players that can be connected simultaneously to the game session.
+     * @return The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -139,11 +139,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -167,10 +167,10 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * @return A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public String getName() {
@@ -179,11 +179,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

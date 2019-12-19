@@ -28,18 +28,18 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Unique identifier for a fleet that was updated.
+     * A unique identifier for a fleet that was updated.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Unique identifier for a fleet that was updated.
+     * A unique identifier for a fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that was updated.
+     *        A unique identifier for a fleet that was updated.
      */
 
     public void setFleetId(String fleetId) {
@@ -48,10 +48,10 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Unique identifier for a fleet that was updated.
+     * A unique identifier for a fleet that was updated.
      * </p>
      * 
-     * @return Unique identifier for a fleet that was updated.
+     * @return A unique identifier for a fleet that was updated.
      */
 
     public String getFleetId() {
@@ -60,11 +60,11 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Unique identifier for a fleet that was updated.
+     * A unique identifier for a fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that was updated.
+     *        A unique identifier for a fleet that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

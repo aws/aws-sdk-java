@@ -28,7 +28,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of objects containing the scaling policies matching the request.
+     * A collection of objects containing the scaling policies matching the request.
      * </p>
      */
     private java.util.List<ScalingPolicy> scalingPolicies;
@@ -42,10 +42,10 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of objects containing the scaling policies matching the request.
+     * A collection of objects containing the scaling policies matching the request.
      * </p>
      * 
-     * @return Collection of objects containing the scaling policies matching the request.
+     * @return A collection of objects containing the scaling policies matching the request.
      */
 
     public java.util.List<ScalingPolicy> getScalingPolicies() {
@@ -54,11 +54,11 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of objects containing the scaling policies matching the request.
+     * A collection of objects containing the scaling policies matching the request.
      * </p>
      * 
      * @param scalingPolicies
-     *        Collection of objects containing the scaling policies matching the request.
+     *        A collection of objects containing the scaling policies matching the request.
      */
 
     public void setScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
@@ -72,7 +72,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of objects containing the scaling policies matching the request.
+     * A collection of objects containing the scaling policies matching the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param scalingPolicies
-     *        Collection of objects containing the scaling policies matching the request.
+     *        A collection of objects containing the scaling policies matching the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeScalingPoliciesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of objects containing the scaling policies matching the request.
+     * A collection of objects containing the scaling policies matching the request.
      * </p>
      * 
      * @param scalingPolicies
-     *        Collection of objects containing the scaling policies matching the request.
+     *        A collection of objects containing the scaling policies matching the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -293,6 +293,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -344,6 +349,16 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public StopMatchmakingResult stopMatchmaking(StopMatchmakingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

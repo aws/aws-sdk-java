@@ -30,15 +30,15 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
-     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
+     * A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate
+     * one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      */
     private String ticketId;
     /**
      * <p>
      * Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same
-     * region as this request.
+     * Region as this request. You can use either the configuration name or ARN value.
      * </p>
      */
     private String configurationName;
@@ -53,12 +53,12 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
-     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
+     * A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate
+     * one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
+     *        A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
      *        generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and
      *        retrieve match results.
      */
@@ -69,11 +69,11 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
-     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
+     * A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate
+     * one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      * 
-     * @return Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
+     * @return A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
      *         generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and
      *         retrieve match results.
      */
@@ -84,12 +84,12 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
-     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
+     * A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate
+     * one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
+     *        A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
      *        generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and
      *        retrieve match results.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -103,12 +103,12 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same
-     * region as this request.
+     * Region as this request. You can use either the configuration name or ARN value.
      * </p>
      * 
      * @param configurationName
      *        Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in
-     *        the same region as this request.
+     *        the same Region as this request. You can use either the configuration name or ARN value.
      */
 
     public void setConfigurationName(String configurationName) {
@@ -118,11 +118,11 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same
-     * region as this request.
+     * Region as this request. You can use either the configuration name or ARN value.
      * </p>
      * 
      * @return Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in
-     *         the same region as this request.
+     *         the same Region as this request. You can use either the configuration name or ARN value.
      */
 
     public String getConfigurationName() {
@@ -132,12 +132,12 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same
-     * region as this request.
+     * Region as this request. You can use either the configuration name or ARN value.
      * </p>
      * 
      * @param configurationName
      *        Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in
-     *        the same region as this request.
+     *        the same Region as this request. You can use either the configuration name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

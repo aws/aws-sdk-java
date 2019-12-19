@@ -30,20 +30,20 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve all game sessions for.
+     * A unique identifier for a fleet to retrieve all game sessions for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
-     * <code>GameSessionArn</code> value.
+     * A unique identifier for the game session to retrieve.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to retrieve all game sessions for.
+     * A unique identifier for an alias associated with the fleet to retrieve all game sessions for. You can use either
+     * the alias ID or ARN value.
      * </p>
      */
     private String aliasId;
@@ -56,8 +56,8 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
     private String statusFilter;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      */
     private Integer limit;
@@ -71,11 +71,12 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve all game sessions for.
+     * A unique identifier for a fleet to retrieve all game sessions for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve all game sessions for.
+     *        A unique identifier for a fleet to retrieve all game sessions for. You can use either the fleet ID or ARN
+     *        value.
      */
 
     public void setFleetId(String fleetId) {
@@ -84,10 +85,11 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve all game sessions for.
+     * A unique identifier for a fleet to retrieve all game sessions for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to retrieve all game sessions for.
+     * @return A unique identifier for a fleet to retrieve all game sessions for. You can use either the fleet ID or ARN
+     *         value.
      */
 
     public String getFleetId() {
@@ -96,11 +98,12 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve all game sessions for.
+     * A unique identifier for a fleet to retrieve all game sessions for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve all game sessions for.
+     *        A unique identifier for a fleet to retrieve all game sessions for. You can use either the fleet ID or ARN
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,13 +114,11 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
-     * <code>GameSessionArn</code> value.
+     * A unique identifier for the game session to retrieve.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
-     *        <code>GameSessionArn</code> value.
+     *        A unique identifier for the game session to retrieve.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -126,12 +127,10 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
-     * <code>GameSessionArn</code> value.
+     * A unique identifier for the game session to retrieve.
      * </p>
      * 
-     * @return Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
-     *         <code>GameSessionArn</code> value.
+     * @return A unique identifier for the game session to retrieve.
      */
 
     public String getGameSessionId() {
@@ -140,13 +139,11 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
-     * <code>GameSessionArn</code> value.
+     * A unique identifier for the game session to retrieve.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code> or
-     *        <code>GameSessionArn</code> value.
+     *        A unique identifier for the game session to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +154,13 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to retrieve all game sessions for.
+     * A unique identifier for an alias associated with the fleet to retrieve all game sessions for. You can use either
+     * the alias ID or ARN value.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for an alias associated with the fleet to retrieve all game sessions for.
+     *        A unique identifier for an alias associated with the fleet to retrieve all game sessions for. You can use
+     *        either the alias ID or ARN value.
      */
 
     public void setAliasId(String aliasId) {
@@ -170,10 +169,12 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to retrieve all game sessions for.
+     * A unique identifier for an alias associated with the fleet to retrieve all game sessions for. You can use either
+     * the alias ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for an alias associated with the fleet to retrieve all game sessions for.
+     * @return A unique identifier for an alias associated with the fleet to retrieve all game sessions for. You can use
+     *         either the alias ID or ARN value.
      */
 
     public String getAliasId() {
@@ -182,11 +183,13 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to retrieve all game sessions for.
+     * A unique identifier for an alias associated with the fleet to retrieve all game sessions for. You can use either
+     * the alias ID or ARN value.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for an alias associated with the fleet to retrieve all game sessions for.
+     *        A unique identifier for an alias associated with the fleet to retrieve all game sessions for. You can use
+     *        either the alias ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,13 +249,13 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -261,12 +264,12 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -275,13 +278,13 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

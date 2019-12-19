@@ -56,6 +56,10 @@ public class MatchmakingTicketJsonUnmarshaller implements Unmarshaller<Matchmaki
                     context.nextToken();
                     matchmakingTicket.setConfigurationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConfigurationArn", targetDepth)) {
+                    context.nextToken();
+                    matchmakingTicket.setConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     matchmakingTicket.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

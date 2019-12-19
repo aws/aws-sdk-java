@@ -54,10 +54,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedUsageClasses;
     /**
      * <p>
-     * Indicates the supported root devices.
+     * Indicates the supported root device types.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<String> supportedRootDevices;
+    private com.amazonaws.internal.SdkInternalList<String> supportedRootDeviceTypes;
     /**
      * <p>
      * Indicates whether the instance is bare metal.
@@ -444,102 +444,102 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root devices.
+     * Indicates the supported root device types.
      * </p>
      * 
-     * @return Indicates the supported root devices.
+     * @return Indicates the supported root device types.
      * @see RootDeviceType
      */
 
-    public java.util.List<String> getSupportedRootDevices() {
-        if (supportedRootDevices == null) {
-            supportedRootDevices = new com.amazonaws.internal.SdkInternalList<String>();
+    public java.util.List<String> getSupportedRootDeviceTypes() {
+        if (supportedRootDeviceTypes == null) {
+            supportedRootDeviceTypes = new com.amazonaws.internal.SdkInternalList<String>();
         }
-        return supportedRootDevices;
+        return supportedRootDeviceTypes;
     }
 
     /**
      * <p>
-     * Indicates the supported root devices.
+     * Indicates the supported root device types.
      * </p>
      * 
-     * @param supportedRootDevices
-     *        Indicates the supported root devices.
+     * @param supportedRootDeviceTypes
+     *        Indicates the supported root device types.
      * @see RootDeviceType
      */
 
-    public void setSupportedRootDevices(java.util.Collection<String> supportedRootDevices) {
-        if (supportedRootDevices == null) {
-            this.supportedRootDevices = null;
+    public void setSupportedRootDeviceTypes(java.util.Collection<String> supportedRootDeviceTypes) {
+        if (supportedRootDeviceTypes == null) {
+            this.supportedRootDeviceTypes = null;
             return;
         }
 
-        this.supportedRootDevices = new com.amazonaws.internal.SdkInternalList<String>(supportedRootDevices);
+        this.supportedRootDeviceTypes = new com.amazonaws.internal.SdkInternalList<String>(supportedRootDeviceTypes);
     }
 
     /**
      * <p>
-     * Indicates the supported root devices.
+     * Indicates the supported root device types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSupportedRootDevices(java.util.Collection)} or {@link #withSupportedRootDevices(java.util.Collection)}
-     * if you want to override the existing values.
+     * {@link #setSupportedRootDeviceTypes(java.util.Collection)} or
+     * {@link #withSupportedRootDeviceTypes(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
-     * @param supportedRootDevices
-     *        Indicates the supported root devices.
+     * @param supportedRootDeviceTypes
+     *        Indicates the supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
-    public InstanceTypeInfo withSupportedRootDevices(String... supportedRootDevices) {
-        if (this.supportedRootDevices == null) {
-            setSupportedRootDevices(new com.amazonaws.internal.SdkInternalList<String>(supportedRootDevices.length));
+    public InstanceTypeInfo withSupportedRootDeviceTypes(String... supportedRootDeviceTypes) {
+        if (this.supportedRootDeviceTypes == null) {
+            setSupportedRootDeviceTypes(new com.amazonaws.internal.SdkInternalList<String>(supportedRootDeviceTypes.length));
         }
-        for (String ele : supportedRootDevices) {
-            this.supportedRootDevices.add(ele);
+        for (String ele : supportedRootDeviceTypes) {
+            this.supportedRootDeviceTypes.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * Indicates the supported root devices.
+     * Indicates the supported root device types.
      * </p>
      * 
-     * @param supportedRootDevices
-     *        Indicates the supported root devices.
+     * @param supportedRootDeviceTypes
+     *        Indicates the supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
-    public InstanceTypeInfo withSupportedRootDevices(java.util.Collection<String> supportedRootDevices) {
-        setSupportedRootDevices(supportedRootDevices);
+    public InstanceTypeInfo withSupportedRootDeviceTypes(java.util.Collection<String> supportedRootDeviceTypes) {
+        setSupportedRootDeviceTypes(supportedRootDeviceTypes);
         return this;
     }
 
     /**
      * <p>
-     * Indicates the supported root devices.
+     * Indicates the supported root device types.
      * </p>
      * 
-     * @param supportedRootDevices
-     *        Indicates the supported root devices.
+     * @param supportedRootDeviceTypes
+     *        Indicates the supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
 
-    public InstanceTypeInfo withSupportedRootDevices(RootDeviceType... supportedRootDevices) {
-        com.amazonaws.internal.SdkInternalList<String> supportedRootDevicesCopy = new com.amazonaws.internal.SdkInternalList<String>(
-                supportedRootDevices.length);
-        for (RootDeviceType value : supportedRootDevices) {
-            supportedRootDevicesCopy.add(value.toString());
+    public InstanceTypeInfo withSupportedRootDeviceTypes(RootDeviceType... supportedRootDeviceTypes) {
+        com.amazonaws.internal.SdkInternalList<String> supportedRootDeviceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                supportedRootDeviceTypes.length);
+        for (RootDeviceType value : supportedRootDeviceTypes) {
+            supportedRootDeviceTypesCopy.add(value.toString());
         }
-        if (getSupportedRootDevices() == null) {
-            setSupportedRootDevices(supportedRootDevicesCopy);
+        if (getSupportedRootDeviceTypes() == null) {
+            setSupportedRootDeviceTypes(supportedRootDeviceTypesCopy);
         } else {
-            getSupportedRootDevices().addAll(supportedRootDevicesCopy);
+            getSupportedRootDeviceTypes().addAll(supportedRootDeviceTypesCopy);
         }
         return this;
     }
@@ -1335,8 +1335,8 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             sb.append("FreeTierEligible: ").append(getFreeTierEligible()).append(",");
         if (getSupportedUsageClasses() != null)
             sb.append("SupportedUsageClasses: ").append(getSupportedUsageClasses()).append(",");
-        if (getSupportedRootDevices() != null)
-            sb.append("SupportedRootDevices: ").append(getSupportedRootDevices()).append(",");
+        if (getSupportedRootDeviceTypes() != null)
+            sb.append("SupportedRootDeviceTypes: ").append(getSupportedRootDeviceTypes()).append(",");
         if (getBareMetal() != null)
             sb.append("BareMetal: ").append(getBareMetal()).append(",");
         if (getHypervisor() != null)
@@ -1401,9 +1401,9 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             return false;
         if (other.getSupportedUsageClasses() != null && other.getSupportedUsageClasses().equals(this.getSupportedUsageClasses()) == false)
             return false;
-        if (other.getSupportedRootDevices() == null ^ this.getSupportedRootDevices() == null)
+        if (other.getSupportedRootDeviceTypes() == null ^ this.getSupportedRootDeviceTypes() == null)
             return false;
-        if (other.getSupportedRootDevices() != null && other.getSupportedRootDevices().equals(this.getSupportedRootDevices()) == false)
+        if (other.getSupportedRootDeviceTypes() != null && other.getSupportedRootDeviceTypes().equals(this.getSupportedRootDeviceTypes()) == false)
             return false;
         if (other.getBareMetal() == null ^ this.getBareMetal() == null)
             return false;
@@ -1486,7 +1486,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCurrentGeneration() == null) ? 0 : getCurrentGeneration().hashCode());
         hashCode = prime * hashCode + ((getFreeTierEligible() == null) ? 0 : getFreeTierEligible().hashCode());
         hashCode = prime * hashCode + ((getSupportedUsageClasses() == null) ? 0 : getSupportedUsageClasses().hashCode());
-        hashCode = prime * hashCode + ((getSupportedRootDevices() == null) ? 0 : getSupportedRootDevices().hashCode());
+        hashCode = prime * hashCode + ((getSupportedRootDeviceTypes() == null) ? 0 : getSupportedRootDeviceTypes().hashCode());
         hashCode = prime * hashCode + ((getBareMetal() == null) ? 0 : getBareMetal().hashCode());
         hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         hashCode = prime * hashCode + ((getProcessorInfo() == null) ? 0 : getProcessorInfo().hashCode());

@@ -27,18 +27,21 @@ public class DescribeScriptRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to retrieve properties for.
+     * A unique identifier for a Realtime script to retrieve properties for. You can use either the script ID or ARN
+     * value.
      * </p>
      */
     private String scriptId;
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to retrieve properties for.
+     * A unique identifier for a Realtime script to retrieve properties for. You can use either the script ID or ARN
+     * value.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script to retrieve properties for.
+     *        A unique identifier for a Realtime script to retrieve properties for. You can use either the script ID or
+     *        ARN value.
      */
 
     public void setScriptId(String scriptId) {
@@ -47,10 +50,12 @@ public class DescribeScriptRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to retrieve properties for.
+     * A unique identifier for a Realtime script to retrieve properties for. You can use either the script ID or ARN
+     * value.
      * </p>
      * 
-     * @return Unique identifier for a Realtime script to retrieve properties for.
+     * @return A unique identifier for a Realtime script to retrieve properties for. You can use either the script ID or
+     *         ARN value.
      */
 
     public String getScriptId() {
@@ -59,11 +64,13 @@ public class DescribeScriptRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to retrieve properties for.
+     * A unique identifier for a Realtime script to retrieve properties for. You can use either the script ID or ARN
+     * value.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script to retrieve properties for.
+     *        A unique identifier for a Realtime script to retrieve properties for. You can use either the script ID or
+     *        ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

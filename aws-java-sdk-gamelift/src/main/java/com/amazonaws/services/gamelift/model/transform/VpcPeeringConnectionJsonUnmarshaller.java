@@ -52,6 +52,10 @@ public class VpcPeeringConnectionJsonUnmarshaller implements Unmarshaller<VpcPee
                     context.nextToken();
                     vpcPeeringConnection.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    vpcPeeringConnection.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("IpV4CidrBlock", targetDepth)) {
                     context.nextToken();
                     vpcPeeringConnection.setIpV4CidrBlock(context.getUnmarshaller(String.class).unmarshall(context));

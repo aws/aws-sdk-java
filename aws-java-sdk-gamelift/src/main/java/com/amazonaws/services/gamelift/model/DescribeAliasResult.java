@@ -28,18 +28,18 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Object that contains the requested alias.
+     * The requested alias resource.
      * </p>
      */
     private Alias alias;
 
     /**
      * <p>
-     * Object that contains the requested alias.
+     * The requested alias resource.
      * </p>
      * 
      * @param alias
-     *        Object that contains the requested alias.
+     *        The requested alias resource.
      */
 
     public void setAlias(Alias alias) {
@@ -48,10 +48,10 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Object that contains the requested alias.
+     * The requested alias resource.
      * </p>
      * 
-     * @return Object that contains the requested alias.
+     * @return The requested alias resource.
      */
 
     public Alias getAlias() {
@@ -60,11 +60,11 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Object that contains the requested alias.
+     * The requested alias resource.
      * </p>
      * 
      * @param alias
-     *        Object that contains the requested alias.
+     *        The requested alias resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

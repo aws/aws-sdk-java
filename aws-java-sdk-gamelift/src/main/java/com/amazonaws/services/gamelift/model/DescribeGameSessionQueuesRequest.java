@@ -30,20 +30,21 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * List of queue names to retrieve information for. To request settings for all queues, leave this parameter empty.
+     * A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request
+     * settings for all queues, leave this parameter empty.
      * </p>
      */
     private java.util.List<String> names;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
@@ -51,11 +52,12 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * List of queue names to retrieve information for. To request settings for all queues, leave this parameter empty.
+     * A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request
+     * settings for all queues, leave this parameter empty.
      * </p>
      * 
-     * @return List of queue names to retrieve information for. To request settings for all queues, leave this parameter
-     *         empty.
+     * @return A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To
+     *         request settings for all queues, leave this parameter empty.
      */
 
     public java.util.List<String> getNames() {
@@ -64,12 +66,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * List of queue names to retrieve information for. To request settings for all queues, leave this parameter empty.
+     * A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request
+     * settings for all queues, leave this parameter empty.
      * </p>
      * 
      * @param names
-     *        List of queue names to retrieve information for. To request settings for all queues, leave this parameter
-     *        empty.
+     *        A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To
+     *        request settings for all queues, leave this parameter empty.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -83,7 +86,8 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * List of queue names to retrieve information for. To request settings for all queues, leave this parameter empty.
+     * A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request
+     * settings for all queues, leave this parameter empty.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,8 +96,8 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param names
-     *        List of queue names to retrieve information for. To request settings for all queues, leave this parameter
-     *        empty.
+     *        A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To
+     *        request settings for all queues, leave this parameter empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,12 +113,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * List of queue names to retrieve information for. To request settings for all queues, leave this parameter empty.
+     * A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request
+     * settings for all queues, leave this parameter empty.
      * </p>
      * 
      * @param names
-     *        List of queue names to retrieve information for. To request settings for all queues, leave this parameter
-     *        empty.
+     *        A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To
+     *        request settings for all queues, leave this parameter empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,13 +130,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -140,12 +145,12 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -154,13 +159,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,13 +176,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -186,11 +191,11 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
      *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
@@ -200,13 +205,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

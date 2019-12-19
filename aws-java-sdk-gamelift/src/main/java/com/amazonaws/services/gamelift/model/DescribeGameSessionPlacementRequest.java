@@ -30,18 +30,18 @@ public class DescribeGameSessionPlacementRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a game session placement to retrieve.
+     * A unique identifier for a game session placement to retrieve.
      * </p>
      */
     private String placementId;
 
     /**
      * <p>
-     * Unique identifier for a game session placement to retrieve.
+     * A unique identifier for a game session placement to retrieve.
      * </p>
      * 
      * @param placementId
-     *        Unique identifier for a game session placement to retrieve.
+     *        A unique identifier for a game session placement to retrieve.
      */
 
     public void setPlacementId(String placementId) {
@@ -50,10 +50,10 @@ public class DescribeGameSessionPlacementRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a game session placement to retrieve.
+     * A unique identifier for a game session placement to retrieve.
      * </p>
      * 
-     * @return Unique identifier for a game session placement to retrieve.
+     * @return A unique identifier for a game session placement to retrieve.
      */
 
     public String getPlacementId() {
@@ -62,11 +62,11 @@ public class DescribeGameSessionPlacementRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a game session placement to retrieve.
+     * A unique identifier for a game session placement to retrieve.
      * </p>
      * 
      * @param placementId
-     *        Unique identifier for a game session placement to retrieve.
+     *        A unique identifier for a game session placement to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

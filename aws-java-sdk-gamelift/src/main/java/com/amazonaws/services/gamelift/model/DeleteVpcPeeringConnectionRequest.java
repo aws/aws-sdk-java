@@ -30,28 +30,28 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a fleet. This value must match the fleet ID referenced in the VPC peering connection
-     * record.
+     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * connection record. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object,
-     * which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+     * A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
+     * object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
      * </p>
      */
     private String vpcPeeringConnectionId;
 
     /**
      * <p>
-     * Unique identifier for a fleet. This value must match the fleet ID referenced in the VPC peering connection
-     * record.
+     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * connection record. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet. This value must match the fleet ID referenced in the VPC peering connection
-     *        record.
+     *        A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     *        connection record. You can use either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -60,12 +60,12 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a fleet. This value must match the fleet ID referenced in the VPC peering connection
-     * record.
+     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * connection record. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet. This value must match the fleet ID referenced in the VPC peering
-     *         connection record.
+     * @return A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     *         connection record. You can use either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -74,13 +74,13 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a fleet. This value must match the fleet ID referenced in the VPC peering connection
-     * record.
+     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * connection record. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet. This value must match the fleet ID referenced in the VPC peering connection
-     *        record.
+     *        A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     *        connection record. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +91,14 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object,
-     * which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+     * A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
+     * object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
-     *        object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+     *        A unique identifier for a VPC peering connection. This value is included in the
+     *        <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     *        <a>DescribeVpcPeeringConnections</a>.
      */
 
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
@@ -106,12 +107,13 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object,
-     * which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+     * A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
+     * object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
      * </p>
      * 
-     * @return Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
-     *         object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+     * @return A unique identifier for a VPC peering connection. This value is included in the
+     *         <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     *         <a>DescribeVpcPeeringConnections</a>.
      */
 
     public String getVpcPeeringConnectionId() {
@@ -120,13 +122,14 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a> object,
-     * which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+     * A unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
+     * object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        Unique identifier for a VPC peering connection. This value is included in the <a>VpcPeeringConnection</a>
-     *        object, which can be retrieved by calling <a>DescribeVpcPeeringConnections</a>.
+     *        A unique identifier for a VPC peering connection. This value is included in the
+     *        <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     *        <a>DescribeVpcPeeringConnections</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

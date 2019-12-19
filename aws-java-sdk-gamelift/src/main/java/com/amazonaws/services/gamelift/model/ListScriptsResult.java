@@ -25,24 +25,24 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Set of properties describing the requested script.
+     * A set of properties describing the requested script.
      * </p>
      */
     private java.util.List<Script> scripts;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Set of properties describing the requested script.
+     * A set of properties describing the requested script.
      * </p>
      * 
-     * @return Set of properties describing the requested script.
+     * @return A set of properties describing the requested script.
      */
 
     public java.util.List<Script> getScripts() {
@@ -51,11 +51,11 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Set of properties describing the requested script.
+     * A set of properties describing the requested script.
      * </p>
      * 
      * @param scripts
-     *        Set of properties describing the requested script.
+     *        A set of properties describing the requested script.
      */
 
     public void setScripts(java.util.Collection<Script> scripts) {
@@ -69,7 +69,7 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Set of properties describing the requested script.
+     * A set of properties describing the requested script.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param scripts
-     *        Set of properties describing the requested script.
+     *        A set of properties describing the requested script.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Set of properties describing the requested script.
+     * A set of properties describing the requested script.
      * </p>
      * 
      * @param scripts
-     *        Set of properties describing the requested script.
+     *        A set of properties describing the requested script.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,12 +109,12 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -124,11 +124,11 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * @return A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *         returned, these results represent the end of the list.
      */
 
@@ -138,12 +138,12 @@ public class ListScriptsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

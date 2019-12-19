@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Routing configuration for a fleet alias.
+ * The routing configuration for a fleet alias.
  * </p>
  * <ul>
  * <li>
@@ -62,7 +62,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of routing strategy.
+     * The type of routing strategy for the alias.
      * </p>
      * <p>
      * Possible routing types include the following:
@@ -70,14 +70,13 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
-     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.
+     * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
      * </p>
      * </li>
      * </ul>
@@ -85,20 +84,20 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
     private String type;
     /**
      * <p>
-     * Unique identifier for a fleet that the alias points to.
+     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Message text to be used with a terminal routing strategy.
+     * The message text to be used with a terminal routing strategy.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Type of routing strategy.
+     * The type of routing strategy for the alias.
      * </p>
      * <p>
      * Possible routing types include the following:
@@ -106,32 +105,31 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
-     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.
+     * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        Type of routing strategy.</p>
+     *        The type of routing strategy for the alias.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>
@@ -145,7 +143,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of routing strategy.
+     * The type of routing strategy for the alias.
      * </p>
      * <p>
      * Possible routing types include the following:
@@ -153,31 +151,30 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
-     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.
+     * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Type of routing strategy.</p>
+     * @return The type of routing strategy for the alias.</p>
      *         <p>
      *         Possible routing types include the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *         <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
+     *         <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
      *         the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *         message embedded.
      *         </p>
@@ -191,7 +188,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of routing strategy.
+     * The type of routing strategy for the alias.
      * </p>
      * <p>
      * Possible routing types include the following:
@@ -199,32 +196,31 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
-     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.
+     * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        Type of routing strategy.</p>
+     *        The type of routing strategy for the alias.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>
@@ -240,7 +236,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of routing strategy.
+     * The type of routing strategy for the alias.
      * </p>
      * <p>
      * Possible routing types include the following:
@@ -248,32 +244,31 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
-     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.
+     * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        Type of routing strategy.</p>
+     *        The type of routing strategy for the alias.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>
@@ -287,7 +282,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Type of routing strategy.
+     * The type of routing strategy for the alias.
      * </p>
      * <p>
      * Possible routing types include the following:
@@ -295,32 +290,31 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
-     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.
+     * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
+     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        Type of routing strategy.</p>
+     *        The type of routing strategy for the alias.</p>
      *        <p>
      *        Possible routing types include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>
@@ -336,11 +330,11 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a fleet that the alias points to.
+     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the alias points to.
+     *        The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      */
 
     public void setFleetId(String fleetId) {
@@ -349,10 +343,11 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a fleet that the alias points to.
+     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      * 
-     * @return Unique identifier for a fleet that the alias points to.
+     * @return The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet
+     *         ARN.
      */
 
     public String getFleetId() {
@@ -361,11 +356,11 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for a fleet that the alias points to.
+     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the alias points to.
+     *        The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,11 +371,11 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Message text to be used with a terminal routing strategy.
+     * The message text to be used with a terminal routing strategy.
      * </p>
      * 
      * @param message
-     *        Message text to be used with a terminal routing strategy.
+     *        The message text to be used with a terminal routing strategy.
      */
 
     public void setMessage(String message) {
@@ -389,10 +384,10 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Message text to be used with a terminal routing strategy.
+     * The message text to be used with a terminal routing strategy.
      * </p>
      * 
-     * @return Message text to be used with a terminal routing strategy.
+     * @return The message text to be used with a terminal routing strategy.
      */
 
     public String getMessage() {
@@ -401,11 +396,11 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Message text to be used with a terminal routing strategy.
+     * The message text to be used with a terminal routing strategy.
      * </p>
      * 
      * @param message
-     *        Message text to be used with a terminal routing strategy.
+     *        The message text to be used with a terminal routing strategy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

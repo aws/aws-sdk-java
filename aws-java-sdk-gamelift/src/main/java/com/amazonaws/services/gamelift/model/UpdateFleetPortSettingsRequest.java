@@ -30,30 +30,30 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique identifier for a fleet to update port settings for.
+     * A unique identifier for a fleet to update port settings for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Collection of port settings to be added to the fleet record.
+     * A collection of port settings to be added to the fleet record.
      * </p>
      */
     private java.util.List<IpPermission> inboundPermissionAuthorizations;
     /**
      * <p>
-     * Collection of port settings to be removed from the fleet record.
+     * A collection of port settings to be removed from the fleet record.
      * </p>
      */
     private java.util.List<IpPermission> inboundPermissionRevocations;
 
     /**
      * <p>
-     * Unique identifier for a fleet to update port settings for.
+     * A unique identifier for a fleet to update port settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update port settings for.
+     *        A unique identifier for a fleet to update port settings for. You can use either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -62,10 +62,11 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique identifier for a fleet to update port settings for.
+     * A unique identifier for a fleet to update port settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to update port settings for.
+     * @return A unique identifier for a fleet to update port settings for. You can use either the fleet ID or ARN
+     *         value.
      */
 
     public String getFleetId() {
@@ -74,11 +75,11 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Unique identifier for a fleet to update port settings for.
+     * A unique identifier for a fleet to update port settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update port settings for.
+     *        A unique identifier for a fleet to update port settings for. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,10 +90,10 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be added to the fleet record.
+     * A collection of port settings to be added to the fleet record.
      * </p>
      * 
-     * @return Collection of port settings to be added to the fleet record.
+     * @return A collection of port settings to be added to the fleet record.
      */
 
     public java.util.List<IpPermission> getInboundPermissionAuthorizations() {
@@ -101,11 +102,11 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be added to the fleet record.
+     * A collection of port settings to be added to the fleet record.
      * </p>
      * 
      * @param inboundPermissionAuthorizations
-     *        Collection of port settings to be added to the fleet record.
+     *        A collection of port settings to be added to the fleet record.
      */
 
     public void setInboundPermissionAuthorizations(java.util.Collection<IpPermission> inboundPermissionAuthorizations) {
@@ -119,7 +120,7 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be added to the fleet record.
+     * A collection of port settings to be added to the fleet record.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +129,7 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param inboundPermissionAuthorizations
-     *        Collection of port settings to be added to the fleet record.
+     *        A collection of port settings to be added to the fleet record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +145,11 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be added to the fleet record.
+     * A collection of port settings to be added to the fleet record.
      * </p>
      * 
      * @param inboundPermissionAuthorizations
-     *        Collection of port settings to be added to the fleet record.
+     *        A collection of port settings to be added to the fleet record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,10 +160,10 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be removed from the fleet record.
+     * A collection of port settings to be removed from the fleet record.
      * </p>
      * 
-     * @return Collection of port settings to be removed from the fleet record.
+     * @return A collection of port settings to be removed from the fleet record.
      */
 
     public java.util.List<IpPermission> getInboundPermissionRevocations() {
@@ -171,11 +172,11 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be removed from the fleet record.
+     * A collection of port settings to be removed from the fleet record.
      * </p>
      * 
      * @param inboundPermissionRevocations
-     *        Collection of port settings to be removed from the fleet record.
+     *        A collection of port settings to be removed from the fleet record.
      */
 
     public void setInboundPermissionRevocations(java.util.Collection<IpPermission> inboundPermissionRevocations) {
@@ -189,7 +190,7 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be removed from the fleet record.
+     * A collection of port settings to be removed from the fleet record.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -198,7 +199,7 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param inboundPermissionRevocations
-     *        Collection of port settings to be removed from the fleet record.
+     *        A collection of port settings to be removed from the fleet record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +215,11 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Collection of port settings to be removed from the fleet record.
+     * A collection of port settings to be removed from the fleet record.
      * </p>
      * 
      * @param inboundPermissionRevocations
-     *        Collection of port settings to be removed from the fleet record.
+     *        A collection of port settings to be removed from the fleet record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

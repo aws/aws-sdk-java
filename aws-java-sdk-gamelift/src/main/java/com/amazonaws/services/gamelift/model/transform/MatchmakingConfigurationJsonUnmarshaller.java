@@ -52,6 +52,10 @@ public class MatchmakingConfigurationJsonUnmarshaller implements Unmarshaller<Ma
                     context.nextToken();
                     matchmakingConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConfigurationArn", targetDepth)) {
+                    context.nextToken();
+                    matchmakingConfiguration.setConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     matchmakingConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class MatchmakingConfigurationJsonUnmarshaller implements Unmarshaller<Ma
                 if (context.testExpression("RuleSetName", targetDepth)) {
                     context.nextToken();
                     matchmakingConfiguration.setRuleSetName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RuleSetArn", targetDepth)) {
+                    context.nextToken();
+                    matchmakingConfiguration.setRuleSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NotificationTarget", targetDepth)) {
                     context.nextToken();

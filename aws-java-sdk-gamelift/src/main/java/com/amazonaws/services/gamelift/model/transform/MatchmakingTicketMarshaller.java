@@ -32,6 +32,8 @@ public class MatchmakingTicketMarshaller {
             .marshallLocationName("TicketId").build();
     private static final MarshallingInfo<String> CONFIGURATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationName").build();
+    private static final MarshallingInfo<String> CONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationArn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class MatchmakingTicketMarshaller {
         try {
             protocolMarshaller.marshall(matchmakingTicket.getTicketId(), TICKETID_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getConfigurationName(), CONFIGURATIONNAME_BINDING);
+            protocolMarshaller.marshall(matchmakingTicket.getConfigurationArn(), CONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getStatusMessage(), STATUSMESSAGE_BINDING);

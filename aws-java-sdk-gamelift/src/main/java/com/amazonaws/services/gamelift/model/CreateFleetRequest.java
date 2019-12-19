@@ -30,36 +30,37 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Human-readable description of a fleet.
+     * A human-readable description of a fleet.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
-     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
-     * changed once the fleet is created.
+     * A unique identifier for a build to be deployed on the new fleet. You can use either the build ID or ARN value.
+     * The custom game server build must have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet is created.
      * </p>
      */
     private String buildId;
     /**
      * <p>
-     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
-     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * A unique identifier for a Realtime script to be deployed on the new fleet. You can use either the script ID or
+     * ARN value. The Realtime script must have been successfully uploaded to Amazon GameLift. This fleet setting cannot
+     * be changed once the fleet is created.
      * </p>
      */
     private String scriptId;
     /**
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
-     * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * <code>RuntimeConfiguration</code> parameter. Requests that specify a server launch path and launch parameters
+     * instead of a runtime configuration will continue to work.
      * </p>
      */
     private String serverLaunchPath;
@@ -67,7 +68,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * instead of a runtime configuration will continue to work.)
      * </p>
      */
     private String serverLaunchParameters;
@@ -83,25 +84,25 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> logPaths;
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
+     * computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity.
+     * Amazon GameLift supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      */
     private String eC2InstanceType;
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
-     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
-     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
-     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that are running on
+     * the fleet. For fleets using a custom game build, this parameter is required before game sessions running on the
+     * fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges
+     * for use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      */
     private java.util.List<IpPermission> eC2InboundPermissions;
     /**
      * <p>
-     * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
+     * A game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
      * in this fleet default to no protection. You can change a fleet's protection policy using
      * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
      * also set protection for individual instances using <a>UpdateGameSession</a>.
@@ -109,13 +110,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
-     * a scale-down event.
+     * <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -124,23 +125,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
-     * processes to run on an instance and includes the following configuration settings: the server executable or
-     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
-     * CreateFleet request must include a run-time configuration with at least one server process configuration.
+     * game build executable or a Realtime script. The runtime configuration defines the server executables or launch
+     * script file, launch parameters, and the number of processes to run concurrently on each instance. When creating a
+     * fleet, the runtime configuration must have at least one server process configuration; otherwise the request fails
+     * with an invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>, although requests that contain values for these parameters instead of a
+     * runtime configuration will continue to work.) This parameter is required unless the parameters
+     * <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code> are defined. Runtime configuration replaced
+     * these parameters, but fleets that use them will continue to work.
      * </p>
      */
     private RuntimeConfiguration runtimeConfiguration;
     /**
      * <p>
-     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * A policy that limits the number of game sessions an individual player can create over a span of time for this
      * fleet.
      * </p>
      */
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
-     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
      * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
@@ -148,26 +153,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> metricGroups;
     /**
      * <p>
-     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
-     * find your Account ID in the AWS Management Console under account settings.
+     * A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You
+     * can find your account ID in the AWS Management Console under account settings.
      * </p>
      */
     private String peerVpcAwsAccountId;
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
-     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
-     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
-     * Amazon GameLift Fleets</a>.
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
+     * GameLift Fleets</a>.
      * </p>
      */
     private String peerVpcId;
     /**
      * <p>
-     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
-     * selected for this fleet. Learn more about <a href=
+     * Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     * <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on the
+     * instance type selected for this fleet. Learn more about <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      * > On-Demand versus Spot Instances</a>.
      * </p>
@@ -175,9 +180,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String fleetType;
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
@@ -185,16 +190,56 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String instanceRoleArn;
-
+    /**
+     * <p>
+     * Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for encrypting
+     * traffic between game clients and game servers running on GameLift. If this parameter is not specified, the
+     * default value, DISABLED, is used. This fleet setting cannot be changed once the fleet is created. Learn more at
+     * <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security"
+     * >Securing Client/Server Communication</a>.
+     * </p>
+     * <p>
+     * Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS global
+     * partition but not in all other partitions. When working in a partition that does not support this feature, a
+     * request for a new fleet with certificate generation results fails with a 4xx unsupported Region error.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private CertificateConfiguration certificateConfiguration;
+    /**
+     * <p>
+     * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS
+     * resources are useful for resource management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS
+     * General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the
+     * AWS General Reference for actual tagging limits.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     *        A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -203,10 +248,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * @return A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -215,11 +260,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     *        A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +275,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Human-readable description of a fleet.
+     * A human-readable description of a fleet.
      * </p>
      * 
      * @param description
-     *        Human-readable description of a fleet.
+     *        A human-readable description of a fleet.
      */
 
     public void setDescription(String description) {
@@ -243,10 +288,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Human-readable description of a fleet.
+     * A human-readable description of a fleet.
      * </p>
      * 
-     * @return Human-readable description of a fleet.
+     * @return A human-readable description of a fleet.
      */
 
     public String getDescription() {
@@ -255,11 +300,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Human-readable description of a fleet.
+     * A human-readable description of a fleet.
      * </p>
      * 
      * @param description
-     *        Human-readable description of a fleet.
+     *        A human-readable description of a fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,15 +315,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
-     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
-     * changed once the fleet is created.
+     * A unique identifier for a build to be deployed on the new fleet. You can use either the build ID or ARN value.
+     * The custom game server build must have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet is created.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
-     *        successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot
-     *        be changed once the fleet is created.
+     *        A unique identifier for a build to be deployed on the new fleet. You can use either the build ID or ARN
+     *        value. The custom game server build must have been successfully uploaded to Amazon GameLift and be in a
+     *        <code>READY</code> status. This fleet setting cannot be changed once the fleet is created.
      */
 
     public void setBuildId(String buildId) {
@@ -287,14 +332,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
-     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
-     * changed once the fleet is created.
+     * A unique identifier for a build to be deployed on the new fleet. You can use either the build ID or ARN value.
+     * The custom game server build must have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet is created.
      * </p>
      * 
-     * @return Unique identifier for a build to be deployed on the new fleet. The custom game server build must have
-     *         been successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting
-     *         cannot be changed once the fleet is created.
+     * @return A unique identifier for a build to be deployed on the new fleet. You can use either the build ID or ARN
+     *         value. The custom game server build must have been successfully uploaded to Amazon GameLift and be in a
+     *         <code>READY</code> status. This fleet setting cannot be changed once the fleet is created.
      */
 
     public String getBuildId() {
@@ -303,15 +348,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
-     * successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot be
-     * changed once the fleet is created.
+     * A unique identifier for a build to be deployed on the new fleet. You can use either the build ID or ARN value.
+     * The custom game server build must have been successfully uploaded to Amazon GameLift and be in a
+     * <code>READY</code> status. This fleet setting cannot be changed once the fleet is created.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build to be deployed on the new fleet. The custom game server build must have been
-     *        successfully uploaded to Amazon GameLift and be in a <code>READY</code> status. This fleet setting cannot
-     *        be changed once the fleet is created.
+     *        A unique identifier for a build to be deployed on the new fleet. You can use either the build ID or ARN
+     *        value. The custom game server build must have been successfully uploaded to Amazon GameLift and be in a
+     *        <code>READY</code> status. This fleet setting cannot be changed once the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,14 +367,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
-     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * A unique identifier for a Realtime script to be deployed on the new fleet. You can use either the script ID or
+     * ARN value. The Realtime script must have been successfully uploaded to Amazon GameLift. This fleet setting cannot
+     * be changed once the fleet is created.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have
-     *        been successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is
-     *        created.
+     *        A unique identifier for a Realtime script to be deployed on the new fleet. You can use either the script
+     *        ID or ARN value. The Realtime script must have been successfully uploaded to Amazon GameLift. This fleet
+     *        setting cannot be changed once the fleet is created.
      */
 
     public void setScriptId(String scriptId) {
@@ -338,13 +384,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
-     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * A unique identifier for a Realtime script to be deployed on the new fleet. You can use either the script ID or
+     * ARN value. The Realtime script must have been successfully uploaded to Amazon GameLift. This fleet setting cannot
+     * be changed once the fleet is created.
      * </p>
      * 
-     * @return Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have
-     *         been successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is
-     *         created.
+     * @return A unique identifier for a Realtime script to be deployed on the new fleet. You can use either the script
+     *         ID or ARN value. The Realtime script must have been successfully uploaded to Amazon GameLift. This fleet
+     *         setting cannot be changed once the fleet is created.
      */
 
     public String getScriptId() {
@@ -353,14 +400,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have been
-     * successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is created.
+     * A unique identifier for a Realtime script to be deployed on the new fleet. You can use either the script ID or
+     * ARN value. The Realtime script must have been successfully uploaded to Amazon GameLift. This fleet setting cannot
+     * be changed once the fleet is created.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script to be deployed on the new fleet. The Realtime script must have
-     *        been successfully uploaded to Amazon GameLift. This fleet setting cannot be changed once the fleet is
-     *        created.
+     *        A unique identifier for a Realtime script to be deployed on the new fleet. You can use either the script
+     *        ID or ARN value. The Realtime script must have been successfully uploaded to Amazon GameLift. This fleet
+     *        setting cannot be changed once the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,14 +420,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
-     * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * <code>RuntimeConfiguration</code> parameter. Requests that specify a server launch path and launch parameters
+     * instead of a runtime configuration will continue to work.
      * </p>
      * 
      * @param serverLaunchPath
      *        This parameter is no longer used. Instead, specify a server launch path using the
-     *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a run-time configuration will continue to work.)
+     *        <code>RuntimeConfiguration</code> parameter. Requests that specify a server launch path and launch
+     *        parameters instead of a runtime configuration will continue to work.
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -389,13 +437,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
-     * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * <code>RuntimeConfiguration</code> parameter. Requests that specify a server launch path and launch parameters
+     * instead of a runtime configuration will continue to work.
      * </p>
      * 
      * @return This parameter is no longer used. Instead, specify a server launch path using the
-     *         <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *         parameters instead of a run-time configuration will continue to work.)
+     *         <code>RuntimeConfiguration</code> parameter. Requests that specify a server launch path and launch
+     *         parameters instead of a runtime configuration will continue to work.
      */
 
     public String getServerLaunchPath() {
@@ -405,14 +453,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
-     * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * <code>RuntimeConfiguration</code> parameter. Requests that specify a server launch path and launch parameters
+     * instead of a runtime configuration will continue to work.
      * </p>
      * 
      * @param serverLaunchPath
      *        This parameter is no longer used. Instead, specify a server launch path using the
-     *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a run-time configuration will continue to work.)
+     *        <code>RuntimeConfiguration</code> parameter. Requests that specify a server launch path and launch
+     *        parameters instead of a runtime configuration will continue to work.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,13 +473,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * instead of a runtime configuration will continue to work.)
      * </p>
      * 
      * @param serverLaunchParameters
      *        This parameter is no longer used. Instead, specify server launch parameters in the
      *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a run-time configuration will continue to work.)
+     *        parameters instead of a runtime configuration will continue to work.)
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -442,12 +490,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * instead of a runtime configuration will continue to work.)
      * </p>
      * 
      * @return This parameter is no longer used. Instead, specify server launch parameters in the
      *         <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *         parameters instead of a run-time configuration will continue to work.)
+     *         parameters instead of a runtime configuration will continue to work.)
      */
 
     public String getServerLaunchParameters() {
@@ -458,13 +506,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a run-time configuration will continue to work.)
+     * instead of a runtime configuration will continue to work.)
      * </p>
      * 
      * @param serverLaunchParameters
      *        This parameter is no longer used. Instead, specify server launch parameters in the
      *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a run-time configuration will continue to work.)
+     *        parameters instead of a runtime configuration will continue to work.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,15 +625,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
+     * computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity.
+     * Amazon GameLift supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
+     *        The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines
+     *        the computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
@@ -597,14 +645,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
+     * computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity.
+     * Amazon GameLift supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
-     * @return Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *         computing resources of each instance in the fleet, including CPU, memory, storage, and networking
+     * @return The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines
+     *         the computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *         capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *         href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
@@ -616,15 +664,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
+     * computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity.
+     * Amazon GameLift supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
+     *        The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines
+     *        the computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -638,15 +686,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
+     * computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity.
+     * Amazon GameLift supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
+     *        The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines
+     *        the computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
@@ -658,15 +706,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
+     * computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity.
+     * Amazon GameLift supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
+     *        The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines
+     *        the computing resources of each instance in the fleet, including CPU, memory, storage, and networking
      *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -680,17 +728,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
-     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
-     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
-     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that are running on
+     * the fleet. For fleets using a custom game build, this parameter is required before game sessions running on the
+     * fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges
+     * for use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * 
-     * @return Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
-     *         on the fleet. For fleets using a custom game build, this parameter is required before game sessions
-     *         running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
-     *         sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
-     *         add more by updating the fleet.
+     * @return Range of IP addresses and port settings that permit inbound traffic to access game sessions that are
+     *         running on the fleet. For fleets using a custom game build, this parameter is required before game
+     *         sessions running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift
+     *         automatically sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple
+     *         permission settings or add more by updating the fleet.
      */
 
     public java.util.List<IpPermission> getEC2InboundPermissions() {
@@ -699,18 +747,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
-     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
-     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
-     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that are running on
+     * the fleet. For fleets using a custom game build, this parameter is required before game sessions running on the
+     * fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges
+     * for use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * 
      * @param eC2InboundPermissions
-     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
-     *        on the fleet. For fleets using a custom game build, this parameter is required before game sessions
-     *        running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
-     *        sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
-     *        add more by updating the fleet.
+     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that are
+     *        running on the fleet. For fleets using a custom game build, this parameter is required before game
+     *        sessions running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift
+     *        automatically sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission
+     *        settings or add more by updating the fleet.
      */
 
     public void setEC2InboundPermissions(java.util.Collection<IpPermission> eC2InboundPermissions) {
@@ -724,10 +772,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
-     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
-     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
-     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that are running on
+     * the fleet. For fleets using a custom game build, this parameter is required before game sessions running on the
+     * fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges
+     * for use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -736,11 +784,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param eC2InboundPermissions
-     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
-     *        on the fleet. For fleets using a custom game build, this parameter is required before game sessions
-     *        running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
-     *        sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
-     *        add more by updating the fleet.
+     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that are
+     *        running on the fleet. For fleets using a custom game build, this parameter is required before game
+     *        sessions running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift
+     *        automatically sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission
+     *        settings or add more by updating the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,18 +804,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that running on the
-     * fleet. For fleets using a custom game build, this parameter is required before game sessions running on the fleet
-     * can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges for
-     * use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
+     * Range of IP addresses and port settings that permit inbound traffic to access game sessions that are running on
+     * the fleet. For fleets using a custom game build, this parameter is required before game sessions running on the
+     * fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges
+     * for use by the Realtime servers. You can specify multiple permission settings or add more by updating the fleet.
      * </p>
      * 
      * @param eC2InboundPermissions
-     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that running
-     *        on the fleet. For fleets using a custom game build, this parameter is required before game sessions
-     *        running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift automatically
-     *        sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission settings or
-     *        add more by updating the fleet.
+     *        Range of IP addresses and port settings that permit inbound traffic to access game sessions that are
+     *        running on the fleet. For fleets using a custom game build, this parameter is required before game
+     *        sessions running on the fleet can accept connections. For Realtime Servers fleets, Amazon GameLift
+     *        automatically sets TCP and UDP ranges for use by the Realtime servers. You can specify multiple permission
+     *        settings or add more by updating the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -778,7 +826,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
+     * A game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
      * in this fleet default to no protection. You can change a fleet's protection policy using
      * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
      * also set protection for individual instances using <a>UpdateGameSession</a>.
@@ -786,31 +834,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
-     * a scale-down event.
+     * <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
      * </p>
      * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
+     *        A game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
      *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
      *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -823,7 +871,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
+     * A game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
      * in this fleet default to no protection. You can change a fleet's protection policy using
      * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
      * also set protection for individual instances using <a>UpdateGameSession</a>.
@@ -831,30 +879,30 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
-     * a scale-down event.
+     * <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
+     * @return A game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *         instances in this fleet default to no protection. You can change a fleet's protection policy using
      *         <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
      *         You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *         <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *         during a scale-down event.
      *         </p>
      *         </li>
@@ -867,7 +915,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
+     * A game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
      * in this fleet default to no protection. You can change a fleet's protection policy using
      * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
      * also set protection for individual instances using <a>UpdateGameSession</a>.
@@ -875,31 +923,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
-     * a scale-down event.
+     * <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
      * </p>
      * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
+     *        A game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
      *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
      *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -914,7 +962,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
+     * A game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
      * in this fleet default to no protection. You can change a fleet's protection policy using
      * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
      * also set protection for individual instances using <a>UpdateGameSession</a>.
@@ -922,31 +970,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
-     * a scale-down event.
+     * <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
      * </p>
      * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
+     *        A game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
      *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
      *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -959,7 +1007,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
+     * A game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
      * in this fleet default to no protection. You can change a fleet's protection policy using
      * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
      * also set protection for individual instances using <a>UpdateGameSession</a>.
@@ -967,31 +1015,31 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
-     * a scale-down event.
+     * <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
+     * scale-down event.
      * </p>
      * </li>
      * </ul>
      * 
      * @param newGameSessionProtectionPolicy
-     *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
+     *        A game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
      *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
      *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> - The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> - If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -1007,19 +1055,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
-     * processes to run on an instance and includes the following configuration settings: the server executable or
-     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
-     * CreateFleet request must include a run-time configuration with at least one server process configuration.
+     * game build executable or a Realtime script. The runtime configuration defines the server executables or launch
+     * script file, launch parameters, and the number of processes to run concurrently on each instance. When creating a
+     * fleet, the runtime configuration must have at least one server process configuration; otherwise the request fails
+     * with an invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>, although requests that contain values for these parameters instead of a
+     * runtime configuration will continue to work.) This parameter is required unless the parameters
+     * <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code> are defined. Runtime configuration replaced
+     * these parameters, but fleets that use them will continue to work.
      * </p>
      * 
      * @param runtimeConfiguration
      *        Instructions for launching server processes on each instance in the fleet. Server processes run either a
-     *        custom game build executable or a Realtime Servers script. The run-time configuration lists the types of
-     *        server processes to run on an instance and includes the following configuration settings: the server
-     *        executable or launch script file, launch parameters, and the number of processes to run concurrently on
-     *        each instance. A CreateFleet request must include a run-time configuration with at least one server
-     *        process configuration.
+     *        custom game build executable or a Realtime script. The runtime configuration defines the server
+     *        executables or launch script file, launch parameters, and the number of processes to run concurrently on
+     *        each instance. When creating a fleet, the runtime configuration must have at least one server process
+     *        configuration; otherwise the request fails with an invalid request exception. (This parameter replaces the
+     *        parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, although requests that
+     *        contain values for these parameters instead of a runtime configuration will continue to work.) This
+     *        parameter is required unless the parameters <code>ServerLaunchPath</code> and
+     *        <code>ServerLaunchParameters</code> are defined. Runtime configuration replaced these parameters, but
+     *        fleets that use them will continue to work.
      */
 
     public void setRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
@@ -1029,18 +1085,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
-     * processes to run on an instance and includes the following configuration settings: the server executable or
-     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
-     * CreateFleet request must include a run-time configuration with at least one server process configuration.
+     * game build executable or a Realtime script. The runtime configuration defines the server executables or launch
+     * script file, launch parameters, and the number of processes to run concurrently on each instance. When creating a
+     * fleet, the runtime configuration must have at least one server process configuration; otherwise the request fails
+     * with an invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>, although requests that contain values for these parameters instead of a
+     * runtime configuration will continue to work.) This parameter is required unless the parameters
+     * <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code> are defined. Runtime configuration replaced
+     * these parameters, but fleets that use them will continue to work.
      * </p>
      * 
      * @return Instructions for launching server processes on each instance in the fleet. Server processes run either a
-     *         custom game build executable or a Realtime Servers script. The run-time configuration lists the types of
-     *         server processes to run on an instance and includes the following configuration settings: the server
-     *         executable or launch script file, launch parameters, and the number of processes to run concurrently on
-     *         each instance. A CreateFleet request must include a run-time configuration with at least one server
-     *         process configuration.
+     *         custom game build executable or a Realtime script. The runtime configuration defines the server
+     *         executables or launch script file, launch parameters, and the number of processes to run concurrently on
+     *         each instance. When creating a fleet, the runtime configuration must have at least one server process
+     *         configuration; otherwise the request fails with an invalid request exception. (This parameter replaces
+     *         the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, although requests
+     *         that contain values for these parameters instead of a runtime configuration will continue to work.) This
+     *         parameter is required unless the parameters <code>ServerLaunchPath</code> and
+     *         <code>ServerLaunchParameters</code> are defined. Runtime configuration replaced these parameters, but
+     *         fleets that use them will continue to work.
      */
 
     public RuntimeConfiguration getRuntimeConfiguration() {
@@ -1050,19 +1114,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The run-time configuration lists the types of server
-     * processes to run on an instance and includes the following configuration settings: the server executable or
-     * launch script file, launch parameters, and the number of processes to run concurrently on each instance. A
-     * CreateFleet request must include a run-time configuration with at least one server process configuration.
+     * game build executable or a Realtime script. The runtime configuration defines the server executables or launch
+     * script file, launch parameters, and the number of processes to run concurrently on each instance. When creating a
+     * fleet, the runtime configuration must have at least one server process configuration; otherwise the request fails
+     * with an invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
+     * <code>ServerLaunchParameters</code>, although requests that contain values for these parameters instead of a
+     * runtime configuration will continue to work.) This parameter is required unless the parameters
+     * <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code> are defined. Runtime configuration replaced
+     * these parameters, but fleets that use them will continue to work.
      * </p>
      * 
      * @param runtimeConfiguration
      *        Instructions for launching server processes on each instance in the fleet. Server processes run either a
-     *        custom game build executable or a Realtime Servers script. The run-time configuration lists the types of
-     *        server processes to run on an instance and includes the following configuration settings: the server
-     *        executable or launch script file, launch parameters, and the number of processes to run concurrently on
-     *        each instance. A CreateFleet request must include a run-time configuration with at least one server
-     *        process configuration.
+     *        custom game build executable or a Realtime script. The runtime configuration defines the server
+     *        executables or launch script file, launch parameters, and the number of processes to run concurrently on
+     *        each instance. When creating a fleet, the runtime configuration must have at least one server process
+     *        configuration; otherwise the request fails with an invalid request exception. (This parameter replaces the
+     *        parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, although requests that
+     *        contain values for these parameters instead of a runtime configuration will continue to work.) This
+     *        parameter is required unless the parameters <code>ServerLaunchPath</code> and
+     *        <code>ServerLaunchParameters</code> are defined. Runtime configuration replaced these parameters, but
+     *        fleets that use them will continue to work.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1073,12 +1145,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * A policy that limits the number of game sessions an individual player can create over a span of time for this
      * fleet.
      * </p>
      * 
      * @param resourceCreationLimitPolicy
-     *        Policy that limits the number of game sessions an individual player can create over a span of time for
+     *        A policy that limits the number of game sessions an individual player can create over a span of time for
      *        this fleet.
      */
 
@@ -1088,11 +1160,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * A policy that limits the number of game sessions an individual player can create over a span of time for this
      * fleet.
      * </p>
      * 
-     * @return Policy that limits the number of game sessions an individual player can create over a span of time for
+     * @return A policy that limits the number of game sessions an individual player can create over a span of time for
      *         this fleet.
      */
 
@@ -1102,12 +1174,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Policy that limits the number of game sessions an individual player can create over a span of time for this
+     * A policy that limits the number of game sessions an individual player can create over a span of time for this
      * fleet.
      * </p>
      * 
      * @param resourceCreationLimitPolicy
-     *        Policy that limits the number of game sessions an individual player can create over a span of time for
+     *        A policy that limits the number of game sessions an individual player can create over a span of time for
      *        this fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1119,13 +1191,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
      * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      * 
-     * @return Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
-     *         all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     * @return The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics
+     *         for all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
      *         metric group. A fleet can only be included in one metric group at a time.
      */
 
@@ -1135,14 +1207,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
      * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
-     *        all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     *        The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics
+     *        for all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
      *        metric group. A fleet can only be included in one metric group at a time.
      */
 
@@ -1157,7 +1229,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
      * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
@@ -1168,8 +1240,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param metricGroups
-     *        Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
-     *        all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     *        The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics
+     *        for all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
      *        metric group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1186,14 +1258,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
      * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
-     *        all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     *        The name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics
+     *        for all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
      *        metric group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1205,13 +1277,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
-     * find your Account ID in the AWS Management Console under account settings.
+     * A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You
+     * can find your account ID in the AWS Management Console under account settings.
      * </p>
      * 
      * @param peerVpcAwsAccountId
-     *        Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with.
-     *        You can find your Account ID in the AWS Management Console under account settings.
+     *        A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet
+     *        with. You can find your account ID in the AWS Management Console under account settings.
      */
 
     public void setPeerVpcAwsAccountId(String peerVpcAwsAccountId) {
@@ -1220,12 +1292,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
-     * find your Account ID in the AWS Management Console under account settings.
+     * A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You
+     * can find your account ID in the AWS Management Console under account settings.
      * </p>
      * 
-     * @return Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with.
-     *         You can find your Account ID in the AWS Management Console under account settings.
+     * @return A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet
+     *         with. You can find your account ID in the AWS Management Console under account settings.
      */
 
     public String getPeerVpcAwsAccountId() {
@@ -1234,13 +1306,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
-     * find your Account ID in the AWS Management Console under account settings.
+     * A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You
+     * can find your account ID in the AWS Management Console under account settings.
      * </p>
      * 
      * @param peerVpcAwsAccountId
-     *        Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with.
-     *        You can find your Account ID in the AWS Management Console under account settings.
+     *        A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet
+     *        with. You can find your account ID in the AWS Management Console under account settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1251,16 +1323,16 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
-     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
-     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
-     * Amazon GameLift Fleets</a>.
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
+     * GameLift Fleets</a>.
      * </p>
      * 
      * @param peerVpcId
-     *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *        in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     *        A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
+     *        in the same Region as your fleet. To look up a VPC ID, use the <a
      *        href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
      *        about VPC peering in <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
@@ -1273,15 +1345,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
-     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
-     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
-     * Amazon GameLift Fleets</a>.
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
+     * GameLift Fleets</a>.
      * </p>
      * 
-     * @return Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *         in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     * @return A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must
+     *         be in the same Region as your fleet. To look up a VPC ID, use the <a
      *         href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
      *         about VPC peering in <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
@@ -1294,16 +1366,16 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
-     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
-     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
-     * Amazon GameLift Fleets</a>.
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
+     * GameLift Fleets</a>.
      * </p>
      * 
      * @param peerVpcId
-     *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *        in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     *        A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
+     *        in the same Region as your fleet. To look up a VPC ID, use the <a
      *        href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
      *        about VPC peering in <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
@@ -1318,17 +1390,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
-     * selected for this fleet. Learn more about <a href=
+     * Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     * <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on the
+     * instance type selected for this fleet. Learn more about <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
-     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
-     *        type selected for this fleet. Learn more about <a href=
+     *        Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     *        <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on
+     *        the instance type selected for this fleet. Learn more about <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      *        > On-Demand versus Spot Instances</a>.
      * @see FleetType
@@ -1340,16 +1412,16 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
-     * selected for this fleet. Learn more about <a href=
+     * Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     * <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on the
+     * instance type selected for this fleet. Learn more about <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
-     * @return Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *         ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
-     *         type selected for this fleet. Learn more about <a href=
+     * @return Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     *         <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on
+     *         the instance type selected for this fleet. Learn more about <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      *         > On-Demand versus Spot Instances</a>.
      * @see FleetType
@@ -1361,17 +1433,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
-     * selected for this fleet. Learn more about <a href=
+     * Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     * <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on the
+     * instance type selected for this fleet. Learn more about <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
-     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
-     *        type selected for this fleet. Learn more about <a href=
+     *        Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     *        <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on
+     *        the instance type selected for this fleet. Learn more about <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      *        > On-Demand versus Spot Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1385,17 +1457,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
-     * selected for this fleet. Learn more about <a href=
+     * Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     * <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on the
+     * instance type selected for this fleet. Learn more about <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
-     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
-     *        type selected for this fleet. Learn more about <a href=
+     *        Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     *        <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on
+     *        the instance type selected for this fleet. Learn more about <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      *        > On-Demand versus Spot Instances</a>.
      * @see FleetType
@@ -1407,17 +1479,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     * ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance type
-     * selected for this fleet. Learn more about <a href=
+     * Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     * <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on the
+     * instance type selected for this fleet. Learn more about <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      * > On-Demand versus Spot Instances</a>.
      * </p>
      * 
      * @param fleetType
-     *        Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
-     *        ON_DEMAND. Both categories of instances use identical hardware and configurations based on the instance
-     *        type selected for this fleet. Learn more about <a href=
+     *        Indicates whether to use On-Demand instances or Spot instances for this fleet. If empty, the default is
+     *        <code>ON_DEMAND</code>. Both categories of instances use identical hardware and configurations based on
+     *        the instance type selected for this fleet. Learn more about <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
      *        > On-Demand versus Spot Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1431,9 +1503,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
@@ -1441,11 +1513,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
-     *        set, any application that runs on an instance in this fleet can assume the role, including install
-     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
-     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
-     *        about using on-box credentials for your game servers at <a
+     *        A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
+     *        ARN set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
+     *        the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
+     *        more about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
      */
@@ -1456,18 +1528,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
-     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
-     *         set, any application that runs on an instance in this fleet can assume the role, including install
-     *         scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using
+     * @return A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
+     *         ARN set, any application that runs on an instance in this fleet can assume the role, including install
+     *         scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
      *         the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
      *         more about using on-box credentials for your game servers at <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
@@ -1480,9 +1552,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
      * any application that runs on an instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * processes, and daemons (background processes). Create a role or look up a role's ARN from the <a
      * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
      * using on-box credentials for your game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
@@ -1490,11 +1562,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
-     *        set, any application that runs on an instance in this fleet can assume the role, including install
-     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
-     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
-     *        about using on-box credentials for your game servers at <a
+     *        A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role
+     *        ARN set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN from
+     *        the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
+     *        more about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1506,7 +1578,62 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for encrypting
+     * traffic between game clients and game servers running on GameLift. If this parameter is not specified, the
+     * default value, DISABLED, is used. This fleet setting cannot be changed once the fleet is created. Learn more at
+     * <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security"
+     * >Securing Client/Server Communication</a>.
+     * </p>
+     * <p>
+     * Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS global
+     * partition but not in all other partitions. When working in a partition that does not support this feature, a
+     * request for a new fleet with certificate generation results fails with a 4xx unsupported Region error.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param certificateConfiguration
+     *        Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for
+     *        encrypting traffic between game clients and game servers running on GameLift. If this parameter is not
+     *        specified, the default value, DISABLED, is used. This fleet setting cannot be changed once the fleet is
+     *        created. Learn more at <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security"
+     *        >Securing Client/Server Communication</a>. </p>
+     *        <p>
+     *        Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS
+     *        global partition but not in all other partitions. When working in a partition that does not support this
+     *        feature, a request for a new fleet with certificate generation results fails with a 4xx unsupported Region
+     *        error.
+     *        </p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
      */
 
     public void setCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
@@ -1514,7 +1641,61 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for encrypting
+     * traffic between game clients and game servers running on GameLift. If this parameter is not specified, the
+     * default value, DISABLED, is used. This fleet setting cannot be changed once the fleet is created. Learn more at
+     * <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security"
+     * >Securing Client/Server Communication</a>.
+     * </p>
+     * <p>
+     * Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS global
+     * partition but not in all other partitions. When working in a partition that does not support this feature, a
+     * request for a new fleet with certificate generation results fails with a 4xx unsupported Region error.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for
+     *         encrypting traffic between game clients and game servers running on GameLift. If this parameter is not
+     *         specified, the default value, DISABLED, is used. This fleet setting cannot be changed once the fleet is
+     *         created. Learn more at <a href=
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security"
+     *         >Securing Client/Server Communication</a>. </p>
+     *         <p>
+     *         Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS
+     *         global partition but not in all other partitions. When working in a partition that does not support this
+     *         feature, a request for a new fleet with certificate generation results fails with a 4xx unsupported
+     *         Region error.
+     *         </p>
+     *         <p>
+     *         Valid values include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     *         </p>
+     *         </li>
      */
 
     public CertificateConfiguration getCertificateConfiguration() {
@@ -1522,12 +1703,177 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for encrypting
+     * traffic between game clients and game servers running on GameLift. If this parameter is not specified, the
+     * default value, DISABLED, is used. This fleet setting cannot be changed once the fleet is created. Learn more at
+     * <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security"
+     * >Securing Client/Server Communication</a>.
+     * </p>
+     * <p>
+     * Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS global
+     * partition but not in all other partitions. When working in a partition that does not support this feature, a
+     * request for a new fleet with certificate generation results fails with a 4xx unsupported Region error.
+     * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param certificateConfiguration
+     *        Indicates whether to generate a TLS/SSL certificate for the new fleet. TLS certificates are used for
+     *        encrypting traffic between game clients and game servers running on GameLift. If this parameter is not
+     *        specified, the default value, DISABLED, is used. This fleet setting cannot be changed once the fleet is
+     *        created. Learn more at <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security"
+     *        >Securing Client/Server Communication</a>. </p>
+     *        <p>
+     *        Note: This feature requires the AWS Certificate Manager (ACM) service, which is available in the AWS
+     *        global partition but not in all other partitions. When working in a partition that does not support this
+     *        feature, a request for a new fleet with certificate generation results fails with a 4xx unsupported Region
+     *        error.
+     *        </p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFleetRequest withCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
         setCertificateConfiguration(certificateConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS
+     * resources are useful for resource management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS
+     * General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the
+     * AWS General Reference for actual tagging limits.
+     * </p>
+     * 
+     * @return A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
+     *         AWS resources are useful for resource management, access management and cost allocation. For more
+     *         information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     *         Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *         <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *         The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS
+     * resources are useful for resource management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS
+     * General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the
+     * AWS General Reference for actual tagging limits.
+     * </p>
+     * 
+     * @param tags
+     *        A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
+     *        AWS resources are useful for resource management, access management and cost allocation. For more
+     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     *        Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS
+     * resources are useful for resource management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS
+     * General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the
+     * AWS General Reference for actual tagging limits.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
+     *        AWS resources are useful for resource management, access management and cost allocation. For more
+     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     *        Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS
+     * resources are useful for resource management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS
+     * General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the
+     * AWS General Reference for actual tagging limits.
+     * </p>
+     * 
+     * @param tags
+     *        A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
+     *        AWS resources are useful for resource management, access management and cost allocation. For more
+     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     *        Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -1578,7 +1924,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getInstanceRoleArn() != null)
             sb.append("InstanceRoleArn: ").append(getInstanceRoleArn()).append(",");
         if (getCertificateConfiguration() != null)
-            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration());
+            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1666,6 +2014,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getCertificateConfiguration() != null && other.getCertificateConfiguration().equals(this.getCertificateConfiguration()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1692,6 +2044,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getInstanceRoleArn() == null) ? 0 : getInstanceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateConfiguration() == null) ? 0 : getCertificateConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

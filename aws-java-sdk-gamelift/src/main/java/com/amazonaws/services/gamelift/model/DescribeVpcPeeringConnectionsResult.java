@@ -29,17 +29,17 @@ public class DescribeVpcPeeringConnectionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Collection of VPC peering connection records that match the request.
+     * A collection of VPC peering connection records that match the request.
      * </p>
      */
     private java.util.List<VpcPeeringConnection> vpcPeeringConnections;
 
     /**
      * <p>
-     * Collection of VPC peering connection records that match the request.
+     * A collection of VPC peering connection records that match the request.
      * </p>
      * 
-     * @return Collection of VPC peering connection records that match the request.
+     * @return A collection of VPC peering connection records that match the request.
      */
 
     public java.util.List<VpcPeeringConnection> getVpcPeeringConnections() {
@@ -48,11 +48,11 @@ public class DescribeVpcPeeringConnectionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Collection of VPC peering connection records that match the request.
+     * A collection of VPC peering connection records that match the request.
      * </p>
      * 
      * @param vpcPeeringConnections
-     *        Collection of VPC peering connection records that match the request.
+     *        A collection of VPC peering connection records that match the request.
      */
 
     public void setVpcPeeringConnections(java.util.Collection<VpcPeeringConnection> vpcPeeringConnections) {
@@ -66,7 +66,7 @@ public class DescribeVpcPeeringConnectionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Collection of VPC peering connection records that match the request.
+     * A collection of VPC peering connection records that match the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -75,7 +75,7 @@ public class DescribeVpcPeeringConnectionsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param vpcPeeringConnections
-     *        Collection of VPC peering connection records that match the request.
+     *        A collection of VPC peering connection records that match the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +91,11 @@ public class DescribeVpcPeeringConnectionsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Collection of VPC peering connection records that match the request.
+     * A collection of VPC peering connection records that match the request.
      * </p>
      * 
      * @param vpcPeeringConnections
-     *        Collection of VPC peering connection records that match the request.
+     *        A collection of VPC peering connection records that match the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

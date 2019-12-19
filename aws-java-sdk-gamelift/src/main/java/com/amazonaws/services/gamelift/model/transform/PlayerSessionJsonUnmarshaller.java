@@ -64,6 +64,10 @@ public class PlayerSessionJsonUnmarshaller implements Unmarshaller<PlayerSession
                     context.nextToken();
                     playerSession.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    playerSession.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     playerSession.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

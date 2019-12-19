@@ -60,32 +60,41 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a Realtime script
+     * A unique identifier for a Realtime script
      * </p>
      */
     private String scriptId;
     /**
      * <p>
-     * Descriptive label that is associated with a script. Script names do not need to be unique.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
+     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * </p>
+     */
+    private String scriptArn;
+    /**
+     * <p>
+     * A descriptive label that is associated with a script. Script names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique.
+     * The version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * File size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this
-     * value remains at "0".
+     * The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location,
+     * this value remains at "0".
      * </p>
      */
     private Long sizeOnDisk;
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      */
@@ -95,11 +104,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a Realtime script
+     * A unique identifier for a Realtime script
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script
+     *        A unique identifier for a Realtime script
      */
 
     public void setScriptId(String scriptId) {
@@ -108,10 +117,10 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a Realtime script
+     * A unique identifier for a Realtime script
      * </p>
      * 
-     * @return Unique identifier for a Realtime script
+     * @return A unique identifier for a Realtime script
      */
 
     public String getScriptId() {
@@ -120,11 +129,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a Realtime script
+     * A unique identifier for a Realtime script
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script
+     *        A unique identifier for a Realtime script
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +144,69 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a script. Script names do not need to be unique.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
+     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * </p>
+     * 
+     * @param scriptArn
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
+     *        a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
+     */
+
+    public void setScriptArn(String scriptArn) {
+        this.scriptArn = scriptArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
+     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * </p>
+     * 
+     * @return Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *         assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
+     *         a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
+     */
+
+    public String getScriptArn() {
+        return this.scriptArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
+     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * </p>
+     * 
+     * @param scriptArn
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
+     *        a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Script withScriptArn(String scriptArn) {
+        setScriptArn(scriptArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A descriptive label that is associated with a script. Script names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a script. Script names do not need to be unique.
+     *        A descriptive label that is associated with a script. Script names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -148,10 +215,10 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a script. Script names do not need to be unique.
+     * A descriptive label that is associated with a script. Script names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a script. Script names do not need to be unique.
+     * @return A descriptive label that is associated with a script. Script names do not need to be unique.
      */
 
     public String getName() {
@@ -160,11 +227,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a script. Script names do not need to be unique.
+     * A descriptive label that is associated with a script. Script names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a script. Script names do not need to be unique.
+     *        A descriptive label that is associated with a script. Script names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +242,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique.
+     * The version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version that is associated with a build or script. Version strings do not need to be unique.
+     *        The version that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public void setVersion(String version) {
@@ -188,10 +255,10 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique.
+     * The version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
-     * @return Version that is associated with a build or script. Version strings do not need to be unique.
+     * @return The version that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public String getVersion() {
@@ -200,11 +267,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique.
+     * The version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version that is associated with a build or script. Version strings do not need to be unique.
+     *        The version that is associated with a build or script. Version strings do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,12 +282,12 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * File size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this
-     * value remains at "0".
+     * The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location,
+     * this value remains at "0".
      * </p>
      * 
      * @param sizeOnDisk
-     *        File size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3
+     *        The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3
      *        location, this value remains at "0".
      */
 
@@ -230,11 +297,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * File size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this
-     * value remains at "0".
+     * The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location,
+     * this value remains at "0".
      * </p>
      * 
-     * @return File size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3
+     * @return The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3
      *         location, this value remains at "0".
      */
 
@@ -244,12 +311,12 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * File size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this
-     * value remains at "0".
+     * The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location,
+     * this value remains at "0".
      * </p>
      * 
      * @param sizeOnDisk
-     *        File size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3
+     *        The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3
      *        location, this value remains at "0".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -261,13 +328,13 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. The format is a number expressed in Unix time
+     *        as milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -276,12 +343,12 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (for example "1469498468.057").
+     * @return A time stamp indicating when this data object was created. The format is a number expressed in Unix time
+     *         as milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -290,13 +357,13 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. The format is a number expressed in Unix time
+     *        as milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,6 +412,8 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getScriptId() != null)
             sb.append("ScriptId: ").append(getScriptId()).append(",");
+        if (getScriptArn() != null)
+            sb.append("ScriptArn: ").append(getScriptArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
@@ -372,6 +441,10 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
         if (other.getScriptId() == null ^ this.getScriptId() == null)
             return false;
         if (other.getScriptId() != null && other.getScriptId().equals(this.getScriptId()) == false)
+            return false;
+        if (other.getScriptArn() == null ^ this.getScriptArn() == null)
+            return false;
+        if (other.getScriptArn() != null && other.getScriptArn().equals(this.getScriptArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -402,6 +475,7 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getScriptId() == null) ? 0 : getScriptId().hashCode());
+        hashCode = prime * hashCode + ((getScriptArn() == null) ? 0 : getScriptArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getSizeOnDisk() == null) ? 0 : getSizeOnDisk().hashCode());

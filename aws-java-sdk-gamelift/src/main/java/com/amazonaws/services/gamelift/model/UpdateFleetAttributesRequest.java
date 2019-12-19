@@ -30,13 +30,13 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet to update attribute metadata for.
+     * A unique identifier for a fleet to update attribute metadata for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
@@ -83,11 +83,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet to update attribute metadata for.
+     * A unique identifier for a fleet to update attribute metadata for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update attribute metadata for.
+     *        A unique identifier for a fleet to update attribute metadata for. You can use either the fleet ID or ARN
+     *        value.
      */
 
     public void setFleetId(String fleetId) {
@@ -96,10 +97,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet to update attribute metadata for.
+     * A unique identifier for a fleet to update attribute metadata for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to update attribute metadata for.
+     * @return A unique identifier for a fleet to update attribute metadata for. You can use either the fleet ID or ARN
+     *         value.
      */
 
     public String getFleetId() {
@@ -108,11 +110,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet to update attribute metadata for.
+     * A unique identifier for a fleet to update attribute metadata for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update attribute metadata for.
+     *        A unique identifier for a fleet to update attribute metadata for. You can use either the fleet ID or ARN
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,11 +126,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     *        A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -136,10 +139,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * @return A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -148,11 +151,11 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     * A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
+     *        A descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

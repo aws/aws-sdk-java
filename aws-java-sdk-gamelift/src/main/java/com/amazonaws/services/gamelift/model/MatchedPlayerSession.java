@@ -35,24 +35,24 @@ public class MatchedPlayerSession implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      */
     private String playerId;
     /**
      * <p>
-     * Unique identifier for a player session
+     * A unique identifier for a player session
      * </p>
      */
     private String playerSessionId;
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player
+     *        A unique identifier for a player
      */
 
     public void setPlayerId(String playerId) {
@@ -61,10 +61,10 @@ public class MatchedPlayerSession implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      * 
-     * @return Unique identifier for a player
+     * @return A unique identifier for a player
      */
 
     public String getPlayerId() {
@@ -73,11 +73,11 @@ public class MatchedPlayerSession implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player
+     *        A unique identifier for a player
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class MatchedPlayerSession implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a player session
+     * A unique identifier for a player session
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session
+     *        A unique identifier for a player session
      */
 
     public void setPlayerSessionId(String playerSessionId) {
@@ -101,10 +101,10 @@ public class MatchedPlayerSession implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a player session
+     * A unique identifier for a player session
      * </p>
      * 
-     * @return Unique identifier for a player session
+     * @return A unique identifier for a player session
      */
 
     public String getPlayerSessionId() {
@@ -113,11 +113,11 @@ public class MatchedPlayerSession implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Unique identifier for a player session
+     * A unique identifier for a player session
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session
+     *        A unique identifier for a player session
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

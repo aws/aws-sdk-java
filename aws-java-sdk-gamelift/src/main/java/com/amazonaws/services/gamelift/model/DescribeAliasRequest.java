@@ -30,18 +30,21 @@ public class DescribeAliasRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to retrieve.
+     * The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN
+     * value.
      * </p>
      */
     private String aliasId;
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to retrieve.
+     * The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN
+     * value.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Specify the alias you want to retrieve.
+     *        The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or
+     *        ARN value.
      */
 
     public void setAliasId(String aliasId) {
@@ -50,10 +53,12 @@ public class DescribeAliasRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to retrieve.
+     * The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN
+     * value.
      * </p>
      * 
-     * @return Unique identifier for a fleet alias. Specify the alias you want to retrieve.
+     * @return The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or
+     *         ARN value.
      */
 
     public String getAliasId() {
@@ -62,11 +67,13 @@ public class DescribeAliasRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Specify the alias you want to retrieve.
+     * The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN
+     * value.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Specify the alias you want to retrieve.
+     *        The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or
+     *        ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

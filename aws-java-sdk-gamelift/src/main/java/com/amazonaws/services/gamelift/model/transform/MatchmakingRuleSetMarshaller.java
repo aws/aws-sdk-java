@@ -29,6 +29,8 @@ public class MatchmakingRuleSetMarshaller {
 
     private static final MarshallingInfo<String> RULESETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleSetName").build();
+    private static final MarshallingInfo<String> RULESETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleSetArn").build();
     private static final MarshallingInfo<String> RULESETBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleSetBody").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -51,6 +53,7 @@ public class MatchmakingRuleSetMarshaller {
 
         try {
             protocolMarshaller.marshall(matchmakingRuleSet.getRuleSetName(), RULESETNAME_BINDING);
+            protocolMarshaller.marshall(matchmakingRuleSet.getRuleSetArn(), RULESETARN_BINDING);
             protocolMarshaller.marshall(matchmakingRuleSet.getRuleSetBody(), RULESETBODY_BINDING);
             protocolMarshaller.marshall(matchmakingRuleSet.getCreationTime(), CREATIONTIME_BINDING);
         } catch (Exception e) {

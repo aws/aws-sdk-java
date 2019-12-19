@@ -28,18 +28,18 @@ public class UpdateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object that contains the updated game session metadata.
+     * The updated game session metadata.
      * </p>
      */
     private GameSession gameSession;
 
     /**
      * <p>
-     * Object that contains the updated game session metadata.
+     * The updated game session metadata.
      * </p>
      * 
      * @param gameSession
-     *        Object that contains the updated game session metadata.
+     *        The updated game session metadata.
      */
 
     public void setGameSession(GameSession gameSession) {
@@ -48,10 +48,10 @@ public class UpdateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object that contains the updated game session metadata.
+     * The updated game session metadata.
      * </p>
      * 
-     * @return Object that contains the updated game session metadata.
+     * @return The updated game session metadata.
      */
 
     public GameSession getGameSession() {
@@ -60,11 +60,11 @@ public class UpdateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object that contains the updated game session metadata.
+     * The updated game session metadata.
      * </p>
      * 
      * @param gameSession
-     *        Object that contains the updated game session metadata.
+     *        The updated game session metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

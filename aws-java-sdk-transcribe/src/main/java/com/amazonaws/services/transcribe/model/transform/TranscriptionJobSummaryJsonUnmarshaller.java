@@ -56,6 +56,10 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
                     context.nextToken();
                     transcriptionJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("StartTime", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("CompletionTime", targetDepth)) {
                     context.nextToken();
                     transcriptionJobSummary.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

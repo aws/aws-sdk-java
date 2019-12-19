@@ -30,21 +30,22 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve instance information for.
+     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in
-     * the fleet.
+     * A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances
+     * in the fleet.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      */
     private Integer limit;
@@ -58,11 +59,13 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve instance information for.
+     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve instance information for.
+     *        A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or
+     *        ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -71,10 +74,12 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve instance information for.
+     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to retrieve instance information for.
+     * @return A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or
+     *         ARN value.
      */
 
     public String getFleetId() {
@@ -83,11 +88,13 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve instance information for.
+     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve instance information for.
+     *        A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or
+     *        ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,12 +105,12 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in
-     * the fleet.
+     * A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances
+     * in the fleet.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all
+     *        A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all
      *        instances in the fleet.
      */
 
@@ -113,11 +120,11 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in
-     * the fleet.
+     * A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances
+     * in the fleet.
      * </p>
      * 
-     * @return Unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all
+     * @return A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all
      *         instances in the fleet.
      */
 
@@ -127,12 +134,12 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in
-     * the fleet.
+     * A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances
+     * in the fleet.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all
+     *        A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all
      *        instances in the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -144,13 +151,13 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -159,12 +166,12 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -173,13 +180,13 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,18 +30,19 @@ public class DescribeFleetPortSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve port settings for.
+     * A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve port settings for.
+     * A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve port settings for.
+     *        A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN
+     *        value.
      */
 
     public void setFleetId(String fleetId) {
@@ -50,10 +51,11 @@ public class DescribeFleetPortSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve port settings for.
+     * A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to retrieve port settings for.
+     * @return A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN
+     *         value.
      */
 
     public String getFleetId() {
@@ -62,11 +64,12 @@ public class DescribeFleetPortSettingsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier for a fleet to retrieve port settings for.
+     * A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to retrieve port settings for.
+     *        A unique identifier for a fleet to retrieve port settings for. You can use either the fleet ID or ARN
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

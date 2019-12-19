@@ -89,6 +89,15 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String responseCard;
+    /**
+     * <p>
+     * Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot,
+     * the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name",
+     * obfuscated values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * </p>
+     */
+    private String obfuscationSetting;
 
     /**
      * <p>
@@ -557,6 +566,109 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot,
+     * the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name",
+     * obfuscated values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * </p>
+     * 
+     * @param obfuscationSetting
+     *        Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a
+     *        slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is
+     *        "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * @see ObfuscationSetting
+     */
+
+    public void setObfuscationSetting(String obfuscationSetting) {
+        this.obfuscationSetting = obfuscationSetting;
+    }
+
+    /**
+     * <p>
+     * Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot,
+     * the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name",
+     * obfuscated values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * </p>
+     * 
+     * @return Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a
+     *         slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is
+     *         "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * @see ObfuscationSetting
+     */
+
+    public String getObfuscationSetting() {
+        return this.obfuscationSetting;
+    }
+
+    /**
+     * <p>
+     * Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot,
+     * the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name",
+     * obfuscated values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * </p>
+     * 
+     * @param obfuscationSetting
+     *        Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a
+     *        slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is
+     *        "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ObfuscationSetting
+     */
+
+    public Slot withObfuscationSetting(String obfuscationSetting) {
+        setObfuscationSetting(obfuscationSetting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot,
+     * the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name",
+     * obfuscated values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * </p>
+     * 
+     * @param obfuscationSetting
+     *        Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a
+     *        slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is
+     *        "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * @see ObfuscationSetting
+     */
+
+    public void setObfuscationSetting(ObfuscationSetting obfuscationSetting) {
+        withObfuscationSetting(obfuscationSetting);
+    }
+
+    /**
+     * <p>
+     * Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot,
+     * the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name",
+     * obfuscated values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * </p>
+     * 
+     * @param obfuscationSetting
+     *        Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a
+     *        slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is
+     *        "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ObfuscationSetting
+     */
+
+    public Slot withObfuscationSetting(ObfuscationSetting obfuscationSetting) {
+        this.obfuscationSetting = obfuscationSetting.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -585,7 +697,9 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
         if (getSampleUtterances() != null)
             sb.append("SampleUtterances: ").append(getSampleUtterances()).append(",");
         if (getResponseCard() != null)
-            sb.append("ResponseCard: ").append(getResponseCard());
+            sb.append("ResponseCard: ").append(getResponseCard()).append(",");
+        if (getObfuscationSetting() != null)
+            sb.append("ObfuscationSetting: ").append(getObfuscationSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -636,6 +750,10 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResponseCard() != null && other.getResponseCard().equals(this.getResponseCard()) == false)
             return false;
+        if (other.getObfuscationSetting() == null ^ this.getObfuscationSetting() == null)
+            return false;
+        if (other.getObfuscationSetting() != null && other.getObfuscationSetting().equals(this.getObfuscationSetting()) == false)
+            return false;
         return true;
     }
 
@@ -653,6 +771,7 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getSampleUtterances() == null) ? 0 : getSampleUtterances().hashCode());
         hashCode = prime * hashCode + ((getResponseCard() == null) ? 0 : getResponseCard().hashCode());
+        hashCode = prime * hashCode + ((getObfuscationSetting() == null) ? 0 : getObfuscationSetting().hashCode());
         return hashCode;
     }
 

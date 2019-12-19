@@ -30,15 +30,15 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
-     * or alias ID, but not both.
+     * A unique identifier for a fleet to search for active game sessions. You can use either the fleet ID or ARN value.
+     * Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
-     * reference either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to search for active game sessions. You can use either
+     * the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      */
     private String aliasId;
@@ -144,8 +144,8 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
     private String sortExpression;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
      * than 20.
      * </p>
      */
@@ -160,13 +160,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
-     * or alias ID, but not both.
+     * A unique identifier for a fleet to search for active game sessions. You can use either the fleet ID or ARN value.
+     * Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to search for active game sessions. Each request must reference either a
-     *        fleet ID or alias ID, but not both.
+     *        A unique identifier for a fleet to search for active game sessions. You can use either the fleet ID or ARN
+     *        value. Each request must reference either a fleet ID or alias ID, but not both.
      */
 
     public void setFleetId(String fleetId) {
@@ -175,12 +175,12 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
-     * or alias ID, but not both.
+     * A unique identifier for a fleet to search for active game sessions. You can use either the fleet ID or ARN value.
+     * Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
-     * @return Unique identifier for a fleet to search for active game sessions. Each request must reference either a
-     *         fleet ID or alias ID, but not both.
+     * @return A unique identifier for a fleet to search for active game sessions. You can use either the fleet ID or
+     *         ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      */
 
     public String getFleetId() {
@@ -189,13 +189,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
-     * or alias ID, but not both.
+     * A unique identifier for a fleet to search for active game sessions. You can use either the fleet ID or ARN value.
+     * Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to search for active game sessions. Each request must reference either a
-     *        fleet ID or alias ID, but not both.
+     *        A unique identifier for a fleet to search for active game sessions. You can use either the fleet ID or ARN
+     *        value. Each request must reference either a fleet ID or alias ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,13 +206,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
-     * reference either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to search for active game sessions. You can use either
+     * the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for an alias associated with the fleet to search for active game sessions. Each request
-     *        must reference either a fleet ID or alias ID, but not both.
+     *        A unique identifier for an alias associated with the fleet to search for active game sessions. You can use
+     *        either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      */
 
     public void setAliasId(String aliasId) {
@@ -221,12 +221,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
-     * reference either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to search for active game sessions. You can use either
+     * the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
-     * @return Unique identifier for an alias associated with the fleet to search for active game sessions. Each request
-     *         must reference either a fleet ID or alias ID, but not both.
+     * @return A unique identifier for an alias associated with the fleet to search for active game sessions. You can
+     *         use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not
+     *         both.
      */
 
     public String getAliasId() {
@@ -235,13 +236,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
-     * reference either a fleet ID or alias ID, but not both.
+     * A unique identifier for an alias associated with the fleet to search for active game sessions. You can use either
+     * the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for an alias associated with the fleet to search for active game sessions. Each request
-     *        must reference either a fleet ID or alias ID, but not both.
+     *        A unique identifier for an alias associated with the fleet to search for active game sessions. You can use
+     *        either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -859,15 +860,15 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
      * than 20.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is
-     *        set higher than 20.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or
+     *        is set higher than 20.
      */
 
     public void setLimit(Integer limit) {
@@ -876,13 +877,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
      * than 20.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages. The maximum number of results returned is 20, even if this value is not set or
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or
      *         is set higher than 20.
      */
 
@@ -892,15 +893,15 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher
      * than 20.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is
-     *        set higher than 20.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or
+     *        is set higher than 20.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

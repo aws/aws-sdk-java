@@ -52,8 +52,11 @@ public class ClientExecutionAbortTrackerTaskImpl implements ClientExecutionAbort
 
     @Override
     public void cancelTask() {
-        // Ensure task is canceled even if it's running as we don't want the Thread to be
+        // Best-effort attempt to ensure task is canceled even if it's running as we don't want the Thread to be
         // interrupted in the caller's code
         future.cancel(false);
+
+        // Ensure that if the future hasn't executed its timeout logic already, it won't do so.
+        task.cancel();
     }
 }

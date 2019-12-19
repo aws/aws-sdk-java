@@ -30,7 +30,7 @@ public class CreatePlayerSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to add players to.
+     * A unique identifier for the game session to add players to.
      * </p>
      */
     private String gameSessionId;
@@ -51,11 +51,11 @@ public class CreatePlayerSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to add players to.
+     * A unique identifier for the game session to add players to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to add players to.
+     *        A unique identifier for the game session to add players to.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -64,10 +64,10 @@ public class CreatePlayerSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to add players to.
+     * A unique identifier for the game session to add players to.
      * </p>
      * 
-     * @return Unique identifier for the game session to add players to.
+     * @return A unique identifier for the game session to add players to.
      */
 
     public String getGameSessionId() {
@@ -76,11 +76,11 @@ public class CreatePlayerSessionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique identifier for the game session to add players to.
+     * A unique identifier for the game session to add players to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session to add players to.
+     *        A unique identifier for the game session to add players to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,18 @@ public class DeleteScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to delete.
+     * A unique identifier for a Realtime script to delete. You can use either the script ID or ARN value.
      * </p>
      */
     private String scriptId;
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to delete.
+     * A unique identifier for a Realtime script to delete. You can use either the script ID or ARN value.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script to delete.
+     *        A unique identifier for a Realtime script to delete. You can use either the script ID or ARN value.
      */
 
     public void setScriptId(String scriptId) {
@@ -47,10 +47,10 @@ public class DeleteScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to delete.
+     * A unique identifier for a Realtime script to delete. You can use either the script ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a Realtime script to delete.
+     * @return A unique identifier for a Realtime script to delete. You can use either the script ID or ARN value.
      */
 
     public String getScriptId() {
@@ -59,11 +59,11 @@ public class DeleteScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique identifier for a Realtime script to delete.
+     * A unique identifier for a Realtime script to delete. You can use either the script ID or ARN value.
      * </p>
      * 
      * @param scriptId
-     *        Unique identifier for a Realtime script to delete.
+     *        A unique identifier for a Realtime script to delete. You can use either the script ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

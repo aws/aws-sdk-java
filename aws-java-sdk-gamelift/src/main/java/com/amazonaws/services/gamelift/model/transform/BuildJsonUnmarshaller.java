@@ -52,6 +52,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setBuildId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BuildArn", targetDepth)) {
+                    context.nextToken();
+                    build.setBuildArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     build.setName(context.getUnmarshaller(String.class).unmarshall(context));

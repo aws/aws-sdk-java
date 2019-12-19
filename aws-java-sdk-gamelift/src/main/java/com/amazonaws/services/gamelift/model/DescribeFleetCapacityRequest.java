@@ -30,15 +30,15 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for all
-     * fleets, leave this parameter empty.
+     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      */
     private java.util.List<String> fleetIds;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      */
     private Integer limit;
@@ -53,12 +53,12 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for all
-     * fleets, leave this parameter empty.
+     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
-     * @return Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information
-     *         for all fleets, leave this parameter empty.
+     * @return A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
+     *         or ARN value.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -67,13 +67,13 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for all
-     * fleets, leave this parameter empty.
+     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetIds
-     *        Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for
-     *        all fleets, leave this parameter empty.
+     *        A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
+     *        or ARN value.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -87,8 +87,8 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for all
-     * fleets, leave this parameter empty.
+     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,8 +97,8 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param fleetIds
-     *        Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for
-     *        all fleets, leave this parameter empty.
+     *        A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
+     *        or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +114,13 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for all
-     * fleets, leave this parameter empty.
+     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value.
      * </p>
      * 
      * @param fleetIds
-     *        Unique identifier for a fleet(s) to retrieve capacity information for. To request capacity information for
-     *        all fleets, leave this parameter empty.
+     *        A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
+     *        or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,13 +131,14 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
+     *        IDs.
      */
 
     public void setLimit(Integer limit) {
@@ -146,12 +147,13 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
+     *         IDs.
      */
 
     public Integer getLimit() {
@@ -160,13 +162,14 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet
+     *        IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

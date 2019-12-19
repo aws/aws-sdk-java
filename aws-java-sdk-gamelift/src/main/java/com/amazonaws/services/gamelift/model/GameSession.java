@@ -92,7 +92,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ARN has the following format:
+     * A unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
@@ -100,16 +100,24 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String gameSessionId;
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Unique identifier for a fleet that the game session is running on.
+     * A unique identifier for a fleet that the game session is running on.
      * </p>
      */
     private String fleetId;
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that this game session is running on.
+     * </p>
+     */
+    private String fleetArn;
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
@@ -132,7 +140,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private Integer currentPlayerSessionCount;
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
@@ -162,12 +170,34 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      */
     private String ipAddress;
-
+    /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     */
     private String dnsName;
     /**
      * <p>
@@ -184,7 +214,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String playerSessionCreationPolicy;
     /**
      * <p>
-     * Unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
+     * A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
      * limits the number of game sessions a player can create.
      * </p>
      */
@@ -212,13 +242,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ARN has the following format:
+     * A unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session. A game session ARN has the following format:
+     *        A unique identifier for the game session. A game session ARN has the following format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .
      */
@@ -229,12 +259,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ARN has the following format:
+     * A unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
      * 
-     * @return Unique identifier for the game session. A game session ARN has the following format:
+     * @return A unique identifier for the game session. A game session ARN has the following format:
      *         <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *         .
      */
@@ -245,13 +275,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ARN has the following format:
+     * A unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session. A game session ARN has the following format:
+     *        A unique identifier for the game session. A game session ARN has the following format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -264,11 +294,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -277,10 +307,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * @return A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public String getName() {
@@ -289,11 +319,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +334,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the game session is running on.
+     * A unique identifier for a fleet that the game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the game session is running on.
+     *        A unique identifier for a fleet that the game session is running on.
      */
 
     public void setFleetId(String fleetId) {
@@ -317,10 +347,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the game session is running on.
+     * A unique identifier for a fleet that the game session is running on.
      * </p>
      * 
-     * @return Unique identifier for a fleet that the game session is running on.
+     * @return A unique identifier for a fleet that the game session is running on.
      */
 
     public String getFleetId() {
@@ -329,16 +359,68 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the game session is running on.
+     * A unique identifier for a fleet that the game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the game session is running on.
+     *        A unique identifier for a fleet that the game session is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GameSession withFleetId(String fleetId) {
         setFleetId(fleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that this game session is running on.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift fleet that this game session is running on.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that this game session is running on.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
+     *         with the GameLift fleet that this game session is running on.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that this game session is running on.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift fleet that this game session is running on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSession withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
         return this;
     }
 
@@ -476,11 +558,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -489,10 +571,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
-     * @return Maximum number of players that can be connected simultaneously to the game session.
+     * @return The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -501,11 +583,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,13 +875,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *        server, a client needs to reference an IP address (or DNS name) and port number.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -808,12 +890,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      * 
-     * @return IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *         address and port number.
+     * @return IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *         server, a client needs to reference an IP address (or DNS name) and port number.
      */
 
     public String getIpAddress() {
@@ -822,13 +904,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *        server, a client needs to reference an IP address (or DNS name) and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -838,7 +920,48 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      */
 
     public void setDnsName(String dnsName) {
@@ -846,7 +969,47 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
+     * @return DNS identifier assigned to the instance that is running the game session. Values have the following
+     *         format:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *         >Amazon EC2 Instance IP Addressing</a>.)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *         the IP address.
      */
 
     public String getDnsName() {
@@ -854,7 +1017,48 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -984,12 +1188,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
+     * A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
      * limits the number of game sessions a player can create.
      * </p>
      * 
      * @param creatorId
-     *        Unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists),
+     *        A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists),
      *        that limits the number of game sessions a player can create.
      */
 
@@ -999,12 +1203,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
+     * A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
      * limits the number of game sessions a player can create.
      * </p>
      * 
-     * @return Unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists),
-     *         that limits the number of game sessions a player can create.
+     * @return A unique identifier for a player. This ID is used to enforce a resource protection policy (if one
+     *         exists), that limits the number of game sessions a player can create.
      */
 
     public String getCreatorId() {
@@ -1013,12 +1217,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
+     * A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that
      * limits the number of game sessions a player can create.
      * </p>
      * 
      * @param creatorId
-     *        Unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists),
+     *        A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists),
      *        that limits the number of game sessions a player can create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1177,6 +1381,8 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTerminationTime() != null)
@@ -1230,6 +1436,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
+            return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
             return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
@@ -1298,6 +1508,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getGameSessionId() == null) ? 0 : getGameSessionId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTerminationTime() == null) ? 0 : getTerminationTime().hashCode());
         hashCode = prime * hashCode + ((getCurrentPlayerSessionCount() == null) ? 0 : getCurrentPlayerSessionCount().hashCode());

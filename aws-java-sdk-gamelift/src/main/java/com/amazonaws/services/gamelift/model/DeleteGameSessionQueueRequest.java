@@ -30,19 +30,21 @@ public class DeleteGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region. You can use either the queue ID or ARN value.
      */
 
     public void setName(String name) {
@@ -51,11 +53,12 @@ public class DeleteGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      * 
-     * @return Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *         region.
+     * @return A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *         Region. You can use either the queue ID or ARN value.
      */
 
     public String getName() {
@@ -64,12 +67,13 @@ public class DeleteGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region. You can use either the queue ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

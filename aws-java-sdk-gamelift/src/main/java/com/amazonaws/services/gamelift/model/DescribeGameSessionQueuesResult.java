@@ -28,24 +28,24 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of objects that describes the requested game session queues.
+     * A collection of objects that describe the requested game session queues.
      * </p>
      */
     private java.util.List<GameSessionQueue> gameSessionQueues;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Collection of objects that describes the requested game session queues.
+     * A collection of objects that describe the requested game session queues.
      * </p>
      * 
-     * @return Collection of objects that describes the requested game session queues.
+     * @return A collection of objects that describe the requested game session queues.
      */
 
     public java.util.List<GameSessionQueue> getGameSessionQueues() {
@@ -54,11 +54,11 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of objects that describes the requested game session queues.
+     * A collection of objects that describe the requested game session queues.
      * </p>
      * 
      * @param gameSessionQueues
-     *        Collection of objects that describes the requested game session queues.
+     *        A collection of objects that describe the requested game session queues.
      */
 
     public void setGameSessionQueues(java.util.Collection<GameSessionQueue> gameSessionQueues) {
@@ -72,7 +72,7 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of objects that describes the requested game session queues.
+     * A collection of objects that describe the requested game session queues.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param gameSessionQueues
-     *        Collection of objects that describes the requested game session queues.
+     *        A collection of objects that describe the requested game session queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of objects that describes the requested game session queues.
+     * A collection of objects that describe the requested game session queues.
      * </p>
      * 
      * @param gameSessionQueues
-     *        Collection of objects that describes the requested game session queues.
+     *        A collection of objects that describe the requested game session queues.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,12 +112,12 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -127,11 +127,11 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * @return A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *         returned, these results represent the end of the list.
      */
 
@@ -141,12 +141,12 @@ public class DescribeGameSessionQueuesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

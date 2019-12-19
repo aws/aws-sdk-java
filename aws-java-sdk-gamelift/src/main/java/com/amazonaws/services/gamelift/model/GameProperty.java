@@ -20,9 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Set of key-value pairs that contain information about a game session. When included in a game session request, these
- * properties communicate details to be used when setting up the new game session, such as to specify a game mode,
- * level, or map. Game properties are passed to the game server process when initiating a new game session; the server
- * process uses the properties as appropriate. For more information, see the <a href=
+ * properties communicate details to be used when setting up the new game session. For example, a game property might
+ * specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game
+ * session. For more information, see the <a href=
  * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create"
  * > Amazon GameLift Developer Guide</a>.
  * </p>
@@ -35,24 +35,24 @@ public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game property identifier.
+     * The game property identifier.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * Game property value.
+     * The game property value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Game property identifier.
+     * The game property identifier.
      * </p>
      * 
      * @param key
-     *        Game property identifier.
+     *        The game property identifier.
      */
 
     public void setKey(String key) {
@@ -61,10 +61,10 @@ public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game property identifier.
+     * The game property identifier.
      * </p>
      * 
-     * @return Game property identifier.
+     * @return The game property identifier.
      */
 
     public String getKey() {
@@ -73,11 +73,11 @@ public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game property identifier.
+     * The game property identifier.
      * </p>
      * 
      * @param key
-     *        Game property identifier.
+     *        The game property identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game property value.
+     * The game property value.
      * </p>
      * 
      * @param value
-     *        Game property value.
+     *        The game property value.
      */
 
     public void setValue(String value) {
@@ -101,10 +101,10 @@ public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game property value.
+     * The game property value.
      * </p>
      * 
-     * @return Game property value.
+     * @return The game property value.
      */
 
     public String getValue() {
@@ -113,11 +113,11 @@ public class GameProperty implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Game property value.
+     * The game property value.
      * </p>
      * 
      * @param value
-     *        Game property value.
+     *        The game property value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

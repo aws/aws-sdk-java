@@ -28,24 +28,24 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Collection of alias records that match the list request.
+     * A collection of alias resources that match the request parameters.
      * </p>
      */
     private java.util.List<Alias> aliases;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Collection of alias records that match the list request.
+     * A collection of alias resources that match the request parameters.
      * </p>
      * 
-     * @return Collection of alias records that match the list request.
+     * @return A collection of alias resources that match the request parameters.
      */
 
     public java.util.List<Alias> getAliases() {
@@ -54,11 +54,11 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Collection of alias records that match the list request.
+     * A collection of alias resources that match the request parameters.
      * </p>
      * 
      * @param aliases
-     *        Collection of alias records that match the list request.
+     *        A collection of alias resources that match the request parameters.
      */
 
     public void setAliases(java.util.Collection<Alias> aliases) {
@@ -72,7 +72,7 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Collection of alias records that match the list request.
+     * A collection of alias resources that match the request parameters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param aliases
-     *        Collection of alias records that match the list request.
+     *        A collection of alias resources that match the request parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Collection of alias records that match the list request.
+     * A collection of alias resources that match the request parameters.
      * </p>
      * 
      * @param aliases
-     *        Collection of alias records that match the list request.
+     *        A collection of alias resources that match the request parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,12 +112,12 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -127,11 +127,11 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * @return A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *         returned, these results represent the end of the list.
      */
 
@@ -141,12 +141,12 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -31,23 +31,45 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the instance is in.
+     * A unique identifier for a fleet that the instance is in.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for an instance.
+     * A unique identifier for an instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      */
     private String ipAddress;
-
+    /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     */
     private String dnsName;
     /**
      * <p>
@@ -98,11 +120,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the instance is in.
+     * A unique identifier for a fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the instance is in.
+     *        A unique identifier for a fleet that the instance is in.
      */
 
     public void setFleetId(String fleetId) {
@@ -111,10 +133,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the instance is in.
+     * A unique identifier for a fleet that the instance is in.
      * </p>
      * 
-     * @return Unique identifier for a fleet that the instance is in.
+     * @return A unique identifier for a fleet that the instance is in.
      */
 
     public String getFleetId() {
@@ -123,11 +145,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the instance is in.
+     * A unique identifier for a fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the instance is in.
+     *        A unique identifier for a fleet that the instance is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +160,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for an instance.
+     * A unique identifier for an instance.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for an instance.
+     *        A unique identifier for an instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -151,10 +173,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for an instance.
+     * A unique identifier for an instance.
      * </p>
      * 
-     * @return Unique identifier for an instance.
+     * @return A unique identifier for an instance.
      */
 
     public String getInstanceId() {
@@ -163,11 +185,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for an instance.
+     * A unique identifier for an instance.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for an instance.
+     *        A unique identifier for an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +200,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      * 
      * @param ipAddress
-     *        IP address assigned to the instance.
+     *        IP address that is assigned to the instance.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -191,10 +213,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      * 
-     * @return IP address assigned to the instance.
+     * @return IP address that is assigned to the instance.
      */
 
     public String getIpAddress() {
@@ -203,11 +225,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address assigned to the instance.
+     * IP address that is assigned to the instance.
      * </p>
      * 
      * @param ipAddress
-     *        IP address assigned to the instance.
+     *        IP address that is assigned to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,7 +239,48 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      */
 
     public void setDnsName(String dnsName) {
@@ -225,7 +288,47 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
+     * @return DNS identifier assigned to the instance that is running the game session. Values have the following
+     *         format:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *         >Amazon EC2 Instance IP Addressing</a>.)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *         the IP address.
      */
 
     public String getDnsName() {
@@ -233,7 +336,48 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

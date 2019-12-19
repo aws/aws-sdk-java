@@ -30,18 +30,19 @@ public class DeleteMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Unique identifier for a matchmaking configuration
+     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Unique identifier for a matchmaking configuration
+     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      * 
      * @param name
-     *        Unique identifier for a matchmaking configuration
+     *        A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN
+     *        value.
      */
 
     public void setName(String name) {
@@ -50,10 +51,11 @@ public class DeleteMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Unique identifier for a matchmaking configuration
+     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a matchmaking configuration
+     * @return A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN
+     *         value.
      */
 
     public String getName() {
@@ -62,11 +64,12 @@ public class DeleteMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Unique identifier for a matchmaking configuration
+     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      * 
      * @param name
-     *        Unique identifier for a matchmaking configuration
+     *        A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

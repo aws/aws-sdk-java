@@ -30,18 +30,18 @@ public class StopMatchmakingRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      */
     private String ticketId;
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket.
+     *        A unique identifier for a matchmaking ticket.
      */
 
     public void setTicketId(String ticketId) {
@@ -50,10 +50,10 @@ public class StopMatchmakingRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      * 
-     * @return Unique identifier for a matchmaking ticket.
+     * @return A unique identifier for a matchmaking ticket.
      */
 
     public String getTicketId() {
@@ -62,11 +62,11 @@ public class StopMatchmakingRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket.
+     * A unique identifier for a matchmaking ticket.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket.
+     *        A unique identifier for a matchmaking ticket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

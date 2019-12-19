@@ -28,18 +28,18 @@ public class CreateGameSessionQueueResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Object that describes the newly created game session queue.
+     * An object that describes the newly created game session queue.
      * </p>
      */
     private GameSessionQueue gameSessionQueue;
 
     /**
      * <p>
-     * Object that describes the newly created game session queue.
+     * An object that describes the newly created game session queue.
      * </p>
      * 
      * @param gameSessionQueue
-     *        Object that describes the newly created game session queue.
+     *        An object that describes the newly created game session queue.
      */
 
     public void setGameSessionQueue(GameSessionQueue gameSessionQueue) {
@@ -48,10 +48,10 @@ public class CreateGameSessionQueueResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Object that describes the newly created game session queue.
+     * An object that describes the newly created game session queue.
      * </p>
      * 
-     * @return Object that describes the newly created game session queue.
+     * @return An object that describes the newly created game session queue.
      */
 
     public GameSessionQueue getGameSessionQueue() {
@@ -60,11 +60,11 @@ public class CreateGameSessionQueueResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Object that describes the newly created game session queue.
+     * An object that describes the newly created game session queue.
      * </p>
      * 
      * @param gameSessionQueue
-     *        Object that describes the newly created game session queue.
+     *        An object that describes the newly created game session queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

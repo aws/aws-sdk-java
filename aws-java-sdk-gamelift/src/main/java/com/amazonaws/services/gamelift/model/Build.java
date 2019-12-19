@@ -60,21 +60,30 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      */
     private String buildId;
     /**
      * <p>
-     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift build ARN,
+     * the resource ID matches the <i>BuildId</i> value.
+     * </p>
+     */
+    private String buildArn;
+    /**
+     * <p>
+     * A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique. This value can be
-     * set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. This
+     * value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      */
     private String version;
@@ -129,11 +138,11 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build.
+     *        A unique identifier for a build.
      */
 
     public void setBuildId(String buildId) {
@@ -142,10 +151,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      * 
-     * @return Unique identifier for a build.
+     * @return A unique identifier for a build.
      */
 
     public String getBuildId() {
@@ -154,11 +163,11 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a build.
+     * A unique identifier for a build.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for a build.
+     *        A unique identifier for a build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,12 +178,70 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift build ARN,
+     * the resource ID matches the <i>BuildId</i> value.
+     * </p>
+     * 
+     * @param buildArn
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     *        GameLift build ARN, the resource ID matches the <i>BuildId</i> value.
+     */
+
+    public void setBuildArn(String buildArn) {
+        this.buildArn = buildArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift build ARN,
+     * the resource ID matches the <i>BuildId</i> value.
+     * </p>
+     * 
+     * @return Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *         assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In
+     *         a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.
+     */
+
+    public String getBuildArn() {
+        return this.buildArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift build ARN,
+     * the resource ID matches the <i>BuildId</i> value.
+     * </p>
+     * 
+     * @param buildArn
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     *        GameLift build ARN, the resource ID matches the <i>BuildId</i> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withBuildArn(String buildArn) {
+        setBuildArn(buildArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a build. Build names do not need to be unique. It can be set
+     *        A descriptive label that is associated with a build. Build names do not need to be unique. It can be set
      *        using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
@@ -184,11 +251,11 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
+     * A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
-     * @return Descriptive label that is associated with a build. Build names do not need to be unique. It can be set
+     * @return A descriptive label that is associated with a build. Build names do not need to be unique. It can be set
      *         using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
@@ -198,12 +265,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
+     * A descriptive label that is associated with a build. Build names do not need to be unique. It can be set using
      * <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a build. Build names do not need to be unique. It can be set
+     *        A descriptive label that is associated with a build. Build names do not need to be unique. It can be set
      *        using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -215,13 +282,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique. This value can be
-     * set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. This
+     * value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param version
-     *        Version that is associated with a build or script. Version strings do not need to be unique. This value
-     *        can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public void setVersion(String version) {
@@ -230,12 +297,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique. This value can be
-     * set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. This
+     * value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
-     * @return Version that is associated with a build or script. Version strings do not need to be unique. This value
-     *         can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * @return Version information that is associated with a build or script. Version strings do not need to be unique.
+     *         This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      */
 
     public String getVersion() {
@@ -244,13 +311,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version that is associated with a build or script. Version strings do not need to be unique. This value can be
-     * set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. This
+     * value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * </p>
      * 
      * @param version
-     *        Version that is associated with a build or script. Version strings do not need to be unique. This value
-     *        can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -736,6 +803,8 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getBuildId() != null)
             sb.append("BuildId: ").append(getBuildId()).append(",");
+        if (getBuildArn() != null)
+            sb.append("BuildArn: ").append(getBuildArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
@@ -765,6 +834,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (other.getBuildId() == null ^ this.getBuildId() == null)
             return false;
         if (other.getBuildId() != null && other.getBuildId().equals(this.getBuildId()) == false)
+            return false;
+        if (other.getBuildArn() == null ^ this.getBuildArn() == null)
+            return false;
+        if (other.getBuildArn() != null && other.getBuildArn().equals(this.getBuildArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -799,6 +872,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
+        hashCode = prime * hashCode + ((getBuildArn() == null) ? 0 : getBuildArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

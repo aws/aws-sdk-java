@@ -30,45 +30,47 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      */
     private Integer timeoutInSeconds;
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. When updating policies, provide a complete collection of policies.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. When updating policies, provide a complete collection of policies.
      * </p>
      */
     private java.util.List<PlayerLatencyPolicy> playerLatencyPolicies;
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
-     * list, provide a complete list of destinations.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
+     * this list, provide a complete list of destinations.
      * </p>
      */
     private java.util.List<GameSessionQueueDestination> destinations;
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region. You can use either the queue ID or ARN value.
      */
 
     public void setName(String name) {
@@ -77,11 +79,12 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      * 
-     * @return Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *         region.
+     * @return A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *         Region. You can use either the queue ID or ARN value.
      */
 
     public String getName() {
@@ -90,12 +93,13 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
+     * You can use either the queue ID or ARN value.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region. You can use either the queue ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,13 +110,13 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *        exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      */
 
     public void setTimeoutInSeconds(Integer timeoutInSeconds) {
@@ -121,12 +125,12 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
-     * @return Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *         exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * @return The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *         request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      */
 
     public Integer getTimeoutInSeconds() {
@@ -135,13 +139,13 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *        exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,17 +156,17 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. When updating policies, provide a complete collection of policies.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. When updating policies, provide a complete collection of policies.
      * </p>
      * 
-     * @return Collection of latency policies to apply when processing game sessions placement requests with player
+     * @return A collection of latency policies to apply when processing game sessions placement requests with player
      *         latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *         the lowest latency values. With just one policy, it is enforced at the start of the game session
+     *         the lowest latency values. With just one policy, the policy is enforced at the start of the game session
      *         placement for the duration period. With multiple policies, each policy is enforced consecutively for its
      *         duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
      *         and then no policy for the remainder of the placement. When updating policies, provide a complete
@@ -175,22 +179,22 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. When updating policies, provide a complete collection of policies.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. When updating policies, provide a complete collection of policies.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement. When updating policies, provide a complete collection of
-     *        policies.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement. When updating policies, provide a complete
+     *        collection of policies.
      */
 
     public void setPlayerLatencyPolicies(java.util.Collection<PlayerLatencyPolicy> playerLatencyPolicies) {
@@ -204,12 +208,12 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. When updating policies, provide a complete collection of policies.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. When updating policies, provide a complete collection of policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -218,13 +222,13 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement. When updating policies, provide a complete collection of
-     *        policies.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement. When updating policies, provide a complete
+     *        collection of policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,22 +244,22 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. When updating policies, provide a complete collection of policies.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. When updating policies, provide a complete collection of policies.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement. When updating policies, provide a complete collection of
-     *        policies.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement. When updating policies, provide a complete
+     *        collection of policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,12 +270,12 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
-     * list, provide a complete list of destinations.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
+     * this list, provide a complete list of destinations.
      * </p>
      * 
-     * @return List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     * @return A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *         identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *         order. When updating this list, provide a complete list of destinations.
      */
@@ -282,13 +286,13 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
-     * list, provide a complete list of destinations.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
+     * this list, provide a complete list of destinations.
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order. When updating this list, provide a complete list of destinations.
      */
@@ -304,9 +308,9 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
-     * list, provide a complete list of destinations.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
+     * this list, provide a complete list of destinations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -315,7 +319,7 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order. When updating this list, provide a complete list of destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -333,13 +337,13 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating this
-     * list, provide a complete list of destinations.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
+     * this list, provide a complete list of destinations.
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order. When updating this list, provide a complete list of destinations.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -77,28 +77,36 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      */
     private String playerSessionId;
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      */
     private String playerId;
     /**
      * <p>
-     * Unique identifier for the game session that the player session is connected to.
+     * A unique identifier for the game session that the player session is connected to.
      * </p>
      */
     private String gameSessionId;
     /**
      * <p>
-     * Unique identifier for a fleet that the player's game session is running on.
+     * A unique identifier for a fleet that the player's game session is running on.
      * </p>
      */
     private String fleetId;
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that the player's game session is running on.
+     * </p>
+     */
+    private String fleetArn;
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
@@ -148,12 +156,34 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      */
     private String ipAddress;
-
+    /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     */
     private String dnsName;
     /**
      * <p>
@@ -172,11 +202,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session.
+     *        A unique identifier for a player session.
      */
 
     public void setPlayerSessionId(String playerSessionId) {
@@ -185,10 +215,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      * 
-     * @return Unique identifier for a player session.
+     * @return A unique identifier for a player session.
      */
 
     public String getPlayerSessionId() {
@@ -197,11 +227,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session.
+     *        A unique identifier for a player session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +242,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player that is associated with this player session.
+     *        A unique identifier for a player that is associated with this player session.
      */
 
     public void setPlayerId(String playerId) {
@@ -225,10 +255,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      * 
-     * @return Unique identifier for a player that is associated with this player session.
+     * @return A unique identifier for a player that is associated with this player session.
      */
 
     public String getPlayerId() {
@@ -237,11 +267,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player that is associated with this player session.
+     *        A unique identifier for a player that is associated with this player session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,11 +282,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session that the player session is connected to.
+     * A unique identifier for the game session that the player session is connected to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session that the player session is connected to.
+     *        A unique identifier for the game session that the player session is connected to.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -265,10 +295,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session that the player session is connected to.
+     * A unique identifier for the game session that the player session is connected to.
      * </p>
      * 
-     * @return Unique identifier for the game session that the player session is connected to.
+     * @return A unique identifier for the game session that the player session is connected to.
      */
 
     public String getGameSessionId() {
@@ -277,11 +307,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session that the player session is connected to.
+     * A unique identifier for the game session that the player session is connected to.
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session that the player session is connected to.
+     *        A unique identifier for the game session that the player session is connected to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +322,11 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the player's game session is running on.
+     * A unique identifier for a fleet that the player's game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the player's game session is running on.
+     *        A unique identifier for a fleet that the player's game session is running on.
      */
 
     public void setFleetId(String fleetId) {
@@ -305,10 +335,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the player's game session is running on.
+     * A unique identifier for a fleet that the player's game session is running on.
      * </p>
      * 
-     * @return Unique identifier for a fleet that the player's game session is running on.
+     * @return A unique identifier for a fleet that the player's game session is running on.
      */
 
     public String getFleetId() {
@@ -317,16 +347,68 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that the player's game session is running on.
+     * A unique identifier for a fleet that the player's game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that the player's game session is running on.
+     *        A unique identifier for a fleet that the player's game session is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlayerSession withFleetId(String fleetId) {
         setFleetId(fleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that the player's game session is running on.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift fleet that the player's game session is running on.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that the player's game session is running on.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
+     *         with the GameLift fleet that the player's game session is running on.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
+     * GameLift fleet that the player's game session is running on.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
+     *        the GameLift fleet that the player's game session is running on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlayerSession withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
         return this;
     }
 
@@ -762,13 +844,13 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *        server, a client needs to reference an IP address (or DNS name) and port number.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -777,12 +859,12 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      * 
-     * @return IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *         address and port number.
+     * @return IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *         server, a client needs to reference an IP address (or DNS name) and port number.
      */
 
     public String getIpAddress() {
@@ -791,13 +873,13 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and
-     * port number.
+     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
+     * client needs to reference an IP address (or DNS name) and port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP
-     *        address and port number.
+     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
+     *        server, a client needs to reference an IP address (or DNS name) and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -807,7 +889,48 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      */
 
     public void setDnsName(String dnsName) {
@@ -815,7 +938,47 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
+     * @return DNS identifier assigned to the instance that is running the game session. Values have the following
+     *         format:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *         >Amazon EC2 Instance IP Addressing</a>.)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *         the IP address.
      */
 
     public String getDnsName() {
@@ -823,7 +986,48 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     * >Amazon EC2 Instance IP Addressing</a>.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP
+     * address.
+     * </p>
+     * 
      * @param dnsName
+     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        format:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses"
+     *        >Amazon EC2 Instance IP Addressing</a>.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     *        the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -944,6 +1148,8 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
             sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTerminationTime() != null)
@@ -988,6 +1194,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -1028,6 +1238,7 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlayerId() == null) ? 0 : getPlayerId().hashCode());
         hashCode = prime * hashCode + ((getGameSessionId() == null) ? 0 : getGameSessionId().hashCode());
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTerminationTime() == null) ? 0 : getTerminationTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

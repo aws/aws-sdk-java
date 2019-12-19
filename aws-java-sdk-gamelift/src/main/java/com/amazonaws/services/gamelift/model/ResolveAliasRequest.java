@@ -30,18 +30,21 @@ public class ResolveAliasRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique identifier for the alias you want to resolve.
+     * The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or
+     * ARN value.
      * </p>
      */
     private String aliasId;
 
     /**
      * <p>
-     * Unique identifier for the alias you want to resolve.
+     * The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or
+     * ARN value.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for the alias you want to resolve.
+     *        The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias
+     *        ID or ARN value.
      */
 
     public void setAliasId(String aliasId) {
@@ -50,10 +53,12 @@ public class ResolveAliasRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique identifier for the alias you want to resolve.
+     * The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or
+     * ARN value.
      * </p>
      * 
-     * @return Unique identifier for the alias you want to resolve.
+     * @return The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias
+     *         ID or ARN value.
      */
 
     public String getAliasId() {
@@ -62,11 +67,13 @@ public class ResolveAliasRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Unique identifier for the alias you want to resolve.
+     * The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or
+     * ARN value.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for the alias you want to resolve.
+     *        The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias
+     *        ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

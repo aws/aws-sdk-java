@@ -28,7 +28,7 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Collection of objects containing properties for each player session that matches the request.
+     * A collection of objects containing properties for each player session that matches the request.
      * </p>
      */
     private java.util.List<PlayerSession> playerSessions;
@@ -42,10 +42,10 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Collection of objects containing properties for each player session that matches the request.
+     * A collection of objects containing properties for each player session that matches the request.
      * </p>
      * 
-     * @return Collection of objects containing properties for each player session that matches the request.
+     * @return A collection of objects containing properties for each player session that matches the request.
      */
 
     public java.util.List<PlayerSession> getPlayerSessions() {
@@ -54,11 +54,11 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Collection of objects containing properties for each player session that matches the request.
+     * A collection of objects containing properties for each player session that matches the request.
      * </p>
      * 
      * @param playerSessions
-     *        Collection of objects containing properties for each player session that matches the request.
+     *        A collection of objects containing properties for each player session that matches the request.
      */
 
     public void setPlayerSessions(java.util.Collection<PlayerSession> playerSessions) {
@@ -72,7 +72,7 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Collection of objects containing properties for each player session that matches the request.
+     * A collection of objects containing properties for each player session that matches the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param playerSessions
-     *        Collection of objects containing properties for each player session that matches the request.
+     *        A collection of objects containing properties for each player session that matches the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Collection of objects containing properties for each player session that matches the request.
+     * A collection of objects containing properties for each player session that matches the request.
      * </p>
      * 
      * @param playerSessions
-     *        Collection of objects containing properties for each player session that matches the request.
+     *        A collection of objects containing properties for each player session that matches the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

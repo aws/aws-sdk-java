@@ -71,24 +71,24 @@ public class PlacedPlayerSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      */
     private String playerId;
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      */
     private String playerSessionId;
 
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player that is associated with this player session.
+     *        A unique identifier for a player that is associated with this player session.
      */
 
     public void setPlayerId(String playerId) {
@@ -97,10 +97,10 @@ public class PlacedPlayerSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      * 
-     * @return Unique identifier for a player that is associated with this player session.
+     * @return A unique identifier for a player that is associated with this player session.
      */
 
     public String getPlayerId() {
@@ -109,11 +109,11 @@ public class PlacedPlayerSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Unique identifier for a player that is associated with this player session.
+     * A unique identifier for a player that is associated with this player session.
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player that is associated with this player session.
+     *        A unique identifier for a player that is associated with this player session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class PlacedPlayerSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session.
+     *        A unique identifier for a player session.
      */
 
     public void setPlayerSessionId(String playerSessionId) {
@@ -137,10 +137,10 @@ public class PlacedPlayerSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      * 
-     * @return Unique identifier for a player session.
+     * @return A unique identifier for a player session.
      */
 
     public String getPlayerSessionId() {
@@ -149,11 +149,11 @@ public class PlacedPlayerSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Unique identifier for a player session.
+     * A unique identifier for a player session.
      * </p>
      * 
      * @param playerSessionId
-     *        Unique identifier for a player session.
+     *        A unique identifier for a player session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

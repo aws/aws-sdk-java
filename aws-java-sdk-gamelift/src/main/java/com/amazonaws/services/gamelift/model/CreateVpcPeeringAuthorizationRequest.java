@@ -30,15 +30,15 @@ public class CreateVpcPeeringAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
+     * A unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
      * Account ID in the AWS Management Console under account settings.
      * </p>
      */
     private String gameLiftAwsAccountId;
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region where your fleet is deployed. Look up a VPC ID using the <a
      * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
      * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
      * Amazon GameLift Fleets</a>.
@@ -48,13 +48,13 @@ public class CreateVpcPeeringAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
+     * A unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
      * Account ID in the AWS Management Console under account settings.
      * </p>
      * 
      * @param gameLiftAwsAccountId
-     *        Unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
-     *        Account ID in the AWS Management Console under account settings.
+     *        A unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find
+     *        your Account ID in the AWS Management Console under account settings.
      */
 
     public void setGameLiftAwsAccountId(String gameLiftAwsAccountId) {
@@ -63,11 +63,11 @@ public class CreateVpcPeeringAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
+     * A unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
      * Account ID in the AWS Management Console under account settings.
      * </p>
      * 
-     * @return Unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find
+     * @return A unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find
      *         your Account ID in the AWS Management Console under account settings.
      */
 
@@ -77,13 +77,13 @@ public class CreateVpcPeeringAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
+     * A unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
      * Account ID in the AWS Management Console under account settings.
      * </p>
      * 
      * @param gameLiftAwsAccountId
-     *        Unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find your
-     *        Account ID in the AWS Management Console under account settings.
+     *        A unique identifier for the AWS account that you use to manage your Amazon GameLift fleet. You can find
+     *        your Account ID in the AWS Management Console under account settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,16 +94,16 @@ public class CreateVpcPeeringAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region where your fleet is deployed. Look up a VPC ID using the <a
      * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
      * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
      * Amazon GameLift Fleets</a>.
      * </p>
      * 
      * @param peerVpcId
-     *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *        in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     *        A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
+     *        in the same Region where your fleet is deployed. Look up a VPC ID using the <a
      *        href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
      *        about VPC peering in <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
@@ -116,15 +116,15 @@ public class CreateVpcPeeringAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region where your fleet is deployed. Look up a VPC ID using the <a
      * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
      * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
      * Amazon GameLift Fleets</a>.
      * </p>
      * 
-     * @return Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *         in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     * @return A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must
+     *         be in the same Region where your fleet is deployed. Look up a VPC ID using the <a
      *         href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
      *         about VPC peering in <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
@@ -137,16 +137,16 @@ public class CreateVpcPeeringAuthorizationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same Region where your fleet is deployed. Look up a VPC ID using the <a
      * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
      * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
      * Amazon GameLift Fleets</a>.
      * </p>
      * 
      * @param peerVpcId
-     *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *        in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     *        A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
+     *        in the same Region where your fleet is deployed. Look up a VPC ID using the <a
      *        href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
      *        about VPC peering in <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon

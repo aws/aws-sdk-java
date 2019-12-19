@@ -70,13 +70,13 @@ public class InstanceTypeInfoStaxUnmarshaller implements Unmarshaller<InstanceTy
                     continue;
                 }
 
-                if (context.testExpression("supportedRootDevices", targetDepth)) {
-                    instanceTypeInfo.withSupportedRootDevices(new ArrayList<String>());
+                if (context.testExpression("supportedRootDeviceTypes", targetDepth)) {
+                    instanceTypeInfo.withSupportedRootDeviceTypes(new ArrayList<String>());
                     continue;
                 }
 
-                if (context.testExpression("supportedRootDevices/item", targetDepth)) {
-                    instanceTypeInfo.withSupportedRootDevices(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("supportedRootDeviceTypes/item", targetDepth)) {
+                    instanceTypeInfo.withSupportedRootDeviceTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

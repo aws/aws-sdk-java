@@ -18,6 +18,12 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet
+ * level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved
+ * using the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift
+ * Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a fleet share the same certificate.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -25,10 +31,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CertificateConfiguration implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * </p>
+     */
     private String certificateType;
 
     /**
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * </p>
+     * 
      * @param certificateType
+     *        Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     *        <p>
+     *        </p>
+     *        <p>
      * @see CertificateType
      */
 
@@ -37,7 +64,18 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * </p>
+     * 
+     * @return Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     *         <p>
+     *         </p>
+     *         <p>
      * @see CertificateType
      */
 
@@ -46,7 +84,19 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * </p>
+     * 
      * @param certificateType
+     *        Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     *        <p>
+     *        </p>
+     *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -57,7 +107,19 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * </p>
+     * 
      * @param certificateType
+     *        Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     *        <p>
+     *        </p>
+     *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */

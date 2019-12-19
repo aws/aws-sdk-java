@@ -28,18 +28,18 @@ public class UpdateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object that contains the updated build record.
+     * The updated build record.
      * </p>
      */
     private Build build;
 
     /**
      * <p>
-     * Object that contains the updated build record.
+     * The updated build record.
      * </p>
      * 
      * @param build
-     *        Object that contains the updated build record.
+     *        The updated build record.
      */
 
     public void setBuild(Build build) {
@@ -48,10 +48,10 @@ public class UpdateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object that contains the updated build record.
+     * The updated build record.
      * </p>
      * 
-     * @return Object that contains the updated build record.
+     * @return The updated build record.
      */
 
     public Build getBuild() {
@@ -60,11 +60,11 @@ public class UpdateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object that contains the updated build record.
+     * The updated build record.
      * </p>
      * 
      * @param build
-     *        Object that contains the updated build record.
+     *        The updated build record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

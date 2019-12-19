@@ -87,13 +87,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for a fleet that is associated with this scaling policy.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      */
     private String name;
@@ -150,7 +150,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private Integer scalingAdjustment;
     /**
      * <p>
-     * Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
      * </p>
      * <ul>
      * <li>
@@ -266,7 +266,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private String metricName;
     /**
      * <p>
-     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
      * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
@@ -275,18 +275,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private String policyType;
     /**
      * <p>
-     * Object that contains settings for a target-based scaling policy.
+     * The settings for a target-based scaling policy.
      * </p>
      */
     private TargetConfiguration targetConfiguration;
 
     /**
      * <p>
-     * Unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for a fleet that is associated with this scaling policy.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that is associated with this scaling policy.
+     *        A unique identifier for a fleet that is associated with this scaling policy.
      */
 
     public void setFleetId(String fleetId) {
@@ -295,10 +295,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for a fleet that is associated with this scaling policy.
      * </p>
      * 
-     * @return Unique identifier for a fleet that is associated with this scaling policy.
+     * @return A unique identifier for a fleet that is associated with this scaling policy.
      */
 
     public String getFleetId() {
@@ -307,11 +307,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for a fleet that is associated with this scaling policy.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet that is associated with this scaling policy.
+     *        A unique identifier for a fleet that is associated with this scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,11 +322,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -335,10 +335,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * @return A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      */
 
     public String getName() {
@@ -347,11 +347,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -865,7 +865,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
      * </p>
      * <ul>
      * <li>
@@ -888,7 +888,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -916,7 +916,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
      * </p>
      * <ul>
      * <li>
@@ -938,7 +938,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     * @return The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -966,7 +966,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
      * </p>
      * <ul>
      * <li>
@@ -989,7 +989,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1019,7 +1019,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
      * </p>
      * <ul>
      * <li>
@@ -1042,7 +1042,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1070,7 +1070,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
      * </p>
      * <ul>
      * <li>
@@ -1093,7 +1093,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2018,14 +2018,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
      * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
      * </p>
      * 
      * @param policyType
-     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
      *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
@@ -2038,13 +2038,13 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
      * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
      * </p>
      * 
-     * @return Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * @return The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      *         'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      *         following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
      *         <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
@@ -2057,14 +2057,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
      * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
      * </p>
      * 
      * @param policyType
-     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
      *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
@@ -2079,14 +2079,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
      * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
      * </p>
      * 
      * @param policyType
-     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
      *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
@@ -2099,14 +2099,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
      * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
      * </p>
      * 
      * @param policyType
-     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
      *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
      *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
      *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
@@ -2121,11 +2121,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object that contains settings for a target-based scaling policy.
+     * The settings for a target-based scaling policy.
      * </p>
      * 
      * @param targetConfiguration
-     *        Object that contains settings for a target-based scaling policy.
+     *        The settings for a target-based scaling policy.
      */
 
     public void setTargetConfiguration(TargetConfiguration targetConfiguration) {
@@ -2134,10 +2134,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object that contains settings for a target-based scaling policy.
+     * The settings for a target-based scaling policy.
      * </p>
      * 
-     * @return Object that contains settings for a target-based scaling policy.
+     * @return The settings for a target-based scaling policy.
      */
 
     public TargetConfiguration getTargetConfiguration() {
@@ -2146,11 +2146,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object that contains settings for a target-based scaling policy.
+     * The settings for a target-based scaling policy.
      * </p>
      * 
      * @param targetConfiguration
-     *        Object that contains settings for a target-based scaling policy.
+     *        The settings for a target-based scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,17 +28,17 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Object that contains port settings for the requested fleet ID.
+     * The port settings for the requested fleet ID.
      * </p>
      */
     private java.util.List<IpPermission> inboundPermissions;
 
     /**
      * <p>
-     * Object that contains port settings for the requested fleet ID.
+     * The port settings for the requested fleet ID.
      * </p>
      * 
-     * @return Object that contains port settings for the requested fleet ID.
+     * @return The port settings for the requested fleet ID.
      */
 
     public java.util.List<IpPermission> getInboundPermissions() {
@@ -47,11 +47,11 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Object that contains port settings for the requested fleet ID.
+     * The port settings for the requested fleet ID.
      * </p>
      * 
      * @param inboundPermissions
-     *        Object that contains port settings for the requested fleet ID.
+     *        The port settings for the requested fleet ID.
      */
 
     public void setInboundPermissions(java.util.Collection<IpPermission> inboundPermissions) {
@@ -65,7 +65,7 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Object that contains port settings for the requested fleet ID.
+     * The port settings for the requested fleet ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param inboundPermissions
-     *        Object that contains port settings for the requested fleet ID.
+     *        The port settings for the requested fleet ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Object that contains port settings for the requested fleet ID.
+     * The port settings for the requested fleet ID.
      * </p>
      * 
      * @param inboundPermissions
-     *        Object that contains port settings for the requested fleet ID.
+     *        The port settings for the requested fleet ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

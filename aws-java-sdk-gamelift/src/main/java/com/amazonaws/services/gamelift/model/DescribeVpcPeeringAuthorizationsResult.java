@@ -26,17 +26,17 @@ public class DescribeVpcPeeringAuthorizationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     * A collection of objects that describe all valid VPC peering operations for the current AWS account.
      * </p>
      */
     private java.util.List<VpcPeeringAuthorization> vpcPeeringAuthorizations;
 
     /**
      * <p>
-     * Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     * A collection of objects that describe all valid VPC peering operations for the current AWS account.
      * </p>
      * 
-     * @return Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     * @return A collection of objects that describe all valid VPC peering operations for the current AWS account.
      */
 
     public java.util.List<VpcPeeringAuthorization> getVpcPeeringAuthorizations() {
@@ -45,11 +45,11 @@ public class DescribeVpcPeeringAuthorizationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     * A collection of objects that describe all valid VPC peering operations for the current AWS account.
      * </p>
      * 
      * @param vpcPeeringAuthorizations
-     *        Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     *        A collection of objects that describe all valid VPC peering operations for the current AWS account.
      */
 
     public void setVpcPeeringAuthorizations(java.util.Collection<VpcPeeringAuthorization> vpcPeeringAuthorizations) {
@@ -63,7 +63,7 @@ public class DescribeVpcPeeringAuthorizationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     * A collection of objects that describe all valid VPC peering operations for the current AWS account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -72,7 +72,7 @@ public class DescribeVpcPeeringAuthorizationsResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param vpcPeeringAuthorizations
-     *        Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     *        A collection of objects that describe all valid VPC peering operations for the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class DescribeVpcPeeringAuthorizationsResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     * A collection of objects that describe all valid VPC peering operations for the current AWS account.
      * </p>
      * 
      * @param vpcPeeringAuthorizations
-     *        Collection of objects that describe all valid VPC peering operations for the current AWS account.
+     *        A collection of objects that describe all valid VPC peering operations for the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

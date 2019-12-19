@@ -20,10 +20,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an Amazon
- * GameLift. New game sessions that are started on the fleet are assigned an IP address/port number combination, which
- * must fall into the fleet's allowed ranges. For fleets created with a custom game server, the ranges reflect the
- * server's game session assignments. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges,
- * one for TCP messaging and one for UDP for use by the Realtime servers.
+ * GameLift hosting resource. New game sessions that are started on the fleet are assigned an IP address/port number
+ * combination, which must fall into the fleet's allowed ranges. For fleets created with a custom game server, the
+ * ranges reflect the server's game session assignments. For Realtime Servers fleets, Amazon GameLift automatically
+ * opens two port ranges, one for TCP messaging and one for UDP for use by the Realtime servers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission" target="_top">AWS API
@@ -34,20 +34,20 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Starting value for a range of allowed port numbers.
+     * A starting value for a range of allowed port numbers.
      * </p>
      */
     private Integer fromPort;
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
-     * <code>FromPort</code>.
+     * An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher
+     * than <code>FromPort</code>.
      * </p>
      */
     private Integer toPort;
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
@@ -55,18 +55,18 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
     private String ipRange;
     /**
      * <p>
-     * Network communication protocol used by the fleet.
+     * The network communication protocol used by the fleet.
      * </p>
      */
     private String protocol;
 
     /**
      * <p>
-     * Starting value for a range of allowed port numbers.
+     * A starting value for a range of allowed port numbers.
      * </p>
      * 
      * @param fromPort
-     *        Starting value for a range of allowed port numbers.
+     *        A starting value for a range of allowed port numbers.
      */
 
     public void setFromPort(Integer fromPort) {
@@ -75,10 +75,10 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Starting value for a range of allowed port numbers.
+     * A starting value for a range of allowed port numbers.
      * </p>
      * 
-     * @return Starting value for a range of allowed port numbers.
+     * @return A starting value for a range of allowed port numbers.
      */
 
     public Integer getFromPort() {
@@ -87,11 +87,11 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Starting value for a range of allowed port numbers.
+     * A starting value for a range of allowed port numbers.
      * </p>
      * 
      * @param fromPort
-     *        Starting value for a range of allowed port numbers.
+     *        A starting value for a range of allowed port numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,12 +102,12 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
-     * <code>FromPort</code>.
+     * An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher
+     * than <code>FromPort</code>.
      * </p>
      * 
      * @param toPort
-     *        Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
+     *        An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
      *        higher than <code>FromPort</code>.
      */
 
@@ -117,11 +117,11 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
-     * <code>FromPort</code>.
+     * An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher
+     * than <code>FromPort</code>.
      * </p>
      * 
-     * @return Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
+     * @return An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
      *         higher than <code>FromPort</code>.
      */
 
@@ -131,12 +131,12 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than
-     * <code>FromPort</code>.
+     * An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher
+     * than <code>FromPort</code>.
      * </p>
      * 
      * @param toPort
-     *        Ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
+     *        An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be
      *        higher than <code>FromPort</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -148,13 +148,13 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
-     *        Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     *        A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
      */
@@ -165,12 +165,12 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
-     * @return Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * @return A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *         <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *         <code>0.0.0.0/[subnet mask]</code>".
      */
@@ -181,13 +181,13 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     * A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      * <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      * <code>0.0.0.0/[subnet mask]</code>".
      * </p>
      * 
      * @param ipRange
-     *        Range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
+     *        A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: "
      *        <code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "
      *        <code>0.0.0.0/[subnet mask]</code>".
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -200,11 +200,11 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network communication protocol used by the fleet.
+     * The network communication protocol used by the fleet.
      * </p>
      * 
      * @param protocol
-     *        Network communication protocol used by the fleet.
+     *        The network communication protocol used by the fleet.
      * @see IpProtocol
      */
 
@@ -214,10 +214,10 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network communication protocol used by the fleet.
+     * The network communication protocol used by the fleet.
      * </p>
      * 
-     * @return Network communication protocol used by the fleet.
+     * @return The network communication protocol used by the fleet.
      * @see IpProtocol
      */
 
@@ -227,11 +227,11 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network communication protocol used by the fleet.
+     * The network communication protocol used by the fleet.
      * </p>
      * 
      * @param protocol
-     *        Network communication protocol used by the fleet.
+     *        The network communication protocol used by the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpProtocol
      */
@@ -243,11 +243,11 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network communication protocol used by the fleet.
+     * The network communication protocol used by the fleet.
      * </p>
      * 
      * @param protocol
-     *        Network communication protocol used by the fleet.
+     *        The network communication protocol used by the fleet.
      * @see IpProtocol
      */
 
@@ -257,11 +257,11 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Network communication protocol used by the fleet.
+     * The network communication protocol used by the fleet.
      * </p>
      * 
      * @param protocol
-     *        Network communication protocol used by the fleet.
+     *        The network communication protocol used by the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpProtocol
      */

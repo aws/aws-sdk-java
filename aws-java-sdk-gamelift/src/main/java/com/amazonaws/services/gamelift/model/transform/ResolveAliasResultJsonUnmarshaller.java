@@ -52,6 +52,10 @@ public class ResolveAliasResultJsonUnmarshaller implements Unmarshaller<ResolveA
                     context.nextToken();
                     resolveAliasResult.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    resolveAliasResult.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

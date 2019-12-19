@@ -30,14 +30,14 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
+     * A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
      * otherwise this request will fail.
      * </p>
      */
     private String ticketId;
     /**
      * <p>
-     * Unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
+     * A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
      * </p>
      */
     private java.util.List<String> playerIds;
@@ -50,13 +50,13 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
+     * A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
      * otherwise this request will fail.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
-     *        otherwise this request will fail.
+     *        A unique identifier for a matchmaking ticket. The ticket must be in status
+     *        <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.
      */
 
     public void setTicketId(String ticketId) {
@@ -65,12 +65,12 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
+     * A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
      * otherwise this request will fail.
      * </p>
      * 
-     * @return Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>
-     *         ; otherwise this request will fail.
+     * @return A unique identifier for a matchmaking ticket. The ticket must be in status
+     *         <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.
      */
 
     public String getTicketId() {
@@ -79,13 +79,13 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
+     * A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
      * otherwise this request will fail.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>;
-     *        otherwise this request will fail.
+     *        A unique identifier for a matchmaking ticket. The ticket must be in status
+     *        <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
+     * A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
      * </p>
      * 
-     * @return Unique identifier for a player delivering the response. This parameter can include one or multiple player
-     *         IDs.
+     * @return A unique identifier for a player delivering the response. This parameter can include one or multiple
+     *         player IDs.
      */
 
     public java.util.List<String> getPlayerIds() {
@@ -109,12 +109,12 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
+     * A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
      * </p>
      * 
      * @param playerIds
-     *        Unique identifier for a player delivering the response. This parameter can include one or multiple player
-     *        IDs.
+     *        A unique identifier for a player delivering the response. This parameter can include one or multiple
+     *        player IDs.
      */
 
     public void setPlayerIds(java.util.Collection<String> playerIds) {
@@ -128,7 +128,7 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
+     * A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,8 +137,8 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param playerIds
-     *        Unique identifier for a player delivering the response. This parameter can include one or multiple player
-     *        IDs.
+     *        A unique identifier for a player delivering the response. This parameter can include one or multiple
+     *        player IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,12 +154,12 @@ public class AcceptMatchRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
+     * A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.
      * </p>
      * 
      * @param playerIds
-     *        Unique identifier for a player delivering the response. This parameter can include one or multiple player
-     *        IDs.
+     *        A unique identifier for a player delivering the response. This parameter can include one or multiple
+     *        player IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

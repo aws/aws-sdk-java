@@ -25,17 +25,20 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of recommendations.
+     * A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in
+     * the list.
      * </p>
      */
     private java.util.List<PredictedItem> itemList;
 
     /**
      * <p>
-     * A list of recommendations.
+     * A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in
+     * the list.
      * </p>
      * 
-     * @return A list of recommendations.
+     * @return A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500
+     *         items in the list.
      */
 
     public java.util.List<PredictedItem> getItemList() {
@@ -44,11 +47,13 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of recommendations.
+     * A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in
+     * the list.
      * </p>
      * 
      * @param itemList
-     *        A list of recommendations.
+     *        A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500
+     *        items in the list.
      */
 
     public void setItemList(java.util.Collection<PredictedItem> itemList) {
@@ -62,7 +67,8 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of recommendations.
+     * A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in
+     * the list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +77,8 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param itemList
-     *        A list of recommendations.
+     *        A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500
+     *        items in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +94,13 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of recommendations.
+     * A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in
+     * the list.
      * </p>
      * 
      * @param itemList
-     *        A list of recommendations.
+     *        A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500
+     *        items in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

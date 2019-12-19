@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TranscriptionJobStatus {
 
+    QUEUED("QUEUED"),
     IN_PROGRESS("IN_PROGRESS"),
     FAILED("FAILED"),
     COMPLETED("COMPLETED");

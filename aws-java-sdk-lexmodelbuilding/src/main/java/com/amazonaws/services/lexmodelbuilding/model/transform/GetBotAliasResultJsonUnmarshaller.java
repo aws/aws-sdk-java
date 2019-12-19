@@ -76,6 +76,10 @@ public class GetBotAliasResultJsonUnmarshaller implements Unmarshaller<GetBotAli
                     context.nextToken();
                     getBotAliasResult.setChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("conversationLogs", targetDepth)) {
+                    context.nextToken();
+                    getBotAliasResult.setConversationLogs(ConversationLogsResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

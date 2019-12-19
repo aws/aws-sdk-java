@@ -69,20 +69,29 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set
+     * A unique identifier for a matchmaking rule set
      * </p>
      */
     private String ruleSetName;
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
-     * support a description field.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * </p>
+     */
+    private String ruleSetArn;
+    /**
+     * <p>
+     * A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      */
     private String ruleSetBody;
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      */
@@ -90,11 +99,11 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set
+     * A unique identifier for a matchmaking rule set
      * </p>
      * 
      * @param ruleSetName
-     *        Unique identifier for a matchmaking rule set
+     *        A unique identifier for a matchmaking rule set
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -103,10 +112,10 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set
+     * A unique identifier for a matchmaking rule set
      * </p>
      * 
-     * @return Unique identifier for a matchmaking rule set
+     * @return A unique identifier for a matchmaking rule set
      */
 
     public String getRuleSetName() {
@@ -115,11 +124,11 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set
+     * A unique identifier for a matchmaking rule set
      * </p>
      * 
      * @param ruleSetName
-     *        Unique identifier for a matchmaking rule set
+     *        A unique identifier for a matchmaking rule set
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,12 +139,70 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
-     * support a description field.
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * </p>
+     * 
+     * @param ruleSetArn
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
+     *        all Regions. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     */
+
+    public void setRuleSetArn(String ruleSetArn) {
+        this.ruleSetArn = ruleSetArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * </p>
+     * 
+     * @return Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *         assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
+     *         all Regions. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     */
+
+    public String getRuleSetArn() {
+        return this.ruleSetArn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
+     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * </p>
+     * 
+     * @param ruleSetArn
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
+     *        assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
+     *        all Regions. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MatchmakingRuleSet withRuleSetArn(String ruleSetArn) {
+        setRuleSetArn(ruleSetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *        A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
      *        elements support a description field.
      */
 
@@ -145,11 +212,11 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
-     * support a description field.
+     * A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      * 
-     * @return Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     * @return A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
      *         elements support a description field.
      */
 
@@ -159,12 +226,12 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements
-     * support a description field.
+     * A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
+     *        A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most
      *        elements support a description field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -176,13 +243,13 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        The time stamp indicating when this data object was created. The format is a number expressed in Unix time
+     *        as milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -191,12 +258,12 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (for example "1469498468.057").
+     * @return The time stamp indicating when this data object was created. The format is a number expressed in Unix
+     *         time as milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -205,13 +272,13 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
      * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        The time stamp indicating when this data object was created. The format is a number expressed in Unix time
+     *        as milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,6 +301,8 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getRuleSetName() != null)
             sb.append("RuleSetName: ").append(getRuleSetName()).append(",");
+        if (getRuleSetArn() != null)
+            sb.append("RuleSetArn: ").append(getRuleSetArn()).append(",");
         if (getRuleSetBody() != null)
             sb.append("RuleSetBody: ").append(getRuleSetBody()).append(",");
         if (getCreationTime() != null)
@@ -256,6 +325,10 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRuleSetName() != null && other.getRuleSetName().equals(this.getRuleSetName()) == false)
             return false;
+        if (other.getRuleSetArn() == null ^ this.getRuleSetArn() == null)
+            return false;
+        if (other.getRuleSetArn() != null && other.getRuleSetArn().equals(this.getRuleSetArn()) == false)
+            return false;
         if (other.getRuleSetBody() == null ^ this.getRuleSetBody() == null)
             return false;
         if (other.getRuleSetBody() != null && other.getRuleSetBody().equals(this.getRuleSetBody()) == false)
@@ -273,6 +346,7 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRuleSetName() == null) ? 0 : getRuleSetName().hashCode());
+        hashCode = prime * hashCode + ((getRuleSetArn() == null) ? 0 : getRuleSetArn().hashCode());
         hashCode = prime * hashCode + ((getRuleSetBody() == null) ? 0 : getRuleSetBody().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;

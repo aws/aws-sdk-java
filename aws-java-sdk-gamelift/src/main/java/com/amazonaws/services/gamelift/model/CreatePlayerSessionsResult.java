@@ -28,17 +28,17 @@ public class CreatePlayerSessionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Collection of player session objects created for the added players.
+     * A collection of player session objects created for the added players.
      * </p>
      */
     private java.util.List<PlayerSession> playerSessions;
 
     /**
      * <p>
-     * Collection of player session objects created for the added players.
+     * A collection of player session objects created for the added players.
      * </p>
      * 
-     * @return Collection of player session objects created for the added players.
+     * @return A collection of player session objects created for the added players.
      */
 
     public java.util.List<PlayerSession> getPlayerSessions() {
@@ -47,11 +47,11 @@ public class CreatePlayerSessionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Collection of player session objects created for the added players.
+     * A collection of player session objects created for the added players.
      * </p>
      * 
      * @param playerSessions
-     *        Collection of player session objects created for the added players.
+     *        A collection of player session objects created for the added players.
      */
 
     public void setPlayerSessions(java.util.Collection<PlayerSession> playerSessions) {
@@ -65,7 +65,7 @@ public class CreatePlayerSessionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Collection of player session objects created for the added players.
+     * A collection of player session objects created for the added players.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class CreatePlayerSessionsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param playerSessions
-     *        Collection of player session objects created for the added players.
+     *        A collection of player session objects created for the added players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class CreatePlayerSessionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Collection of player session objects created for the added players.
+     * A collection of player session objects created for the added players.
      * </p>
      * 
      * @param playerSessions
-     *        Collection of player session objects created for the added players.
+     *        A collection of player session objects created for the added players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

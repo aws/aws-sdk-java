@@ -31,13 +31,13 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      */
     private String playerId;
     /**
      * <p>
-     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
@@ -52,12 +52,12 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. If this property is present, FlexMatch considers placing the match only in regions for
+     * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
      * <p>
      * If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If
-     * no latency is reported in this scenario, FlexMatch assumes that no regions are available to the player and the
+     * no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the
      * ticket is not matchable.
      * </p>
      */
@@ -65,11 +65,11 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player
+     *        A unique identifier for a player
      */
 
     public void setPlayerId(String playerId) {
@@ -78,10 +78,10 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      * 
-     * @return Unique identifier for a player
+     * @return A unique identifier for a player
      */
 
     public String getPlayerId() {
@@ -90,11 +90,11 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a player
+     * A unique identifier for a player
      * </p>
      * 
      * @param playerId
-     *        Unique identifier for a player
+     *        A unique identifier for a player
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,13 +105,13 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
      * 
-     * @return Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys
-     *         must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
+     * @return A collection of key:value pairs containing player information for use in matchmaking. Player attribute
+     *         keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      *         <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      */
 
@@ -121,14 +121,14 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
      * 
      * @param playerAttributes
-     *        Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys
-     *        must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
+     *        A collection of key:value pairs containing player information for use in matchmaking. Player attribute
+     *        keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      */
 
@@ -138,14 +138,14 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
+     * A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
      * 
      * @param playerAttributes
-     *        Collection of key:value pairs containing player information for use in matchmaking. Player attribute keys
-     *        must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
+     *        A collection of key:value pairs containing player information for use in matchmaking. Player attribute
+     *        keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -222,21 +222,21 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. If this property is present, FlexMatch considers placing the match only in regions for
+     * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
      * <p>
      * If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If
-     * no latency is reported in this scenario, FlexMatch assumes that no regions are available to the player and the
+     * no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the
      * ticket is not matchable.
      * </p>
      * 
      * @return Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *         connected to AWS regions. If this property is present, FlexMatch considers placing the match only in
-     *         regions for which latency is reported. </p>
+     *         connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
+     *         Regions for which latency is reported. </p>
      *         <p>
      *         If a matchmaker has a rule that evaluates player latency, players must report latency in order to be
-     *         matched. If no latency is reported in this scenario, FlexMatch assumes that no regions are available to
+     *         matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to
      *         the player and the ticket is not matchable.
      */
 
@@ -247,22 +247,22 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. If this property is present, FlexMatch considers placing the match only in regions for
+     * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
      * <p>
      * If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If
-     * no latency is reported in this scenario, FlexMatch assumes that no regions are available to the player and the
+     * no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the
      * ticket is not matchable.
      * </p>
      * 
      * @param latencyInMs
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions. If this property is present, FlexMatch considers placing the match only in
-     *        regions for which latency is reported. </p>
+     *        connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
+     *        Regions for which latency is reported. </p>
      *        <p>
      *        If a matchmaker has a rule that evaluates player latency, players must report latency in order to be
-     *        matched. If no latency is reported in this scenario, FlexMatch assumes that no regions are available to
+     *        matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to
      *        the player and the ticket is not matchable.
      */
 
@@ -273,22 +273,22 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. If this property is present, FlexMatch considers placing the match only in regions for
+     * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
      * <p>
      * If a matchmaker has a rule that evaluates player latency, players must report latency in order to be matched. If
-     * no latency is reported in this scenario, FlexMatch assumes that no regions are available to the player and the
+     * no latency is reported in this scenario, FlexMatch assumes that no Regions are available to the player and the
      * ticket is not matchable.
      * </p>
      * 
      * @param latencyInMs
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions. If this property is present, FlexMatch considers placing the match only in
-     *        regions for which latency is reported. </p>
+     *        connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
+     *        Regions for which latency is reported. </p>
      *        <p>
      *        If a matchmaker has a rule that evaluates player latency, players must report latency in order to be
-     *        matched. If no latency is reported in this scenario, FlexMatch assumes that no regions are available to
+     *        matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to
      *        the player and the ticket is not matchable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

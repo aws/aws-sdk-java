@@ -30,24 +30,24 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Unique identifier for a fleet to be deleted.
+     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * @return A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to be deleted.
+     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to be deleted.
+     *        A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -96,10 +96,10 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to be deleted.
+     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to be deleted.
+     * @return A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -108,11 +108,11 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to be deleted.
+     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to be deleted.
+     *        A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

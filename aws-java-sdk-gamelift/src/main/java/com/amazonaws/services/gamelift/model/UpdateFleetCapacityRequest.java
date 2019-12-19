@@ -30,7 +30,7 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to update capacity for.
+     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
@@ -42,24 +42,24 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer desiredInstances;
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      */
     private Integer minSize;
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      */
     private Integer maxSize;
 
     /**
      * <p>
-     * Unique identifier for a fleet to update capacity for.
+     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update capacity for.
+     *        A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -68,10 +68,10 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to update capacity for.
+     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to update capacity for.
+     * @return A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -80,11 +80,11 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to update capacity for.
+     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update capacity for.
+     *        A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
      * @param minSize
-     *        Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     *        The minimum value allowed for the fleet's instance count. Default if not set is 0.
      */
 
     public void setMinSize(Integer minSize) {
@@ -148,10 +148,10 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
-     * @return Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * @return The minimum value allowed for the fleet's instance count. Default if not set is 0.
      */
 
     public Integer getMinSize() {
@@ -160,11 +160,11 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
      * </p>
      * 
      * @param minSize
-     *        Minimum value allowed for the fleet's instance count. Default if not set is 0.
+     *        The minimum value allowed for the fleet's instance count. Default if not set is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
      * @param maxSize
-     *        Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     *        The maximum value allowed for the fleet's instance count. Default if not set is 1.
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -188,10 +188,10 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
-     * @return Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * @return The maximum value allowed for the fleet's instance count. Default if not set is 1.
      */
 
     public Integer getMaxSize() {
@@ -200,11 +200,11 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
      * </p>
      * 
      * @param maxSize
-     *        Maximum value allowed for the fleet's instance count. Default if not set is 1.
+     *        The maximum value allowed for the fleet's instance count. Default if not set is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

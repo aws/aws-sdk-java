@@ -34,7 +34,7 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list.
+     * the end of the reranked list. The maximum is 500.
      * </p>
      */
     private java.util.List<String> inputList;
@@ -44,6 +44,14 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String userId;
+    /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     */
+    private java.util.Map<String, String> context;
 
     /**
      * <p>
@@ -88,11 +96,11 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list.
+     * the end of the reranked list. The maximum is 500.
      * </p>
      * 
      * @return A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *         appended to the end of the reranked list.
+     *         appended to the end of the reranked list. The maximum is 500.
      */
 
     public java.util.List<String> getInputList() {
@@ -102,12 +110,12 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list.
+     * the end of the reranked list. The maximum is 500.
      * </p>
      * 
      * @param inputList
      *        A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *        appended to the end of the reranked list.
+     *        appended to the end of the reranked list. The maximum is 500.
      */
 
     public void setInputList(java.util.Collection<String> inputList) {
@@ -122,7 +130,7 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list.
+     * the end of the reranked list. The maximum is 500.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,7 +140,7 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param inputList
      *        A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *        appended to the end of the reranked list.
+     *        appended to the end of the reranked list. The maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,12 +157,12 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list.
+     * the end of the reranked list. The maximum is 500.
      * </p>
      * 
      * @param inputList
      *        A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *        appended to the end of the reranked list.
+     *        appended to the end of the reranked list. The maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,6 +212,79 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     * 
+     * @return The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     *         information that might be relevant when getting a user's recommendations, such as the user's current
+     *         location or device type. For more information, see Contextual Metadata.
+     */
+
+    public java.util.Map<String, String> getContext() {
+        return context;
+    }
+
+    /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     * 
+     * @param context
+     *        The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     *        information that might be relevant when getting a user's recommendations, such as the user's current
+     *        location or device type. For more information, see Contextual Metadata.
+     */
+
+    public void setContext(java.util.Map<String, String> context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     * information that might be relevant when getting a user's recommendations, such as the user's current location or
+     * device type. For more information, see Contextual Metadata.
+     * </p>
+     * 
+     * @param context
+     *        The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction
+     *        information that might be relevant when getting a user's recommendations, such as the user's current
+     *        location or device type. For more information, see Contextual Metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonalizedRankingRequest withContext(java.util.Map<String, String> context) {
+        setContext(context);
+        return this;
+    }
+
+    public GetPersonalizedRankingRequest addContextEntry(String key, String value) {
+        if (null == this.context) {
+            this.context = new java.util.HashMap<String, String>();
+        }
+        if (this.context.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.context.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Context.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonalizedRankingRequest clearContextEntries() {
+        this.context = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -220,7 +301,9 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
         if (getInputList() != null)
             sb.append("InputList: ").append(getInputList()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+            sb.append("UserId: ").append(getUserId()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +330,10 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -258,6 +345,7 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getCampaignArn() == null) ? 0 : getCampaignArn().hashCode());
         hashCode = prime * hashCode + ((getInputList() == null) ? 0 : getInputList().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

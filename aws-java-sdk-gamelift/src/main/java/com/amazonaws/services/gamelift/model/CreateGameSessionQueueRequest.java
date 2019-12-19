@@ -30,45 +30,56 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      */
     private Integer timeoutInSeconds;
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. A player latency policy must set a value for MaximumIndividualPlayerLatencyMilliseconds; if none
-     * is set, this API requests will fail.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. A player latency policy must set a value for
+     * <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      * </p>
      */
     private java.util.List<PlayerLatencyPolicy> playerLatencyPolicies;
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      */
     private java.util.List<GameSessionQueueDestination> destinations;
+    /**
+     * <p>
+     * A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs.
+     * Tagging AWS resources are useful for resource management, access management and cost allocation. For more
+     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
+     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region.
      */
 
     public void setName(String name) {
@@ -77,11 +88,11 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
-     * @return Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *         region.
+     * @return A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *         Region.
      */
 
     public String getName() {
@@ -90,12 +101,12 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
+     * A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
-     *        region.
+     *        A descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,13 +117,13 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *        exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      */
 
     public void setTimeoutInSeconds(Integer timeoutInSeconds) {
@@ -121,12 +132,12 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
-     * @return Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *         exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * @return The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *         request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      */
 
     public Integer getTimeoutInSeconds() {
@@ -135,13 +146,13 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds
-     * this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        Maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     *        exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,22 +163,22 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. A player latency policy must set a value for MaximumIndividualPlayerLatencyMilliseconds; if none
-     * is set, this API requests will fail.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. A player latency policy must set a value for
+     * <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      * </p>
      * 
-     * @return Collection of latency policies to apply when processing game sessions placement requests with player
+     * @return A collection of latency policies to apply when processing game sessions placement requests with player
      *         latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *         the lowest latency values. With just one policy, it is enforced at the start of the game session
+     *         the lowest latency values. With just one policy, the policy is enforced at the start of the game session
      *         placement for the duration period. With multiple policies, each policy is enforced consecutively for its
      *         duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
      *         and then no policy for the remainder of the placement. A player latency policy must set a value for
-     *         MaximumIndividualPlayerLatencyMilliseconds; if none is set, this API requests will fail.
+     *         <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      */
 
     public java.util.List<PlayerLatencyPolicy> getPlayerLatencyPolicies() {
@@ -176,23 +187,23 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. A player latency policy must set a value for MaximumIndividualPlayerLatencyMilliseconds; if none
-     * is set, this API requests will fail.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. A player latency policy must set a value for
+     * <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement. A player latency policy must set a value for
-     *        MaximumIndividualPlayerLatencyMilliseconds; if none is set, this API requests will fail.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement. A player latency policy must set a value for
+     *        <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      */
 
     public void setPlayerLatencyPolicies(java.util.Collection<PlayerLatencyPolicy> playerLatencyPolicies) {
@@ -206,13 +217,13 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. A player latency policy must set a value for MaximumIndividualPlayerLatencyMilliseconds; if none
-     * is set, this API requests will fail.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. A player latency policy must set a value for
+     * <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -221,13 +232,13 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement. A player latency policy must set a value for
-     *        MaximumIndividualPlayerLatencyMilliseconds; if none is set, this API requests will fail.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement. A player latency policy must set a value for
+     *        <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,23 +254,23 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Collection of latency policies to apply when processing game sessions placement requests with player latency
+     * A collection of latency policies to apply when processing game sessions placement requests with player latency
      * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, it is enforced at the start of the game session placement for the duration
-     * period. With multiple policies, each policy is enforced consecutively for its duration period. For example, a
-     * queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the remainder of
-     * the placement. A player latency policy must set a value for MaximumIndividualPlayerLatencyMilliseconds; if none
-     * is set, this API requests will fail.
+     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
+     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
+     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
+     * remainder of the placement. A player latency policy must set a value for
+     * <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        Collection of latency policies to apply when processing game sessions placement requests with player
+     *        A collection of latency policies to apply when processing game sessions placement requests with player
      *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, it is enforced at the start of the game session placement
-     *        for the duration period. With multiple policies, each policy is enforced consecutively for its duration
-     *        period. For example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no
-     *        policy for the remainder of the placement. A player latency policy must set a value for
-     *        MaximumIndividualPlayerLatencyMilliseconds; if none is set, this API requests will fail.
+     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
+     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
+     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+     *        and then no policy for the remainder of the placement. A player latency policy must set a value for
+     *        <code>MaximumIndividualPlayerLatencyMilliseconds</code>. If none is set, this API request fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +281,11 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * 
-     * @return List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     * @return A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *         identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *         order.
      */
@@ -285,12 +296,12 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order.
      */
@@ -306,8 +317,8 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -316,7 +327,7 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -334,12 +345,12 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified by
-     * either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
+     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
      * </p>
      * 
      * @param destinations
-     *        List of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
+     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
      *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
      *        order.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -347,6 +358,116 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     public CreateGameSessionQueueRequest withDestinations(java.util.Collection<GameSessionQueueDestination> destinations) {
         setDestinations(destinations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs.
+     * Tagging AWS resources are useful for resource management, access management and cost allocation. For more
+     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
+     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * </p>
+     * 
+     * @return A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value
+     *         pairs. Tagging AWS resources are useful for resource management, access management and cost allocation.
+     *         For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+     *         Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *         <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *         The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs.
+     * Tagging AWS resources are useful for resource management, access management and cost allocation. For more
+     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
+     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * </p>
+     * 
+     * @param tags
+     *        A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value
+     *        pairs. Tagging AWS resources are useful for resource management, access management and cost allocation.
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+     *        Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs.
+     * Tagging AWS resources are useful for resource management, access management and cost allocation. For more
+     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
+     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value
+     *        pairs. Tagging AWS resources are useful for resource management, access management and cost allocation.
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+     *        Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGameSessionQueueRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs.
+     * Tagging AWS resources are useful for resource management, access management and cost allocation. For more
+     * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
+     * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
+     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * </p>
+     * 
+     * @param tags
+     *        A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value
+     *        pairs. Tagging AWS resources are useful for resource management, access management and cost allocation.
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
+     *        Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
+     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGameSessionQueueRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -369,7 +490,9 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
         if (getPlayerLatencyPolicies() != null)
             sb.append("PlayerLatencyPolicies: ").append(getPlayerLatencyPolicies()).append(",");
         if (getDestinations() != null)
-            sb.append("Destinations: ").append(getDestinations());
+            sb.append("Destinations: ").append(getDestinations()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -400,6 +523,10 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -412,6 +539,7 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getPlayerLatencyPolicies() == null) ? 0 : getPlayerLatencyPolicies().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -48,8 +48,12 @@ public class FleetAttributesMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> BUILDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("BuildId").build();
+    private static final MarshallingInfo<String> BUILDARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BuildArn").build();
     private static final MarshallingInfo<String> SCRIPTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ScriptId").build();
+    private static final MarshallingInfo<String> SCRIPTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ScriptArn").build();
     private static final MarshallingInfo<String> SERVERLAUNCHPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerLaunchPath").build();
     private static final MarshallingInfo<String> SERVERLAUNCHPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -97,7 +101,9 @@ public class FleetAttributesMarshaller {
             protocolMarshaller.marshall(fleetAttributes.getTerminationTime(), TERMINATIONTIME_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getBuildId(), BUILDID_BINDING);
+            protocolMarshaller.marshall(fleetAttributes.getBuildArn(), BUILDARN_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getScriptId(), SCRIPTID_BINDING);
+            protocolMarshaller.marshall(fleetAttributes.getScriptArn(), SCRIPTARN_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getServerLaunchPath(), SERVERLAUNCHPATH_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getServerLaunchParameters(), SERVERLAUNCHPARAMETERS_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getLogPaths(), LOGPATHS_BINDING);

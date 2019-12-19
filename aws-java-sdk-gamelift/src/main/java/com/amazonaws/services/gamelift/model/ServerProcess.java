@@ -34,8 +34,9 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
-     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of the server executable in a custom game build or the name of the Realtime script file that
+     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
+     * root:
      * </p>
      * <ul>
      * <li>
@@ -54,21 +55,22 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
     private String launchPath;
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable or Realtime script on launch.
+     * An optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      */
     private String parameters;
     /**
      * <p>
-     * Number of server processes using this configuration to run concurrently on an instance.
+     * The number of server processes that use this configuration to run concurrently on an instance.
      * </p>
      */
     private Integer concurrentExecutions;
 
     /**
      * <p>
-     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
-     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of the server executable in a custom game build or the name of the Realtime script file that
+     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
+     * root:
      * </p>
      * <ul>
      * <li>
@@ -85,7 +87,7 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param launchPath
-     *        Location of the server executable in a custom game build or the name of the Realtime script file that
+     *        The location of the server executable in a custom game build or the name of the Realtime script file that
      *        contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
      *        the root: </p>
      *        <ul>
@@ -109,8 +111,9 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
-     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of the server executable in a custom game build or the name of the Realtime script file that
+     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
+     * root:
      * </p>
      * <ul>
      * <li>
@@ -126,7 +129,7 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Location of the server executable in a custom game build or the name of the Realtime script file that
+     * @return The location of the server executable in a custom game build or the name of the Realtime script file that
      *         contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
      *         the root: </p>
      *         <ul>
@@ -150,8 +153,9 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Location of the server executable in a custom game build or the name of the Realtime script file that contains
-     * the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root:
+     * The location of the server executable in a custom game build or the name of the Realtime script file that
+     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
+     * root:
      * </p>
      * <ul>
      * <li>
@@ -168,7 +172,7 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param launchPath
-     *        Location of the server executable in a custom game build or the name of the Realtime script file that
+     *        The location of the server executable in a custom game build or the name of the Realtime script file that
      *        contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
      *        the root: </p>
      *        <ul>
@@ -194,11 +198,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable or Realtime script on launch.
+     * An optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      * 
      * @param parameters
-     *        Optional list of parameters to pass to the server executable or Realtime script on launch.
+     *        An optional list of parameters to pass to the server executable or Realtime script on launch.
      */
 
     public void setParameters(String parameters) {
@@ -207,10 +211,10 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable or Realtime script on launch.
+     * An optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      * 
-     * @return Optional list of parameters to pass to the server executable or Realtime script on launch.
+     * @return An optional list of parameters to pass to the server executable or Realtime script on launch.
      */
 
     public String getParameters() {
@@ -219,11 +223,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Optional list of parameters to pass to the server executable or Realtime script on launch.
+     * An optional list of parameters to pass to the server executable or Realtime script on launch.
      * </p>
      * 
      * @param parameters
-     *        Optional list of parameters to pass to the server executable or Realtime script on launch.
+     *        An optional list of parameters to pass to the server executable or Realtime script on launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +238,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of server processes using this configuration to run concurrently on an instance.
+     * The number of server processes that use this configuration to run concurrently on an instance.
      * </p>
      * 
      * @param concurrentExecutions
-     *        Number of server processes using this configuration to run concurrently on an instance.
+     *        The number of server processes that use this configuration to run concurrently on an instance.
      */
 
     public void setConcurrentExecutions(Integer concurrentExecutions) {
@@ -247,10 +251,10 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of server processes using this configuration to run concurrently on an instance.
+     * The number of server processes that use this configuration to run concurrently on an instance.
      * </p>
      * 
-     * @return Number of server processes using this configuration to run concurrently on an instance.
+     * @return The number of server processes that use this configuration to run concurrently on an instance.
      */
 
     public Integer getConcurrentExecutions() {
@@ -259,11 +263,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of server processes using this configuration to run concurrently on an instance.
+     * The number of server processes that use this configuration to run concurrently on an instance.
      * </p>
      * 
      * @param concurrentExecutions
-     *        Number of server processes using this configuration to run concurrently on an instance.
+     *        The number of server processes that use this configuration to run concurrently on an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

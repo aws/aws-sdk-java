@@ -30,7 +30,7 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to get event logs for.
+     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
@@ -52,8 +52,8 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.Date endTime;
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      */
     private Integer limit;
@@ -67,11 +67,11 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to get event logs for.
+     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to get event logs for.
+     *        A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -80,10 +80,10 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to get event logs for.
+     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return Unique identifier for a fleet to get event logs for.
+     * @return A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -92,11 +92,11 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for a fleet to get event logs for.
+     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to get event logs for.
+     *        A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,13 +211,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -226,12 +226,12 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -240,13 +240,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,15 +30,15 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
+     * A unique identifier to assign to the new game session placement. This value is developer-defined. The value must
+     * be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      */
     private String placementId;
     /**
      * <p>
-     * Name of the queue to use to place the new game session.
+     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
      * </p>
      */
     private String gameSessionQueueName;
@@ -53,20 +53,20 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      */
     private String gameSessionName;
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * connected to AWS Regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      */
@@ -89,15 +89,15 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
+     * A unique identifier to assign to the new game session placement. This value is developer-defined. The value must
+     * be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      * 
      * @param placementId
-     *        Unique identifier to assign to the new game session placement. This value is developer-defined. The value
-     *        must be unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out
-     *        placement request.
+     *        A unique identifier to assign to the new game session placement. This value is developer-defined. The
+     *        value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or
+     *        timed-out placement request.
      */
 
     public void setPlacementId(String placementId) {
@@ -106,13 +106,13 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
+     * A unique identifier to assign to the new game session placement. This value is developer-defined. The value must
+     * be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      * 
-     * @return Unique identifier to assign to the new game session placement. This value is developer-defined. The value
-     *         must be unique across all regions and cannot be reused unless you are resubmitting a canceled or
+     * @return A unique identifier to assign to the new game session placement. This value is developer-defined. The
+     *         value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or
      *         timed-out placement request.
      */
 
@@ -122,15 +122,15 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be
-     * unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
+     * A unique identifier to assign to the new game session placement. This value is developer-defined. The value must
+     * be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement
      * request.
      * </p>
      * 
      * @param placementId
-     *        Unique identifier to assign to the new game session placement. This value is developer-defined. The value
-     *        must be unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out
-     *        placement request.
+     *        A unique identifier to assign to the new game session placement. This value is developer-defined. The
+     *        value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or
+     *        timed-out placement request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of the queue to use to place the new game session.
+     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
      * </p>
      * 
      * @param gameSessionQueueName
-     *        Name of the queue to use to place the new game session.
+     *        Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
      */
 
     public void setGameSessionQueueName(String gameSessionQueueName) {
@@ -154,10 +154,10 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of the queue to use to place the new game session.
+     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
      * </p>
      * 
-     * @return Name of the queue to use to place the new game session.
+     * @return Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
      */
 
     public String getGameSessionQueueName() {
@@ -166,11 +166,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of the queue to use to place the new game session.
+     * Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
      * </p>
      * 
      * @param gameSessionQueueName
-     *        Name of the queue to use to place the new game session.
+     *        Name of the queue to use to place the new game session. You can use either the qieue name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -292,10 +292,10 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
-     * @return Maximum number of players that can be connected simultaneously to the game session.
+     * @return The maximum number of players that can be connected simultaneously to the game session.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -304,11 +304,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Maximum number of players that can be connected simultaneously to the game session.
+     * The maximum number of players that can be connected simultaneously to the game session.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        Maximum number of players that can be connected simultaneously to the game session.
+     *        The maximum number of players that can be connected simultaneously to the game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +319,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param gameSessionName
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public void setGameSessionName(String gameSessionName) {
@@ -332,10 +332,10 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * @return A descriptive label that is associated with a game session. Session names do not need to be unique.
      */
 
     public String getGameSessionName() {
@@ -344,11 +344,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Descriptive label that is associated with a game session. Session names do not need to be unique.
+     * A descriptive label that is associated with a game session. Session names do not need to be unique.
      * </p>
      * 
      * @param gameSessionName
-     *        Descriptive label that is associated with a game session. Session names do not need to be unique.
+     *        A descriptive label that is associated with a game session. Session names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,12 +360,12 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * connected to AWS Regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      * 
      * @return Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *         connected to AWS regions. This information is used to try to place the new game session where it can
+     *         connected to AWS Regions. This information is used to try to place the new game session where it can
      *         offer the best possible gameplay experience for the players.
      */
 
@@ -376,13 +376,13 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * connected to AWS Regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      * 
      * @param playerLatencies
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions. This information is used to try to place the new game session where it can offer
+     *        connected to AWS Regions. This information is used to try to place the new game session where it can offer
      *        the best possible gameplay experience for the players.
      */
 
@@ -398,7 +398,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * connected to AWS Regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      * <p>
@@ -409,7 +409,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param playerLatencies
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions. This information is used to try to place the new game session where it can offer
+     *        connected to AWS Regions. This information is used to try to place the new game session where it can offer
      *        the best possible gameplay experience for the players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -427,13 +427,13 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     * connected to AWS regions. This information is used to try to place the new game session where it can offer the
+     * connected to AWS Regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      * 
      * @param playerLatencies
      *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS regions. This information is used to try to place the new game session where it can offer
+     *        connected to AWS Regions. This information is used to try to place the new game session where it can offer
      *        the best possible gameplay experience for the players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

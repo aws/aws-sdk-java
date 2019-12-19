@@ -27,14 +27,14 @@ public class ListScriptsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
@@ -42,13 +42,13 @@ public class ListScriptsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -57,12 +57,12 @@ public class ListScriptsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
-     * @return Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *         set of sequential pages.
+     * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *         a set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -71,13 +71,13 @@ public class ListScriptsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of
-     * sequential pages.
+     * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
+     * of sequential pages.
      * </p>
      * 
      * @param limit
-     *        Maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a
-     *        set of sequential pages.
+     *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
+     *        a set of sequential pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +88,13 @@ public class ListScriptsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -103,11 +103,11 @@ public class ListScriptsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
      *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
@@ -117,13 +117,13 @@ public class ListScriptsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
