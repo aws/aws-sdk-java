@@ -43,7 +43,7 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
     private String body;
     /**
      * <p>
-     * The date when the message template was created.
+     * The date, in ISO 8601 format, when the message template was created.
      * </p>
      */
     private String creationDate;
@@ -57,7 +57,7 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
     private String defaultSubstitutions;
     /**
      * <p>
-     * The date when the message template was last modified.
+     * The date, in ISO 8601 format, when the message template was last modified.
      * </p>
      */
     private String lastModifiedDate;
@@ -86,6 +86,13 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String templateType;
+    /**
+     * <p>
+     * The unique identifier, as an integer, for the active version of the message template, or the version of the
+     * template that you specified by using the version parameter in your request.
+     * </p>
+     */
+    private String version;
 
     /**
      * <p>
@@ -169,11 +176,11 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the message template was created.
+     * The date, in ISO 8601 format, when the message template was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the message template was created.
+     *        The date, in ISO 8601 format, when the message template was created.
      */
 
     public void setCreationDate(String creationDate) {
@@ -182,10 +189,10 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the message template was created.
+     * The date, in ISO 8601 format, when the message template was created.
      * </p>
      * 
-     * @return The date when the message template was created.
+     * @return The date, in ISO 8601 format, when the message template was created.
      */
 
     public String getCreationDate() {
@@ -194,11 +201,11 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the message template was created.
+     * The date, in ISO 8601 format, when the message template was created.
      * </p>
      * 
      * @param creationDate
-     *        The date when the message template was created.
+     *        The date, in ISO 8601 format, when the message template was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,11 +268,11 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the message template was last modified.
+     * The date, in ISO 8601 format, when the message template was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date when the message template was last modified.
+     *        The date, in ISO 8601 format, when the message template was last modified.
      */
 
     public void setLastModifiedDate(String lastModifiedDate) {
@@ -274,10 +281,10 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the message template was last modified.
+     * The date, in ISO 8601 format, when the message template was last modified.
      * </p>
      * 
-     * @return The date when the message template was last modified.
+     * @return The date, in ISO 8601 format, when the message template was last modified.
      */
 
     public String getLastModifiedDate() {
@@ -286,11 +293,11 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date when the message template was last modified.
+     * The date, in ISO 8601 format, when the message template was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The date when the message template was last modified.
+     *        The date, in ISO 8601 format, when the message template was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,6 +513,52 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The unique identifier, as an integer, for the active version of the message template, or the version of the
+     * template that you specified by using the version parameter in your request.
+     * </p>
+     * 
+     * @param version
+     *        The unique identifier, as an integer, for the active version of the message template, or the version of
+     *        the template that you specified by using the version parameter in your request.
+     */
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The unique identifier, as an integer, for the active version of the message template, or the version of the
+     * template that you specified by using the version parameter in your request.
+     * </p>
+     * 
+     * @return The unique identifier, as an integer, for the active version of the message template, or the version of
+     *         the template that you specified by using the version parameter in your request.
+     */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The unique identifier, as an integer, for the active version of the message template, or the version of the
+     * template that you specified by using the version parameter in your request.
+     * </p>
+     * 
+     * @param version
+     *        The unique identifier, as an integer, for the active version of the message template, or the version of
+     *        the template that you specified by using the version parameter in your request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMSTemplateResponse withVersion(String version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -534,7 +587,9 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
         if (getTemplateName() != null)
             sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getTemplateType() != null)
-            sb.append("TemplateType: ").append(getTemplateType());
+            sb.append("TemplateType: ").append(getTemplateType()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -585,6 +640,10 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTemplateType() != null && other.getTemplateType().equals(this.getTemplateType()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         return true;
     }
 
@@ -602,6 +661,7 @@ public class SMSTemplateResponse implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getTemplateType() == null) ? 0 : getTemplateType().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

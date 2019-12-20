@@ -25,11 +25,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * Creates a new message template that you can use in messages that are sent through the email channel.
-     * </p>
-     */
     private EmailTemplateRequest emailTemplateRequest;
     /**
      * <p>
@@ -41,12 +36,7 @@ public class CreateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     private String templateName;
 
     /**
-     * <p>
-     * Creates a new message template that you can use in messages that are sent through the email channel.
-     * </p>
-     * 
      * @param emailTemplateRequest
-     *        Creates a new message template that you can use in messages that are sent through the email channel.
      */
 
     public void setEmailTemplateRequest(EmailTemplateRequest emailTemplateRequest) {
@@ -54,11 +44,7 @@ public class CreateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * Creates a new message template that you can use in messages that are sent through the email channel.
-     * </p>
-     * 
-     * @return Creates a new message template that you can use in messages that are sent through the email channel.
+     * @return
      */
 
     public EmailTemplateRequest getEmailTemplateRequest() {
@@ -66,12 +52,7 @@ public class CreateEmailTemplateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * Creates a new message template that you can use in messages that are sent through the email channel.
-     * </p>
-     * 
      * @param emailTemplateRequest
-     *        Creates a new message template that you can use in messages that are sent through the email channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

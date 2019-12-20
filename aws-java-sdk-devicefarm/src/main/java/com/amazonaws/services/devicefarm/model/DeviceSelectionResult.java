@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the run results requested by the device selection configuration as well as how many devices were returned.
- * For an example of the JSON response syntax, see <a>ScheduleRun</a>.
+ * Contains the run results requested by the device selection configuration and how many devices were returned. For an
+ * example of the JSON response syntax, see <a>ScheduleRun</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceSelectionResult" target="_top">AWS

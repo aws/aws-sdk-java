@@ -30,18 +30,18 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.
      * </p>
      * 
      * @param arn
-     *        Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
+     *        Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.
      * </p>
      * 
-     * @return Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
+     * @return Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.
      * </p>
      * 
      * @param arn
-     *        Represents the Amazon Resource Name (ARN) of the Device Farm project you wish to delete.
+     *        Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

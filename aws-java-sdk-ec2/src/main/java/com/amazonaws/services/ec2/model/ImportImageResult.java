@@ -61,8 +61,8 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String importTaskId;
     /**
      * <p>
-     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
-     * encrypted AMI.
+     * The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     * create the encrypted AMI.
      * </p>
      */
     private String kmsKeyId;
@@ -363,13 +363,13 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
-     * encrypted AMI.
+     * The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     * create the encrypted AMI.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *        create the encrypted AMI.
+     *        The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     *        used to create the encrypted AMI.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -378,12 +378,12 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
-     * encrypted AMI.
+     * The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     * create the encrypted AMI.
      * </p>
      * 
-     * @return The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *         create the encrypted AMI.
+     * @return The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     *         used to create the encrypted AMI.
      */
 
     public String getKmsKeyId() {
@@ -392,13 +392,13 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
-     * encrypted AMI.
+     * The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     * create the encrypted AMI.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
-     *        create the encrypted AMI.
+     *        The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+     *        used to create the encrypted AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

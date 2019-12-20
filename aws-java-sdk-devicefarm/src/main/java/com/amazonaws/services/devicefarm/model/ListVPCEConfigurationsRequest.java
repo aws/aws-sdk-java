@@ -27,7 +27,7 @@ public class ListVPCEConfigurationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An integer specifying the maximum number of items you want to return in the API response.
+     * An integer that specifies the maximum number of items you want to return in the API response.
      * </p>
      */
     private Integer maxResults;
@@ -41,11 +41,11 @@ public class ListVPCEConfigurationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An integer specifying the maximum number of items you want to return in the API response.
+     * An integer that specifies the maximum number of items you want to return in the API response.
      * </p>
      * 
      * @param maxResults
-     *        An integer specifying the maximum number of items you want to return in the API response.
+     *        An integer that specifies the maximum number of items you want to return in the API response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -54,10 +54,10 @@ public class ListVPCEConfigurationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An integer specifying the maximum number of items you want to return in the API response.
+     * An integer that specifies the maximum number of items you want to return in the API response.
      * </p>
      * 
-     * @return An integer specifying the maximum number of items you want to return in the API response.
+     * @return An integer that specifies the maximum number of items you want to return in the API response.
      */
 
     public Integer getMaxResults() {
@@ -66,11 +66,11 @@ public class ListVPCEConfigurationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An integer specifying the maximum number of items you want to return in the API response.
+     * An integer that specifies the maximum number of items you want to return in the API response.
      * </p>
      * 
      * @param maxResults
-     *        An integer specifying the maximum number of items you want to return in the API response.
+     *        An integer that specifies the maximum number of items you want to return in the API response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

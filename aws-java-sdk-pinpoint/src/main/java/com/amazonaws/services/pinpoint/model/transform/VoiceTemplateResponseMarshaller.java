@@ -49,6 +49,8 @@ public class VoiceTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
     private static final MarshallingInfo<String> TEMPLATETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateType").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
     private static final MarshallingInfo<String> VOICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VoiceId").build();
 
@@ -78,6 +80,7 @@ public class VoiceTemplateResponseMarshaller {
             protocolMarshaller.marshall(voiceTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(voiceTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(voiceTemplateResponse.getTemplateType(), TEMPLATETYPE_BINDING);
+            protocolMarshaller.marshall(voiceTemplateResponse.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(voiceTemplateResponse.getVoiceId(), VOICEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -27,10 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateEmailTemplateRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> CREATENEWVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("create-new-version").build();
     private static final MarshallingInfo<StructuredPojo> EMAILTEMPLATEREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("template-name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("version").build();
 
     private static final UpdateEmailTemplateRequestMarshaller instance = new UpdateEmailTemplateRequestMarshaller();
 
@@ -48,8 +52,10 @@ public class UpdateEmailTemplateRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateEmailTemplateRequest.getCreateNewVersion(), CREATENEWVERSION_BINDING);
             protocolMarshaller.marshall(updateEmailTemplateRequest.getEmailTemplateRequest(), EMAILTEMPLATEREQUEST_BINDING);
             protocolMarshaller.marshall(updateEmailTemplateRequest.getTemplateName(), TEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(updateEmailTemplateRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

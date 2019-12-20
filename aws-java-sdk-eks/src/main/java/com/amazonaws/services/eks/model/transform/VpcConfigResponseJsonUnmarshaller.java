@@ -72,6 +72,10 @@ public class VpcConfigResponseJsonUnmarshaller implements Unmarshaller<VpcConfig
                     context.nextToken();
                     vpcConfigResponse.setEndpointPrivateAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("publicAccessCidrs", targetDepth)) {
+                    context.nextToken();
+                    vpcConfigResponse.setPublicAccessCidrs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

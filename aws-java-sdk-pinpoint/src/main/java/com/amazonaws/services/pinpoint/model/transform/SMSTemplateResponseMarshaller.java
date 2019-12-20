@@ -47,6 +47,8 @@ public class SMSTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
     private static final MarshallingInfo<String> TEMPLATETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateType").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
 
     private static final SMSTemplateResponseMarshaller instance = new SMSTemplateResponseMarshaller();
 
@@ -73,6 +75,7 @@ public class SMSTemplateResponseMarshaller {
             protocolMarshaller.marshall(sMSTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(sMSTemplateResponse.getTemplateType(), TEMPLATETYPE_BINDING);
+            protocolMarshaller.marshall(sMSTemplateResponse.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

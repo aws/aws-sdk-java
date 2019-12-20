@@ -115,6 +115,16 @@ public class ImportImageTaskStaxUnmarshaller implements Unmarshaller<ImportImage
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    importImageTask.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    importImageTask.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("licenseSpecifications", targetDepth)) {
                     importImageTask.withLicenseSpecifications(new ArrayList<ImportImageLicenseConfigurationResponse>());
                     continue;

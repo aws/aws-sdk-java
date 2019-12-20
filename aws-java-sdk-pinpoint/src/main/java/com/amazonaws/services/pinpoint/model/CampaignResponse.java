@@ -49,7 +49,7 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     private String arn;
     /**
      * <p>
-     * The date, ISO 8601 format, when the campaign was created.
+     * The date, in ISO 8601 format, when the campaign was created.
      * </p>
      */
     private String creationDate;
@@ -331,11 +331,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date, ISO 8601 format, when the campaign was created.
+     * The date, in ISO 8601 format, when the campaign was created.
      * </p>
      * 
      * @param creationDate
-     *        The date, ISO 8601 format, when the campaign was created.
+     *        The date, in ISO 8601 format, when the campaign was created.
      */
 
     public void setCreationDate(String creationDate) {
@@ -344,10 +344,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date, ISO 8601 format, when the campaign was created.
+     * The date, in ISO 8601 format, when the campaign was created.
      * </p>
      * 
-     * @return The date, ISO 8601 format, when the campaign was created.
+     * @return The date, in ISO 8601 format, when the campaign was created.
      */
 
     public String getCreationDate() {
@@ -356,11 +356,11 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date, ISO 8601 format, when the campaign was created.
+     * The date, in ISO 8601 format, when the campaign was created.
      * </p>
      * 
      * @param creationDate
-     *        The date, ISO 8601 format, when the campaign was created.
+     *        The date, in ISO 8601 format, when the campaign was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

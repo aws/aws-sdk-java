@@ -37,9 +37,44 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
     private String key;
     /**
      * <p>
-     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
-     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     * <b>Value</b> depends on the type of key you specify.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your
+     * account, a version number of that document, and a file attached to that document version that you want to reuse.
+     * For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     * </p>
+     * <p>
+     * However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified
+     * instead of the document name only. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
     /**
@@ -110,12 +145,81 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
-     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     * <b>Value</b> depends on the type of key you specify.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your
+     * account, a version number of that document, and a file attached to that document version that you want to reuse.
+     * For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     * </p>
+     * <p>
+     * However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified
+     * instead of the document name only. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The value of a key-value pair that identifies the location of an attachment to a document. The format is
-     *         the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * @return The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     *         <b>Value</b> depends on the type of key you specify.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     *         </p>
+     *         <p>
+     *         <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     *         </p>
+     *         <p>
+     *         <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in
+     *         your account, a version number of that document, and a file attached to that document version that you
+     *         want to reuse. For example:
+     *         </p>
+     *         <p>
+     *         <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     *         </p>
+     *         <p>
+     *         However, if the SSM document is shared with you from another account, the full SSM document ARN must be
+     *         specified instead of the document name only. For example:
+     *         </p>
+     *         <p>
+     *         <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getValues() {
@@ -127,13 +231,82 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
-     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     * <b>Value</b> depends on the type of key you specify.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your
+     * account, a version number of that document, and a file attached to that document version that you want to reuse.
+     * For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     * </p>
+     * <p>
+     * However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified
+     * instead of the document name only. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        The value of a key-value pair that identifies the location of an attachment to a document. The format is
-     *        the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     *        The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     *        <b>Value</b> depends on the type of key you specify.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in
+     *        your account, a version number of that document, and a file attached to that document version that you
+     *        want to reuse. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     *        </p>
+     *        <p>
+     *        However, if the SSM document is shared with you from another account, the full SSM document ARN must be
+     *        specified instead of the document name only. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     *        </p>
+     *        </li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -147,9 +320,44 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
-     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     * <b>Value</b> depends on the type of key you specify.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your
+     * account, a version number of that document, and a file attached to that document version that you want to reuse.
+     * For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     * </p>
+     * <p>
+     * However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified
+     * instead of the document name only. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -157,8 +365,42 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param values
-     *        The value of a key-value pair that identifies the location of an attachment to a document. The format is
-     *        the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     *        The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     *        <b>Value</b> depends on the type of key you specify.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in
+     *        your account, a version number of that document, and a file attached to that document version that you
+     *        want to reuse. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     *        </p>
+     *        <p>
+     *        However, if the SSM document is shared with you from another account, the full SSM document ARN must be
+     *        specified instead of the document name only. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,13 +416,82 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The value of a key-value pair that identifies the location of an attachment to a document. The format is the URL
-     * of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     * The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     * <b>Value</b> depends on the type of key you specify.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your
+     * account, a version number of that document, and a file attached to that document version that you want to reuse.
+     * For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     * </p>
+     * <p>
+     * However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified
+     * instead of the document name only. For example:
+     * </p>
+     * <p>
+     * <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        The value of a key-value pair that identifies the location of an attachment to a document. The format is
-     *        the URL of the location of a document attachment, such as the URL of an Amazon S3 bucket.
+     *        The value of a key-value pair that identifies the location of an attachment to a document. The format for
+     *        <b>Value</b> depends on the type of key you specify.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in
+     *        your account, a version number of that document, and a file attached to that document version that you
+     *        want to reuse. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "MyOtherDocument/3/my-other-file.py" ]</code>
+     *        </p>
+     *        <p>
+     *        However, if the SSM document is shared with you from another account, the full SSM document ARN must be
+     *        specified instead of the document name only. For example:
+     *        </p>
+     *        <p>
+     *        <code>"Values": [ "arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py" ]</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the specified
+     * Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified
      * execution timeout value unless overridden when scheduling a run.
      * </p>
      */
@@ -84,12 +84,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the specified
+     * Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified
      * execution timeout value unless overridden when scheduling a run.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the
+     *        Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
      *        specified execution timeout value unless overridden when scheduling a run.
      */
 
@@ -99,11 +99,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the specified
+     * Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified
      * execution timeout value unless overridden when scheduling a run.
      * </p>
      * 
-     * @return Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the
+     * @return Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
      *         specified execution timeout value unless overridden when scheduling a run.
      */
 
@@ -113,12 +113,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the specified
+     * Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified
      * execution timeout value unless overridden when scheduling a run.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        Sets the execution timeout value (in minutes) for a project. All test runs in this project will use the
+     *        Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
      *        specified execution timeout value unless overridden when scheduling a run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

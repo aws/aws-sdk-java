@@ -44,13 +44,13 @@ public class ConditionalSplitActivity implements Serializable, Cloneable, Struct
     private WaitTime evaluationWaitTime;
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition isn't met.
+     * The unique identifier for the activity to perform if the conditions aren't met.
      * </p>
      */
     private String falseActivity;
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition is met.
+     * The unique identifier for the activity to perform if the conditions are met.
      * </p>
      */
     private String trueActivity;
@@ -143,11 +143,11 @@ public class ConditionalSplitActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition isn't met.
+     * The unique identifier for the activity to perform if the conditions aren't met.
      * </p>
      * 
      * @param falseActivity
-     *        The unique identifier for the activity to perform if the condition isn't met.
+     *        The unique identifier for the activity to perform if the conditions aren't met.
      */
 
     public void setFalseActivity(String falseActivity) {
@@ -156,10 +156,10 @@ public class ConditionalSplitActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition isn't met.
+     * The unique identifier for the activity to perform if the conditions aren't met.
      * </p>
      * 
-     * @return The unique identifier for the activity to perform if the condition isn't met.
+     * @return The unique identifier for the activity to perform if the conditions aren't met.
      */
 
     public String getFalseActivity() {
@@ -168,11 +168,11 @@ public class ConditionalSplitActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition isn't met.
+     * The unique identifier for the activity to perform if the conditions aren't met.
      * </p>
      * 
      * @param falseActivity
-     *        The unique identifier for the activity to perform if the condition isn't met.
+     *        The unique identifier for the activity to perform if the conditions aren't met.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +183,11 @@ public class ConditionalSplitActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition is met.
+     * The unique identifier for the activity to perform if the conditions are met.
      * </p>
      * 
      * @param trueActivity
-     *        The unique identifier for the activity to perform if the condition is met.
+     *        The unique identifier for the activity to perform if the conditions are met.
      */
 
     public void setTrueActivity(String trueActivity) {
@@ -196,10 +196,10 @@ public class ConditionalSplitActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition is met.
+     * The unique identifier for the activity to perform if the conditions are met.
      * </p>
      * 
-     * @return The unique identifier for the activity to perform if the condition is met.
+     * @return The unique identifier for the activity to perform if the conditions are met.
      */
 
     public String getTrueActivity() {
@@ -208,11 +208,11 @@ public class ConditionalSplitActivity implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The unique identifier for the activity to perform if the condition is met.
+     * The unique identifier for the activity to perform if the conditions are met.
      * </p>
      * 
      * @param trueActivity
-     *        The unique identifier for the activity to perform if the condition is met.
+     *        The unique identifier for the activity to perform if the conditions are met.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

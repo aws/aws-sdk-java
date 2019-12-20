@@ -55,6 +55,8 @@ public class PushNotificationTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
     private static final MarshallingInfo<String> TEMPLATETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateType").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
 
     private static final PushNotificationTemplateResponseMarshaller instance = new PushNotificationTemplateResponseMarshaller();
 
@@ -85,6 +87,7 @@ public class PushNotificationTemplateResponseMarshaller {
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(pushNotificationTemplateResponse.getTemplateType(), TEMPLATETYPE_BINDING);
+            protocolMarshaller.marshall(pushNotificationTemplateResponse.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

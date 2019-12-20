@@ -36,19 +36,19 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the device.
+     * The ARN of the device.
      * </p>
      */
     private String deviceArn;
     /**
      * <p>
-     * An array of strings describing the device instance.
+     * An array of strings that describe the device instance.
      * </p>
      */
     private java.util.List<String> labels;
     /**
      * <p>
-     * The status of the device instance. Valid values are listed below.
+     * The status of the device instance. Valid values are listed here.
      * </p>
      */
     private String status;
@@ -60,7 +60,7 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
     private String udid;
     /**
      * <p>
-     * A object containing information about the instance profile.
+     * A object that contains information about the instance profile.
      * </p>
      */
     private InstanceProfile instanceProfile;
@@ -107,11 +107,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the device.
+     * The ARN of the device.
      * </p>
      * 
      * @param deviceArn
-     *        The Amazon Resource Name (ARN) of the device.
+     *        The ARN of the device.
      */
 
     public void setDeviceArn(String deviceArn) {
@@ -120,10 +120,10 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the device.
+     * The ARN of the device.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the device.
+     * @return The ARN of the device.
      */
 
     public String getDeviceArn() {
@@ -132,11 +132,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the device.
+     * The ARN of the device.
      * </p>
      * 
      * @param deviceArn
-     *        The Amazon Resource Name (ARN) of the device.
+     *        The ARN of the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,10 +147,10 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of strings describing the device instance.
+     * An array of strings that describe the device instance.
      * </p>
      * 
-     * @return An array of strings describing the device instance.
+     * @return An array of strings that describe the device instance.
      */
 
     public java.util.List<String> getLabels() {
@@ -159,11 +159,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of strings describing the device instance.
+     * An array of strings that describe the device instance.
      * </p>
      * 
      * @param labels
-     *        An array of strings describing the device instance.
+     *        An array of strings that describe the device instance.
      */
 
     public void setLabels(java.util.Collection<String> labels) {
@@ -177,7 +177,7 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of strings describing the device instance.
+     * An array of strings that describe the device instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,7 +186,7 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param labels
-     *        An array of strings describing the device instance.
+     *        An array of strings that describe the device instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +202,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of strings describing the device instance.
+     * An array of strings that describe the device instance.
      * </p>
      * 
      * @param labels
-     *        An array of strings describing the device instance.
+     *        An array of strings that describe the device instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +217,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the device instance. Valid values are listed below.
+     * The status of the device instance. Valid values are listed here.
      * </p>
      * 
      * @param status
-     *        The status of the device instance. Valid values are listed below.
+     *        The status of the device instance. Valid values are listed here.
      * @see InstanceStatus
      */
 
@@ -231,10 +231,10 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the device instance. Valid values are listed below.
+     * The status of the device instance. Valid values are listed here.
      * </p>
      * 
-     * @return The status of the device instance. Valid values are listed below.
+     * @return The status of the device instance. Valid values are listed here.
      * @see InstanceStatus
      */
 
@@ -244,11 +244,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the device instance. Valid values are listed below.
+     * The status of the device instance. Valid values are listed here.
      * </p>
      * 
      * @param status
-     *        The status of the device instance. Valid values are listed below.
+     *        The status of the device instance. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStatus
      */
@@ -260,11 +260,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the device instance. Valid values are listed below.
+     * The status of the device instance. Valid values are listed here.
      * </p>
      * 
      * @param status
-     *        The status of the device instance. Valid values are listed below.
+     *        The status of the device instance. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStatus
      */
@@ -316,11 +316,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A object containing information about the instance profile.
+     * A object that contains information about the instance profile.
      * </p>
      * 
      * @param instanceProfile
-     *        A object containing information about the instance profile.
+     *        A object that contains information about the instance profile.
      */
 
     public void setInstanceProfile(InstanceProfile instanceProfile) {
@@ -329,10 +329,10 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A object containing information about the instance profile.
+     * A object that contains information about the instance profile.
      * </p>
      * 
-     * @return A object containing information about the instance profile.
+     * @return A object that contains information about the instance profile.
      */
 
     public InstanceProfile getInstanceProfile() {
@@ -341,11 +341,11 @@ public class DeviceInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A object containing information about the instance profile.
+     * A object that contains information about the instance profile.
      * </p>
      * 
      * @param instanceProfile
-     *        A object containing information about the instance profile.
+     *        A object that contains information about the instance profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

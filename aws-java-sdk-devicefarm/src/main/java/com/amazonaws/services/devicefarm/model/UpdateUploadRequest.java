@@ -33,20 +33,20 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String arn;
     /**
      * <p>
-     * The upload's test spec file name. The name should not contain the '/' character. The test spec file name must end
-     * with the <code>.yaml</code> or <code>.yml</code> file extension.
+     * The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must
+     * end with the <code>.yaml</code> or <code>.yml</code> file extension.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The upload's content type (for example, "application/x-yaml").
+     * The upload's content type (for example, <code>application/x-yaml</code>).
      * </p>
      */
     private String contentType;
     /**
      * <p>
-     * Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     * Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      * </p>
      */
     private Boolean editContent;
@@ -93,13 +93,13 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's test spec file name. The name should not contain the '/' character. The test spec file name must end
-     * with the <code>.yaml</code> or <code>.yml</code> file extension.
+     * The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must
+     * end with the <code>.yaml</code> or <code>.yml</code> file extension.
      * </p>
      * 
      * @param name
-     *        The upload's test spec file name. The name should not contain the '/' character. The test spec file name
-     *        must end with the <code>.yaml</code> or <code>.yml</code> file extension.
+     *        The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
+     *        name must end with the <code>.yaml</code> or <code>.yml</code> file extension.
      */
 
     public void setName(String name) {
@@ -108,12 +108,12 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's test spec file name. The name should not contain the '/' character. The test spec file name must end
-     * with the <code>.yaml</code> or <code>.yml</code> file extension.
+     * The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must
+     * end with the <code>.yaml</code> or <code>.yml</code> file extension.
      * </p>
      * 
-     * @return The upload's test spec file name. The name should not contain the '/' character. The test spec file name
-     *         must end with the <code>.yaml</code> or <code>.yml</code> file extension.
+     * @return The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
+     *         name must end with the <code>.yaml</code> or <code>.yml</code> file extension.
      */
 
     public String getName() {
@@ -122,13 +122,13 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's test spec file name. The name should not contain the '/' character. The test spec file name must end
-     * with the <code>.yaml</code> or <code>.yml</code> file extension.
+     * The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must
+     * end with the <code>.yaml</code> or <code>.yml</code> file extension.
      * </p>
      * 
      * @param name
-     *        The upload's test spec file name. The name should not contain the '/' character. The test spec file name
-     *        must end with the <code>.yaml</code> or <code>.yml</code> file extension.
+     *        The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
+     *        name must end with the <code>.yaml</code> or <code>.yml</code> file extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's content type (for example, "application/x-yaml").
+     * The upload's content type (for example, <code>application/x-yaml</code>).
      * </p>
      * 
      * @param contentType
-     *        The upload's content type (for example, "application/x-yaml").
+     *        The upload's content type (for example, <code>application/x-yaml</code>).
      */
 
     public void setContentType(String contentType) {
@@ -152,10 +152,10 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's content type (for example, "application/x-yaml").
+     * The upload's content type (for example, <code>application/x-yaml</code>).
      * </p>
      * 
-     * @return The upload's content type (for example, "application/x-yaml").
+     * @return The upload's content type (for example, <code>application/x-yaml</code>).
      */
 
     public String getContentType() {
@@ -164,11 +164,11 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The upload's content type (for example, "application/x-yaml").
+     * The upload's content type (for example, <code>application/x-yaml</code>).
      * </p>
      * 
      * @param contentType
-     *        The upload's content type (for example, "application/x-yaml").
+     *        The upload's content type (for example, <code>application/x-yaml</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     * Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      * </p>
      * 
      * @param editContent
-     *        Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     *        Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      */
 
     public void setEditContent(Boolean editContent) {
@@ -192,10 +192,10 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     * Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      * </p>
      * 
-     * @return Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     * @return Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      */
 
     public Boolean getEditContent() {
@@ -204,11 +204,11 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     * Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      * </p>
      * 
      * @param editContent
-     *        Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     *        Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,10 +219,10 @@ public class UpdateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     * Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      * </p>
      * 
-     * @return Set to true if the YAML file has changed and needs to be updated; otherwise, set to false.
+     * @return Set to true if the YAML file has changed and must be updated. Otherwise, set to false.
      */
 
     public Boolean isEditContent() {

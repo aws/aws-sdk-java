@@ -413,6 +413,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public ListTemplateVersionsResult listTemplateVersions(ListTemplateVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTemplatesResult listTemplates(ListTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -549,6 +554,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public UpdateSmsTemplateResult updateSmsTemplate(UpdateSmsTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTemplateActiveVersionResult updateTemplateActiveVersion(UpdateTemplateActiveVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

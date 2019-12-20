@@ -29,6 +29,8 @@ public class DeleteEmailTemplateRequestMarshaller {
 
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("template-name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("version").build();
 
     private static final DeleteEmailTemplateRequestMarshaller instance = new DeleteEmailTemplateRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteEmailTemplateRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteEmailTemplateRequest.getTemplateName(), TEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(deleteEmailTemplateRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -30,6 +30,26 @@
  * with the master account is created only in the us-west-2 Region. Security Hub must be enabled for the member account
  * in the same Region that the invite was sent from.
  * </p>
+ * <p>
+ * The following throttling limits apply to using Security Hub API operations:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>GetFindings</code> - RateLimit of 3 requests per second, and a BurstLimit of 6 requests per second.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateFindings</code> - RateLimit of 1 request per second, and a BurstLimit of 5 requests per second.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * All other operations - RateLimit of 10 request per second, and a BurstLimit of 30 requests per second.
+ * </p>
+ * </li>
+ * </ul>
  */
 package com.amazonaws.services.securityhub;
 

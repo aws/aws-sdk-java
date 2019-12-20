@@ -60,9 +60,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     private Boolean encrypted;
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this parameter is
-     * not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
@@ -102,6 +102,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * <p>
      * The specified CMK must exist in the Region that the snapshot is being copied to.
+     * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
      * </p>
      */
     private String kmsKeyId;
@@ -354,9 +357,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this parameter is
-     * not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
@@ -397,12 +400,15 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * The specified CMK must exist in the Region that the snapshot is being copied to.
      * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
+     * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *        the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this
-     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     *        <code>Encrypted</code> flag must also be set. </p>
+     *        An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     *        creating the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if
+     *        this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified,
+     *        the <code>Encrypted</code> flag must also be set. </p>
      *        <p>
      *        The CMK identifier may be provided in any of the following formats:
      *        </p>
@@ -440,6 +446,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *        </p>
      *        <p>
      *        The specified CMK must exist in the Region that the snapshot is being copied to.
+     *        </p>
+     *        <p>
+     *        Amazon EBS does not support asymmetric CMKs.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -448,9 +457,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this parameter is
-     * not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
@@ -491,11 +500,14 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * The specified CMK must exist in the Region that the snapshot is being copied to.
      * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
+     * </p>
      * 
-     * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *         the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this
-     *         parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     *         <code>Encrypted</code> flag must also be set. </p>
+     * @return An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use
+     *         when creating the encrypted snapshot. This parameter is only required if you want to use a non-default
+     *         CMK; if this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
+     *         specified, the <code>Encrypted</code> flag must also be set. </p>
      *         <p>
      *         The CMK identifier may be provided in any of the following formats:
      *         </p>
@@ -534,6 +546,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *         </p>
      *         <p>
      *         The specified CMK must exist in the Region that the snapshot is being copied to.
+     *         </p>
+     *         <p>
+     *         Amazon EBS does not support asymmetric CMKs.
      */
 
     public String getKmsKeyId() {
@@ -542,9 +557,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this parameter is
-     * not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
@@ -585,12 +600,15 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * The specified CMK must exist in the Region that the snapshot is being copied to.
      * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
+     * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *        the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if this
-     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     *        <code>Encrypted</code> flag must also be set. </p>
+     *        An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     *        creating the encrypted snapshot. This parameter is only required if you want to use a non-default CMK; if
+     *        this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified,
+     *        the <code>Encrypted</code> flag must also be set. </p>
      *        <p>
      *        The CMK identifier may be provided in any of the following formats:
      *        </p>
@@ -628,6 +646,9 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *        </p>
      *        <p>
      *        The specified CMK must exist in the Region that the snapshot is being copied to.
+     *        </p>
+     *        <p>
+     *        Amazon EBS does not support asymmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -134,7 +134,7 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
+     * The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.
      * </p>
      */
     private String url;
@@ -1169,12 +1169,11 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
+     * The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.
      * </p>
      * 
      * @param url
-     *        The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's
-     *        file.
+     *        The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.
      */
 
     public void setUrl(String url) {
@@ -1183,11 +1182,10 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
+     * The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.
      * </p>
      * 
-     * @return The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's
-     *         file.
+     * @return The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.
      */
 
     public String getUrl() {
@@ -1196,12 +1194,11 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's file.
+     * The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.
      * </p>
      * 
      * @param url
-     *        The pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the sample's
-     *        file.
+     *        The presigned Amazon S3 URL that can be used with a GET request to download the sample's file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

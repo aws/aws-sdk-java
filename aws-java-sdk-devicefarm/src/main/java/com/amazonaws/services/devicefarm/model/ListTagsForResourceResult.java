@@ -26,7 +26,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -34,11 +34,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @return The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *         character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *         character length of 128 characters. Tag values can have a maximum length of 256 characters.
      */
 
     public java.util.List<Tag> getTags() {
@@ -48,12 +48,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @param tags
      *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        character length of 128 characters. Tag values can have a maximum length of 256 characters.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -68,7 +68,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param tags
      *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        character length of 128 characters. Tag values can have a maximum length of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,12 +95,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @param tags
      *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        character length of 128 characters. Tag values can have a maximum length of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

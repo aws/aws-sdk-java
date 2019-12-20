@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The response information of license configurations.
+ * The response information for license configurations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImageLicenseConfigurationResponse"

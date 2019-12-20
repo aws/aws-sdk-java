@@ -25,6 +25,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
+     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
+     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
+     * parameter. Otherwise, an error will occur.
+     * </p>
+     */
+    private Boolean createNewVersion;
+
     private SMSTemplateRequest sMSTemplateRequest;
     /**
      * <p>
@@ -34,6 +47,140 @@ public class UpdateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String templateName;
+    /**
+     * <p>
+     * The unique identifier for the version of the message template to update, retrieve information about, or delete.
+     * To retrieve identifiers and other information for all the versions of a template, use the <link
+     * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
+     * </p>
+     * <p>
+     * If specified, this value must match the identifier of an existing template version. If specified for an update
+     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * helps ensure that race conditions don't occur.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a get operation, retrieves information about the active version of the template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * create-new-version parameter isn't used or is set to false.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a delete operation, deletes the template, including all versions of the template.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String version;
+
+    /**
+     * <p>
+     * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
+     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
+     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
+     * parameter. Otherwise, an error will occur.
+     * </p>
+     * 
+     * @param createNewVersion
+     *        Specifies whether to save the updates as a new version of the message template. Valid values are: true,
+     *        save the updates as a new version; and, false, save the updates to the latest existing version of the
+     *        template.</p>
+     *        <p>
+     *        If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
+     *        version of the template. If you specify a value of true for this parameter, don't specify a value for the
+     *        version parameter. Otherwise, an error will occur.
+     */
+
+    public void setCreateNewVersion(Boolean createNewVersion) {
+        this.createNewVersion = createNewVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
+     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
+     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
+     * parameter. Otherwise, an error will occur.
+     * </p>
+     * 
+     * @return Specifies whether to save the updates as a new version of the message template. Valid values are: true,
+     *         save the updates as a new version; and, false, save the updates to the latest existing version of the
+     *         template.</p>
+     *         <p>
+     *         If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
+     *         version of the template. If you specify a value of true for this parameter, don't specify a value for the
+     *         version parameter. Otherwise, an error will occur.
+     */
+
+    public Boolean getCreateNewVersion() {
+        return this.createNewVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
+     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
+     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
+     * parameter. Otherwise, an error will occur.
+     * </p>
+     * 
+     * @param createNewVersion
+     *        Specifies whether to save the updates as a new version of the message template. Valid values are: true,
+     *        save the updates as a new version; and, false, save the updates to the latest existing version of the
+     *        template.</p>
+     *        <p>
+     *        If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
+     *        version of the template. If you specify a value of true for this parameter, don't specify a value for the
+     *        version parameter. Otherwise, an error will occur.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSmsTemplateRequest withCreateNewVersion(Boolean createNewVersion) {
+        setCreateNewVersion(createNewVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the
+     * updates as a new version; and, false, save the updates to the latest existing version of the template.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing version
+     * of the template. If you specify a value of true for this parameter, don't specify a value for the version
+     * parameter. Otherwise, an error will occur.
+     * </p>
+     * 
+     * @return Specifies whether to save the updates as a new version of the message template. Valid values are: true,
+     *         save the updates as a new version; and, false, save the updates to the latest existing version of the
+     *         template.</p>
+     *         <p>
+     *         If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to the latest existing
+     *         version of the template. If you specify a value of true for this parameter, don't specify a value for the
+     *         version parameter. Otherwise, an error will occur.
+     */
+
+    public Boolean isCreateNewVersion() {
+        return this.createNewVersion;
+    }
 
     /**
      * @param sMSTemplateRequest
@@ -114,6 +261,211 @@ public class UpdateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The unique identifier for the version of the message template to update, retrieve information about, or delete.
+     * To retrieve identifiers and other information for all the versions of a template, use the <link
+     * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
+     * </p>
+     * <p>
+     * If specified, this value must match the identifier of an existing template version. If specified for an update
+     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * helps ensure that race conditions don't occur.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a get operation, retrieves information about the active version of the template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * create-new-version parameter isn't used or is set to false.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a delete operation, deletes the template, including all versions of the template.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param version
+     *        The unique identifier for the version of the message template to update, retrieve information about, or
+     *        delete. To retrieve identifiers and other information for all the versions of a template, use the <link
+     *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
+     *        <p>
+     *        If specified, this value must match the identifier of an existing template version. If specified for an
+     *        update operation, this value must match the identifier of the latest existing version of the template.
+     *        This restriction helps ensure that race conditions don't occur.
+     *        </p>
+     *        <p>
+     *        If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a get operation, retrieves information about the active version of the template.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an update operation, saves the updates to the latest existing version of the template, if the
+     *        create-new-version parameter isn't used or is set to false.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a delete operation, deletes the template, including all versions of the template.
+     *        </p>
+     *        </li>
+     */
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the version of the message template to update, retrieve information about, or delete.
+     * To retrieve identifiers and other information for all the versions of a template, use the <link
+     * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
+     * </p>
+     * <p>
+     * If specified, this value must match the identifier of an existing template version. If specified for an update
+     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * helps ensure that race conditions don't occur.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a get operation, retrieves information about the active version of the template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * create-new-version parameter isn't used or is set to false.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a delete operation, deletes the template, including all versions of the template.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The unique identifier for the version of the message template to update, retrieve information about, or
+     *         delete. To retrieve identifiers and other information for all the versions of a template, use the <link
+     *         linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
+     *         <p>
+     *         If specified, this value must match the identifier of an existing template version. If specified for an
+     *         update operation, this value must match the identifier of the latest existing version of the template.
+     *         This restriction helps ensure that race conditions don't occur.
+     *         </p>
+     *         <p>
+     *         If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For a get operation, retrieves information about the active version of the template.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an update operation, saves the updates to the latest existing version of the template, if the
+     *         create-new-version parameter isn't used or is set to false.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For a delete operation, deletes the template, including all versions of the template.
+     *         </p>
+     *         </li>
+     */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the version of the message template to update, retrieve information about, or delete.
+     * To retrieve identifiers and other information for all the versions of a template, use the <link
+     * linkend="templates-template-name-template-type-versions">Template Versions</link> resource.
+     * </p>
+     * <p>
+     * If specified, this value must match the identifier of an existing template version. If specified for an update
+     * operation, this value must match the identifier of the latest existing version of the template. This restriction
+     * helps ensure that race conditions don't occur.
+     * </p>
+     * <p>
+     * If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a get operation, retrieves information about the active version of the template.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an update operation, saves the updates to the latest existing version of the template, if the
+     * create-new-version parameter isn't used or is set to false.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a delete operation, deletes the template, including all versions of the template.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param version
+     *        The unique identifier for the version of the message template to update, retrieve information about, or
+     *        delete. To retrieve identifiers and other information for all the versions of a template, use the <link
+     *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
+     *        <p>
+     *        If specified, this value must match the identifier of an existing template version. If specified for an
+     *        update operation, this value must match the identifier of the latest existing version of the template.
+     *        This restriction helps ensure that race conditions don't occur.
+     *        </p>
+     *        <p>
+     *        If you don't specify a value for this parameter, Amazon Pinpoint does the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a get operation, retrieves information about the active version of the template.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an update operation, saves the updates to the latest existing version of the template, if the
+     *        create-new-version parameter isn't used or is set to false.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a delete operation, deletes the template, including all versions of the template.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSmsTemplateRequest withVersion(String version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -125,10 +477,14 @@ public class UpdateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCreateNewVersion() != null)
+            sb.append("CreateNewVersion: ").append(getCreateNewVersion()).append(",");
         if (getSMSTemplateRequest() != null)
             sb.append("SMSTemplateRequest: ").append(getSMSTemplateRequest()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: ").append(getTemplateName());
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -143,6 +499,10 @@ public class UpdateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof UpdateSmsTemplateRequest == false)
             return false;
         UpdateSmsTemplateRequest other = (UpdateSmsTemplateRequest) obj;
+        if (other.getCreateNewVersion() == null ^ this.getCreateNewVersion() == null)
+            return false;
+        if (other.getCreateNewVersion() != null && other.getCreateNewVersion().equals(this.getCreateNewVersion()) == false)
+            return false;
         if (other.getSMSTemplateRequest() == null ^ this.getSMSTemplateRequest() == null)
             return false;
         if (other.getSMSTemplateRequest() != null && other.getSMSTemplateRequest().equals(this.getSMSTemplateRequest()) == false)
@@ -150,6 +510,10 @@ public class UpdateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
         if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
+            return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
         return true;
     }
@@ -159,8 +523,10 @@ public class UpdateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCreateNewVersion() == null) ? 0 : getCreateNewVersion().hashCode());
         hashCode = prime * hashCode + ((getSMSTemplateRequest() == null) ? 0 : getSMSTemplateRequest().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

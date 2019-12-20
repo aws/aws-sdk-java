@@ -29,12 +29,26 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ResourceDetailsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AWSCLOUDFRONTDISTRIBUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCloudFrontDistribution").build();
     private static final MarshallingInfo<StructuredPojo> AWSEC2INSTANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2Instance").build();
+    private static final MarshallingInfo<StructuredPojo> AWSELBV2LOADBALANCER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElbv2LoadBalancer").build();
     private static final MarshallingInfo<StructuredPojo> AWSS3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsS3Bucket").build();
     private static final MarshallingInfo<StructuredPojo> AWSIAMACCESSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsIamAccessKey").build();
+    private static final MarshallingInfo<StructuredPojo> AWSIAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsIamRole").build();
+    private static final MarshallingInfo<StructuredPojo> AWSKMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsKmsKey").build();
+    private static final MarshallingInfo<StructuredPojo> AWSLAMBDAFUNCTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsLambdaFunction").build();
+    private static final MarshallingInfo<StructuredPojo> AWSSNSTOPIC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsSnsTopic").build();
+    private static final MarshallingInfo<StructuredPojo> AWSSQSQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsSqsQueue").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Container").build();
     private static final MarshallingInfo<Map> OTHER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,9 +70,16 @@ public class ResourceDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(resourceDetails.getAwsCloudFrontDistribution(), AWSCLOUDFRONTDISTRIBUTION_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEc2Instance(), AWSEC2INSTANCE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsElbv2LoadBalancer(), AWSELBV2LOADBALANCER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsS3Bucket(), AWSS3BUCKET_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsIamAccessKey(), AWSIAMACCESSKEY_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsIamRole(), AWSIAMROLE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsKmsKey(), AWSKMSKEY_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsLambdaFunction(), AWSLAMBDAFUNCTION_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsSnsTopic(), AWSSNSTOPIC_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsSqsQueue(), AWSSQSQUEUE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getContainer(), CONTAINER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getOther(), OTHER_BINDING);
         } catch (Exception e) {

@@ -39,6 +39,11 @@ public class HoldoutActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The percentage of participants who shouldn't continue the journey.
      * </p>
+     * <p>
+     * To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the
+     * percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal
+     * to the percentage that you specify.
+     * </p>
      */
     private Integer percentage;
 
@@ -86,9 +91,18 @@ public class HoldoutActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The percentage of participants who shouldn't continue the journey.
      * </p>
+     * <p>
+     * To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the
+     * percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal
+     * to the percentage that you specify.
+     * </p>
      * 
      * @param percentage
-     *        The percentage of participants who shouldn't continue the journey.
+     *        The percentage of participants who shouldn't continue the journey.</p>
+     *        <p>
+     *        To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the
+     *        percentage that you specify. Therefore, the actual percentage of participants who are held out may not be
+     *        equal to the percentage that you specify.
      */
 
     public void setPercentage(Integer percentage) {
@@ -99,8 +113,17 @@ public class HoldoutActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The percentage of participants who shouldn't continue the journey.
      * </p>
+     * <p>
+     * To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the
+     * percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal
+     * to the percentage that you specify.
+     * </p>
      * 
-     * @return The percentage of participants who shouldn't continue the journey.
+     * @return The percentage of participants who shouldn't continue the journey.</p>
+     *         <p>
+     *         To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to
+     *         the percentage that you specify. Therefore, the actual percentage of participants who are held out may
+     *         not be equal to the percentage that you specify.
      */
 
     public Integer getPercentage() {
@@ -111,9 +134,18 @@ public class HoldoutActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The percentage of participants who shouldn't continue the journey.
      * </p>
+     * <p>
+     * To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the
+     * percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal
+     * to the percentage that you specify.
+     * </p>
      * 
      * @param percentage
-     *        The percentage of participants who shouldn't continue the journey.
+     *        The percentage of participants who shouldn't continue the journey.</p>
+     *        <p>
+     *        To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the
+     *        percentage that you specify. Therefore, the actual percentage of participants who are held out may not be
+     *        equal to the percentage that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a test run on a set of devices with a given app package, test parameters, etc.
+ * Represents a test run on a set of devices with a given app package, test parameters, and so on.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Run" target="_top">AWS API
@@ -50,93 +50,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER
+     * </p>
+     * <note>
+     * <p>
+     * For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the
+     * same time.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -152,12 +156,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -179,47 +183,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_CONCURRENCY: A pending concurrency status.
+     * PENDING_CONCURRENCY
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_DEVICE: A pending device status.
+     * PENDING_DEVICE
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * SCHEDULING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PREPARING: A preparing status.
+     * PREPARING
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING: A running status.
+     * RUNNING
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * COMPLETED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPING: A stopping status.
+     * STOPPING
      * </p>
      * </li>
      * </ul>
@@ -235,37 +239,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending condition.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PASSED: A passing condition.
+     * PASSED
      * </p>
      * </li>
      * <li>
      * <p>
-     * WARNED: A warning condition.
+     * WARNED
      * </p>
      * </li>
      * <li>
      * <p>
-     * FAILED: A failed condition.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED: A skipped condition.
+     * SKIPPED
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * ERRORED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPED: A stopped condition.
+     * STOPPED
      * </p>
      * </li>
      * </ul>
@@ -312,6 +316,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run
+     * is counted toward metered device minutes.
+     * </p>
+     * </note>
      */
     private String billingMethod;
     /**
@@ -328,8 +338,8 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     private NetworkProfile networkProfile;
     /**
      * <p>
-     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
-     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the
+     * test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
      * </p>
      */
     private String parsingResultUrl;
@@ -361,7 +371,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     private Integer eventCount;
     /**
      * <p>
-     * The number of minutes the job will execute before it times out.
+     * The number of minutes the job executes before it times out.
      * </p>
      */
     private Integer jobTimeoutMinutes;
@@ -403,11 +413,11 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     private String webUrl;
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      */
@@ -515,93 +525,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER
+     * </p>
+     * <note>
+     * <p>
+     * For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the
+     * same time.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -614,93 +628,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     *        capturing screenshots at the same time.
+     *        BUILTIN_EXPLORER
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots
+     *        at the same time.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @see TestType
@@ -720,93 +738,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER
+     * </p>
+     * <note>
+     * <p>
+     * For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the
+     * same time.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -818,93 +840,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         BUILTIN_FUZZ: The built-in fuzz type.
+     *         BUILTIN_FUZZ
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     *         capturing screenshots at the same time.
+     *         BUILTIN_EXPLORER
+     *         </p>
+     *         <note>
+     *         <p>
+     *         For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots
+     *         at the same time.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         APPIUM_JAVA_JUNIT
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *         APPIUM_JAVA_TESTNG
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *         APPIUM_PYTHON
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_PYTHON: The Appium Python type.
+     *         APPIUM_NODE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_NODE: The Appium Node.js type.
+     *         APPIUM_RUBY
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_RUBY: The Appium Ruby type.
+     *         APPIUM_WEB_JAVA_JUNIT
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *         APPIUM_WEB_JAVA_TESTNG
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *         APPIUM_WEB_PYTHON
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *         APPIUM_WEB_NODE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *         APPIUM_WEB_RUBY
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *         CALABASH
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CALABASH: The Calabash type.
+     *         INSTRUMENTATION
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INSTRUMENTATION: The Instrumentation type.
+     *         UIAUTOMATION
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATION: The uiautomation type.
+     *         UIAUTOMATOR
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATOR: The uiautomator type.
+     *         XCTEST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST: The Xcode test type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         XCTEST_UI: The Xcode UI test type.
+     *         XCTEST_UI
      *         </p>
      *         </li>
      * @see TestType
@@ -924,93 +950,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER
+     * </p>
+     * <note>
+     * <p>
+     * For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the
+     * same time.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -1023,93 +1053,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     *        capturing screenshots at the same time.
+     *        BUILTIN_EXPLORER
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots
+     *        at the same time.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1131,93 +1165,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER
+     * </p>
+     * <note>
+     * <p>
+     * For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the
+     * same time.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -1230,93 +1268,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     *        capturing screenshots at the same time.
+     *        BUILTIN_EXPLORER
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots
+     *        at the same time.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @see TestType
@@ -1336,93 +1378,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER
+     * </p>
+     * <note>
+     * <p>
+     * For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the
+     * same time.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -1435,93 +1481,97 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     *        capturing screenshots at the same time.
+     *        BUILTIN_EXPLORER
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots
+     *        at the same time.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1543,12 +1593,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -1561,12 +1611,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @see DevicePlatform
@@ -1586,12 +1636,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -1603,12 +1653,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         ANDROID: The Android platform.
+     *         ANDROID
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         IOS: The iOS platform.
+     *         IOS
      *         </p>
      *         </li>
      * @see DevicePlatform
@@ -1628,12 +1678,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -1646,12 +1696,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1673,12 +1723,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -1691,12 +1741,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @see DevicePlatform
@@ -1716,12 +1766,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -1734,12 +1784,12 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1801,47 +1851,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_CONCURRENCY: A pending concurrency status.
+     * PENDING_CONCURRENCY
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_DEVICE: A pending device status.
+     * PENDING_DEVICE
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * SCHEDULING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PREPARING: A preparing status.
+     * PREPARING
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING: A running status.
+     * RUNNING
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * COMPLETED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPING: A stopping status.
+     * STOPPING
      * </p>
      * </li>
      * </ul>
@@ -1854,47 +1904,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        PENDING_CONCURRENCY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_DEVICE: A pending device status.
+     *        PENDING_DEVICE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        SCHEDULING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PREPARING: A preparing status.
+     *        PREPARING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING: A running status.
+     *        RUNNING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        COMPLETED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPING: A stopping status.
+     *        STOPPING
      *        </p>
      *        </li>
      * @see ExecutionStatus
@@ -1914,47 +1964,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_CONCURRENCY: A pending concurrency status.
+     * PENDING_CONCURRENCY
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_DEVICE: A pending device status.
+     * PENDING_DEVICE
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * SCHEDULING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PREPARING: A preparing status.
+     * PREPARING
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING: A running status.
+     * RUNNING
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * COMPLETED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPING: A stopping status.
+     * STOPPING
      * </p>
      * </li>
      * </ul>
@@ -1966,47 +2016,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         PENDING: A pending status.
+     *         PENDING
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PENDING_CONCURRENCY: A pending concurrency status.
+     *         PENDING_CONCURRENCY
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PENDING_DEVICE: A pending device status.
+     *         PENDING_DEVICE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PROCESSING: A processing status.
+     *         PROCESSING
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SCHEDULING: A scheduling status.
+     *         SCHEDULING
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PREPARING: A preparing status.
+     *         PREPARING
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RUNNING: A running status.
+     *         RUNNING
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         COMPLETED: A completed status.
+     *         COMPLETED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         STOPPING: A stopping status.
+     *         STOPPING
      *         </p>
      *         </li>
      * @see ExecutionStatus
@@ -2026,47 +2076,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_CONCURRENCY: A pending concurrency status.
+     * PENDING_CONCURRENCY
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_DEVICE: A pending device status.
+     * PENDING_DEVICE
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * SCHEDULING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PREPARING: A preparing status.
+     * PREPARING
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING: A running status.
+     * RUNNING
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * COMPLETED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPING: A stopping status.
+     * STOPPING
      * </p>
      * </li>
      * </ul>
@@ -2079,47 +2129,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        PENDING_CONCURRENCY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_DEVICE: A pending device status.
+     *        PENDING_DEVICE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        SCHEDULING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PREPARING: A preparing status.
+     *        PREPARING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING: A running status.
+     *        RUNNING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        COMPLETED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPING: A stopping status.
+     *        STOPPING
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2141,47 +2191,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_CONCURRENCY: A pending concurrency status.
+     * PENDING_CONCURRENCY
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_DEVICE: A pending device status.
+     * PENDING_DEVICE
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * SCHEDULING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PREPARING: A preparing status.
+     * PREPARING
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING: A running status.
+     * RUNNING
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * COMPLETED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPING: A stopping status.
+     * STOPPING
      * </p>
      * </li>
      * </ul>
@@ -2194,47 +2244,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        PENDING_CONCURRENCY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_DEVICE: A pending device status.
+     *        PENDING_DEVICE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        SCHEDULING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PREPARING: A preparing status.
+     *        PREPARING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING: A running status.
+     *        RUNNING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        COMPLETED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPING: A stopping status.
+     *        STOPPING
      *        </p>
      *        </li>
      * @see ExecutionStatus
@@ -2254,47 +2304,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_CONCURRENCY: A pending concurrency status.
+     * PENDING_CONCURRENCY
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING_DEVICE: A pending device status.
+     * PENDING_DEVICE
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * SCHEDULING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PREPARING: A preparing status.
+     * PREPARING
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING: A running status.
+     * RUNNING
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * COMPLETED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPING: A stopping status.
+     * STOPPING
      * </p>
      * </li>
      * </ul>
@@ -2307,47 +2357,47 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        PENDING_CONCURRENCY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING_DEVICE: A pending device status.
+     *        PENDING_DEVICE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        SCHEDULING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PREPARING: A preparing status.
+     *        PREPARING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING: A running status.
+     *        RUNNING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        COMPLETED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPING: A stopping status.
+     *        STOPPING
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2369,37 +2419,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending condition.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PASSED: A passing condition.
+     * PASSED
      * </p>
      * </li>
      * <li>
      * <p>
-     * WARNED: A warning condition.
+     * WARNED
      * </p>
      * </li>
      * <li>
      * <p>
-     * FAILED: A failed condition.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED: A skipped condition.
+     * SKIPPED
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * ERRORED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPED: A stopped condition.
+     * STOPPED
      * </p>
      * </li>
      * </ul>
@@ -2412,37 +2462,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending condition.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PASSED: A passing condition.
+     *        PASSED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WARNED: A warning condition.
+     *        WARNED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED: A failed condition.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SKIPPED: A skipped condition.
+     *        SKIPPED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        ERRORED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPED: A stopped condition.
+     *        STOPPED
      *        </p>
      *        </li>
      * @see ExecutionResult
@@ -2462,37 +2512,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending condition.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PASSED: A passing condition.
+     * PASSED
      * </p>
      * </li>
      * <li>
      * <p>
-     * WARNED: A warning condition.
+     * WARNED
      * </p>
      * </li>
      * <li>
      * <p>
-     * FAILED: A failed condition.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED: A skipped condition.
+     * SKIPPED
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * ERRORED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPED: A stopped condition.
+     * STOPPED
      * </p>
      * </li>
      * </ul>
@@ -2504,37 +2554,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         PENDING: A pending condition.
+     *         PENDING
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PASSED: A passing condition.
+     *         PASSED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         WARNED: A warning condition.
+     *         WARNED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FAILED: A failed condition.
+     *         FAILED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SKIPPED: A skipped condition.
+     *         SKIPPED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ERRORED: An error condition.
+     *         ERRORED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         STOPPED: A stopped condition.
+     *         STOPPED
      *         </p>
      *         </li>
      * @see ExecutionResult
@@ -2554,37 +2604,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending condition.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PASSED: A passing condition.
+     * PASSED
      * </p>
      * </li>
      * <li>
      * <p>
-     * WARNED: A warning condition.
+     * WARNED
      * </p>
      * </li>
      * <li>
      * <p>
-     * FAILED: A failed condition.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED: A skipped condition.
+     * SKIPPED
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * ERRORED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPED: A stopped condition.
+     * STOPPED
      * </p>
      * </li>
      * </ul>
@@ -2597,37 +2647,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending condition.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PASSED: A passing condition.
+     *        PASSED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WARNED: A warning condition.
+     *        WARNED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED: A failed condition.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SKIPPED: A skipped condition.
+     *        SKIPPED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        ERRORED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPED: A stopped condition.
+     *        STOPPED
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2649,37 +2699,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending condition.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PASSED: A passing condition.
+     * PASSED
      * </p>
      * </li>
      * <li>
      * <p>
-     * WARNED: A warning condition.
+     * WARNED
      * </p>
      * </li>
      * <li>
      * <p>
-     * FAILED: A failed condition.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED: A skipped condition.
+     * SKIPPED
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * ERRORED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPED: A stopped condition.
+     * STOPPED
      * </p>
      * </li>
      * </ul>
@@ -2692,37 +2742,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending condition.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PASSED: A passing condition.
+     *        PASSED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WARNED: A warning condition.
+     *        WARNED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED: A failed condition.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SKIPPED: A skipped condition.
+     *        SKIPPED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        ERRORED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPED: A stopped condition.
+     *        STOPPED
      *        </p>
      *        </li>
      * @see ExecutionResult
@@ -2742,37 +2792,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PENDING: A pending condition.
+     * PENDING
      * </p>
      * </li>
      * <li>
      * <p>
-     * PASSED: A passing condition.
+     * PASSED
      * </p>
      * </li>
      * <li>
      * <p>
-     * WARNED: A warning condition.
+     * WARNED
      * </p>
      * </li>
      * <li>
      * <p>
-     * FAILED: A failed condition.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * SKIPPED: A skipped condition.
+     * SKIPPED
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * ERRORED
      * </p>
      * </li>
      * <li>
      * <p>
-     * STOPPED: A stopped condition.
+     * STOPPED
      * </p>
      * </li>
      * </ul>
@@ -2785,37 +2835,37 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PENDING: A pending condition.
+     *        PENDING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PASSED: A passing condition.
+     *        PASSED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WARNED: A warning condition.
+     *        WARNED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED: A failed condition.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SKIPPED: A skipped condition.
+     *        SKIPPED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        ERRORED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        STOPPED: A stopped condition.
+     *        STOPPED
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3072,10 +3122,20 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run
+     * is counted toward metered device minutes.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise,
+     *        the run is counted toward metered device minutes.
+     *        </p>
      * @see BillingMethod
      */
 
@@ -3088,9 +3148,19 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run
+     * is counted toward metered device minutes.
+     * </p>
+     * </note>
      * 
      * @return Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *         parameter is not specified, the default value is <code>metered</code>.
+     *         parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *         <p>
+     *         If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise,
+     *         the run is counted toward metered device minutes.
+     *         </p>
      * @see BillingMethod
      */
 
@@ -3103,10 +3173,20 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run
+     * is counted toward metered device minutes.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise,
+     *        the run is counted toward metered device minutes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */
@@ -3121,10 +3201,20 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run
+     * is counted toward metered device minutes.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise,
+     *        the run is counted toward metered device minutes.
+     *        </p>
      * @see BillingMethod
      */
 
@@ -3137,10 +3227,20 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run
+     * is counted toward metered device minutes.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise,
+     *        the run is counted toward metered device minutes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */
@@ -3232,13 +3332,14 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
-     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the
+     * test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
      * </p>
      * 
      * @param parsingResultUrl
-     *        Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the
-     *        test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     *        Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If
+     *        the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
+     *        to.
      */
 
     public void setParsingResultUrl(String parsingResultUrl) {
@@ -3247,11 +3348,11 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
-     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the
+     * test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
      * </p>
      * 
-     * @return Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If
+     * @return Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If
      *         the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
      *         to.
      */
@@ -3262,13 +3363,14 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the test
-     * package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     * Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the
+     * test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
      * </p>
      * 
      * @param parsingResultUrl
-     *        Read-only URL for an object in S3 bucket where you can get the parsing results of the test package. If the
-     *        test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.
+     *        Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If
+     *        the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points
+     *        to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3488,11 +3590,11 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of minutes the job will execute before it times out.
+     * The number of minutes the job executes before it times out.
      * </p>
      * 
      * @param jobTimeoutMinutes
-     *        The number of minutes the job will execute before it times out.
+     *        The number of minutes the job executes before it times out.
      */
 
     public void setJobTimeoutMinutes(Integer jobTimeoutMinutes) {
@@ -3501,10 +3603,10 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of minutes the job will execute before it times out.
+     * The number of minutes the job executes before it times out.
      * </p>
      * 
-     * @return The number of minutes the job will execute before it times out.
+     * @return The number of minutes the job executes before it times out.
      */
 
     public Integer getJobTimeoutMinutes() {
@@ -3513,11 +3615,11 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of minutes the job will execute before it times out.
+     * The number of minutes the job executes before it times out.
      * </p>
      * 
      * @param jobTimeoutMinutes
-     *        The number of minutes the job will execute before it times out.
+     *        The number of minutes the job executes before it times out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3768,19 +3870,19 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
-     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *        devices, Device Farm always signs your apps again.</p>
      *        <p>
-     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        For more information about how Device Farm re-signs your apps, see <a
      *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      */
@@ -3791,18 +3893,18 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
-     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *         devices, Device Farm always signs your apps again.</p>
      *         <p>
-     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         For more information about how Device Farm re-signs your apps, see <a
      *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
@@ -3813,19 +3915,19 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
-     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *        devices, Device Farm always signs your apps again.</p>
      *        <p>
-     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        For more information about how Device Farm re-signs your apps, see <a
      *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3838,18 +3940,18 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
-     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *         devices, Device Farm always signs your apps again.</p>
      *         <p>
-     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         For more information about how Device Farm re-signs your apps, see <a
      *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */

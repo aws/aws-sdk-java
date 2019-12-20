@@ -96,7 +96,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the email channel.
+     * Creates a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param createEmailTemplateRequest
@@ -109,7 +109,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the email channel.
+     * Creates a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param createEmailTemplateRequest
@@ -220,7 +220,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through a push notification channel.
+     * Creates a message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param createPushTemplateRequest
@@ -233,7 +233,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through a push notification channel.
+     * Creates a message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param createPushTemplateRequest
@@ -284,7 +284,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
+     * Creates a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param createSmsTemplateRequest
@@ -297,7 +297,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
+     * Creates a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param createSmsTemplateRequest
@@ -315,7 +315,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the voice channel.
+     * Creates a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param createVoiceTemplateRequest
@@ -328,7 +328,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the voice channel.
+     * Creates a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param createVoiceTemplateRequest
@@ -629,7 +629,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the email channel.
+     * Deletes a message template for messages that were sent through the email channel.
      * </p>
      * 
      * @param deleteEmailTemplateRequest
@@ -642,7 +642,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the email channel.
+     * Deletes a message template for messages that were sent through the email channel.
      * </p>
      * 
      * @param deleteEmailTemplateRequest
@@ -784,8 +784,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through a push notification
-     * channel.
+     * Deletes a message template for messages that were sent through a push notification channel.
      * </p>
      * 
      * @param deletePushTemplateRequest
@@ -798,8 +797,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through a push notification
-     * channel.
+     * Deletes a message template for messages that were sent through a push notification channel.
      * </p>
      * 
      * @param deletePushTemplateRequest
@@ -879,7 +877,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the SMS channel.
+     * Deletes a message template for messages that were sent through the SMS channel.
      * </p>
      * 
      * @param deleteSmsTemplateRequest
@@ -892,7 +890,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the SMS channel.
+     * Deletes a message template for messages that were sent through the SMS channel.
      * </p>
      * 
      * @param deleteSmsTemplateRequest
@@ -972,7 +970,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the voice channel.
+     * Deletes a message template for messages that were sent through the voice channel.
      * </p>
      * 
      * @param deleteVoiceTemplateRequest
@@ -985,7 +983,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the voice channel.
+     * Deletes a message template for messages that were sent through the voice channel.
      * </p>
      * 
      * @param deleteVoiceTemplateRequest
@@ -1255,7 +1253,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves information about all of your applications.
+     * Retrieves information about all the applications that are associated with your Amazon Pinpoint account.
      * </p>
      * 
      * @param getAppsRequest
@@ -1268,7 +1266,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves information about all of your applications.
+     * Retrieves information about all the applications that are associated with your Amazon Pinpoint account.
      * </p>
      * 
      * @param getAppsRequest
@@ -1567,8 +1565,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * email channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param getEmailTemplateRequest
@@ -1581,8 +1578,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * email channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param getEmailTemplateRequest
@@ -1947,8 +1943,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through a
-     * push notification channel.
+     * Retrieves the content and settings of a message template for messages that are sent through a push notification
+     * channel.
      * </p>
      * 
      * @param getPushTemplateRequest
@@ -1961,8 +1957,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through a
-     * push notification channel.
+     * Retrieves the content and settings of a message template for messages that are sent through a push notification
+     * channel.
      * </p>
      * 
      * @param getPushTemplateRequest
@@ -2108,7 +2104,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves information about the configuration, dimension, and other settings for all versions of a specific
+     * Retrieves information about the configuration, dimension, and other settings for all the versions of a specific
      * segment that's associated with an application.
      * </p>
      * 
@@ -2122,7 +2118,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves information about the configuration, dimension, and other settings for all versions of a specific
+     * Retrieves information about the configuration, dimension, and other settings for all the versions of a specific
      * segment that's associated with an application.
      * </p>
      * 
@@ -2205,8 +2201,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * SMS channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param getSmsTemplateRequest
@@ -2219,8 +2214,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * SMS channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param getSmsTemplateRequest
@@ -2300,8 +2294,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * voice channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param getVoiceTemplateRequest
@@ -2314,8 +2307,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * voice channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param getVoiceTemplateRequest
@@ -2396,6 +2388,37 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about all the versions of a specific message template.
+     * </p>
+     * 
+     * @param listTemplateVersionsRequest
+     * @return A Java Future containing the result of the ListTemplateVersions operation returned by the service.
+     * @sample AmazonPinpointAsync.ListTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTemplateVersionsResult> listTemplateVersionsAsync(ListTemplateVersionsRequest listTemplateVersionsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about all the versions of a specific message template.
+     * </p>
+     * 
+     * @param listTemplateVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTemplateVersions operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.ListTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTemplateVersionsResult> listTemplateVersionsAsync(ListTemplateVersionsRequest listTemplateVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTemplateVersionsRequest, ListTemplateVersionsResult> asyncHandler);
 
     /**
      * <p>
@@ -2983,7 +3006,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the email channel.
+     * Updates an existing message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param updateEmailTemplateRequest
@@ -2996,7 +3019,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the email channel.
+     * Updates an existing message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param updateEmailTemplateRequest
@@ -3148,7 +3171,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Cancels an active journey.
+     * Cancels (stops) an active journey.
      * </p>
      * 
      * @param updateJourneyStateRequest
@@ -3161,7 +3184,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Cancels an active journey.
+     * Cancels (stops) an active journey.
      * </p>
      * 
      * @param updateJourneyStateRequest
@@ -3179,8 +3202,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through a push notification
-     * channel.
+     * Updates an existing message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param updatePushTemplateRequest
@@ -3193,8 +3215,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through a push notification
-     * channel.
+     * Updates an existing message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param updatePushTemplateRequest
@@ -3278,7 +3299,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the SMS channel.
+     * Updates an existing message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param updateSmsTemplateRequest
@@ -3291,7 +3312,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the SMS channel.
+     * Updates an existing message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param updateSmsTemplateRequest
@@ -3306,6 +3327,39 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<UpdateSmsTemplateResult> updateSmsTemplateAsync(UpdateSmsTemplateRequest updateSmsTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSmsTemplateRequest, UpdateSmsTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes the status of a specific version of a message template to <i>active</i>.
+     * </p>
+     * 
+     * @param updateTemplateActiveVersionRequest
+     * @return A Java Future containing the result of the UpdateTemplateActiveVersion operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateTemplateActiveVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTemplateActiveVersionResult> updateTemplateActiveVersionAsync(
+            UpdateTemplateActiveVersionRequest updateTemplateActiveVersionRequest);
+
+    /**
+     * <p>
+     * Changes the status of a specific version of a message template to <i>active</i>.
+     * </p>
+     * 
+     * @param updateTemplateActiveVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTemplateActiveVersion operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateTemplateActiveVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTemplateActiveVersionResult> updateTemplateActiveVersionAsync(
+            UpdateTemplateActiveVersionRequest updateTemplateActiveVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTemplateActiveVersionRequest, UpdateTemplateActiveVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -3342,7 +3396,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the voice channel.
+     * Updates an existing message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param updateVoiceTemplateRequest
@@ -3355,7 +3409,7 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the voice channel.
+     * Updates an existing message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param updateVoiceTemplateRequest

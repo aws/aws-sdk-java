@@ -30,10 +30,11 @@ public class TagSpecification implements Serializable, Cloneable {
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are:
      * <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     * <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.
+     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     * <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code>
+     * | <code>volume</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -52,10 +53,11 @@ public class TagSpecification implements Serializable, Cloneable {
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are:
      * <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     * <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.
+     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     * <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code>
+     * | <code>volume</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -65,8 +67,9 @@ public class TagSpecification implements Serializable, Cloneable {
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are:
      *        <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     *        <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
+     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     *        <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     *        <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
      *        <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>
      *        .</p>
@@ -84,10 +87,11 @@ public class TagSpecification implements Serializable, Cloneable {
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are:
      * <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     * <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.
+     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     * <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code>
+     * | <code>volume</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -96,8 +100,9 @@ public class TagSpecification implements Serializable, Cloneable {
      * 
      * @return The type of resource to tag. Currently, the resource types that support tagging on creation are:
      *         <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     *         <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     *         <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
+     *         <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     *         <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     *         <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
      *         <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *         <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>
      *         .</p>
@@ -115,10 +120,11 @@ public class TagSpecification implements Serializable, Cloneable {
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are:
      * <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     * <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.
+     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     * <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code>
+     * | <code>volume</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -128,8 +134,9 @@ public class TagSpecification implements Serializable, Cloneable {
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are:
      *        <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     *        <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
+     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     *        <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     *        <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
      *        <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>
      *        .</p>
@@ -149,10 +156,11 @@ public class TagSpecification implements Serializable, Cloneable {
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are:
      * <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     * <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.
+     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     * <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code>
+     * | <code>volume</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -162,8 +170,9 @@ public class TagSpecification implements Serializable, Cloneable {
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are:
      *        <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     *        <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
+     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     *        <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     *        <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
      *        <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>
      *        .</p>
@@ -181,10 +190,11 @@ public class TagSpecification implements Serializable, Cloneable {
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are:
      * <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     * <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.
+     * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     * <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code>
+     * | <code>volume</code>.
      * </p>
      * <p>
      * To tag a resource after it has been created, see <a
@@ -194,8 +204,9 @@ public class TagSpecification implements Serializable, Cloneable {
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are:
      *        <code>capacity-reservation</code> | <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
-     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>launch-template</code> |
-     *        <code>snapshot</code> | <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
+     *        <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> | <code>key-pair</code> |
+     *        <code>launch-template</code> | <code>placement-group</code> | <code>snapshot</code> |
+     *        <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
      *        <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
      *        <code>transit-gateway-attachment</code> | <code>transit-gateway-route-table</code> | <code>volume</code>
      *        .</p>

@@ -61,13 +61,15 @@ public class SpotOptions implements Serializable, Cloneable {
     private Integer instancePoolsToUseCount;
     /**
      * <p>
-     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported only
+     * for fleets of type <code>instant</code>.
      * </p>
      */
     private Boolean singleInstanceType;
     /**
      * <p>
-     * Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     * Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for fleets
+     * of type <code>instant</code>.
      * </p>
      */
     private Boolean singleAvailabilityZone;
@@ -357,11 +359,13 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported only
+     * for fleets of type <code>instant</code>.
      * </p>
      * 
      * @param singleInstanceType
-     *        Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     *        Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported
+     *        only for fleets of type <code>instant</code>.
      */
 
     public void setSingleInstanceType(Boolean singleInstanceType) {
@@ -370,10 +374,12 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported only
+     * for fleets of type <code>instant</code>.
      * </p>
      * 
-     * @return Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * @return Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported
+     *         only for fleets of type <code>instant</code>.
      */
 
     public Boolean getSingleInstanceType() {
@@ -382,11 +388,13 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported only
+     * for fleets of type <code>instant</code>.
      * </p>
      * 
      * @param singleInstanceType
-     *        Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     *        Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported
+     *        only for fleets of type <code>instant</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,10 +405,12 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported only
+     * for fleets of type <code>instant</code>.
      * </p>
      * 
-     * @return Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet.
+     * @return Indicates that the fleet uses a single instance type to launch all Spot Instances in the fleet. Supported
+     *         only for fleets of type <code>instant</code>.
      */
 
     public Boolean isSingleInstanceType() {
@@ -409,11 +419,13 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     * Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for fleets
+     * of type <code>instant</code>.
      * </p>
      * 
      * @param singleAvailabilityZone
-     *        Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     *        Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for
+     *        fleets of type <code>instant</code>.
      */
 
     public void setSingleAvailabilityZone(Boolean singleAvailabilityZone) {
@@ -422,10 +434,12 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     * Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for fleets
+     * of type <code>instant</code>.
      * </p>
      * 
-     * @return Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     * @return Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for
+     *         fleets of type <code>instant</code>.
      */
 
     public Boolean getSingleAvailabilityZone() {
@@ -434,11 +448,13 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     * Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for fleets
+     * of type <code>instant</code>.
      * </p>
      * 
      * @param singleAvailabilityZone
-     *        Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     *        Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for
+     *        fleets of type <code>instant</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,10 +465,12 @@ public class SpotOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     * Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for fleets
+     * of type <code>instant</code>.
      * </p>
      * 
-     * @return Indicates that the fleet launches all Spot Instances into a single Availability Zone.
+     * @return Indicates that the fleet launches all Spot Instances into a single Availability Zone. Supported only for
+     *         fleets of type <code>instant</code>.
      */
 
     public Boolean isSingleAvailabilityZone() {

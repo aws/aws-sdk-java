@@ -39,7 +39,7 @@ public class Ipv6Range implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      */
     private String description;
@@ -96,14 +96,14 @@ public class Ipv6Range implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param description
      *        A description for the security group rule that references this IPv6 address range.</p>
      *        <p>
      *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=;{}!$
+     *        ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public void setDescription(String description) {
@@ -116,13 +116,13 @@ public class Ipv6Range implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @return A description for the security group rule that references this IPv6 address range.</p>
      *         <p>
      *         Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
-     *         ._-:/()#,@[]+=;{}!$
+     *         ._-:/()#,@[]+=&amp;;{}!$
      **/
 
     public String getDescription() {
@@ -135,14 +135,14 @@ public class Ipv6Range implements Serializable, Cloneable {
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
-     * ._-:/()#,@[]+=;{}!$*
+     * ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
      * @param description
      *        A description for the security group rule that references this IPv6 address range.</p>
      *        <p>
      *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
-     *        ._-:/()#,@[]+=;{}!$*
+     *        ._-:/()#,@[]+=&amp;;{}!$*
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

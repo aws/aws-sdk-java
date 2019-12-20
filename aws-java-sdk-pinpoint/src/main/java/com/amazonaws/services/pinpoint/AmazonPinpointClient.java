@@ -434,7 +434,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the email channel.
+     * Creates a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param createEmailTemplateRequest
@@ -704,7 +704,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through a push notification channel.
+     * Creates a message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param createPushTemplateRequest
@@ -839,7 +839,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
+     * Creates a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param createSmsTemplateRequest
@@ -905,7 +905,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the voice channel.
+     * Creates a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param createVoiceTemplateRequest
@@ -1588,7 +1588,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the email channel.
+     * Deletes a message template for messages that were sent through the email channel.
      * </p>
      * 
      * @param deleteEmailTemplateRequest
@@ -1928,8 +1928,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through a push notification
-     * channel.
+     * Deletes a message template for messages that were sent through a push notification channel.
      * </p>
      * 
      * @param deletePushTemplateRequest
@@ -2133,7 +2132,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the SMS channel.
+     * Deletes a message template for messages that were sent through the SMS channel.
      * </p>
      * 
      * @param deleteSmsTemplateRequest
@@ -2337,7 +2336,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the voice channel.
+     * Deletes a message template for messages that were sent through the voice channel.
      * </p>
      * 
      * @param deleteVoiceTemplateRequest
@@ -2955,7 +2954,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves information about all of your applications.
+     * Retrieves information about all the applications that are associated with your Amazon Pinpoint account.
      * </p>
      * 
      * @param getAppsRequest
@@ -3639,8 +3638,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * email channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param getEmailTemplateRequest
@@ -4462,8 +4460,8 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through a
-     * push notification channel.
+     * Retrieves the content and settings of a message template for messages that are sent through a push notification
+     * channel.
      * </p>
      * 
      * @param getPushTemplateRequest
@@ -4805,7 +4803,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves information about the configuration, dimension, and other settings for all versions of a specific
+     * Retrieves information about the configuration, dimension, and other settings for all the versions of a specific
      * segment that's associated with an application.
      * </p>
      * 
@@ -5011,8 +5009,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * SMS channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param getSmsTemplateRequest
@@ -5216,8 +5213,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * voice channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param getVoiceTemplateRequest
@@ -5396,6 +5392,74 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about all the versions of a specific message template.
+     * </p>
+     * 
+     * @param listTemplateVersionsRequest
+     * @return Result of the ListTemplateVersions operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.ListTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTemplateVersionsResult listTemplateVersions(ListTemplateVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTemplateVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListTemplateVersionsResult executeListTemplateVersions(ListTemplateVersionsRequest listTemplateVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTemplateVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTemplateVersionsRequest> request = null;
+        Response<ListTemplateVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTemplateVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplateVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplateVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTemplateVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTemplateVersionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6617,7 +6681,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the email channel.
+     * Updates an existing message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param updateEmailTemplateRequest
@@ -6962,7 +7026,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Cancels an active journey.
+     * Cancels (stops) an active journey.
      * </p>
      * 
      * @param updateJourneyStateRequest
@@ -7030,8 +7094,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through a push notification
-     * channel.
+     * Updates an existing message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param updatePushTemplateRequest
@@ -7237,7 +7300,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the SMS channel.
+     * Updates an existing message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param updateSmsTemplateRequest
@@ -7293,6 +7356,76 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSmsTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSmsTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes the status of a specific version of a message template to <i>active</i>.
+     * </p>
+     * 
+     * @param updateTemplateActiveVersionRequest
+     * @return Result of the UpdateTemplateActiveVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdateTemplateActiveVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTemplateActiveVersionResult updateTemplateActiveVersion(UpdateTemplateActiveVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTemplateActiveVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTemplateActiveVersionResult executeUpdateTemplateActiveVersion(UpdateTemplateActiveVersionRequest updateTemplateActiveVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTemplateActiveVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTemplateActiveVersionRequest> request = null;
+        Response<UpdateTemplateActiveVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTemplateActiveVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateTemplateActiveVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplateActiveVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTemplateActiveVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateTemplateActiveVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7374,7 +7507,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the voice channel.
+     * Updates an existing message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param updateVoiceTemplateRequest

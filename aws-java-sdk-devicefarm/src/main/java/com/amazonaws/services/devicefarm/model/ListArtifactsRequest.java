@@ -30,7 +30,7 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Run, Job, Suite, or Test ARN.
+     * The run, job, suite, or test ARN.
      * </p>
      */
     private String arn;
@@ -44,17 +44,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * FILE: The artifacts are files.
+     * FILE
      * </p>
      * </li>
      * <li>
      * <p>
-     * LOG: The artifacts are logs.
+     * LOG
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCREENSHOT: The artifacts are screenshots.
+     * SCREENSHOT
      * </p>
      * </li>
      * </ul>
@@ -70,11 +70,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Run, Job, Suite, or Test ARN.
+     * The run, job, suite, or test ARN.
      * </p>
      * 
      * @param arn
-     *        The Run, Job, Suite, or Test ARN.
+     *        The run, job, suite, or test ARN.
      */
 
     public void setArn(String arn) {
@@ -83,10 +83,10 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Run, Job, Suite, or Test ARN.
+     * The run, job, suite, or test ARN.
      * </p>
      * 
-     * @return The Run, Job, Suite, or Test ARN.
+     * @return The run, job, suite, or test ARN.
      */
 
     public String getArn() {
@@ -95,11 +95,11 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Run, Job, Suite, or Test ARN.
+     * The run, job, suite, or test ARN.
      * </p>
      * 
      * @param arn
-     *        The Run, Job, Suite, or Test ARN.
+     *        The run, job, suite, or test ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,17 +118,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * FILE: The artifacts are files.
+     * FILE
      * </p>
      * </li>
      * <li>
      * <p>
-     * LOG: The artifacts are logs.
+     * LOG
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCREENSHOT: The artifacts are screenshots.
+     * SCREENSHOT
      * </p>
      * </li>
      * </ul>
@@ -141,17 +141,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        FILE: The artifacts are files.
+     *        FILE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        LOG: The artifacts are logs.
+     *        LOG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCREENSHOT: The artifacts are screenshots.
+     *        SCREENSHOT
      *        </p>
      *        </li>
      * @see ArtifactCategory
@@ -171,17 +171,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * FILE: The artifacts are files.
+     * FILE
      * </p>
      * </li>
      * <li>
      * <p>
-     * LOG: The artifacts are logs.
+     * LOG
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCREENSHOT: The artifacts are screenshots.
+     * SCREENSHOT
      * </p>
      * </li>
      * </ul>
@@ -193,17 +193,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <ul>
      *         <li>
      *         <p>
-     *         FILE: The artifacts are files.
+     *         FILE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         LOG: The artifacts are logs.
+     *         LOG
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SCREENSHOT: The artifacts are screenshots.
+     *         SCREENSHOT
      *         </p>
      *         </li>
      * @see ArtifactCategory
@@ -223,17 +223,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * FILE: The artifacts are files.
+     * FILE
      * </p>
      * </li>
      * <li>
      * <p>
-     * LOG: The artifacts are logs.
+     * LOG
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCREENSHOT: The artifacts are screenshots.
+     * SCREENSHOT
      * </p>
      * </li>
      * </ul>
@@ -246,17 +246,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        FILE: The artifacts are files.
+     *        FILE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        LOG: The artifacts are logs.
+     *        LOG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCREENSHOT: The artifacts are screenshots.
+     *        SCREENSHOT
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -278,17 +278,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * FILE: The artifacts are files.
+     * FILE
      * </p>
      * </li>
      * <li>
      * <p>
-     * LOG: The artifacts are logs.
+     * LOG
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCREENSHOT: The artifacts are screenshots.
+     * SCREENSHOT
      * </p>
      * </li>
      * </ul>
@@ -301,17 +301,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        FILE: The artifacts are files.
+     *        FILE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        LOG: The artifacts are logs.
+     *        LOG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCREENSHOT: The artifacts are screenshots.
+     *        SCREENSHOT
      *        </p>
      *        </li>
      * @see ArtifactCategory
@@ -331,17 +331,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * FILE: The artifacts are files.
+     * FILE
      * </p>
      * </li>
      * <li>
      * <p>
-     * LOG: The artifacts are logs.
+     * LOG
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCREENSHOT: The artifacts are screenshots.
+     * SCREENSHOT
      * </p>
      * </li>
      * </ul>
@@ -354,17 +354,17 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        FILE: The artifacts are files.
+     *        FILE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        LOG: The artifacts are logs.
+     *        LOG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCREENSHOT: The artifacts are screenshots.
+     *        SCREENSHOT
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

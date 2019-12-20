@@ -57,6 +57,11 @@ public class KeyPairStaxUnmarshaller implements Unmarshaller<KeyPair, StaxUnmars
                     keyPair.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("keyPairId", targetDepth)) {
+                    keyPair.setKeyPairId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return keyPair;

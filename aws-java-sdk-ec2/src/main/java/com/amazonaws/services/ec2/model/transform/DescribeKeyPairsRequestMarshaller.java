@@ -80,6 +80,19 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> describeKeyPairsRequestKeyPairIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyPairsRequest
+                .getKeyPairIds();
+        if (!describeKeyPairsRequestKeyPairIdsList.isEmpty() || !describeKeyPairsRequestKeyPairIdsList.isAutoConstruct()) {
+            int keyPairIdsListIndex = 1;
+
+            for (String describeKeyPairsRequestKeyPairIdsListValue : describeKeyPairsRequestKeyPairIdsList) {
+                if (describeKeyPairsRequestKeyPairIdsListValue != null) {
+                    request.addParameter("KeyPairId." + keyPairIdsListIndex, StringUtils.fromString(describeKeyPairsRequestKeyPairIdsListValue));
+                }
+                keyPairIdsListIndex++;
+            }
+        }
+
         return request;
     }
 

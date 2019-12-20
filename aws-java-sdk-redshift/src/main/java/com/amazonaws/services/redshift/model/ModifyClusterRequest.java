@@ -64,7 +64,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      */
     private String nodeType;
@@ -541,7 +541,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -556,7 +556,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public void setNodeType(String nodeType) {
@@ -577,7 +577,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @return The new node type of the cluster. If you specify a new node type, you must also specify the number of
@@ -591,7 +591,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <p>
      *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
+     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public String getNodeType() {
@@ -612,7 +612,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -627,7 +627,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

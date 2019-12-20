@@ -39,24 +39,24 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
     private String description;
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      */
     private Boolean packageCleanup;
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
+     * test run.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      */
     private java.util.List<String> excludeAppPackagesFromCleanup;
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      */
@@ -144,12 +144,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
      * @param packageCleanup
-     *        When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      *        <code>false</code> for private devices.
      */
 
@@ -159,12 +159,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value
-     *         is <code>false</code> for private devices.
+     * @return When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
+     *         <code>false</code> for private devices.
      */
 
     public Boolean getPackageCleanup() {
@@ -173,12 +173,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
      * @param packageCleanup
-     *        When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      *        <code>false</code> for private devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -190,12 +190,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value
-     *         is <code>false</code> for private devices.
+     * @return When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
+     *         <code>false</code> for private devices.
      */
 
     public Boolean isPackageCleanup() {
@@ -204,17 +204,17 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
+     * test run.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * 
-     * @return An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *         after a test run is over.</p>
+     * @return An array of strings that specifies the list of app packages that should not be cleaned up from the device
+     *         after a test run.</p>
      *         <p>
-     *         The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *         The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      */
 
     public java.util.List<String> getExcludeAppPackagesFromCleanup() {
@@ -223,18 +223,18 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
+     * test run.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *        after a test run is over.</p>
+     *        An array of strings that specifies the list of app packages that should not be cleaned up from the device
+     *        after a test run.</p>
      *        <p>
-     *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *        The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      */
 
     public void setExcludeAppPackagesFromCleanup(java.util.Collection<String> excludeAppPackagesFromCleanup) {
@@ -248,11 +248,11 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
+     * test run.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -261,10 +261,10 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *        after a test run is over.</p>
+     *        An array of strings that specifies the list of app packages that should not be cleaned up from the device
+     *        after a test run.</p>
      *        <p>
-     *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *        The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,18 +280,18 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
+     * test run.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *        after a test run is over.</p>
+     *        An array of strings that specifies the list of app packages that should not be cleaned up from the device
+     *        after a test run.</p>
      *        <p>
-     *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *        The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,12 +302,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
      * @param rebootAfterUse
-     *        When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      *        <code>true</code>.
      */
 
@@ -317,12 +317,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value
-     *         is <code>true</code>.
+     * @return When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
+     *         <code>true</code>.
      */
 
     public Boolean getRebootAfterUse() {
@@ -331,12 +331,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
      * @param rebootAfterUse
-     *        When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -348,12 +348,12 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value
-     *         is <code>true</code>.
+     * @return When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
+     *         <code>true</code>.
      */
 
     public Boolean isRebootAfterUse() {

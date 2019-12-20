@@ -29,7 +29,7 @@ public class ListRemoteAccessSessionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A container representing the metadata from the service about each remote access session you are requesting.
+     * A container that represents the metadata from the service about each remote access session you are requesting.
      * </p>
      */
     private java.util.List<RemoteAccessSession> remoteAccessSessions;
@@ -43,10 +43,10 @@ public class ListRemoteAccessSessionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A container representing the metadata from the service about each remote access session you are requesting.
+     * A container that represents the metadata from the service about each remote access session you are requesting.
      * </p>
      * 
-     * @return A container representing the metadata from the service about each remote access session you are
+     * @return A container that represents the metadata from the service about each remote access session you are
      *         requesting.
      */
 
@@ -56,11 +56,11 @@ public class ListRemoteAccessSessionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A container representing the metadata from the service about each remote access session you are requesting.
+     * A container that represents the metadata from the service about each remote access session you are requesting.
      * </p>
      * 
      * @param remoteAccessSessions
-     *        A container representing the metadata from the service about each remote access session you are
+     *        A container that represents the metadata from the service about each remote access session you are
      *        requesting.
      */
 
@@ -75,7 +75,7 @@ public class ListRemoteAccessSessionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A container representing the metadata from the service about each remote access session you are requesting.
+     * A container that represents the metadata from the service about each remote access session you are requesting.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class ListRemoteAccessSessionsResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param remoteAccessSessions
-     *        A container representing the metadata from the service about each remote access session you are
+     *        A container that represents the metadata from the service about each remote access session you are
      *        requesting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -101,11 +101,11 @@ public class ListRemoteAccessSessionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A container representing the metadata from the service about each remote access session you are requesting.
+     * A container that represents the metadata from the service about each remote access session you are requesting.
      * </p>
      * 
      * @param remoteAccessSessions
-     *        A container representing the metadata from the service about each remote access session you are
+     *        A container that represents the metadata from the service about each remote access session you are
      *        requesting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

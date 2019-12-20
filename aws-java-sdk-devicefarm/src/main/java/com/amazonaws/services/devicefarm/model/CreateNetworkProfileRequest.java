@@ -33,7 +33,7 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
     private String projectArn;
     /**
      * <p>
-     * The name you wish to specify for the new network profile.
+     * The name for the new network profile.
      * </p>
      */
     private String name;
@@ -45,7 +45,7 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
     private String description;
     /**
      * <p>
-     * The type of network profile you wish to create. Valid values are listed below.
+     * The type of network profile to create. Valid values are listed here.
      * </p>
      */
     private String type;
@@ -140,11 +140,11 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name you wish to specify for the new network profile.
+     * The name for the new network profile.
      * </p>
      * 
      * @param name
-     *        The name you wish to specify for the new network profile.
+     *        The name for the new network profile.
      */
 
     public void setName(String name) {
@@ -153,10 +153,10 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name you wish to specify for the new network profile.
+     * The name for the new network profile.
      * </p>
      * 
-     * @return The name you wish to specify for the new network profile.
+     * @return The name for the new network profile.
      */
 
     public String getName() {
@@ -165,11 +165,11 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name you wish to specify for the new network profile.
+     * The name for the new network profile.
      * </p>
      * 
      * @param name
-     *        The name you wish to specify for the new network profile.
+     *        The name for the new network profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,11 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to create. Valid values are listed below.
+     * The type of network profile to create. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to create. Valid values are listed below.
+     *        The type of network profile to create. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -234,10 +234,10 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to create. Valid values are listed below.
+     * The type of network profile to create. Valid values are listed here.
      * </p>
      * 
-     * @return The type of network profile you wish to create. Valid values are listed below.
+     * @return The type of network profile to create. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -247,11 +247,11 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to create. Valid values are listed below.
+     * The type of network profile to create. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to create. Valid values are listed below.
+     *        The type of network profile to create. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProfileType
      */
@@ -263,11 +263,11 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to create. Valid values are listed below.
+     * The type of network profile to create. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to create. Valid values are listed below.
+     *        The type of network profile to create. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -277,11 +277,11 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to create. Valid values are listed below.
+     * The type of network profile to create. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to create. Valid values are listed below.
+     *        The type of network profile to create. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProfileType
      */

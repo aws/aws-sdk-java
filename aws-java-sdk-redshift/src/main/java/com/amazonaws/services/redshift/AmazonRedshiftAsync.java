@@ -3770,6 +3770,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * ds2.8xlarge
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * ra3.16xlarge
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>
@@ -3820,6 +3825,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <li>
      * <p>
      * ds2.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ra3.16xlarge
      * </p>
      * </li>
      * </ul>

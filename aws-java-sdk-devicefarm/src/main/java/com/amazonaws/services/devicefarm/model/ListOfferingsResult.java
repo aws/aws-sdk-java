@@ -28,7 +28,7 @@ public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A value representing the list offering results.
+     * A value that represents the list offering results.
      * </p>
      */
     private java.util.List<Offering> offerings;
@@ -42,10 +42,10 @@ public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A value representing the list offering results.
+     * A value that represents the list offering results.
      * </p>
      * 
-     * @return A value representing the list offering results.
+     * @return A value that represents the list offering results.
      */
 
     public java.util.List<Offering> getOfferings() {
@@ -54,11 +54,11 @@ public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A value representing the list offering results.
+     * A value that represents the list offering results.
      * </p>
      * 
      * @param offerings
-     *        A value representing the list offering results.
+     *        A value that represents the list offering results.
      */
 
     public void setOfferings(java.util.Collection<Offering> offerings) {
@@ -72,7 +72,7 @@ public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A value representing the list offering results.
+     * A value that represents the list offering results.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param offerings
-     *        A value representing the list offering results.
+     *        A value that represents the list offering results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A value representing the list offering results.
+     * A value that represents the list offering results.
      * </p>
      * 
      * @param offerings
-     *        A value representing the list offering results.
+     *        A value that represents the list offering results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

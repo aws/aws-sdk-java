@@ -28,18 +28,18 @@ public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The project you wish to update.
+     * The project to update.
      * </p>
      */
     private Project project;
 
     /**
      * <p>
-     * The project you wish to update.
+     * The project to update.
      * </p>
      * 
      * @param project
-     *        The project you wish to update.
+     *        The project to update.
      */
 
     public void setProject(Project project) {
@@ -48,10 +48,10 @@ public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The project you wish to update.
+     * The project to update.
      * </p>
      * 
-     * @return The project you wish to update.
+     * @return The project to update.
      */
 
     public Project getProject() {
@@ -60,11 +60,11 @@ public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The project you wish to update.
+     * The project to update.
      * </p>
      * 
      * @param project
-     *        The project you wish to update.
+     *        The project to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

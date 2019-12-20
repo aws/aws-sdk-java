@@ -1,3 +1,40 @@
+# __1.11.698__ __2019-12-20__
+## __AWS Device Farm__
+  - ### Features
+    - Introduced browser testing support through AWS Device Farm
+
+## __AWS SecurityHub__
+  - ### Features
+    - Additional resource types are now fully supported in the AWS Security Finding Format (ASFF). These resources include AwsElbv2LoadBalancer, AwsKmsKey, AwsIamRole, AwsSqsQueue, AwsLambdaFunction, AwsSnsTopic, and AwsCloudFrontDistribution. Each of these resource types includes an accompanying resource details object with fields for security finding providers to populate. Updates were made to the AwsIamAccessKey resource details object to include information on principal ID and name. To learn more, visit our documentation on the ASFF.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release introduces the ability to tag key pairs, placement groups, export tasks, import image tasks, import snapshot tasks and export image tasks. You can use tags to organize and identify your resources for cost allocation. 
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Amazon EKS now supports restricting access to the API server public endpoint by applying CIDR blocks
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release of the Amazon Pinpoint API introduces versioning support for message templates.
+
+## __Amazon Redshift__
+  - ### Features
+    - Documentation updates for Amazon Redshift RA3 node types.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds an operation that enables users to specify whether a database is restarted when its SSL/TLS certificate is rotated. Only customers who do not use SSL/TLS should use this operation.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release updates the attachments support to include AttachmentReference source for Automation documents.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - AWS Transcribe now supports vocabulary filtering that allows customers to input words to the service that they don't want to see in the output transcript.
+
 # __1.11.697__ __2019-12-19__
 ## __AWS CodeStar connections__
   - ### Features

@@ -78,10 +78,10 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     private String hypervisor;
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -120,6 +120,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * <p>
      * The specified CMK must exist in the Region that the AMI is being copied to.
+     * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
      * </p>
      */
     private String kmsKeyId;
@@ -547,10 +550,10 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -590,11 +593,14 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
+     * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *        the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter
-     *        is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     *        creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
+     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      *        <code>Encrypted</code> flag must also be set. </p>
      *        <p>
      *        The CMK identifier may be provided in any of the following formats:
@@ -633,6 +639,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        </p>
      *        <p>
      *        The specified CMK must exist in the Region that the AMI is being copied to.
+     *        </p>
+     *        <p>
+     *        Amazon EBS does not support asymmetric CMKs.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -641,10 +650,10 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -684,11 +693,14 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
+     * </p>
      * 
-     * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *         the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
-     *         parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
-     *         <code>Encrypted</code> flag must also be set. </p>
+     * @return An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use
+     *         when creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if
+     *         this parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
+     *         specified, the <code>Encrypted</code> flag must also be set. </p>
      *         <p>
      *         The CMK identifier may be provided in any of the following formats:
      *         </p>
@@ -727,6 +739,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         </p>
      *         <p>
      *         The specified CMK must exist in the Region that the AMI is being copied to.
+     *         </p>
+     *         <p>
+     *         Amazon EBS does not support asymmetric CMKs.
      */
 
     public String getKmsKeyId() {
@@ -735,10 +750,10 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
-     * encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter is not
-     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
-     * flag must also be set.
+     * An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     * creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
+     * parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     * <code>Encrypted</code> flag must also be set.
      * </p>
      * <p>
      * The CMK identifier may be provided in any of the following formats:
@@ -778,11 +793,14 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The specified CMK must exist in the Region that the AMI is being copied to.
      * </p>
+     * <p>
+     * Amazon EBS does not support asymmetric CMKs.
+     * </p>
      * 
      * @param kmsKeyId
-     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
-     *        the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this parameter
-     *        is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        An identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key (CMK) to use when
+     *        creating the encrypted AMI. This parameter is only required if you want to use a non-default CMK; if this
+     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
      *        <code>Encrypted</code> flag must also be set. </p>
      *        <p>
      *        The CMK identifier may be provided in any of the following formats:
@@ -821,6 +839,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        </p>
      *        <p>
      *        The specified CMK must exist in the Region that the AMI is being copied to.
+     *        </p>
+     *        <p>
+     *        Amazon EBS does not support asymmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

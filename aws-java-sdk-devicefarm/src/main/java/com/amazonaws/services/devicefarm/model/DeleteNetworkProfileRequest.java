@@ -27,18 +27,18 @@ public class DeleteNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to delete.
+     * The ARN of the network profile to delete.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to delete.
+     * The ARN of the network profile to delete.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the network profile you want to delete.
+     *        The ARN of the network profile to delete.
      */
 
     public void setArn(String arn) {
@@ -47,10 +47,10 @@ public class DeleteNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to delete.
+     * The ARN of the network profile to delete.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the network profile you want to delete.
+     * @return The ARN of the network profile to delete.
      */
 
     public String getArn() {
@@ -59,11 +59,11 @@ public class DeleteNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to delete.
+     * The ARN of the network profile to delete.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the network profile you want to delete.
+     *        The ARN of the network profile to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

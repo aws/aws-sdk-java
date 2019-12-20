@@ -249,7 +249,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. You cannot specify this parameter and the network interface IDs
+     * parameter in the same request.
      * </p>
      */
     private Integer maxResults;
@@ -2047,12 +2048,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. You cannot specify this parameter and the network interface IDs
+     * parameter in the same request.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.
+     *        in a subsequent call to get the next set of results. You cannot specify this parameter and the network
+     *        interface IDs parameter in the same request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -2062,11 +2065,13 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. You cannot specify this parameter and the network interface IDs
+     * parameter in the same request.
      * </p>
      * 
      * @return The maximum number of items to return for this request. The request returns a token that you can specify
-     *         in a subsequent call to get the next set of results.
+     *         in a subsequent call to get the next set of results. You cannot specify this parameter and the network
+     *         interface IDs parameter in the same request.
      */
 
     public Integer getMaxResults() {
@@ -2076,12 +2081,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     /**
      * <p>
      * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * subsequent call to get the next set of results. You cannot specify this parameter and the network interface IDs
+     * parameter in the same request.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.
+     *        in a subsequent call to get the next set of results. You cannot specify this parameter and the network
+     *        interface IDs parameter in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

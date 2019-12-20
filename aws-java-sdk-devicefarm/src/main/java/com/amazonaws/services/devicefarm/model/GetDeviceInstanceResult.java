@@ -25,18 +25,18 @@ public class GetDeviceInstanceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An object containing information about your device instance.
+     * An object that contains information about your device instance.
      * </p>
      */
     private DeviceInstance deviceInstance;
 
     /**
      * <p>
-     * An object containing information about your device instance.
+     * An object that contains information about your device instance.
      * </p>
      * 
      * @param deviceInstance
-     *        An object containing information about your device instance.
+     *        An object that contains information about your device instance.
      */
 
     public void setDeviceInstance(DeviceInstance deviceInstance) {
@@ -45,10 +45,10 @@ public class GetDeviceInstanceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An object containing information about your device instance.
+     * An object that contains information about your device instance.
      * </p>
      * 
-     * @return An object containing information about your device instance.
+     * @return An object that contains information about your device instance.
      */
 
     public DeviceInstance getDeviceInstance() {
@@ -57,11 +57,11 @@ public class GetDeviceInstanceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An object containing information about your device instance.
+     * An object that contains information about your device instance.
      * </p>
      * 
      * @param deviceInstance
-     *        An object containing information about your device instance.
+     *        An object that contains information about your device instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

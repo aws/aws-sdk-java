@@ -151,7 +151,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the email channel.
+     * Creates a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param createEmailTemplateRequest
@@ -261,7 +261,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through a push notification channel.
+     * Creates a message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param createPushTemplateRequest
@@ -316,7 +316,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
+     * Creates a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param createSmsTemplateRequest
@@ -342,7 +342,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Creates a message template that you can use in messages that are sent through the voice channel.
+     * Creates a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param createVoiceTemplateRequest
@@ -620,7 +620,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the email channel.
+     * Deletes a message template for messages that were sent through the email channel.
      * </p>
      * 
      * @param deleteEmailTemplateRequest
@@ -760,8 +760,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through a push notification
-     * channel.
+     * Deletes a message template for messages that were sent through a push notification channel.
      * </p>
      * 
      * @param deletePushTemplateRequest
@@ -845,7 +844,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the SMS channel.
+     * Deletes a message template for messages that were sent through the SMS channel.
      * </p>
      * 
      * @param deleteSmsTemplateRequest
@@ -929,7 +928,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Deletes a message template that was designed for use in messages that were sent through the voice channel.
+     * Deletes a message template for messages that were sent through the voice channel.
      * </p>
      * 
      * @param deleteVoiceTemplateRequest
@@ -1181,7 +1180,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves information about all of your applications.
+     * Retrieves information about all the applications that are associated with your Amazon Pinpoint account.
      * </p>
      * 
      * @param getAppsRequest
@@ -1462,8 +1461,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * email channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param getEmailTemplateRequest
@@ -1800,8 +1798,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through a
-     * push notification channel.
+     * Retrieves the content and settings of a message template for messages that are sent through a push notification
+     * channel.
      * </p>
      * 
      * @param getPushTemplateRequest
@@ -1943,7 +1941,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves information about the configuration, dimension, and other settings for all versions of a specific
+     * Retrieves information about the configuration, dimension, and other settings for all the versions of a specific
      * segment that's associated with an application.
      * </p>
      * 
@@ -2029,8 +2027,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * SMS channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param getSmsTemplateRequest
@@ -2114,8 +2111,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Retrieves the content and settings for a message template that you can use in messages that are sent through the
-     * voice channel.
+     * Retrieves the content and settings of a message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param getVoiceTemplateRequest
@@ -2183,6 +2179,34 @@ public interface AmazonPinpoint {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Retrieves information about all the versions of a specific message template.
+     * </p>
+     * 
+     * @param listTemplateVersionsRequest
+     * @return Result of the ListTemplateVersions operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.ListTemplateVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTemplateVersionsResult listTemplateVersions(ListTemplateVersionsRequest listTemplateVersionsRequest);
 
     /**
      * <p>
@@ -2668,7 +2692,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the email channel.
+     * Updates an existing message template for messages that are sent through the email channel.
      * </p>
      * 
      * @param updateEmailTemplateRequest
@@ -2813,7 +2837,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Cancels an active journey.
+     * Cancels (stops) an active journey.
      * </p>
      * 
      * @param updateJourneyStateRequest
@@ -2841,8 +2865,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through a push notification
-     * channel.
+     * Updates an existing message template for messages that are sent through a push notification channel.
      * </p>
      * 
      * @param updatePushTemplateRequest
@@ -2928,7 +2951,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the SMS channel.
+     * Updates an existing message template for messages that are sent through the SMS channel.
      * </p>
      * 
      * @param updateSmsTemplateRequest
@@ -2953,6 +2976,34 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     UpdateSmsTemplateResult updateSmsTemplate(UpdateSmsTemplateRequest updateSmsTemplateRequest);
+
+    /**
+     * <p>
+     * Changes the status of a specific version of a message template to <i>active</i>.
+     * </p>
+     * 
+     * @param updateTemplateActiveVersionRequest
+     * @return Result of the UpdateTemplateActiveVersion operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.UpdateTemplateActiveVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTemplateActiveVersionResult updateTemplateActiveVersion(UpdateTemplateActiveVersionRequest updateTemplateActiveVersionRequest);
 
     /**
      * <p>
@@ -2985,7 +3036,7 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Updates an existing message template that you can use in messages that are sent through the voice channel.
+     * Updates an existing message template for messages that are sent through the voice channel.
      * </p>
      * 
      * @param updateVoiceTemplateRequest

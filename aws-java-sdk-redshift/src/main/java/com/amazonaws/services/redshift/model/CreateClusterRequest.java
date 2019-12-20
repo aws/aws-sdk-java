@@ -134,9 +134,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code>
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      */
     private String nodeType;
@@ -1112,9 +1111,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code>
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -1122,9 +1120,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working
      *        with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *        <p>
-     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> |
-     *        <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     *        <code>dc2.8xlarge</code>
+     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public void setNodeType(String nodeType) {
@@ -1138,18 +1135,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code>
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @return The node type to be provisioned for the cluster. For information about node types, go to <a
      *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *         <p>
-     *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> |
-     *         <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     *         <code>dc2.8xlarge</code>
+     *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public String getNodeType() {
@@ -1163,9 +1158,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
-     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code>
+     * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -1173,9 +1167,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working
      *        with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *        <p>
-     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> |
-     *        <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     *        <code>dc2.8xlarge</code>
+     *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

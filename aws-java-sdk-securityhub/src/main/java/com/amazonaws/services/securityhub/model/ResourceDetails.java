@@ -30,10 +30,22 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details about a CloudFront distribution.
+     * </p>
+     */
+    private AwsCloudFrontDistributionDetails awsCloudFrontDistribution;
+    /**
+     * <p>
      * Details about an Amazon EC2 instance related to a finding.
      * </p>
      */
     private AwsEc2InstanceDetails awsEc2Instance;
+    /**
+     * <p>
+     * Details about a load balancer.
+     * </p>
+     */
+    private AwsElbv2LoadBalancerDetails awsElbv2LoadBalancer;
     /**
      * <p>
      * Details about an Amazon S3 Bucket related to a finding.
@@ -48,6 +60,36 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsIamAccessKeyDetails awsIamAccessKey;
     /**
      * <p>
+     * Details about an IAM role.
+     * </p>
+     */
+    private AwsIamRoleDetails awsIamRole;
+    /**
+     * <p>
+     * Details about a KMS key.
+     * </p>
+     */
+    private AwsKmsKeyDetails awsKmsKey;
+    /**
+     * <p>
+     * Details about a Lambda function.
+     * </p>
+     */
+    private AwsLambdaFunctionDetails awsLambdaFunction;
+    /**
+     * <p>
+     * Details about an SNS topic.
+     * </p>
+     */
+    private AwsSnsTopicDetails awsSnsTopic;
+    /**
+     * <p>
+     * Details about an SQS queue.
+     * </p>
+     */
+    private AwsSqsQueueDetails awsSqsQueue;
+    /**
+     * <p>
      * Details about a container resource related to a finding.
      * </p>
      */
@@ -58,6 +100,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Map<String, String> other;
+
+    /**
+     * <p>
+     * Details about a CloudFront distribution.
+     * </p>
+     * 
+     * @param awsCloudFrontDistribution
+     *        Details about a CloudFront distribution.
+     */
+
+    public void setAwsCloudFrontDistribution(AwsCloudFrontDistributionDetails awsCloudFrontDistribution) {
+        this.awsCloudFrontDistribution = awsCloudFrontDistribution;
+    }
+
+    /**
+     * <p>
+     * Details about a CloudFront distribution.
+     * </p>
+     * 
+     * @return Details about a CloudFront distribution.
+     */
+
+    public AwsCloudFrontDistributionDetails getAwsCloudFrontDistribution() {
+        return this.awsCloudFrontDistribution;
+    }
+
+    /**
+     * <p>
+     * Details about a CloudFront distribution.
+     * </p>
+     * 
+     * @param awsCloudFrontDistribution
+     *        Details about a CloudFront distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsCloudFrontDistribution(AwsCloudFrontDistributionDetails awsCloudFrontDistribution) {
+        setAwsCloudFrontDistribution(awsCloudFrontDistribution);
+        return this;
+    }
 
     /**
      * <p>
@@ -96,6 +178,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsEc2Instance(AwsEc2InstanceDetails awsEc2Instance) {
         setAwsEc2Instance(awsEc2Instance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about a load balancer.
+     * </p>
+     * 
+     * @param awsElbv2LoadBalancer
+     *        Details about a load balancer.
+     */
+
+    public void setAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetails awsElbv2LoadBalancer) {
+        this.awsElbv2LoadBalancer = awsElbv2LoadBalancer;
+    }
+
+    /**
+     * <p>
+     * Details about a load balancer.
+     * </p>
+     * 
+     * @return Details about a load balancer.
+     */
+
+    public AwsElbv2LoadBalancerDetails getAwsElbv2LoadBalancer() {
+        return this.awsElbv2LoadBalancer;
+    }
+
+    /**
+     * <p>
+     * Details about a load balancer.
+     * </p>
+     * 
+     * @param awsElbv2LoadBalancer
+     *        Details about a load balancer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetails awsElbv2LoadBalancer) {
+        setAwsElbv2LoadBalancer(awsElbv2LoadBalancer);
         return this;
     }
 
@@ -176,6 +298,206 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsIamAccessKey(AwsIamAccessKeyDetails awsIamAccessKey) {
         setAwsIamAccessKey(awsIamAccessKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM role.
+     * </p>
+     * 
+     * @param awsIamRole
+     *        Details about an IAM role.
+     */
+
+    public void setAwsIamRole(AwsIamRoleDetails awsIamRole) {
+        this.awsIamRole = awsIamRole;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM role.
+     * </p>
+     * 
+     * @return Details about an IAM role.
+     */
+
+    public AwsIamRoleDetails getAwsIamRole() {
+        return this.awsIamRole;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM role.
+     * </p>
+     * 
+     * @param awsIamRole
+     *        Details about an IAM role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsIamRole(AwsIamRoleDetails awsIamRole) {
+        setAwsIamRole(awsIamRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about a KMS key.
+     * </p>
+     * 
+     * @param awsKmsKey
+     *        Details about a KMS key.
+     */
+
+    public void setAwsKmsKey(AwsKmsKeyDetails awsKmsKey) {
+        this.awsKmsKey = awsKmsKey;
+    }
+
+    /**
+     * <p>
+     * Details about a KMS key.
+     * </p>
+     * 
+     * @return Details about a KMS key.
+     */
+
+    public AwsKmsKeyDetails getAwsKmsKey() {
+        return this.awsKmsKey;
+    }
+
+    /**
+     * <p>
+     * Details about a KMS key.
+     * </p>
+     * 
+     * @param awsKmsKey
+     *        Details about a KMS key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsKmsKey(AwsKmsKeyDetails awsKmsKey) {
+        setAwsKmsKey(awsKmsKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about a Lambda function.
+     * </p>
+     * 
+     * @param awsLambdaFunction
+     *        Details about a Lambda function.
+     */
+
+    public void setAwsLambdaFunction(AwsLambdaFunctionDetails awsLambdaFunction) {
+        this.awsLambdaFunction = awsLambdaFunction;
+    }
+
+    /**
+     * <p>
+     * Details about a Lambda function.
+     * </p>
+     * 
+     * @return Details about a Lambda function.
+     */
+
+    public AwsLambdaFunctionDetails getAwsLambdaFunction() {
+        return this.awsLambdaFunction;
+    }
+
+    /**
+     * <p>
+     * Details about a Lambda function.
+     * </p>
+     * 
+     * @param awsLambdaFunction
+     *        Details about a Lambda function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsLambdaFunction(AwsLambdaFunctionDetails awsLambdaFunction) {
+        setAwsLambdaFunction(awsLambdaFunction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an SNS topic.
+     * </p>
+     * 
+     * @param awsSnsTopic
+     *        Details about an SNS topic.
+     */
+
+    public void setAwsSnsTopic(AwsSnsTopicDetails awsSnsTopic) {
+        this.awsSnsTopic = awsSnsTopic;
+    }
+
+    /**
+     * <p>
+     * Details about an SNS topic.
+     * </p>
+     * 
+     * @return Details about an SNS topic.
+     */
+
+    public AwsSnsTopicDetails getAwsSnsTopic() {
+        return this.awsSnsTopic;
+    }
+
+    /**
+     * <p>
+     * Details about an SNS topic.
+     * </p>
+     * 
+     * @param awsSnsTopic
+     *        Details about an SNS topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsSnsTopic(AwsSnsTopicDetails awsSnsTopic) {
+        setAwsSnsTopic(awsSnsTopic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an SQS queue.
+     * </p>
+     * 
+     * @param awsSqsQueue
+     *        Details about an SQS queue.
+     */
+
+    public void setAwsSqsQueue(AwsSqsQueueDetails awsSqsQueue) {
+        this.awsSqsQueue = awsSqsQueue;
+    }
+
+    /**
+     * <p>
+     * Details about an SQS queue.
+     * </p>
+     * 
+     * @return Details about an SQS queue.
+     */
+
+    public AwsSqsQueueDetails getAwsSqsQueue() {
+        return this.awsSqsQueue;
+    }
+
+    /**
+     * <p>
+     * Details about an SQS queue.
+     * </p>
+     * 
+     * @param awsSqsQueue
+     *        Details about an SQS queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsSqsQueue(AwsSqsQueueDetails awsSqsQueue) {
+        setAwsSqsQueue(awsSqsQueue);
         return this;
     }
 
@@ -292,12 +614,26 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAwsCloudFrontDistribution() != null)
+            sb.append("AwsCloudFrontDistribution: ").append(getAwsCloudFrontDistribution()).append(",");
         if (getAwsEc2Instance() != null)
             sb.append("AwsEc2Instance: ").append(getAwsEc2Instance()).append(",");
+        if (getAwsElbv2LoadBalancer() != null)
+            sb.append("AwsElbv2LoadBalancer: ").append(getAwsElbv2LoadBalancer()).append(",");
         if (getAwsS3Bucket() != null)
             sb.append("AwsS3Bucket: ").append(getAwsS3Bucket()).append(",");
         if (getAwsIamAccessKey() != null)
             sb.append("AwsIamAccessKey: ").append(getAwsIamAccessKey()).append(",");
+        if (getAwsIamRole() != null)
+            sb.append("AwsIamRole: ").append(getAwsIamRole()).append(",");
+        if (getAwsKmsKey() != null)
+            sb.append("AwsKmsKey: ").append(getAwsKmsKey()).append(",");
+        if (getAwsLambdaFunction() != null)
+            sb.append("AwsLambdaFunction: ").append(getAwsLambdaFunction()).append(",");
+        if (getAwsSnsTopic() != null)
+            sb.append("AwsSnsTopic: ").append(getAwsSnsTopic()).append(",");
+        if (getAwsSqsQueue() != null)
+            sb.append("AwsSqsQueue: ").append(getAwsSqsQueue()).append(",");
         if (getContainer() != null)
             sb.append("Container: ").append(getContainer()).append(",");
         if (getOther() != null)
@@ -316,9 +652,17 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ResourceDetails == false)
             return false;
         ResourceDetails other = (ResourceDetails) obj;
+        if (other.getAwsCloudFrontDistribution() == null ^ this.getAwsCloudFrontDistribution() == null)
+            return false;
+        if (other.getAwsCloudFrontDistribution() != null && other.getAwsCloudFrontDistribution().equals(this.getAwsCloudFrontDistribution()) == false)
+            return false;
         if (other.getAwsEc2Instance() == null ^ this.getAwsEc2Instance() == null)
             return false;
         if (other.getAwsEc2Instance() != null && other.getAwsEc2Instance().equals(this.getAwsEc2Instance()) == false)
+            return false;
+        if (other.getAwsElbv2LoadBalancer() == null ^ this.getAwsElbv2LoadBalancer() == null)
+            return false;
+        if (other.getAwsElbv2LoadBalancer() != null && other.getAwsElbv2LoadBalancer().equals(this.getAwsElbv2LoadBalancer()) == false)
             return false;
         if (other.getAwsS3Bucket() == null ^ this.getAwsS3Bucket() == null)
             return false;
@@ -327,6 +671,26 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (other.getAwsIamAccessKey() == null ^ this.getAwsIamAccessKey() == null)
             return false;
         if (other.getAwsIamAccessKey() != null && other.getAwsIamAccessKey().equals(this.getAwsIamAccessKey()) == false)
+            return false;
+        if (other.getAwsIamRole() == null ^ this.getAwsIamRole() == null)
+            return false;
+        if (other.getAwsIamRole() != null && other.getAwsIamRole().equals(this.getAwsIamRole()) == false)
+            return false;
+        if (other.getAwsKmsKey() == null ^ this.getAwsKmsKey() == null)
+            return false;
+        if (other.getAwsKmsKey() != null && other.getAwsKmsKey().equals(this.getAwsKmsKey()) == false)
+            return false;
+        if (other.getAwsLambdaFunction() == null ^ this.getAwsLambdaFunction() == null)
+            return false;
+        if (other.getAwsLambdaFunction() != null && other.getAwsLambdaFunction().equals(this.getAwsLambdaFunction()) == false)
+            return false;
+        if (other.getAwsSnsTopic() == null ^ this.getAwsSnsTopic() == null)
+            return false;
+        if (other.getAwsSnsTopic() != null && other.getAwsSnsTopic().equals(this.getAwsSnsTopic()) == false)
+            return false;
+        if (other.getAwsSqsQueue() == null ^ this.getAwsSqsQueue() == null)
+            return false;
+        if (other.getAwsSqsQueue() != null && other.getAwsSqsQueue().equals(this.getAwsSqsQueue()) == false)
             return false;
         if (other.getContainer() == null ^ this.getContainer() == null)
             return false;
@@ -344,9 +708,16 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAwsCloudFrontDistribution() == null) ? 0 : getAwsCloudFrontDistribution().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2Instance() == null) ? 0 : getAwsEc2Instance().hashCode());
+        hashCode = prime * hashCode + ((getAwsElbv2LoadBalancer() == null) ? 0 : getAwsElbv2LoadBalancer().hashCode());
         hashCode = prime * hashCode + ((getAwsS3Bucket() == null) ? 0 : getAwsS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getAwsIamAccessKey() == null) ? 0 : getAwsIamAccessKey().hashCode());
+        hashCode = prime * hashCode + ((getAwsIamRole() == null) ? 0 : getAwsIamRole().hashCode());
+        hashCode = prime * hashCode + ((getAwsKmsKey() == null) ? 0 : getAwsKmsKey().hashCode());
+        hashCode = prime * hashCode + ((getAwsLambdaFunction() == null) ? 0 : getAwsLambdaFunction().hashCode());
+        hashCode = prime * hashCode + ((getAwsSnsTopic() == null) ? 0 : getAwsSnsTopic().hashCode());
+        hashCode = prime * hashCode + ((getAwsSqsQueue() == null) ? 0 : getAwsSqsQueue().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getOther() == null) ? 0 : getOther().hashCode());
         return hashCode;

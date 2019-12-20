@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example 47.6204,
+ * Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204,
  * -122.3491).
  * </p>
  * <p>

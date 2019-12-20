@@ -5827,6 +5827,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * ds2.8xlarge
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * ra3.16xlarge
+     * </p>
+     * </li>
      * </ul>
      * </li>
      * <li>

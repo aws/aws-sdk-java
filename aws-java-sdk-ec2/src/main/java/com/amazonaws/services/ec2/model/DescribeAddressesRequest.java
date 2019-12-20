@@ -53,6 +53,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
      * with, if any.
      * </p>
@@ -133,6 +138,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
      * with, if any.
      * </p>
@@ -189,6 +199,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-border-group</code> - The location from where the IP address is advertised.
      *         </p>
      *         </li>
      *         <li>
@@ -264,6 +279,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
      * with, if any.
      * </p>
@@ -321,6 +341,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-border-group</code> - The location from where the IP address is advertised.
      *        </p>
      *        </li>
      *        <li>
@@ -397,6 +422,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
      * with, if any.
      * </p>
@@ -459,6 +489,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-border-group</code> - The location from where the IP address is advertised.
      *        </p>
      *        </li>
      *        <li>
@@ -537,6 +572,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that the address is associated
      * with, if any.
      * </p>
@@ -594,6 +634,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>instance-id</code> - The ID of the instance the address is associated with, if any.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-border-group</code> - The location from where the IP address is advertised.
      *        </p>
      *        </li>
      *        <li>

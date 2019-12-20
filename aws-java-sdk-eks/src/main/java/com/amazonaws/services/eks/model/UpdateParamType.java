@@ -30,7 +30,8 @@ public enum UpdateParamType {
     LabelsToRemove("LabelsToRemove"),
     MaxSize("MaxSize"),
     MinSize("MinSize"),
-    ReleaseVersion("ReleaseVersion");
+    ReleaseVersion("ReleaseVersion"),
+    PublicAccessCidrs("PublicAccessCidrs");
 
     private String value;
 

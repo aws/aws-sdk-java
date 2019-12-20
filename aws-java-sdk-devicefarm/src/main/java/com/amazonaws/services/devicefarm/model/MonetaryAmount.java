@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A number representing the monetary amount for an offering or transaction.
+ * A number that represents the monetary amount for an offering or transaction.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/MonetaryAmount" target="_top">AWS API
@@ -36,7 +36,7 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
     private Double amount;
     /**
      * <p>
-     * The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     * The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * </p>
      */
     private String currencyCode;
@@ -83,11 +83,11 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     * The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     *        The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * @see CurrencyCode
      */
 
@@ -97,10 +97,10 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     * The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * </p>
      * 
-     * @return The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     * @return The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * @see CurrencyCode
      */
 
@@ -110,11 +110,11 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     * The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     *        The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCode
      */
@@ -126,11 +126,11 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     * The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     *        The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * @see CurrencyCode
      */
 
@@ -140,11 +140,11 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     * The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code of a monetary amount. For example, <code>USD</code> means "U.S. dollars."
+     *        The currency code of a monetary amount. For example, <code>USD</code> means U.S. dollars.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CurrencyCode
      */

@@ -30,18 +30,18 @@ public class DeleteRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the run you wish to delete.
+     * The Amazon Resource Name (ARN) for the run to delete.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the run you wish to delete.
+     * The Amazon Resource Name (ARN) for the run to delete.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the run you wish to delete.
+     *        The Amazon Resource Name (ARN) for the run to delete.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class DeleteRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the run you wish to delete.
+     * The Amazon Resource Name (ARN) for the run to delete.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the run you wish to delete.
+     * @return The Amazon Resource Name (ARN) for the run to delete.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class DeleteRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the run you wish to delete.
+     * The Amazon Resource Name (ARN) for the run to delete.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the run you wish to delete.
+     *        The Amazon Resource Name (ARN) for the run to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

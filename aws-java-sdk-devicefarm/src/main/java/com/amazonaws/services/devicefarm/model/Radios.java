@@ -30,36 +30,36 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     * True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      * </p>
      */
     private Boolean wifi;
     /**
      * <p>
-     * True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     * True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      * </p>
      */
     private Boolean bluetooth;
     /**
      * <p>
-     * True if NFC is enabled at the beginning of the test; otherwise, false.
+     * True if NFC is enabled at the beginning of the test. Otherwise, false.
      * </p>
      */
     private Boolean nfc;
     /**
      * <p>
-     * True if GPS is enabled at the beginning of the test; otherwise, false.
+     * True if GPS is enabled at the beginning of the test. Otherwise, false.
      * </p>
      */
     private Boolean gps;
 
     /**
      * <p>
-     * True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     * True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param wifi
-     *        True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     *        True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      */
 
     public void setWifi(Boolean wifi) {
@@ -68,10 +68,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     * True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     * @return True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean getWifi() {
@@ -80,11 +80,11 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     * True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param wifi
-     *        True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     *        True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,10 +95,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     * True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if Wi-Fi is enabled at the beginning of the test; otherwise, false.
+     * @return True if Wi-Fi is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean isWifi() {
@@ -107,11 +107,11 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     * True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param bluetooth
-     *        True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     *        True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      */
 
     public void setBluetooth(Boolean bluetooth) {
@@ -120,10 +120,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     * True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     * @return True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean getBluetooth() {
@@ -132,11 +132,11 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     * True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param bluetooth
-     *        True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     *        True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,10 +147,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     * True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if Bluetooth is enabled at the beginning of the test; otherwise, false.
+     * @return True if Bluetooth is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean isBluetooth() {
@@ -159,11 +159,11 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if NFC is enabled at the beginning of the test; otherwise, false.
+     * True if NFC is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param nfc
-     *        True if NFC is enabled at the beginning of the test; otherwise, false.
+     *        True if NFC is enabled at the beginning of the test. Otherwise, false.
      */
 
     public void setNfc(Boolean nfc) {
@@ -172,10 +172,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if NFC is enabled at the beginning of the test; otherwise, false.
+     * True if NFC is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if NFC is enabled at the beginning of the test; otherwise, false.
+     * @return True if NFC is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean getNfc() {
@@ -184,11 +184,11 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if NFC is enabled at the beginning of the test; otherwise, false.
+     * True if NFC is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param nfc
-     *        True if NFC is enabled at the beginning of the test; otherwise, false.
+     *        True if NFC is enabled at the beginning of the test. Otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,10 +199,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if NFC is enabled at the beginning of the test; otherwise, false.
+     * True if NFC is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if NFC is enabled at the beginning of the test; otherwise, false.
+     * @return True if NFC is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean isNfc() {
@@ -211,11 +211,11 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if GPS is enabled at the beginning of the test; otherwise, false.
+     * True if GPS is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param gps
-     *        True if GPS is enabled at the beginning of the test; otherwise, false.
+     *        True if GPS is enabled at the beginning of the test. Otherwise, false.
      */
 
     public void setGps(Boolean gps) {
@@ -224,10 +224,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if GPS is enabled at the beginning of the test; otherwise, false.
+     * True if GPS is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if GPS is enabled at the beginning of the test; otherwise, false.
+     * @return True if GPS is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean getGps() {
@@ -236,11 +236,11 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if GPS is enabled at the beginning of the test; otherwise, false.
+     * True if GPS is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param gps
-     *        True if GPS is enabled at the beginning of the test; otherwise, false.
+     *        True if GPS is enabled at the beginning of the test. Otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +251,10 @@ public class Radios implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True if GPS is enabled at the beginning of the test; otherwise, false.
+     * True if GPS is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if GPS is enabled at the beginning of the test; otherwise, false.
+     * @return True if GPS is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean isGps() {

@@ -27,10 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdatePushTemplateRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> CREATENEWVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("create-new-version").build();
     private static final MarshallingInfo<StructuredPojo> PUSHNOTIFICATIONTEMPLATEREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("template-name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("version").build();
 
     private static final UpdatePushTemplateRequestMarshaller instance = new UpdatePushTemplateRequestMarshaller();
 
@@ -48,8 +52,10 @@ public class UpdatePushTemplateRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updatePushTemplateRequest.getCreateNewVersion(), CREATENEWVERSION_BINDING);
             protocolMarshaller.marshall(updatePushTemplateRequest.getPushNotificationTemplateRequest(), PUSHNOTIFICATIONTEMPLATEREQUEST_BINDING);
             protocolMarshaller.marshall(updatePushTemplateRequest.getTemplateName(), TEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(updatePushTemplateRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

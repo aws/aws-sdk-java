@@ -1208,8 +1208,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * For more information about copying snapshots, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying a DB Snapshot</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
+     * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param copyDBSnapshotRequest

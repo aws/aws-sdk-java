@@ -765,6 +765,41 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer maxAllocatedStorage;
+    /**
+     * <p>
+     * A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to
+     * rotate your SSL/TLS certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Boolean certificateRotationRestart;
 
     /**
      * Default constructor for ModifyDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -5708,6 +5743,286 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to
+     * rotate your SSL/TLS certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param certificateRotationRestart
+     *        A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *        <p>
+     *        By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *        updated until the DB instance is restarted.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB
+     *        engine to rotate your SSL/TLS certificate:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     *        Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     *        Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        </li>
+     */
+
+    public void setCertificateRotationRestart(Boolean certificateRotationRestart) {
+        this.certificateRotationRestart = certificateRotationRestart;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to
+     * rotate your SSL/TLS certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *         <p>
+     *         By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *         updated until the DB instance is restarted.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB
+     *         engine to rotate your SSL/TLS certificate:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     *         Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"
+     *         > Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean getCertificateRotationRestart() {
+        return this.certificateRotationRestart;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to
+     * rotate your SSL/TLS certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param certificateRotationRestart
+     *        A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *        <p>
+     *        By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *        updated until the DB instance is restarted.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB
+     *        engine to rotate your SSL/TLS certificate:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     *        Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     *        Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBInstanceRequest withCertificateRotationRestart(Boolean certificateRotationRestart) {
+        setCertificateRotationRestart(certificateRotationRestart);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to
+     * rotate your SSL/TLS certificate:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A value that indicates whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *         <p>
+     *         By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *         updated until the DB instance is restarted.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB
+     *         engine to rotate your SSL/TLS certificate:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     *         Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"
+     *         > Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide.</i>
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean isCertificateRotationRestart() {
+        return this.certificateRotationRestart;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5800,7 +6115,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getMaxAllocatedStorage() != null)
-            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage());
+            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
+        if (getCertificateRotationRestart() != null)
+            sb.append("CertificateRotationRestart: ").append(getCertificateRotationRestart());
         sb.append("}");
         return sb.toString();
     }
@@ -5982,6 +6299,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMaxAllocatedStorage() != null && other.getMaxAllocatedStorage().equals(this.getMaxAllocatedStorage()) == false)
             return false;
+        if (other.getCertificateRotationRestart() == null ^ this.getCertificateRotationRestart() == null)
+            return false;
+        if (other.getCertificateRotationRestart() != null && other.getCertificateRotationRestart().equals(this.getCertificateRotationRestart()) == false)
+            return false;
         return true;
     }
 
@@ -6031,6 +6352,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getUseDefaultProcessorFeatures() == null) ? 0 : getUseDefaultProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getCertificateRotationRestart() == null) ? 0 : getCertificateRotationRestart().hashCode());
         return hashCode;
     }
 

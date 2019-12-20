@@ -43,13 +43,13 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     private String locale;
     /**
      * <p>
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as apple or samsung.
      * </p>
      */
     private String make;
     /**
      * <p>
-     * The model name or number of the endpoint device, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone or SM-G900F.
      * </p>
      */
     private String model;
@@ -61,7 +61,7 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
     private String modelVersion;
     /**
      * <p>
-     * The platform of the endpoint device, such as iOS or Android.
+     * The platform of the endpoint device, such as ios.
      * </p>
      */
     private String platform;
@@ -166,11 +166,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as apple or samsung.
      * </p>
      * 
      * @param make
-     *        The manufacturer of the endpoint device, such as Apple or Samsung.
+     *        The manufacturer of the endpoint device, such as apple or samsung.
      */
 
     public void setMake(String make) {
@@ -179,10 +179,10 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as apple or samsung.
      * </p>
      * 
-     * @return The manufacturer of the endpoint device, such as Apple or Samsung.
+     * @return The manufacturer of the endpoint device, such as apple or samsung.
      */
 
     public String getMake() {
@@ -191,11 +191,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as apple or samsung.
      * </p>
      * 
      * @param make
-     *        The manufacturer of the endpoint device, such as Apple or Samsung.
+     *        The manufacturer of the endpoint device, such as apple or samsung.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +206,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The model name or number of the endpoint device, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone or SM-G900F.
      * </p>
      * 
      * @param model
-     *        The model name or number of the endpoint device, such as iPhone.
+     *        The model name or number of the endpoint device, such as iPhone or SM-G900F.
      */
 
     public void setModel(String model) {
@@ -219,10 +219,10 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The model name or number of the endpoint device, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone or SM-G900F.
      * </p>
      * 
-     * @return The model name or number of the endpoint device, such as iPhone.
+     * @return The model name or number of the endpoint device, such as iPhone or SM-G900F.
      */
 
     public String getModel() {
@@ -231,11 +231,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The model name or number of the endpoint device, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone or SM-G900F.
      * </p>
      * 
      * @param model
-     *        The model name or number of the endpoint device, such as iPhone.
+     *        The model name or number of the endpoint device, such as iPhone or SM-G900F.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,11 +286,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform of the endpoint device, such as iOS or Android.
+     * The platform of the endpoint device, such as ios.
      * </p>
      * 
      * @param platform
-     *        The platform of the endpoint device, such as iOS or Android.
+     *        The platform of the endpoint device, such as ios.
      */
 
     public void setPlatform(String platform) {
@@ -299,10 +299,10 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform of the endpoint device, such as iOS or Android.
+     * The platform of the endpoint device, such as ios.
      * </p>
      * 
-     * @return The platform of the endpoint device, such as iOS or Android.
+     * @return The platform of the endpoint device, such as ios.
      */
 
     public String getPlatform() {
@@ -311,11 +311,11 @@ public class EndpointDemographic implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform of the endpoint device, such as iOS or Android.
+     * The platform of the endpoint device, such as ios.
      * </p>
      * 
      * @param platform
-     *        The platform of the endpoint device, such as iOS or Android.
+     *        The platform of the endpoint device, such as ios.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

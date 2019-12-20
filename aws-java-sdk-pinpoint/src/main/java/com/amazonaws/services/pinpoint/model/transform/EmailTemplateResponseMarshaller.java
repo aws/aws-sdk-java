@@ -51,6 +51,8 @@ public class EmailTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateType").build();
     private static final MarshallingInfo<String> TEXTPART_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TextPart").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
 
     private static final EmailTemplateResponseMarshaller instance = new EmailTemplateResponseMarshaller();
 
@@ -79,6 +81,7 @@ public class EmailTemplateResponseMarshaller {
             protocolMarshaller.marshall(emailTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTemplateType(), TEMPLATETYPE_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTextPart(), TEXTPART_BINDING);
+            protocolMarshaller.marshall(emailTemplateResponse.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -52,6 +52,12 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> keyNames;
+    /**
+     * <p>
+     * The IDs of the key pairs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> keyPairIds;
 
     /**
      * <p>
@@ -312,6 +318,79 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * The IDs of the key pairs.
+     * </p>
+     * 
+     * @return The IDs of the key pairs.
+     */
+
+    public java.util.List<String> getKeyPairIds() {
+        if (keyPairIds == null) {
+            keyPairIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return keyPairIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the key pairs.
+     * </p>
+     * 
+     * @param keyPairIds
+     *        The IDs of the key pairs.
+     */
+
+    public void setKeyPairIds(java.util.Collection<String> keyPairIds) {
+        if (keyPairIds == null) {
+            this.keyPairIds = null;
+            return;
+        }
+
+        this.keyPairIds = new com.amazonaws.internal.SdkInternalList<String>(keyPairIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the key pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setKeyPairIds(java.util.Collection)} or {@link #withKeyPairIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param keyPairIds
+     *        The IDs of the key pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeKeyPairsRequest withKeyPairIds(String... keyPairIds) {
+        if (this.keyPairIds == null) {
+            setKeyPairIds(new com.amazonaws.internal.SdkInternalList<String>(keyPairIds.length));
+        }
+        for (String ele : keyPairIds) {
+            this.keyPairIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the key pairs.
+     * </p>
+     * 
+     * @param keyPairIds
+     *        The IDs of the key pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeKeyPairsRequest withKeyPairIds(java.util.Collection<String> keyPairIds) {
+        setKeyPairIds(keyPairIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -337,7 +416,9 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getKeyNames() != null)
-            sb.append("KeyNames: ").append(getKeyNames());
+            sb.append("KeyNames: ").append(getKeyNames()).append(",");
+        if (getKeyPairIds() != null)
+            sb.append("KeyPairIds: ").append(getKeyPairIds());
         sb.append("}");
         return sb.toString();
     }
@@ -360,6 +441,10 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getKeyNames() != null && other.getKeyNames().equals(this.getKeyNames()) == false)
             return false;
+        if (other.getKeyPairIds() == null ^ this.getKeyPairIds() == null)
+            return false;
+        if (other.getKeyPairIds() != null && other.getKeyPairIds().equals(this.getKeyPairIds()) == false)
+            return false;
         return true;
     }
 
@@ -370,6 +455,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getKeyNames() == null) ? 0 : getKeyNames().hashCode());
+        hashCode = prime * hashCode + ((getKeyPairIds() == null) ? 0 : getKeyPairIds().hashCode());
         return hashCode;
     }
 

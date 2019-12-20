@@ -36,19 +36,19 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * A string describing the offering.
+     * A string that describes the offering.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The type of offering (e.g., "RECURRING") for a device.
+     * The type of offering (for example, <code>RECURRING</code>) for a device.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The platform of the device (e.g., ANDROID or IOS).
+     * The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * </p>
      */
     private String platform;
@@ -101,11 +101,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string describing the offering.
+     * A string that describes the offering.
      * </p>
      * 
      * @param description
-     *        A string describing the offering.
+     *        A string that describes the offering.
      */
 
     public void setDescription(String description) {
@@ -114,10 +114,10 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string describing the offering.
+     * A string that describes the offering.
      * </p>
      * 
-     * @return A string describing the offering.
+     * @return A string that describes the offering.
      */
 
     public String getDescription() {
@@ -126,11 +126,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string describing the offering.
+     * A string that describes the offering.
      * </p>
      * 
      * @param description
-     *        A string describing the offering.
+     *        A string that describes the offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of offering (e.g., "RECURRING") for a device.
+     * The type of offering (for example, <code>RECURRING</code>) for a device.
      * </p>
      * 
      * @param type
-     *        The type of offering (e.g., "RECURRING") for a device.
+     *        The type of offering (for example, <code>RECURRING</code>) for a device.
      * @see OfferingType
      */
 
@@ -155,10 +155,10 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of offering (e.g., "RECURRING") for a device.
+     * The type of offering (for example, <code>RECURRING</code>) for a device.
      * </p>
      * 
-     * @return The type of offering (e.g., "RECURRING") for a device.
+     * @return The type of offering (for example, <code>RECURRING</code>) for a device.
      * @see OfferingType
      */
 
@@ -168,11 +168,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of offering (e.g., "RECURRING") for a device.
+     * The type of offering (for example, <code>RECURRING</code>) for a device.
      * </p>
      * 
      * @param type
-     *        The type of offering (e.g., "RECURRING") for a device.
+     *        The type of offering (for example, <code>RECURRING</code>) for a device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingType
      */
@@ -184,11 +184,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of offering (e.g., "RECURRING") for a device.
+     * The type of offering (for example, <code>RECURRING</code>) for a device.
      * </p>
      * 
      * @param type
-     *        The type of offering (e.g., "RECURRING") for a device.
+     *        The type of offering (for example, <code>RECURRING</code>) for a device.
      * @see OfferingType
      */
 
@@ -198,11 +198,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of offering (e.g., "RECURRING") for a device.
+     * The type of offering (for example, <code>RECURRING</code>) for a device.
      * </p>
      * 
      * @param type
-     *        The type of offering (e.g., "RECURRING") for a device.
+     *        The type of offering (for example, <code>RECURRING</code>) for a device.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OfferingType
      */
@@ -214,11 +214,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the device (e.g., ANDROID or IOS).
+     * The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * </p>
      * 
      * @param platform
-     *        The platform of the device (e.g., ANDROID or IOS).
+     *        The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * @see DevicePlatform
      */
 
@@ -228,10 +228,10 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the device (e.g., ANDROID or IOS).
+     * The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * </p>
      * 
-     * @return The platform of the device (e.g., ANDROID or IOS).
+     * @return The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * @see DevicePlatform
      */
 
@@ -241,11 +241,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the device (e.g., ANDROID or IOS).
+     * The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * </p>
      * 
      * @param platform
-     *        The platform of the device (e.g., ANDROID or IOS).
+     *        The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePlatform
      */
@@ -257,11 +257,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the device (e.g., ANDROID or IOS).
+     * The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * </p>
      * 
      * @param platform
-     *        The platform of the device (e.g., ANDROID or IOS).
+     *        The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * @see DevicePlatform
      */
 
@@ -271,11 +271,11 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the device (e.g., ANDROID or IOS).
+     * The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * </p>
      * 
      * @param platform
-     *        The platform of the device (e.g., ANDROID or IOS).
+     *        The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DevicePlatform
      */

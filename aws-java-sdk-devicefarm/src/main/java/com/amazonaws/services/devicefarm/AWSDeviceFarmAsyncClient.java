@@ -31,9 +31,31 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Device Farm is a service that enables mobile app developers to test Android, iOS, and Fire OS apps on physical
- * phones, tablets, and other devices in the cloud.
+ * Welcome to the AWS Device Farm API documentation, which contains APIs for:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Testing on desktop browsers
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test your web applications on desktop browsers using Selenium. The APIs for
+ * desktop browser testing contain <code>TestGrid</code> in their names. For more information, see <a
+ * href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing Web Applications on Selenium with Device
+ * Farm</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Testing on real mobile devices
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test apps on physical phones, tablets, and other devices in the cloud. For
+ * more information, see the <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device Farm
+ * Developer Guide</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -410,6 +432,72 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTestGridProjectResult> createTestGridProjectAsync(CreateTestGridProjectRequest request) {
+
+        return createTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTestGridProjectResult> createTestGridProjectAsync(final CreateTestGridProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTestGridProjectRequest, CreateTestGridProjectResult> asyncHandler) {
+        final CreateTestGridProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTestGridProjectResult>() {
+            @Override
+            public CreateTestGridProjectResult call() throws Exception {
+                CreateTestGridProjectResult result = null;
+
+                try {
+                    result = executeCreateTestGridProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTestGridUrlResult> createTestGridUrlAsync(CreateTestGridUrlRequest request) {
+
+        return createTestGridUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTestGridUrlResult> createTestGridUrlAsync(final CreateTestGridUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTestGridUrlRequest, CreateTestGridUrlResult> asyncHandler) {
+        final CreateTestGridUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTestGridUrlResult>() {
+            @Override
+            public CreateTestGridUrlResult call() throws Exception {
+                CreateTestGridUrlResult result = null;
+
+                try {
+                    result = executeCreateTestGridUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUploadResult> createUploadAsync(CreateUploadRequest request) {
 
         return createUploadAsync(request, null);
@@ -658,6 +746,39 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = executeDeleteRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTestGridProjectResult> deleteTestGridProjectAsync(DeleteTestGridProjectRequest request) {
+
+        return deleteTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTestGridProjectResult> deleteTestGridProjectAsync(final DeleteTestGridProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTestGridProjectRequest, DeleteTestGridProjectResult> asyncHandler) {
+        final DeleteTestGridProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTestGridProjectResult>() {
+            @Override
+            public DeleteTestGridProjectResult call() throws Exception {
+                DeleteTestGridProjectResult result = null;
+
+                try {
+                    result = executeDeleteTestGridProject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1186,6 +1307,72 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = executeGetTest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridProjectResult> getTestGridProjectAsync(GetTestGridProjectRequest request) {
+
+        return getTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridProjectResult> getTestGridProjectAsync(final GetTestGridProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTestGridProjectRequest, GetTestGridProjectResult> asyncHandler) {
+        final GetTestGridProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTestGridProjectResult>() {
+            @Override
+            public GetTestGridProjectResult call() throws Exception {
+                GetTestGridProjectResult result = null;
+
+                try {
+                    result = executeGetTestGridProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridSessionResult> getTestGridSessionAsync(GetTestGridSessionRequest request) {
+
+        return getTestGridSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridSessionResult> getTestGridSessionAsync(final GetTestGridSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTestGridSessionRequest, GetTestGridSessionResult> asyncHandler) {
+        final GetTestGridSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTestGridSessionResult>() {
+            @Override
+            public GetTestGridSessionResult call() throws Exception {
+                GetTestGridSessionResult result = null;
+
+                try {
+                    result = executeGetTestGridSession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1829,6 +2016,138 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListTestGridProjectsResult> listTestGridProjectsAsync(ListTestGridProjectsRequest request) {
+
+        return listTestGridProjectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridProjectsResult> listTestGridProjectsAsync(final ListTestGridProjectsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTestGridProjectsRequest, ListTestGridProjectsResult> asyncHandler) {
+        final ListTestGridProjectsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTestGridProjectsResult>() {
+            @Override
+            public ListTestGridProjectsResult call() throws Exception {
+                ListTestGridProjectsResult result = null;
+
+                try {
+                    result = executeListTestGridProjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionActionsResult> listTestGridSessionActionsAsync(ListTestGridSessionActionsRequest request) {
+
+        return listTestGridSessionActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionActionsResult> listTestGridSessionActionsAsync(final ListTestGridSessionActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTestGridSessionActionsRequest, ListTestGridSessionActionsResult> asyncHandler) {
+        final ListTestGridSessionActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTestGridSessionActionsResult>() {
+            @Override
+            public ListTestGridSessionActionsResult call() throws Exception {
+                ListTestGridSessionActionsResult result = null;
+
+                try {
+                    result = executeListTestGridSessionActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionArtifactsResult> listTestGridSessionArtifactsAsync(ListTestGridSessionArtifactsRequest request) {
+
+        return listTestGridSessionArtifactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionArtifactsResult> listTestGridSessionArtifactsAsync(final ListTestGridSessionArtifactsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTestGridSessionArtifactsRequest, ListTestGridSessionArtifactsResult> asyncHandler) {
+        final ListTestGridSessionArtifactsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTestGridSessionArtifactsResult>() {
+            @Override
+            public ListTestGridSessionArtifactsResult call() throws Exception {
+                ListTestGridSessionArtifactsResult result = null;
+
+                try {
+                    result = executeListTestGridSessionArtifacts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionsResult> listTestGridSessionsAsync(ListTestGridSessionsRequest request) {
+
+        return listTestGridSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionsResult> listTestGridSessionsAsync(final ListTestGridSessionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTestGridSessionsRequest, ListTestGridSessionsResult> asyncHandler) {
+        final ListTestGridSessionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTestGridSessionsResult>() {
+            @Override
+            public ListTestGridSessionsResult call() throws Exception {
+                ListTestGridSessionsResult result = null;
+
+                try {
+                    result = executeListTestGridSessions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTestsResult> listTestsAsync(ListTestsRequest request) {
 
         return listTestsAsync(request, null);
@@ -2374,6 +2693,39 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = executeUpdateProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTestGridProjectResult> updateTestGridProjectAsync(UpdateTestGridProjectRequest request) {
+
+        return updateTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTestGridProjectResult> updateTestGridProjectAsync(final UpdateTestGridProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTestGridProjectRequest, UpdateTestGridProjectResult> asyncHandler) {
+        final UpdateTestGridProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTestGridProjectResult>() {
+            @Override
+            public UpdateTestGridProjectResult call() throws Exception {
+                UpdateTestGridProjectResult result = null;
+
+                try {
+                    result = executeUpdateTestGridProject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

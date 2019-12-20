@@ -93,6 +93,32 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTestGridProjectResult> createTestGridProjectAsync(CreateTestGridProjectRequest request) {
+
+        return createTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTestGridProjectResult> createTestGridProjectAsync(CreateTestGridProjectRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTestGridProjectRequest, CreateTestGridProjectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTestGridUrlResult> createTestGridUrlAsync(CreateTestGridUrlRequest request) {
+
+        return createTestGridUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTestGridUrlResult> createTestGridUrlAsync(CreateTestGridUrlRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTestGridUrlRequest, CreateTestGridUrlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUploadResult> createUploadAsync(CreateUploadRequest request) {
 
         return createUploadAsync(request, null);
@@ -192,6 +218,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(DeleteRunRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRunRequest, DeleteRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTestGridProjectResult> deleteTestGridProjectAsync(DeleteTestGridProjectRequest request) {
+
+        return deleteTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTestGridProjectResult> deleteTestGridProjectAsync(DeleteTestGridProjectRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTestGridProjectRequest, DeleteTestGridProjectResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -400,6 +439,32 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<GetTestResult> getTestAsync(GetTestRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTestRequest, GetTestResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridProjectResult> getTestGridProjectAsync(GetTestGridProjectRequest request) {
+
+        return getTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridProjectResult> getTestGridProjectAsync(GetTestGridProjectRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTestGridProjectRequest, GetTestGridProjectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridSessionResult> getTestGridSessionAsync(GetTestGridSessionRequest request) {
+
+        return getTestGridSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTestGridSessionResult> getTestGridSessionAsync(GetTestGridSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTestGridSessionRequest, GetTestGridSessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -652,6 +717,58 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListTestGridProjectsResult> listTestGridProjectsAsync(ListTestGridProjectsRequest request) {
+
+        return listTestGridProjectsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridProjectsResult> listTestGridProjectsAsync(ListTestGridProjectsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridProjectsRequest, ListTestGridProjectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionActionsResult> listTestGridSessionActionsAsync(ListTestGridSessionActionsRequest request) {
+
+        return listTestGridSessionActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionActionsResult> listTestGridSessionActionsAsync(ListTestGridSessionActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridSessionActionsRequest, ListTestGridSessionActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionArtifactsResult> listTestGridSessionArtifactsAsync(ListTestGridSessionArtifactsRequest request) {
+
+        return listTestGridSessionArtifactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionArtifactsResult> listTestGridSessionArtifactsAsync(ListTestGridSessionArtifactsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridSessionArtifactsRequest, ListTestGridSessionArtifactsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionsResult> listTestGridSessionsAsync(ListTestGridSessionsRequest request) {
+
+        return listTestGridSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTestGridSessionsResult> listTestGridSessionsAsync(ListTestGridSessionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridSessionsRequest, ListTestGridSessionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTestsResult> listTestsAsync(ListTestsRequest request) {
 
         return listTestsAsync(request, null);
@@ -868,6 +985,19 @@ public class AbstractAWSDeviceFarmAsync extends AbstractAWSDeviceFarm implements
     @Override
     public java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTestGridProjectResult> updateTestGridProjectAsync(UpdateTestGridProjectRequest request) {
+
+        return updateTestGridProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTestGridProjectResult> updateTestGridProjectAsync(UpdateTestGridProjectRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTestGridProjectRequest, UpdateTestGridProjectResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

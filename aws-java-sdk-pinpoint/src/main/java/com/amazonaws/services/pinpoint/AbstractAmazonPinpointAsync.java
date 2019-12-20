@@ -1005,6 +1005,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListTemplateVersionsResult> listTemplateVersionsAsync(ListTemplateVersionsRequest request) {
+
+        return listTemplateVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTemplateVersionsResult> listTemplateVersionsAsync(ListTemplateVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTemplateVersionsRequest, ListTemplateVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTemplatesResult> listTemplatesAsync(ListTemplatesRequest request) {
 
         return listTemplatesAsync(request, null);
@@ -1364,6 +1377,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<UpdateSmsTemplateResult> updateSmsTemplateAsync(UpdateSmsTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSmsTemplateRequest, UpdateSmsTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTemplateActiveVersionResult> updateTemplateActiveVersionAsync(UpdateTemplateActiveVersionRequest request) {
+
+        return updateTemplateActiveVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTemplateActiveVersionResult> updateTemplateActiveVersionAsync(UpdateTemplateActiveVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTemplateActiveVersionRequest, UpdateTemplateActiveVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

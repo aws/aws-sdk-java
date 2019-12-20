@@ -36,24 +36,24 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      */
     private Boolean packageCleanup;
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings containing the list of app packages that should not be cleaned up from the device after a
+     * test run completes.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      */
     private java.util.List<String> excludeAppPackagesFromCleanup;
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      */
@@ -113,12 +113,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
      * @param packageCleanup
-     *        When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      *        <code>false</code> for private devices.
      */
 
@@ -128,12 +128,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value
-     *         is <code>false</code> for private devices.
+     * @return When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
+     *         <code>false</code> for private devices.
      */
 
     public Boolean getPackageCleanup() {
@@ -142,12 +142,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
      * @param packageCleanup
-     *        When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      *        <code>false</code> for private devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -159,12 +159,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value is
+     * When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
      * <code>false</code> for private devices.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will remove app packages after a test run. The default value
-     *         is <code>false</code> for private devices.
+     * @return When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
+     *         <code>false</code> for private devices.
      */
 
     public Boolean isPackageCleanup() {
@@ -173,17 +173,17 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings containing the list of app packages that should not be cleaned up from the device after a
+     * test run completes.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * 
-     * @return An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *         after a test run is over.</p>
+     * @return An array of strings containing the list of app packages that should not be cleaned up from the device
+     *         after a test run completes.</p>
      *         <p>
-     *         The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *         The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      */
 
     public java.util.List<String> getExcludeAppPackagesFromCleanup() {
@@ -192,18 +192,18 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings containing the list of app packages that should not be cleaned up from the device after a
+     * test run completes.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *        after a test run is over.</p>
+     *        An array of strings containing the list of app packages that should not be cleaned up from the device
+     *        after a test run completes.</p>
      *        <p>
-     *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *        The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      */
 
     public void setExcludeAppPackagesFromCleanup(java.util.Collection<String> excludeAppPackagesFromCleanup) {
@@ -217,11 +217,11 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings containing the list of app packages that should not be cleaned up from the device after a
+     * test run completes.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -230,10 +230,10 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *        after a test run is over.</p>
+     *        An array of strings containing the list of app packages that should not be cleaned up from the device
+     *        after a test run completes.</p>
      *        <p>
-     *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *        The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,18 +249,18 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
-     * test run is over.
+     * An array of strings containing the list of app packages that should not be cleaned up from the device after a
+     * test run completes.
      * </p>
      * <p>
-     * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     * The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
-     *        after a test run is over.</p>
+     *        An array of strings containing the list of app packages that should not be cleaned up from the device
+     *        after a test run completes.</p>
      *        <p>
-     *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
+     *        The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,12 +271,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
      * @param rebootAfterUse
-     *        When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      *        <code>true</code>.
      */
 
@@ -286,12 +286,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value
-     *         is <code>true</code>.
+     * @return When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
+     *         <code>true</code>.
      */
 
     public Boolean getRebootAfterUse() {
@@ -300,12 +300,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
      * @param rebootAfterUse
-     *        When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     *        When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -317,12 +317,12 @@ public class InstanceProfile implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value is
+     * When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
      * <code>true</code>.
      * </p>
      * 
-     * @return When set to <code>true</code>, Device Farm will reboot the instance after a test run. The default value
-     *         is <code>true</code>.
+     * @return When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
+     *         <code>true</code>.
      */
 
     public Boolean isRebootAfterUse() {

@@ -55,14 +55,15 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a>
-     * in the <i>Amazon EKS User Guide</i>.
+     * profile. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      */
     private String podExecutionRoleArn;
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into.
+     * The IDs of subnets to launch pods into.
      * </p>
      */
     private java.util.List<String> subnets;
@@ -250,14 +251,16 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a>
-     * in the <i>Amazon EKS User Guide</i>.
+     * profile. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param podExecutionRoleArn
      *        The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the
-     *        Fargate profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod
-     *        Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+     *        Fargate profile. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
+     *        the <i>Amazon EKS User Guide</i>.
      */
 
     public void setPodExecutionRoleArn(String podExecutionRoleArn) {
@@ -267,13 +270,15 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a>
-     * in the <i>Amazon EKS User Guide</i>.
+     * profile. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the
-     *         Fargate profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod
-     *         Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+     *         Fargate profile. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
+     *         the <i>Amazon EKS User Guide</i>.
      */
 
     public String getPodExecutionRoleArn() {
@@ -283,14 +288,16 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate
-     * profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a>
-     * in the <i>Amazon EKS User Guide</i>.
+     * profile. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the
+     * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param podExecutionRoleArn
      *        The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the
-     *        Fargate profile. For more information, see <a href="eks/latest/userguide/pod-execution-role.html">Pod
-     *        Execution Role</a> in the <i>Amazon EKS User Guide</i>.
+     *        Fargate profile. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
+     *        the <i>Amazon EKS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,10 +308,10 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into.
+     * The IDs of subnets to launch pods into.
      * </p>
      * 
-     * @return The IDs of subnets to launch Fargate pods into.
+     * @return The IDs of subnets to launch pods into.
      */
 
     public java.util.List<String> getSubnets() {
@@ -313,11 +320,11 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into.
+     * The IDs of subnets to launch pods into.
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch Fargate pods into.
+     *        The IDs of subnets to launch pods into.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -331,7 +338,7 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into.
+     * The IDs of subnets to launch pods into.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -340,7 +347,7 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch Fargate pods into.
+     *        The IDs of subnets to launch pods into.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,11 +363,11 @@ public class FargateProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into.
+     * The IDs of subnets to launch pods into.
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch Fargate pods into.
+     *        The IDs of subnets to launch pods into.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

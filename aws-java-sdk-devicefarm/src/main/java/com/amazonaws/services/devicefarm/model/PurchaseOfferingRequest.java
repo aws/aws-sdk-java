@@ -36,7 +36,7 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
     private String offeringId;
     /**
      * <p>
-     * The number of device slots you wish to purchase in an offering request.
+     * The number of device slots to purchase in an offering request.
      * </p>
      */
     private Integer quantity;
@@ -89,11 +89,11 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of device slots you wish to purchase in an offering request.
+     * The number of device slots to purchase in an offering request.
      * </p>
      * 
      * @param quantity
-     *        The number of device slots you wish to purchase in an offering request.
+     *        The number of device slots to purchase in an offering request.
      */
 
     public void setQuantity(Integer quantity) {
@@ -102,10 +102,10 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of device slots you wish to purchase in an offering request.
+     * The number of device slots to purchase in an offering request.
      * </p>
      * 
-     * @return The number of device slots you wish to purchase in an offering request.
+     * @return The number of device slots to purchase in an offering request.
      */
 
     public Integer getQuantity() {
@@ -114,11 +114,11 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of device slots you wish to purchase in an offering request.
+     * The number of device slots to purchase in an offering request.
      * </p>
      * 
      * @param quantity
-     *        The number of device slots you wish to purchase in an offering request.
+     *        The number of device slots to purchase in an offering request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -89,6 +89,10 @@ public class VoiceTemplateResponseJsonUnmarshaller implements Unmarshaller<Voice
                     context.nextToken();
                     voiceTemplateResponse.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Version", targetDepth)) {
+                    context.nextToken();
+                    voiceTemplateResponse.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("VoiceId", targetDepth)) {
                     context.nextToken();
                     voiceTemplateResponse.setVoiceId(context.getUnmarshaller(String.class).unmarshall(context));

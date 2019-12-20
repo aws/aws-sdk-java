@@ -68,12 +68,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PHONE: The phone form factor.
+     * PHONE
      * </p>
      * </li>
      * <li>
      * <p>
-     * TABLET: The tablet form factor.
+     * TABLET
      * </p>
      * </li>
      * </ul>
@@ -89,12 +89,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -159,14 +159,14 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
      * <p>
-     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i>
+     * Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     * supported</a>.
      * </p>
      */
     private Boolean remoteDebugEnabled;
     /**
      * <p>
-     * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
+     * The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
      * </p>
      */
     private String fleetType;
@@ -178,13 +178,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private String fleetName;
     /**
      * <p>
-     * The instances belonging to this device.
+     * The instances that belong to this device.
      * </p>
      */
     private java.util.List<DeviceInstance> instances;
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and
      * GetDevice API methods.
      * </p>
      */
@@ -400,12 +400,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PHONE: The phone form factor.
+     * PHONE
      * </p>
      * </li>
      * <li>
      * <p>
-     * TABLET: The tablet form factor.
+     * TABLET
      * </p>
      * </li>
      * </ul>
@@ -418,12 +418,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PHONE: The phone form factor.
+     *        PHONE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TABLET: The tablet form factor.
+     *        TABLET
      *        </p>
      *        </li>
      * @see DeviceFormFactor
@@ -443,12 +443,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PHONE: The phone form factor.
+     * PHONE
      * </p>
      * </li>
      * <li>
      * <p>
-     * TABLET: The tablet form factor.
+     * TABLET
      * </p>
      * </li>
      * </ul>
@@ -460,12 +460,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         PHONE: The phone form factor.
+     *         PHONE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         TABLET: The tablet form factor.
+     *         TABLET
      *         </p>
      *         </li>
      * @see DeviceFormFactor
@@ -485,12 +485,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PHONE: The phone form factor.
+     * PHONE
      * </p>
      * </li>
      * <li>
      * <p>
-     * TABLET: The tablet form factor.
+     * TABLET
      * </p>
      * </li>
      * </ul>
@@ -503,12 +503,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PHONE: The phone form factor.
+     *        PHONE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TABLET: The tablet form factor.
+     *        TABLET
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -530,12 +530,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PHONE: The phone form factor.
+     * PHONE
      * </p>
      * </li>
      * <li>
      * <p>
-     * TABLET: The tablet form factor.
+     * TABLET
      * </p>
      * </li>
      * </ul>
@@ -548,12 +548,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PHONE: The phone form factor.
+     *        PHONE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TABLET: The tablet form factor.
+     *        TABLET
      *        </p>
      *        </li>
      * @see DeviceFormFactor
@@ -573,12 +573,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * PHONE: The phone form factor.
+     * PHONE
      * </p>
      * </li>
      * <li>
      * <p>
-     * TABLET: The tablet form factor.
+     * TABLET
      * </p>
      * </li>
      * </ul>
@@ -591,12 +591,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        PHONE: The phone form factor.
+     *        PHONE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        TABLET: The tablet form factor.
+     *        TABLET
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -618,12 +618,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -636,12 +636,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @see DevicePlatform
@@ -661,12 +661,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -678,12 +678,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         ANDROID: The Android platform.
+     *         ANDROID
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         IOS: The iOS platform.
+     *         IOS
      *         </p>
      *         </li>
      * @see DevicePlatform
@@ -703,12 +703,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -721,12 +721,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -748,12 +748,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -766,12 +766,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @see DevicePlatform
@@ -791,12 +791,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID: The Android platform.
+     * ANDROID
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS: The iOS platform.
+     * IOS
      * </p>
      * </li>
      * </ul>
@@ -809,12 +809,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID: The Android platform.
+     *        ANDROID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS: The iOS platform.
+     *        IOS
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1203,16 +1203,15 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
      * <p>
-     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i>
+     * Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     * supported</a>.
      * </p>
      * 
      * @param remoteDebugEnabled
      *        This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
      *        <p>
-     *        <i>Remote debugging is <a
-     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-     *        supported</a>.</i>
+     *        Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     *        longer supported</a>.
      */
 
     public void setRemoteDebugEnabled(Boolean remoteDebugEnabled) {
@@ -1224,15 +1223,14 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
      * <p>
-     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i>
+     * Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     * supported</a>.
      * </p>
      * 
      * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
      *         <p>
-     *         <i>Remote debugging is <a
-     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-     *         supported</a>.</i>
+     *         Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.
      */
 
     public Boolean getRemoteDebugEnabled() {
@@ -1244,16 +1242,15 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
      * <p>
-     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i>
+     * Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     * supported</a>.
      * </p>
      * 
      * @param remoteDebugEnabled
      *        This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
      *        <p>
-     *        <i>Remote debugging is <a
-     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-     *        supported</a>.</i>
+     *        Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
+     *        longer supported</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1267,15 +1264,14 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * This flag is set to <code>true</code> if remote debugging is enabled for the device.
      * </p>
      * <p>
-     * <i>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i>
+     * Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
+     * supported</a>.
      * </p>
      * 
      * @return This flag is set to <code>true</code> if remote debugging is enabled for the device.</p>
      *         <p>
-     *         <i>Remote debugging is <a
-     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer
-     *         supported</a>.</i>
+     *         Remote debugging is <a
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.
      */
 
     public Boolean isRemoteDebugEnabled() {
@@ -1284,11 +1280,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
+     * The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
      * </p>
      * 
      * @param fleetType
-     *        The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
+     *        The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
      */
 
     public void setFleetType(String fleetType) {
@@ -1297,10 +1293,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
+     * The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
      * </p>
      * 
-     * @return The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
+     * @return The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
      */
 
     public String getFleetType() {
@@ -1309,11 +1305,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
+     * The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
      * </p>
      * 
      * @param fleetType
-     *        The type of fleet to which this device belongs. Possible values for fleet type are PRIVATE and PUBLIC.
+     *        The type of fleet to which this device belongs. Possible values are PRIVATE and PUBLIC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1364,10 +1360,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instances belonging to this device.
+     * The instances that belong to this device.
      * </p>
      * 
-     * @return The instances belonging to this device.
+     * @return The instances that belong to this device.
      */
 
     public java.util.List<DeviceInstance> getInstances() {
@@ -1376,11 +1372,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instances belonging to this device.
+     * The instances that belong to this device.
      * </p>
      * 
      * @param instances
-     *        The instances belonging to this device.
+     *        The instances that belong to this device.
      */
 
     public void setInstances(java.util.Collection<DeviceInstance> instances) {
@@ -1394,7 +1390,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instances belonging to this device.
+     * The instances that belong to this device.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1403,7 +1399,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param instances
-     *        The instances belonging to this device.
+     *        The instances that belong to this device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1419,11 +1415,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instances belonging to this device.
+     * The instances that belong to this device.
      * </p>
      * 
      * @param instances
-     *        The instances belonging to this device.
+     *        The instances that belong to this device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1434,13 +1430,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and
      * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run. It is currently available in the
-     *        ListDevices and GetDevice API methods.
+     *        Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a>
+     *        and GetDevice API methods.
      * @see DeviceAvailability
      */
 
@@ -1450,12 +1446,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and
      * GetDevice API methods.
      * </p>
      * 
-     * @return Reflects how likely a device will be available for a test run. It is currently available in the
-     *         ListDevices and GetDevice API methods.
+     * @return Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a>
+     *         and GetDevice API methods.
      * @see DeviceAvailability
      */
 
@@ -1465,13 +1461,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and
      * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run. It is currently available in the
-     *        ListDevices and GetDevice API methods.
+     *        Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a>
+     *        and GetDevice API methods.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceAvailability
      */
@@ -1483,13 +1479,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and
      * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run. It is currently available in the
-     *        ListDevices and GetDevice API methods.
+     *        Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a>
+     *        and GetDevice API methods.
      * @see DeviceAvailability
      */
 
@@ -1499,13 +1495,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a> and
      * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run. It is currently available in the
-     *        ListDevices and GetDevice API methods.
+     *        Indicates how likely a device is available for a test run. Currently available in the <a>ListDevices</a>
+     *        and GetDevice API methods.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceAvailability
      */

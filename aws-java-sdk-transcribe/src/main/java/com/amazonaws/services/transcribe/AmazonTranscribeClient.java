@@ -210,6 +210,76 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a new vocabulary filter that you can use to filter words, such as profane words, from the output of a
+     * transcription job.
+     * </p>
+     * 
+     * @param createVocabularyFilterRequest
+     * @return Result of the CreateVocabularyFilter operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws ConflictException
+     *         When you are using the <code>CreateVocabulary</code> operation, the <code>JobName</code> field is a
+     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
+     *         <p>
+     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
+     *         time. Resend the second request later.
+     * @sample AmazonTranscribe.CreateVocabularyFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVocabularyFilterResult createVocabularyFilter(CreateVocabularyFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVocabularyFilter(request);
+    }
+
+    @SdkInternalApi
+    final CreateVocabularyFilterResult executeCreateVocabularyFilter(CreateVocabularyFilterRequest createVocabularyFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVocabularyFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVocabularyFilterRequest> request = null;
+        Response<CreateVocabularyFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVocabularyFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVocabularyFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVocabularyFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateVocabularyFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a previously submitted transcription job along with any other generated results such as the
      * transcription, models, and so on.
      * </p>
@@ -326,6 +396,71 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a vocabulary filter.
+     * </p>
+     * 
+     * @param deleteVocabularyFilterRequest
+     * @return Result of the DeleteVocabularyFilter operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.DeleteVocabularyFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabularyFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVocabularyFilterResult deleteVocabularyFilter(DeleteVocabularyFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVocabularyFilter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVocabularyFilterResult executeDeleteVocabularyFilter(DeleteVocabularyFilterRequest deleteVocabularyFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVocabularyFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVocabularyFilterRequest> request = null;
+        Response<DeleteVocabularyFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVocabularyFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVocabularyFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVocabularyFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteVocabularyFilterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -468,6 +603,70 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Returns information about a vocabulary filter.
+     * </p>
+     * 
+     * @param getVocabularyFilterRequest
+     * @return Result of the GetVocabularyFilter operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @sample AmazonTranscribe.GetVocabularyFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabularyFilter" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetVocabularyFilterResult getVocabularyFilter(GetVocabularyFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVocabularyFilter(request);
+    }
+
+    @SdkInternalApi
+    final GetVocabularyFilterResult executeGetVocabularyFilter(GetVocabularyFilterRequest getVocabularyFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVocabularyFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVocabularyFilterRequest> request = null;
+        Response<GetVocabularyFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVocabularyFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVocabularyFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVocabularyFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVocabularyFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists transcription jobs with the specified status.
      * </p>
      * 
@@ -582,6 +781,69 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<ListVocabulariesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVocabulariesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about vocabulary filters.
+     * </p>
+     * 
+     * @param listVocabularyFiltersRequest
+     * @return Result of the ListVocabularyFilters operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.ListVocabularyFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularyFilters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListVocabularyFiltersResult listVocabularyFilters(ListVocabularyFiltersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVocabularyFilters(request);
+    }
+
+    @SdkInternalApi
+    final ListVocabularyFiltersResult executeListVocabularyFilters(ListVocabularyFiltersRequest listVocabularyFiltersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVocabularyFiltersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVocabularyFiltersRequest> request = null;
+        Response<ListVocabularyFiltersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVocabularyFiltersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVocabularyFiltersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVocabularyFilters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVocabularyFiltersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListVocabularyFiltersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -722,6 +984,71 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a vocabulary filter with a new list of filtered words.
+     * </p>
+     * 
+     * @param updateVocabularyFilterRequest
+     * @return Result of the UpdateVocabularyFilter operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @sample AmazonTranscribe.UpdateVocabularyFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabularyFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateVocabularyFilterResult updateVocabularyFilter(UpdateVocabularyFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVocabularyFilter(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVocabularyFilterResult executeUpdateVocabularyFilter(UpdateVocabularyFilterRequest updateVocabularyFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVocabularyFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVocabularyFilterRequest> request = null;
+        Response<UpdateVocabularyFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVocabularyFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVocabularyFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVocabularyFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVocabularyFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateVocabularyFilterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

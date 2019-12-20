@@ -44,32 +44,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * ARN: The ARN.
+     * ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The form factor (for example, phone or tablet).
+     * FORM_FACTOR (for example, phone or tablet)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The manufacturer.
+     * MANUFACTURER
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform (for example, Android or iOS).
+     * PLATFORM (for example, Android or iOS)
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_VERSION: The Appium version for the test.
+     * APPIUM_VERSION
      * </p>
      * </li>
      * </ul>
@@ -126,32 +126,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * ARN: The ARN.
+     * ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The form factor (for example, phone or tablet).
+     * FORM_FACTOR (for example, phone or tablet)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The manufacturer.
+     * MANUFACTURER
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform (for example, Android or iOS).
+     * PLATFORM (for example, Android or iOS)
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_VERSION: The Appium version for the test.
+     * APPIUM_VERSION
      * </p>
      * </li>
      * </ul>
@@ -164,32 +164,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The ARN.
+     *        ARN
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The form factor (for example, phone or tablet).
+     *        FORM_FACTOR (for example, phone or tablet)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The manufacturer.
+     *        MANUFACTURER
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform (for example, Android or iOS).
+     *        PLATFORM (for example, Android or iOS)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_VERSION: The Appium version for the test.
+     *        APPIUM_VERSION
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -209,32 +209,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * ARN: The ARN.
+     * ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The form factor (for example, phone or tablet).
+     * FORM_FACTOR (for example, phone or tablet)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The manufacturer.
+     * MANUFACTURER
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform (for example, Android or iOS).
+     * PLATFORM (for example, Android or iOS)
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_VERSION: The Appium version for the test.
+     * APPIUM_VERSION
      * </p>
      * </li>
      * </ul>
@@ -246,32 +246,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *         <ul>
      *         <li>
      *         <p>
-     *         ARN: The ARN.
+     *         ARN
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FORM_FACTOR: The form factor (for example, phone or tablet).
+     *         FORM_FACTOR (for example, phone or tablet)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MANUFACTURER: The manufacturer.
+     *         MANUFACTURER
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PLATFORM: The platform (for example, Android or iOS).
+     *         PLATFORM (for example, Android or iOS)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         REMOTE_ACCESS_ENABLED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_VERSION: The Appium version for the test.
+     *         APPIUM_VERSION
      *         </p>
      *         </li>
      * @see DeviceAttribute
@@ -291,32 +291,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * ARN: The ARN.
+     * ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The form factor (for example, phone or tablet).
+     * FORM_FACTOR (for example, phone or tablet)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The manufacturer.
+     * MANUFACTURER
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform (for example, Android or iOS).
+     * PLATFORM (for example, Android or iOS)
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_VERSION: The Appium version for the test.
+     * APPIUM_VERSION
      * </p>
      * </li>
      * </ul>
@@ -329,32 +329,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The ARN.
+     *        ARN
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The form factor (for example, phone or tablet).
+     *        FORM_FACTOR (for example, phone or tablet)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The manufacturer.
+     *        MANUFACTURER
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform (for example, Android or iOS).
+     *        PLATFORM (for example, Android or iOS)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_VERSION: The Appium version for the test.
+     *        APPIUM_VERSION
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -376,32 +376,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * ARN: The ARN.
+     * ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The form factor (for example, phone or tablet).
+     * FORM_FACTOR (for example, phone or tablet)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The manufacturer.
+     * MANUFACTURER
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform (for example, Android or iOS).
+     * PLATFORM (for example, Android or iOS)
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_VERSION: The Appium version for the test.
+     * APPIUM_VERSION
      * </p>
      * </li>
      * </ul>
@@ -414,32 +414,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The ARN.
+     *        ARN
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The form factor (for example, phone or tablet).
+     *        FORM_FACTOR (for example, phone or tablet)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The manufacturer.
+     *        MANUFACTURER
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform (for example, Android or iOS).
+     *        PLATFORM (for example, Android or iOS)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_VERSION: The Appium version for the test.
+     *        APPIUM_VERSION
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -459,32 +459,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      * <ul>
      * <li>
      * <p>
-     * ARN: The ARN.
+     * ARN
      * </p>
      * </li>
      * <li>
      * <p>
-     * FORM_FACTOR: The form factor (for example, phone or tablet).
+     * FORM_FACTOR (for example, phone or tablet)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MANUFACTURER: The manufacturer.
+     * MANUFACTURER
      * </p>
      * </li>
      * <li>
      * <p>
-     * PLATFORM: The platform (for example, Android or iOS).
+     * PLATFORM (for example, Android or iOS)
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_VERSION: The Appium version for the test.
+     * APPIUM_VERSION
      * </p>
      * </li>
      * </ul>
@@ -497,32 +497,32 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      *        <ul>
      *        <li>
      *        <p>
-     *        ARN: The ARN.
+     *        ARN
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FORM_FACTOR: The form factor (for example, phone or tablet).
+     *        FORM_FACTOR (for example, phone or tablet)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MANUFACTURER: The manufacturer.
+     *        MANUFACTURER
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM: The platform (for example, Android or iOS).
+     *        PLATFORM (for example, Android or iOS)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_VERSION: The Appium version for the test.
+     *        APPIUM_VERSION
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

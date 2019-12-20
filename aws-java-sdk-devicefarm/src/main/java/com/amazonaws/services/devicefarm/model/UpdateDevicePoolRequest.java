@@ -30,26 +30,26 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool to update.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * A string representing the name of the device pool you wish to update.
+     * A string that represents the name of the device pool to update.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A description of the device pool you wish to update.
+     * A description of the device pool to update.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you choose
-     * to update rules for your request, the update will replace the existing rules.
+     * Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your
+     * request, the update replaces the existing rules.
      * </p>
      */
     private java.util.List<Rule> rules;
@@ -73,7 +73,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to
      * <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the
      * number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that
-     * meet the criteria that are specified for the <code>rules</code> parameter.
+     * meet the criteria specified in the <code>rules</code> parameter.
      * </p>
      * <p>
      * If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same
@@ -84,11 +84,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+     *        The Amazon Resource Name (ARN) of the Device Farm device pool to update.
      */
 
     public void setArn(String arn) {
@@ -97,10 +97,10 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+     * @return The Amazon Resource Name (ARN) of the Device Farm device pool to update.
      */
 
     public String getArn() {
@@ -109,11 +109,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+     * The Amazon Resource Name (ARN) of the Device Farm device pool to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the Device Farm device pool you wish to update.
+     *        The Amazon Resource Name (ARN) of the Device Farm device pool to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A string representing the name of the device pool you wish to update.
+     * A string that represents the name of the device pool to update.
      * </p>
      * 
      * @param name
-     *        A string representing the name of the device pool you wish to update.
+     *        A string that represents the name of the device pool to update.
      */
 
     public void setName(String name) {
@@ -137,10 +137,10 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A string representing the name of the device pool you wish to update.
+     * A string that represents the name of the device pool to update.
      * </p>
      * 
-     * @return A string representing the name of the device pool you wish to update.
+     * @return A string that represents the name of the device pool to update.
      */
 
     public String getName() {
@@ -149,11 +149,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A string representing the name of the device pool you wish to update.
+     * A string that represents the name of the device pool to update.
      * </p>
      * 
      * @param name
-     *        A string representing the name of the device pool you wish to update.
+     *        A string that represents the name of the device pool to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +164,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description of the device pool you wish to update.
+     * A description of the device pool to update.
      * </p>
      * 
      * @param description
-     *        A description of the device pool you wish to update.
+     *        A description of the device pool to update.
      */
 
     public void setDescription(String description) {
@@ -177,10 +177,10 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description of the device pool you wish to update.
+     * A description of the device pool to update.
      * </p>
      * 
-     * @return A description of the device pool you wish to update.
+     * @return A description of the device pool to update.
      */
 
     public String getDescription() {
@@ -189,11 +189,11 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description of the device pool you wish to update.
+     * A description of the device pool to update.
      * </p>
      * 
      * @param description
-     *        A description of the device pool you wish to update.
+     *        A description of the device pool to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,12 +204,12 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you choose
-     * to update rules for your request, the update will replace the existing rules.
+     * Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your
+     * request, the update replaces the existing rules.
      * </p>
      * 
-     * @return Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you
-     *         choose to update rules for your request, the update will replace the existing rules.
+     * @return Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
+     *         your request, the update replaces the existing rules.
      */
 
     public java.util.List<Rule> getRules() {
@@ -218,13 +218,13 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you choose
-     * to update rules for your request, the update will replace the existing rules.
+     * Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your
+     * request, the update replaces the existing rules.
      * </p>
      * 
      * @param rules
-     *        Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you
-     *        choose to update rules for your request, the update will replace the existing rules.
+     *        Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
+     *        your request, the update replaces the existing rules.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -238,8 +238,8 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you choose
-     * to update rules for your request, the update will replace the existing rules.
+     * Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your
+     * request, the update replaces the existing rules.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -248,8 +248,8 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param rules
-     *        Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you
-     *        choose to update rules for your request, the update will replace the existing rules.
+     *        Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
+     *        your request, the update replaces the existing rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,13 +265,13 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you choose
-     * to update rules for your request, the update will replace the existing rules.
+     * Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your
+     * request, the update replaces the existing rules.
      * </p>
      * 
      * @param rules
-     *        Represents the rules you wish to modify for the device pool. Updating rules is optional; however, if you
-     *        choose to update rules for your request, the update will replace the existing rules.
+     *        Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
+     *        your request, the update replaces the existing rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,7 +379,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to
      * <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the
      * number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that
-     * meet the criteria that are specified for the <code>rules</code> parameter.
+     * meet the criteria specified in the <code>rules</code> parameter.
      * </p>
      * <p>
      * If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same
@@ -390,7 +390,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      *        Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
      *        to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
      *        the number of devices that it adds to your device pool. In this case, Device Farm adds all available
-     *        devices that meet the criteria that are specified for the <code>rules</code> parameter.</p>
+     *        devices that meet the criteria specified in the <code>rules</code> parameter.</p>
      *        <p>
      *        If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the
      *        same request.
@@ -405,7 +405,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to
      * <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the
      * number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that
-     * meet the criteria that are specified for the <code>rules</code> parameter.
+     * meet the criteria specified in the <code>rules</code> parameter.
      * </p>
      * <p>
      * If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same
@@ -415,7 +415,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
      *         to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not
      *         limit the number of devices that it adds to your device pool. In this case, Device Farm adds all
-     *         available devices that meet the criteria that are specified for the <code>rules</code> parameter.</p>
+     *         available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
      *         <p>
      *         If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the
      *         same request.
@@ -430,7 +430,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to
      * <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the
      * number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that
-     * meet the criteria that are specified for the <code>rules</code> parameter.
+     * meet the criteria specified in the <code>rules</code> parameter.
      * </p>
      * <p>
      * If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same
@@ -441,7 +441,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      *        Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
      *        to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
      *        the number of devices that it adds to your device pool. In this case, Device Farm adds all available
-     *        devices that meet the criteria that are specified for the <code>rules</code> parameter.</p>
+     *        devices that meet the criteria specified in the <code>rules</code> parameter.</p>
      *        <p>
      *        If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the
      *        same request.
@@ -458,7 +458,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to
      * <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the
      * number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that
-     * meet the criteria that are specified for the <code>rules</code> parameter.
+     * meet the criteria specified in the <code>rules</code> parameter.
      * </p>
      * <p>
      * If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same
@@ -468,7 +468,7 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
      *         to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not
      *         limit the number of devices that it adds to your device pool. In this case, Device Farm adds all
-     *         available devices that meet the criteria that are specified for the <code>rules</code> parameter.</p>
+     *         available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
      *         <p>
      *         If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the
      *         same request.

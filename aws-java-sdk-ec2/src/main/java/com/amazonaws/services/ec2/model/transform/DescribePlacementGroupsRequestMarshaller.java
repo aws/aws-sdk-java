@@ -81,6 +81,19 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<String> describePlacementGroupsRequestGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) describePlacementGroupsRequest
+                .getGroupIds();
+        if (!describePlacementGroupsRequestGroupIdsList.isEmpty() || !describePlacementGroupsRequestGroupIdsList.isAutoConstruct()) {
+            int groupIdsListIndex = 1;
+
+            for (String describePlacementGroupsRequestGroupIdsListValue : describePlacementGroupsRequestGroupIdsList) {
+                if (describePlacementGroupsRequestGroupIdsListValue != null) {
+                    request.addParameter("GroupId." + groupIdsListIndex, StringUtils.fromString(describePlacementGroupsRequestGroupIdsListValue));
+                }
+                groupIdsListIndex++;
+            }
+        }
+
         return request;
     }
 

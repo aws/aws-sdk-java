@@ -39,6 +39,10 @@ public class SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShowAlternatives").build();
     private static final MarshallingInfo<Integer> MAXALTERNATIVES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxAlternatives").build();
+    private static final MarshallingInfo<String> VOCABULARYFILTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyFilterName").build();
+    private static final MarshallingInfo<String> VOCABULARYFILTERMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyFilterMethod").build();
 
     private static final SettingsMarshaller instance = new SettingsMarshaller();
 
@@ -62,6 +66,8 @@ public class SettingsMarshaller {
             protocolMarshaller.marshall(settings.getChannelIdentification(), CHANNELIDENTIFICATION_BINDING);
             protocolMarshaller.marshall(settings.getShowAlternatives(), SHOWALTERNATIVES_BINDING);
             protocolMarshaller.marshall(settings.getMaxAlternatives(), MAXALTERNATIVES_BINDING);
+            protocolMarshaller.marshall(settings.getVocabularyFilterName(), VOCABULARYFILTERNAME_BINDING);
+            protocolMarshaller.marshall(settings.getVocabularyFilterMethod(), VOCABULARYFILTERMETHOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

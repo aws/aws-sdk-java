@@ -27,18 +27,18 @@ public class GetInstanceProfileRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your instance profile.
+     * The Amazon Resource Name (ARN) of an instance profile.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your instance profile.
+     * The Amazon Resource Name (ARN) of an instance profile.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of your instance profile.
+     *        The Amazon Resource Name (ARN) of an instance profile.
      */
 
     public void setArn(String arn) {
@@ -47,10 +47,10 @@ public class GetInstanceProfileRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your instance profile.
+     * The Amazon Resource Name (ARN) of an instance profile.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of your instance profile.
+     * @return The Amazon Resource Name (ARN) of an instance profile.
      */
 
     public String getArn() {
@@ -59,11 +59,11 @@ public class GetInstanceProfileRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of your instance profile.
+     * The Amazon Resource Name (ARN) of an instance profile.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of your instance profile.
+     *        The Amazon Resource Name (ARN) of an instance profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

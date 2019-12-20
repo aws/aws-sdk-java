@@ -30,18 +30,18 @@ public class StopRemoteAccessSessionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+     * The Amazon Resource Name (ARN) of the remote access session to stop.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+     * The Amazon Resource Name (ARN) of the remote access session to stop.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+     *        The Amazon Resource Name (ARN) of the remote access session to stop.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class StopRemoteAccessSessionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+     * The Amazon Resource Name (ARN) of the remote access session to stop.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+     * @return The Amazon Resource Name (ARN) of the remote access session to stop.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class StopRemoteAccessSessionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+     * The Amazon Resource Name (ARN) of the remote access session to stop.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the remote access session you wish to stop.
+     *        The Amazon Resource Name (ARN) of the remote access session to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

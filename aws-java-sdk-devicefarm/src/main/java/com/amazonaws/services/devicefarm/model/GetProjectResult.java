@@ -28,18 +28,18 @@ public class GetProjectResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The project you wish to get information about.
+     * The project to get information about.
      * </p>
      */
     private Project project;
 
     /**
      * <p>
-     * The project you wish to get information about.
+     * The project to get information about.
      * </p>
      * 
      * @param project
-     *        The project you wish to get information about.
+     *        The project to get information about.
      */
 
     public void setProject(Project project) {
@@ -48,10 +48,10 @@ public class GetProjectResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The project you wish to get information about.
+     * The project to get information about.
      * </p>
      * 
-     * @return The project you wish to get information about.
+     * @return The project to get information about.
      */
 
     public Project getProject() {
@@ -60,11 +60,11 @@ public class GetProjectResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The project you wish to get information about.
+     * The project to get information about.
      * </p>
      * 
      * @param project
-     *        The project you wish to get information about.
+     *        The project to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

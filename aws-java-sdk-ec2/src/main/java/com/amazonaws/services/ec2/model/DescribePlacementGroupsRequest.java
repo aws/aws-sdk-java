@@ -60,6 +60,12 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupNames;
+    /**
+     * <p>
+     * The IDs of the placement groups.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> groupIds;
 
     /**
      * <p>
@@ -376,6 +382,79 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The IDs of the placement groups.
+     * </p>
+     * 
+     * @return The IDs of the placement groups.
+     */
+
+    public java.util.List<String> getGroupIds() {
+        if (groupIds == null) {
+            groupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return groupIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the placement groups.
+     * </p>
+     * 
+     * @param groupIds
+     *        The IDs of the placement groups.
+     */
+
+    public void setGroupIds(java.util.Collection<String> groupIds) {
+        if (groupIds == null) {
+            this.groupIds = null;
+            return;
+        }
+
+        this.groupIds = new com.amazonaws.internal.SdkInternalList<String>(groupIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the placement groups.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupIds(java.util.Collection)} or {@link #withGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param groupIds
+     *        The IDs of the placement groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlacementGroupsRequest withGroupIds(String... groupIds) {
+        if (this.groupIds == null) {
+            setGroupIds(new com.amazonaws.internal.SdkInternalList<String>(groupIds.length));
+        }
+        for (String ele : groupIds) {
+            this.groupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the placement groups.
+     * </p>
+     * 
+     * @param groupIds
+     *        The IDs of the placement groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlacementGroupsRequest withGroupIds(java.util.Collection<String> groupIds) {
+        setGroupIds(groupIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -401,7 +480,9 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getGroupNames() != null)
-            sb.append("GroupNames: ").append(getGroupNames());
+            sb.append("GroupNames: ").append(getGroupNames()).append(",");
+        if (getGroupIds() != null)
+            sb.append("GroupIds: ").append(getGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -424,6 +505,10 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
             return false;
+        if (other.getGroupIds() == null ^ this.getGroupIds() == null)
+            return false;
+        if (other.getGroupIds() != null && other.getGroupIds().equals(this.getGroupIds()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +519,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
+        hashCode = prime * hashCode + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode());
         return hashCode;
     }
 

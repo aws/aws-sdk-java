@@ -33,26 +33,26 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
     private String arn;
     /**
      * <p>
-     * The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.
+     * The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.
      * </p>
      */
     private String vpceConfigurationName;
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      */
     private String vpceServiceName;
     /**
      * <p>
-     * The DNS (domain) name used to connect to your private service in your Amazon VPC. The DNS name must not already
-     * be in use on the Internet.
+     * The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in
+     * use on the internet.
      * </p>
      */
     private String serviceDnsName;
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      */
     private String vpceConfigurationDescription;
@@ -99,11 +99,11 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.
+     * The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.
      * </p>
      * 
      * @param vpceConfigurationName
-     *        The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.
+     *        The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.
      */
 
     public void setVpceConfigurationName(String vpceConfigurationName) {
@@ -112,10 +112,10 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.
+     * The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.
      * </p>
      * 
-     * @return The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.
+     * @return The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.
      */
 
     public String getVpceConfigurationName() {
@@ -124,11 +124,11 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.
+     * The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.
      * </p>
      * 
      * @param vpceConfigurationName
-     *        The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.
+     *        The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      * 
      * @param vpceServiceName
-     *        The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     *        The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      */
 
     public void setVpceServiceName(String vpceServiceName) {
@@ -152,10 +152,10 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      * 
-     * @return The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * @return The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      */
 
     public String getVpceServiceName() {
@@ -164,11 +164,11 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      * 
      * @param vpceServiceName
-     *        The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     *        The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,13 +179,13 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The DNS (domain) name used to connect to your private service in your Amazon VPC. The DNS name must not already
-     * be in use on the Internet.
+     * The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in
+     * use on the internet.
      * </p>
      * 
      * @param serviceDnsName
-     *        The DNS (domain) name used to connect to your private service in your Amazon VPC. The DNS name must not
-     *        already be in use on the Internet.
+     *        The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
+     *        be in use on the internet.
      */
 
     public void setServiceDnsName(String serviceDnsName) {
@@ -194,12 +194,12 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The DNS (domain) name used to connect to your private service in your Amazon VPC. The DNS name must not already
-     * be in use on the Internet.
+     * The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in
+     * use on the internet.
      * </p>
      * 
-     * @return The DNS (domain) name used to connect to your private service in your Amazon VPC. The DNS name must not
-     *         already be in use on the Internet.
+     * @return The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
+     *         be in use on the internet.
      */
 
     public String getServiceDnsName() {
@@ -208,13 +208,13 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The DNS (domain) name used to connect to your private service in your Amazon VPC. The DNS name must not already
-     * be in use on the Internet.
+     * The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in
+     * use on the internet.
      * </p>
      * 
      * @param serviceDnsName
-     *        The DNS (domain) name used to connect to your private service in your Amazon VPC. The DNS name must not
-     *        already be in use on the Internet.
+     *        The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
+     *        be in use on the internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +225,11 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      * 
      * @param vpceConfigurationDescription
-     *        An optional description, providing more details about your VPC endpoint configuration.
+     *        An optional description that provides details about your VPC endpoint configuration.
      */
 
     public void setVpceConfigurationDescription(String vpceConfigurationDescription) {
@@ -238,10 +238,10 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      * 
-     * @return An optional description, providing more details about your VPC endpoint configuration.
+     * @return An optional description that provides details about your VPC endpoint configuration.
      */
 
     public String getVpceConfigurationDescription() {
@@ -250,11 +250,11 @@ public class UpdateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      * 
      * @param vpceConfigurationDescription
-     *        An optional description, providing more details about your VPC endpoint configuration.
+     *        An optional description that provides details about your VPC endpoint configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

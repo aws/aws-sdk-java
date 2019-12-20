@@ -48,9 +48,17 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AwsCloudFrontDistribution", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsCloudFrontDistribution(AwsCloudFrontDistributionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsEc2Instance", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsEc2Instance(AwsEc2InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsElbv2LoadBalancer", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AwsS3Bucket", targetDepth)) {
                     context.nextToken();
@@ -59,6 +67,26 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 if (context.testExpression("AwsIamAccessKey", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsIamAccessKey(AwsIamAccessKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsIamRole", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsIamRole(AwsIamRoleDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsKmsKey", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsKmsKey(AwsKmsKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsLambdaFunction", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsLambdaFunction(AwsLambdaFunctionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsSnsTopic", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsSnsTopic(AwsSnsTopicDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsSqsQueue", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsSqsQueue(AwsSqsQueueDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Container", targetDepth)) {
                     context.nextToken();

@@ -63,6 +63,8 @@ public class ExportTask implements Serializable, Cloneable {
      */
     private String statusMessage;
 
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+
     /**
      * <p>
      * A description of the resource being exported.
@@ -337,6 +339,61 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportTask withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportTask withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -359,7 +416,9 @@ public class ExportTask implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -398,6 +457,10 @@ public class ExportTask implements Serializable, Cloneable {
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -412,6 +475,7 @@ public class ExportTask implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceExportDetails() == null) ? 0 : getInstanceExportDetails().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

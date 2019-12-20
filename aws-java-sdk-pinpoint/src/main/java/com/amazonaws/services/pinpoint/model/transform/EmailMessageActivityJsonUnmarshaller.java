@@ -60,6 +60,10 @@ public class EmailMessageActivityJsonUnmarshaller implements Unmarshaller<EmailM
                     context.nextToken();
                     emailMessageActivity.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TemplateVersion", targetDepth)) {
+                    context.nextToken();
+                    emailMessageActivity.setTemplateVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -96,6 +96,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVocabularyFilterResult> createVocabularyFilterAsync(CreateVocabularyFilterRequest request) {
+
+        return createVocabularyFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVocabularyFilterResult> createVocabularyFilterAsync(final CreateVocabularyFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVocabularyFilterRequest, CreateVocabularyFilterResult> asyncHandler) {
+        final CreateVocabularyFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVocabularyFilterResult>() {
+            @Override
+            public CreateVocabularyFilterResult call() throws Exception {
+                CreateVocabularyFilterResult result = null;
+
+                try {
+                    result = executeCreateVocabularyFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest request) {
 
         return deleteTranscriptionJobAsync(request, null);
@@ -146,6 +179,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
 
                 try {
                     result = executeDeleteVocabulary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVocabularyFilterResult> deleteVocabularyFilterAsync(DeleteVocabularyFilterRequest request) {
+
+        return deleteVocabularyFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVocabularyFilterResult> deleteVocabularyFilterAsync(final DeleteVocabularyFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVocabularyFilterRequest, DeleteVocabularyFilterResult> asyncHandler) {
+        final DeleteVocabularyFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVocabularyFilterResult>() {
+            @Override
+            public DeleteVocabularyFilterResult call() throws Exception {
+                DeleteVocabularyFilterResult result = null;
+
+                try {
+                    result = executeDeleteVocabularyFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -228,6 +294,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetVocabularyFilterResult> getVocabularyFilterAsync(GetVocabularyFilterRequest request) {
+
+        return getVocabularyFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVocabularyFilterResult> getVocabularyFilterAsync(final GetVocabularyFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetVocabularyFilterRequest, GetVocabularyFilterResult> asyncHandler) {
+        final GetVocabularyFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetVocabularyFilterResult>() {
+            @Override
+            public GetVocabularyFilterResult call() throws Exception {
+                GetVocabularyFilterResult result = null;
+
+                try {
+                    result = executeGetVocabularyFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTranscriptionJobsResult> listTranscriptionJobsAsync(ListTranscriptionJobsRequest request) {
 
         return listTranscriptionJobsAsync(request, null);
@@ -294,6 +393,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListVocabularyFiltersResult> listVocabularyFiltersAsync(ListVocabularyFiltersRequest request) {
+
+        return listVocabularyFiltersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVocabularyFiltersResult> listVocabularyFiltersAsync(final ListVocabularyFiltersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVocabularyFiltersRequest, ListVocabularyFiltersResult> asyncHandler) {
+        final ListVocabularyFiltersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVocabularyFiltersResult>() {
+            @Override
+            public ListVocabularyFiltersResult call() throws Exception {
+                ListVocabularyFiltersResult result = null;
+
+                try {
+                    result = executeListVocabularyFilters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartTranscriptionJobResult> startTranscriptionJobAsync(StartTranscriptionJobRequest request) {
 
         return startTranscriptionJobAsync(request, null);
@@ -344,6 +476,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
 
                 try {
                     result = executeUpdateVocabulary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVocabularyFilterResult> updateVocabularyFilterAsync(UpdateVocabularyFilterRequest request) {
+
+        return updateVocabularyFilterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVocabularyFilterResult> updateVocabularyFilterAsync(final UpdateVocabularyFilterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVocabularyFilterRequest, UpdateVocabularyFilterResult> asyncHandler) {
+        final UpdateVocabularyFilterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVocabularyFilterResult>() {
+            @Override
+            public UpdateVocabularyFilterResult call() throws Exception {
+                UpdateVocabularyFilterResult result = null;
+
+                try {
+                    result = executeUpdateVocabularyFilter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

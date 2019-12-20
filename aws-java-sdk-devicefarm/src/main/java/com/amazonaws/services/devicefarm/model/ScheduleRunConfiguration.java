@@ -30,8 +30,8 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to
-     * external data for Android or the app's sandbox for iOS.
+     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external
+     * data for Android or the app's sandbox for iOS.
      * </p>
      */
     private String extraDataPackageArn;
@@ -55,7 +55,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
     private Location location;
     /**
      * <p>
-     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * An array of ARNs for your VPC endpoint configurations.
      * </p>
      */
     private java.util.List<String> vpceConfigurationArns;
@@ -73,7 +73,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
     private Radios radios;
     /**
      * <p>
-     * A list of Upload ARNs for app packages that will be installed alongside your app.
+     * A list of upload ARNs for app packages to be installed with your app.
      * </p>
      */
     private java.util.List<String> auxiliaryApps;
@@ -82,17 +82,23 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use
+     * of them. Otherwise, your run counts against your metered time.
+     * </p>
+     * </note>
      */
     private String billingMethod;
 
     /**
      * <p>
-     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to
-     * external data for Android or the app's sandbox for iOS.
+     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external
+     * data for Android or the app's sandbox for iOS.
      * </p>
      * 
      * @param extraDataPackageArn
-     *        The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to
+     *        The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
      *        external data for Android or the app's sandbox for iOS.
      */
 
@@ -102,11 +108,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to
-     * external data for Android or the app's sandbox for iOS.
+     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external
+     * data for Android or the app's sandbox for iOS.
      * </p>
      * 
-     * @return The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to
+     * @return The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
      *         external data for Android or the app's sandbox for iOS.
      */
 
@@ -116,12 +122,12 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to
-     * external data for Android or the app's sandbox for iOS.
+     * The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external
+     * data for Android or the app's sandbox for iOS.
      * </p>
      * 
      * @param extraDataPackageArn
-     *        The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm will extract to
+     *        The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to
      *        external data for Android or the app's sandbox for iOS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -253,10 +259,10 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * An array of ARNs for your VPC endpoint configurations.
      * </p>
      * 
-     * @return An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * @return An array of ARNs for your VPC endpoint configurations.
      */
 
     public java.util.List<String> getVpceConfigurationArns() {
@@ -265,11 +271,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * An array of ARNs for your VPC endpoint configurations.
      * </p>
      * 
      * @param vpceConfigurationArns
-     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     *        An array of ARNs for your VPC endpoint configurations.
      */
 
     public void setVpceConfigurationArns(java.util.Collection<String> vpceConfigurationArns) {
@@ -283,7 +289,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * An array of ARNs for your VPC endpoint configurations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -292,7 +298,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param vpceConfigurationArns
-     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     *        An array of ARNs for your VPC endpoint configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +314,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * An array of ARNs for your VPC endpoint configurations.
      * </p>
      * 
      * @param vpceConfigurationArns
-     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     *        An array of ARNs for your VPC endpoint configurations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,10 +409,10 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of Upload ARNs for app packages that will be installed alongside your app.
+     * A list of upload ARNs for app packages to be installed with your app.
      * </p>
      * 
-     * @return A list of Upload ARNs for app packages that will be installed alongside your app.
+     * @return A list of upload ARNs for app packages to be installed with your app.
      */
 
     public java.util.List<String> getAuxiliaryApps() {
@@ -415,11 +421,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of Upload ARNs for app packages that will be installed alongside your app.
+     * A list of upload ARNs for app packages to be installed with your app.
      * </p>
      * 
      * @param auxiliaryApps
-     *        A list of Upload ARNs for app packages that will be installed alongside your app.
+     *        A list of upload ARNs for app packages to be installed with your app.
      */
 
     public void setAuxiliaryApps(java.util.Collection<String> auxiliaryApps) {
@@ -433,7 +439,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of Upload ARNs for app packages that will be installed alongside your app.
+     * A list of upload ARNs for app packages to be installed with your app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -442,7 +448,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param auxiliaryApps
-     *        A list of Upload ARNs for app packages that will be installed alongside your app.
+     *        A list of upload ARNs for app packages to be installed with your app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,11 +464,11 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A list of Upload ARNs for app packages that will be installed alongside your app.
+     * A list of upload ARNs for app packages to be installed with your app.
      * </p>
      * 
      * @param auxiliaryApps
-     *        A list of Upload ARNs for app packages that will be installed alongside your app.
+     *        A list of upload ARNs for app packages to be installed with your app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,10 +482,20 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use
+     * of them. Otherwise, your run counts against your metered time.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
+     *        make use of them. Otherwise, your run counts against your metered time.
+     *        </p>
      * @see BillingMethod
      */
 
@@ -492,9 +508,19 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use
+     * of them. Otherwise, your run counts against your metered time.
+     * </p>
+     * </note>
      * 
      * @return Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *         parameter is not specified, the default value is <code>metered</code>.
+     *         parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *         <p>
+     *         If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
+     *         make use of them. Otherwise, your run counts against your metered time.
+     *         </p>
      * @see BillingMethod
      */
 
@@ -507,10 +533,20 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use
+     * of them. Otherwise, your run counts against your metered time.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
+     *        make use of them. Otherwise, your run counts against your metered time.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */
@@ -525,10 +561,20 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use
+     * of them. Otherwise, your run counts against your metered time.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
+     *        make use of them. Otherwise, your run counts against your metered time.
+     *        </p>
      * @see BillingMethod
      */
 
@@ -541,10 +587,20 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      * Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is
      * not specified, the default value is <code>metered</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use
+     * of them. Otherwise, your run counts against your metered time.
+     * </p>
+     * </note>
      * 
      * @param billingMethod
      *        Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the
-     *        parameter is not specified, the default value is <code>metered</code>.
+     *        parameter is not specified, the default value is <code>metered</code>.</p> <note>
+     *        <p>
+     *        If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to
+     *        make use of them. Otherwise, your run counts against your metered time.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */

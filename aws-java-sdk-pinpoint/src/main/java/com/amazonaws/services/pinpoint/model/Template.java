@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the name of the message template to use for the message.
+ * Specifies the name and version of the message template to use for the message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Template" target="_top">AWS API
@@ -35,6 +35,20 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The unique identifier for the version of the message template to use for the message. If specified, this value
+     * must match the identifier for an existing template version. To retrieve a list of versions and version
+     * identifiers for a template, use the <link linkend="templates-template-name-template-type-versions">Template
+     * Versions</link> resource.
+     * </p>
+     * <p>
+     * If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i> version of the template.
+     * The <i>active</i> version is typically the version of a template that's been most recently reviewed and approved
+     * for use, depending on your workflow. It isn't necessarily the latest version of a template.
+     * </p>
+     */
+    private String version;
 
     /**
      * <p>
@@ -83,6 +97,94 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The unique identifier for the version of the message template to use for the message. If specified, this value
+     * must match the identifier for an existing template version. To retrieve a list of versions and version
+     * identifiers for a template, use the <link linkend="templates-template-name-template-type-versions">Template
+     * Versions</link> resource.
+     * </p>
+     * <p>
+     * If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i> version of the template.
+     * The <i>active</i> version is typically the version of a template that's been most recently reviewed and approved
+     * for use, depending on your workflow. It isn't necessarily the latest version of a template.
+     * </p>
+     * 
+     * @param version
+     *        The unique identifier for the version of the message template to use for the message. If specified, this
+     *        value must match the identifier for an existing template version. To retrieve a list of versions and
+     *        version identifiers for a template, use the <link
+     *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
+     *        <p>
+     *        If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i> version of the
+     *        template. The <i>active</i> version is typically the version of a template that's been most recently
+     *        reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a
+     *        template.
+     */
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the version of the message template to use for the message. If specified, this value
+     * must match the identifier for an existing template version. To retrieve a list of versions and version
+     * identifiers for a template, use the <link linkend="templates-template-name-template-type-versions">Template
+     * Versions</link> resource.
+     * </p>
+     * <p>
+     * If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i> version of the template.
+     * The <i>active</i> version is typically the version of a template that's been most recently reviewed and approved
+     * for use, depending on your workflow. It isn't necessarily the latest version of a template.
+     * </p>
+     * 
+     * @return The unique identifier for the version of the message template to use for the message. If specified, this
+     *         value must match the identifier for an existing template version. To retrieve a list of versions and
+     *         version identifiers for a template, use the <link
+     *         linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
+     *         <p>
+     *         If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i> version of the
+     *         template. The <i>active</i> version is typically the version of a template that's been most recently
+     *         reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a
+     *         template.
+     */
+
+    public String getVersion() {
+        return this.version;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the version of the message template to use for the message. If specified, this value
+     * must match the identifier for an existing template version. To retrieve a list of versions and version
+     * identifiers for a template, use the <link linkend="templates-template-name-template-type-versions">Template
+     * Versions</link> resource.
+     * </p>
+     * <p>
+     * If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i> version of the template.
+     * The <i>active</i> version is typically the version of a template that's been most recently reviewed and approved
+     * for use, depending on your workflow. It isn't necessarily the latest version of a template.
+     * </p>
+     * 
+     * @param version
+     *        The unique identifier for the version of the message template to use for the message. If specified, this
+     *        value must match the identifier for an existing template version. To retrieve a list of versions and
+     *        version identifiers for a template, use the <link
+     *        linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
+     *        <p>
+     *        If you don't specify a value for this property, Amazon Pinpoint uses the <i>active</i> version of the
+     *        template. The <i>active</i> version is typically the version of a template that's been most recently
+     *        reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a
+     *        template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Template withVersion(String version) {
+        setVersion(version);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +197,9 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getVersion() != null)
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +218,10 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getVersion() == null ^ this.getVersion() == null)
+            return false;
+        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +231,7 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

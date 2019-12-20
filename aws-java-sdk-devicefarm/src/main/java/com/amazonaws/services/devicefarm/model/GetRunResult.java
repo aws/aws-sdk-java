@@ -28,18 +28,18 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run you wish to get results from.
+     * The run to get results from.
      * </p>
      */
     private Run run;
 
     /**
      * <p>
-     * The run you wish to get results from.
+     * The run to get results from.
      * </p>
      * 
      * @param run
-     *        The run you wish to get results from.
+     *        The run to get results from.
      */
 
     public void setRun(Run run) {
@@ -48,10 +48,10 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run you wish to get results from.
+     * The run to get results from.
      * </p>
      * 
-     * @return The run you wish to get results from.
+     * @return The run to get results from.
      */
 
     public Run getRun() {
@@ -60,11 +60,11 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run you wish to get results from.
+     * The run to get results from.
      * </p>
      * 
      * @param run
-     *        The run you wish to get results from.
+     *        The run to get results from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

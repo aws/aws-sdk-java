@@ -57,7 +57,7 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The settings for a multivariate split activity. This type of activity sends participants down one of as many as
-     * five paths in a journey, based on conditions that you specify.
+     * five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
      * </p>
      */
     private MultiConditionalSplitActivity multiCondition;
@@ -251,12 +251,13 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The settings for a multivariate split activity. This type of activity sends participants down one of as many as
-     * five paths in a journey, based on conditions that you specify.
+     * five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
      * </p>
      * 
      * @param multiCondition
      *        The settings for a multivariate split activity. This type of activity sends participants down one of as
-     *        many as five paths in a journey, based on conditions that you specify.
+     *        many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you
+     *        specify.
      */
 
     public void setMultiCondition(MultiConditionalSplitActivity multiCondition) {
@@ -266,11 +267,12 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The settings for a multivariate split activity. This type of activity sends participants down one of as many as
-     * five paths in a journey, based on conditions that you specify.
+     * five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
      * </p>
      * 
      * @return The settings for a multivariate split activity. This type of activity sends participants down one of as
-     *         many as five paths in a journey, based on conditions that you specify.
+     *         many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you
+     *         specify.
      */
 
     public MultiConditionalSplitActivity getMultiCondition() {
@@ -280,12 +282,13 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The settings for a multivariate split activity. This type of activity sends participants down one of as many as
-     * five paths in a journey, based on conditions that you specify.
+     * five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.
      * </p>
      * 
      * @param multiCondition
      *        The settings for a multivariate split activity. This type of activity sends participants down one of as
-     *        many as five paths in a journey, based on conditions that you specify.
+     *        many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you
+     *        specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

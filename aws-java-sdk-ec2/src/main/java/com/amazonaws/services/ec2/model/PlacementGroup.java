@@ -50,6 +50,18 @@ public class PlacementGroup implements Serializable, Cloneable {
      * </p>
      */
     private Integer partitionCount;
+    /**
+     * <p>
+     * The ID of the placement group.
+     * </p>
+     */
+    private String groupId;
+    /**
+     * <p>
+     * Any tags applied to the placement group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * Default constructor for PlacementGroup object. Callers should use the setter or fluent setter (with...) methods
@@ -296,6 +308,119 @@ public class PlacementGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the placement group.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the placement group.
+     */
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the placement group.
+     * </p>
+     * 
+     * @return The ID of the placement group.
+     */
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the placement group.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the placement group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlacementGroup withGroupId(String groupId) {
+        setGroupId(groupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the placement group.
+     * </p>
+     * 
+     * @return Any tags applied to the placement group.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the placement group.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the placement group.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the placement group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the placement group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlacementGroup withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the placement group.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the placement group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlacementGroup withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -314,7 +439,11 @@ public class PlacementGroup implements Serializable, Cloneable {
         if (getStrategy() != null)
             sb.append("Strategy: ").append(getStrategy()).append(",");
         if (getPartitionCount() != null)
-            sb.append("PartitionCount: ").append(getPartitionCount());
+            sb.append("PartitionCount: ").append(getPartitionCount()).append(",");
+        if (getGroupId() != null)
+            sb.append("GroupId: ").append(getGroupId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -345,6 +474,14 @@ public class PlacementGroup implements Serializable, Cloneable {
             return false;
         if (other.getPartitionCount() != null && other.getPartitionCount().equals(this.getPartitionCount()) == false)
             return false;
+        if (other.getGroupId() == null ^ this.getGroupId() == null)
+            return false;
+        if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -357,6 +494,8 @@ public class PlacementGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStrategy() == null) ? 0 : getStrategy().hashCode());
         hashCode = prime * hashCode + ((getPartitionCount() == null) ? 0 : getPartitionCount().hashCode());
+        hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

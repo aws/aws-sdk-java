@@ -49,8 +49,8 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
     private String podExecutionRoleArn;
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP addresses,
-     * so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
+     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
      * </p>
      */
     private java.util.List<String> subnets;
@@ -223,13 +223,13 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP addresses,
-     * so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
+     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
      * </p>
      * 
-     * @return The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP
-     *         addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
-     *         parameter.
+     * @return The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned
+     *         public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted
+     *         for this parameter.
      */
 
     public java.util.List<String> getSubnets() {
@@ -238,13 +238,13 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP addresses,
-     * so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
+     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP
-     *        addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     *        The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public
+     *        IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
      *        parameter.
      */
 
@@ -259,8 +259,8 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP addresses,
-     * so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
+     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -269,8 +269,8 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP
-     *        addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     *        The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public
+     *        IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
      *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -287,13 +287,13 @@ public class CreateFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP addresses,
-     * so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
+     * The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP
+     * addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.
      * </p>
      * 
      * @param subnets
-     *        The IDs of subnets to launch Fargate pods into. At this time, Fargate pods are not assigned public IP
-     *        addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
+     *        The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public
+     *        IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this
      *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

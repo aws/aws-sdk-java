@@ -29,18 +29,19 @@ public class StopRemoteAccessSessionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A container representing the metadata from the service about the remote access session you are stopping.
+     * A container that represents the metadata from the service about the remote access session you are stopping.
      * </p>
      */
     private RemoteAccessSession remoteAccessSession;
 
     /**
      * <p>
-     * A container representing the metadata from the service about the remote access session you are stopping.
+     * A container that represents the metadata from the service about the remote access session you are stopping.
      * </p>
      * 
      * @param remoteAccessSession
-     *        A container representing the metadata from the service about the remote access session you are stopping.
+     *        A container that represents the metadata from the service about the remote access session you are
+     *        stopping.
      */
 
     public void setRemoteAccessSession(RemoteAccessSession remoteAccessSession) {
@@ -49,10 +50,11 @@ public class StopRemoteAccessSessionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A container representing the metadata from the service about the remote access session you are stopping.
+     * A container that represents the metadata from the service about the remote access session you are stopping.
      * </p>
      * 
-     * @return A container representing the metadata from the service about the remote access session you are stopping.
+     * @return A container that represents the metadata from the service about the remote access session you are
+     *         stopping.
      */
 
     public RemoteAccessSession getRemoteAccessSession() {
@@ -61,11 +63,12 @@ public class StopRemoteAccessSessionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A container representing the metadata from the service about the remote access session you are stopping.
+     * A container that represents the metadata from the service about the remote access session you are stopping.
      * </p>
      * 
      * @param remoteAccessSession
-     *        A container representing the metadata from the service about the remote access session you are stopping.
+     *        A container that represents the metadata from the service about the remote access session you are
+     *        stopping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

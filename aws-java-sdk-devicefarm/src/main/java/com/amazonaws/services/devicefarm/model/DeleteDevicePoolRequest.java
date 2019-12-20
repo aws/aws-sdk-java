@@ -30,18 +30,18 @@ public class DeleteDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.
      * </p>
      * 
      * @param arn
-     *        Represents the Amazon Resource Name (ARN) of the Device Farm device pool you wish to delete.
+     *        Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class DeleteDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.
      * </p>
      * 
-     * @return Represents the Amazon Resource Name (ARN) of the Device Farm device pool you wish to delete.
+     * @return Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class DeleteDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool you wish to delete.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.
      * </p>
      * 
      * @param arn
-     *        Represents the Amazon Resource Name (ARN) of the Device Farm device pool you wish to delete.
+     *        Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

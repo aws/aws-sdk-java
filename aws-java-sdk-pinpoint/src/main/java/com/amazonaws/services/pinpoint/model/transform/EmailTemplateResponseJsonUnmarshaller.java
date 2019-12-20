@@ -93,6 +93,10 @@ public class EmailTemplateResponseJsonUnmarshaller implements Unmarshaller<Email
                     context.nextToken();
                     emailTemplateResponse.setTextPart(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Version", targetDepth)) {
+                    context.nextToken();
+                    emailTemplateResponse.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

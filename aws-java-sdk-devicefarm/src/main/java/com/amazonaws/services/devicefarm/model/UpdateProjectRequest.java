@@ -30,30 +30,30 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project whose name you wish to update.
+     * The Amazon Resource Name (ARN) of the project whose name to update.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * A string representing the new name of the project that you are updating.
+     * A string that represents the new name of the project that you are updating.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The number of minutes a test run in the project will execute before it times out.
+     * The number of minutes a test run in the project executes before it times out.
      * </p>
      */
     private Integer defaultJobTimeoutMinutes;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project whose name you wish to update.
+     * The Amazon Resource Name (ARN) of the project whose name to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the project whose name you wish to update.
+     *        The Amazon Resource Name (ARN) of the project whose name to update.
      */
 
     public void setArn(String arn) {
@@ -62,10 +62,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project whose name you wish to update.
+     * The Amazon Resource Name (ARN) of the project whose name to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the project whose name you wish to update.
+     * @return The Amazon Resource Name (ARN) of the project whose name to update.
      */
 
     public String getArn() {
@@ -74,11 +74,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project whose name you wish to update.
+     * The Amazon Resource Name (ARN) of the project whose name to update.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the project whose name you wish to update.
+     *        The Amazon Resource Name (ARN) of the project whose name to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A string representing the new name of the project that you are updating.
+     * A string that represents the new name of the project that you are updating.
      * </p>
      * 
      * @param name
-     *        A string representing the new name of the project that you are updating.
+     *        A string that represents the new name of the project that you are updating.
      */
 
     public void setName(String name) {
@@ -102,10 +102,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A string representing the new name of the project that you are updating.
+     * A string that represents the new name of the project that you are updating.
      * </p>
      * 
-     * @return A string representing the new name of the project that you are updating.
+     * @return A string that represents the new name of the project that you are updating.
      */
 
     public String getName() {
@@ -114,11 +114,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A string representing the new name of the project that you are updating.
+     * A string that represents the new name of the project that you are updating.
      * </p>
      * 
      * @param name
-     *        A string representing the new name of the project that you are updating.
+     *        A string that represents the new name of the project that you are updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of minutes a test run in the project will execute before it times out.
+     * The number of minutes a test run in the project executes before it times out.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        The number of minutes a test run in the project will execute before it times out.
+     *        The number of minutes a test run in the project executes before it times out.
      */
 
     public void setDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
@@ -142,10 +142,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of minutes a test run in the project will execute before it times out.
+     * The number of minutes a test run in the project executes before it times out.
      * </p>
      * 
-     * @return The number of minutes a test run in the project will execute before it times out.
+     * @return The number of minutes a test run in the project executes before it times out.
      */
 
     public Integer getDefaultJobTimeoutMinutes() {
@@ -154,11 +154,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of minutes a test run in the project will execute before it times out.
+     * The number of minutes a test run in the project executes before it times out.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        The number of minutes a test run in the project will execute before it times out.
+     *        The number of minutes a test run in the project executes before it times out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

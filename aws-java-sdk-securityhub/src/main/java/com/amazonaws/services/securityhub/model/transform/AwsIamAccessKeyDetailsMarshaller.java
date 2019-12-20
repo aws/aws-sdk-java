@@ -33,6 +33,12 @@ public class AwsIamAccessKeyDetailsMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CreatedAt").build();
+    private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
+    private static final MarshallingInfo<String> PRINCIPALTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalType").build();
+    private static final MarshallingInfo<String> PRINCIPALNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalName").build();
 
     private static final AwsIamAccessKeyDetailsMarshaller instance = new AwsIamAccessKeyDetailsMarshaller();
 
@@ -53,6 +59,9 @@ public class AwsIamAccessKeyDetailsMarshaller {
             protocolMarshaller.marshall(awsIamAccessKeyDetails.getUserName(), USERNAME_BINDING);
             protocolMarshaller.marshall(awsIamAccessKeyDetails.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(awsIamAccessKeyDetails.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(awsIamAccessKeyDetails.getPrincipalId(), PRINCIPALID_BINDING);
+            protocolMarshaller.marshall(awsIamAccessKeyDetails.getPrincipalType(), PRINCIPALTYPE_BINDING);
+            protocolMarshaller.marshall(awsIamAccessKeyDetails.getPrincipalName(), PRINCIPALNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

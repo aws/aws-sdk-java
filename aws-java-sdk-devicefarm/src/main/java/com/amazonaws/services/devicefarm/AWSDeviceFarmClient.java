@@ -51,9 +51,31 @@ import com.amazonaws.services.devicefarm.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS Device Farm is a service that enables mobile app developers to test Android, iOS, and Fire OS apps on physical
- * phones, tablets, and other devices in the cloud.
+ * Welcome to the AWS Device Farm API documentation, which contains APIs for:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Testing on desktop browsers
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test your web applications on desktop browsers using Selenium. The APIs for
+ * desktop browser testing contain <code>TestGrid</code> in their names. For more information, see <a
+ * href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing Web Applications on Selenium with Device
+ * Farm</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Testing on real mobile devices
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test apps on physical phones, tablets, and other devices in the cloud. For
+ * more information, see the <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device Farm
+ * Developer Guide</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -89,6 +111,12 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.devicefarm.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CannotDeleteException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.CannotDeleteExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.devicefarm.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
@@ -495,7 +523,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Creates a new project.
+     * Creates a project.
      * </p>
      * 
      * @param createProjectRequest
@@ -611,6 +639,125 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
             HttpResponseHandler<AmazonWebServiceResponse<CreateRemoteAccessSessionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateRemoteAccessSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a> instances.
+     * </p>
+     * 
+     * @param createTestGridProjectRequest
+     * @return Result of the CreateTestGridProject operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.CreateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTestGridProjectResult createTestGridProject(CreateTestGridProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTestGridProject(request);
+    }
+
+    @SdkInternalApi
+    final CreateTestGridProjectResult executeCreateTestGridProject(CreateTestGridProjectRequest createTestGridProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTestGridProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTestGridProjectRequest> request = null;
+        Response<CreateTestGridProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTestGridProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTestGridProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTestGridProjectResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateTestGridProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.
+     * </p>
+     * 
+     * @param createTestGridUrlRequest
+     * @return Result of the CreateTestGridUrl operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.CreateTestGridUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateTestGridUrlResult createTestGridUrl(CreateTestGridUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTestGridUrl(request);
+    }
+
+    @SdkInternalApi
+    final CreateTestGridUrlResult executeCreateTestGridUrl(CreateTestGridUrlRequest createTestGridUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTestGridUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTestGridUrlRequest> request = null;
+        Response<CreateTestGridUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTestGridUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTestGridUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTestGridUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTestGridUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTestGridUrlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -934,7 +1081,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * Deletes an AWS Device Farm project, given the project ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -1063,7 +1210,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * Deletes the run, given the run ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteRunRequest
@@ -1113,6 +1260,79 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRunResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a Selenium testing project and all content generated under it.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot undo this operation.
+     * </p>
+     * </important> <note>
+     * <p>
+     * You cannot delete a project if it has active sessions.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTestGridProjectRequest
+     * @return Result of the DeleteTestGridProject operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws CannotDeleteException
+     *         The requested object could not be deleted.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.DeleteTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTestGridProjectResult deleteTestGridProject(DeleteTestGridProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTestGridProject(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTestGridProjectResult executeDeleteTestGridProject(DeleteTestGridProjectRequest deleteTestGridProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTestGridProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTestGridProjectRequest> request = null;
+        Response<DeleteTestGridProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTestGridProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTestGridProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTestGridProjectResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteTestGridProjectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1251,7 +1471,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.
+     * Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the account.
      * </p>
      * 
      * @param getAccountSettingsRequest
@@ -1375,7 +1595,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Returns information about a device instance belonging to a private device fleet.
+     * Returns information about a device instance that belongs to a private device fleet.
      * </p>
      * 
      * @param getDeviceInstanceRequest
@@ -1748,9 +1968,9 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * <p>
      * Gets the current status and future status of all offerings purchased by an AWS account. The response indicates
      * how many offerings are currently available and the offerings that will be available in the next period. The API
-     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be
+     * able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param getOfferingStatusRequest
@@ -2113,6 +2333,143 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTestResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTestResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about a Selenium testing project.
+     * </p>
+     * 
+     * @param getTestGridProjectRequest
+     * @return Result of the GetTestGridProject operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.GetTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetTestGridProjectResult getTestGridProject(GetTestGridProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTestGridProject(request);
+    }
+
+    @SdkInternalApi
+    final GetTestGridProjectResult executeGetTestGridProject(GetTestGridProjectRequest getTestGridProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTestGridProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTestGridProjectRequest> request = null;
+        Response<GetTestGridProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTestGridProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTestGridProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTestGridProjectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTestGridProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from
+     * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up sessions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+     * <a>GetTestGridSessionRequest$sessionId</a>).
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * 
+     * @param getTestGridSessionRequest
+     * @return Result of the GetTestGridSession operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.GetTestGridSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetTestGridSessionResult getTestGridSession(GetTestGridSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTestGridSession(request);
+    }
+
+    @SdkInternalApi
+    final GetTestGridSessionResult executeGetTestGridSession(GetTestGridSessionRequest getTestGridSessionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTestGridSessionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTestGridSessionRequest> request = null;
+        Response<GetTestGridSessionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTestGridSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTestGridSessionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTestGridSession");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTestGridSessionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTestGridSessionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2746,7 +3103,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
      * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
      * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
-     * you believe that you should be able to invoke this operation.
+     * you must be able to invoke this operation.
      * </p>
      * 
      * @param listOfferingPromotionsRequest
@@ -2812,9 +3169,9 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * <p>
      * Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The
      * list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a
-     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to
+     * invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingTransactionsRequest
@@ -2882,9 +3239,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * <p>
      * Returns a list of products or offerings that the user can manage through the API. Each offering record indicates
      * the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code>
-     * error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact
+     * <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingsRequest
@@ -3265,6 +3621,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
      * @throws NotFoundException
      *         The specified entity was not found.
      * @throws TagOperationException
@@ -3305,6 +3663,252 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of all Selenium testing projects in your account.
+     * </p>
+     * 
+     * @param listTestGridProjectsRequest
+     * @return Result of the ListTestGridProjects operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTestGridProjectsResult listTestGridProjects(ListTestGridProjectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestGridProjects(request);
+    }
+
+    @SdkInternalApi
+    final ListTestGridProjectsResult executeListTestGridProjects(ListTestGridProjectsRequest listTestGridProjectsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestGridProjectsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestGridProjectsRequest> request = null;
+        Response<ListTestGridProjectsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestGridProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestGridProjectsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridProjects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestGridProjectsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTestGridProjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the actions taken in a <a>TestGridSession</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionActionsRequest
+     * @return Result of the ListTestGridSessionActions operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridSessionActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTestGridSessionActionsResult listTestGridSessionActions(ListTestGridSessionActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestGridSessionActions(request);
+    }
+
+    @SdkInternalApi
+    final ListTestGridSessionActionsResult executeListTestGridSessionActions(ListTestGridSessionActionsRequest listTestGridSessionActionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestGridSessionActionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestGridSessionActionsRequest> request = null;
+        Response<ListTestGridSessionActionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestGridSessionActionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTestGridSessionActionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridSessionActions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestGridSessionActionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTestGridSessionActionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of artifacts created during the session.
+     * </p>
+     * 
+     * @param listTestGridSessionArtifactsRequest
+     * @return Result of the ListTestGridSessionArtifacts operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridSessionArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTestGridSessionArtifactsResult listTestGridSessionArtifacts(ListTestGridSessionArtifactsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestGridSessionArtifacts(request);
+    }
+
+    @SdkInternalApi
+    final ListTestGridSessionArtifactsResult executeListTestGridSessionArtifacts(ListTestGridSessionArtifactsRequest listTestGridSessionArtifactsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestGridSessionArtifactsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestGridSessionArtifactsRequest> request = null;
+        Response<ListTestGridSessionArtifactsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestGridSessionArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTestGridSessionArtifactsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridSessionArtifacts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestGridSessionArtifactsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTestGridSessionArtifactsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of sessions for a <a>TestGridProject</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionsRequest
+     * @return Result of the ListTestGridSessions operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTestGridSessionsResult listTestGridSessions(ListTestGridSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTestGridSessions(request);
+    }
+
+    @SdkInternalApi
+    final ListTestGridSessionsResult executeListTestGridSessions(ListTestGridSessionsRequest listTestGridSessionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTestGridSessionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTestGridSessionsRequest> request = null;
+        Response<ListTestGridSessionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTestGridSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestGridSessionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridSessions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTestGridSessionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTestGridSessionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3379,7 +3983,12 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Gets information about unique problems.
+     * Gets information about unique problems, such as exceptions or crashes.
+     * </p>
+     * <p>
+     * Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call
+     * in your application consistently raises an exception (<code>OutOfBoundsException in MyActivity.java:386</code>),
+     * <code>ListUniqueProblems</code> returns a single entry instead of many individual entries for that exception.
      * </p>
      * 
      * @param listUniqueProblemsRequest
@@ -3563,9 +4172,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * <p>
      * Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for
      * an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is
-     * not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * not permitted to invoke the operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param purchaseOfferingRequest
@@ -3631,13 +4239,12 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * <p>
      * Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of
      * the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-     * operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param renewOfferingRequest
-     *        A request representing an offering renewal.
+     *        A request that represents an offering renewal.
      * @return Result of the RenewOffering operation returned by the service.
      * @throws ArgumentException
      *         An invalid argument was specified.
@@ -3761,10 +4368,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
-     * tests have not started executing, and you will not be billed for this device. On the device where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
-     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests
+     * have not started. You are not billed for this device. On the device where tests have started, setup suite and
+     * teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were
+     * in progress or already completed.
      * </p>
      * 
      * @param stopJobRequest
@@ -3889,10 +4496,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Initiates a stop request for the current test run. AWS Device Farm will immediately stop the run on devices where
-     * tests have not started executing, and you will not be billed for these devices. On devices where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on those
-     * devices. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where
+     * tests have not started. You are not billed for these devices. On devices where tests have started executing,
+     * setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and
+     * any tests that were in progress or already completed.
      * </p>
      * 
      * @param stopRunRequest
@@ -3956,11 +4563,13 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * associated with that resource are also deleted.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
      * @throws NotFoundException
      *         The specified entity was not found.
      * @throws TagOperationException
@@ -4024,6 +4633,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
      * @throws NotFoundException
      *         The specified entity was not found.
      * @throws TagOperationException
@@ -4076,7 +4687,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Updates information about an existing private device instance.
+     * Updates information about a private device instance.
      * </p>
      * 
      * @param updateDeviceInstanceRequest
@@ -4262,7 +4873,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Updates the network profile with specific settings.
+     * Updates the network profile.
      * </p>
      * 
      * @param updateNetworkProfileRequest
@@ -4385,7 +4996,69 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Update an uploaded test specification (test spec).
+     * Change details of a project.
+     * </p>
+     * 
+     * @param updateTestGridProjectRequest
+     * @return Result of the UpdateTestGridProject operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.UpdateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTestGridProjectResult updateTestGridProject(UpdateTestGridProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTestGridProject(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTestGridProjectResult executeUpdateTestGridProject(UpdateTestGridProjectRequest updateTestGridProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTestGridProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTestGridProjectRequest> request = null;
+        Response<UpdateTestGridProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTestGridProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTestGridProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTestGridProjectResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateTestGridProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an uploaded test spec.
      * </p>
      * 
      * @param updateUploadRequest
@@ -4446,7 +5119,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
-     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.
      * </p>
      * 
      * @param updateVPCEConfigurationRequest

@@ -27,9 +27,31 @@ import com.amazonaws.services.devicefarm.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Device Farm is a service that enables mobile app developers to test Android, iOS, and Fire OS apps on physical
- * phones, tablets, and other devices in the cloud.
+ * Welcome to the AWS Device Farm API documentation, which contains APIs for:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Testing on desktop browsers
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test your web applications on desktop browsers using Selenium. The APIs for
+ * desktop browser testing contain <code>TestGrid</code> in their names. For more information, see <a
+ * href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing Web Applications on Selenium with Device
+ * Farm</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Testing on real mobile devices
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test apps on physical phones, tablets, and other devices in the cloud. For
+ * more information, see the <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device Farm
+ * Developer Guide</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSDeviceFarm {
@@ -160,7 +182,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Creates a new project.
+     * Creates a project.
      * </p>
      * 
      * @param createProjectRequest
@@ -203,6 +225,44 @@ public interface AWSDeviceFarm {
      *      target="_top">AWS API Documentation</a>
      */
     CreateRemoteAccessSessionResult createRemoteAccessSession(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest);
+
+    /**
+     * <p>
+     * Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a> instances.
+     * </p>
+     * 
+     * @param createTestGridProjectRequest
+     * @return Result of the CreateTestGridProject operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.CreateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTestGridProjectResult createTestGridProject(CreateTestGridProjectRequest createTestGridProjectRequest);
+
+    /**
+     * <p>
+     * Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.
+     * </p>
+     * 
+     * @param createTestGridUrlRequest
+     * @return Result of the CreateTestGridUrl operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.CreateTestGridUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateTestGridUrlResult createTestGridUrl(CreateTestGridUrlRequest createTestGridUrlRequest);
 
     /**
      * <p>
@@ -314,7 +374,7 @@ public interface AWSDeviceFarm {
      * Deletes an AWS Device Farm project, given the project ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -361,7 +421,7 @@ public interface AWSDeviceFarm {
      * Deletes the run, given the run ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteRunRequest
@@ -380,6 +440,38 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     DeleteRunResult deleteRun(DeleteRunRequest deleteRunRequest);
+
+    /**
+     * <p>
+     * Deletes a Selenium testing project and all content generated under it.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot undo this operation.
+     * </p>
+     * </important> <note>
+     * <p>
+     * You cannot delete a project if it has active sessions.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTestGridProjectRequest
+     * @return Result of the DeleteTestGridProject operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws CannotDeleteException
+     *         The requested object could not be deleted.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.DeleteTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTestGridProjectResult deleteTestGridProject(DeleteTestGridProjectRequest deleteTestGridProjectRequest);
 
     /**
      * <p>
@@ -427,7 +519,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.
+     * Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the account.
      * </p>
      * 
      * @param getAccountSettingsRequest
@@ -471,7 +563,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Returns information about a device instance belonging to a private device fleet.
+     * Returns information about a device instance that belongs to a private device fleet.
      * </p>
      * 
      * @param getDeviceInstanceRequest
@@ -602,9 +694,9 @@ public interface AWSDeviceFarm {
      * <p>
      * Gets the current status and future status of all offerings purchased by an AWS account. The response indicates
      * how many offerings are currently available and the offerings that will be available in the next period. The API
-     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be
+     * able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param getOfferingStatusRequest
@@ -735,6 +827,63 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     GetTestResult getTest(GetTestRequest getTestRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a Selenium testing project.
+     * </p>
+     * 
+     * @param getTestGridProjectRequest
+     * @return Result of the GetTestGridProject operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.GetTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetTestGridProjectResult getTestGridProject(GetTestGridProjectRequest getTestGridProjectRequest);
+
+    /**
+     * <p>
+     * A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from
+     * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up sessions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+     * <a>GetTestGridSessionRequest$sessionId</a>).
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * 
+     * @param getTestGridSessionRequest
+     * @return Result of the GetTestGridSession operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.GetTestGridSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetTestGridSessionResult getTestGridSession(GetTestGridSessionRequest getTestGridSessionRequest);
 
     /**
      * <p>
@@ -957,7 +1106,7 @@ public interface AWSDeviceFarm {
      * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
      * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
      * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
-     * you believe that you should be able to invoke this operation.
+     * you must be able to invoke this operation.
      * </p>
      * 
      * @param listOfferingPromotionsRequest
@@ -982,9 +1131,9 @@ public interface AWSDeviceFarm {
      * <p>
      * Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The
      * list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a
-     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to
+     * invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingTransactionsRequest
@@ -1010,9 +1159,8 @@ public interface AWSDeviceFarm {
      * <p>
      * Returns a list of products or offerings that the user can manage through the API. Each offering record indicates
      * the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code>
-     * error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact
+     * <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingsRequest
@@ -1151,6 +1299,8 @@ public interface AWSDeviceFarm {
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
      * @throws NotFoundException
      *         The specified entity was not found.
      * @throws TagOperationException
@@ -1160,6 +1310,88 @@ public interface AWSDeviceFarm {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Gets a list of all Selenium testing projects in your account.
+     * </p>
+     * 
+     * @param listTestGridProjectsRequest
+     * @return Result of the ListTestGridProjects operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTestGridProjectsResult listTestGridProjects(ListTestGridProjectsRequest listTestGridProjectsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the actions taken in a <a>TestGridSession</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionActionsRequest
+     * @return Result of the ListTestGridSessionActions operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridSessionActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTestGridSessionActionsResult listTestGridSessionActions(ListTestGridSessionActionsRequest listTestGridSessionActionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of artifacts created during the session.
+     * </p>
+     * 
+     * @param listTestGridSessionArtifactsRequest
+     * @return Result of the ListTestGridSessionArtifacts operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridSessionArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTestGridSessionArtifactsResult listTestGridSessionArtifacts(ListTestGridSessionArtifactsRequest listTestGridSessionArtifactsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of sessions for a <a>TestGridProject</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionsRequest
+     * @return Result of the ListTestGridSessions operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.ListTestGridSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTestGridSessionsResult listTestGridSessions(ListTestGridSessionsRequest listTestGridSessionsRequest);
 
     /**
      * <p>
@@ -1185,7 +1417,12 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about unique problems.
+     * Gets information about unique problems, such as exceptions or crashes.
+     * </p>
+     * <p>
+     * Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call
+     * in your application consistently raises an exception (<code>OutOfBoundsException in MyActivity.java:386</code>),
+     * <code>ListUniqueProblems</code> returns a single entry instead of many individual entries for that exception.
      * </p>
      * 
      * @param listUniqueProblemsRequest
@@ -1248,9 +1485,8 @@ public interface AWSDeviceFarm {
      * <p>
      * Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for
      * an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is
-     * not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * not permitted to invoke the operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param purchaseOfferingRequest
@@ -1276,13 +1512,12 @@ public interface AWSDeviceFarm {
      * <p>
      * Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of
      * the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-     * operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param renewOfferingRequest
-     *        A request representing an offering renewal.
+     *        A request that represents an offering renewal.
      * @return Result of the RenewOffering operation returned by the service.
      * @throws ArgumentException
      *         An invalid argument was specified.
@@ -1326,10 +1561,10 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
-     * tests have not started executing, and you will not be billed for this device. On the device where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
-     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests
+     * have not started. You are not billed for this device. On the device where tests have started, setup suite and
+     * teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were
+     * in progress or already completed.
      * </p>
      * 
      * @param stopJobRequest
@@ -1372,10 +1607,10 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Initiates a stop request for the current test run. AWS Device Farm will immediately stop the run on devices where
-     * tests have not started executing, and you will not be billed for these devices. On devices where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on those
-     * devices. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where
+     * tests have not started. You are not billed for these devices. On devices where tests have started executing,
+     * setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and
+     * any tests that were in progress or already completed.
      * </p>
      * 
      * @param stopRunRequest
@@ -1399,11 +1634,13 @@ public interface AWSDeviceFarm {
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * associated with that resource are also deleted.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
      * @throws NotFoundException
      *         The specified entity was not found.
      * @throws TagOperationException
@@ -1427,6 +1664,8 @@ public interface AWSDeviceFarm {
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
      * @throws NotFoundException
      *         The specified entity was not found.
      * @throws TagOperationException
@@ -1439,7 +1678,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates information about an existing private device instance.
+     * Updates information about a private device instance.
      * </p>
      * 
      * @param updateDeviceInstanceRequest
@@ -1504,7 +1743,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates the network profile with specific settings.
+     * Updates the network profile.
      * </p>
      * 
      * @param updateNetworkProfileRequest
@@ -1547,7 +1786,28 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Update an uploaded test specification (test spec).
+     * Change details of a project.
+     * </p>
+     * 
+     * @param updateTestGridProjectRequest
+     * @return Result of the UpdateTestGridProject operation returned by the service.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws InternalServiceException
+     *         An internal exception was raised in the service. Contact <a
+     *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
+     *         error.
+     * @sample AWSDeviceFarm.UpdateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTestGridProjectResult updateTestGridProject(UpdateTestGridProjectRequest updateTestGridProjectRequest);
+
+    /**
+     * <p>
+     * Updates an uploaded test spec.
      * </p>
      * 
      * @param updateUploadRequest
@@ -1568,7 +1828,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.
      * </p>
      * 
      * @param updateVPCEConfigurationRequest

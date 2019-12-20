@@ -30,7 +30,8 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The configuration and other settings for the activities that comprise the journey.
+     * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
+     * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
      * </p>
      */
     private java.util.Map<String, Activity> activities;
@@ -166,7 +167,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      * CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time,
      * or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is
      * CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time.
-     * However, any existing participants who are currently waiting to start an activity may resume the journey.
+     * However, any existing participants who are currently waiting to start an activity may continue the journey.
      * </p>
      * </li>
      * </ul>
@@ -182,10 +183,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The configuration and other settings for the activities that comprise the journey.
+     * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
+     * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
      * </p>
      * 
-     * @return The configuration and other settings for the activities that comprise the journey.
+     * @return A map that contains a set of Activity objects, one object for each activity in the journey. For each
+     *         Activity object, the key is the unique identifier (string) for an activity and the value is the settings
+     *         for the activity.
      */
 
     public java.util.Map<String, Activity> getActivities() {
@@ -194,11 +198,14 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The configuration and other settings for the activities that comprise the journey.
+     * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
+     * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
      * </p>
      * 
      * @param activities
-     *        The configuration and other settings for the activities that comprise the journey.
+     *        A map that contains a set of Activity objects, one object for each activity in the journey. For each
+     *        Activity object, the key is the unique identifier (string) for an activity and the value is the settings
+     *        for the activity.
      */
 
     public void setActivities(java.util.Map<String, Activity> activities) {
@@ -207,11 +214,14 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The configuration and other settings for the activities that comprise the journey.
+     * A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity
+     * object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.
      * </p>
      * 
      * @param activities
-     *        The configuration and other settings for the activities that comprise the journey.
+     *        A map that contains a set of Activity objects, one object for each activity in the journey. For each
+     *        Activity object, the key is the unique identifier (string) for an activity and the value is the settings
+     *        for the activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -922,7 +932,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      * CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time,
      * or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is
      * CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time.
-     * However, any existing participants who are currently waiting to start an activity may resume the journey.
+     * However, any existing participants who are currently waiting to start an activity may continue the journey.
      * </p>
      * </li>
      * </ul>
@@ -960,7 +970,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      *        time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a
      *        journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the
      *        journey for the first time. However, any existing participants who are currently waiting to start an
-     *        activity may resume the journey.
+     *        activity may continue the journey.
      *        </p>
      *        </li>
      * @see State
@@ -1004,7 +1014,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      * CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time,
      * or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is
      * CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time.
-     * However, any existing participants who are currently waiting to start an activity may resume the journey.
+     * However, any existing participants who are currently waiting to start an activity may continue the journey.
      * </p>
      * </li>
      * </ul>
@@ -1041,7 +1051,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      *         end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a
      *         journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the
      *         journey for the first time. However, any existing participants who are currently waiting to start an
-     *         activity may resume the journey.
+     *         activity may continue the journey.
      *         </p>
      *         </li>
      * @see State
@@ -1085,7 +1095,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      * CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time,
      * or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is
      * CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time.
-     * However, any existing participants who are currently waiting to start an activity may resume the journey.
+     * However, any existing participants who are currently waiting to start an activity may continue the journey.
      * </p>
      * </li>
      * </ul>
@@ -1123,7 +1133,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      *        time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a
      *        journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the
      *        journey for the first time. However, any existing participants who are currently waiting to start an
-     *        activity may resume the journey.
+     *        activity may continue the journey.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1169,7 +1179,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      * CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time,
      * or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is
      * CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time.
-     * However, any existing participants who are currently waiting to start an activity may resume the journey.
+     * However, any existing participants who are currently waiting to start an activity may continue the journey.
      * </p>
      * </li>
      * </ul>
@@ -1207,7 +1217,7 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      *        time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a
      *        journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the
      *        journey for the first time. However, any existing participants who are currently waiting to start an
-     *        activity may resume the journey.
+     *        activity may continue the journey.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -35,6 +35,10 @@ public enum DevicefarmActions implements Action {
     CreateProject("devicefarm:CreateProject"),
     /** Action for the CreateRemoteAccessSession operation. */
     CreateRemoteAccessSession("devicefarm:CreateRemoteAccessSession"),
+    /** Action for the CreateTestGridProject operation. */
+    CreateTestGridProject("devicefarm:CreateTestGridProject"),
+    /** Action for the CreateTestGridUrl operation. */
+    CreateTestGridUrl("devicefarm:CreateTestGridUrl"),
     /** Action for the CreateUpload operation. */
     CreateUpload("devicefarm:CreateUpload"),
     /** Action for the CreateVPCEConfiguration operation. */
@@ -51,6 +55,8 @@ public enum DevicefarmActions implements Action {
     DeleteRemoteAccessSession("devicefarm:DeleteRemoteAccessSession"),
     /** Action for the DeleteRun operation. */
     DeleteRun("devicefarm:DeleteRun"),
+    /** Action for the DeleteTestGridProject operation. */
+    DeleteTestGridProject("devicefarm:DeleteTestGridProject"),
     /** Action for the DeleteUpload operation. */
     DeleteUpload("devicefarm:DeleteUpload"),
     /** Action for the DeleteVPCEConfiguration operation. */
@@ -83,6 +89,10 @@ public enum DevicefarmActions implements Action {
     GetSuite("devicefarm:GetSuite"),
     /** Action for the GetTest operation. */
     GetTest("devicefarm:GetTest"),
+    /** Action for the GetTestGridProject operation. */
+    GetTestGridProject("devicefarm:GetTestGridProject"),
+    /** Action for the GetTestGridSession operation. */
+    GetTestGridSession("devicefarm:GetTestGridSession"),
     /** Action for the GetUpload operation. */
     GetUpload("devicefarm:GetUpload"),
     /** Action for the GetVPCEConfiguration operation. */
@@ -121,6 +131,14 @@ public enum DevicefarmActions implements Action {
     ListSuites("devicefarm:ListSuites"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("devicefarm:ListTagsForResource"),
+    /** Action for the ListTestGridProjects operation. */
+    ListTestGridProjects("devicefarm:ListTestGridProjects"),
+    /** Action for the ListTestGridSessionActions operation. */
+    ListTestGridSessionActions("devicefarm:ListTestGridSessionActions"),
+    /** Action for the ListTestGridSessionArtifacts operation. */
+    ListTestGridSessionArtifacts("devicefarm:ListTestGridSessionArtifacts"),
+    /** Action for the ListTestGridSessions operation. */
+    ListTestGridSessions("devicefarm:ListTestGridSessions"),
     /** Action for the ListTests operation. */
     ListTests("devicefarm:ListTests"),
     /** Action for the ListUniqueProblems operation. */
@@ -155,6 +173,8 @@ public enum DevicefarmActions implements Action {
     UpdateNetworkProfile("devicefarm:UpdateNetworkProfile"),
     /** Action for the UpdateProject operation. */
     UpdateProject("devicefarm:UpdateProject"),
+    /** Action for the UpdateTestGridProject operation. */
+    UpdateTestGridProject("devicefarm:UpdateTestGridProject"),
     /** Action for the UpdateUpload operation. */
     UpdateUpload("devicefarm:UpdateUpload"),
     /** Action for the UpdateVPCEConfiguration operation. */

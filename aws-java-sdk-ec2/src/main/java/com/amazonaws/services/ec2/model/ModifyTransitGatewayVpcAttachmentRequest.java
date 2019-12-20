@@ -48,6 +48,11 @@ public class ModifyTransitGatewayVpcAttachmentRequest extends AmazonWebServiceRe
      * <p>
      * The new VPC attachment options.
      * </p>
+     * <note>
+     * <p>
+     * You cannot modify the IPv6 options.
+     * </p>
+     * </note>
      */
     private ModifyTransitGatewayVpcAttachmentRequestOptions options;
 
@@ -241,9 +246,17 @@ public class ModifyTransitGatewayVpcAttachmentRequest extends AmazonWebServiceRe
      * <p>
      * The new VPC attachment options.
      * </p>
+     * <note>
+     * <p>
+     * You cannot modify the IPv6 options.
+     * </p>
+     * </note>
      * 
      * @param options
-     *        The new VPC attachment options.
+     *        The new VPC attachment options.</p> <note>
+     *        <p>
+     *        You cannot modify the IPv6 options.
+     *        </p>
      */
 
     public void setOptions(ModifyTransitGatewayVpcAttachmentRequestOptions options) {
@@ -254,8 +267,16 @@ public class ModifyTransitGatewayVpcAttachmentRequest extends AmazonWebServiceRe
      * <p>
      * The new VPC attachment options.
      * </p>
+     * <note>
+     * <p>
+     * You cannot modify the IPv6 options.
+     * </p>
+     * </note>
      * 
-     * @return The new VPC attachment options.
+     * @return The new VPC attachment options.</p> <note>
+     *         <p>
+     *         You cannot modify the IPv6 options.
+     *         </p>
      */
 
     public ModifyTransitGatewayVpcAttachmentRequestOptions getOptions() {
@@ -266,9 +287,17 @@ public class ModifyTransitGatewayVpcAttachmentRequest extends AmazonWebServiceRe
      * <p>
      * The new VPC attachment options.
      * </p>
+     * <note>
+     * <p>
+     * You cannot modify the IPv6 options.
+     * </p>
+     * </note>
      * 
      * @param options
-     *        The new VPC attachment options.
+     *        The new VPC attachment options.</p> <note>
+     *        <p>
+     *        You cannot modify the IPv6 options.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

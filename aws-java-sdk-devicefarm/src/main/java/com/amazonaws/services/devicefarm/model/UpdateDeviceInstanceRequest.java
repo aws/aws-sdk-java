@@ -33,7 +33,7 @@ public class UpdateDeviceInstanceRequest extends com.amazonaws.AmazonWebServiceR
     private String arn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the profile that you want to associate with the device instance.
+     * The ARN of the profile that you want to associate with the device instance.
      * </p>
      */
     private String profileArn;
@@ -86,11 +86,11 @@ public class UpdateDeviceInstanceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the profile that you want to associate with the device instance.
+     * The ARN of the profile that you want to associate with the device instance.
      * </p>
      * 
      * @param profileArn
-     *        The Amazon Resource Name (ARN) of the profile that you want to associate with the device instance.
+     *        The ARN of the profile that you want to associate with the device instance.
      */
 
     public void setProfileArn(String profileArn) {
@@ -99,10 +99,10 @@ public class UpdateDeviceInstanceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the profile that you want to associate with the device instance.
+     * The ARN of the profile that you want to associate with the device instance.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the profile that you want to associate with the device instance.
+     * @return The ARN of the profile that you want to associate with the device instance.
      */
 
     public String getProfileArn() {
@@ -111,11 +111,11 @@ public class UpdateDeviceInstanceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the profile that you want to associate with the device instance.
+     * The ARN of the profile that you want to associate with the device instance.
      * </p>
      * 
      * @param profileArn
-     *        The Amazon Resource Name (ARN) of the profile that you want to associate with the device instance.
+     *        The ARN of the profile that you want to associate with the device instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

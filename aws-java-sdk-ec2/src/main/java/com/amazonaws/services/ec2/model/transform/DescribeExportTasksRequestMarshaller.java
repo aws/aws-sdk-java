@@ -53,6 +53,33 @@ public class DescribeExportTasksRequestMarshaller implements Marshaller<Request<
             }
         }
 
+        com.amazonaws.internal.SdkInternalList<Filter> describeExportTasksRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeExportTasksRequest
+                .getFilters();
+        if (!describeExportTasksRequestFiltersList.isEmpty() || !describeExportTasksRequestFiltersList.isAutoConstruct()) {
+            int filtersListIndex = 1;
+
+            for (Filter describeExportTasksRequestFiltersListValue : describeExportTasksRequestFiltersList) {
+
+                if (describeExportTasksRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeExportTasksRequestFiltersListValue.getName()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeExportTasksRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
+                    int valuesListIndex = 1;
+
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+                filtersListIndex++;
+            }
+        }
+
         return request;
     }
 

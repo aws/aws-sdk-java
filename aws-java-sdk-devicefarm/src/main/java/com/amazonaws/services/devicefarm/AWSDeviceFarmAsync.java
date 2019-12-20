@@ -26,9 +26,31 @@ import com.amazonaws.services.devicefarm.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Device Farm is a service that enables mobile app developers to test Android, iOS, and Fire OS apps on physical
- * phones, tablets, and other devices in the cloud.
+ * Welcome to the AWS Device Farm API documentation, which contains APIs for:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Testing on desktop browsers
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test your web applications on desktop browsers using Selenium. The APIs for
+ * desktop browser testing contain <code>TestGrid</code> in their names. For more information, see <a
+ * href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing Web Applications on Selenium with Device
+ * Farm</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Testing on real mobile devices
+ * </p>
+ * <p>
+ * Device Farm makes it possible for you to test apps on physical phones, tablets, and other devices in the cloud. For
+ * more information, see the <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device Farm
+ * Developer Guide</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
@@ -130,7 +152,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Creates a new project.
+     * Creates a project.
      * </p>
      * 
      * @param createProjectRequest
@@ -144,7 +166,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Creates a new project.
+     * Creates a project.
      * </p>
      * 
      * @param createProjectRequest
@@ -195,6 +217,68 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<CreateRemoteAccessSessionResult> createRemoteAccessSessionAsync(
             CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRemoteAccessSessionRequest, CreateRemoteAccessSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a> instances.
+     * </p>
+     * 
+     * @param createTestGridProjectRequest
+     * @return A Java Future containing the result of the CreateTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTestGridProjectResult> createTestGridProjectAsync(CreateTestGridProjectRequest createTestGridProjectRequest);
+
+    /**
+     * <p>
+     * Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a> instances.
+     * </p>
+     * 
+     * @param createTestGridProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTestGridProjectResult> createTestGridProjectAsync(CreateTestGridProjectRequest createTestGridProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTestGridProjectRequest, CreateTestGridProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.
+     * </p>
+     * 
+     * @param createTestGridUrlRequest
+     * @return A Java Future containing the result of the CreateTestGridUrl operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateTestGridUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTestGridUrlResult> createTestGridUrlAsync(CreateTestGridUrlRequest createTestGridUrlRequest);
+
+    /**
+     * <p>
+     * Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.
+     * </p>
+     * 
+     * @param createTestGridUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTestGridUrl operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateTestGridUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTestGridUrlResult> createTestGridUrlAsync(CreateTestGridUrlRequest createTestGridUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTestGridUrlRequest, CreateTestGridUrlResult> asyncHandler);
 
     /**
      * <p>
@@ -360,7 +444,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * Deletes an AWS Device Farm project, given the project ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -377,7 +461,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * Deletes an AWS Device Farm project, given the project ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteProjectRequest
@@ -434,7 +518,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * Deletes the run, given the run ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteRunRequest
@@ -451,7 +535,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * Deletes the run, given the run ARN.
      * </p>
      * <p>
-     * <b>Note</b> Deleting this resource does not stop an in-progress run.
+     * Deleting this resource does not stop an in-progress run.
      * </p>
      * 
      * @param deleteRunRequest
@@ -467,6 +551,55 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(DeleteRunRequest deleteRunRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRunRequest, DeleteRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Selenium testing project and all content generated under it.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot undo this operation.
+     * </p>
+     * </important> <note>
+     * <p>
+     * You cannot delete a project if it has active sessions.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTestGridProjectRequest
+     * @return A Java Future containing the result of the DeleteTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTestGridProjectResult> deleteTestGridProjectAsync(DeleteTestGridProjectRequest deleteTestGridProjectRequest);
+
+    /**
+     * <p>
+     * Deletes a Selenium testing project and all content generated under it.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot undo this operation.
+     * </p>
+     * </important> <note>
+     * <p>
+     * You cannot delete a project if it has active sessions.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTestGridProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTestGridProjectResult> deleteTestGridProjectAsync(DeleteTestGridProjectRequest deleteTestGridProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTestGridProjectRequest, DeleteTestGridProjectResult> asyncHandler);
 
     /**
      * <p>
@@ -534,7 +667,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.
+     * Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the account.
      * </p>
      * 
      * @param getAccountSettingsRequest
@@ -548,7 +681,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.
+     * Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the account.
      * </p>
      * 
      * @param getAccountSettingsRequest
@@ -600,7 +733,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Returns information about a device instance belonging to a private device fleet.
+     * Returns information about a device instance that belongs to a private device fleet.
      * </p>
      * 
      * @param getDeviceInstanceRequest
@@ -613,7 +746,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Returns information about a device instance belonging to a private device fleet.
+     * Returns information about a device instance that belongs to a private device fleet.
      * </p>
      * 
      * @param getDeviceInstanceRequest
@@ -796,9 +929,9 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Gets the current status and future status of all offerings purchased by an AWS account. The response indicates
      * how many offerings are currently available and the offerings that will be available in the next period. The API
-     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be
+     * able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param getOfferingStatusRequest
@@ -814,9 +947,9 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Gets the current status and future status of all offerings purchased by an AWS account. The response indicates
      * how many offerings are currently available and the offerings that will be available in the next period. The API
-     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be
+     * able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param getOfferingStatusRequest
@@ -997,6 +1130,98 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<GetTestResult> getTestAsync(GetTestRequest getTestRequest,
             com.amazonaws.handlers.AsyncHandler<GetTestRequest, GetTestResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about a Selenium testing project.
+     * </p>
+     * 
+     * @param getTestGridProjectRequest
+     * @return A Java Future containing the result of the GetTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTestGridProjectResult> getTestGridProjectAsync(GetTestGridProjectRequest getTestGridProjectRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a Selenium testing project.
+     * </p>
+     * 
+     * @param getTestGridProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTestGridProjectResult> getTestGridProjectAsync(GetTestGridProjectRequest getTestGridProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTestGridProjectRequest, GetTestGridProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from
+     * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up sessions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+     * <a>GetTestGridSessionRequest$sessionId</a>).
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * 
+     * @param getTestGridSessionRequest
+     * @return A Java Future containing the result of the GetTestGridSession operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetTestGridSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTestGridSessionResult> getTestGridSessionAsync(GetTestGridSessionRequest getTestGridSessionRequest);
+
+    /**
+     * <p>
+     * A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from
+     * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up sessions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+     * <a>GetTestGridSessionRequest$sessionId</a>).
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * 
+     * @param getTestGridSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTestGridSession operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetTestGridSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTestGridSessionResult> getTestGridSessionAsync(GetTestGridSessionRequest getTestGridSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTestGridSessionRequest, GetTestGridSessionResult> asyncHandler);
 
     /**
      * <p>
@@ -1333,7 +1558,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
      * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
      * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
-     * you believe that you should be able to invoke this operation.
+     * you must be able to invoke this operation.
      * </p>
      * 
      * @param listOfferingPromotionsRequest
@@ -1349,7 +1574,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
      * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
      * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
-     * you believe that you should be able to invoke this operation.
+     * you must be able to invoke this operation.
      * </p>
      * 
      * @param listOfferingPromotionsRequest
@@ -1369,9 +1594,9 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The
      * list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a
-     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to
+     * invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingTransactionsRequest
@@ -1387,9 +1612,9 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The
      * list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a
-     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to
+     * invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingTransactionsRequest
@@ -1410,9 +1635,8 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Returns a list of products or offerings that the user can manage through the API. Each offering record indicates
      * the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code>
-     * error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact
+     * <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingsRequest
@@ -1428,9 +1652,8 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Returns a list of products or offerings that the user can manage through the API. Each offering record indicates
      * the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code>
-     * error if the user is not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact
+     * <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param listOfferingsRequest
@@ -1645,6 +1868,136 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Gets a list of all Selenium testing projects in your account.
+     * </p>
+     * 
+     * @param listTestGridProjectsRequest
+     * @return A Java Future containing the result of the ListTestGridProjects operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListTestGridProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridProjectsResult> listTestGridProjectsAsync(ListTestGridProjectsRequest listTestGridProjectsRequest);
+
+    /**
+     * <p>
+     * Gets a list of all Selenium testing projects in your account.
+     * </p>
+     * 
+     * @param listTestGridProjectsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestGridProjects operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListTestGridProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridProjectsResult> listTestGridProjectsAsync(ListTestGridProjectsRequest listTestGridProjectsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridProjectsRequest, ListTestGridProjectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the actions taken in a <a>TestGridSession</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionActionsRequest
+     * @return A Java Future containing the result of the ListTestGridSessionActions operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListTestGridSessionActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridSessionActionsResult> listTestGridSessionActionsAsync(
+            ListTestGridSessionActionsRequest listTestGridSessionActionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the actions taken in a <a>TestGridSession</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestGridSessionActions operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListTestGridSessionActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridSessionActionsResult> listTestGridSessionActionsAsync(
+            ListTestGridSessionActionsRequest listTestGridSessionActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridSessionActionsRequest, ListTestGridSessionActionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of artifacts created during the session.
+     * </p>
+     * 
+     * @param listTestGridSessionArtifactsRequest
+     * @return A Java Future containing the result of the ListTestGridSessionArtifacts operation returned by the
+     *         service.
+     * @sample AWSDeviceFarmAsync.ListTestGridSessionArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridSessionArtifactsResult> listTestGridSessionArtifactsAsync(
+            ListTestGridSessionArtifactsRequest listTestGridSessionArtifactsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of artifacts created during the session.
+     * </p>
+     * 
+     * @param listTestGridSessionArtifactsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestGridSessionArtifacts operation returned by the
+     *         service.
+     * @sample AWSDeviceFarmAsyncHandler.ListTestGridSessionArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridSessionArtifactsResult> listTestGridSessionArtifactsAsync(
+            ListTestGridSessionArtifactsRequest listTestGridSessionArtifactsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridSessionArtifactsRequest, ListTestGridSessionArtifactsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of sessions for a <a>TestGridProject</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionsRequest
+     * @return A Java Future containing the result of the ListTestGridSessions operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListTestGridSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridSessionsResult> listTestGridSessionsAsync(ListTestGridSessionsRequest listTestGridSessionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of sessions for a <a>TestGridProject</a>.
+     * </p>
+     * 
+     * @param listTestGridSessionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestGridSessions operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListTestGridSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestGridSessionsResult> listTestGridSessionsAsync(ListTestGridSessionsRequest listTestGridSessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestGridSessionsRequest, ListTestGridSessionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about tests in a given test suite.
      * </p>
      * 
@@ -1678,7 +2031,12 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about unique problems.
+     * Gets information about unique problems, such as exceptions or crashes.
+     * </p>
+     * <p>
+     * Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call
+     * in your application consistently raises an exception (<code>OutOfBoundsException in MyActivity.java:386</code>),
+     * <code>ListUniqueProblems</code> returns a single entry instead of many individual entries for that exception.
      * </p>
      * 
      * @param listUniqueProblemsRequest
@@ -1692,7 +2050,12 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about unique problems.
+     * Gets information about unique problems, such as exceptions or crashes.
+     * </p>
+     * <p>
+     * Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call
+     * in your application consistently raises an exception (<code>OutOfBoundsException in MyActivity.java:386</code>),
+     * <code>ListUniqueProblems</code> returns a single entry instead of many individual entries for that exception.
      * </p>
      * 
      * @param listUniqueProblemsRequest
@@ -1777,9 +2140,8 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for
      * an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is
-     * not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * not permitted to invoke the operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param purchaseOfferingRequest
@@ -1795,9 +2157,8 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for
      * an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is
-     * not permitted to invoke the operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * not permitted to invoke the operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param purchaseOfferingRequest
@@ -1818,13 +2179,12 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of
      * the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-     * operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param renewOfferingRequest
-     *        A request representing an offering renewal.
+     *        A request that represents an offering renewal.
      * @return A Java Future containing the result of the RenewOffering operation returned by the service.
      * @sample AWSDeviceFarmAsync.RenewOffering
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering" target="_top">AWS API
@@ -1836,13 +2196,12 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of
      * the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-     * operation. Please contact <a
-     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you believe that you
-     * should be able to invoke this operation.
+     * operation. If you must be able to invoke this operation, contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
      * </p>
      * 
      * @param renewOfferingRequest
-     *        A request representing an offering renewal.
+     *        A request that represents an offering renewal.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1890,10 +2249,10 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
-     * tests have not started executing, and you will not be billed for this device. On the device where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
-     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests
+     * have not started. You are not billed for this device. On the device where tests have started, setup suite and
+     * teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were
+     * in progress or already completed.
      * </p>
      * 
      * @param stopJobRequest
@@ -1906,10 +2265,10 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
-     * tests have not started executing, and you will not be billed for this device. On the device where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
-     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests
+     * have not started. You are not billed for this device. On the device where tests have started, setup suite and
+     * teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were
+     * in progress or already completed.
      * </p>
      * 
      * @param stopJobRequest
@@ -1960,10 +2319,10 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Initiates a stop request for the current test run. AWS Device Farm will immediately stop the run on devices where
-     * tests have not started executing, and you will not be billed for these devices. On devices where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on those
-     * devices. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where
+     * tests have not started. You are not billed for these devices. On devices where tests have started executing,
+     * setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and
+     * any tests that were in progress or already completed.
      * </p>
      * 
      * @param stopRunRequest
@@ -1977,10 +2336,10 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Initiates a stop request for the current test run. AWS Device Farm will immediately stop the run on devices where
-     * tests have not started executing, and you will not be billed for these devices. On devices where tests have
-     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on those
-     * devices. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where
+     * tests have not started. You are not billed for these devices. On devices where tests have started executing,
+     * setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and
+     * any tests that were in progress or already completed.
      * </p>
      * 
      * @param stopRunRequest
@@ -2001,7 +2360,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * associated with that resource are also deleted.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2016,7 +2375,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * <p>
      * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
-     * associated with that resource are deleted as well.
+     * associated with that resource are also deleted.
      * </p>
      * 
      * @param tagResourceRequest
@@ -2065,7 +2424,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates information about an existing private device instance.
+     * Updates information about a private device instance.
      * </p>
      * 
      * @param updateDeviceInstanceRequest
@@ -2078,7 +2437,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates information about an existing private device instance.
+     * Updates information about a private device instance.
      * </p>
      * 
      * @param updateDeviceInstanceRequest
@@ -2162,7 +2521,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates the network profile with specific settings.
+     * Updates the network profile.
      * </p>
      * 
      * @param updateNetworkProfileRequest
@@ -2175,7 +2534,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates the network profile with specific settings.
+     * Updates the network profile.
      * </p>
      * 
      * @param updateNetworkProfileRequest
@@ -2226,7 +2585,38 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Update an uploaded test specification (test spec).
+     * Change details of a project.
+     * </p>
+     * 
+     * @param updateTestGridProjectRequest
+     * @return A Java Future containing the result of the UpdateTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTestGridProjectResult> updateTestGridProjectAsync(UpdateTestGridProjectRequest updateTestGridProjectRequest);
+
+    /**
+     * <p>
+     * Change details of a project.
+     * </p>
+     * 
+     * @param updateTestGridProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTestGridProject operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateTestGridProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTestGridProjectResult> updateTestGridProjectAsync(UpdateTestGridProjectRequest updateTestGridProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTestGridProjectRequest, UpdateTestGridProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an uploaded test spec.
      * </p>
      * 
      * @param updateUploadRequest
@@ -2239,7 +2629,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Update an uploaded test specification (test spec).
+     * Updates an uploaded test spec.
      * </p>
      * 
      * @param updateUploadRequest
@@ -2257,7 +2647,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.
      * </p>
      * 
      * @param updateVPCEConfigurationRequest
@@ -2270,7 +2660,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * Updates information about an Amazon Virtual Private Cloud (VPC) endpoint configuration.
      * </p>
      * 
      * @param updateVPCEConfigurationRequest

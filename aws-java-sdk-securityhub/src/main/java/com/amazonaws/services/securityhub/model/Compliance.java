@@ -22,6 +22,38 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard
  * (for example, CIS AWS Foundations). Contains compliance-related finding details.
  * </p>
+ * <p>
+ * Values include the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Allowed values are the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>PASSED</code> - Compliance check passed for all evaluated resources.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WARNING</code> - Some information is missing or this check is not supported given your configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FAILED</code> - Compliance check failed for at least one evaluated resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage or API error.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance" target="_top">AWS API
  *      Documentation</a>

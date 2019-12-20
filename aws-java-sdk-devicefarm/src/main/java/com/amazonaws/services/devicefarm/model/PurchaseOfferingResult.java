@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of the purchase offering (e.g., success or failure).
+ * The result of the purchase offering (for example, success or failure).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering" target="_top">AWS API

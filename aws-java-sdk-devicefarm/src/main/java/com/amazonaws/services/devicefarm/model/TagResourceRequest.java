@@ -27,8 +27,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) to which to add tags. You can associate tags with the following
-     * Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the
+     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
@@ -37,24 +37,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) to which to add tags. You can associate tags with the following
-     * Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the
+     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource(s) to which to add tags. You can associate tags with the
-     *        following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
-     *        <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>,
-     *        <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
+     *        The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
+     *        with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+     *        <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+     *        <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -63,16 +63,16 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) to which to add tags. You can associate tags with the following
-     * Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the
+     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource(s) to which to add tags. You can associate tags with the
-     *         following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
-     *         <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>,
-     *         <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
+     * @return The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
+     *         with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+     *         <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+     *         <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      */
 
     public String getResourceARN() {
@@ -81,17 +81,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) to which to add tags. You can associate tags with the following
-     * Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the
+     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource(s) to which to add tags. You can associate tags with the
-     *        following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
-     *        <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>,
-     *        <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
+     *        The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
+     *        with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+     *        <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+     *        <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +103,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @return The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *         character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *         character length of 128 characters. Tag values can have a maximum length of 256 characters.
      */
 
     public java.util.List<Tag> getTags() {
@@ -117,12 +117,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @param tags
      *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        character length of 128 characters. Tag values can have a maximum length of 256 characters.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -137,7 +137,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +147,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param tags
      *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        character length of 128 characters. Tag values can have a maximum length of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,12 +164,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character
-     * length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * length of 128 characters. Tag values can have a maximum length of 256 characters.
      * </p>
      * 
      * @param tags
      *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        character length of 128 characters. Tag values can have a maximum length of 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

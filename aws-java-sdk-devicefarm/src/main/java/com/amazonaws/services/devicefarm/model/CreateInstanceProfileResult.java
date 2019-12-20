@@ -25,18 +25,18 @@ public class CreateInstanceProfileResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object containing information about your instance profile.
+     * An object that contains information about your instance profile.
      * </p>
      */
     private InstanceProfile instanceProfile;
 
     /**
      * <p>
-     * An object containing information about your instance profile.
+     * An object that contains information about your instance profile.
      * </p>
      * 
      * @param instanceProfile
-     *        An object containing information about your instance profile.
+     *        An object that contains information about your instance profile.
      */
 
     public void setInstanceProfile(InstanceProfile instanceProfile) {
@@ -45,10 +45,10 @@ public class CreateInstanceProfileResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object containing information about your instance profile.
+     * An object that contains information about your instance profile.
      * </p>
      * 
-     * @return An object containing information about your instance profile.
+     * @return An object that contains information about your instance profile.
      */
 
     public InstanceProfile getInstanceProfile() {
@@ -57,11 +57,11 @@ public class CreateInstanceProfileResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object containing information about your instance profile.
+     * An object that contains information about your instance profile.
      * </p>
      * 
      * @param instanceProfile
-     *        An object containing information about your instance profile.
+     *        An object that contains information about your instance profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateVoiceTemplateRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> CREATENEWVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("create-new-version").build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("template-name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("version").build();
     private static final MarshallingInfo<StructuredPojo> VOICETEMPLATEREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
@@ -48,7 +52,9 @@ public class UpdateVoiceTemplateRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateVoiceTemplateRequest.getCreateNewVersion(), CREATENEWVERSION_BINDING);
             protocolMarshaller.marshall(updateVoiceTemplateRequest.getTemplateName(), TEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(updateVoiceTemplateRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(updateVoiceTemplateRequest.getVoiceTemplateRequest(), VOICETEMPLATEREQUEST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

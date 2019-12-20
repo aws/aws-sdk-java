@@ -50,7 +50,7 @@ public class DBProxyTarget implements Serializable, Cloneable {
     /**
      * <p>
      * The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target
-     * represents an
+     * represents an RDS DB instance.
      * </p>
      */
     private String trackedClusterId;
@@ -157,12 +157,12 @@ public class DBProxyTarget implements Serializable, Cloneable {
     /**
      * <p>
      * The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target
-     * represents an
+     * represents an RDS DB instance.
      * </p>
      * 
      * @param trackedClusterId
      *        The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the
-     *        target represents an
+     *        target represents an RDS DB instance.
      */
 
     public void setTrackedClusterId(String trackedClusterId) {
@@ -172,11 +172,11 @@ public class DBProxyTarget implements Serializable, Cloneable {
     /**
      * <p>
      * The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target
-     * represents an
+     * represents an RDS DB instance.
      * </p>
      * 
      * @return The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the
-     *         target represents an
+     *         target represents an RDS DB instance.
      */
 
     public String getTrackedClusterId() {
@@ -186,12 +186,12 @@ public class DBProxyTarget implements Serializable, Cloneable {
     /**
      * <p>
      * The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target
-     * represents an
+     * represents an RDS DB instance.
      * </p>
      * 
      * @param trackedClusterId
      *        The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the
-     *        target represents an
+     *        target represents an RDS DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

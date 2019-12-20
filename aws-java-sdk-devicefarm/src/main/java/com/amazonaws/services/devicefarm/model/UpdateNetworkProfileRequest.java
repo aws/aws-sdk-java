@@ -45,7 +45,7 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
     private String description;
     /**
      * <p>
-     * The type of network profile you wish to return information about. Valid values are listed below.
+     * The type of network profile to return information about. Valid values are listed here.
      * </p>
      */
     private String type;
@@ -220,11 +220,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to return information about. Valid values are listed below.
+     * The type of network profile to return information about. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to return information about. Valid values are listed below.
+     *        The type of network profile to return information about. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -234,10 +234,10 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to return information about. Valid values are listed below.
+     * The type of network profile to return information about. Valid values are listed here.
      * </p>
      * 
-     * @return The type of network profile you wish to return information about. Valid values are listed below.
+     * @return The type of network profile to return information about. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -247,11 +247,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to return information about. Valid values are listed below.
+     * The type of network profile to return information about. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to return information about. Valid values are listed below.
+     *        The type of network profile to return information about. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProfileType
      */
@@ -263,11 +263,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to return information about. Valid values are listed below.
+     * The type of network profile to return information about. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to return information about. Valid values are listed below.
+     *        The type of network profile to return information about. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -277,11 +277,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of network profile you wish to return information about. Valid values are listed below.
+     * The type of network profile to return information about. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile you wish to return information about. Valid values are listed below.
+     *        The type of network profile to return information about. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProfileType
      */

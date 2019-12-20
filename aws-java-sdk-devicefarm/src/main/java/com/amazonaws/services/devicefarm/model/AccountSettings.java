@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A container for account-level settings within AWS Device Farm.
+ * A container for account-level settings in AWS Device Farm.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/AccountSettings" target="_top">AWS API
@@ -48,7 +48,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     private java.util.Map<String, Integer> unmeteredRemoteAccessDevices;
     /**
      * <p>
-     * The maximum number of minutes a test run will execute before it times out.
+     * The maximum number of minutes a test run executes before it times out.
      * </p>
      */
     private Integer maxJobTimeoutMinutes;
@@ -68,18 +68,18 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     private java.util.Map<String, Integer> maxSlots;
     /**
      * <p>
-     * The default number of minutes (at the account level) a test run will execute before it times out. The default
-     * value is 150 minutes.
+     * The default number of minutes (at the account level) a test run executes before it times out. The default value
+     * is 150 minutes.
      * </p>
      */
     private Integer defaultJobTimeoutMinutes;
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      */
@@ -249,11 +249,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of minutes a test run will execute before it times out.
+     * The maximum number of minutes a test run executes before it times out.
      * </p>
      * 
      * @param maxJobTimeoutMinutes
-     *        The maximum number of minutes a test run will execute before it times out.
+     *        The maximum number of minutes a test run executes before it times out.
      */
 
     public void setMaxJobTimeoutMinutes(Integer maxJobTimeoutMinutes) {
@@ -262,10 +262,10 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of minutes a test run will execute before it times out.
+     * The maximum number of minutes a test run executes before it times out.
      * </p>
      * 
-     * @return The maximum number of minutes a test run will execute before it times out.
+     * @return The maximum number of minutes a test run executes before it times out.
      */
 
     public Integer getMaxJobTimeoutMinutes() {
@@ -274,11 +274,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of minutes a test run will execute before it times out.
+     * The maximum number of minutes a test run executes before it times out.
      * </p>
      * 
      * @param maxJobTimeoutMinutes
-     *        The maximum number of minutes a test run will execute before it times out.
+     *        The maximum number of minutes a test run executes before it times out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,13 +402,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The default number of minutes (at the account level) a test run will execute before it times out. The default
-     * value is 150 minutes.
+     * The default number of minutes (at the account level) a test run executes before it times out. The default value
+     * is 150 minutes.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        The default number of minutes (at the account level) a test run will execute before it times out. The
-     *        default value is 150 minutes.
+     *        The default number of minutes (at the account level) a test run executes before it times out. The default
+     *        value is 150 minutes.
      */
 
     public void setDefaultJobTimeoutMinutes(Integer defaultJobTimeoutMinutes) {
@@ -417,12 +417,12 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The default number of minutes (at the account level) a test run will execute before it times out. The default
-     * value is 150 minutes.
+     * The default number of minutes (at the account level) a test run executes before it times out. The default value
+     * is 150 minutes.
      * </p>
      * 
-     * @return The default number of minutes (at the account level) a test run will execute before it times out. The
-     *         default value is 150 minutes.
+     * @return The default number of minutes (at the account level) a test run executes before it times out. The default
+     *         value is 150 minutes.
      */
 
     public Integer getDefaultJobTimeoutMinutes() {
@@ -431,13 +431,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The default number of minutes (at the account level) a test run will execute before it times out. The default
-     * value is 150 minutes.
+     * The default number of minutes (at the account level) a test run executes before it times out. The default value
+     * is 150 minutes.
      * </p>
      * 
      * @param defaultJobTimeoutMinutes
-     *        The default number of minutes (at the account level) a test run will execute before it times out. The
-     *        default value is 150 minutes.
+     *        The default number of minutes (at the account level) a test run executes before it times out. The default
+     *        value is 150 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,19 +448,19 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
-     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *        devices, Device Farm always signs your apps again.</p>
      *        <p>
-     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        For more information about how Device Farm re-signs your apps, see <a
      *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      */
@@ -471,18 +471,18 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
-     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *         devices, Device Farm always signs your apps again.</p>
      *         <p>
-     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         For more information about how Device Farm re-signs your apps, see <a
      *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
@@ -493,19 +493,19 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
-     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *        devices, Device Farm always signs your apps again.</p>
      *        <p>
-     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        For more information about how Device Farm re-signs your apps, see <a
      *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -518,18 +518,18 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
-     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *         devices, Device Farm always signs your apps again.</p>
      *         <p>
-     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         For more information about how Device Farm re-signs your apps, see <a
      *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */

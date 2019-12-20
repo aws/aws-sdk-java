@@ -25,7 +25,7 @@ public class ListDeviceInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object containing information about your device instances.
+     * An object that contains information about your device instances.
      * </p>
      */
     private java.util.List<DeviceInstance> deviceInstances;
@@ -38,10 +38,10 @@ public class ListDeviceInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object containing information about your device instances.
+     * An object that contains information about your device instances.
      * </p>
      * 
-     * @return An object containing information about your device instances.
+     * @return An object that contains information about your device instances.
      */
 
     public java.util.List<DeviceInstance> getDeviceInstances() {
@@ -50,11 +50,11 @@ public class ListDeviceInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object containing information about your device instances.
+     * An object that contains information about your device instances.
      * </p>
      * 
      * @param deviceInstances
-     *        An object containing information about your device instances.
+     *        An object that contains information about your device instances.
      */
 
     public void setDeviceInstances(java.util.Collection<DeviceInstance> deviceInstances) {
@@ -68,7 +68,7 @@ public class ListDeviceInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object containing information about your device instances.
+     * An object that contains information about your device instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListDeviceInstancesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param deviceInstances
-     *        An object containing information about your device instances.
+     *        An object that contains information about your device instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListDeviceInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An object containing information about your device instances.
+     * An object that contains information about your device instances.
      * </p>
      * 
      * @param deviceInstances
-     *        An object containing information about your device instances.
+     *        An object that contains information about your device instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

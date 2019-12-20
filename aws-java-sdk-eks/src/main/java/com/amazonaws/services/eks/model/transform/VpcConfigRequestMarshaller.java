@@ -36,6 +36,8 @@ public class VpcConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointPublicAccess").build();
     private static final MarshallingInfo<Boolean> ENDPOINTPRIVATEACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointPrivateAccess").build();
+    private static final MarshallingInfo<List> PUBLICACCESSCIDRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publicAccessCidrs").build();
 
     private static final VpcConfigRequestMarshaller instance = new VpcConfigRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class VpcConfigRequestMarshaller {
             protocolMarshaller.marshall(vpcConfigRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(vpcConfigRequest.getEndpointPublicAccess(), ENDPOINTPUBLICACCESS_BINDING);
             protocolMarshaller.marshall(vpcConfigRequest.getEndpointPrivateAccess(), ENDPOINTPRIVATEACCESS_BINDING);
+            protocolMarshaller.marshall(vpcConfigRequest.getPublicAccessCidrs(), PUBLICACCESSCIDRS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

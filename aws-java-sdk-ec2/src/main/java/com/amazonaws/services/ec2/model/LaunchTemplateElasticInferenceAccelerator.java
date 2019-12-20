@@ -34,8 +34,10 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
     private String type;
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      */
     private Integer count;
@@ -85,13 +87,16 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
 
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      * 
      * @param count
-     *        The number of elastic inference accelerators of given type to be attached to the instance. Only positive
-     *        values allowed. If not specified defaults to 1.
+     *        The number of elastic inference accelerators to attach to the instance. </p>
+     *        <p>
+     *        Default: 1
      */
 
     public void setCount(Integer count) {
@@ -100,12 +105,15 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
 
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      * 
-     * @return The number of elastic inference accelerators of given type to be attached to the instance. Only positive
-     *         values allowed. If not specified defaults to 1.
+     * @return The number of elastic inference accelerators to attach to the instance. </p>
+     *         <p>
+     *         Default: 1
      */
 
     public Integer getCount() {
@@ -114,13 +122,16 @@ public class LaunchTemplateElasticInferenceAccelerator implements Serializable, 
 
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      * 
      * @param count
-     *        The number of elastic inference accelerators of given type to be attached to the instance. Only positive
-     *        values allowed. If not specified defaults to 1.
+     *        The number of elastic inference accelerators to attach to the instance. </p>
+     *        <p>
+     *        Default: 1
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

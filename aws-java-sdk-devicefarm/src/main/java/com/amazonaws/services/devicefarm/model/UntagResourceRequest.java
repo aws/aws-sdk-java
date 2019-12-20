@@ -27,8 +27,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can associate tags with the
-     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags
+     * with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
@@ -43,17 +43,17 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can associate tags with the
-     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags
+     * with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can associate tags with
-     *        the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
-     *        <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>,
-     *        <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
+     *        The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
+     *        tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+     *        <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+     *        <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -62,16 +62,16 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can associate tags with the
-     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags
+     * with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can associate tags with
-     *         the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>
-     *         , <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>,
-     *         <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
+     * @return The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
+     *         tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+     *         <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+     *         <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      */
 
     public String getResourceARN() {
@@ -80,17 +80,17 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can associate tags with the
-     * following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
+     * The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags
+     * with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>,
      * <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the resource(s) from which to delete tags. You can associate tags with
-     *        the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
-     *        <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>,
-     *        <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
+     *        The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
+     *        tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
+     *        <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
+     *        <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -175,6 +175,8 @@ public enum PinpointActions implements Action {
     ListJourneys("pinpoint:ListJourneys"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("pinpoint:ListTagsForResource"),
+    /** Action for the ListTemplateVersions operation. */
+    ListTemplateVersions("pinpoint:ListTemplateVersions"),
     /** Action for the ListTemplates operation. */
     ListTemplates("pinpoint:ListTemplates"),
     /** Action for the PhoneNumberValidate operation. */
@@ -231,6 +233,8 @@ public enum PinpointActions implements Action {
     UpdateSmsChannel("pinpoint:UpdateSmsChannel"),
     /** Action for the UpdateSmsTemplate operation. */
     UpdateSmsTemplate("pinpoint:UpdateSmsTemplate"),
+    /** Action for the UpdateTemplateActiveVersion operation. */
+    UpdateTemplateActiveVersion("pinpoint:UpdateTemplateActiveVersion"),
     /** Action for the UpdateVoiceChannel operation. */
     UpdateVoiceChannel("pinpoint:UpdateVoiceChannel"),
     /** Action for the UpdateVoiceTemplate operation. */

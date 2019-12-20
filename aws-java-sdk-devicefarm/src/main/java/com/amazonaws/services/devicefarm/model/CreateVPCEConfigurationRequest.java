@@ -33,7 +33,7 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
     private String vpceConfigurationName;
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      */
     private String vpceServiceName;
@@ -45,7 +45,7 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
     private String serviceDnsName;
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      */
     private String vpceConfigurationDescription;
@@ -92,11 +92,11 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      * 
      * @param vpceServiceName
-     *        The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     *        The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      */
 
     public void setVpceServiceName(String vpceServiceName) {
@@ -105,10 +105,10 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      * 
-     * @return The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * @return The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      */
 
     public String getVpceServiceName() {
@@ -117,11 +117,11 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     * The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * </p>
      * 
      * @param vpceServiceName
-     *        The name of the VPC endpoint service running inside your AWS account that you want Device Farm to test.
+     *        The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      * 
      * @param vpceConfigurationDescription
-     *        An optional description, providing more details about your VPC endpoint configuration.
+     *        An optional description that provides details about your VPC endpoint configuration.
      */
 
     public void setVpceConfigurationDescription(String vpceConfigurationDescription) {
@@ -185,10 +185,10 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      * 
-     * @return An optional description, providing more details about your VPC endpoint configuration.
+     * @return An optional description that provides details about your VPC endpoint configuration.
      */
 
     public String getVpceConfigurationDescription() {
@@ -197,11 +197,11 @@ public class CreateVPCEConfigurationRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An optional description, providing more details about your VPC endpoint configuration.
+     * An optional description that provides details about your VPC endpoint configuration.
      * </p>
      * 
      * @param vpceConfigurationDescription
-     *        An optional description, providing more details about your VPC endpoint configuration.
+     *        An optional description that provides details about your VPC endpoint configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

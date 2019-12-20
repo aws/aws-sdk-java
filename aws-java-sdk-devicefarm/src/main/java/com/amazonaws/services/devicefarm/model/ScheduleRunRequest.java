@@ -36,7 +36,7 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String projectArn;
     /**
      * <p>
-     * The ARN of the app to schedule a run.
+     * The ARN of an application package to run tests against, created with <a>CreateUpload</a>. See <a>ListUploads</a>.
      * </p>
      */
     private String appArn;
@@ -48,8 +48,8 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String devicePoolArn;
     /**
      * <p>
-     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
-     * devices to be included in the run.
+     * The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices
+     * to be included in the run.
      * </p>
      * <p>
      * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a
@@ -124,11 +124,12 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the app to schedule a run.
+     * The ARN of an application package to run tests against, created with <a>CreateUpload</a>. See <a>ListUploads</a>.
      * </p>
      * 
      * @param appArn
-     *        The ARN of the app to schedule a run.
+     *        The ARN of an application package to run tests against, created with <a>CreateUpload</a>. See
+     *        <a>ListUploads</a>.
      */
 
     public void setAppArn(String appArn) {
@@ -137,10 +138,11 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the app to schedule a run.
+     * The ARN of an application package to run tests against, created with <a>CreateUpload</a>. See <a>ListUploads</a>.
      * </p>
      * 
-     * @return The ARN of the app to schedule a run.
+     * @return The ARN of an application package to run tests against, created with <a>CreateUpload</a>. See
+     *         <a>ListUploads</a>.
      */
 
     public String getAppArn() {
@@ -149,11 +151,12 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the app to schedule a run.
+     * The ARN of an application package to run tests against, created with <a>CreateUpload</a>. See <a>ListUploads</a>.
      * </p>
      * 
      * @param appArn
-     *        The ARN of the app to schedule a run.
+     *        The ARN of an application package to run tests against, created with <a>CreateUpload</a>. See
+     *        <a>ListUploads</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,8 +207,8 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
-     * devices to be included in the run.
+     * The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices
+     * to be included in the run.
      * </p>
      * <p>
      * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a
@@ -213,8 +216,8 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param deviceSelectionConfiguration
-     *        The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum
-     *        number of devices to be included in the run.</p>
+     *        The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
+     *        devices to be included in the run.</p>
      *        <p>
      *        Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is
      *        required in a request.
@@ -226,16 +229,16 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
-     * devices to be included in the run.
+     * The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices
+     * to be included in the run.
      * </p>
      * <p>
      * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a
      * request.
      * </p>
      * 
-     * @return The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum
-     *         number of devices to be included in the run.</p>
+     * @return The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
+     *         devices to be included in the run.</p>
      *         <p>
      *         Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is
      *         required in a request.
@@ -247,8 +250,8 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum number of
-     * devices to be included in the run.
+     * The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices
+     * to be included in the run.
      * </p>
      * <p>
      * Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a
@@ -256,8 +259,8 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param deviceSelectionConfiguration
-     *        The filter criteria used to dynamically select a set of devices for a test run, as well as the maximum
-     *        number of devices to be included in the run.</p>
+     *        The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
+     *        devices to be included in the run.</p>
      *        <p>
      *        Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is
      *        required in a request.

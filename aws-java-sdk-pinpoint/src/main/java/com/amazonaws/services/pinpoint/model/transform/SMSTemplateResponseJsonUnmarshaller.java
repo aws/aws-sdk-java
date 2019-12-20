@@ -85,6 +85,10 @@ public class SMSTemplateResponseJsonUnmarshaller implements Unmarshaller<SMSTemp
                     context.nextToken();
                     sMSTemplateResponse.setTemplateType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Version", targetDepth)) {
+                    context.nextToken();
+                    sMSTemplateResponse.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

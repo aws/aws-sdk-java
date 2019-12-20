@@ -50,93 +50,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ.
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI.
      * </p>
      * </li>
      * </ul>
@@ -150,7 +150,7 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
     private ScheduleRunTest test;
     /**
      * <p>
-     * An object containing information about the settings for a run.
+     * An object that contains information about the settings for a run.
      * </p>
      */
     private ScheduleRunConfiguration configuration;
@@ -245,93 +245,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ.
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI.
      * </p>
      * </li>
      * </ul>
@@ -344,93 +344,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI.
      *        </p>
      *        </li>
      * @see TestType
@@ -450,93 +450,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ.
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI.
      * </p>
      * </li>
      * </ul>
@@ -548,93 +548,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *         <ul>
      *         <li>
      *         <p>
-     *         BUILTIN_FUZZ: The built-in fuzz type.
+     *         BUILTIN_FUZZ.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *         BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *         capturing screenshots at the same time.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *         APPIUM_JAVA_JUNIT.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *         APPIUM_JAVA_TESTNG.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_PYTHON: The Appium Python type.
+     *         APPIUM_PYTHON.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_NODE: The Appium Node.js type.
+     *         APPIUM_NODE.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_RUBY: The Appium Ruby type.
+     *         APPIUM_RUBY.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *         APPIUM_WEB_JAVA_JUNIT.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *         APPIUM_WEB_JAVA_TESTNG.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *         APPIUM_WEB_PYTHON.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *         APPIUM_WEB_NODE.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *         APPIUM_WEB_RUBY.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CALABASH: The Calabash type.
+     *         CALABASH.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INSTRUMENTATION: The Instrumentation type.
+     *         INSTRUMENTATION.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATION: The uiautomation type.
+     *         UIAUTOMATION.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATOR: The uiautomator type.
+     *         UIAUTOMATOR.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST: The Xcode test type.
+     *         XCTEST.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI: The Xcode UI test type.
+     *         XCTEST_UI.
      *         </p>
      *         </li>
      * @see TestType
@@ -654,93 +654,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ.
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI.
      * </p>
      * </li>
      * </ul>
@@ -753,93 +753,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -861,93 +861,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ.
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI.
      * </p>
      * </li>
      * </ul>
@@ -960,93 +960,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI.
      *        </p>
      *        </li>
      * @see TestType
@@ -1066,93 +1066,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ.
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST.
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI.
      * </p>
      * </li>
      * </ul>
@@ -1165,93 +1165,93 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1305,11 +1305,11 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * An object containing information about the settings for a run.
+     * An object that contains information about the settings for a run.
      * </p>
      * 
      * @param configuration
-     *        An object containing information about the settings for a run.
+     *        An object that contains information about the settings for a run.
      */
 
     public void setConfiguration(ScheduleRunConfiguration configuration) {
@@ -1318,10 +1318,10 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * An object containing information about the settings for a run.
+     * An object that contains information about the settings for a run.
      * </p>
      * 
-     * @return An object containing information about the settings for a run.
+     * @return An object that contains information about the settings for a run.
      */
 
     public ScheduleRunConfiguration getConfiguration() {
@@ -1330,11 +1330,11 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * An object containing information about the settings for a run.
+     * An object that contains information about the settings for a run.
      * </p>
      * 
      * @param configuration
-     *        An object containing information about the settings for a run.
+     *        An object that contains information about the settings for a run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

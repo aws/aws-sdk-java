@@ -56,7 +56,7 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
     private Integer iops;
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
      * </p>
      */
     private String kmsKeyId;
@@ -292,11 +292,11 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     *        The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -305,10 +305,10 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
      * </p>
      * 
-     * @return The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * @return The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
      */
 
     public String getKmsKeyId() {
@@ -317,11 +317,11 @@ public class LaunchTemplateEbsBlockDeviceRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     * The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+     *        The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

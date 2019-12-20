@@ -25,11 +25,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
-     * </p>
-     */
     private SMSTemplateRequest sMSTemplateRequest;
     /**
      * <p>
@@ -41,12 +36,7 @@ public class CreateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     private String templateName;
 
     /**
-     * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
-     * </p>
-     * 
      * @param sMSTemplateRequest
-     *        Creates a message template that you can use in messages that are sent through the SMS channel.
      */
 
     public void setSMSTemplateRequest(SMSTemplateRequest sMSTemplateRequest) {
@@ -54,11 +44,7 @@ public class CreateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
-     * </p>
-     * 
-     * @return Creates a message template that you can use in messages that are sent through the SMS channel.
+     * @return
      */
 
     public SMSTemplateRequest getSMSTemplateRequest() {
@@ -66,12 +52,7 @@ public class CreateSmsTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p>
-     * Creates a message template that you can use in messages that are sent through the SMS channel.
-     * </p>
-     * 
      * @param sMSTemplateRequest
-     *        Creates a message template that you can use in messages that are sent through the SMS channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

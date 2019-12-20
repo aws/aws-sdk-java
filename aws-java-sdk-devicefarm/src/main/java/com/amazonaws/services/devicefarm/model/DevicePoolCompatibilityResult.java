@@ -30,7 +30,7 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The device (phone or tablet) that you wish to return information about.
+     * The device (phone or tablet) to return information about.
      * </p>
      */
     private Device device;
@@ -49,11 +49,11 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The device (phone or tablet) that you wish to return information about.
+     * The device (phone or tablet) to return information about.
      * </p>
      * 
      * @param device
-     *        The device (phone or tablet) that you wish to return information about.
+     *        The device (phone or tablet) to return information about.
      */
 
     public void setDevice(Device device) {
@@ -62,10 +62,10 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The device (phone or tablet) that you wish to return information about.
+     * The device (phone or tablet) to return information about.
      * </p>
      * 
-     * @return The device (phone or tablet) that you wish to return information about.
+     * @return The device (phone or tablet) to return information about.
      */
 
     public Device getDevice() {
@@ -74,11 +74,11 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The device (phone or tablet) that you wish to return information about.
+     * The device (phone or tablet) to return information about.
      * </p>
      * 
      * @param device
-     *        The device (phone or tablet) that you wish to return information about.
+     *        The device (phone or tablet) to return information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

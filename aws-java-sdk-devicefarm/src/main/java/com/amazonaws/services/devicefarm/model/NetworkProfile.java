@@ -48,7 +48,7 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The type of network profile. Valid values are listed below.
+     * The type of network profile. Valid values are listed here.
      * </p>
      */
     private String type;
@@ -223,11 +223,11 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of network profile. Valid values are listed below.
+     * The type of network profile. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile. Valid values are listed below.
+     *        The type of network profile. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -237,10 +237,10 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of network profile. Valid values are listed below.
+     * The type of network profile. Valid values are listed here.
      * </p>
      * 
-     * @return The type of network profile. Valid values are listed below.
+     * @return The type of network profile. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -250,11 +250,11 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of network profile. Valid values are listed below.
+     * The type of network profile. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile. Valid values are listed below.
+     *        The type of network profile. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProfileType
      */
@@ -266,11 +266,11 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of network profile. Valid values are listed below.
+     * The type of network profile. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile. Valid values are listed below.
+     *        The type of network profile. Valid values are listed here.
      * @see NetworkProfileType
      */
 
@@ -280,11 +280,11 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of network profile. Valid values are listed below.
+     * The type of network profile. Valid values are listed here.
      * </p>
      * 
      * @param type
-     *        The type of network profile. Valid values are listed below.
+     *        The type of network profile. Valid values are listed here.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkProfileType
      */

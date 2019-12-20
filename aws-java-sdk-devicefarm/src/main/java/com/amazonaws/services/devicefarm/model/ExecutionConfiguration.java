@@ -30,35 +30,35 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of minutes a test run will execute before it times out.
+     * The number of minutes a test run executes before it times out.
      * </p>
      */
     private Integer jobTimeoutMinutes;
     /**
      * <p>
-     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      */
     private Boolean accountsCleanup;
     /**
      * <p>
-     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      */
     private Boolean appPackagesCleanup;
     /**
      * <p>
-     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * Set to true to enable video capture. Otherwise, set to false. The default is true.
      * </p>
      */
     private Boolean videoCapture;
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      */
@@ -66,11 +66,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of minutes a test run will execute before it times out.
+     * The number of minutes a test run executes before it times out.
      * </p>
      * 
      * @param jobTimeoutMinutes
-     *        The number of minutes a test run will execute before it times out.
+     *        The number of minutes a test run executes before it times out.
      */
 
     public void setJobTimeoutMinutes(Integer jobTimeoutMinutes) {
@@ -79,10 +79,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of minutes a test run will execute before it times out.
+     * The number of minutes a test run executes before it times out.
      * </p>
      * 
-     * @return The number of minutes a test run will execute before it times out.
+     * @return The number of minutes a test run executes before it times out.
      */
 
     public Integer getJobTimeoutMinutes() {
@@ -91,11 +91,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of minutes a test run will execute before it times out.
+     * The number of minutes a test run executes before it times out.
      * </p>
      * 
      * @param jobTimeoutMinutes
-     *        The number of minutes a test run will execute before it times out.
+     *        The number of minutes a test run executes before it times out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +106,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param accountsCleanup
-     *        True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     *        True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      */
 
     public void setAccountsCleanup(Boolean accountsCleanup) {
@@ -119,10 +119,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * @return True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean getAccountsCleanup() {
@@ -131,11 +131,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param accountsCleanup
-     *        True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     *        True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,10 +146,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if account cleanup is enabled at the beginning of the test; otherwise, false.
+     * @return True if account cleanup is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean isAccountsCleanup() {
@@ -158,11 +158,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param appPackagesCleanup
-     *        True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     *        True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      */
 
     public void setAppPackagesCleanup(Boolean appPackagesCleanup) {
@@ -171,10 +171,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * @return True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean getAppPackagesCleanup() {
@@ -183,11 +183,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
      * @param appPackagesCleanup
-     *        True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     *        True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,10 +198,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      * </p>
      * 
-     * @return True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+     * @return True if app package cleanup is enabled at the beginning of the test. Otherwise, false.
      */
 
     public Boolean isAppPackagesCleanup() {
@@ -210,11 +210,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * Set to true to enable video capture. Otherwise, set to false. The default is true.
      * </p>
      * 
      * @param videoCapture
-     *        Set to true to enable video capture; otherwise, set to false. The default is true.
+     *        Set to true to enable video capture. Otherwise, set to false. The default is true.
      */
 
     public void setVideoCapture(Boolean videoCapture) {
@@ -223,10 +223,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * Set to true to enable video capture. Otherwise, set to false. The default is true.
      * </p>
      * 
-     * @return Set to true to enable video capture; otherwise, set to false. The default is true.
+     * @return Set to true to enable video capture. Otherwise, set to false. The default is true.
      */
 
     public Boolean getVideoCapture() {
@@ -235,11 +235,11 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * Set to true to enable video capture. Otherwise, set to false. The default is true.
      * </p>
      * 
      * @param videoCapture
-     *        Set to true to enable video capture; otherwise, set to false. The default is true.
+     *        Set to true to enable video capture. Otherwise, set to false. The default is true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,10 +250,10 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Set to true to enable video capture; otherwise, set to false. The default is true.
+     * Set to true to enable video capture. Otherwise, set to false. The default is true.
      * </p>
      * 
-     * @return Set to true to enable video capture; otherwise, set to false. The default is true.
+     * @return Set to true to enable video capture. Otherwise, set to false. The default is true.
      */
 
     public Boolean isVideoCapture() {
@@ -262,19 +262,19 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
-     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *        devices, Device Farm always signs your apps again.</p>
      *        <p>
-     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        For more information about how Device Farm re-signs your apps, see <a
      *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      */
@@ -285,18 +285,18 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
-     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *         devices, Device Farm always signs your apps again.</p>
      *         <p>
-     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         For more information about how Device Farm re-signs your apps, see <a
      *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */
@@ -307,19 +307,19 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
      * @param skipAppResign
-     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *        devices, Device Farm always signs your apps again.</p>
      *        <p>
-     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        For more information about how Device Farm re-signs your apps, see <a
      *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *        FAQs</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -332,18 +332,18 @@ public class ExecutionConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
-     * Device Farm always signs your apps again and this parameter has no effect.
+     * When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices,
+     * Device Farm always signs your apps again.
      * </p>
      * <p>
-     * For more information about how Device Farm re-signs your app(s), see <a
+     * For more information about how Device Farm re-signs your apps, see <a
      * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
      * </p>
      * 
-     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
-     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     * @return When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
+     *         devices, Device Farm always signs your apps again.</p>
      *         <p>
-     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         For more information about how Device Farm re-signs your apps, see <a
      *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
      *         FAQs</i>.
      */

@@ -33,6 +33,8 @@ public class EmailMessageActivityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextActivity").build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
+    private static final MarshallingInfo<String> TEMPLATEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateVersion").build();
 
     private static final EmailMessageActivityMarshaller instance = new EmailMessageActivityMarshaller();
 
@@ -53,6 +55,7 @@ public class EmailMessageActivityMarshaller {
             protocolMarshaller.marshall(emailMessageActivity.getMessageConfig(), MESSAGECONFIG_BINDING);
             protocolMarshaller.marshall(emailMessageActivity.getNextActivity(), NEXTACTIVITY_BINDING);
             protocolMarshaller.marshall(emailMessageActivity.getTemplateName(), TEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(emailMessageActivity.getTemplateVersion(), TEMPLATEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

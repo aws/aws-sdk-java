@@ -63,6 +63,16 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public CreateTestGridProjectResult createTestGridProject(CreateTestGridProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTestGridUrlResult createTestGridUrl(CreateTestGridUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUploadResult createUpload(CreateUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +109,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public DeleteRunResult deleteRun(DeleteRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTestGridProjectResult deleteTestGridProject(DeleteTestGridProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +194,16 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public GetTestResult getTest(GetTestRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTestGridProjectResult getTestGridProject(GetTestGridProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTestGridSessionResult getTestGridSession(GetTestGridSessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -278,6 +303,26 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public ListTestGridProjectsResult listTestGridProjects(ListTestGridProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTestGridSessionActionsResult listTestGridSessionActions(ListTestGridSessionActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTestGridSessionArtifactsResult listTestGridSessionArtifacts(ListTestGridSessionArtifactsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTestGridSessionsResult listTestGridSessions(ListTestGridSessionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTestsResult listTests(ListTestsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -359,6 +404,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTestGridProjectResult updateTestGridProject(UpdateTestGridProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

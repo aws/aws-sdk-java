@@ -30,18 +30,18 @@ public class StopRunRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.
      * </p>
      * 
      * @param arn
-     *        Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+     *        Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class StopRunRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.
      * </p>
      * 
-     * @return Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+     * @return Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class StopRunRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+     * Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.
      * </p>
      * 
      * @param arn
-     *        Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.
+     *        Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

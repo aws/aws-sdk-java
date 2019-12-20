@@ -27,18 +27,18 @@ public class GetNetworkProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     * The ARN of the network profile to return information about.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     * The ARN of the network profile to return information about.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     *        The ARN of the network profile to return information about.
      */
 
     public void setArn(String arn) {
@@ -47,10 +47,10 @@ public class GetNetworkProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     * The ARN of the network profile to return information about.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     * @return The ARN of the network profile to return information about.
      */
 
     public String getArn() {
@@ -59,11 +59,11 @@ public class GetNetworkProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     * The ARN of the network profile to return information about.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the network profile you want to return information about.
+     *        The ARN of the network profile to return information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

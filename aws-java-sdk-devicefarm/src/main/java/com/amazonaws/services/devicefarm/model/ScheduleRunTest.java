@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of
+ * Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of
  * the JSON request syntax, see <a>ScheduleRun</a>.
  * </p>
  * 
@@ -39,93 +39,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -133,7 +133,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
     private String type;
     /**
      * <p>
-     * The ARN of the uploaded test that will be run.
+     * The ARN of the uploaded test to be run.
      * </p>
      */
     private String testPackageArn;
@@ -160,8 +160,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
-     * disable it.
+     * <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to
+     * false to disable it.
      * </p>
      * </li>
      * </ul>
@@ -171,13 +171,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * profile: A cucumber profile, for example, "my_profile_name".
+     * profile: A cucumber profile (for example, <code>my_profile_name</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for example,
-     * "@smoke" or "@smoke,~@wip".
+     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke
+     * or @smoke,~@wip).
      * </p>
      * </li>
      * </ul>
@@ -187,18 +187,18 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+     * latest runs the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
+     * For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run
+     * 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -210,7 +210,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * For Fuzz tests (Android only):
+     * For fuzz tests (Android only):
      * </p>
      * <ul>
      * <li>
@@ -236,14 +236,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * username: A username to use if the Explorer encounters a login form. If not supplied, no username will be
-     * inserted.
+     * username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * password: A password to use if the Explorer encounters a login form. If not supplied, no password will be
-     * inserted.
+     * password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.
      * </p>
      * </li>
      * </ul>
@@ -258,17 +256,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -285,22 +283,22 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test class: "LoginTests"
+     * Running a single test class: <code>LoginTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a multiple test classes: "LoginTests,SmokeTests"
+     * Running a multiple test classes: <code>LoginTests,SmokeTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "LoginTests/testValid"
+     * Running a single test: <code>LoginTests/testValid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+     * Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code>
      * </p>
      * </li>
      * </ul>
@@ -317,17 +315,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -346,93 +344,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -445,93 +443,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @see TestType
@@ -551,93 +549,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -649,93 +647,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         BUILTIN_FUZZ: The built-in fuzz type.
+     *         BUILTIN_FUZZ
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *         BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *         capturing screenshots at the same time.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *         APPIUM_JAVA_JUNIT
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *         APPIUM_JAVA_TESTNG
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_PYTHON: The Appium Python type.
+     *         APPIUM_PYTHON
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_NODE: The Appium Node.js type.
+     *         APPIUM_NODE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_RUBY: The Appium Ruby type.
+     *         APPIUM_RUBY
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *         APPIUM_WEB_JAVA_JUNIT
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *         APPIUM_WEB_JAVA_TESTNG
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *         APPIUM_WEB_PYTHON
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *         APPIUM_WEB_NODE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *         APPIUM_WEB_RUBY
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CALABASH: The Calabash type.
+     *         CALABASH
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INSTRUMENTATION: The Instrumentation type.
+     *         INSTRUMENTATION
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATION: The uiautomation type.
+     *         UIAUTOMATION
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATOR: The uiautomator type.
+     *         UIAUTOMATOR
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST: The Xcode test type.
+     *         XCTEST
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI: The Xcode UI test type.
+     *         XCTEST_UI
      *         </p>
      *         </li>
      * @see TestType
@@ -755,93 +753,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -854,93 +852,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -962,93 +960,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -1061,93 +1059,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @see TestType
@@ -1167,93 +1165,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * BUILTIN_FUZZ: The built-in fuzz type.
+     * BUILTIN_FUZZ
      * </p>
      * </li>
      * <li>
      * <p>
-     * BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
-     * capturing screenshots at the same time.
+     * BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing
+     * screenshots at the same time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     * APPIUM_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     * APPIUM_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON: The Appium Python type.
+     * APPIUM_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE: The Appium Node.js type.
+     * APPIUM_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY: The Appium Ruby type.
+     * APPIUM_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * APPIUM_WEB_JAVA_JUNIT
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * APPIUM_WEB_JAVA_TESTNG
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * APPIUM_WEB_PYTHON
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * APPIUM_WEB_NODE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     * APPIUM_WEB_RUBY
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH: The Calabash type.
+     * CALABASH
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION: The Instrumentation type.
+     * INSTRUMENTATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION: The uiautomation type.
+     * UIAUTOMATION
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR: The uiautomator type.
+     * UIAUTOMATOR
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST: The Xcode test type.
+     * XCTEST
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI: The Xcode UI test type.
+     * XCTEST_UI
      * </p>
      * </li>
      * </ul>
@@ -1266,93 +1264,93 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        BUILTIN_FUZZ: The built-in fuzz type.
+     *        BUILTIN_FUZZ
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and
+     *        BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and
      *        capturing screenshots at the same time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
+     *        APPIUM_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
+     *        APPIUM_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON: The Appium Python type.
+     *        APPIUM_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE: The Appium Node.js type.
+     *        APPIUM_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY: The Appium Ruby type.
+     *        APPIUM_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        APPIUM_WEB_PYTHON
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        APPIUM_WEB_NODE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
+     *        APPIUM_WEB_RUBY
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH: The Calabash type.
+     *        CALABASH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION: The Instrumentation type.
+     *        INSTRUMENTATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION: The uiautomation type.
+     *        UIAUTOMATION
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR: The uiautomator type.
+     *        UIAUTOMATOR
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST: The Xcode test type.
+     *        XCTEST
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI: The Xcode UI test type.
+     *        XCTEST_UI
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1366,11 +1364,11 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the uploaded test that will be run.
+     * The ARN of the uploaded test to be run.
      * </p>
      * 
      * @param testPackageArn
-     *        The ARN of the uploaded test that will be run.
+     *        The ARN of the uploaded test to be run.
      */
 
     public void setTestPackageArn(String testPackageArn) {
@@ -1379,10 +1377,10 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the uploaded test that will be run.
+     * The ARN of the uploaded test to be run.
      * </p>
      * 
-     * @return The ARN of the uploaded test that will be run.
+     * @return The ARN of the uploaded test to be run.
      */
 
     public String getTestPackageArn() {
@@ -1391,11 +1389,11 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the uploaded test that will be run.
+     * The ARN of the uploaded test to be run.
      * </p>
      * 
      * @param testPackageArn
-     *        The ARN of the uploaded test that will be run.
+     *        The ARN of the uploaded test to be run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1495,8 +1493,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
-     * disable it.
+     * <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to
+     * false to disable it.
      * </p>
      * </li>
      * </ul>
@@ -1506,13 +1504,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * profile: A cucumber profile, for example, "my_profile_name".
+     * profile: A cucumber profile (for example, <code>my_profile_name</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for example,
-     * "@smoke" or "@smoke,~@wip".
+     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke
+     * or @smoke,~@wip).
      * </p>
      * </li>
      * </ul>
@@ -1522,18 +1520,18 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+     * latest runs the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
+     * For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run
+     * 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -1545,7 +1543,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * For Fuzz tests (Android only):
+     * For fuzz tests (Android only):
      * </p>
      * <ul>
      * <li>
@@ -1571,14 +1569,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * username: A username to use if the Explorer encounters a login form. If not supplied, no username will be
-     * inserted.
+     * username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * password: A password to use if the Explorer encounters a login form. If not supplied, no password will be
-     * inserted.
+     * password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.
      * </p>
      * </li>
      * </ul>
@@ -1593,17 +1589,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -1620,22 +1616,22 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test class: "LoginTests"
+     * Running a single test class: <code>LoginTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a multiple test classes: "LoginTests,SmokeTests"
+     * Running a multiple test classes: <code>LoginTests,SmokeTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "LoginTests/testValid"
+     * Running a single test: <code>LoginTests/testValid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+     * Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code>
      * </p>
      * </li>
      * </ul>
@@ -1652,17 +1648,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -1677,8 +1673,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false"
-     *         to disable it.
+     *         <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter
+     *         to false to disable it.
      *         </p>
      *         </li>
      *         </ul>
@@ -1688,13 +1684,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         profile: A cucumber profile, for example, "my_profile_name".
+     *         profile: A cucumber profile (for example, <code>my_profile_name</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for
-     *         example, "@smoke" or "@smoke,~@wip".
+     *         tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for
+     *         example, @smoke or @smoke,~@wip).
      *         </p>
      *         </li>
      *         </ul>
@@ -1704,19 +1700,19 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and
-     *         "default".
+     *         appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and
+     *         default.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+     *         latest runs the latest Appium version supported by Device Farm (1.9.1).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For “default”, Device Farm will choose a compatible version of Appium for the device. The current
-     *         behavior is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
+     *         For default, Device Farm selects a compatible version of Appium for the device. The current behavior is
+     *         to run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.
      *         </p>
      *         </li>
      *         <li>
@@ -1728,7 +1724,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         </ul>
      *         <p>
-     *         For Fuzz tests (Android only):
+     *         For fuzz tests (Android only):
      *         </p>
      *         <ul>
      *         <li>
@@ -1754,13 +1750,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         username: A username to use if the Explorer encounters a login form. If not supplied, no username will be
+     *         username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is
      *         inserted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         password: A password to use if the Explorer encounters a login form. If not supplied, no password will be
+     *         password: A password to use if the Explorer encounters a login form. If not supplied, no password is
      *         inserted.
      *         </p>
      *         </li>
@@ -1776,17 +1772,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         Running a single test case: "com.android.abc.Test1"
+     *         Running a single test case: <code>com.android.abc.Test1</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Running a single test: "com.android.abc.Test1#smoke"
+     *         Running a single test: <code>com.android.abc.Test1#smoke</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     *         Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -1803,22 +1799,22 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         Running a single test class: "LoginTests"
+     *         Running a single test class: <code>LoginTests</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Running a multiple test classes: "LoginTests,SmokeTests"
+     *         Running a multiple test classes: <code>LoginTests,SmokeTests</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Running a single test: "LoginTests/testValid"
+     *         Running a single test: <code>LoginTests/testValid</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+     *         Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -1835,17 +1831,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         Running a single test case: "com.android.abc.Test1"
+     *         Running a single test case: <code>com.android.abc.Test1</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Running a single test: "com.android.abc.Test1#smoke"
+     *         Running a single test: <code>com.android.abc.Test1#smoke</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     *         Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -1867,8 +1863,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
-     * disable it.
+     * <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to
+     * false to disable it.
      * </p>
      * </li>
      * </ul>
@@ -1878,13 +1874,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * profile: A cucumber profile, for example, "my_profile_name".
+     * profile: A cucumber profile (for example, <code>my_profile_name</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for example,
-     * "@smoke" or "@smoke,~@wip".
+     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke
+     * or @smoke,~@wip).
      * </p>
      * </li>
      * </ul>
@@ -1894,18 +1890,18 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+     * latest runs the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
+     * For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run
+     * 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -1917,7 +1913,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * For Fuzz tests (Android only):
+     * For fuzz tests (Android only):
      * </p>
      * <ul>
      * <li>
@@ -1943,14 +1939,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * username: A username to use if the Explorer encounters a login form. If not supplied, no username will be
-     * inserted.
+     * username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * password: A password to use if the Explorer encounters a login form. If not supplied, no password will be
-     * inserted.
+     * password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.
      * </p>
      * </li>
      * </ul>
@@ -1965,17 +1959,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -1992,22 +1986,22 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test class: "LoginTests"
+     * Running a single test class: <code>LoginTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a multiple test classes: "LoginTests,SmokeTests"
+     * Running a multiple test classes: <code>LoginTests,SmokeTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "LoginTests/testValid"
+     * Running a single test: <code>LoginTests/testValid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+     * Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code>
      * </p>
      * </li>
      * </ul>
@@ -2024,17 +2018,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -2050,8 +2044,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
-     *        disable it.
+     *        <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter
+     *        to false to disable it.
      *        </p>
      *        </li>
      *        </ul>
@@ -2061,13 +2055,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        profile: A cucumber profile, for example, "my_profile_name".
+     *        profile: A cucumber profile (for example, <code>my_profile_name</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for
-     *        example, "@smoke" or "@smoke,~@wip".
+     *        tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for
+     *        example, @smoke or @smoke,~@wip).
      *        </p>
      *        </li>
      *        </ul>
@@ -2077,19 +2071,18 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and
-     *        "default".
+     *        appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+     *        latest runs the latest Appium version supported by Device Farm (1.9.1).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior
-     *        is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
+     *        For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to
+     *        run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.
      *        </p>
      *        </li>
      *        <li>
@@ -2101,7 +2094,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        For Fuzz tests (Android only):
+     *        For fuzz tests (Android only):
      *        </p>
      *        <ul>
      *        <li>
@@ -2127,13 +2120,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        username: A username to use if the Explorer encounters a login form. If not supplied, no username will be
+     *        username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is
      *        inserted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        password: A password to use if the Explorer encounters a login form. If not supplied, no password will be
+     *        password: A password to use if the Explorer encounters a login form. If not supplied, no password is
      *        inserted.
      *        </p>
      *        </li>
@@ -2149,17 +2142,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Running a single test case: "com.android.abc.Test1"
+     *        Running a single test case: <code>com.android.abc.Test1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a single test: "com.android.abc.Test1#smoke"
+     *        Running a single test: <code>com.android.abc.Test1#smoke</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     *        Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2176,22 +2169,22 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Running a single test class: "LoginTests"
+     *        Running a single test class: <code>LoginTests</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a multiple test classes: "LoginTests,SmokeTests"
+     *        Running a multiple test classes: <code>LoginTests,SmokeTests</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a single test: "LoginTests/testValid"
+     *        Running a single test: <code>LoginTests/testValid</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+     *        Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2208,17 +2201,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Running a single test case: "com.android.abc.Test1"
+     *        Running a single test case: <code>com.android.abc.Test1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a single test: "com.android.abc.Test1#smoke"
+     *        Running a single test: <code>com.android.abc.Test1#smoke</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     *        Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2240,8 +2233,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
-     * disable it.
+     * <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter to
+     * false to disable it.
      * </p>
      * </li>
      * </ul>
@@ -2251,13 +2244,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * profile: A cucumber profile, for example, "my_profile_name".
+     * profile: A cucumber profile (for example, <code>my_profile_name</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for example,
-     * "@smoke" or "@smoke,~@wip".
+     * tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for example, @smoke
+     * or @smoke,~@wip).
      * </p>
      * </li>
      * </ul>
@@ -2267,18 +2260,18 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
+     * appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+     * latest runs the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior is to
-     * run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
+     * For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to run
+     * 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.
      * </p>
      * </li>
      * <li>
@@ -2290,7 +2283,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * For Fuzz tests (Android only):
+     * For fuzz tests (Android only):
      * </p>
      * <ul>
      * <li>
@@ -2316,14 +2309,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * username: A username to use if the Explorer encounters a login form. If not supplied, no username will be
-     * inserted.
+     * username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is inserted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * password: A password to use if the Explorer encounters a login form. If not supplied, no password will be
-     * inserted.
+     * password: A password to use if the Explorer encounters a login form. If not supplied, no password is inserted.
      * </p>
      * </li>
      * </ul>
@@ -2338,17 +2329,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -2365,22 +2356,22 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test class: "LoginTests"
+     * Running a single test class: <code>LoginTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a multiple test classes: "LoginTests,SmokeTests"
+     * Running a multiple test classes: <code>LoginTests,SmokeTests</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "LoginTests/testValid"
+     * Running a single test: <code>LoginTests/testValid</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+     * Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code>
      * </p>
      * </li>
      * </ul>
@@ -2397,17 +2388,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Running a single test case: "com.android.abc.Test1"
+     * Running a single test case: <code>com.android.abc.Test1</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running a single test: "com.android.abc.Test1#smoke"
+     * Running a single test: <code>com.android.abc.Test1#smoke</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     * Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      * </p>
      * </li>
      * </ul>
@@ -2423,8 +2414,8 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        app_performance_monitoring: Performance monitoring is enabled by default. Set this parameter to "false" to
-     *        disable it.
+     *        <code>app_performance_monitoring</code>: Performance monitoring is enabled by default. Set this parameter
+     *        to false to disable it.
      *        </p>
      *        </li>
      *        </ul>
@@ -2434,13 +2425,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        profile: A cucumber profile, for example, "my_profile_name".
+     *        profile: A cucumber profile (for example, <code>my_profile_name</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        tags: You can limit execution to features or scenarios that have (or don't have) certain tags, for
-     *        example, "@smoke" or "@smoke,~@wip".
+     *        tags: You can limit execution to features or scenarios that have (or don't have) certain tags (for
+     *        example, @smoke or @smoke,~@wip).
      *        </p>
      *        </li>
      *        </ul>
@@ -2450,19 +2441,18 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and
-     *        "default".
+     *        appium_version: The Appium version. Currently supported values are 1.6.5 (and later), latest, and default.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        “latest” will run the latest Appium version supported by Device Farm (1.9.1).
+     *        latest runs the latest Appium version supported by Device Farm (1.9.1).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For “default”, Device Farm will choose a compatible version of Appium for the device. The current behavior
-     *        is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2 for iOS 10 and later.
+     *        For default, Device Farm selects a compatible version of Appium for the device. The current behavior is to
+     *        run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2 for iOS 10 and later.
      *        </p>
      *        </li>
      *        <li>
@@ -2474,7 +2464,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        For Fuzz tests (Android only):
+     *        For fuzz tests (Android only):
      *        </p>
      *        <ul>
      *        <li>
@@ -2500,13 +2490,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        username: A username to use if the Explorer encounters a login form. If not supplied, no username will be
+     *        username: A user name to use if the Explorer encounters a login form. If not supplied, no user name is
      *        inserted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        password: A password to use if the Explorer encounters a login form. If not supplied, no password will be
+     *        password: A password to use if the Explorer encounters a login form. If not supplied, no password is
      *        inserted.
      *        </p>
      *        </li>
@@ -2522,17 +2512,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Running a single test case: "com.android.abc.Test1"
+     *        Running a single test case: <code>com.android.abc.Test1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a single test: "com.android.abc.Test1#smoke"
+     *        Running a single test: <code>com.android.abc.Test1#smoke</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     *        Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2549,22 +2539,22 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Running a single test class: "LoginTests"
+     *        Running a single test class: <code>LoginTests</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a multiple test classes: "LoginTests,SmokeTests"
+     *        Running a multiple test classes: <code>LoginTests,SmokeTests</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a single test: "LoginTests/testValid"
+     *        Running a single test: <code>LoginTests/testValid</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+     *        Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2581,17 +2571,17 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Running a single test case: "com.android.abc.Test1"
+     *        Running a single test case: <code>com.android.abc.Test1</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running a single test: "com.android.abc.Test1#smoke"
+     *        Running a single test: <code>com.android.abc.Test1#smoke</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+     *        Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code>
      *        </p>
      *        </li>
      *        </ul>

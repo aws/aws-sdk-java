@@ -274,6 +274,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(modifyDBInstanceRequest.getMaxAllocatedStorage()));
         }
 
+        if (modifyDBInstanceRequest.getCertificateRotationRestart() != null) {
+            request.addParameter("CertificateRotationRestart", StringUtils.fromBoolean(modifyDBInstanceRequest.getCertificateRotationRestart()));
+        }
+
         return request;
     }
 

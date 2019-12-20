@@ -43,6 +43,12 @@ public class KeyPair implements Serializable, Cloneable {
      * </p>
      */
     private String keyName;
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     */
+    private String keyPairId;
 
     /**
      * <p>
@@ -165,6 +171,46 @@ public class KeyPair implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     */
+
+    public void setKeyPairId(String keyPairId) {
+        this.keyPairId = keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @return The ID of the key pair.
+     */
+
+    public String getKeyPairId() {
+        return this.keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyPair withKeyPairId(String keyPairId) {
+        setKeyPairId(keyPairId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +227,9 @@ public class KeyPair implements Serializable, Cloneable {
         if (getKeyMaterial() != null)
             sb.append("KeyMaterial: ").append("***Sensitive Data Redacted***").append(",");
         if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName());
+            sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getKeyPairId() != null)
+            sb.append("KeyPairId: ").append(getKeyPairId());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class KeyPair implements Serializable, Cloneable {
             return false;
         if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
+        if (other.getKeyPairId() == null ^ this.getKeyPairId() == null)
+            return false;
+        if (other.getKeyPairId() != null && other.getKeyPairId().equals(this.getKeyPairId()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class KeyPair implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
         hashCode = prime * hashCode + ((getKeyMaterial() == null) ? 0 : getKeyMaterial().hashCode());
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getKeyPairId() == null) ? 0 : getKeyPairId().hashCode());
         return hashCode;
     }
 

@@ -113,7 +113,13 @@ public class ImportImageTask implements Serializable, Cloneable {
     private String statusMessage;
     /**
      * <p>
-     * The ARNs of the license configurations associated to the import image task.
+     * Any tags applied to the import image task.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ARNs of the license configurations that are associated with the import image task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ImportImageLicenseConfigurationResponse> licenseSpecifications;
@@ -721,10 +727,83 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARNs of the license configurations associated to the import image task.
+     * Any tags applied to the import image task.
      * </p>
      * 
-     * @return The ARNs of the license configurations associated to the import image task.
+     * @return Any tags applied to the import image task.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the import image task.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the import image task.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the import image task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the import image task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageTask withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the import image task.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the import image task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageTask withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARNs of the license configurations that are associated with the import image task.
+     * </p>
+     * 
+     * @return The ARNs of the license configurations that are associated with the import image task.
      */
 
     public java.util.List<ImportImageLicenseConfigurationResponse> getLicenseSpecifications() {
@@ -736,11 +815,11 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARNs of the license configurations associated to the import image task.
+     * The ARNs of the license configurations that are associated with the import image task.
      * </p>
      * 
      * @param licenseSpecifications
-     *        The ARNs of the license configurations associated to the import image task.
+     *        The ARNs of the license configurations that are associated with the import image task.
      */
 
     public void setLicenseSpecifications(java.util.Collection<ImportImageLicenseConfigurationResponse> licenseSpecifications) {
@@ -754,7 +833,7 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARNs of the license configurations associated to the import image task.
+     * The ARNs of the license configurations that are associated with the import image task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -763,7 +842,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * </p>
      * 
      * @param licenseSpecifications
-     *        The ARNs of the license configurations associated to the import image task.
+     *        The ARNs of the license configurations that are associated with the import image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -779,11 +858,11 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARNs of the license configurations associated to the import image task.
+     * The ARNs of the license configurations that are associated with the import image task.
      * </p>
      * 
      * @param licenseSpecifications
-     *        The ARNs of the license configurations associated to the import image task.
+     *        The ARNs of the license configurations that are associated with the import image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -830,6 +909,8 @@ public class ImportImageTask implements Serializable, Cloneable {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getLicenseSpecifications() != null)
             sb.append("LicenseSpecifications: ").append(getLicenseSpecifications());
         sb.append("}");
@@ -898,6 +979,10 @@ public class ImportImageTask implements Serializable, Cloneable {
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getLicenseSpecifications() == null ^ this.getLicenseSpecifications() == null)
             return false;
         if (other.getLicenseSpecifications() != null && other.getLicenseSpecifications().equals(this.getLicenseSpecifications()) == false)
@@ -923,6 +1008,7 @@ public class ImportImageTask implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSnapshotDetails() == null) ? 0 : getSnapshotDetails().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
         return hashCode;
     }

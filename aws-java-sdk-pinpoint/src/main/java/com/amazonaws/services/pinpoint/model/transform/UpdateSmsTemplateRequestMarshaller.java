@@ -27,10 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateSmsTemplateRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> CREATENEWVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("create-new-version").build();
     private static final MarshallingInfo<StructuredPojo> SMSTEMPLATEREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
     private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("template-name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("version").build();
 
     private static final UpdateSmsTemplateRequestMarshaller instance = new UpdateSmsTemplateRequestMarshaller();
 
@@ -48,8 +52,10 @@ public class UpdateSmsTemplateRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateSmsTemplateRequest.getCreateNewVersion(), CREATENEWVERSION_BINDING);
             protocolMarshaller.marshall(updateSmsTemplateRequest.getSMSTemplateRequest(), SMSTEMPLATEREQUEST_BINDING);
             protocolMarshaller.marshall(updateSmsTemplateRequest.getTemplateName(), TEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(updateSmsTemplateRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -28,6 +28,12 @@ public class KeyPairInfo implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ID of the key pair.
+     * </p>
+     */
+    private String keyPairId;
+    /**
+     * <p>
      * If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
      * If you used <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5 public key fingerprint as
      * specified in section 4 of RFC4716.
@@ -40,6 +46,52 @@ public class KeyPairInfo implements Serializable, Cloneable {
      * </p>
      */
     private String keyName;
+    /**
+     * <p>
+     * Any tags applied to the key pair.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     */
+
+    public void setKeyPairId(String keyPairId) {
+        this.keyPairId = keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @return The ID of the key pair.
+     */
+
+    public String getKeyPairId() {
+        return this.keyPairId;
+    }
+
+    /**
+     * <p>
+     * The ID of the key pair.
+     * </p>
+     * 
+     * @param keyPairId
+     *        The ID of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyPairInfo withKeyPairId(String keyPairId) {
+        setKeyPairId(keyPairId);
+        return this;
+    }
 
     /**
      * <p>
@@ -134,6 +186,79 @@ public class KeyPairInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Any tags applied to the key pair.
+     * </p>
+     * 
+     * @return Any tags applied to the key pair.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the key pair.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the key pair.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the key pair.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyPairInfo withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags applied to the key pair.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags applied to the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyPairInfo withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -145,10 +270,14 @@ public class KeyPairInfo implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getKeyPairId() != null)
+            sb.append("KeyPairId: ").append(getKeyPairId()).append(",");
         if (getKeyFingerprint() != null)
             sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
         if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName());
+            sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +292,10 @@ public class KeyPairInfo implements Serializable, Cloneable {
         if (obj instanceof KeyPairInfo == false)
             return false;
         KeyPairInfo other = (KeyPairInfo) obj;
+        if (other.getKeyPairId() == null ^ this.getKeyPairId() == null)
+            return false;
+        if (other.getKeyPairId() != null && other.getKeyPairId().equals(this.getKeyPairId()) == false)
+            return false;
         if (other.getKeyFingerprint() == null ^ this.getKeyFingerprint() == null)
             return false;
         if (other.getKeyFingerprint() != null && other.getKeyFingerprint().equals(this.getKeyFingerprint()) == false)
@@ -170,6 +303,10 @@ public class KeyPairInfo implements Serializable, Cloneable {
         if (other.getKeyName() == null ^ this.getKeyName() == null)
             return false;
         if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -179,8 +316,10 @@ public class KeyPairInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getKeyPairId() == null) ? 0 : getKeyPairId().hashCode());
         hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

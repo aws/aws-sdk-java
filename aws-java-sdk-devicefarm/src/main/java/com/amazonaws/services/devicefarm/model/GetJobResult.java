@@ -28,18 +28,18 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * An object containing information about the requested job.
+     * An object that contains information about the requested job.
      * </p>
      */
     private Job job;
 
     /**
      * <p>
-     * An object containing information about the requested job.
+     * An object that contains information about the requested job.
      * </p>
      * 
      * @param job
-     *        An object containing information about the requested job.
+     *        An object that contains information about the requested job.
      */
 
     public void setJob(Job job) {
@@ -48,10 +48,10 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * An object containing information about the requested job.
+     * An object that contains information about the requested job.
      * </p>
      * 
-     * @return An object containing information about the requested job.
+     * @return An object that contains information about the requested job.
      */
 
     public Job getJob() {
@@ -60,11 +60,11 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * An object containing information about the requested job.
+     * An object that contains information about the requested job.
      * </p>
      * 
      * @param job
-     *        An object containing information about the requested job.
+     *        An object that contains information about the requested job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

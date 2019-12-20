@@ -56,162 +56,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID_APP: An Android upload.
+     * ANDROID_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS_APP: An iOS upload.
+     * IOS_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web application upload.
+     * WEB_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
+     * EXTERNAL_DATA
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     * APPIUM_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     * APPIUM_WEB_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     * APPIUM_WEB_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * CALABASH_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * INSTRUMENTATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * UIAUTOMATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * UIAUTOMATOR_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     * XCTEST_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * APPIUM_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * APPIUM_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * APPIUM_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * APPIUM_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * APPIUM_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * APPIUM_WEB_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * APPIUM_WEB_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * APPIUM_WEB_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * INSTRUMENTATION_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC
      * </p>
      * </li>
      * </ul>
@@ -227,22 +227,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FAILED: A failed status.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * INITIALIZED: An initialized status.
+     * INITIALIZED
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SUCCEEDED: A succeeded status.
+     * SUCCEEDED
      * </p>
      * </li>
      * </ul>
@@ -250,7 +250,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.
+     * The presigned Amazon S3 URL that was used to store a file using a PUT request.
      * </p>
      */
     private String url;
@@ -263,7 +263,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
     private String metadata;
     /**
      * <p>
-     * The upload's content type (for example, "application/octet-stream").
+     * The upload's content type (for example, <code>application/octet-stream</code>).
      * </p>
      */
     private String contentType;
@@ -422,162 +422,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID_APP: An Android upload.
+     * ANDROID_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS_APP: An iOS upload.
+     * IOS_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web application upload.
+     * WEB_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
+     * EXTERNAL_DATA
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     * APPIUM_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     * APPIUM_WEB_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     * APPIUM_WEB_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * CALABASH_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * INSTRUMENTATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * UIAUTOMATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * UIAUTOMATOR_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     * XCTEST_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * APPIUM_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * APPIUM_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * APPIUM_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * APPIUM_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * APPIUM_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * APPIUM_WEB_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * APPIUM_WEB_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * APPIUM_WEB_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * INSTRUMENTATION_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC
      * </p>
      * </li>
      * </ul>
@@ -590,162 +590,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID_APP: An Android upload.
+     *        ANDROID_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS_APP: An iOS upload.
+     *        IOS_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web application upload.
+     *        WEB_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
+     *        EXTERNAL_DATA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     *        APPIUM_WEB_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        CALABASH_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        INSTRUMENTATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        UIAUTOMATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        UIAUTOMATOR_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     *        XCTEST_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        APPIUM_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        APPIUM_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        APPIUM_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        APPIUM_WEB_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        APPIUM_WEB_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        APPIUM_WEB_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        INSTRUMENTATION_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC
      *        </p>
      *        </li>
      * @see UploadType
@@ -765,162 +765,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID_APP: An Android upload.
+     * ANDROID_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS_APP: An iOS upload.
+     * IOS_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web application upload.
+     * WEB_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
+     * EXTERNAL_DATA
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     * APPIUM_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     * APPIUM_WEB_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     * APPIUM_WEB_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * CALABASH_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * INSTRUMENTATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * UIAUTOMATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * UIAUTOMATOR_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     * XCTEST_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * APPIUM_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * APPIUM_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * APPIUM_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * APPIUM_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * APPIUM_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * APPIUM_WEB_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * APPIUM_WEB_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * APPIUM_WEB_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * INSTRUMENTATION_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC
      * </p>
      * </li>
      * </ul>
@@ -932,162 +932,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         ANDROID_APP: An Android upload.
+     *         ANDROID_APP
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         IOS_APP: An iOS upload.
+     *         IOS_APP
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         WEB_APP: A web application upload.
+     *         WEB_APP
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         EXTERNAL_DATA: An external data upload.
+     *         EXTERNAL_DATA
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *         APPIUM_JAVA_JUNIT_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *         APPIUM_JAVA_TESTNG_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *         APPIUM_PYTHON_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     *         APPIUM_NODE_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     *         APPIUM_RUBY_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     *         APPIUM_WEB_PYTHON_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     *         APPIUM_WEB_NODE_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     *         APPIUM_WEB_RUBY_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *         CALABASH_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *         INSTRUMENTATION_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *         UIAUTOMATION_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *         UIAUTOMATOR_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     *         XCTEST_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *         XCTEST_UI_TEST_PACKAGE
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *         APPIUM_JAVA_JUNIT_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *         APPIUM_JAVA_TESTNG_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *         APPIUM_PYTHON_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *         APPIUM_NODE_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *         APPIUM_RUBY_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *         APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *         APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *         APPIUM_WEB_PYTHON_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *         APPIUM_WEB_NODE_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *         APPIUM_WEB_RUBY_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *         INSTRUMENTATION_TEST_SPEC
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     *         XCTEST_UI_TEST_SPEC
      *         </p>
      *         </li>
      * @see UploadType
@@ -1107,162 +1107,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID_APP: An Android upload.
+     * ANDROID_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS_APP: An iOS upload.
+     * IOS_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web application upload.
+     * WEB_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
+     * EXTERNAL_DATA
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     * APPIUM_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     * APPIUM_WEB_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     * APPIUM_WEB_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * CALABASH_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * INSTRUMENTATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * UIAUTOMATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * UIAUTOMATOR_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     * XCTEST_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * APPIUM_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * APPIUM_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * APPIUM_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * APPIUM_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * APPIUM_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * APPIUM_WEB_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * APPIUM_WEB_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * APPIUM_WEB_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * INSTRUMENTATION_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC
      * </p>
      * </li>
      * </ul>
@@ -1275,162 +1275,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID_APP: An Android upload.
+     *        ANDROID_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS_APP: An iOS upload.
+     *        IOS_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web application upload.
+     *        WEB_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
+     *        EXTERNAL_DATA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     *        APPIUM_WEB_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        CALABASH_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        INSTRUMENTATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        UIAUTOMATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        UIAUTOMATOR_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     *        XCTEST_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        APPIUM_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        APPIUM_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        APPIUM_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        APPIUM_WEB_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        APPIUM_WEB_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        APPIUM_WEB_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        INSTRUMENTATION_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1452,162 +1452,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID_APP: An Android upload.
+     * ANDROID_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS_APP: An iOS upload.
+     * IOS_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web application upload.
+     * WEB_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
+     * EXTERNAL_DATA
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     * APPIUM_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     * APPIUM_WEB_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     * APPIUM_WEB_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * CALABASH_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * INSTRUMENTATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * UIAUTOMATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * UIAUTOMATOR_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     * XCTEST_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * APPIUM_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * APPIUM_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * APPIUM_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * APPIUM_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * APPIUM_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * APPIUM_WEB_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * APPIUM_WEB_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * APPIUM_WEB_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * INSTRUMENTATION_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC
      * </p>
      * </li>
      * </ul>
@@ -1620,162 +1620,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID_APP: An Android upload.
+     *        ANDROID_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS_APP: An iOS upload.
+     *        IOS_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web application upload.
+     *        WEB_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
+     *        EXTERNAL_DATA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     *        APPIUM_WEB_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        CALABASH_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        INSTRUMENTATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        UIAUTOMATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        UIAUTOMATOR_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     *        XCTEST_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        APPIUM_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        APPIUM_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        APPIUM_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        APPIUM_WEB_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        APPIUM_WEB_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        APPIUM_WEB_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        INSTRUMENTATION_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC
      *        </p>
      *        </li>
      * @see UploadType
@@ -1795,162 +1795,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * ANDROID_APP: An Android upload.
+     * ANDROID_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * IOS_APP: An iOS upload.
+     * IOS_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * WEB_APP: A web application upload.
+     * WEB_APP
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXTERNAL_DATA: An external data upload.
+     * EXTERNAL_DATA
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     * APPIUM_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     * APPIUM_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     * APPIUM_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     * APPIUM_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     * APPIUM_WEB_NODE_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     * APPIUM_WEB_RUBY_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * CALABASH_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * INSTRUMENTATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * UIAUTOMATION_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * UIAUTOMATOR_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     * XCTEST_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     * XCTEST_UI_TEST_PACKAGE
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     * APPIUM_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     * APPIUM_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     * APPIUM_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     * APPIUM_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     * APPIUM_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     * APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     * APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     * APPIUM_WEB_PYTHON_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     * APPIUM_WEB_NODE_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     * APPIUM_WEB_RUBY_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     * INSTRUMENTATION_TEST_SPEC
      * </p>
      * </li>
      * <li>
      * <p>
-     * XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     * XCTEST_UI_TEST_SPEC
      * </p>
      * </li>
      * </ul>
@@ -1963,162 +1963,162 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        ANDROID_APP: An Android upload.
+     *        ANDROID_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        IOS_APP: An iOS upload.
+     *        IOS_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        WEB_APP: A web application upload.
+     *        WEB_APP
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXTERNAL_DATA: An external data upload.
+     *        EXTERNAL_DATA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
+     *        APPIUM_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
+     *        APPIUM_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_PACKAGE: An Appium Node.js test package upload.
+     *        APPIUM_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby test package upload.
+     *        APPIUM_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload for web apps.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload for web apps.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload for web apps.
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for web apps.
+     *        APPIUM_WEB_NODE_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package upload for web apps.
+     *        APPIUM_WEB_RUBY_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        CALABASH_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        INSTRUMENTATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        UIAUTOMATION_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        UIAUTOMATOR_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_TEST_PACKAGE: An Xcode test package upload.
+     *        XCTEST_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_PACKAGE: An Xcode UI test package upload.
+     *        XCTEST_UI_TEST_PACKAGE
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.
+     *        APPIUM_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload.
+     *        APPIUM_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec upload.
+     *        APPIUM_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_NODE_TEST_SPEC: An Appium Node.js test spec upload.
+     *        APPIUM_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_RUBY_TEST_SPEC: An Appium Ruby test spec upload.
+     *        APPIUM_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_JUNIT_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for a web app.
+     *        APPIUM_WEB_JAVA_TESTNG_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test spec upload for a web app.
+     *        APPIUM_WEB_PYTHON_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_NODE_TEST_SPEC: An Appium Node.js test spec upload for a web app.
+     *        APPIUM_WEB_NODE_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.
+     *        APPIUM_WEB_RUBY_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INSTRUMENTATION_TEST_SPEC: An instrumentation test spec upload.
+     *        INSTRUMENTATION_TEST_SPEC
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        XCTEST_UI_TEST_SPEC: An Xcode UI test spec upload.
+     *        XCTEST_UI_TEST_SPEC
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2140,22 +2140,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FAILED: A failed status.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * INITIALIZED: An initialized status.
+     * INITIALIZED
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SUCCEEDED: A succeeded status.
+     * SUCCEEDED
      * </p>
      * </li>
      * </ul>
@@ -2168,22 +2168,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FAILED: A failed status.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INITIALIZED: An initialized status.
+     *        INITIALIZED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SUCCEEDED: A succeeded status.
+     *        SUCCEEDED
      *        </p>
      *        </li>
      * @see UploadStatus
@@ -2203,22 +2203,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FAILED: A failed status.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * INITIALIZED: An initialized status.
+     * INITIALIZED
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SUCCEEDED: A succeeded status.
+     * SUCCEEDED
      * </p>
      * </li>
      * </ul>
@@ -2230,22 +2230,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         FAILED: A failed status.
+     *         FAILED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INITIALIZED: An initialized status.
+     *         INITIALIZED
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PROCESSING: A processing status.
+     *         PROCESSING
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SUCCEEDED: A succeeded status.
+     *         SUCCEEDED
      *         </p>
      *         </li>
      * @see UploadStatus
@@ -2265,22 +2265,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FAILED: A failed status.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * INITIALIZED: An initialized status.
+     * INITIALIZED
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SUCCEEDED: A succeeded status.
+     * SUCCEEDED
      * </p>
      * </li>
      * </ul>
@@ -2293,22 +2293,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FAILED: A failed status.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INITIALIZED: An initialized status.
+     *        INITIALIZED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SUCCEEDED: A succeeded status.
+     *        SUCCEEDED
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2330,22 +2330,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FAILED: A failed status.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * INITIALIZED: An initialized status.
+     * INITIALIZED
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SUCCEEDED: A succeeded status.
+     * SUCCEEDED
      * </p>
      * </li>
      * </ul>
@@ -2358,22 +2358,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FAILED: A failed status.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INITIALIZED: An initialized status.
+     *        INITIALIZED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SUCCEEDED: A succeeded status.
+     *        SUCCEEDED
      *        </p>
      *        </li>
      * @see UploadStatus
@@ -2393,22 +2393,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FAILED: A failed status.
+     * FAILED
      * </p>
      * </li>
      * <li>
      * <p>
-     * INITIALIZED: An initialized status.
+     * INITIALIZED
      * </p>
      * </li>
      * <li>
      * <p>
-     * PROCESSING: A processing status.
+     * PROCESSING
      * </p>
      * </li>
      * <li>
      * <p>
-     * SUCCEEDED: A succeeded status.
+     * SUCCEEDED
      * </p>
      * </li>
      * </ul>
@@ -2421,22 +2421,22 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FAILED: A failed status.
+     *        FAILED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INITIALIZED: An initialized status.
+     *        INITIALIZED
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PROCESSING: A processing status.
+     *        PROCESSING
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SUCCEEDED: A succeeded status.
+     *        SUCCEEDED
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2450,11 +2450,11 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.
+     * The presigned Amazon S3 URL that was used to store a file using a PUT request.
      * </p>
      * 
      * @param url
-     *        The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.
+     *        The presigned Amazon S3 URL that was used to store a file using a PUT request.
      */
 
     public void setUrl(String url) {
@@ -2463,10 +2463,10 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.
+     * The presigned Amazon S3 URL that was used to store a file using a PUT request.
      * </p>
      * 
-     * @return The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.
+     * @return The presigned Amazon S3 URL that was used to store a file using a PUT request.
      */
 
     public String getUrl() {
@@ -2475,11 +2475,11 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.
+     * The presigned Amazon S3 URL that was used to store a file using a PUT request.
      * </p>
      * 
      * @param url
-     *        The pre-signed Amazon S3 URL that was used to store a file through a corresponding PUT request.
+     *        The presigned Amazon S3 URL that was used to store a file using a PUT request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2536,11 +2536,11 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upload's content type (for example, "application/octet-stream").
+     * The upload's content type (for example, <code>application/octet-stream</code>).
      * </p>
      * 
      * @param contentType
-     *        The upload's content type (for example, "application/octet-stream").
+     *        The upload's content type (for example, <code>application/octet-stream</code>).
      */
 
     public void setContentType(String contentType) {
@@ -2549,10 +2549,10 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upload's content type (for example, "application/octet-stream").
+     * The upload's content type (for example, <code>application/octet-stream</code>).
      * </p>
      * 
-     * @return The upload's content type (for example, "application/octet-stream").
+     * @return The upload's content type (for example, <code>application/octet-stream</code>).
      */
 
     public String getContentType() {
@@ -2561,11 +2561,11 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The upload's content type (for example, "application/octet-stream").
+     * The upload's content type (for example, <code>application/octet-stream</code>).
      * </p>
      * 
      * @param contentType
-     *        The upload's content type (for example, "application/octet-stream").
+     *        The upload's content type (for example, <code>application/octet-stream</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

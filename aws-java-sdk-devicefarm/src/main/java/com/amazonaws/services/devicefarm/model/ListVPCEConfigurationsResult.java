@@ -25,7 +25,8 @@ public class ListVPCEConfigurationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint configuration.
+     * An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
+     * configuration.
      * </p>
      */
     private java.util.List<VPCEConfiguration> vpceConfigurations;
@@ -39,10 +40,11 @@ public class ListVPCEConfigurationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint configuration.
+     * An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
+     * configuration.
      * </p>
      * 
-     * @return An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint
+     * @return An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
      *         configuration.
      */
 
@@ -52,11 +54,12 @@ public class ListVPCEConfigurationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint configuration.
+     * An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
+     * configuration.
      * </p>
      * 
      * @param vpceConfigurations
-     *        An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint
+     *        An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
      *        configuration.
      */
 
@@ -71,7 +74,8 @@ public class ListVPCEConfigurationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint configuration.
+     * An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
+     * configuration.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +84,7 @@ public class ListVPCEConfigurationsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param vpceConfigurations
-     *        An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint
+     *        An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
      *        configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -97,11 +101,12 @@ public class ListVPCEConfigurationsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint configuration.
+     * An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
+     * configuration.
      * </p>
      * 
      * @param vpceConfigurations
-     *        An array of <code>VPCEConfiguration</code> objects containing information about your VPC endpoint
+     *        An array of <code>VPCEConfiguration</code> objects that contain information about your VPC endpoint
      *        configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

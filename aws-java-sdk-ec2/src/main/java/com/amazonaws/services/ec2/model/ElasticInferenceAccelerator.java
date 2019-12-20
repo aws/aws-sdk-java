@@ -35,8 +35,10 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      */
     private Integer count;
@@ -89,13 +91,16 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      * 
      * @param count
-     *        The number of elastic inference accelerators of given type to be attached to the instance. Only positive
-     *        values allowed. If not specified defaults to 1.
+     *        The number of elastic inference accelerators to attach to the instance. </p>
+     *        <p>
+     *        Default: 1
      */
 
     public void setCount(Integer count) {
@@ -104,12 +109,15 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      * 
-     * @return The number of elastic inference accelerators of given type to be attached to the instance. Only positive
-     *         values allowed. If not specified defaults to 1.
+     * @return The number of elastic inference accelerators to attach to the instance. </p>
+     *         <p>
+     *         Default: 1
      */
 
     public Integer getCount() {
@@ -118,13 +126,16 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of elastic inference accelerators of given type to be attached to the instance. Only positive values
-     * allowed. If not specified defaults to 1.
+     * The number of elastic inference accelerators to attach to the instance.
+     * </p>
+     * <p>
+     * Default: 1
      * </p>
      * 
      * @param count
-     *        The number of elastic inference accelerators of given type to be attached to the instance. Only positive
-     *        values allowed. If not specified defaults to 1.
+     *        The number of elastic inference accelerators to attach to the instance. </p>
+     *        <p>
+     *        Default: 1
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies the settings for a multivariate split activity in a journey. This type of activity sends participants down
- * one of as many as five paths in a journey, based on conditions that you specify.
+ * one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you
+ * specify.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MultiConditionalSplitActivity"
@@ -38,7 +39,8 @@ public class MultiConditionalSplitActivity implements Serializable, Cloneable, S
     private java.util.List<MultiConditionalBranch> branches;
     /**
      * <p>
-     * The activity to perform by default for any path in the activity.
+     * The unique identifier for the activity to perform for participants who don't meet any of the conditions specified
+     * for other paths in the activity.
      * </p>
      */
     private String defaultActivity;
@@ -129,11 +131,13 @@ public class MultiConditionalSplitActivity implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The activity to perform by default for any path in the activity.
+     * The unique identifier for the activity to perform for participants who don't meet any of the conditions specified
+     * for other paths in the activity.
      * </p>
      * 
      * @param defaultActivity
-     *        The activity to perform by default for any path in the activity.
+     *        The unique identifier for the activity to perform for participants who don't meet any of the conditions
+     *        specified for other paths in the activity.
      */
 
     public void setDefaultActivity(String defaultActivity) {
@@ -142,10 +146,12 @@ public class MultiConditionalSplitActivity implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The activity to perform by default for any path in the activity.
+     * The unique identifier for the activity to perform for participants who don't meet any of the conditions specified
+     * for other paths in the activity.
      * </p>
      * 
-     * @return The activity to perform by default for any path in the activity.
+     * @return The unique identifier for the activity to perform for participants who don't meet any of the conditions
+     *         specified for other paths in the activity.
      */
 
     public String getDefaultActivity() {
@@ -154,11 +160,13 @@ public class MultiConditionalSplitActivity implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The activity to perform by default for any path in the activity.
+     * The unique identifier for the activity to perform for participants who don't meet any of the conditions specified
+     * for other paths in the activity.
      * </p>
      * 
      * @param defaultActivity
-     *        The activity to perform by default for any path in the activity.
+     *        The unique identifier for the activity to perform for participants who don't meet any of the conditions
+     *        specified for other paths in the activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

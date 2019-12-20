@@ -52,7 +52,7 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
     private Boolean packageCleanup;
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
      * test run is over.
      * </p>
      * <p>
@@ -249,14 +249,14 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
      * test run is over.
      * </p>
      * <p>
      * The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
      * </p>
      * 
-     * @return An array of strings specifying the list of app packages that should not be cleaned up from the device
+     * @return An array of strings that specifies the list of app packages that should not be cleaned up from the device
      *         after a test run is over.</p>
      *         <p>
      *         The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
@@ -268,7 +268,7 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
      * test run is over.
      * </p>
      * <p>
@@ -276,7 +276,7 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
+     *        An array of strings that specifies the list of app packages that should not be cleaned up from the device
      *        after a test run is over.</p>
      *        <p>
      *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
@@ -293,7 +293,7 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
      * test run is over.
      * </p>
      * <p>
@@ -306,7 +306,7 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
+     *        An array of strings that specifies the list of app packages that should not be cleaned up from the device
      *        after a test run is over.</p>
      *        <p>
      *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.
@@ -325,7 +325,7 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An array of strings specifying the list of app packages that should not be cleaned up from the device after a
+     * An array of strings that specifies the list of app packages that should not be cleaned up from the device after a
      * test run is over.
      * </p>
      * <p>
@@ -333,7 +333,7 @@ public class UpdateInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param excludeAppPackagesFromCleanup
-     *        An array of strings specifying the list of app packages that should not be cleaned up from the device
+     *        An array of strings that specifies the list of app packages that should not be cleaned up from the device
      *        after a test run is over.</p>
      *        <p>
      *        The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.

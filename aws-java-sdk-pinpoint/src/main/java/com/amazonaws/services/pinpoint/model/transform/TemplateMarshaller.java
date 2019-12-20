@@ -29,6 +29,8 @@ public class TemplateMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
 
     private static final TemplateMarshaller instance = new TemplateMarshaller();
 
@@ -47,6 +49,7 @@ public class TemplateMarshaller {
 
         try {
             protocolMarshaller.marshall(template.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(template.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

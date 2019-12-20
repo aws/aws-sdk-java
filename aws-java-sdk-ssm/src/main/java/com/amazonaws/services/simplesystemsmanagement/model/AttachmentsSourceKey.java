@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum AttachmentsSourceKey {
 
     SourceUrl("SourceUrl"),
-    S3FileUrl("S3FileUrl");
+    S3FileUrl("S3FileUrl"),
+    AttachmentReference("AttachmentReference");
 
     private String value;
 

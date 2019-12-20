@@ -25,7 +25,7 @@ public class ListInstanceProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object containing information about your instance profiles.
+     * An object that contains information about your instance profiles.
      * </p>
      */
     private java.util.List<InstanceProfile> instanceProfiles;
@@ -38,10 +38,10 @@ public class ListInstanceProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object containing information about your instance profiles.
+     * An object that contains information about your instance profiles.
      * </p>
      * 
-     * @return An object containing information about your instance profiles.
+     * @return An object that contains information about your instance profiles.
      */
 
     public java.util.List<InstanceProfile> getInstanceProfiles() {
@@ -50,11 +50,11 @@ public class ListInstanceProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object containing information about your instance profiles.
+     * An object that contains information about your instance profiles.
      * </p>
      * 
      * @param instanceProfiles
-     *        An object containing information about your instance profiles.
+     *        An object that contains information about your instance profiles.
      */
 
     public void setInstanceProfiles(java.util.Collection<InstanceProfile> instanceProfiles) {
@@ -68,7 +68,7 @@ public class ListInstanceProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object containing information about your instance profiles.
+     * An object that contains information about your instance profiles.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListInstanceProfilesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param instanceProfiles
-     *        An object containing information about your instance profiles.
+     *        An object that contains information about your instance profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListInstanceProfilesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An object containing information about your instance profiles.
+     * An object that contains information about your instance profiles.
      * </p>
      * 
      * @param instanceProfiles
-     *        An object containing information about your instance profiles.
+     *        An object that contains information about your instance profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
