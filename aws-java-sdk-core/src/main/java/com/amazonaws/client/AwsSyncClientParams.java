@@ -16,8 +16,10 @@ package com.amazonaws.client;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.SdkProtectedApi;
+import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.client.builder.AdvancedConfig;
+import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.monitoring.MonitoringListener;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.internal.auth.SignerProvider;
@@ -67,5 +69,14 @@ public abstract class AwsSyncClientParams {
     public RetryPolicy getRetryPolicy() {
         final ClientConfiguration config = getClientConfiguration();
         return new RetryPolicyAdapter(config.getRetryPolicy(), config);
+    }
+
+    @SdkTestInternalApi
+    public AmazonHttpClient getHttpClient(ClientConfiguration config,
+                                          RequestMetricCollector requestMetricCollector,
+                                          boolean useBrowserCompatibleHostNameVerifier,
+                                          boolean calculateCRC32FromCompressedData) {
+        return new AmazonHttpClient(config, requestMetricCollector, useBrowserCompatibleHostNameVerifier,
+            calculateCRC32FromCompressedData);
     }
 }

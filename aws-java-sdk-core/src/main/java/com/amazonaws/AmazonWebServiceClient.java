@@ -179,13 +179,14 @@ public abstract class AmazonWebServiceClient {
      */
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        this(clientConfiguration, requestMetricCollector, false);
+        this(clientConfiguration, requestMetricCollector, false, null);
     }
 
     @SdkProtectedApi
     protected AmazonWebServiceClient(final ClientConfiguration clientConfiguration,
                                      final RequestMetricCollector requestMetricCollector,
-                                     boolean disableStrictHostNameVerification) {
+                                     boolean disableStrictHostNameVerification,
+                                     final AmazonHttpClient httpClient) {
         this(new AwsSyncClientParams() {
             @Override
             public AWSCredentialsProvider getCredentialsProvider() {
@@ -216,6 +217,19 @@ public abstract class AmazonWebServiceClient {
             public MonitoringListener getMonitoringListener() {
                 return null;
             }
+
+            @Override
+            public AmazonHttpClient getHttpClient(ClientConfiguration config,
+                                                  RequestMetricCollector requestMetricCollector,
+                                                  boolean useBrowserCompatibleHostNameVerifier,
+                                                  boolean calculateCRC32FromCompressedData) {
+                if (httpClient == null) {
+                    return new AmazonHttpClient(config, requestMetricCollector, useBrowserCompatibleHostNameVerifier,
+                        calculateCRC32FromCompressedData);
+                } else {
+                    return httpClient;
+                }
+            }
         }, !disableStrictHostNameVerification);
     }
 
@@ -231,10 +245,10 @@ public abstract class AmazonWebServiceClient {
         useStrictHostNameVerification = useStrictHostNameVerification != null ? useStrictHostNameVerification
                                                                               : useStrictHostNameVerification();
 
-        this.client = new AmazonHttpClient(clientConfiguration,
-                                           clientParams.getRequestMetricCollector(),
-                                           !useStrictHostNameVerification,
-                                           calculateCRC32FromCompressedData());
+        this.client = clientParams.getHttpClient(clientConfiguration,
+                                                 clientParams.getRequestMetricCollector(),
+                                                 !useStrictHostNameVerification,
+                                                 calculateCRC32FromCompressedData());
         this.csmConfiguration = getCsmConfiguration(clientParams.getClientSideMonitoringConfigurationProvider());
 
         if (isCsmEnabled()) {

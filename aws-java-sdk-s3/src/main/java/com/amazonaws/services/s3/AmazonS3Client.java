@@ -55,6 +55,7 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
+import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
@@ -604,7 +605,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public AmazonS3Client(AWSCredentialsProvider credentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        this(credentialsProvider, clientConfiguration, requestMetricCollector, SkipMd5CheckStrategy.INSTANCE);
+        this(credentialsProvider, clientConfiguration, requestMetricCollector, SkipMd5CheckStrategy.INSTANCE, null);
     }
 
     /**
@@ -621,10 +622,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     @SdkTestInternalApi
     AmazonS3Client(AWSCredentialsProvider credentialsProvider,
-            ClientConfiguration clientConfiguration,
-            RequestMetricCollector requestMetricCollector,
-            SkipMd5CheckStrategy skipMd5CheckStrategy) {
-        super(clientConfiguration, requestMetricCollector, true);
+                   ClientConfiguration clientConfiguration,
+                   RequestMetricCollector requestMetricCollector,
+                   SkipMd5CheckStrategy skipMd5CheckStrategy,
+                   AmazonHttpClient httpClient) {
+        super(clientConfiguration, requestMetricCollector, true, httpClient);
         this.awsCredentialsProvider = credentialsProvider;
         this.skipMd5CheckStrategy = skipMd5CheckStrategy;
         init();
