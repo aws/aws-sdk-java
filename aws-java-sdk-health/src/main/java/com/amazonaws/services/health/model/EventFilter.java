@@ -38,7 +38,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of unique identifiers for event types. For example,
-     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      * </p>
      */
     private java.util.List<String> eventTypeCodes;
@@ -192,11 +192,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of unique identifiers for event types. For example,
-     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      * </p>
      * 
      * @return A list of unique identifiers for event types. For example,
-     *         <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     *         <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      */
 
     public java.util.List<String> getEventTypeCodes() {
@@ -206,12 +206,12 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of unique identifiers for event types. For example,
-     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      * </p>
      * 
      * @param eventTypeCodes
      *        A list of unique identifiers for event types. For example,
-     *        <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     *        <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      */
 
     public void setEventTypeCodes(java.util.Collection<String> eventTypeCodes) {
@@ -226,7 +226,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of unique identifiers for event types. For example,
-     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -236,7 +236,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param eventTypeCodes
      *        A list of unique identifiers for event types. For example,
-     *        <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     *        <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,12 +253,12 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of unique identifiers for event types. For example,
-     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      * </p>
      * 
      * @param eventTypeCodes
      *        A list of unique identifiers for event types. For example,
-     *        <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     *        <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

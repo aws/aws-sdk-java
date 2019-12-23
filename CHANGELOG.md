@@ -1,7 +1,24 @@
+# __1.11.699__ __2019-12-23__
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - With this release, you can now centrally aggregate AWS Health events from all accounts in your AWS organization. Visit AWS Health documentation to learn more about enabling and using this feature: https://docs.aws.amazon.com/health/latest/ug/organizational-view-health.html. 
+
+## __Amazon Detective__
+  - ### Features
+    - Updated the documentation for Amazon Detective.
+
+## __Amazon FSx__
+  - ### Features
+    - This release adds a new family of APIs (create-data-repository-task, describe-data-repository-task, and cancel-data-repository-task) that allow users to perform operations between their file system and its linked data repository.
+
 # __1.11.698__ __2019-12-20__
 ## __AWS Device Farm__
   - ### Features
     - Introduced browser testing support through AWS Device Farm
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fix a race condition where the execution timer interrupts the thread at the same time the response is complete or an exception is thrown, leaving thread interrupt flag uncleared, which causes subsequent requests to fail of `AbortedException`.
 
 ## __AWS SecurityHub__
   - ### Features

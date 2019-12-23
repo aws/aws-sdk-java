@@ -519,7 +519,7 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Deletes one or more member accounts from the master account behavior graph. This operation can only be called by
      * a Detective master account. That account cannot use <code>DeleteMembers</code> to delete their own account from
-     * the Morocco graph. To disable a behavior graph, the master account uses the <code>DeleteGraph</code> API method.
+     * the behavior graph. To disable a behavior graph, the master account uses the <code>DeleteGraph</code> API method.
      * </p>
      * 
      * @param deleteMembersRequest

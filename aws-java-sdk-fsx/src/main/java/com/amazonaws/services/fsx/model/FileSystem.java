@@ -135,7 +135,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system.
+     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
      * </p>
      */
     private String kmsKeyId;
@@ -1022,12 +1022,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system.
+     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
      * </p>
      * 
      * @param kmsKeyId
      *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an
-     *        Amazon FSx for Windows File Server file system.
+     *        Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1037,11 +1037,11 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system.
+     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
      * </p>
      * 
      * @return The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an
-     *         Amazon FSx for Windows File Server file system.
+     *         Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
      */
 
     public String getKmsKeyId() {
@@ -1051,12 +1051,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system.
+     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
      * </p>
      * 
      * @param kmsKeyId
      *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an
-     *        Amazon FSx for Windows File Server file system.
+     *        Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -99,6 +99,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                             new JsonErrorShapeMetadata().withErrorCode("MissingFileSystemConfiguration").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.MissingFileSystemConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskExecuting").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.DataRepositoryTaskExecutingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("FileSystemNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.FileSystemNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -108,6 +111,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                             new JsonErrorShapeMetadata().withErrorCode("IncompatibleParameterError").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.IncompatibleParameterErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskEnded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.DataRepositoryTaskEndedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BackupInProgress").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.BackupInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -116,6 +122,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceDoesNotSupportTagging").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.ResourceDoesNotSupportTaggingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.DataRepositoryTaskNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BackupNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.BackupNotFoundExceptionUnmarshaller.getInstance()))
@@ -178,6 +187,90 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
+     * Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code>
+     * or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any files that FSx has already exported are not reverted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FSx continues to export any files that are "in-flight" when the cancel operation is received.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FSx does not export any files that have not yet been exported.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param cancelDataRepositoryTaskRequest
+     *        Cancels a data repository task.
+     * @return Result of the CancelDataRepositoryTask operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws UnsupportedOperationException
+     *         The requested operation is not supported for this resource or API.
+     * @throws DataRepositoryTaskNotFoundException
+     *         The data repository task or tasks you specified could not be found.
+     * @throws DataRepositoryTaskEndedException
+     *         The data repository task could not be canceled because the task has already ended.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.CancelDataRepositoryTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CancelDataRepositoryTaskResult cancelDataRepositoryTask(CancelDataRepositoryTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelDataRepositoryTask(request);
+    }
+
+    @SdkInternalApi
+    final CancelDataRepositoryTaskResult executeCancelDataRepositoryTask(CancelDataRepositoryTaskRequest cancelDataRepositoryTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelDataRepositoryTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelDataRepositoryTaskRequest> request = null;
+        Response<CancelDataRepositoryTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelDataRepositoryTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelDataRepositoryTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelDataRepositoryTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelDataRepositoryTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelDataRepositoryTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a backup of an existing Amazon FSx for Windows File Server file system. Creating regular backups for your
      * file system is a best practice that complements the replication that Amazon FSx for Windows File Server performs
      * for your file system. It also enables you to restore from user modification of data.
@@ -221,7 +314,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * @throws BadRequestException
      *         A generic error indicating a failure with a client request.
      * @throws UnsupportedOperationException
-     *         An error occured.
+     *         The requested operation is not supported for this resource or API.
      * @throws FileSystemNotFoundException
      *         No Amazon FSx file systems were found based upon supplied parameters.
      * @throws BackupInProgressException
@@ -271,6 +364,87 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateBackupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBackupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an Amazon FSx for Lustre data repository task. You use data repository tasks to perform bulk operations
+     * between your Amazon FSx file system and its linked data repository. An example of a data repository task is
+     * exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links
+     * (symlinks) from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
+     * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
+     * repository tasks, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository
+     * Tasks</a>. To learn more about linking a data repository to your file system, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step 1: Create Your Amazon
+     * FSx for Lustre File System</a>.
+     * </p>
+     * 
+     * @param createDataRepositoryTaskRequest
+     * @return Result of the CreateDataRepositoryTask operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws UnsupportedOperationException
+     *         The requested operation is not supported for this resource or API.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws IncompatibleParameterErrorException
+     *         The error returned when a second request is received with the same client request token but different
+     *         parameters settings. A client request token should always uniquely identify a single request.
+     * @throws ServiceLimitExceededException
+     *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
+     *         contacting AWS Support.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @throws DataRepositoryTaskExecutingException
+     *         An existing data repository task is currently executing on the file system. Wait until the existing task
+     *         has completed, then create the new task.
+     * @sample AmazonFSx.CreateDataRepositoryTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateDataRepositoryTaskResult createDataRepositoryTask(CreateDataRepositoryTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDataRepositoryTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateDataRepositoryTaskResult executeCreateDataRepositoryTask(CreateDataRepositoryTaskRequest createDataRepositoryTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDataRepositoryTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDataRepositoryTaskRequest> request = null;
+        Response<CreateDataRepositoryTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDataRepositoryTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDataRepositoryTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataRepositoryTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDataRepositoryTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDataRepositoryTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -603,7 +777,12 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * of file systems in your account. If you pass the file system ID for a deleted file system, the
      * <a>DescribeFileSystems</a> returns a <code>FileSystemNotFound</code> error.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a data repository task is in a
+     * <code>PENDING</code> or <code>EXECUTING</code> state.
+     * </p>
+     * </note> <important>
      * <p>
      * The data in a deleted file system is also deleted and can't be recovered by any means.
      * </p>
@@ -753,6 +932,79 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBackupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the description of specific Amazon FSx for Lustre data repository tasks, if one or more
+     * <code>TaskIds</code> values are provided in the request, or if filters are used in the request. You can use
+     * filters to narrow the response to include just tasks for specific file systems, or tasks in a specific lifecycle
+     * state. Otherwise, it returns all data repository tasks owned by your AWS account in the AWS Region of the
+     * endpoint that you're calling.
+     * </p>
+     * <p>
+     * When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code> parameter
+     * to limit the number of tasks returned in a response. If more tasks remain, Amazon FSx returns a
+     * <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code>
+     * request parameter set to the value of <code>NextToken</code> from the last response.
+     * </p>
+     * 
+     * @param describeDataRepositoryTasksRequest
+     * @return Result of the DescribeDataRepositoryTasks operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws DataRepositoryTaskNotFoundException
+     *         The data repository task or tasks you specified could not be found.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.DescribeDataRepositoryTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDataRepositoryTasksResult describeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDataRepositoryTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDataRepositoryTasksResult executeDescribeDataRepositoryTasks(DescribeDataRepositoryTasksRequest describeDataRepositoryTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDataRepositoryTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDataRepositoryTasksRequest> request = null;
+        Response<DescribeDataRepositoryTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDataRepositoryTasksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDataRepositoryTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataRepositoryTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDataRepositoryTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDataRepositoryTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1089,7 +1341,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * @throws BadRequestException
      *         A generic error indicating a failure with a client request.
      * @throws UnsupportedOperationException
-     *         An error occured.
+     *         The requested operation is not supported for this resource or API.
      * @throws IncompatibleParameterErrorException
      *         The error returned when a second request is received with the same client request token but different
      *         parameters settings. A client request token should always uniquely identify a single request.

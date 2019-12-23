@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary information about an event, returned by the <a>DescribeEvents</a> operation. The <a>DescribeEventDetails</a>
- * operation also returns this information, as well as the <a>EventDescription</a> and additional event metadata.
+ * Summary information about an AWS Health event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/Event" target="_top">AWS API Documentation</a>

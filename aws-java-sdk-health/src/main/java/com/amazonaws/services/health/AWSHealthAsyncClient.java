@@ -75,6 +75,54 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * </ul>
  * <p>
+ * AWS Health integrates with AWS Organizations to provide a centralized view of AWS Health events across all accounts
+ * in your organization.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeEventsForOrganization</a>: Summary information about events across the organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeAffectedAccountsForOrganization</a>: List of accounts in your organization impacted by an event.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeEventDetailsForOrganization</a>: Detailed information about events in your organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeAffectedEntitiesForOrganization</a>: Information about AWS resources in your organization that are
+ * affected by events.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can use the following operations to enable or disable AWS Health from working with AWS Organizations.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>EnableHealthServiceAccessForOrganization</a>: Enables AWS Health to work with AWS Organizations.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DisableHealthServiceAccessForOrganization</a>: Disables AWS Health from working with AWS Organizations.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeHealthServiceStatusForOrganization</a>: Status information about enabling or disabling AWS Health from
+ * working with AWS Organizations.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * The Health API requires a Business or Enterprise support plan from <a
  * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>. Calling the Health API from an account that does not
  * have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>.
@@ -312,6 +360,41 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAffectedAccountsForOrganizationResult> describeAffectedAccountsForOrganizationAsync(
+            DescribeAffectedAccountsForOrganizationRequest request) {
+
+        return describeAffectedAccountsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAffectedAccountsForOrganizationResult> describeAffectedAccountsForOrganizationAsync(
+            final DescribeAffectedAccountsForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAffectedAccountsForOrganizationRequest, DescribeAffectedAccountsForOrganizationResult> asyncHandler) {
+        final DescribeAffectedAccountsForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAffectedAccountsForOrganizationResult>() {
+            @Override
+            public DescribeAffectedAccountsForOrganizationResult call() throws Exception {
+                DescribeAffectedAccountsForOrganizationResult result = null;
+
+                try {
+                    result = executeDescribeAffectedAccountsForOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAffectedEntitiesResult> describeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request) {
 
         return describeAffectedEntitiesAsync(request, null);
@@ -329,6 +412,41 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
 
                 try {
                     result = executeDescribeAffectedEntities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAffectedEntitiesForOrganizationResult> describeAffectedEntitiesForOrganizationAsync(
+            DescribeAffectedEntitiesForOrganizationRequest request) {
+
+        return describeAffectedEntitiesForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAffectedEntitiesForOrganizationResult> describeAffectedEntitiesForOrganizationAsync(
+            final DescribeAffectedEntitiesForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAffectedEntitiesForOrganizationRequest, DescribeAffectedEntitiesForOrganizationResult> asyncHandler) {
+        final DescribeAffectedEntitiesForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAffectedEntitiesForOrganizationResult>() {
+            @Override
+            public DescribeAffectedEntitiesForOrganizationResult call() throws Exception {
+                DescribeAffectedEntitiesForOrganizationResult result = null;
+
+                try {
+                    result = executeDescribeAffectedEntitiesForOrganization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -444,6 +562,41 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEventDetailsForOrganizationResult> describeEventDetailsForOrganizationAsync(
+            DescribeEventDetailsForOrganizationRequest request) {
+
+        return describeEventDetailsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventDetailsForOrganizationResult> describeEventDetailsForOrganizationAsync(
+            final DescribeEventDetailsForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEventDetailsForOrganizationRequest, DescribeEventDetailsForOrganizationResult> asyncHandler) {
+        final DescribeEventDetailsForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEventDetailsForOrganizationResult>() {
+            @Override
+            public DescribeEventDetailsForOrganizationResult call() throws Exception {
+                DescribeEventDetailsForOrganizationResult result = null;
+
+                try {
+                    result = executeDescribeEventDetailsForOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventTypesResult> describeEventTypesAsync(DescribeEventTypesRequest request) {
 
         return describeEventTypesAsync(request, null);
@@ -494,6 +647,145 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
 
                 try {
                     result = executeDescribeEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventsForOrganizationResult> describeEventsForOrganizationAsync(DescribeEventsForOrganizationRequest request) {
+
+        return describeEventsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventsForOrganizationResult> describeEventsForOrganizationAsync(
+            final DescribeEventsForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEventsForOrganizationRequest, DescribeEventsForOrganizationResult> asyncHandler) {
+        final DescribeEventsForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEventsForOrganizationResult>() {
+            @Override
+            public DescribeEventsForOrganizationResult call() throws Exception {
+                DescribeEventsForOrganizationResult result = null;
+
+                try {
+                    result = executeDescribeEventsForOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHealthServiceStatusForOrganizationResult> describeHealthServiceStatusForOrganizationAsync(
+            DescribeHealthServiceStatusForOrganizationRequest request) {
+
+        return describeHealthServiceStatusForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHealthServiceStatusForOrganizationResult> describeHealthServiceStatusForOrganizationAsync(
+            final DescribeHealthServiceStatusForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHealthServiceStatusForOrganizationRequest, DescribeHealthServiceStatusForOrganizationResult> asyncHandler) {
+        final DescribeHealthServiceStatusForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeHealthServiceStatusForOrganizationResult>() {
+            @Override
+            public DescribeHealthServiceStatusForOrganizationResult call() throws Exception {
+                DescribeHealthServiceStatusForOrganizationResult result = null;
+
+                try {
+                    result = executeDescribeHealthServiceStatusForOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableHealthServiceAccessForOrganizationResult> disableHealthServiceAccessForOrganizationAsync(
+            DisableHealthServiceAccessForOrganizationRequest request) {
+
+        return disableHealthServiceAccessForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableHealthServiceAccessForOrganizationResult> disableHealthServiceAccessForOrganizationAsync(
+            final DisableHealthServiceAccessForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableHealthServiceAccessForOrganizationRequest, DisableHealthServiceAccessForOrganizationResult> asyncHandler) {
+        final DisableHealthServiceAccessForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableHealthServiceAccessForOrganizationResult>() {
+            @Override
+            public DisableHealthServiceAccessForOrganizationResult call() throws Exception {
+                DisableHealthServiceAccessForOrganizationResult result = null;
+
+                try {
+                    result = executeDisableHealthServiceAccessForOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHealthServiceAccessForOrganizationResult> enableHealthServiceAccessForOrganizationAsync(
+            EnableHealthServiceAccessForOrganizationRequest request) {
+
+        return enableHealthServiceAccessForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHealthServiceAccessForOrganizationResult> enableHealthServiceAccessForOrganizationAsync(
+            final EnableHealthServiceAccessForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableHealthServiceAccessForOrganizationRequest, EnableHealthServiceAccessForOrganizationResult> asyncHandler) {
+        final EnableHealthServiceAccessForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableHealthServiceAccessForOrganizationResult>() {
+            @Override
+            public EnableHealthServiceAccessForOrganizationResult call() throws Exception {
+                EnableHealthServiceAccessForOrganizationResult result = null;
+
+                try {
+                    result = executeEnableHealthServiceAccessForOrganization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -27,6 +27,21 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAffectedAccountsForOrganizationResult> describeAffectedAccountsForOrganizationAsync(
+            DescribeAffectedAccountsForOrganizationRequest request) {
+
+        return describeAffectedAccountsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAffectedAccountsForOrganizationResult> describeAffectedAccountsForOrganizationAsync(
+            DescribeAffectedAccountsForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAffectedAccountsForOrganizationRequest, DescribeAffectedAccountsForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAffectedEntitiesResult> describeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request) {
 
         return describeAffectedEntitiesAsync(request, null);
@@ -35,6 +50,21 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     @Override
     public java.util.concurrent.Future<DescribeAffectedEntitiesResult> describeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAffectedEntitiesRequest, DescribeAffectedEntitiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAffectedEntitiesForOrganizationResult> describeAffectedEntitiesForOrganizationAsync(
+            DescribeAffectedEntitiesForOrganizationRequest request) {
+
+        return describeAffectedEntitiesForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAffectedEntitiesForOrganizationResult> describeAffectedEntitiesForOrganizationAsync(
+            DescribeAffectedEntitiesForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAffectedEntitiesForOrganizationRequest, DescribeAffectedEntitiesForOrganizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +109,21 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEventDetailsForOrganizationResult> describeEventDetailsForOrganizationAsync(
+            DescribeEventDetailsForOrganizationRequest request) {
+
+        return describeEventDetailsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventDetailsForOrganizationResult> describeEventDetailsForOrganizationAsync(
+            DescribeEventDetailsForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventDetailsForOrganizationRequest, DescribeEventDetailsForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventTypesResult> describeEventTypesAsync(DescribeEventTypesRequest request) {
 
         return describeEventTypesAsync(request, null);
@@ -100,6 +145,64 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventsForOrganizationResult> describeEventsForOrganizationAsync(DescribeEventsForOrganizationRequest request) {
+
+        return describeEventsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventsForOrganizationResult> describeEventsForOrganizationAsync(DescribeEventsForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventsForOrganizationRequest, DescribeEventsForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHealthServiceStatusForOrganizationResult> describeHealthServiceStatusForOrganizationAsync(
+            DescribeHealthServiceStatusForOrganizationRequest request) {
+
+        return describeHealthServiceStatusForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHealthServiceStatusForOrganizationResult> describeHealthServiceStatusForOrganizationAsync(
+            DescribeHealthServiceStatusForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeHealthServiceStatusForOrganizationRequest, DescribeHealthServiceStatusForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableHealthServiceAccessForOrganizationResult> disableHealthServiceAccessForOrganizationAsync(
+            DisableHealthServiceAccessForOrganizationRequest request) {
+
+        return disableHealthServiceAccessForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableHealthServiceAccessForOrganizationResult> disableHealthServiceAccessForOrganizationAsync(
+            DisableHealthServiceAccessForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableHealthServiceAccessForOrganizationRequest, DisableHealthServiceAccessForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHealthServiceAccessForOrganizationResult> enableHealthServiceAccessForOrganizationAsync(
+            EnableHealthServiceAccessForOrganizationRequest request) {
+
+        return enableHealthServiceAccessForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHealthServiceAccessForOrganizationResult> enableHealthServiceAccessForOrganizationAsync(
+            EnableHealthServiceAccessForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableHealthServiceAccessForOrganizationRequest, EnableHealthServiceAccessForOrganizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

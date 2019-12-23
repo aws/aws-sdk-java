@@ -95,6 +95,54 @@ import com.amazonaws.services.health.model.transform.*;
  * </li>
  * </ul>
  * <p>
+ * AWS Health integrates with AWS Organizations to provide a centralized view of AWS Health events across all accounts
+ * in your organization.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeEventsForOrganization</a>: Summary information about events across the organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeAffectedAccountsForOrganization</a>: List of accounts in your organization impacted by an event.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeEventDetailsForOrganization</a>: Detailed information about events in your organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeAffectedEntitiesForOrganization</a>: Information about AWS resources in your organization that are
+ * affected by events.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can use the following operations to enable or disable AWS Health from working with AWS Organizations.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>EnableHealthServiceAccessForOrganization</a>: Enables AWS Health to work with AWS Organizations.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DisableHealthServiceAccessForOrganization</a>: Disables AWS Health from working with AWS Organizations.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeHealthServiceStatusForOrganization</a>: Status information about enabling or disabling AWS Health from
+ * working with AWS Organizations.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * The Health API requires a Business or Enterprise support plan from <a
  * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>. Calling the Health API from an account that does not
  * have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>.
@@ -144,6 +192,9 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.health.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedLocale").withExceptionUnmarshaller(
                                     com.amazonaws.services.health.model.transform.UnsupportedLocaleExceptionUnmarshaller.getInstance()))
@@ -352,6 +403,68 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
 
     /**
      * <p>
+     * Returns a list of accounts in the organization from AWS Organizations that are affected by the provided event.
+     * </p>
+     * <p>
+     * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
+     * call the <a>EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * </p>
+     * 
+     * @param describeAffectedAccountsForOrganizationRequest
+     * @return Result of the DescribeAffectedAccountsForOrganization operation returned by the service.
+     * @throws InvalidPaginationTokenException
+     *         The specified pagination token (<code>nextToken</code>) is not valid.
+     * @sample AWSHealth.DescribeAffectedAccountsForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedAccountsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAffectedAccountsForOrganizationResult describeAffectedAccountsForOrganization(DescribeAffectedAccountsForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAffectedAccountsForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAffectedAccountsForOrganizationResult executeDescribeAffectedAccountsForOrganization(
+            DescribeAffectedAccountsForOrganizationRequest describeAffectedAccountsForOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAffectedAccountsForOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAffectedAccountsForOrganizationRequest> request = null;
+        Response<DescribeAffectedAccountsForOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAffectedAccountsForOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAffectedAccountsForOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAffectedAccountsForOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAffectedAccountsForOrganizationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeAffectedAccountsForOrganizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of entities that have been affected by the specified events, based on the specified filter
      * criteria. Entities can refer to individual customer resources, groups of customer resources, or any other
      * construct, depending on the AWS service. Events that have impact beyond that of the affected entities, or where
@@ -406,6 +519,76 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAffectedEntitiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeAffectedEntitiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of entities that have been affected by one or more events for one or more accounts in your
+     * organization in AWS Organizations, based on the filter criteria. Entities can refer to individual customer
+     * resources, groups of customer resources, or any other construct, depending on the AWS service.
+     * </p>
+     * <p>
+     * At least one event ARN and account ID are required. Results are sorted by the <code>lastUpdatedTime</code> of the
+     * entity, starting with the most recent.
+     * </p>
+     * <p>
+     * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
+     * call the <a>EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * </p>
+     * 
+     * @param describeAffectedEntitiesForOrganizationRequest
+     * @return Result of the DescribeAffectedEntitiesForOrganization operation returned by the service.
+     * @throws InvalidPaginationTokenException
+     *         The specified pagination token (<code>nextToken</code>) is not valid.
+     * @throws UnsupportedLocaleException
+     *         The specified locale is not supported.
+     * @sample AWSHealth.DescribeAffectedEntitiesForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntitiesForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAffectedEntitiesForOrganizationResult describeAffectedEntitiesForOrganization(DescribeAffectedEntitiesForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAffectedEntitiesForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAffectedEntitiesForOrganizationResult executeDescribeAffectedEntitiesForOrganization(
+            DescribeAffectedEntitiesForOrganizationRequest describeAffectedEntitiesForOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAffectedEntitiesForOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAffectedEntitiesForOrganizationRequest> request = null;
+        Response<DescribeAffectedEntitiesForOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAffectedEntitiesForOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAffectedEntitiesForOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAffectedEntitiesForOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAffectedEntitiesForOrganizationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeAffectedEntitiesForOrganizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -533,7 +716,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
     /**
      * <p>
      * Returns detailed information about one or more specified events. Information includes standard event data
-     * (region, service, etc., as returned by <a>DescribeEvents</a>), a detailed event description, and possible
+     * (region, service, and so on, as returned by <a>DescribeEvents</a>), a detailed event description, and possible
      * additional metadata that depends upon the nature of the event. Affected entities are not included; to retrieve
      * those, use the <a>DescribeAffectedEntities</a> operation.
      * </p>
@@ -581,6 +764,72 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEventDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEventDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns detailed information about one or more specified events for one or more accounts in your organization.
+     * Information includes standard event data (Region, service, and so on, as returned by
+     * <a>DescribeEventsForOrganization</a>, a detailed event description, and possible additional metadata that depends
+     * upon the nature of the event. Affected entities are not included; to retrieve those, use the
+     * <a>DescribeAffectedEntitiesForOrganization</a> operation.
+     * </p>
+     * <p>
+     * Before you can call this operation, you must first enable AWS Health to work with AWS Organizations. To do this,
+     * call the <a>EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * </p>
+     * 
+     * @param describeEventDetailsForOrganizationRequest
+     * @return Result of the DescribeEventDetailsForOrganization operation returned by the service.
+     * @throws UnsupportedLocaleException
+     *         The specified locale is not supported.
+     * @sample AWSHealth.DescribeEventDetailsForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetailsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEventDetailsForOrganizationResult describeEventDetailsForOrganization(DescribeEventDetailsForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventDetailsForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventDetailsForOrganizationResult executeDescribeEventDetailsForOrganization(
+            DescribeEventDetailsForOrganizationRequest describeEventDetailsForOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEventDetailsForOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEventDetailsForOrganizationRequest> request = null;
+        Response<DescribeEventDetailsForOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEventDetailsForOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEventDetailsForOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventDetailsForOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEventDetailsForOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEventDetailsForOrganizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -703,6 +952,262 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about events across your organization in AWS Organizations, meeting the specified filter
+     * criteria. Events are returned in a summary form and do not include the accounts impacted, detailed description,
+     * any additional metadata that depends on the event type, or any affected resources. To retrieve that information,
+     * use the <a>DescribeAffectedAccountsForOrganization</a>, <a>DescribeEventDetailsForOrganization</a>, and
+     * <a>DescribeAffectedEntitiesForOrganization</a> operations.
+     * </p>
+     * <p>
+     * If no filter criteria are specified, all events across your organization are returned. Results are sorted by
+     * <code>lastModifiedTime</code>, starting with the most recent.
+     * </p>
+     * <p>
+     * Before you can call this operation, you must first enable Health to work with AWS Organizations. To do this, call
+     * the <a>EnableHealthServiceAccessForOrganization</a> operation from your organization's master account.
+     * </p>
+     * 
+     * @param describeEventsForOrganizationRequest
+     * @return Result of the DescribeEventsForOrganization operation returned by the service.
+     * @throws InvalidPaginationTokenException
+     *         The specified pagination token (<code>nextToken</code>) is not valid.
+     * @throws UnsupportedLocaleException
+     *         The specified locale is not supported.
+     * @sample AWSHealth.DescribeEventsForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEventsForOrganizationResult describeEventsForOrganization(DescribeEventsForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventsForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsForOrganizationResult executeDescribeEventsForOrganization(DescribeEventsForOrganizationRequest describeEventsForOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEventsForOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEventsForOrganizationRequest> request = null;
+        Response<DescribeEventsForOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEventsForOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEventsForOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventsForOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEventsForOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEventsForOrganizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation provides status information on enabling or disabling AWS Health to work with your organization. To
+     * call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not
+     * recommended) in the organization's master account.
+     * </p>
+     * 
+     * @param describeHealthServiceStatusForOrganizationRequest
+     * @return Result of the DescribeHealthServiceStatusForOrganization operation returned by the service.
+     * @sample AWSHealth.DescribeHealthServiceStatusForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeHealthServiceStatusForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeHealthServiceStatusForOrganizationResult describeHealthServiceStatusForOrganization(DescribeHealthServiceStatusForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeHealthServiceStatusForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeHealthServiceStatusForOrganizationResult executeDescribeHealthServiceStatusForOrganization(
+            DescribeHealthServiceStatusForOrganizationRequest describeHealthServiceStatusForOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeHealthServiceStatusForOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeHealthServiceStatusForOrganizationRequest> request = null;
+        Response<DescribeHealthServiceStatusForOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeHealthServiceStatusForOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeHealthServiceStatusForOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHealthServiceStatusForOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeHealthServiceStatusForOrganizationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeHealthServiceStatusForOrganizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Calling this operation disables Health from working with AWS Organizations. This does not remove the Service
+     * Linked Role (SLR) from the the master account in your organization. Use the IAM console, API, or AWS CLI to
+     * remove the SLR if desired. To call this operation, you must sign in as an IAM user, assume an IAM role, or sign
+     * in as the root user (not recommended) in the organization's master account.
+     * </p>
+     * 
+     * @param disableHealthServiceAccessForOrganizationRequest
+     * @return Result of the DisableHealthServiceAccessForOrganization operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         <a>EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete
+     *         before trying again. To get the current status, use the <a>DescribeHealthServiceStatusForOrganization</a>
+     *         operation.
+     * @sample AWSHealth.DisableHealthServiceAccessForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DisableHealthServiceAccessForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableHealthServiceAccessForOrganizationResult disableHealthServiceAccessForOrganization(DisableHealthServiceAccessForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableHealthServiceAccessForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DisableHealthServiceAccessForOrganizationResult executeDisableHealthServiceAccessForOrganization(
+            DisableHealthServiceAccessForOrganizationRequest disableHealthServiceAccessForOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableHealthServiceAccessForOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableHealthServiceAccessForOrganizationRequest> request = null;
+        Response<DisableHealthServiceAccessForOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableHealthServiceAccessForOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disableHealthServiceAccessForOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableHealthServiceAccessForOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisableHealthServiceAccessForOrganizationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisableHealthServiceAccessForOrganizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Calling this operation enables AWS Health to work with AWS Organizations. This applies a Service Linked Role
+     * (SLR) to the master account in the organization. To learn more about the steps in this process, visit enabling
+     * service access for AWS Health in AWS Organizations. To call this operation, you must sign in as an IAM user,
+     * assume an IAM role, or sign in as the root user (not recommended) in the organization's master account.
+     * </p>
+     * 
+     * @param enableHealthServiceAccessForOrganizationRequest
+     * @return Result of the EnableHealthServiceAccessForOrganization operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         <a>EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete
+     *         before trying again. To get the current status, use the <a>DescribeHealthServiceStatusForOrganization</a>
+     *         operation.
+     * @sample AWSHealth.EnableHealthServiceAccessForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EnableHealthServiceAccessForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EnableHealthServiceAccessForOrganizationResult enableHealthServiceAccessForOrganization(EnableHealthServiceAccessForOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableHealthServiceAccessForOrganization(request);
+    }
+
+    @SdkInternalApi
+    final EnableHealthServiceAccessForOrganizationResult executeEnableHealthServiceAccessForOrganization(
+            EnableHealthServiceAccessForOrganizationRequest enableHealthServiceAccessForOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableHealthServiceAccessForOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableHealthServiceAccessForOrganizationRequest> request = null;
+        Response<EnableHealthServiceAccessForOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableHealthServiceAccessForOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(enableHealthServiceAccessForOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Health");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableHealthServiceAccessForOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EnableHealthServiceAccessForOrganizationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new EnableHealthServiceAccessForOrganizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

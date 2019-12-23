@@ -28,7 +28,17 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public CancelDataRepositoryTaskResult cancelDataRepositoryTask(CancelDataRepositoryTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBackupResult createBackup(CreateBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDataRepositoryTaskResult createDataRepositoryTask(CreateDataRepositoryTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,6 +64,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
 
     @Override
     public DescribeBackupsResult describeBackups(DescribeBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDataRepositoryTasksResult describeDataRepositoryTasks(DescribeDataRepositoryTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -4018,7 +4018,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         URI uri = clientOptions.isAccelerateModeEnabled() ? endpoint : request.getEndpoint();
 
         Signer signer;
-        if (isArn(bucketName)) {
+        if (isAccessPointArn(bucketName)) {
             Arn resourceArn = Arn.fromString(bucketName);
             S3Resource s3Resource = S3ArnConverter.getInstance().convertArn(resourceArn);
             String region = s3Resource.getRegion();
@@ -4685,7 +4685,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         // If the bucketName appears to be an ARN, parse the ARN as an S3 resource and rewrite target resource arguments
         // based on the parsed resource.
-        if (bucketName != null && isArn(bucketName)) {
+        if (isAccessPointArn(bucketName)) {
             Arn resourceArn = Arn.fromString(bucketName);
             S3Resource s3Resource = S3ArnConverter.getInstance().convertArn(resourceArn);
 
@@ -5105,13 +5105,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private boolean shouldPerformHeadRequestToFindRegion(Request<?> request, String bucket) {
-        return bucket != null && !isArn(bucket) &&
+        return bucket != null && !isAccessPointArn(bucket) &&
                !(request.getOriginalRequest() instanceof CreateBucketRequest) &&
                bucketRegionShouldBeCached(request);
     }
 
-    private boolean isArn(String s) {
-        return s != null && s.startsWith("arn:");
+    private boolean isAccessPointArn(String s) {
+        return s != null && s.startsWith("arn:") && s.contains(":accesspoint");
     }
 
     private boolean bucketRegionShouldBeCached(Request<?> request) {

@@ -35,6 +35,75 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
+     * Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code>
+     * or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any files that FSx has already exported are not reverted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FSx continues to export any files that are "in-flight" when the cancel operation is received.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FSx does not export any files that have not yet been exported.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param cancelDataRepositoryTaskRequest
+     *        Cancels a data repository task.
+     * @return A Java Future containing the result of the CancelDataRepositoryTask operation returned by the service.
+     * @sample AmazonFSxAsync.CancelDataRepositoryTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDataRepositoryTaskResult> cancelDataRepositoryTaskAsync(CancelDataRepositoryTaskRequest cancelDataRepositoryTaskRequest);
+
+    /**
+     * <p>
+     * Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code>
+     * or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any files that FSx has already exported are not reverted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FSx continues to export any files that are "in-flight" when the cancel operation is received.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FSx does not export any files that have not yet been exported.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param cancelDataRepositoryTaskRequest
+     *        Cancels a data repository task.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelDataRepositoryTask operation returned by the service.
+     * @sample AmazonFSxAsyncHandler.CancelDataRepositoryTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDataRepositoryTaskResult> cancelDataRepositoryTaskAsync(CancelDataRepositoryTaskRequest cancelDataRepositoryTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelDataRepositoryTaskRequest, CancelDataRepositoryTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a backup of an existing Amazon FSx for Windows File Server file system. Creating regular backups for your
      * file system is a best practice that complements the replication that Amazon FSx for Windows File Server performs
      * for your file system. It also enables you to restore from user modification of data.
@@ -133,6 +202,55 @@ public interface AmazonFSxAsync extends AmazonFSx {
      */
     java.util.concurrent.Future<CreateBackupResult> createBackupAsync(CreateBackupRequest createBackupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateBackupRequest, CreateBackupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon FSx for Lustre data repository task. You use data repository tasks to perform bulk operations
+     * between your Amazon FSx file system and its linked data repository. An example of a data repository task is
+     * exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links
+     * (symlinks) from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
+     * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
+     * repository tasks, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository
+     * Tasks</a>. To learn more about linking a data repository to your file system, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step 1: Create Your Amazon
+     * FSx for Lustre File System</a>.
+     * </p>
+     * 
+     * @param createDataRepositoryTaskRequest
+     * @return A Java Future containing the result of the CreateDataRepositoryTask operation returned by the service.
+     * @sample AmazonFSxAsync.CreateDataRepositoryTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataRepositoryTaskResult> createDataRepositoryTaskAsync(CreateDataRepositoryTaskRequest createDataRepositoryTaskRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon FSx for Lustre data repository task. You use data repository tasks to perform bulk operations
+     * between your Amazon FSx file system and its linked data repository. An example of a data repository task is
+     * exporting any data and metadata changes, including POSIX metadata, to files, directories, and symbolic links
+     * (symlinks) from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
+     * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
+     * repository tasks, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository
+     * Tasks</a>. To learn more about linking a data repository to your file system, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step 1: Create Your Amazon
+     * FSx for Lustre File System</a>.
+     * </p>
+     * 
+     * @param createDataRepositoryTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDataRepositoryTask operation returned by the service.
+     * @sample AmazonFSxAsyncHandler.CreateDataRepositoryTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataRepositoryTaskResult> createDataRepositoryTaskAsync(CreateDataRepositoryTaskRequest createDataRepositoryTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDataRepositoryTaskRequest, CreateDataRepositoryTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -416,7 +534,12 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * of file systems in your account. If you pass the file system ID for a deleted file system, the
      * <a>DescribeFileSystems</a> returns a <code>FileSystemNotFound</code> error.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a data repository task is in a
+     * <code>PENDING</code> or <code>EXECUTING</code> state.
+     * </p>
+     * </note> <important>
      * <p>
      * The data in a deleted file system is also deleted and can't be recovered by any means.
      * </p>
@@ -446,7 +569,12 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * of file systems in your account. If you pass the file system ID for a deleted file system, the
      * <a>DescribeFileSystems</a> returns a <code>FileSystemNotFound</code> error.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a data repository task is in a
+     * <code>PENDING</code> or <code>EXECUTING</code> state.
+     * </p>
+     * </note> <important>
      * <p>
      * The data in a deleted file system is also deleted and can't be recovered by any means.
      * </p>
@@ -560,6 +688,59 @@ public interface AmazonFSxAsync extends AmazonFSx {
      */
     java.util.concurrent.Future<DescribeBackupsResult> describeBackupsAsync(DescribeBackupsRequest describeBackupsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeBackupsRequest, DescribeBackupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the description of specific Amazon FSx for Lustre data repository tasks, if one or more
+     * <code>TaskIds</code> values are provided in the request, or if filters are used in the request. You can use
+     * filters to narrow the response to include just tasks for specific file systems, or tasks in a specific lifecycle
+     * state. Otherwise, it returns all data repository tasks owned by your AWS account in the AWS Region of the
+     * endpoint that you're calling.
+     * </p>
+     * <p>
+     * When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code> parameter
+     * to limit the number of tasks returned in a response. If more tasks remain, Amazon FSx returns a
+     * <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code>
+     * request parameter set to the value of <code>NextToken</code> from the last response.
+     * </p>
+     * 
+     * @param describeDataRepositoryTasksRequest
+     * @return A Java Future containing the result of the DescribeDataRepositoryTasks operation returned by the service.
+     * @sample AmazonFSxAsync.DescribeDataRepositoryTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataRepositoryTasksResult> describeDataRepositoryTasksAsync(
+            DescribeDataRepositoryTasksRequest describeDataRepositoryTasksRequest);
+
+    /**
+     * <p>
+     * Returns the description of specific Amazon FSx for Lustre data repository tasks, if one or more
+     * <code>TaskIds</code> values are provided in the request, or if filters are used in the request. You can use
+     * filters to narrow the response to include just tasks for specific file systems, or tasks in a specific lifecycle
+     * state. Otherwise, it returns all data repository tasks owned by your AWS account in the AWS Region of the
+     * endpoint that you're calling.
+     * </p>
+     * <p>
+     * When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code> parameter
+     * to limit the number of tasks returned in a response. If more tasks remain, Amazon FSx returns a
+     * <code>NextToken</code> value in the response. In this case, send a later request with the <code>NextToken</code>
+     * request parameter set to the value of <code>NextToken</code> from the last response.
+     * </p>
+     * 
+     * @param describeDataRepositoryTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDataRepositoryTasks operation returned by the service.
+     * @sample AmazonFSxAsyncHandler.DescribeDataRepositoryTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataRepositoryTasksResult> describeDataRepositoryTasksAsync(
+            DescribeDataRepositoryTasksRequest describeDataRepositoryTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDataRepositoryTasksRequest, DescribeDataRepositoryTasksResult> asyncHandler);
 
     /**
      * <p>

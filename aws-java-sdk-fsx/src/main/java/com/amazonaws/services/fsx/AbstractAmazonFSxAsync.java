@@ -27,6 +27,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     }
 
     @Override
+    public java.util.concurrent.Future<CancelDataRepositoryTaskResult> cancelDataRepositoryTaskAsync(CancelDataRepositoryTaskRequest request) {
+
+        return cancelDataRepositoryTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDataRepositoryTaskResult> cancelDataRepositoryTaskAsync(CancelDataRepositoryTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelDataRepositoryTaskRequest, CancelDataRepositoryTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBackupResult> createBackupAsync(CreateBackupRequest request) {
 
         return createBackupAsync(request, null);
@@ -35,6 +48,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     @Override
     public java.util.concurrent.Future<CreateBackupResult> createBackupAsync(CreateBackupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateBackupRequest, CreateBackupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataRepositoryTaskResult> createDataRepositoryTaskAsync(CreateDataRepositoryTaskRequest request) {
+
+        return createDataRepositoryTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataRepositoryTaskResult> createDataRepositoryTaskAsync(CreateDataRepositoryTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDataRepositoryTaskRequest, CreateDataRepositoryTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,6 +126,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     @Override
     public java.util.concurrent.Future<DescribeBackupsResult> describeBackupsAsync(DescribeBackupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBackupsRequest, DescribeBackupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDataRepositoryTasksResult> describeDataRepositoryTasksAsync(DescribeDataRepositoryTasksRequest request) {
+
+        return describeDataRepositoryTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDataRepositoryTasksResult> describeDataRepositoryTasksAsync(DescribeDataRepositoryTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDataRepositoryTasksRequest, DescribeDataRepositoryTasksResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

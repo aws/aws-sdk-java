@@ -728,6 +728,12 @@ public class AmazonHttpClient {
                 throw handleInterruptedException(ie);
             } catch (AbortedException ae) {
                 throw handleAbortedException(ae);
+            } finally {
+                if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
+                    // There might be a race condition that the timeout tracker executed before the call to cancel(),
+                    // which means it set this thread's interrupt flag, so just clear the interrupt flag
+                    Thread.interrupted();
+                }
             }
         }
 
@@ -740,6 +746,7 @@ public class AmazonHttpClient {
             ClientExecutionAbortTrackerTask clientExecutionTrackerTask =
                     clientExecutionTimer.startTimer(getClientExecutionTimeout(requestConfig));
             Response<Output> outputResponse;
+
             try {
                 executionContext.setClientExecutionTrackerTask(clientExecutionTrackerTask);
                 outputResponse = doExecute();
@@ -749,13 +756,6 @@ public class AmazonHttpClient {
                 // interrupt flag, it won't do so later. Every code path executed after this line *must* call
                 // timeoutTracker.hasTimeoutExpired() and appropriately clear the interrupt flag if it returns true.
                 executionContext.getClientExecutionTrackerTask().cancelTask();
-            }
-
-            if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
-                // The timeout tracker executed before the call to cancel(), which means it set this thread's interrupt
-                // flag. However, the execute() call returned before we raised an InterruptedException, so just clear the
-                // interrupt flag and return the result we got back.
-                Thread.interrupted();
             }
 
             return outputResponse;
