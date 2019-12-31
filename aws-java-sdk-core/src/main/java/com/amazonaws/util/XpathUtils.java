@@ -22,6 +22,7 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.Date;
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -166,7 +167,24 @@ public class XpathUtils {
         is = new NamespaceRemovingInputStream(is);
         // DocumentBuilderFactory is not thread safe
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+        factory.setXIncludeAware(false);
+        factory.setExpandEntityReferences(false);
+
+        factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+        if (isXerces(factory)) {
+            factory.setAttribute("http://xml.org/sax/features/external-general-entities", "");
+            factory.setAttribute("http://xml.org/sax/features/external-parameter-entities", "");
+            factory.setAttribute("http://apache.org/xml/features/nonvalidating/load-external-dtd", "");
+            factory.setAttribute("http://apache.org/xml/features/disallow-doctype-decl", "");
+        } else {
+            factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalDTD", "");
+            factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalSchema", "");
+        }
+
         DocumentBuilder builder = factory.newDocumentBuilder();
+
         // ensure that parser writes error/warning messages to the logger
         // rather than stderr
         builder.setErrorHandler(ERROR_HANDLER);
@@ -614,5 +632,18 @@ public class XpathUtils {
      */
     private static boolean isEmptyString(String s) {
         return s == null || s.trim().length() == 0;
+    }
+
+    /**
+     * Check if an instance of DocumentBuilderFactory is provided
+     * by Apache Xerces.
+     *
+     * @param factory The instance of DocumentBuilderFactory.
+     * @return True if the instance of DocumentBuilderFactory is provided
+     *         by Apache Xerces, false otherwise.
+     */
+    private static boolean isXerces(DocumentBuilderFactory factory) {
+        return factory.getClass().getCanonicalName()
+                .startsWith("org.apache.xerces.");
     }
 }

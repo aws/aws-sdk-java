@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -114,6 +115,21 @@ public class RegionMetadataParser {
             DocumentBuilderFactory factory =
                 DocumentBuilderFactory.newInstance();
 
+            factory.setXIncludeAware(false);
+            factory.setExpandEntityReferences(false);
+
+            factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+
+            if (isXerces(factory)) {
+                factory.setAttribute("http://xml.org/sax/features/external-general-entities", "");
+                factory.setAttribute("http://xml.org/sax/features/external-parameter-entities", "");
+                factory.setAttribute("http://apache.org/xml/features/nonvalidating/load-external-dtd", "");
+                factory.setAttribute("http://apache.org/xml/features/disallow-doctype-decl", "");
+            } else {
+                factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalDTD", "");
+                factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalSchema", "");
+            }
+
             DocumentBuilder documentBuilder = factory.newDocumentBuilder();
             document = documentBuilder.parse(input);
 
@@ -207,5 +223,18 @@ public class RegionMetadataParser {
      */
     private static boolean verifyLegacyEndpoint(String endpoint) {
         return endpoint.endsWith(".amazonaws.com");
+    }
+
+    /**
+     * Check if an instance of DocumentBuilderFactory is provided
+     * by Apache Xerces.
+     *
+     * @param factory The instance of DocumentBuilderFactory.
+     * @return True if the instance of DocumentBuilderFactory is provided
+     *         by Apache Xerces, false otherwise.
+     */
+    private static boolean isXerces(DocumentBuilderFactory factory) {
+        return factory.getClass().getCanonicalName()
+                .startsWith("org.apache.xerces.");
     }
 }
