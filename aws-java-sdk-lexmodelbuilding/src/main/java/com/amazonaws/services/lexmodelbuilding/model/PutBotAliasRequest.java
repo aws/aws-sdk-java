@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String checksum;
     /**
      * <p>
-     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * Settings for conversation logs for the alias.
      * </p>
      */
     private ConversationLogsRequest conversationLogs;
@@ -331,11 +331,11 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * Settings for conversation logs for the alias.
      * </p>
      * 
      * @param conversationLogs
-     *        Settings that determine how Amazon Lex uses conversation logs for the alias.
+     *        Settings for conversation logs for the alias.
      */
 
     public void setConversationLogs(ConversationLogsRequest conversationLogs) {
@@ -344,10 +344,10 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * Settings for conversation logs for the alias.
      * </p>
      * 
-     * @return Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * @return Settings for conversation logs for the alias.
      */
 
     public ConversationLogsRequest getConversationLogs() {
@@ -356,11 +356,11 @@ public class PutBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Settings that determine how Amazon Lex uses conversation logs for the alias.
+     * Settings for conversation logs for the alias.
      * </p>
      * 
      * @param conversationLogs
-     *        Settings that determine how Amazon Lex uses conversation logs for the alias.
+     *        Settings for conversation logs for the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

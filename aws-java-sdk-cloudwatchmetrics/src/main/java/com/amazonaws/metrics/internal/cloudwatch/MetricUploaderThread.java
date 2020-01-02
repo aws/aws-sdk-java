@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,13 @@
  */
 package com.amazonaws.metrics.internal.cloudwatch;
 
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.client.builder.AwsClientBuilder;
+import com.amazonaws.services.cloudwatch.AmazonCloudWatch;
+import com.amazonaws.services.cloudwatch.AmazonCloudWatchClientBuilder;
+import com.amazonaws.util.AwsHostNameUtils;
+import com.amazonaws.util.ValidationUtils;
 import java.util.concurrent.BlockingQueue;
 
 import org.apache.commons.logging.Log;
@@ -27,11 +34,12 @@ import com.amazonaws.util.VersionInfoUtils;
 /**
  * A internal daemon thread used to upload request metrics to Amazon CloudWatch.
  */
+@SdkInternalApi
 class MetricUploaderThread extends Thread {
     private static final String USER_AGENT = MetricUploaderThread.class.getName() + "/" + VersionInfoUtils.getVersion();
     private static final String THREAD_NAME = "java-sdk-metric-uploader";
     private volatile boolean cancelled;
-    private final AmazonCloudWatchClient cloudwatchClient;
+    private final AmazonCloudWatch cloudwatchClient;
     private final Log log = LogFactory.getLog(getClass());
     private final BlockingRequestBuilder qIterator;
 
@@ -42,36 +50,43 @@ class MetricUploaderThread extends Thread {
              createCloudWatchClient(config));
     }
 
-    private static AmazonCloudWatchClient createCloudWatchClient(
+    private static AmazonCloudWatch createCloudWatchClient(
             CloudWatchMetricConfig config) {
-        AmazonCloudWatchClient amazonCloudWatchClient = null;
-        if (config.getCredentialsProvider() == null && config.getClientConfiguration() == null) {
-            amazonCloudWatchClient = new AmazonCloudWatchClient();
-        } else if (config.getCredentialsProvider() != null && config.getClientConfiguration() == null) {
-            amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider());
-        } else if (config.getClientConfiguration() != null && config.getCredentialsProvider() == null) {
-            amazonCloudWatchClient = new AmazonCloudWatchClient(config.getClientConfiguration());
-        } else if (config.getClientConfiguration() != null && config.getCredentialsProvider() != null) {
-            amazonCloudWatchClient = new AmazonCloudWatchClient(config.getCredentialsProvider(),
-                    config.getClientConfiguration());
+
+        if (config.getCloudWatchEndPoint() != null && config.getEndpointConfiguration() != null) {
+            throw new IllegalArgumentException("Both cloudWatchEndpoint and endpointConfiguration are specified and "
+                                               + "only one should be specified (cloudWatchEndpoint is deprecated in favor of"
+                                               + " endpointConfiguration)");
         }
-        return amazonCloudWatchClient;
+
+        AmazonCloudWatchClientBuilder amazonCloudWatchClientBuilder = AmazonCloudWatchClient.builder();
+
+        amazonCloudWatchClientBuilder.withClientConfiguration(config.getClientConfiguration());
+        amazonCloudWatchClientBuilder.withCredentials(config.getCredentialsProvider());
+        amazonCloudWatchClientBuilder.withEndpointConfiguration(config.getEndpointConfiguration());
+
+        if (config.getCloudWatchEndPoint() != null) {
+            String cloudWatchEndPoint = config.getCloudWatchEndPoint();
+            String region = AwsHostNameUtils.parseRegion(cloudWatchEndPoint, AmazonCloudWatch.ENDPOINT_PREFIX);
+            amazonCloudWatchClientBuilder.withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(cloudWatchEndPoint, region));
+        }
+
+        return amazonCloudWatchClientBuilder.build();
     }
 
-
+    @SdkTestInternalApi
     MetricUploaderThread(CloudWatchMetricConfig config,
         BlockingQueue<MetricDatum> queue,
-        AmazonCloudWatchClient client)
+        AmazonCloudWatch client)
     {
         super(THREAD_NAME);
-        if (config == null || queue == null) {
-            throw new IllegalArgumentException();
-        }
+
+        ValidationUtils.assertNotNull(config, "config");
+        ValidationUtils.assertNotNull(queue, "queue");
+
         this.cloudwatchClient = client;
         this.qIterator = new BlockingRequestBuilder(config, queue);
-        String endpoint = config.getCloudWatchEndPoint();
-        if (endpoint != null)
-            cloudwatchClient.setEndpoint(endpoint);
+
         this.setPriority(MIN_PRIORITY);
         setDaemon(true);
     }
@@ -100,8 +115,8 @@ class MetricUploaderThread extends Thread {
 
     void cancel() { cancelled = true; }
 
-    public AmazonCloudWatchClient getCloudwatchClient() {
-        return cloudwatchClient;
+    AmazonCloudWatchClient getCloudwatchClient() {
+        return (AmazonCloudWatchClient) cloudwatchClient;
     }
 
     private void appendUserAgent(PutMetricDataRequest request) {

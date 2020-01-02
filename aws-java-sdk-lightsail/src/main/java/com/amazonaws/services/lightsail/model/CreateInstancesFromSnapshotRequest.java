@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,9 +52,16 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * operation to return information about your existing snapshots.
      * </p>
      * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>source instance name</code> parameter. The
      * <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.
      * </p>
+     * </li>
+     * </ul>
      */
     private String instanceSnapshotName;
     /**
@@ -106,25 +113,30 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The name of the source instance from which the source automatic snapshot was created.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The
      * <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      */
     private String sourceInstanceName;
     /**
      * <p>
-     * The date of the automatic snapshot to use for the new instance.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation
+     * to identify the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -142,15 +154,15 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      */
     private String restoreDate;
     /**
@@ -158,17 +170,24 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * A Boolean value to indicate whether to use the latest available automatic snapshot.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      */
     private Boolean useLatestRestorableAutoSnapshot;
 
@@ -367,17 +386,31 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * operation to return information about your existing snapshots.
      * </p>
      * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>source instance name</code> parameter. The
      * <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceSnapshotName
      *        The name of the instance snapshot on which you are basing your new instances. Use the get instance
      *        snapshots operation to return information about your existing snapshots.</p>
      *        <p>
+     *        Constraint:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        This parameter cannot be defined together with the <code>source instance name</code> parameter. The
      *        <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually
      *        exclusive.
+     *        </p>
+     *        </li>
      */
 
     public void setInstanceSnapshotName(String instanceSnapshotName) {
@@ -390,16 +423,30 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * operation to return information about your existing snapshots.
      * </p>
      * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>source instance name</code> parameter. The
      * <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of the instance snapshot on which you are basing your new instances. Use the get instance
      *         snapshots operation to return information about your existing snapshots.</p>
      *         <p>
+     *         Constraint:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
      *         This parameter cannot be defined together with the <code>source instance name</code> parameter. The
      *         <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually
      *         exclusive.
+     *         </p>
+     *         </li>
      */
 
     public String getInstanceSnapshotName() {
@@ -412,17 +459,31 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * operation to return information about your existing snapshots.
      * </p>
      * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>source instance name</code> parameter. The
      * <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually exclusive.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param instanceSnapshotName
      *        The name of the instance snapshot on which you are basing your new instances. Use the get instance
      *        snapshots operation to return information about your existing snapshots.</p>
      *        <p>
+     *        Constraint:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        This parameter cannot be defined together with the <code>source instance name</code> parameter. The
      *        <code>instance snapshot name</code> and <code>source instance name</code> parameters are mutually
      *        exclusive.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -776,32 +837,46 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The name of the source instance from which the source automatic snapshot was created.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The
      * <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param sourceInstanceName
      *        The name of the source instance from which the source automatic snapshot was created.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The
      *        <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually
      *        exclusive.
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      */
 
     public void setSourceInstanceName(String sourceInstanceName) {
@@ -813,31 +888,45 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The name of the source instance from which the source automatic snapshot was created.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The
      * <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @return The name of the source instance from which the source automatic snapshot was created.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The
      *         <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually
      *         exclusive.
      *         </p>
-     *         <note>
+     *         </li>
+     *         <li>
      *         <p>
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public String getSourceInstanceName() {
@@ -849,32 +938,46 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * The name of the source instance from which the source automatic snapshot was created.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The
      * <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param sourceInstanceName
      *        The name of the source instance from which the source automatic snapshot was created.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The
      *        <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually
      *        exclusive.
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -885,10 +988,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date of the automatic snapshot to use for the new instance.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation
+     * to identify the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -906,22 +1007,19 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param restoreDate
-     *        The date of the automatic snapshot to use for the new instance.</p>
-     *        <p>
-     *        Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
-     *        snapshots.
-     *        </p>
+     *        The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code>
+     *        operation to identify the dates of the available automatic snapshots.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -938,14 +1036,14 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        are mutually exclusive.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
+     *        <li>
      *        <p>
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      */
 
     public void setRestoreDate(String restoreDate) {
@@ -954,10 +1052,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date of the automatic snapshot to use for the new instance.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation
+     * to identify the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -975,21 +1071,18 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
-     * @return The date of the automatic snapshot to use for the new instance.</p>
-     *         <p>
-     *         Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
-     *         snapshots.
-     *         </p>
+     * @return The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code>
+     *         operation to identify the dates of the available automatic snapshots.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1006,14 +1099,14 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *         are mutually exclusive.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
+     *         <li>
      *         <p>
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public String getRestoreDate() {
@@ -1022,10 +1115,8 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The date of the automatic snapshot to use for the new instance.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation
+     * to identify the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -1043,22 +1134,19 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param restoreDate
-     *        The date of the automatic snapshot to use for the new instance.</p>
-     *        <p>
-     *        Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
-     *        snapshots.
-     *        </p>
+     *        The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code>
+     *        operation to identify the dates of the available automatic snapshots.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1075,14 +1163,14 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      *        are mutually exclusive.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
+     *        <li>
      *        <p>
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1096,32 +1184,46 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * A Boolean value to indicate whether to use the latest available automatic snapshot.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param useLatestRestorableAutoSnapshot
      *        A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *        <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *        exclusive.
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      */
 
     public void setUseLatestRestorableAutoSnapshot(Boolean useLatestRestorableAutoSnapshot) {
@@ -1133,31 +1235,45 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * A Boolean value to indicate whether to use the latest available automatic snapshot.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @return A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *         <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *         exclusive.
      *         </p>
-     *         <note>
+     *         </li>
+     *         <li>
      *         <p>
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public Boolean getUseLatestRestorableAutoSnapshot() {
@@ -1169,32 +1285,46 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * A Boolean value to indicate whether to use the latest available automatic snapshot.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param useLatestRestorableAutoSnapshot
      *        A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *        <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *        exclusive.
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
      *        Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *        see the <a href=
      *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1208,31 +1338,45 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
      * A Boolean value to indicate whether to use the latest available automatic snapshot.
      * </p>
      * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the
      * <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @return A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *         <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *         exclusive.
      *         </p>
-     *         <note>
+     *         </li>
+     *         <li>
      *         <p>
      *         Define this parameter only when creating a new instance from an automatic snapshot. For more information,
      *         see the <a href=
      *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public Boolean isUseLatestRestorableAutoSnapshot() {

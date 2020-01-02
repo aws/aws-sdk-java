@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,11 +54,8 @@ public class LogSettingsResponse implements Serializable, Cloneable, StructuredP
     private String resourceArn;
     /**
      * <p>
-     * The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered. For both S3 and
-     * CloudWatch Logs, the prefix is:
-     * </p>
-     * <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code>
+     * The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain
+     * audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.
      * </p>
      */
     private String resourcePrefix;
@@ -264,18 +261,14 @@ public class LogSettingsResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered. For both S3 and
-     * CloudWatch Logs, the prefix is:
-     * </p>
-     * <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code>
+     * The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain
+     * audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.
      * </p>
      * 
      * @param resourcePrefix
-     *        The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered. For both S3
-     *        and CloudWatch Logs, the prefix is:</p>
-     *        <p>
-     *        <code>aws/lex/bot-name/bot-alias/bot-version</code>
+     *        The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to
+     *        contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that
+     *        you specified.
      */
 
     public void setResourcePrefix(String resourcePrefix) {
@@ -284,17 +277,13 @@ public class LogSettingsResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered. For both S3 and
-     * CloudWatch Logs, the prefix is:
-     * </p>
-     * <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code>
+     * The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain
+     * audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.
      * </p>
      * 
-     * @return The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered. For both S3
-     *         and CloudWatch Logs, the prefix is:</p>
-     *         <p>
-     *         <code>aws/lex/bot-name/bot-alias/bot-version</code>
+     * @return The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to
+     *         contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that
+     *         you specified.
      */
 
     public String getResourcePrefix() {
@@ -303,18 +292,14 @@ public class LogSettingsResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered. For both S3 and
-     * CloudWatch Logs, the prefix is:
-     * </p>
-     * <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code>
+     * The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to contain
+     * audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that you specified.
      * </p>
      * 
      * @param resourcePrefix
-     *        The resource prefix of the S3 object or CloudWatch Logs log entry where logs are delivered. For both S3
-     *        and CloudWatch Logs, the prefix is:</p>
-     *        <p>
-     *        <code>aws/lex/bot-name/bot-alias/bot-version</code>
+     *        The resource prefix is the first part of the S3 object key within the S3 bucket that you specified to
+     *        contain audio logs. For CloudWatch Logs it is the prefix of the log stream name within the log group that
+     *        you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -13,6 +13,7 @@
  */
 package com.amazonaws.metrics.internal.cloudwatch;
 
+import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration;
 import java.util.concurrent.TimeUnit;
 
 import com.amazonaws.annotation.NotThreadSafe;
@@ -46,10 +47,10 @@ import com.amazonaws.metrics.AwsSdkMetrics;
  *                 .withMetricQueueSize(1000)
  *                 .withCredentialsProvider(
  *                         new DefaultAWSCredentialsProviderChain())
- *                 .withCloudWatchEndPoint(&quot;monitoring.us-west-2.amazonaws.com&quot;)
+ *                 .withEndpointConfiguration(new EndpointConfiguration(&quot;https://monitoring.us-west-2.amazonaws.com&quot;, &quot;us-west-2&quot;))
  *                 .withPredefinedMetrics(
  *                         new HashSet&lt;Field&gt;(Arrays.asList(Field.HttpRequestTime,
- *                                 Field.ResponseProcessingTime))));
+ *                                 Field.ResponseProcessingTime)));
  * myCollector.start();
  * // Enable the AWS SDK level request metric collection with a custom collector
  * AwsSdkMetrics.setRequestMetricCollector(myCollector);
@@ -92,8 +93,17 @@ public class CloudWatchMetricConfig {
     /**
      * Endpoint for Amazon CloudWatch where the metric data can be uploaded;
      * or null if the default endpoint is to be used.
+     *
+     * @deprecated Use {@link #endpointConfiguration} instead
      */
+    @Deprecated
     private String cloudWatchEndPoint;
+
+    /**
+     * Endpoint for Amazon CloudWatch where the metric data can be uploaded;
+     * or null if the default endpoint is to be used.
+     */
+    private EndpointConfiguration endpointConfiguration;
 
     private int metricQueueSize = DEFAULT_METRICS_QSIZE;
 
@@ -168,13 +178,44 @@ public class CloudWatchMetricConfig {
 
     /**
      * Sets the end point of AmazonCloudWatch to upload the metrics.
+     * @deprecated Use {@link #setEndpointConfiguration(EndpointConfiguration)} instead
      */
+    @Deprecated
     public void setCloudWatchEndPoint(String cloudWatchEndPoint) {
         this.cloudWatchEndPoint = cloudWatchEndPoint;
     }
 
+    /**
+     * Sets the end point of AmazonCloudWatch to upload the metrics.
+     * @deprecated Use {@link #withEndpointConfiguration(EndpointConfiguration)} instead
+     */
+    @Deprecated
     public CloudWatchMetricConfig withCloudWatchEndPoint(String cloudWatchEndPoint) {
         setCloudWatchEndPoint(cloudWatchEndPoint);
+        return this;
+    }
+
+    public EndpointConfiguration getEndpointConfiguration() {
+        return endpointConfiguration;
+    }
+
+    /**
+     * Configure the endpoint to be used
+     *
+     * @param endpointConfiguration the endpoint configuration
+     */
+    public void setEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        this.endpointConfiguration = endpointConfiguration;
+    }
+
+    /**
+     * Configure the endpoint to be used
+     *
+     * @param endpointConfiguration the endpoint configuration
+     * @return the builder
+     */
+    public CloudWatchMetricConfig withEndpointConfiguration(EndpointConfiguration endpointConfiguration) {
+        setEndpointConfiguration(endpointConfiguration);
         return this;
     }
 

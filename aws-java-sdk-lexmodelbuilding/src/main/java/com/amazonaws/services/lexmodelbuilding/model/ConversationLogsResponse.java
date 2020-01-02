@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ConversationLogsResponse implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The settings for your conversation logs.
+     * The settings for your conversation logs. You can log text, audio, or both.
      * </p>
      */
     private java.util.List<LogSettingsResponse> logSettings;
@@ -43,10 +43,10 @@ public class ConversationLogsResponse implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The settings for your conversation logs.
+     * The settings for your conversation logs. You can log text, audio, or both.
      * </p>
      * 
-     * @return The settings for your conversation logs.
+     * @return The settings for your conversation logs. You can log text, audio, or both.
      */
 
     public java.util.List<LogSettingsResponse> getLogSettings() {
@@ -55,11 +55,11 @@ public class ConversationLogsResponse implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The settings for your conversation logs.
+     * The settings for your conversation logs. You can log text, audio, or both.
      * </p>
      * 
      * @param logSettings
-     *        The settings for your conversation logs.
+     *        The settings for your conversation logs. You can log text, audio, or both.
      */
 
     public void setLogSettings(java.util.Collection<LogSettingsResponse> logSettings) {
@@ -73,7 +73,7 @@ public class ConversationLogsResponse implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The settings for your conversation logs.
+     * The settings for your conversation logs. You can log text, audio, or both.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class ConversationLogsResponse implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param logSettings
-     *        The settings for your conversation logs.
+     *        The settings for your conversation logs. You can log text, audio, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ConversationLogsResponse implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The settings for your conversation logs.
+     * The settings for your conversation logs. You can log text, audio, or both.
      * </p>
      * 
      * @param logSettings
-     *        The settings for your conversation logs.
+     *        The settings for your conversation logs. You can log text, audio, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

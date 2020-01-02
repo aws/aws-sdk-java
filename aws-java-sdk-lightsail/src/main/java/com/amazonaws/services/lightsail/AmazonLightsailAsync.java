@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -311,9 +311,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Copies a manual instance or disk snapshot as another manual snapshot, or copies an automatic instance or disk
-     * snapshot as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of an
-     * instance or a disk from one AWS Region to another in Amazon Lightsail.
+     * Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic snapshot of an
+     * instance or disk as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of
+     * an instance or a disk from one AWS Region to another in Amazon Lightsail.
      * </p>
      * <p>
      * When copying a <i>manual snapshot</i>, be sure to define the <code>source region</code>,
@@ -324,11 +324,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <code>source resource name</code>, <code>target snapshot name</code>, and either the <code>restore date</code> or
      * the <code>use latest restorable auto snapshot</code> parameters.
      * </p>
-     * <note>
-     * <p>
-     * Database snapshots cannot be copied at this time.
-     * </p>
-     * </note>
      * 
      * @param copySnapshotRequest
      * @return A Java Future containing the result of the CopySnapshot operation returned by the service.
@@ -340,9 +335,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Copies a manual instance or disk snapshot as another manual snapshot, or copies an automatic instance or disk
-     * snapshot as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of an
-     * instance or a disk from one AWS Region to another in Amazon Lightsail.
+     * Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic snapshot of an
+     * instance or disk as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of
+     * an instance or a disk from one AWS Region to another in Amazon Lightsail.
      * </p>
      * <p>
      * When copying a <i>manual snapshot</i>, be sure to define the <code>source region</code>,
@@ -353,11 +348,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <code>source resource name</code>, <code>target snapshot name</code>, and either the <code>restore date</code> or
      * the <code>use latest restorable auto snapshot</code> parameters.
      * </p>
-     * <note>
-     * <p>
-     * Database snapshots cannot be copied at this time.
-     * </p>
-     * </note>
      * 
      * @param copySnapshotRequest
      * @param asyncHandler
@@ -1123,7 +1113,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Deletes an automatic snapshot for an instance or disk.
+     * Deletes an automatic snapshot of an instance or disk. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteAutoSnapshotRequest
@@ -1136,7 +1128,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Deletes an automatic snapshot for an instance or disk.
+     * Deletes an automatic snapshot of an instance or disk. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteAutoSnapshotRequest
@@ -2050,7 +2044,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the available automatic snapshots for the specified resource name. For more information, see the <a
+     * Returns the available automatic snapshots for an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
@@ -2065,7 +2059,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns the available automatic snapshots for the specified resource name. For more information, see the <a
+     * Returns the available automatic snapshots for an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
      * </p>
@@ -4345,7 +4339,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance
-     * window. However, there are two ways in which paramater updates are applied: <code>dynamic</code> or
+     * window. However, there are two ways in which parameter updates are applied: <code>dynamic</code> or
      * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
      * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
      * using the <code>reboot relational database</code> operation.
@@ -4373,7 +4367,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance
-     * window. However, there are two ways in which paramater updates are applied: <code>dynamic</code> or
+     * window. However, there are two ways in which parameter updates are applied: <code>dynamic</code> or
      * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
      * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
      * using the <code>reboot relational database</code> operation.

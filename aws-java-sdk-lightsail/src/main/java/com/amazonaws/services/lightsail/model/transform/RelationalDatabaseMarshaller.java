@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,8 @@ public class RelationalDatabaseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("masterEndpoint").build();
     private static final MarshallingInfo<List> PENDINGMAINTENANCEACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pendingMaintenanceActions").build();
+    private static final MarshallingInfo<String> CACERTIFICATEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("caCertificateIdentifier").build();
 
     private static final RelationalDatabaseMarshaller instance = new RelationalDatabaseMarshaller();
 
@@ -120,6 +122,7 @@ public class RelationalDatabaseMarshaller {
             protocolMarshaller.marshall(relationalDatabase.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(relationalDatabase.getMasterEndpoint(), MASTERENDPOINT_BINDING);
             protocolMarshaller.marshall(relationalDatabase.getPendingMaintenanceActions(), PENDINGMAINTENANCEACTIONS_BINDING);
+            protocolMarshaller.marshall(relationalDatabase.getCaCertificateIdentifier(), CACERTIFICATEIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

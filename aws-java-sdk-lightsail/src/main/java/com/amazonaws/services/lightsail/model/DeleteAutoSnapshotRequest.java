@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,27 +27,25 @@ public class DeleteAutoSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the source resource from which to delete the automatic snapshot.
+     * The name of the source instance or disk from which to delete the automatic snapshot.
      * </p>
      */
     private String resourceName;
     /**
      * <p>
-     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
+     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+     * <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
      * </p>
      */
     private String date;
 
     /**
      * <p>
-     * The name of the source resource from which to delete the automatic snapshot.
+     * The name of the source instance or disk from which to delete the automatic snapshot.
      * </p>
      * 
      * @param resourceName
-     *        The name of the source resource from which to delete the automatic snapshot.
+     *        The name of the source instance or disk from which to delete the automatic snapshot.
      */
 
     public void setResourceName(String resourceName) {
@@ -56,10 +54,10 @@ public class DeleteAutoSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the source resource from which to delete the automatic snapshot.
+     * The name of the source instance or disk from which to delete the automatic snapshot.
      * </p>
      * 
-     * @return The name of the source resource from which to delete the automatic snapshot.
+     * @return The name of the source instance or disk from which to delete the automatic snapshot.
      */
 
     public String getResourceName() {
@@ -68,11 +66,11 @@ public class DeleteAutoSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the source resource from which to delete the automatic snapshot.
+     * The name of the source instance or disk from which to delete the automatic snapshot.
      * </p>
      * 
      * @param resourceName
-     *        The name of the source resource from which to delete the automatic snapshot.
+     *        The name of the source instance or disk from which to delete the automatic snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,16 +81,13 @@ public class DeleteAutoSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
+     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+     * <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
      * </p>
      * 
      * @param date
-     *        The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.</p>
-     *        <p>
-     *        Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
+     *        The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+     *        <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
      */
 
     public void setDate(String date) {
@@ -101,16 +96,12 @@ public class DeleteAutoSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
+     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+     * <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
      * </p>
      * 
-     * @return The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.</p>
-     *         <p>
-     *         Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a
-     *         resource.
+     * @return The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+     *         <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
      */
 
     public String getDate() {
@@ -119,16 +110,13 @@ public class DeleteAutoSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
+     * The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+     * <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
      * </p>
      * 
      * @param date
-     *        The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format.</p>
-     *        <p>
-     *        Use the <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
+     *        The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use the
+     *        <code>get auto snapshots</code> operation to get the available automatic snapshots for a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

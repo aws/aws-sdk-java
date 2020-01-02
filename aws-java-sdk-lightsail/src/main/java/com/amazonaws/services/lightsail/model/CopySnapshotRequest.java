@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,35 +27,42 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source instance or disk snapshot to be copied.
+     * The name of the source manual snapshot to copy.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying a manual snapshot as another manual snapshot.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      */
     private String sourceSnapshotName;
     /**
      * <p>
-     * The name of the source resource from which the automatic snapshot was created.
+     * The name of the source instance or disk from which the source automatic snapshot was created.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      */
     private String sourceResourceName;
     /**
      * <p>
-     * The date of the automatic snapshot to copy for the new manual snapshot.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify
+     * the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -73,38 +80,44 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      */
     private String restoreDate;
     /**
      * <p>
-     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source
+     * instance or disk.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      */
     private Boolean useLatestRestorableAutoSnapshot;
     /**
      * <p>
-     * The name of the new instance or disk snapshot to be created as a copy.
+     * The name of the new manual snapshot to be created as a copy.
      * </p>
      */
     private String targetSnapshotName;
@@ -117,19 +130,30 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source instance or disk snapshot to be copied.
+     * The name of the source manual snapshot to copy.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying a manual snapshot as another manual snapshot.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param sourceSnapshotName
-     *        The name of the source instance or disk snapshot to be copied.</p> <note>
+     *        The name of the source manual snapshot to copy.</p>
+     *        <p>
+     *        Constraint:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying a manual snapshot as another manual snapshot.
      *        </p>
+     *        </li>
      */
 
     public void setSourceSnapshotName(String sourceSnapshotName) {
@@ -138,18 +162,29 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source instance or disk snapshot to be copied.
+     * The name of the source manual snapshot to copy.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying a manual snapshot as another manual snapshot.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the source instance or disk snapshot to be copied.</p> <note>
+     * @return The name of the source manual snapshot to copy.</p>
+     *         <p>
+     *         Constraint:
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         Define this parameter only when copying a manual snapshot as another manual snapshot.
      *         </p>
+     *         </li>
      */
 
     public String getSourceSnapshotName() {
@@ -158,19 +193,30 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source instance or disk snapshot to be copied.
+     * The name of the source manual snapshot to copy.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying a manual snapshot as another manual snapshot.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param sourceSnapshotName
-     *        The name of the source instance or disk snapshot to be copied.</p> <note>
+     *        The name of the source manual snapshot to copy.</p>
+     *        <p>
+     *        Constraint:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying a manual snapshot as another manual snapshot.
      *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,25 +227,35 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source resource from which the automatic snapshot was created.
+     * The name of the source instance or disk from which the source automatic snapshot was created.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param sourceResourceName
-     *        The name of the source resource from which the automatic snapshot was created.</p> <note>
+     *        The name of the source instance or disk from which the source automatic snapshot was created.</p>
+     *        <p>
+     *        Constraint:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      */
 
     public void setSourceResourceName(String sourceResourceName) {
@@ -208,24 +264,34 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source resource from which the automatic snapshot was created.
+     * The name of the source instance or disk from which the source automatic snapshot was created.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the source resource from which the automatic snapshot was created.</p> <note>
+     * @return The name of the source instance or disk from which the source automatic snapshot was created.</p>
+     *         <p>
+     *         Constraint:
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
-     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public String getSourceResourceName() {
@@ -234,25 +300,35 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source resource from which the automatic snapshot was created.
+     * The name of the source instance or disk from which the source automatic snapshot was created.
      * </p>
-     * <note>
+     * <p>
+     * Constraint:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param sourceResourceName
-     *        The name of the source resource from which the automatic snapshot was created.</p> <note>
+     *        The name of the source instance or disk from which the source automatic snapshot was created.</p>
+     *        <p>
+     *        Constraint:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,10 +339,8 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The date of the automatic snapshot to copy for the new manual snapshot.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify
+     * the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -284,22 +358,18 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param restoreDate
-     *        The date of the automatic snapshot to copy for the new manual snapshot.</p>
-     *        <p>
-     *        Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
-     *        snapshots.
-     *        </p>
+     *        The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to
+     *        identify the dates of the available automatic snapshots.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -316,14 +386,14 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        are mutually exclusive.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      */
 
     public void setRestoreDate(String restoreDate) {
@@ -332,10 +402,8 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The date of the automatic snapshot to copy for the new manual snapshot.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify
+     * the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -353,21 +421,17 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
-     * @return The date of the automatic snapshot to copy for the new manual snapshot.</p>
-     *         <p>
-     *         Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
-     *         snapshots.
-     *         </p>
+     * @return The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to
+     *         identify the dates of the available automatic snapshots.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -384,14 +448,14 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         are mutually exclusive.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
+     *         <li>
      *         <p>
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
-     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public String getRestoreDate() {
@@ -400,10 +464,8 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The date of the automatic snapshot to copy for the new manual snapshot.
-     * </p>
-     * <p>
-     * Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.
+     * The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to identify
+     * the dates of the available automatic snapshots.
      * </p>
      * <p>
      * Constraints:
@@ -421,22 +483,18 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * exclusive.
      * </p>
      * </li>
-     * </ul>
-     * <note>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param restoreDate
-     *        The date of the automatic snapshot to copy for the new manual snapshot.</p>
-     *        <p>
-     *        Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic
-     *        snapshots.
-     *        </p>
+     *        The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code> operation to
+     *        identify the dates of the available automatic snapshots.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -453,14 +511,14 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        are mutually exclusive.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,35 +529,50 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source
+     * instance or disk.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param useLatestRestorableAutoSnapshot
-     *        A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *        A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source
+     *        instance or disk.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *        <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *        exclusive.
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      */
 
     public void setUseLatestRestorableAutoSnapshot(Boolean useLatestRestorableAutoSnapshot) {
@@ -508,34 +581,49 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source
+     * instance or disk.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
-     * @return A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     * @return A Boolean value to indicate whether to use the latest available automatic snapshot of the specified
+     *         source instance or disk.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *         <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *         exclusive.
      *         </p>
-     *         <note>
+     *         </li>
+     *         <li>
      *         <p>
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
-     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public Boolean getUseLatestRestorableAutoSnapshot() {
@@ -544,35 +632,50 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source
+     * instance or disk.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
      * @param useLatestRestorableAutoSnapshot
-     *        A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     *        A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source
+     *        instance or disk.</p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *        <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *        exclusive.
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
      *        Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *        see the <a href=
-     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *        >Lightsail Dev Guide</a>.
      *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,34 +686,49 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A Boolean value to indicate whether to use the latest available automatic snapshot.
+     * A Boolean value to indicate whether to use the latest available automatic snapshot of the specified source
+     * instance or disk.
      * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
      * <p>
      * This parameter cannot be defined together with the <code>restore date</code> parameter. The
      * <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
      * Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information, see the
-     * <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
-     * >Lightsail Dev Guide</a>.
+     * <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">
+     * Lightsail Dev Guide</a>.
      * </p>
-     * </note>
+     * </li>
+     * </ul>
      * 
-     * @return A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
+     * @return A Boolean value to indicate whether to use the latest available automatic snapshot of the specified
+     *         source instance or disk.</p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         This parameter cannot be defined together with the <code>restore date</code> parameter. The
      *         <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually
      *         exclusive.
      *         </p>
-     *         <note>
+     *         </li>
+     *         <li>
      *         <p>
      *         Define this parameter only when copying an automatic snapshot as a manual snapshot. For more information,
      *         see the <a href=
-     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots"
      *         >Lightsail Dev Guide</a>.
      *         </p>
+     *         </li>
      */
 
     public Boolean isUseLatestRestorableAutoSnapshot() {
@@ -619,11 +737,11 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the new instance or disk snapshot to be created as a copy.
+     * The name of the new manual snapshot to be created as a copy.
      * </p>
      * 
      * @param targetSnapshotName
-     *        The name of the new instance or disk snapshot to be created as a copy.
+     *        The name of the new manual snapshot to be created as a copy.
      */
 
     public void setTargetSnapshotName(String targetSnapshotName) {
@@ -632,10 +750,10 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the new instance or disk snapshot to be created as a copy.
+     * The name of the new manual snapshot to be created as a copy.
      * </p>
      * 
-     * @return The name of the new instance or disk snapshot to be created as a copy.
+     * @return The name of the new manual snapshot to be created as a copy.
      */
 
     public String getTargetSnapshotName() {
@@ -644,11 +762,11 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the new instance or disk snapshot to be created as a copy.
+     * The name of the new manual snapshot to be created as a copy.
      * </p>
      * 
      * @param targetSnapshotName
-     *        The name of the new instance or disk snapshot to be created as a copy.
+     *        The name of the new manual snapshot to be created as a copy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DisableAddOnRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String addOnType;
     /**
      * <p>
-     * The name of the source resource from which to disable the add-on.
+     * The name of the source resource for which to disable the add-on.
      * </p>
      */
     private String resourceName;
@@ -99,11 +99,11 @@ public class DisableAddOnRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source resource from which to disable the add-on.
+     * The name of the source resource for which to disable the add-on.
      * </p>
      * 
      * @param resourceName
-     *        The name of the source resource from which to disable the add-on.
+     *        The name of the source resource for which to disable the add-on.
      */
 
     public void setResourceName(String resourceName) {
@@ -112,10 +112,10 @@ public class DisableAddOnRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source resource from which to disable the add-on.
+     * The name of the source resource for which to disable the add-on.
      * </p>
      * 
-     * @return The name of the source resource from which to disable the add-on.
+     * @return The name of the source resource for which to disable the add-on.
      */
 
     public String getResourceName() {
@@ -124,11 +124,11 @@ public class DisableAddOnRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the source resource from which to disable the add-on.
+     * The name of the source resource for which to disable the add-on.
      * </p>
      * 
      * @param resourceName
-     *        The name of the source resource from which to disable the add-on.
+     *        The name of the source resource for which to disable the add-on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,6 +165,12 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private Boolean applyImmediately;
+    /**
+     * <p>
+     * Indicates the certificate that needs to be associated with the database.
+     * </p>
+     */
+    private String caCertificateIdentifier;
 
     /**
      * <p>
@@ -1120,6 +1126,46 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Indicates the certificate that needs to be associated with the database.
+     * </p>
+     * 
+     * @param caCertificateIdentifier
+     *        Indicates the certificate that needs to be associated with the database.
+     */
+
+    public void setCaCertificateIdentifier(String caCertificateIdentifier) {
+        this.caCertificateIdentifier = caCertificateIdentifier;
+    }
+
+    /**
+     * <p>
+     * Indicates the certificate that needs to be associated with the database.
+     * </p>
+     * 
+     * @return Indicates the certificate that needs to be associated with the database.
+     */
+
+    public String getCaCertificateIdentifier() {
+        return this.caCertificateIdentifier;
+    }
+
+    /**
+     * <p>
+     * Indicates the certificate that needs to be associated with the database.
+     * </p>
+     * 
+     * @param caCertificateIdentifier
+     *        Indicates the certificate that needs to be associated with the database.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRelationalDatabaseRequest withCaCertificateIdentifier(String caCertificateIdentifier) {
+        setCaCertificateIdentifier(caCertificateIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1148,7 +1194,9 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getApplyImmediately() != null)
-            sb.append("ApplyImmediately: ").append(getApplyImmediately());
+            sb.append("ApplyImmediately: ").append(getApplyImmediately()).append(",");
+        if (getCaCertificateIdentifier() != null)
+            sb.append("CaCertificateIdentifier: ").append(getCaCertificateIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -1199,6 +1247,10 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getApplyImmediately() != null && other.getApplyImmediately().equals(this.getApplyImmediately()) == false)
             return false;
+        if (other.getCaCertificateIdentifier() == null ^ this.getCaCertificateIdentifier() == null)
+            return false;
+        if (other.getCaCertificateIdentifier() != null && other.getCaCertificateIdentifier().equals(this.getCaCertificateIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -1216,6 +1268,7 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getDisableBackupRetention() == null) ? 0 : getDisableBackupRetention().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getApplyImmediately() == null) ? 0 : getApplyImmediately().hashCode());
+        hashCode = prime * hashCode + ((getCaCertificateIdentifier() == null) ? 0 : getCaCertificateIdentifier().hashCode());
         return hashCode;
     }
 

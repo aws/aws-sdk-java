@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the source resource for the automatic snapshots.
+     * The name of the source instance or disk for the automatic snapshots.
      * </p>
      */
     private String resourceName;
@@ -37,19 +37,19 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
     private String resourceType;
     /**
      * <p>
-     * An array of objects that describe the automatic snapshots that are available for the specified source
-     * resource.asdf
+     * An array of objects that describe the automatic snapshots that are available for the specified source instance or
+     * disk.
      * </p>
      */
     private java.util.List<AutoSnapshotDetails> autoSnapshots;
 
     /**
      * <p>
-     * The name of the source resource for the automatic snapshots.
+     * The name of the source instance or disk for the automatic snapshots.
      * </p>
      * 
      * @param resourceName
-     *        The name of the source resource for the automatic snapshots.
+     *        The name of the source instance or disk for the automatic snapshots.
      */
 
     public void setResourceName(String resourceName) {
@@ -58,10 +58,10 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the source resource for the automatic snapshots.
+     * The name of the source instance or disk for the automatic snapshots.
      * </p>
      * 
-     * @return The name of the source resource for the automatic snapshots.
+     * @return The name of the source instance or disk for the automatic snapshots.
      */
 
     public String getResourceName() {
@@ -70,11 +70,11 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name of the source resource for the automatic snapshots.
+     * The name of the source instance or disk for the automatic snapshots.
      * </p>
      * 
      * @param resourceName
-     *        The name of the source resource for the automatic snapshots.
+     *        The name of the source instance or disk for the automatic snapshots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,12 +144,12 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of objects that describe the automatic snapshots that are available for the specified source
-     * resource.asdf
+     * An array of objects that describe the automatic snapshots that are available for the specified source instance or
+     * disk.
      * </p>
      * 
      * @return An array of objects that describe the automatic snapshots that are available for the specified source
-     *         resource.asdf
+     *         instance or disk.
      */
 
     public java.util.List<AutoSnapshotDetails> getAutoSnapshots() {
@@ -158,13 +158,13 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of objects that describe the automatic snapshots that are available for the specified source
-     * resource.asdf
+     * An array of objects that describe the automatic snapshots that are available for the specified source instance or
+     * disk.
      * </p>
      * 
      * @param autoSnapshots
      *        An array of objects that describe the automatic snapshots that are available for the specified source
-     *        resource.asdf
+     *        instance or disk.
      */
 
     public void setAutoSnapshots(java.util.Collection<AutoSnapshotDetails> autoSnapshots) {
@@ -178,8 +178,8 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of objects that describe the automatic snapshots that are available for the specified source
-     * resource.asdf
+     * An array of objects that describe the automatic snapshots that are available for the specified source instance or
+     * disk.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -189,7 +189,7 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
      * 
      * @param autoSnapshots
      *        An array of objects that describe the automatic snapshots that are available for the specified source
-     *        resource.asdf
+     *        instance or disk.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,13 +205,13 @@ public class GetAutoSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of objects that describe the automatic snapshots that are available for the specified source
-     * resource.asdf
+     * An array of objects that describe the automatic snapshots that are available for the specified source instance or
+     * disk.
      * </p>
      * 
      * @param autoSnapshots
      *        An array of objects that describe the automatic snapshots that are available for the specified source
-     *        resource.asdf
+     *        instance or disk.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

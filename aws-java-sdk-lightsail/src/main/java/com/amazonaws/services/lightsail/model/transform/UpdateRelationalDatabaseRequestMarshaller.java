@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class UpdateRelationalDatabaseRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publiclyAccessible").build();
     private static final MarshallingInfo<Boolean> APPLYIMMEDIATELY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applyImmediately").build();
+    private static final MarshallingInfo<String> CACERTIFICATEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("caCertificateIdentifier").build();
 
     private static final UpdateRelationalDatabaseRequestMarshaller instance = new UpdateRelationalDatabaseRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class UpdateRelationalDatabaseRequestMarshaller {
             protocolMarshaller.marshall(updateRelationalDatabaseRequest.getDisableBackupRetention(), DISABLEBACKUPRETENTION_BINDING);
             protocolMarshaller.marshall(updateRelationalDatabaseRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(updateRelationalDatabaseRequest.getApplyImmediately(), APPLYIMMEDIATELY_BINDING);
+            protocolMarshaller.marshall(updateRelationalDatabaseRequest.getCaCertificateIdentifier(), CACERTIFICATEIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

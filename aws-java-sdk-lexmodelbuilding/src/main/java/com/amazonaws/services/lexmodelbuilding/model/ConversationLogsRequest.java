@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,10 @@ public class ConversationLogsRequest implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and
-     * your S3 bucket for audio logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation Logs</a>.
+     * your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the
+     * AWS KMS key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and
+     * Policy for Conversation Logs</a>.
      * </p>
      */
     private String iamRoleArn;
@@ -116,14 +118,18 @@ public class ConversationLogsRequest implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and
-     * your S3 bucket for audio logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation Logs</a>.
+     * your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the
+     * AWS KMS key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and
+     * Policy for Conversation Logs</a>.
      * </p>
      * 
      * @param iamRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text
-     *        logs and your S3 bucket for audio logs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation Logs</a>.
+     *        logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access
+     *        permission for the AWS KMS key used for encrypting audio logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM
+     *        Role and Policy for Conversation Logs</a>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -133,13 +139,17 @@ public class ConversationLogsRequest implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and
-     * your S3 bucket for audio logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation Logs</a>.
+     * your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the
+     * AWS KMS key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and
+     * Policy for Conversation Logs</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text
-     *         logs and your S3 bucket for audio logs. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation Logs</a>.
+     *         logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access
+     *         permission for the AWS KMS key used for encrypting audio logs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM
+     *         Role and Policy for Conversation Logs</a>.
      */
 
     public String getIamRoleArn() {
@@ -149,14 +159,18 @@ public class ConversationLogsRequest implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text logs and
-     * your S3 bucket for audio logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation Logs</a>.
+     * your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access permission for the
+     * AWS KMS key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM Role and
+     * Policy for Conversation Logs</a>.
      * </p>
      * 
      * @param iamRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role with permission to write to your CloudWatch Logs for text
-     *        logs and your S3 bucket for audio logs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating Conversation Logs</a>.
+     *        logs and your S3 bucket for audio logs. If audio encryption is enabled, this role also provides access
+     *        permission for the AWS KMS key used for encrypting audio logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an IAM
+     *        Role and Policy for Conversation Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
