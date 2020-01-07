@@ -25,7 +25,7 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Trace IDs and metadata for traces that were found in the specified time frame.
+     * Trace IDs and annotations for traces that were found in the specified time frame.
      * </p>
      */
     private java.util.List<TraceSummary> traceSummaries;
@@ -51,10 +51,10 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Trace IDs and metadata for traces that were found in the specified time frame.
+     * Trace IDs and annotations for traces that were found in the specified time frame.
      * </p>
      * 
-     * @return Trace IDs and metadata for traces that were found in the specified time frame.
+     * @return Trace IDs and annotations for traces that were found in the specified time frame.
      */
 
     public java.util.List<TraceSummary> getTraceSummaries() {
@@ -63,11 +63,11 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Trace IDs and metadata for traces that were found in the specified time frame.
+     * Trace IDs and annotations for traces that were found in the specified time frame.
      * </p>
      * 
      * @param traceSummaries
-     *        Trace IDs and metadata for traces that were found in the specified time frame.
+     *        Trace IDs and annotations for traces that were found in the specified time frame.
      */
 
     public void setTraceSummaries(java.util.Collection<TraceSummary> traceSummaries) {
@@ -81,7 +81,7 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Trace IDs and metadata for traces that were found in the specified time frame.
+     * Trace IDs and annotations for traces that were found in the specified time frame.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,7 +90,7 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param traceSummaries
-     *        Trace IDs and metadata for traces that were found in the specified time frame.
+     *        Trace IDs and annotations for traces that were found in the specified time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +106,11 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Trace IDs and metadata for traces that were found in the specified time frame.
+     * Trace IDs and annotations for traces that were found in the specified time frame.
      * </p>
      * 
      * @param traceSummaries
-     *        Trace IDs and metadata for traces that were found in the specified time frame.
+     *        Trace IDs and annotations for traces that were found in the specified time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

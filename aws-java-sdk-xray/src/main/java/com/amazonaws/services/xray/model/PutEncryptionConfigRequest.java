@@ -37,7 +37,8 @@ public class PutEncryptionConfigRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.
      * </p>
      * </li>
      * <li>
@@ -73,7 +74,8 @@ public class PutEncryptionConfigRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.
      * </p>
      * </li>
      * <li>
@@ -99,7 +101,7 @@ public class PutEncryptionConfigRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>
-     *        .
+     *        . AWS X-Ray does not support asymmetric CMKs.
      *        </p>
      *        </li>
      *        <li>
@@ -130,7 +132,8 @@ public class PutEncryptionConfigRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.
      * </p>
      * </li>
      * <li>
@@ -155,7 +158,7 @@ public class PutEncryptionConfigRequest extends com.amazonaws.AmazonWebServiceRe
      *         <li>
      *         <p>
      *         <b>Key ID</b> - The KMS key ID of the key. For example,
-     *         <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+     *         <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS X-Ray does not support asymmetric CMKs.
      *         </p>
      *         </li>
      *         <li>
@@ -186,7 +189,8 @@ public class PutEncryptionConfigRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+     * <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.
      * </p>
      * </li>
      * <li>
@@ -212,7 +216,7 @@ public class PutEncryptionConfigRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>
-     *        .
+     *        . AWS X-Ray does not support asymmetric CMKs.
      *        </p>
      *        </li>
      *        <li>

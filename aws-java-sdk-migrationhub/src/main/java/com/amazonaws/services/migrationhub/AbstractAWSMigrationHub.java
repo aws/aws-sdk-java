@@ -73,6 +73,11 @@ public class AbstractAWSMigrationHub implements AWSMigrationHub {
     }
 
     @Override
+    public ListApplicationStatesResult listApplicationStates(ListApplicationStatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCreatedArtifactsResult listCreatedArtifacts(ListCreatedArtifactsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

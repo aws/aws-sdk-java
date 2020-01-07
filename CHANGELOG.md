@@ -1,3 +1,16 @@
+# __1.11.702__ __2020-01-07__
+## __AWS CodeBuild__
+  - ### Features
+    - Add encryption key override to StartBuild API in AWS CodeBuild.
+
+## __AWS Migration Hub__
+  - ### Features
+    - ListApplicationStates API provides a list of all application migration states
+
+## __AWS X-Ray__
+  - ### Features
+    - Documentation updates for xray
+
 # __1.11.701__ __2020-01-06__
 ## __AWS Elemental MediaPackage__
   - ### Features

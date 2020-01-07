@@ -37,7 +37,7 @@ public class BatchGetTracesResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<String> unprocessedTraceIds;
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      */
     private String nextToken;
@@ -184,11 +184,11 @@ public class BatchGetTracesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -197,10 +197,10 @@ public class BatchGetTracesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
-     * @return Pagination token. Not used.
+     * @return Pagination token.
      */
 
     public String getNextToken() {
@@ -209,11 +209,11 @@ public class BatchGetTracesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,6 +33,7 @@ public class PropertyNames {
     public static final String RESULT_PATH = "ResultPath";
     public static final String INPUT_PATH = "InputPath";
     public static final String OUTPUT_PATH = "OutputPath";
+    public static final String ITEMS_PATH = "ItemsPath";
     public static final String PARAMETERS = "Parameters";
     public static final String END = "End";
     public static final String VERSION = "Version";
@@ -43,6 +44,10 @@ public class PropertyNames {
 
     // ParallelState property names
     public static final String BRANCHES = "Branches";
+
+    // MapState property names
+    public static final String ITERATOR = "Iterator";
+    public static final String MAX_CONCURRENCY = "MaxConcurrency";
 
     // FailState property names
     public static final String ERROR = "Error";

@@ -159,6 +159,15 @@ final class ValidationContext {
     /**
      * Asserts that the string represents a valid JsonPath expression.
      *
+     * @param path Path expression to validate.
+     */
+    public void assertIsValidItemsPath(String path) {
+        assertIsValidReferencePath(path, PropertyNames.ITEMS_PATH);
+    }
+
+    /**
+     * Asserts that the string represents a valid JsonPath expression.
+     *
      * @param path         Path expression to validate.
      * @param propertyName Name of property.
      */
@@ -218,6 +227,15 @@ final class ValidationContext {
         return newChildContext()
                 .identifier(String.valueOf(index))
                 .location(Location.Branch)
+                .build();
+    }
+
+    /**
+     * @return Iterator sub-context.
+     */
+    public ValidationContext iterator() {
+        return newChildContext()
+                .location(Location.Iterator)
                 .build();
     }
 

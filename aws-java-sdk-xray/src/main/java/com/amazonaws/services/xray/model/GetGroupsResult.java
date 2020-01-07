@@ -31,7 +31,7 @@ public class GetGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private java.util.List<GroupSummary> groups;
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class GetGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class GetGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
-     * @return Pagination token. Not used.
+     * @return Pagination token.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class GetGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

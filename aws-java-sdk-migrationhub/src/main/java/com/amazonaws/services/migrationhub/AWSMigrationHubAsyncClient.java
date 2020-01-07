@@ -367,6 +367,39 @@ public class AWSMigrationHubAsyncClient extends AWSMigrationHubClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListApplicationStatesResult> listApplicationStatesAsync(ListApplicationStatesRequest request) {
+
+        return listApplicationStatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationStatesResult> listApplicationStatesAsync(final ListApplicationStatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListApplicationStatesRequest, ListApplicationStatesResult> asyncHandler) {
+        final ListApplicationStatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListApplicationStatesResult>() {
+            @Override
+            public ListApplicationStatesResult call() throws Exception {
+                ListApplicationStatesResult result = null;
+
+                try {
+                    result = executeListApplicationStates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCreatedArtifactsResult> listCreatedArtifactsAsync(ListCreatedArtifactsRequest request) {
 
         return listCreatedArtifactsAsync(request, null);

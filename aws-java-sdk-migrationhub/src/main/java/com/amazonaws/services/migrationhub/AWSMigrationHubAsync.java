@@ -495,6 +495,39 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
 
     /**
      * <p>
+     * Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code>
+     * parameter, only the migration statuses for those applications will be returned.
+     * </p>
+     * 
+     * @param listApplicationStatesRequest
+     * @return A Java Future containing the result of the ListApplicationStates operation returned by the service.
+     * @sample AWSMigrationHubAsync.ListApplicationStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationStatesResult> listApplicationStatesAsync(ListApplicationStatesRequest listApplicationStatesRequest);
+
+    /**
+     * <p>
+     * Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code>
+     * parameter, only the migration statuses for those applications will be returned.
+     * </p>
+     * 
+     * @param listApplicationStatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationStates operation returned by the service.
+     * @sample AWSMigrationHubAsyncHandler.ListApplicationStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationStatesResult> listApplicationStatesAsync(ListApplicationStatesRequest listApplicationStatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationStatesRequest, ListApplicationStatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the created artifacts attached to a given migration task in an update stream. This API has the following
      * traits:
      * </p>

@@ -35,6 +35,7 @@ public class StateVisitorTest {
         assertNull(visitor.visit(failState().build()));
         assertNull(visitor.visit(choiceState().build()));
         assertNull(visitor.visit(parallelState().build()));
+        assertNull(visitor.visit(mapState().build()));
         assertNull(visitor.visit(succeedState().build()));
         assertNull(visitor.visit(taskState().build()));
         assertNull(visitor.visit(waitState().build()));

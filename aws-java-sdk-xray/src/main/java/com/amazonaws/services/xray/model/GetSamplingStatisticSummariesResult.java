@@ -32,7 +32,7 @@ public class GetSamplingStatisticSummariesResult extends com.amazonaws.AmazonWeb
     private java.util.List<SamplingStatisticSummary> samplingStatisticSummaries;
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      */
     private String nextToken;
@@ -109,11 +109,11 @@ public class GetSamplingStatisticSummariesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,10 +122,10 @@ public class GetSamplingStatisticSummariesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
-     * @return Pagination token. Not used.
+     * @return Pagination token.
      */
 
     public String getNextToken() {
@@ -134,11 +134,11 @@ public class GetSamplingStatisticSummariesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

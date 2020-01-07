@@ -59,7 +59,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>PLAINTEXT</code>: An environment variable in plain text format.
+     * <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -199,7 +199,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>PLAINTEXT</code>: An environment variable in plain text format.
+     * <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -220,7 +220,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PLAINTEXT</code>: An environment variable in plain text format.
+     *        <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      *        </p>
      *        </li>
      *        <li>
@@ -247,7 +247,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>PLAINTEXT</code>: An environment variable in plain text format.
+     * <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -267,7 +267,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PLAINTEXT</code>: An environment variable in plain text format.
+     *         <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      *         </p>
      *         </li>
      *         <li>
@@ -294,7 +294,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>PLAINTEXT</code>: An environment variable in plain text format.
+     * <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -315,7 +315,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PLAINTEXT</code>: An environment variable in plain text format.
+     *        <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      *        </p>
      *        </li>
      *        <li>
@@ -344,7 +344,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>PLAINTEXT</code>: An environment variable in plain text format.
+     * <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -365,7 +365,7 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PLAINTEXT</code>: An environment variable in plain text format.
+     *        <code>PLAINTEXT</code>: An environment variable in plain text format. This is the default value.
      *        </p>
      *        </li>
      *        <li>

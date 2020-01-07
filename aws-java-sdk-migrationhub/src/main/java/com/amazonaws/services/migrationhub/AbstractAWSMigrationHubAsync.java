@@ -145,6 +145,19 @@ public class AbstractAWSMigrationHubAsync extends AbstractAWSMigrationHub implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListApplicationStatesResult> listApplicationStatesAsync(ListApplicationStatesRequest request) {
+
+        return listApplicationStatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationStatesResult> listApplicationStatesAsync(ListApplicationStatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationStatesRequest, ListApplicationStatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCreatedArtifactsResult> listCreatedArtifactsAsync(ListCreatedArtifactsRequest request) {
 
         return listCreatedArtifactsAsync(request, null);

@@ -1,0 +1,30 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Map",
+      "Comment": "My map state",
+      "ItemsPath": "$.items",
+      "InputPath": "$.input",
+      "OutputPath": "$.output",
+      "ResultPath": "$.result",
+      "MaxConcurrency": 50,
+      "Parameters": {
+        "foo.$": "$.val"
+      },
+      "Next": "NextState",
+      "Iterator": {
+        "StartAt": "IteratorState",
+        "Comment": "Iterator state machine",
+        "States": {
+          "IteratorState": {
+            "Type": "Succeed"
+          }
+        }
+      }
+    },
+    "NextState": {
+      "Type": "Succeed"
+    }
+  }
+}

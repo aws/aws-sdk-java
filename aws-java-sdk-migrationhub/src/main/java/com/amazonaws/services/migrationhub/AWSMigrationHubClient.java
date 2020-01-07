@@ -914,6 +914,72 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code>
+     * parameter, only the migration statuses for those applications will be returned.
+     * </p>
+     * 
+     * @param listApplicationStatesRequest
+     * @return Result of the ListApplicationStates operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerErrorException
+     *         Exception raised when an internal, configuration, or dependency error is encountered.
+     * @throws ServiceUnavailableException
+     *         Exception raised when there is an internal, configuration, or dependency error encountered.
+     * @throws InvalidInputException
+     *         Exception raised when the provided input violates a policy constraint or is entered in the wrong format
+     *         or data type.
+     * @throws HomeRegionNotSetException
+     *         The home region is not set. Set the home region to continue.
+     * @sample AWSMigrationHub.ListApplicationStates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationStatesResult listApplicationStates(ListApplicationStatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationStates(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationStatesResult executeListApplicationStates(ListApplicationStatesRequest listApplicationStatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationStatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationStatesRequest> request = null;
+        Response<ListApplicationStatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationStatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationStatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationStates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationStatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListApplicationStatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the created artifacts attached to a given migration task in an update stream. This API has the following
      * traits:
      * </p>

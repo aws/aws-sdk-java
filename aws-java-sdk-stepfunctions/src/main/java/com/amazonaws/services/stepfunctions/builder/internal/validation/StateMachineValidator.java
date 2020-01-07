@@ -22,12 +22,14 @@ import com.amazonaws.services.stepfunctions.builder.conditions.NAryCondition;
 import com.amazonaws.services.stepfunctions.builder.conditions.NotCondition;
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
 import com.amazonaws.services.stepfunctions.builder.states.Branch;
+import com.amazonaws.services.stepfunctions.builder.states.Iterator;
 import com.amazonaws.services.stepfunctions.builder.states.Catcher;
 import com.amazonaws.services.stepfunctions.builder.states.Choice;
 import com.amazonaws.services.stepfunctions.builder.states.ChoiceState;
 import com.amazonaws.services.stepfunctions.builder.states.FailState;
 import com.amazonaws.services.stepfunctions.builder.states.NextStateTransition;
 import com.amazonaws.services.stepfunctions.builder.states.ParallelState;
+import com.amazonaws.services.stepfunctions.builder.states.MapState;
 import com.amazonaws.services.stepfunctions.builder.states.PassState;
 import com.amazonaws.services.stepfunctions.builder.states.Retrier;
 import com.amazonaws.services.stepfunctions.builder.states.State;
@@ -141,6 +143,9 @@ public class StateMachineValidator {
             if (state instanceof ParallelState) {
                 validateParallelState(stateContext, (ParallelState) state);
             }
+            if (state instanceof MapState) {
+                validateMapState(stateContext, (MapState) state);
+            }
             if (state.isTerminalState()) {
                 return true;
             } else if (state instanceof TransitionState) {
@@ -162,6 +167,14 @@ public class StateMachineValidator {
                                    branch.getStates()).validate();
                 index++;
             }
+        }
+
+        private void validateMapState(ValidationContext stateContext, MapState state) {
+            Iterator iterator = state.getIterator();
+            new GraphValidator(stateContext.iterator(),
+                               Collections.<String, State>emptyMap(),
+                               iterator.getStartAt(),
+                               iterator.getStates()).validate();
         }
 
         private boolean validateChoiceState(ValidationContext stateContext, ChoiceState choiceState) {
@@ -286,6 +299,30 @@ public class StateMachineValidator {
                                                                                     PropertyNames.START_AT)));
                 }
                 index++;
+            }
+        }
+
+        @Override
+        public Void visit(MapState mapState) {
+            currentContext.assertIsValidItemsPath(mapState.getItemsPath());
+            currentContext.assertIsValidInputPath(mapState.getInputPath());
+            currentContext.assertIsValidOutputPath(mapState.getOutputPath());
+            currentContext.assertIsValidResultPath(mapState.getResultPath());
+            validateTransition(mapState.getTransition());
+            validateRetriers(mapState.getRetriers());
+            validateCatchers(mapState.getCatchers());
+            validateIterator(mapState);
+            return null;
+        }
+
+        private void validateIterator(MapState mapState) {
+            currentContext.assertNotNull(mapState.getIterator(), PropertyNames.ITERATOR);
+            Iterator iterator = mapState.getIterator();
+            ValidationContext iteratorContext = currentContext.iterator();
+            validateStates(iteratorContext, iterator.getStates());
+            if (!iterator.getStates().containsKey(iterator.getStartAt())) {
+                problemReporter.report(new Problem(iteratorContext, String.format("%s references a non existent state.",
+                        PropertyNames.START_AT)));
             }
         }
 

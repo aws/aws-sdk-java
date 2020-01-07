@@ -392,8 +392,8 @@ public interface AWSXRayAsync extends AWSXRay {
      * <p>
      * Retrieves a document that describes services that process incoming requests, and downstream services that they
      * call as a result. Root services process incoming requests and make calls to downstream services. Root services
-     * are applications that use the AWS X-Ray SDK. Downstream services can be other applications, AWS resources, HTTP
-     * web APIs, or SQL databases.
+     * are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream
+     * services can be other applications, AWS resources, HTTP web APIs, or SQL databases.
      * </p>
      * 
      * @param getServiceGraphRequest
@@ -408,8 +408,8 @@ public interface AWSXRayAsync extends AWSXRay {
      * <p>
      * Retrieves a document that describes services that process incoming requests, and downstream services that they
      * call as a result. Root services process incoming requests and make calls to downstream services. Root services
-     * are applications that use the AWS X-Ray SDK. Downstream services can be other applications, AWS resources, HTTP
-     * web APIs, or SQL databases.
+     * are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream
+     * services can be other applications, AWS resources, HTTP web APIs, or SQL databases.
      * </p>
      * 
      * @param getServiceGraphRequest
@@ -493,8 +493,8 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
-     * Retrieves IDs and metadata for traces available for a specified time frame using an optional filter. To get the
-     * full traces, pass the trace IDs to <code>BatchGetTraces</code>.
+     * Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get
+     * the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
      * </p>
      * <p>
      * A filter expression can target traced requests that hit specific service nodes or edges, have errors, or come
@@ -527,8 +527,8 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
-     * Retrieves IDs and metadata for traces available for a specified time frame using an optional filter. To get the
-     * full traces, pass the trace IDs to <code>BatchGetTraces</code>.
+     * Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get
+     * the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
      * </p>
      * <p>
      * A filter expression can target traced requests that hit specific service nodes or edges, have errors, or come
@@ -628,9 +628,9 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
-     * Uploads segment documents to AWS X-Ray. The X-Ray SDK generates segment documents and sends them to the X-Ray
-     * daemon, which uploads them in batches. A segment document can be a completed segment, an in-progress segment, or
-     * an array of subsegments.
+     * Uploads segment documents to AWS X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a>
+     * generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A segment document
+     * can be a completed segment, an in-progress segment, or an array of subsegments.
      * </p>
      * <p>
      * Segments must include the following fields. For the full segment document schema, see <a
@@ -715,9 +715,9 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
-     * Uploads segment documents to AWS X-Ray. The X-Ray SDK generates segment documents and sends them to the X-Ray
-     * daemon, which uploads them in batches. A segment document can be a completed segment, an in-progress segment, or
-     * an array of subsegments.
+     * Uploads segment documents to AWS X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a>
+     * generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A segment document
+     * can be a completed segment, an in-progress segment, or an array of subsegments.
      * </p>
      * <p>
      * Segments must include the following fields. For the full segment document schema, see <a

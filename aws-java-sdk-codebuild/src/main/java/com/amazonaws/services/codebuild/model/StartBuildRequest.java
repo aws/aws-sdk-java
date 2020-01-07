@@ -225,6 +225,23 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer queuedTimeoutInMinutesOverride;
     /**
      * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
+     * project. The CMK key encrypts the build output artifacts.
+     * </p>
+     * <note>
+     * <p>
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     */
+    private String encryptionKeyOverride;
+    /**
+     * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
      * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
@@ -1777,6 +1794,106 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
+     * project. The CMK key encrypts the build output artifacts.
+     * </p>
+     * <note>
+     * <p>
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     * 
+     * @param encryptionKeyOverride
+     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the
+     *        build project. The CMK key encrypts the build output artifacts.</p> <note>
+     *        <p>
+     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *        permission to that key.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
+     */
+
+    public void setEncryptionKeyOverride(String encryptionKeyOverride) {
+        this.encryptionKeyOverride = encryptionKeyOverride;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
+     * project. The CMK key encrypts the build output artifacts.
+     * </p>
+     * <note>
+     * <p>
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     * 
+     * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in
+     *         the build project. The CMK key encrypts the build output artifacts.</p> <note>
+     *         <p>
+     *         You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *         permission to that key.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *         the format <code>alias/<i>alias-name</i> </code>).
+     */
+
+    public String getEncryptionKeyOverride() {
+        return this.encryptionKeyOverride;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
+     * project. The CMK key encrypts the build output artifacts.
+     * </p>
+     * <note>
+     * <p>
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
+     * </p>
+     * 
+     * @param encryptionKeyOverride
+     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the
+     *        build project. The CMK key encrypts the build output artifacts.</p> <note>
+     *        <p>
+     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *        permission to that key.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withEncryptionKeyOverride(String encryptionKeyOverride) {
+        setEncryptionKeyOverride(encryptionKeyOverride);
+        return this;
+    }
+
+    /**
+     * <p>
      * A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is
      * included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same
      * token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.
@@ -2158,6 +2275,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("TimeoutInMinutesOverride: ").append(getTimeoutInMinutesOverride()).append(",");
         if (getQueuedTimeoutInMinutesOverride() != null)
             sb.append("QueuedTimeoutInMinutesOverride: ").append(getQueuedTimeoutInMinutesOverride()).append(",");
+        if (getEncryptionKeyOverride() != null)
+            sb.append("EncryptionKeyOverride: ").append(getEncryptionKeyOverride()).append(",");
         if (getIdempotencyToken() != null)
             sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
         if (getLogsConfigOverride() != null)
@@ -2278,6 +2397,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getQueuedTimeoutInMinutesOverride() != null
                 && other.getQueuedTimeoutInMinutesOverride().equals(this.getQueuedTimeoutInMinutesOverride()) == false)
             return false;
+        if (other.getEncryptionKeyOverride() == null ^ this.getEncryptionKeyOverride() == null)
+            return false;
+        if (other.getEncryptionKeyOverride() != null && other.getEncryptionKeyOverride().equals(this.getEncryptionKeyOverride()) == false)
+            return false;
         if (other.getIdempotencyToken() == null ^ this.getIdempotencyToken() == null)
             return false;
         if (other.getIdempotencyToken() != null && other.getIdempotencyToken().equals(this.getIdempotencyToken()) == false)
@@ -2327,6 +2450,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getPrivilegedModeOverride() == null) ? 0 : getPrivilegedModeOverride().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutesOverride() == null) ? 0 : getTimeoutInMinutesOverride().hashCode());
         hashCode = prime * hashCode + ((getQueuedTimeoutInMinutesOverride() == null) ? 0 : getQueuedTimeoutInMinutesOverride().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionKeyOverride() == null) ? 0 : getEncryptionKeyOverride().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         hashCode = prime * hashCode + ((getLogsConfigOverride() == null) ? 0 : getLogsConfigOverride().hashCode());
         hashCode = prime * hashCode + ((getRegistryCredentialOverride() == null) ? 0 : getRegistryCredentialOverride().hashCode());

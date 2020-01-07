@@ -65,6 +65,16 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <code>BatchGetReportGroups</code>: Returns an array of report groups.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>BatchGetReports</code>: Returns an array of reports.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>CreateProject</code>: Creates a build project.
  * </p>
  * </li>

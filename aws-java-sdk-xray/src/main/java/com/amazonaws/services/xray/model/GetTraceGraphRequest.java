@@ -33,7 +33,7 @@ public class GetTraceGraphRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<String> traceIds;
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      */
     private String nextToken;
@@ -110,11 +110,11 @@ public class GetTraceGraphRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -123,10 +123,10 @@ public class GetTraceGraphRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
-     * @return Pagination token. Not used.
+     * @return Pagination token.
      */
 
     public String getNextToken() {
@@ -135,11 +135,11 @@ public class GetTraceGraphRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

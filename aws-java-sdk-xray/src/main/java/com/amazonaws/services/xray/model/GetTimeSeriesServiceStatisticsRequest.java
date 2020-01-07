@@ -64,7 +64,7 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
     private Integer period;
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      */
     private String nextToken;
@@ -317,11 +317,11 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -330,10 +330,10 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
-     * @return Pagination token. Not used.
+     * @return Pagination token.
      */
 
     public String getNextToken() {
@@ -342,11 +342,11 @@ public class GetTimeSeriesServiceStatisticsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

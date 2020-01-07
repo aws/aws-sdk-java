@@ -50,7 +50,7 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
     private Boolean containsOldGroupVersions;
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      */
     private String nextToken;
@@ -267,11 +267,11 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -280,10 +280,10 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
-     * @return Pagination token. Not used.
+     * @return Pagination token.
      */
 
     public String getNextToken() {
@@ -292,11 +292,11 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

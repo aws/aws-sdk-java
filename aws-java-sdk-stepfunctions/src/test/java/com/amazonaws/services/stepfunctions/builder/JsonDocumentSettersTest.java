@@ -17,10 +17,12 @@ package com.amazonaws.services.stepfunctions.builder;
 import static com.amazonaws.services.stepfunctions.builder.StatesAsserts.assertJsonEquals;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.end;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.parallelState;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.mapState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.passState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.taskState;
 
 import com.amazonaws.services.stepfunctions.builder.states.ParallelState;
+import com.amazonaws.services.stepfunctions.builder.states.MapState;
 import com.amazonaws.services.stepfunctions.builder.states.PassState;
 import com.amazonaws.services.stepfunctions.builder.states.TaskState;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,8 +34,8 @@ import org.junit.runners.Parameterized;
 
 /**
  * Tests various builders that accept a raw JSON string or POJO to be serialized as JSON. This includes
- * {@link PassState} which has a JSON result object, and PassState, {@link ParallelState}, and {@link TaskState} which
- * accepts JSON for the Parameters field.
+ * {@link PassState} which has a JSON result object, and PassState, {@link ParallelState}, {@link MapState},
+ * and {@link TaskState} which accepts JSON for the Parameters field.
  */
 @RunWith(Parameterized.class)
 public class JsonDocumentSettersTest {
@@ -143,6 +145,25 @@ public class JsonDocumentSettersTest {
                         return result.build().getParameters();
                     }
                 }
+            },
+            // MapState#parameters
+            {
+                    new Handler() {
+
+                        @Override
+                        public String setString(String json) {
+                            return build(newMapState().parameters(json));
+                        }
+
+                        @Override
+                        public String setPojo(Object pojo) {
+                            return build(newMapState().parameters(pojo));
+                        }
+
+                        private String build(MapState.Builder result) {
+                            return result.build().getParameters();
+                        }
+                    }
             }
         });
     }
@@ -209,5 +230,9 @@ public class JsonDocumentSettersTest {
 
     private static ParallelState.Builder newParallelState() {
         return parallelState().transition(end());
+    }
+
+    private static MapState.Builder newMapState() {
+        return mapState().transition(end());
     }
 }

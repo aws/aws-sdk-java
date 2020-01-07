@@ -16,6 +16,7 @@
 package com.amazonaws.services.stepfunctions.builder;
 
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.iterator;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choice;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.choiceState;
@@ -25,6 +26,7 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.f
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.gte;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.next;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.parallelState;
+import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.mapState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.passState;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.retrier;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.seconds;
@@ -36,13 +38,17 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.t
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.waitState;
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.client.builder.AwsClientBuilder;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagement;
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagementClient;
 import com.amazonaws.services.stepfunctions.AWSStepFunctions;
 import com.amazonaws.services.stepfunctions.AWSStepFunctionsClient;
+import com.amazonaws.services.stepfunctions.AWSStepFunctionsClientBuilder;
 import com.amazonaws.services.stepfunctions.builder.states.ChoiceState;
 import com.amazonaws.services.stepfunctions.builder.states.FailState;
 import com.amazonaws.services.stepfunctions.builder.states.ParallelState;
+import com.amazonaws.services.stepfunctions.builder.states.MapState;
 import com.amazonaws.services.stepfunctions.builder.states.WaitState;
 import com.amazonaws.services.stepfunctions.model.CreateStateMachineRequest;
 import com.amazonaws.services.stepfunctions.model.CreateStateMachineResult;
@@ -91,6 +97,7 @@ public class StepFunctionBuilderIntegrationTest extends AWSIntegrationTestBase {
     public void roundTripStateMachine() {
         StateMachine stateMachine =
             stateMachine().state("ParallelState", testParallelState())
+                          .state("MapState", testMapState())
                           .state("WaitForTimestamp", testWaitForTimestamp())
                           .state("WaitForTimestampPath", testWaitForTimestampPath())
                           .state("WaitForSeconds", testWaitForSeconds())
@@ -123,7 +130,7 @@ public class StepFunctionBuilderIntegrationTest extends AWSIntegrationTestBase {
                               .resultPath("$.parallel.result")
                               .inputPath("$.parallel.input")
                               .outputPath("$.parallel.output")
-                              .transition(next("WaitForTimestamp"))
+                              .transition(next("MapState"))
                               .catcher(catcher().transition(next("EndState"))
                                                 .resultPath("$.catcher.result")
                                                 .catchAll())
@@ -151,6 +158,32 @@ public class StepFunctionBuilderIntegrationTest extends AWSIntegrationTestBase {
                                                   .transition(end())
                                                   .comment("This is the final state of branch two"))
                                               .startAt("BranchTwoStart"));
+    }
+
+    private MapState.Builder testMapState() {
+        return mapState()
+                .itemsPath("$.map.items")
+                .parameters("\"foo\"")
+                .resultPath("$.map.result")
+                .inputPath("$.map.input")
+                .outputPath("$.map.output")
+                .maxConcurrency(10)
+                .transition(next("WaitForTimestamp"))
+                .catcher(catcher().transition(next("EndState"))
+                        .resultPath("$.catcher.result")
+                        .catchAll())
+                .retrier(retrier()
+                        .retryOnAllErrors()
+                        .backoffRate(1.2)
+                        .maxAttempts(3)
+                        .intervalSeconds(5))
+                .comment("This is a map state")
+                .iterator(iterator().comment("Iterator start")
+                        .state("IteratorStart", succeedState()
+                                .inputPath("$.succeed.input")
+                                .outputPath("$.succeed.output")
+                                .comment("Succeed state"))
+                        .startAt("IteratorStart"));
     }
 
     private WaitState.Builder testWaitForTimestamp() {

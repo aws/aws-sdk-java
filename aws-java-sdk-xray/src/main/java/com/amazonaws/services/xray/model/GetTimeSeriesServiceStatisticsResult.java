@@ -39,7 +39,7 @@ public class GetTimeSeriesServiceStatisticsResult extends com.amazonaws.AmazonWe
     private Boolean containsOldGroupVersions;
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      */
     private String nextToken;
@@ -176,11 +176,11 @@ public class GetTimeSeriesServiceStatisticsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -189,10 +189,10 @@ public class GetTimeSeriesServiceStatisticsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
-     * @return Pagination token. Not used.
+     * @return Pagination token.
      */
 
     public String getNextToken() {
@@ -201,11 +201,11 @@ public class GetTimeSeriesServiceStatisticsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Pagination token. Not used.
+     * Pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Not used.
+     *        Pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
