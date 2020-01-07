@@ -31,6 +31,15 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.List<DocumentClass> classes;
+    /**
+     * <p>
+     * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
+     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
+     * the same time.
+     * </p>
+     */
+    private java.util.List<DocumentLabel> labels;
 
     /**
      * <p>
@@ -119,6 +128,100 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
+     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
+     * the same time.
+     * </p>
+     * 
+     * @return The labels used the document being analyzed. These are used for multi-label trained models. Individual
+     *         labels represent different categories that are related in some manner and are not multually exclusive.
+     *         For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie,
+     *         and a comedy, all at the same time.
+     */
+
+    public java.util.List<DocumentLabel> getLabels() {
+        return labels;
+    }
+
+    /**
+     * <p>
+     * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
+     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
+     * the same time.
+     * </p>
+     * 
+     * @param labels
+     *        The labels used the document being analyzed. These are used for multi-label trained models. Individual
+     *        labels represent different categories that are related in some manner and are not multually exclusive. For
+     *        example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a
+     *        comedy, all at the same time.
+     */
+
+    public void setLabels(java.util.Collection<DocumentLabel> labels) {
+        if (labels == null) {
+            this.labels = null;
+            return;
+        }
+
+        this.labels = new java.util.ArrayList<DocumentLabel>(labels);
+    }
+
+    /**
+     * <p>
+     * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
+     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
+     * the same time.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param labels
+     *        The labels used the document being analyzed. These are used for multi-label trained models. Individual
+     *        labels represent different categories that are related in some manner and are not multually exclusive. For
+     *        example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a
+     *        comedy, all at the same time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClassifyDocumentResult withLabels(DocumentLabel... labels) {
+        if (this.labels == null) {
+            setLabels(new java.util.ArrayList<DocumentLabel>(labels.length));
+        }
+        for (DocumentLabel ele : labels) {
+            this.labels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
+     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
+     * the same time.
+     * </p>
+     * 
+     * @param labels
+     *        The labels used the document being analyzed. These are used for multi-label trained models. Individual
+     *        labels represent different categories that are related in some manner and are not multually exclusive. For
+     *        example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a
+     *        comedy, all at the same time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClassifyDocumentResult withLabels(java.util.Collection<DocumentLabel> labels) {
+        setLabels(labels);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +234,9 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClasses() != null)
-            sb.append("Classes: ").append(getClasses());
+            sb.append("Classes: ").append(getClasses()).append(",");
+        if (getLabels() != null)
+            sb.append("Labels: ").append(getLabels());
         sb.append("}");
         return sb.toString();
     }
@@ -150,6 +255,10 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getClasses() != null && other.getClasses().equals(this.getClasses()) == false)
             return false;
+        if (other.getLabels() == null ^ this.getLabels() == null)
+            return false;
+        if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
+            return false;
         return true;
     }
 
@@ -159,6 +268,7 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClasses() == null) ? 0 : getClasses().hashCode());
+        hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         return hashCode;
     }
 

@@ -622,6 +622,26 @@
       ],
       "type": "string"
     },
+    "Authorization": {
+      "documentation": "CDN Authorization credentials",
+      "members": {
+        "CdnIdentifierSecret": {
+          "documentation": "The Amazon Resource Name (ARN) for the secret in Secrets Manager that your Content Distribution Network (CDN) uses for authorization to access your endpoint.\n",
+          "locationName": "cdnIdentifierSecret",
+          "shape": "__string"
+        },
+        "SecretsRoleArn": {
+          "documentation": "The Amazon Resource Name (ARN) for the IAM role that allows MediaPackage to communicate with AWS Secrets Manager.\n",
+          "locationName": "secretsRoleArn",
+          "shape": "__string"
+        }
+      },
+      "required": [
+        "SecretsRoleArn",
+        "CdnIdentifierSecret"
+      ],
+      "type": "structure"
+    },
     "Channel": {
       "documentation": "A Channel resource configuration.",
       "members": {
@@ -917,6 +937,10 @@
     "CreateOriginEndpointRequest": {
       "documentation": "Configuration parameters used to create a new OriginEndpoint.",
       "members": {
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
+        },
         "ChannelId": {
           "documentation": "The ID of the Channel that the OriginEndpoint will be associated with.\nThis cannot be changed after the OriginEndpoint is created.\n",
           "locationName": "channelId",
@@ -990,6 +1014,10 @@
           "documentation": "The Amazon Resource Name (ARN) assigned to the OriginEndpoint.",
           "locationName": "arn",
           "shape": "__string"
+        },
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
         },
         "ChannelId": {
           "documentation": "The ID of the Channel the OriginEndpoint is associated with.",
@@ -1305,6 +1333,10 @@
           "documentation": "The Amazon Resource Name (ARN) assigned to the OriginEndpoint.",
           "locationName": "arn",
           "shape": "__string"
+        },
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
         },
         "ChannelId": {
           "documentation": "The ID of the Channel the OriginEndpoint is associated with.",
@@ -1947,6 +1979,10 @@
           "locationName": "arn",
           "shape": "__string"
         },
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
+        },
         "ChannelId": {
           "documentation": "The ID of the Channel the OriginEndpoint is associated with.",
           "locationName": "channelId",
@@ -2018,6 +2054,10 @@
     "OriginEndpointCreateParameters": {
       "documentation": "Configuration parameters for a new OriginEndpoint.",
       "members": {
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
+        },
         "ChannelId": {
           "documentation": "The ID of the Channel that the OriginEndpoint will be associated with.\nThis cannot be changed after the OriginEndpoint is created.\n",
           "locationName": "channelId",
@@ -2080,8 +2120,8 @@
         }
       },
       "required": [
-        "Id",
-        "ChannelId"
+        "ChannelId",
+        "Id"
       ],
       "type": "structure"
     },
@@ -2104,6 +2144,10 @@
     "OriginEndpointUpdateParameters": {
       "documentation": "Configuration parameters for updating an existing OriginEndpoint.",
       "members": {
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
+        },
         "CmafPackage": {
           "locationName": "cmafPackage",
           "shape": "CmafPackageCreateOrUpdateParameters"
@@ -2529,6 +2573,10 @@
     "UpdateOriginEndpointRequest": {
       "documentation": "Configuration parameters used to update an existing OriginEndpoint.",
       "members": {
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
+        },
         "CmafPackage": {
           "locationName": "cmafPackage",
           "shape": "CmafPackageCreateOrUpdateParameters"
@@ -2593,6 +2641,10 @@
           "documentation": "The Amazon Resource Name (ARN) assigned to the OriginEndpoint.",
           "locationName": "arn",
           "shape": "__string"
+        },
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
         },
         "ChannelId": {
           "documentation": "The ID of the Channel the OriginEndpoint is associated with.",

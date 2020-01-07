@@ -35,6 +35,14 @@ public class ClassifierEvaluationMetricsMarshaller {
             .marshallLocationName("Recall").build();
     private static final MarshallingInfo<Double> F1SCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("F1Score").build();
+    private static final MarshallingInfo<Double> MICROPRECISION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MicroPrecision").build();
+    private static final MarshallingInfo<Double> MICRORECALL_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MicroRecall").build();
+    private static final MarshallingInfo<Double> MICROF1SCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MicroF1Score").build();
+    private static final MarshallingInfo<Double> HAMMINGLOSS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HammingLoss").build();
 
     private static final ClassifierEvaluationMetricsMarshaller instance = new ClassifierEvaluationMetricsMarshaller();
 
@@ -56,6 +64,10 @@ public class ClassifierEvaluationMetricsMarshaller {
             protocolMarshaller.marshall(classifierEvaluationMetrics.getPrecision(), PRECISION_BINDING);
             protocolMarshaller.marshall(classifierEvaluationMetrics.getRecall(), RECALL_BINDING);
             protocolMarshaller.marshall(classifierEvaluationMetrics.getF1Score(), F1SCORE_BINDING);
+            protocolMarshaller.marshall(classifierEvaluationMetrics.getMicroPrecision(), MICROPRECISION_BINDING);
+            protocolMarshaller.marshall(classifierEvaluationMetrics.getMicroRecall(), MICRORECALL_BINDING);
+            protocolMarshaller.marshall(classifierEvaluationMetrics.getMicroF1Score(), MICROF1SCORE_BINDING);
+            protocolMarshaller.marshall(classifierEvaluationMetrics.getHammingLoss(), HAMMINGLOSS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -41,7 +41,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
@@ -67,7 +67,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * subsequent call to get the next set of results.
      * </p>
      * <p>
-     * Constraint: If the value is greater than 1000, we return only 1000 items.
+     * Constraint: If the value is greater than 1,000, we return only 1,000 items.
      * </p>
      */
     private Integer maxResults;
@@ -158,7 +158,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
@@ -181,7 +181,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>service-name</code>: The name of the service.
+     *         <code>service-name</code> - The name of the service.
      *         </p>
      *         </li>
      *         <li>
@@ -214,7 +214,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
@@ -238,7 +238,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the service.
+     *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -273,7 +273,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
@@ -302,7 +302,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the service.
+     *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -339,7 +339,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <code>service-name</code>: The name of the service.
+     * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
@@ -363,7 +363,7 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>service-name</code>: The name of the service.
+     *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
@@ -394,14 +394,14 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * subsequent call to get the next set of results.
      * </p>
      * <p>
-     * Constraint: If the value is greater than 1000, we return only 1000 items.
+     * Constraint: If the value is greater than 1,000, we return only 1,000 items.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this request. The request returns a token that you can specify
      *        in a subsequent call to get the next set of results.</p>
      *        <p>
-     *        Constraint: If the value is greater than 1000, we return only 1000 items.
+     *        Constraint: If the value is greater than 1,000, we return only 1,000 items.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -414,13 +414,13 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * subsequent call to get the next set of results.
      * </p>
      * <p>
-     * Constraint: If the value is greater than 1000, we return only 1000 items.
+     * Constraint: If the value is greater than 1,000, we return only 1,000 items.
      * </p>
      * 
      * @return The maximum number of items to return for this request. The request returns a token that you can specify
      *         in a subsequent call to get the next set of results.</p>
      *         <p>
-     *         Constraint: If the value is greater than 1000, we return only 1000 items.
+     *         Constraint: If the value is greater than 1,000, we return only 1,000 items.
      */
 
     public Integer getMaxResults() {
@@ -433,14 +433,14 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * subsequent call to get the next set of results.
      * </p>
      * <p>
-     * Constraint: If the value is greater than 1000, we return only 1000 items.
+     * Constraint: If the value is greater than 1,000, we return only 1,000 items.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items to return for this request. The request returns a token that you can specify
      *        in a subsequent call to get the next set of results.</p>
      *        <p>
-     *        Constraint: If the value is greater than 1000, we return only 1000 items.
+     *        Constraint: If the value is greater than 1,000, we return only 1,000 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

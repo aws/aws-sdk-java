@@ -136,6 +136,14 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * </p>
      */
     private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     * documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot
+     * be changed once the classifier is trained.
+     * </p>
+     */
+    private String mode;
 
     /**
      * <p>
@@ -881,6 +889,81 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     * documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot
+     * be changed once the classifier is trained.
+     * </p>
+     * 
+     * @param mode
+     *        Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     *        documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this
+     *        cannot be changed once the classifier is trained.
+     * @see DocumentClassifierMode
+     */
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     * documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot
+     * be changed once the classifier is trained.
+     * </p>
+     * 
+     * @return Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     *         documents and the format of the confusion matrix. Each classifier can only be trained in one mode and
+     *         this cannot be changed once the classifier is trained.
+     * @see DocumentClassifierMode
+     */
+
+    public String getMode() {
+        return this.mode;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     * documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot
+     * be changed once the classifier is trained.
+     * </p>
+     * 
+     * @param mode
+     *        Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     *        documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this
+     *        cannot be changed once the classifier is trained.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentClassifierMode
+     */
+
+    public DocumentClassifierProperties withMode(String mode) {
+        setMode(mode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     * documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this cannot
+     * be changed once the classifier is trained.
+     * </p>
+     * 
+     * @param mode
+     *        Indicates the mode in which the specific classifier was trained. This also indicates the format of input
+     *        documents and the format of the confusion matrix. Each classifier can only be trained in one mode and this
+     *        cannot be changed once the classifier is trained.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentClassifierMode
+     */
+
+    public DocumentClassifierProperties withMode(DocumentClassifierMode mode) {
+        this.mode = mode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -919,7 +1002,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
         if (getVolumeKmsKeyId() != null)
             sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getMode() != null)
+            sb.append("Mode: ").append(getMode());
         sb.append("}");
         return sb.toString();
     }
@@ -990,6 +1075,10 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getMode() == null ^ this.getMode() == null)
+            return false;
+        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
+            return false;
         return true;
     }
 
@@ -1012,6 +1101,7 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         return hashCode;
     }
 

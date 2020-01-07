@@ -25,6 +25,8 @@ public class DescribeOriginEndpointResult extends com.amazonaws.AmazonWebService
 
     /** The Amazon Resource Name (ARN) assigned to the OriginEndpoint. */
     private String arn;
+
+    private Authorization authorization;
     /** The ID of the Channel the OriginEndpoint is associated with. */
     private String channelId;
 
@@ -95,6 +97,32 @@ public class DescribeOriginEndpointResult extends com.amazonaws.AmazonWebService
 
     public DescribeOriginEndpointResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param authorization
+     */
+
+    public void setAuthorization(Authorization authorization) {
+        this.authorization = authorization;
+    }
+
+    /**
+     * @return
+     */
+
+    public Authorization getAuthorization() {
+        return this.authorization;
+    }
+
+    /**
+     * @param authorization
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOriginEndpointResult withAuthorization(Authorization authorization) {
+        setAuthorization(authorization);
         return this;
     }
 
@@ -646,6 +674,8 @@ public class DescribeOriginEndpointResult extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAuthorization() != null)
+            sb.append("Authorization: ").append(getAuthorization()).append(",");
         if (getChannelId() != null)
             sb.append("ChannelId: ").append(getChannelId()).append(",");
         if (getCmafPackage() != null)
@@ -691,6 +721,10 @@ public class DescribeOriginEndpointResult extends com.amazonaws.AmazonWebService
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getAuthorization() == null ^ this.getAuthorization() == null)
+            return false;
+        if (other.getAuthorization() != null && other.getAuthorization().equals(this.getAuthorization()) == false)
             return false;
         if (other.getChannelId() == null ^ this.getChannelId() == null)
             return false;
@@ -757,6 +791,7 @@ public class DescribeOriginEndpointResult extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
         hashCode = prime * hashCode + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
         hashCode = prime * hashCode + ((getCmafPackage() == null) ? 0 : getCmafPackage().hashCode());
         hashCode = prime * hashCode + ((getDashPackage() == null) ? 0 : getDashPackage().hashCode());

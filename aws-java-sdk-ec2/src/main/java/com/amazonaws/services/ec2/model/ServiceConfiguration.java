@@ -52,7 +52,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     private String serviceState;
     /**
      * <p>
-     * In the Availability Zones in which the service is available.
+     * The Availability Zones in which the service is available.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
@@ -64,7 +64,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     private Boolean acceptanceRequired;
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      */
@@ -87,6 +87,12 @@ public class ServiceConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private String privateDnsName;
+    /**
+     * <p>
+     * Information about the endpoint service private DNS name configuration.
+     * </p>
+     */
+    private PrivateDnsNameConfiguration privateDnsNameConfiguration;
     /**
      * <p>
      * Any tags assigned to the service.
@@ -308,10 +314,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * In the Availability Zones in which the service is available.
+     * The Availability Zones in which the service is available.
      * </p>
      * 
-     * @return In the Availability Zones in which the service is available.
+     * @return The Availability Zones in which the service is available.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -323,11 +329,11 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * In the Availability Zones in which the service is available.
+     * The Availability Zones in which the service is available.
      * </p>
      * 
      * @param availabilityZones
-     *        In the Availability Zones in which the service is available.
+     *        The Availability Zones in which the service is available.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -341,7 +347,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * In the Availability Zones in which the service is available.
+     * The Availability Zones in which the service is available.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -350,7 +356,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param availabilityZones
-     *        In the Availability Zones in which the service is available.
+     *        The Availability Zones in which the service is available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,11 +372,11 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * In the Availability Zones in which the service is available.
+     * The Availability Zones in which the service is available.
      * </p>
      * 
      * @param availabilityZones
-     *        In the Availability Zones in which the service is available.
+     *        The Availability Zones in which the service is available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,13 +443,13 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
      * @param managesVpcEndpoints
-     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
-     *        the VPC endpoint API is restricted.
+     *        Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the
+     *        VPC endpoint API is restricted.
      */
 
     public void setManagesVpcEndpoints(Boolean managesVpcEndpoints) {
@@ -452,11 +458,11 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
-     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     * @return Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using
      *         the VPC endpoint API is restricted.
      */
 
@@ -466,13 +472,13 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
      * @param managesVpcEndpoints
-     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
-     *        the VPC endpoint API is restricted.
+     *        Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the
+     *        VPC endpoint API is restricted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,11 +489,11 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
-     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     * @return Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using
      *         the VPC endpoint API is restricted.
      */
 
@@ -683,6 +689,46 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Information about the endpoint service private DNS name configuration.
+     * </p>
+     * 
+     * @param privateDnsNameConfiguration
+     *        Information about the endpoint service private DNS name configuration.
+     */
+
+    public void setPrivateDnsNameConfiguration(PrivateDnsNameConfiguration privateDnsNameConfiguration) {
+        this.privateDnsNameConfiguration = privateDnsNameConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the endpoint service private DNS name configuration.
+     * </p>
+     * 
+     * @return Information about the endpoint service private DNS name configuration.
+     */
+
+    public PrivateDnsNameConfiguration getPrivateDnsNameConfiguration() {
+        return this.privateDnsNameConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the endpoint service private DNS name configuration.
+     * </p>
+     * 
+     * @param privateDnsNameConfiguration
+     *        Information about the endpoint service private DNS name configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withPrivateDnsNameConfiguration(PrivateDnsNameConfiguration privateDnsNameConfiguration) {
+        setPrivateDnsNameConfiguration(privateDnsNameConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Any tags assigned to the service.
      * </p>
      * 
@@ -786,6 +832,8 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             sb.append("BaseEndpointDnsNames: ").append(getBaseEndpointDnsNames()).append(",");
         if (getPrivateDnsName() != null)
             sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
+        if (getPrivateDnsNameConfiguration() != null)
+            sb.append("PrivateDnsNameConfiguration: ").append(getPrivateDnsNameConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -842,6 +890,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
             return false;
+        if (other.getPrivateDnsNameConfiguration() == null ^ this.getPrivateDnsNameConfiguration() == null)
+            return false;
+        if (other.getPrivateDnsNameConfiguration() != null && other.getPrivateDnsNameConfiguration().equals(this.getPrivateDnsNameConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -864,6 +916,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getBaseEndpointDnsNames() == null) ? 0 : getBaseEndpointDnsNames().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsNameConfiguration() == null) ? 0 : getPrivateDnsNameConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

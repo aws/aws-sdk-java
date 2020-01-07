@@ -47,6 +47,10 @@ public class CreateVpcEndpointServiceConfigurationRequestMarshaller implements
             request.addParameter("AcceptanceRequired", StringUtils.fromBoolean(createVpcEndpointServiceConfigurationRequest.getAcceptanceRequired()));
         }
 
+        if (createVpcEndpointServiceConfigurationRequest.getPrivateDnsName() != null) {
+            request.addParameter("PrivateDnsName", StringUtils.fromString(createVpcEndpointServiceConfigurationRequest.getPrivateDnsName()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> createVpcEndpointServiceConfigurationRequestNetworkLoadBalancerArnsList = (com.amazonaws.internal.SdkInternalList<String>) createVpcEndpointServiceConfigurationRequest
                 .getNetworkLoadBalancerArns();
         if (!createVpcEndpointServiceConfigurationRequestNetworkLoadBalancerArnsList.isEmpty()

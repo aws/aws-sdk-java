@@ -28,7 +28,7 @@ public class AcceptVpcEndpointConnectionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the endpoint service.
+     * The ID of the VPC endpoint service.
      * </p>
      */
     private String serviceId;
@@ -41,11 +41,11 @@ public class AcceptVpcEndpointConnectionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the endpoint service.
+     * The ID of the VPC endpoint service.
      * </p>
      * 
      * @param serviceId
-     *        The ID of the endpoint service.
+     *        The ID of the VPC endpoint service.
      */
 
     public void setServiceId(String serviceId) {
@@ -54,10 +54,10 @@ public class AcceptVpcEndpointConnectionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the endpoint service.
+     * The ID of the VPC endpoint service.
      * </p>
      * 
-     * @return The ID of the endpoint service.
+     * @return The ID of the VPC endpoint service.
      */
 
     public String getServiceId() {
@@ -66,11 +66,11 @@ public class AcceptVpcEndpointConnectionsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the endpoint service.
+     * The ID of the VPC endpoint service.
      * </p>
      * 
      * @param serviceId
-     *        The ID of the endpoint service.
+     *        The ID of the VPC endpoint service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

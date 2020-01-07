@@ -115,6 +115,11 @@ public class ServiceConfigurationStaxUnmarshaller implements Unmarshaller<Servic
                     continue;
                 }
 
+                if (context.testExpression("privateDnsNameConfiguration", targetDepth)) {
+                    serviceConfiguration.setPrivateDnsNameConfiguration(PrivateDnsNameConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     serviceConfiguration.withTags(new ArrayList<Tag>());
                     continue;

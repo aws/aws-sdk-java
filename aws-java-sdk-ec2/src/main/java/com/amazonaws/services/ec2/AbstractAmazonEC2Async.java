@@ -6526,6 +6526,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<StartVpcEndpointServicePrivateDnsVerificationResult> startVpcEndpointServicePrivateDnsVerificationAsync(
+            StartVpcEndpointServicePrivateDnsVerificationRequest request) {
+
+        return startVpcEndpointServicePrivateDnsVerificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartVpcEndpointServicePrivateDnsVerificationResult> startVpcEndpointServicePrivateDnsVerificationAsync(
+            StartVpcEndpointServicePrivateDnsVerificationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartVpcEndpointServicePrivateDnsVerificationRequest, StartVpcEndpointServicePrivateDnsVerificationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopInstancesResult> stopInstancesAsync(StopInstancesRequest request) {
 
         return stopInstancesAsync(request, null);

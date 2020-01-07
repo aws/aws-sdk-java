@@ -52,6 +52,10 @@ public class CreateOriginEndpointResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     createOriginEndpointResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("authorization", targetDepth)) {
+                    context.nextToken();
+                    createOriginEndpointResult.setAuthorization(AuthorizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("channelId", targetDepth)) {
                     context.nextToken();
                     createOriginEndpointResult.setChannelId(context.getUnmarshaller(String.class).unmarshall(context));

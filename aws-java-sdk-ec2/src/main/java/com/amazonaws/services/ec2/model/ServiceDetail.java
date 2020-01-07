@@ -82,7 +82,7 @@ public class ServiceDetail implements Serializable, Cloneable {
     private Boolean acceptanceRequired;
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      */
@@ -93,6 +93,15 @@ public class ServiceDetail implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The verification state of the VPC endpoint service.
+     * </p>
+     * <p>
+     * Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * </p>
+     */
+    private String privateDnsNameVerificationState;
 
     /**
      * <p>
@@ -579,13 +588,13 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
      * @param managesVpcEndpoints
-     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
-     *        the VPC endpoint API is restricted.
+     *        Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the
+     *        VPC endpoint API is restricted.
      */
 
     public void setManagesVpcEndpoints(Boolean managesVpcEndpoints) {
@@ -594,11 +603,11 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
-     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     * @return Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using
      *         the VPC endpoint API is restricted.
      */
 
@@ -608,13 +617,13 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
      * @param managesVpcEndpoints
-     *        Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
-     *        the VPC endpoint API is restricted.
+     *        Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the
+     *        VPC endpoint API is restricted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -625,11 +634,11 @@ public class ServiceDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using the VPC
+     * Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using the VPC
      * endpoint API is restricted.
      * </p>
      * 
-     * @return Indicates whether the service manages it's VPC endpoints. Management of the service VPC endpoints using
+     * @return Indicates whether the service manages its VPC endpoints. Management of the service VPC endpoints using
      *         the VPC endpoint API is restricted.
      */
 
@@ -711,6 +720,85 @@ public class ServiceDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The verification state of the VPC endpoint service.
+     * </p>
+     * <p>
+     * Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * </p>
+     * 
+     * @param privateDnsNameVerificationState
+     *        The verification state of the VPC endpoint service.</p>
+     *        <p>
+     *        Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * @see DnsNameState
+     */
+
+    public void setPrivateDnsNameVerificationState(String privateDnsNameVerificationState) {
+        this.privateDnsNameVerificationState = privateDnsNameVerificationState;
+    }
+
+    /**
+     * <p>
+     * The verification state of the VPC endpoint service.
+     * </p>
+     * <p>
+     * Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * </p>
+     * 
+     * @return The verification state of the VPC endpoint service.</p>
+     *         <p>
+     *         Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * @see DnsNameState
+     */
+
+    public String getPrivateDnsNameVerificationState() {
+        return this.privateDnsNameVerificationState;
+    }
+
+    /**
+     * <p>
+     * The verification state of the VPC endpoint service.
+     * </p>
+     * <p>
+     * Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * </p>
+     * 
+     * @param privateDnsNameVerificationState
+     *        The verification state of the VPC endpoint service.</p>
+     *        <p>
+     *        Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DnsNameState
+     */
+
+    public ServiceDetail withPrivateDnsNameVerificationState(String privateDnsNameVerificationState) {
+        setPrivateDnsNameVerificationState(privateDnsNameVerificationState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The verification state of the VPC endpoint service.
+     * </p>
+     * <p>
+     * Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * </p>
+     * 
+     * @param privateDnsNameVerificationState
+     *        The verification state of the VPC endpoint service.</p>
+     *        <p>
+     *        Consumers of the endpoint service cannot use the private name when the state is not <code>verified</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DnsNameState
+     */
+
+    public ServiceDetail withPrivateDnsNameVerificationState(DnsNameState privateDnsNameVerificationState) {
+        this.privateDnsNameVerificationState = privateDnsNameVerificationState.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -743,7 +831,9 @@ public class ServiceDetail implements Serializable, Cloneable {
         if (getManagesVpcEndpoints() != null)
             sb.append("ManagesVpcEndpoints: ").append(getManagesVpcEndpoints()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPrivateDnsNameVerificationState() != null)
+            sb.append("PrivateDnsNameVerificationState: ").append(getPrivateDnsNameVerificationState());
         sb.append("}");
         return sb.toString();
     }
@@ -802,6 +892,11 @@ public class ServiceDetail implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPrivateDnsNameVerificationState() == null ^ this.getPrivateDnsNameVerificationState() == null)
+            return false;
+        if (other.getPrivateDnsNameVerificationState() != null
+                && other.getPrivateDnsNameVerificationState().equals(this.getPrivateDnsNameVerificationState()) == false)
+            return false;
         return true;
     }
 
@@ -821,6 +916,7 @@ public class ServiceDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
         hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsNameVerificationState() == null) ? 0 : getPrivateDnsNameVerificationState().hashCode());
         return hashCode;
     }
 

@@ -29,6 +29,8 @@ public class DocumentClassifierInputDataConfigMarshaller {
 
     private static final MarshallingInfo<String> S3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("S3Uri").build();
+    private static final MarshallingInfo<String> LABELDELIMITER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelDelimiter").build();
 
     private static final DocumentClassifierInputDataConfigMarshaller instance = new DocumentClassifierInputDataConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class DocumentClassifierInputDataConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(documentClassifierInputDataConfig.getS3Uri(), S3URI_BINDING);
+            protocolMarshaller.marshall(documentClassifierInputDataConfig.getLabelDelimiter(), LABELDELIMITER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

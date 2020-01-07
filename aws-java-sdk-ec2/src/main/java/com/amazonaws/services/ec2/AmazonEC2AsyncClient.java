@@ -14536,6 +14536,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<StartVpcEndpointServicePrivateDnsVerificationResult> startVpcEndpointServicePrivateDnsVerificationAsync(
+            StartVpcEndpointServicePrivateDnsVerificationRequest request) {
+
+        return startVpcEndpointServicePrivateDnsVerificationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartVpcEndpointServicePrivateDnsVerificationResult> startVpcEndpointServicePrivateDnsVerificationAsync(
+            final StartVpcEndpointServicePrivateDnsVerificationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartVpcEndpointServicePrivateDnsVerificationRequest, StartVpcEndpointServicePrivateDnsVerificationResult> asyncHandler) {
+        final StartVpcEndpointServicePrivateDnsVerificationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartVpcEndpointServicePrivateDnsVerificationResult>() {
+            @Override
+            public StartVpcEndpointServicePrivateDnsVerificationResult call() throws Exception {
+                StartVpcEndpointServicePrivateDnsVerificationResult result = null;
+
+                try {
+                    result = executeStartVpcEndpointServicePrivateDnsVerification(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopInstancesResult> stopInstancesAsync(StopInstancesRequest request) {
 
         return stopInstancesAsync(request, null);

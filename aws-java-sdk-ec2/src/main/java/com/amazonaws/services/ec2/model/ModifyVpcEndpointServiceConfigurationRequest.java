@@ -34,7 +34,19 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     private String serviceId;
     /**
      * <p>
-     * Indicate whether requests to create an endpoint to your service must be accepted.
+     * The private DNS name to assign to the endpoint service.
+     * </p>
+     */
+    private String privateDnsName;
+    /**
+     * <p>
+     * Removes the private DNS name of the endpoint service.
+     * </p>
+     */
+    private Boolean removePrivateDnsName;
+    /**
+     * <p>
+     * Indicates whether requests to create an endpoint to your service must be accepted.
      * </p>
      */
     private Boolean acceptanceRequired;
@@ -93,11 +105,103 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests to create an endpoint to your service must be accepted.
+     * The private DNS name to assign to the endpoint service.
+     * </p>
+     * 
+     * @param privateDnsName
+     *        The private DNS name to assign to the endpoint service.
+     */
+
+    public void setPrivateDnsName(String privateDnsName) {
+        this.privateDnsName = privateDnsName;
+    }
+
+    /**
+     * <p>
+     * The private DNS name to assign to the endpoint service.
+     * </p>
+     * 
+     * @return The private DNS name to assign to the endpoint service.
+     */
+
+    public String getPrivateDnsName() {
+        return this.privateDnsName;
+    }
+
+    /**
+     * <p>
+     * The private DNS name to assign to the endpoint service.
+     * </p>
+     * 
+     * @param privateDnsName
+     *        The private DNS name to assign to the endpoint service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withPrivateDnsName(String privateDnsName) {
+        setPrivateDnsName(privateDnsName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes the private DNS name of the endpoint service.
+     * </p>
+     * 
+     * @param removePrivateDnsName
+     *        Removes the private DNS name of the endpoint service.
+     */
+
+    public void setRemovePrivateDnsName(Boolean removePrivateDnsName) {
+        this.removePrivateDnsName = removePrivateDnsName;
+    }
+
+    /**
+     * <p>
+     * Removes the private DNS name of the endpoint service.
+     * </p>
+     * 
+     * @return Removes the private DNS name of the endpoint service.
+     */
+
+    public Boolean getRemovePrivateDnsName() {
+        return this.removePrivateDnsName;
+    }
+
+    /**
+     * <p>
+     * Removes the private DNS name of the endpoint service.
+     * </p>
+     * 
+     * @param removePrivateDnsName
+     *        Removes the private DNS name of the endpoint service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointServiceConfigurationRequest withRemovePrivateDnsName(Boolean removePrivateDnsName) {
+        setRemovePrivateDnsName(removePrivateDnsName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes the private DNS name of the endpoint service.
+     * </p>
+     * 
+     * @return Removes the private DNS name of the endpoint service.
+     */
+
+    public Boolean isRemovePrivateDnsName() {
+        return this.removePrivateDnsName;
+    }
+
+    /**
+     * <p>
+     * Indicates whether requests to create an endpoint to your service must be accepted.
      * </p>
      * 
      * @param acceptanceRequired
-     *        Indicate whether requests to create an endpoint to your service must be accepted.
+     *        Indicates whether requests to create an endpoint to your service must be accepted.
      */
 
     public void setAcceptanceRequired(Boolean acceptanceRequired) {
@@ -106,10 +210,10 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests to create an endpoint to your service must be accepted.
+     * Indicates whether requests to create an endpoint to your service must be accepted.
      * </p>
      * 
-     * @return Indicate whether requests to create an endpoint to your service must be accepted.
+     * @return Indicates whether requests to create an endpoint to your service must be accepted.
      */
 
     public Boolean getAcceptanceRequired() {
@@ -118,11 +222,11 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests to create an endpoint to your service must be accepted.
+     * Indicates whether requests to create an endpoint to your service must be accepted.
      * </p>
      * 
      * @param acceptanceRequired
-     *        Indicate whether requests to create an endpoint to your service must be accepted.
+     *        Indicates whether requests to create an endpoint to your service must be accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +237,10 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests to create an endpoint to your service must be accepted.
+     * Indicates whether requests to create an endpoint to your service must be accepted.
      * </p>
      * 
-     * @return Indicate whether requests to create an endpoint to your service must be accepted.
+     * @return Indicates whether requests to create an endpoint to your service must be accepted.
      */
 
     public Boolean isAcceptanceRequired() {
@@ -314,6 +418,10 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         sb.append("{");
         if (getServiceId() != null)
             sb.append("ServiceId: ").append(getServiceId()).append(",");
+        if (getPrivateDnsName() != null)
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
+        if (getRemovePrivateDnsName() != null)
+            sb.append("RemovePrivateDnsName: ").append(getRemovePrivateDnsName()).append(",");
         if (getAcceptanceRequired() != null)
             sb.append("AcceptanceRequired: ").append(getAcceptanceRequired()).append(",");
         if (getAddNetworkLoadBalancerArns() != null)
@@ -338,6 +446,14 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
             return false;
         if (other.getServiceId() != null && other.getServiceId().equals(this.getServiceId()) == false)
             return false;
+        if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null)
+            return false;
+        if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
+            return false;
+        if (other.getRemovePrivateDnsName() == null ^ this.getRemovePrivateDnsName() == null)
+            return false;
+        if (other.getRemovePrivateDnsName() != null && other.getRemovePrivateDnsName().equals(this.getRemovePrivateDnsName()) == false)
+            return false;
         if (other.getAcceptanceRequired() == null ^ this.getAcceptanceRequired() == null)
             return false;
         if (other.getAcceptanceRequired() != null && other.getAcceptanceRequired().equals(this.getAcceptanceRequired()) == false)
@@ -360,6 +476,8 @@ public class ModifyVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getServiceId() == null) ? 0 : getServiceId().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
+        hashCode = prime * hashCode + ((getRemovePrivateDnsName() == null) ? 0 : getRemovePrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
         hashCode = prime * hashCode + ((getAddNetworkLoadBalancerArns() == null) ? 0 : getAddNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getRemoveNetworkLoadBalancerArns() == null) ? 0 : getRemoveNetworkLoadBalancerArns().hashCode());

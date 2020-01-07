@@ -52,6 +52,10 @@ public class ClassifyDocumentResultJsonUnmarshaller implements Unmarshaller<Clas
                     context.nextToken();
                     classifyDocumentResult.setClasses(new ListUnmarshaller<DocumentClass>(DocumentClassJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("Labels", targetDepth)) {
+                    context.nextToken();
+                    classifyDocumentResult.setLabels(new ListUnmarshaller<DocumentLabel>(DocumentLabelJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

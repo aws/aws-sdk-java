@@ -47,6 +47,14 @@ public class ModifyVpcEndpointServiceConfigurationRequestMarshaller implements
             request.addParameter("ServiceId", StringUtils.fromString(modifyVpcEndpointServiceConfigurationRequest.getServiceId()));
         }
 
+        if (modifyVpcEndpointServiceConfigurationRequest.getPrivateDnsName() != null) {
+            request.addParameter("PrivateDnsName", StringUtils.fromString(modifyVpcEndpointServiceConfigurationRequest.getPrivateDnsName()));
+        }
+
+        if (modifyVpcEndpointServiceConfigurationRequest.getRemovePrivateDnsName() != null) {
+            request.addParameter("RemovePrivateDnsName", StringUtils.fromBoolean(modifyVpcEndpointServiceConfigurationRequest.getRemovePrivateDnsName()));
+        }
+
         if (modifyVpcEndpointServiceConfigurationRequest.getAcceptanceRequired() != null) {
             request.addParameter("AcceptanceRequired", StringUtils.fromBoolean(modifyVpcEndpointServiceConfigurationRequest.getAcceptanceRequired()));
         }

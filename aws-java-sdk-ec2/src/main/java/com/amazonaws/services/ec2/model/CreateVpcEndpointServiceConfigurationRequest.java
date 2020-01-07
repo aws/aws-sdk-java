@@ -28,11 +28,17 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests from service consumers to create an endpoint to your service must be accepted. To
+     * Indicates whether requests from service consumers to create an endpoint to your service must be accepted. To
      * accept a request, use <a>AcceptVpcEndpointConnections</a>.
      * </p>
      */
     private Boolean acceptanceRequired;
+    /**
+     * <p>
+     * The private DNS name to assign to the VPC endpoint service.
+     * </p>
+     */
+    private String privateDnsName;
     /**
      * <p>
      * The Amazon Resource Names (ARNs) of one or more Network Load Balancers for your service.
@@ -41,21 +47,21 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> networkLoadBalancerArns;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * Indicate whether requests from service consumers to create an endpoint to your service must be accepted. To
+     * Indicates whether requests from service consumers to create an endpoint to your service must be accepted. To
      * accept a request, use <a>AcceptVpcEndpointConnections</a>.
      * </p>
      * 
      * @param acceptanceRequired
-     *        Indicate whether requests from service consumers to create an endpoint to your service must be accepted.
+     *        Indicates whether requests from service consumers to create an endpoint to your service must be accepted.
      *        To accept a request, use <a>AcceptVpcEndpointConnections</a>.
      */
 
@@ -65,11 +71,11 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests from service consumers to create an endpoint to your service must be accepted. To
+     * Indicates whether requests from service consumers to create an endpoint to your service must be accepted. To
      * accept a request, use <a>AcceptVpcEndpointConnections</a>.
      * </p>
      * 
-     * @return Indicate whether requests from service consumers to create an endpoint to your service must be accepted.
+     * @return Indicates whether requests from service consumers to create an endpoint to your service must be accepted.
      *         To accept a request, use <a>AcceptVpcEndpointConnections</a>.
      */
 
@@ -79,12 +85,12 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests from service consumers to create an endpoint to your service must be accepted. To
+     * Indicates whether requests from service consumers to create an endpoint to your service must be accepted. To
      * accept a request, use <a>AcceptVpcEndpointConnections</a>.
      * </p>
      * 
      * @param acceptanceRequired
-     *        Indicate whether requests from service consumers to create an endpoint to your service must be accepted.
+     *        Indicates whether requests from service consumers to create an endpoint to your service must be accepted.
      *        To accept a request, use <a>AcceptVpcEndpointConnections</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -96,16 +102,56 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Indicate whether requests from service consumers to create an endpoint to your service must be accepted. To
+     * Indicates whether requests from service consumers to create an endpoint to your service must be accepted. To
      * accept a request, use <a>AcceptVpcEndpointConnections</a>.
      * </p>
      * 
-     * @return Indicate whether requests from service consumers to create an endpoint to your service must be accepted.
+     * @return Indicates whether requests from service consumers to create an endpoint to your service must be accepted.
      *         To accept a request, use <a>AcceptVpcEndpointConnections</a>.
      */
 
     public Boolean isAcceptanceRequired() {
         return this.acceptanceRequired;
+    }
+
+    /**
+     * <p>
+     * The private DNS name to assign to the VPC endpoint service.
+     * </p>
+     * 
+     * @param privateDnsName
+     *        The private DNS name to assign to the VPC endpoint service.
+     */
+
+    public void setPrivateDnsName(String privateDnsName) {
+        this.privateDnsName = privateDnsName;
+    }
+
+    /**
+     * <p>
+     * The private DNS name to assign to the VPC endpoint service.
+     * </p>
+     * 
+     * @return The private DNS name to assign to the VPC endpoint service.
+     */
+
+    public String getPrivateDnsName() {
+        return this.privateDnsName;
+    }
+
+    /**
+     * <p>
+     * The private DNS name to assign to the VPC endpoint service.
+     * </p>
+     * 
+     * @param privateDnsName
+     *        The private DNS name to assign to the VPC endpoint service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointServiceConfigurationRequest withPrivateDnsName(String privateDnsName) {
+        setPrivateDnsName(privateDnsName);
+        return this;
     }
 
     /**
@@ -183,13 +229,13 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      *        Idempotency</a>.
@@ -201,12 +247,12 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      *         Idempotency</a>.
@@ -218,13 +264,13 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      *        Idempotency</a>.
@@ -261,6 +307,8 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         sb.append("{");
         if (getAcceptanceRequired() != null)
             sb.append("AcceptanceRequired: ").append(getAcceptanceRequired()).append(",");
+        if (getPrivateDnsName() != null)
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getNetworkLoadBalancerArns() != null)
             sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
         if (getClientToken() != null)
@@ -283,6 +331,10 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
             return false;
         if (other.getAcceptanceRequired() != null && other.getAcceptanceRequired().equals(this.getAcceptanceRequired()) == false)
             return false;
+        if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null)
+            return false;
+        if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false)
+            return false;
         if (other.getNetworkLoadBalancerArns() == null ^ this.getNetworkLoadBalancerArns() == null)
             return false;
         if (other.getNetworkLoadBalancerArns() != null && other.getNetworkLoadBalancerArns().equals(this.getNetworkLoadBalancerArns()) == false)
@@ -300,6 +352,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
+        hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;

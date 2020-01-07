@@ -64,6 +64,22 @@ public class ClassifierEvaluationMetricsJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     classifierEvaluationMetrics.setF1Score(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("MicroPrecision", targetDepth)) {
+                    context.nextToken();
+                    classifierEvaluationMetrics.setMicroPrecision(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("MicroRecall", targetDepth)) {
+                    context.nextToken();
+                    classifierEvaluationMetrics.setMicroRecall(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("MicroF1Score", targetDepth)) {
+                    context.nextToken();
+                    classifierEvaluationMetrics.setMicroF1Score(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("HammingLoss", targetDepth)) {
+                    context.nextToken();
+                    classifierEvaluationMetrics.setHammingLoss(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

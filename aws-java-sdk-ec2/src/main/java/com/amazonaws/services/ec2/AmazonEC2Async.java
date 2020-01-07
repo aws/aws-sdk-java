@@ -4639,14 +4639,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
-     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace Partner, or another AWS account.
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
      * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * A <code>gateway</code> endpoint serves as a target for a route in your route table for traffic destined for the
-     * AWS service. You can specify an endpoint policy to attach to the endpoint that will control access to the service
-     * from your VPC. You can also specify the VPC route tables that use the endpoint.
+     * AWS service. You can specify an endpoint policy to attach to the endpoint, which will control access to the
+     * service from your VPC. You can also specify the VPC route tables that use the endpoint.
      * </p>
      * <p>
      * An <code>interface</code> endpoint is a network interface in your subnet that serves as an endpoint for
@@ -4669,14 +4669,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
-     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace partner, or another AWS account.
+     * your VPC and the service. The service may be provided by AWS, an AWS Marketplace Partner, or another AWS account.
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
      * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
      * A <code>gateway</code> endpoint serves as a target for a route in your route table for traffic destined for the
-     * AWS service. You can specify an endpoint policy to attach to the endpoint that will control access to the service
-     * from your VPC. You can also specify the VPC route tables that use the endpoint.
+     * AWS service. You can specify an endpoint policy to attach to the endpoint, which will control access to the
+     * service from your VPC. You can also specify the VPC route tables that use the endpoint.
      * </p>
      * <p>
      * An <code>interface</code> endpoint is a network interface in your subnet that serves as an endpoint for
@@ -4758,6 +4758,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
      * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
+     * <p>
+     * If you set the private DNS name, you must prove that you own the private DNS domain name. For more information,
+     * see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC Endpoint
+     * Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
      * 
      * @param createVpcEndpointServiceConfigurationRequest
      * @return A Java Future containing the result of the CreateVpcEndpointServiceConfiguration operation returned by
@@ -4778,6 +4783,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
      * more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
      * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * If you set the private DNS name, you must prove that you own the private DNS domain name. For more information,
+     * see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC Endpoint
+     * Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createVpcEndpointServiceConfigurationRequest
@@ -16219,6 +16229,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * your service, and you can specify whether acceptance is required for requests to connect to your endpoint service
      * through an interface VPC endpoint.
      * </p>
+     * <p>
+     * If you set or modify the private DNS name, you must prove that you own the private DNS domain name. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC Endpoint
+     * Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
      * 
      * @param modifyVpcEndpointServiceConfigurationRequest
      * @return A Java Future containing the result of the ModifyVpcEndpointServiceConfiguration operation returned by
@@ -16235,6 +16251,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers for
      * your service, and you can specify whether acceptance is required for requests to connect to your endpoint service
      * through an interface VPC endpoint.
+     * </p>
+     * <p>
+     * If you set or modify the private DNS name, you must prove that you own the private DNS domain name. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC Endpoint
+     * Service Private DNS Name Verification</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyVpcEndpointServiceConfigurationRequest
@@ -18886,6 +18908,65 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<StartInstancesResult> startInstancesAsync(StartInstancesRequest startInstancesRequest,
             com.amazonaws.handlers.AsyncHandler<StartInstancesRequest, StartInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates the verification process to prove that the service provider owns the private DNS name domain for the
+     * endpoint service.
+     * </p>
+     * <p>
+     * The service provider must successfully perform the verification before the consumer can use the name to access
+     * the service.
+     * </p>
+     * <p>
+     * Before the service provider runs this command, they must add a record to the DNS server. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record"
+     * >Adding a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * 
+     * @param startVpcEndpointServicePrivateDnsVerificationRequest
+     * @return A Java Future containing the result of the StartVpcEndpointServicePrivateDnsVerification operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.StartVpcEndpointServicePrivateDnsVerification
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartVpcEndpointServicePrivateDnsVerificationResult> startVpcEndpointServicePrivateDnsVerificationAsync(
+            StartVpcEndpointServicePrivateDnsVerificationRequest startVpcEndpointServicePrivateDnsVerificationRequest);
+
+    /**
+     * <p>
+     * Initiates the verification process to prove that the service provider owns the private DNS name domain for the
+     * endpoint service.
+     * </p>
+     * <p>
+     * The service provider must successfully perform the verification before the consumer can use the name to access
+     * the service.
+     * </p>
+     * <p>
+     * Before the service provider runs this command, they must add a record to the DNS server. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record"
+     * >Adding a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * 
+     * @param startVpcEndpointServicePrivateDnsVerificationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartVpcEndpointServicePrivateDnsVerification operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.StartVpcEndpointServicePrivateDnsVerification
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartVpcEndpointServicePrivateDnsVerificationResult> startVpcEndpointServicePrivateDnsVerificationAsync(
+            StartVpcEndpointServicePrivateDnsVerificationRequest startVpcEndpointServicePrivateDnsVerificationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartVpcEndpointServicePrivateDnsVerificationRequest, StartVpcEndpointServicePrivateDnsVerificationResult> asyncHandler);
 
     /**
      * <p>

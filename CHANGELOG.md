@@ -1,3 +1,16 @@
+# __1.11.701__ __2020-01-06__
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - You can now restrict direct access to AWS Elemental MediaPackage by securing requests for live content using CDN authorization. With CDN authorization, content requests require a specific HTTP header and authorization code.
+
+## __Amazon Comprehend__
+  - ### Features
+    - Amazon Comprehend now supports Multilabel document classification
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release supports service providers configuring a private DNS name for services other than AWS services and services available in the AWS marketplace. This feature allows consumers to access the service using an existing DNS name without making changes to their applications.
+
 # __1.11.700__ __2020-01-02__
 ## __AWS Cost Explorer Service__
   - ### Features

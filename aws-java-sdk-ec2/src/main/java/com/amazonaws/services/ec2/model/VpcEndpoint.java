@@ -76,7 +76,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * (Interface endpoint) Information about the security groups that are associated with the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SecurityGroupIdentifier> groups;
@@ -106,7 +106,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DnsEntry> dnsEntries;
     /**
      * <p>
-     * The date and time the VPC endpoint was created.
+     * The date and time that the VPC endpoint was created.
      * </p>
      */
     private java.util.Date creationTimestamp;
@@ -122,6 +122,12 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      */
     private String ownerId;
+    /**
+     * <p>
+     * The last error that occurred for VPC endpoint.
+     * </p>
+     */
+    private LastError lastError;
 
     /**
      * <p>
@@ -577,10 +583,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * (Interface endpoint) Information about the security groups that are associated with the network interface.
      * </p>
      * 
-     * @return (Interface endpoint) Information about the security groups associated with the network interface.
+     * @return (Interface endpoint) Information about the security groups that are associated with the network
+     *         interface.
      */
 
     public java.util.List<SecurityGroupIdentifier> getGroups() {
@@ -592,11 +599,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * (Interface endpoint) Information about the security groups that are associated with the network interface.
      * </p>
      * 
      * @param groups
-     *        (Interface endpoint) Information about the security groups associated with the network interface.
+     *        (Interface endpoint) Information about the security groups that are associated with the network interface.
      */
 
     public void setGroups(java.util.Collection<SecurityGroupIdentifier> groups) {
@@ -610,7 +617,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * (Interface endpoint) Information about the security groups that are associated with the network interface.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -619,7 +626,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      * </p>
      * 
      * @param groups
-     *        (Interface endpoint) Information about the security groups associated with the network interface.
+     *        (Interface endpoint) Information about the security groups that are associated with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -635,11 +642,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * (Interface endpoint) Information about the security groups associated with the network interface.
+     * (Interface endpoint) Information about the security groups that are associated with the network interface.
      * </p>
      * 
      * @param groups
-     *        (Interface endpoint) Information about the security groups associated with the network interface.
+     *        (Interface endpoint) Information about the security groups that are associated with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -900,11 +907,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the VPC endpoint was created.
+     * The date and time that the VPC endpoint was created.
      * </p>
      * 
      * @param creationTimestamp
-     *        The date and time the VPC endpoint was created.
+     *        The date and time that the VPC endpoint was created.
      */
 
     public void setCreationTimestamp(java.util.Date creationTimestamp) {
@@ -913,10 +920,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the VPC endpoint was created.
+     * The date and time that the VPC endpoint was created.
      * </p>
      * 
-     * @return The date and time the VPC endpoint was created.
+     * @return The date and time that the VPC endpoint was created.
      */
 
     public java.util.Date getCreationTimestamp() {
@@ -925,11 +932,11 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the VPC endpoint was created.
+     * The date and time that the VPC endpoint was created.
      * </p>
      * 
      * @param creationTimestamp
-     *        The date and time the VPC endpoint was created.
+     *        The date and time that the VPC endpoint was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1052,6 +1059,46 @@ public class VpcEndpoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The last error that occurred for VPC endpoint.
+     * </p>
+     * 
+     * @param lastError
+     *        The last error that occurred for VPC endpoint.
+     */
+
+    public void setLastError(LastError lastError) {
+        this.lastError = lastError;
+    }
+
+    /**
+     * <p>
+     * The last error that occurred for VPC endpoint.
+     * </p>
+     * 
+     * @return The last error that occurred for VPC endpoint.
+     */
+
+    public LastError getLastError() {
+        return this.lastError;
+    }
+
+    /**
+     * <p>
+     * The last error that occurred for VPC endpoint.
+     * </p>
+     * 
+     * @param lastError
+     *        The last error that occurred for VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withLastError(LastError lastError) {
+        setLastError(lastError);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1094,7 +1141,9 @@ public class VpcEndpoint implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getOwnerId() != null)
-            sb.append("OwnerId: ").append(getOwnerId());
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getLastError() != null)
+            sb.append("LastError: ").append(getLastError());
         sb.append("}");
         return sb.toString();
     }
@@ -1173,6 +1222,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
             return false;
+        if (other.getLastError() == null ^ this.getLastError() == null)
+            return false;
+        if (other.getLastError() != null && other.getLastError().equals(this.getLastError()) == false)
+            return false;
         return true;
     }
 
@@ -1197,6 +1250,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getLastError() == null) ? 0 : getLastError().hashCode());
         return hashCode;
     }
 

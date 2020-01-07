@@ -43,6 +43,16 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
      * </p>
      */
     private String s3Uri;
+    /**
+     * <p>
+     * Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter
+     * between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by
+     * specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the
+     * delimiter you specify, the labels on that line will be combined to make a single unique label, such as
+     * LABELLABELLABEL.
+     * </p>
+     */
+    private String labelDelimiter;
 
     /**
      * <p>
@@ -121,6 +131,70 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter
+     * between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by
+     * specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the
+     * delimiter you specify, the labels on that line will be combined to make a single unique label, such as
+     * LABELLABELLABEL.
+     * </p>
+     * 
+     * @param labelDelimiter
+     *        Indicates the delimiter used to separate each label for training a multi-label classifier. The default
+     *        delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an
+     *        allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter
+     *        other than the default or the delimiter you specify, the labels on that line will be combined to make a
+     *        single unique label, such as LABELLABELLABEL.
+     */
+
+    public void setLabelDelimiter(String labelDelimiter) {
+        this.labelDelimiter = labelDelimiter;
+    }
+
+    /**
+     * <p>
+     * Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter
+     * between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by
+     * specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the
+     * delimiter you specify, the labels on that line will be combined to make a single unique label, such as
+     * LABELLABELLABEL.
+     * </p>
+     * 
+     * @return Indicates the delimiter used to separate each label for training a multi-label classifier. The default
+     *         delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an
+     *         allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter
+     *         other than the default or the delimiter you specify, the labels on that line will be combined to make a
+     *         single unique label, such as LABELLABELLABEL.
+     */
+
+    public String getLabelDelimiter() {
+        return this.labelDelimiter;
+    }
+
+    /**
+     * <p>
+     * Indicates the delimiter used to separate each label for training a multi-label classifier. The default delimiter
+     * between labels is a pipe (|). You can use a different character as a delimiter (if it's an allowed character) by
+     * specifying it under Delimiter for labels. If the training documents use a delimiter other than the default or the
+     * delimiter you specify, the labels on that line will be combined to make a single unique label, such as
+     * LABELLABELLABEL.
+     * </p>
+     * 
+     * @param labelDelimiter
+     *        Indicates the delimiter used to separate each label for training a multi-label classifier. The default
+     *        delimiter between labels is a pipe (|). You can use a different character as a delimiter (if it's an
+     *        allowed character) by specifying it under Delimiter for labels. If the training documents use a delimiter
+     *        other than the default or the delimiter you specify, the labels on that line will be combined to make a
+     *        single unique label, such as LABELLABELLABEL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassifierInputDataConfig withLabelDelimiter(String labelDelimiter) {
+        setLabelDelimiter(labelDelimiter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +207,9 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3Uri() != null)
-            sb.append("S3Uri: ").append(getS3Uri());
+            sb.append("S3Uri: ").append(getS3Uri()).append(",");
+        if (getLabelDelimiter() != null)
+            sb.append("LabelDelimiter: ").append(getLabelDelimiter());
         sb.append("}");
         return sb.toString();
     }
@@ -152,6 +228,10 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
             return false;
         if (other.getS3Uri() != null && other.getS3Uri().equals(this.getS3Uri()) == false)
             return false;
+        if (other.getLabelDelimiter() == null ^ this.getLabelDelimiter() == null)
+            return false;
+        if (other.getLabelDelimiter() != null && other.getLabelDelimiter().equals(this.getLabelDelimiter()) == false)
+            return false;
         return true;
     }
 
@@ -161,6 +241,7 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
+        hashCode = prime * hashCode + ((getLabelDelimiter() == null) ? 0 : getLabelDelimiter().hashCode());
         return hashCode;
     }
 

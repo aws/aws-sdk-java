@@ -120,6 +120,10 @@ public class ServiceDetailStaxUnmarshaller implements Unmarshaller<ServiceDetail
                     continue;
                 }
 
+                if (context.testExpression("privateDnsNameVerificationState", targetDepth)) {
+                    serviceDetail.setPrivateDnsNameVerificationState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return serviceDetail;

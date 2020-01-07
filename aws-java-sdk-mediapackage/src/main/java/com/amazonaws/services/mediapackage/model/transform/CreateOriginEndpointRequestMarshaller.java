@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateOriginEndpointRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AUTHORIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorization").build();
     private static final MarshallingInfo<String> CHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("channelId").build();
     private static final MarshallingInfo<StructuredPojo> CMAFPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -72,6 +74,7 @@ public class CreateOriginEndpointRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createOriginEndpointRequest.getAuthorization(), AUTHORIZATION_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getChannelId(), CHANNELID_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getCmafPackage(), CMAFPACKAGE_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getDashPackage(), DASHPACKAGE_BINDING);

@@ -84,7 +84,7 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> removeSecurityGroupIds;
     /**
      * <p>
-     * (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
      */
     private Boolean privateDnsEnabled;
@@ -672,11 +672,11 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
      * 
      * @param privateDnsEnabled
-     *        (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     *        (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      */
 
     public void setPrivateDnsEnabled(Boolean privateDnsEnabled) {
@@ -685,10 +685,10 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
      * 
-     * @return (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     * @return (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      */
 
     public Boolean getPrivateDnsEnabled() {
@@ -697,11 +697,11 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
      * 
      * @param privateDnsEnabled
-     *        (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     *        (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -712,10 +712,10 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     * (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      * </p>
      * 
-     * @return (Interface endpoint) Indicate whether a private hosted zone is associated with the VPC.
+     * @return (Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.
      */
 
     public Boolean isPrivateDnsEnabled() {

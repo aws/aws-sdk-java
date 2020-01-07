@@ -101,6 +101,15 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
+     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
+     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
+     * delimiter. The default delimiter between labels is a pipe (|).
+     * </p>
+     */
+    private String mode;
 
     /**
      * <p>
@@ -652,6 +661,89 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
+     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
+     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
+     * delimiter. The default delimiter between labels is a pipe (|).
+     * </p>
+     * 
+     * @param mode
+     *        Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     *        mode, which identifies one and only one class for each document, or multi-label mode, which identifies one
+     *        or more labels for each document. In multi-label mode, multiple labels for an individual document are
+     *        separated by a delimiter. The default delimiter between labels is a pipe (|).
+     * @see DocumentClassifierMode
+     */
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
+     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
+     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
+     * delimiter. The default delimiter between labels is a pipe (|).
+     * </p>
+     * 
+     * @return Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     *         mode, which identifies one and only one class for each document, or multi-label mode, which identifies
+     *         one or more labels for each document. In multi-label mode, multiple labels for an individual document are
+     *         separated by a delimiter. The default delimiter between labels is a pipe (|).
+     * @see DocumentClassifierMode
+     */
+
+    public String getMode() {
+        return this.mode;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
+     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
+     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
+     * delimiter. The default delimiter between labels is a pipe (|).
+     * </p>
+     * 
+     * @param mode
+     *        Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     *        mode, which identifies one and only one class for each document, or multi-label mode, which identifies one
+     *        or more labels for each document. In multi-label mode, multiple labels for an individual document are
+     *        separated by a delimiter. The default delimiter between labels is a pipe (|).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentClassifierMode
+     */
+
+    public CreateDocumentClassifierRequest withMode(String mode) {
+        setMode(mode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
+     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
+     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
+     * delimiter. The default delimiter between labels is a pipe (|).
+     * </p>
+     * 
+     * @param mode
+     *        Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     *        mode, which identifies one and only one class for each document, or multi-label mode, which identifies one
+     *        or more labels for each document. In multi-label mode, multiple labels for an individual document are
+     *        separated by a delimiter. The default delimiter between labels is a pipe (|).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentClassifierMode
+     */
+
+    public CreateDocumentClassifierRequest withMode(DocumentClassifierMode mode) {
+        this.mode = mode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -680,7 +772,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
         if (getVolumeKmsKeyId() != null)
             sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getMode() != null)
+            sb.append("Mode: ").append(getMode());
         sb.append("}");
         return sb.toString();
     }
@@ -731,6 +825,10 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getMode() == null ^ this.getMode() == null)
+            return false;
+        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
+            return false;
         return true;
     }
 
@@ -748,6 +846,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         return hashCode;
     }
 

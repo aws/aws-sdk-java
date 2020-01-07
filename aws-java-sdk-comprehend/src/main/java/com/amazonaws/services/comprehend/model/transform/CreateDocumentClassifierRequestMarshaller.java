@@ -49,6 +49,8 @@ public class CreateDocumentClassifierRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Mode").build();
 
     private static final CreateDocumentClassifierRequestMarshaller instance = new CreateDocumentClassifierRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class CreateDocumentClassifierRequestMarshaller {
             protocolMarshaller.marshall(createDocumentClassifierRequest.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
             protocolMarshaller.marshall(createDocumentClassifierRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(createDocumentClassifierRequest.getMode(), MODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

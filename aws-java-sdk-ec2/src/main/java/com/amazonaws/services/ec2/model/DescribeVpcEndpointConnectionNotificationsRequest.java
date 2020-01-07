@@ -39,7 +39,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      * </p>
      * </li>
      * <li>
@@ -132,7 +132,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      * </p>
      * </li>
      * <li>
@@ -167,7 +167,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     *         <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      *         </p>
      *         </li>
      *         <li>
@@ -212,7 +212,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      * </p>
      * </li>
      * <li>
@@ -248,7 +248,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     *        <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      *        </p>
      *        </li>
      *        <li>
@@ -295,7 +295,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      * </p>
      * </li>
      * <li>
@@ -336,7 +336,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     *        <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      *        </p>
      *        </li>
      *        <li>
@@ -385,7 +385,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      * </p>
      * </li>
      * <li>
@@ -421,7 +421,7 @@ public class DescribeVpcEndpointConnectionNotificationsRequest extends AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>connection-notification-arn</code> - The ARN of SNS topic for the notification.
+     *        <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
      *        </p>
      *        </li>
      *        <li>
