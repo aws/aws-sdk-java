@@ -65,6 +65,41 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
+     * Gets the properties associated with an asycnhronous batch translation job including name, ID, status, source and
+     * target languages, input/output S3 buckets, and so on.
+     * </p>
+     * 
+     * @param describeTextTranslationJobRequest
+     * @return A Java Future containing the result of the DescribeTextTranslationJob operation returned by the service.
+     * @sample AmazonTranslateAsync.DescribeTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTextTranslationJobResult> describeTextTranslationJobAsync(
+            DescribeTextTranslationJobRequest describeTextTranslationJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with an asycnhronous batch translation job including name, ID, status, source and
+     * target languages, input/output S3 buckets, and so on.
+     * </p>
+     * 
+     * @param describeTextTranslationJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTextTranslationJob operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.DescribeTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTextTranslationJobResult> describeTextTranslationJobAsync(
+            DescribeTextTranslationJobRequest describeTextTranslationJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTextTranslationJobRequest, DescribeTextTranslationJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a custom terminology.
      * </p>
      * 
@@ -174,122 +209,141 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
-     * Translates input text from the source language to the target language. It is not necessary to use English (en) as
-     * either the source or the target language but not all language combinations are supported by Amazon Translate. For
-     * more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported Language
-     * Pairs</a>.
+     * Gets a list of the batch translation jobs that you have submitted.
      * </p>
-     * <ul>
-     * <li>
+     * 
+     * @param listTextTranslationJobsRequest
+     * @return A Java Future containing the result of the ListTextTranslationJobs operation returned by the service.
+     * @sample AmazonTranslateAsync.ListTextTranslationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTextTranslationJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTextTranslationJobsResult> listTextTranslationJobsAsync(ListTextTranslationJobsRequest listTextTranslationJobsRequest);
+
+    /**
      * <p>
-     * Arabic (ar)
+     * Gets a list of the batch translation jobs that you have submitted.
      * </p>
-     * </li>
-     * <li>
+     * 
+     * @param listTextTranslationJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTextTranslationJobs operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.ListTextTranslationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTextTranslationJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTextTranslationJobsResult> listTextTranslationJobsAsync(ListTextTranslationJobsRequest listTextTranslationJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTextTranslationJobsRequest, ListTextTranslationJobsResult> asyncHandler);
+
+    /**
      * <p>
-     * Chinese (Simplified) (zh)
+     * Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of
+     * text across multiple documents at once. For more information, see <a>async</a>.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Chinese (Traditional) (zh-TW)
+     * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
+     * <a>ListTextTranslationJobs</a> operation, and stopped with the <a>StopTextTranslationJob</a> operation.
      * </p>
-     * </li>
-     * <li>
+     * <note>
      * <p>
-     * Czech (cs)
+     * Amazon Translate does not support batch translation of multiple source languages at once.
      * </p>
-     * </li>
-     * <li>
+     * </note>
+     * 
+     * @param startTextTranslationJobRequest
+     * @return A Java Future containing the result of the StartTextTranslationJob operation returned by the service.
+     * @sample AmazonTranslateAsync.StartTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartTextTranslationJobResult> startTextTranslationJobAsync(StartTextTranslationJobRequest startTextTranslationJobRequest);
+
+    /**
      * <p>
-     * Danish (da)
+     * Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of
+     * text across multiple documents at once. For more information, see <a>async</a>.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Dutch (nl)
+     * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
+     * <a>ListTextTranslationJobs</a> operation, and stopped with the <a>StopTextTranslationJob</a> operation.
      * </p>
-     * </li>
-     * <li>
+     * <note>
      * <p>
-     * English (en)
+     * Amazon Translate does not support batch translation of multiple source languages at once.
      * </p>
-     * </li>
-     * <li>
+     * </note>
+     * 
+     * @param startTextTranslationJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartTextTranslationJob operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.StartTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartTextTranslationJobResult> startTextTranslationJobAsync(StartTextTranslationJobRequest startTextTranslationJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartTextTranslationJobRequest, StartTextTranslationJobResult> asyncHandler);
+
+    /**
      * <p>
-     * Finnish (fi)
+     * Stops an asynchronous batch translation job that is in progress.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * French (fr)
+     * If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state. Otherwise, the job is put into the <code>STOPPED</code> state.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * German (de)
+     * Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a> operation. You can use
+     * the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a> operations to get a batch translation
+     * job's <code>JobId</code>.
      * </p>
-     * </li>
-     * <li>
+     * 
+     * @param stopTextTranslationJobRequest
+     * @return A Java Future containing the result of the StopTextTranslationJob operation returned by the service.
+     * @sample AmazonTranslateAsync.StopTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StopTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopTextTranslationJobResult> stopTextTranslationJobAsync(StopTextTranslationJobRequest stopTextTranslationJobRequest);
+
+    /**
      * <p>
-     * Hebrew (he)
+     * Stops an asynchronous batch translation job that is in progress.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Indonesian (id)
+     * If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state. Otherwise, the job is put into the <code>STOPPED</code> state.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Italian (it)
+     * Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a> operation. You can use
+     * the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a> operations to get a batch translation
+     * job's <code>JobId</code>.
      * </p>
-     * </li>
-     * <li>
+     * 
+     * @param stopTextTranslationJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopTextTranslationJob operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.StopTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StopTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopTextTranslationJobResult> stopTextTranslationJobAsync(StopTextTranslationJobRequest stopTextTranslationJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopTextTranslationJobRequest, StopTextTranslationJobResult> asyncHandler);
+
+    /**
      * <p>
-     * Japanese (ja)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Polish (pl)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Russian (ru)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swedish (sv)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Turkish (tr)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
-     * Comprehend to determine the source language.
+     * Translates input text from the source language to the target language. For a list of available languages and
+     * language codes, see <a>what-is-languages</a>.
      * </p>
      * 
      * @param translateTextRequest
@@ -302,122 +356,8 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
 
     /**
      * <p>
-     * Translates input text from the source language to the target language. It is not necessary to use English (en) as
-     * either the source or the target language but not all language combinations are supported by Amazon Translate. For
-     * more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported Language
-     * Pairs</a>.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Arabic (ar)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Chinese (Simplified) (zh)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Chinese (Traditional) (zh-TW)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Czech (cs)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Danish (da)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Dutch (nl)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * English (en)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Finnish (fi)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Hebrew (he)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indonesian (id)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Polish (pl)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Russian (ru)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swedish (sv)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Turkish (tr)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
-     * Comprehend to determine the source language.
+     * Translates input text from the source language to the target language. For a list of available languages and
+     * language codes, see <a>what-is-languages</a>.
      * </p>
      * 
      * @param translateTextRequest

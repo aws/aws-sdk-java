@@ -30,6 +30,13 @@ public class CreateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
     private String ruleVersion;
     /**
      * <p>
+     * <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
+     * dimensions supported is <code>LINKED_ACCOUNT</code>.
+     * </p>
+     * <p>
+     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     * </p>
+     * <p>
      * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
      * is used to determine that Cost Category value.
      * </p>
@@ -104,11 +111,24 @@ public class CreateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
+     * dimensions supported is <code>LINKED_ACCOUNT</code>.
+     * </p>
+     * <p>
+     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     * </p>
+     * <p>
      * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
      * is used to determine that Cost Category value.
      * </p>
      * 
-     * @return Rules are processed in order. If there are multiple rules that match the line item, then the first rule
+     * @return <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently
+     *         the only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
+     *         <p>
+     *         Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     *         </p>
+     *         <p>
+     *         Rules are processed in order. If there are multiple rules that match the line item, then the first rule
      *         to match is used to determine that Cost Category value.
      */
 
@@ -118,11 +138,24 @@ public class CreateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
+     * dimensions supported is <code>LINKED_ACCOUNT</code>.
+     * </p>
+     * <p>
+     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     * </p>
+     * <p>
      * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
      * is used to determine that Cost Category value.
      * </p>
      * 
      * @param rules
+     *        <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the
+     *        only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
+     *        <p>
+     *        Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     *        </p>
+     *        <p>
      *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
      *        match is used to determine that Cost Category value.
      */
@@ -138,6 +171,13 @@ public class CreateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
+     * dimensions supported is <code>LINKED_ACCOUNT</code>.
+     * </p>
+     * <p>
+     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     * </p>
+     * <p>
      * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
      * is used to determine that Cost Category value.
      * </p>
@@ -148,6 +188,12 @@ public class CreateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param rules
+     *        <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the
+     *        only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
+     *        <p>
+     *        Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     *        </p>
+     *        <p>
      *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
      *        match is used to determine that Cost Category value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -165,11 +211,24 @@ public class CreateCostCategoryDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the only
+     * dimensions supported is <code>LINKED_ACCOUNT</code>.
+     * </p>
+     * <p>
+     * Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     * </p>
+     * <p>
      * Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match
      * is used to determine that Cost Category value.
      * </p>
      * 
      * @param rules
+     *        <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and nested expressions. Currently the
+     *        only dimensions supported is <code>LINKED_ACCOUNT</code>.</p>
+     *        <p>
+     *        Root level <code>OR</code> is not supported. We recommend you create a separate rule instead.
+     *        </p>
+     *        <p>
      *        Rules are processed in order. If there are multiple rules that match the line item, then the first rule to
      *        match is used to determine that Cost Category value.
      * @return Returns a reference to this object so that method calls can be chained together.

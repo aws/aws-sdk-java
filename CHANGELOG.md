@@ -1,3 +1,16 @@
+# __1.11.703__ __2020-01-08__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Documentation updates for CreateCostCategoryDefinition and UpdateCostCategoryDefinition API
+
+## __Amazon Translate__
+  - ### Features
+    - This release adds a new family of APIs for asynchronous batch translation service that provides option to translate large collection of text or HTML documents stored in Amazon S3 folder. This service accepts a batch of up to 5 GB in size per API call with each document not exceeding 1 MB size and the number of documents not exceeding 1 million per batch. See documentation for more information. 
+
+## __Firewall Management Service__
+  - ### Features
+    - AWS Firewall Manager now supports tagging, and tag-based access control, of policies.
+
 # __1.11.702__ __2020-01-07__
 ## __AWS CodeBuild__
   - ### Features

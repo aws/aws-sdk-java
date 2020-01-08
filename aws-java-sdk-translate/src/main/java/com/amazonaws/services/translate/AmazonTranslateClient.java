@@ -77,6 +77,9 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.translate.model.transform.InvalidFilterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.translate.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -163,7 +166,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
      * @return Result of the DeleteTerminology operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
-     *         different resource will accomplish your needs before retrying the revised request. .
+     *         different resource will accomplish your needs before retrying the revised request.
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again.
@@ -217,6 +220,70 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Gets the properties associated with an asycnhronous batch translation job including name, ID, status, source and
+     * target languages, input/output S3 buckets, and so on.
+     * </p>
+     * 
+     * @param describeTextTranslationJobRequest
+     * @return Result of the DescribeTextTranslationJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.DescribeTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DescribeTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTextTranslationJobResult describeTextTranslationJob(DescribeTextTranslationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTextTranslationJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTextTranslationJobResult executeDescribeTextTranslationJob(DescribeTextTranslationJobRequest describeTextTranslationJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTextTranslationJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTextTranslationJobRequest> request = null;
+        Response<DescribeTextTranslationJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTextTranslationJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTextTranslationJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTextTranslationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTextTranslationJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeTextTranslationJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a custom terminology.
      * </p>
      * 
@@ -224,7 +291,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
      * @return Result of the GetTerminology operation returned by the service.
      * @throws ResourceNotFoundException
      *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
-     *         different resource will accomplish your needs before retrying the revised request. .
+     *         different resource will accomplish your needs before retrying the revised request.
      * @throws InvalidParameterValueException
      *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
      *         then retry your operation.
@@ -414,122 +481,224 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Translates input text from the source language to the target language. It is not necessary to use English (en) as
-     * either the source or the target language but not all language combinations are supported by Amazon Translate. For
-     * more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported Language
-     * Pairs</a>.
+     * Gets a list of the batch translation jobs that you have submitted.
      * </p>
-     * <ul>
-     * <li>
+     * 
+     * @param listTextTranslationJobsRequest
+     * @return Result of the ListTextTranslationJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.ListTextTranslationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTextTranslationJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTextTranslationJobsResult listTextTranslationJobs(ListTextTranslationJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTextTranslationJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListTextTranslationJobsResult executeListTextTranslationJobs(ListTextTranslationJobsRequest listTextTranslationJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTextTranslationJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTextTranslationJobsRequest> request = null;
+        Response<ListTextTranslationJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTextTranslationJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTextTranslationJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTextTranslationJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTextTranslationJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTextTranslationJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * Arabic (ar)
+     * Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of
+     * text across multiple documents at once. For more information, see <a>async</a>.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Chinese (Simplified) (zh)
+     * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
+     * <a>ListTextTranslationJobs</a> operation, and stopped with the <a>StopTextTranslationJob</a> operation.
      * </p>
-     * </li>
-     * <li>
+     * <note>
      * <p>
-     * Chinese (Traditional) (zh-TW)
+     * Amazon Translate does not support batch translation of multiple source languages at once.
      * </p>
-     * </li>
-     * <li>
+     * </note>
+     * 
+     * @param startTextTranslationJobRequest
+     * @return Result of the StartTextTranslationJob operation returned by the service.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws UnsupportedLanguagePairException
+     *         Amazon Translate does not support translation from the language of the source text into the requested
+     *         target language. For more information, see <a>how-to-error-msg</a>.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.StartTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StartTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartTextTranslationJobResult startTextTranslationJob(StartTextTranslationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartTextTranslationJob(request);
+    }
+
+    @SdkInternalApi
+    final StartTextTranslationJobResult executeStartTextTranslationJob(StartTextTranslationJobRequest startTextTranslationJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startTextTranslationJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartTextTranslationJobRequest> request = null;
+        Response<StartTextTranslationJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartTextTranslationJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startTextTranslationJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTextTranslationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartTextTranslationJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartTextTranslationJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * Czech (cs)
+     * Stops an asynchronous batch translation job that is in progress.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Danish (da)
+     * If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+     * <code>COMPLETED</code> state. Otherwise, the job is put into the <code>STOPPED</code> state.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Dutch (nl)
+     * Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a> operation. You can use
+     * the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a> operations to get a batch translation
+     * job's <code>JobId</code>.
      * </p>
-     * </li>
-     * <li>
+     * 
+     * @param stopTextTranslationJobRequest
+     * @return Result of the StopTextTranslationJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.StopTextTranslationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/StopTextTranslationJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopTextTranslationJobResult stopTextTranslationJob(StopTextTranslationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopTextTranslationJob(request);
+    }
+
+    @SdkInternalApi
+    final StopTextTranslationJobResult executeStopTextTranslationJob(StopTextTranslationJobRequest stopTextTranslationJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopTextTranslationJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopTextTranslationJobRequest> request = null;
+        Response<StopTextTranslationJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopTextTranslationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTextTranslationJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTextTranslationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopTextTranslationJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopTextTranslationJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
-     * English (en)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Finnish (fi)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * French (fr)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * German (de)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Hebrew (he)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Indonesian (id)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Italian (it)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Japanese (ja)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Korean (ko)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Polish (pl)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Portuguese (pt)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Russian (ru)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spanish (es)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Swedish (sv)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Turkish (tr)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
-     * Comprehend to determine the source language.
+     * Translates input text from the source language to the target language. For a list of available languages and
+     * language codes, see <a>what-is-languages</a>.
      * </p>
      * 
      * @param translateTextRequest
@@ -554,7 +723,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
      *         >DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>.
      * @throws ResourceNotFoundException
      *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
-     *         different resource will accomplish your needs before retrying the revised request. .
+     *         different resource will accomplish your needs before retrying the revised request.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException

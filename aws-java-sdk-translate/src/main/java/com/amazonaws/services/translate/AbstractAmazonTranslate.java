@@ -33,6 +33,11 @@ public class AbstractAmazonTranslate implements AmazonTranslate {
     }
 
     @Override
+    public DescribeTextTranslationJobResult describeTextTranslationJob(DescribeTextTranslationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTerminologyResult getTerminology(GetTerminologyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +49,21 @@ public class AbstractAmazonTranslate implements AmazonTranslate {
 
     @Override
     public ListTerminologiesResult listTerminologies(ListTerminologiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTextTranslationJobsResult listTextTranslationJobs(ListTextTranslationJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartTextTranslationJobResult startTextTranslationJob(StartTextTranslationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopTextTranslationJobResult stopTextTranslationJob(StopTextTranslationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

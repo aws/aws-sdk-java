@@ -25,7 +25,7 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The the translated text. The maximum length of this text is 5kb.
+     * The translated text.
      * </p>
      */
     private String translatedText;
@@ -51,11 +51,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The the translated text. The maximum length of this text is 5kb.
+     * The translated text.
      * </p>
      * 
      * @param translatedText
-     *        The the translated text. The maximum length of this text is 5kb.
+     *        The translated text.
      */
 
     public void setTranslatedText(String translatedText) {
@@ -64,10 +64,10 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The the translated text. The maximum length of this text is 5kb.
+     * The translated text.
      * </p>
      * 
-     * @return The the translated text. The maximum length of this text is 5kb.
+     * @return The translated text.
      */
 
     public String getTranslatedText() {
@@ -76,11 +76,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The the translated text. The maximum length of this text is 5kb.
+     * The translated text.
      * </p>
      * 
      * @param translatedText
-     *        The the translated text. The maximum length of this text is 5kb.
+     *        The translated text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

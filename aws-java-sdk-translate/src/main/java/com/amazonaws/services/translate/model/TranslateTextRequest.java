@@ -34,20 +34,21 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String text;
     /**
      * <p>
-     * The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and
-     * a maximum length of 1.
+     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
+     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
      * </p>
      */
     private java.util.List<String> terminologyNames;
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate.
+     * Translate. For a list of language codes, see <a>what-is-languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
-     * Comprehend to determine the source language.
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
+     * determine the source language.
      * </p>
      */
     private String sourceLanguageCode;
@@ -107,12 +108,13 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and
-     * a maximum length of 1.
+     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
+     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
      * </p>
      * 
-     * @return The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length
-     *         of 0 and a maximum length of 1.
+     * @return The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
+     *         list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
+     *         terms.
      */
 
     public java.util.List<String> getTerminologyNames() {
@@ -121,13 +123,14 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and
-     * a maximum length of 1.
+     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
+     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
      * </p>
      * 
      * @param terminologyNames
-     *        The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length
-     *        of 0 and a maximum length of 1.
+     *        The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
+     *        list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
+     *        terms.
      */
 
     public void setTerminologyNames(java.util.Collection<String> terminologyNames) {
@@ -141,8 +144,8 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and
-     * a maximum length of 1.
+     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
+     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -151,8 +154,9 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param terminologyNames
-     *        The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length
-     *        of 0 and a maximum length of 1.
+     *        The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
+     *        list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
+     *        terms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,13 +172,14 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length of 0 and
-     * a maximum length of 1.
+     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
+     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
      * </p>
      * 
      * @param terminologyNames
-     *        The TerminologyNames list that is taken as input to the TranslateText request. This has a minimum length
-     *        of 0 and a maximum length of 1.
+     *        The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
+     *        list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
+     *        terms.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,21 +191,23 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate.
+     * Translate. For a list of language codes, see <a>what-is-languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
-     * Comprehend to determine the source language.
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
+     * determine the source language.
      * </p>
      * 
      * @param sourceLanguageCode
      *        The language code for the language of the source text. The language must be a language supported by Amazon
-     *        Translate. </p>
+     *        Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
      *        <p>
      *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
-     *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call
-     *        Amazon Comprehend to determine the source language.
+     *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
+     *        determine the source language.
      */
 
     public void setSourceLanguageCode(String sourceLanguageCode) {
@@ -210,20 +217,22 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate.
+     * Translate. For a list of language codes, see <a>what-is-languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
-     * Comprehend to determine the source language.
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
+     * determine the source language.
      * </p>
      * 
      * @return The language code for the language of the source text. The language must be a language supported by
-     *         Amazon Translate. </p>
+     *         Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
      *         <p>
      *         To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
      *         the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call
-     *         Amazon Comprehend to determine the source language.
+     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a>
+     *         to determine the source language.
      */
 
     public String getSourceLanguageCode() {
@@ -233,21 +242,23 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate.
+     * Translate. For a list of language codes, see <a>what-is-languages</a>.
      * </p>
      * <p>
      * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
-     * Comprehend to determine the source language.
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
+     * determine the source language.
      * </p>
      * 
      * @param sourceLanguageCode
      *        The language code for the language of the source text. The language must be a language supported by Amazon
-     *        Translate. </p>
+     *        Translate. For a list of language codes, see <a>what-is-languages</a>.</p>
      *        <p>
      *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
-     *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call
-     *        Amazon Comprehend to determine the source language.
+     *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a
+     *        href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to
+     *        determine the source language.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

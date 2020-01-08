@@ -88,12 +88,27 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutNotificationChannelResult putNotificationChannel(PutNotificationChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutPolicyResult putPolicy(PutPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

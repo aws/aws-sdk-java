@@ -1339,28 +1339,18 @@ public class AmazonHttpClient {
             publishProgress(listener, ProgressEventType.HTTP_REQUEST_COMPLETED_EVENT);
             final StatusLine statusLine = execOneParams.apacheResponse.getStatusLine();
             final int statusCode = statusLine == null ? -1 : statusLine.getStatusCode();
-            if (ApacheUtils.isRequestSuccessful(execOneParams.apacheResponse)) {
-                awsRequestMetrics.addProperty(Field.StatusCode, statusCode);
-            /*
-             * If we get back any 2xx status code, then we know we should treat the service call as
-             * successful.
-             */
-                execOneParams.leaveHttpConnectionOpen = responseHandler.needsConnectionLeftOpen();
-                HttpResponse httpResponse = ApacheUtils.createResponse(request, execOneParams.apacheRequest, execOneParams.apacheResponse, localRequestContext);
-                Output response = handleResponse(httpResponse);
 
-            /*
-             * If this was a successful retry attempt we'll release the full retry capacity that
-             * the attempt originally consumed.  If this was a successful initial request
-             * we return a lesser amount.
-             */
-                if (execOneParams.isRetry() && executionContext.retryCapacityConsumed()) {
-                    retryCapacity.release(THROTTLED_RETRY_COST);
-                } else {
-                    retryCapacity.release();
-                }
-                return new Response<Output>(response, httpResponse);
+            if (ApacheUtils.isRequestSuccessful(execOneParams.apacheResponse)) {
+                return handleSuccessResponse(execOneParams, localRequestContext, statusCode);
             }
+
+            return handleServiceErrorResponse(execOneParams, localRequestContext, statusCode);
+        }
+
+        /**
+         * Handle service error response and check if the response is retryable or not.
+         */
+        private Response<Output> handleServiceErrorResponse(ExecOneRequestParams execOneParams, HttpClientContext localRequestContext, int statusCode) throws IOException, InterruptedException {
             if (isTemporaryRedirect(execOneParams.apacheResponse)) {
             /*
              * S3 sends 307 Temporary Redirects if you try to delete an EU bucket from the US
@@ -1379,8 +1369,8 @@ public class AmazonHttpClient {
             }
             execOneParams.leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
             final SdkBaseException exception = handleErrorResponse(execOneParams.apacheRequest,
-                                                             execOneParams.apacheResponse,
-                                                             localRequestContext);
+                                                                   execOneParams.apacheResponse,
+                                                                   localRequestContext);
 
             ClockSkewAdjustment clockSkewAdjustment =
                     clockSkewAdjuster.getAdjustment(new AdjustmentRequest().exception(exception)
@@ -1416,6 +1406,32 @@ public class AmazonHttpClient {
             execOneParams.retriedException = exception;
 
             return null; // => retry
+        }
+
+        /**
+         * Handle success response.
+         */
+        private Response<Output> handleSuccessResponse(ExecOneRequestParams execOneParams, HttpClientContext localRequestContext, int statusCode) throws IOException, InterruptedException {
+            awsRequestMetrics.addProperty(Field.StatusCode, statusCode);
+            /*
+             * If we get back any 2xx status code, then we know we should treat the service call as
+             * successful.
+             */
+            execOneParams.leaveHttpConnectionOpen = responseHandler.needsConnectionLeftOpen();
+            HttpResponse httpResponse = ApacheUtils.createResponse(request, execOneParams.apacheRequest, execOneParams.apacheResponse, localRequestContext);
+            Output response = handleResponse(httpResponse);
+
+            /*
+             * If this was a successful retry attempt we'll release the full retry capacity that
+             * the attempt originally consumed.  If this was a successful initial request
+             * we return a lesser amount.
+             */
+            if (execOneParams.isRetry() && executionContext.retryCapacityConsumed()) {
+                retryCapacity.release(THROTTLED_RETRY_COST);
+            } else {
+                retryCapacity.release();
+            }
+            return new Response<Output>(response, httpResponse);
         }
 
         /**
