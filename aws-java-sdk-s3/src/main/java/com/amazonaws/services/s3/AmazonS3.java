@@ -4354,13 +4354,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * Uploads a part in a multipart upload. You must initiate a multipart
      * upload before you can upload any part.
      * <p>
-     * Your UploadPart request must include an upload ID and a part number. The
+     * Your UploadPart request must include an upload ID, a part number and part size. The
      * upload ID is the ID returned by Amazon S3 in response to your Initiate
      * Multipart Upload request. Part number can be any number between 1 and
      * 10,000, inclusive. A part number uniquely identifies a part and also
      * defines its position within the object being uploaded. If you upload a
      * new part using the same part number that was specified in uploading a
-     * previous part, the previously uploaded part is overwritten.
+     * previous part, the previously uploaded part is overwritten. <b>Note:</b> if
+     * part size is not specified, 0 will be used and could cause unexpected results.
      * <p>
      * To ensure data is not corrupted traversing the network, specify the
      * Content-MD5 header in the Upload Part request. Amazon S3 checks the part

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The sequence token is not valid.
+ * The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
+ * field in the <code>InvalidSequenceTokenException</code> message.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

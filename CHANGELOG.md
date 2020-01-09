@@ -1,3 +1,16 @@
+# __1.11.704__ __2020-01-09__
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Increase the priority of the AWS_WEB_IDENTITY_TOKEN_FILE/AWS_ROLE_ARN/AWS_ROLE_SESSION_NAME environment variables when loading credentials so that they are considered before web_identity_token_file/role_arn/role_session_name profile properties. This is consistent with the other AWS SDKs, including the CLI.
+
+## __AWS Security Token Service__
+  - ### Features
+    - Documentation updates for sts
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Documentation updates for logs
+
 # __1.11.703__ __2020-01-08__
 ## __AWS Cost Explorer Service__
   - ### Features

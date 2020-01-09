@@ -33,7 +33,11 @@ import com.amazonaws.event.ProgressListener;
  * -signature-version
  * </p>
  * <p>
- * Required Parameters: BucketName, Key, UploadId, PartNumber
+ * Required Parameters: BucketName, Key, UploadId, PartNumber, PartSize
+ *
+ * <b>Note:</b>
+ * If part size is not specified, 0 will be used and could cause unexpected results.
+ *
  */
 public class UploadPartRequest extends AmazonWebServiceRequest implements
         SSECustomerKeyProvider, S3DataSource, Serializable {

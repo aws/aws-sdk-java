@@ -33,9 +33,12 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
     private String logGroupName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
      * </p>
      */
     private String kmsKeyId;
@@ -82,15 +85,21 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     *        Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     *        Asymmetric Keys</a>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -99,14 +108,20 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *         Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     *         Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric
+     *         and Asymmetric Keys</a>.
      */
 
     public String getKmsKeyId() {
@@ -115,15 +130,21 @@ public class AssociateKmsKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - AWS Key Management Service (AWS KMS)</a>.
+     * Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
+     *        Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     *        Asymmetric Keys</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

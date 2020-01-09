@@ -45,8 +45,8 @@ public class DefaultAWSCredentialsProviderChain extends AWSCredentialsProviderCh
     public DefaultAWSCredentialsProviderChain() {
         super(new EnvironmentVariableCredentialsProvider(),
               new SystemPropertiesCredentialsProvider(),
-              new ProfileCredentialsProvider(),
               WebIdentityTokenCredentialsProvider.create(),
+              new ProfileCredentialsProvider(),
               new EC2ContainerCredentialsProviderWrapper());
     }
 

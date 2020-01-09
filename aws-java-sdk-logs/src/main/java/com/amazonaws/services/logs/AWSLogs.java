@@ -136,6 +136,14 @@ public interface AWSLogs {
      * This association is stored as long as the data encrypted with the CMK is still within Amazon CloudWatch Logs.
      * This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
      * </p>
+     * <note>
+     * <p>
+     * <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric CMK with
+     * your log group. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
+     * </p>
+     * </note>
      * <p>
      * Note that it can take up to 5 minutes for this operation to take effect.
      * </p>
@@ -261,6 +269,14 @@ public interface AWSLogs {
      * If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you will
      * receive an <code>InvalidParameterException</code> error.
      * </p>
+     * <note>
+     * <p>
+     * <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with your log
+     * group. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
+     * </p>
+     * </note>
      * 
      * @param createLogGroupRequest
      * @return Result of the CreateLogGroup operation returned by the service.
@@ -285,7 +301,8 @@ public interface AWSLogs {
      * Creates a log stream for the specified log group.
      * </p>
      * <p>
-     * There is no limit on the number of log streams that you can create for a log group.
+     * There is no limit on the number of log streams that you can create for a log group. There is a limit of 50 TPS on
+     * <code>CreateLogStream</code> operations, after which transactions are throttled.
      * </p>
      * <p>
      * You must use the following guidelines when naming a log stream:
@@ -882,9 +899,10 @@ public interface AWSLogs {
      * </p>
      * <p>
      * You must include the sequence token obtained from the response of the previous call. An upload in a newly created
-     * log stream does not require a sequence token. You can also get the sequence token using
-     * <a>DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
-     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     * log stream does not require a sequence token. You can also get the sequence token in the
+     * <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>. If you call
+     * <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>,
+     * both calls may be successful, or one may be rejected.
      * </p>
      * <p>
      * The batch of events must satisfy the following constraints:
@@ -917,12 +935,18 @@ public interface AWSLogs {
      * </li>
      * <li>
      * <p>
+     * A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * The maximum number of log events in a batch is 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.
+     * There is a quota of 5 requests per second per log stream. Additional requests are throttled. This quota can't be
+     * changed.
      * </p>
      * </li>
      * </ul>
@@ -936,7 +960,8 @@ public interface AWSLogs {
      * @throws InvalidParameterException
      *         A parameter is specified incorrectly.
      * @throws InvalidSequenceTokenException
-     *         The sequence token is not valid.
+     *         The sequence token is not valid. You can get the correct sequence token in the
+     *         <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message.
      * @throws DataAlreadyAcceptedException
      *         The event was already logged.
      * @throws ResourceNotFoundException
