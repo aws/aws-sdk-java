@@ -197,6 +197,8 @@ public enum RDSActions implements Action {
     ImportInstallationMedia("rds:ImportInstallationMedia"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("rds:ListTagsForResource"),
+    /** Action for the ModifyCertificates operation. */
+    ModifyCertificates("rds:ModifyCertificates"),
     /** Action for the ModifyCurrentDBClusterCapacity operation. */
     ModifyCurrentDBClusterCapacity("rds:ModifyCurrentDBClusterCapacity"),
     /** Action for the ModifyDBCluster operation. */

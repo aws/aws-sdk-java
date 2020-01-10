@@ -44,6 +44,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public AssociateSigninDelegateGroupsWithAccountResult associateSigninDelegateGroupsWithAccount(AssociateSigninDelegateGroupsWithAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchCreateAttendeeResult batchCreateAttendee(BatchCreateAttendeeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +115,11 @@ public class AbstractAmazonChime implements AmazonChime {
 
     @Override
     public CreateRoomMembershipResult createRoomMembership(CreateRoomMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,6 +211,12 @@ public class AbstractAmazonChime implements AmazonChime {
     @Override
     public DisassociatePhoneNumbersFromVoiceConnectorGroupResult disassociatePhoneNumbersFromVoiceConnectorGroup(
             DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateSigninDelegateGroupsFromAccountResult disassociateSigninDelegateGroupsFromAccount(
+            DisassociateSigninDelegateGroupsFromAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

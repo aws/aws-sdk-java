@@ -68,6 +68,12 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
      * </p>
      */
     private Integer peerBgpAsn;
+    /**
+     * <p>
+     * The tags assigned to the virtual interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -350,6 +356,79 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tags assigned to the virtual interface.
+     * </p>
+     * 
+     * @return The tags assigned to the virtual interface.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the virtual interface.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the virtual interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayVirtualInterface withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the virtual interface.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayVirtualInterface withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -374,7 +453,9 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
         if (getLocalBgpAsn() != null)
             sb.append("LocalBgpAsn: ").append(getLocalBgpAsn()).append(",");
         if (getPeerBgpAsn() != null)
-            sb.append("PeerBgpAsn: ").append(getPeerBgpAsn());
+            sb.append("PeerBgpAsn: ").append(getPeerBgpAsn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -418,6 +499,10 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
             return false;
         if (other.getPeerBgpAsn() != null && other.getPeerBgpAsn().equals(this.getPeerBgpAsn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -433,6 +518,7 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPeerAddress() == null) ? 0 : getPeerAddress().hashCode());
         hashCode = prime * hashCode + ((getLocalBgpAsn() == null) ? 0 : getLocalBgpAsn().hashCode());
         hashCode = prime * hashCode + ((getPeerBgpAsn() == null) ? 0 : getPeerBgpAsn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

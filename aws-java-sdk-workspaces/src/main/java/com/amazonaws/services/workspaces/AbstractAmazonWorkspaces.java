@@ -173,6 +173,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public MigrateWorkspaceResult migrateWorkspace(MigrateWorkspaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyAccountResult modifyAccount(ModifyAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

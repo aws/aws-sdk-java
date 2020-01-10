@@ -72,6 +72,10 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                     context.nextToken();
                     user.setLicenseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UserType", targetDepth)) {
+                    context.nextToken();
+                    user.setUserType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UserRegistrationStatus", targetDepth)) {
                     context.nextToken();
                     user.setUserRegistrationStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +91,10 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                 if (context.testExpression("InvitedOn", targetDepth)) {
                     context.nextToken();
                     user.setInvitedOn(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("AlexaForBusinessMetadata", targetDepth)) {
+                    context.nextToken();
+                    user.setAlexaForBusinessMetadata(AlexaForBusinessMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PersonalPIN", targetDepth)) {
                     context.nextToken();

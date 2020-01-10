@@ -44,6 +44,12 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
      * </p>
      */
     private String localGatewayId;
+    /**
+     * <p>
+     * The tags assigned to the virtual interface group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -199,6 +205,79 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * The tags assigned to the virtual interface group.
+     * </p>
+     * 
+     * @return The tags assigned to the virtual interface group.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the virtual interface group.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the virtual interface group.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the virtual interface group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the virtual interface group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayVirtualInterfaceGroup withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the virtual interface group.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the virtual interface group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayVirtualInterfaceGroup withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -215,7 +294,9 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
         if (getLocalGatewayVirtualInterfaceIds() != null)
             sb.append("LocalGatewayVirtualInterfaceIds: ").append(getLocalGatewayVirtualInterfaceIds()).append(",");
         if (getLocalGatewayId() != null)
-            sb.append("LocalGatewayId: ").append(getLocalGatewayId());
+            sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +325,10 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
             return false;
         if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -255,6 +340,7 @@ public class LocalGatewayVirtualInterfaceGroup implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getLocalGatewayVirtualInterfaceGroupId() == null) ? 0 : getLocalGatewayVirtualInterfaceGroupId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayVirtualInterfaceIds() == null) ? 0 : getLocalGatewayVirtualInterfaceIds().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

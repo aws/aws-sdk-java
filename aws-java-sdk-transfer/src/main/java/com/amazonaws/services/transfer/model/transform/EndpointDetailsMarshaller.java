@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.transfer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,8 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EndpointDetailsMarshaller {
 
+    private static final MarshallingInfo<List> ADDRESSALLOCATIONIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddressAllocationIds").build();
+    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetIds").build();
     private static final MarshallingInfo<String> VPCENDPOINTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcEndpointId").build();
+    private static final MarshallingInfo<String> VPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VpcId").build();
 
     private static final EndpointDetailsMarshaller instance = new EndpointDetailsMarshaller();
 
@@ -46,7 +53,10 @@ public class EndpointDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(endpointDetails.getAddressAllocationIds(), ADDRESSALLOCATIONIDS_BINDING);
+            protocolMarshaller.marshall(endpointDetails.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(endpointDetails.getVpcEndpointId(), VPCENDPOINTID_BINDING);
+            protocolMarshaller.marshall(endpointDetails.getVpcId(), VPCID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

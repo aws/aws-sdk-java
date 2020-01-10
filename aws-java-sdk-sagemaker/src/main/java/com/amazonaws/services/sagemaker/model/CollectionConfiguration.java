@@ -30,7 +30,7 @@ public class CollectionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the tensor collection.
+     * The name of the tensor collection. The name must be unique relative to other rule configuration names.
      * </p>
      */
     private String collectionName;
@@ -45,11 +45,11 @@ public class CollectionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the tensor collection.
+     * The name of the tensor collection. The name must be unique relative to other rule configuration names.
      * </p>
      * 
      * @param collectionName
-     *        The name of the tensor collection.
+     *        The name of the tensor collection. The name must be unique relative to other rule configuration names.
      */
 
     public void setCollectionName(String collectionName) {
@@ -58,10 +58,10 @@ public class CollectionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the tensor collection.
+     * The name of the tensor collection. The name must be unique relative to other rule configuration names.
      * </p>
      * 
-     * @return The name of the tensor collection.
+     * @return The name of the tensor collection. The name must be unique relative to other rule configuration names.
      */
 
     public String getCollectionName() {
@@ -70,11 +70,11 @@ public class CollectionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the tensor collection.
+     * The name of the tensor collection. The name must be unique relative to other rule configuration names.
      * </p>
      * 
      * @param collectionName
-     *        The name of the tensor collection.
+     *        The name of the tensor collection. The name must be unique relative to other rule configuration names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

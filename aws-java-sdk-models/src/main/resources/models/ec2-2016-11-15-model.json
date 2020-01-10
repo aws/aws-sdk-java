@@ -11887,6 +11887,11 @@
         "NextToken":{
           "shape":"String",
           "documentation":"<p>The token for the next page of results.</p>"
+        },
+        "Filters":{
+          "shape":"FilterList",
+          "documentation":"<p>One or more filters.</p> <ul> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> </ul>",
+          "locationName":"Filter"
         }
       }
     },
@@ -17095,6 +17100,11 @@
           "shape":"EgressOnlyInternetGatewayId",
           "documentation":"<p>The ID of the egress-only internet gateway.</p>",
           "locationName":"egressOnlyInternetGatewayId"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags assigned to the egress-only internet gateway.</p>",
+          "locationName":"tagSet"
         }
       },
       "documentation":"<p>Describes an egress-only internet gateway.</p>"
@@ -24181,6 +24191,11 @@
           "shape":"String",
           "documentation":"<p>The state of the local gateway.</p>",
           "locationName":"state"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags assigned to the local gateway.</p>",
+          "locationName":"tagSet"
         }
       },
       "documentation":"<p>Describes a local gateway.</p>"
@@ -24267,6 +24282,11 @@
           "shape":"String",
           "documentation":"<p>The state of the local gateway route table.</p>",
           "locationName":"state"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags assigned to the local gateway route table.</p>",
+          "locationName":"tagSet"
         }
       },
       "documentation":"<p>Describes a local gateway route table.</p>"
@@ -24312,6 +24332,11 @@
           "shape":"String",
           "documentation":"<p>The state of the association.</p>",
           "locationName":"state"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags assigned to the association.</p>",
+          "locationName":"tagSet"
         }
       },
       "documentation":"<p>Describes an association between a local gateway route table and a virtual interface group.</p>"
@@ -24357,6 +24382,11 @@
           "shape":"String",
           "documentation":"<p>The state of the association.</p>",
           "locationName":"state"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags assigned to the association.</p>",
+          "locationName":"tagSet"
         }
       },
       "documentation":"<p>Describes an association between a local gateway route table and a VPC.</p>"
@@ -24426,6 +24456,11 @@
           "shape":"Integer",
           "documentation":"<p>The peer BGP ASN.</p>",
           "locationName":"peerBgpAsn"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags assigned to the virtual interface.</p>",
+          "locationName":"tagSet"
         }
       },
       "documentation":"<p>Describes a local gateway virtual interface.</p>"
@@ -24447,6 +24482,11 @@
           "shape":"String",
           "documentation":"<p>The ID of the local gateway.</p>",
           "locationName":"localGatewayId"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags assigned to the virtual interface group.</p>",
+          "locationName":"tagSet"
         }
       },
       "documentation":"<p>Describes a local gateway virtual interface group.</p>"

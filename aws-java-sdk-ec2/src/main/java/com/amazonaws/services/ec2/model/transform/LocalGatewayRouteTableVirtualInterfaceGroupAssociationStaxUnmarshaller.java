@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -71,6 +73,17 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociationStaxUnmarshal
                     localGatewayRouteTableVirtualInterfaceGroupAssociation.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    localGatewayRouteTableVirtualInterfaceGroupAssociation.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    localGatewayRouteTableVirtualInterfaceGroupAssociation.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return localGatewayRouteTableVirtualInterfaceGroupAssociation;

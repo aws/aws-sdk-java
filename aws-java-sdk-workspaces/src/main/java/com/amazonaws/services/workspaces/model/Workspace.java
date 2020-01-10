@@ -90,7 +90,8 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     private String computerName;
     /**
      * <p>
-     * The KMS key used to encrypt data stored on your WorkSpace.
+     * The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces
+     * does not support asymmetric CMKs.
      * </p>
      */
     private String volumeEncryptionKey;
@@ -554,11 +555,13 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key used to encrypt data stored on your WorkSpace.
+     * The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces
+     * does not support asymmetric CMKs.
      * </p>
      * 
      * @param volumeEncryptionKey
-     *        The KMS key used to encrypt data stored on your WorkSpace.
+     *        The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon
+     *        WorkSpaces does not support asymmetric CMKs.
      */
 
     public void setVolumeEncryptionKey(String volumeEncryptionKey) {
@@ -567,10 +570,12 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key used to encrypt data stored on your WorkSpace.
+     * The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces
+     * does not support asymmetric CMKs.
      * </p>
      * 
-     * @return The KMS key used to encrypt data stored on your WorkSpace.
+     * @return The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon
+     *         WorkSpaces does not support asymmetric CMKs.
      */
 
     public String getVolumeEncryptionKey() {
@@ -579,11 +584,13 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The KMS key used to encrypt data stored on your WorkSpace.
+     * The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon WorkSpaces
+     * does not support asymmetric CMKs.
      * </p>
      * 
      * @param volumeEncryptionKey
-     *        The KMS key used to encrypt data stored on your WorkSpace.
+     *        The symmetric AWS KMS customer master key (CMK) used to encrypt data stored on your WorkSpace. Amazon
+     *        WorkSpaces does not support asymmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

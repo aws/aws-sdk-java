@@ -64,6 +64,17 @@ public class LocalGatewayVirtualInterfaceGroupStaxUnmarshaller implements Unmars
                     localGatewayVirtualInterfaceGroup.setLocalGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    localGatewayVirtualInterfaceGroup.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    localGatewayVirtualInterfaceGroup.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return localGatewayVirtualInterfaceGroup;

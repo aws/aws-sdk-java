@@ -428,6 +428,77 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Associates the specified sign-in delegate groups with the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param associateSigninDelegateGroupsWithAccountRequest
+     * @return Result of the AssociateSigninDelegateGroupsWithAccount operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.AssociateSigninDelegateGroupsWithAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociateSigninDelegateGroupsWithAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateSigninDelegateGroupsWithAccountResult associateSigninDelegateGroupsWithAccount(AssociateSigninDelegateGroupsWithAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSigninDelegateGroupsWithAccount(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSigninDelegateGroupsWithAccountResult executeAssociateSigninDelegateGroupsWithAccount(
+            AssociateSigninDelegateGroupsWithAccountRequest associateSigninDelegateGroupsWithAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSigninDelegateGroupsWithAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSigninDelegateGroupsWithAccountRequest> request = null;
+        Response<AssociateSigninDelegateGroupsWithAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSigninDelegateGroupsWithAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateSigninDelegateGroupsWithAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSigninDelegateGroupsWithAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSigninDelegateGroupsWithAccountResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AssociateSigninDelegateGroupsWithAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
      * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
@@ -515,6 +586,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -648,7 +721,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -1113,6 +1186,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The request exceeds the resource limit.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.CreateBot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
      *      Documentation</a>
@@ -1320,6 +1395,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -1391,6 +1468,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         account from an unsupported Region.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -1431,6 +1510,76 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRoomMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRoomMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a user under the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserResult executeCreateUser(CreateUserRequest createUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserRequest> request = null;
+        Response<CreateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1976,6 +2125,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -2042,6 +2193,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -2737,6 +2890,79 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Disassociates the specified sign-in delegate groups from the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param disassociateSigninDelegateGroupsFromAccountRequest
+     * @return Result of the DisassociateSigninDelegateGroupsFromAccount operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DisassociateSigninDelegateGroupsFromAccount
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociateSigninDelegateGroupsFromAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateSigninDelegateGroupsFromAccountResult disassociateSigninDelegateGroupsFromAccount(
+            DisassociateSigninDelegateGroupsFromAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateSigninDelegateGroupsFromAccount(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateSigninDelegateGroupsFromAccountResult executeDisassociateSigninDelegateGroupsFromAccount(
+            DisassociateSigninDelegateGroupsFromAccountRequest disassociateSigninDelegateGroupsFromAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateSigninDelegateGroupsFromAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateSigninDelegateGroupsFromAccountRequest> request = null;
+        Response<DisassociateSigninDelegateGroupsFromAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateSigninDelegateGroupsFromAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateSigninDelegateGroupsFromAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSigninDelegateGroupsFromAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateSigninDelegateGroupsFromAccountResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisassociateSigninDelegateGroupsFromAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves details for the specified Amazon Chime account, such as account type and supported licenses.
      * </p>
      * 
@@ -2964,6 +3190,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.GetBot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
      *      Documentation</a>
@@ -3424,7 +3652,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Retrieves room details, such as name.
+     * Retrieves room details, such as the room name.
      * </p>
      * 
      * @param getRoomRequest
@@ -3438,6 +3666,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -4354,6 +4584,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The input parameters don't match the service's restrictions.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.ListBots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
      *      Documentation</a>
@@ -4604,8 +4836,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Lists the membership details for the specified room, such as member IDs, member email addresses, and member
-     * names.
+     * Lists the membership details for the specified room, such as the members' IDs, email addresses, and names.
      * </p>
      * 
      * @param listRoomMembershipsRequest
@@ -4619,6 +4850,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         account from an unsupported Region.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -4686,6 +4919,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         account from an unsupported Region.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -5526,6 +5761,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.RegenerateSecurityToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
      *      API Documentation</a>
@@ -5947,6 +6184,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is not currently authorized to make the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.UpdateBot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
      *      Documentation</a>
@@ -6223,6 +6462,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -6275,8 +6516,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Updates room membership details, such as member role. The member role designates whether the member is a chat
-     * room administrator or a general chat room member. Member role can only be updated for user IDs.
+     * Updates room membership details, such as the member role. The member role designates whether the member is a chat
+     * room administrator or a general chat room member. The member role can be updated only for user IDs.
      * </p>
      * 
      * @param updateRoomMembershipRequest
@@ -6290,6 +6531,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException

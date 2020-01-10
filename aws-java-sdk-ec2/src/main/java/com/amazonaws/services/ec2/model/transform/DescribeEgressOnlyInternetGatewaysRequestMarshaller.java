@@ -65,6 +65,34 @@ public class DescribeEgressOnlyInternetGatewaysRequestMarshaller implements
             request.addParameter("NextToken", StringUtils.fromString(describeEgressOnlyInternetGatewaysRequest.getNextToken()));
         }
 
+        com.amazonaws.internal.SdkInternalList<Filter> describeEgressOnlyInternetGatewaysRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeEgressOnlyInternetGatewaysRequest
+                .getFilters();
+        if (!describeEgressOnlyInternetGatewaysRequestFiltersList.isEmpty() || !describeEgressOnlyInternetGatewaysRequestFiltersList.isAutoConstruct()) {
+            int filtersListIndex = 1;
+
+            for (Filter describeEgressOnlyInternetGatewaysRequestFiltersListValue : describeEgressOnlyInternetGatewaysRequestFiltersList) {
+
+                if (describeEgressOnlyInternetGatewaysRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describeEgressOnlyInternetGatewaysRequestFiltersListValue.getName()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeEgressOnlyInternetGatewaysRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
+                    int valuesListIndex = 1;
+
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+                filtersListIndex++;
+            }
+        }
+
         return request;
     }
 

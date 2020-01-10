@@ -71,6 +71,21 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateSigninDelegateGroupsWithAccountResult> associateSigninDelegateGroupsWithAccountAsync(
+            AssociateSigninDelegateGroupsWithAccountRequest request) {
+
+        return associateSigninDelegateGroupsWithAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSigninDelegateGroupsWithAccountResult> associateSigninDelegateGroupsWithAccountAsync(
+            AssociateSigninDelegateGroupsWithAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateSigninDelegateGroupsWithAccountRequest, AssociateSigninDelegateGroupsWithAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(BatchCreateAttendeeRequest request) {
 
         return batchCreateAttendeeAsync(request, null);
@@ -248,6 +263,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     @Override
     public java.util.concurrent.Future<CreateRoomMembershipResult> createRoomMembershipAsync(CreateRoomMembershipRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRoomMembershipRequest, CreateRoomMembershipResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
+
+        return createUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -496,6 +524,21 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     public java.util.concurrent.Future<DisassociatePhoneNumbersFromVoiceConnectorGroupResult> disassociatePhoneNumbersFromVoiceConnectorGroupAsync(
             DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociatePhoneNumbersFromVoiceConnectorGroupRequest, DisassociatePhoneNumbersFromVoiceConnectorGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSigninDelegateGroupsFromAccountResult> disassociateSigninDelegateGroupsFromAccountAsync(
+            DisassociateSigninDelegateGroupsFromAccountRequest request) {
+
+        return disassociateSigninDelegateGroupsFromAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSigninDelegateGroupsFromAccountResult> disassociateSigninDelegateGroupsFromAccountAsync(
+            DisassociateSigninDelegateGroupsFromAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSigninDelegateGroupsFromAccountRequest, DisassociateSigninDelegateGroupsFromAccountResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

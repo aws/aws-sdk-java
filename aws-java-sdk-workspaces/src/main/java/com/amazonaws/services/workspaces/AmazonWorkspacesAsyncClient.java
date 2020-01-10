@@ -1112,6 +1112,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<MigrateWorkspaceResult> migrateWorkspaceAsync(MigrateWorkspaceRequest request) {
+
+        return migrateWorkspaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MigrateWorkspaceResult> migrateWorkspaceAsync(final MigrateWorkspaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MigrateWorkspaceRequest, MigrateWorkspaceResult> asyncHandler) {
+        final MigrateWorkspaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MigrateWorkspaceResult>() {
+            @Override
+            public MigrateWorkspaceResult call() throws Exception {
+                MigrateWorkspaceResult result = null;
+
+                try {
+                    result = executeMigrateWorkspace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyAccountResult> modifyAccountAsync(ModifyAccountRequest request) {
 
         return modifyAccountAsync(request, null);

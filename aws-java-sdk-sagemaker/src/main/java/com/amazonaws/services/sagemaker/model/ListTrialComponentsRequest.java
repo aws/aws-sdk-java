@@ -27,6 +27,20 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * A filter that returns only components that are part of the specified experiment. If you specify
+     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * </p>
+     */
+    private String experimentName;
+    /**
+     * <p>
+     * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
+     * , you can't specify <code>ExperimentName</code>.
+     * </p>
+     */
+    private String trialName;
+    /**
+     * <p>
      * A filter that returns only components that have the specified source Amazon Resource Name (ARN).
      * </p>
      */
@@ -57,7 +71,7 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     private String sortOrder;
     /**
      * <p>
-     * The maximum number of components to return in the response.
+     * The maximum number of components to return in the response. The default value is 10.
      * </p>
      */
     private Integer maxResults;
@@ -68,6 +82,98 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * A filter that returns only components that are part of the specified experiment. If you specify
+     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * </p>
+     * 
+     * @param experimentName
+     *        A filter that returns only components that are part of the specified experiment. If you specify
+     *        <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     */
+
+    public void setExperimentName(String experimentName) {
+        this.experimentName = experimentName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only components that are part of the specified experiment. If you specify
+     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * </p>
+     * 
+     * @return A filter that returns only components that are part of the specified experiment. If you specify
+     *         <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     */
+
+    public String getExperimentName() {
+        return this.experimentName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only components that are part of the specified experiment. If you specify
+     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * </p>
+     * 
+     * @param experimentName
+     *        A filter that returns only components that are part of the specified experiment. If you specify
+     *        <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTrialComponentsRequest withExperimentName(String experimentName) {
+        setExperimentName(experimentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
+     * , you can't specify <code>ExperimentName</code>.
+     * </p>
+     * 
+     * @param trialName
+     *        A filter that returns only components that are part of the specified trial. If you specify
+     *        <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+     */
+
+    public void setTrialName(String trialName) {
+        this.trialName = trialName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
+     * , you can't specify <code>ExperimentName</code>.
+     * </p>
+     * 
+     * @return A filter that returns only components that are part of the specified trial. If you specify
+     *         <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+     */
+
+    public String getTrialName() {
+        return this.trialName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
+     * , you can't specify <code>ExperimentName</code>.
+     * </p>
+     * 
+     * @param trialName
+     *        A filter that returns only components that are part of the specified trial. If you specify
+     *        <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTrialComponentsRequest withTrialName(String trialName) {
+        setTrialName(trialName);
+        return this;
+    }
 
     /**
      * <p>
@@ -309,11 +415,11 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of components to return in the response.
+     * The maximum number of components to return in the response. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of components to return in the response.
+     *        The maximum number of components to return in the response. The default value is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -322,10 +428,10 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of components to return in the response.
+     * The maximum number of components to return in the response. The default value is 10.
      * </p>
      * 
-     * @return The maximum number of components to return in the response.
+     * @return The maximum number of components to return in the response. The default value is 10.
      */
 
     public Integer getMaxResults() {
@@ -334,11 +440,11 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of components to return in the response.
+     * The maximum number of components to return in the response. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of components to return in the response.
+     *        The maximum number of components to return in the response. The default value is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,6 +511,10 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getExperimentName() != null)
+            sb.append("ExperimentName: ").append(getExperimentName()).append(",");
+        if (getTrialName() != null)
+            sb.append("TrialName: ").append(getTrialName()).append(",");
         if (getSourceArn() != null)
             sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getCreatedAfter() != null)
@@ -433,6 +543,14 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof ListTrialComponentsRequest == false)
             return false;
         ListTrialComponentsRequest other = (ListTrialComponentsRequest) obj;
+        if (other.getExperimentName() == null ^ this.getExperimentName() == null)
+            return false;
+        if (other.getExperimentName() != null && other.getExperimentName().equals(this.getExperimentName()) == false)
+            return false;
+        if (other.getTrialName() == null ^ this.getTrialName() == null)
+            return false;
+        if (other.getTrialName() != null && other.getTrialName().equals(this.getTrialName()) == false)
+            return false;
         if (other.getSourceArn() == null ^ this.getSourceArn() == null)
             return false;
         if (other.getSourceArn() != null && other.getSourceArn().equals(this.getSourceArn()) == false)
@@ -469,6 +587,8 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getExperimentName() == null) ? 0 : getExperimentName().hashCode());
+        hashCode = prime * hashCode + ((getTrialName() == null) ? 0 : getTrialName().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode());

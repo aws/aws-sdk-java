@@ -34,7 +34,8 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String resourceId;
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     * existing tags, you must submit all of the existing tags along with the new ones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -87,10 +88,12 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     * existing tags, you must submit all of the existing tags along with the new ones.
      * </p>
      * 
-     * @return The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * @return The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     *         existing tags, you must submit all of the existing tags along with the new ones.
      */
 
     public java.util.List<Tag> getTags() {
@@ -102,11 +105,13 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     * existing tags, you must submit all of the existing tags along with the new ones.
      * </p>
      * 
      * @param tags
-     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     *        existing tags, you must submit all of the existing tags along with the new ones.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -120,7 +125,8 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     * existing tags, you must submit all of the existing tags along with the new ones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +135,8 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     *        existing tags, you must submit all of the existing tags along with the new ones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +152,13 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     * existing tags, you must submit all of the existing tags along with the new ones.
      * </p>
      * 
      * @param tags
-     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags. If you want to add new tags to a set of
+     *        existing tags, you must submit all of the existing tags along with the new ones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

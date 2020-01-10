@@ -37,6 +37,12 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<String> userEmailList;
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     */
+    private String userType;
 
     /**
      * <p>
@@ -149,6 +155,65 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @see UserType
+     */
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @return The user type.
+     * @see UserType
+     */
+
+    public String getUserType() {
+        return this.userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public InviteUsersRequest withUserType(String userType) {
+        setUserType(userType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public InviteUsersRequest withUserType(UserType userType) {
+        this.userType = userType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +228,9 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getUserEmailList() != null)
-            sb.append("UserEmailList: ").append("***Sensitive Data Redacted***");
+            sb.append("UserEmailList: ").append("***Sensitive Data Redacted***").append(",");
+        if (getUserType() != null)
+            sb.append("UserType: ").append(getUserType());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +253,10 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getUserEmailList() != null && other.getUserEmailList().equals(this.getUserEmailList()) == false)
             return false;
+        if (other.getUserType() == null ^ this.getUserType() == null)
+            return false;
+        if (other.getUserType() != null && other.getUserType().equals(this.getUserType()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +267,7 @@ public class InviteUsersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getUserEmailList() == null) ? 0 : getUserEmailList().hashCode());
+        hashCode = prime * hashCode + ((getUserType() == null) ? 0 : getUserType().hashCode());
         return hashCode;
     }
 

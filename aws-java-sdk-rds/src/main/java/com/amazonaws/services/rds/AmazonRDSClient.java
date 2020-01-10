@@ -4187,7 +4187,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This operation can also return information for Amazon Neptune DB instances and Amazon DocumentDB instances.
      * </p>
      * </note>
      * 
@@ -4372,6 +4372,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <p>
      * Returns information about provisioned RDS instances. This API supports pagination.
      * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon Neptune DB instances and Amazon DocumentDB instances.
+     * </p>
+     * </note>
      * 
      * @param describeDBInstancesRequest
      * @return Result of the DescribeDBInstances operation returned by the service.
@@ -6177,6 +6182,94 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS
+     * for new DB instances, or remove the override.
+     * </p>
+     * <p>
+     * By using this operation, you can specify an RDS-approved SSL/TLS certificate for new DB instances that is
+     * different from the default certificate provided by RDS. You can also use this operation to remove the override,
+     * so that new DB instances use the default certificate provided by RDS.
+     * </p>
+     * <p>
+     * You might need to override the default certificate in the following situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You already migrated your applications to support the latest certificate authority (CA) certificate, but the new
+     * CA certificate is not yet the RDS default CA certificate for the specified AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RDS has already moved to a new default CA certificate for the specified AWS Region, but you are still in the
+     * process of supporting the new CA certificate. In this case, you temporarily need additional time to finish your
+     * application changes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+     * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param modifyCertificatesRequest
+     * @return Result of the ModifyCertificates operation returned by the service.
+     * @throws CertificateNotFoundException
+     *         <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+     * @sample AmazonRDS.ModifyCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public Certificate modifyCertificates(ModifyCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyCertificates(request);
+    }
+
+    @SdkInternalApi
+    final Certificate executeModifyCertificates(ModifyCertificatesRequest modifyCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyCertificatesRequest> request = null;
+        Response<Certificate> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyCertificatesRequestMarshaller().marshall(super.beforeMarshalling(modifyCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<Certificate> responseHandler = new StaxResponseHandler<Certificate>(new CertificateStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

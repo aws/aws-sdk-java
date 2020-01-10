@@ -110,7 +110,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     private com.amazonaws.internal.SdkInternalList<String> ipGroupIds;
     /**
      * <p>
-     * The devices and operating systems that users can use to access Workspaces.
+     * The devices and operating systems that users can use to access WorkSpaces.
      * </p>
      */
     private WorkspaceAccessProperties workspaceAccessProperties;
@@ -829,11 +829,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The devices and operating systems that users can use to access Workspaces.
+     * The devices and operating systems that users can use to access WorkSpaces.
      * </p>
      * 
      * @param workspaceAccessProperties
-     *        The devices and operating systems that users can use to access Workspaces.
+     *        The devices and operating systems that users can use to access WorkSpaces.
      */
 
     public void setWorkspaceAccessProperties(WorkspaceAccessProperties workspaceAccessProperties) {
@@ -842,10 +842,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The devices and operating systems that users can use to access Workspaces.
+     * The devices and operating systems that users can use to access WorkSpaces.
      * </p>
      * 
-     * @return The devices and operating systems that users can use to access Workspaces.
+     * @return The devices and operating systems that users can use to access WorkSpaces.
      */
 
     public WorkspaceAccessProperties getWorkspaceAccessProperties() {
@@ -854,11 +854,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The devices and operating systems that users can use to access Workspaces.
+     * The devices and operating systems that users can use to access WorkSpaces.
      * </p>
      * 
      * @param workspaceAccessProperties
-     *        The devices and operating systems that users can use to access Workspaces.
+     *        The devices and operating systems that users can use to access WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

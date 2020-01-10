@@ -72,6 +72,16 @@ public class CertificateStaxUnmarshaller implements Unmarshaller<Certificate, St
                     certificate.setCertificateArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("CustomerOverride", targetDepth)) {
+                    certificate.setCustomerOverride(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CustomerOverrideValidTill", targetDepth)) {
+                    certificate.setCustomerOverrideValidTill(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return certificate;

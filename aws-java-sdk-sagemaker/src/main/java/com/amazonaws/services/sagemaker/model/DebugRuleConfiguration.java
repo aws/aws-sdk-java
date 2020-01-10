@@ -36,7 +36,7 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
     private String ruleConfigurationName;
     /**
      * <p>
-     * Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+     * Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
      * </p>
      */
     private String localPath;
@@ -60,7 +60,7 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
     private String instanceType;
     /**
      * <p>
-     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * The size, in GB, of the ML storage volume attached to the processing instance.
      * </p>
      */
     private Integer volumeSizeInGB;
@@ -113,11 +113,12 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+     * Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
      * </p>
      * 
      * @param localPath
-     *        Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+     *        Path to local storage location for output of rules. Defaults to
+     *        <code>/opt/ml/processing/output/rule/</code>.
      */
 
     public void setLocalPath(String localPath) {
@@ -126,10 +127,11 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+     * Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
      * </p>
      * 
-     * @return Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+     * @return Path to local storage location for output of rules. Defaults to
+     *         <code>/opt/ml/processing/output/rule/</code>.
      */
 
     public String getLocalPath() {
@@ -138,11 +140,12 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+     * Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
      * </p>
      * 
      * @param localPath
-     *        Path to local storage location for rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+     *        Path to local storage location for output of rules. Defaults to
+     *        <code>/opt/ml/processing/output/rule/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +295,11 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * The size, in GB, of the ML storage volume attached to the processing instance.
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size, in GB, of the ML storage volume attached to the notebook instance.
+     *        The size, in GB, of the ML storage volume attached to the processing instance.
      */
 
     public void setVolumeSizeInGB(Integer volumeSizeInGB) {
@@ -305,10 +308,10 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * The size, in GB, of the ML storage volume attached to the processing instance.
      * </p>
      * 
-     * @return The size, in GB, of the ML storage volume attached to the notebook instance.
+     * @return The size, in GB, of the ML storage volume attached to the processing instance.
      */
 
     public Integer getVolumeSizeInGB() {
@@ -317,11 +320,11 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The size, in GB, of the ML storage volume attached to the notebook instance.
+     * The size, in GB, of the ML storage volume attached to the processing instance.
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size, in GB, of the ML storage volume attached to the notebook instance.
+     *        The size, in GB, of the ML storage volume attached to the processing instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

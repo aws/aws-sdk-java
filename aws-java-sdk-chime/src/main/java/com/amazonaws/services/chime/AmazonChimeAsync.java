@@ -189,6 +189,41 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Associates the specified sign-in delegate groups with the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param associateSigninDelegateGroupsWithAccountRequest
+     * @return A Java Future containing the result of the AssociateSigninDelegateGroupsWithAccount operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.AssociateSigninDelegateGroupsWithAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociateSigninDelegateGroupsWithAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSigninDelegateGroupsWithAccountResult> associateSigninDelegateGroupsWithAccountAsync(
+            AssociateSigninDelegateGroupsWithAccountRequest associateSigninDelegateGroupsWithAccountRequest);
+
+    /**
+     * <p>
+     * Associates the specified sign-in delegate groups with the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param associateSigninDelegateGroupsWithAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSigninDelegateGroupsWithAccount operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.AssociateSigninDelegateGroupsWithAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociateSigninDelegateGroupsWithAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSigninDelegateGroupsWithAccountResult> associateSigninDelegateGroupsWithAccountAsync(
+            AssociateSigninDelegateGroupsWithAccountRequest associateSigninDelegateGroupsWithAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSigninDelegateGroupsWithAccountRequest, AssociateSigninDelegateGroupsWithAccountResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
      * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
@@ -304,7 +339,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -333,7 +368,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -726,6 +761,37 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<CreateRoomMembershipResult> createRoomMembershipAsync(CreateRoomMembershipRequest createRoomMembershipRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoomMembershipRequest, CreateRoomMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a user under the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return A Java Future containing the result of the CreateUser operation returned by the service.
+     * @sample AmazonChimeAsync.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest);
+
+    /**
+     * <p>
+     * Creates a user under the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUser operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler);
 
     /**
      * <p>
@@ -1397,6 +1463,43 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Disassociates the specified sign-in delegate groups from the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param disassociateSigninDelegateGroupsFromAccountRequest
+     * @return A Java Future containing the result of the DisassociateSigninDelegateGroupsFromAccount operation returned
+     *         by the service.
+     * @sample AmazonChimeAsync.DisassociateSigninDelegateGroupsFromAccount
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociateSigninDelegateGroupsFromAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSigninDelegateGroupsFromAccountResult> disassociateSigninDelegateGroupsFromAccountAsync(
+            DisassociateSigninDelegateGroupsFromAccountRequest disassociateSigninDelegateGroupsFromAccountRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified sign-in delegate groups from the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param disassociateSigninDelegateGroupsFromAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateSigninDelegateGroupsFromAccount operation returned
+     *         by the service.
+     * @sample AmazonChimeAsyncHandler.DisassociateSigninDelegateGroupsFromAccount
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociateSigninDelegateGroupsFromAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSigninDelegateGroupsFromAccountResult> disassociateSigninDelegateGroupsFromAccountAsync(
+            DisassociateSigninDelegateGroupsFromAccountRequest disassociateSigninDelegateGroupsFromAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSigninDelegateGroupsFromAccountRequest, DisassociateSigninDelegateGroupsFromAccountResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves details for the specified Amazon Chime account, such as account type and supported licenses.
      * </p>
      * 
@@ -1729,7 +1832,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves room details, such as name.
+     * Retrieves room details, such as the room name.
      * </p>
      * 
      * @param getRoomRequest
@@ -1742,7 +1845,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves room details, such as name.
+     * Retrieves room details, such as the room name.
      * </p>
      * 
      * @param getRoomRequest
@@ -2314,8 +2417,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Lists the membership details for the specified room, such as member IDs, member email addresses, and member
-     * names.
+     * Lists the membership details for the specified room, such as the members' IDs, email addresses, and names.
      * </p>
      * 
      * @param listRoomMembershipsRequest
@@ -2328,8 +2430,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Lists the membership details for the specified room, such as member IDs, member email addresses, and member
-     * names.
+     * Lists the membership details for the specified room, such as the members' IDs, email addresses, and names.
      * </p>
      * 
      * @param listRoomMembershipsRequest
@@ -3136,8 +3237,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Updates room membership details, such as member role. The member role designates whether the member is a chat
-     * room administrator or a general chat room member. Member role can only be updated for user IDs.
+     * Updates room membership details, such as the member role. The member role designates whether the member is a chat
+     * room administrator or a general chat room member. The member role can be updated only for user IDs.
      * </p>
      * 
      * @param updateRoomMembershipRequest
@@ -3150,8 +3251,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Updates room membership details, such as member role. The member role designates whether the member is a chat
-     * room administrator or a general chat room member. Member role can only be updated for user IDs.
+     * Updates room membership details, such as the member role. The member role designates whether the member is a chat
+     * room administrator or a general chat room member. The member role can be updated only for user IDs.
      * </p>
      * 
      * @param updateRoomMembershipRequest

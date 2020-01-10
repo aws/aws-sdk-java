@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -67,6 +69,17 @@ public class LocalGatewayRouteTableVpcAssociationStaxUnmarshaller implements Unm
                     localGatewayRouteTableVpcAssociation.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    localGatewayRouteTableVpcAssociation.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    localGatewayRouteTableVpcAssociation.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return localGatewayRouteTableVpcAssociation;

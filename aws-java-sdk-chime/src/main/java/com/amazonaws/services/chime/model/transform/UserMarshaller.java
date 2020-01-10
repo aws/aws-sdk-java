@@ -39,6 +39,8 @@ public class UserMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LicenseType").build();
+    private static final MarshallingInfo<String> USERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserType").build();
     private static final MarshallingInfo<String> USERREGISTRATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserRegistrationStatus").build();
     private static final MarshallingInfo<String> USERINVITATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -47,6 +49,8 @@ public class UserMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegisteredOn").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> INVITEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvitedOn").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<StructuredPojo> ALEXAFORBUSINESSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlexaForBusinessMetadata").build();
     private static final MarshallingInfo<String> PERSONALPIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PersonalPIN").build();
 
@@ -72,10 +76,12 @@ public class UserMarshaller {
             protocolMarshaller.marshall(user.getPrimaryProvisionedNumber(), PRIMARYPROVISIONEDNUMBER_BINDING);
             protocolMarshaller.marshall(user.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(user.getLicenseType(), LICENSETYPE_BINDING);
+            protocolMarshaller.marshall(user.getUserType(), USERTYPE_BINDING);
             protocolMarshaller.marshall(user.getUserRegistrationStatus(), USERREGISTRATIONSTATUS_BINDING);
             protocolMarshaller.marshall(user.getUserInvitationStatus(), USERINVITATIONSTATUS_BINDING);
             protocolMarshaller.marshall(user.getRegisteredOn(), REGISTEREDON_BINDING);
             protocolMarshaller.marshall(user.getInvitedOn(), INVITEDON_BINDING);
+            protocolMarshaller.marshall(user.getAlexaForBusinessMetadata(), ALEXAFORBUSINESSMETADATA_BINDING);
             protocolMarshaller.marshall(user.getPersonalPIN(), PERSONALPIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

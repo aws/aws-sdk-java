@@ -58,7 +58,7 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
     private String nextToken;
     /**
      * <p>
-     * The maximum number of experiments to return in the response.
+     * The maximum number of experiments to return in the response. The default value is 10.
      * </p>
      */
     private Integer maxResults;
@@ -309,11 +309,11 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of experiments to return in the response.
+     * The maximum number of experiments to return in the response. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of experiments to return in the response.
+     *        The maximum number of experiments to return in the response. The default value is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -322,10 +322,10 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of experiments to return in the response.
+     * The maximum number of experiments to return in the response. The default value is 10.
      * </p>
      * 
-     * @return The maximum number of experiments to return in the response.
+     * @return The maximum number of experiments to return in the response. The default value is 10.
      */
 
     public Integer getMaxResults() {
@@ -334,11 +334,11 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of experiments to return in the response.
+     * The maximum number of experiments to return in the response. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of experiments to return in the response.
+     *        The maximum number of experiments to return in the response. The default value is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1590,6 +1590,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param createPresignedDomainUrlRequest
      * @return Result of the CreatePresignedDomainUrl operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
      * @sample AmazonSageMaker.CreatePresignedDomainUrl
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl"
      *      target="_top">AWS API Documentation</a>
@@ -2092,10 +2094,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <note>
      * <p>
-     * You can create a trial component through a direct call to the <code>CreateTrialComponent</code> API. However, you
-     * can't specify the <code>Source</code> property of the component in the request, therefore, the component isn't
-     * associated with an Amazon SageMaker job. You must use Amazon SageMaker Studio, the Amazon SageMaker Python SDK,
-     * or the AWS SDK for Python (Boto) to create the component with a valid <code>Source</code> property.
+     * <code>CreateTrialComponent</code> can only be invoked from within an Amazon SageMaker managed environment. This
+     * includes Amazon SageMaker training jobs, processing jobs, transform jobs, and Amazon SageMaker notebooks. A call
+     * to <code>CreateTrialComponent</code> from outside one of these environments results in an error.
      * </p>
      * </note>
      * 
@@ -6328,6 +6329,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listTrialComponentsRequest
      * @return Result of the ListTrialComponents operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
      * @sample AmazonSageMaker.ListTrialComponents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents" target="_top">AWS
      *      API Documentation</a>
@@ -6383,6 +6386,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listTrialsRequest
      * @return Result of the ListTrials operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
      * @sample AmazonSageMaker.ListTrials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials" target="_top">AWS API
      *      Documentation</a>
@@ -6596,7 +6601,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * ascending or descending order.
      * </p>
      * <p>
-     * You can query against the following value types: numerical, text, Booleans, and timestamps.
+     * You can query against the following value types: numeric, text, Boolean, and timestamp.
      * </p>
      * 
      * @param searchRequest

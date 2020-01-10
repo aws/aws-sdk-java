@@ -60,8 +60,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
+     * <note>
      * <p>
+     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
+     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
+     * call instead of s3 so you can use the put-object operation. For example, you use the following:
+     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
+     * name ends in a / for it to be considered a folder.
      * </p>
+     * </note>
      */
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
@@ -273,8 +280,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
+     * <note>
      * <p>
+     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
+     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
+     * call instead of s3 so you can use the put-object operation. For example, you use the following:
+     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
+     * name ends in a / for it to be considered a folder.
      * </p>
+     * </note>
      * 
      * @return Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
      *         want to make them visible. You will need to specify the "<code>Entry</code>" and "<code>Target</code>"
@@ -289,7 +303,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *         <code>Target</code> to the HomeDirectory parameter value.
      *         </p>
+     *         <note>
      *         <p>
+     *         If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
+     *         workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
+     *         the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
+     *         the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure
+     *         that the end of the key name ends in a / for it to be considered a folder.
+     *         </p>
      */
 
     public java.util.List<HomeDirectoryMapEntry> getHomeDirectoryMappings() {
@@ -312,8 +333,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
+     * <note>
      * <p>
+     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
+     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
+     * call instead of s3 so you can use the put-object operation. For example, you use the following:
+     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
+     * name ends in a / for it to be considered a folder.
      * </p>
+     * </note>
      * 
      * @param homeDirectoryMappings
      *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
@@ -329,7 +357,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      *        </p>
+     *        <note>
      *        <p>
+     *        If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
+     *        workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
+     *        the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
+     *        the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
+     *        the end of the key name ends in a / for it to be considered a folder.
+     *        </p>
      */
 
     public void setHomeDirectoryMappings(java.util.Collection<HomeDirectoryMapEntry> homeDirectoryMappings) {
@@ -357,8 +392,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
+     * <note>
      * <p>
+     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
+     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
+     * call instead of s3 so you can use the put-object operation. For example, you use the following:
+     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
+     * name ends in a / for it to be considered a folder.
      * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHomeDirectoryMappings(java.util.Collection)} or
@@ -379,7 +421,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      *        </p>
+     *        <note>
      *        <p>
+     *        If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
+     *        workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
+     *        the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
+     *        the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
+     *        the end of the key name ends in a / for it to be considered a folder.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,8 +458,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the
      * HomeDirectory parameter value.
      * </p>
+     * <note>
      * <p>
+     * If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a workaround, you
+     * can use the S3 api to create 0 byte objects as place holders for your directory. If using the CLI, use the s3api
+     * call instead of s3 so you can use the put-object operation. For example, you use the following:
+     * <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key
+     * name ends in a / for it to be considered a folder.
      * </p>
+     * </note>
      * 
      * @param homeDirectoryMappings
      *        Logical directory mappings that specify what S3 paths and keys should be visible to your user and how you
@@ -426,7 +482,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        designated home directory ("chroot"). To do this, you can set <code>Entry</code> to '/' and set
      *        <code>Target</code> to the HomeDirectory parameter value.
      *        </p>
+     *        <note>
      *        <p>
+     *        If the target of a logical directory entry does not exist in S3, the entry will be ignored. As a
+     *        workaround, you can use the S3 api to create 0 byte objects as place holders for your directory. If using
+     *        the CLI, use the s3api call instead of s3 so you can use the put-object operation. For example, you use
+     *        the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that
+     *        the end of the key name ends in a / for it to be considered a folder.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,6 +56,14 @@ public class UpdateUserRequestItemJsonUnmarshaller implements Unmarshaller<Updat
                     context.nextToken();
                     updateUserRequestItem.setLicenseType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UserType", targetDepth)) {
+                    context.nextToken();
+                    updateUserRequestItem.setUserType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AlexaForBusinessMetadata", targetDepth)) {
+                    context.nextToken();
+                    updateUserRequestItem.setAlexaForBusinessMetadata(AlexaForBusinessMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListTrialComponentsRequestMarshaller {
 
+    private static final MarshallingInfo<String> EXPERIMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExperimentName").build();
+    private static final MarshallingInfo<String> TRIALNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TrialName").build();
     private static final MarshallingInfo<String> SOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SourceArn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -58,6 +62,8 @@ public class ListTrialComponentsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listTrialComponentsRequest.getExperimentName(), EXPERIMENTNAME_BINDING);
+            protocolMarshaller.marshall(listTrialComponentsRequest.getTrialName(), TRIALNAME_BINDING);
             protocolMarshaller.marshall(listTrialComponentsRequest.getSourceArn(), SOURCEARN_BINDING);
             protocolMarshaller.marshall(listTrialComponentsRequest.getCreatedAfter(), CREATEDAFTER_BINDING);
             protocolMarshaller.marshall(listTrialComponentsRequest.getCreatedBefore(), CREATEDBEFORE_BINDING);

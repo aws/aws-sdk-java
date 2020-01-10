@@ -96,22 +96,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You use one of the following prebuilt Amazon SageMaker Docker images:
+     * You use one of the following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     * >Prebuilt Amazon SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Tensorflow
+     * Tensorflow (version &gt;= 1.15)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MXNet
+     * MXNet (version &gt;= 1.6)
      * </p>
      * </li>
      * <li>
      * <p>
-     * PyTorch
+     * PyTorch (version &gt;= 1.3)
      * </p>
      * </li>
      * </ul>
@@ -530,22 +532,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You use one of the following prebuilt Amazon SageMaker Docker images:
+     * You use one of the following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     * >Prebuilt Amazon SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Tensorflow
+     * Tensorflow (version &gt;= 1.15)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MXNet
+     * MXNet (version &gt;= 1.6)
      * </p>
      * </li>
      * <li>
      * <p>
-     * PyTorch
+     * PyTorch (version &gt;= 1.3)
      * </p>
      * </li>
      * </ul>
@@ -568,22 +572,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        </li>
      *        <li>
      *        <p>
-     *        You use one of the following prebuilt Amazon SageMaker Docker images:
+     *        You use one of the following <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     *        >Prebuilt Amazon SageMaker Docker Images</a>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Tensorflow
+     *        Tensorflow (version &gt;= 1.15)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MXNet
+     *        MXNet (version &gt;= 1.6)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PyTorch
+     *        PyTorch (version &gt;= 1.3)
      *        </p>
      *        </li>
      *        </ul>
@@ -612,22 +618,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You use one of the following prebuilt Amazon SageMaker Docker images:
+     * You use one of the following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     * >Prebuilt Amazon SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Tensorflow
+     * Tensorflow (version &gt;= 1.15)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MXNet
+     * MXNet (version &gt;= 1.6)
      * </p>
      * </li>
      * <li>
      * <p>
-     * PyTorch
+     * PyTorch (version &gt;= 1.3)
      * </p>
      * </li>
      * </ul>
@@ -649,22 +657,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *         </li>
      *         <li>
      *         <p>
-     *         You use one of the following prebuilt Amazon SageMaker Docker images:
+     *         You use one of the following <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     *         >Prebuilt Amazon SageMaker Docker Images</a>:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Tensorflow
+     *         Tensorflow (version &gt;= 1.15)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MXNet
+     *         MXNet (version &gt;= 1.6)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PyTorch
+     *         PyTorch (version &gt;= 1.3)
      *         </p>
      *         </li>
      *         </ul>
@@ -693,22 +703,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You use one of the following prebuilt Amazon SageMaker Docker images:
+     * You use one of the following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     * >Prebuilt Amazon SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Tensorflow
+     * Tensorflow (version &gt;= 1.15)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MXNet
+     * MXNet (version &gt;= 1.6)
      * </p>
      * </li>
      * <li>
      * <p>
-     * PyTorch
+     * PyTorch (version &gt;= 1.3)
      * </p>
      * </li>
      * </ul>
@@ -731,22 +743,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *        </li>
      *        <li>
      *        <p>
-     *        You use one of the following prebuilt Amazon SageMaker Docker images:
+     *        You use one of the following <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     *        >Prebuilt Amazon SageMaker Docker Images</a>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Tensorflow
+     *        Tensorflow (version &gt;= 1.15)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        MXNet
+     *        MXNet (version &gt;= 1.6)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PyTorch
+     *        PyTorch (version &gt;= 1.3)
      *        </p>
      *        </li>
      *        </ul>
@@ -777,22 +791,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </li>
      * <li>
      * <p>
-     * You use one of the following prebuilt Amazon SageMaker Docker images:
+     * You use one of the following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     * >Prebuilt Amazon SageMaker Docker Images</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Tensorflow
+     * Tensorflow (version &gt;= 1.15)
      * </p>
      * </li>
      * <li>
      * <p>
-     * MXNet
+     * MXNet (version &gt;= 1.6)
      * </p>
      * </li>
      * <li>
      * <p>
-     * PyTorch
+     * PyTorch (version &gt;= 1.3)
      * </p>
      * </li>
      * </ul>
@@ -814,22 +830,24 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      *         </li>
      *         <li>
      *         <p>
-     *         You use one of the following prebuilt Amazon SageMaker Docker images:
+     *         You use one of the following <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html"
+     *         >Prebuilt Amazon SageMaker Docker Images</a>:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Tensorflow
+     *         Tensorflow (version &gt;= 1.15)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MXNet
+     *         MXNet (version &gt;= 1.6)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PyTorch
+     *         PyTorch (version &gt;= 1.3)
      *         </p>
      *         </li>
      *         </ul>

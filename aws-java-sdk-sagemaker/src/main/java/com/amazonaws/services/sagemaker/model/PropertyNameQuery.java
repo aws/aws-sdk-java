@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A type of <code>SuggestionQuery</code>. A suggestion query for retrieving property names that match the specified
- * hint.
+ * Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the
+ * specified text.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PropertyNameQuery" target="_top">AWS API
@@ -31,21 +31,18 @@ public class PropertyNameQuery implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Text that is part of a property's name. The property names of hyperparameter, metric, and tag key names that
-     * begin with the specified text in the <code>PropertyNameHint</code>.
+     * Text that begins a property's name.
      * </p>
      */
     private String propertyNameHint;
 
     /**
      * <p>
-     * Text that is part of a property's name. The property names of hyperparameter, metric, and tag key names that
-     * begin with the specified text in the <code>PropertyNameHint</code>.
+     * Text that begins a property's name.
      * </p>
      * 
      * @param propertyNameHint
-     *        Text that is part of a property's name. The property names of hyperparameter, metric, and tag key names
-     *        that begin with the specified text in the <code>PropertyNameHint</code>.
+     *        Text that begins a property's name.
      */
 
     public void setPropertyNameHint(String propertyNameHint) {
@@ -54,12 +51,10 @@ public class PropertyNameQuery implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Text that is part of a property's name. The property names of hyperparameter, metric, and tag key names that
-     * begin with the specified text in the <code>PropertyNameHint</code>.
+     * Text that begins a property's name.
      * </p>
      * 
-     * @return Text that is part of a property's name. The property names of hyperparameter, metric, and tag key names
-     *         that begin with the specified text in the <code>PropertyNameHint</code>.
+     * @return Text that begins a property's name.
      */
 
     public String getPropertyNameHint() {
@@ -68,13 +63,11 @@ public class PropertyNameQuery implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Text that is part of a property's name. The property names of hyperparameter, metric, and tag key names that
-     * begin with the specified text in the <code>PropertyNameHint</code>.
+     * Text that begins a property's name.
      * </p>
      * 
      * @param propertyNameHint
-     *        Text that is part of a property's name. The property names of hyperparameter, metric, and tag key names
-     *        that begin with the specified text in the <code>PropertyNameHint</code>.
+     *        Text that begins a property's name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

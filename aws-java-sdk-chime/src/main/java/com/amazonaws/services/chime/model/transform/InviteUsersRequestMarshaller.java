@@ -32,6 +32,8 @@ public class InviteUsersRequestMarshaller {
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<List> USEREMAILLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserEmailList").build();
+    private static final MarshallingInfo<String> USERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserType").build();
 
     private static final InviteUsersRequestMarshaller instance = new InviteUsersRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class InviteUsersRequestMarshaller {
         try {
             protocolMarshaller.marshall(inviteUsersRequest.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(inviteUsersRequest.getUserEmailList(), USEREMAILLIST_BINDING);
+            protocolMarshaller.marshall(inviteUsersRequest.getUserType(), USERTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

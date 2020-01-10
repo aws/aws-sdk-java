@@ -684,15 +684,15 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
-     * as listed.
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For
+     * private and vendor workforces, the maximum is as listed.
      * </p>
      */
     private Integer taskAvailabilityLifetimeInSeconds;
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
      * </p>
      */
     private Integer maxConcurrentTaskCount;
@@ -4689,14 +4689,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
-     * as listed.
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For
+     * private and vendor workforces, the maximum is as listed.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
      *        The length of time that a task remains available for labeling by human workers. <b>If you choose the
-     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces,
-     *        the maximum is as listed.
+     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds
+     *        (1 day). For private and vendor workforces, the maximum is as listed.
      */
 
     public void setTaskAvailabilityLifetimeInSeconds(Integer taskAvailabilityLifetimeInSeconds) {
@@ -4706,13 +4706,13 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
-     * as listed.
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For
+     * private and vendor workforces, the maximum is as listed.
      * </p>
      * 
      * @return The length of time that a task remains available for labeling by human workers. <b>If you choose the
-     *         Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces,
-     *         the maximum is as listed.
+     *         Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000
+     *         seconds (1 day). For private and vendor workforces, the maximum is as listed.
      */
 
     public Integer getTaskAvailabilityLifetimeInSeconds() {
@@ -4722,14 +4722,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
-     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
-     * as listed.
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For
+     * private and vendor workforces, the maximum is as listed.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
      *        The length of time that a task remains available for labeling by human workers. <b>If you choose the
-     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces,
-     *        the maximum is as listed.
+     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. The default value is 864000 seconds
+     *        (1 day). For private and vendor workforces, the maximum is as listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4741,12 +4741,13 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
      * </p>
      * 
      * @param maxConcurrentTaskCount
      *        Defines the maximum number of data objects that can be labeled by human workers at the same time. Also
-     *        referred to as batch size. Each object may have more than one worker at one time.
+     *        referred to as batch size. Each object may have more than one worker at one time. The default value is
+     *        1000 objects.
      */
 
     public void setMaxConcurrentTaskCount(Integer maxConcurrentTaskCount) {
@@ -4756,11 +4757,12 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
      * </p>
      * 
      * @return Defines the maximum number of data objects that can be labeled by human workers at the same time. Also
-     *         referred to as batch size. Each object may have more than one worker at one time.
+     *         referred to as batch size. Each object may have more than one worker at one time. The default value is
+     *         1000 objects.
      */
 
     public Integer getMaxConcurrentTaskCount() {
@@ -4770,12 +4772,13 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Defines the maximum number of data objects that can be labeled by human workers at the same time. Also referred
-     * to as batch size. Each object may have more than one worker at one time.
+     * to as batch size. Each object may have more than one worker at one time. The default value is 1000 objects.
      * </p>
      * 
      * @param maxConcurrentTaskCount
      *        Defines the maximum number of data objects that can be labeled by human workers at the same time. Also
-     *        referred to as batch size. Each object may have more than one worker at one time.
+     *        referred to as batch size. Each object may have more than one worker at one time. The default value is
+     *        1000 objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

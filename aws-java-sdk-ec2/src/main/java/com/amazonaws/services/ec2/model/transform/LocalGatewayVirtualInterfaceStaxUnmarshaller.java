@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -77,6 +79,17 @@ public class LocalGatewayVirtualInterfaceStaxUnmarshaller implements Unmarshalle
                     localGatewayVirtualInterface.setPeerBgpAsn(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    localGatewayVirtualInterface.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    localGatewayVirtualInterface.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return localGatewayVirtualInterface;

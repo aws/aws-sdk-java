@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum EndpointType {
 
     PUBLIC("PUBLIC"),
+    VPC("VPC"),
     VPC_ENDPOINT("VPC_ENDPOINT");
 
     private String value;

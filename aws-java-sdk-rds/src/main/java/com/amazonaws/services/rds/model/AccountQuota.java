@@ -74,6 +74,10 @@ import javax.annotation.Generated;
  * <code>DBInstances</code> - The number of DB instances per account. The used value is the count of the DB instances in
  * the account.
  * </p>
+ * <p>
+ * Amazon RDS DB instances, Amazon Aurora DB instances, Amazon Neptune instances, and Amazon DocumentDB instances apply
+ * to this quota.
+ * </p>
  * </li>
  * <li>
  * <p>
@@ -133,9 +137,9 @@ import javax.annotation.Generated;
  * </li>
  * </ul>
  * <p>
- * For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html">Limits</a> in the <i>Amazon RDS User
- * Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html">Limits</a> in
+ * For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html">Quotas
+ * for Amazon RDS</a> in the <i>Amazon RDS User Guide</i> and <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html">Quotas for Amazon Aurora</a> in
  * the <i>Amazon Aurora User Guide</i>.
  * </p>
  * 

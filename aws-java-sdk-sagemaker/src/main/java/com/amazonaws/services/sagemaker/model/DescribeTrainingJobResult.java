@@ -330,11 +330,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
      * specified VPC, but the training container does not have network access.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      */
     private Boolean enableNetworkIsolation;
     /**
@@ -2747,20 +2742,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
      * specified VPC, but the training container does not have network access.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
      * @param enableNetworkIsolation
      *        If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *        cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
      *        jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *        artifacts through the specified VPC, but the training container does not have network access.</p> <note>
-     *        <p>
-     *        The Semantic Segmentation built-in algorithm does not support network isolation.
-     *        </p>
+     *        artifacts through the specified VPC, but the training container does not have network access.
      */
 
     public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
@@ -2774,19 +2761,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
      * specified VPC, but the training container does not have network access.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
      * @return If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *         cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
      *         jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *         artifacts through the specified VPC, but the training container does not have network access.</p> <note>
-     *         <p>
-     *         The Semantic Segmentation built-in algorithm does not support network isolation.
-     *         </p>
+     *         artifacts through the specified VPC, but the training container does not have network access.
      */
 
     public Boolean getEnableNetworkIsolation() {
@@ -2800,20 +2779,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
      * specified VPC, but the training container does not have network access.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
      * @param enableNetworkIsolation
      *        If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *        cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
      *        jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *        artifacts through the specified VPC, but the training container does not have network access.</p> <note>
-     *        <p>
-     *        The Semantic Segmentation built-in algorithm does not support network isolation.
-     *        </p>
+     *        artifacts through the specified VPC, but the training container does not have network access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2829,19 +2800,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
      * specified VPC, but the training container does not have network access.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
      * @return If you want to allow inbound or outbound network calls, except for calls between peers within a training
      *         cluster for distributed training, choose <code>True</code>. If you enable network isolation for training
      *         jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     *         artifacts through the specified VPC, but the training container does not have network access.</p> <note>
-     *         <p>
-     *         The Semantic Segmentation built-in algorithm does not support network isolation.
-     *         </p>
+     *         artifacts through the specified VPC, but the training container does not have network access.
      */
 
     public Boolean isEnableNetworkIsolation() {

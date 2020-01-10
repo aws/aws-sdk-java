@@ -57,6 +57,12 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * The tags assigned to the association.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -260,6 +266,79 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
     }
 
     /**
+     * <p>
+     * The tags assigned to the association.
+     * </p>
+     * 
+     * @return The tags assigned to the association.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the association.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the association.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the association.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRouteTableVirtualInterfaceGroupAssociation withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the association.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRouteTableVirtualInterfaceGroupAssociation withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +360,9 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
         if (getLocalGatewayRouteTableId() != null)
             sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +401,10 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -336,6 +421,7 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
         hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

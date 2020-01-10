@@ -213,6 +213,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateSigninDelegateGroupsWithAccountResult> associateSigninDelegateGroupsWithAccountAsync(
+            AssociateSigninDelegateGroupsWithAccountRequest request) {
+
+        return associateSigninDelegateGroupsWithAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSigninDelegateGroupsWithAccountResult> associateSigninDelegateGroupsWithAccountAsync(
+            final AssociateSigninDelegateGroupsWithAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateSigninDelegateGroupsWithAccountRequest, AssociateSigninDelegateGroupsWithAccountResult> asyncHandler) {
+        final AssociateSigninDelegateGroupsWithAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateSigninDelegateGroupsWithAccountResult>() {
+            @Override
+            public AssociateSigninDelegateGroupsWithAccountResult call() throws Exception {
+                AssociateSigninDelegateGroupsWithAccountResult result = null;
+
+                try {
+                    result = executeAssociateSigninDelegateGroupsWithAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchCreateAttendeeResult> batchCreateAttendeeAsync(BatchCreateAttendeeRequest request) {
 
         return batchCreateAttendeeAsync(request, null);
@@ -659,6 +694,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeCreateRoomMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
+
+        return createUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserResult> createUserAsync(final CreateUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
+        final CreateUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUserResult>() {
+            @Override
+            public CreateUserResult call() throws Exception {
+                CreateUserResult result = null;
+
+                try {
+                    result = executeCreateUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1267,6 +1335,41 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
 
                 try {
                     result = executeDisassociatePhoneNumbersFromVoiceConnectorGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSigninDelegateGroupsFromAccountResult> disassociateSigninDelegateGroupsFromAccountAsync(
+            DisassociateSigninDelegateGroupsFromAccountRequest request) {
+
+        return disassociateSigninDelegateGroupsFromAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSigninDelegateGroupsFromAccountResult> disassociateSigninDelegateGroupsFromAccountAsync(
+            final DisassociateSigninDelegateGroupsFromAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateSigninDelegateGroupsFromAccountRequest, DisassociateSigninDelegateGroupsFromAccountResult> asyncHandler) {
+        final DisassociateSigninDelegateGroupsFromAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateSigninDelegateGroupsFromAccountResult>() {
+            @Override
+            public DisassociateSigninDelegateGroupsFromAccountResult call() throws Exception {
+                DisassociateSigninDelegateGroupsFromAccountResult result = null;
+
+                try {
+                    result = executeDisassociateSigninDelegateGroupsFromAccount(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

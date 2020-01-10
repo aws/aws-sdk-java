@@ -31,6 +31,10 @@ public class UpdateUserRequestItemMarshaller {
             .marshallLocationName("UserId").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LicenseType").build();
+    private static final MarshallingInfo<String> USERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserType").build();
+    private static final MarshallingInfo<StructuredPojo> ALEXAFORBUSINESSMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlexaForBusinessMetadata").build();
 
     private static final UpdateUserRequestItemMarshaller instance = new UpdateUserRequestItemMarshaller();
 
@@ -50,6 +54,8 @@ public class UpdateUserRequestItemMarshaller {
         try {
             protocolMarshaller.marshall(updateUserRequestItem.getUserId(), USERID_BINDING);
             protocolMarshaller.marshall(updateUserRequestItem.getLicenseType(), LICENSETYPE_BINDING);
+            protocolMarshaller.marshall(updateUserRequestItem.getUserType(), USERTYPE_BINDING);
+            protocolMarshaller.marshall(updateUserRequestItem.getAlexaForBusinessMetadata(), ALEXAFORBUSINESSMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -72,11 +72,6 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      */
     private Boolean enableNetworkIsolation;
 
@@ -412,18 +407,9 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
      * @param enableNetworkIsolation
-     *        If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
-     *        <note>
-     *        <p>
-     *        The Semantic Segmentation built-in algorithm does not support network isolation.
-     *        </p>
+     *        If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      */
 
     public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
@@ -434,17 +420,8 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
-     * @return If <code>True</code>, no inbound or outbound network calls can be made to or from the model
-     *         container.</p> <note>
-     *         <p>
-     *         The Semantic Segmentation built-in algorithm does not support network isolation.
-     *         </p>
+     * @return If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      */
 
     public Boolean getEnableNetworkIsolation() {
@@ -455,18 +432,9 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
      * @param enableNetworkIsolation
-     *        If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.</p>
-     *        <note>
-     *        <p>
-     *        The Semantic Segmentation built-in algorithm does not support network isolation.
-     *        </p>
+     *        If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,17 +447,8 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      * </p>
-     * <note>
-     * <p>
-     * The Semantic Segmentation built-in algorithm does not support network isolation.
-     * </p>
-     * </note>
      * 
-     * @return If <code>True</code>, no inbound or outbound network calls can be made to or from the model
-     *         container.</p> <note>
-     *         <p>
-     *         The Semantic Segmentation built-in algorithm does not support network isolation.
-     *         </p>
+     * @return If <code>True</code>, no inbound or outbound network calls can be made to or from the model container.
      */
 
     public Boolean isEnableNetworkIsolation() {

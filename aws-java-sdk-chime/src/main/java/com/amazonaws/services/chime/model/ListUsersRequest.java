@@ -39,6 +39,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String userEmail;
     /**
      * <p>
+     * The user type.
+     * </p>
+     */
+    private String userType;
+    /**
+     * <p>
      * The maximum number of results to return in a single call. Defaults to 100.
      * </p>
      */
@@ -127,6 +133,65 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public ListUsersRequest withUserEmail(String userEmail) {
         setUserEmail(userEmail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @see UserType
+     */
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @return The user type.
+     * @see UserType
+     */
+
+    public String getUserType() {
+        return this.userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public ListUsersRequest withUserType(String userType) {
+        setUserType(userType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public ListUsersRequest withUserType(UserType userType) {
+        this.userType = userType.toString();
         return this;
     }
 
@@ -226,6 +291,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getUserEmail() != null)
             sb.append("UserEmail: ").append("***Sensitive Data Redacted***").append(",");
+        if (getUserType() != null)
+            sb.append("UserType: ").append(getUserType()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -252,6 +319,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getUserEmail() != null && other.getUserEmail().equals(this.getUserEmail()) == false)
             return false;
+        if (other.getUserType() == null ^ this.getUserType() == null)
+            return false;
+        if (other.getUserType() != null && other.getUserType().equals(this.getUserType()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -270,6 +341,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getUserEmail() == null) ? 0 : getUserEmail().hashCode());
+        hashCode = prime * hashCode + ((getUserType() == null) ? 0 : getUserType().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

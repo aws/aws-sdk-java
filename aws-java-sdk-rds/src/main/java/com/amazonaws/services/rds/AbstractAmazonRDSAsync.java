@@ -1623,6 +1623,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     }
 
     @Override
+    public java.util.concurrent.Future<Certificate> modifyCertificatesAsync(ModifyCertificatesRequest request) {
+
+        return modifyCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Certificate> modifyCertificatesAsync(ModifyCertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyCertificatesRequest, Certificate> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyCurrentDBClusterCapacityResult> modifyCurrentDBClusterCapacityAsync(ModifyCurrentDBClusterCapacityRequest request) {
 
         return modifyCurrentDBClusterCapacityAsync(request, null);

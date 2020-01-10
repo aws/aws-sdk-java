@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum Framework {
 
     TENSORFLOW("TENSORFLOW"),
+    KERAS("KERAS"),
     MXNET("MXNET"),
     ONNX("ONNX"),
     PYTORCH("PYTORCH"),

@@ -42,6 +42,8 @@ public class AccountMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultLicense").build();
     private static final MarshallingInfo<List> SUPPORTEDLICENSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedLicenses").build();
+    private static final MarshallingInfo<List> SIGNINDELEGATEGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigninDelegateGroups").build();
 
     private static final AccountMarshaller instance = new AccountMarshaller();
 
@@ -66,6 +68,7 @@ public class AccountMarshaller {
             protocolMarshaller.marshall(account.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(account.getDefaultLicense(), DEFAULTLICENSE_BINDING);
             protocolMarshaller.marshall(account.getSupportedLicenses(), SUPPORTEDLICENSES_BINDING);
+            protocolMarshaller.marshall(account.getSigninDelegateGroups(), SIGNINDELEGATEGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

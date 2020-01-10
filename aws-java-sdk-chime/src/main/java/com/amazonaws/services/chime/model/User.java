@@ -65,6 +65,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String licenseType;
     /**
      * <p>
+     * The user type.
+     * </p>
+     */
+    private String userType;
+    /**
+     * <p>
      * The user registration status.
      * </p>
      */
@@ -87,6 +93,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date invitedOn;
+    /**
+     * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     */
+    private AlexaForBusinessMetadata alexaForBusinessMetadata;
     /**
      * <p>
      * The user's personal meeting PIN.
@@ -355,6 +367,65 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @see UserType
+     */
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @return The user type.
+     * @see UserType
+     */
+
+    public String getUserType() {
+        return this.userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public User withUserType(String userType) {
+        setUserType(userType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public User withUserType(UserType userType) {
+        this.userType = userType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The user registration status.
      * </p>
      * 
@@ -553,6 +624,46 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     * 
+     * @param alexaForBusinessMetadata
+     *        The Alexa for Business metadata.
+     */
+
+    public void setAlexaForBusinessMetadata(AlexaForBusinessMetadata alexaForBusinessMetadata) {
+        this.alexaForBusinessMetadata = alexaForBusinessMetadata;
+    }
+
+    /**
+     * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     * 
+     * @return The Alexa for Business metadata.
+     */
+
+    public AlexaForBusinessMetadata getAlexaForBusinessMetadata() {
+        return this.alexaForBusinessMetadata;
+    }
+
+    /**
+     * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     * 
+     * @param alexaForBusinessMetadata
+     *        The Alexa for Business metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withAlexaForBusinessMetadata(AlexaForBusinessMetadata alexaForBusinessMetadata) {
+        setAlexaForBusinessMetadata(alexaForBusinessMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
      * The user's personal meeting PIN.
      * </p>
      * 
@@ -615,6 +726,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLicenseType() != null)
             sb.append("LicenseType: ").append(getLicenseType()).append(",");
+        if (getUserType() != null)
+            sb.append("UserType: ").append(getUserType()).append(",");
         if (getUserRegistrationStatus() != null)
             sb.append("UserRegistrationStatus: ").append(getUserRegistrationStatus()).append(",");
         if (getUserInvitationStatus() != null)
@@ -623,6 +736,8 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             sb.append("RegisteredOn: ").append(getRegisteredOn()).append(",");
         if (getInvitedOn() != null)
             sb.append("InvitedOn: ").append(getInvitedOn()).append(",");
+        if (getAlexaForBusinessMetadata() != null)
+            sb.append("AlexaForBusinessMetadata: ").append(getAlexaForBusinessMetadata()).append(",");
         if (getPersonalPIN() != null)
             sb.append("PersonalPIN: ").append(getPersonalPIN());
         sb.append("}");
@@ -663,6 +778,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
             return false;
+        if (other.getUserType() == null ^ this.getUserType() == null)
+            return false;
+        if (other.getUserType() != null && other.getUserType().equals(this.getUserType()) == false)
+            return false;
         if (other.getUserRegistrationStatus() == null ^ this.getUserRegistrationStatus() == null)
             return false;
         if (other.getUserRegistrationStatus() != null && other.getUserRegistrationStatus().equals(this.getUserRegistrationStatus()) == false)
@@ -678,6 +797,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         if (other.getInvitedOn() == null ^ this.getInvitedOn() == null)
             return false;
         if (other.getInvitedOn() != null && other.getInvitedOn().equals(this.getInvitedOn()) == false)
+            return false;
+        if (other.getAlexaForBusinessMetadata() == null ^ this.getAlexaForBusinessMetadata() == null)
+            return false;
+        if (other.getAlexaForBusinessMetadata() != null && other.getAlexaForBusinessMetadata().equals(this.getAlexaForBusinessMetadata()) == false)
             return false;
         if (other.getPersonalPIN() == null ^ this.getPersonalPIN() == null)
             return false;
@@ -697,10 +820,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPrimaryProvisionedNumber() == null) ? 0 : getPrimaryProvisionedNumber().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
+        hashCode = prime * hashCode + ((getUserType() == null) ? 0 : getUserType().hashCode());
         hashCode = prime * hashCode + ((getUserRegistrationStatus() == null) ? 0 : getUserRegistrationStatus().hashCode());
         hashCode = prime * hashCode + ((getUserInvitationStatus() == null) ? 0 : getUserInvitationStatus().hashCode());
         hashCode = prime * hashCode + ((getRegisteredOn() == null) ? 0 : getRegisteredOn().hashCode());
         hashCode = prime * hashCode + ((getInvitedOn() == null) ? 0 : getInvitedOn().hashCode());
+        hashCode = prime * hashCode + ((getAlexaForBusinessMetadata() == null) ? 0 : getAlexaForBusinessMetadata().hashCode());
         hashCode = prime * hashCode + ((getPersonalPIN() == null) ? 0 : getPersonalPIN().hashCode());
         return hashCode;
     }

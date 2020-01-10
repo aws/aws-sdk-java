@@ -413,6 +413,19 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces impl
     }
 
     @Override
+    public java.util.concurrent.Future<MigrateWorkspaceResult> migrateWorkspaceAsync(MigrateWorkspaceRequest request) {
+
+        return migrateWorkspaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MigrateWorkspaceResult> migrateWorkspaceAsync(MigrateWorkspaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<MigrateWorkspaceRequest, MigrateWorkspaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyAccountResult> modifyAccountAsync(ModifyAccountRequest request) {
 
         return modifyAccountAsync(request, null);

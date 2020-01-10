@@ -3631,6 +3631,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<Certificate> modifyCertificatesAsync(ModifyCertificatesRequest request) {
+
+        return modifyCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<Certificate> modifyCertificatesAsync(final ModifyCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyCertificatesRequest, Certificate> asyncHandler) {
+        final ModifyCertificatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<Certificate>() {
+            @Override
+            public Certificate call() throws Exception {
+                Certificate result = null;
+
+                try {
+                    result = executeModifyCertificates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyCurrentDBClusterCapacityResult> modifyCurrentDBClusterCapacityAsync(ModifyCurrentDBClusterCapacityRequest request) {
 
         return modifyCurrentDBClusterCapacityAsync(request, null);

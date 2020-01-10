@@ -1,3 +1,28 @@
+# __1.11.705__ __2020-01-10__
+## __AWS Transfer for SFTP__
+  - ### Features
+    - This release introduces a new endpoint type that allows you to attach Elastic IP addresses from your AWS account with your server's endpoint directly and whitelist access to your server by client's internet IP address(es) using VPC Security Groups.
+
+## __Amazon Chime__
+  - ### Features
+    - Add shared profile support to new and existing users
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release introduces the ability to tag egress only internet gateways, local gateways, local gateway route tables, local gateway virtual interfaces, local gateway virtual interface groups, local gateway route table VPC association and local gateway route table virtual interface group association. You can use tags to organize and identify your resources for cost allocation. 
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds an operation that enables users to override the system-default SSL/TLS certificate for new Amazon RDS DB instances temporarily, or remove the customer override.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker ListTrialComponents API filter by TrialName and ExperimentName.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Added the migrate feature to Amazon WorkSpaces.
+
 # __1.11.704__ __2020-01-09__
 ## __AWS SDK for Java__
   - ### Bugfixes

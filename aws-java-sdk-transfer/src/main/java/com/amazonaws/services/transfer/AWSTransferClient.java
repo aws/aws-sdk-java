@@ -83,6 +83,9 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.transfer.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.transfer.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -488,7 +491,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * Describes the server that you specify by passing the <code>ServerId</code> parameter.
      * </p>
      * <p>
-     * The response contains a description of the server's properties.
+     * The response contains a description of the server's properties. When you set <code>EndpointType</code> to VPC,
+     * the response will contain the <code>EndpointDetails</code>.
      * </p>
      * 
      * @param describeServerRequest
@@ -1226,6 +1230,9 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      * @return Result of the UpdateServer operation returned by the service.
      * @throws ServiceUnavailableException
      *         The request has failed because the AWS Transfer for SFTP service is not available.
+     * @throws ConflictException
+     *         This exception is thrown when the <code>UpdatServer</code> is called for a server that has VPC as the
+     *         endpoint type and the server's <code>VpcEndpointID</code> is not in the available state.
      * @throws InternalServiceErrorException
      *         This exception is thrown when an error occurs in the AWS Transfer for SFTP service.
      * @throws InvalidRequestException

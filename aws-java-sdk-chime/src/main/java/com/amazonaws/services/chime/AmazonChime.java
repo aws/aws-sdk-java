@@ -184,6 +184,35 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Associates the specified sign-in delegate groups with the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param associateSigninDelegateGroupsWithAccountRequest
+     * @return Result of the AssociateSigninDelegateGroupsWithAccount operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.AssociateSigninDelegateGroupsWithAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AssociateSigninDelegateGroupsWithAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateSigninDelegateGroupsWithAccountResult associateSigninDelegateGroupsWithAccount(
+            AssociateSigninDelegateGroupsWithAccountRequest associateSigninDelegateGroupsWithAccountRequest);
+
+    /**
+     * <p>
      * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
      * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
@@ -231,6 +260,8 @@ public interface AmazonChime {
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -281,7 +312,7 @@ public interface AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are dissasociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -505,6 +536,8 @@ public interface AmazonChime {
      *         The request exceeds the resource limit.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.CreateBot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot" target="_top">AWS API
      *      Documentation</a>
@@ -591,6 +624,8 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -622,6 +657,8 @@ public interface AmazonChime {
      *         account from an unsupported Region.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -631,6 +668,36 @@ public interface AmazonChime {
      *      Documentation</a>
      */
     CreateRoomMembershipResult createRoomMembership(CreateRoomMembershipRequest createRoomMembershipRequest);
+
+    /**
+     * <p>
+     * Creates a user under the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateUserResult createUser(CreateUserRequest createUserRequest);
 
     /**
      * <p>
@@ -883,6 +950,8 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -909,6 +978,8 @@ public interface AmazonChime {
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -1184,6 +1255,36 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Disassociates the specified sign-in delegate groups from the specified Amazon Chime account.
+     * </p>
+     * 
+     * @param disassociateSigninDelegateGroupsFromAccountRequest
+     * @return Result of the DisassociateSigninDelegateGroupsFromAccount operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
+     *         account from an unsupported Region.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DisassociateSigninDelegateGroupsFromAccount
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DisassociateSigninDelegateGroupsFromAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateSigninDelegateGroupsFromAccountResult disassociateSigninDelegateGroupsFromAccount(
+            DisassociateSigninDelegateGroupsFromAccountRequest disassociateSigninDelegateGroupsFromAccountRequest);
+
+    /**
+     * <p>
      * Retrieves details for the specified Amazon Chime account, such as account type and supported licenses.
      * </p>
      * 
@@ -1291,6 +1392,8 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.GetBot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot" target="_top">AWS API
      *      Documentation</a>
@@ -1469,7 +1572,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves room details, such as name.
+     * Retrieves room details, such as the room name.
      * </p>
      * 
      * @param getRoomRequest
@@ -1483,6 +1586,8 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -1868,6 +1973,8 @@ public interface AmazonChime {
      *         The input parameters don't match the service's restrictions.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.ListBots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots" target="_top">AWS API
      *      Documentation</a>
@@ -1957,8 +2064,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Lists the membership details for the specified room, such as member IDs, member email addresses, and member
-     * names.
+     * Lists the membership details for the specified room, such as the members' IDs, email addresses, and names.
      * </p>
      * 
      * @param listRoomMembershipsRequest
@@ -1972,6 +2078,8 @@ public interface AmazonChime {
      *         account from an unsupported Region.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -1999,6 +2107,8 @@ public interface AmazonChime {
      *         account from an unsupported Region.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -2344,6 +2454,8 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.RegenerateSecurityToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken" target="_top">AWS
      *      API Documentation</a>
@@ -2520,6 +2632,8 @@ public interface AmazonChime {
      *         The client is not currently authorized to make the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @sample AmazonChime.UpdateBot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateBot" target="_top">AWS API
      *      Documentation</a>
@@ -2634,6 +2748,8 @@ public interface AmazonChime {
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException
@@ -2646,8 +2762,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates room membership details, such as member role. The member role designates whether the member is a chat
-     * room administrator or a general chat room member. Member role can only be updated for user IDs.
+     * Updates room membership details, such as the member role. The member role designates whether the member is a chat
+     * room administrator or a general chat room member. The member role can be updated only for user IDs.
      * </p>
      * 
      * @param updateRoomMembershipRequest
@@ -2661,6 +2777,8 @@ public interface AmazonChime {
      * @throws ForbiddenException
      *         The client is permanently forbidden from making the request. For example, when a user tries to create an
      *         account from an unsupported Region.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ServiceFailureException

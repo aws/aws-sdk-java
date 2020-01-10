@@ -72,6 +72,12 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> supportedLicenses;
+    /**
+     * <p>
+     * The sign-in delegate groups associated with the account.
+     * </p>
+     */
+    private java.util.List<SigninDelegateGroup> signinDelegateGroups;
 
     /**
      * <p>
@@ -466,6 +472,76 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The sign-in delegate groups associated with the account.
+     * </p>
+     * 
+     * @return The sign-in delegate groups associated with the account.
+     */
+
+    public java.util.List<SigninDelegateGroup> getSigninDelegateGroups() {
+        return signinDelegateGroups;
+    }
+
+    /**
+     * <p>
+     * The sign-in delegate groups associated with the account.
+     * </p>
+     * 
+     * @param signinDelegateGroups
+     *        The sign-in delegate groups associated with the account.
+     */
+
+    public void setSigninDelegateGroups(java.util.Collection<SigninDelegateGroup> signinDelegateGroups) {
+        if (signinDelegateGroups == null) {
+            this.signinDelegateGroups = null;
+            return;
+        }
+
+        this.signinDelegateGroups = new java.util.ArrayList<SigninDelegateGroup>(signinDelegateGroups);
+    }
+
+    /**
+     * <p>
+     * The sign-in delegate groups associated with the account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSigninDelegateGroups(java.util.Collection)} or {@link #withSigninDelegateGroups(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param signinDelegateGroups
+     *        The sign-in delegate groups associated with the account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Account withSigninDelegateGroups(SigninDelegateGroup... signinDelegateGroups) {
+        if (this.signinDelegateGroups == null) {
+            setSigninDelegateGroups(new java.util.ArrayList<SigninDelegateGroup>(signinDelegateGroups.length));
+        }
+        for (SigninDelegateGroup ele : signinDelegateGroups) {
+            this.signinDelegateGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sign-in delegate groups associated with the account.
+     * </p>
+     * 
+     * @param signinDelegateGroups
+     *        The sign-in delegate groups associated with the account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Account withSigninDelegateGroups(java.util.Collection<SigninDelegateGroup> signinDelegateGroups) {
+        setSigninDelegateGroups(signinDelegateGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -490,7 +566,9 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
         if (getDefaultLicense() != null)
             sb.append("DefaultLicense: ").append(getDefaultLicense()).append(",");
         if (getSupportedLicenses() != null)
-            sb.append("SupportedLicenses: ").append(getSupportedLicenses());
+            sb.append("SupportedLicenses: ").append(getSupportedLicenses()).append(",");
+        if (getSigninDelegateGroups() != null)
+            sb.append("SigninDelegateGroups: ").append(getSigninDelegateGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -533,6 +611,10 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSupportedLicenses() != null && other.getSupportedLicenses().equals(this.getSupportedLicenses()) == false)
             return false;
+        if (other.getSigninDelegateGroups() == null ^ this.getSigninDelegateGroups() == null)
+            return false;
+        if (other.getSigninDelegateGroups() != null && other.getSigninDelegateGroups().equals(this.getSigninDelegateGroups()) == false)
+            return false;
         return true;
     }
 
@@ -548,6 +630,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDefaultLicense() == null) ? 0 : getDefaultLicense().hashCode());
         hashCode = prime * hashCode + ((getSupportedLicenses() == null) ? 0 : getSupportedLicenses().hashCode());
+        hashCode = prime * hashCode + ((getSigninDelegateGroups() == null) ? 0 : getSigninDelegateGroups().hashCode());
         return hashCode;
     }
 

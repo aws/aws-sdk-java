@@ -569,6 +569,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public Certificate modifyCertificates(ModifyCertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyCurrentDBClusterCapacityResult modifyCurrentDBClusterCapacity(ModifyCurrentDBClusterCapacityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -40,6 +40,18 @@ public class UpdateUserRequestItem implements Serializable, Cloneable, Structure
      * </p>
      */
     private String licenseType;
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     */
+    private String userType;
+    /**
+     * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     */
+    private AlexaForBusinessMetadata alexaForBusinessMetadata;
 
     /**
      * <p>
@@ -141,6 +153,105 @@ public class UpdateUserRequestItem implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @see UserType
+     */
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @return The user type.
+     * @see UserType
+     */
+
+    public String getUserType() {
+        return this.userType;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public UpdateUserRequestItem withUserType(String userType) {
+        setUserType(userType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user type.
+     * </p>
+     * 
+     * @param userType
+     *        The user type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserType
+     */
+
+    public UpdateUserRequestItem withUserType(UserType userType) {
+        this.userType = userType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     * 
+     * @param alexaForBusinessMetadata
+     *        The Alexa for Business metadata.
+     */
+
+    public void setAlexaForBusinessMetadata(AlexaForBusinessMetadata alexaForBusinessMetadata) {
+        this.alexaForBusinessMetadata = alexaForBusinessMetadata;
+    }
+
+    /**
+     * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     * 
+     * @return The Alexa for Business metadata.
+     */
+
+    public AlexaForBusinessMetadata getAlexaForBusinessMetadata() {
+        return this.alexaForBusinessMetadata;
+    }
+
+    /**
+     * <p>
+     * The Alexa for Business metadata.
+     * </p>
+     * 
+     * @param alexaForBusinessMetadata
+     *        The Alexa for Business metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequestItem withAlexaForBusinessMetadata(AlexaForBusinessMetadata alexaForBusinessMetadata) {
+        setAlexaForBusinessMetadata(alexaForBusinessMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +266,11 @@ public class UpdateUserRequestItem implements Serializable, Cloneable, Structure
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId()).append(",");
         if (getLicenseType() != null)
-            sb.append("LicenseType: ").append(getLicenseType());
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
+        if (getUserType() != null)
+            sb.append("UserType: ").append(getUserType()).append(",");
+        if (getAlexaForBusinessMetadata() != null)
+            sb.append("AlexaForBusinessMetadata: ").append(getAlexaForBusinessMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +293,14 @@ public class UpdateUserRequestItem implements Serializable, Cloneable, Structure
             return false;
         if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
             return false;
+        if (other.getUserType() == null ^ this.getUserType() == null)
+            return false;
+        if (other.getUserType() != null && other.getUserType().equals(this.getUserType()) == false)
+            return false;
+        if (other.getAlexaForBusinessMetadata() == null ^ this.getAlexaForBusinessMetadata() == null)
+            return false;
+        if (other.getAlexaForBusinessMetadata() != null && other.getAlexaForBusinessMetadata().equals(this.getAlexaForBusinessMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +311,8 @@ public class UpdateUserRequestItem implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
+        hashCode = prime * hashCode + ((getUserType() == null) ? 0 : getUserType().hashCode());
+        hashCode = prime * hashCode + ((getAlexaForBusinessMetadata() == null) ? 0 : getAlexaForBusinessMetadata().hashCode());
         return hashCode;
     }
 
