@@ -1,3 +1,16 @@
+# __1.11.706__ __2020-01-13__
+## __AWS Backup__
+  - ### Features
+    - Cross-region backup is a new AWS Backup feature that allows enterprises to copy backups across multiple AWS services to different regions. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Documentation updates for the StopInstances API. You can now stop and start an Amazon EBS-backed Spot Instance at will, instead of relying on the Stop interruption behavior to stop your Spot Instances when interrupted.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - This release adds support for managing EFS file system policies and EFS Access Points.
+
 # __1.11.705__ __2020-01-10__
 ## __AWS Transfer for SFTP__
   - ### Features

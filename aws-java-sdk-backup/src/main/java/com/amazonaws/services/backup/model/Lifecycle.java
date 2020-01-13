@@ -22,6 +22,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions
  * to cold storage or is deleted.
  * </p>
+ * <p>
+ * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the
+ * console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
+ * The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Lifecycle" target="_top">AWS API
  *      Documentation</a>
@@ -37,7 +42,7 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
     private Long moveToColdStorageAfterDays;
     /**
      * <p>
-     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than
+     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus
      * <code>MoveToColdStorageAfterDays</code>.
      * </p>
      */
@@ -85,13 +90,13 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than
+     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus
      * <code>MoveToColdStorageAfterDays</code>.
      * </p>
      * 
      * @param deleteAfterDays
-     *        Specifies the number of days after creation that a recovery point is deleted. Must be greater than
-     *        <code>MoveToColdStorageAfterDays</code>.
+     *        Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days
+     *        plus <code>MoveToColdStorageAfterDays</code>.
      */
 
     public void setDeleteAfterDays(Long deleteAfterDays) {
@@ -100,12 +105,12 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than
+     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus
      * <code>MoveToColdStorageAfterDays</code>.
      * </p>
      * 
-     * @return Specifies the number of days after creation that a recovery point is deleted. Must be greater than
-     *         <code>MoveToColdStorageAfterDays</code>.
+     * @return Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90
+     *         days plus <code>MoveToColdStorageAfterDays</code>.
      */
 
     public Long getDeleteAfterDays() {
@@ -114,13 +119,13 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than
+     * Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days plus
      * <code>MoveToColdStorageAfterDays</code>.
      * </p>
      * 
      * @param deleteAfterDays
-     *        Specifies the number of days after creation that a recovery point is deleted. Must be greater than
-     *        <code>MoveToColdStorageAfterDays</code>.
+     *        Specifies the number of days after creation that a recovery point is deleted. Must be greater than 90 days
+     *        plus <code>MoveToColdStorageAfterDays</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

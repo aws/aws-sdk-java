@@ -43,15 +43,14 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     private String iamRoleArn;
     /**
      * <p>
-     * An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     * <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     * An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      * </p>
      */
     private java.util.List<String> resources;
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      */
     private java.util.List<Condition> listOfTags;
@@ -144,12 +143,10 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     * <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     * An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      * </p>
      * 
-     * @return An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     *         <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     * @return An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      */
 
     public java.util.List<String> getResources() {
@@ -158,13 +155,11 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     * <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     * An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      * </p>
      * 
      * @param resources
-     *        An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     *        <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     *        An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -178,8 +173,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     * <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     * An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -188,8 +182,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param resources
-     *        An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     *        <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     *        An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,13 +198,11 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     * <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     * An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      * </p>
      * 
      * @param resources
-     *        An array of strings that either contain Amazon Resource Names (ARNs) or match patterns such as "
-     *        <code>arn:aws:ec2:us-east-1:123456789012:volume/*</code>" of resources to assign to a backup plan.
+     *        An array of strings that contain Amazon Resource Names (ARNs) of resources to assign to a backup plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +214,11 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * 
      * @return An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *         <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *         <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      */
 
     public java.util.List<Condition> getListOfTags() {
@@ -237,12 +228,12 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      */
 
     public void setListOfTags(java.util.Collection<Condition> listOfTags) {
@@ -257,7 +248,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -267,7 +258,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,12 +275,12 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

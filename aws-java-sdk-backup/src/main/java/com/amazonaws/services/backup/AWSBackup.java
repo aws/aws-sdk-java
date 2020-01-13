@@ -50,7 +50,7 @@ public interface AWSBackup {
      * points of resources.
      * </p>
      * <p>
-     * If you call <code>CreateBackupPlan</code> with a plan that already exists, the existing <code>backupPlanId</code>
+     * If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
      * is returned.
      * </p>
      * 
@@ -94,7 +94,7 @@ public interface AWSBackup {
      * <code>ConditionValue:"finance"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * <li>
@@ -105,7 +105,7 @@ public interface AWSBackup {
      * <code>ConditionValue:"critical"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * </ul>
@@ -351,6 +351,27 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * Returns metadata associated with creating a copy of a resource.
+     * </p>
+     * 
+     * @param describeCopyJobRequest
+     * @return Result of the DescribeCopyJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DescribeCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeCopyJobResult describeCopyJob(DescribeCopyJobRequest describeCopyJobRequest);
+
+    /**
+     * <p>
      * Returns information about a saved resource, including the last time it was backed-up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
@@ -569,13 +590,7 @@ public interface AWSBackup {
 
     /**
      * <p>
-     * Returns two sets of metadata key-value pairs. The first set lists the metadata that the recovery point was
-     * created with. The second set lists the metadata key-value pairs that are required to restore the recovery point.
-     * </p>
-     * <p>
-     * These sets can be the same, or the restore metadata set can contain different values if the target service to be
-     * restored has changed since the recovery point was created and now requires additional or different information in
-     * order to be restored.
+     * Returns a set of metadata key-value pairs that were used to create the backup.
      * </p>
      * 
      * @param getRecoveryPointRestoreMetadataRequest
@@ -618,6 +633,9 @@ public interface AWSBackup {
      * @return Result of the ListBackupJobs operation returned by the service.
      * @throws InvalidParameterValueException
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @sample AWSBackup.ListBackupJobs
@@ -733,6 +751,23 @@ public interface AWSBackup {
      *      Documentation</a>
      */
     ListBackupVaultsResult listBackupVaults(ListBackupVaultsRequest listBackupVaultsRequest);
+
+    /**
+     * <p>
+     * Returns metadata about your copy jobs.
+     * </p>
+     * 
+     * @param listCopyJobsRequest
+     * @return Result of the ListCopyJobs operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListCopyJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListCopyJobsResult listCopyJobs(ListCopyJobsRequest listCopyJobsRequest);
 
     /**
      * <p>
@@ -903,6 +938,29 @@ public interface AWSBackup {
      *      Documentation</a>
      */
     StartBackupJobResult startBackupJob(StartBackupJobRequest startBackupJobRequest);
+
+    /**
+     * <p>
+     * Starts a job to create a one-time copy of the specified resource.
+     * </p>
+     * 
+     * @param startCopyJobRequest
+     * @return Result of the StartCopyJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @sample AWSBackup.StartCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartCopyJobResult startCopyJob(StartCopyJobRequest startCopyJobRequest);
 
     /**
      * <p>

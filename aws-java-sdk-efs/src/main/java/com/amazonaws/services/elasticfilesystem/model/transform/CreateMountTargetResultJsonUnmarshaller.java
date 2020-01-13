@@ -76,6 +76,14 @@ public class CreateMountTargetResultJsonUnmarshaller implements Unmarshaller<Cre
                     context.nextToken();
                     createMountTargetResult.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    context.nextToken();
+                    createMountTargetResult.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    context.nextToken();
+                    createMountTargetResult.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

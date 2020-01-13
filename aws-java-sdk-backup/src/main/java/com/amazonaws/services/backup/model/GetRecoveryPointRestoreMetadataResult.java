@@ -40,8 +40,8 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
     private String recoveryPointArn;
     /**
      * <p>
-     * A set of metadata key-value pairs that lists the metadata key-value pairs that are required to restore the
-     * recovery point.
+     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * values vary depending on the service that is being restored.
      * </p>
      */
     private java.util.Map<String, String> restoreMetadata;
@@ -140,12 +140,12 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of metadata key-value pairs that lists the metadata key-value pairs that are required to restore the
-     * recovery point.
+     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * values vary depending on the service that is being restored.
      * </p>
      * 
-     * @return A set of metadata key-value pairs that lists the metadata key-value pairs that are required to restore
-     *         the recovery point.
+     * @return The set of metadata key-value pairs that describes the original configuration of the backed-up resource.
+     *         These values vary depending on the service that is being restored.
      */
 
     public java.util.Map<String, String> getRestoreMetadata() {
@@ -154,13 +154,13 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of metadata key-value pairs that lists the metadata key-value pairs that are required to restore the
-     * recovery point.
+     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * values vary depending on the service that is being restored.
      * </p>
      * 
      * @param restoreMetadata
-     *        A set of metadata key-value pairs that lists the metadata key-value pairs that are required to restore the
-     *        recovery point.
+     *        The set of metadata key-value pairs that describes the original configuration of the backed-up resource.
+     *        These values vary depending on the service that is being restored.
      */
 
     public void setRestoreMetadata(java.util.Map<String, String> restoreMetadata) {
@@ -169,13 +169,13 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of metadata key-value pairs that lists the metadata key-value pairs that are required to restore the
-     * recovery point.
+     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * values vary depending on the service that is being restored.
      * </p>
      * 
      * @param restoreMetadata
-     *        A set of metadata key-value pairs that lists the metadata key-value pairs that are required to restore the
-     *        recovery point.
+     *        The set of metadata key-value pairs that describes the original configuration of the backed-up resource.
+     *        These values vary depending on the service that is being restored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,7 +222,7 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
         if (getRecoveryPointArn() != null)
             sb.append("RecoveryPointArn: ").append(getRecoveryPointArn()).append(",");
         if (getRestoreMetadata() != null)
-            sb.append("RestoreMetadata: ").append(getRestoreMetadata());
+            sb.append("RestoreMetadata: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -24015,8 +24015,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-     * instances. For information about using hibernation for Spot Instances, see <a
+     * You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed instances. For
+     * information about using hibernation for Spot Instances, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
      * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>

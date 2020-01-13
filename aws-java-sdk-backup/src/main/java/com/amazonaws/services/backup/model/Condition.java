@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>), a key, and a value.
+ * Contains an array of triplets made up of a condition type (such as <code>STRINGEQUALS</code>), a key, and a value.
  * Conditions are used to filter resources in a selection that is assigned to a backup plan.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter resources in
+     * An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter resources in
      * a selection.
      * </p>
      */
@@ -53,12 +53,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter resources in
+     * An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter resources in
      * a selection.
      * </p>
      * 
      * @param conditionType
-     *        An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter
+     *        An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter
      *        resources in a selection.
      * @see ConditionType
      */
@@ -69,11 +69,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter resources in
+     * An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter resources in
      * a selection.
      * </p>
      * 
-     * @return An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter
+     * @return An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter
      *         resources in a selection.
      * @see ConditionType
      */
@@ -84,12 +84,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter resources in
+     * An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter resources in
      * a selection.
      * </p>
      * 
      * @param conditionType
-     *        An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter
+     *        An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter
      *        resources in a selection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionType
@@ -102,12 +102,12 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter resources in
+     * An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter resources in
      * a selection.
      * </p>
      * 
      * @param conditionType
-     *        An operation, such as <code>StringEquals</code>, that is applied to a key-value pair used to filter
+     *        An operation, such as <code>STRINGEQUALS</code>, that is applied to a key-value pair used to filter
      *        resources in a selection.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionType

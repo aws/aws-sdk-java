@@ -171,7 +171,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance type.
+     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance type.
      * </p>
      * </li>
      * <li>
@@ -454,7 +454,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance type.
+     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance type.
      * </p>
      * </li>
      * <li>
@@ -600,8 +600,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the
-     *         instance type.
+     *         <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance
+     *         type.
      *         </p>
      *         </li>
      *         <li>
@@ -755,7 +755,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance type.
+     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance type.
      * </p>
      * </li>
      * <li>
@@ -902,7 +902,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance
+     *        <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance
      *        type.
      *        </p>
      *        </li>
@@ -1059,7 +1059,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance type.
+     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance type.
      * </p>
      * </li>
      * <li>
@@ -1211,7 +1211,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance
+     *        <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance
      *        type.
      *        </p>
      *        </li>
@@ -1370,7 +1370,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance type.
+     * <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance type.
      * </p>
      * </li>
      * <li>
@@ -1517,7 +1517,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vcpu-info.default-threads-per-core</code> - The default number of threads per cores for the instance
+     *        <code>vcpu-info.default-threads-per-core</code> - The default number of threads per core for the instance
      *        type.
      *        </p>
      *        </li>

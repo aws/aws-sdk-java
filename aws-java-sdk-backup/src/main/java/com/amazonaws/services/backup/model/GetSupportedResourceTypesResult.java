@@ -35,7 +35,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>SGW</code> for AWS Storage Gateway
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * <li>
@@ -69,7 +69,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>SGW</code> for AWS Storage Gateway
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * <li>
@@ -98,7 +98,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SGW</code> for AWS Storage Gateway
+     *         <code>Storage Gateway</code> for AWS Storage Gateway
      *         </p>
      *         </li>
      *         <li>
@@ -134,7 +134,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>SGW</code> for AWS Storage Gateway
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * <li>
@@ -164,7 +164,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SGW</code> for AWS Storage Gateway
+     *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
      *        <li>
@@ -205,7 +205,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>SGW</code> for AWS Storage Gateway
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * <li>
@@ -240,7 +240,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SGW</code> for AWS Storage Gateway
+     *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
      *        <li>
@@ -283,7 +283,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <code>SGW</code> for AWS Storage Gateway
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * <li>
@@ -313,7 +313,7 @@ public class GetSupportedResourceTypesResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SGW</code> for AWS Storage Gateway
+     *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
      *        <li>

@@ -70,6 +70,21 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private String networkInterfaceId;
+    /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
+     * </p>
+     */
+    private String availabilityZoneId;
+    /**
+     * <p>
+     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
+     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
+     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * </p>
+     */
+    private String availabilityZoneName;
 
     /**
      * <p>
@@ -385,6 +400,107 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
+     * </p>
+     * 
+     * @param availabilityZoneId
+     *        The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For
+     *        example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every
+     *        AWS account.
+     */
+
+    public void setAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+    }
+
+    /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
+     * </p>
+     * 
+     * @return The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For
+     *         example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every
+     *         AWS account.
+     */
+
+    public String getAvailabilityZoneId() {
+        return this.availabilityZoneId;
+    }
+
+    /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
+     * </p>
+     * 
+     * @param availabilityZoneId
+     *        The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For
+     *        example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every
+     *        AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MountTargetDescription withAvailabilityZoneId(String availabilityZoneId) {
+        setAvailabilityZoneId(availabilityZoneId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
+     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
+     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * </p>
+     * 
+     * @param availabilityZoneName
+     *        The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to
+     *        names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
+     *        account might not be the same location as <code>us-east-1a</code> for another AWS account.
+     */
+
+    public void setAvailabilityZoneName(String availabilityZoneName) {
+        this.availabilityZoneName = availabilityZoneName;
+    }
+
+    /**
+     * <p>
+     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
+     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
+     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * </p>
+     * 
+     * @return The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to
+     *         names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
+     *         account might not be the same location as <code>us-east-1a</code> for another AWS account.
+     */
+
+    public String getAvailabilityZoneName() {
+        return this.availabilityZoneName;
+    }
+
+    /**
+     * <p>
+     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
+     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
+     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * </p>
+     * 
+     * @param availabilityZoneName
+     *        The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to
+     *        names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
+     *        account might not be the same location as <code>us-east-1a</code> for another AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MountTargetDescription withAvailabilityZoneName(String availabilityZoneName) {
+        setAvailabilityZoneName(availabilityZoneName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -409,7 +525,11 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getAvailabilityZoneId() != null)
+            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
+        if (getAvailabilityZoneName() != null)
+            sb.append("AvailabilityZoneName: ").append(getAvailabilityZoneName());
         sb.append("}");
         return sb.toString();
     }
@@ -452,6 +572,14 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
+        if (other.getAvailabilityZoneId() == null ^ this.getAvailabilityZoneId() == null)
+            return false;
+        if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
+            return false;
+        if (other.getAvailabilityZoneName() == null ^ this.getAvailabilityZoneName() == null)
+            return false;
+        if (other.getAvailabilityZoneName() != null && other.getAvailabilityZoneName().equals(this.getAvailabilityZoneName()) == false)
+            return false;
         return true;
     }
 
@@ -467,6 +595,8 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getLifeCycleState() == null) ? 0 : getLifeCycleState().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneName() == null) ? 0 : getAvailabilityZoneName().hashCode());
         return hashCode;
     }
 

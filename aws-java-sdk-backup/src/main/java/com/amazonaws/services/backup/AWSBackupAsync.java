@@ -41,7 +41,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * points of resources.
      * </p>
      * <p>
-     * If you call <code>CreateBackupPlan</code> with a plan that already exists, the existing <code>backupPlanId</code>
+     * If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
      * is returned.
      * </p>
      * 
@@ -59,7 +59,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * points of resources.
      * </p>
      * <p>
-     * If you call <code>CreateBackupPlan</code> with a plan that already exists, the existing <code>backupPlanId</code>
+     * If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
      * is returned.
      * </p>
      * 
@@ -98,7 +98,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * <code>ConditionValue:"finance"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * <li>
@@ -109,7 +109,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * <code>ConditionValue:"critical"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * </ul>
@@ -154,7 +154,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * <code>ConditionValue:"finance"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * <li>
@@ -165,7 +165,7 @@ public interface AWSBackupAsync extends AWSBackup {
      * <code>ConditionValue:"critical"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * </ul>
@@ -498,6 +498,37 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
+     * Returns metadata associated with creating a copy of a resource.
+     * </p>
+     * 
+     * @param describeCopyJobRequest
+     * @return A Java Future containing the result of the DescribeCopyJob operation returned by the service.
+     * @sample AWSBackupAsync.DescribeCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCopyJobResult> describeCopyJobAsync(DescribeCopyJobRequest describeCopyJobRequest);
+
+    /**
+     * <p>
+     * Returns metadata associated with creating a copy of a resource.
+     * </p>
+     * 
+     * @param describeCopyJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCopyJob operation returned by the service.
+     * @sample AWSBackupAsyncHandler.DescribeCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCopyJobResult> describeCopyJobAsync(DescribeCopyJobRequest describeCopyJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCopyJobRequest, DescribeCopyJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a saved resource, including the last time it was backed-up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
@@ -820,13 +851,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Returns two sets of metadata key-value pairs. The first set lists the metadata that the recovery point was
-     * created with. The second set lists the metadata key-value pairs that are required to restore the recovery point.
-     * </p>
-     * <p>
-     * These sets can be the same, or the restore metadata set can contain different values if the target service to be
-     * restored has changed since the recovery point was created and now requires additional or different information in
-     * order to be restored.
+     * Returns a set of metadata key-value pairs that were used to create the backup.
      * </p>
      * 
      * @param getRecoveryPointRestoreMetadataRequest
@@ -841,13 +866,7 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * Returns two sets of metadata key-value pairs. The first set lists the metadata that the recovery point was
-     * created with. The second set lists the metadata key-value pairs that are required to restore the recovery point.
-     * </p>
-     * <p>
-     * These sets can be the same, or the restore metadata set can contain different values if the target service to be
-     * restored has changed since the recovery point was created and now requires additional or different information in
-     * order to be restored.
+     * Returns a set of metadata key-value pairs that were used to create the backup.
      * </p>
      * 
      * @param getRecoveryPointRestoreMetadataRequest
@@ -1089,6 +1108,37 @@ public interface AWSBackupAsync extends AWSBackup {
      */
     java.util.concurrent.Future<ListBackupVaultsResult> listBackupVaultsAsync(ListBackupVaultsRequest listBackupVaultsRequest,
             com.amazonaws.handlers.AsyncHandler<ListBackupVaultsRequest, ListBackupVaultsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns metadata about your copy jobs.
+     * </p>
+     * 
+     * @param listCopyJobsRequest
+     * @return A Java Future containing the result of the ListCopyJobs operation returned by the service.
+     * @sample AWSBackupAsync.ListCopyJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCopyJobsResult> listCopyJobsAsync(ListCopyJobsRequest listCopyJobsRequest);
+
+    /**
+     * <p>
+     * Returns metadata about your copy jobs.
+     * </p>
+     * 
+     * @param listCopyJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCopyJobs operation returned by the service.
+     * @sample AWSBackupAsyncHandler.ListCopyJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCopyJobsResult> listCopyJobsAsync(ListCopyJobsRequest listCopyJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCopyJobsRequest, ListCopyJobsResult> asyncHandler);
 
     /**
      * <p>
@@ -1357,6 +1407,37 @@ public interface AWSBackupAsync extends AWSBackup {
      */
     java.util.concurrent.Future<StartBackupJobResult> startBackupJobAsync(StartBackupJobRequest startBackupJobRequest,
             com.amazonaws.handlers.AsyncHandler<StartBackupJobRequest, StartBackupJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a job to create a one-time copy of the specified resource.
+     * </p>
+     * 
+     * @param startCopyJobRequest
+     * @return A Java Future containing the result of the StartCopyJob operation returned by the service.
+     * @sample AWSBackupAsync.StartCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartCopyJobResult> startCopyJobAsync(StartCopyJobRequest startCopyJobRequest);
+
+    /**
+     * <p>
+     * Starts a job to create a one-time copy of the specified resource.
+     * </p>
+     * 
+     * @param startCopyJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCopyJob operation returned by the service.
+     * @sample AWSBackupAsyncHandler.StartCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartCopyJobResult> startCopyJobAsync(StartCopyJobRequest startCopyJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCopyJobRequest, StartCopyJobResult> asyncHandler);
 
     /**
      * <p>

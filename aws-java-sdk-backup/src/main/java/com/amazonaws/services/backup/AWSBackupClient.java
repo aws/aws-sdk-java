@@ -158,7 +158,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * points of resources.
      * </p>
      * <p>
-     * If you call <code>CreateBackupPlan</code> with a plan that already exists, the existing <code>backupPlanId</code>
+     * If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
      * is returned.
      * </p>
      * 
@@ -242,7 +242,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <code>ConditionValue:"finance"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * <li>
@@ -253,7 +253,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <code>ConditionValue:"critical"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"StringEquals"</code>
+     * <code>ConditionType:"STRINGEQUALS"</code>
      * </p>
      * </li>
      * </ul>
@@ -905,6 +905,67 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * Returns metadata associated with creating a copy of a resource.
+     * </p>
+     * 
+     * @param describeCopyJobRequest
+     * @return Result of the DescribeCopyJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DescribeCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeCopyJobResult describeCopyJob(DescribeCopyJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCopyJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCopyJobResult executeDescribeCopyJob(DescribeCopyJobRequest describeCopyJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCopyJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCopyJobRequest> request = null;
+        Response<DescribeCopyJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCopyJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCopyJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCopyJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCopyJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCopyJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a saved resource, including the last time it was backed-up, its Amazon Resource Name
      * (ARN), and the AWS service type of the saved resource.
      * </p>
@@ -1535,13 +1596,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns two sets of metadata key-value pairs. The first set lists the metadata that the recovery point was
-     * created with. The second set lists the metadata key-value pairs that are required to restore the recovery point.
-     * </p>
-     * <p>
-     * These sets can be the same, or the restore metadata set can contain different values if the target service to be
-     * restored has changed since the recovery point was created and now requires additional or different information in
-     * order to be restored.
+     * Returns a set of metadata key-value pairs that were used to create the backup.
      * </p>
      * 
      * @param getRecoveryPointRestoreMetadataRequest
@@ -1669,6 +1724,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * @return Result of the ListBackupJobs operation returned by the service.
      * @throws InvalidParameterValueException
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @sample AWSBackup.ListBackupJobs
@@ -2018,6 +2076,63 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
             HttpResponseHandler<AmazonWebServiceResponse<ListBackupVaultsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBackupVaultsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns metadata about your copy jobs.
+     * </p>
+     * 
+     * @param listCopyJobsRequest
+     * @return Result of the ListCopyJobs operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListCopyJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListCopyJobsResult listCopyJobs(ListCopyJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCopyJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListCopyJobsResult executeListCopyJobs(ListCopyJobsRequest listCopyJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCopyJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCopyJobsRequest> request = null;
+        Response<ListCopyJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCopyJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCopyJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCopyJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCopyJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCopyJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2518,6 +2633,69 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
             HttpResponseHandler<AmazonWebServiceResponse<StartBackupJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartBackupJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a job to create a one-time copy of the specified resource.
+     * </p>
+     * 
+     * @param startCopyJobRequest
+     * @return Result of the StartCopyJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @sample AWSBackup.StartCopyJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartCopyJobResult startCopyJob(StartCopyJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartCopyJob(request);
+    }
+
+    @SdkInternalApi
+    final StartCopyJobResult executeStartCopyJob(StartCopyJobRequest startCopyJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCopyJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCopyJobRequest> request = null;
+        Response<StartCopyJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCopyJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCopyJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCopyJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCopyJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCopyJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

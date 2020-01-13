@@ -83,6 +83,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public DescribeCopyJobResult describeCopyJob(DescribeCopyJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProtectedResourceResult describeProtectedResource(DescribeProtectedResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,6 +178,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public ListCopyJobsResult listCopyJobs(ListCopyJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProtectedResourcesResult listProtectedResources(ListProtectedResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -209,6 +219,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public StartBackupJobResult startBackupJob(StartBackupJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCopyJobResult startCopyJob(StartCopyJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
