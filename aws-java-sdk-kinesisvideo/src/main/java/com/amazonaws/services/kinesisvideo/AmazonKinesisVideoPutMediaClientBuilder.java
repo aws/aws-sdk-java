@@ -42,6 +42,8 @@ public final class AmazonKinesisVideoPutMediaClientBuilder {
     private URI endpoint;
     private Integer connectionTimeoutInMillis;
     private Integer numberOfThreads;
+    private String proxyHost;
+    private Integer proxyPort;
 
     AmazonKinesisVideoPutMediaClientBuilder() {
     }
@@ -229,6 +231,60 @@ public final class AmazonKinesisVideoPutMediaClientBuilder {
         return this;
     }
 
+    /**
+     * @return The currently configured host name for the http proxy.
+     */
+    public String getProxyHost() {
+        return this.proxyHost;
+    }
+
+    /**
+     * Sets the host name for the http proxy.
+     *
+     * @param proxyHost Host name for the http proxy.
+     */
+    public void setProxyHost(String proxyHost) {
+        this.proxyHost = proxyHost;
+    }
+
+    /**
+     * Sets the host name for the http proxy.
+     *
+     * @param proxyHost Host name for the http proxy.
+     * @return This object for method chaining.
+     */
+    public AmazonKinesisVideoPutMediaClientBuilder withProxyHost(String proxyHost) {
+        setProxyHost(proxyHost);
+        return this;
+    }
+
+    /**
+     * @return The currently configured port for the http proxy.
+     */
+    public Integer getProxyPort() {
+        return this.proxyPort;
+    }
+
+    /**
+     * Sets the port number for the http proxy.
+     *
+     * @param proxyPort The port number for the http proxy.
+     */
+    public void setProxyPort(Integer proxyPort) {
+        this.proxyPort = proxyPort;
+    }
+
+    /**
+     * Sets the port number for the http proxy.
+     *
+     * @param proxyPort The port number for the http proxy.
+     * @return This object for method chaining.
+     */
+    public AmazonKinesisVideoPutMediaClientBuilder withProxyPort(Integer proxyPort) {
+        setProxyPort(proxyPort);
+        return this;
+    }
+
     private String resolveRegion() {
         return region == null ? determineRegionFromRegionProvider() : region;
     }
@@ -261,6 +317,8 @@ public final class AmazonKinesisVideoPutMediaClientBuilder {
                                               resolveCredentialsProvider(),
                                               resolveConnectionTimeoutInMillis(),
                                               endpoint,
-                                              numberOfThreads);
+                                              numberOfThreads,
+                                              proxyHost,
+                                              proxyPort);
     }
 }

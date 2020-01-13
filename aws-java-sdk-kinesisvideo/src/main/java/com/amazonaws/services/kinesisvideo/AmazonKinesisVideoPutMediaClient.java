@@ -45,18 +45,23 @@ import io.netty.handler.codec.http.HttpChunkedInput;
 import io.netty.handler.codec.http.HttpHeaderNames;
 import io.netty.handler.codec.http.HttpHeaderValues;
 import io.netty.handler.codec.http.HttpRequest;
+import io.netty.handler.proxy.HttpProxyHandler;
+import io.netty.handler.proxy.ProxyHandler;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.stream.ChunkedStream;
+import io.netty.resolver.NoopAddressResolverGroup;
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
+
+import javax.net.ssl.SSLException;
+import java.net.InetSocketAddress;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.SSLException;
 
 /**
  * Client implementation class for {@link AmazonKinesisVideoPutMedia}. To create, obtain an instance of the builder
@@ -72,6 +77,8 @@ public final class AmazonKinesisVideoPutMediaClient implements AmazonKinesisVide
     private final URI endpoint;
     private final int connectionTimeoutInMillis;
     private final EventLoopGroup group;
+    private final String proxyHost;
+    private final Integer proxyPort;
 
     /**
      * Protocol factory used by normal client. Used for marshaller and error response handler creation.
@@ -82,12 +89,16 @@ public final class AmazonKinesisVideoPutMediaClient implements AmazonKinesisVide
                                      AWSCredentialsProvider credentialsProvider,
                                      int connectionTimeoutInMillis,
                                      URI endpoint,
-                                     Integer numberOfThreads) {
+                                     Integer numberOfThreads,
+                                     String proxyHost,
+                                     Integer proxyPort) {
         this.signer = new PutMediaAWS4Signer(region);
         this.credentialsProvider = credentialsProvider;
         this.connectionTimeoutInMillis = connectionTimeoutInMillis;
         this.endpoint = endpoint;
         this.group = numberOfThreads == null ? new NioEventLoopGroup() : new NioEventLoopGroup(numberOfThreads);
+        this.proxyHost = proxyHost;
+        this.proxyPort = proxyPort;
     }
 
     @Override
@@ -100,18 +111,24 @@ public final class AmazonKinesisVideoPutMediaClient implements AmazonKinesisVide
                             PutMediaResponseHandler responseHandler,
                             List<ChannelHandler> requestHandlers) {
         request.getRequestClientOptions().appendUserAgent(USER_AGENT);
+
         Request<PutMediaRequest> marshalled = marshall(request);
         applyUserAgent(request, marshalled);
         signer.sign(marshalled, resolveCredentials(request));
 
         try {
+            ProxyHandler proxyHandler = createProxyHandler(proxyHost, proxyPort);
             Bootstrap b = new Bootstrap()
                 .group(group)
                 .channel(NioSocketChannel.class)
                 .remoteAddress(marshalled.getEndpoint().getHost(), getPort(marshalled.getEndpoint()))
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, connectionTimeoutInMillis)
                 .handler(new PutMediaHandlerInitializer(getSslContext(marshalled.getEndpoint()),
+                                                        proxyHandler,
                                                         createHandlers(responseHandler, marshalled, requestHandlers)));
+            if (proxyHandler != null) {
+                b.resolver(NoopAddressResolverGroup.INSTANCE);
+            }
             invoke(marshalled, b, responseHandler);
         } catch (InterruptedException e) {
             throw handleInterruptedException(e);
@@ -127,6 +144,10 @@ public final class AmazonKinesisVideoPutMediaClient implements AmazonKinesisVide
                                           protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata()),
                                           marshalled));
         return handlers;
+    }
+
+    private HttpProxyHandler createProxyHandler(String proxyHost, Integer proxyPort) {
+        return (proxyHost != null && proxyPort != null) ? new HttpProxyHandler(new InetSocketAddress(proxyHost, proxyPort)) : null;
     }
 
     /**

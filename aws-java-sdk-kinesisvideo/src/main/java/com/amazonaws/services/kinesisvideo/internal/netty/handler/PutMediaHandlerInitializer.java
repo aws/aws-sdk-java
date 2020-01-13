@@ -18,12 +18,14 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.handler.codec.http.HttpClientCodec;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.proxy.ProxyHandler;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.stream.ChunkedWriteHandler;
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Initializer for PutMedia pipeline.
@@ -38,23 +40,27 @@ public class PutMediaHandlerInitializer extends ChannelInitializer<Channel> {
      * Additional pipeline handlers to process PutMedia response and ack events. See {@link DeliverAckHandler}.
      */
     private final List<ChannelHandler> handlers;
+    private ProxyHandler proxyHandler;
 
-    public PutMediaHandlerInitializer(SslContext sslContext, List<ChannelHandler> handlers) {
+    public PutMediaHandlerInitializer(SslContext sslContext, ProxyHandler proxyHandler,
+                                      List<ChannelHandler> handlers) {
         this.sslContext = sslContext;
+        this.proxyHandler = proxyHandler;
         this.handlers = new ArrayList<ChannelHandler>(handlers);
     }
 
     @Override
     public void initChannel(Channel channel) throws Exception {
         ChannelPipeline pipeline = channel.pipeline();
-
         if (log.isDebugEnabled()) {
             pipeline.addLast(new LoggingHandler());
+        }
+        if (proxyHandler != null) {
+            pipeline.addFirst(proxyHandler);
         }
         if (sslContext != null) {
             pipeline.addLast("ssl", sslContext.newHandler(channel.alloc()));
         }
-
         pipeline.addLast("http-codec", new HttpClientCodec());
         for (ChannelHandler handler : handlers) {
             pipeline.addLast(handler);

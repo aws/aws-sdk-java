@@ -34,6 +34,12 @@
         <version>${netty.version}</version>
     </dependency>
     <dependency>
+        <artifactId>netty-handler-proxy</artifactId>
+        <groupId>io.netty</groupId>
+        <optional>false</optional>
+        <version>${netty.version}</version>
+    </dependency>
+    <dependency>
         <artifactId>aws-java-sdk-test-utils</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
