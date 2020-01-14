@@ -238,6 +238,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      */
     private LaunchTemplateHibernationOptionsRequest hibernationOptions;
+    /**
+     * <p>
+     * The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private LaunchTemplateInstanceMetadataOptionsRequest metadataOptions;
 
     /**
      * <p>
@@ -1979,6 +1987,58 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *        and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setMetadataOptions(LaunchTemplateInstanceMetadataOptionsRequest metadataOptions) {
+        this.metadataOptions = metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The metadata options for the instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *         and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public LaunchTemplateInstanceMetadataOptionsRequest getMetadataOptions() {
+        return this.metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *        and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestLaunchTemplateData withMetadataOptions(LaunchTemplateInstanceMetadataOptionsRequest metadataOptions) {
+        setMetadataOptions(metadataOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2039,7 +2099,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
         if (getLicenseSpecifications() != null)
             sb.append("LicenseSpecifications: ").append(getLicenseSpecifications()).append(",");
         if (getHibernationOptions() != null)
-            sb.append("HibernationOptions: ").append(getHibernationOptions());
+            sb.append("HibernationOptions: ").append(getHibernationOptions()).append(",");
+        if (getMetadataOptions() != null)
+            sb.append("MetadataOptions: ").append(getMetadataOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -2156,6 +2218,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
             return false;
         if (other.getHibernationOptions() != null && other.getHibernationOptions().equals(this.getHibernationOptions()) == false)
             return false;
+        if (other.getMetadataOptions() == null ^ this.getMetadataOptions() == null)
+            return false;
+        if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
+            return false;
         return true;
     }
 
@@ -2189,6 +2255,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCapacityReservationSpecification() == null) ? 0 : getCapacityReservationSpecification().hashCode());
         hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
         hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
+        hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
         return hashCode;
     }
 
