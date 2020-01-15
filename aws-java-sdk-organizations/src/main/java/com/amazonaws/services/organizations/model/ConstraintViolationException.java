@@ -151,7 +151,15 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an organization.
+ * POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * TAG_POLICY_VIOLATION: Tags associated with the resource must be compliant with the tag policy that’s in effect for
+ * the account. For more information, see <a
+ * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+ * Policies</a> in the <i>AWS Organizations User Guide.</i>
  * </p>
  * </li>
  * </ul>

@@ -103,6 +103,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public DescribeStandardsControlsResult describeStandardsControls(DescribeStandardsControlsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableImportFindingsForProductResult disableImportFindingsForProduct(DisableImportFindingsForProductRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +219,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public UpdateInsightResult updateInsight(UpdateInsightRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStandardsControlResult updateStandardsControl(UpdateStandardsControlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

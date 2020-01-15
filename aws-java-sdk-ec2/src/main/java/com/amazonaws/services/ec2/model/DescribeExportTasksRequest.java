@@ -31,7 +31,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> exportTaskIds;
-
+    /**
+     * <p>
+     * the filters for the export tasks.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
 
     /**
@@ -108,7 +112,11 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * @return
+     * <p>
+     * the filters for the export tasks.
+     * </p>
+     * 
+     * @return the filters for the export tasks.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -119,7 +127,12 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * the filters for the export tasks.
+     * </p>
+     * 
      * @param filters
+     *        the filters for the export tasks.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -133,12 +146,16 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
+     * the filters for the export tasks.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
+     *        the filters for the export tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +170,12 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * the filters for the export tasks.
+     * </p>
+     * 
      * @param filters
+     *        the filters for the export tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

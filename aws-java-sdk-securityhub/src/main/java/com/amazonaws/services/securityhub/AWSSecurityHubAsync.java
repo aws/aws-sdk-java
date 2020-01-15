@@ -592,6 +592,47 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
+     * Returns a list of compliance standards controls.
+     * </p>
+     * <p>
+     * For each control, the results include information about whether it is currently enabled, the severity, and a link
+     * to remediation information.
+     * </p>
+     * 
+     * @param describeStandardsControlsRequest
+     * @return A Java Future containing the result of the DescribeStandardsControls operation returned by the service.
+     * @sample AWSSecurityHubAsync.DescribeStandardsControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStandardsControlsResult> describeStandardsControlsAsync(
+            DescribeStandardsControlsRequest describeStandardsControlsRequest);
+
+    /**
+     * <p>
+     * Returns a list of compliance standards controls.
+     * </p>
+     * <p>
+     * For each control, the results include information about whether it is currently enabled, the severity, and a link
+     * to remediation information.
+     * </p>
+     * 
+     * @param describeStandardsControlsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStandardsControls operation returned by the service.
+     * @sample AWSSecurityHubAsyncHandler.DescribeStandardsControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStandardsControlsResult> describeStandardsControlsAsync(
+            DescribeStandardsControlsRequest describeStandardsControlsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStandardsControlsRequest, DescribeStandardsControlsResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables the integration of the specified product with Security Hub. Findings from that product are no longer
      * sent to Security Hub after the integration is disabled.
      * </p>
@@ -1360,5 +1401,36 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      */
     java.util.concurrent.Future<UpdateInsightResult> updateInsightAsync(UpdateInsightRequest updateInsightRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInsightRequest, UpdateInsightResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used to control whether an individual compliance standard control is enabled or disabled.
+     * </p>
+     * 
+     * @param updateStandardsControlRequest
+     * @return A Java Future containing the result of the UpdateStandardsControl operation returned by the service.
+     * @sample AWSSecurityHubAsync.UpdateStandardsControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStandardsControlResult> updateStandardsControlAsync(UpdateStandardsControlRequest updateStandardsControlRequest);
+
+    /**
+     * <p>
+     * Used to control whether an individual compliance standard control is enabled or disabled.
+     * </p>
+     * 
+     * @param updateStandardsControlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateStandardsControl operation returned by the service.
+     * @sample AWSSecurityHubAsyncHandler.UpdateStandardsControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateStandardsControlResult> updateStandardsControlAsync(UpdateStandardsControlRequest updateStandardsControlRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateStandardsControlRequest, UpdateStandardsControlResult> asyncHandler);
 
 }

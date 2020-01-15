@@ -68,13 +68,13 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
                     continue;
                 }
 
-                if (context.testExpression("encrypted", targetDepth)) {
-                    ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    ebsBlockDevice.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("KmsKeyId", targetDepth)) {
-                    ebsBlockDevice.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("encrypted", targetDepth)) {
+                    ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

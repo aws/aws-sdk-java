@@ -592,6 +592,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStandardsControlsResult> describeStandardsControlsAsync(DescribeStandardsControlsRequest request) {
+
+        return describeStandardsControlsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStandardsControlsResult> describeStandardsControlsAsync(final DescribeStandardsControlsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStandardsControlsRequest, DescribeStandardsControlsResult> asyncHandler) {
+        final DescribeStandardsControlsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStandardsControlsResult>() {
+            @Override
+            public DescribeStandardsControlsResult call() throws Exception {
+                DescribeStandardsControlsResult result = null;
+
+                try {
+                    result = executeDescribeStandardsControls(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableImportFindingsForProductResult> disableImportFindingsForProductAsync(
             DisableImportFindingsForProductRequest request) {
 
@@ -1339,6 +1372,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeUpdateInsight(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStandardsControlResult> updateStandardsControlAsync(UpdateStandardsControlRequest request) {
+
+        return updateStandardsControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStandardsControlResult> updateStandardsControlAsync(final UpdateStandardsControlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStandardsControlRequest, UpdateStandardsControlResult> asyncHandler) {
+        final UpdateStandardsControlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStandardsControlResult>() {
+            @Override
+            public UpdateStandardsControlResult call() throws Exception {
+                UpdateStandardsControlResult result = null;
+
+                try {
+                    result = executeUpdateStandardsControl(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

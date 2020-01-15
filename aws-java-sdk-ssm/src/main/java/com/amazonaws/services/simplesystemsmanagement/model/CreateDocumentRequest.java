@@ -82,8 +82,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private String versionName;
     /**
      * <p>
-     * The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     * <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     * The type of document to create.
      * </p>
      */
     private String documentType;
@@ -545,13 +544,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     * <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     * The type of document to create.
      * </p>
      * 
      * @param documentType
-     *        The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     *        <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     *        The type of document to create.
      * @see DocumentType
      */
 
@@ -561,12 +558,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     * <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     * The type of document to create.
      * </p>
      * 
-     * @return The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     *         <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     * @return The type of document to create.
      * @see DocumentType
      */
 
@@ -576,13 +571,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     * <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     * The type of document to create.
      * </p>
      * 
      * @param documentType
-     *        The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     *        <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     *        The type of document to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentType
      */
@@ -594,13 +587,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     * <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     * The type of document to create.
      * </p>
      * 
      * @param documentType
-     *        The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     *        <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     *        The type of document to create.
      * @see DocumentType
      */
 
@@ -610,13 +601,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     * <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     * The type of document to create.
      * </p>
      * 
      * @param documentType
-     *        The type of document to create. Valid document types include: <code>Command</code>, <code>Policy</code>,
-     *        <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
+     *        The type of document to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentType
      */

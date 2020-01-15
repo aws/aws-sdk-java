@@ -62,7 +62,11 @@ public class ExportTask implements Serializable, Cloneable {
      * </p>
      */
     private String statusMessage;
-
+    /**
+     * <p>
+     * The tags for the export task.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -339,7 +343,11 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The tags for the export task.
+     * </p>
+     * 
+     * @return The tags for the export task.
      */
 
     public java.util.List<Tag> getTags() {
@@ -350,7 +358,12 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tags for the export task.
+     * </p>
+     * 
      * @param tags
+     *        The tags for the export task.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -364,12 +377,16 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The tags for the export task.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        The tags for the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,7 +401,12 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tags for the export task.
+     * </p>
+     * 
      * @param tags
+     *        The tags for the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

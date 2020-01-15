@@ -450,6 +450,31 @@ public interface AWSSecurityHub {
 
     /**
      * <p>
+     * Returns a list of compliance standards controls.
+     * </p>
+     * <p>
+     * For each control, the results include information about whether it is currently enabled, the severity, and a link
+     * to remediation information.
+     * </p>
+     * 
+     * @param describeStandardsControlsRequest
+     * @return Result of the DescribeStandardsControls operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.DescribeStandardsControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeStandardsControlsResult describeStandardsControls(DescribeStandardsControlsRequest describeStandardsControlsRequest);
+
+    /**
+     * <p>
      * Disables the integration of the specified product with Security Hub. Findings from that product are no longer
      * sent to Security Hub after the integration is disabled.
      * </p>
@@ -988,6 +1013,27 @@ public interface AWSSecurityHub {
      *      Documentation</a>
      */
     UpdateInsightResult updateInsight(UpdateInsightRequest updateInsightRequest);
+
+    /**
+     * <p>
+     * Used to control whether an individual compliance standard control is enabled or disabled.
+     * </p>
+     * 
+     * @param updateStandardsControlRequest
+     * @return Result of the UpdateStandardsControl operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.UpdateStandardsControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateStandardsControlResult updateStandardsControl(UpdateStandardsControlRequest updateStandardsControlRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

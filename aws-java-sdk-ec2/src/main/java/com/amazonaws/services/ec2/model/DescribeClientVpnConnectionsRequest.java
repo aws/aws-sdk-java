@@ -36,6 +36,19 @@ public class DescribeClientVpnConnectionsRequest extends AmazonWebServiceRequest
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>connection-id</code> - The ID of the connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>username</code> - For Active Directory client authentication, the user name of the client who established
+     * the client connection.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -96,8 +109,33 @@ public class DescribeClientVpnConnectionsRequest extends AmazonWebServiceRequest
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>connection-id</code> - The ID of the connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>username</code> - For Active Directory client authentication, the user name of the client who established
+     * the client connection.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters. Filter names and values are case-sensitive.
+     * @return One or more filters. Filter names and values are case-sensitive.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>connection-id</code> - The ID of the connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>username</code> - For Active Directory client authentication, the user name of the client who
+     *         established the client connection.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -111,9 +149,34 @@ public class DescribeClientVpnConnectionsRequest extends AmazonWebServiceRequest
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>connection-id</code> - The ID of the connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>username</code> - For Active Directory client authentication, the user name of the client who established
+     * the client connection.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>connection-id</code> - The ID of the connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>username</code> - For Active Directory client authentication, the user name of the client who
+     *        established the client connection.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -129,6 +192,19 @@ public class DescribeClientVpnConnectionsRequest extends AmazonWebServiceRequest
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>connection-id</code> - The ID of the connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>username</code> - For Active Directory client authentication, the user name of the client who established
+     * the client connection.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -136,7 +212,19 @@ public class DescribeClientVpnConnectionsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>connection-id</code> - The ID of the connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>username</code> - For Active Directory client authentication, the user name of the client who
+     *        established the client connection.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,9 +242,34 @@ public class DescribeClientVpnConnectionsRequest extends AmazonWebServiceRequest
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>connection-id</code> - The ID of the connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>username</code> - For Active Directory client authentication, the user name of the client who established
+     * the client connection.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>connection-id</code> - The ID of the connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>username</code> - For Active Directory client authentication, the user name of the client who
+     *        established the client connection.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,7 +43,8 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithInstalledOtherPatches;
     /**
      * <p>
-     * Reserved for future use.
+     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
+     * installation. The status of these instances is NON_COMPLIANT.
      * </p>
      */
     private Integer instancesWithInstalledPendingRebootPatches;
@@ -208,11 +209,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for future use.
+     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
+     * installation. The status of these instances is NON_COMPLIANT.
      * </p>
      * 
      * @param instancesWithInstalledPendingRebootPatches
-     *        Reserved for future use.
+     *        The number of instances with patches installed by Patch Manager that have not been rebooted after the
+     *        patch installation. The status of these instances is NON_COMPLIANT.
      */
 
     public void setInstancesWithInstalledPendingRebootPatches(Integer instancesWithInstalledPendingRebootPatches) {
@@ -221,10 +224,12 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for future use.
+     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
+     * installation. The status of these instances is NON_COMPLIANT.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The number of instances with patches installed by Patch Manager that have not been rebooted after the
+     *         patch installation. The status of these instances is NON_COMPLIANT.
      */
 
     public Integer getInstancesWithInstalledPendingRebootPatches() {
@@ -233,11 +238,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for future use.
+     * The number of instances with patches installed by Patch Manager that have not been rebooted after the patch
+     * installation. The status of these instances is NON_COMPLIANT.
      * </p>
      * 
      * @param instancesWithInstalledPendingRebootPatches
-     *        Reserved for future use.
+     *        The number of instances with patches installed by Patch Manager that have not been rebooted after the
+     *        patch installation. The status of these instances is NON_COMPLIANT.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

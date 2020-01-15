@@ -215,12 +215,20 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
-     * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
-     * instance. For more information about activations, see <a
+     * Generates an activation code and activation ID you can use to register your on-premises server or virtual machine
+     * (VM) with Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using
+     * Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your
+     * hybrid environment. For more information about requirements for managing on-premises instances and VMs using
+     * Systems Manager, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * Up AWS Systems Manager for Hybrid Environments</a>.
+     * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * On-premises servers or VMs that are registered with Systems Manager and Amazon EC2 instances that you manage with
+     * Systems Manager are all called <i>managed instances</i>.
+     * </p>
+     * </note>
      * 
      * @param createActivationRequest
      * @return Result of the CreateActivation operation returned by the service.
@@ -2234,7 +2242,8 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Lists the associations for the specified Systems Manager document or instance.
+     * Returns all State Manager associations in the current AWS account and Region. You can limit the results to a
+     * specific State Manager association document or instance by specifying a filter.
      * </p>
      * 
      * @param listAssociationsRequest
@@ -2388,7 +2397,8 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Describes one or more of your Systems Manager documents.
+     * Returns all Systems Manager (SSM) documents in the current AWS account and Region. You can limit the results of
+     * this request by using a filter.
      * </p>
      * 
      * @param listDocumentsRequest

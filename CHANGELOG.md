@@ -1,3 +1,20 @@
+# __1.11.708__ __2020-01-15__
+## __AWS Organizations__
+  - ### Features
+    - Updated description for PolicyID parameter and ConstraintViolationException.
+
+## __AWS SecurityHub__
+  - ### Features
+    - Add support for DescribeStandardsControls and UpdateStandardsControl. These new Security Hub API operations are used to track and manage whether a compliance standards control is enabled.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - General Update to EC2 Docs and SDKs
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Document updates for Patch Manager 'NoReboot' feature.
+
 # __1.11.707__ __2020-01-14__
 ## __Amazon Elastic Compute Cloud__
   - ### Features
