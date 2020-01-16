@@ -99,6 +99,12 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
     private String transportProtocol;
     /**
      * <p>
+     * The port number for the Client VPN endpoint.
+     * </p>
+     */
+    private Integer vpnPort;
+    /**
+     * <p>
      * Information about the associated target networks. A target network is a subnet in a VPC.
      * </p>
      */
@@ -690,6 +696,46 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The port number for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param vpnPort
+     *        The port number for the Client VPN endpoint.
+     */
+
+    public void setVpnPort(Integer vpnPort) {
+        this.vpnPort = vpnPort;
+    }
+
+    /**
+     * <p>
+     * The port number for the Client VPN endpoint.
+     * </p>
+     * 
+     * @return The port number for the Client VPN endpoint.
+     */
+
+    public Integer getVpnPort() {
+        return this.vpnPort;
+    }
+
+    /**
+     * <p>
+     * The port number for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param vpnPort
+     *        The port number for the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnEndpoint withVpnPort(Integer vpnPort) {
+        setVpnPort(vpnPort);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the associated target networks. A target network is a subnet in a VPC.
      * </p>
      * 
@@ -1021,6 +1067,8 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
             sb.append("VpnProtocol: ").append(getVpnProtocol()).append(",");
         if (getTransportProtocol() != null)
             sb.append("TransportProtocol: ").append(getTransportProtocol()).append(",");
+        if (getVpnPort() != null)
+            sb.append("VpnPort: ").append(getVpnPort()).append(",");
         if (getAssociatedTargetNetworks() != null)
             sb.append("AssociatedTargetNetworks: ").append(getAssociatedTargetNetworks()).append(",");
         if (getServerCertificateArn() != null)
@@ -1089,6 +1137,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getTransportProtocol() != null && other.getTransportProtocol().equals(this.getTransportProtocol()) == false)
             return false;
+        if (other.getVpnPort() == null ^ this.getVpnPort() == null)
+            return false;
+        if (other.getVpnPort() != null && other.getVpnPort().equals(this.getVpnPort()) == false)
+            return false;
         if (other.getAssociatedTargetNetworks() == null ^ this.getAssociatedTargetNetworks() == null)
             return false;
         if (other.getAssociatedTargetNetworks() != null && other.getAssociatedTargetNetworks().equals(this.getAssociatedTargetNetworks()) == false)
@@ -1128,6 +1180,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
         hashCode = prime * hashCode + ((getVpnProtocol() == null) ? 0 : getVpnProtocol().hashCode());
         hashCode = prime * hashCode + ((getTransportProtocol() == null) ? 0 : getTransportProtocol().hashCode());
+        hashCode = prime * hashCode + ((getVpnPort() == null) ? 0 : getVpnPort().hashCode());
         hashCode = prime * hashCode + ((getAssociatedTargetNetworks() == null) ? 0 : getAssociatedTargetNetworks().hashCode());
         hashCode = prime * hashCode + ((getServerCertificateArn() == null) ? 0 : getServerCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationOptions() == null) ? 0 : getAuthenticationOptions().hashCode());

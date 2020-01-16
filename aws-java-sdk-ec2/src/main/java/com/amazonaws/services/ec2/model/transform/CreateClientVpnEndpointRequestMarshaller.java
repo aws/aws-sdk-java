@@ -115,6 +115,10 @@ public class CreateClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             request.addParameter("TransportProtocol", StringUtils.fromString(createClientVpnEndpointRequest.getTransportProtocol()));
         }
 
+        if (createClientVpnEndpointRequest.getVpnPort() != null) {
+            request.addParameter("VpnPort", StringUtils.fromInteger(createClientVpnEndpointRequest.getVpnPort()));
+        }
+
         if (createClientVpnEndpointRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(createClientVpnEndpointRequest.getDescription()));
         }

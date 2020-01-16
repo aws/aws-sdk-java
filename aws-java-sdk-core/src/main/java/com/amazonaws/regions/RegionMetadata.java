@@ -74,6 +74,38 @@ public class RegionMetadata {
     }
 
     /**
+     * Returns the region associated with the specified endpoint by searching the endpoint configuration for an endpoint
+     * that is explicitly listed. This is likely to be null, because most endpoints are not explicitly listed in the endpoints
+     * file.
+     *
+     * This is mostly useful for retrieving the region of non-standard endpoints that do not include the region in the host name.
+     * These include global endpoints (budgets.amazonaws.com),
+     *
+     * Unlike {@link #getRegionByEndpoint(String)}, this returns null on failure instead of raising an exception.
+     *
+     * @param endpoint The endpoint to look up in the region metadata.
+     * @return The region, or null if it cannot be determined.
+     */
+    public Region tryGetRegionByExplicitEndpoint(String endpoint) {
+        return provider.tryGetRegionByExplicitEndpoint(endpoint);
+    }
+
+    /**
+     * Returns the region associated with the specified endpoint by searching the endpoint configuration for a partition
+     * that matches the DNS suffix of the provided endpoint and extracting the region name based on the endpoint pattern for
+     * that partition. This may be wrong if the service does not follow the endpoint pattern for the partition. This returns
+     * null if the endpoint provided does not appear to include a region, or does not match a known partition DNS suffix.
+     *
+     * Unlike {@link #getRegionByEndpoint(String)}, this returns null on failure instead of raising an exception.
+     *
+     * @param endpoint The endpoint to look up in the region metadata based on the DNS suffix.
+     * @return The region, or null if it cannot be determined.
+     */
+    public Region tryGetRegionByEndpointDnsSuffix(String endpoint) {
+        return provider.tryGetRegionByEndpointDnsSuffix(endpoint);
+    }
+
+    /**
      * Searches through all known regions to find one with any service at the
      * specified endpoint. If no region is found with a service at that
      * endpoint, an exception is thrown.
@@ -88,7 +120,7 @@ public class RegionMetadata {
      * It now uses the partition metadata to compute the endpoints dynamically for new regions and services.
      */
     @Deprecated
-    public Region getRegionByEndpoint(final String endpoint) {
+    public Region getRegionByEndpoint(String endpoint) {
         return provider.getRegionByEndpoint(endpoint);
     }
 

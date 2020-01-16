@@ -98,6 +98,18 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     private String transportProtocol;
     /**
      * <p>
+     * The port number to assign to the Client VPN endpoint for TCP and UDP traffic.
+     * </p>
+     * <p>
+     * Valid Values: <code>443</code> | <code>1194</code>
+     * </p>
+     * <p>
+     * Default Value: <code>443</code>
+     * </p>
+     */
+    private Integer vpnPort;
+    /**
+     * <p>
      * A brief description of the Client VPN endpoint.
      * </p>
      */
@@ -668,6 +680,79 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The port number to assign to the Client VPN endpoint for TCP and UDP traffic.
+     * </p>
+     * <p>
+     * Valid Values: <code>443</code> | <code>1194</code>
+     * </p>
+     * <p>
+     * Default Value: <code>443</code>
+     * </p>
+     * 
+     * @param vpnPort
+     *        The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
+     *        <p>
+     *        Valid Values: <code>443</code> | <code>1194</code>
+     *        </p>
+     *        <p>
+     *        Default Value: <code>443</code>
+     */
+
+    public void setVpnPort(Integer vpnPort) {
+        this.vpnPort = vpnPort;
+    }
+
+    /**
+     * <p>
+     * The port number to assign to the Client VPN endpoint for TCP and UDP traffic.
+     * </p>
+     * <p>
+     * Valid Values: <code>443</code> | <code>1194</code>
+     * </p>
+     * <p>
+     * Default Value: <code>443</code>
+     * </p>
+     * 
+     * @return The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
+     *         <p>
+     *         Valid Values: <code>443</code> | <code>1194</code>
+     *         </p>
+     *         <p>
+     *         Default Value: <code>443</code>
+     */
+
+    public Integer getVpnPort() {
+        return this.vpnPort;
+    }
+
+    /**
+     * <p>
+     * The port number to assign to the Client VPN endpoint for TCP and UDP traffic.
+     * </p>
+     * <p>
+     * Valid Values: <code>443</code> | <code>1194</code>
+     * </p>
+     * <p>
+     * Default Value: <code>443</code>
+     * </p>
+     * 
+     * @param vpnPort
+     *        The port number to assign to the Client VPN endpoint for TCP and UDP traffic.</p>
+     *        <p>
+     *        Valid Values: <code>443</code> | <code>1194</code>
+     *        </p>
+     *        <p>
+     *        Default Value: <code>443</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClientVpnEndpointRequest withVpnPort(Integer vpnPort) {
+        setVpnPort(vpnPort);
+        return this;
+    }
+
+    /**
+     * <p>
      * A brief description of the Client VPN endpoint.
      * </p>
      * 
@@ -984,6 +1069,8 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             sb.append("DnsServers: ").append(getDnsServers()).append(",");
         if (getTransportProtocol() != null)
             sb.append("TransportProtocol: ").append(getTransportProtocol()).append(",");
+        if (getVpnPort() != null)
+            sb.append("VpnPort: ").append(getVpnPort()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSplitTunnel() != null)
@@ -1030,6 +1117,10 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getTransportProtocol() != null && other.getTransportProtocol().equals(this.getTransportProtocol()) == false)
             return false;
+        if (other.getVpnPort() == null ^ this.getVpnPort() == null)
+            return false;
+        if (other.getVpnPort() != null && other.getVpnPort().equals(this.getVpnPort()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -1060,6 +1151,7 @@ public class CreateClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getConnectionLogOptions() == null) ? 0 : getConnectionLogOptions().hashCode());
         hashCode = prime * hashCode + ((getDnsServers() == null) ? 0 : getDnsServers().hashCode());
         hashCode = prime * hashCode + ((getTransportProtocol() == null) ? 0 : getTransportProtocol().hashCode());
+        hashCode = prime * hashCode + ((getVpnPort() == null) ? 0 : getVpnPort().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());

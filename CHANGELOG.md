@@ -1,7 +1,24 @@
+# __1.11.709__ __2020-01-16__
+## __AWS Directory Service__
+  - ### Features
+    - To reduce the number of errors our customers are facing, we have modified the requirements of input parameters for two of Directory Service APIs.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Client VPN now supports Port Configuration for VPN Endpoints, allowing usage of either port 443 or port 1194.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This release adds two new APIs (UpdateWorkforce and DescribeWorkforce) to SageMaker Ground Truth service for workforce IP whitelisting.
+
 # __1.11.708__ __2020-01-15__
 ## __AWS Organizations__
   - ### Features
     - Updated description for PolicyID parameter and ConstraintViolationException.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Updated endpoint-to-region resolution logic to support additional services with non-standard endpoint patterns.
 
 ## __AWS SecurityHub__
   - ### Features

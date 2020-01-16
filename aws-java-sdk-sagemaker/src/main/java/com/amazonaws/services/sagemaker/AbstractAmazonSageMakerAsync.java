@@ -974,6 +974,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWorkforceResult> describeWorkforceAsync(DescribeWorkforceRequest request) {
+
+        return describeWorkforceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorkforceResult> describeWorkforceAsync(DescribeWorkforceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkforceRequest, DescribeWorkforceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeWorkteamResult> describeWorkteamAsync(DescribeWorkteamRequest request) {
 
         return describeWorkteamAsync(request, null);
@@ -1731,6 +1744,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     @Override
     public java.util.concurrent.Future<UpdateUserProfileResult> updateUserProfileAsync(UpdateUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateUserProfileRequest, UpdateUserProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkforceResult> updateWorkforceAsync(UpdateWorkforceRequest request) {
+
+        return updateWorkforceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkforceResult> updateWorkforceAsync(UpdateWorkforceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkforceRequest, UpdateWorkforceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

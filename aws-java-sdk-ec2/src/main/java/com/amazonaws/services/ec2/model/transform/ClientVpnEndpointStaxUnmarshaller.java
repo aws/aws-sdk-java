@@ -105,6 +105,11 @@ public class ClientVpnEndpointStaxUnmarshaller implements Unmarshaller<ClientVpn
                     continue;
                 }
 
+                if (context.testExpression("vpnPort", targetDepth)) {
+                    clientVpnEndpoint.setVpnPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("associatedTargetNetwork", targetDepth)) {
                     clientVpnEndpoint.withAssociatedTargetNetworks(new ArrayList<AssociatedTargetNetwork>());
                     continue;

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.util;
 
+import com.amazonaws.annotation.SdkProtectedApi;
 import java.net.InetAddress;
 import java.net.URI;
 import java.util.regex.Matcher;
@@ -65,44 +66,102 @@ public class AwsHostNameUtils {
 
     /**
      * Attempts to parse the region name from an endpoint based on conventions
-     * about the endpoint format.
+     * about the endpoint format. This does not consider any properties in the endpoint
+     * configuration from the service.
      *
      * @param host         the hostname to parse
      * @param serviceHint  an optional hint about the service for the endpoint
      * @return             the region parsed from the hostname, or
      *                     null if no region information could be found.
      */
-    public static String parseRegion(final String host,
-                                         final String serviceHint) {
+    public static String parseRegion(String host, String serviceHint) {
+        String result;
 
-        if (host == null) {
-            throw new IllegalArgumentException("hostname cannot be null");
-        }
-        String regionNameInInternalConfig = parseRegionNameByInternalConfig(host);
-        if (regionNameInInternalConfig != null) {
-            return regionNameInInternalConfig;
+        result = parseRegionFromInternalConfig(host);
+        if (result != null) {
+            return result;
         }
 
+        result = parseRegionFromAwsPartitionPattern(host);
+        if (result != null) {
+            return result;
+        }
+
+        result = parseRegionUsingServiceHint(host, serviceHint);
+        if (result != null) {
+            return result;
+        }
+
+        result = parseRegionFromAfterServiceName(host, serviceHint);
+
+        return result;
+    }
+
+    /**
+     * Parse the region from the host name using any internal configuration regex patterns that are available. Returns null if
+     * it cannot be parsed from the internal configuration.
+     */
+    @SdkProtectedApi
+    public static String parseRegionFromInternalConfig(String host) {
+        validateHostname(host);
+        InternalConfig internConfig = InternalConfig.Factory.getInternalConfig();
+
+        for (HostRegexToRegionMapping mapping : internConfig.getHostRegexToRegionMappings()) {
+            if (mapping.isHostNameMatching(host)) {
+                return mapping.getRegionName();
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Parse the region from the host name, if it's in the standard AWS parition (ending in amazonaws.com). Returns null if
+     * it cannot be parsed from the standard partition pattern.
+     */
+    @SdkProtectedApi
+    public static String parseRegionFromAwsPartitionPattern(String host) {
+        validateHostname(host);
         if (host.endsWith(".amazonaws.com")) {
             int index = host.length() - ".amazonaws.com".length();
             return parseStandardRegionName(host.substring(0, index));
         }
+        return null;
+    }
 
+    /**
+     * Parse the region using service-specific logic from the host name. Returns null if
+     * it cannot be parsed from the host using service-specific logic.
+     */
+    @SdkProtectedApi
+    public static String parseRegionUsingServiceHint(String host, String serviceHint) {
+        validateHostname(host);
         if (serviceHint != null) {
             if (serviceHint.equals("cloudsearch")
-                    && !host.startsWith("cloudsearch.")) {
+                && !host.startsWith("cloudsearch.")) {
 
                 // CloudSearch domains use the nonstandard domain format
                 // [domain].[region].cloudsearch.[suffix].
 
                 Matcher matcher = EXTENDED_CLOUDSEARCH_ENDPOINT_PATTERN
-                        .matcher(host);
+                    .matcher(host);
 
                 if (matcher.matches()) {
                     return matcher.group(1);
                 }
             }
+        }
 
+        return null;
+    }
+
+    /**
+     * Parse the region by looking for the service name in the hostname and assuming anything that follows it (separated by
+     * a . or a -) is the region. Returns null if this process fails.
+     */
+    public static String parseRegionFromAfterServiceName(String host, String serviceHint) {
+        validateHostname(host);
+        if (serviceHint != null) {
             // If we have a service hint, look for 'service.[region]' or
             // 'service-[region]' in the endpoint's hostname.
             Pattern pattern = Pattern.compile(
@@ -117,8 +176,13 @@ public class AwsHostNameUtils {
             }
         }
 
-        // Endpoint is non-standard
         return null;
+    }
+
+    private static void validateHostname(String hostname) {
+        if (hostname == null) {
+            throw new IllegalArgumentException("hostname cannot be null");
+        }
     }
 
     /**
@@ -160,23 +224,6 @@ public class AwsHostNameUtils {
         }
 
         return region;
-    }
-
-    /**
-     * @return the configured region name if the given host name matches any of
-     *         the host-to-region mappings in the internal config; otherwise
-     *         return null.
-     */
-    private static String parseRegionNameByInternalConfig(String host) {
-        InternalConfig internConfig = InternalConfig.Factory.getInternalConfig();
-
-        for (HostRegexToRegionMapping mapping : internConfig.getHostRegexToRegionMappings()) {
-            if (mapping.isHostNameMatching(host)) {
-                return mapping.getRegionName();
-            }
-        }
-
-        return null;
     }
 
     /**

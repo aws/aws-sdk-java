@@ -67,6 +67,18 @@ public class InMemoryRegionsProvider extends AbstractRegionMetadataProvider {
     }
 
     @Override
+    public Region tryGetRegionByExplicitEndpoint(String endpoint) {
+        // This operation is not currently supported on this provider.
+        return null;
+    }
+
+    @Override
+    public Region tryGetRegionByEndpointDnsSuffix(String endpoint) {
+        // This operation is not currently supported on this provider.
+        return null;
+    }
+
+    @Override
     public String toString() {
         return regions.toString();
     }

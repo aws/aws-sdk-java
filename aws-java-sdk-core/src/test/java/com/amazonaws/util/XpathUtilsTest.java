@@ -36,6 +36,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -55,6 +56,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
+import utils.TestHttpServer;
 
 /**
  * Unit tests for the XpathUtils class.
@@ -248,6 +250,112 @@ public class XpathUtilsTest {
             assertEquals(0, bytes.toByteArray().length);
         } finally {
             System.setErr(err);
+        }
+    }
+
+    @Test
+    public void testExternalEntity() throws Exception {
+        TestHttpServer server = new TestHttpServer("secret");
+        try {
+            String xml = String.format(
+                    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                            + "<!DOCTYPE oops [\n"
+                            + "     <!ENTITY foo SYSTEM \"%s\" >\n"
+                            + "]>\n"
+                            + "<oops>&foo;</oops>",
+                    server.url());
+
+            parse(xml);
+        } catch (SAXParseException e) {
+            // okay
+        } finally {
+            server.stop();
+        }
+
+        if (server.accepted()) {
+            fail("Oops! The server has been reached!");
+        }
+    }
+
+    @Test
+    public void testExternalSchema() throws Exception {
+        TestHttpServer server = new TestHttpServer("secret");
+        try {
+            String xml = String.format(
+                    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                            + "<!DOCTYPE oops SYSTEM \"%s\">\n"
+                            + "<oops></oops>",
+                    server.url());
+
+            parse(xml);
+        } catch (SAXParseException e) {
+            // okay
+        } finally {
+            server.stop();
+        }
+
+        if (server.accepted()) {
+            fail("Oops! The server has been reached!");
+        }
+    }
+
+    @Test
+    public void testExternalEntityParameter() throws Exception {
+        TestHttpServer server = new TestHttpServer("secret");
+        try {
+            String xml = String.format(
+                    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                            + "<!DOCTYPE oops [\n"
+                            + "     <!ENTITY %% sp SYSTEM \"%s\">\n"
+                            + "%%sp;"
+                            + "]>\n"
+                            + "<oops></oops>",
+                    server.url());
+
+            parse(xml);
+        } catch (SAXParseException e) {
+            // okay
+        } finally {
+            server.stop();
+        }
+
+        if (server.accepted()) {
+            fail("Oops! The server has been reached!");
+        }
+    }
+
+    @Test(expected = SAXParseException.class)
+    public void billionLaughs() throws Exception {
+        String xml =
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                        "<!DOCTYPE lolz [\n" +
+                        " <!ENTITY lol \"lol\">\n" +
+                        " <!ELEMENT lolz (#PCDATA)>\n" +
+                        " <!ENTITY lol1 \"&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;\">\n" +
+                        " <!ENTITY lol2 \"&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;\">\n" +
+                        " <!ENTITY lol3 \"&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;\">\n" +
+                        " <!ENTITY lol4 \"&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;\">\n" +
+                        " <!ENTITY lol5 \"&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;\">\n" +
+                        " <!ENTITY lol6 \"&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;\">\n" +
+                        " <!ENTITY lol7 \"&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;\">\n" +
+                        " <!ENTITY lol8 \"&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;\">\n" +
+                        " <!ENTITY lol9 \"&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;\">\n" +
+                        "]>\n" +
+                        "<lolz>&lol9;</lolz>";
+        parse(xml);
+    }
+
+    private static void parse(String xml) throws Exception {
+        try {
+            XpathUtils.documentFrom(xml);
+        } catch (Exception e) {
+            if (e instanceof ParserConfigurationException
+                    || e.getCause() instanceof ParserConfigurationException) {
+
+                e.printStackTrace(System.out);
+                fail("Looks like parser configuration failed");
+            }
+            throw e;
         }
     }
 

@@ -15,7 +15,6 @@
 package com.amazonaws.regions;
 
 import com.amazonaws.annotation.SdkInternalApi;
-
 import java.util.List;
 
 @SdkInternalApi
@@ -59,11 +58,34 @@ public interface RegionMetadataProvider {
      * @return The region containing any service running at the specified
      * endpoint, otherwise an exception is thrown if no region is found
      * with a service at the specified endpoint.
-     * @throws IllegalArgumentException If the given URL is malformed, or if the one of the service
-     *                                  URLs on record is malformed.
-     * @deprecated sdk no longer holds the complete endpoint for every service in the region.
-     * It now uses the partition metadata to compute the endpoints dynamically for new regions and services.
      */
-    @Deprecated
     Region getRegionByEndpoint(final String endpoint);
+
+    /**
+     * Returns the region associated with the specified endpoint by searching the endpoint configuration for an endpoint
+     * that is explicitly listed. This is likely to be null, because most endpoints are not explicitly listed in the endpoints
+     * file.
+     *
+     * This is mostly useful for retrieving the region of non-standard endpoints that do not include the region in the host name.
+     * These include global endpoints (budgets.amazonaws.com),
+     *
+     * Unlike {@link #getRegionByEndpoint(String)}, this returns null on failure instead of raising an exception.
+     *
+     * @param endpoint The endpoint to look up in the region metadata.
+     * @return The region, or null if it cannot be determined.
+     */
+    Region tryGetRegionByExplicitEndpoint(String endpoint);
+
+    /**
+     * Returns the region associated with the specified endpoint by searching the endpoint configuration for a partition
+     * that matches the DNS suffix of the provided endpoint and extracting the region name based on the endpoint pattern for
+     * that partition. This may be wrong if the service does not follow the endpoint pattern for the partition. This returns
+     * null if the endpoint provided does not appear to include a region, or does not match a known partition DNS suffix.
+     *
+     * Unlike {@link #getRegionByEndpoint(String)}, this returns null on failure instead of raising an exception.
+     *
+     * @param endpoint The endpoint to look up in the region metadata based on the DNS suffix.
+     * @return The region, or null if it cannot be determined.
+     */
+    Region tryGetRegionByEndpointDnsSuffix(String endpoint);
 }

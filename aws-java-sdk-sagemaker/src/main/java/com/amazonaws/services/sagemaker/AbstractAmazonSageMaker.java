@@ -389,6 +389,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeWorkforceResult describeWorkforce(DescribeWorkforceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeWorkteamResult describeWorkteam(DescribeWorkteamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -675,6 +680,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public UpdateUserProfileResult updateUserProfile(UpdateUserProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorkforceResult updateWorkforce(UpdateWorkforceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

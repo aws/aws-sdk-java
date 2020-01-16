@@ -1676,6 +1676,27 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Lists private workforce information, including workforce name, Amazon Resource Name (ARN), and, if applicable,
+     * allowed IP address ranges (<a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Allowable IP address ranges
+     * are the IP addresses that workers can use to access tasks.
+     * </p>
+     * <important>
+     * <p>
+     * This operation applies only to private workforces.
+     * </p>
+     * </important>
+     * 
+     * @param describeWorkforceRequest
+     * @return Result of the DescribeWorkforce operation returned by the service.
+     * @sample AmazonSageMaker.DescribeWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeWorkforceResult describeWorkforce(DescribeWorkforceRequest describeWorkforceRequest);
+
+    /**
+     * <p>
      * Gets information about a specific work team. You can see information such as the create date, the last updated
      * date, membership information, and the work team's Amazon Resource Name (ARN).
      * </p>
@@ -2092,9 +2113,27 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Lists the trial components in your account. You can filter the list to show only components that were created in
-     * a specific time range. You can sort the list by trial component name or creation time.
+     * Lists the trial components in your account. You can sort the list by trial component name or creation time. You
+     * can filter the list to show only components that were created in a specific time range. You can also filter on
+     * one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ExperimentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialName</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listTrialComponentsRequest
      * @return Result of the ListTrialComponents operation returned by the service.
@@ -2593,6 +2632,32 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     UpdateUserProfileResult updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest);
+
+    /**
+     * <p>
+     * Restricts access to tasks assigned to workers in the specified workforce to those within specific ranges of IP
+     * addresses. You specify allowed IP addresses by creating a list of up to four <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+     * </p>
+     * <p>
+     * By default, a workforce isn't restricted to specific IP addresses. If you specify a range of IP addresses,
+     * workers who attempt to access tasks using any IP address outside the specified range are denied access and get a
+     * <code>Not Found</code> error message on the worker portal. After restricting access with this operation, you can
+     * see the allowed IP values for a private workforce with the operation.
+     * </p>
+     * <important>
+     * <p>
+     * This operation applies only to private workforces.
+     * </p>
+     * </important>
+     * 
+     * @param updateWorkforceRequest
+     * @return Result of the UpdateWorkforce operation returned by the service.
+     * @sample AmazonSageMaker.UpdateWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateWorkforceResult updateWorkforce(UpdateWorkforceRequest updateWorkforceRequest);
 
     /**
      * <p>
