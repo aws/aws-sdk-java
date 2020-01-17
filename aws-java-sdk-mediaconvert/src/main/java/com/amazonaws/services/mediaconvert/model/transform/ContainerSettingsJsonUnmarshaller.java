@@ -48,6 +48,10 @@ public class ContainerSettingsJsonUnmarshaller implements Unmarshaller<Container
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("cmfcSettings", targetDepth)) {
+                    context.nextToken();
+                    containerSettings.setCmfcSettings(CmfcSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("container", targetDepth)) {
                     context.nextToken();
                     containerSettings.setContainer(context.getUnmarshaller(String.class).unmarshall(context));

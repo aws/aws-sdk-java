@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ContainerSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Settings for MP4 segments in CMAF */
+    private CmfcSettings cmfcSettings;
     /**
      * Container for this output. Some containers require a container settings object. If not specified, the default
      * object will be created.
@@ -51,6 +53,40 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     private Mp4Settings mp4Settings;
     /** Settings for MP4 segments in DASH */
     private MpdSettings mpdSettings;
+
+    /**
+     * Settings for MP4 segments in CMAF
+     * 
+     * @param cmfcSettings
+     *        Settings for MP4 segments in CMAF
+     */
+
+    public void setCmfcSettings(CmfcSettings cmfcSettings) {
+        this.cmfcSettings = cmfcSettings;
+    }
+
+    /**
+     * Settings for MP4 segments in CMAF
+     * 
+     * @return Settings for MP4 segments in CMAF
+     */
+
+    public CmfcSettings getCmfcSettings() {
+        return this.cmfcSettings;
+    }
+
+    /**
+     * Settings for MP4 segments in CMAF
+     * 
+     * @param cmfcSettings
+     *        Settings for MP4 segments in CMAF
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerSettings withCmfcSettings(CmfcSettings cmfcSettings) {
+        setCmfcSettings(cmfcSettings);
+        return this;
+    }
 
     /**
      * Container for this output. Some containers require a container settings object. If not specified, the default
@@ -363,6 +399,8 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCmfcSettings() != null)
+            sb.append("CmfcSettings: ").append(getCmfcSettings()).append(",");
         if (getContainer() != null)
             sb.append("Container: ").append(getContainer()).append(",");
         if (getF4vSettings() != null)
@@ -391,6 +429,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof ContainerSettings == false)
             return false;
         ContainerSettings other = (ContainerSettings) obj;
+        if (other.getCmfcSettings() == null ^ this.getCmfcSettings() == null)
+            return false;
+        if (other.getCmfcSettings() != null && other.getCmfcSettings().equals(this.getCmfcSettings()) == false)
+            return false;
         if (other.getContainer() == null ^ this.getContainer() == null)
             return false;
         if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false)
@@ -427,6 +469,7 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCmfcSettings() == null) ? 0 : getCmfcSettings().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getF4vSettings() == null) ? 0 : getF4vSettings().hashCode());
         hashCode = prime * hashCode + ((getM2tsSettings() == null) ? 0 : getM2tsSettings().hashCode());

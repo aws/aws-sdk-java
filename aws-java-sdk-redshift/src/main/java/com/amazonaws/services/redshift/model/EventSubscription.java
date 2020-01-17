@@ -74,8 +74,8 @@ public class EventSubscription implements Serializable, Cloneable {
     private java.util.Date subscriptionCreationTime;
     /**
      * <p>
-     * The source type of the events returned the Amazon Redshift event notification, such as cluster, or
-     * cluster-snapshot.
+     * The source type of the events returned by the Amazon Redshift event notification, such as cluster,
+     * cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.
      * </p>
      */
     private String sourceType;
@@ -415,13 +415,13 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source type of the events returned the Amazon Redshift event notification, such as cluster, or
-     * cluster-snapshot.
+     * The source type of the events returned by the Amazon Redshift event notification, such as cluster,
+     * cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.
      * </p>
      * 
      * @param sourceType
-     *        The source type of the events returned the Amazon Redshift event notification, such as cluster, or
-     *        cluster-snapshot.
+     *        The source type of the events returned by the Amazon Redshift event notification, such as cluster,
+     *        cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.
      */
 
     public void setSourceType(String sourceType) {
@@ -430,12 +430,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source type of the events returned the Amazon Redshift event notification, such as cluster, or
-     * cluster-snapshot.
+     * The source type of the events returned by the Amazon Redshift event notification, such as cluster,
+     * cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.
      * </p>
      * 
-     * @return The source type of the events returned the Amazon Redshift event notification, such as cluster, or
-     *         cluster-snapshot.
+     * @return The source type of the events returned by the Amazon Redshift event notification, such as cluster,
+     *         cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.
      */
 
     public String getSourceType() {
@@ -444,13 +444,13 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source type of the events returned the Amazon Redshift event notification, such as cluster, or
-     * cluster-snapshot.
+     * The source type of the events returned by the Amazon Redshift event notification, such as cluster,
+     * cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.
      * </p>
      * 
      * @param sourceType
-     *        The source type of the events returned the Amazon Redshift event notification, such as cluster, or
-     *        cluster-snapshot.
+     *        The source type of the events returned by the Amazon Redshift event notification, such as cluster,
+     *        cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

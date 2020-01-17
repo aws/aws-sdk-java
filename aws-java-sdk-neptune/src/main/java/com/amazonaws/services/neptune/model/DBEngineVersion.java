@@ -58,15 +58,13 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private String dBEngineVersionDescription;
     /**
      * <p>
-     * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private CharacterSet defaultCharacterSet;
     /**
      * <p>
-     * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private java.util.List<CharacterSet> supportedCharacterSets;
@@ -305,13 +303,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param defaultCharacterSet
-     *        The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     *        parameter of the CreateDBInstance API is not specified.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setDefaultCharacterSet(CharacterSet defaultCharacterSet) {
@@ -320,12 +316,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     *         parameter of the CreateDBInstance API is not specified.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public CharacterSet getDefaultCharacterSet() {
@@ -334,13 +328,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     * parameter of the CreateDBInstance API is not specified.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param defaultCharacterSet
-     *        The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
-     *        parameter of the CreateDBInstance API is not specified.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,12 +343,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *         the <code>CreateDBInstance</code> action.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public java.util.List<CharacterSet> getSupportedCharacterSets() {
@@ -365,13 +355,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param supportedCharacterSets
-     *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setSupportedCharacterSets(java.util.Collection<CharacterSet> supportedCharacterSets) {
@@ -385,8 +373,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -395,8 +382,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedCharacterSets
-     *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,13 +398,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param supportedCharacterSets
-     *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

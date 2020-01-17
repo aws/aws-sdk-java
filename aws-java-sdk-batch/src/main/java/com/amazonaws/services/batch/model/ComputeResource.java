@@ -41,11 +41,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
      * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
-     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
-     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
-     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
-     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
-     * preference for an instance type that is less likely to be interrupted.
+     * but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must
+     * be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are large enough to
+     * meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU.
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
+     * preference for instance types that are less likely to be interrupted. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private String allocationStrategy;
@@ -149,7 +152,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment. For more information, see <a
+     * environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation
+     * strategy is not specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
      * in the <i>AWS Batch User Guide</i>.
      * </p>
@@ -246,11 +250,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
      * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
-     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
-     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
-     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
-     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
-     * preference for an instance type that is less likely to be interrupted.
+     * but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must
+     * be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are large enough to
+     * meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU.
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
+     * preference for instance types that are less likely to be interrupted. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -259,12 +266,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
      *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
-     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
-     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
-     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
-     *        Instance compute resources and will select an additional instance type that is large enough to meet the
-     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
-     *        interrupted.
+     *        keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the
+     *        Spot Fleet IAM Role must be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance
+     *        types that are large enough to meet the requirements of the jobs in the queue, with a preference for
+     *        instance types with a lower cost per vCPU. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select additional instance types that are large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
+     *        interrupted. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @see CRAllocationStrategy
      */
 
@@ -279,11 +289,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
      * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
-     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
-     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
-     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
-     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
-     * preference for an instance type that is less likely to be interrupted.
+     * but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must
+     * be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are large enough to
+     * meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU.
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
+     * preference for instance types that are less likely to be interrupted. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The allocation strategy to use for the compute resource in case not enough instances of the best fitting
@@ -291,12 +304,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      *         limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
      *         fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
-     *         keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
-     *         instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
-     *         for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
-     *         Instance compute resources and will select an additional instance type that is large enough to meet the
-     *         requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
-     *         interrupted.
+     *         keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the
+     *         Spot Fleet IAM Role must be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance
+     *         types that are large enough to meet the requirements of the jobs in the queue, with a preference for
+     *         instance types with a lower cost per vCPU. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for
+     *         Spot Instance compute resources and will select additional instance types that are large enough to meet
+     *         the requirements of the jobs in the queue, with a preference for instance types that are less likely to
+     *         be interrupted. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *         Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @see CRAllocationStrategy
      */
 
@@ -311,11 +327,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
      * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
-     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
-     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
-     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
-     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
-     * preference for an instance type that is less likely to be interrupted.
+     * but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must
+     * be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are large enough to
+     * meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU.
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
+     * preference for instance types that are less likely to be interrupted. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -324,12 +343,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
      *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
-     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
-     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
-     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
-     *        Instance compute resources and will select an additional instance type that is large enough to meet the
-     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
-     *        interrupted.
+     *        keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the
+     *        Spot Fleet IAM Role must be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance
+     *        types that are large enough to meet the requirements of the jobs in the queue, with a preference for
+     *        instance types with a lower cost per vCPU. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select additional instance types that are large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
+     *        interrupted. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRAllocationStrategy
      */
@@ -346,11 +368,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
      * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
-     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
-     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
-     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
-     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
-     * preference for an instance type that is less likely to be interrupted.
+     * but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must
+     * be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are large enough to
+     * meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU.
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
+     * preference for instance types that are less likely to be interrupted. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -359,12 +384,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
      *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
-     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
-     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
-     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
-     *        Instance compute resources and will select an additional instance type that is large enough to meet the
-     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
-     *        interrupted.
+     *        keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the
+     *        Spot Fleet IAM Role must be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance
+     *        types that are large enough to meet the requirements of the jobs in the queue, with a preference for
+     *        instance types with a lower cost per vCPU. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select additional instance types that are large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
+     *        interrupted. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @see CRAllocationStrategy
      */
 
@@ -379,11 +407,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      * limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best fitting
      * instance type, waiting for additional capacity if it's not available. This allocation strategy keeps costs lower
-     * but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional instance type that is large
-     * enough to meet the requirements of the jobs in the queue, with a preference for an instance type with a lower
-     * cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
-     * an additional instance type that is large enough to meet the requirements of the jobs in the queue, with a
-     * preference for an instance type that is less likely to be interrupted.
+     * but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role must
+     * be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance types that are large enough to
+     * meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU.
+     * <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot Instance compute resources and will select
+     * additional instance types that are large enough to meet the requirements of the jobs in the queue, with a
+     * preference for instance types that are less likely to be interrupted. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation Strategies</a>
+     * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param allocationStrategy
@@ -392,12 +423,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service
      *        limits</a>. If this is not specified, the default is <code>BEST_FIT</code>, which will use only the best
      *        fitting instance type, waiting for additional capacity if it's not available. This allocation strategy
-     *        keeps costs lower but can limit scaling. <code>BEST_FIT_PROGRESSIVE</code> will select an additional
-     *        instance type that is large enough to meet the requirements of the jobs in the queue, with a preference
-     *        for an instance type with a lower cost. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
-     *        Instance compute resources and will select an additional instance type that is large enough to meet the
-     *        requirements of the jobs in the queue, with a preference for an instance type that is less likely to be
-     *        interrupted.
+     *        keeps costs lower but can limit scaling. If you are using Spot Fleets with <code>BEST_FIT</code> then the
+     *        Spot Fleet IAM Role must be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance
+     *        types that are large enough to meet the requirements of the jobs in the queue, with a preference for
+     *        instance types with a lower cost per vCPU. <code>SPOT_CAPACITY_OPTIMIZED</code> is only available for Spot
+     *        Instance compute resources and will select additional instance types that are large enough to meet the
+     *        requirements of the jobs in the queue, with a preference for instance types that are less likely to be
+     *        interrupted. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html ">Allocation
+     *        Strategies</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRAllocationStrategy
      */
@@ -1181,14 +1215,16 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment. For more information, see <a
+     * environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation
+     * strategy is not specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
      * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param spotIamFleetRole
      *        The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *        compute environment. For more information, see <a
+     *        compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if
+     *        the allocation strategy is not specified. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
      *        Role</a> in the <i>AWS Batch User Guide</i>.
      */
@@ -1200,13 +1236,15 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment. For more information, see <a
+     * environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation
+     * strategy is not specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
      * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *         compute environment. For more information, see <a
+     *         compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if
+     *         the allocation strategy is not specified. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
      *         Role</a> in the <i>AWS Batch User Guide</i>.
      */
@@ -1218,14 +1256,16 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code> compute
-     * environment. For more information, see <a
+     * environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if the allocation
+     * strategy is not specified. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet Role</a>
      * in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param spotIamFleetRole
      *        The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <code>SPOT</code>
-     *        compute environment. For more information, see <a
+     *        compute environment. This role is required if the allocation strategy set to <code>BEST_FIT</code> or if
+     *        the allocation strategy is not specified. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 Spot Fleet
      *        Role</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

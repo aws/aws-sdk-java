@@ -38,6 +38,8 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
      */
     private String backupId;
 
+    private java.util.List<Tag> tagList;
+
     /**
      * <p>
      * The AWS region that will contain your copied CloudHSM cluster backup.
@@ -119,6 +121,58 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new java.util.ArrayList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyBackupToRegionRequest withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new java.util.ArrayList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyBackupToRegionRequest withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +187,9 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDestinationRegion() != null)
             sb.append("DestinationRegion: ").append(getDestinationRegion()).append(",");
         if (getBackupId() != null)
-            sb.append("BackupId: ").append(getBackupId());
+            sb.append("BackupId: ").append(getBackupId()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +212,10 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getBackupId() != null && other.getBackupId().equals(this.getBackupId()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +226,7 @@ public class CopyBackupToRegionRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getDestinationRegion() == null) ? 0 : getDestinationRegion().hashCode());
         hashCode = prime * hashCode + ((getBackupId() == null) ? 0 : getBackupId().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         return hashCode;
     }
 

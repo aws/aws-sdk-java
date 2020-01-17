@@ -32,6 +32,13 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
      * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      */
     private String cslgAtom;
+    /**
+     * Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a
+     * value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you
+     * specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the default value 0 to set
+     * your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
+     */
+    private Integer cttsVersion;
     /** Inserts a free-space box immediately after the moov box. */
     private String freeSpaceBox;
     /**
@@ -106,6 +113,61 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
 
     public Mp4Settings withCslgAtom(Mp4CslgAtom cslgAtom) {
         this.cslgAtom = cslgAtom.toString();
+        return this;
+    }
+
+    /**
+     * Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a
+     * value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you
+     * specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the default value 0 to set
+     * your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
+     * 
+     * @param cttsVersion
+     *        Ignore this setting unless compliance to the CTTS box version specification matters in your workflow.
+     *        Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the
+     *        specification. When you specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE.
+     *        Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for
+     *        some players and packagers.
+     */
+
+    public void setCttsVersion(Integer cttsVersion) {
+        this.cttsVersion = cttsVersion;
+    }
+
+    /**
+     * Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a
+     * value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you
+     * specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the default value 0 to set
+     * your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
+     * 
+     * @return Ignore this setting unless compliance to the CTTS box version specification matters in your workflow.
+     *         Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the
+     *         specification. When you specify a value of 1, you must also set CSLG atom (cslgAtom) to the value
+     *         INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward
+     *         compatibility for some players and packagers.
+     */
+
+    public Integer getCttsVersion() {
+        return this.cttsVersion;
+    }
+
+    /**
+     * Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a
+     * value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you
+     * specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the default value 0 to set
+     * your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
+     * 
+     * @param cttsVersion
+     *        Ignore this setting unless compliance to the CTTS box version specification matters in your workflow.
+     *        Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the
+     *        specification. When you specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE.
+     *        Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for
+     *        some players and packagers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Mp4Settings withCttsVersion(Integer cttsVersion) {
+        setCttsVersion(cttsVersion);
         return this;
     }
 
@@ -267,6 +329,8 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getCslgAtom() != null)
             sb.append("CslgAtom: ").append(getCslgAtom()).append(",");
+        if (getCttsVersion() != null)
+            sb.append("CttsVersion: ").append(getCttsVersion()).append(",");
         if (getFreeSpaceBox() != null)
             sb.append("FreeSpaceBox: ").append(getFreeSpaceBox()).append(",");
         if (getMoovPlacement() != null)
@@ -291,6 +355,10 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCslgAtom() != null && other.getCslgAtom().equals(this.getCslgAtom()) == false)
             return false;
+        if (other.getCttsVersion() == null ^ this.getCttsVersion() == null)
+            return false;
+        if (other.getCttsVersion() != null && other.getCttsVersion().equals(this.getCttsVersion()) == false)
+            return false;
         if (other.getFreeSpaceBox() == null ^ this.getFreeSpaceBox() == null)
             return false;
         if (other.getFreeSpaceBox() != null && other.getFreeSpaceBox().equals(this.getFreeSpaceBox()) == false)
@@ -312,6 +380,7 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCslgAtom() == null) ? 0 : getCslgAtom().hashCode());
+        hashCode = prime * hashCode + ((getCttsVersion() == null) ? 0 : getCttsVersion().hashCode());
         hashCode = prime * hashCode + ((getFreeSpaceBox() == null) ? 0 : getFreeSpaceBox().hashCode());
         hashCode = prime * hashCode + ((getMoovPlacement() == null) ? 0 : getMoovPlacement().hashCode());
         hashCode = prime * hashCode + ((getMp4MajorBrand() == null) ? 0 : getMp4MajorBrand().hashCode());

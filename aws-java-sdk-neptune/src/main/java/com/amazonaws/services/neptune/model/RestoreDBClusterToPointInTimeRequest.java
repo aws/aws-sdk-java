@@ -165,7 +165,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBSubnetGroupName;
     /**
      * <p>
-     * The name of the option group for the new DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String optionGroupName;
@@ -249,6 +249,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </ul>
      */
     private String dBClusterParameterGroupName;
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -1112,11 +1119,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the option group for the new DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group for the new DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1125,10 +1132,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the option group for the new DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return The name of the option group for the new DB cluster.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getOptionGroupName() {
@@ -1137,11 +1144,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the option group for the new DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group for the new DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1756,6 +1763,66 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1794,7 +1861,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         if (getEnableCloudwatchLogsExports() != null)
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName());
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -1866,6 +1935,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getDBClusterParameterGroupName() != null && other.getDBClusterParameterGroupName().equals(this.getDBClusterParameterGroupName()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -1888,6 +1961,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDBClusterParameterGroupName() == null) ? 0 : getDBClusterParameterGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

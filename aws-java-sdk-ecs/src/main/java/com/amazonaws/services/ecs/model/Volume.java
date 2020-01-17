@@ -58,10 +58,25 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
      * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify a <code>host</code> instead.
+     * mounts, specify the <code>host</code> parameter instead.
      * </p>
      */
     private DockerVolumeConfiguration dockerVolumeConfiguration;
+    /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
+     * EFS file systems are only supported when you are using the EC2 launch type.
+     * </p>
+     * <important>
+     * <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
+     * Beta Service Participation Service Terms located at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
+     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+     * </p>
+     * </important>
+     */
+    private EFSVolumeConfiguration efsVolumeConfiguration;
 
     /**
      * <p>
@@ -216,13 +231,13 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
      * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify a <code>host</code> instead.
+     * mounts, specify the <code>host</code> parameter instead.
      * </p>
      * 
      * @param dockerVolumeConfiguration
      *        This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you
      *        are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver.
-     *        To use bind mounts, specify a <code>host</code> instead.
+     *        To use bind mounts, specify the <code>host</code> parameter instead.
      */
 
     public void setDockerVolumeConfiguration(DockerVolumeConfiguration dockerVolumeConfiguration) {
@@ -233,12 +248,12 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
      * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify a <code>host</code> instead.
+     * mounts, specify the <code>host</code> parameter instead.
      * </p>
      * 
      * @return This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you
      *         are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver.
-     *         To use bind mounts, specify a <code>host</code> instead.
+     *         To use bind mounts, specify the <code>host</code> parameter instead.
      */
 
     public DockerVolumeConfiguration getDockerVolumeConfiguration() {
@@ -249,18 +264,106 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
      * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify a <code>host</code> instead.
+     * mounts, specify the <code>host</code> parameter instead.
      * </p>
      * 
      * @param dockerVolumeConfiguration
      *        This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you
      *        are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver.
-     *        To use bind mounts, specify a <code>host</code> instead.
+     *        To use bind mounts, specify the <code>host</code> parameter instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Volume withDockerVolumeConfiguration(DockerVolumeConfiguration dockerVolumeConfiguration) {
         setDockerVolumeConfiguration(dockerVolumeConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
+     * EFS file systems are only supported when you are using the EC2 launch type.
+     * </p>
+     * <important>
+     * <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
+     * Beta Service Participation Service Terms located at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
+     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+     * </p>
+     * </important>
+     * 
+     * @param efsVolumeConfiguration
+     *        This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage.
+     *        Amazon EFS file systems are only supported when you are using the EC2 launch type.</p> <important>
+     *        <p>
+     *        <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to
+     *        the Beta Service Participation Service Terms located at <a
+     *        href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These
+     *        Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+     *        </p>
+     */
+
+    public void setEfsVolumeConfiguration(EFSVolumeConfiguration efsVolumeConfiguration) {
+        this.efsVolumeConfiguration = efsVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
+     * EFS file systems are only supported when you are using the EC2 launch type.
+     * </p>
+     * <important>
+     * <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
+     * Beta Service Participation Service Terms located at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
+     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+     * </p>
+     * </important>
+     * 
+     * @return This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage.
+     *         Amazon EFS file systems are only supported when you are using the EC2 launch type.</p> <important>
+     *         <p>
+     *         <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to
+     *         the Beta Service Participation Service Terms located at <a
+     *         href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms").
+     *         These Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+     *         </p>
+     */
+
+    public EFSVolumeConfiguration getEfsVolumeConfiguration() {
+        return this.efsVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage. Amazon
+     * EFS file systems are only supported when you are using the EC2 launch type.
+     * </p>
+     * <important>
+     * <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to the
+     * Beta Service Participation Service Terms located at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These Beta
+     * Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+     * </p>
+     * </important>
+     * 
+     * @param efsVolumeConfiguration
+     *        This parameter is specified when you are using an Amazon Elastic File System (Amazon EFS) file storage.
+     *        Amazon EFS file systems are only supported when you are using the EC2 launch type.</p> <important>
+     *        <p>
+     *        <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as defined by and subject to
+     *        the Beta Service Participation Service Terms located at <a
+     *        href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> ("Beta Terms"). These
+     *        Beta Terms apply to your participation in this preview of <code>EFSVolumeConfiguration</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withEfsVolumeConfiguration(EFSVolumeConfiguration efsVolumeConfiguration) {
+        setEfsVolumeConfiguration(efsVolumeConfiguration);
         return this;
     }
 
@@ -281,7 +384,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         if (getHost() != null)
             sb.append("Host: ").append(getHost()).append(",");
         if (getDockerVolumeConfiguration() != null)
-            sb.append("DockerVolumeConfiguration: ").append(getDockerVolumeConfiguration());
+            sb.append("DockerVolumeConfiguration: ").append(getDockerVolumeConfiguration()).append(",");
+        if (getEfsVolumeConfiguration() != null)
+            sb.append("EfsVolumeConfiguration: ").append(getEfsVolumeConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -308,6 +413,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDockerVolumeConfiguration() != null && other.getDockerVolumeConfiguration().equals(this.getDockerVolumeConfiguration()) == false)
             return false;
+        if (other.getEfsVolumeConfiguration() == null ^ this.getEfsVolumeConfiguration() == null)
+            return false;
+        if (other.getEfsVolumeConfiguration() != null && other.getEfsVolumeConfiguration().equals(this.getEfsVolumeConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -319,6 +428,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getHost() == null) ? 0 : getHost().hashCode());
         hashCode = prime * hashCode + ((getDockerVolumeConfiguration() == null) ? 0 : getDockerVolumeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEfsVolumeConfiguration() == null) ? 0 : getEfsVolumeConfiguration().hashCode());
         return hashCode;
     }
 

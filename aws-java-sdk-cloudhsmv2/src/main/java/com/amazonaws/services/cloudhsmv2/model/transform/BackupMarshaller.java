@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cloudhsmv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,8 @@ public class BackupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCluster").build();
     private static final MarshallingInfo<java.util.Date> DELETETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> TAGLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagList").build();
 
     private static final BackupMarshaller instance = new BackupMarshaller();
 
@@ -71,6 +74,7 @@ public class BackupMarshaller {
             protocolMarshaller.marshall(backup.getSourceBackup(), SOURCEBACKUP_BINDING);
             protocolMarshaller.marshall(backup.getSourceCluster(), SOURCECLUSTER_BINDING);
             protocolMarshaller.marshall(backup.getDeleteTimestamp(), DELETETIMESTAMP_BINDING);
+            protocolMarshaller.marshall(backup.getTagList(), TAGLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

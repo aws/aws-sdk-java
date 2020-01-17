@@ -59,7 +59,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> filters;
-
+    /**
+     * <p>
+     * Designates whether or not to sort the return backups by ascending chronological order of generation.
+     * </p>
+     */
     private Boolean sortAscending;
 
     /**
@@ -300,7 +304,12 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Designates whether or not to sort the return backups by ascending chronological order of generation.
+     * </p>
+     * 
      * @param sortAscending
+     *        Designates whether or not to sort the return backups by ascending chronological order of generation.
      */
 
     public void setSortAscending(Boolean sortAscending) {
@@ -308,7 +317,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * Designates whether or not to sort the return backups by ascending chronological order of generation.
+     * </p>
+     * 
+     * @return Designates whether or not to sort the return backups by ascending chronological order of generation.
      */
 
     public Boolean getSortAscending() {
@@ -316,7 +329,12 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Designates whether or not to sort the return backups by ascending chronological order of generation.
+     * </p>
+     * 
      * @param sortAscending
+     *        Designates whether or not to sort the return backups by ascending chronological order of generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -326,7 +344,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * @return
+     * <p>
+     * Designates whether or not to sort the return backups by ascending chronological order of generation.
+     * </p>
+     * 
+     * @return Designates whether or not to sort the return backups by ascending chronological order of generation.
      */
 
     public Boolean isSortAscending() {

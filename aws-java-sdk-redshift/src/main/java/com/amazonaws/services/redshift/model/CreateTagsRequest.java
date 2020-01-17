@@ -31,7 +31,7 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      */
     private String resourceName;
@@ -50,12 +50,12 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-     *        <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     *        <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      */
 
     public void setResourceName(String resourceName) {
@@ -65,11 +65,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-     *         <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     *         <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      */
 
     public String getResourceName() {
@@ -79,12 +79,12 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
-     *        <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     *        <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

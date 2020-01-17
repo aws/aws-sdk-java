@@ -109,7 +109,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     private Boolean supportsIAMDatabaseAuthentication;
     /**
      * <p>
-     * True if a DB instance supports Performance Insights, otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private Boolean supportsPerformanceInsights;
@@ -786,11 +786,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if a DB instance supports Performance Insights, otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param supportsPerformanceInsights
-     *        True if a DB instance supports Performance Insights, otherwise false.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setSupportsPerformanceInsights(Boolean supportsPerformanceInsights) {
@@ -799,10 +799,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if a DB instance supports Performance Insights, otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return True if a DB instance supports Performance Insights, otherwise false.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public Boolean getSupportsPerformanceInsights() {
@@ -811,11 +811,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if a DB instance supports Performance Insights, otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param supportsPerformanceInsights
-     *        True if a DB instance supports Performance Insights, otherwise false.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -826,10 +826,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if a DB instance supports Performance Insights, otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return True if a DB instance supports Performance Insights, otherwise false.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public Boolean isSupportsPerformanceInsights() {

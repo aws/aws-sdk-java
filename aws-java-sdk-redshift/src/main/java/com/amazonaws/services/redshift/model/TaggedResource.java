@@ -35,7 +35,7 @@ public class TaggedResource implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) with which the tag is associated, for example:
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      */
     private String resourceName;
@@ -141,12 +141,12 @@ public class TaggedResource implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) with which the tag is associated, for example:
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon Resource Name (ARN) with which the tag is associated, for example:
-     *        <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     *        <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      */
 
     public void setResourceName(String resourceName) {
@@ -156,11 +156,11 @@ public class TaggedResource implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) with which the tag is associated, for example:
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) with which the tag is associated, for example:
-     *         <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     *         <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      */
 
     public String getResourceName() {
@@ -170,12 +170,12 @@ public class TaggedResource implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) with which the tag is associated, for example:
-     * <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     * <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * </p>
      * 
      * @param resourceName
      *        The Amazon Resource Name (ARN) with which the tag is associated, for example:
-     *        <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
+     *        <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DestinationBackup" target="_top">AWS API
  *      Documentation</a>
@@ -25,16 +28,38 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DestinationBackup implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The date and time when both the source backup was created.
+     * </p>
+     */
     private java.util.Date createTimestamp;
-
+    /**
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     */
     private String sourceRegion;
-
+    /**
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     */
     private String sourceBackup;
-
+    /**
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
+     * </p>
+     */
     private String sourceCluster;
 
     /**
+     * <p>
+     * The date and time when both the source backup was created.
+     * </p>
+     * 
      * @param createTimestamp
+     *        The date and time when both the source backup was created.
      */
 
     public void setCreateTimestamp(java.util.Date createTimestamp) {
@@ -42,7 +67,11 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The date and time when both the source backup was created.
+     * </p>
+     * 
+     * @return The date and time when both the source backup was created.
      */
 
     public java.util.Date getCreateTimestamp() {
@@ -50,7 +79,12 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The date and time when both the source backup was created.
+     * </p>
+     * 
      * @param createTimestamp
+     *        The date and time when both the source backup was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +94,12 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceRegion
+     *        The AWS region that contains the source backup from which the new backup was copied.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -68,7 +107,11 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     * 
+     * @return The AWS region that contains the source backup from which the new backup was copied.
      */
 
     public String getSourceRegion() {
@@ -76,7 +119,12 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceRegion
+     *        The AWS region that contains the source backup from which the new backup was copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +134,12 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceBackup
+     *        The identifier (ID) of the source backup from which the new backup was copied.
      */
 
     public void setSourceBackup(String sourceBackup) {
@@ -94,7 +147,11 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     * 
+     * @return The identifier (ID) of the source backup from which the new backup was copied.
      */
 
     public String getSourceBackup() {
@@ -102,7 +159,12 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceBackup
+     *        The identifier (ID) of the source backup from which the new backup was copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +174,12 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceCluster
+     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      */
 
     public void setSourceCluster(String sourceCluster) {
@@ -120,7 +187,11 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
+     * </p>
+     * 
+     * @return The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      */
 
     public String getSourceCluster() {
@@ -128,7 +199,12 @@ public class DestinationBackup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceCluster
+     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

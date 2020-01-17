@@ -52,7 +52,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified CharacterSet.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String characterSetName;
@@ -138,7 +138,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String engine;
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      * <p>
      * Example: <code>1.0.1</code>
@@ -192,11 +192,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String masterUserPassword;
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String optionGroupName;
@@ -337,6 +333,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.List<String> enableCloudwatchLogsExports;
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -525,11 +528,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified CharacterSet.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        A value that indicates that the DB cluster should be associated with the specified CharacterSet.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setCharacterSetName(String characterSetName) {
@@ -538,10 +541,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified CharacterSet.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return A value that indicates that the DB cluster should be associated with the specified CharacterSet.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getCharacterSetName() {
@@ -550,11 +553,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified CharacterSet.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        A value that indicates that the DB cluster should be associated with the specified CharacterSet.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1087,14 +1090,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      * <p>
      * Example: <code>1.0.1</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.</p>
+     *        The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
      *        <p>
      *        Example: <code>1.0.1</code>
      */
@@ -1105,13 +1108,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      * <p>
      * Example: <code>1.0.1</code>
      * </p>
      * 
-     * @return The version number of the database engine to use.</p>
+     * @return The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
      *         <p>
      *         Example: <code>1.0.1</code>
      */
@@ -1122,14 +1125,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      * <p>
      * Example: <code>1.0.1</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.</p>
+     *        The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
      *        <p>
      *        Example: <code>1.0.1</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1415,18 +1418,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        A value that indicates that the DB cluster should be associated with the specified option group.</p>
-     *        <p>
-     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
-     *        cluster once it is associated with a DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1435,17 +1431,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return A value that indicates that the DB cluster should be associated with the specified option group.</p>
-     *         <p>
-     *         Permanent options can't be removed from an option group. The option group can't be removed from a DB
-     *         cluster once it is associated with a DB cluster.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getOptionGroupName() {
@@ -1454,18 +1443,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        A value that indicates that the DB cluster should be associated with the specified option group.</p>
-     *        <p>
-     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
-     *        cluster once it is associated with a DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2415,6 +2397,66 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2471,7 +2513,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getEnableIAMDatabaseAuthentication() != null)
             sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
-            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports());
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -2579,6 +2623,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -2610,6 +2658,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

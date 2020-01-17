@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ContainerSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CMFCSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cmfcSettings").build();
     private static final MarshallingInfo<String> CONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("container").build();
     private static final MarshallingInfo<StructuredPojo> F4VSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -58,6 +60,7 @@ public class ContainerSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(containerSettings.getCmfcSettings(), CMFCSETTINGS_BINDING);
             protocolMarshaller.marshall(containerSettings.getContainer(), CONTAINER_BINDING);
             protocolMarshaller.marshall(containerSettings.getF4vSettings(), F4VSETTINGS_BINDING);
             protocolMarshaller.marshall(containerSettings.getM2tsSettings(), M2TSSETTINGS_BINDING);

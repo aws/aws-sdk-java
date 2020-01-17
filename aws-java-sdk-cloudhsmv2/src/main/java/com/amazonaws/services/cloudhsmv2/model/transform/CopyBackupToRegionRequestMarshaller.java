@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cloudhsmv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CopyBackupToRegionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationRegion").build();
     private static final MarshallingInfo<String> BACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("BackupId").build();
+    private static final MarshallingInfo<List> TAGLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagList").build();
 
     private static final CopyBackupToRegionRequestMarshaller instance = new CopyBackupToRegionRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CopyBackupToRegionRequestMarshaller {
         try {
             protocolMarshaller.marshall(copyBackupToRegionRequest.getDestinationRegion(), DESTINATIONREGION_BINDING);
             protocolMarshaller.marshall(copyBackupToRegionRequest.getBackupId(), BACKUPID_BINDING);
+            protocolMarshaller.marshall(copyBackupToRegionRequest.getTagList(), TAGLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

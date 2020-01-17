@@ -46,7 +46,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * source IDs.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+     * Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.
      * </p>
      */
     private String sourceType;
@@ -178,7 +178,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * source IDs.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+     * Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.
      * </p>
      * 
      * @param sourceType
@@ -187,7 +187,8 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        are returned for all Amazon Redshift objects in your AWS account. You must specify a source type in order
      *        to specify source IDs.</p>
      *        <p>
-     *        Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+     *        Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     *        scheduled-action.
      */
 
     public void setSourceType(String sourceType) {
@@ -202,7 +203,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * source IDs.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+     * Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.
      * </p>
      * 
      * @return The type of source that will be generating the events. For example, if you want to be notified of events
@@ -210,7 +211,8 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *         are returned for all Amazon Redshift objects in your AWS account. You must specify a source type in order
      *         to specify source IDs.</p>
      *         <p>
-     *         Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+     *         Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     *         scheduled-action.
      */
 
     public String getSourceType() {
@@ -225,7 +227,7 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * source IDs.
      * </p>
      * <p>
-     * Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+     * Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.
      * </p>
      * 
      * @param sourceType
@@ -234,7 +236,8 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        are returned for all Amazon Redshift objects in your AWS account. You must specify a source type in order
      *        to specify source IDs.</p>
      *        <p>
-     *        Valid values: cluster, cluster-parameter-group, cluster-security-group, and cluster-snapshot.
+     *        Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     *        scheduled-action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

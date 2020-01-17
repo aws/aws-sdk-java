@@ -27,10 +27,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
-     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
-     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
-     * your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create
+     * separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this
+     * setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA
+     * to delete the video and map the alpha channel to the luma channel of your outputs.
      */
     private String alphaBehavior;
     /**
@@ -86,16 +86,16 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     private String rotate;
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
-     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
-     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
-     * your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create
+     * separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this
+     * setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA
+     * to delete the video and map the alpha channel to the luma channel of your outputs.
      * 
      * @param alphaBehavior
-     *        Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
-     *        MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel
-     *        and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel
-     *        to the luma channel of your outputs.
+     *        Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to
+     *        create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses.
+     *        Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it
+     *        to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
      * @see AlphaBehavior
      */
 
@@ -104,15 +104,15 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
-     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
-     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
-     * your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create
+     * separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this
+     * setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA
+     * to delete the video and map the alpha channel to the luma channel of your outputs.
      * 
-     * @return Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
-     *         MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha
-     *         channel and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha
-     *         channel to the luma channel of your outputs.
+     * @return Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to
+     *         create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses.
+     *         Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set
+     *         it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
      * @see AlphaBehavior
      */
 
@@ -121,16 +121,16 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
-     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
-     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
-     * your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create
+     * separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this
+     * setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA
+     * to delete the video and map the alpha channel to the luma channel of your outputs.
      * 
      * @param alphaBehavior
-     *        Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
-     *        MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel
-     *        and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel
-     *        to the luma channel of your outputs.
+     *        Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to
+     *        create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses.
+     *        Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it
+     *        to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlphaBehavior
      */
@@ -141,16 +141,16 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which part of this input MediaConvert
-     * uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel and preserve the
-     * video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to the luma channel of
-     * your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create
+     * separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this
+     * setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA
+     * to delete the video and map the alpha channel to the luma channel of your outputs.
      * 
      * @param alphaBehavior
-     *        Ignore this setting unless this input is a QuickTime animation. Specify which part of this input
-     *        MediaConvert uses for your outputs. Leave this setting set to DISCARD in order to delete the alpha channel
-     *        and preserve the video. Use REMAP_TO_LUMA for this setting to delete the video and map the alpha channel
-     *        to the luma channel of your outputs.
+     *        Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to
+     *        create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses.
+     *        Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it
+     *        to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlphaBehavior
      */

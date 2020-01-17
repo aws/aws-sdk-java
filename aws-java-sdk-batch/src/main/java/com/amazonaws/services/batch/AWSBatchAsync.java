@@ -353,7 +353,7 @@ public interface AWSBatchAsync extends AWSBatch {
 
     /**
      * <p>
-     * Deregisters an AWS Batch job definition.
+     * Deregisters an AWS Batch job definition. Job definitions will be permanently deleted after 180 days.
      * </p>
      * 
      * @param deregisterJobDefinitionRequest
@@ -366,7 +366,7 @@ public interface AWSBatchAsync extends AWSBatch {
 
     /**
      * <p>
-     * Deregisters an AWS Batch job definition.
+     * Deregisters an AWS Batch job definition. Job definitions will be permanently deleted after 180 days.
      * </p>
      * 
      * @param deregisterJobDefinitionRequest
