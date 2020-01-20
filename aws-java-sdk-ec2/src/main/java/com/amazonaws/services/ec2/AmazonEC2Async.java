@@ -281,8 +281,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP
-     * addresses (BYOIP).
+     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through bring your
+     * own IP addresses (BYOIP).
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
@@ -312,8 +312,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP
-     * addresses (BYOIP).
+     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through bring your
+     * own IP addresses (BYOIP).
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
@@ -998,8 +998,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, or you can associate an
-     * Amazon-provided IPv6 CIDR block. The IPv6 CIDR block size is fixed at /56.
+     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, an Amazon-provided IPv6
+     * CIDR block, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP
+     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>). The IPv6 CIDR
+     * block size is fixed at /56.
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
@@ -1017,8 +1019,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, or you can associate an
-     * Amazon-provided IPv6 CIDR block. The IPv6 CIDR block size is fixed at /56.
+     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, an Amazon-provided IPv6
+     * CIDR block, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP
+     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>). The IPv6 CIDR
+     * block size is fixed at /56.
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
@@ -4575,8 +4579,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix
-     * length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.
+     * You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block
+     * from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
+     * through bring your own IP addresses (<a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
@@ -4607,8 +4613,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix
-     * length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.
+     * You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block
+     * from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
+     * through bring your own IP addresses (<a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
@@ -7320,7 +7328,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * To describe the address pools that were created when you provisioned the address ranges, use
-     * <a>DescribePublicIpv4Pools</a>.
+     * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
      * </p>
      * 
      * @param describeByoipCidrsRequest
@@ -7337,7 +7345,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * To describe the address pools that were created when you provisioned the address ranges, use
-     * <a>DescribePublicIpv4Pools</a>.
+     * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
      * </p>
      * 
      * @param describeByoipCidrsRequest
@@ -9159,6 +9167,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeInternetGatewaysResult> describeInternetGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInternetGatewaysRequest, DescribeInternetGatewaysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes your IPv6 address pools.
+     * </p>
+     * 
+     * @param describeIpv6PoolsRequest
+     * @return A Java Future containing the result of the DescribeIpv6Pools operation returned by the service.
+     * @sample AmazonEC2Async.DescribeIpv6Pools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpv6PoolsResult> describeIpv6PoolsAsync(DescribeIpv6PoolsRequest describeIpv6PoolsRequest);
+
+    /**
+     * <p>
+     * Describes your IPv6 address pools.
+     * </p>
+     * 
+     * @param describeIpv6PoolsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIpv6Pools operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeIpv6Pools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpv6PoolsResult> describeIpv6PoolsAsync(DescribeIpv6PoolsRequest describeIpv6PoolsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIpv6PoolsRequest, DescribeIpv6PoolsResult> asyncHandler);
 
     /**
      * <p>
@@ -13698,6 +13737,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Gets information about the IPv6 CIDR block associations for a specified IPv6 address pool.
+     * </p>
+     * 
+     * @param getAssociatedIpv6PoolCidrsRequest
+     * @return A Java Future containing the result of the GetAssociatedIpv6PoolCidrs operation returned by the service.
+     * @sample AmazonEC2Async.GetAssociatedIpv6PoolCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAssociatedIpv6PoolCidrsResult> getAssociatedIpv6PoolCidrsAsync(
+            GetAssociatedIpv6PoolCidrsRequest getAssociatedIpv6PoolCidrsRequest);
+
+    /**
+     * <p>
+     * Gets information about the IPv6 CIDR block associations for a specified IPv6 address pool.
+     * </p>
+     * 
+     * @param getAssociatedIpv6PoolCidrsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAssociatedIpv6PoolCidrs operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetAssociatedIpv6PoolCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAssociatedIpv6PoolCidrsResult> getAssociatedIpv6PoolCidrsAsync(
+            GetAssociatedIpv6PoolCidrsRequest getAssociatedIpv6PoolCidrsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAssociatedIpv6PoolCidrsRequest, GetAssociatedIpv6PoolCidrsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage
      * information for the Capacity Reservation owner and each AWS account that is currently using the shared capacity.
      * If the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.
@@ -16766,9 +16838,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Provisions an address range for use with your AWS resources through bring your own IP addresses (BYOIP) and
-     * creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using
-     * <a>AdvertiseByoipCidr</a>.
+     * Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP addresses
+     * (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be
+     * advertised using <a>AdvertiseByoipCidr</a>.
      * </p>
      * <p>
      * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
@@ -16781,8 +16853,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address
      * range is not ready to use until its status changes from <code>pending-provision</code> to
      * <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>. To allocate
-     * an Elastic IP address from your address pool, use <a>AllocateAddress</a> with either the specific address from
-     * the address pool or the ID of the address pool.
+     * an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a> with either the specific address
+     * from the address pool or the ID of the address pool.
      * </p>
      * 
      * @param provisionByoipCidrRequest
@@ -16795,9 +16867,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Provisions an address range for use with your AWS resources through bring your own IP addresses (BYOIP) and
-     * creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using
-     * <a>AdvertiseByoipCidr</a>.
+     * Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP addresses
+     * (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be
+     * advertised using <a>AdvertiseByoipCidr</a>.
      * </p>
      * <p>
      * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
@@ -16810,8 +16882,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address
      * range is not ready to use until its status changes from <code>pending-provision</code> to
      * <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>. To allocate
-     * an Elastic IP address from your address pool, use <a>AllocateAddress</a> with either the specific address from
-     * the address pool or the ID of the address pool.
+     * an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a> with either the specific address
+     * from the address pool or the ID of the address pool.
      * </p>
      * 
      * @param provisionByoipCidrRequest
@@ -19400,7 +19472,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Stops advertising an IPv4 address range that is provisioned as an address pool.
+     * Stops advertising an address range that is provisioned as an address pool.
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
@@ -19421,7 +19493,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Stops advertising an IPv4 address range that is provisioned as an address pool.
+     * Stops advertising an address range that is provisioned as an address pool.
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each

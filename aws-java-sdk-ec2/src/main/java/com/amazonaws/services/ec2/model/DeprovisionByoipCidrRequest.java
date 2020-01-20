@@ -28,21 +28,21 @@ public class DeprovisionByoipCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The prefix must be the same prefix that you specified when you
-     * provisioned the address range.
+     * The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned
+     * the address range.
      * </p>
      */
     private String cidr;
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The prefix must be the same prefix that you specified when you
-     * provisioned the address range.
+     * The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned
+     * the address range.
      * </p>
      * 
      * @param cidr
-     *        The public IPv4 address range, in CIDR notation. The prefix must be the same prefix that you specified
-     *        when you provisioned the address range.
+     *        The address range, in CIDR notation. The prefix must be the same prefix that you specified when you
+     *        provisioned the address range.
      */
 
     public void setCidr(String cidr) {
@@ -51,12 +51,12 @@ public class DeprovisionByoipCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The prefix must be the same prefix that you specified when you
-     * provisioned the address range.
+     * The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned
+     * the address range.
      * </p>
      * 
-     * @return The public IPv4 address range, in CIDR notation. The prefix must be the same prefix that you specified
-     *         when you provisioned the address range.
+     * @return The address range, in CIDR notation. The prefix must be the same prefix that you specified when you
+     *         provisioned the address range.
      */
 
     public String getCidr() {
@@ -65,13 +65,13 @@ public class DeprovisionByoipCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The prefix must be the same prefix that you specified when you
-     * provisioned the address range.
+     * The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned
+     * the address range.
      * </p>
      * 
      * @param cidr
-     *        The public IPv4 address range, in CIDR notation. The prefix must be the same prefix that you specified
-     *        when you provisioned the address range.
+     *        The address range, in CIDR notation. The prefix must be the same prefix that you specified when you
+     *        provisioned the address range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

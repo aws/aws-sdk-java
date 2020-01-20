@@ -170,7 +170,8 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
     private String stateReasonCode;
     /**
      * <p>
-     * The status of the last update that was performed on the function.
+     * The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+     * after function creation completes.
      * </p>
      */
     private String lastUpdateStatus;
@@ -1277,11 +1278,13 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The status of the last update that was performed on the function.
+     * The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+     * after function creation completes.
      * </p>
      * 
      * @param lastUpdateStatus
-     *        The status of the last update that was performed on the function.
+     *        The status of the last update that was performed on the function. This is first set to
+     *        <code>Successful</code> after function creation completes.
      * @see LastUpdateStatus
      */
 
@@ -1291,10 +1294,12 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The status of the last update that was performed on the function.
+     * The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+     * after function creation completes.
      * </p>
      * 
-     * @return The status of the last update that was performed on the function.
+     * @return The status of the last update that was performed on the function. This is first set to
+     *         <code>Successful</code> after function creation completes.
      * @see LastUpdateStatus
      */
 
@@ -1304,11 +1309,13 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The status of the last update that was performed on the function.
+     * The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+     * after function creation completes.
      * </p>
      * 
      * @param lastUpdateStatus
-     *        The status of the last update that was performed on the function.
+     *        The status of the last update that was performed on the function. This is first set to
+     *        <code>Successful</code> after function creation completes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LastUpdateStatus
      */
@@ -1320,11 +1327,13 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The status of the last update that was performed on the function.
+     * The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+     * after function creation completes.
      * </p>
      * 
      * @param lastUpdateStatus
-     *        The status of the last update that was performed on the function.
+     *        The status of the last update that was performed on the function. This is first set to
+     *        <code>Successful</code> after function creation completes.
      * @see LastUpdateStatus
      */
 
@@ -1334,11 +1343,13 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The status of the last update that was performed on the function.
+     * The status of the last update that was performed on the function. This is first set to <code>Successful</code>
+     * after function creation completes.
      * </p>
      * 
      * @param lastUpdateStatus
-     *        The status of the last update that was performed on the function.
+     *        The status of the last update that was performed on the function. This is first set to
+     *        <code>Successful</code> after function creation completes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LastUpdateStatus
      */

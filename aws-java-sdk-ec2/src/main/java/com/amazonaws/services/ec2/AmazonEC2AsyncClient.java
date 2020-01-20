@@ -7171,6 +7171,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeIpv6PoolsResult> describeIpv6PoolsAsync(DescribeIpv6PoolsRequest request) {
+
+        return describeIpv6PoolsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIpv6PoolsResult> describeIpv6PoolsAsync(final DescribeIpv6PoolsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeIpv6PoolsRequest, DescribeIpv6PoolsResult> asyncHandler) {
+        final DescribeIpv6PoolsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeIpv6PoolsResult>() {
+            @Override
+            public DescribeIpv6PoolsResult call() throws Exception {
+                DescribeIpv6PoolsResult result = null;
+
+                try {
+                    result = executeDescribeIpv6Pools(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeKeyPairsResult> describeKeyPairsAsync(DescribeKeyPairsRequest request) {
 
         return describeKeyPairsAsync(request, null);
@@ -11064,6 +11097,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeExportTransitGatewayRoutes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedIpv6PoolCidrsResult> getAssociatedIpv6PoolCidrsAsync(GetAssociatedIpv6PoolCidrsRequest request) {
+
+        return getAssociatedIpv6PoolCidrsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedIpv6PoolCidrsResult> getAssociatedIpv6PoolCidrsAsync(final GetAssociatedIpv6PoolCidrsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAssociatedIpv6PoolCidrsRequest, GetAssociatedIpv6PoolCidrsResult> asyncHandler) {
+        final GetAssociatedIpv6PoolCidrsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAssociatedIpv6PoolCidrsResult>() {
+            @Override
+            public GetAssociatedIpv6PoolCidrsResult call() throws Exception {
+                GetAssociatedIpv6PoolCidrsResult result = null;
+
+                try {
+                    result = executeGetAssociatedIpv6PoolCidrs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

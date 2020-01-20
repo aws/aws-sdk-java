@@ -1,3 +1,28 @@
+# __1.11.711__ __2020-01-20__
+## __AWS Key Management Service__
+  - ### Features
+    - The ConnectCustomKeyStore operation now provides new error codes (USER_LOGGED_IN and USER_NOT_FOUND) for customers to better troubleshoot if their connect custom key store operation fails. Password length validation during CreateCustomKeyStore now also occurs on the client side. 
+
+## __AWS Lambda__
+  - ### Features
+    - Added reason codes to StateReasonCode (InvalidSubnet, InvalidSecurityGroup) and LastUpdateStatusReasonCode (SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup) for functions that connect to a VPC.
+
+## __Alexa For Business__
+  - ### Features
+    - Add support for CreatedTime and ConnectionStatusUpdatedTime in response of SearchDevices API.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - Updating DescribeAnomalyDetectors API to return AnomalyDetector Status value in response.
+
+## __Amazon CloudWatch Application Insights__
+  - ### Features
+    - This release adds support for a list API to retrieve the configuration events logged during periodic updates to an application by Amazon CloudWatch Application Insights. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release provides support for a preview of bringing your own IPv6 addresses (BYOIP for IPv6) for use in AWS.
+
 # __1.11.710__ __2020-01-17__
 ## __AWS Batch__
   - ### Features

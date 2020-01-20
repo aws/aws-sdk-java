@@ -25,18 +25,18 @@ public class ProvisionByoipCidrResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about the address pool.
+     * Information about the address range.
      * </p>
      */
     private ByoipCidr byoipCidr;
 
     /**
      * <p>
-     * Information about the address pool.
+     * Information about the address range.
      * </p>
      * 
      * @param byoipCidr
-     *        Information about the address pool.
+     *        Information about the address range.
      */
 
     public void setByoipCidr(ByoipCidr byoipCidr) {
@@ -45,10 +45,10 @@ public class ProvisionByoipCidrResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about the address pool.
+     * Information about the address range.
      * </p>
      * 
-     * @return Information about the address pool.
+     * @return Information about the address range.
      */
 
     public ByoipCidr getByoipCidr() {
@@ -57,11 +57,11 @@ public class ProvisionByoipCidrResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about the address pool.
+     * Information about the address range.
      * </p>
      * 
      * @param byoipCidr
-     *        Information about the address pool.
+     *        Information about the address range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

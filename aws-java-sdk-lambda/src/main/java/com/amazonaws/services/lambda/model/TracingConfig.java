@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The function's AWS X-Ray tracing configuration.
+ * The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to
+ * <code>Active</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TracingConfig" target="_top">AWS API

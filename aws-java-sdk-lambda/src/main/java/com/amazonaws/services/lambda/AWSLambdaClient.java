@@ -652,6 +652,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createEventSourceMappingRequest
@@ -3344,6 +3349,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3405,6 +3412,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         One of the parameters in the request is invalid.
      * @throws TooManyRequestsException
      *         The request throughput limit was exceeded.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3546,6 +3555,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * <li>
      * <p>
      * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
      * </p>
      * </li>
      * </ul>

@@ -373,6 +373,43 @@ public interface AmazonApplicationInsights {
 
     /**
      * <p>
+     * Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights.
+     * Examples of events represented are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INFO: creating a new alarm or updating an alarm threshold.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARN: alarm not created due to insufficient data points used to predict thresholds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ERROR: alarm not created due to permission errors or exceeding quotas.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listConfigurationHistoryRequest
+     * @return Result of the ListConfigurationHistory operation returned by the service.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.ListConfigurationHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListConfigurationHistoryResult listConfigurationHistory(ListConfigurationHistoryRequest listConfigurationHistoryRequest);
+
+    /**
+     * <p>
      * Lists the log pattern sets in the specific application.
      * </p>
      * 

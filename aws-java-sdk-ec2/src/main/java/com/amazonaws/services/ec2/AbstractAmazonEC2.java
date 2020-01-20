@@ -1112,6 +1112,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeIpv6PoolsResult describeIpv6Pools(DescribeIpv6PoolsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeKeyPairsResult describeKeyPairs(DescribeKeyPairsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1736,6 +1741,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ExportTransitGatewayRoutesResult exportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAssociatedIpv6PoolCidrsResult getAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -3112,6 +3112,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeIpv6PoolsResult> describeIpv6PoolsAsync(DescribeIpv6PoolsRequest request) {
+
+        return describeIpv6PoolsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIpv6PoolsResult> describeIpv6PoolsAsync(DescribeIpv6PoolsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeIpv6PoolsRequest, DescribeIpv6PoolsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeKeyPairsResult> describeKeyPairsAsync(DescribeKeyPairsRequest request) {
 
         return describeKeyPairsAsync(request, null);
@@ -5089,6 +5102,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ExportTransitGatewayRoutesResult> exportTransitGatewayRoutesAsync(ExportTransitGatewayRoutesRequest request,
             com.amazonaws.handlers.AsyncHandler<ExportTransitGatewayRoutesRequest, ExportTransitGatewayRoutesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedIpv6PoolCidrsResult> getAssociatedIpv6PoolCidrsAsync(GetAssociatedIpv6PoolCidrsRequest request) {
+
+        return getAssociatedIpv6PoolCidrsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedIpv6PoolCidrsResult> getAssociatedIpv6PoolCidrsAsync(GetAssociatedIpv6PoolCidrsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAssociatedIpv6PoolCidrsRequest, GetAssociatedIpv6PoolCidrsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

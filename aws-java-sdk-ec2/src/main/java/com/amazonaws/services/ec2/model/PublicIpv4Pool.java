@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an address pool.
+ * Describes an IPv4 address pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PublicIpv4Pool" target="_top">AWS API
@@ -28,7 +28,7 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      */
     private String poolId;
@@ -59,11 +59,11 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      * 
      * @param poolId
-     *        The ID of the IPv4 address pool.
+     *        The ID of the address pool.
      */
 
     public void setPoolId(String poolId) {
@@ -72,10 +72,10 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      * 
-     * @return The ID of the IPv4 address pool.
+     * @return The ID of the address pool.
      */
 
     public String getPoolId() {
@@ -84,11 +84,11 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      * 
      * @param poolId
-     *        The ID of the IPv4 address pool.
+     *        The ID of the address pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

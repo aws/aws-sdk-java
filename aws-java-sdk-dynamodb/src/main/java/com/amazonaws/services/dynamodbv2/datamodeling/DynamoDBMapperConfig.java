@@ -459,15 +459,17 @@ public class DynamoDBMapperConfig {
         UPDATE_SKIP_NULL_ATTRIBUTES,
 
         /**
-         * CLOBBER will clear and replace all attributes, including unmodeled
-         * ones, on save. Versioned field constraints will
-         * also be disregarded. If versioning is required use {@link #PUT}.
+         * CLOBBER will clear and replace all attributes on save, including unmodeled
+         * ones, and will also disregard versioned field constraints on conditional writes
+         * as well as overwriting auto-generated values regardless of existing values.
+         * If versioning is required, use {@link #PUT}.
          */
         CLOBBER,
 
         /**
-         * PUT will clear and replace all attributes, including unmodeled
-         * ones, on save.
+         * PUT will clear and replace all attributes on save, including unmodeled
+         * ones, but fails if values do not match what is persisted on conditional writes
+         * and does not overwrite auto-generated values.
          */
         PUT,
 

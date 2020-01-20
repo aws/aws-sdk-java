@@ -40,6 +40,21 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
     private Boolean amazonProvidedIpv6CidrBlock;
     /**
      * <p>
+     * The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+     * </p>
+     */
+    private String ipv6Pool;
+    /**
+     * <p>
+     * The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.
+     * </p>
+     * <p>
+     * To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+     * </p>
+     */
+    private String ipv6CidrBlock;
+    /**
+     * <p>
      * The tenancy options for instances launched into the VPC. For <code>default</code>, instances are launched with
      * shared tenancy by default. You can launch instances with any tenancy into a shared tenancy VPC. For
      * <code>dedicated</code>, instances are launched as dedicated tenancy instances by default. You can only launch
@@ -181,6 +196,104 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
 
     public Boolean isAmazonProvidedIpv6CidrBlock() {
         return this.amazonProvidedIpv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+     * </p>
+     * 
+     * @param ipv6Pool
+     *        The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+     */
+
+    public void setIpv6Pool(String ipv6Pool) {
+        this.ipv6Pool = ipv6Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+     * </p>
+     * 
+     * @return The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+     */
+
+    public String getIpv6Pool() {
+        return this.ipv6Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+     * </p>
+     * 
+     * @param ipv6Pool
+     *        The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcRequest withIpv6Pool(String ipv6Pool) {
+        setIpv6Pool(ipv6Pool);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.
+     * </p>
+     * <p>
+     * To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the
+     *        request.</p>
+     *        <p>
+     *        To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+     */
+
+    public void setIpv6CidrBlock(String ipv6CidrBlock) {
+        this.ipv6CidrBlock = ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.
+     * </p>
+     * <p>
+     * To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+     * </p>
+     * 
+     * @return The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the
+     *         request.</p>
+     *         <p>
+     *         To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+     */
+
+    public String getIpv6CidrBlock() {
+        return this.ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the request.
+     * </p>
+     * <p>
+     * To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code> in the
+     *        request.</p>
+     *        <p>
+     *        To let Amazon choose the IPv6 CIDR block for you, omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcRequest withIpv6CidrBlock(String ipv6CidrBlock) {
+        setIpv6CidrBlock(ipv6CidrBlock);
+        return this;
     }
 
     /**
@@ -444,6 +557,10 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
             sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getAmazonProvidedIpv6CidrBlock() != null)
             sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock()).append(",");
+        if (getIpv6Pool() != null)
+            sb.append("Ipv6Pool: ").append(getIpv6Pool()).append(",");
+        if (getIpv6CidrBlock() != null)
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getInstanceTenancy() != null)
             sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
         if (getIpv6CidrBlockNetworkBorderGroup() != null)
@@ -470,6 +587,14 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
             return false;
         if (other.getAmazonProvidedIpv6CidrBlock() != null && other.getAmazonProvidedIpv6CidrBlock().equals(this.getAmazonProvidedIpv6CidrBlock()) == false)
             return false;
+        if (other.getIpv6Pool() == null ^ this.getIpv6Pool() == null)
+            return false;
+        if (other.getIpv6Pool() != null && other.getIpv6Pool().equals(this.getIpv6Pool()) == false)
+            return false;
+        if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
+            return false;
+        if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
+            return false;
         if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null)
             return false;
         if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
@@ -489,6 +614,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
 
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getAmazonProvidedIpv6CidrBlock() == null) ? 0 : getAmazonProvidedIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Pool() == null) ? 0 : getIpv6Pool().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlockNetworkBorderGroup() == null) ? 0 : getIpv6CidrBlockNetworkBorderGroup().hashCode());
         return hashCode;

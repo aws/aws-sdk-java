@@ -51,6 +51,8 @@ public class DeviceDataMarshaller {
             .marshallLocationName("RoomName").build();
     private static final MarshallingInfo<StructuredPojo> DEVICESTATUSINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceStatusInfo").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
 
     private static final DeviceDataMarshaller instance = new DeviceDataMarshaller();
 
@@ -80,6 +82,7 @@ public class DeviceDataMarshaller {
             protocolMarshaller.marshall(deviceData.getRoomArn(), ROOMARN_BINDING);
             protocolMarshaller.marshall(deviceData.getRoomName(), ROOMNAME_BINDING);
             protocolMarshaller.marshall(deviceData.getDeviceStatusInfo(), DEVICESTATUSINFO_BINDING);
+            protocolMarshaller.marshall(deviceData.getCreatedTime(), CREATEDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -23,7 +23,10 @@ public enum LastUpdateStatusReasonCode {
     EniLimitExceeded("EniLimitExceeded"),
     InsufficientRolePermissions("InsufficientRolePermissions"),
     InvalidConfiguration("InvalidConfiguration"),
-    InternalError("InternalError");
+    InternalError("InternalError"),
+    SubnetOutOfIPAddresses("SubnetOutOfIPAddresses"),
+    InvalidSubnet("InvalidSubnet"),
+    InvalidSecurityGroup("InvalidSecurityGroup");
 
     private String value;
 

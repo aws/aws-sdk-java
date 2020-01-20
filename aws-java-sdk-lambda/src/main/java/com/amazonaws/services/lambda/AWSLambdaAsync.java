@@ -242,6 +242,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createEventSourceMappingRequest
@@ -299,6 +304,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
      * </p>
      * </li>
      * </ul>
@@ -2034,6 +2044,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updateEventSourceMappingRequest
@@ -2071,6 +2086,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
      * </p>
      * </li>
      * </ul>

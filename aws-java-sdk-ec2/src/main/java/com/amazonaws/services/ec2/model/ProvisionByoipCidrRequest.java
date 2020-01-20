@@ -27,8 +27,9 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is
+     * /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address
+     * range that you've brought to this or another Region.
      * </p>
      */
     private String cidr;
@@ -41,6 +42,15 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     private CidrAuthorizationContext cidrAuthorizationContext;
     /**
      * <p>
+     * (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.
+     * </p>
+     * <p>
+     * Default: true
+     * </p>
+     */
+    private Boolean publiclyAdvertisable;
+    /**
+     * <p>
      * A description for the address range and the address pool.
      * </p>
      */
@@ -48,13 +58,15 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is
+     * /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address
+     * range that you've brought to this or another Region.
      * </p>
      * 
      * @param cidr
-     *        The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     *        address range cannot overlap with another address range that you've brought to this or another Region.
+     *        The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can
+     *        specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap
+     *        with another address range that you've brought to this or another Region.
      */
 
     public void setCidr(String cidr) {
@@ -63,13 +75,14 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is
+     * /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address
+     * range that you've brought to this or another Region.
      * </p>
      * 
-     * @return The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24.
-     *         The address range cannot overlap with another address range that you've brought to this or another
-     *         Region.
+     * @return The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can
+     *         specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap
+     *         with another address range that you've brought to this or another Region.
      */
 
     public String getCidr() {
@@ -78,13 +91,15 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is
+     * /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address
+     * range that you've brought to this or another Region.
      * </p>
      * 
      * @param cidr
-     *        The public IPv4 address range, in CIDR notation. The most specific prefix that you can specify is /24. The
-     *        address range cannot overlap with another address range that you've brought to this or another Region.
+     *        The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can
+     *        specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap
+     *        with another address range that you've brought to this or another Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,6 +152,78 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     public ProvisionByoipCidrRequest withCidrAuthorizationContext(CidrAuthorizationContext cidrAuthorizationContext) {
         setCidrAuthorizationContext(cidrAuthorizationContext);
         return this;
+    }
+
+    /**
+     * <p>
+     * (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.
+     * </p>
+     * <p>
+     * Default: true
+     * </p>
+     * 
+     * @param publiclyAdvertisable
+     *        (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
+     *        <p>
+     *        Default: true
+     */
+
+    public void setPubliclyAdvertisable(Boolean publiclyAdvertisable) {
+        this.publiclyAdvertisable = publiclyAdvertisable;
+    }
+
+    /**
+     * <p>
+     * (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.
+     * </p>
+     * <p>
+     * Default: true
+     * </p>
+     * 
+     * @return (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
+     *         <p>
+     *         Default: true
+     */
+
+    public Boolean getPubliclyAdvertisable() {
+        return this.publiclyAdvertisable;
+    }
+
+    /**
+     * <p>
+     * (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.
+     * </p>
+     * <p>
+     * Default: true
+     * </p>
+     * 
+     * @param publiclyAdvertisable
+     *        (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
+     *        <p>
+     *        Default: true
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionByoipCidrRequest withPubliclyAdvertisable(Boolean publiclyAdvertisable) {
+        setPubliclyAdvertisable(publiclyAdvertisable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.
+     * </p>
+     * <p>
+     * Default: true
+     * </p>
+     * 
+     * @return (IPv6 only) Indicate whether the address range will be publicly advertised to the internet.</p>
+     *         <p>
+     *         Default: true
+     */
+
+    public Boolean isPubliclyAdvertisable() {
+        return this.publiclyAdvertisable;
     }
 
     /**
@@ -206,6 +293,8 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
             sb.append("Cidr: ").append(getCidr()).append(",");
         if (getCidrAuthorizationContext() != null)
             sb.append("CidrAuthorizationContext: ").append(getCidrAuthorizationContext()).append(",");
+        if (getPubliclyAdvertisable() != null)
+            sb.append("PubliclyAdvertisable: ").append(getPubliclyAdvertisable()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription());
         sb.append("}");
@@ -230,6 +319,10 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
             return false;
         if (other.getCidrAuthorizationContext() != null && other.getCidrAuthorizationContext().equals(this.getCidrAuthorizationContext()) == false)
             return false;
+        if (other.getPubliclyAdvertisable() == null ^ this.getPubliclyAdvertisable() == null)
+            return false;
+        if (other.getPubliclyAdvertisable() != null && other.getPubliclyAdvertisable().equals(this.getPubliclyAdvertisable()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -244,6 +337,7 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
 
         hashCode = prime * hashCode + ((getCidr() == null) ? 0 : getCidr().hashCode());
         hashCode = prime * hashCode + ((getCidrAuthorizationContext() == null) ? 0 : getCidrAuthorizationContext().hashCode());
+        hashCode = prime * hashCode + ((getPubliclyAdvertisable() == null) ? 0 : getPubliclyAdvertisable().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }

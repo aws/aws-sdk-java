@@ -601,8 +601,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP
-     * addresses (BYOIP).
+     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through bring your
+     * own IP addresses (BYOIP).
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
@@ -1479,8 +1479,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, or you can associate an
-     * Amazon-provided IPv6 CIDR block. The IPv6 CIDR block size is fixed at /56.
+     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, an Amazon-provided IPv6
+     * CIDR block, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP
+     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>). The IPv6 CIDR
+     * block size is fixed at /56.
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
@@ -5741,8 +5743,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix
-     * length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.
+     * You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block
+     * from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
+     * through bring your own IP addresses (<a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
@@ -9469,7 +9473,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * To describe the address pools that were created when you provisioned the address ranges, use
-     * <a>DescribePublicIpv4Pools</a>.
+     * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
      * </p>
      * 
      * @param describeByoipCidrsRequest
@@ -11832,6 +11836,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeInternetGatewaysResult describeInternetGateways() {
         return describeInternetGateways(new DescribeInternetGatewaysRequest());
+    }
+
+    /**
+     * <p>
+     * Describes your IPv6 address pools.
+     * </p>
+     * 
+     * @param describeIpv6PoolsRequest
+     * @return Result of the DescribeIpv6Pools operation returned by the service.
+     * @sample AmazonEC2.DescribeIpv6Pools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeIpv6PoolsResult describeIpv6Pools(DescribeIpv6PoolsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIpv6Pools(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIpv6PoolsResult executeDescribeIpv6Pools(DescribeIpv6PoolsRequest describeIpv6PoolsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeIpv6PoolsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIpv6PoolsRequest> request = null;
+        Response<DescribeIpv6PoolsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIpv6PoolsRequestMarshaller().marshall(super.beforeMarshalling(describeIpv6PoolsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIpv6Pools");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeIpv6PoolsResult> responseHandler = new StaxResponseHandler<DescribeIpv6PoolsResult>(
+                    new DescribeIpv6PoolsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -17581,6 +17638,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Gets information about the IPv6 CIDR block associations for a specified IPv6 address pool.
+     * </p>
+     * 
+     * @param getAssociatedIpv6PoolCidrsRequest
+     * @return Result of the GetAssociatedIpv6PoolCidrs operation returned by the service.
+     * @sample AmazonEC2.GetAssociatedIpv6PoolCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAssociatedIpv6PoolCidrsResult getAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAssociatedIpv6PoolCidrs(request);
+    }
+
+    @SdkInternalApi
+    final GetAssociatedIpv6PoolCidrsResult executeGetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest getAssociatedIpv6PoolCidrsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAssociatedIpv6PoolCidrsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAssociatedIpv6PoolCidrsRequest> request = null;
+        Response<GetAssociatedIpv6PoolCidrsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAssociatedIpv6PoolCidrsRequestMarshaller().marshall(super.beforeMarshalling(getAssociatedIpv6PoolCidrsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedIpv6PoolCidrs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult> responseHandler = new StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult>(
+                    new GetAssociatedIpv6PoolCidrsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage
      * information for the Capacity Reservation owner and each AWS account that is currently using the shared capacity.
      * If the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.
@@ -21375,9 +21485,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Provisions an address range for use with your AWS resources through bring your own IP addresses (BYOIP) and
-     * creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using
-     * <a>AdvertiseByoipCidr</a>.
+     * Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP addresses
+     * (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be
+     * advertised using <a>AdvertiseByoipCidr</a>.
      * </p>
      * <p>
      * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
@@ -21390,8 +21500,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address
      * range is not ready to use until its status changes from <code>pending-provision</code> to
      * <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>. To allocate
-     * an Elastic IP address from your address pool, use <a>AllocateAddress</a> with either the specific address from
-     * the address pool or the ID of the address pool.
+     * an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a> with either the specific address
+     * from the address pool or the ID of the address pool.
      * </p>
      * 
      * @param provisionByoipCidrRequest
@@ -24506,7 +24616,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Stops advertising an IPv4 address range that is provisioned as an address pool.
+     * Stops advertising an address range that is provisioned as an address pool.
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each

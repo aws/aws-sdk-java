@@ -238,6 +238,19 @@ public class AbstractAmazonApplicationInsightsAsync extends AbstractAmazonApplic
     }
 
     @Override
+    public java.util.concurrent.Future<ListConfigurationHistoryResult> listConfigurationHistoryAsync(ListConfigurationHistoryRequest request) {
+
+        return listConfigurationHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigurationHistoryResult> listConfigurationHistoryAsync(ListConfigurationHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConfigurationHistoryRequest, ListConfigurationHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLogPatternSetsResult> listLogPatternSetsAsync(ListLogPatternSetsRequest request) {
 
         return listLogPatternSetsAsync(request, null);
