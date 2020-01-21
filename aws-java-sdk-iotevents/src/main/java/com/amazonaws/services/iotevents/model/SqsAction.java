@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
+ * Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/SqsAction" target="_top">AWS API
@@ -30,7 +30,7 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue where the data is written.
+     * The URL of the SQS queue where the data is written.
      * </p>
      */
     private String queueUrl;
@@ -44,11 +44,11 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue where the data is written.
+     * The URL of the SQS queue where the data is written.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue where the data is written.
+     *        The URL of the SQS queue where the data is written.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -57,10 +57,10 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue where the data is written.
+     * The URL of the SQS queue where the data is written.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue where the data is written.
+     * @return The URL of the SQS queue where the data is written.
      */
 
     public String getQueueUrl() {
@@ -69,11 +69,11 @@ public class SqsAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue where the data is written.
+     * The URL of the SQS queue where the data is written.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue where the data is written.
+     *        The URL of the SQS queue where the data is written.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

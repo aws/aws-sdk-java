@@ -82,6 +82,11 @@
  * </li>
  * <li>
  * <p>
+ * <a>StopPipelineExecution</a>, which stops the specified pipeline execution from continuing through the pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.
  * </p>
  * </li>

@@ -95,6 +95,11 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>StopPipelineExecution</a>, which stops the specified pipeline execution from continuing through the pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.
  * </p>
  * </li>
@@ -629,9 +634,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -650,9 +655,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -793,9 +798,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -814,9 +819,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -1036,9 +1041,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -1059,9 +1064,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -1085,8 +1090,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts.
      * </p>
      * </important>
      * 
@@ -1105,8 +1110,8 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts.
      * </p>
      * </important>
      * 
@@ -1483,6 +1488,43 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      */
     java.util.concurrent.Future<StartPipelineExecutionResult> startPipelineExecutionAsync(StartPipelineExecutionRequest startPipelineExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StartPipelineExecutionRequest, StartPipelineExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the specified pipeline execution. You choose to either stop the pipeline execution by completing
+     * in-progress actions without starting subsequent actions, or by abandoning in-progress actions. While completing
+     * or abandoning in-progress actions, the pipeline execution is in a <code>Stopping</code> state. After all
+     * in-progress actions are completed or abandoned, the pipeline execution is in a <code>Stopped</code> state.
+     * </p>
+     * 
+     * @param stopPipelineExecutionRequest
+     * @return A Java Future containing the result of the StopPipelineExecution operation returned by the service.
+     * @sample AWSCodePipelineAsync.StopPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopPipelineExecutionResult> stopPipelineExecutionAsync(StopPipelineExecutionRequest stopPipelineExecutionRequest);
+
+    /**
+     * <p>
+     * Stops the specified pipeline execution. You choose to either stop the pipeline execution by completing
+     * in-progress actions without starting subsequent actions, or by abandoning in-progress actions. While completing
+     * or abandoning in-progress actions, the pipeline execution is in a <code>Stopping</code> state. After all
+     * in-progress actions are completed or abandoned, the pipeline execution is in a <code>Stopped</code> state.
+     * </p>
+     * 
+     * @param stopPipelineExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopPipelineExecution operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.StopPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopPipelineExecutionResult> stopPipelineExecutionAsync(StopPipelineExecutionRequest stopPipelineExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopPipelineExecutionRequest, StopPipelineExecutionResult> asyncHandler);
 
     /**
      * <p>

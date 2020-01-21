@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ActionExecutionStatus {
 
     InProgress("InProgress"),
+    Abandoned("Abandoned"),
     Succeeded("Succeeded"),
     Failed("Failed");
 

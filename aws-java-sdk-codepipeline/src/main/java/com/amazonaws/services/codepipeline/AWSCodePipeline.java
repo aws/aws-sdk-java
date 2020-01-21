@@ -96,6 +96,11 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * <li>
  * <p>
+ * <a>StopPipelineExecution</a>, which stops the specified pipeline execution from continuing through the pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.
  * </p>
  * </li>
@@ -547,9 +552,9 @@ public interface AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -640,9 +645,9 @@ public interface AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -794,9 +799,9 @@ public interface AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
-     * This API also returns any secret values defined for the action.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * returns any secret values defined for the action.
      * </p>
      * </important>
      * 
@@ -819,8 +824,8 @@ public interface AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store
-     * artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.
+     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
+     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts.
      * </p>
      * </important>
      * 
@@ -1071,6 +1076,34 @@ public interface AWSCodePipeline {
      *      target="_top">AWS API Documentation</a>
      */
     StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest startPipelineExecutionRequest);
+
+    /**
+     * <p>
+     * Stops the specified pipeline execution. You choose to either stop the pipeline execution by completing
+     * in-progress actions without starting subsequent actions, or by abandoning in-progress actions. While completing
+     * or abandoning in-progress actions, the pipeline execution is in a <code>Stopping</code> state. After all
+     * in-progress actions are completed or abandoned, the pipeline execution is in a <code>Stopped</code> state.
+     * </p>
+     * 
+     * @param stopPipelineExecutionRequest
+     * @return Result of the StopPipelineExecution operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws PipelineNotFoundException
+     *         The pipeline was specified in an invalid format or cannot be found.
+     * @throws PipelineExecutionNotStoppableException
+     *         Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code> state, or
+     *         it might no longer be in progress.
+     * @throws DuplicatedStopRequestException
+     *         The pipeline execution is already in a <code>Stopping</code> state. If you already chose to stop and
+     *         wait, you cannot make that request again. You can choose to stop and abandon now, but be aware that this
+     *         option can lead to failed tasks or out of sequence tasks. If you already chose to stop and abandon, you
+     *         cannot make that request again.
+     * @sample AWSCodePipeline.StopPipelineExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopPipelineExecutionResult stopPipelineExecution(StopPipelineExecutionRequest stopPipelineExecutionRequest);
 
     /**
      * <p>

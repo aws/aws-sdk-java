@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Sends information about the detector model instance and the event which triggered the action to a Kinesis Data
+ * Sends information about the detector model instance and the event that triggered the action to a Kinesis Data
  * Firehose delivery stream.
  * </p>
  * 

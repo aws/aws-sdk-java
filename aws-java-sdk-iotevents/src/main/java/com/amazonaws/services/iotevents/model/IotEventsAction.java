@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Sends an IoT Events input, passing in information about the detector model instance and the event which triggered the
- * action.
+ * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered
+ * the action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotEventsAction" target="_top">AWS API

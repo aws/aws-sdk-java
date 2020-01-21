@@ -22,6 +22,8 @@ public enum StageExecutionStatus {
 
     InProgress("InProgress"),
     Failed("Failed"),
+    Stopped("Stopped"),
+    Stopping("Stopping"),
     Succeeded("Succeeded");
 
     private String value;

@@ -26,7 +26,8 @@ public enum ByoipCidrState {
     FailedProvision("failed-provision"),
     PendingDeprovision("pending-deprovision"),
     PendingProvision("pending-provision"),
-    Provisioned("provisioned");
+    Provisioned("provisioned"),
+    ProvisionedNotPubliclyAdvertisable("provisioned-not-publicly-advertisable");
 
     private String value;
 

@@ -51,9 +51,7 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
     private String roleArn;
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      */
     private String evaluationMethod;
@@ -220,15 +218,11 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
      * @param evaluationMethod
-     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *        after all event conditions are evaluated.
+     *        Information about the order in which events are evaluated and how actions are executed.
      * @see EvaluationMethod
      */
 
@@ -238,14 +232,10 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
-     * @return When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *         the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *         after all event conditions are evaluated.
+     * @return Information about the order in which events are evaluated and how actions are executed.
      * @see EvaluationMethod
      */
 
@@ -255,15 +245,11 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
      * @param evaluationMethod
-     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *        after all event conditions are evaluated.
+     *        Information about the order in which events are evaluated and how actions are executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EvaluationMethod
      */
@@ -275,15 +261,11 @@ public class UpdateDetectorModelRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
      * @param evaluationMethod
-     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *        after all event conditions are evaluated.
+     *        Information about the order in which events are evaluated and how actions are executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EvaluationMethod
      */

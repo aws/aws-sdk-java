@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The location of the Amazon S3 bucket that contains a revision.
+ * The location of the S3 bucket that contains a revision.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/S3ArtifactLocation" target="_top">AWS
@@ -30,24 +30,24 @@ public class S3ArtifactLocation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      */
     private String bucketName;
     /**
      * <p>
-     * The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.
+     * The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.
      * </p>
      */
     private String objectKey;
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        The name of the Amazon S3 bucket.
+     *        The name of the S3 bucket.
      */
 
     public void setBucketName(String bucketName) {
@@ -56,10 +56,10 @@ public class S3ArtifactLocation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket.
+     * @return The name of the S3 bucket.
      */
 
     public String getBucketName() {
@@ -68,11 +68,11 @@ public class S3ArtifactLocation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket.
+     * The name of the S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        The name of the Amazon S3 bucket.
+     *        The name of the S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class S3ArtifactLocation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.
+     * The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.
      * </p>
      * 
      * @param objectKey
-     *        The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.
+     *        The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.
      */
 
     public void setObjectKey(String objectKey) {
@@ -96,10 +96,10 @@ public class S3ArtifactLocation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.
+     * The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.
      * </p>
      * 
-     * @return The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.
+     * @return The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.
      */
 
     public String getObjectKey() {
@@ -108,11 +108,11 @@ public class S3ArtifactLocation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.
+     * The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.
      * </p>
      * 
      * @param objectKey
-     *        The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.
+     *        The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

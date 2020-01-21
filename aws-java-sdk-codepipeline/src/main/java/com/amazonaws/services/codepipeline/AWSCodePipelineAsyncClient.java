@@ -100,6 +100,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <a>StopPipelineExecution</a>, which stops the specified pipeline execution from continuing through the pipeline.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.
  * </p>
  * </li>
@@ -1537,6 +1542,39 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
 
                 try {
                     result = executeStartPipelineExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopPipelineExecutionResult> stopPipelineExecutionAsync(StopPipelineExecutionRequest request) {
+
+        return stopPipelineExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopPipelineExecutionResult> stopPipelineExecutionAsync(final StopPipelineExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopPipelineExecutionRequest, StopPipelineExecutionResult> asyncHandler) {
+        final StopPipelineExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopPipelineExecutionResult>() {
+            @Override
+            public StopPipelineExecutionResult call() throws Exception {
+                StopPipelineExecutionResult result = null;
+
+                try {
+                    result = executeStopPipelineExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
