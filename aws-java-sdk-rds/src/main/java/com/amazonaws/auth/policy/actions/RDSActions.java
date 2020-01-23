@@ -39,6 +39,8 @@ public enum RDSActions implements Action {
     AuthorizeDBSecurityGroupIngress("rds:AuthorizeDBSecurityGroupIngress"),
     /** Action for the BacktrackDBCluster operation. */
     BacktrackDBCluster("rds:BacktrackDBCluster"),
+    /** Action for the CancelExportTask operation. */
+    CancelExportTask("rds:CancelExportTask"),
     /** Action for the CopyDBClusterParameterGroup operation. */
     CopyDBClusterParameterGroup("rds:CopyDBClusterParameterGroup"),
     /** Action for the CopyDBClusterSnapshot operation. */
@@ -169,6 +171,8 @@ public enum RDSActions implements Action {
     DescribeEventSubscriptions("rds:DescribeEventSubscriptions"),
     /** Action for the DescribeEvents operation. */
     DescribeEvents("rds:DescribeEvents"),
+    /** Action for the DescribeExportTasks operation. */
+    DescribeExportTasks("rds:DescribeExportTasks"),
     /** Action for the DescribeGlobalClusters operation. */
     DescribeGlobalClusters("rds:DescribeGlobalClusters"),
     /** Action for the DescribeInstallationMedia operation. */
@@ -273,6 +277,8 @@ public enum RDSActions implements Action {
     StartDBCluster("rds:StartDBCluster"),
     /** Action for the StartDBInstance operation. */
     StartDBInstance("rds:StartDBInstance"),
+    /** Action for the StartExportTask operation. */
+    StartExportTask("rds:StartExportTask"),
     /** Action for the StopActivityStream operation. */
     StopActivityStream("rds:StopActivityStream"),
     /** Action for the StopDBCluster operation. */

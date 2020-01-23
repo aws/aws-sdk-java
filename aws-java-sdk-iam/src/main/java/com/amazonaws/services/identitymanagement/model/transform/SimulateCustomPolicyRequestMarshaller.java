@@ -54,6 +54,21 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
             }
         }
 
+        if (!simulateCustomPolicyRequest.getPermissionsBoundaryPolicyInputList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest.getPermissionsBoundaryPolicyInputList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> permissionsBoundaryPolicyInputListList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest
+                    .getPermissionsBoundaryPolicyInputList();
+            int permissionsBoundaryPolicyInputListListIndex = 1;
+
+            for (String permissionsBoundaryPolicyInputListListValue : permissionsBoundaryPolicyInputListList) {
+                if (permissionsBoundaryPolicyInputListListValue != null) {
+                    request.addParameter("PermissionsBoundaryPolicyInputList.member." + permissionsBoundaryPolicyInputListListIndex,
+                            StringUtils.fromString(permissionsBoundaryPolicyInputListListValue));
+                }
+                permissionsBoundaryPolicyInputListListIndex++;
+            }
+        }
+
         if (!simulateCustomPolicyRequest.getActionNames().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest.getActionNames()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<String> actionNamesList = (com.amazonaws.internal.SdkInternalList<String>) simulateCustomPolicyRequest

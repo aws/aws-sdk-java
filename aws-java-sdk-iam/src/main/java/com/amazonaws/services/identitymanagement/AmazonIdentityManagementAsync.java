@@ -702,7 +702,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </li>
      * <li>
      * <p>
-     * A list of thumbprints of the server certificate(s) that the IdP uses
+     * A list of thumbprints of one or more server certificates that the IdP uses
      * </p>
      * </li>
      * </ul>
@@ -751,7 +751,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * </li>
      * <li>
      * <p>
-     * A list of thumbprints of the server certificate(s) that the IdP uses
+     * A list of thumbprints of one or more server certificates that the IdP uses
      * </p>
      * </li>
      * </ul>
@@ -6844,13 +6844,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * simulated policies allow or deny the operations.
      * </p>
      * <p>
-     * If you want to simulate existing policies attached to an IAM user, group, or role, use
+     * If you want to simulate existing policies that are attached to an IAM user, group, or role, use
      * <a>SimulatePrincipalPolicy</a> instead.
      * </p>
      * <p>
-     * Context keys are variables maintained by AWS and its services that provide details about the context of an API
-     * query request. You can use the <code>Condition</code> element of an IAM policy to evaluate context keys. To get
-     * the list of context keys that the policies require for correct simulation, use
+     * Context keys are variables that are maintained by AWS and its services and which provide details about the
+     * context of an API query request. You can use the <code>Condition</code> element of an IAM policy to evaluate
+     * context keys. To get the list of context keys that the policies require for correct simulation, use
      * <a>GetContextKeysForCustomPolicy</a>.
      * </p>
      * <p>
@@ -6876,13 +6876,13 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * simulated policies allow or deny the operations.
      * </p>
      * <p>
-     * If you want to simulate existing policies attached to an IAM user, group, or role, use
+     * If you want to simulate existing policies that are attached to an IAM user, group, or role, use
      * <a>SimulatePrincipalPolicy</a> instead.
      * </p>
      * <p>
-     * Context keys are variables maintained by AWS and its services that provide details about the context of an API
-     * query request. You can use the <code>Condition</code> element of an IAM policy to evaluate context keys. To get
-     * the list of context keys that the policies require for correct simulation, use
+     * Context keys are variables that are maintained by AWS and its services and which provide details about the
+     * context of an API query request. You can use the <code>Condition</code> element of an IAM policy to evaluate
+     * context keys. To get the list of context keys that the policies require for correct simulation, use
      * <a>GetContextKeysForCustomPolicy</a>.
      * </p>
      * <p>

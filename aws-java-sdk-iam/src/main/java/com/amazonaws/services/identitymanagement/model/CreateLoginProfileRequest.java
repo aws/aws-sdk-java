@@ -42,11 +42,11 @@ public class CreateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
-     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
-     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
-     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
-     * Console, might restrict the ability to type certain characters because they have special meaning within that
-     * tool.
+     * string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>
+     * ) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (
+     * <code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any
+     * of these characters are valid in a password. However, many tools, such as the AWS Management Console, might
+     * restrict the ability to type certain characters because they have special meaning within that tool.
      * </p>
      */
     private String password;
@@ -79,11 +79,12 @@ public class CreateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
-     *        a string of characters. That string can include almost any printable ASCII character from the space ( )
-     *        through the end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ),
-     *        and carriage return ( ) characters. Any of these characters are valid in a password. However, many tools,
-     *        such as the AWS Management Console, might restrict the ability to type certain characters because they
-     *        have special meaning within that tool.
+     *        a string of characters. That string can include almost any printable ASCII character from the space (
+     *        <code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also
+     *        include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>
+     *        ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS
+     *        Management Console, might restrict the ability to type certain characters because they have special
+     *        meaning within that tool.
      */
     public CreateLoginProfileRequest(String userName, String password) {
         setUserName(userName);
@@ -163,22 +164,23 @@ public class CreateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
-     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
-     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
-     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
-     * Console, might restrict the ability to type certain characters because they have special meaning within that
-     * tool.
+     * string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>
+     * ) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (
+     * <code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any
+     * of these characters are valid in a password. However, many tools, such as the AWS Management Console, might
+     * restrict the ability to type certain characters because they have special meaning within that tool.
      * </p>
      * 
      * @param password
      *        The new password for the user.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
-     *        a string of characters. That string can include almost any printable ASCII character from the space ( )
-     *        through the end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ),
-     *        and carriage return ( ) characters. Any of these characters are valid in a password. However, many tools,
-     *        such as the AWS Management Console, might restrict the ability to type certain characters because they
-     *        have special meaning within that tool.
+     *        a string of characters. That string can include almost any printable ASCII character from the space (
+     *        <code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also
+     *        include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>
+     *        ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS
+     *        Management Console, might restrict the ability to type certain characters because they have special
+     *        meaning within that tool.
      */
 
     public void setPassword(String password) {
@@ -191,21 +193,22 @@ public class CreateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
-     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
-     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
-     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
-     * Console, might restrict the ability to type certain characters because they have special meaning within that
-     * tool.
+     * string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>
+     * ) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (
+     * <code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any
+     * of these characters are valid in a password. However, many tools, such as the AWS Management Console, might
+     * restrict the ability to type certain characters because they have special meaning within that tool.
      * </p>
      * 
      * @return The new password for the user.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter
      *         is a string of characters. That string can include almost any printable ASCII character from the space (
-     *         ) through the end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ),
-     *         and carriage return ( ) characters. Any of these characters are valid in a password. However, many tools,
-     *         such as the AWS Management Console, might restrict the ability to type certain characters because they
-     *         have special meaning within that tool.
+     *         <code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also
+     *         include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>
+     *         ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS
+     *         Management Console, might restrict the ability to type certain characters because they have special
+     *         meaning within that tool.
      */
 
     public String getPassword() {
@@ -218,22 +221,23 @@ public class CreateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
-     * string of characters. That string can include almost any printable ASCII character from the space ( ) through the
-     * end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ), and carriage return (
-     * ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS Management
-     * Console, might restrict the ability to type certain characters because they have special meaning within that
-     * tool.
+     * string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>
+     * ) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (
+     * <code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any
+     * of these characters are valid in a password. However, many tools, such as the AWS Management Console, might
+     * restrict the ability to type certain characters because they have special meaning within that tool.
      * </p>
      * 
      * @param password
      *        The new password for the user.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
-     *        a string of characters. That string can include almost any printable ASCII character from the space ( )
-     *        through the end of the ASCII character range (\u00FF). You can also include the tab ( ), line feed ( ),
-     *        and carriage return ( ) characters. Any of these characters are valid in a password. However, many tools,
-     *        such as the AWS Management Console, might restrict the ability to type certain characters because they
-     *        have special meaning within that tool.
+     *        a string of characters. That string can include almost any printable ASCII character from the space (
+     *        <code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also
+     *        include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>
+     *        ) characters. Any of these characters are valid in a password. However, many tools, such as the AWS
+     *        Management Console, might restrict the ability to type certain characters because they have special
+     *        meaning within that tool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

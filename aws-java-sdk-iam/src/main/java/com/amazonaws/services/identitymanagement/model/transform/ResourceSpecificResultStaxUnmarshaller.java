@@ -124,6 +124,11 @@ public class ResourceSpecificResultStaxUnmarshaller implements Unmarshaller<Reso
                     continue;
                 }
 
+                if (context.testExpression("PermissionsBoundaryDecisionDetail", targetDepth)) {
+                    resourceSpecificResult.setPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetailStaxUnmarshaller.getInstance().unmarshall(
+                            context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return resourceSpecificResult;

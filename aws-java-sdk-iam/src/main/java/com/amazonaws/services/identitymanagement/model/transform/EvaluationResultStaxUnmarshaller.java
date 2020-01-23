@@ -128,6 +128,11 @@ public class EvaluationResultStaxUnmarshaller implements Unmarshaller<Evaluation
                     continue;
                 }
 
+                if (context.testExpression("PermissionsBoundaryDecisionDetail", targetDepth)) {
+                    evaluationResult.setPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("EvalDecisionDetails/entry", targetDepth)) {
                     Entry<String, String> entry = EvalDecisionDetailsMapEntryUnmarshaller.getInstance().unmarshall(context);
                     evaluationResult.addEvalDecisionDetailsEntry(entry.getKey(), entry.getValue());

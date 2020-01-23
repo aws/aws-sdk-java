@@ -93,8 +93,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     private String targetDBClusterSnapshotIdentifier;
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS
+     * key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
@@ -141,7 +141,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
      * </p>
      * </li>
      * <li>
@@ -577,8 +577,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS
+     * key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
@@ -602,8 +602,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
-     *        (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
+     *        The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
+     *        KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
      *        <p>
      *        If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
      *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
@@ -631,8 +631,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS
+     * key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
@@ -655,7 +655,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * error is returned.
      * </p>
      * 
-     * @return The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
+     * @return The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
      *         (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
      *         <p>
      *         If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
@@ -684,8 +684,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS
+     * key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
@@ -709,8 +709,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
-     *        (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
+     *        The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
+     *        KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
      *        <p>
      *        If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
      *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
@@ -761,7 +761,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
      * </p>
      * </li>
      * <li>
@@ -812,7 +812,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created
+     *        <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created
      *        in.
      *        </p>
      *        </li>
@@ -869,7 +869,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
      * </p>
      * </li>
      * <li>
@@ -919,7 +919,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created
+     *         <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created
      *         in.
      *         </p>
      *         </li>
@@ -976,7 +976,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
      * </p>
      * </li>
      * <li>
@@ -1027,7 +1027,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created
+     *        <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created
      *        in.
      *        </p>
      *        </li>
