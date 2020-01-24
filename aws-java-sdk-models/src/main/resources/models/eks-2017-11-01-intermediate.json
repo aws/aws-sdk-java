@@ -26359,6 +26359,9 @@
         "name" : "AutoScalingGroupNotFound",
         "value" : "AutoScalingGroupNotFound"
       }, {
+        "name" : "AutoScalingGroupInvalidConfiguration",
+        "value" : "AutoScalingGroupInvalidConfiguration"
+      }, {
         "name" : "Ec2SecurityGroupNotFound",
         "value" : "Ec2SecurityGroupNotFound"
       }, {
@@ -26370,6 +26373,9 @@
       }, {
         "name" : "Ec2LaunchTemplateVersionMismatch",
         "value" : "Ec2LaunchTemplateVersionMismatch"
+      }, {
+        "name" : "Ec2SubnetNotFound",
+        "value" : "Ec2SubnetNotFound"
       }, {
         "name" : "IamInstanceProfileNotFound",
         "value" : "IamInstanceProfileNotFound"

@@ -21,10 +21,12 @@ import javax.annotation.Generated;
 public enum NodegroupIssueCode {
 
     AutoScalingGroupNotFound("AutoScalingGroupNotFound"),
+    AutoScalingGroupInvalidConfiguration("AutoScalingGroupInvalidConfiguration"),
     Ec2SecurityGroupNotFound("Ec2SecurityGroupNotFound"),
     Ec2SecurityGroupDeletionFailure("Ec2SecurityGroupDeletionFailure"),
     Ec2LaunchTemplateNotFound("Ec2LaunchTemplateNotFound"),
     Ec2LaunchTemplateVersionMismatch("Ec2LaunchTemplateVersionMismatch"),
+    Ec2SubnetNotFound("Ec2SubnetNotFound"),
     IamInstanceProfileNotFound("IamInstanceProfileNotFound"),
     IamNodeRoleNotFound("IamNodeRoleNotFound"),
     AsgInstanceLaunchFailures("AsgInstanceLaunchFailures"),

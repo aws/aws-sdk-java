@@ -226,6 +226,14 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String taskQueueing;
+    /**
+     * <p>
+     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
+     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * </p>
+     */
+    private String logLevel;
 
     /**
      * <p>
@@ -1824,6 +1832,85 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
+     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * </p>
+     * 
+     * @param logLevel
+     *        A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     *        <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
+     *        operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
+     *        transferred.
+     * @see LogLevel
+     */
+
+    public void setLogLevel(String logLevel) {
+        this.logLevel = logLevel;
+    }
+
+    /**
+     * <p>
+     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
+     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * </p>
+     * 
+     * @return A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set
+     *         to <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
+     *         operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
+     *         transferred.
+     * @see LogLevel
+     */
+
+    public String getLogLevel() {
+        return this.logLevel;
+    }
+
+    /**
+     * <p>
+     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
+     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * </p>
+     * 
+     * @param logLevel
+     *        A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     *        <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
+     *        operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
+     *        transferred.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogLevel
+     */
+
+    public Options withLogLevel(String logLevel) {
+        setLogLevel(logLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
+     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * </p>
+     * 
+     * @param logLevel
+     *        A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
+     *        <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
+     *        operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
+     *        transferred.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogLevel
+     */
+
+    public Options withLogLevel(LogLevel logLevel) {
+        this.logLevel = logLevel.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1856,7 +1943,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         if (getBytesPerSecond() != null)
             sb.append("BytesPerSecond: ").append(getBytesPerSecond()).append(",");
         if (getTaskQueueing() != null)
-            sb.append("TaskQueueing: ").append(getTaskQueueing());
+            sb.append("TaskQueueing: ").append(getTaskQueueing()).append(",");
+        if (getLogLevel() != null)
+            sb.append("LogLevel: ").append(getLogLevel());
         sb.append("}");
         return sb.toString();
     }
@@ -1915,6 +2004,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTaskQueueing() != null && other.getTaskQueueing().equals(this.getTaskQueueing()) == false)
             return false;
+        if (other.getLogLevel() == null ^ this.getLogLevel() == null)
+            return false;
+        if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
+            return false;
         return true;
     }
 
@@ -1934,6 +2027,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPosixPermissions() == null) ? 0 : getPosixPermissions().hashCode());
         hashCode = prime * hashCode + ((getBytesPerSecond() == null) ? 0 : getBytesPerSecond().hashCode());
         hashCode = prime * hashCode + ((getTaskQueueing() == null) ? 0 : getTaskQueueing().hashCode());
+        hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
         return hashCode;
     }
 
