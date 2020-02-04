@@ -88,6 +88,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public ListKafkaVersionsResult listKafkaVersions(ListKafkaVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListNodesResult listNodes(ListNodesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

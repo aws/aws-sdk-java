@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A viewer certificate specified in the response body is not valid.
+ * A viewer certificate specified is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -60,6 +60,10 @@ public class PatchRuleJsonUnmarshaller implements Unmarshaller<PatchRule, JsonUn
                     context.nextToken();
                     patchRule.setApproveAfterDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ApproveUntilDate", targetDepth)) {
+                    context.nextToken();
+                    patchRule.setApproveUntilDate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("EnableNonSecurity", targetDepth)) {
                     context.nextToken();
                     patchRule.setEnableNonSecurity(context.getUnmarshaller(Boolean.class).unmarshall(context));

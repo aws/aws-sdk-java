@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * TTL order specified in the response body is not valid.
+ * The TTL order specified is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

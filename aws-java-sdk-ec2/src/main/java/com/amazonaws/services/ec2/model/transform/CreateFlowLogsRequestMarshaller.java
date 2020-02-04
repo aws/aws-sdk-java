@@ -85,6 +85,10 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("LogFormat", StringUtils.fromString(createFlowLogsRequest.getLogFormat()));
         }
 
+        if (createFlowLogsRequest.getMaxAggregationInterval() != null) {
+            request.addParameter("MaxAggregationInterval", StringUtils.fromInteger(createFlowLogsRequest.getMaxAggregationInterval()));
+        }
+
         return request;
     }
 

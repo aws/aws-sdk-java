@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A response code specified in the response body is not valid.
+ * A response code is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

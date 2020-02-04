@@ -51,6 +51,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     private Integer approveAfterDays;
     /**
      * <p>
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
+     * installed automatically
+     * </p>
+     */
+    private String approveUntilDate;
+    /**
+     * <p>
      * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
      * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
      * </p>
@@ -234,6 +241,52 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
+     * installed automatically
+     * </p>
+     * 
+     * @param approveUntilDate
+     *        The cutoff date for auto approval of released patches. Any patches released on or before this date will be
+     *        installed automatically
+     */
+
+    public void setApproveUntilDate(String approveUntilDate) {
+        this.approveUntilDate = approveUntilDate;
+    }
+
+    /**
+     * <p>
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
+     * installed automatically
+     * </p>
+     * 
+     * @return The cutoff date for auto approval of released patches. Any patches released on or before this date will
+     *         be installed automatically
+     */
+
+    public String getApproveUntilDate() {
+        return this.approveUntilDate;
+    }
+
+    /**
+     * <p>
+     * The cutoff date for auto approval of released patches. Any patches released on or before this date will be
+     * installed automatically
+     * </p>
+     * 
+     * @param approveUntilDate
+     *        The cutoff date for auto approval of released patches. Any patches released on or before this date will be
+     *        installed automatically
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchRule withApproveUntilDate(String approveUntilDate) {
+        setApproveUntilDate(approveUntilDate);
+        return this;
+    }
+
+    /**
+     * <p>
      * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
      * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
      * </p>
@@ -314,6 +367,8 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
             sb.append("ComplianceLevel: ").append(getComplianceLevel()).append(",");
         if (getApproveAfterDays() != null)
             sb.append("ApproveAfterDays: ").append(getApproveAfterDays()).append(",");
+        if (getApproveUntilDate() != null)
+            sb.append("ApproveUntilDate: ").append(getApproveUntilDate()).append(",");
         if (getEnableNonSecurity() != null)
             sb.append("EnableNonSecurity: ").append(getEnableNonSecurity());
         sb.append("}");
@@ -342,6 +397,10 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getApproveAfterDays() != null && other.getApproveAfterDays().equals(this.getApproveAfterDays()) == false)
             return false;
+        if (other.getApproveUntilDate() == null ^ this.getApproveUntilDate() == null)
+            return false;
+        if (other.getApproveUntilDate() != null && other.getApproveUntilDate().equals(this.getApproveUntilDate()) == false)
+            return false;
         if (other.getEnableNonSecurity() == null ^ this.getEnableNonSecurity() == null)
             return false;
         if (other.getEnableNonSecurity() != null && other.getEnableNonSecurity().equals(this.getEnableNonSecurity()) == false)
@@ -357,6 +416,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPatchFilterGroup() == null) ? 0 : getPatchFilterGroup().hashCode());
         hashCode = prime * hashCode + ((getComplianceLevel() == null) ? 0 : getComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getApproveAfterDays() == null) ? 0 : getApproveAfterDays().hashCode());
+        hashCode = prime * hashCode + ((getApproveUntilDate() == null) ? 0 : getApproveUntilDate().hashCode());
         hashCode = prime * hashCode + ((getEnableNonSecurity() == null) ? 0 : getEnableNonSecurity().hashCode());
         return hashCode;
     }

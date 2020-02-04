@@ -460,6 +460,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
     }
 
     @Override
+    public java.util.concurrent.Future<ListKafkaVersionsResult> listKafkaVersionsAsync(ListKafkaVersionsRequest request) {
+
+        return listKafkaVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKafkaVersionsResult> listKafkaVersionsAsync(final ListKafkaVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKafkaVersionsRequest, ListKafkaVersionsResult> asyncHandler) {
+        final ListKafkaVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKafkaVersionsResult>() {
+            @Override
+            public ListKafkaVersionsResult call() throws Exception {
+                ListKafkaVersionsResult result = null;
+
+                try {
+                    result = executeListKafkaVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListNodesResult> listNodesAsync(ListNodesRequest request) {
 
         return listNodesAsync(request, null);

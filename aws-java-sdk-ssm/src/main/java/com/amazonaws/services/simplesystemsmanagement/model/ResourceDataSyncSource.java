@@ -38,7 +38,8 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
     private String sourceType;
     /**
      * <p>
-     * The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.
+     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
+     * synchronize data from AWS Organizations.
      * </p>
      */
     private ResourceDataSyncAwsOrganizationsSource awsOrganizationsSource;
@@ -109,12 +110,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.
+     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
+     * synchronize data from AWS Organizations.
      * </p>
      * 
      * @param awsOrganizationsSource
-     *        The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code>
-     *        type.
+     *        Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
+     *        synchronize data from AWS Organizations.
      */
 
     public void setAwsOrganizationsSource(ResourceDataSyncAwsOrganizationsSource awsOrganizationsSource) {
@@ -123,11 +125,12 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.
+     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
+     * synchronize data from AWS Organizations.
      * </p>
      * 
-     * @return The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code>
-     *         type.
+     * @return Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
+     *         synchronize data from AWS Organizations.
      */
 
     public ResourceDataSyncAwsOrganizationsSource getAwsOrganizationsSource() {
@@ -136,12 +139,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code> type.
+     * Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
+     * synchronize data from AWS Organizations.
      * </p>
      * 
      * @param awsOrganizationsSource
-     *        The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code>
-     *        type.
+     *        Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can
+     *        synchronize data from AWS Organizations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,6 +55,8 @@ public class ClusterInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfBrokerNodes").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
+    private static final MarshallingInfo<StructuredPojo> STATEINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateInfo").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> ZOOKEEPERCONNECTSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -89,6 +91,7 @@ public class ClusterInfoMarshaller {
             protocolMarshaller.marshall(clusterInfo.getOpenMonitoring(), OPENMONITORING_BINDING);
             protocolMarshaller.marshall(clusterInfo.getNumberOfBrokerNodes(), NUMBEROFBROKERNODES_BINDING);
             protocolMarshaller.marshall(clusterInfo.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(clusterInfo.getStateInfo(), STATEINFO_BINDING);
             protocolMarshaller.marshall(clusterInfo.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(clusterInfo.getZookeeperConnectString(), ZOOKEEPERCONNECTSTRING_BINDING);
         } catch (Exception e) {

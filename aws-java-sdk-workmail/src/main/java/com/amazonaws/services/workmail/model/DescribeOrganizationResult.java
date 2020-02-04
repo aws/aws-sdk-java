@@ -71,6 +71,12 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String errorMessage;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the organization.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -396,6 +402,46 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the organization.
+     * </p>
+     * 
+     * @param aRN
+     *        The Amazon Resource Name (ARN) of the organization.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the organization.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the organization.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the organization.
+     * </p>
+     * 
+     * @param aRN
+     *        The Amazon Resource Name (ARN) of the organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOrganizationResult withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -422,7 +468,9 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
         if (getCompletedDate() != null)
             sb.append("CompletedDate: ").append(getCompletedDate()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -469,6 +517,10 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -485,6 +537,7 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDefaultMailDomain() == null) ? 0 : getDefaultMailDomain().hashCode());
         hashCode = prime * hashCode + ((getCompletedDate() == null) ? 0 : getCompletedDate().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 
