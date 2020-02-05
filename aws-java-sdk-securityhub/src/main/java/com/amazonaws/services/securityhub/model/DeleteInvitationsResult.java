@@ -25,17 +25,20 @@ public class DeleteInvitationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     * The list of AWS accounts for which the invitations were not deleted. For each account, the list includes the
+     * account ID and the email address.
      * </p>
      */
     private java.util.List<Result> unprocessedAccounts;
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     * The list of AWS accounts for which the invitations were not deleted. For each account, the list includes the
+     * account ID and the email address.
      * </p>
      * 
-     * @return A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     * @return The list of AWS accounts for which the invitations were not deleted. For each account, the list includes
+     *         the account ID and the email address.
      */
 
     public java.util.List<Result> getUnprocessedAccounts() {
@@ -44,11 +47,13 @@ public class DeleteInvitationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     * The list of AWS accounts for which the invitations were not deleted. For each account, the list includes the
+     * account ID and the email address.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     *        The list of AWS accounts for which the invitations were not deleted. For each account, the list includes
+     *        the account ID and the email address.
      */
 
     public void setUnprocessedAccounts(java.util.Collection<Result> unprocessedAccounts) {
@@ -62,7 +67,8 @@ public class DeleteInvitationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     * The list of AWS accounts for which the invitations were not deleted. For each account, the list includes the
+     * account ID and the email address.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +77,8 @@ public class DeleteInvitationsResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     *        The list of AWS accounts for which the invitations were not deleted. For each account, the list includes
+     *        the account ID and the email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +94,13 @@ public class DeleteInvitationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     * The list of AWS accounts for which the invitations were not deleted. For each account, the list includes the
+     * account ID and the email address.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that invitations weren't deleted for.
+     *        The list of AWS accounts for which the invitations were not deleted. For each account, the list includes
+     *        the account ID and the email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

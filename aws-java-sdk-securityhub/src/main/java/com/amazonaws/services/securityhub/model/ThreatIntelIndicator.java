@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the threat intel related to a finding.
+ * Details about the threat intelligence related to a finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ThreatIntelIndicator" target="_top">AWS
@@ -30,48 +30,48 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of a threat intel indicator.
+     * The type of threat intelligence indicator.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The value of a threat intel indicator.
+     * The value of a threat intelligence indicator.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The category of a threat intel indicator.
+     * The category of a threat intelligence indicator.
      * </p>
      */
     private String category;
     /**
      * <p>
-     * The date and time when the most recent instance of a threat intel indicator was observed.
+     * The date and time when the most recent instance of a threat intelligence indicator was observed.
      * </p>
      */
     private String lastObservedAt;
     /**
      * <p>
-     * The source of the threat intel indicator.
+     * The source of the threat intelligence indicator.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * The URL to the page or site where you can get more information about the threat intel indicator.
+     * The URL to the page or site where you can get more information about the threat intelligence indicator.
      * </p>
      */
     private String sourceUrl;
 
     /**
      * <p>
-     * The type of a threat intel indicator.
+     * The type of threat intelligence indicator.
      * </p>
      * 
      * @param type
-     *        The type of a threat intel indicator.
+     *        The type of threat intelligence indicator.
      * @see ThreatIntelIndicatorType
      */
 
@@ -81,10 +81,10 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of a threat intel indicator.
+     * The type of threat intelligence indicator.
      * </p>
      * 
-     * @return The type of a threat intel indicator.
+     * @return The type of threat intelligence indicator.
      * @see ThreatIntelIndicatorType
      */
 
@@ -94,11 +94,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of a threat intel indicator.
+     * The type of threat intelligence indicator.
      * </p>
      * 
      * @param type
-     *        The type of a threat intel indicator.
+     *        The type of threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThreatIntelIndicatorType
      */
@@ -110,11 +110,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of a threat intel indicator.
+     * The type of threat intelligence indicator.
      * </p>
      * 
      * @param type
-     *        The type of a threat intel indicator.
+     *        The type of threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThreatIntelIndicatorType
      */
@@ -126,11 +126,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The value of a threat intel indicator.
+     * The value of a threat intelligence indicator.
      * </p>
      * 
      * @param value
-     *        The value of a threat intel indicator.
+     *        The value of a threat intelligence indicator.
      */
 
     public void setValue(String value) {
@@ -139,10 +139,10 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The value of a threat intel indicator.
+     * The value of a threat intelligence indicator.
      * </p>
      * 
-     * @return The value of a threat intel indicator.
+     * @return The value of a threat intelligence indicator.
      */
 
     public String getValue() {
@@ -151,11 +151,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The value of a threat intel indicator.
+     * The value of a threat intelligence indicator.
      * </p>
      * 
      * @param value
-     *        The value of a threat intel indicator.
+     *        The value of a threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +166,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category of a threat intel indicator.
+     * The category of a threat intelligence indicator.
      * </p>
      * 
      * @param category
-     *        The category of a threat intel indicator.
+     *        The category of a threat intelligence indicator.
      * @see ThreatIntelIndicatorCategory
      */
 
@@ -180,10 +180,10 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category of a threat intel indicator.
+     * The category of a threat intelligence indicator.
      * </p>
      * 
-     * @return The category of a threat intel indicator.
+     * @return The category of a threat intelligence indicator.
      * @see ThreatIntelIndicatorCategory
      */
 
@@ -193,11 +193,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category of a threat intel indicator.
+     * The category of a threat intelligence indicator.
      * </p>
      * 
      * @param category
-     *        The category of a threat intel indicator.
+     *        The category of a threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThreatIntelIndicatorCategory
      */
@@ -209,11 +209,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The category of a threat intel indicator.
+     * The category of a threat intelligence indicator.
      * </p>
      * 
      * @param category
-     *        The category of a threat intel indicator.
+     *        The category of a threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThreatIntelIndicatorCategory
      */
@@ -225,11 +225,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time when the most recent instance of a threat intel indicator was observed.
+     * The date and time when the most recent instance of a threat intelligence indicator was observed.
      * </p>
      * 
      * @param lastObservedAt
-     *        The date and time when the most recent instance of a threat intel indicator was observed.
+     *        The date and time when the most recent instance of a threat intelligence indicator was observed.
      */
 
     public void setLastObservedAt(String lastObservedAt) {
@@ -238,10 +238,10 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time when the most recent instance of a threat intel indicator was observed.
+     * The date and time when the most recent instance of a threat intelligence indicator was observed.
      * </p>
      * 
-     * @return The date and time when the most recent instance of a threat intel indicator was observed.
+     * @return The date and time when the most recent instance of a threat intelligence indicator was observed.
      */
 
     public String getLastObservedAt() {
@@ -250,11 +250,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time when the most recent instance of a threat intel indicator was observed.
+     * The date and time when the most recent instance of a threat intelligence indicator was observed.
      * </p>
      * 
      * @param lastObservedAt
-     *        The date and time when the most recent instance of a threat intel indicator was observed.
+     *        The date and time when the most recent instance of a threat intelligence indicator was observed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +265,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The source of the threat intel indicator.
+     * The source of the threat intelligence indicator.
      * </p>
      * 
      * @param source
-     *        The source of the threat intel indicator.
+     *        The source of the threat intelligence indicator.
      */
 
     public void setSource(String source) {
@@ -278,10 +278,10 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The source of the threat intel indicator.
+     * The source of the threat intelligence indicator.
      * </p>
      * 
-     * @return The source of the threat intel indicator.
+     * @return The source of the threat intelligence indicator.
      */
 
     public String getSource() {
@@ -290,11 +290,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The source of the threat intel indicator.
+     * The source of the threat intelligence indicator.
      * </p>
      * 
      * @param source
-     *        The source of the threat intel indicator.
+     *        The source of the threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +305,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The URL to the page or site where you can get more information about the threat intel indicator.
+     * The URL to the page or site where you can get more information about the threat intelligence indicator.
      * </p>
      * 
      * @param sourceUrl
-     *        The URL to the page or site where you can get more information about the threat intel indicator.
+     *        The URL to the page or site where you can get more information about the threat intelligence indicator.
      */
 
     public void setSourceUrl(String sourceUrl) {
@@ -318,10 +318,10 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The URL to the page or site where you can get more information about the threat intel indicator.
+     * The URL to the page or site where you can get more information about the threat intelligence indicator.
      * </p>
      * 
-     * @return The URL to the page or site where you can get more information about the threat intel indicator.
+     * @return The URL to the page or site where you can get more information about the threat intelligence indicator.
      */
 
     public String getSourceUrl() {
@@ -330,11 +330,11 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The URL to the page or site where you can get more information about the threat intel indicator.
+     * The URL to the page or site where you can get more information about the threat intelligence indicator.
      * </p>
      * 
      * @param sourceUrl
-     *        The URL to the page or site where you can get more information about the threat intel indicator.
+     *        The URL to the page or site where you can get more information about the threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,7 +48,7 @@ public class AwsCloudFrontDistributionLogging implements Serializable, Cloneable
     private Boolean includeCookies;
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution.
+     * An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.
      * </p>
      */
     private String prefix;
@@ -199,11 +199,12 @@ public class AwsCloudFrontDistributionLogging implements Serializable, Cloneable
 
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution.
+     * An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.
      * </p>
      * 
      * @param prefix
-     *        An optional string that you want CloudFront to prefix to the access log filenames for this distribution.
+     *        An optional string that you want CloudFront to use as a prefix to the access log filenames for this
+     *        distribution.
      */
 
     public void setPrefix(String prefix) {
@@ -212,10 +213,11 @@ public class AwsCloudFrontDistributionLogging implements Serializable, Cloneable
 
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution.
+     * An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.
      * </p>
      * 
-     * @return An optional string that you want CloudFront to prefix to the access log filenames for this distribution.
+     * @return An optional string that you want CloudFront to use as a prefix to the access log filenames for this
+     *         distribution.
      */
 
     public String getPrefix() {
@@ -224,11 +226,12 @@ public class AwsCloudFrontDistributionLogging implements Serializable, Cloneable
 
     /**
      * <p>
-     * An optional string that you want CloudFront to prefix to the access log filenames for this distribution.
+     * An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.
      * </p>
      * 
      * @param prefix
-     *        An optional string that you want CloudFront to prefix to the access log filenames for this distribution.
+     *        An optional string that you want CloudFront to use as a prefix to the access log filenames for this
+     *        distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,7 +25,7 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the Hub resource retrieved.
+     * The ARN of the Hub resource that was retrieved.
      * </p>
      */
     private String hubArn;
@@ -38,11 +38,11 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the Hub resource retrieved.
+     * The ARN of the Hub resource that was retrieved.
      * </p>
      * 
      * @param hubArn
-     *        The ARN of the Hub resource retrieved.
+     *        The ARN of the Hub resource that was retrieved.
      */
 
     public void setHubArn(String hubArn) {
@@ -51,10 +51,10 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the Hub resource retrieved.
+     * The ARN of the Hub resource that was retrieved.
      * </p>
      * 
-     * @return The ARN of the Hub resource retrieved.
+     * @return The ARN of the Hub resource that was retrieved.
      */
 
     public String getHubArn() {
@@ -63,11 +63,11 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the Hub resource retrieved.
+     * The ARN of the Hub resource that was retrieved.
      * </p>
      * 
      * @param hubArn
-     *        The ARN of the Hub resource retrieved.
+     *        The ARN of the Hub resource that was retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

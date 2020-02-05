@@ -84,6 +84,10 @@ public class DescribeContactResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeContactResult.setPrePassStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    describeContactResult.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("satelliteArn", targetDepth)) {
                     context.nextToken();
                     describeContactResult.setSatelliteArn(context.getUnmarshaller(String.class).unmarshall(context));

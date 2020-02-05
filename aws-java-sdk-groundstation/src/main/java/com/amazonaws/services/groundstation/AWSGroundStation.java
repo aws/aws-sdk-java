@@ -50,10 +50,10 @@ public interface AWSGroundStation {
      * 
      * @param cancelContactRequest
      * @return Result of the CancelContact operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.CancelContact
@@ -72,10 +72,12 @@ public interface AWSGroundStation {
      * 
      * @param createConfigRequest
      * @return Result of the CreateConfig operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceLimitExceededException
+     *         Account limits for this resource have been exceeded.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.CreateConfig
@@ -100,10 +102,10 @@ public interface AWSGroundStation {
      * 
      * @param createDataflowEndpointGroupRequest
      * @return Result of the CreateDataflowEndpointGroup operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.CreateDataflowEndpointGroup
@@ -118,15 +120,15 @@ public interface AWSGroundStation {
      * </p>
      * <p>
      * <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a
-     * <i>from ARN</i> and a <i>to ARN</i>.
+     * <i>from</i> ARN and a <i>to</i> ARN.
      * </p>
      * 
      * @param createMissionProfileRequest
      * @return Result of the CreateMissionProfile operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.CreateMissionProfile
@@ -142,10 +144,10 @@ public interface AWSGroundStation {
      * 
      * @param deleteConfigRequest
      * @return Result of the DeleteConfig operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.DeleteConfig
@@ -161,10 +163,10 @@ public interface AWSGroundStation {
      * 
      * @param deleteDataflowEndpointGroupRequest
      * @return Result of the DeleteDataflowEndpointGroup operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.DeleteDataflowEndpointGroup
@@ -180,10 +182,10 @@ public interface AWSGroundStation {
      * 
      * @param deleteMissionProfileRequest
      * @return Result of the DeleteMissionProfile operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.DeleteMissionProfile
@@ -199,10 +201,10 @@ public interface AWSGroundStation {
      * 
      * @param describeContactRequest
      * @return Result of the DescribeContact operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.DescribeContact
@@ -221,10 +223,10 @@ public interface AWSGroundStation {
      * 
      * @param getConfigRequest
      * @return Result of the GetConfig operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.GetConfig
@@ -240,10 +242,10 @@ public interface AWSGroundStation {
      * 
      * @param getDataflowEndpointGroupRequest
      * @return Result of the GetDataflowEndpointGroup operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.GetDataflowEndpointGroup
@@ -259,10 +261,10 @@ public interface AWSGroundStation {
      * 
      * @param getMinuteUsageRequest
      * @return Result of the GetMinuteUsage operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.GetMinuteUsage
@@ -278,10 +280,10 @@ public interface AWSGroundStation {
      * 
      * @param getMissionProfileRequest
      * @return Result of the GetMissionProfile operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.GetMissionProfile
@@ -297,10 +299,10 @@ public interface AWSGroundStation {
      * 
      * @param getSatelliteRequest
      * @return Result of the GetSatellite operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.GetSatellite
@@ -316,10 +318,10 @@ public interface AWSGroundStation {
      * 
      * @param listConfigsRequest
      * @return Result of the ListConfigs operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ListConfigs
@@ -333,16 +335,16 @@ public interface AWSGroundStation {
      * Returns a list of contacts.
      * </p>
      * <p>
-     * If <code>statusList</code> contains AVAILABLE, the request must include <code>groundstation</code>,
+     * If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>,
      * <code>missionprofileArn</code>, and <code>satelliteArn</code>.
      * </p>
      * 
      * @param listContactsRequest
      * @return Result of the ListContacts operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ListContacts
@@ -358,10 +360,10 @@ public interface AWSGroundStation {
      * 
      * @param listDataflowEndpointGroupsRequest
      * @return Result of the ListDataflowEndpointGroups operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ListDataflowEndpointGroups
@@ -377,10 +379,10 @@ public interface AWSGroundStation {
      * 
      * @param listGroundStationsRequest
      * @return Result of the ListGroundStations operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ListGroundStations
@@ -396,10 +398,10 @@ public interface AWSGroundStation {
      * 
      * @param listMissionProfilesRequest
      * @return Result of the ListMissionProfiles operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ListMissionProfiles
@@ -415,10 +417,10 @@ public interface AWSGroundStation {
      * 
      * @param listSatellitesRequest
      * @return Result of the ListSatellites operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ListSatellites
@@ -429,15 +431,15 @@ public interface AWSGroundStation {
 
     /**
      * <p>
-     * Returns a list of tags or a specified resource.
+     * Returns a list of tags for a specified resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ListTagsForResource
@@ -453,10 +455,10 @@ public interface AWSGroundStation {
      * 
      * @param reserveContactRequest
      * @return Result of the ReserveContact operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.ReserveContact
@@ -472,10 +474,10 @@ public interface AWSGroundStation {
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.TagResource
@@ -491,10 +493,10 @@ public interface AWSGroundStation {
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.UntagResource
@@ -514,10 +516,10 @@ public interface AWSGroundStation {
      * 
      * @param updateConfigRequest
      * @return Result of the UpdateConfig operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.UpdateConfig
@@ -536,10 +538,10 @@ public interface AWSGroundStation {
      * 
      * @param updateMissionProfileRequest
      * @return Result of the UpdateMissionProfile operation returned by the service.
-     * @throws DependencyException
-     *         Dependency encountered an error.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
      * @throws ResourceNotFoundException
      *         Resource was not found.
      * @sample AWSGroundStation.UpdateMissionProfile

@@ -48,7 +48,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage or API error.
+ * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result
+ * of the AWS Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+ * <code> NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
  * </p>
  * </li>
  * </ul>
@@ -67,6 +69,12 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * List of requirements that are related to a standards control.
+     * </p>
+     */
+    private java.util.List<String> relatedRequirements;
 
     /**
      * <p>
@@ -128,6 +136,76 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * List of requirements that are related to a standards control.
+     * </p>
+     * 
+     * @return List of requirements that are related to a standards control.
+     */
+
+    public java.util.List<String> getRelatedRequirements() {
+        return relatedRequirements;
+    }
+
+    /**
+     * <p>
+     * List of requirements that are related to a standards control.
+     * </p>
+     * 
+     * @param relatedRequirements
+     *        List of requirements that are related to a standards control.
+     */
+
+    public void setRelatedRequirements(java.util.Collection<String> relatedRequirements) {
+        if (relatedRequirements == null) {
+            this.relatedRequirements = null;
+            return;
+        }
+
+        this.relatedRequirements = new java.util.ArrayList<String>(relatedRequirements);
+    }
+
+    /**
+     * <p>
+     * List of requirements that are related to a standards control.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRelatedRequirements(java.util.Collection)} or {@link #withRelatedRequirements(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param relatedRequirements
+     *        List of requirements that are related to a standards control.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Compliance withRelatedRequirements(String... relatedRequirements) {
+        if (this.relatedRequirements == null) {
+            setRelatedRequirements(new java.util.ArrayList<String>(relatedRequirements.length));
+        }
+        for (String ele : relatedRequirements) {
+            this.relatedRequirements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of requirements that are related to a standards control.
+     * </p>
+     * 
+     * @param relatedRequirements
+     *        List of requirements that are related to a standards control.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Compliance withRelatedRequirements(java.util.Collection<String> relatedRequirements) {
+        setRelatedRequirements(relatedRequirements);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +218,9 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getRelatedRequirements() != null)
+            sb.append("RelatedRequirements: ").append(getRelatedRequirements());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +239,10 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getRelatedRequirements() == null ^ this.getRelatedRequirements() == null)
+            return false;
+        if (other.getRelatedRequirements() != null && other.getRelatedRequirements().equals(this.getRelatedRequirements()) == false)
+            return false;
         return true;
     }
 
@@ -168,6 +252,7 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getRelatedRequirements() == null) ? 0 : getRelatedRequirements().hashCode());
         return hashCode;
     }
 

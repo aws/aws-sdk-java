@@ -27,31 +27,31 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights that you want to describe.
+     * The ARNs of the insights to describe.
      * </p>
      */
     private java.util.List<String> insightArns;
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetInsights</code> operation, set the value of this parameter
-     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing data.
+     * to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set <code>nextToken</code>
+     * in the request to the value of <code>nextToken</code> from the previous response.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The ARNs of the insights that you want to describe.
+     * The ARNs of the insights to describe.
      * </p>
      * 
-     * @return The ARNs of the insights that you want to describe.
+     * @return The ARNs of the insights to describe.
      */
 
     public java.util.List<String> getInsightArns() {
@@ -60,11 +60,11 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights that you want to describe.
+     * The ARNs of the insights to describe.
      * </p>
      * 
      * @param insightArns
-     *        The ARNs of the insights that you want to describe.
+     *        The ARNs of the insights to describe.
      */
 
     public void setInsightArns(java.util.Collection<String> insightArns) {
@@ -78,7 +78,7 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights that you want to describe.
+     * The ARNs of the insights to describe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,7 +87,7 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param insightArns
-     *        The ARNs of the insights that you want to describe.
+     *        The ARNs of the insights to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +103,11 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the insights that you want to describe.
+     * The ARNs of the insights to describe.
      * </p>
      * 
      * @param insightArns
-     *        The ARNs of the insights that you want to describe.
+     *        The ARNs of the insights to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,14 +119,14 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetInsights</code> operation, set the value of this parameter
-     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing data.
+     * to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set <code>nextToken</code>
+     * in the request to the value of <code>nextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        Paginates results. On your first call to the <code>GetInsights</code> operation, set the value of this
-     *        parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     *        request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     *        parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+     *        <code>nextToken</code> in the request to the value of <code>nextToken</code> from the previous response.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,13 +136,13 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetInsights</code> operation, set the value of this parameter
-     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing data.
+     * to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set <code>nextToken</code>
+     * in the request to the value of <code>nextToken</code> from the previous response.
      * </p>
      * 
      * @return Paginates results. On your first call to the <code>GetInsights</code> operation, set the value of this
-     *         parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     *         request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     *         parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+     *         <code>nextToken</code> in the request to the value of <code>nextToken</code> from the previous response.
      */
 
     public String getNextToken() {
@@ -152,14 +152,14 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetInsights</code> operation, set the value of this parameter
-     * to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing data.
+     * to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set <code>nextToken</code>
+     * in the request to the value of <code>nextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        Paginates results. On your first call to the <code>GetInsights</code> operation, set the value of this
-     *        parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     *        request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     *        parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+     *        <code>nextToken</code> in the request to the value of <code>nextToken</code> from the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of items to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -183,10 +183,10 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
-     * @return The maximum number of items that you want in the response.
+     * @return The maximum number of items to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -195,11 +195,11 @@ public class GetInsightsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of items to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

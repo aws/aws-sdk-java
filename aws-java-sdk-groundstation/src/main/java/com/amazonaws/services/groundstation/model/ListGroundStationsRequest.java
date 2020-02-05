@@ -38,6 +38,12 @@ public class ListGroundStationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Satellite ID to retrieve on-boarded ground stations.
+     * </p>
+     */
+    private String satelliteId;
 
     /**
      * <p>
@@ -120,6 +126,46 @@ public class ListGroundStationsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Satellite ID to retrieve on-boarded ground stations.
+     * </p>
+     * 
+     * @param satelliteId
+     *        Satellite ID to retrieve on-boarded ground stations.
+     */
+
+    public void setSatelliteId(String satelliteId) {
+        this.satelliteId = satelliteId;
+    }
+
+    /**
+     * <p>
+     * Satellite ID to retrieve on-boarded ground stations.
+     * </p>
+     * 
+     * @return Satellite ID to retrieve on-boarded ground stations.
+     */
+
+    public String getSatelliteId() {
+        return this.satelliteId;
+    }
+
+    /**
+     * <p>
+     * Satellite ID to retrieve on-boarded ground stations.
+     * </p>
+     * 
+     * @param satelliteId
+     *        Satellite ID to retrieve on-boarded ground stations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroundStationsRequest withSatelliteId(String satelliteId) {
+        setSatelliteId(satelliteId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,7 +180,9 @@ public class ListGroundStationsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getSatelliteId() != null)
+            sb.append("SatelliteId: ").append(getSatelliteId());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +205,10 @@ public class ListGroundStationsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getSatelliteId() == null ^ this.getSatelliteId() == null)
+            return false;
+        if (other.getSatelliteId() != null && other.getSatelliteId().equals(this.getSatelliteId()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +219,7 @@ public class ListGroundStationsRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSatelliteId() == null) ? 0 : getSatelliteId().hashCode());
         return hashCode;
     }
 

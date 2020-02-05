@@ -30,8 +30,7 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
-     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * </p>
      */
     private String policyType;
@@ -55,20 +54,18 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Schedule> schedules;
     /**
      * <p>
-     * A set of optional parameters that can be provided by the policy.
+     * A set of optional parameters for the policy.
      * </p>
      */
     private Parameters parameters;
 
     /**
      * <p>
-     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
-     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * </p>
      * 
      * @param policyType
-     *        This field determines the valid target resource types and actions a policy can manage. This field defaults
-     *        to EBS_SNAPSHOT_MANAGEMENT if not present.
+     *        The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * @see PolicyTypeValues
      */
 
@@ -78,12 +75,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
-     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * </p>
      * 
-     * @return This field determines the valid target resource types and actions a policy can manage. This field
-     *         defaults to EBS_SNAPSHOT_MANAGEMENT if not present.
+     * @return The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * @see PolicyTypeValues
      */
 
@@ -93,13 +88,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
-     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * </p>
      * 
      * @param policyType
-     *        This field determines the valid target resource types and actions a policy can manage. This field defaults
-     *        to EBS_SNAPSHOT_MANAGEMENT if not present.
+     *        The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */
@@ -111,13 +104,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This field determines the valid target resource types and actions a policy can manage. This field defaults to
-     * EBS_SNAPSHOT_MANAGEMENT if not present.
+     * The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * </p>
      * 
      * @param policyType
-     *        This field determines the valid target resource types and actions a policy can manage. This field defaults
-     *        to EBS_SNAPSHOT_MANAGEMENT if not present.
+     *        The valid target resource types and actions a policy can manage. The default is EBS_SNAPSHOT_MANAGEMENT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyTypeValues
      */
@@ -367,11 +358,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of optional parameters that can be provided by the policy.
+     * A set of optional parameters for the policy.
      * </p>
      * 
      * @param parameters
-     *        A set of optional parameters that can be provided by the policy.
+     *        A set of optional parameters for the policy.
      */
 
     public void setParameters(Parameters parameters) {
@@ -380,10 +371,10 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of optional parameters that can be provided by the policy.
+     * A set of optional parameters for the policy.
      * </p>
      * 
-     * @return A set of optional parameters that can be provided by the policy.
+     * @return A set of optional parameters for the policy.
      */
 
     public Parameters getParameters() {
@@ -392,11 +383,11 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A set of optional parameters that can be provided by the policy.
+     * A set of optional parameters for the policy.
      * </p>
      * 
      * @param parameters
-     *        A set of optional parameters that can be provided by the policy.
+     *        A set of optional parameters for the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

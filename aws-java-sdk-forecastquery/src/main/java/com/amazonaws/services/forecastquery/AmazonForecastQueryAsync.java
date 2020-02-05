@@ -34,7 +34,7 @@ public interface AmazonForecastQueryAsync extends AmazonForecastQuery {
 
     /**
      * <p>
-     * Retrieves a forecast filtered by the supplied criteria.
+     * Retrieves a forecast for a single item, filtered by the supplied criteria.
      * </p>
      * <p>
      * The criteria is a key-value pair. The key is either <code>item_id</code> (or the equivalent non-timestamp,
@@ -42,8 +42,13 @@ public interface AmazonForecastQueryAsync extends AmazonForecastQuery {
      * as part of the <code>FeaturizationConfig</code> object.
      * </p>
      * <p>
-     * By default, the complete date range of the filtered forecast is returned. Optionally, you can request a specific
-     * date range within the forecast.
+     * By default, <code>QueryForecast</code> returns the complete date range for the filtered forecast. You can request
+     * a specific date range.
+     * </p>
+     * <p>
+     * To get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     * >CreateForecastExportJob</a> operation.
      * </p>
      * <note>
      * <p>
@@ -62,7 +67,7 @@ public interface AmazonForecastQueryAsync extends AmazonForecastQuery {
 
     /**
      * <p>
-     * Retrieves a forecast filtered by the supplied criteria.
+     * Retrieves a forecast for a single item, filtered by the supplied criteria.
      * </p>
      * <p>
      * The criteria is a key-value pair. The key is either <code>item_id</code> (or the equivalent non-timestamp,
@@ -70,8 +75,13 @@ public interface AmazonForecastQueryAsync extends AmazonForecastQuery {
      * as part of the <code>FeaturizationConfig</code> object.
      * </p>
      * <p>
-     * By default, the complete date range of the filtered forecast is returned. Optionally, you can request a specific
-     * date range within the forecast.
+     * By default, <code>QueryForecast</code> returns the complete date range for the filtered forecast. You can request
+     * a specific date range.
+     * </p>
+     * <p>
+     * To get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     * >CreateForecastExportJob</a> operation.
      * </p>
      * <note>
      * <p>

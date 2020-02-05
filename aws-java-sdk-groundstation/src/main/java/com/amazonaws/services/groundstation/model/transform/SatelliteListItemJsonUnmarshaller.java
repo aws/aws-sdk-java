@@ -48,6 +48,10 @@ public class SatelliteListItemJsonUnmarshaller implements Unmarshaller<Satellite
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("groundStations", targetDepth)) {
+                    context.nextToken();
+                    satelliteListItem.setGroundStations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("noradSatelliteID", targetDepth)) {
                     context.nextToken();
                     satelliteListItem.setNoradSatelliteID(context.getUnmarshaller(Integer.class).unmarshall(context));

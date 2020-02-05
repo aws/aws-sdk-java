@@ -84,6 +84,10 @@ public class ContactDataJsonUnmarshaller implements Unmarshaller<ContactData, Js
                     context.nextToken();
                     contactData.setPrePassStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("region", targetDepth)) {
+                    context.nextToken();
+                    contactData.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("satelliteArn", targetDepth)) {
                     context.nextToken();
                     contactData.setSatelliteArn(context.getUnmarshaller(String.class).unmarshall(context));

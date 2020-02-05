@@ -26,16 +26,10 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * When a satellite was created.
+     * A list of ground stations to which the satellite is on-boarded.
      * </p>
      */
-    private java.util.Date dateCreated;
-    /**
-     * <p>
-     * When a satellite was last updated.
-     * </p>
-     */
-    private java.util.Date lastUpdated;
+    private java.util.List<String> groundStations;
     /**
      * <p>
      * NORAD satellite ID number.
@@ -54,90 +48,74 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String satelliteId;
-    /**
-     * <p>
-     * Tags assigned to a satellite.
-     * </p>
-     */
-    private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * When a satellite was created.
+     * A list of ground stations to which the satellite is on-boarded.
      * </p>
      * 
-     * @param dateCreated
-     *        When a satellite was created.
+     * @return A list of ground stations to which the satellite is on-boarded.
      */
 
-    public void setDateCreated(java.util.Date dateCreated) {
-        this.dateCreated = dateCreated;
+    public java.util.List<String> getGroundStations() {
+        return groundStations;
     }
 
     /**
      * <p>
-     * When a satellite was created.
+     * A list of ground stations to which the satellite is on-boarded.
      * </p>
      * 
-     * @return When a satellite was created.
+     * @param groundStations
+     *        A list of ground stations to which the satellite is on-boarded.
      */
 
-    public java.util.Date getDateCreated() {
-        return this.dateCreated;
+    public void setGroundStations(java.util.Collection<String> groundStations) {
+        if (groundStations == null) {
+            this.groundStations = null;
+            return;
+        }
+
+        this.groundStations = new java.util.ArrayList<String>(groundStations);
     }
 
     /**
      * <p>
-     * When a satellite was created.
+     * A list of ground stations to which the satellite is on-boarded.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroundStations(java.util.Collection)} or {@link #withGroundStations(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
-     * @param dateCreated
-     *        When a satellite was created.
+     * @param groundStations
+     *        A list of ground stations to which the satellite is on-boarded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetSatelliteResult withDateCreated(java.util.Date dateCreated) {
-        setDateCreated(dateCreated);
+    public GetSatelliteResult withGroundStations(String... groundStations) {
+        if (this.groundStations == null) {
+            setGroundStations(new java.util.ArrayList<String>(groundStations.length));
+        }
+        for (String ele : groundStations) {
+            this.groundStations.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * When a satellite was last updated.
+     * A list of ground stations to which the satellite is on-boarded.
      * </p>
      * 
-     * @param lastUpdated
-     *        When a satellite was last updated.
-     */
-
-    public void setLastUpdated(java.util.Date lastUpdated) {
-        this.lastUpdated = lastUpdated;
-    }
-
-    /**
-     * <p>
-     * When a satellite was last updated.
-     * </p>
-     * 
-     * @return When a satellite was last updated.
-     */
-
-    public java.util.Date getLastUpdated() {
-        return this.lastUpdated;
-    }
-
-    /**
-     * <p>
-     * When a satellite was last updated.
-     * </p>
-     * 
-     * @param lastUpdated
-     *        When a satellite was last updated.
+     * @param groundStations
+     *        A list of ground stations to which the satellite is on-boarded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetSatelliteResult withLastUpdated(java.util.Date lastUpdated) {
-        setLastUpdated(lastUpdated);
+    public GetSatelliteResult withGroundStations(java.util.Collection<String> groundStations) {
+        setGroundStations(groundStations);
         return this;
     }
 
@@ -262,67 +240,6 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * <p>
-     * Tags assigned to a satellite.
-     * </p>
-     * 
-     * @return Tags assigned to a satellite.
-     */
-
-    public java.util.Map<String, String> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * Tags assigned to a satellite.
-     * </p>
-     * 
-     * @param tags
-     *        Tags assigned to a satellite.
-     */
-
-    public void setTags(java.util.Map<String, String> tags) {
-        this.tags = tags;
-    }
-
-    /**
-     * <p>
-     * Tags assigned to a satellite.
-     * </p>
-     * 
-     * @param tags
-     *        Tags assigned to a satellite.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetSatelliteResult withTags(java.util.Map<String, String> tags) {
-        setTags(tags);
-        return this;
-    }
-
-    public GetSatelliteResult addTagsEntry(String key, String value) {
-        if (null == this.tags) {
-            this.tags = new java.util.HashMap<String, String>();
-        }
-        if (this.tags.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.tags.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Tags.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetSatelliteResult clearTagsEntries() {
-        this.tags = null;
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -334,18 +251,14 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDateCreated() != null)
-            sb.append("DateCreated: ").append(getDateCreated()).append(",");
-        if (getLastUpdated() != null)
-            sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
+        if (getGroundStations() != null)
+            sb.append("GroundStations: ").append(getGroundStations()).append(",");
         if (getNoradSatelliteID() != null)
             sb.append("NoradSatelliteID: ").append(getNoradSatelliteID()).append(",");
         if (getSatelliteArn() != null)
             sb.append("SatelliteArn: ").append(getSatelliteArn()).append(",");
         if (getSatelliteId() != null)
-            sb.append("SatelliteId: ").append(getSatelliteId()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("SatelliteId: ").append(getSatelliteId());
         sb.append("}");
         return sb.toString();
     }
@@ -360,13 +273,9 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof GetSatelliteResult == false)
             return false;
         GetSatelliteResult other = (GetSatelliteResult) obj;
-        if (other.getDateCreated() == null ^ this.getDateCreated() == null)
+        if (other.getGroundStations() == null ^ this.getGroundStations() == null)
             return false;
-        if (other.getDateCreated() != null && other.getDateCreated().equals(this.getDateCreated()) == false)
-            return false;
-        if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
-            return false;
-        if (other.getLastUpdated() != null && other.getLastUpdated().equals(this.getLastUpdated()) == false)
+        if (other.getGroundStations() != null && other.getGroundStations().equals(this.getGroundStations()) == false)
             return false;
         if (other.getNoradSatelliteID() == null ^ this.getNoradSatelliteID() == null)
             return false;
@@ -380,10 +289,6 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getSatelliteId() != null && other.getSatelliteId().equals(this.getSatelliteId()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         return true;
     }
 
@@ -392,12 +297,10 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
-        hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
+        hashCode = prime * hashCode + ((getGroundStations() == null) ? 0 : getGroundStations().hashCode());
         hashCode = prime * hashCode + ((getNoradSatelliteID() == null) ? 0 : getNoradSatelliteID().hashCode());
         hashCode = prime * hashCode + ((getSatelliteArn() == null) ? 0 : getSatelliteArn().hashCode());
         hashCode = prime * hashCode + ((getSatelliteId() == null) ? 0 : getSatelliteId().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

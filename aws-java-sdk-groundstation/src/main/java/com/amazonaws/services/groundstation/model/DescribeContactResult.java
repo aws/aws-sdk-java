@@ -81,6 +81,12 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.Date prePassStartTime;
     /**
      * <p>
+     * Region of a contact.
+     * </p>
+     */
+    private String region;
+    /**
+     * <p>
      * ARN of a satellite.
      * </p>
      */
@@ -488,6 +494,46 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * Region of a contact.
+     * </p>
+     * 
+     * @param region
+     *        Region of a contact.
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * Region of a contact.
+     * </p>
+     * 
+     * @return Region of a contact.
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * Region of a contact.
+     * </p>
+     * 
+     * @param region
+     *        Region of a contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeContactResult withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
+     * <p>
      * ARN of a satellite.
      * </p>
      * 
@@ -657,6 +703,8 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("PostPassEndTime: ").append(getPostPassEndTime()).append(",");
         if (getPrePassStartTime() != null)
             sb.append("PrePassStartTime: ").append(getPrePassStartTime()).append(",");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getSatelliteArn() != null)
             sb.append("SatelliteArn: ").append(getSatelliteArn()).append(",");
         if (getStartTime() != null)
@@ -713,6 +761,10 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getPrePassStartTime() != null && other.getPrePassStartTime().equals(this.getPrePassStartTime()) == false)
             return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
+            return false;
         if (other.getSatelliteArn() == null ^ this.getSatelliteArn() == null)
             return false;
         if (other.getSatelliteArn() != null && other.getSatelliteArn().equals(this.getSatelliteArn()) == false)
@@ -742,6 +794,7 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getMissionProfileArn() == null) ? 0 : getMissionProfileArn().hashCode());
         hashCode = prime * hashCode + ((getPostPassEndTime() == null) ? 0 : getPostPassEndTime().hashCode());
         hashCode = prime * hashCode + ((getPrePassStartTime() == null) ? 0 : getPrePassStartTime().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getSatelliteArn() == null) ? 0 : getSatelliteArn().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

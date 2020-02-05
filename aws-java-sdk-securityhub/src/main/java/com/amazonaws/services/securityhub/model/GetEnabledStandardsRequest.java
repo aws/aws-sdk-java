@@ -27,15 +27,18 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the standards subscription ARNs for the standards to retrieve.
+     * The list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      */
     private java.util.List<String> standardsSubscriptionArns;
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this
-     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
-     * with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set <code>nextToken</code> in the request to the
+     * value of <code>nextToken</code> from the previous response.
      * </p>
      */
     private String nextToken;
@@ -48,10 +51,10 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the standards subscription ARNs for the standards to retrieve.
+     * The list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * 
-     * @return A list of the standards subscription ARNs for the standards to retrieve.
+     * @return The list of the standards subscription ARNs for the standards to retrieve.
      */
 
     public java.util.List<String> getStandardsSubscriptionArns() {
@@ -60,11 +63,11 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the standards subscription ARNs for the standards to retrieve.
+     * The list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        A list of the standards subscription ARNs for the standards to retrieve.
+     *        The list of the standards subscription ARNs for the standards to retrieve.
      */
 
     public void setStandardsSubscriptionArns(java.util.Collection<String> standardsSubscriptionArns) {
@@ -78,7 +81,7 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the standards subscription ARNs for the standards to retrieve.
+     * The list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,7 +90,7 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        A list of the standards subscription ARNs for the standards to retrieve.
+     *        The list of the standards subscription ARNs for the standards to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +106,11 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of the standards subscription ARNs for the standards to retrieve.
+     * The list of the standards subscription ARNs for the standards to retrieve.
      * </p>
      * 
      * @param standardsSubscriptionArns
-     *        A list of the standards subscription ARNs for the standards to retrieve.
+     *        The list of the standards subscription ARNs for the standards to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,14 +122,19 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this
-     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
-     * with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set <code>nextToken</code> in the request to the
+     * value of <code>nextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        Paginates results. On your first call to the <code>GetEnabledStandards</code> operation, set the value of
-     *        this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in
-     *        the request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     *        this parameter to <code>NULL</code>.</p>
+     *        <p>
+     *        For subsequent calls to the operation, to continue listing data, set <code>nextToken</code> in the request
+     *        to the value of <code>nextToken</code> from the previous response.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,14 +144,18 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this
-     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
-     * with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set <code>nextToken</code> in the request to the
+     * value of <code>nextToken</code> from the previous response.
      * </p>
      * 
      * @return Paginates results. On your first call to the <code>GetEnabledStandards</code> operation, set the value of
-     *         this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code>
-     *         in the request with the value of <code>nextToken</code> from the previous response to continue listing
-     *         data.
+     *         this parameter to <code>NULL</code>.</p>
+     *         <p>
+     *         For subsequent calls to the operation, to continue listing data, set <code>nextToken</code> in the
+     *         request to the value of <code>nextToken</code> from the previous response.
      */
 
     public String getNextToken() {
@@ -153,14 +165,19 @@ public class GetEnabledStandardsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Paginates results. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this
-     * parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the request
-     * with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set <code>nextToken</code> in the request to the
+     * value of <code>nextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        Paginates results. On your first call to the <code>GetEnabledStandards</code> operation, set the value of
-     *        this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in
-     *        the request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     *        this parameter to <code>NULL</code>.</p>
+     *        <p>
+     *        For subsequent calls to the operation, to continue listing data, set <code>nextToken</code> in the request
+     *        to the value of <code>nextToken</code> from the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

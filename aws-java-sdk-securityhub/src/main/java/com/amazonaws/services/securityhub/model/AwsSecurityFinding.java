@@ -115,15 +115,21 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior
-     * or issue that it was intended to identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.
+     * or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
      * </p>
      */
     private Integer confidence;
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
-     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
      * </p>
      */
     private Integer criticality;
@@ -195,7 +201,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private ProcessDetails process;
     /**
      * <p>
-     * Threat intel details related to a finding.
+     * Threat intelligence details related to a finding.
      * </p>
      */
     private java.util.List<ThreatIntelIndicator> threatIntelIndicators;
@@ -793,14 +799,19 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior
-     * or issue that it was intended to identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.
+     * or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
      * </p>
      * 
      * @param confidence
      *        A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the
-     *        behavior or issue that it was intended to identify. Confidence is scored on a 0-100 basis using a ratio
-     *        scale, where 0 means zero percent confidence and 100 means 100 percent confidence.
+     *        behavior or issue that it was intended to identify.</p>
+     *        <p>
+     *        Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+     *        means 100 percent confidence.
      */
 
     public void setConfidence(Integer confidence) {
@@ -810,13 +821,18 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior
-     * or issue that it was intended to identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.
+     * or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
      * </p>
      * 
      * @return A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the
-     *         behavior or issue that it was intended to identify. Confidence is scored on a 0-100 basis using a ratio
-     *         scale, where 0 means zero percent confidence and 100 means 100 percent confidence.
+     *         behavior or issue that it was intended to identify.</p>
+     *         <p>
+     *         Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+     *         means 100 percent confidence.
      */
 
     public Integer getConfidence() {
@@ -826,14 +842,19 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior
-     * or issue that it was intended to identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.
+     * or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
      * </p>
      * 
      * @param confidence
      *        A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the
-     *        behavior or issue that it was intended to identify. Confidence is scored on a 0-100 basis using a ratio
-     *        scale, where 0 means zero percent confidence and 100 means 100 percent confidence.
+     *        behavior or issue that it was intended to identify.</p>
+     *        <p>
+     *        Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+     *        means 100 percent confidence.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -844,13 +865,18 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
-     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
      * </p>
      * 
      * @param criticality
-     *        The level of importance assigned to the resources associated with the finding. A score of 0 means that the
-     *        underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     *        The level of importance assigned to the resources associated with the finding.</p>
+     *        <p>
+     *        A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for
+     *        the most critical resources.
      */
 
     public void setCriticality(Integer criticality) {
@@ -859,13 +885,17 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
-     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
      * </p>
      * 
-     * @return The level of importance assigned to the resources associated with the finding. A score of 0 means that
-     *         the underlying resources have no criticality, and a score of 100 is reserved for the most critical
-     *         resources.
+     * @return The level of importance assigned to the resources associated with the finding.</p>
+     *         <p>
+     *         A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for
+     *         the most critical resources.
      */
 
     public Integer getCriticality() {
@@ -874,13 +904,18 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The level of importance assigned to the resources associated with the finding. A score of 0 means that the
-     * underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     * The level of importance assigned to the resources associated with the finding.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
      * </p>
      * 
      * @param criticality
-     *        The level of importance assigned to the resources associated with the finding. A score of 0 means that the
-     *        underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+     *        The level of importance assigned to the resources associated with the finding.</p>
+     *        <p>
+     *        A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for
+     *        the most critical resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1383,10 +1418,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Threat intel details related to a finding.
+     * Threat intelligence details related to a finding.
      * </p>
      * 
-     * @return Threat intel details related to a finding.
+     * @return Threat intelligence details related to a finding.
      */
 
     public java.util.List<ThreatIntelIndicator> getThreatIntelIndicators() {
@@ -1395,11 +1430,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Threat intel details related to a finding.
+     * Threat intelligence details related to a finding.
      * </p>
      * 
      * @param threatIntelIndicators
-     *        Threat intel details related to a finding.
+     *        Threat intelligence details related to a finding.
      */
 
     public void setThreatIntelIndicators(java.util.Collection<ThreatIntelIndicator> threatIntelIndicators) {
@@ -1413,7 +1448,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Threat intel details related to a finding.
+     * Threat intelligence details related to a finding.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1422,7 +1457,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param threatIntelIndicators
-     *        Threat intel details related to a finding.
+     *        Threat intelligence details related to a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1438,11 +1473,11 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Threat intel details related to a finding.
+     * Threat intelligence details related to a finding.
      * </p>
      * 
      * @param threatIntelIndicators
-     *        Threat intel details related to a finding.
+     *        Threat intelligence details related to a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

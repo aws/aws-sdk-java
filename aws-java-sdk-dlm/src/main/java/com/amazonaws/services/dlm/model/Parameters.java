@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Optional parameters that can be added to the policy. The set of valid parameters depends on the combination of
- * <code>policyType</code> and <code>resourceType</code> values.
+ * Specifies optional parameters to add to a policy. The set of valid parameters depends on the combination of policy
+ * type and resource type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Parameters" target="_top">AWS API
@@ -31,24 +31,27 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     * <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     * Management – Instance policies.
+     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
+     * created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
+     * default is false.
      * </p>
      */
     private Boolean excludeBootVolume;
 
     /**
      * <p>
-     * When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     * <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     * Management – Instance policies.
+     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
+     * created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
+     * default is false.
      * </p>
      * 
      * @param excludeBootVolume
-     *        When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     *        <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     *        Management – Instance policies.
+     *        [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
+     *        snapshots created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
+     *        >CreateSnapshots</a>. The default is false.
      */
 
     public void setExcludeBootVolume(Boolean excludeBootVolume) {
@@ -57,14 +60,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     * <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     * Management – Instance policies.
+     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
+     * created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
+     * default is false.
      * </p>
      * 
-     * @return When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     *         <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     *         Management – Instance policies.
+     * @return [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
+     *         snapshots created using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
+     *         >CreateSnapshots</a>. The default is false.
      */
 
     public Boolean getExcludeBootVolume() {
@@ -73,15 +78,17 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     * <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     * Management – Instance policies.
+     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
+     * created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
+     * default is false.
      * </p>
      * 
      * @param excludeBootVolume
-     *        When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     *        <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     *        Management – Instance policies.
+     *        [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
+     *        snapshots created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
+     *        >CreateSnapshots</a>. The default is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,14 +99,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     * <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     * Management – Instance policies.
+     * [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from snapshots
+     * created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>. The
+     * default is false.
      * </p>
      * 
-     * @return When executing an EBS Snapshot Management – Instance policy, execute all CreateSnapshots calls with the
-     *         <code>excludeBootVolume</code> set to the supplied field. Defaults to false. Only valid for EBS Snapshot
-     *         Management – Instance policies.
+     * @return [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the root volume from
+     *         snapshots created using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html"
+     *         >CreateSnapshots</a>. The default is false.
      */
 
     public Boolean isExcludeBootVolume() {

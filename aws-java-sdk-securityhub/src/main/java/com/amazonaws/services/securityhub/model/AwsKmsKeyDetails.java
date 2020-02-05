@@ -60,10 +60,18 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
     private String keyState;
     /**
      * <p>
-     * The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created the key material. When this
-     * value is EXTERNAL, the key material was imported from your existing key management infrastructure or the CMK
-     * lacks key material. When this value is AWS_CLOUDHSM, the key material was created in the AWS CloudHSM cluster
-     * associated with a custom key store.
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+     * </p>
+     * <p>
+     * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
+     * infrastructure or the CMK lacks key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster associated
+     * with a custom key store.
      * </p>
      */
     private String origin;
@@ -270,17 +278,32 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created the key material. When this
-     * value is EXTERNAL, the key material was imported from your existing key management infrastructure or the CMK
-     * lacks key material. When this value is AWS_CLOUDHSM, the key material was created in the AWS CloudHSM cluster
-     * associated with a custom key store.
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+     * </p>
+     * <p>
+     * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
+     * infrastructure or the CMK lacks key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster associated
+     * with a custom key store.
      * </p>
      * 
      * @param origin
-     *        The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created the key material. When
-     *        this value is EXTERNAL, the key material was imported from your existing key management infrastructure or
-     *        the CMK lacks key material. When this value is AWS_CLOUDHSM, the key material was created in the AWS
-     *        CloudHSM cluster associated with a custom key store.
+     *        The source of the CMK's key material.</p>
+     *        <p>
+     *        When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+     *        </p>
+     *        <p>
+     *        When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
+     *        infrastructure or the CMK lacks key material.
+     *        </p>
+     *        <p>
+     *        When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
+     *        associated with a custom key store.
      */
 
     public void setOrigin(String origin) {
@@ -289,16 +312,31 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created the key material. When this
-     * value is EXTERNAL, the key material was imported from your existing key management infrastructure or the CMK
-     * lacks key material. When this value is AWS_CLOUDHSM, the key material was created in the AWS CloudHSM cluster
-     * associated with a custom key store.
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+     * </p>
+     * <p>
+     * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
+     * infrastructure or the CMK lacks key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster associated
+     * with a custom key store.
      * </p>
      * 
-     * @return The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created the key material. When
-     *         this value is EXTERNAL, the key material was imported from your existing key management infrastructure or
-     *         the CMK lacks key material. When this value is AWS_CLOUDHSM, the key material was created in the AWS
-     *         CloudHSM cluster associated with a custom key store.
+     * @return The source of the CMK's key material.</p>
+     *         <p>
+     *         When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+     *         </p>
+     *         <p>
+     *         When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
+     *         infrastructure or the CMK lacks key material.
+     *         </p>
+     *         <p>
+     *         When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
+     *         associated with a custom key store.
      */
 
     public String getOrigin() {
@@ -307,17 +345,32 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created the key material. When this
-     * value is EXTERNAL, the key material was imported from your existing key management infrastructure or the CMK
-     * lacks key material. When this value is AWS_CLOUDHSM, the key material was created in the AWS CloudHSM cluster
-     * associated with a custom key store.
+     * The source of the CMK's key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+     * </p>
+     * <p>
+     * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
+     * infrastructure or the CMK lacks key material.
+     * </p>
+     * <p>
+     * When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster associated
+     * with a custom key store.
      * </p>
      * 
      * @param origin
-     *        The source of the CMK's key material. When this value is AWS_KMS, AWS KMS created the key material. When
-     *        this value is EXTERNAL, the key material was imported from your existing key management infrastructure or
-     *        the CMK lacks key material. When this value is AWS_CLOUDHSM, the key material was created in the AWS
-     *        CloudHSM cluster associated with a custom key store.
+     *        The source of the CMK's key material.</p>
+     *        <p>
+     *        When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
+     *        </p>
+     *        <p>
+     *        When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
+     *        infrastructure or the CMK lacks key material.
+     *        </p>
+     *        <p>
+     *        When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
+     *        associated with a custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

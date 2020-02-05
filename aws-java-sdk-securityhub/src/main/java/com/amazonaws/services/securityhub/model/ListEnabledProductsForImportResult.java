@@ -25,7 +25,7 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      */
     private java.util.List<String> productSubscriptions;
@@ -38,10 +38,10 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * 
-     * @return A list of ARNs for the resources that represent your subscriptions to products.
+     * @return The list of ARNs for the resources that represent your subscriptions to products.
      */
 
     public java.util.List<String> getProductSubscriptions() {
@@ -50,11 +50,11 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * 
      * @param productSubscriptions
-     *        A list of ARNs for the resources that represent your subscriptions to products.
+     *        The list of ARNs for the resources that represent your subscriptions to products.
      */
 
     public void setProductSubscriptions(java.util.Collection<String> productSubscriptions) {
@@ -68,7 +68,7 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param productSubscriptions
-     *        A list of ARNs for the resources that represent your subscriptions to products.
+     *        The list of ARNs for the resources that represent your subscriptions to products.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * 
      * @param productSubscriptions
-     *        A list of ARNs for the resources that represent your subscriptions to products.
+     *        The list of ARNs for the resources that represent your subscriptions to products.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

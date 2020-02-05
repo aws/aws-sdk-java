@@ -50,7 +50,7 @@ public class AwsSqsQueueDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * maxReceiveCount is exceeded.
+     * <code>maxReceiveCount</code> is exceeded.
      * </p>
      */
     private String deadLetterTargetArn;
@@ -184,12 +184,12 @@ public class AwsSqsQueueDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * maxReceiveCount is exceeded.
+     * <code>maxReceiveCount</code> is exceeded.
      * </p>
      * 
      * @param deadLetterTargetArn
      *        The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value
-     *        of maxReceiveCount is exceeded.
+     *        of <code>maxReceiveCount</code> is exceeded.
      */
 
     public void setDeadLetterTargetArn(String deadLetterTargetArn) {
@@ -199,11 +199,11 @@ public class AwsSqsQueueDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * maxReceiveCount is exceeded.
+     * <code>maxReceiveCount</code> is exceeded.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the
-     *         value of maxReceiveCount is exceeded.
+     *         value of <code>maxReceiveCount</code> is exceeded.
      */
 
     public String getDeadLetterTargetArn() {
@@ -213,12 +213,12 @@ public class AwsSqsQueueDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of
-     * maxReceiveCount is exceeded.
+     * <code>maxReceiveCount</code> is exceeded.
      * </p>
      * 
      * @param deadLetterTargetArn
      *        The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value
-     *        of maxReceiveCount is exceeded.
+     *        of <code>maxReceiveCount</code> is exceeded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

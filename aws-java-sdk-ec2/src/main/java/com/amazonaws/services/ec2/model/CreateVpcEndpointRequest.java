@@ -101,6 +101,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private Boolean privateDnsEnabled;
+    /**
+     * <p>
+     * The tags to associate with the endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -746,6 +752,79 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * The tags to associate with the endpoint.
+     * </p>
+     * 
+     * @return The tags to associate with the endpoint.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the endpoint.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to associate with the endpoint.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to associate with the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the endpoint.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to associate with the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -785,7 +864,9 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getPrivateDnsEnabled() != null)
-            sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled());
+            sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -836,6 +917,10 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getPrivateDnsEnabled() != null && other.getPrivateDnsEnabled().equals(this.getPrivateDnsEnabled()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -853,6 +938,7 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsEnabled() == null) ? 0 : getPrivateDnsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

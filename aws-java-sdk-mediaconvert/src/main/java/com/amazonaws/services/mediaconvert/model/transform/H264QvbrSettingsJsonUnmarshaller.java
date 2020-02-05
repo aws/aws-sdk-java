@@ -56,6 +56,10 @@ public class H264QvbrSettingsJsonUnmarshaller implements Unmarshaller<H264QvbrSe
                     context.nextToken();
                     h264QvbrSettings.setQvbrQualityLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("qvbrQualityLevelFineTune", targetDepth)) {
+                    context.nextToken();
+                    h264QvbrSettings.setQvbrQualityLevelFineTune(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

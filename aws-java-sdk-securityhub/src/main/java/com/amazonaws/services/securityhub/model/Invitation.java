@@ -48,7 +48,7 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date invitedAt;
     /**
      * <p>
-     * The current status of the association between member and master accounts.
+     * The current status of the association between the member and master accounts.
      * </p>
      */
     private String memberStatus;
@@ -175,11 +175,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the association between member and master accounts.
+     * The current status of the association between the member and master accounts.
      * </p>
      * 
      * @param memberStatus
-     *        The current status of the association between member and master accounts.
+     *        The current status of the association between the member and master accounts.
      */
 
     public void setMemberStatus(String memberStatus) {
@@ -188,10 +188,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the association between member and master accounts.
+     * The current status of the association between the member and master accounts.
      * </p>
      * 
-     * @return The current status of the association between member and master accounts.
+     * @return The current status of the association between the member and master accounts.
      */
 
     public String getMemberStatus() {
@@ -200,11 +200,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the association between member and master accounts.
+     * The current status of the association between the member and master accounts.
      * </p>
      * 
      * @param memberStatus
-     *        The current status of the association between member and master accounts.
+     *        The current status of the association between the member and master accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

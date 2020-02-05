@@ -30,8 +30,13 @@ public class LoadBalancerState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The state code. The initial state of the load balancer is provisioning. After the load balancer is fully set up
-     * and ready to route traffic, its state is active. If the load balancer could not be set up, its state is failed.
+     * The state code. The initial state of the load balancer is provisioning.
+     * </p>
+     * <p>
+     * After the load balancer is fully set up and ready to route traffic, its state is active.
+     * </p>
+     * <p>
+     * If the load balancer could not be set up, its state is failed.
      * </p>
      */
     private String code;
@@ -44,14 +49,22 @@ public class LoadBalancerState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The state code. The initial state of the load balancer is provisioning. After the load balancer is fully set up
-     * and ready to route traffic, its state is active. If the load balancer could not be set up, its state is failed.
+     * The state code. The initial state of the load balancer is provisioning.
+     * </p>
+     * <p>
+     * After the load balancer is fully set up and ready to route traffic, its state is active.
+     * </p>
+     * <p>
+     * If the load balancer could not be set up, its state is failed.
      * </p>
      * 
      * @param code
-     *        The state code. The initial state of the load balancer is provisioning. After the load balancer is fully
-     *        set up and ready to route traffic, its state is active. If the load balancer could not be set up, its
-     *        state is failed.
+     *        The state code. The initial state of the load balancer is provisioning.</p>
+     *        <p>
+     *        After the load balancer is fully set up and ready to route traffic, its state is active.
+     *        </p>
+     *        <p>
+     *        If the load balancer could not be set up, its state is failed.
      */
 
     public void setCode(String code) {
@@ -60,13 +73,21 @@ public class LoadBalancerState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The state code. The initial state of the load balancer is provisioning. After the load balancer is fully set up
-     * and ready to route traffic, its state is active. If the load balancer could not be set up, its state is failed.
+     * The state code. The initial state of the load balancer is provisioning.
+     * </p>
+     * <p>
+     * After the load balancer is fully set up and ready to route traffic, its state is active.
+     * </p>
+     * <p>
+     * If the load balancer could not be set up, its state is failed.
      * </p>
      * 
-     * @return The state code. The initial state of the load balancer is provisioning. After the load balancer is fully
-     *         set up and ready to route traffic, its state is active. If the load balancer could not be set up, its
-     *         state is failed.
+     * @return The state code. The initial state of the load balancer is provisioning.</p>
+     *         <p>
+     *         After the load balancer is fully set up and ready to route traffic, its state is active.
+     *         </p>
+     *         <p>
+     *         If the load balancer could not be set up, its state is failed.
      */
 
     public String getCode() {
@@ -75,14 +96,22 @@ public class LoadBalancerState implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The state code. The initial state of the load balancer is provisioning. After the load balancer is fully set up
-     * and ready to route traffic, its state is active. If the load balancer could not be set up, its state is failed.
+     * The state code. The initial state of the load balancer is provisioning.
+     * </p>
+     * <p>
+     * After the load balancer is fully set up and ready to route traffic, its state is active.
+     * </p>
+     * <p>
+     * If the load balancer could not be set up, its state is failed.
      * </p>
      * 
      * @param code
-     *        The state code. The initial state of the load balancer is provisioning. After the load balancer is fully
-     *        set up and ready to route traffic, its state is active. If the load balancer could not be set up, its
-     *        state is failed.
+     *        The state code. The initial state of the load balancer is provisioning.</p>
+     *        <p>
+     *        After the load balancer is fully set up and ready to route traffic, its state is active.
+     *        </p>
+     *        <p>
+     *        If the load balancer could not be set up, its state is failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

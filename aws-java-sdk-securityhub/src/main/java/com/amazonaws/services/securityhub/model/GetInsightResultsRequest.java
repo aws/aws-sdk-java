@@ -27,18 +27,18 @@ public class GetInsightResultsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the insight whose results you want to see.
+     * The ARN of the insight for which to return results.
      * </p>
      */
     private String insightArn;
 
     /**
      * <p>
-     * The ARN of the insight whose results you want to see.
+     * The ARN of the insight for which to return results.
      * </p>
      * 
      * @param insightArn
-     *        The ARN of the insight whose results you want to see.
+     *        The ARN of the insight for which to return results.
      */
 
     public void setInsightArn(String insightArn) {
@@ -47,10 +47,10 @@ public class GetInsightResultsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the insight whose results you want to see.
+     * The ARN of the insight for which to return results.
      * </p>
      * 
-     * @return The ARN of the insight whose results you want to see.
+     * @return The ARN of the insight for which to return results.
      */
 
     public String getInsightArn() {
@@ -59,11 +59,11 @@ public class GetInsightResultsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the insight whose results you want to see.
+     * The ARN of the insight for which to return results.
      * </p>
      * 
      * @param insightArn
-     *        The ARN of the insight whose results you want to see.
+     *        The ARN of the insight for which to return results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

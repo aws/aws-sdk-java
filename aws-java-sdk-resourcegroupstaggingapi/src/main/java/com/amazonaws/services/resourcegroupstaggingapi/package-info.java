@@ -225,6 +225,11 @@
  * </li>
  * <li>
  * <p>
+ * AWS Data Exchange
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * AWS Data Pipeline
  * </p>
  * </li>
@@ -236,6 +241,11 @@
  * <li>
  * <p>
  * AWS DataSync
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS Device Farm
  * </p>
  * </li>
  * <li>
@@ -271,6 +281,11 @@
  * <li>
  * <p>
  * Amazon ECS
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon EKS
  * </p>
  * </li>
  * <li>
@@ -371,6 +386,11 @@
  * <li>
  * <p>
  * AWS IoT Greengrass
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS IoT 1-Click
  * </p>
  * </li>
  * <li>
@@ -506,6 +526,11 @@
  * <li>
  * <p>
  * Amazon Simple Queue Service (SQS)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon Simple Workflow Service
  * </p>
  * </li>
  * <li>

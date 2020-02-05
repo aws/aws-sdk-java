@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The value that you provided was invalid or too long.
+ * The value is invalid or is too long.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

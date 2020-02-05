@@ -263,6 +263,11 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * AWS Data Exchange
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * AWS Data Pipeline
  * </p>
  * </li>
@@ -274,6 +279,11 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.transform.*;
  * <li>
  * <p>
  * AWS DataSync
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS Device Farm
  * </p>
  * </li>
  * <li>
@@ -309,6 +319,11 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.transform.*;
  * <li>
  * <p>
  * Amazon ECS
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon EKS
  * </p>
  * </li>
  * <li>
@@ -409,6 +424,11 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.transform.*;
  * <li>
  * <p>
  * AWS IoT Greengrass
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS IoT 1-Click
  * </p>
  * </li>
  * <li>
@@ -544,6 +564,11 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.transform.*;
  * <li>
  * <p>
  * Amazon Simple Queue Service (SQS)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon Simple Workflow Service
  * </p>
  * </li>
  * <li>

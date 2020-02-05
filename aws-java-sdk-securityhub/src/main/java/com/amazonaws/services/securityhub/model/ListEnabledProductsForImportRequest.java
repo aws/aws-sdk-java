@@ -28,14 +28,14 @@ public class ListEnabledProductsForImportRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Paginates results. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value
-     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>NextToken</code> from the previous response to continue listing data.
+     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>NextToken</code> from the previous response.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      */
     private Integer maxResults;
@@ -43,15 +43,15 @@ public class ListEnabledProductsForImportRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Paginates results. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value
-     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>NextToken</code> from the previous response to continue listing data.
+     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        Paginates results. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the
-     *        value of this parameter to <code>NULL</code>. For subsequent calls to the operation, fill
-     *        <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response
-     *        to continue listing data.
+     *        value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing
+     *        data, set <code>nextToken</code> in the request to the value of <code>NextToken</code> from the previous
+     *        response.
      */
 
     public void setNextToken(String nextToken) {
@@ -61,14 +61,14 @@ public class ListEnabledProductsForImportRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Paginates results. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value
-     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>NextToken</code> from the previous response to continue listing data.
+     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @return Paginates results. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the
-     *         value of this parameter to <code>NULL</code>. For subsequent calls to the operation, fill
-     *         <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response
-     *         to continue listing data.
+     *         value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing
+     *         data, set <code>nextToken</code> in the request to the value of <code>NextToken</code> from the previous
+     *         response.
      */
 
     public String getNextToken() {
@@ -78,15 +78,15 @@ public class ListEnabledProductsForImportRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Paginates results. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value
-     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>NextToken</code> from the previous response to continue listing data.
+     * of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        Paginates results. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the
-     *        value of this parameter to <code>NULL</code>. For subsequent calls to the operation, fill
-     *        <code>nextToken</code> in the request with the value of <code>NextToken</code> from the previous response
-     *        to continue listing data.
+     *        value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing
+     *        data, set <code>nextToken</code> in the request to the value of <code>NextToken</code> from the previous
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListEnabledProductsForImportRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of items to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -110,10 +110,10 @@ public class ListEnabledProductsForImportRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
-     * @return The maximum number of items that you want in the response.
+     * @return The maximum number of items to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -122,11 +122,11 @@ public class ListEnabledProductsForImportRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of items to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

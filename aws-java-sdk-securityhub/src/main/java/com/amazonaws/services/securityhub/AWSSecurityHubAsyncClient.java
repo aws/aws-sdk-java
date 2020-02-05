@@ -38,28 +38,34 @@ import java.util.concurrent.ExecutorService;
  * When you use operations in the Security Hub API, the requests are executed only in the AWS Region that is currently
  * active or in the specific AWS Region that you specify in your request. Any configuration or settings change that
  * results from the operation is applied only to that Region. To make the same change in other Regions, execute the same
- * command for each Region to apply the change to. For example, if your Region is set to <code>us-west-2</code>, when
- * you use <code>CreateMembers</code> to add a member account to Security Hub, the association of the member account
- * with the master account is created only in the us-west-2 Region. Security Hub must be enabled for the member account
- * in the same Region that the invite was sent from.
+ * command for each Region to apply the change to.
  * </p>
  * <p>
- * The following throttling limits apply to using Security Hub API operations:
+ * For example, if your Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code> to add a member
+ * account to Security Hub, the association of the member account with the master account is created only in the
+ * <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
+ * invitation was sent from.
+ * </p>
+ * <p>
+ * The following throttling limits apply to using Security Hub API operations.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <code>GetFindings</code> - RateLimit of 3 requests per second, and a BurstLimit of 6 requests per second.
+ * <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6 requests per
+ * second.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>UpdateFindings</code> - RateLimit of 1 request per second, and a BurstLimit of 5 requests per second.
+ * <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5 requests
+ * per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * All other operations - RateLimit of 10 request per second, and a BurstLimit of 30 requests per second.
+ * All other operations - <code>RateLimit</code> of 10 request per second. <code>BurstLimit</code> of 30 requests per
+ * second.
  * </p>
  * </li>
  * </ul>
