@@ -36,8 +36,8 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block index of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      */
     private Integer blockIndex;
@@ -46,8 +46,8 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block token of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      */
     private String blockToken;
@@ -97,15 +97,15 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block index of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      * 
      * @param blockIndex
      *        The block index of the block from which to get data.</p>
      *        <p>
-     *        Obtain the <code>block index</code> by running the <code>list changed blocks</code> or
-     *        <code>list snapshot blocks</code> operations.
+     *        Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     *        <code>ListSnapshotBlocks</code> operations.
      */
 
     public void setBlockIndex(Integer blockIndex) {
@@ -117,14 +117,14 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block index of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      * 
      * @return The block index of the block from which to get data.</p>
      *         <p>
-     *         Obtain the <code>block index</code> by running the <code>list changed blocks</code> or
-     *         <code>list snapshot blocks</code> operations.
+     *         Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     *         <code>ListSnapshotBlocks</code> operations.
      */
 
     public Integer getBlockIndex() {
@@ -136,15 +136,15 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block index of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      * 
      * @param blockIndex
      *        The block index of the block from which to get data.</p>
      *        <p>
-     *        Obtain the <code>block index</code> by running the <code>list changed blocks</code> or
-     *        <code>list snapshot blocks</code> operations.
+     *        Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     *        <code>ListSnapshotBlocks</code> operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,15 +158,15 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block token of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      * 
      * @param blockToken
      *        The block token of the block from which to get data.</p>
      *        <p>
-     *        Obtain the <code>block token</code> by running the <code>list changed blocks</code> or
-     *        <code>list snapshot blocks</code> operations.
+     *        Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     *        <code>ListSnapshotBlocks</code> operations.
      */
 
     public void setBlockToken(String blockToken) {
@@ -178,14 +178,14 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block token of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      * 
      * @return The block token of the block from which to get data.</p>
      *         <p>
-     *         Obtain the <code>block token</code> by running the <code>list changed blocks</code> or
-     *         <code>list snapshot blocks</code> operations.
+     *         Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     *         <code>ListSnapshotBlocks</code> operations.
      */
 
     public String getBlockToken() {
@@ -197,15 +197,15 @@ public class GetSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
      * The block token of the block from which to get data.
      * </p>
      * <p>
-     * Obtain the <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.
+     * Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.
      * </p>
      * 
      * @param blockToken
      *        The block token of the block from which to get data.</p>
      *        <p>
-     *        Obtain the <code>block token</code> by running the <code>list changed blocks</code> or
-     *        <code>list snapshot blocks</code> operations.
+     *        Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     *        <code>ListSnapshotBlocks</code> operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

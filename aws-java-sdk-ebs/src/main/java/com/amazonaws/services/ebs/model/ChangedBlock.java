@@ -37,16 +37,16 @@ public class ChangedBlock implements Serializable, Cloneable, StructuredPojo {
     private Integer blockIndex;
     /**
      * <p>
-     * The block token for the block index of the <code>first snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation. This value is absent if the first snapshot does not have the changed
+     * The block token for the block index of the <code>FirstSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed
      * block that is on the second snapshot.
      * </p>
      */
     private String firstBlockToken;
     /**
      * <p>
-     * The block token for the block index of the <code>second snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation.
+     * The block token for the block index of the <code>SecondSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation.
      * </p>
      */
     private String secondBlockToken;
@@ -93,14 +93,14 @@ public class ChangedBlock implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The block token for the block index of the <code>first snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation. This value is absent if the first snapshot does not have the changed
+     * The block token for the block index of the <code>FirstSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed
      * block that is on the second snapshot.
      * </p>
      * 
      * @param firstBlockToken
-     *        The block token for the block index of the <code>first snapshot ID</code> specified in the
-     *        <code>list changed blocks</code> operation. This value is absent if the first snapshot does not have the
+     *        The block token for the block index of the <code>FirstSnapshotId</code> specified in the
+     *        <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the
      *        changed block that is on the second snapshot.
      */
 
@@ -110,13 +110,13 @@ public class ChangedBlock implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The block token for the block index of the <code>first snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation. This value is absent if the first snapshot does not have the changed
+     * The block token for the block index of the <code>FirstSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed
      * block that is on the second snapshot.
      * </p>
      * 
-     * @return The block token for the block index of the <code>first snapshot ID</code> specified in the
-     *         <code>list changed blocks</code> operation. This value is absent if the first snapshot does not have the
+     * @return The block token for the block index of the <code>FirstSnapshotId</code> specified in the
+     *         <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the
      *         changed block that is on the second snapshot.
      */
 
@@ -126,14 +126,14 @@ public class ChangedBlock implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The block token for the block index of the <code>first snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation. This value is absent if the first snapshot does not have the changed
+     * The block token for the block index of the <code>FirstSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed
      * block that is on the second snapshot.
      * </p>
      * 
      * @param firstBlockToken
-     *        The block token for the block index of the <code>first snapshot ID</code> specified in the
-     *        <code>list changed blocks</code> operation. This value is absent if the first snapshot does not have the
+     *        The block token for the block index of the <code>FirstSnapshotId</code> specified in the
+     *        <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the
      *        changed block that is on the second snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -145,13 +145,13 @@ public class ChangedBlock implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The block token for the block index of the <code>second snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation.
+     * The block token for the block index of the <code>SecondSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation.
      * </p>
      * 
      * @param secondBlockToken
-     *        The block token for the block index of the <code>second snapshot ID</code> specified in the
-     *        <code>list changed blocks</code> operation.
+     *        The block token for the block index of the <code>SecondSnapshotId</code> specified in the
+     *        <code>ListChangedBlocks</code> operation.
      */
 
     public void setSecondBlockToken(String secondBlockToken) {
@@ -160,12 +160,12 @@ public class ChangedBlock implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The block token for the block index of the <code>second snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation.
+     * The block token for the block index of the <code>SecondSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation.
      * </p>
      * 
-     * @return The block token for the block index of the <code>second snapshot ID</code> specified in the
-     *         <code>list changed blocks</code> operation.
+     * @return The block token for the block index of the <code>SecondSnapshotId</code> specified in the
+     *         <code>ListChangedBlocks</code> operation.
      */
 
     public String getSecondBlockToken() {
@@ -174,13 +174,13 @@ public class ChangedBlock implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The block token for the block index of the <code>second snapshot ID</code> specified in the
-     * <code>list changed blocks</code> operation.
+     * The block token for the block index of the <code>SecondSnapshotId</code> specified in the
+     * <code>ListChangedBlocks</code> operation.
      * </p>
      * 
      * @param secondBlockToken
-     *        The block token for the block index of the <code>second snapshot ID</code> specified in the
-     *        <code>list changed blocks</code> operation.
+     *        The block token for the block index of the <code>SecondSnapshotId</code> specified in the
+     *        <code>ListChangedBlocks</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

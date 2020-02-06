@@ -64,6 +64,8 @@ public class CreateProjectRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("badgeEnabled").build();
     private static final MarshallingInfo<StructuredPojo> LOGSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logsConfig").build();
+    private static final MarshallingInfo<List> FILESYSTEMLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileSystemLocations").build();
 
     private static final CreateProjectRequestMarshaller instance = new CreateProjectRequestMarshaller();
 
@@ -99,6 +101,7 @@ public class CreateProjectRequestMarshaller {
             protocolMarshaller.marshall(createProjectRequest.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getBadgeEnabled(), BADGEENABLED_BINDING);
             protocolMarshaller.marshall(createProjectRequest.getLogsConfig(), LOGSCONFIG_BINDING);
+            protocolMarshaller.marshall(createProjectRequest.getFileSystemLocations(), FILESYSTEMLOCATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

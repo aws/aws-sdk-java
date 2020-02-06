@@ -38,7 +38,15 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Check the availability of multiple image layers in a specified registry and repository.
+     * Checks the availability of one or more image layers in a repository.
+     * </p>
+     * <p>
+     * When an image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If
+     * it is, then the image layer is skipped.
+     * </p>
+     * <p>
+     * When an image is pulled from a repository, each image layer is checked once to verify it is available to be
+     * pulled.
      * </p>
      * <note>
      * <p>
@@ -58,7 +66,15 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Check the availability of multiple image layers in a specified registry and repository.
+     * Checks the availability of one or more image layers in a repository.
+     * </p>
+     * <p>
+     * When an image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If
+     * it is, then the image layer is skipped.
+     * </p>
+     * <p>
+     * When an image is pulled from a repository, each image layer is checked once to verify it is available to be
+     * pulled.
      * </p>
      * <note>
      * <p>
@@ -83,8 +99,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes a list of specified images within a specified repository. Images are specified with either
-     * <code>imageTag</code> or <code>imageDigest</code>.
+     * Deletes a list of specified images within a repository. Images are specified with either an <code>imageTag</code>
+     * or <code>imageDigest</code>.
      * </p>
      * <p>
      * You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag
@@ -106,8 +122,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes a list of specified images within a specified repository. Images are specified with either
-     * <code>imageTag</code> or <code>imageDigest</code>.
+     * Deletes a list of specified images within a repository. Images are specified with either an <code>imageTag</code>
+     * or <code>imageDigest</code>.
      * </p>
      * <p>
      * You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag
@@ -134,8 +150,11 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Gets detailed information for specified images within a specified repository. Images are specified with either
-     * <code>imageTag</code> or <code>imageDigest</code>.
+     * Gets detailed information for an image. Images are specified with either an <code>imageTag</code> or
+     * <code>imageDigest</code>.
+     * </p>
+     * <p>
+     * When an image is pulled, the BatchGetImage API is called once to retrieve the image manifest.
      * </p>
      * 
      * @param batchGetImageRequest
@@ -148,8 +167,11 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Gets detailed information for specified images within a specified repository. Images are specified with either
-     * <code>imageTag</code> or <code>imageDigest</code>.
+     * Gets detailed information for an image. Images are specified with either an <code>imageTag</code> or
+     * <code>imageDigest</code>.
+     * </p>
+     * <p>
+     * When an image is pulled, the BatchGetImage API is called once to retrieve the image manifest.
      * </p>
      * 
      * @param batchGetImageRequest
@@ -171,6 +193,10 @@ public interface AmazonECRAsync extends AmazonECR {
      * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
      * </p>
+     * <p>
+     * When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the
+     * upload has completed.
+     * </p>
      * <note>
      * <p>
      * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
@@ -191,6 +217,10 @@ public interface AmazonECRAsync extends AmazonECR {
      * Informs Amazon ECR that the image layer upload has completed for a specified registry, repository name, and
      * upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation
      * purposes.
+     * </p>
+     * <p>
+     * When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the
+     * upload has completed.
      * </p>
      * <note>
      * <p>
@@ -214,8 +244,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users can push and pull Docker
-     * images. For more information, see <a
+     * Creates a repository. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR Repositories</a> in
      * the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
@@ -230,8 +259,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where users can push and pull Docker
-     * images. For more information, see <a
+     * Creates a repository. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR Repositories</a> in
      * the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
@@ -251,7 +279,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes the specified lifecycle policy.
+     * Deletes the lifecycle policy associated with the specified repository.
      * </p>
      * 
      * @param deleteLifecyclePolicyRequest
@@ -264,7 +292,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes the specified lifecycle policy.
+     * Deletes the lifecycle policy associated with the specified repository.
      * </p>
      * 
      * @param deleteLifecyclePolicyRequest
@@ -282,8 +310,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes an existing image repository. If a repository contains images, you must use the <code>force</code> option
-     * to delete it.
+     * Deletes a repository. If the repository contains images, you must either delete all images in the repository or
+     * use the <code>force</code> option to delete the repository.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -296,8 +324,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes an existing image repository. If a repository contains images, you must use the <code>force</code> option
-     * to delete it.
+     * Deletes a repository. If the repository contains images, you must either delete all images in the repository or
+     * use the <code>force</code> option to delete the repository.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -315,7 +343,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes the repository policy from a specified repository.
+     * Deletes the repository policy associated with the specified repository.
      * </p>
      * 
      * @param deleteRepositoryPolicyRequest
@@ -328,7 +356,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes the repository policy from a specified repository.
+     * Deletes the repository policy associated with the specified repository.
      * </p>
      * 
      * @param deleteRepositoryPolicyRequest
@@ -346,7 +374,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Describes the image scan findings for the specified image.
+     * Returns the scan findings for the specified image.
      * </p>
      * 
      * @param describeImageScanFindingsRequest
@@ -360,7 +388,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Describes the image scan findings for the specified image.
+     * Returns the scan findings for the specified image.
      * </p>
      * 
      * @param describeImageScanFindingsRequest
@@ -379,7 +407,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Returns metadata about the images in a repository, including image size, image tags, and creation date.
+     * Returns metadata about the images in a repository.
      * </p>
      * <note>
      * <p>
@@ -399,7 +427,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Returns metadata about the images in a repository, including image size, image tags, and creation date.
+     * Returns metadata about the images in a repository.
      * </p>
      * <note>
      * <p>
@@ -455,14 +483,16 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves a token that is valid for a specified registry for 12 hours. This command allows you to use the
-     * <code>docker</code> CLI to push and pull images with Amazon ECR. If you do not specify a registry, the default
-     * registry is assumed.
+     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials and can
+     * be used to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
+     * for 12 hours.
      * </p>
      * <p>
-     * The <code>authorizationToken</code> returned for each registry specified is a base64 encoded string that can be
-     * decoded and used in a <code>docker login</code> command to authenticate to a registry. The AWS CLI offers an
-     * <code>aws ecr get-login</code> command that simplifies the login process.
+     * The <code>authorizationToken</code> returned is a base64 encoded string that can be decoded and used in a
+     * <code>docker login</code> command to authenticate to a registry. The AWS CLI offers an
+     * <code>get-login-password</code> command that simplifies the login process. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
+     * Authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param getAuthorizationTokenRequest
@@ -475,14 +505,16 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves a token that is valid for a specified registry for 12 hours. This command allows you to use the
-     * <code>docker</code> CLI to push and pull images with Amazon ECR. If you do not specify a registry, the default
-     * registry is assumed.
+     * Retrieves an authorization token. An authorization token represents your IAM authentication credentials and can
+     * be used to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
+     * for 12 hours.
      * </p>
      * <p>
-     * The <code>authorizationToken</code> returned for each registry specified is a base64 encoded string that can be
-     * decoded and used in a <code>docker login</code> command to authenticate to a registry. The AWS CLI offers an
-     * <code>aws ecr get-login</code> command that simplifies the login process.
+     * The <code>authorizationToken</code> returned is a base64 encoded string that can be decoded and used in a
+     * <code>docker login</code> command to authenticate to a registry. The AWS CLI offers an
+     * <code>get-login-password</code> command that simplifies the login process. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
+     * Authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param getAuthorizationTokenRequest
@@ -503,6 +535,9 @@ public interface AmazonECRAsync extends AmazonECR {
      * Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can only get URLs for image
      * layers that are referenced in an image.
      * </p>
+     * <p>
+     * When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer.
+     * </p>
      * <note>
      * <p>
      * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
@@ -522,6 +557,9 @@ public interface AmazonECRAsync extends AmazonECR {
      * <p>
      * Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can only get URLs for image
      * layers that are referenced in an image.
+     * </p>
+     * <p>
+     * When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer.
      * </p>
      * <note>
      * <p>
@@ -545,7 +583,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves the specified lifecycle policy.
+     * Retrieves the lifecycle policy for the specified repository.
      * </p>
      * 
      * @param getLifecyclePolicyRequest
@@ -558,7 +596,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves the specified lifecycle policy.
+     * Retrieves the lifecycle policy for the specified repository.
      * </p>
      * 
      * @param getLifecyclePolicyRequest
@@ -576,7 +614,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves the results of the specified lifecycle policy preview request.
+     * Retrieves the results of the lifecycle policy preview request for the specified repository.
      * </p>
      * 
      * @param getLifecyclePolicyPreviewRequest
@@ -590,7 +628,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves the results of the specified lifecycle policy preview request.
+     * Retrieves the results of the lifecycle policy preview request for the specified repository.
      * </p>
      * 
      * @param getLifecyclePolicyPreviewRequest
@@ -609,7 +647,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves the repository policy for a specified repository.
+     * Retrieves the repository policy for the specified repository.
      * </p>
      * 
      * @param getRepositoryPolicyRequest
@@ -622,7 +660,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Retrieves the repository policy for a specified repository.
+     * Retrieves the repository policy for the specified repository.
      * </p>
      * 
      * @param getRepositoryPolicyRequest
@@ -640,7 +678,12 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Notify Amazon ECR that you intend to upload an image layer.
+     * Notifies Amazon ECR that you intend to upload an image layer.
+     * </p>
+     * <p>
+     * When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been
+     * uploaded. Whether an image layer has been uploaded before is determined by the <a>BatchCheckLayerAvailability</a>
+     * API action.
      * </p>
      * <note>
      * <p>
@@ -659,7 +702,12 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Notify Amazon ECR that you intend to upload an image layer.
+     * Notifies Amazon ECR that you intend to upload an image layer.
+     * </p>
+     * <p>
+     * When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been
+     * uploaded. Whether an image layer has been uploaded before is determined by the <a>BatchCheckLayerAvailability</a>
+     * API action.
      * </p>
      * <note>
      * <p>
@@ -683,13 +731,14 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Lists all the image IDs for a given repository.
+     * Lists all the image IDs for the specified repository.
      * </p>
      * <p>
-     * You can filter images based on whether or not they are tagged by setting the <code>tagStatus</code> parameter to
-     * <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can filter your results to return only
-     * <code>UNTAGGED</code> images and then pipe that result to a <a>BatchDeleteImage</a> operation to delete them. Or,
-     * you can filter your results to return only <code>TAGGED</code> images to list all of the tags in your repository.
+     * You can filter images based on whether or not they are tagged by using the <code>tagStatus</code> filter and
+     * specifying either <code>TAGGED</code>, <code>UNTAGGED</code> or <code>ANY</code>. For example, you can filter
+     * your results to return only <code>UNTAGGED</code> images and then pipe that result to a <a>BatchDeleteImage</a>
+     * operation to delete them. Or, you can filter your results to return only <code>TAGGED</code> images to list all
+     * of the tags in your repository.
      * </p>
      * 
      * @param listImagesRequest
@@ -702,13 +751,14 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Lists all the image IDs for a given repository.
+     * Lists all the image IDs for the specified repository.
      * </p>
      * <p>
-     * You can filter images based on whether or not they are tagged by setting the <code>tagStatus</code> parameter to
-     * <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can filter your results to return only
-     * <code>UNTAGGED</code> images and then pipe that result to a <a>BatchDeleteImage</a> operation to delete them. Or,
-     * you can filter your results to return only <code>TAGGED</code> images to list all of the tags in your repository.
+     * You can filter images based on whether or not they are tagged by using the <code>tagStatus</code> filter and
+     * specifying either <code>TAGGED</code>, <code>UNTAGGED</code> or <code>ANY</code>. For example, you can filter
+     * your results to return only <code>UNTAGGED</code> images and then pipe that result to a <a>BatchDeleteImage</a>
+     * operation to delete them. Or, you can filter your results to return only <code>TAGGED</code> images to list all
+     * of the tags in your repository.
      * </p>
      * 
      * @param listImagesRequest
@@ -759,6 +809,10 @@ public interface AmazonECRAsync extends AmazonECR {
      * <p>
      * Creates or updates the image manifest and tags associated with an image.
      * </p>
+     * <p>
+     * When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or
+     * update the image manifest and tags associated with the image.
+     * </p>
      * <note>
      * <p>
      * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
@@ -777,6 +831,10 @@ public interface AmazonECRAsync extends AmazonECR {
     /**
      * <p>
      * Creates or updates the image manifest and tags associated with an image.
+     * </p>
+     * <p>
+     * When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or
+     * update the image manifest and tags associated with the image.
      * </p>
      * <note>
      * <p>
@@ -800,7 +858,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Updates the image scanning configuration for a repository.
+     * Updates the image scanning configuration for the specified repository.
      * </p>
      * 
      * @param putImageScanningConfigurationRequest
@@ -815,7 +873,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Updates the image scanning configuration for a repository.
+     * Updates the image scanning configuration for the specified repository.
      * </p>
      * 
      * @param putImageScanningConfigurationRequest
@@ -835,10 +893,9 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Updates the image tag mutability settings for a repository. When a repository is configured with tag
-     * immutability, all image tags within the repository will be prevented them from being overwritten. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
-     * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+     * Updates the image tag mutability settings for the specified repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image Tag Mutability</a>
+     * in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param putImageTagMutabilityRequest
@@ -851,10 +908,9 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Updates the image tag mutability settings for a repository. When a repository is configured with tag
-     * immutability, all image tags within the repository will be prevented them from being overwritten. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
-     * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+     * Updates the image tag mutability settings for the specified repository. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image Tag Mutability</a>
+     * in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param putImageTagMutabilityRequest
@@ -872,7 +928,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see <a
+     * Creates or updates the lifecycle policy for the specified repository. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
      * Template</a>.
      * </p>
@@ -887,7 +943,7 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see <a
+     * Creates or updates the lifecycle policy for the specified repository. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy
      * Template</a>.
      * </p>
@@ -907,8 +963,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Applies a repository policy on a specified repository to control access permissions. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * Applies a repository policy to the specified repository to control access permissions. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
      * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
@@ -922,8 +978,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Applies a repository policy on a specified repository to control access permissions. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
+     * Applies a repository policy to the specified repository to control access permissions. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon ECR Repository
      * Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
@@ -979,8 +1035,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Starts a preview of the specified lifecycle policy. This allows you to see the results before creating the
-     * lifecycle policy.
+     * Starts a preview of a lifecycle policy for the specified repository. This allows you to see the results before
+     * associating the lifecycle policy with the repository.
      * </p>
      * 
      * @param startLifecyclePolicyPreviewRequest
@@ -994,8 +1050,8 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Starts a preview of the specified lifecycle policy. This allows you to see the results before creating the
-     * lifecycle policy.
+     * Starts a preview of a lifecycle policy for the specified repository. This allows you to see the results before
+     * associating the lifecycle policy with the repository.
      * </p>
      * 
      * @param startLifecyclePolicyPreviewRequest
@@ -1080,6 +1136,10 @@ public interface AmazonECRAsync extends AmazonECR {
      * <p>
      * Uploads an image layer part to Amazon ECR.
      * </p>
+     * <p>
+     * When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can
+     * be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.
+     * </p>
      * <note>
      * <p>
      * This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling
@@ -1098,6 +1158,10 @@ public interface AmazonECRAsync extends AmazonECR {
     /**
      * <p>
      * Uploads an image layer part to Amazon ECR.
+     * </p>
+     * <p>
+     * When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can
+     * be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.
      * </p>
      * <note>
      * <p>

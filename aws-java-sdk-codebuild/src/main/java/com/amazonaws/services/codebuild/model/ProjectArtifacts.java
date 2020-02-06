@@ -248,8 +248,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     private String packaging;
     /**
      * <p>
-     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
-     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      */
@@ -2045,14 +2045,14 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
-     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
      * @param overrideArtifactName
-     *        If this flag is set, a name specified in the build spec file overrides the artifact name. The name
-     *        specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     *        If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *        specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
      *        example, you can append a date and time to your artifact name so that it is always unique.
      */
 
@@ -2062,13 +2062,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
-     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
-     * @return If this flag is set, a name specified in the build spec file overrides the artifact name. The name
-     *         specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     * @return If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *         specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
      *         example, you can append a date and time to your artifact name so that it is always unique.
      */
 
@@ -2078,14 +2078,14 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
-     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
      * @param overrideArtifactName
-     *        If this flag is set, a name specified in the build spec file overrides the artifact name. The name
-     *        specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     *        If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *        specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
      *        example, you can append a date and time to your artifact name so that it is always unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2097,13 +2097,13 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
-     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a
+     * buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a
      * date and time to your artifact name so that it is always unique.
      * </p>
      * 
-     * @return If this flag is set, a name specified in the build spec file overrides the artifact name. The name
-     *         specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     * @return If this flag is set, a name specified in the buildspec file overrides the artifact name. The name
+     *         specified in a buildspec file is calculated at build time and uses the Shell Command Language. For
      *         example, you can append a date and time to your artifact name so that it is always unique.
      */
 

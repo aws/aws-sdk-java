@@ -31,7 +31,7 @@ public class ListChangedBlocksResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<ChangedBlock> changedBlocks;
     /**
      * <p>
-     * The time when the <code>block token</code> expires.
+     * The time when the <code>BlockToken</code> expires.
      * </p>
      */
     private java.util.Date expiryTime;
@@ -127,11 +127,11 @@ public class ListChangedBlocksResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The time when the <code>block token</code> expires.
+     * The time when the <code>BlockToken</code> expires.
      * </p>
      * 
      * @param expiryTime
-     *        The time when the <code>block token</code> expires.
+     *        The time when the <code>BlockToken</code> expires.
      */
 
     public void setExpiryTime(java.util.Date expiryTime) {
@@ -140,10 +140,10 @@ public class ListChangedBlocksResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The time when the <code>block token</code> expires.
+     * The time when the <code>BlockToken</code> expires.
      * </p>
      * 
-     * @return The time when the <code>block token</code> expires.
+     * @return The time when the <code>BlockToken</code> expires.
      */
 
     public java.util.Date getExpiryTime() {
@@ -152,11 +152,11 @@ public class ListChangedBlocksResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The time when the <code>block token</code> expires.
+     * The time when the <code>BlockToken</code> expires.
      * </p>
      * 
      * @param expiryTime
-     *        The time when the <code>block token</code> expires.
+     *        The time when the <code>BlockToken</code> expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

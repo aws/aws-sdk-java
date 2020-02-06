@@ -17132,7 +17132,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server
      * (SLES), use the EC2 billing product code associated with an AMI to verify the subscription status for package
-     * updates. To create a new AMI for operating systems that require a billing product code, do the following:
+     * updates. To create a new AMI for operating systems that require a billing product code, instead of instead of
+     * registering the AMI, do the following to preserve the billing product code association:
      * </p>
      * <ol>
      * <li>
@@ -17147,7 +17148,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing product code association.
+     * Create an AMI from the instance using <a>CreateImage</a>.
      * </p>
      * </li>
      * </ol>
@@ -17197,7 +17198,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server
      * (SLES), use the EC2 billing product code associated with an AMI to verify the subscription status for package
-     * updates. To create a new AMI for operating systems that require a billing product code, do the following:
+     * updates. To create a new AMI for operating systems that require a billing product code, instead of instead of
+     * registering the AMI, do the following to preserve the billing product code association:
      * </p>
      * <ol>
      * <li>
@@ -17212,7 +17214,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing product code association.
+     * Create an AMI from the instance using <a>CreateImage</a>.
      * </p>
      * </li>
      * </ol>

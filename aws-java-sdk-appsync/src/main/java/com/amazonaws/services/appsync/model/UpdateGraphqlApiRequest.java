@@ -67,6 +67,12 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<AdditionalAuthenticationProvider> additionalAuthenticationProviders;
+    /**
+     * <p>
+     * A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     * </p>
+     */
+    private Boolean xrayEnabled;
 
     /**
      * <p>
@@ -399,6 +405,58 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     * </p>
+     * 
+     * @param xrayEnabled
+     *        A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     */
+
+    public void setXrayEnabled(Boolean xrayEnabled) {
+        this.xrayEnabled = xrayEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     * </p>
+     * 
+     * @return A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     */
+
+    public Boolean getXrayEnabled() {
+        return this.xrayEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     * </p>
+     * 
+     * @param xrayEnabled
+     *        A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGraphqlApiRequest withXrayEnabled(Boolean xrayEnabled) {
+        setXrayEnabled(xrayEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     * </p>
+     * 
+     * @return A flag indicating whether to enable X-Ray tracing for the <code>GraphqlApi</code>.
+     */
+
+    public Boolean isXrayEnabled() {
+        return this.xrayEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -423,7 +481,9 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         if (getOpenIDConnectConfig() != null)
             sb.append("OpenIDConnectConfig: ").append(getOpenIDConnectConfig()).append(",");
         if (getAdditionalAuthenticationProviders() != null)
-            sb.append("AdditionalAuthenticationProviders: ").append(getAdditionalAuthenticationProviders());
+            sb.append("AdditionalAuthenticationProviders: ").append(getAdditionalAuthenticationProviders()).append(",");
+        if (getXrayEnabled() != null)
+            sb.append("XrayEnabled: ").append(getXrayEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -467,6 +527,10 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getAdditionalAuthenticationProviders() != null
                 && other.getAdditionalAuthenticationProviders().equals(this.getAdditionalAuthenticationProviders()) == false)
             return false;
+        if (other.getXrayEnabled() == null ^ this.getXrayEnabled() == null)
+            return false;
+        if (other.getXrayEnabled() != null && other.getXrayEnabled().equals(this.getXrayEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -482,6 +546,7 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getUserPoolConfig() == null) ? 0 : getUserPoolConfig().hashCode());
         hashCode = prime * hashCode + ((getOpenIDConnectConfig() == null) ? 0 : getOpenIDConnectConfig().hashCode());
         hashCode = prime * hashCode + ((getAdditionalAuthenticationProviders() == null) ? 0 : getAdditionalAuthenticationProviders().hashCode());
+        hashCode = prime * hashCode + ((getXrayEnabled() == null) ? 0 : getXrayEnabled().hashCode());
         return hashCode;
     }
 

@@ -81,6 +81,16 @@ public class GetSlotTypeResultJsonUnmarshaller implements Unmarshaller<GetSlotTy
                     context.nextToken();
                     getSlotTypeResult.setValueSelectionStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("parentSlotTypeSignature", targetDepth)) {
+                    context.nextToken();
+                    getSlotTypeResult.setParentSlotTypeSignature(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("slotTypeConfigurations", targetDepth)) {
+                    context.nextToken();
+                    getSlotTypeResult
+                            .setSlotTypeConfigurations(new ListUnmarshaller<SlotTypeConfiguration>(SlotTypeConfigurationJsonUnmarshaller.getInstance())
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

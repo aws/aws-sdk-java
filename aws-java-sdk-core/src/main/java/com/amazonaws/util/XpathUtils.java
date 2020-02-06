@@ -170,11 +170,6 @@ public class XpathUtils {
         // DocumentBuilderFactory is not thread safe
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
-        factory.setXIncludeAware(false);
-        factory.setExpandEntityReferences(false);
-
-        factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-
         configureDocumentBuilderFactory(factory);
 
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -633,10 +628,15 @@ public class XpathUtils {
 
         if (cache != null && cache.clzz.equals(factory.getClass())) {
             if (cache.xxeMitigationSuccessful) {
-                if (isXerces(cache.canonicalName)) {
-                    configureXercesFactory(factory);
-                } else {
-                    configureGenericFactory(factory);
+                try {
+                    if (isXerces(cache.canonicalName)) {
+                        configureXercesFactory(factory);
+                    } else {
+                        configureGenericFactory(factory);
+                    }
+                } catch (Throwable t) {
+                    // Should not get to here since we check first if we could successfully configure previously
+                    log.warn("Unable to configure DocumentBuilderFactory to protect against XXE attacks", t);
                 }
             }
         } else {
@@ -670,16 +670,24 @@ public class XpathUtils {
         return canonicalName.startsWith("org.apache.xerces.");
     }
 
-    private static void configureXercesFactory(DocumentBuilderFactory factory) {
+    private static void configureXercesFactory(DocumentBuilderFactory factory) throws ParserConfigurationException {
+        commonConfigureFactory(factory);
         factory.setAttribute("http://xml.org/sax/features/external-general-entities", "");
         factory.setAttribute("http://xml.org/sax/features/external-parameter-entities", "");
         factory.setAttribute("http://apache.org/xml/features/nonvalidating/load-external-dtd", "");
         factory.setAttribute("http://apache.org/xml/features/disallow-doctype-decl", "");
     }
 
-    private static void configureGenericFactory(DocumentBuilderFactory factory) {
+    private static void configureGenericFactory(DocumentBuilderFactory factory) throws ParserConfigurationException {
+        commonConfigureFactory(factory);
         factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalDTD", "");
         factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalSchema", "");
+    }
+
+    private static void commonConfigureFactory(DocumentBuilderFactory factory) throws ParserConfigurationException {
+        factory.setXIncludeAware(false);
+        factory.setExpandEntityReferences(false);
+        factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
     }
 
     private static class DocumentBuilderInfo {

@@ -40,9 +40,11 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We strongly discourage the use of environment variables to store sensitive values, especially AWS secret key IDs
-     * and secret access keys. Environment variables can be displayed in plain text using the AWS CodeBuild console and
-     * the AWS Command Line Interface (AWS CLI).
+     * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
+     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
+     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
      */
@@ -117,18 +119,22 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We strongly discourage the use of environment variables to store sensitive values, especially AWS secret key IDs
-     * and secret access keys. Environment variables can be displayed in plain text using the AWS CodeBuild console and
-     * the AWS Command Line Interface (AWS CLI).
+     * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
+     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
+     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
      * 
      * @param value
      *        The value of the environment variable.</p> <important>
      *        <p>
-     *        We strongly discourage the use of environment variables to store sensitive values, especially AWS secret
-     *        key IDs and secret access keys. Environment variables can be displayed in plain text using the AWS
-     *        CodeBuild console and the AWS Command Line Interface (AWS CLI).
+     *        We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
+     *        especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
+     *        displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
+     *        sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     *        <code>SECRETS_MANAGER</code>.
      *        </p>
      */
 
@@ -142,17 +148,21 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We strongly discourage the use of environment variables to store sensitive values, especially AWS secret key IDs
-     * and secret access keys. Environment variables can be displayed in plain text using the AWS CodeBuild console and
-     * the AWS Command Line Interface (AWS CLI).
+     * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
+     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
+     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
      * 
      * @return The value of the environment variable.</p> <important>
      *         <p>
-     *         We strongly discourage the use of environment variables to store sensitive values, especially AWS secret
-     *         key IDs and secret access keys. Environment variables can be displayed in plain text using the AWS
-     *         CodeBuild console and the AWS Command Line Interface (AWS CLI).
+     *         We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
+     *         especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
+     *         displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
+     *         sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     *         <code>SECRETS_MANAGER</code>.
      *         </p>
      */
 
@@ -166,18 +176,22 @@ public class EnvironmentVariable implements Serializable, Cloneable, StructuredP
      * </p>
      * <important>
      * <p>
-     * We strongly discourage the use of environment variables to store sensitive values, especially AWS secret key IDs
-     * and secret access keys. Environment variables can be displayed in plain text using the AWS CodeBuild console and
-     * the AWS Command Line Interface (AWS CLI).
+     * We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
+     * displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
+     * sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     * <code>SECRETS_MANAGER</code>.
      * </p>
      * </important>
      * 
      * @param value
      *        The value of the environment variable.</p> <important>
      *        <p>
-     *        We strongly discourage the use of environment variables to store sensitive values, especially AWS secret
-     *        key IDs and secret access keys. Environment variables can be displayed in plain text using the AWS
-     *        CodeBuild console and the AWS Command Line Interface (AWS CLI).
+     *        We strongly discourage the use of <code>PLAINTEXT</code> environment variables to store sensitive values,
+     *        especially AWS secret key IDs and secret access keys. <code>PLAINTEXT</code> environment variables can be
+     *        displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI). For
+     *        sensitive values, we recommend you use an environment variable of type <code>PARAMETER_STORE</code> or
+     *        <code>SECRETS_MANAGER</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

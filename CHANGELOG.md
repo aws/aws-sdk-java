@@ -1,3 +1,28 @@
+# __1.11.717__ __2020-02-06__
+## __AWS AppSync__
+  - ### Features
+    - AWS AppSync now supports X-Ray
+
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild adds support for Amazon Elastic File Systems
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This release contains updated text for the GetAuthorizationToken API.
+
+## __Amazon Elastic Block Store__
+  - ### Features
+    - Documentation updates for EBS direct APIs.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds platform details and billing info to the DescribeImages API.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex now supports AMAZON.AlphaNumeric with regular expressions.
+
 # __1.11.716__ __2020-02-05__
 ## __AWS Elemental MediaConvert__
   - ### Features

@@ -82,6 +82,25 @@ public class Image implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
+     * The platform details associated with the billing code of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String platformDetails;
+    /**
+     * <p>
+     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String usageOperation;
+    /**
+     * <p>
      * Any product codes associated with the AMI.
      * </p>
      */
@@ -653,6 +672,128 @@ public class Image implements Serializable, Cloneable {
 
     public Image withPlatform(PlatformValues platform) {
         this.platform = platform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform details associated with the billing code of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param platformDetails
+     *        The platform details associated with the billing code of the AMI. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setPlatformDetails(String platformDetails) {
+        this.platformDetails = platformDetails;
+    }
+
+    /**
+     * <p>
+     * The platform details associated with the billing code of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The platform details associated with the billing code of the AMI. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public String getPlatformDetails() {
+        return this.platformDetails;
+    }
+
+    /**
+     * <p>
+     * The platform details associated with the billing code of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param platformDetails
+     *        The platform details associated with the billing code of the AMI. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withPlatformDetails(String platformDetails) {
+        setPlatformDetails(platformDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param usageOperation
+     *        The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     *        <code>usageOperation</code> corresponds to the <a
+     *        href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
+     *        >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setUsageOperation(String usageOperation) {
+        this.usageOperation = usageOperation;
+    }
+
+    /**
+     * <p>
+     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     *         <code>usageOperation</code> corresponds to the <a
+     *         href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
+     *         >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public String getUsageOperation() {
+        return this.usageOperation;
+    }
+
+    /**
+     * <p>
+     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param usageOperation
+     *        The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     *        <code>usageOperation</code> corresponds to the <a
+     *        href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
+     *        >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withUsageOperation(String usageOperation) {
+        setUsageOperation(usageOperation);
         return this;
     }
 
@@ -1545,6 +1686,10 @@ public class Image implements Serializable, Cloneable {
             sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getPlatformDetails() != null)
+            sb.append("PlatformDetails: ").append(getPlatformDetails()).append(",");
+        if (getUsageOperation() != null)
+            sb.append("UsageOperation: ").append(getUsageOperation()).append(",");
         if (getProductCodes() != null)
             sb.append("ProductCodes: ").append(getProductCodes()).append(",");
         if (getRamdiskId() != null)
@@ -1625,6 +1770,14 @@ public class Image implements Serializable, Cloneable {
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
+        if (other.getPlatformDetails() == null ^ this.getPlatformDetails() == null)
+            return false;
+        if (other.getPlatformDetails() != null && other.getPlatformDetails().equals(this.getPlatformDetails()) == false)
+            return false;
+        if (other.getUsageOperation() == null ^ this.getUsageOperation() == null)
+            return false;
+        if (other.getUsageOperation() != null && other.getUsageOperation().equals(this.getUsageOperation()) == false)
+            return false;
         if (other.getProductCodes() == null ^ this.getProductCodes() == null)
             return false;
         if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false)
@@ -1702,6 +1855,8 @@ public class Image implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getPlatformDetails() == null) ? 0 : getPlatformDetails().hashCode());
+        hashCode = prime * hashCode + ((getUsageOperation() == null) ? 0 : getUsageOperation().hashCode());
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

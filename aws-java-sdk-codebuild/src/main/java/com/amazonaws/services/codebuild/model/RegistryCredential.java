@@ -51,7 +51,7 @@ public class RegistryCredential implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * The <code>credential</code> can use the name of the credentials only if they exist in your current region.
+     * The <code>credential</code> can use the name of the credentials only if they exist in your current AWS Region.
      * </p>
      * </note>
      */
@@ -70,14 +70,15 @@ public class RegistryCredential implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * The <code>credential</code> can use the name of the credentials only if they exist in your current region.
+     * The <code>credential</code> can use the name of the credentials only if they exist in your current AWS Region.
      * </p>
      * </note>
      * 
      * @param credential
      *        The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager. </p> <note>
      *        <p>
-     *        The <code>credential</code> can use the name of the credentials only if they exist in your current region.
+     *        The <code>credential</code> can use the name of the credentials only if they exist in your current AWS
+     *        Region.
      *        </p>
      */
 
@@ -91,14 +92,14 @@ public class RegistryCredential implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * The <code>credential</code> can use the name of the credentials only if they exist in your current region.
+     * The <code>credential</code> can use the name of the credentials only if they exist in your current AWS Region.
      * </p>
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager. </p> <note>
      *         <p>
-     *         The <code>credential</code> can use the name of the credentials only if they exist in your current
-     *         region.
+     *         The <code>credential</code> can use the name of the credentials only if they exist in your current AWS
+     *         Region.
      *         </p>
      */
 
@@ -112,14 +113,15 @@ public class RegistryCredential implements Serializable, Cloneable, StructuredPo
      * </p>
      * <note>
      * <p>
-     * The <code>credential</code> can use the name of the credentials only if they exist in your current region.
+     * The <code>credential</code> can use the name of the credentials only if they exist in your current AWS Region.
      * </p>
      * </note>
      * 
      * @param credential
      *        The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager. </p> <note>
      *        <p>
-     *        The <code>credential</code> can use the name of the credentials only if they exist in your current region.
+     *        The <code>credential</code> can use the name of the credentials only if they exist in your current AWS
+     *        Region.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
