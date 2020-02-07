@@ -41,12 +41,11 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String nextToken;
     /**
      * <p>
-     * The maximum number of deployment job results returned by <code>ListFleets</code> in paginated output. When this
-     * parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.
+     * When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single
+     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
+     * seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer maxResults;
@@ -146,21 +145,19 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of deployment job results returned by <code>ListFleets</code> in paginated output. When this
-     * parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.
+     * When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single
+     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
+     * seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of deployment job results returned by <code>ListFleets</code> in paginated output. When
-     *        this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single
-     *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     *        can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code>
-     *        value. This value can be between 1 and 100. If this parameter is not used, then <code>ListFleets</code>
-     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
+     *        When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a
+     *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
+     *        request can be seen by sending another <code>ListFleets</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then
+     *        <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -169,20 +166,18 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of deployment job results returned by <code>ListFleets</code> in paginated output. When this
-     * parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.
+     * When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single
+     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
+     * seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
-     * @return The maximum number of deployment job results returned by <code>ListFleets</code> in paginated output.
-     *         When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a
+     * @return When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a
      *         single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *         request can be seen by sending another <code>ListFleets</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
-     *         <code>ListFleets</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+     *         <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then
+     *         <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
      */
 
     public Integer getMaxResults() {
@@ -191,21 +186,19 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of deployment job results returned by <code>ListFleets</code> in paginated output. When this
-     * parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along
-     * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
-     * sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code> returns up to 100 results and a
-     * <code>nextToken</code> value if applicable.
+     * When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single
+     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
+     * seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of deployment job results returned by <code>ListFleets</code> in paginated output. When
-     *        this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single
-     *        page along with a <code>nextToken</code> response element. The remaining results of the initial request
-     *        can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code>
-     *        value. This value can be between 1 and 100. If this parameter is not used, then <code>ListFleets</code>
-     *        returns up to 100 results and a <code>nextToken</code> value if applicable.
+     *        When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a
+     *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
+     *        request can be seen by sending another <code>ListFleets</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then
+     *        <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

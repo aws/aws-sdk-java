@@ -30,67 +30,67 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the infrastruction configuration.
+     * The name of the infrastructure configuration.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the infrastruction configuration.
+     * The description of the infrastructure configuration.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The instance types of the infrastruction configuration.
+     * The instance types of the infrastructure configuration.
      * </p>
      */
     private java.util.List<String> instanceTypes;
     /**
      * <p>
-     * The instance profile of the infrastruction configuration.
+     * The instance profile of the infrastructure configuration.
      * </p>
      */
     private String instanceProfileName;
     /**
      * <p>
-     * The security group IDs of the infrastruction configuration.
+     * The security group IDs of the infrastructure configuration.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The subnet ID of the infrastruction configuration.
+     * The subnet ID of the infrastructure configuration.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
-     * The logging configuration of the infrastruction configuration.
+     * The logging configuration of the infrastructure configuration.
      * </p>
      */
     private Logging logging;
     /**
      * <p>
-     * The EC2 key pair of the infrastruction configuration.
+     * The EC2 key pair of the infrastructure configuration.
      * </p>
      */
     private String keyPair;
     /**
      * <p>
-     * The terminate instance on failure configuration of the infrastruction configuration.
+     * The terminate instance on failure configuration of the infrastructure configuration.
      * </p>
      */
     private Boolean terminateInstanceOnFailure;
     /**
      * <p>
-     * The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      */
     private String snsTopicArn;
@@ -108,18 +108,18 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
     private String dateUpdated;
     /**
      * <p>
-     * The tags of the infrastruction configuration.
+     * The tags of the infrastructure configuration.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the infrastruction configuration.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration.
      */
 
     public void setArn(String arn) {
@@ -128,10 +128,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the infrastruction configuration.
+     * @return The Amazon Resource Name (ARN) of the infrastructure configuration.
      */
 
     public String getArn() {
@@ -140,11 +140,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the infrastruction configuration.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +155,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the infrastruction configuration.
+     * The name of the infrastructure configuration.
      * </p>
      * 
      * @param name
-     *        The name of the infrastruction configuration.
+     *        The name of the infrastructure configuration.
      */
 
     public void setName(String name) {
@@ -168,10 +168,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the infrastruction configuration.
+     * The name of the infrastructure configuration.
      * </p>
      * 
-     * @return The name of the infrastruction configuration.
+     * @return The name of the infrastructure configuration.
      */
 
     public String getName() {
@@ -180,11 +180,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the infrastruction configuration.
+     * The name of the infrastructure configuration.
      * </p>
      * 
      * @param name
-     *        The name of the infrastruction configuration.
+     *        The name of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +195,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The description of the infrastruction configuration.
+     * The description of the infrastructure configuration.
      * </p>
      * 
      * @param description
-     *        The description of the infrastruction configuration.
+     *        The description of the infrastructure configuration.
      */
 
     public void setDescription(String description) {
@@ -208,10 +208,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The description of the infrastruction configuration.
+     * The description of the infrastructure configuration.
      * </p>
      * 
-     * @return The description of the infrastruction configuration.
+     * @return The description of the infrastructure configuration.
      */
 
     public String getDescription() {
@@ -220,11 +220,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The description of the infrastruction configuration.
+     * The description of the infrastructure configuration.
      * </p>
      * 
      * @param description
-     *        The description of the infrastruction configuration.
+     *        The description of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,10 +235,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The instance types of the infrastruction configuration.
+     * The instance types of the infrastructure configuration.
      * </p>
      * 
-     * @return The instance types of the infrastruction configuration.
+     * @return The instance types of the infrastructure configuration.
      */
 
     public java.util.List<String> getInstanceTypes() {
@@ -247,11 +247,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The instance types of the infrastruction configuration.
+     * The instance types of the infrastructure configuration.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types of the infrastruction configuration.
+     *        The instance types of the infrastructure configuration.
      */
 
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -265,7 +265,7 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The instance types of the infrastruction configuration.
+     * The instance types of the infrastructure configuration.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -274,7 +274,7 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types of the infrastruction configuration.
+     *        The instance types of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,11 +290,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The instance types of the infrastruction configuration.
+     * The instance types of the infrastructure configuration.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types of the infrastruction configuration.
+     *        The instance types of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +305,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The instance profile of the infrastruction configuration.
+     * The instance profile of the infrastructure configuration.
      * </p>
      * 
      * @param instanceProfileName
-     *        The instance profile of the infrastruction configuration.
+     *        The instance profile of the infrastructure configuration.
      */
 
     public void setInstanceProfileName(String instanceProfileName) {
@@ -318,10 +318,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The instance profile of the infrastruction configuration.
+     * The instance profile of the infrastructure configuration.
      * </p>
      * 
-     * @return The instance profile of the infrastruction configuration.
+     * @return The instance profile of the infrastructure configuration.
      */
 
     public String getInstanceProfileName() {
@@ -330,11 +330,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The instance profile of the infrastruction configuration.
+     * The instance profile of the infrastructure configuration.
      * </p>
      * 
      * @param instanceProfileName
-     *        The instance profile of the infrastruction configuration.
+     *        The instance profile of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,10 +345,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The security group IDs of the infrastruction configuration.
+     * The security group IDs of the infrastructure configuration.
      * </p>
      * 
-     * @return The security group IDs of the infrastruction configuration.
+     * @return The security group IDs of the infrastructure configuration.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -357,11 +357,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The security group IDs of the infrastruction configuration.
+     * The security group IDs of the infrastructure configuration.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security group IDs of the infrastruction configuration.
+     *        The security group IDs of the infrastructure configuration.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -375,7 +375,7 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The security group IDs of the infrastruction configuration.
+     * The security group IDs of the infrastructure configuration.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -384,7 +384,7 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param securityGroupIds
-     *        The security group IDs of the infrastruction configuration.
+     *        The security group IDs of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,11 +400,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The security group IDs of the infrastruction configuration.
+     * The security group IDs of the infrastructure configuration.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security group IDs of the infrastruction configuration.
+     *        The security group IDs of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,11 +415,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The subnet ID of the infrastruction configuration.
+     * The subnet ID of the infrastructure configuration.
      * </p>
      * 
      * @param subnetId
-     *        The subnet ID of the infrastruction configuration.
+     *        The subnet ID of the infrastructure configuration.
      */
 
     public void setSubnetId(String subnetId) {
@@ -428,10 +428,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The subnet ID of the infrastruction configuration.
+     * The subnet ID of the infrastructure configuration.
      * </p>
      * 
-     * @return The subnet ID of the infrastruction configuration.
+     * @return The subnet ID of the infrastructure configuration.
      */
 
     public String getSubnetId() {
@@ -440,11 +440,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The subnet ID of the infrastruction configuration.
+     * The subnet ID of the infrastructure configuration.
      * </p>
      * 
      * @param subnetId
-     *        The subnet ID of the infrastruction configuration.
+     *        The subnet ID of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,11 +455,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The logging configuration of the infrastruction configuration.
+     * The logging configuration of the infrastructure configuration.
      * </p>
      * 
      * @param logging
-     *        The logging configuration of the infrastruction configuration.
+     *        The logging configuration of the infrastructure configuration.
      */
 
     public void setLogging(Logging logging) {
@@ -468,10 +468,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The logging configuration of the infrastruction configuration.
+     * The logging configuration of the infrastructure configuration.
      * </p>
      * 
-     * @return The logging configuration of the infrastruction configuration.
+     * @return The logging configuration of the infrastructure configuration.
      */
 
     public Logging getLogging() {
@@ -480,11 +480,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The logging configuration of the infrastruction configuration.
+     * The logging configuration of the infrastructure configuration.
      * </p>
      * 
      * @param logging
-     *        The logging configuration of the infrastruction configuration.
+     *        The logging configuration of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -495,11 +495,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The EC2 key pair of the infrastruction configuration.
+     * The EC2 key pair of the infrastructure configuration.
      * </p>
      * 
      * @param keyPair
-     *        The EC2 key pair of the infrastruction configuration.
+     *        The EC2 key pair of the infrastructure configuration.
      */
 
     public void setKeyPair(String keyPair) {
@@ -508,10 +508,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The EC2 key pair of the infrastruction configuration.
+     * The EC2 key pair of the infrastructure configuration.
      * </p>
      * 
-     * @return The EC2 key pair of the infrastruction configuration.
+     * @return The EC2 key pair of the infrastructure configuration.
      */
 
     public String getKeyPair() {
@@ -520,11 +520,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The EC2 key pair of the infrastruction configuration.
+     * The EC2 key pair of the infrastructure configuration.
      * </p>
      * 
      * @param keyPair
-     *        The EC2 key pair of the infrastruction configuration.
+     *        The EC2 key pair of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,11 +535,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The terminate instance on failure configuration of the infrastruction configuration.
+     * The terminate instance on failure configuration of the infrastructure configuration.
      * </p>
      * 
      * @param terminateInstanceOnFailure
-     *        The terminate instance on failure configuration of the infrastruction configuration.
+     *        The terminate instance on failure configuration of the infrastructure configuration.
      */
 
     public void setTerminateInstanceOnFailure(Boolean terminateInstanceOnFailure) {
@@ -548,10 +548,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The terminate instance on failure configuration of the infrastruction configuration.
+     * The terminate instance on failure configuration of the infrastructure configuration.
      * </p>
      * 
-     * @return The terminate instance on failure configuration of the infrastruction configuration.
+     * @return The terminate instance on failure configuration of the infrastructure configuration.
      */
 
     public Boolean getTerminateInstanceOnFailure() {
@@ -560,11 +560,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The terminate instance on failure configuration of the infrastruction configuration.
+     * The terminate instance on failure configuration of the infrastructure configuration.
      * </p>
      * 
      * @param terminateInstanceOnFailure
-     *        The terminate instance on failure configuration of the infrastruction configuration.
+     *        The terminate instance on failure configuration of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,10 +575,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The terminate instance on failure configuration of the infrastruction configuration.
+     * The terminate instance on failure configuration of the infrastructure configuration.
      * </p>
      * 
-     * @return The terminate instance on failure configuration of the infrastruction configuration.
+     * @return The terminate instance on failure configuration of the infrastructure configuration.
      */
 
     public Boolean isTerminateInstanceOnFailure() {
@@ -587,11 +587,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      * 
      * @param snsTopicArn
-     *        The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+     *        The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -600,10 +600,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      * 
-     * @return The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+     * @return The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
      */
 
     public String getSnsTopicArn() {
@@ -612,11 +612,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+     * The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
      * </p>
      * 
      * @param snsTopicArn
-     *        The SNS Topic Amazon Resource Name (ARN) of the infrastruction configuration.
+     *        The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -707,10 +707,10 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The tags of the infrastruction configuration.
+     * The tags of the infrastructure configuration.
      * </p>
      * 
-     * @return The tags of the infrastruction configuration.
+     * @return The tags of the infrastructure configuration.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -719,11 +719,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The tags of the infrastruction configuration.
+     * The tags of the infrastructure configuration.
      * </p>
      * 
      * @param tags
-     *        The tags of the infrastruction configuration.
+     *        The tags of the infrastructure configuration.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -732,11 +732,11 @@ public class InfrastructureConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The tags of the infrastruction configuration.
+     * The tags of the infrastructure configuration.
      * </p>
      * 
      * @param tags
-     *        The tags of the infrastruction configuration.
+     *        The tags of the infrastructure configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

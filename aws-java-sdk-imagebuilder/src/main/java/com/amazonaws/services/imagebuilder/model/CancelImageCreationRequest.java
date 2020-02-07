@@ -27,7 +27,7 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
      * </p>
      */
     private String imageBuildVersionArn;
@@ -40,11 +40,11 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+     *        The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
      */
 
     public void setImageBuildVersionArn(String imageBuildVersionArn) {
@@ -53,10 +53,10 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+     * @return The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
      */
 
     public String getImageBuildVersionArn() {
@@ -65,11 +65,11 @@ public class CancelImageCreationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+     * The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose creation you wish to cancel.
+     *        The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource that you wish to tag.
+     * The Amazon Resource Name (ARN) of the resource that you want to tag.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource that you wish to tag.
+     * The Amazon Resource Name (ARN) of the resource that you want to tag.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you wish to tag.
+     *        The Amazon Resource Name (ARN) of the resource that you want to tag.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource that you wish to tag.
+     * The Amazon Resource Name (ARN) of the resource that you want to tag.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource that you wish to tag.
+     * @return The Amazon Resource Name (ARN) of the resource that you want to tag.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource that you wish to tag.
+     * The Amazon Resource Name (ARN) of the resource that you want to tag.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource that you wish to tag.
+     *        The Amazon Resource Name (ARN) of the resource that you want to tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

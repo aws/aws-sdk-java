@@ -55,7 +55,7 @@ public class UpdateSimulationApplicationResult extends com.amazonaws.AmazonWebSe
     private SimulationSoftwareSuite simulationSoftwareSuite;
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      */
     private RobotSoftwareSuite robotSoftwareSuite;
@@ -310,11 +310,11 @@ public class UpdateSimulationApplicationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        Information about the robot software suite.
+     *        Information about the robot software suite (ROS distribution).
      */
 
     public void setRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
@@ -323,10 +323,10 @@ public class UpdateSimulationApplicationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      * 
-     * @return Information about the robot software suite.
+     * @return Information about the robot software suite (ROS distribution).
      */
 
     public RobotSoftwareSuite getRobotSoftwareSuite() {
@@ -335,11 +335,11 @@ public class UpdateSimulationApplicationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        Information about the robot software suite.
+     *        Information about the robot software suite (ROS distribution).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

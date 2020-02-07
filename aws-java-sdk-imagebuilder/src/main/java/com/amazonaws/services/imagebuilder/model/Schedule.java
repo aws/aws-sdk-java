@@ -30,24 +30,31 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The expression determines how often a pipeline starts the creation of new images.
+     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
+     * .
      * </p>
      */
     private String scheduleExpression;
     /**
      * <p>
-     * The condition configures when the pipeline should trigger a new image build.
+     * The condition configures when the pipeline should trigger a new image build. When the
+     * <code>pipelineExecutionStartCondition</code> is set to
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
+     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
+     * image every time the CRON expression matches the current time.
      * </p>
      */
     private String pipelineExecutionStartCondition;
 
     /**
      * <p>
-     * The expression determines how often a pipeline starts the creation of new images.
+     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
+     * .
      * </p>
      * 
      * @param scheduleExpression
-     *        The expression determines how often a pipeline starts the creation of new images.
+     *        The expression determines how often EC2 Image Builder evaluates your
+     *        <code>pipelineExecutionStartCondition</code>.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -56,10 +63,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The expression determines how often a pipeline starts the creation of new images.
+     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
+     * .
      * </p>
      * 
-     * @return The expression determines how often a pipeline starts the creation of new images.
+     * @return The expression determines how often EC2 Image Builder evaluates your
+     *         <code>pipelineExecutionStartCondition</code>.
      */
 
     public String getScheduleExpression() {
@@ -68,11 +77,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The expression determines how often a pipeline starts the creation of new images.
+     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
+     * .
      * </p>
      * 
      * @param scheduleExpression
-     *        The expression determines how often a pipeline starts the creation of new images.
+     *        The expression determines how often EC2 Image Builder evaluates your
+     *        <code>pipelineExecutionStartCondition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +94,19 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition configures when the pipeline should trigger a new image build.
+     * The condition configures when the pipeline should trigger a new image build. When the
+     * <code>pipelineExecutionStartCondition</code> is set to
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
+     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
+     * image every time the CRON expression matches the current time.
      * </p>
      * 
      * @param pipelineExecutionStartCondition
-     *        The condition configures when the pipeline should trigger a new image build.
+     *        The condition configures when the pipeline should trigger a new image build. When the
+     *        <code>pipelineExecutionStartCondition</code> is set to
+     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
+     *        only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
+     *        build a new image every time the CRON expression matches the current time.
      * @see PipelineExecutionStartCondition
      */
 
@@ -97,10 +116,18 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition configures when the pipeline should trigger a new image build.
+     * The condition configures when the pipeline should trigger a new image build. When the
+     * <code>pipelineExecutionStartCondition</code> is set to
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
+     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
+     * image every time the CRON expression matches the current time.
      * </p>
      * 
-     * @return The condition configures when the pipeline should trigger a new image build.
+     * @return The condition configures when the pipeline should trigger a new image build. When the
+     *         <code>pipelineExecutionStartCondition</code> is set to
+     *         <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
+     *         only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
+     *         build a new image every time the CRON expression matches the current time.
      * @see PipelineExecutionStartCondition
      */
 
@@ -110,11 +137,19 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition configures when the pipeline should trigger a new image build.
+     * The condition configures when the pipeline should trigger a new image build. When the
+     * <code>pipelineExecutionStartCondition</code> is set to
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
+     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
+     * image every time the CRON expression matches the current time.
      * </p>
      * 
      * @param pipelineExecutionStartCondition
-     *        The condition configures when the pipeline should trigger a new image build.
+     *        The condition configures when the pipeline should trigger a new image build. When the
+     *        <code>pipelineExecutionStartCondition</code> is set to
+     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
+     *        only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
+     *        build a new image every time the CRON expression matches the current time.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PipelineExecutionStartCondition
      */
@@ -126,11 +161,19 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition configures when the pipeline should trigger a new image build.
+     * The condition configures when the pipeline should trigger a new image build. When the
+     * <code>pipelineExecutionStartCondition</code> is set to
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
+     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
+     * image every time the CRON expression matches the current time.
      * </p>
      * 
      * @param pipelineExecutionStartCondition
-     *        The condition configures when the pipeline should trigger a new image build.
+     *        The condition configures when the pipeline should trigger a new image build. When the
+     *        <code>pipelineExecutionStartCondition</code> is set to
+     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
+     *        only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
+     *        build a new image every time the CRON expression matches the current time.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PipelineExecutionStartCondition
      */

@@ -19,6 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
+ * Describes the configuration for a launch permission. The launch permission modification request is sent to the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2
+ * ModifyImageAttribute</a> API on behalf of the user for each Region they have selected to distribute the AMI.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchPermissionConfiguration"
@@ -29,20 +32,23 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The AWS account ID.
      * </p>
      */
     private java.util.List<String> userIds;
     /**
      * <p>
+     * The name of the group.
      * </p>
      */
     private java.util.List<String> userGroups;
 
     /**
      * <p>
+     * The AWS account ID.
      * </p>
      * 
-     * @return
+     * @return The AWS account ID.
      */
 
     public java.util.List<String> getUserIds() {
@@ -51,9 +57,11 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The AWS account ID.
      * </p>
      * 
      * @param userIds
+     *        The AWS account ID.
      */
 
     public void setUserIds(java.util.Collection<String> userIds) {
@@ -67,6 +75,7 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The AWS account ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -75,6 +84,7 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
      * </p>
      * 
      * @param userIds
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,9 +100,11 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The AWS account ID.
      * </p>
      * 
      * @param userIds
+     *        The AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,9 +115,10 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The name of the group.
      * </p>
      * 
-     * @return
+     * @return The name of the group.
      */
 
     public java.util.List<String> getUserGroups() {
@@ -114,9 +127,11 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The name of the group.
      * </p>
      * 
      * @param userGroups
+     *        The name of the group.
      */
 
     public void setUserGroups(java.util.Collection<String> userGroups) {
@@ -130,6 +145,7 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The name of the group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,6 +154,7 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
      * </p>
      * 
      * @param userGroups
+     *        The name of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,9 +170,11 @@ public class LaunchPermissionConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The name of the group.
      * </p>
      * 
      * @param userGroups
+     *        The name of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

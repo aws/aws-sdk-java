@@ -36,7 +36,7 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable, Stru
     private String deviceName;
     /**
      * <p>
-     * Use to manage EBS specific configuration for this mapping.
+     * Use to manage Amazon EBS-specific configuration for this mapping.
      * </p>
      */
     private EbsInstanceBlockDeviceSpecification ebs;
@@ -95,11 +95,11 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use to manage EBS specific configuration for this mapping.
+     * Use to manage Amazon EBS-specific configuration for this mapping.
      * </p>
      * 
      * @param ebs
-     *        Use to manage EBS specific configuration for this mapping.
+     *        Use to manage Amazon EBS-specific configuration for this mapping.
      */
 
     public void setEbs(EbsInstanceBlockDeviceSpecification ebs) {
@@ -108,10 +108,10 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use to manage EBS specific configuration for this mapping.
+     * Use to manage Amazon EBS-specific configuration for this mapping.
      * </p>
      * 
-     * @return Use to manage EBS specific configuration for this mapping.
+     * @return Use to manage Amazon EBS-specific configuration for this mapping.
      */
 
     public EbsInstanceBlockDeviceSpecification getEbs() {
@@ -120,11 +120,11 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Use to manage EBS specific configuration for this mapping.
+     * Use to manage Amazon EBS-specific configuration for this mapping.
      * </p>
      * 
      * @param ebs
-     *        Use to manage EBS specific configuration for this mapping.
+     *        Use to manage Amazon EBS-specific configuration for this mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have specified an client token for an operation using parameter values that differ from a previous request that
+ * You have specified a client token for an operation using parameter values that differ from a previous request that
  * used the same client token.
  * </p>
  */

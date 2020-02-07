@@ -60,7 +60,7 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
     private String imageRecipeArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration associated with this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      * </p>
      */
     private String infrastructureConfigurationArn;
@@ -340,11 +340,11 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration associated with this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastruction configuration associated with this image pipeline.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      */
 
     public void setInfrastructureConfigurationArn(String infrastructureConfigurationArn) {
@@ -353,10 +353,10 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration associated with this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the infrastruction configuration associated with this image pipeline.
+     * @return The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      */
 
     public String getInfrastructureConfigurationArn() {
@@ -365,11 +365,11 @@ public class ImagePipeline implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastruction configuration associated with this image pipeline.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastruction configuration associated with this image pipeline.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration associated with this image pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource whose tags you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource whose tags you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource whose tags you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

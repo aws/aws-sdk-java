@@ -27,14 +27,15 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The owner defines whose image recipes you wish to list. By default this request will only show image recipes
-     * owned by your account. You may use this field to specify if you wish to view image recipes owned by yourself,
+     * The owner defines which image recipes you want to list. By default, this request will only show image recipes
+     * owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by
      * Amazon, or those image recipes that have been shared with you by other customers.
      * </p>
      */
     private String owner;
     /**
      * <p>
+     * The filters.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -53,15 +54,15 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The owner defines whose image recipes you wish to list. By default this request will only show image recipes
-     * owned by your account. You may use this field to specify if you wish to view image recipes owned by yourself,
+     * The owner defines which image recipes you want to list. By default, this request will only show image recipes
+     * owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by
      * Amazon, or those image recipes that have been shared with you by other customers.
      * </p>
      * 
      * @param owner
-     *        The owner defines whose image recipes you wish to list. By default this request will only show image
-     *        recipes owned by your account. You may use this field to specify if you wish to view image recipes owned
-     *        by yourself, Amazon, or those image recipes that have been shared with you by other customers.
+     *        The owner defines which image recipes you want to list. By default, this request will only show image
+     *        recipes owned by your account. You can use this field to specify if you want to view image recipes owned
+     *        by yourself, by Amazon, or those image recipes that have been shared with you by other customers.
      * @see Ownership
      */
 
@@ -71,14 +72,14 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The owner defines whose image recipes you wish to list. By default this request will only show image recipes
-     * owned by your account. You may use this field to specify if you wish to view image recipes owned by yourself,
+     * The owner defines which image recipes you want to list. By default, this request will only show image recipes
+     * owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by
      * Amazon, or those image recipes that have been shared with you by other customers.
      * </p>
      * 
-     * @return The owner defines whose image recipes you wish to list. By default this request will only show image
-     *         recipes owned by your account. You may use this field to specify if you wish to view image recipes owned
-     *         by yourself, Amazon, or those image recipes that have been shared with you by other customers.
+     * @return The owner defines which image recipes you want to list. By default, this request will only show image
+     *         recipes owned by your account. You can use this field to specify if you want to view image recipes owned
+     *         by yourself, by Amazon, or those image recipes that have been shared with you by other customers.
      * @see Ownership
      */
 
@@ -88,15 +89,15 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The owner defines whose image recipes you wish to list. By default this request will only show image recipes
-     * owned by your account. You may use this field to specify if you wish to view image recipes owned by yourself,
+     * The owner defines which image recipes you want to list. By default, this request will only show image recipes
+     * owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by
      * Amazon, or those image recipes that have been shared with you by other customers.
      * </p>
      * 
      * @param owner
-     *        The owner defines whose image recipes you wish to list. By default this request will only show image
-     *        recipes owned by your account. You may use this field to specify if you wish to view image recipes owned
-     *        by yourself, Amazon, or those image recipes that have been shared with you by other customers.
+     *        The owner defines which image recipes you want to list. By default, this request will only show image
+     *        recipes owned by your account. You can use this field to specify if you want to view image recipes owned
+     *        by yourself, by Amazon, or those image recipes that have been shared with you by other customers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ownership
      */
@@ -108,15 +109,15 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The owner defines whose image recipes you wish to list. By default this request will only show image recipes
-     * owned by your account. You may use this field to specify if you wish to view image recipes owned by yourself,
+     * The owner defines which image recipes you want to list. By default, this request will only show image recipes
+     * owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by
      * Amazon, or those image recipes that have been shared with you by other customers.
      * </p>
      * 
      * @param owner
-     *        The owner defines whose image recipes you wish to list. By default this request will only show image
-     *        recipes owned by your account. You may use this field to specify if you wish to view image recipes owned
-     *        by yourself, Amazon, or those image recipes that have been shared with you by other customers.
+     *        The owner defines which image recipes you want to list. By default, this request will only show image
+     *        recipes owned by your account. You can use this field to specify if you want to view image recipes owned
+     *        by yourself, by Amazon, or those image recipes that have been shared with you by other customers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ownership
      */
@@ -128,9 +129,10 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
-     * @return
+     * @return The filters.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -139,9 +141,11 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
      * @param filters
+     *        The filters.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -155,6 +159,7 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The filters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,6 +168,7 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param filters
+     *        The filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,9 +184,11 @@ public class ListImageRecipesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
      * @param filters
+     *        The filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

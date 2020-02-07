@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Define and configure the outputs AMIs of the pipeline.
+ * Define and configure the output AMIs of the pipeline.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AmiDistributionConfiguration"
@@ -42,7 +42,7 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
     private String description;
     /**
      * <p>
-     * The tags to apply to AMIs distributed to this region.
+     * The tags to apply to AMIs distributed to this Region.
      * </p>
      */
     private java.util.Map<String, String> amiTags;
@@ -135,10 +135,10 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The tags to apply to AMIs distributed to this region.
+     * The tags to apply to AMIs distributed to this Region.
      * </p>
      * 
-     * @return The tags to apply to AMIs distributed to this region.
+     * @return The tags to apply to AMIs distributed to this Region.
      */
 
     public java.util.Map<String, String> getAmiTags() {
@@ -147,11 +147,11 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The tags to apply to AMIs distributed to this region.
+     * The tags to apply to AMIs distributed to this Region.
      * </p>
      * 
      * @param amiTags
-     *        The tags to apply to AMIs distributed to this region.
+     *        The tags to apply to AMIs distributed to this Region.
      */
 
     public void setAmiTags(java.util.Map<String, String> amiTags) {
@@ -160,11 +160,11 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The tags to apply to AMIs distributed to this region.
+     * The tags to apply to AMIs distributed to this Region.
      * </p>
      * 
      * @param amiTags
-     *        The tags to apply to AMIs distributed to this region.
+     *        The tags to apply to AMIs distributed to this Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

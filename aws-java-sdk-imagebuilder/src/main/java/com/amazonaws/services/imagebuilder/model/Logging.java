@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Logging configuration defines where Image Builder uploads your logs to.
+ * Logging configuration defines where Image Builder uploads your logs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Logging" target="_top">AWS API
@@ -30,18 +30,18 @@ public class Logging implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 logging configuration.
+     * The Amazon S3 logging configuration.
      * </p>
      */
     private S3Logs s3Logs;
 
     /**
      * <p>
-     * The S3 logging configuration.
+     * The Amazon S3 logging configuration.
      * </p>
      * 
      * @param s3Logs
-     *        The S3 logging configuration.
+     *        The Amazon S3 logging configuration.
      */
 
     public void setS3Logs(S3Logs s3Logs) {
@@ -50,10 +50,10 @@ public class Logging implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 logging configuration.
+     * The Amazon S3 logging configuration.
      * </p>
      * 
-     * @return The S3 logging configuration.
+     * @return The Amazon S3 logging configuration.
      */
 
     public S3Logs getS3Logs() {
@@ -62,11 +62,11 @@ public class Logging implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 logging configuration.
+     * The Amazon S3 logging configuration.
      * </p>
      * 
      * @param s3Logs
-     *        The S3 logging configuration.
+     *        The Amazon S3 logging configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

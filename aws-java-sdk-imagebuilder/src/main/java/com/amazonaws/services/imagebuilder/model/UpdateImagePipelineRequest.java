@@ -27,7 +27,7 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to update.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to update.
      * </p>
      */
     private String imagePipelineArn;
@@ -85,11 +85,11 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to update.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to update.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline that you wish to update.
+     *        The Amazon Resource Name (ARN) of the image pipeline that you want to update.
      */
 
     public void setImagePipelineArn(String imagePipelineArn) {
@@ -98,10 +98,10 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to update.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image pipeline that you wish to update.
+     * @return The Amazon Resource Name (ARN) of the image pipeline that you want to update.
      */
 
     public String getImagePipelineArn() {
@@ -110,11 +110,11 @@ public class UpdateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to update.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to update.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline that you wish to update.
+     *        The Amazon Resource Name (ARN) of the image pipeline that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

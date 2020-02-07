@@ -27,12 +27,13 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
      * </p>
      */
     private String imageVersionArn;
     /**
      * <p>
+     * The filters.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -51,11 +52,11 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
      * </p>
      * 
      * @param imageVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
      */
 
     public void setImageVersionArn(String imageVersionArn) {
@@ -64,10 +65,10 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
      */
 
     public String getImageVersionArn() {
@@ -76,11 +77,11 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
      * </p>
      * 
      * @param imageVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose build versions you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,9 +92,10 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
-     * @return
+     * @return The filters.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -102,9 +104,11 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
      * @param filters
+     *        The filters.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -118,6 +122,7 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The filters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,6 +131,7 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param filters
+     *        The filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,9 +147,11 @@ public class ListImageBuildVersionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
      * @param filters
+     *        The filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

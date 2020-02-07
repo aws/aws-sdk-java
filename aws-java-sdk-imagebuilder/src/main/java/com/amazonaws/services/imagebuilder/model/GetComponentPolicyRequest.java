@@ -27,18 +27,18 @@ public class GetComponentPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.
      * </p>
      */
     private String componentArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.
      * </p>
      * 
      * @param componentArn
-     *        The Amazon Resource Name (ARN) of the component whose policy you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.
      */
 
     public void setComponentArn(String componentArn) {
@@ -47,10 +47,10 @@ public class GetComponentPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the component whose policy you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.
      */
 
     public String getComponentArn() {
@@ -59,11 +59,11 @@ public class GetComponentPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.
      * </p>
      * 
      * @param componentArn
-     *        The Amazon Resource Name (ARN) of the component whose policy you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
