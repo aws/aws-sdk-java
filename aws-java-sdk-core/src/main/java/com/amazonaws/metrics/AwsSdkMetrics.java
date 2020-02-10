@@ -344,6 +344,12 @@ public enum AwsSdkMetrics {
             perHostMetricsIncluded = includePerHostMetrics;
             singleMetricNamespace = useSingleMetricNamespace;
             httpSocketReadMetricEnabled = enableHttpSocketReadMetric;
+            // Exports AwsSdkMetrics for JMX access.
+            try {
+                registerMetricAdminMBean();
+            } catch(Exception ex) {
+                LogFactory.getLog(AwsSdkMetrics.class).warn("", ex);
+            }
         }
     }
 
@@ -353,14 +359,6 @@ public enum AwsSdkMetrics {
      * Used to disallow re-entrancy in enabling the default metric collection system.
      */
     private static boolean dirtyEnabling;
-    /** Exports AwsSdkMetrics for JMX access. */
-    static {
-        try {
-            registerMetricAdminMBean();
-        } catch(Exception ex) {
-            LogFactory.getLog(AwsSdkMetrics.class).warn("", ex);
-        }
-    }
 
     /**
      * Returns true if the metric admin MBean is currently registered for JMX
