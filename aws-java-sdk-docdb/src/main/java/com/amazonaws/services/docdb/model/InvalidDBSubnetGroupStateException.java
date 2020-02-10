@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB subnet group can't be deleted because it's in use.
+ * The subnet group can't be deleted because it's in use.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

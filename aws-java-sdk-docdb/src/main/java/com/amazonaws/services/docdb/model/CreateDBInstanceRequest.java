@@ -30,7 +30,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -59,7 +59,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+     * The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
      * </p>
      */
     private String dBInstanceClass;
@@ -74,7 +74,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String engine;
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the DB instance is created in.
+     * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -110,7 +110,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
@@ -119,13 +119,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     * The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The identifier of the DB cluster that the instance will belong to.
+     * The identifier of the cluster that the instance will belong to.
      * </p>
      */
     private String dBClusterIdentifier;
@@ -145,7 +145,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -172,7 +172,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This parameter is stored as a lowercase string.</p>
+     *        The instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -203,7 +203,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -229,7 +229,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>mydbinstance</code>
      * </p>
      * 
-     * @return The DB instance identifier. This parameter is stored as a lowercase string.</p>
+     * @return The instance identifier. This parameter is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -260,7 +260,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -287,7 +287,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This parameter is stored as a lowercase string.</p>
+     *        The instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -320,11 +320,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+     * The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+     *        The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -333,10 +333,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+     * The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
      * </p>
      * 
-     * @return The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+     * @return The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
      */
 
     public String getDBInstanceClass() {
@@ -345,11 +345,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+     * The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The compute and memory capacity of the DB instance; for example, <code>db.r5.large</code>.
+     *        The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,7 +415,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the DB instance is created in.
+     * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -430,7 +430,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     *        The Amazon EC2 Availability Zone that the instance is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
@@ -449,7 +449,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the DB instance is created in.
+     * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -463,7 +463,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * endpoint.
      * </p>
      * 
-     * @return The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * @return The Amazon EC2 Availability Zone that the instance is created in.</p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *         </p>
@@ -482,7 +482,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon EC2 Availability Zone that the DB instance is created in.
+     * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
      * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
@@ -497,7 +497,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     *        The Amazon EC2 Availability Zone that the instance is created in.</p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
@@ -636,14 +636,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     *        Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
      *        window.</p>
      *        <p>
      *        Default: <code>true</code>
@@ -655,13 +655,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     * @return Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
      *         window.</p>
      *         <p>
      *         Default: <code>true</code>
@@ -673,14 +673,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     *        Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
      *        window.</p>
      *        <p>
      *        Default: <code>true</code>
@@ -694,13 +694,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
      * </p>
      * <p>
      * Default: <code>true</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance
+     * @return Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
      *         window.</p>
      *         <p>
      *         Default: <code>true</code>
@@ -712,10 +712,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     * The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      * </p>
      * 
-     * @return The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     * @return The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      */
 
     public java.util.List<Tag> getTags() {
@@ -724,11 +724,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     * The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     *        The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -742,7 +742,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     * The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -751,7 +751,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     *        The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -767,11 +767,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     * The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB instance. You can assign up to 10 tags to an instance.
+     *        The tags to be assigned to the instance. You can assign up to 10 tags to an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -782,11 +782,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the DB cluster that the instance will belong to.
+     * The identifier of the cluster that the instance will belong to.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster that the instance will belong to.
+     *        The identifier of the cluster that the instance will belong to.
      */
 
     public void setDBClusterIdentifier(String dBClusterIdentifier) {
@@ -795,10 +795,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the DB cluster that the instance will belong to.
+     * The identifier of the cluster that the instance will belong to.
      * </p>
      * 
-     * @return The identifier of the DB cluster that the instance will belong to.
+     * @return The identifier of the cluster that the instance will belong to.
      */
 
     public String getDBClusterIdentifier() {
@@ -807,11 +807,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the DB cluster that the instance will belong to.
+     * The identifier of the cluster that the instance will belong to.
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster that the instance will belong to.
+     *        The identifier of the cluster that the instance will belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

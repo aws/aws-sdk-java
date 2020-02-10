@@ -30,7 +30,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -51,26 +51,26 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * The DB cluster parameter group family name.
+     * The cluster parameter group family name.
      * </p>
      */
     private String dBParameterGroupFamily;
     /**
      * <p>
-     * The description for the DB cluster parameter group.
+     * The description for the cluster parameter group.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The tags to be assigned to the DB cluster parameter group.
+     * The tags to be assigned to the cluster parameter group.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -89,7 +89,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </note>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group.</p>
+     *        The name of the cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -112,7 +112,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -130,7 +130,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </p>
      * </note>
      * 
-     * @return The name of the DB cluster parameter group.</p>
+     * @return The name of the cluster parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -153,7 +153,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -172,7 +172,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </note>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group.</p>
+     *        The name of the cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -197,11 +197,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The DB cluster parameter group family name.
+     * The cluster parameter group family name.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        The DB cluster parameter group family name.
+     *        The cluster parameter group family name.
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -210,10 +210,10 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The DB cluster parameter group family name.
+     * The cluster parameter group family name.
      * </p>
      * 
-     * @return The DB cluster parameter group family name.
+     * @return The cluster parameter group family name.
      */
 
     public String getDBParameterGroupFamily() {
@@ -222,11 +222,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The DB cluster parameter group family name.
+     * The cluster parameter group family name.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        The DB cluster parameter group family name.
+     *        The cluster parameter group family name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +237,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The description for the DB cluster parameter group.
+     * The description for the cluster parameter group.
      * </p>
      * 
      * @param description
-     *        The description for the DB cluster parameter group.
+     *        The description for the cluster parameter group.
      */
 
     public void setDescription(String description) {
@@ -250,10 +250,10 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The description for the DB cluster parameter group.
+     * The description for the cluster parameter group.
      * </p>
      * 
-     * @return The description for the DB cluster parameter group.
+     * @return The description for the cluster parameter group.
      */
 
     public String getDescription() {
@@ -262,11 +262,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The description for the DB cluster parameter group.
+     * The description for the cluster parameter group.
      * </p>
      * 
      * @param description
-     *        The description for the DB cluster parameter group.
+     *        The description for the cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,10 +277,10 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster parameter group.
+     * The tags to be assigned to the cluster parameter group.
      * </p>
      * 
-     * @return The tags to be assigned to the DB cluster parameter group.
+     * @return The tags to be assigned to the cluster parameter group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -289,11 +289,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster parameter group.
+     * The tags to be assigned to the cluster parameter group.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster parameter group.
+     *        The tags to be assigned to the cluster parameter group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -307,7 +307,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster parameter group.
+     * The tags to be assigned to the cluster parameter group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -316,7 +316,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster parameter group.
+     *        The tags to be assigned to the cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,11 +332,11 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster parameter group.
+     * The tags to be assigned to the cluster parameter group.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster parameter group.
+     *        The tags to be assigned to the cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

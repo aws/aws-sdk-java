@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request would cause you to exceed the allowed number of DB instances.
+ * The request would cause you to exceed the allowed number of instances.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

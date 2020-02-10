@@ -30,7 +30,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet
      * group.
      * </p>
      * <p>
@@ -43,20 +43,20 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     private String dBSubnetGroupName;
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      */
     private String dBSubnetGroupDescription;
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      */
     private java.util.List<String> subnetIds;
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet
      * group.
      * </p>
      * <p>
@@ -67,7 +67,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default
+     *        The name for the subnet group. This value is stored as a lowercase string. You can't modify the default
      *        subnet group. </p>
      *        <p>
      *        Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
@@ -82,7 +82,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet
      * group.
      * </p>
      * <p>
@@ -92,8 +92,8 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the
-     *         default subnet group. </p>
+     * @return The name for the subnet group. This value is stored as a lowercase string. You can't modify the default
+     *         subnet group. </p>
      *         <p>
      *         Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
      *         </p>
@@ -107,7 +107,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet
+     * The name for the subnet group. This value is stored as a lowercase string. You can't modify the default subnet
      * group.
      * </p>
      * <p>
@@ -118,7 +118,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default
+     *        The name for the subnet group. This value is stored as a lowercase string. You can't modify the default
      *        subnet group. </p>
      *        <p>
      *        Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
@@ -135,11 +135,11 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      * 
      * @param dBSubnetGroupDescription
-     *        The description for the DB subnet group.
+     *        The description for the subnet group.
      */
 
     public void setDBSubnetGroupDescription(String dBSubnetGroupDescription) {
@@ -148,10 +148,10 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      * 
-     * @return The description for the DB subnet group.
+     * @return The description for the subnet group.
      */
 
     public String getDBSubnetGroupDescription() {
@@ -160,11 +160,11 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      * 
      * @param dBSubnetGroupDescription
-     *        The description for the DB subnet group.
+     *        The description for the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,10 +175,10 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * 
-     * @return The Amazon EC2 subnet IDs for the DB subnet group.
+     * @return The Amazon EC2 subnet IDs for the subnet group.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -187,11 +187,11 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * 
      * @param subnetIds
-     *        The Amazon EC2 subnet IDs for the DB subnet group.
+     *        The Amazon EC2 subnet IDs for the subnet group.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -205,7 +205,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,7 +214,7 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param subnetIds
-     *        The Amazon EC2 subnet IDs for the DB subnet group.
+     *        The Amazon EC2 subnet IDs for the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +230,11 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * 
      * @param subnetIds
-     *        The Amazon EC2 subnet IDs for the DB subnet group.
+     *        The Amazon EC2 subnet IDs for the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains information about an instance that is part of a DB cluster.
+ * Contains information about an instance that is part of a cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterMember" target="_top">AWS API
@@ -28,20 +28,20 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the instance identifier for this member of the DB cluster.
+     * Specifies the instance identifier for this member of the cluster.
      * </p>
      */
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      * <code>false</code> otherwise.
      * </p>
      */
     private Boolean isClusterWriter;
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     * Specifies the status of the cluster parameter group for this member of the DB cluster.
      * </p>
      */
     private String dBClusterParameterGroupStatus;
@@ -55,11 +55,11 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the instance identifier for this member of the DB cluster.
+     * Specifies the instance identifier for this member of the cluster.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Specifies the instance identifier for this member of the DB cluster.
+     *        Specifies the instance identifier for this member of the cluster.
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -68,10 +68,10 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the instance identifier for this member of the DB cluster.
+     * Specifies the instance identifier for this member of the cluster.
      * </p>
      * 
-     * @return Specifies the instance identifier for this member of the DB cluster.
+     * @return Specifies the instance identifier for this member of the cluster.
      */
 
     public String getDBInstanceIdentifier() {
@@ -80,11 +80,11 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the instance identifier for this member of the DB cluster.
+     * Specifies the instance identifier for this member of the cluster.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Specifies the instance identifier for this member of the DB cluster.
+     *        Specifies the instance identifier for this member of the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,12 +95,12 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      * <code>false</code> otherwise.
      * </p>
      * 
      * @param isClusterWriter
-     *        A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     *        A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      *        <code>false</code> otherwise.
      */
 
@@ -110,11 +110,11 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      * <code>false</code> otherwise.
      * </p>
      * 
-     * @return A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * @return A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      *         <code>false</code> otherwise.
      */
 
@@ -124,12 +124,12 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      * <code>false</code> otherwise.
      * </p>
      * 
      * @param isClusterWriter
-     *        A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     *        A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      *        <code>false</code> otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -141,11 +141,11 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      * <code>false</code> otherwise.
      * </p>
      * 
-     * @return A value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and
+     * @return A value that is <code>true</code> if the cluster member is the primary instance for the cluster and
      *         <code>false</code> otherwise.
      */
 
@@ -155,11 +155,11 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     * Specifies the status of the cluster parameter group for this member of the DB cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupStatus
-     *        Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     *        Specifies the status of the cluster parameter group for this member of the DB cluster.
      */
 
     public void setDBClusterParameterGroupStatus(String dBClusterParameterGroupStatus) {
@@ -168,10 +168,10 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     * Specifies the status of the cluster parameter group for this member of the DB cluster.
      * </p>
      * 
-     * @return Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     * @return Specifies the status of the cluster parameter group for this member of the DB cluster.
      */
 
     public String getDBClusterParameterGroupStatus() {
@@ -180,11 +180,11 @@ public class DBClusterMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     * Specifies the status of the cluster parameter group for this member of the DB cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupStatus
-     *        Specifies the status of the DB cluster parameter group for this member of the DB cluster.
+     *        Specifies the status of the cluster parameter group for this member of the DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

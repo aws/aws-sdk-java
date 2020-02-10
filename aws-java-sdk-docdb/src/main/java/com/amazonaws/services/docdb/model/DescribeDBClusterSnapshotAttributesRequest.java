@@ -30,18 +30,18 @@ public class DescribeDBClusterSnapshotAttributesRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The identifier for the DB cluster snapshot to describe the attributes for.
+     * The identifier for the cluster snapshot to describe the attributes for.
      * </p>
      */
     private String dBClusterSnapshotIdentifier;
 
     /**
      * <p>
-     * The identifier for the DB cluster snapshot to describe the attributes for.
+     * The identifier for the cluster snapshot to describe the attributes for.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier for the DB cluster snapshot to describe the attributes for.
+     *        The identifier for the cluster snapshot to describe the attributes for.
      */
 
     public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
@@ -50,10 +50,10 @@ public class DescribeDBClusterSnapshotAttributesRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The identifier for the DB cluster snapshot to describe the attributes for.
+     * The identifier for the cluster snapshot to describe the attributes for.
      * </p>
      * 
-     * @return The identifier for the DB cluster snapshot to describe the attributes for.
+     * @return The identifier for the cluster snapshot to describe the attributes for.
      */
 
     public String getDBClusterSnapshotIdentifier() {
@@ -62,11 +62,11 @@ public class DescribeDBClusterSnapshotAttributesRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The identifier for the DB cluster snapshot to describe the attributes for.
+     * The identifier for the cluster snapshot to describe the attributes for.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier for the DB cluster snapshot to describe the attributes for.
+     *        The identifier for the cluster snapshot to describe the attributes for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

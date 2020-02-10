@@ -19,6 +19,7 @@ import com.amazonaws.http.IdleConnectionReaper;
 import com.amazonaws.http.SystemPropertyTlsKeyManagersProvider;
 import com.amazonaws.http.TlsKeyManagersProvider;
 import com.amazonaws.retry.PredefinedRetryPolicies;
+import com.amazonaws.retry.RetryMode;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.ValidationUtils;
@@ -368,6 +369,7 @@ public class ClientConfiguration {
     private final AtomicReference<URLHolder> httpsProxyHolder = new AtomicReference<URLHolder>();
 
     private TlsKeyManagersProvider tlsKeyManagersProvider;
+    private RetryMode retryMode;
 
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
@@ -419,6 +421,7 @@ public class ClientConfiguration {
         this.httpProxyHolder.set(other.httpProxyHolder.get());
         this.httpsProxyHolder.set(other.httpsProxyHolder.get());
         this.tlsKeyManagersProvider = other.tlsKeyManagersProvider;
+        this.retryMode = other.retryMode;
     }
 
     /**
@@ -1261,7 +1264,7 @@ public class ClientConfiguration {
      */
     public void setMaxErrorRetry(int maxErrorRetry) {
         if (maxErrorRetry < 0) {
-            throw new IllegalArgumentException("maxErrorRetry shoud be non-negative");
+            throw new IllegalArgumentException("maxErrorRetry should be non-negative");
         }
         this.maxErrorRetry = maxErrorRetry;
     }
@@ -1278,6 +1281,33 @@ public class ClientConfiguration {
     public ClientConfiguration withMaxErrorRetry(int maxErrorRetry) {
         setMaxErrorRetry(maxErrorRetry);
         return this;
+    }
+
+    /**
+     * Sets the RetryMode to use
+     *
+     * @param retryMode the retryMode
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withRetryMode(RetryMode retryMode) {
+        setRetryMode(retryMode);
+        return this;
+    }
+
+    /**
+     * Sets the RetryMode to use
+     *
+     * @param retryMode the retryMode
+     */
+    public void setRetryMode(RetryMode retryMode) {
+        this.retryMode = retryMode;
+    }
+
+    /**
+     * @return the retryMode
+     */
+    public RetryMode getRetryMode() {
+        return retryMode;
     }
 
     /**

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified DB instance class isn't available in the specified Availability Zone.
+ * The specified instance class isn't available in the specified Availability Zone.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

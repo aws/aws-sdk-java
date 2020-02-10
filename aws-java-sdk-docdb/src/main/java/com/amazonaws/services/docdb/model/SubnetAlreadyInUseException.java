@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB subnet is already in use in the Availability Zone.
+ * The subnet is already in use in the Availability Zone.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -28,7 +28,7 @@ public class DescribeDBClusterParametersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Provides a list of parameters for the DB cluster parameter group.
+     * Provides a list of parameters for the cluster parameter group.
      * </p>
      */
     private java.util.List<Parameter> parameters;
@@ -42,10 +42,10 @@ public class DescribeDBClusterParametersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Provides a list of parameters for the DB cluster parameter group.
+     * Provides a list of parameters for the cluster parameter group.
      * </p>
      * 
-     * @return Provides a list of parameters for the DB cluster parameter group.
+     * @return Provides a list of parameters for the cluster parameter group.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -54,11 +54,11 @@ public class DescribeDBClusterParametersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Provides a list of parameters for the DB cluster parameter group.
+     * Provides a list of parameters for the cluster parameter group.
      * </p>
      * 
      * @param parameters
-     *        Provides a list of parameters for the DB cluster parameter group.
+     *        Provides a list of parameters for the cluster parameter group.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -72,7 +72,7 @@ public class DescribeDBClusterParametersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Provides a list of parameters for the DB cluster parameter group.
+     * Provides a list of parameters for the cluster parameter group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeDBClusterParametersResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param parameters
-     *        Provides a list of parameters for the DB cluster parameter group.
+     *        Provides a list of parameters for the cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeDBClusterParametersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Provides a list of parameters for the DB cluster parameter group.
+     * Provides a list of parameters for the cluster parameter group.
      * </p>
      * 
      * @param parameters
-     *        Provides a list of parameters for the DB cluster parameter group.
+     *        Provides a list of parameters for the cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

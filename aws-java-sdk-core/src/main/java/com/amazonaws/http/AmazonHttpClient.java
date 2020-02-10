@@ -84,6 +84,7 @@ import com.amazonaws.monitoring.internal.ClientSideMonitoringRequestHandler;
 import com.amazonaws.retry.ClockSkewAdjuster;
 import com.amazonaws.retry.ClockSkewAdjuster.AdjustmentRequest;
 import com.amazonaws.retry.ClockSkewAdjuster.ClockSkewAdjustment;
+import com.amazonaws.retry.RetryMode;
 import com.amazonaws.retry.RetryPolicyAdapter;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
@@ -109,6 +110,7 @@ import java.io.Closeable;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collections;
@@ -128,6 +130,7 @@ import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.impl.execchain.RequestAbortedException;
 import org.apache.http.pool.ConnPoolControl;
@@ -167,6 +170,11 @@ public class AmazonHttpClient {
      * pool.
      */
     private static final int THROTTLED_RETRY_COST = 5;
+
+    /**
+     * The capacity to acquire for a connection timeout or socket timeout error.
+     */
+    private static final int TIMEOUT_RETRY_COST = 10;
 
     static {
         // Customers have reported XML parsing issues with the following
@@ -241,6 +249,8 @@ public class AmazonHttpClient {
      * The time difference in seconds between this client and AWS.
      */
     private volatile int timeOffset = SDKGlobalTime.getGlobalTimeOffset();
+
+    private final RetryMode retryMode;
 
     /**
      * Constructs a new AWS client using the specified client configuration options (ex: max retry
@@ -345,6 +355,8 @@ public class AmazonHttpClient {
         this.config = clientConfig;
         this.retryPolicy =
                 retryPolicy == null ? new RetryPolicyAdapter(clientConfig.getRetryPolicy(), clientConfig) : retryPolicy;
+        this.retryMode =
+            clientConfig.getRetryMode() == null ? clientConfig.getRetryPolicy().getRetryMode() : clientConfig.getRetryMode();
         this.httpClientSettings = httpClientSettings;
         this.requestMetricCollector = requestMetricCollector;
         this.responseMetadataCache =
@@ -1427,7 +1439,7 @@ public class AmazonHttpClient {
              * we return a lesser amount.
              */
             if (execOneParams.isRetry() && executionContext.retryCapacityConsumed()) {
-                retryCapacity.release(THROTTLED_RETRY_COST);
+                retryCapacity.release(execOneParams.lastConsumedRetryCapacity);
             } else {
                 retryCapacity.release();
             }
@@ -1581,16 +1593,8 @@ public class AmazonHttpClient {
                                                            .httpStatusCode(params.getStatusCode())
                                                            .build();
 
-            // Do not use retry capacity for throttling exceptions
-            if (!RetryUtils.isThrottlingException(exception)) {
-                // See if we have enough available retry capacity to be able to execute
-                // this retry attempt.
-                if (!retryCapacity.acquire(THROTTLED_RETRY_COST)) {
-                    awsRequestMetrics.incrementCounter(ThrottledRetryCount);
-                    reportMaxRetriesExceededIfRetryable(context);
-                    return false;
-                }
-                executionContext.markRetryCapacityConsumed();
+            if (!acquireRetryCapacity(context, params)) {
+                return false;
             }
 
             // Finally, pass all the context information to the RetryCondition and let it
@@ -1604,6 +1608,59 @@ public class AmazonHttpClient {
                 return false;
             }
 
+            return true;
+        }
+
+        /**
+         * Attempts to acquire retry capacity.
+         *
+         * @return true if retry capacity can be acquired, false otherwise.
+         */
+        private boolean acquireRetryCapacity(RetryPolicyContext context, ExecOneRequestParams params) {
+            switch (retryMode) {
+                case LEGACY:
+                    return legacyAcquireRetryCapacity(context, params);
+                case STANDARD:
+                    return standardAcquireRetryCapacity(context, params);
+                default:
+                    throw new IllegalStateException("Unsupported retry mode: " + retryMode);
+            }
+        }
+
+        private boolean standardAcquireRetryCapacity(RetryPolicyContext context, ExecOneRequestParams params) {
+            SdkBaseException exception = context.exception();
+            if (isTimeoutError(exception)) {
+                return doAcquireCapacity(context, TIMEOUT_RETRY_COST, params);
+            }
+
+            return doAcquireCapacity(context, THROTTLED_RETRY_COST, params);
+        }
+
+        private boolean isTimeoutError(SdkBaseException exception) {
+            Throwable cause = exception.getCause();
+            return cause instanceof ConnectTimeoutException || cause instanceof SocketTimeoutException;
+        }
+
+        private boolean legacyAcquireRetryCapacity(RetryPolicyContext context, ExecOneRequestParams params) {
+            // For legacy retry mode, we only attempt to acquire capacity for non-throttling errors
+            if (!RetryUtils.isThrottlingException(context.exception())) {
+                // Do not use retry capacity for throttling exceptions if the retry mode
+                return doAcquireCapacity(context, THROTTLED_RETRY_COST, params);
+            } else {
+                return true;
+            }
+        }
+
+        private boolean doAcquireCapacity(RetryPolicyContext context, int retryCost, ExecOneRequestParams params) {
+            // See if we have enough available retry capacity to be able to execute
+            // this retry attempt.
+            if (!retryCapacity.acquire(retryCost)) {
+                awsRequestMetrics.incrementCounter(ThrottledRetryCount);
+                reportMaxRetriesExceededIfRetryable(context);
+                return false;
+            }
+            params.lastConsumedRetryCapacity = retryCost;
+            executionContext.markRetryCapacityConsumed();
             return true;
         }
 
@@ -1826,6 +1883,7 @@ public class AmazonHttpClient {
             org.apache.http.HttpResponse apacheResponse;
             URI redirectedURI;
             AuthRetryParameters authRetryParam;
+            int lastConsumedRetryCapacity;
             /*
              * Depending on which response handler we end up choosing to handle the HTTP response, it
              * might require us to leave the underlying HTTP connection open, depending on whether or

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A DB parameter group with the same name already exists.
+ * A parameter group with the same name already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

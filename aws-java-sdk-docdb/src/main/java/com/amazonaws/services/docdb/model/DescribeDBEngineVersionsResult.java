@@ -35,7 +35,7 @@ public class DescribeDBEngineVersionsResult extends com.amazonaws.AmazonWebServi
     private String marker;
     /**
      * <p>
-     * Detailed information about one or more DB engine versions.
+     * Detailed information about one or more engine versions.
      * </p>
      */
     private java.util.List<DBEngineVersion> dBEngineVersions;
@@ -88,10 +88,10 @@ public class DescribeDBEngineVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Detailed information about one or more DB engine versions.
+     * Detailed information about one or more engine versions.
      * </p>
      * 
-     * @return Detailed information about one or more DB engine versions.
+     * @return Detailed information about one or more engine versions.
      */
 
     public java.util.List<DBEngineVersion> getDBEngineVersions() {
@@ -100,11 +100,11 @@ public class DescribeDBEngineVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Detailed information about one or more DB engine versions.
+     * Detailed information about one or more engine versions.
      * </p>
      * 
      * @param dBEngineVersions
-     *        Detailed information about one or more DB engine versions.
+     *        Detailed information about one or more engine versions.
      */
 
     public void setDBEngineVersions(java.util.Collection<DBEngineVersion> dBEngineVersions) {
@@ -118,7 +118,7 @@ public class DescribeDBEngineVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Detailed information about one or more DB engine versions.
+     * Detailed information about one or more engine versions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +127,7 @@ public class DescribeDBEngineVersionsResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBEngineVersions
-     *        Detailed information about one or more DB engine versions.
+     *        Detailed information about one or more engine versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class DescribeDBEngineVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Detailed information about one or more DB engine versions.
+     * Detailed information about one or more engine versions.
      * </p>
      * 
      * @param dBEngineVersions
-     *        Detailed information about one or more DB engine versions.
+     *        Detailed information about one or more engine versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

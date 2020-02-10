@@ -30,7 +30,7 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of a specific DB cluster parameter group to return parameter details for.
+     * The name of a specific cluster parameter group to return parameter details for.
      * </p>
      * <p>
      * Constraints:
@@ -81,7 +81,7 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of a specific DB cluster parameter group to return parameter details for.
+     * The name of a specific cluster parameter group to return parameter details for.
      * </p>
      * <p>
      * Constraints:
@@ -95,7 +95,7 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of a specific DB cluster parameter group to return parameter details for.</p>
+     *        The name of a specific cluster parameter group to return parameter details for.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -113,7 +113,7 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of a specific DB cluster parameter group to return parameter details for.
+     * The name of a specific cluster parameter group to return parameter details for.
      * </p>
      * <p>
      * Constraints:
@@ -126,7 +126,7 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
      * </li>
      * </ul>
      * 
-     * @return The name of a specific DB cluster parameter group to return parameter details for.</p>
+     * @return The name of a specific cluster parameter group to return parameter details for.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -144,7 +144,7 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of a specific DB cluster parameter group to return parameter details for.
+     * The name of a specific cluster parameter group to return parameter details for.
      * </p>
      * <p>
      * Constraints:
@@ -158,7 +158,7 @@ public class DescribeDBClusterParametersRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of a specific DB cluster parameter group to return parameter details for.</p>
+     *        The name of a specific cluster parameter group to return parameter details for.</p>
      *        <p>
      *        Constraints:
      *        </p>

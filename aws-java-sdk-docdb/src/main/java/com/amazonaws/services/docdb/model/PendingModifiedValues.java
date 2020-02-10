@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * One or more modified settings for a DB instance. These modified settings have been requested, but haven't been
- * applied yet.
+ * One or more modified settings for an instance. These modified settings have been requested, but haven't been applied
+ * yet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/PendingModifiedValues" target="_top">AWS API
@@ -29,27 +29,27 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      */
     private String dBInstanceClass;
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
-     * being applied.
+     * Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being
+     * applied.
      * </p>
      */
     private Integer allocatedStorage;
     /**
      * <p>
-     * Contains the pending or currently in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently in-progress change of the master credentials for the instance.
      * </p>
      */
     private String masterUserPassword;
     /**
      * <p>
-     * Specifies the pending port for the DB instance.
+     * Specifies the pending port for the instance.
      * </p>
      */
     private Integer port;
@@ -61,7 +61,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     * Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      * </p>
      */
     private Boolean multiAZ;
@@ -73,7 +73,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
-     * The license model for the DB instance.
+     * The license model for the instance.
      * </p>
      * <p>
      * Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
@@ -83,20 +83,20 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String licenseModel;
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
+     * Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.
      * </p>
      */
     private Integer iops;
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      */
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the instance.
      * </p>
      */
     private String storageType;
@@ -108,7 +108,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String cACertificateIdentifier;
     /**
      * <p>
-     * The new DB subnet group for the DB instance.
+     * The new subnet group for the instance.
      * </p>
      */
     private String dBSubnetGroupName;
@@ -122,13 +122,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      * 
      * @param dBInstanceClass
-     *        Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently
-     *        being applied.
+     *        Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being
+     *        applied.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -137,12 +137,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      * 
-     * @return Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently
-     *         being applied.
+     * @return Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being
+     *         applied.
      */
 
     public String getDBInstanceClass() {
@@ -151,13 +151,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      * 
      * @param dBInstanceClass
-     *        Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied or is currently
-     *        being applied.
+     *        Contains the new <code>DBInstanceClass</code> for the instance that will be applied or is currently being
+     *        applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,13 +168,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
-     * being applied.
+     * Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
      * @param allocatedStorage
-     *        Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is
-     *        currently being applied.
+     *        Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently
+     *        being applied.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -183,11 +183,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
-     * being applied.
+     * Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
-     * @return Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is
+     * @return Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is
      *         currently being applied.
      */
 
@@ -197,13 +197,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is currently
-     * being applied.
+     * Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently being
+     * applied.
      * </p>
      * 
      * @param allocatedStorage
-     *        Contains the new <code>AllocatedStorage</code> size for the DB instance that will be applied or is
-     *        currently being applied.
+     *        Contains the new <code>AllocatedStorage</code> size for then instance that will be applied or is currently
+     *        being applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +214,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or currently in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently in-progress change of the master credentials for the instance.
      * </p>
      * 
      * @param masterUserPassword
-     *        Contains the pending or currently in-progress change of the master credentials for the DB instance.
+     *        Contains the pending or currently in-progress change of the master credentials for the instance.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -227,10 +227,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or currently in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently in-progress change of the master credentials for the instance.
      * </p>
      * 
-     * @return Contains the pending or currently in-progress change of the master credentials for the DB instance.
+     * @return Contains the pending or currently in-progress change of the master credentials for the instance.
      */
 
     public String getMasterUserPassword() {
@@ -239,11 +239,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or currently in-progress change of the master credentials for the DB instance.
+     * Contains the pending or currently in-progress change of the master credentials for the instance.
      * </p>
      * 
      * @param masterUserPassword
-     *        Contains the pending or currently in-progress change of the master credentials for the DB instance.
+     *        Contains the pending or currently in-progress change of the master credentials for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +254,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the pending port for the DB instance.
+     * Specifies the pending port for the instance.
      * </p>
      * 
      * @param port
-     *        Specifies the pending port for the DB instance.
+     *        Specifies the pending port for the instance.
      */
 
     public void setPort(Integer port) {
@@ -267,10 +267,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the pending port for the DB instance.
+     * Specifies the pending port for the instance.
      * </p>
      * 
-     * @return Specifies the pending port for the DB instance.
+     * @return Specifies the pending port for the instance.
      */
 
     public Integer getPort() {
@@ -279,11 +279,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the pending port for the DB instance.
+     * Specifies the pending port for the instance.
      * </p>
      * 
      * @param port
-     *        Specifies the pending port for the DB instance.
+     *        Specifies the pending port for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,11 +334,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     * Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      * </p>
      * 
      * @param multiAZ
-     *        Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     *        Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      */
 
     public void setMultiAZ(Boolean multiAZ) {
@@ -347,10 +347,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     * Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      * </p>
      * 
-     * @return Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     * @return Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      */
 
     public Boolean getMultiAZ() {
@@ -359,11 +359,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     * Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      * </p>
      * 
      * @param multiAZ
-     *        Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     *        Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,10 +374,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     * Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      * </p>
      * 
-     * @return Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+     * @return Indicates that the Single-AZ instance is to change to a Multi-AZ deployment.
      */
 
     public Boolean isMultiAZ() {
@@ -426,7 +426,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model for the DB instance.
+     * The license model for the instance.
      * </p>
      * <p>
      * Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
@@ -434,7 +434,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param licenseModel
-     *        The license model for the DB instance.</p>
+     *        The license model for the instance.</p>
      *        <p>
      *        Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
      *        <code>general-public-license</code>
@@ -446,14 +446,14 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model for the DB instance.
+     * The license model for the instance.
      * </p>
      * <p>
      * Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
      * <code>general-public-license</code>
      * </p>
      * 
-     * @return The license model for the DB instance.</p>
+     * @return The license model for the instance.</p>
      *         <p>
      *         Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
      *         <code>general-public-license</code>
@@ -465,7 +465,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model for the DB instance.
+     * The license model for the instance.
      * </p>
      * <p>
      * Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
@@ -473,7 +473,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param licenseModel
-     *        The license model for the DB instance.</p>
+     *        The license model for the instance.</p>
      *        <p>
      *        Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
      *        <code>general-public-license</code>
@@ -487,11 +487,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
+     * Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.
      * </p>
      * 
      * @param iops
-     *        Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being
+     *        Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being
      *        applied.
      */
 
@@ -501,10 +501,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
+     * Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.
      * </p>
      * 
-     * @return Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being
+     * @return Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being
      *         applied.
      */
 
@@ -514,11 +514,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being applied.
+     * Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being applied.
      * </p>
      * 
      * @param iops
-     *        Specifies the new Provisioned IOPS value for the DB instance that will be applied or is currently being
+     *        Specifies the new Provisioned IOPS value for the instance that will be applied or is currently being
      *        applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -530,13 +530,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is
-     *        currently being applied.
+     *        Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently
+     *        being applied.
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -545,12 +545,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      * 
-     * @return Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is
-     *         currently being applied.
+     * @return Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently
+     *         being applied.
      */
 
     public String getDBInstanceIdentifier() {
@@ -559,13 +559,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is currently being
+     * Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently being
      * applied.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will be applied or is
-     *        currently being applied.
+     *        Contains the new <code>DBInstanceIdentifier</code> for the instance that will be applied or is currently
+     *        being applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -576,11 +576,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
+     *        Specifies the storage type to be associated with the instance.
      */
 
     public void setStorageType(String storageType) {
@@ -589,10 +589,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the instance.
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the DB instance.
+     * @return Specifies the storage type to be associated with the instance.
      */
 
     public String getStorageType() {
@@ -601,11 +601,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the DB instance.
+     * Specifies the storage type to be associated with the instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the DB instance.
+     *        Specifies the storage type to be associated with the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,11 +656,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new DB subnet group for the DB instance.
+     * The new subnet group for the instance.
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The new DB subnet group for the DB instance.
+     *        The new subnet group for the instance.
      */
 
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
@@ -669,10 +669,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new DB subnet group for the DB instance.
+     * The new subnet group for the instance.
      * </p>
      * 
-     * @return The new DB subnet group for the DB instance.
+     * @return The new subnet group for the instance.
      */
 
     public String getDBSubnetGroupName() {
@@ -681,11 +681,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The new DB subnet group for the DB instance.
+     * The new subnet group for the instance.
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The new DB subnet group for the DB instance.
+     *        The new subnet group for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

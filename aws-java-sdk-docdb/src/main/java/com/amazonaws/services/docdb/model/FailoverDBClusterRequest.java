@@ -30,7 +30,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter is not case sensitive.
+     * A cluster identifier to force a failover for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -49,7 +49,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the instance to promote to the primary instance.
      * </p>
      * <p>
-     * You must specify the instance identifier for an Amazon DocumentDB replica in the DB cluster. For example,
+     * You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example,
      * <code>mydbcluster-replica1</code>.
      * </p>
      */
@@ -57,7 +57,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter is not case sensitive.
+     * A cluster identifier to force a failover for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -71,7 +71,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        A DB cluster identifier to force a failover for. This parameter is not case sensitive.</p>
+     *        A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -89,7 +89,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter is not case sensitive.
+     * A cluster identifier to force a failover for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -102,7 +102,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * 
-     * @return A DB cluster identifier to force a failover for. This parameter is not case sensitive.</p>
+     * @return A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -120,7 +120,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter is not case sensitive.
+     * A cluster identifier to force a failover for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -134,7 +134,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        A DB cluster identifier to force a failover for. This parameter is not case sensitive.</p>
+     *        A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -157,14 +157,14 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the instance to promote to the primary instance.
      * </p>
      * <p>
-     * You must specify the instance identifier for an Amazon DocumentDB replica in the DB cluster. For example,
+     * You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example,
      * <code>mydbcluster-replica1</code>.
      * </p>
      * 
      * @param targetDBInstanceIdentifier
      *        The name of the instance to promote to the primary instance.</p>
      *        <p>
-     *        You must specify the instance identifier for an Amazon DocumentDB replica in the DB cluster. For example,
+     *        You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example,
      *        <code>mydbcluster-replica1</code>.
      */
 
@@ -177,13 +177,13 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the instance to promote to the primary instance.
      * </p>
      * <p>
-     * You must specify the instance identifier for an Amazon DocumentDB replica in the DB cluster. For example,
+     * You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example,
      * <code>mydbcluster-replica1</code>.
      * </p>
      * 
      * @return The name of the instance to promote to the primary instance.</p>
      *         <p>
-     *         You must specify the instance identifier for an Amazon DocumentDB replica in the DB cluster. For example,
+     *         You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example,
      *         <code>mydbcluster-replica1</code>.
      */
 
@@ -196,14 +196,14 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * The name of the instance to promote to the primary instance.
      * </p>
      * <p>
-     * You must specify the instance identifier for an Amazon DocumentDB replica in the DB cluster. For example,
+     * You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example,
      * <code>mydbcluster-replica1</code>.
      * </p>
      * 
      * @param targetDBInstanceIdentifier
      *        The name of the instance to promote to the primary instance.</p>
      *        <p>
-     *        You must specify the instance identifier for an Amazon DocumentDB replica in the DB cluster. For example,
+     *        You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example,
      *        <code>mydbcluster-replica1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

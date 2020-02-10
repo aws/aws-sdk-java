@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The provided value isn't a valid DB cluster snapshot state.
+ * The provided value isn't a valid cluster snapshot state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

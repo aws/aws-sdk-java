@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You already have a DB cluster snapshot with the given identifier.
+ * You already have a cluster snapshot with the given identifier.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

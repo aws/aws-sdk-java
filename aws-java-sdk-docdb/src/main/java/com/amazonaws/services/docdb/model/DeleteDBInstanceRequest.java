@@ -30,7 +30,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.
+     * The instance identifier for the instance to be deleted. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -38,7 +38,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DB instance.
+     * Must match the name of an existing instance.
      * </p>
      * </li>
      * </ul>
@@ -47,7 +47,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.
+     * The instance identifier for the instance to be deleted. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -55,20 +55,20 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DB instance.
+     * Must match the name of an existing instance.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.</p>
+     *        The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing DB instance.
+     *        Must match the name of an existing instance.
      *        </p>
      *        </li>
      */
@@ -79,7 +79,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.
+     * The instance identifier for the instance to be deleted. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -87,19 +87,19 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DB instance.
+     * Must match the name of an existing instance.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.</p>
+     * @return The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must match the name of an existing DB instance.
+     *         Must match the name of an existing instance.
      *         </p>
      *         </li>
      */
@@ -110,7 +110,7 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.
+     * The instance identifier for the instance to be deleted. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -118,20 +118,20 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DB instance.
+     * Must match the name of an existing instance.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive.</p>
+     *        The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing DB instance.
+     *        Must match the name of an existing instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

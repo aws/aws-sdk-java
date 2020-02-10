@@ -1,0 +1,3 @@
+[default]
+retry_mode = unsupported-value
+max_attempts = unsupported-value

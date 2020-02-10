@@ -14,6 +14,8 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.retry.RetryMode;
+
 /**
  * SDKGlobalConfiguration is to configure any global settings
  */
@@ -333,6 +335,26 @@ public class SDKGlobalConfiguration {
      * monitoring events.
      */
     public static final String AWS_CSM_CLIENT_ID_ENV_VAR = "AWS_CSM_CLIENT_ID";
+
+    /**
+     * System properties to set the retry mode to use. See {@link RetryMode} for available values
+     */
+    public static final String AWS_RETRY_MODE_SYSTEM_PROPERTY = "com.amazonaws.sdk.retryMode";
+
+    /**
+     * Environment variable to set the retry mode to use. See {@link RetryMode} for available values
+     */
+    public static final String AWS_RETRY_MODE_ENV_VAR = "AWS_RETRY_MODE";
+
+    /**
+     * System properties to set the retry max attempts
+     */
+    public static final String AWS_MAX_ATTEMPTS_SYSTEM_PROPERTY = "com.amazonaws.sdk.maxAttempts";
+
+    /**
+     * Environment variable to set the retry max attempts
+     */
+    public static final String AWS_MAX_ATTEMPTS_ENV_VAR= "AWS_MAX_ATTEMPTS";
 
     /**
      * @deprecated by {@link SDKGlobalTime#setGlobalTimeOffset(int)}

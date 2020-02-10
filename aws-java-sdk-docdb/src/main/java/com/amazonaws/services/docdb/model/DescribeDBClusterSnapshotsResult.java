@@ -35,7 +35,7 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
     private String marker;
     /**
      * <p>
-     * Provides a list of DB cluster snapshots.
+     * Provides a list of cluster snapshots.
      * </p>
      */
     private java.util.List<DBClusterSnapshot> dBClusterSnapshots;
@@ -88,10 +88,10 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Provides a list of DB cluster snapshots.
+     * Provides a list of cluster snapshots.
      * </p>
      * 
-     * @return Provides a list of DB cluster snapshots.
+     * @return Provides a list of cluster snapshots.
      */
 
     public java.util.List<DBClusterSnapshot> getDBClusterSnapshots() {
@@ -100,11 +100,11 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Provides a list of DB cluster snapshots.
+     * Provides a list of cluster snapshots.
      * </p>
      * 
      * @param dBClusterSnapshots
-     *        Provides a list of DB cluster snapshots.
+     *        Provides a list of cluster snapshots.
      */
 
     public void setDBClusterSnapshots(java.util.Collection<DBClusterSnapshot> dBClusterSnapshots) {
@@ -118,7 +118,7 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Provides a list of DB cluster snapshots.
+     * Provides a list of cluster snapshots.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +127,7 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param dBClusterSnapshots
-     *        Provides a list of DB cluster snapshots.
+     *        Provides a list of cluster snapshots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Provides a list of DB cluster snapshots.
+     * Provides a list of cluster snapshots.
      * </p>
      * 
      * @param dBClusterSnapshots
-     *        Provides a list of DB cluster snapshots.
+     *        Provides a list of cluster snapshots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

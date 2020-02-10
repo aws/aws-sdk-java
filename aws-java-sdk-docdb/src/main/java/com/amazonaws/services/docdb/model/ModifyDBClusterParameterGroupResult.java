@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the name of a DB cluster parameter group.
+ * Contains the name of a cluster parameter group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup"
@@ -29,7 +29,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of a DB cluster parameter group.
+     * The name of a cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -61,7 +61,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of a DB cluster parameter group.
+     * The name of a cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -90,7 +90,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * </note>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of a DB cluster parameter group.</p>
+     *        The name of a cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -123,7 +123,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of a DB cluster parameter group.
+     * The name of a cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -151,7 +151,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * </p>
      * </note>
      * 
-     * @return The name of a DB cluster parameter group.</p>
+     * @return The name of a cluster parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -184,7 +184,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of a DB cluster parameter group.
+     * The name of a cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -213,7 +213,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
      * </note>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of a DB cluster parameter group.</p>
+     *        The name of a cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>

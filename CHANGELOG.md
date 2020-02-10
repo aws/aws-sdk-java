@@ -1,3 +1,16 @@
+# __1.11.719__ __2020-02-10__
+## __AWS Key Management Service__
+  - ### Features
+    - The ConnectCustomKeyStore API now provides a new error code (SUBNET_NOT_FOUND) for customers to better troubleshoot if their "connect-custom-key-store" operation fails.
+
+## __AWS SDK for Java__
+  - ### Features
+    - Implement `STANDARD` retry mode. Standard retry mode is built on top of legacy mode and has throttled retry enabled for throttling errors apart from transient errors. In addition, timeout(socket timeout or connection timeout) errors would cost more retry capacity compared with legacy mode.
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - Added clarifying information that Amazon DocumentDB shares operational technology with Amazon RDS and Amazon Neptune.
+
 # __1.11.718__ __2020-02-07__
 ## __AWS RoboMaker__
   - ### Features

@@ -18,6 +18,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.retry.internal.MaxAttemptsResolver;
 import com.amazonaws.retry.v2.RetryPolicyContext;
 
 import static com.amazonaws.util.ValidationUtils.assertNotNull;
@@ -31,10 +32,13 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
 
     private final RetryPolicy legacyRetryPolicy;
     private final ClientConfiguration clientConfiguration;
+    private final int maxErrorRetry;
 
     public RetryPolicyAdapter(RetryPolicy legacyRetryPolicy, ClientConfiguration clientConfiguration) {
         this.legacyRetryPolicy = assertNotNull(legacyRetryPolicy, "legacyRetryPolicy");
         this.clientConfiguration = assertNotNull(clientConfiguration, "clientConfiguration");
+
+        this.maxErrorRetry = getMaxErrorRetry();
     }
 
     @Override
@@ -65,10 +69,15 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
         if(legacyRetryPolicy.isMaxErrorRetryInClientConfigHonored() && clientConfiguration.getMaxErrorRetry() >= 0) {
             return clientConfiguration.getMaxErrorRetry();
         }
-        return legacyRetryPolicy.getMaxErrorRetry();
+
+        Integer resolvedMaxAttempts = new MaxAttemptsResolver().maxAttempts();
+
+        // default to use legacyRetryPolicy.getMaxErrorRetry() because it's always be "present" and there is no
+        // way to tell if it's unset(using the default) or provided.
+        return resolvedMaxAttempts != null ? resolvedMaxAttempts - 1 : legacyRetryPolicy.getMaxErrorRetry();
     }
 
     public boolean maxRetriesExceeded(RetryPolicyContext context) {
-        return context.retriesAttempted() >= getMaxErrorRetry();
+        return context.retriesAttempted() >= maxErrorRetry;
     }
 }

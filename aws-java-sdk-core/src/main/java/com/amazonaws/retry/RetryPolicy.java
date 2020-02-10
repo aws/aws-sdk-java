@@ -18,6 +18,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.Immutable;
+import com.amazonaws.retry.internal.RetryModeResolver;
 
 /**
  * Retry policy that can be configured on a specific service client using
@@ -54,6 +55,11 @@ public final class RetryPolicy {
     private final boolean honorMaxErrorRetryInClientConfig;
 
     /**
+     * The retry mode to use
+     */
+    private final RetryMode retryMode;
+
+    /**
      * Constructs a new retry policy. See {@link PredefinedRetryPolicies} for
      * some pre-defined policy components, and also the default policies used by
      * SDK.
@@ -78,6 +84,14 @@ public final class RetryPolicy {
                        BackoffStrategy backoffStrategy,
                        int maxErrorRetry,
                        boolean honorMaxErrorRetryInClientConfig) {
+        this(retryCondition, backoffStrategy, maxErrorRetry, honorMaxErrorRetryInClientConfig, null);
+    }
+
+    public RetryPolicy(RetryCondition retryCondition,
+                       BackoffStrategy backoffStrategy,
+                       int maxErrorRetry,
+                       boolean honorMaxErrorRetryInClientConfig,
+                       RetryMode retryMode) {
         if (retryCondition == null) {
             retryCondition = PredefinedRetryPolicies.DEFAULT_RETRY_CONDITION;
         }
@@ -87,12 +101,13 @@ public final class RetryPolicy {
         if (maxErrorRetry < 0) {
             throw new IllegalArgumentException("Please provide a non-negative value for maxErrorRetry.");
         }
-        
+
         this.retryCondition = retryCondition;
         this.backoffStrategy = backoffStrategy;
         this.maxErrorRetry = maxErrorRetry;
         this.honorMaxErrorRetryInClientConfig = honorMaxErrorRetryInClientConfig;
-    };
+        this.retryMode = retryMode != null ? retryMode : new RetryModeResolver().retryMode();
+    }
 
     /**
      * Returns the retry condition included in this retry policy.
@@ -131,6 +146,15 @@ public final class RetryPolicy {
      */
     public boolean isMaxErrorRetryInClientConfigHonored() {
         return honorMaxErrorRetryInClientConfig;
+    }
+
+    /**
+     * Returns the {@link RetryMode} to be used.
+     *
+     * @return retryMode
+     */
+    public RetryMode getRetryMode() {
+        return retryMode;
     }
     
     /**

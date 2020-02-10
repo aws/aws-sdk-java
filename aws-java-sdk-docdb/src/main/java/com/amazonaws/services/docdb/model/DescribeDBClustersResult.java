@@ -35,7 +35,7 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
     private String marker;
     /**
      * <p>
-     * A list of DB clusters.
+     * A list of clusters.
      * </p>
      */
     private java.util.List<DBCluster> dBClusters;
@@ -88,10 +88,10 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of DB clusters.
+     * A list of clusters.
      * </p>
      * 
-     * @return A list of DB clusters.
+     * @return A list of clusters.
      */
 
     public java.util.List<DBCluster> getDBClusters() {
@@ -100,11 +100,11 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of DB clusters.
+     * A list of clusters.
      * </p>
      * 
      * @param dBClusters
-     *        A list of DB clusters.
+     *        A list of clusters.
      */
 
     public void setDBClusters(java.util.Collection<DBCluster> dBClusters) {
@@ -118,7 +118,7 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of DB clusters.
+     * A list of clusters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +127,7 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param dBClusters
-     *        A list of DB clusters.
+     *        A list of clusters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of DB clusters.
+     * A list of clusters.
      * </p>
      * 
      * @param dBClusters
-     *        A list of DB clusters.
+     *        A list of clusters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

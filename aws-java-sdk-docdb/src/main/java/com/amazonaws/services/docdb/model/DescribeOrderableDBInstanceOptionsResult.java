@@ -29,7 +29,7 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The options that are available for a particular orderable DB instance.
+     * The options that are available for a particular orderable instance.
      * </p>
      */
     private java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptions;
@@ -43,10 +43,10 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The options that are available for a particular orderable DB instance.
+     * The options that are available for a particular orderable instance.
      * </p>
      * 
-     * @return The options that are available for a particular orderable DB instance.
+     * @return The options that are available for a particular orderable instance.
      */
 
     public java.util.List<OrderableDBInstanceOption> getOrderableDBInstanceOptions() {
@@ -55,11 +55,11 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The options that are available for a particular orderable DB instance.
+     * The options that are available for a particular orderable instance.
      * </p>
      * 
      * @param orderableDBInstanceOptions
-     *        The options that are available for a particular orderable DB instance.
+     *        The options that are available for a particular orderable instance.
      */
 
     public void setOrderableDBInstanceOptions(java.util.Collection<OrderableDBInstanceOption> orderableDBInstanceOptions) {
@@ -73,7 +73,7 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The options that are available for a particular orderable DB instance.
+     * The options that are available for a particular orderable instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param orderableDBInstanceOptions
-     *        The options that are available for a particular orderable DB instance.
+     *        The options that are available for a particular orderable instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The options that are available for a particular orderable DB instance.
+     * The options that are available for a particular orderable instance.
      * </p>
      * 
      * @param orderableDBInstanceOptions
-     *        The options that are available for a particular orderable DB instance.
+     *        The options that are available for a particular orderable instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

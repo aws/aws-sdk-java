@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB parameter group is in use, or it is in a state that is not valid. If you are trying to delete the parameter
+ * The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the parameter
  * group, you can't delete it when the parameter group is in this state.
  * </p>
  */
