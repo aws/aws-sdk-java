@@ -32,6 +32,9 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      */
     private String type;
     /**
@@ -39,7 +42,7 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String typeName;
@@ -48,13 +51,16 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String typeArn;
     /**
      * <p>
      * The current status of the type registration request.
+     * </p>
+     * <p>
+     * The default is <code>IN_PROGRESS</code>.
      * </p>
      */
     private String registrationStatusFilter;
@@ -83,11 +89,17 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of type.</p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -102,10 +114,16 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @return The kind of type.</p>
      *         <p>
      *         Currently the only valid value is <code>RESOURCE</code>.
+     *         </p>
+     *         <p>
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -120,11 +138,17 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of type.</p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -141,11 +165,17 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of type.</p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -160,13 +190,13 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -178,12 +208,12 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The name of the type.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getTypeName() {
@@ -195,13 +225,13 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,13 +245,13 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeArn
      *        The Amazon Resource Name (ARN) of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setTypeArn(String typeArn) {
@@ -233,12 +263,12 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the type.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getTypeArn() {
@@ -250,13 +280,13 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeArn
      *        The Amazon Resource Name (ARN) of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,9 +299,14 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The current status of the type registration request.
      * </p>
+     * <p>
+     * The default is <code>IN_PROGRESS</code>.
+     * </p>
      * 
      * @param registrationStatusFilter
-     *        The current status of the type registration request.
+     *        The current status of the type registration request.</p>
+     *        <p>
+     *        The default is <code>IN_PROGRESS</code>.
      * @see RegistrationStatus
      */
 
@@ -283,8 +318,13 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The current status of the type registration request.
      * </p>
+     * <p>
+     * The default is <code>IN_PROGRESS</code>.
+     * </p>
      * 
-     * @return The current status of the type registration request.
+     * @return The current status of the type registration request.</p>
+     *         <p>
+     *         The default is <code>IN_PROGRESS</code>.
      * @see RegistrationStatus
      */
 
@@ -296,9 +336,14 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The current status of the type registration request.
      * </p>
+     * <p>
+     * The default is <code>IN_PROGRESS</code>.
+     * </p>
      * 
      * @param registrationStatusFilter
-     *        The current status of the type registration request.
+     *        The current status of the type registration request.</p>
+     *        <p>
+     *        The default is <code>IN_PROGRESS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
@@ -312,9 +357,14 @@ public class ListTypeRegistrationsRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The current status of the type registration request.
      * </p>
+     * <p>
+     * The default is <code>IN_PROGRESS</code>.
+     * </p>
      * 
      * @param registrationStatusFilter
-     *        The current status of the type registration request.
+     *        The current status of the type registration request.</p>
+     *        <p>
+     *        The default is <code>IN_PROGRESS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */

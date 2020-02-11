@@ -32,6 +32,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      */
     private String type;
     /**
@@ -39,7 +42,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String typeName;
@@ -48,7 +51,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String arn;
@@ -90,6 +93,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>LIVE</code>.
+     * </p>
      */
     private String deprecatedStatus;
 
@@ -100,11 +106,17 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of the type.</p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -119,10 +131,16 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @return The kind of the type.</p>
      *         <p>
      *         Currently the only valid value is <code>RESOURCE</code>.
+     *         </p>
+     *         <p>
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -137,11 +155,17 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of the type.</p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -158,11 +182,17 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of the type.</p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -177,13 +207,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type for which you want version summary information.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -195,12 +225,12 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The name of the type for which you want version summary information.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getTypeName() {
@@ -212,13 +242,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type for which you want version summary information.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,13 +262,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setArn(String arn) {
@@ -250,12 +280,12 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getArn() {
@@ -267,13 +297,13 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -416,6 +446,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>LIVE</code>.
+     * </p>
      * 
      * @param deprecatedStatus
      *        The deprecation status of the type versions that you want to get summary information about.</p>
@@ -435,6 +468,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      *        CloudFormation operations.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>LIVE</code>.
      * @see DeprecatedStatus
      */
 
@@ -463,6 +499,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>LIVE</code>.
+     * </p>
      * 
      * @return The deprecation status of the type versions that you want to get summary information about.</p>
      *         <p>
@@ -481,6 +520,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      *         CloudFormation operations.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The default is <code>LIVE</code>.
      * @see DeprecatedStatus
      */
 
@@ -509,6 +551,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>LIVE</code>.
+     * </p>
      * 
      * @param deprecatedStatus
      *        The deprecation status of the type versions that you want to get summary information about.</p>
@@ -528,6 +573,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      *        CloudFormation operations.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeprecatedStatus
      */
@@ -558,6 +606,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>LIVE</code>.
+     * </p>
      * 
      * @param deprecatedStatus
      *        The deprecation status of the type versions that you want to get summary information about.</p>
@@ -577,6 +628,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      *        CloudFormation operations.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeprecatedStatus
      */

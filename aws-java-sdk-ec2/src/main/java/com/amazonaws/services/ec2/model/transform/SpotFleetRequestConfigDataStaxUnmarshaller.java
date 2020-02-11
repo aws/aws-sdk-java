@@ -164,6 +164,17 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     spotFleetRequestConfigData.setInstancePoolsToUseCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("TagSpecification", targetDepth)) {
+                    spotFleetRequestConfigData.withTagSpecifications(new ArrayList<TagSpecification>());
+                    continue;
+                }
+
+                if (context.testExpression("TagSpecification/item", targetDepth)) {
+                    spotFleetRequestConfigData.withTagSpecifications(TagSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotFleetRequestConfigData;

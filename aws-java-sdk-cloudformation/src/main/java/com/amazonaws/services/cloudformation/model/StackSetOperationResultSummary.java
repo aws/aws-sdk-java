@@ -28,7 +28,7 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      */
     private String account;
@@ -90,14 +90,21 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
      * </p>
      */
     private AccountGateResult accountGateResult;
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID for this
+     * operation result.
+     * </p>
+     */
+    private String organizationalUnitId;
 
     /**
      * <p>
-     * The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      * 
      * @param account
-     *        The name of the AWS account for this operation result.
+     *        [Self-managed permissions] The name of the AWS account for this operation result.
      */
 
     public void setAccount(String account) {
@@ -106,10 +113,10 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      * 
-     * @return The name of the AWS account for this operation result.
+     * @return [Self-managed permissions] The name of the AWS account for this operation result.
      */
 
     public String getAccount() {
@@ -118,11 +125,11 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      * 
      * @param account
-     *        The name of the AWS account for this operation result.
+     *        [Self-managed permissions] The name of the AWS account for this operation result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,6 +663,52 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID for this
+     * operation result.
+     * </p>
+     * 
+     * @param organizationalUnitId
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID for
+     *        this operation result.
+     */
+
+    public void setOrganizationalUnitId(String organizationalUnitId) {
+        this.organizationalUnitId = organizationalUnitId;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID for this
+     * operation result.
+     * </p>
+     * 
+     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID for
+     *         this operation result.
+     */
+
+    public String getOrganizationalUnitId() {
+        return this.organizationalUnitId;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID for this
+     * operation result.
+     * </p>
+     * 
+     * @param organizationalUnitId
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID for
+     *        this operation result.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperationResultSummary withOrganizationalUnitId(String organizationalUnitId) {
+        setOrganizationalUnitId(organizationalUnitId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -676,7 +729,9 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getAccountGateResult() != null)
-            sb.append("AccountGateResult: ").append(getAccountGateResult());
+            sb.append("AccountGateResult: ").append(getAccountGateResult()).append(",");
+        if (getOrganizationalUnitId() != null)
+            sb.append("OrganizationalUnitId: ").append(getOrganizationalUnitId());
         sb.append("}");
         return sb.toString();
     }
@@ -711,6 +766,10 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
             return false;
         if (other.getAccountGateResult() != null && other.getAccountGateResult().equals(this.getAccountGateResult()) == false)
             return false;
+        if (other.getOrganizationalUnitId() == null ^ this.getOrganizationalUnitId() == null)
+            return false;
+        if (other.getOrganizationalUnitId() != null && other.getOrganizationalUnitId().equals(this.getOrganizationalUnitId()) == false)
+            return false;
         return true;
     }
 
@@ -724,6 +783,7 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getAccountGateResult() == null) ? 0 : getAccountGateResult().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationalUnitId() == null) ? 0 : getOrganizationalUnitId().hashCode());
         return hashCode;
     }
 

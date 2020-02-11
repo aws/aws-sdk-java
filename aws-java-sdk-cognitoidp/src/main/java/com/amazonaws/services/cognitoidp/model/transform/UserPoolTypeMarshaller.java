@@ -85,6 +85,8 @@ public class UserPoolTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdminCreateUserConfig").build();
     private static final MarshallingInfo<StructuredPojo> USERPOOLADDONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolAddOns").build();
+    private static final MarshallingInfo<StructuredPojo> USERNAMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsernameConfiguration").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<StructuredPojo> ACCOUNTRECOVERYSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -134,6 +136,7 @@ public class UserPoolTypeMarshaller {
             protocolMarshaller.marshall(userPoolType.getCustomDomain(), CUSTOMDOMAIN_BINDING);
             protocolMarshaller.marshall(userPoolType.getAdminCreateUserConfig(), ADMINCREATEUSERCONFIG_BINDING);
             protocolMarshaller.marshall(userPoolType.getUserPoolAddOns(), USERPOOLADDONS_BINDING);
+            protocolMarshaller.marshall(userPoolType.getUsernameConfiguration(), USERNAMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(userPoolType.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(userPoolType.getAccountRecoverySetting(), ACCOUNTRECOVERYSETTING_BINDING);
         } catch (Exception e) {

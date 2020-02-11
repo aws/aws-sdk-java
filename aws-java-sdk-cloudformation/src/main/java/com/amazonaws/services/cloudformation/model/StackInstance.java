@@ -44,7 +44,7 @@ public class StackInstance implements Serializable, Cloneable {
     private String region;
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      */
     private String account;
@@ -105,6 +105,13 @@ public class StackInstance implements Serializable, Cloneable {
      * </p>
      */
     private String statusReason;
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
+     * instance is associated with.
+     * </p>
+     */
+    private String organizationalUnitId;
     /**
      * <p>
      * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
@@ -227,11 +234,11 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        The name of the AWS account that the stack instance is associated with.
+     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      */
 
     public void setAccount(String account) {
@@ -240,10 +247,10 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
-     * @return The name of the AWS account that the stack instance is associated with.
+     * @return [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      */
 
     public String getAccount() {
@@ -252,11 +259,11 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        The name of the AWS account that the stack instance is associated with.
+     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -820,6 +827,52 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
+     * instance is associated with.
+     * </p>
+     * 
+     * @param organizationalUnitId
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that
+     *        the stack instance is associated with.
+     */
+
+    public void setOrganizationalUnitId(String organizationalUnitId) {
+        this.organizationalUnitId = organizationalUnitId;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
+     * instance is associated with.
+     * </p>
+     * 
+     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that
+     *         the stack instance is associated with.
+     */
+
+    public String getOrganizationalUnitId() {
+        return this.organizationalUnitId;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that the stack
+     * instance is associated with.
+     * </p>
+     * 
+     * @param organizationalUnitId
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OU) ID that
+     *        the stack instance is associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstance withOrganizationalUnitId(String organizationalUnitId) {
+        setOrganizationalUnitId(organizationalUnitId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Status of the stack instance's actual configuration compared to the expected template and parameter configuration
      * of the stack set to which it belongs.
      * </p>
@@ -1226,6 +1279,8 @@ public class StackInstance implements Serializable, Cloneable {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getOrganizationalUnitId() != null)
+            sb.append("OrganizationalUnitId: ").append(getOrganizationalUnitId()).append(",");
         if (getDriftStatus() != null)
             sb.append("DriftStatus: ").append(getDriftStatus()).append(",");
         if (getLastDriftCheckTimestamp() != null)
@@ -1272,6 +1327,10 @@ public class StackInstance implements Serializable, Cloneable {
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getOrganizationalUnitId() == null ^ this.getOrganizationalUnitId() == null)
+            return false;
+        if (other.getOrganizationalUnitId() != null && other.getOrganizationalUnitId().equals(this.getOrganizationalUnitId()) == false)
+            return false;
         if (other.getDriftStatus() == null ^ this.getDriftStatus() == null)
             return false;
         if (other.getDriftStatus() != null && other.getDriftStatus().equals(this.getDriftStatus()) == false)
@@ -1295,6 +1354,7 @@ public class StackInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getParameterOverrides() == null) ? 0 : getParameterOverrides().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationalUnitId() == null) ? 0 : getOrganizationalUnitId().hashCode());
         hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());
         hashCode = prime * hashCode + ((getLastDriftCheckTimestamp() == null) ? 0 : getLastDriftCheckTimestamp().hashCode());
         return hashCode;

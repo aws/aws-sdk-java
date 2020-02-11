@@ -117,6 +117,44 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      */
     private StackSetDriftDetectionDetails stackSetDriftDetectionDetails;
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     */
+    private AutoDeployment autoDeployment;
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String permissionModel;
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
+     * stacks in your stack set have been deployed.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
 
     /**
      * <p>
@@ -873,6 +911,381 @@ public class StackSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     * 
+     * @param autoDeployment
+     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
+     *        Organizations accounts that are added to a target organization or organizational unit (OU).
+     */
+
+    public void setAutoDeployment(AutoDeployment autoDeployment) {
+        this.autoDeployment = autoDeployment;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     * 
+     * @return [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
+     *         Organizations accounts that are added to a target organization or organizational unit (OU).
+     */
+
+    public AutoDeployment getAutoDeployment() {
+        return this.autoDeployment;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     * 
+     * @param autoDeployment
+     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
+     *        Organizations accounts that are added to a target organization or organizational unit (OU).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSet withAutoDeployment(AutoDeployment autoDeployment) {
+        setAutoDeployment(autoDeployment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionModel
+     *        Describes how the IAM roles required for stack set operations are created.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        With <code>self-managed</code> permissions, you must create the administrator and execution roles required
+     *        to deploy to target accounts. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     *        Self-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *        deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *        >Grant Service-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     * @see PermissionModels
+     */
+
+    public void setPermissionModel(String permissionModel) {
+        this.permissionModel = permissionModel;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Describes how the IAM roles required for stack set operations are created.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         With <code>self-managed</code> permissions, you must create the administrator and execution roles
+     *         required to deploy to target accounts. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html"
+     *         >Grant Self-Managed Stack Set Permissions</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *         deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *         >Grant Service-Managed Stack Set Permissions</a>.
+     *         </p>
+     *         </li>
+     * @see PermissionModels
+     */
+
+    public String getPermissionModel() {
+        return this.permissionModel;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionModel
+     *        Describes how the IAM roles required for stack set operations are created.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        With <code>self-managed</code> permissions, you must create the administrator and execution roles required
+     *        to deploy to target accounts. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     *        Self-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *        deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *        >Grant Service-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionModels
+     */
+
+    public StackSet withPermissionModel(String permissionModel) {
+        setPermissionModel(permissionModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionModel
+     *        Describes how the IAM roles required for stack set operations are created.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        With <code>self-managed</code> permissions, you must create the administrator and execution roles required
+     *        to deploy to target accounts. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     *        Self-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *        deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *        >Grant Service-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     * @see PermissionModels
+     */
+
+    public void setPermissionModel(PermissionModels permissionModel) {
+        withPermissionModel(permissionModel);
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionModel
+     *        Describes how the IAM roles required for stack set operations are created.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        With <code>self-managed</code> permissions, you must create the administrator and execution roles required
+     *        to deploy to target accounts. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     *        Self-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *        deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *        >Grant Service-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionModels
+     */
+
+    public StackSet withPermissionModel(PermissionModels permissionModel) {
+        this.permissionModel = permissionModel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
+     * stacks in your stack set have been deployed.
+     * </p>
+     * 
+     * @return [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
+     *         which stacks in your stack set have been deployed.
+     */
+
+    public java.util.List<String> getOrganizationalUnitIds() {
+        if (organizationalUnitIds == null) {
+            organizationalUnitIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return organizationalUnitIds;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
+     * stacks in your stack set have been deployed.
+     * </p>
+     * 
+     * @param organizationalUnitIds
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
+     *        which stacks in your stack set have been deployed.
+     */
+
+    public void setOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
+        if (organizationalUnitIds == null) {
+            this.organizationalUnitIds = null;
+            return;
+        }
+
+        this.organizationalUnitIds = new com.amazonaws.internal.SdkInternalList<String>(organizationalUnitIds);
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
+     * stacks in your stack set have been deployed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrganizationalUnitIds(java.util.Collection)} or
+     * {@link #withOrganizationalUnitIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param organizationalUnitIds
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
+     *        which stacks in your stack set have been deployed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSet withOrganizationalUnitIds(String... organizationalUnitIds) {
+        if (this.organizationalUnitIds == null) {
+            setOrganizationalUnitIds(new com.amazonaws.internal.SdkInternalList<String>(organizationalUnitIds.length));
+        }
+        for (String ele : organizationalUnitIds) {
+            this.organizationalUnitIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to which
+     * stacks in your stack set have been deployed.
+     * </p>
+     * 
+     * @param organizationalUnitIds
+     *        [<code>Service-managed</code> permissions] The organization root ID or organizational unit (OUs) IDs to
+     *        which stacks in your stack set have been deployed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSet withOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
+        setOrganizationalUnitIds(organizationalUnitIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -907,7 +1320,13 @@ public class StackSet implements Serializable, Cloneable {
         if (getExecutionRoleName() != null)
             sb.append("ExecutionRoleName: ").append(getExecutionRoleName()).append(",");
         if (getStackSetDriftDetectionDetails() != null)
-            sb.append("StackSetDriftDetectionDetails: ").append(getStackSetDriftDetectionDetails());
+            sb.append("StackSetDriftDetectionDetails: ").append(getStackSetDriftDetectionDetails()).append(",");
+        if (getAutoDeployment() != null)
+            sb.append("AutoDeployment: ").append(getAutoDeployment()).append(",");
+        if (getPermissionModel() != null)
+            sb.append("PermissionModel: ").append(getPermissionModel()).append(",");
+        if (getOrganizationalUnitIds() != null)
+            sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds());
         sb.append("}");
         return sb.toString();
     }
@@ -971,6 +1390,18 @@ public class StackSet implements Serializable, Cloneable {
         if (other.getStackSetDriftDetectionDetails() != null
                 && other.getStackSetDriftDetectionDetails().equals(this.getStackSetDriftDetectionDetails()) == false)
             return false;
+        if (other.getAutoDeployment() == null ^ this.getAutoDeployment() == null)
+            return false;
+        if (other.getAutoDeployment() != null && other.getAutoDeployment().equals(this.getAutoDeployment()) == false)
+            return false;
+        if (other.getPermissionModel() == null ^ this.getPermissionModel() == null)
+            return false;
+        if (other.getPermissionModel() != null && other.getPermissionModel().equals(this.getPermissionModel()) == false)
+            return false;
+        if (other.getOrganizationalUnitIds() == null ^ this.getOrganizationalUnitIds() == null)
+            return false;
+        if (other.getOrganizationalUnitIds() != null && other.getOrganizationalUnitIds().equals(this.getOrganizationalUnitIds()) == false)
+            return false;
         return true;
     }
 
@@ -991,6 +1422,9 @@ public class StackSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
         hashCode = prime * hashCode + ((getStackSetDriftDetectionDetails() == null) ? 0 : getStackSetDriftDetectionDetails().hashCode());
+        hashCode = prime * hashCode + ((getAutoDeployment() == null) ? 0 : getAutoDeployment().hashCode());
+        hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationalUnitIds() == null) ? 0 : getOrganizationalUnitIds().hashCode());
         return hashCode;
     }
 

@@ -10683,7 +10683,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * The list of snapshots returned can be modified by specifying snapshot IDs, snapshot owners, or AWS accounts with
+     * The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS accounts with
      * create volume permissions. If no options are specified, Amazon EC2 returns all snapshots for which you have
      * create volume permissions.
      * </p>
@@ -10709,6 +10709,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * results exceeds your <code>MaxResults</code> value, then that number of results is returned along with a
      * <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
      * retrieve the remaining results.
+     * </p>
+     * <p>
+     * To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
@@ -10754,7 +10757,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * </ul>
      * <p>
-     * The list of snapshots returned can be modified by specifying snapshot IDs, snapshot owners, or AWS accounts with
+     * The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS accounts with
      * create volume permissions. If no options are specified, Amazon EC2 returns all snapshots for which you have
      * create volume permissions.
      * </p>
@@ -10780,6 +10783,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * results exceeds your <code>MaxResults</code> value, then that number of results is returned along with a
      * <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
      * retrieve the remaining results.
+     * </p>
+     * <p>
+     * To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
@@ -13364,6 +13370,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast snapshot
      * restores, use <a>DisableFastSnapshotRestores</a>.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS Fast
+     * Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
      * @param enableFastSnapshotRestoresRequest
      * @return A Java Future containing the result of the EnableFastSnapshotRestores operation returned by the service.
@@ -13382,6 +13393,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You get the full benefit of fast snapshot restores after they enter the <code>enabled</code> state. To get the
      * current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast snapshot
      * restores, use <a>DisableFastSnapshotRestores</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS Fast
+     * Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param enableFastSnapshotRestoresRequest
@@ -17132,8 +17148,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server
      * (SLES), use the EC2 billing product code associated with an AMI to verify the subscription status for package
-     * updates. To create a new AMI for operating systems that require a billing product code, instead of instead of
-     * registering the AMI, do the following to preserve the billing product code association:
+     * updates. To create a new AMI for operating systems that require a billing product code, instead of registering
+     * the AMI, do the following to preserve the billing product code association:
      * </p>
      * <ol>
      * <li>
@@ -17156,7 +17172,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched from an AMI with a
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
-     * On-Demand Instance.
+     * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance
@@ -17198,8 +17216,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server
      * (SLES), use the EC2 billing product code associated with an AMI to verify the subscription status for package
-     * updates. To create a new AMI for operating systems that require a billing product code, instead of instead of
-     * registering the AMI, do the following to preserve the billing product code association:
+     * updates. To create a new AMI for operating systems that require a billing product code, instead of registering
+     * the AMI, do the following to preserve the billing product code association:
      * </p>
      * <ol>
      * <li>
@@ -17222,7 +17240,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched from an AMI with a
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
-     * On-Demand Instance.
+     * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance
@@ -17947,8 +17967,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you can improve the availability of your fleet.
      * </p>
      * <p>
-     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request because
-     * only the <code>instance</code> resource type is supported.
+     * You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource types in a Spot Fleet
+     * request because only the <code>spot-fleet-request</code> and <code>instance</code> resource types are supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -17989,8 +18009,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * you can improve the availability of your fleet.
      * </p>
      * <p>
-     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request because
-     * only the <code>instance</code> resource type is supported.
+     * You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource types in a Spot Fleet
+     * request because only the <code>spot-fleet-request</code> and <code>instance</code> resource types are supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -19064,8 +19084,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-     * instances. For information about using hibernation for Spot Instances, see <a
+     * You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed instances. For
+     * information about using hibernation for Spot Instances, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
      * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -19121,8 +19141,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-     * instances. For information about using hibernation for Spot Instances, see <a
+     * You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed instances. For
+     * information about using hibernation for Spot Instances, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
      * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>

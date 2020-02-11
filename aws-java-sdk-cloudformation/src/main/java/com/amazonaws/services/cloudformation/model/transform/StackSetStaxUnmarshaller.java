@@ -119,6 +119,27 @@ public class StackSetStaxUnmarshaller implements Unmarshaller<StackSet, StaxUnma
                     stackSet.setStackSetDriftDetectionDetails(StackSetDriftDetectionDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AutoDeployment", targetDepth)) {
+                    stackSet.setAutoDeployment(AutoDeploymentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PermissionModel", targetDepth)) {
+                    stackSet.setPermissionModel(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OrganizationalUnitIds", targetDepth)) {
+                    stackSet.withOrganizationalUnitIds(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("OrganizationalUnitIds/member", targetDepth)) {
+                    stackSet.withOrganizationalUnitIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSet;

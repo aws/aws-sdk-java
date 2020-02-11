@@ -40,7 +40,9 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
     private String maxPrice;
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances.
+     * The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example,
+     * <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have
+     * only one subnet ID.
      * </p>
      */
     private String subnetId;
@@ -174,11 +176,15 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances.
+     * The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example,
+     * <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have
+     * only one subnet ID.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet in which to launch the instances.
+     *        The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for
+     *        example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type
+     *        <code>instant</code> can have only one subnet ID.
      */
 
     public void setSubnetId(String subnetId) {
@@ -187,10 +193,14 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances.
+     * The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example,
+     * <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have
+     * only one subnet ID.
      * </p>
      * 
-     * @return The ID of the subnet in which to launch the instances.
+     * @return The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for
+     *         example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type
+     *         <code>instant</code> can have only one subnet ID.
      */
 
     public String getSubnetId() {
@@ -199,11 +209,15 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the subnet in which to launch the instances.
+     * The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for example,
+     * <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type <code>instant</code> can have
+     * only one subnet ID.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet in which to launch the instances.
+     *        The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas (for
+     *        example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>). A request of type
+     *        <code>instant</code> can have only one subnet ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

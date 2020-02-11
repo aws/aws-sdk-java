@@ -63,6 +63,16 @@ public class StackSetSummaryStaxUnmarshaller implements Unmarshaller<StackSetSum
                     continue;
                 }
 
+                if (context.testExpression("AutoDeployment", targetDepth)) {
+                    stackSetSummary.setAutoDeployment(AutoDeploymentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PermissionModel", targetDepth)) {
+                    stackSetSummary.setPermissionModel(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DriftStatus", targetDepth)) {
                     stackSetSummary.setDriftStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

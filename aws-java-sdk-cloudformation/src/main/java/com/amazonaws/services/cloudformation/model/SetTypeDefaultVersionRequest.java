@@ -30,13 +30,16 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String arn;
     /**
      * <p>
      * The kind of type.
+     * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String type;
@@ -45,7 +48,7 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String typeName;
@@ -62,13 +65,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setArn(String arn) {
@@ -80,12 +83,12 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getArn() {
@@ -97,13 +100,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The Amazon Resource Name (ARN) of the type for which you want version summary information.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,9 +119,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The kind of type.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
-     *        The kind of type.
+     *        The kind of type.</p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -130,8 +138,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The kind of type.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
-     * @return The kind of type.
+     * @return The kind of type.</p>
+     *         <p>
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -143,9 +156,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The kind of type.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
-     *        The kind of type.
+     *        The kind of type.</p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -159,9 +177,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The kind of type.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
-     *        The kind of type.
+     *        The kind of type.</p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -176,13 +199,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -194,12 +217,12 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The name of the type.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getTypeName() {
@@ -211,13 +234,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

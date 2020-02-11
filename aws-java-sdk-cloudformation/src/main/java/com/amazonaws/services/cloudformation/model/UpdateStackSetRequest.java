@@ -274,6 +274,61 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String executionRoleName;
     /**
      * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
+     * instances.
+     * </p>
+     * <p>
+     * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
+     * or <code>Regions</code>.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or
+     * <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack
+     * instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+     * and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation
+     * updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with
+     * their existing stack instance status.
+     * </p>
+     */
+    private DeploymentTargets deploymentTargets;
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created. You cannot modify
+     * <code>PermissionModel</code> if there are stack instances associated with your stack set.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String permissionModel;
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     * <p>
+     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
+     * .
+     * </p>
+     */
+    private AutoDeployment autoDeployment;
+    /**
+     * <p>
      * The unique ID for this stack set operation.
      * </p>
      * <p>
@@ -292,8 +347,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String operationId;
     /**
      * <p>
-     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
-     * regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -2507,6 +2562,395 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
+     * instances.
+     * </p>
+     * <p>
+     * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
+     * or <code>Regions</code>.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or
+     * <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack
+     * instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+     * and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation
+     * updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with
+     * their existing stack instance status.
+     * </p>
+     * 
+     * @param deploymentTargets
+     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated
+     *        stack instances.</p>
+     *        <p>
+     *        To update all the stack instances associated with this stack set, do not specify
+     *        <code>DeploymentTargets</code> or <code>Regions</code>.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack
+     *        instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified
+     *        accounts and Regions. If the stack set update does not include changes to the template or parameters, AWS
+     *        CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
+     *        stack instances with their existing stack instance status.
+     */
+
+    public void setDeploymentTargets(DeploymentTargets deploymentTargets) {
+        this.deploymentTargets = deploymentTargets;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
+     * instances.
+     * </p>
+     * <p>
+     * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
+     * or <code>Regions</code>.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or
+     * <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack
+     * instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+     * and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation
+     * updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with
+     * their existing stack instance status.
+     * </p>
+     * 
+     * @return [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated
+     *         stack instances.</p>
+     *         <p>
+     *         To update all the stack instances associated with this stack set, do not specify
+     *         <code>DeploymentTargets</code> or <code>Regions</code>.
+     *         </p>
+     *         <p>
+     *         If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or
+     *         <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all
+     *         stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     *         specified accounts and Regions. If the stack set update does not include changes to the template or
+     *         parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while
+     *         leaving all other stack instances with their existing stack instance status.
+     */
+
+    public DeploymentTargets getDeploymentTargets() {
+        return this.deploymentTargets;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated stack
+     * instances.
+     * </p>
+     * <p>
+     * To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code>
+     * or <code>Regions</code>.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or
+     * <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack
+     * instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+     * and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation
+     * updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with
+     * their existing stack instance status.
+     * </p>
+     * 
+     * @param deploymentTargets
+     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts in which to update associated
+     *        stack instances.</p>
+     *        <p>
+     *        To update all the stack instances associated with this stack set, do not specify
+     *        <code>DeploymentTargets</code> or <code>Regions</code>.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack
+     *        instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified
+     *        accounts and Regions. If the stack set update does not include changes to the template or parameters, AWS
+     *        CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other
+     *        stack instances with their existing stack instance status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withDeploymentTargets(DeploymentTargets deploymentTargets) {
+        setDeploymentTargets(deploymentTargets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created. You cannot modify
+     * <code>PermissionModel</code> if there are stack instances associated with your stack set.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionModel
+     *        Describes how the IAM roles required for stack set operations are created. You cannot modify
+     *        <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        With <code>self-managed</code> permissions, you must create the administrator and execution roles required
+     *        to deploy to target accounts. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     *        Self-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *        deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *        >Grant Service-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     * @see PermissionModels
+     */
+
+    public void setPermissionModel(String permissionModel) {
+        this.permissionModel = permissionModel;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created. You cannot modify
+     * <code>PermissionModel</code> if there are stack instances associated with your stack set.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Describes how the IAM roles required for stack set operations are created. You cannot modify
+     *         <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         With <code>self-managed</code> permissions, you must create the administrator and execution roles
+     *         required to deploy to target accounts. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html"
+     *         >Grant Self-Managed Stack Set Permissions</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *         deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *         >Grant Service-Managed Stack Set Permissions</a>.
+     *         </p>
+     *         </li>
+     * @see PermissionModels
+     */
+
+    public String getPermissionModel() {
+        return this.permissionModel;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created. You cannot modify
+     * <code>PermissionModel</code> if there are stack instances associated with your stack set.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionModel
+     *        Describes how the IAM roles required for stack set operations are created. You cannot modify
+     *        <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        With <code>self-managed</code> permissions, you must create the administrator and execution roles required
+     *        to deploy to target accounts. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     *        Self-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *        deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *        >Grant Service-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionModels
+     */
+
+    public UpdateStackSetRequest withPermissionModel(String permissionModel) {
+        setPermissionModel(permissionModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes how the IAM roles required for stack set operations are created. You cannot modify
+     * <code>PermissionModel</code> if there are stack instances associated with your stack set.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * With <code>self-managed</code> permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy
+     * to accounts managed by AWS Organizations. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     * >Grant Service-Managed Stack Set Permissions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param permissionModel
+     *        Describes how the IAM roles required for stack set operations are created. You cannot modify
+     *        <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        With <code>self-managed</code> permissions, you must create the administrator and execution roles required
+     *        to deploy to target accounts. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     *        Self-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to
+     *        deploy to accounts managed by AWS Organizations. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html"
+     *        >Grant Service-Managed Stack Set Permissions</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionModels
+     */
+
+    public UpdateStackSetRequest withPermissionModel(PermissionModels permissionModel) {
+        this.permissionModel = permissionModel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     * <p>
+     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
+     * .
+     * </p>
+     * 
+     * @param autoDeployment
+     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
+     *        Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+     *        <p>
+     *        If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     *        <code>Regions</code>.
+     */
+
+    public void setAutoDeployment(AutoDeployment autoDeployment) {
+        this.autoDeployment = autoDeployment;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     * <p>
+     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
+     * .
+     * </p>
+     * 
+     * @return [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
+     *         Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+     *         <p>
+     *         If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     *         <code>Regions</code>.
+     */
+
+    public AutoDeployment getAutoDeployment() {
+        return this.autoDeployment;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to a target organization or organizational unit (OU).
+     * </p>
+     * <p>
+     * If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>
+     * .
+     * </p>
+     * 
+     * @param autoDeployment
+     *        [<code>Service-managed</code> permissions] Describes whether StackSets automatically deploys to AWS
+     *        Organizations accounts that are added to a target organization or organizational unit (OU).</p>
+     *        <p>
+     *        If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     *        <code>Regions</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withAutoDeployment(AutoDeployment autoDeployment) {
+        setAutoDeployment(autoDeployment);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique ID for this stack set operation.
      * </p>
      * <p>
@@ -2616,8 +3060,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
-     * regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -2632,8 +3076,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * stack instances with their existing stack instance status.
      * </p>
      * 
-     * @return The accounts in which to update associated stack instances. If you specify accounts, you must also
-     *         specify the regions in which to update stack set instances.</p>
+     * @return [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *         accounts, you must also specify the regions in which to update stack set instances.</p>
      *         <p>
      *         To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *         <code>Accounts</code> or <code>Regions</code> properties.
@@ -2656,8 +3100,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
-     * regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -2673,8 +3117,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param accounts
-     *        The accounts in which to update associated stack instances. If you specify accounts, you must also specify
-     *        the regions in which to update stack set instances.</p>
+     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *        accounts, you must also specify the regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -2699,8 +3143,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
-     * regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -2721,8 +3165,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param accounts
-     *        The accounts in which to update associated stack instances. If you specify accounts, you must also specify
-     *        the regions in which to update stack set instances.</p>
+     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *        accounts, you must also specify the regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -2749,8 +3193,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
-     * regions in which to update stack set instances.
+     * [Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts,
+     * you must also specify the regions in which to update stack set instances.
      * </p>
      * <p>
      * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
@@ -2766,8 +3210,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param accounts
-     *        The accounts in which to update associated stack instances. If you specify accounts, you must also specify
-     *        the regions in which to update stack set instances.</p>
+     *        [Self-managed permissions] The accounts in which to update associated stack instances. If you specify
+     *        accounts, you must also specify the regions in which to update stack set instances.</p>
      *        <p>
      *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
      *        <code>Accounts</code> or <code>Regions</code> properties.
@@ -2994,6 +3438,12 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("AdministrationRoleARN: ").append(getAdministrationRoleARN()).append(",");
         if (getExecutionRoleName() != null)
             sb.append("ExecutionRoleName: ").append(getExecutionRoleName()).append(",");
+        if (getDeploymentTargets() != null)
+            sb.append("DeploymentTargets: ").append(getDeploymentTargets()).append(",");
+        if (getPermissionModel() != null)
+            sb.append("PermissionModel: ").append(getPermissionModel()).append(",");
+        if (getAutoDeployment() != null)
+            sb.append("AutoDeployment: ").append(getAutoDeployment()).append(",");
         if (getOperationId() != null)
             sb.append("OperationId: ").append(getOperationId()).append(",");
         if (getAccounts() != null)
@@ -3058,6 +3508,18 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getExecutionRoleName() != null && other.getExecutionRoleName().equals(this.getExecutionRoleName()) == false)
             return false;
+        if (other.getDeploymentTargets() == null ^ this.getDeploymentTargets() == null)
+            return false;
+        if (other.getDeploymentTargets() != null && other.getDeploymentTargets().equals(this.getDeploymentTargets()) == false)
+            return false;
+        if (other.getPermissionModel() == null ^ this.getPermissionModel() == null)
+            return false;
+        if (other.getPermissionModel() != null && other.getPermissionModel().equals(this.getPermissionModel()) == false)
+            return false;
+        if (other.getAutoDeployment() == null ^ this.getAutoDeployment() == null)
+            return false;
+        if (other.getAutoDeployment() != null && other.getAutoDeployment().equals(this.getAutoDeployment()) == false)
+            return false;
         if (other.getOperationId() == null ^ this.getOperationId() == null)
             return false;
         if (other.getOperationId() != null && other.getOperationId().equals(this.getOperationId()) == false)
@@ -3089,6 +3551,9 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
         hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentTargets() == null) ? 0 : getDeploymentTargets().hashCode());
+        hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
+        hashCode = prime * hashCode + ((getAutoDeployment() == null) ? 0 : getAutoDeployment().hashCode());
         hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
         hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());

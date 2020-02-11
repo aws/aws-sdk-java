@@ -134,9 +134,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds, regardless of the value that you specify.
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
      * </p>
      * <p>
      * Default: 600
@@ -968,9 +968,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds, regardless of the value that you specify.
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
      * </p>
      * <p>
      * Default: 600
@@ -980,10 +980,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
      *        record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
      *        <p>
-     *        For network interfaces attached to <a
+     *        When a network interface is attached to a <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>, the aggregation interval is always 60 seconds, regardless of the value that
-     *        you specify.
+     *        >Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value
+     *        that you specify.
      *        </p>
      *        <p>
      *        Default: 600
@@ -999,9 +999,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds, regardless of the value that you specify.
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
      * </p>
      * <p>
      * Default: 600
@@ -1010,10 +1010,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * @return The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
      *         record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
      *         <p>
-     *         For network interfaces attached to <a
+     *         When a network interface is attached to a <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Nitro-based instances</a>, the aggregation interval is always 60 seconds, regardless of the value that
-     *         you specify.
+     *         >Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value
+     *         that you specify.
      *         </p>
      *         <p>
      *         Default: 600
@@ -1029,9 +1029,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds, regardless of the value that you specify.
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
      * </p>
      * <p>
      * Default: 600
@@ -1041,10 +1041,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
      *        record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
      *        <p>
-     *        For network interfaces attached to <a
+     *        When a network interface is attached to a <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>, the aggregation interval is always 60 seconds, regardless of the value that
-     *        you specify.
+     *        >Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value
+     *        that you specify.
      *        </p>
      *        <p>
      *        Default: 600

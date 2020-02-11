@@ -83,19 +83,21 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String platformDetails;
     /**
      * <p>
-     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
      * <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
-     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price List API</a>.
+     * For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform Details
+     * and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String usageOperation;
@@ -678,14 +680,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param platformDetails
      *        The platform details associated with the billing code of the AMI. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     *        Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setPlatformDetails(String platformDetails) {
@@ -695,13 +697,13 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The platform details associated with the billing code of the AMI. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
-     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     *         Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getPlatformDetails() {
@@ -711,14 +713,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param platformDetails
      *        The platform details associated with the billing code of the AMI. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     *        Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -729,21 +731,25 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
      * <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
-     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price List API</a>.
+     * For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform Details
+     * and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param usageOperation
-     *        The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     *        The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
      *        <code>usageOperation</code> corresponds to the <a
      *        href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
-     *        >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price List
+     *        API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     *        Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setUsageOperation(String usageOperation) {
@@ -752,20 +758,24 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
      * <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
-     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price List API</a>.
+     * For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform Details
+     * and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * @return The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
      *         <code>usageOperation</code> corresponds to the <a
      *         href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
-     *         >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
-     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         >lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price List
+     *         API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     *         Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getUsageOperation() {
@@ -774,21 +784,25 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     * The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
      * <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
-     * >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price List API</a>.
+     * For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform Details
+     * and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param usageOperation
-     *        The operation of the Amazon EC2 instance and the billing code associated with the AMI.
+     *        The operation of the Amazon EC2 instance and the billing code that is associated with the AMI.
      *        <code>usageOperation</code> corresponds to the <a
      *        href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation"
-     *        >lineitem/Operation</a> column on your AWS Cost and Usage Report. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI Billing Information</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >lineitem/Operation</a> column on your AWS Cost and Usage Report and in the <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS Price List
+     *        API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     *        Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

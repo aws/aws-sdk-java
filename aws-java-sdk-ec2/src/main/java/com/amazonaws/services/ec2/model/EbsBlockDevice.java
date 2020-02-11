@@ -121,6 +121,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
      * </p>
+     * <p>
+     * This parameter is not returned by .
+     * </p>
      */
     private Boolean encrypted;
 
@@ -692,6 +695,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
      * </p>
+     * <p>
+     * This parameter is not returned by .
+     * </p>
      * 
      * @param encrypted
      *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
@@ -708,6 +714,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      *        >Supported Instance Types</a>.
+     *        </p>
+     *        <p>
+     *        This parameter is not returned by .
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -732,6 +741,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
      * </p>
+     * <p>
+     * This parameter is not returned by .
+     * </p>
      * 
      * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
      *         snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
@@ -747,6 +759,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      *         >Supported Instance Types</a>.
+     *         </p>
+     *         <p>
+     *         This parameter is not returned by .
      */
 
     public Boolean getEncrypted() {
@@ -771,6 +786,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
      * </p>
+     * <p>
+     * This parameter is not returned by .
+     * </p>
      * 
      * @param encrypted
      *        Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
@@ -787,6 +805,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      *        >Supported Instance Types</a>.
+     *        </p>
+     *        <p>
+     *        This parameter is not returned by .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -813,6 +834,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      * >Supported Instance Types</a>.
      * </p>
+     * <p>
+     * This parameter is not returned by .
+     * </p>
      * 
      * @return Indicates whether the encryption state of an EBS volume is changed while being restored from a backing
      *         snapshot. The effect of setting the encryption state to <code>true</code> depends on the volume origin
@@ -828,6 +852,9 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
      *         >Supported Instance Types</a>.
+     *         </p>
+     *         <p>
+     *         This parameter is not returned by .
      */
 
     public Boolean isEncrypted() {

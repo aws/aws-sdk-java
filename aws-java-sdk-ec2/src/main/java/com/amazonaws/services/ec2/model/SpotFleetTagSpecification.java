@@ -28,7 +28,8 @@ public class SpotFleetTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     * The type of resource. Currently, the only resource types that are supported are <code>spot-fleet-request</code>
+     * and <code>instance</code>.
      * </p>
      */
     private String resourceType;
@@ -41,11 +42,13 @@ public class SpotFleetTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     * The type of resource. Currently, the only resource types that are supported are <code>spot-fleet-request</code>
+     * and <code>instance</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     *        The type of resource. Currently, the only resource types that are supported are
+     *        <code>spot-fleet-request</code> and <code>instance</code>.
      * @see ResourceType
      */
 
@@ -55,10 +58,12 @@ public class SpotFleetTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     * The type of resource. Currently, the only resource types that are supported are <code>spot-fleet-request</code>
+     * and <code>instance</code>.
      * </p>
      * 
-     * @return The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     * @return The type of resource. Currently, the only resource types that are supported are
+     *         <code>spot-fleet-request</code> and <code>instance</code>.
      * @see ResourceType
      */
 
@@ -68,11 +73,13 @@ public class SpotFleetTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     * The type of resource. Currently, the only resource types that are supported are <code>spot-fleet-request</code>
+     * and <code>instance</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     *        The type of resource. Currently, the only resource types that are supported are
+     *        <code>spot-fleet-request</code> and <code>instance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -84,11 +91,13 @@ public class SpotFleetTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     * The type of resource. Currently, the only resource types that are supported are <code>spot-fleet-request</code>
+     * and <code>instance</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     *        The type of resource. Currently, the only resource types that are supported are
+     *        <code>spot-fleet-request</code> and <code>instance</code>.
      * @see ResourceType
      */
 
@@ -98,11 +107,13 @@ public class SpotFleetTagSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     * The type of resource. Currently, the only resource types that are supported are <code>spot-fleet-request</code>
+     * and <code>instance</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource. Currently, the only resource type that is supported is <code>instance</code>.
+     *        The type of resource. Currently, the only resource types that are supported are
+     *        <code>spot-fleet-request</code> and <code>instance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

@@ -163,6 +163,14 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private UserPoolAddOnsType userPoolAddOns;
     /**
      * <p>
+     * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
+     * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     */
+    private UsernameConfigurationType usernameConfiguration;
+    /**
+     * <p>
      * Use this setting to define which verified available method a user can use to recover their password when they
      * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
      * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
@@ -1318,6 +1326,58 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
+     * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     * 
+     * @param usernameConfiguration
+     *        You can choose to set case sensitivity on the username input for the selected sign-in option. For example,
+     *        when this is set to <code>False</code>, users will be able to sign in using either "username" or
+     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     */
+
+    public void setUsernameConfiguration(UsernameConfigurationType usernameConfiguration) {
+        this.usernameConfiguration = usernameConfiguration;
+    }
+
+    /**
+     * <p>
+     * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
+     * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     * 
+     * @return You can choose to set case sensitivity on the username input for the selected sign-in option. For
+     *         example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
+     *         "Username". This configuration is immutable once it has been set. For more information, see .
+     */
+
+    public UsernameConfigurationType getUsernameConfiguration() {
+        return this.usernameConfiguration;
+    }
+
+    /**
+     * <p>
+     * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
+     * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     * 
+     * @param usernameConfiguration
+     *        You can choose to set case sensitivity on the username input for the selected sign-in option. For example,
+     *        when this is set to <code>False</code>, users will be able to sign in using either "username" or
+     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserPoolRequest withUsernameConfiguration(UsernameConfigurationType usernameConfiguration) {
+        setUsernameConfiguration(usernameConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Use this setting to define which verified available method a user can use to recover their password when they
      * call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more than one method
      * available. With this setting, SMS does not qualify for a valid password recovery mechanism if the user also has
@@ -1466,6 +1526,8 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Schema: ").append(getSchema()).append(",");
         if (getUserPoolAddOns() != null)
             sb.append("UserPoolAddOns: ").append(getUserPoolAddOns()).append(",");
+        if (getUsernameConfiguration() != null)
+            sb.append("UsernameConfiguration: ").append(getUsernameConfiguration()).append(",");
         if (getAccountRecoverySetting() != null)
             sb.append("AccountRecoverySetting: ").append(getAccountRecoverySetting());
         sb.append("}");
@@ -1558,6 +1620,10 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
             return false;
+        if (other.getUsernameConfiguration() == null ^ this.getUsernameConfiguration() == null)
+            return false;
+        if (other.getUsernameConfiguration() != null && other.getUsernameConfiguration().equals(this.getUsernameConfiguration()) == false)
+            return false;
         if (other.getAccountRecoverySetting() == null ^ this.getAccountRecoverySetting() == null)
             return false;
         if (other.getAccountRecoverySetting() != null && other.getAccountRecoverySetting().equals(this.getAccountRecoverySetting()) == false)
@@ -1589,6 +1655,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         hashCode = prime * hashCode + ((getSchema() == null) ? 0 : getSchema().hashCode());
         hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
+        hashCode = prime * hashCode + ((getUsernameConfiguration() == null) ? 0 : getUsernameConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAccountRecoverySetting() == null) ? 0 : getAccountRecoverySetting().hashCode());
         return hashCode;
     }

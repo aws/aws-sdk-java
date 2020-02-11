@@ -223,6 +223,14 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private UserPoolAddOnsType userPoolAddOns;
     /**
      * <p>
+     * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
+     * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     */
+    private UsernameConfigurationType usernameConfiguration;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the user pool.
      * </p>
      */
@@ -1868,6 +1876,58 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
+     * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     * 
+     * @param usernameConfiguration
+     *        You can choose to enable case sensitivity on the username input for the selected sign-in option. For
+     *        example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
+     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     */
+
+    public void setUsernameConfiguration(UsernameConfigurationType usernameConfiguration) {
+        this.usernameConfiguration = usernameConfiguration;
+    }
+
+    /**
+     * <p>
+     * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
+     * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     * 
+     * @return You can choose to enable case sensitivity on the username input for the selected sign-in option. For
+     *         example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
+     *         "Username". This configuration is immutable once it has been set. For more information, see .
+     */
+
+    public UsernameConfigurationType getUsernameConfiguration() {
+        return this.usernameConfiguration;
+    }
+
+    /**
+     * <p>
+     * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
+     * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .
+     * </p>
+     * 
+     * @param usernameConfiguration
+     *        You can choose to enable case sensitivity on the username input for the selected sign-in option. For
+     *        example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
+     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withUsernameConfiguration(UsernameConfigurationType usernameConfiguration) {
+        setUsernameConfiguration(usernameConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the user pool.
      * </p>
      * 
@@ -2038,6 +2098,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
         if (getUserPoolAddOns() != null)
             sb.append("UserPoolAddOns: ").append(getUserPoolAddOns()).append(",");
+        if (getUsernameConfiguration() != null)
+            sb.append("UsernameConfiguration: ").append(getUsernameConfiguration()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getAccountRecoverySetting() != null)
@@ -2168,6 +2230,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
             return false;
+        if (other.getUsernameConfiguration() == null ^ this.getUsernameConfiguration() == null)
+            return false;
+        if (other.getUsernameConfiguration() != null && other.getUsernameConfiguration().equals(this.getUsernameConfiguration()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -2212,6 +2278,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomDomain() == null) ? 0 : getCustomDomain().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
+        hashCode = prime * hashCode + ((getUsernameConfiguration() == null) ? 0 : getUsernameConfiguration().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAccountRecoverySetting() == null) ? 0 : getAccountRecoverySetting().hashCode());
         return hashCode;

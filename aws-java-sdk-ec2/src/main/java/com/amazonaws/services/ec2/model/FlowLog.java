@@ -112,9 +112,13 @@ public class FlowLog implements Serializable, Cloneable {
      * log record.
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless of the specified value.
+     * instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified
+     * value.
+     * </p>
+     * <p>
+     * Valid Values: <code>60</code> | <code>600</code>
      * </p>
      */
     private Integer maxAggregationInterval;
@@ -729,19 +733,26 @@ public class FlowLog implements Serializable, Cloneable {
      * log record.
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless of the specified value.
+     * instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified
+     * value.
+     * </p>
+     * <p>
+     * Valid Values: <code>60</code> | <code>600</code>
      * </p>
      * 
      * @param maxAggregationInterval
      *        The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a
      *        flow log record.</p>
      *        <p>
-     *        For network interfaces attached to <a
+     *        When a network interface is attached to a <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless of the
-     *        specified value.
+     *        >Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of
+     *        the specified value.
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>60</code> | <code>600</code>
      */
 
     public void setMaxAggregationInterval(Integer maxAggregationInterval) {
@@ -754,18 +765,25 @@ public class FlowLog implements Serializable, Cloneable {
      * log record.
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless of the specified value.
+     * instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified
+     * value.
+     * </p>
+     * <p>
+     * Valid Values: <code>60</code> | <code>600</code>
      * </p>
      * 
      * @return The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into
      *         a flow log record.</p>
      *         <p>
-     *         For network interfaces attached to <a
+     *         When a network interface is attached to a <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *         >Nitro-based instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless of the
-     *         specified value.
+     *         >Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless
+     *         of the specified value.
+     *         </p>
+     *         <p>
+     *         Valid Values: <code>60</code> | <code>600</code>
      */
 
     public Integer getMaxAggregationInterval() {
@@ -778,19 +796,26 @@ public class FlowLog implements Serializable, Cloneable {
      * log record.
      * </p>
      * <p>
-     * For network interfaces attached to <a
+     * When a network interface is attached to a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-     * instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless of the specified value.
+     * instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of the specified
+     * value.
+     * </p>
+     * <p>
+     * Valid Values: <code>60</code> | <code>600</code>
      * </p>
      * 
      * @param maxAggregationInterval
      *        The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a
      *        flow log record.</p>
      *        <p>
-     *        For network interfaces attached to <a
+     *        When a network interface is attached to a <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
-     *        >Nitro-based instances</a>, the aggregation interval is always 60 seconds (1 minute), regardless of the
-     *        specified value.
+     *        >Nitro-based instance</a>, the aggregation interval is always 60 seconds (1 minute) or less, regardless of
+     *        the specified value.
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>60</code> | <code>600</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
