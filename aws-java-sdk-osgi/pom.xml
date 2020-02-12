@@ -1341,7 +1341,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
         <configuration>
           <archive>
             <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
@@ -1374,7 +1373,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>2.3</version>
+        <version>3.2.2</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -2510,7 +2509,7 @@
                   <!-- Invoke the Assembly plugin to create the ZIP archive -->
                   <plugin>
                       <artifactId>maven-assembly-plugin</artifactId>
-                      <version>2.6</version>
+                      <version>3.2.0</version>
                       <configuration>
                           <descriptors>
                               <descriptor>src/assembly/sdk-zip-archive-assembly.xml</descriptor>

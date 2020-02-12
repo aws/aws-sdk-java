@@ -295,6 +295,8 @@
       <unitils.version>3.3</unitils.version>
       <!-- Netty is used by Kinesis Video -->
       <netty.version>4.1.44.Final</netty.version>
+      <!-- Reproducible Builds jar entries timestamp: https://maven.apache.org/guides/mini/guide-reproducible-builds.html -->
+      <project.build.outputTimestamp>2020-02-08T08:04:00Z</project.build.outputTimestamp>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -350,6 +352,12 @@
               <include>**/*TestCase.java</include>
             </includes>
           </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.0</version>
         </plugin>
       </plugins>
     </pluginManagement>
