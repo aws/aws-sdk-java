@@ -1,3 +1,32 @@
+# __1.11.721__ __2020-02-12__
+## __AWS Directory Service__
+  - ### Features
+    - Release to add the ExpirationDateTime as an output to ListCertificates so as to ease customers to look into their certificate lifetime and make timely decisions about renewing them.
+
+## __AWS Glue__
+  - ### Features
+    - Adding ability to add arguments that cannot be overridden to AWS Glue jobs
+
+## __Amazon Chime__
+  - ### Features
+    - Documentation updates for Amazon Chime
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for tagging public IPv4 pools.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Amazon Elasticsearch Service now offers fine-grained access control, which adds multiple capabilities to give tighter control over data. New features include the ability to use roles to define granular permissions for indices, documents, or fields and to extend Kibana with read-only views and secure multi-tenant support.
+
+## __Amazon Neptune__
+  - ### Features
+    - This launch enables Neptune start-db-cluster and stop-db-cluster. Stopping and starting Amazon Neptune clusters helps you manage costs for development and test environments. You can temporarily stop all the DB instances in your cluster, instead of setting up and tearing down all the DB instances each time that you use the cluster.
+
+## __Amazon WorkMail__
+  - ### Features
+    - This release adds support for access control rules management  in Amazon WorkMail.
+
 # __1.11.720__ __2020-02-11__
 ## __AWS CloudFormation__
   - ### Features

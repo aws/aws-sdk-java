@@ -58,6 +58,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public DeleteAccessControlRuleResult deleteAccessControlRule(DeleteAccessControlRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -118,7 +123,17 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public GetAccessControlEffectResult getAccessControlEffect(GetAccessControlEffectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMailboxDetailsResult getMailboxDetails(GetMailboxDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessControlRulesResult listAccessControlRules(ListAccessControlRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,6 +179,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public ListUsersResult listUsers(ListUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAccessControlRuleResult putAccessControlRule(PutAccessControlRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

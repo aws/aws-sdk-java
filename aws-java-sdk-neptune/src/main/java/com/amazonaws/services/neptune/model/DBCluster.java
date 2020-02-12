@@ -263,8 +263,8 @@ public class DBCluster implements Serializable, Cloneable {
     private java.util.List<String> enabledCloudwatchLogsExports;
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
      * </p>
      */
     private Boolean deletionProtection;
@@ -2065,13 +2065,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled.
+     *        Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *        when deletion protection is enabled.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -2080,12 +2080,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
      * </p>
      * 
-     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled.
+     * @return Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *         when deletion protection is enabled.
      */
 
     public Boolean getDeletionProtection() {
@@ -2094,13 +2094,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled.
+     *        Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *        when deletion protection is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2111,12 +2111,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
      * </p>
      * 
-     * @return Indicates if the DB cluster has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled.
+     * @return Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *         when deletion protection is enabled.
      */
 
     public Boolean isDeletionProtection() {

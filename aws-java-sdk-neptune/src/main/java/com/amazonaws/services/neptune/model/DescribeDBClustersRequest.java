@@ -56,7 +56,17 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * results list will only include information about the DB clusters identified by these ARNs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB
+     * clusters created by that engine.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * could use the following command:
+     * </p>
      */
     private java.util.List<Filter> filters;
     /**
@@ -199,7 +209,17 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * results list will only include information about the DB clusters identified by these ARNs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB
+     * clusters created by that engine.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * could use the following command:
+     * </p>
      * 
      * @return A filter that specifies one or more DB clusters to describe.</p>
      *         <p>
@@ -212,6 +232,16 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *         The results list will only include information about the DB clusters identified by these ARNs.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results
+     *         list to DB clusters created by that engine.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are
+     *         returned, you could use the following command:
      */
 
     public java.util.List<Filter> getFilters() {
@@ -232,7 +262,17 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * results list will only include information about the DB clusters identified by these ARNs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB
+     * clusters created by that engine.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * could use the following command:
+     * </p>
      * 
      * @param filters
      *        A filter that specifies one or more DB clusters to describe.</p>
@@ -246,6 +286,16 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        The results list will only include information about the DB clusters identified by these ARNs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results
+     *        list to DB clusters created by that engine.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned,
+     *        you could use the following command:
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -271,7 +321,17 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * results list will only include information about the DB clusters identified by these ARNs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB
+     * clusters created by that engine.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * could use the following command:
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -290,6 +350,16 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        The results list will only include information about the DB clusters identified by these ARNs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results
+     *        list to DB clusters created by that engine.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned,
+     *        you could use the following command:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,7 +387,17 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * results list will only include information about the DB clusters identified by these ARNs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB
+     * clusters created by that engine.
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * could use the following command:
+     * </p>
      * 
      * @param filters
      *        A filter that specifies one or more DB clusters to describe.</p>
@@ -331,6 +411,16 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        The results list will only include information about the DB clusters identified by these ARNs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results
+     *        list to DB clusters created by that engine.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned,
+     *        you could use the following command:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

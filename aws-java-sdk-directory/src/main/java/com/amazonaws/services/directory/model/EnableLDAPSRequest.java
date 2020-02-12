@@ -33,8 +33,7 @@ public class EnableLDAPSRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String directoryId;
     /**
      * <p>
-     * The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     * currently only the default <code>Client</code> is supported.
+     * The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * </p>
      */
     private String type;
@@ -81,13 +80,11 @@ public class EnableLDAPSRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     * currently only the default <code>Client</code> is supported.
+     * The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * </p>
      * 
      * @param type
-     *        The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     *        currently only the default <code>Client</code> is supported.
+     *        The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * @see LDAPSType
      */
 
@@ -97,12 +94,10 @@ public class EnableLDAPSRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     * currently only the default <code>Client</code> is supported.
+     * The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * </p>
      * 
-     * @return The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     *         currently only the default <code>Client</code> is supported.
+     * @return The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * @see LDAPSType
      */
 
@@ -112,13 +107,11 @@ public class EnableLDAPSRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     * currently only the default <code>Client</code> is supported.
+     * The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * </p>
      * 
      * @param type
-     *        The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     *        currently only the default <code>Client</code> is supported.
+     *        The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LDAPSType
      */
@@ -130,13 +123,11 @@ public class EnableLDAPSRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     * currently only the default <code>Client</code> is supported.
+     * The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * </p>
      * 
      * @param type
-     *        The type of LDAP security the customer wants to enable. The security can be either server or client, but
-     *        currently only the default <code>Client</code> is supported.
+     *        The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LDAPSType
      */

@@ -303,6 +303,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAccessControlRuleResult> deleteAccessControlRuleAsync(DeleteAccessControlRuleRequest request) {
+
+        return deleteAccessControlRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessControlRuleResult> deleteAccessControlRuleAsync(final DeleteAccessControlRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessControlRuleRequest, DeleteAccessControlRuleResult> asyncHandler) {
+        final DeleteAccessControlRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessControlRuleResult>() {
+            @Override
+            public DeleteAccessControlRuleResult call() throws Exception {
+                DeleteAccessControlRuleResult result = null;
+
+                try {
+                    result = executeDeleteAccessControlRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
@@ -701,6 +734,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessControlEffectResult> getAccessControlEffectAsync(GetAccessControlEffectRequest request) {
+
+        return getAccessControlEffectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessControlEffectResult> getAccessControlEffectAsync(final GetAccessControlEffectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccessControlEffectRequest, GetAccessControlEffectResult> asyncHandler) {
+        final GetAccessControlEffectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccessControlEffectResult>() {
+            @Override
+            public GetAccessControlEffectResult call() throws Exception {
+                GetAccessControlEffectResult result = null;
+
+                try {
+                    result = executeGetAccessControlEffect(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(GetMailboxDetailsRequest request) {
 
         return getMailboxDetailsAsync(request, null);
@@ -718,6 +784,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeGetMailboxDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessControlRulesResult> listAccessControlRulesAsync(ListAccessControlRulesRequest request) {
+
+        return listAccessControlRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessControlRulesResult> listAccessControlRulesAsync(final ListAccessControlRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessControlRulesRequest, ListAccessControlRulesResult> asyncHandler) {
+        final ListAccessControlRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessControlRulesResult>() {
+            @Override
+            public ListAccessControlRulesResult call() throws Exception {
+                ListAccessControlRulesResult result = null;
+
+                try {
+                    result = executeListAccessControlRules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1015,6 +1114,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeListUsers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccessControlRuleResult> putAccessControlRuleAsync(PutAccessControlRuleRequest request) {
+
+        return putAccessControlRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccessControlRuleResult> putAccessControlRuleAsync(final PutAccessControlRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccessControlRuleRequest, PutAccessControlRuleResult> asyncHandler) {
+        final PutAccessControlRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccessControlRuleResult>() {
+            @Override
+            public PutAccessControlRuleResult call() throws Exception {
+                PutAccessControlRuleResult result = null;
+
+                try {
+                    result = executePutAccessControlRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

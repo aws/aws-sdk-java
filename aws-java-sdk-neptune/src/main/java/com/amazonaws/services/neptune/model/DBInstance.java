@@ -353,8 +353,10 @@ public class DBInstance implements Serializable, Cloneable {
     private java.util.List<String> enabledCloudwatchLogsExports;
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      */
     private Boolean deletionProtection;
@@ -2864,13 +2866,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled.
+     *        Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *        when deletion protection is enabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -2879,12 +2885,16 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * 
-     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled.
+     * @return Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *         when deletion protection is enabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.
      */
 
     public Boolean getDeletionProtection() {
@@ -2893,13 +2903,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * 
      * @param deletionProtection
-     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *        protection is enabled.
+     *        Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *        when deletion protection is enabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2910,12 +2924,16 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     * protection is enabled.
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * 
-     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when deletion
-     *         protection is enabled.
+     * @return Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *         when deletion protection is enabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.
      */
 
     public Boolean isDeletionProtection() {

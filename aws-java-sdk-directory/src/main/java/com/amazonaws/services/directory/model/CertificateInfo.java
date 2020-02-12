@@ -46,6 +46,12 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * The date and time when the certificate will expire.
+     * </p>
+     */
+    private java.util.Date expiryDateTime;
 
     /**
      * <p>
@@ -187,6 +193,46 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The date and time when the certificate will expire.
+     * </p>
+     * 
+     * @param expiryDateTime
+     *        The date and time when the certificate will expire.
+     */
+
+    public void setExpiryDateTime(java.util.Date expiryDateTime) {
+        this.expiryDateTime = expiryDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the certificate will expire.
+     * </p>
+     * 
+     * @return The date and time when the certificate will expire.
+     */
+
+    public java.util.Date getExpiryDateTime() {
+        return this.expiryDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the certificate will expire.
+     * </p>
+     * 
+     * @param expiryDateTime
+     *        The date and time when the certificate will expire.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateInfo withExpiryDateTime(java.util.Date expiryDateTime) {
+        setExpiryDateTime(expiryDateTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,7 +249,9 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
         if (getCommonName() != null)
             sb.append("CommonName: ").append(getCommonName()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getExpiryDateTime() != null)
+            sb.append("ExpiryDateTime: ").append(getExpiryDateTime());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +278,10 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getExpiryDateTime() == null ^ this.getExpiryDateTime() == null)
+            return false;
+        if (other.getExpiryDateTime() != null && other.getExpiryDateTime().equals(this.getExpiryDateTime()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +293,7 @@ public class CertificateInfo implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
         hashCode = prime * hashCode + ((getCommonName() == null) ? 0 : getCommonName().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getExpiryDateTime() == null) ? 0 : getExpiryDateTime().hashCode());
         return hashCode;
     }
 

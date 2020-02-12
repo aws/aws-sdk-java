@@ -474,12 +474,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled.
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * <p>
-     * You can enable or disable deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for
-     * the DB cluster.
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
      * </p>
      */
     private Boolean deletionProtection;
@@ -3516,21 +3516,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled.
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * <p>
-     * You can enable or disable deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for
-     * the DB cluster.
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
      * </p>
      * 
      * @param deletionProtection
      *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.</p>
      *        <p>
-     *        You can enable or disable deletion protection for the DB cluster. For more information, see
-     *        <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is
-     *        enabled for the DB cluster.
+     *        DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *        cluster.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -3540,20 +3541,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled.
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * <p>
-     * You can enable or disable deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for
-     * the DB cluster.
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
      * </p>
      * 
      * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.</p>
      *         <p>
-     *         You can enable or disable deletion protection for the DB cluster. For more information, see
-     *         <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is
-     *         enabled for the DB cluster.
+     *         DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *         cluster.
      */
 
     public Boolean getDeletionProtection() {
@@ -3563,21 +3565,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled.
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * <p>
-     * You can enable or disable deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for
-     * the DB cluster.
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
      * </p>
      * 
      * @param deletionProtection
      *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.</p>
      *        <p>
-     *        You can enable or disable deletion protection for the DB cluster. For more information, see
-     *        <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is
-     *        enabled for the DB cluster.
+     *        DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *        cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3589,20 +3592,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
-     * when deletion protection is enabled. By default, deletion protection is disabled.
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
      * </p>
      * <p>
-     * You can enable or disable deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is enabled for
-     * the DB cluster.
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
      * </p>
      * 
      * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.</p>
      *         <p>
-     *         You can enable or disable deletion protection for the DB cluster. For more information, see
-     *         <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when deletion protection is
-     *         enabled for the DB cluster.
+     *         DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *         cluster.
      */
 
     public Boolean isDeletionProtection() {

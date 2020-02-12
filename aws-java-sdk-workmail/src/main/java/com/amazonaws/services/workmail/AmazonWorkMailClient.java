@@ -651,6 +651,66 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes an access control rule for the specified WorkMail organization.
+     * </p>
+     * 
+     * @param deleteAccessControlRuleRequest
+     * @return Result of the DeleteAccessControlRule operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.DeleteAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAccessControlRuleResult deleteAccessControlRule(DeleteAccessControlRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessControlRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessControlRuleResult executeDeleteAccessControlRule(DeleteAccessControlRuleRequest deleteAccessControlRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessControlRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessControlRuleRequest> request = null;
+        Response<DeleteAccessControlRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessControlRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAccessControlRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessControlRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAccessControlRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAccessControlRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Remove one or more specified aliases from a set of aliases for a given user.
      * </p>
      * 
@@ -1441,6 +1501,70 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
+     * protocol action, or user ID.
+     * </p>
+     * 
+     * @param getAccessControlEffectRequest
+     * @return Result of the GetAccessControlEffect operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.GetAccessControlEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccessControlEffectResult getAccessControlEffect(GetAccessControlEffectRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessControlEffect(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessControlEffectResult executeGetAccessControlEffect(GetAccessControlEffectRequest getAccessControlEffectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessControlEffectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessControlEffectRequest> request = null;
+        Response<GetAccessControlEffectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessControlEffectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccessControlEffectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessControlEffect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAccessControlEffectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAccessControlEffectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Requests a user's mailbox details for a specified organization and user.
      * </p>
      * 
@@ -1489,6 +1613,65 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMailboxDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMailboxDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the access control rules for the specified organization.
+     * </p>
+     * 
+     * @param listAccessControlRulesRequest
+     * @return Result of the ListAccessControlRules operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.ListAccessControlRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAccessControlRulesResult listAccessControlRules(ListAccessControlRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccessControlRules(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessControlRulesResult executeListAccessControlRules(ListAccessControlRulesRequest listAccessControlRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccessControlRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccessControlRulesRequest> request = null;
+        Response<ListAccessControlRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccessControlRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccessControlRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessControlRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAccessControlRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAccessControlRulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2053,6 +2236,72 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Adds a new access control rule for the specified organization. The rule allows or denies access to the
+     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
+     * same name as an existing rule replaces the older rule.
+     * </p>
+     * 
+     * @param putAccessControlRuleRequest
+     * @return Result of the PutAccessControlRule operation returned by the service.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.PutAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutAccessControlRuleResult putAccessControlRule(PutAccessControlRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAccessControlRule(request);
+    }
+
+    @SdkInternalApi
+    final PutAccessControlRuleResult executePutAccessControlRule(PutAccessControlRuleRequest putAccessControlRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAccessControlRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAccessControlRuleRequest> request = null;
+        Response<PutAccessControlRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAccessControlRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAccessControlRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccessControlRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAccessControlRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutAccessControlRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets permissions for a user, group, or resource. This replaces any pre-existing permissions.
      * </p>
      * 
@@ -2122,7 +2371,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
-     * href="https://aws.amazon.com//workmail/pricing">Pricing</a>. The equivalent console functionality for this
+     * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
      * operation is <i>Enable</i>.
      * </p>
      * <p>

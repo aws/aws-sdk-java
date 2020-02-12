@@ -85,6 +85,11 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     job.setDefaultArguments(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("NonOverridableArguments", targetDepth)) {
+                    context.nextToken();
+                    job.setNonOverridableArguments(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("Connections", targetDepth)) {
                     context.nextToken();
                     job.setConnections(ConnectionsListJsonUnmarshaller.getInstance().unmarshall(context));

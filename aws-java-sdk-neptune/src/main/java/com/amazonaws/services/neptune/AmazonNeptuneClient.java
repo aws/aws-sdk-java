@@ -502,9 +502,6 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster
      * snapshot.
      * </p>
-     * <p>
-     * You can't copy from one AWS Region to another.
-     * </p>
      * 
      * @param copyDBClusterSnapshotRequest
      * @return Result of the CopyDBClusterSnapshot operation returned by the service.
@@ -630,6 +627,12 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of
      * another DB cluster or Amazon Neptune DB instance.
+     * </p>
+     * <p>
+     * Note that when you create a new cluster using <code>CreateDBCluster</code> directly, deletion protection is
+     * disabled by default (when you create a new production cluster in the console, deletion protection is enabled by
+     * default). You can only delete a DB cluster if its <code>DeletionProtection</code> field is set to
+     * <code>false</code>.
      * </p>
      * 
      * @param createDBClusterRequest
@@ -1171,6 +1174,10 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
      * </p>
+     * <p>
+     * Note that the DB Cluster cannot be deleted if deletion protection is enabled. To delete it, you must first set
+     * its <code>DeletionProtection</code> field to <code>False</code>.
+     * </p>
      * 
      * @param deleteDBClusterRequest
      * @return Result of the DeleteDBCluster operation returned by the service.
@@ -1366,7 +1373,8 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * You can't delete a DB instance if it is the only instance in the DB cluster.
+     * You can't delete a DB instance if it is the only instance in the DB cluster, or if it has deletion protection
+     * enabled.
      * </p>
      * 
      * @param deleteDBInstanceRequest
@@ -1842,8 +1850,13 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Returns information about provisioned DB clusters. This API supports pagination.
+     * Returns information about provisioned DB clusters, and supports pagination.
      * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClustersRequest
      * @return Result of the DescribeDBClusters operation returned by the service.
@@ -1950,8 +1963,13 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Returns information about provisioned instances. This API supports pagination.
+     * Returns information about provisioned instances, and supports pagination.
      * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS instances and Amazon DocDB instances.
+     * </p>
+     * </note>
      * 
      * @param describeDBInstancesRequest
      * @return Result of the DescribeDBInstances operation returned by the service.
@@ -3874,6 +3892,127 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterToPointInTime");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the AWS CLI stop-db-cluster command,
+     * or the StopDBCluster API.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @return Result of the StartDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DBCluster startDBCluster(StartDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeStartDBCluster(StartDBClusterRequest startDBClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDBClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDBClusterRequest> request = null;
+        Response<DBCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDBClusterRequestMarshaller().marshall(super.beforeMarshalling(startDBClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune retains the DB cluster's metadata,
+     * including its endpoints and DB parameter groups.
+     * </p>
+     * <p>
+     * Neptune also retains the transaction logs so you can do a point-in-time restore if necessary.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @return Result of the StopDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DBCluster stopDBCluster(StopDBClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDBCluster(request);
+    }
+
+    @SdkInternalApi
+    final DBCluster executeStopDBCluster(StopDBClusterRequest stopDBClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopDBClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopDBClusterRequest> request = null;
+        Response<DBCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopDBClusterRequestMarshaller().marshall(super.beforeMarshalling(stopDBClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Neptune");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBCluster");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {

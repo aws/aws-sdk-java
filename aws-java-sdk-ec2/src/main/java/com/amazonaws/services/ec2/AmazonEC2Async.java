@@ -517,6 +517,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per
      * Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You must specify either the IPv6 addresses or the IPv6 address count in the request.
+     * </p>
      * 
      * @param assignIpv6AddressesRequest
      * @return A Java Future containing the result of the AssignIpv6Addresses operation returned by the service.
@@ -534,6 +537,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * IPv4 addresses, and the limit varies per instance type. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per
      * Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * You must specify either the IPv6 addresses or the IPv6 address count in the request.
      * </p>
      * 
      * @param assignIpv6AddressesRequest
@@ -571,6 +577,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to confirm that the
      * remapping is complete.
      * </p>
+     * <p>
+     * You must specify either the IP addresses or the IP address count in the request.
+     * </p>
      * 
      * @param assignPrivateIpAddressesRequest
      *        Contains the parameters for AssignPrivateIpAddresses.
@@ -602,6 +611,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Remapping an IP address is an asynchronous operation. When you move an IP address from one network interface to
      * another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to confirm that the
      * remapping is complete.
+     * </p>
+     * <p>
+     * You must specify either the IP addresses or the IP address count in the request.
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest

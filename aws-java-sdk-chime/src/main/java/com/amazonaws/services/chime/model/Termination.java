@@ -30,7 +30,7 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The limit on calls per second. Max value based on account service limit. Default value of 1.
+     * The limit on calls per second. Max value based on account service quota. Default value of 1.
      * </p>
      */
     private Integer cpsLimit;
@@ -61,11 +61,11 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The limit on calls per second. Max value based on account service limit. Default value of 1.
+     * The limit on calls per second. Max value based on account service quota. Default value of 1.
      * </p>
      * 
      * @param cpsLimit
-     *        The limit on calls per second. Max value based on account service limit. Default value of 1.
+     *        The limit on calls per second. Max value based on account service quota. Default value of 1.
      */
 
     public void setCpsLimit(Integer cpsLimit) {
@@ -74,10 +74,10 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The limit on calls per second. Max value based on account service limit. Default value of 1.
+     * The limit on calls per second. Max value based on account service quota. Default value of 1.
      * </p>
      * 
-     * @return The limit on calls per second. Max value based on account service limit. Default value of 1.
+     * @return The limit on calls per second. Max value based on account service quota. Default value of 1.
      */
 
     public Integer getCpsLimit() {
@@ -86,11 +86,11 @@ public class Termination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The limit on calls per second. Max value based on account service limit. Default value of 1.
+     * The limit on calls per second. Max value based on account service quota. Default value of 1.
      * </p>
      * 
      * @param cpsLimit
-     *        The limit on calls per second. Max value based on account service limit. Default value of 1.
+     *        The limit on calls per second. Max value based on account service quota. Default value of 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,6 +43,8 @@ public class CreateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Command").build();
     private static final MarshallingInfo<Map> DEFAULTARGUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultArguments").build();
+    private static final MarshallingInfo<Map> NONOVERRIDABLEARGUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NonOverridableArguments").build();
     private static final MarshallingInfo<StructuredPojo> CONNECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Connections").build();
     private static final MarshallingInfo<Integer> MAXRETRIES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -89,6 +91,7 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getExecutionProperty(), EXECUTIONPROPERTY_BINDING);
             protocolMarshaller.marshall(createJobRequest.getCommand(), COMMAND_BINDING);
             protocolMarshaller.marshall(createJobRequest.getDefaultArguments(), DEFAULTARGUMENTS_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getNonOverridableArguments(), NONOVERRIDABLEARGUMENTS_BINDING);
             protocolMarshaller.marshall(createJobRequest.getConnections(), CONNECTIONS_BINDING);
             protocolMarshaller.marshall(createJobRequest.getMaxRetries(), MAXRETRIES_BINDING);
             protocolMarshaller.marshall(createJobRequest.getAllocatedCapacity(), ALLOCATEDCAPACITY_BINDING);
