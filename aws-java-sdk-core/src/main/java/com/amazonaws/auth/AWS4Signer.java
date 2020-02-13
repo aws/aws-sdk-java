@@ -543,8 +543,12 @@ public class AWS4Signer extends AbstractAWSSigner implements
         // have to have it in the request by the time we sign.
 
         final URI endpoint = request.getEndpoint();
-        final StringBuilder hostHeaderBuilder = new StringBuilder(
-                endpoint.getHost());
+
+        if (endpoint.getHost() == null) {
+            throw new IllegalArgumentException("Request endpoint must have a valid hostname, but it did not: " + endpoint);
+        }
+
+        final StringBuilder hostHeaderBuilder = new StringBuilder(endpoint.getHost());
         if (SdkHttpUtils.isUsingNonDefaultPort(endpoint)) {
             hostHeaderBuilder.append(":").append(endpoint.getPort());
         }

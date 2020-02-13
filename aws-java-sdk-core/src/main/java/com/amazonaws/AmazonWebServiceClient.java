@@ -422,6 +422,9 @@ public abstract class AmazonWebServiceClient {
             throw new IllegalArgumentException(
                     "Endpoint is not set. Use setEndpoint to set an endpoint before performing any request.");
         }
+        if (uri.getHost() == null) {
+            throw new IllegalArgumentException("Endpoint does not contain a valid host name: " + uri);
+        }
         String service = getServiceNameIntern();
         String region = EndpointToRegion.guessRegionNameForEndpointWithDefault(uri.getHost(), getEndpointPrefix(), "us-east-1");
         return computeSignerByServiceRegion(

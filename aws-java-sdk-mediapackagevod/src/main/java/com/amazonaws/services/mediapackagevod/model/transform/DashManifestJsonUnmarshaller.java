@@ -48,6 +48,10 @@ public class DashManifestJsonUnmarshaller implements Unmarshaller<DashManifest, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("manifestLayout", targetDepth)) {
+                    context.nextToken();
+                    dashManifest.setManifestLayout(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("manifestName", targetDepth)) {
                     context.nextToken();
                     dashManifest.setManifestName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -1,3 +1,12 @@
+# __1.11.722__ __2020-02-13__
+## __AWS Elemental MediaPackage VOD__
+  - ### Features
+    - Adds support for DASH with multiple media presentation description periods triggered by presence of SCTE-35 ad markers in the manifest.Also adds optional configuration for DASH SegmentTemplateFormat to refer to segments by Number with Duration, Number with Timeline or Time with Timeline and compact the manifest by combining duplicate SegmentTemplate tags.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fixed a behavioral change in 1.11.709 where invalid regions would cause a NullPointerException instead of an IllegalArgumentException.
+
 # __1.11.721__ __2020-02-12__
 ## __AWS Directory Service__
   - ### Features

@@ -32,8 +32,12 @@ public class DashPackageMarshaller {
             .marshallLocationName("dashManifests").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
+    private static final MarshallingInfo<List> PERIODTRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("periodTriggers").build();
     private static final MarshallingInfo<Integer> SEGMENTDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentDurationSeconds").build();
+    private static final MarshallingInfo<String> SEGMENTTEMPLATEFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentTemplateFormat").build();
 
     private static final DashPackageMarshaller instance = new DashPackageMarshaller();
 
@@ -53,7 +57,9 @@ public class DashPackageMarshaller {
         try {
             protocolMarshaller.marshall(dashPackage.getDashManifests(), DASHMANIFESTS_BINDING);
             protocolMarshaller.marshall(dashPackage.getEncryption(), ENCRYPTION_BINDING);
+            protocolMarshaller.marshall(dashPackage.getPeriodTriggers(), PERIODTRIGGERS_BINDING);
             protocolMarshaller.marshall(dashPackage.getSegmentDurationSeconds(), SEGMENTDURATIONSECONDS_BINDING);
+            protocolMarshaller.marshall(dashPackage.getSegmentTemplateFormat(), SEGMENTTEMPLATEFORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
