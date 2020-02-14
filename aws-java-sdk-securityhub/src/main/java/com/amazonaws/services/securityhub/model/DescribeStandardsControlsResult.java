@@ -31,8 +31,7 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
     private java.util.List<StandardsControl> controls;
     /**
      * <p>
-     * If there are more compliance standards control remaining in the results, then this is the pagination token to use
-     * to request the next page of compliance standard controls.
+     * The pagination token to use to request the next page of results.
      * </p>
      */
     private String nextToken;
@@ -109,13 +108,11 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * If there are more compliance standards control remaining in the results, then this is the pagination token to use
-     * to request the next page of compliance standard controls.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        If there are more compliance standards control remaining in the results, then this is the pagination token
-     *        to use to request the next page of compliance standard controls.
+     *        The pagination token to use to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +121,10 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * If there are more compliance standards control remaining in the results, then this is the pagination token to use
-     * to request the next page of compliance standard controls.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
-     * @return If there are more compliance standards control remaining in the results, then this is the pagination
-     *         token to use to request the next page of compliance standard controls.
+     * @return The pagination token to use to request the next page of results.
      */
 
     public String getNextToken() {
@@ -138,13 +133,11 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * If there are more compliance standards control remaining in the results, then this is the pagination token to use
-     * to request the next page of compliance standard controls.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        If there are more compliance standards control remaining in the results, then this is the pagination token
-     *        to use to request the next page of compliance standard controls.
+     *        The pagination token to use to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

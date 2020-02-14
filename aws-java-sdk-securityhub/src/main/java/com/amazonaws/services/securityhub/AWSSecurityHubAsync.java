@@ -27,10 +27,10 @@ import com.amazonaws.services.securityhub.model.*;
  * <p>
  * <p>
  * Security Hub provides you with a comprehensive view of the security state of your AWS environment and resources. It
- * also provides you with the compliance status of your environment based on CIS AWS Foundations compliance checks.
- * Security Hub collects security data from AWS accounts, services, and integrated third-party products and helps you
- * analyze security trends in your environment to identify the highest priority security issues. For more information
- * about Security Hub, see the <i> <a
+ * also provides you with the compliance status of your environment based on controls from supported standards. Security
+ * Hub collects security data from AWS accounts, services, and integrated third-party products and helps you analyze
+ * security trends in your environment to identify the highest priority security issues. For more information about
+ * Security Hub, see the <i> <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
  * Guide</a> </i>.
  * </p>
@@ -41,9 +41,9 @@ import com.amazonaws.services.securityhub.model.*;
  * command for each Region to apply the change to.
  * </p>
  * <p>
- * For example, if your Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code> to add a member
- * account to Security Hub, the association of the member account with the master account is created only in the
- * <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
+ * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
+ * a member account to Security Hub, the association of the member account with the master account is created only in
+ * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
  * invitation was sent from.
  * </p>
  * <p>
@@ -52,19 +52,19 @@ import com.amazonaws.services.securityhub.model.*;
  * <ul>
  * <li>
  * <p>
- * <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6 requests per
- * second.
+ * <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5 requests
- * per second.
+ * <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * All other operations - <code>RateLimit</code> of 10 request per second. <code>BurstLimit</code> of 30 requests per
+ * All other operations - <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code> of 30 requests per
  * second.
  * </p>
  * </li>
@@ -120,8 +120,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards Supported in
-     * AWS Security Hub</a>.
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+     * Standards</a> section of the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchDisableStandardsRequest
@@ -138,8 +138,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards Supported in
-     * AWS Security Hub</a>.
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+     * Standards</a> section of the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchDisableStandardsRequest
@@ -157,15 +157,13 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Enables the standards specified by the provided <code>standardsArn</code>.
+     * Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the ARN for a standard, use
+     * the <code> <a>DescribeStandards</a> </code> operation.
      * </p>
      * <p>
-     * In this release, only CIS AWS Foundations standards are supported.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards Supported in
-     * AWS Security Hub</a>.
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+     * Standards</a> section of the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchEnableStandardsRequest
@@ -178,15 +176,13 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Enables the standards specified by the provided <code>standardsArn</code>.
+     * Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the ARN for a standard, use
+     * the <code> <a>DescribeStandards</a> </code> operation.
      * </p>
      * <p>
-     * In this release, only CIS AWS Foundations standards are supported.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards Supported in
-     * AWS Security Hub</a>.
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+     * Standards</a> section of the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchEnableStandardsRequest
@@ -323,13 +319,13 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
      * request, which is the master account. To successfully create a member, you must use this action from an account
-     * that already has Security Hub enabled. To enable Security Hub, you can use the <a>EnableSecurityHub</a>
-     * operation.
+     * that already has Security Hub enabled. To enable Security Hub, you can use the
+     * <code> <a>EnableSecurityHub</a> </code> operation.
      * </p>
      * <p>
      * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you must use the
-     * <a>InviteMembers</a> operation to invite the accounts to enable Security Hub and become member accounts in
-     * Security Hub.
+     * <code> <a>InviteMembers</a> </code> operation to invite the accounts to enable Security Hub and become member
+     * accounts in Security Hub.
      * </p>
      * <p>
      * If the account owner accepts the invitation, the account becomes a member account in Security Hub, and a
@@ -338,8 +334,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * accounts.
      * </p>
      * <p>
-     * To remove the association between the master and member accounts, use the <a>DisassociateFromMasterAccount</a> or
-     * <a>DisassociateMembers</a> operation.
+     * To remove the association between the master and member accounts, use the
+     * <code> <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a> </code> operation.
      * </p>
      * 
      * @param createMembersRequest
@@ -354,13 +350,13 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
      * request, which is the master account. To successfully create a member, you must use this action from an account
-     * that already has Security Hub enabled. To enable Security Hub, you can use the <a>EnableSecurityHub</a>
-     * operation.
+     * that already has Security Hub enabled. To enable Security Hub, you can use the
+     * <code> <a>EnableSecurityHub</a> </code> operation.
      * </p>
      * <p>
      * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you must use the
-     * <a>InviteMembers</a> operation to invite the accounts to enable Security Hub and become member accounts in
-     * Security Hub.
+     * <code> <a>InviteMembers</a> </code> operation to invite the accounts to enable Security Hub and become member
+     * accounts in Security Hub.
      * </p>
      * <p>
      * If the account owner accepts the invitation, the account becomes a member account in Security Hub, and a
@@ -369,8 +365,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * accounts.
      * </p>
      * <p>
-     * To remove the association between the master and member accounts, use the <a>DisassociateFromMasterAccount</a> or
-     * <a>DisassociateMembers</a> operation.
+     * To remove the association between the master and member accounts, use the
+     * <code> <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a> </code> operation.
      * </p>
      * 
      * @param createMembersRequest
@@ -648,6 +644,43 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
+     * Returns a list of the available standards in Security Hub.
+     * </p>
+     * <p>
+     * For each standard, the results include the standard ARN, the name, and a description.
+     * </p>
+     * 
+     * @param describeStandardsRequest
+     * @return A Java Future containing the result of the DescribeStandards operation returned by the service.
+     * @sample AWSSecurityHubAsync.DescribeStandards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStandardsResult> describeStandardsAsync(DescribeStandardsRequest describeStandardsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the available standards in Security Hub.
+     * </p>
+     * <p>
+     * For each standard, the results include the standard ARN, the name, and a description.
+     * </p>
+     * 
+     * @param describeStandardsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStandards operation returned by the service.
+     * @sample AWSSecurityHubAsyncHandler.DescribeStandards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStandardsResult> describeStandardsAsync(DescribeStandardsRequest describeStandardsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStandardsRequest, DescribeStandardsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of compliance standards controls.
      * </p>
      * <p>
@@ -897,16 +930,19 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * Enables Security Hub for your account in the current Region or the Region you specify in the request.
      * </p>
      * <p>
-     * Enabling Security Hub also enables the CIS AWS Foundations standard.
-     * </p>
-     * <p>
      * When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings from AWS
      * Config, Amazon GuardDuty, Amazon Inspector, and Amazon Macie.
      * </p>
      * <p>
+     * When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also automatically enable
+     * the CIS AWS Foundations standard. You do not enable the Payment Card Industry Data Security Standard (PCI DSS)
+     * standard. To enable a standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
+     * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.
+     * </p>
+     * <p>
      * To learn more, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting Up AWS
-     * Security Hub</a>.
+     * Security Hub</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param enableSecurityHubRequest
@@ -922,16 +958,19 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * Enables Security Hub for your account in the current Region or the Region you specify in the request.
      * </p>
      * <p>
-     * Enabling Security Hub also enables the CIS AWS Foundations standard.
-     * </p>
-     * <p>
      * When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings from AWS
      * Config, Amazon GuardDuty, Amazon Inspector, and Amazon Macie.
      * </p>
      * <p>
+     * When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also automatically enable
+     * the CIS AWS Foundations standard. You do not enable the Payment Card Industry Data Security Standard (PCI DSS)
+     * standard. To enable a standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
+     * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.
+     * </p>
+     * <p>
      * To learn more, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting Up AWS
-     * Security Hub</a>.
+     * Security Hub</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param enableSecurityHubRequest
@@ -1172,8 +1211,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * sent from.
      * </p>
      * <p>
-     * Before you can use this action to invite a member, you must first use the <a>CreateMembers</a> action to create
-     * the member account in Security Hub.
+     * Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a> </code>
+     * action to create the member account in Security Hub.
      * </p>
      * <p>
      * When the account owner accepts the invitation to become a member account and enables Security Hub, the master
@@ -1194,8 +1233,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * sent from.
      * </p>
      * <p>
-     * Before you can use this action to invite a member, you must first use the <a>CreateMembers</a> action to create
-     * the member account in Security Hub.
+     * Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a> </code>
+     * action to create the member account in Security Hub.
      * </p>
      * <p>
      * When the account owner accepts the invitation to become a member account and enables Security Hub, the master

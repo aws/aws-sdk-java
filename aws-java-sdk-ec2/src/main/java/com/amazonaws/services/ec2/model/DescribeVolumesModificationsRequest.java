@@ -34,8 +34,10 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> volumeIds;
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
-     * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
+     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -127,14 +129,17 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
-     * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
+     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      * </p>
      * 
-     * @return The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     *         <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
-     *         <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
-     *         <code>start-time</code>.
+     * @return The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     *         <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     *         <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     *         <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>
+     *         .
      */
 
     public java.util.List<Filter> getFilters() {
@@ -146,15 +151,17 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
-     * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
+     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      * </p>
      * 
      * @param filters
-     *        The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     *        <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
-     *        <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
-     *        <code>start-time</code>.
+     *        The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     *        <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     *        <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     *        <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -168,8 +175,10 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
-     * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
+     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -178,10 +187,10 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     *        <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
-     *        <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
-     *        <code>start-time</code>.
+     *        The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     *        <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     *        <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     *        <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,15 +206,17 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
-     * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
+     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      * </p>
      * 
      * @param filters
-     *        The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     *        <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
-     *        <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
-     *        <code>start-time</code>.
+     *        The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
+     *        <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
+     *        <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
+     *        <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

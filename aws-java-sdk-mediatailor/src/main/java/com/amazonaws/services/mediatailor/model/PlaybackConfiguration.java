@@ -106,6 +106,12 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private String transcodeProfileName;
     /**
      * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     */
+    private Integer personalizationThresholdSeconds;
+    /**
+     * <p>
      * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      */
@@ -637,6 +643,46 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     */
+
+    public void setPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        this.personalizationThresholdSeconds = personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @return The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     */
+
+    public Integer getPersonalizationThresholdSeconds() {
+        return this.personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration withPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        setPersonalizationThresholdSeconds(personalizationThresholdSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
@@ -712,6 +758,8 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTranscodeProfileName() != null)
             sb.append("TranscodeProfileName: ").append(getTranscodeProfileName()).append(",");
+        if (getPersonalizationThresholdSeconds() != null)
+            sb.append("PersonalizationThresholdSeconds: ").append(getPersonalizationThresholdSeconds()).append(",");
         if (getVideoContentSourceUrl() != null)
             sb.append("VideoContentSourceUrl: ").append(getVideoContentSourceUrl());
         sb.append("}");
@@ -773,6 +821,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getTranscodeProfileName() != null && other.getTranscodeProfileName().equals(this.getTranscodeProfileName()) == false)
             return false;
+        if (other.getPersonalizationThresholdSeconds() == null ^ this.getPersonalizationThresholdSeconds() == null)
+            return false;
+        if (other.getPersonalizationThresholdSeconds() != null
+                && other.getPersonalizationThresholdSeconds().equals(this.getPersonalizationThresholdSeconds()) == false)
+            return false;
         if (other.getVideoContentSourceUrl() == null ^ this.getVideoContentSourceUrl() == null)
             return false;
         if (other.getVideoContentSourceUrl() != null && other.getVideoContentSourceUrl().equals(this.getVideoContentSourceUrl()) == false)
@@ -796,6 +849,7 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getSlateAdUrl() == null) ? 0 : getSlateAdUrl().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTranscodeProfileName() == null) ? 0 : getTranscodeProfileName().hashCode());
+        hashCode = prime * hashCode + ((getPersonalizationThresholdSeconds() == null) ? 0 : getPersonalizationThresholdSeconds().hashCode());
         hashCode = prime * hashCode + ((getVideoContentSourceUrl() == null) ? 0 : getVideoContentSourceUrl().hashCode());
         return hashCode;
     }

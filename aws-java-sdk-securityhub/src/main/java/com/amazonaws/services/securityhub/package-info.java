@@ -14,10 +14,10 @@
 /**
  * <p>
  * Security Hub provides you with a comprehensive view of the security state of your AWS environment and resources. It
- * also provides you with the compliance status of your environment based on CIS AWS Foundations compliance checks.
- * Security Hub collects security data from AWS accounts, services, and integrated third-party products and helps you
- * analyze security trends in your environment to identify the highest priority security issues. For more information
- * about Security Hub, see the <i> <a
+ * also provides you with the compliance status of your environment based on controls from supported standards. Security
+ * Hub collects security data from AWS accounts, services, and integrated third-party products and helps you analyze
+ * security trends in your environment to identify the highest priority security issues. For more information about
+ * Security Hub, see the <i> <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
  * Guide</a> </i>.
  * </p>
@@ -28,9 +28,9 @@
  * command for each Region to apply the change to.
  * </p>
  * <p>
- * For example, if your Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code> to add a member
- * account to Security Hub, the association of the member account with the master account is created only in the
- * <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
+ * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
+ * a member account to Security Hub, the association of the member account with the master account is created only in
+ * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
  * invitation was sent from.
  * </p>
  * <p>
@@ -39,19 +39,19 @@
  * <ul>
  * <li>
  * <p>
- * <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6 requests per
- * second.
+ * <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>UpdateFindings</code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5 requests
- * per second.
+ * <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * All other operations - <code>RateLimit</code> of 10 request per second. <code>BurstLimit</code> of 30 requests per
+ * All other operations - <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code> of 30 requests per
  * second.
  * </p>
  * </li>

@@ -61,6 +61,12 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
     private String name;
     /**
      * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     */
+    private Integer personalizationThresholdSeconds;
+    /**
+     * <p>
      * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
      * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated
@@ -315,6 +321,46 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     */
+
+    public void setPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        this.personalizationThresholdSeconds = personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @return The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     */
+
+    public Integer getPersonalizationThresholdSeconds() {
+        return this.personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationRequest withPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        setPersonalizationThresholdSeconds(personalizationThresholdSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
      * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated
@@ -552,6 +598,8 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
             sb.append("LivePreRollConfiguration: ").append(getLivePreRollConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPersonalizationThresholdSeconds() != null)
+            sb.append("PersonalizationThresholdSeconds: ").append(getPersonalizationThresholdSeconds()).append(",");
         if (getSlateAdUrl() != null)
             sb.append("SlateAdUrl: ").append(getSlateAdUrl()).append(",");
         if (getTags() != null)
@@ -594,6 +642,11 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPersonalizationThresholdSeconds() == null ^ this.getPersonalizationThresholdSeconds() == null)
+            return false;
+        if (other.getPersonalizationThresholdSeconds() != null
+                && other.getPersonalizationThresholdSeconds().equals(this.getPersonalizationThresholdSeconds()) == false)
+            return false;
         if (other.getSlateAdUrl() == null ^ this.getSlateAdUrl() == null)
             return false;
         if (other.getSlateAdUrl() != null && other.getSlateAdUrl().equals(this.getSlateAdUrl()) == false)
@@ -623,6 +676,7 @@ public class PutPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPersonalizationThresholdSeconds() == null) ? 0 : getPersonalizationThresholdSeconds().hashCode());
         hashCode = prime * hashCode + ((getSlateAdUrl() == null) ? 0 : getSlateAdUrl().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTranscodeProfileName() == null) ? 0 : getTranscodeProfileName().hashCode());

@@ -46,6 +46,12 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     * </p>
+     */
+    private java.util.List<String> healthCheckIds;
 
     /**
      * <p>
@@ -168,6 +174,76 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     * </p>
+     * 
+     * @return The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     */
+
+    public java.util.List<String> getHealthCheckIds() {
+        return healthCheckIds;
+    }
+
+    /**
+     * <p>
+     * The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     * </p>
+     * 
+     * @param healthCheckIds
+     *        The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     */
+
+    public void setHealthCheckIds(java.util.Collection<String> healthCheckIds) {
+        if (healthCheckIds == null) {
+            this.healthCheckIds = null;
+            return;
+        }
+
+        this.healthCheckIds = new java.util.ArrayList<String>(healthCheckIds);
+    }
+
+    /**
+     * <p>
+     * The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHealthCheckIds(java.util.Collection)} or {@link #withHealthCheckIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param healthCheckIds
+     *        The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Protection withHealthCheckIds(String... healthCheckIds) {
+        if (this.healthCheckIds == null) {
+            setHealthCheckIds(new java.util.ArrayList<String>(healthCheckIds.length));
+        }
+        for (String ele : healthCheckIds) {
+            this.healthCheckIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     * </p>
+     * 
+     * @param healthCheckIds
+     *        The unique identifier (ID) for the Route 53 health check that's associated with the protection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Protection withHealthCheckIds(java.util.Collection<String> healthCheckIds) {
+        setHealthCheckIds(healthCheckIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +260,9 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: ").append(getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getHealthCheckIds() != null)
+            sb.append("HealthCheckIds: ").append(getHealthCheckIds());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +289,10 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getHealthCheckIds() == null ^ this.getHealthCheckIds() == null)
+            return false;
+        if (other.getHealthCheckIds() != null && other.getHealthCheckIds().equals(this.getHealthCheckIds()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +304,7 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckIds() == null) ? 0 : getHealthCheckIds().hashCode());
         return hashCode;
     }
 

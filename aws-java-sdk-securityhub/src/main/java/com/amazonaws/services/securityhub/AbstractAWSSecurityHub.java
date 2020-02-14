@@ -103,6 +103,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public DescribeStandardsResult describeStandards(DescribeStandardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeStandardsControlsResult describeStandardsControls(DescribeStandardsControlsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

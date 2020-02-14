@@ -488,7 +488,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported
-     * standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      */
     private java.util.List<StringFilter> complianceStatus;
@@ -5805,11 +5805,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported
-     * standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      * 
      * @return Exclusive to findings that are generated as the result of a check run against a specific rule in a
-     *         supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     *         supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      */
 
     public java.util.List<StringFilter> getComplianceStatus() {
@@ -5819,12 +5819,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported
-     * standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      * 
      * @param complianceStatus
      *        Exclusive to findings that are generated as the result of a check run against a specific rule in a
-     *        supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     *        supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      */
 
     public void setComplianceStatus(java.util.Collection<StringFilter> complianceStatus) {
@@ -5839,7 +5839,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported
-     * standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -5849,7 +5849,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * 
      * @param complianceStatus
      *        Exclusive to findings that are generated as the result of a check run against a specific rule in a
-     *        supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     *        supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5866,12 +5866,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported
-     * standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      * 
      * @param complianceStatus
      *        Exclusive to findings that are generated as the result of a check run against a specific rule in a
-     *        supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     *        supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

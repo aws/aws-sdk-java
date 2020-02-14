@@ -74,7 +74,7 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
     private String description;
     /**
      * <p>
-     * A link to remediation information for the control in the Security Hub user documentation
+     * A link to remediation information for the control in the Security Hub user documentation.
      * </p>
      */
     private String remediationUrl;
@@ -88,6 +88,12 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String severityRating;
+    /**
+     * <p>
+     * The list of requirements that are related to this control.
+     * </p>
+     */
+    private java.util.List<String> relatedRequirements;
 
     /**
      * <p>
@@ -404,11 +410,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A link to remediation information for the control in the Security Hub user documentation
+     * A link to remediation information for the control in the Security Hub user documentation.
      * </p>
      * 
      * @param remediationUrl
-     *        A link to remediation information for the control in the Security Hub user documentation
+     *        A link to remediation information for the control in the Security Hub user documentation.
      */
 
     public void setRemediationUrl(String remediationUrl) {
@@ -417,10 +423,10 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A link to remediation information for the control in the Security Hub user documentation
+     * A link to remediation information for the control in the Security Hub user documentation.
      * </p>
      * 
-     * @return A link to remediation information for the control in the Security Hub user documentation
+     * @return A link to remediation information for the control in the Security Hub user documentation.
      */
 
     public String getRemediationUrl() {
@@ -429,11 +435,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A link to remediation information for the control in the Security Hub user documentation
+     * A link to remediation information for the control in the Security Hub user documentation.
      * </p>
      * 
      * @param remediationUrl
-     *        A link to remediation information for the control in the Security Hub user documentation
+     *        A link to remediation information for the control in the Security Hub user documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,6 +536,76 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The list of requirements that are related to this control.
+     * </p>
+     * 
+     * @return The list of requirements that are related to this control.
+     */
+
+    public java.util.List<String> getRelatedRequirements() {
+        return relatedRequirements;
+    }
+
+    /**
+     * <p>
+     * The list of requirements that are related to this control.
+     * </p>
+     * 
+     * @param relatedRequirements
+     *        The list of requirements that are related to this control.
+     */
+
+    public void setRelatedRequirements(java.util.Collection<String> relatedRequirements) {
+        if (relatedRequirements == null) {
+            this.relatedRequirements = null;
+            return;
+        }
+
+        this.relatedRequirements = new java.util.ArrayList<String>(relatedRequirements);
+    }
+
+    /**
+     * <p>
+     * The list of requirements that are related to this control.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRelatedRequirements(java.util.Collection)} or {@link #withRelatedRequirements(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param relatedRequirements
+     *        The list of requirements that are related to this control.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StandardsControl withRelatedRequirements(String... relatedRequirements) {
+        if (this.relatedRequirements == null) {
+            setRelatedRequirements(new java.util.ArrayList<String>(relatedRequirements.length));
+        }
+        for (String ele : relatedRequirements) {
+            this.relatedRequirements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of requirements that are related to this control.
+     * </p>
+     * 
+     * @param relatedRequirements
+     *        The list of requirements that are related to this control.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StandardsControl withRelatedRequirements(java.util.Collection<String> relatedRequirements) {
+        setRelatedRequirements(relatedRequirements);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -558,7 +634,9 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
         if (getRemediationUrl() != null)
             sb.append("RemediationUrl: ").append(getRemediationUrl()).append(",");
         if (getSeverityRating() != null)
-            sb.append("SeverityRating: ").append(getSeverityRating());
+            sb.append("SeverityRating: ").append(getSeverityRating()).append(",");
+        if (getRelatedRequirements() != null)
+            sb.append("RelatedRequirements: ").append(getRelatedRequirements());
         sb.append("}");
         return sb.toString();
     }
@@ -609,6 +687,10 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSeverityRating() != null && other.getSeverityRating().equals(this.getSeverityRating()) == false)
             return false;
+        if (other.getRelatedRequirements() == null ^ this.getRelatedRequirements() == null)
+            return false;
+        if (other.getRelatedRequirements() != null && other.getRelatedRequirements().equals(this.getRelatedRequirements()) == false)
+            return false;
         return true;
     }
 
@@ -626,6 +708,7 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRemediationUrl() == null) ? 0 : getRemediationUrl().hashCode());
         hashCode = prime * hashCode + ((getSeverityRating() == null) ? 0 : getSeverityRating().hashCode());
+        hashCode = prime * hashCode + ((getRelatedRequirements() == null) ? 0 : getRelatedRequirements().hashCode());
         return hashCode;
     }
 

@@ -214,7 +214,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This data type is exclusive to findings that are generated as the result of a check run against a specific rule
-     * in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      */
     private Compliance compliance;
@@ -1559,13 +1559,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This data type is exclusive to findings that are generated as the result of a check run against a specific rule
-     * in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      * 
      * @param compliance
      *        This data type is exclusive to findings that are generated as the result of a check run against a specific
-     *        rule in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding
-     *        details.
+     *        rule in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      */
 
     public void setCompliance(Compliance compliance) {
@@ -1575,12 +1574,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This data type is exclusive to findings that are generated as the result of a check run against a specific rule
-     * in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      * 
      * @return This data type is exclusive to findings that are generated as the result of a check run against a
-     *         specific rule in a supported standard (for example, CIS AWS Foundations). Contains compliance-related
-     *         finding details.
+     *         specific rule in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding
+     *         details.
      */
 
     public Compliance getCompliance() {
@@ -1590,13 +1589,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * This data type is exclusive to findings that are generated as the result of a check run against a specific rule
-     * in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding details.
+     * in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * </p>
      * 
      * @param compliance
      *        This data type is exclusive to findings that are generated as the result of a check run against a specific
-     *        rule in a supported standard (for example, CIS AWS Foundations). Contains compliance-related finding
-     *        details.
+     *        rule in a supported standard, such as CIS AWS Foundations. Contains compliance-related finding details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

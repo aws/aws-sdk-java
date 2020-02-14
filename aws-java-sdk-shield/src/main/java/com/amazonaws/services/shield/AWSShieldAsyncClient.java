@@ -314,6 +314,39 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateHealthCheckResult> associateHealthCheckAsync(AssociateHealthCheckRequest request) {
+
+        return associateHealthCheckAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHealthCheckResult> associateHealthCheckAsync(final AssociateHealthCheckRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateHealthCheckRequest, AssociateHealthCheckResult> asyncHandler) {
+        final AssociateHealthCheckRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateHealthCheckResult>() {
+            @Override
+            public AssociateHealthCheckResult call() throws Exception {
+                AssociateHealthCheckResult result = null;
+
+                try {
+                    result = executeAssociateHealthCheck(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest request) {
 
         return createProtectionAsync(request, null);
@@ -665,6 +698,39 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
 
                 try {
                     result = executeDisassociateDRTRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateHealthCheckResult> disassociateHealthCheckAsync(DisassociateHealthCheckRequest request) {
+
+        return disassociateHealthCheckAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateHealthCheckResult> disassociateHealthCheckAsync(final DisassociateHealthCheckRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateHealthCheckRequest, DisassociateHealthCheckResult> asyncHandler) {
+        final DisassociateHealthCheckRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateHealthCheckResult>() {
+            @Override
+            public DisassociateHealthCheckResult call() throws Exception {
+                DisassociateHealthCheckResult result = null;
+
+                try {
+                    result = executeDisassociateHealthCheck(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

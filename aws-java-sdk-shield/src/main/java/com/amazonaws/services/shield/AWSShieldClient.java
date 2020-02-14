@@ -349,9 +349,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
-     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
-     *         the user did not have the appropriate permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
+     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
+     *         permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
@@ -454,9 +454,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
-     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
-     *         the user did not have the appropriate permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
+     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
+     *         permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
@@ -500,6 +500,85 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
             HttpResponseHandler<AmazonWebServiceResponse<AssociateDRTRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateDRTRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds health-based detection to the Shield Advanced protection for a resource. Shield Advanced health-based
+     * detection uses the health of your AWS resource to improve responsiveness and accuracy in attack detection and
+     * mitigation.
+     * </p>
+     * <p>
+     * You define the health check in Route 53 and then associate it with your Shield Advanced protection. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option"
+     * >Shield Advanced Health-Based Detection</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.
+     * </p>
+     * 
+     * @param associateHealthCheckRequest
+     * @return Result of the AssociateHealthCheck operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws LimitsExceededException
+     *         Exception that indicates that the operation would exceed a limit.</p>
+     *         <p>
+     *         <code>Type</code> is the type of limit that would be exceeded.
+     *         </p>
+     *         <p>
+     *         <code>Limit</code> is the threshold that would be exceeded.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @sample AWSShield.AssociateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateHealthCheckResult associateHealthCheck(AssociateHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final AssociateHealthCheckResult executeAssociateHealthCheck(AssociateHealthCheckRequest associateHealthCheckRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateHealthCheckRequest> request = null;
+        Response<AssociateHealthCheckResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateHealthCheckRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateHealthCheckRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateHealthCheck");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateHealthCheckResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateHealthCheckResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1113,9 +1192,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws NoAssociatedRoleException
      *         The ARN of the role that you specifed does not exist.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
-     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
-     *         the user did not have the appropriate permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
+     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
+     *         permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
@@ -1231,6 +1310,80 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateDRTRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateDRTRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes health-based detection from the Shield Advanced protection for a resource. Shield Advanced health-based
+     * detection uses the health of your AWS resource to improve responsiveness and accuracy in attack detection and
+     * mitigation.
+     * </p>
+     * <p>
+     * You define the health check in Route 53 and then associate or disassociate it with your Shield Advanced
+     * protection. For more information, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option"
+     * >Shield Advanced Health-Based Detection</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.
+     * </p>
+     * 
+     * @param disassociateHealthCheckRequest
+     * @return Result of the DisassociateHealthCheck operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @sample AWSShield.DisassociateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisassociateHealthCheckResult disassociateHealthCheck(DisassociateHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateHealthCheckResult executeDisassociateHealthCheck(DisassociateHealthCheckRequest disassociateHealthCheckRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateHealthCheckRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateHealthCheckRequest> request = null;
+        Response<DisassociateHealthCheckResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateHealthCheckRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateHealthCheckRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateHealthCheck");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateHealthCheckResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateHealthCheckResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

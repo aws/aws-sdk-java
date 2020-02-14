@@ -72,6 +72,10 @@ public class PutPlaybackConfigurationResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     putPlaybackConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PersonalizationThresholdSeconds", targetDepth)) {
+                    context.nextToken();
+                    putPlaybackConfigurationResult.setPersonalizationThresholdSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("PlaybackConfigurationArn", targetDepth)) {
                     context.nextToken();
                     putPlaybackConfigurationResult.setPlaybackConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));

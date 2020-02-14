@@ -126,9 +126,9 @@ public interface AWSShield {
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
-     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
-     *         the user did not have the appropriate permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
+     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
+     *         permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
@@ -190,9 +190,9 @@ public interface AWSShield {
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
-     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
-     *         the user did not have the appropriate permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
+     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
+     *         permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
@@ -205,6 +205,45 @@ public interface AWSShield {
      *      Documentation</a>
      */
     AssociateDRTRoleResult associateDRTRole(AssociateDRTRoleRequest associateDRTRoleRequest);
+
+    /**
+     * <p>
+     * Adds health-based detection to the Shield Advanced protection for a resource. Shield Advanced health-based
+     * detection uses the health of your AWS resource to improve responsiveness and accuracy in attack detection and
+     * mitigation.
+     * </p>
+     * <p>
+     * You define the health check in Route 53 and then associate it with your Shield Advanced protection. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option"
+     * >Shield Advanced Health-Based Detection</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.
+     * </p>
+     * 
+     * @param associateHealthCheckRequest
+     * @return Result of the AssociateHealthCheck operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws LimitsExceededException
+     *         Exception that indicates that the operation would exceed a limit.</p>
+     *         <p>
+     *         <code>Type</code> is the type of limit that would be exceeded.
+     *         </p>
+     *         <p>
+     *         <code>Limit</code> is the threshold that would be exceeded.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @sample AWSShield.AssociateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AssociateHealthCheckResult associateHealthCheck(AssociateHealthCheckRequest associateHealthCheckRequest);
 
     /**
      * <p>
@@ -446,9 +485,9 @@ public interface AWSShield {
      * @throws NoAssociatedRoleException
      *         The ARN of the role that you specifed does not exist.
      * @throws AccessDeniedForDependencyException
-     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
-     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
-     *         the user did not have the appropriate permissions. For more information, see <a
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting the request must
+     *         have the <code>iam:PassRole</code> permission. This error indicates the user did not have the appropriate
+     *         permissions. For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
      *         Permissions to Pass a Role to an AWS Service</a>.
      * @throws OptimisticLockException
@@ -491,6 +530,38 @@ public interface AWSShield {
      *      Documentation</a>
      */
     DisassociateDRTRoleResult disassociateDRTRole(DisassociateDRTRoleRequest disassociateDRTRoleRequest);
+
+    /**
+     * <p>
+     * Removes health-based detection from the Shield Advanced protection for a resource. Shield Advanced health-based
+     * detection uses the health of your AWS resource to improve responsiveness and accuracy in attack detection and
+     * mitigation.
+     * </p>
+     * <p>
+     * You define the health check in Route 53 and then associate or disassociate it with your Shield Advanced
+     * protection. For more information, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option"
+     * >Shield Advanced Health-Based Detection</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.
+     * </p>
+     * 
+     * @param disassociateHealthCheckRequest
+     * @return Result of the DisassociateHealthCheck operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @sample AWSShield.DisassociateHealthCheck
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisassociateHealthCheckResult disassociateHealthCheck(DisassociateHealthCheckRequest disassociateHealthCheckRequest);
 
     /**
      * <p>

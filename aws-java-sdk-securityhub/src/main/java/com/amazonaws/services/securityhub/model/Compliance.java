@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported standard
- * (for example, CIS AWS Foundations). Contains compliance-related finding details.
+ * Exclusive to findings that are generated as the result of a check run against a specific rule in a supported
+ * standard, such as CIS AWS Foundations. Contains compliance-related finding details.
  * </p>
  * <p>
  * Values include the following:

@@ -43,7 +43,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
     private Boolean force;
     /**
      * <p>
-     * The ID of the instance.
+     * The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.
      * </p>
      */
     private String instanceId;
@@ -198,11 +198,12 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the instance.
+     * The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance
+     *        ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -211,10 +212,11 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the instance.
+     * The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.
      * </p>
      * 
-     * @return The ID of the instance.
+     * @return The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance
+     *         ID.
      */
 
     public String getInstanceId() {
@@ -223,11 +225,12 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the instance.
+     * The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The ID of the instance. If you are detaching a Multi-Attach enabled volume, you must specify an instance
+     *        ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -74,6 +74,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> |
+     * <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast
      * snapshot restore (<code>true</code> | <code>false</code>).
      * </p>
@@ -218,6 +224,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> |
+     * <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast
      * snapshot restore (<code>true</code> | <code>false</code>).
      * </p>
@@ -309,6 +321,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <p>
      *         <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> |
      *         <code>false</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (
+     *         <code>true</code> | <code>false</code>)
      *         </p>
      *         </li>
      *         <li>
@@ -417,6 +435,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> |
+     * <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast
      * snapshot restore (<code>true</code> | <code>false</code>).
      * </p>
@@ -509,6 +533,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
      *        )
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (
+     *        <code>true</code> | <code>false</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -619,6 +649,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> |
+     * <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast
      * snapshot restore (<code>true</code> | <code>false</code>).
      * </p>
@@ -716,6 +752,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
      *        )
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (
+     *        <code>true</code> | <code>false</code>)
      *        </p>
      *        </li>
      *        <li>
@@ -828,6 +870,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (<code>true</code> |
+     * <code>false</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>fast-restored</code> - Indicates whether the volume was created from a snapshot that is enabled for fast
      * snapshot restore (<code>true</code> | <code>false</code>).
      * </p>
@@ -920,6 +968,12 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        <code>encrypted</code> - Indicates whether the volume is encrypted (<code>true</code> | <code>false</code>
      *        )
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>multi-attach-enabled</code> - Indicates whether the volume is enabled for Multi-Attach (
+     *        <code>true</code> | <code>false</code>)
      *        </p>
      *        </li>
      *        <li>
