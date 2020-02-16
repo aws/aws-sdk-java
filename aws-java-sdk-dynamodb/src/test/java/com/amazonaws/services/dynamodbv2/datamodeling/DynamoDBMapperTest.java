@@ -56,7 +56,7 @@ public class DynamoDBMapperTest {
 
         // create a dummy request
         TransactionWriteRequest deleteStubItemRequest = new TransactionWriteRequest();
-        deleteStubItemRequest.addDelete(createDummyVersionedItem());
+        deleteStubItemRequest.addDelete(createStubVersionedItem());
 
         // send the dummy request to the sut
         sut.transactionWrite(deleteStubItemRequest, DynamoDBMapperConfig.builder()
@@ -76,10 +76,10 @@ public class DynamoDBMapperTest {
                                                 .getConditionExpression();
     }
 
-    private StubVersionedItem createDummyVersionedItem() {
+    private StubVersionedItem createStubVersionedItem() {
         StubVersionedItem stubVersionedItem = new StubVersionedItem();
 
-        stubVersionedItem.setDummyHashKey("Dummy");
+        stubVersionedItem.setHashKey("Dummy");
 
         return stubVersionedItem;
     }
@@ -88,17 +88,17 @@ public class DynamoDBMapperTest {
 @DynamoDBTable(tableName = "StubTableName")
 class StubVersionedItem {
     @DynamoDBHashKey(attributeName = "StubTableHashKey")
-    private String dummyHashKey;
+    private String hashKey;
 
     @DynamoDBVersionAttribute
     private Long version;
 
-    public String getDummyHashKey() {
-        return dummyHashKey;
+    public String getHashKey() {
+        return hashKey;
     }
 
-    public void setDummyHashKey(String dummyHashKey) {
-        this.dummyHashKey = dummyHashKey;
+    public void setHashKey(String dummyHashKey) {
+        this.hashKey = dummyHashKey;
     }
 
     public Long getVersion() {
