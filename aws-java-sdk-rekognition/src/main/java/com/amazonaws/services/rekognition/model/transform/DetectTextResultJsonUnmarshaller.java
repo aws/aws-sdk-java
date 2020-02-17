@@ -52,6 +52,10 @@ public class DetectTextResultJsonUnmarshaller implements Unmarshaller<DetectText
                     context.nextToken();
                     detectTextResult.setTextDetections(new ListUnmarshaller<TextDetection>(TextDetectionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("TextModelVersion", targetDepth)) {
+                    context.nextToken();
+                    detectTextResult.setTextModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

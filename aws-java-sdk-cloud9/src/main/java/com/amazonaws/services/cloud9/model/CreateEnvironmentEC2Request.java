@@ -76,6 +76,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String ownerArn;
+    /**
+     * <p>
+     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -409,6 +415,76 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * </p>
+     * 
+     * @return An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentEC2Request withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * </p>
+     * 
+     * @param tags
+     *        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentEC2Request withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -433,7 +509,9 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         if (getAutomaticStopTimeMinutes() != null)
             sb.append("AutomaticStopTimeMinutes: ").append(getAutomaticStopTimeMinutes()).append(",");
         if (getOwnerArn() != null)
-            sb.append("OwnerArn: ").append(getOwnerArn());
+            sb.append("OwnerArn: ").append(getOwnerArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -476,6 +554,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getOwnerArn() != null && other.getOwnerArn().equals(this.getOwnerArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -491,6 +573,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticStopTimeMinutes() == null) ? 0 : getAutomaticStopTimeMinutes().hashCode());
         hashCode = prime * hashCode + ((getOwnerArn() == null) ? 0 : getOwnerArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

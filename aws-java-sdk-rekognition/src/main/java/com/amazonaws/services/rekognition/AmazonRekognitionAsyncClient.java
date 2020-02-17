@@ -1037,6 +1037,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetTextDetectionResult> getTextDetectionAsync(GetTextDetectionRequest request) {
+
+        return getTextDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTextDetectionResult> getTextDetectionAsync(final GetTextDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTextDetectionRequest, GetTextDetectionResult> asyncHandler) {
+        final GetTextDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTextDetectionResult>() {
+            @Override
+            public GetTextDetectionResult call() throws Exception {
+                GetTextDetectionResult result = null;
+
+                try {
+                    result = executeGetTextDetection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<IndexFacesResult> indexFacesAsync(IndexFacesRequest request) {
 
         return indexFacesAsync(request, null);
@@ -1516,6 +1549,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeStartStreamProcessor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartTextDetectionResult> startTextDetectionAsync(StartTextDetectionRequest request) {
+
+        return startTextDetectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartTextDetectionResult> startTextDetectionAsync(final StartTextDetectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartTextDetectionRequest, StartTextDetectionResult> asyncHandler) {
+        final StartTextDetectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartTextDetectionResult>() {
+            @Override
+            public StartTextDetectionResult call() throws Exception {
+                StartTextDetectionResult result = null;
+
+                try {
+                    result = executeStartTextDetection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -47,6 +47,19 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     private String vpcId;
     /**
      * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * to this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     * <p>
+     * You can have one IPv6 CIDR block association per network border group.
+     * </p>
+     */
+    private String ipv6CidrBlockNetworkBorderGroup;
+    /**
+     * <p>
      * The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
      * </p>
      */
@@ -60,19 +73,6 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
      * </p>
      */
     private String ipv6CidrBlock;
-    /**
-     * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
-     * to this location.
-     * </p>
-     * <p>
-     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
-     * </p>
-     * <p>
-     * You can have one IPv6 CIDR block association per network border group.
-     * </p>
-     */
-    private String ipv6CidrBlockNetworkBorderGroup;
 
     /**
      * <p>
@@ -216,6 +216,85 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * to this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     * <p>
+     * You can have one IPv6 CIDR block association per network border group.
+     * </p>
+     * 
+     * @param ipv6CidrBlockNetworkBorderGroup
+     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR
+     *        block to this location.</p>
+     *        <p>
+     *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     *        </p>
+     *        <p>
+     *        You can have one IPv6 CIDR block association per network border group.
+     */
+
+    public void setIpv6CidrBlockNetworkBorderGroup(String ipv6CidrBlockNetworkBorderGroup) {
+        this.ipv6CidrBlockNetworkBorderGroup = ipv6CidrBlockNetworkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * to this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     * <p>
+     * You can have one IPv6 CIDR block association per network border group.
+     * </p>
+     * 
+     * @return The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the
+     *         CiDR block to this location.</p>
+     *         <p>
+     *         You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     *         </p>
+     *         <p>
+     *         You can have one IPv6 CIDR block association per network border group.
+     */
+
+    public String getIpv6CidrBlockNetworkBorderGroup() {
+        return this.ipv6CidrBlockNetworkBorderGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * to this location.
+     * </p>
+     * <p>
+     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     * </p>
+     * <p>
+     * You can have one IPv6 CIDR block association per network border group.
+     * </p>
+     * 
+     * @param ipv6CidrBlockNetworkBorderGroup
+     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR
+     *        block to this location.</p>
+     *        <p>
+     *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
+     *        </p>
+     *        <p>
+     *        You can have one IPv6 CIDR block association per network border group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateVpcCidrBlockRequest withIpv6CidrBlockNetworkBorderGroup(String ipv6CidrBlockNetworkBorderGroup) {
+        setIpv6CidrBlockNetworkBorderGroup(ipv6CidrBlockNetworkBorderGroup);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.
      * </p>
      * 
@@ -313,85 +392,6 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
-     * to this location.
-     * </p>
-     * <p>
-     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
-     * </p>
-     * <p>
-     * You can have one IPv6 CIDR block association per network border group.
-     * </p>
-     * 
-     * @param ipv6CidrBlockNetworkBorderGroup
-     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR
-     *        block to this location.</p>
-     *        <p>
-     *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
-     *        </p>
-     *        <p>
-     *        You can have one IPv6 CIDR block association per network border group.
-     */
-
-    public void setIpv6CidrBlockNetworkBorderGroup(String ipv6CidrBlockNetworkBorderGroup) {
-        this.ipv6CidrBlockNetworkBorderGroup = ipv6CidrBlockNetworkBorderGroup;
-    }
-
-    /**
-     * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
-     * to this location.
-     * </p>
-     * <p>
-     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
-     * </p>
-     * <p>
-     * You can have one IPv6 CIDR block association per network border group.
-     * </p>
-     * 
-     * @return The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the
-     *         CiDR block to this location.</p>
-     *         <p>
-     *         You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
-     *         </p>
-     *         <p>
-     *         You can have one IPv6 CIDR block association per network border group.
-     */
-
-    public String getIpv6CidrBlockNetworkBorderGroup() {
-        return this.ipv6CidrBlockNetworkBorderGroup;
-    }
-
-    /**
-     * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
-     * to this location.
-     * </p>
-     * <p>
-     * You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
-     * </p>
-     * <p>
-     * You can have one IPv6 CIDR block association per network border group.
-     * </p>
-     * 
-     * @param ipv6CidrBlockNetworkBorderGroup
-     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR
-     *        block to this location.</p>
-     *        <p>
-     *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
-     *        </p>
-     *        <p>
-     *        You can have one IPv6 CIDR block association per network border group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateVpcCidrBlockRequest withIpv6CidrBlockNetworkBorderGroup(String ipv6CidrBlockNetworkBorderGroup) {
-        setIpv6CidrBlockNetworkBorderGroup(ipv6CidrBlockNetworkBorderGroup);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -420,12 +420,12 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
             sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getIpv6CidrBlockNetworkBorderGroup() != null)
+            sb.append("Ipv6CidrBlockNetworkBorderGroup: ").append(getIpv6CidrBlockNetworkBorderGroup()).append(",");
         if (getIpv6Pool() != null)
             sb.append("Ipv6Pool: ").append(getIpv6Pool()).append(",");
         if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
-        if (getIpv6CidrBlockNetworkBorderGroup() != null)
-            sb.append("Ipv6CidrBlockNetworkBorderGroup: ").append(getIpv6CidrBlockNetworkBorderGroup());
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock());
         sb.append("}");
         return sb.toString();
     }
@@ -452,6 +452,11 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getIpv6CidrBlockNetworkBorderGroup() == null ^ this.getIpv6CidrBlockNetworkBorderGroup() == null)
+            return false;
+        if (other.getIpv6CidrBlockNetworkBorderGroup() != null
+                && other.getIpv6CidrBlockNetworkBorderGroup().equals(this.getIpv6CidrBlockNetworkBorderGroup()) == false)
+            return false;
         if (other.getIpv6Pool() == null ^ this.getIpv6Pool() == null)
             return false;
         if (other.getIpv6Pool() != null && other.getIpv6Pool().equals(this.getIpv6Pool()) == false)
@@ -459,11 +464,6 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
         if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
             return false;
         if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
-            return false;
-        if (other.getIpv6CidrBlockNetworkBorderGroup() == null ^ this.getIpv6CidrBlockNetworkBorderGroup() == null)
-            return false;
-        if (other.getIpv6CidrBlockNetworkBorderGroup() != null
-                && other.getIpv6CidrBlockNetworkBorderGroup().equals(this.getIpv6CidrBlockNetworkBorderGroup()) == false)
             return false;
         return true;
     }
@@ -476,9 +476,9 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getAmazonProvidedIpv6CidrBlock() == null) ? 0 : getAmazonProvidedIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlockNetworkBorderGroup() == null) ? 0 : getIpv6CidrBlockNetworkBorderGroup().hashCode());
         hashCode = prime * hashCode + ((getIpv6Pool() == null) ? 0 : getIpv6Pool().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
-        hashCode = prime * hashCode + ((getIpv6CidrBlockNetworkBorderGroup() == null) ? 0 : getIpv6CidrBlockNetworkBorderGroup().hashCode());
         return hashCode;
     }
 

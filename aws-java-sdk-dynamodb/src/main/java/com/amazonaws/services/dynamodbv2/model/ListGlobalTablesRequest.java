@@ -33,7 +33,12 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
     private String exclusiveStartGlobalTableName;
     /**
      * <p>
-     * The maximum number of table names to return.
+     * The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.
+     * </p>
+     * <p>
+     * If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in
+     * a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.
      * </p>
      */
     private Integer limit;
@@ -86,11 +91,21 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of table names to return.
+     * The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.
+     * </p>
+     * <p>
+     * If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in
+     * a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.
      * </p>
      * 
      * @param limit
-     *        The maximum number of table names to return.
+     *        The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to
+     *        100.</p>
+     *        <p>
+     *        If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the
+     *        table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code>
+     *        to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.
      */
 
     public void setLimit(Integer limit) {
@@ -99,10 +114,21 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of table names to return.
+     * The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.
+     * </p>
+     * <p>
+     * If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in
+     * a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.
      * </p>
      * 
-     * @return The maximum number of table names to return.
+     * @return The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to
+     *         100.</p>
+     *         <p>
+     *         If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the
+     *         table names collected up to that point, with a table name in the
+     *         <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the
+     *         <code>ExclusiveStartGlobalTableName</code> parameter.
      */
 
     public Integer getLimit() {
@@ -111,11 +137,21 @@ public class ListGlobalTablesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of table names to return.
+     * The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.
+     * </p>
+     * <p>
+     * If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in
+     * a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.
      * </p>
      * 
      * @param limit
-     *        The maximum number of table names to return.
+     *        The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to
+     *        100.</p>
+     *        <p>
+     *        If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the
+     *        table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code>
+     *        to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RestoreTableToPointInTimeRequestMarshaller {
 
+    private static final MarshallingInfo<String> SOURCETABLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceTableArn").build();
     private static final MarshallingInfo<String> SOURCETABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceTableName").build();
     private static final MarshallingInfo<String> TARGETTABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -44,6 +46,8 @@ public class RestoreTableToPointInTimeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalSecondaryIndexOverride").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUTOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputOverride").build();
+    private static final MarshallingInfo<StructuredPojo> SSESPECIFICATIONOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SSESpecificationOverride").build();
 
     private static final RestoreTableToPointInTimeRequestMarshaller instance = new RestoreTableToPointInTimeRequestMarshaller();
 
@@ -61,6 +65,7 @@ public class RestoreTableToPointInTimeRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getSourceTableArn(), SOURCETABLEARN_BINDING);
             protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getSourceTableName(), SOURCETABLENAME_BINDING);
             protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getTargetTableName(), TARGETTABLENAME_BINDING);
             protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getUseLatestRestorableTime(), USELATESTRESTORABLETIME_BINDING);
@@ -69,6 +74,7 @@ public class RestoreTableToPointInTimeRequestMarshaller {
             protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getGlobalSecondaryIndexOverride(), GLOBALSECONDARYINDEXOVERRIDE_BINDING);
             protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getLocalSecondaryIndexOverride(), LOCALSECONDARYINDEXOVERRIDE_BINDING);
             protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getProvisionedThroughputOverride(), PROVISIONEDTHROUGHPUTOVERRIDE_BINDING);
+            protocolMarshaller.marshall(restoreTableToPointInTimeRequest.getSSESpecificationOverride(), SSESPECIFICATIONOVERRIDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

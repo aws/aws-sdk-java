@@ -34,7 +34,7 @@ public class FaceSearchSettings implements Serializable, Cloneable, StructuredPo
     private String collectionId;
     /**
      * <p>
-     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 70. 0
+     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 80. 0
      * is the lowest confidence. 100 is the highest confidence.
      * </p>
      */
@@ -82,13 +82,13 @@ public class FaceSearchSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 70. 0
+     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 80. 0
      * is the lowest confidence. 100 is the highest confidence.
      * </p>
      * 
      * @param faceMatchThreshold
      *        Minimum face match confidence score that must be met to return a result for a recognized face. Default is
-     *        70. 0 is the lowest confidence. 100 is the highest confidence.
+     *        80. 0 is the lowest confidence. 100 is the highest confidence.
      */
 
     public void setFaceMatchThreshold(Float faceMatchThreshold) {
@@ -97,12 +97,12 @@ public class FaceSearchSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 70. 0
+     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 80. 0
      * is the lowest confidence. 100 is the highest confidence.
      * </p>
      * 
      * @return Minimum face match confidence score that must be met to return a result for a recognized face. Default is
-     *         70. 0 is the lowest confidence. 100 is the highest confidence.
+     *         80. 0 is the lowest confidence. 100 is the highest confidence.
      */
 
     public Float getFaceMatchThreshold() {
@@ -111,13 +111,13 @@ public class FaceSearchSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 70. 0
+     * Minimum face match confidence score that must be met to return a result for a recognized face. Default is 80. 0
      * is the lowest confidence. 100 is the highest confidence.
      * </p>
      * 
      * @param faceMatchThreshold
      *        Minimum face match confidence score that must be met to return a result for a recognized face. Default is
-     *        70. 0 is the lowest confidence. 100 is the highest confidence.
+     *        80. 0 is the lowest confidence. 100 is the highest confidence.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

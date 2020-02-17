@@ -626,8 +626,8 @@ public interface AmazonRekognition {
      * </p>
      * <p>
      * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
-     * bucket. If you use the to call Amazon Rekognition operations, passing image bytes is not supported. The image
-     * must be either a PNG or JPEG formatted file.
+     * bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The
+     * image must be either a PNG or JPEG formatted file.
      * </p>
      * <note>
      * <p>
@@ -1262,6 +1262,57 @@ public interface AmazonRekognition {
 
     /**
      * <p>
+     * Gets the text detection results of a Amazon Rekognition Video analysis started by <a>StartTextDetection</a>.
+     * </p>
+     * <p>
+     * Text detection with Amazon Rekognition Video is an asynchronous operation. You start text detection by calling
+     * <a>StartTextDetection</a> which returns a job identifier (<code>JobId</code>) When the text detection operation
+     * finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification Service topic
+     * registered in the initial call to <code>StartTextDetection</code>. To get the results of the text detection
+     * operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so,
+     * call <code>GetTextDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call of
+     * <code>StartLabelDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetTextDetection</code> returns an array of detected text (<code>TextDetections</code>) sorted by the time
+     * the text was detected, up to 50 words per frame of video.
+     * </p>
+     * <p>
+     * Each element of the array includes the detected text, the precentage confidence in the acuracy of the detected
+     * text, the time the text was detected, bounding box information for where the text was located, and unique
+     * identifiers for words and their lines.
+     * </p>
+     * <p>
+     * Use MaxResults parameter to limit the number of text detections returned. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetTextDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetTextDetection</code>.
+     * </p>
+     * 
+     * @param getTextDetectionRequest
+     * @return Result of the GetTextDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidPaginationTokenException
+     *         Pagination token in the request is not valid.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.GetTextDetection
+     */
+    GetTextDetectionResult getTextDetection(GetTextDetectionRequest getTextDetectionRequest);
+
+    /**
+     * <p>
      * Detects faces in the input image and adds them to the specified collection.
      * </p>
      * <p>
@@ -1717,8 +1768,8 @@ public interface AmazonRekognition {
      * @throws InternalServerErrorException
      *         Amazon Rekognition experienced a service issue. Try your call again.
      * @throws VideoTooLargeException
-     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
-     *         duration is 2 hours.
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -1767,8 +1818,8 @@ public interface AmazonRekognition {
      * @throws InternalServerErrorException
      *         Amazon Rekognition experienced a service issue. Try your call again.
      * @throws VideoTooLargeException
-     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
-     *         duration is 2 hours.
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -1814,8 +1865,8 @@ public interface AmazonRekognition {
      * @throws InternalServerErrorException
      *         Amazon Rekognition experienced a service issue. Try your call again.
      * @throws VideoTooLargeException
-     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
-     *         duration is 2 hours.
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -1860,8 +1911,8 @@ public interface AmazonRekognition {
      * @throws InternalServerErrorException
      *         Amazon Rekognition experienced a service issue. Try your call again.
      * @throws VideoTooLargeException
-     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
-     *         duration is 2 hours.
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -1914,8 +1965,8 @@ public interface AmazonRekognition {
      * @throws InternalServerErrorException
      *         Amazon Rekognition experienced a service issue. Try your call again.
      * @throws VideoTooLargeException
-     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
-     *         duration is 2 hours.
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -1961,8 +2012,8 @@ public interface AmazonRekognition {
      * @throws InternalServerErrorException
      *         Amazon Rekognition experienced a service issue. Try your call again.
      * @throws VideoTooLargeException
-     *         The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum
-     *         duration is 2 hours.
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -2046,6 +2097,53 @@ public interface AmazonRekognition {
      * @sample AmazonRekognition.StartStreamProcessor
      */
     StartStreamProcessorResult startStreamProcessor(StartStreamProcessorRequest startStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of text in a stored video.
+     * </p>
+     * <p>
+     * Amazon Rekognition Video can detect text in a video stored in an Amazon S3 bucket. Use <a>Video</a> to specify
+     * the bucket name and the filename of the video. <code>StartTextDetection</code> returns a job identifier (
+     * <code>JobId</code>) which you use to get the results of the operation. When text detection is finished, Amazon
+     * Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify
+     * in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * To get the results of the text detection operation, first check that the status value published to the Amazon SNS
+     * topic is <code>SUCCEEDED</code>. if so, call <a>GetTextDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartTextDetection</code>.
+     * </p>
+     * 
+     * @param startTextDetectionRequest
+     * @return Result of the StartTextDetection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws VideoTooLargeException
+     *         The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum
+     *         duration is 6 hours.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
+     *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
+     *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
+     *         concurrently running jobs is below the Amazon Rekognition service limit.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @sample AmazonRekognition.StartTextDetection
+     */
+    StartTextDetectionResult startTextDetection(StartTextDetectionRequest startTextDetectionRequest);
 
     /**
      * <p>

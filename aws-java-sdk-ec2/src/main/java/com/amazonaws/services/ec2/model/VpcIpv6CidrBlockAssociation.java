@@ -46,16 +46,16 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
     private VpcCidrBlockState ipv6CidrBlockState;
     /**
      * <p>
-     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
-     * </p>
-     */
-    private String ipv6Pool;
-    /**
-     * <p>
      * The name of the location from which we advertise the IPV6 CIDR block.
      * </p>
      */
     private String networkBorderGroup;
+    /**
+     * <p>
+     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+     * </p>
+     */
+    private String ipv6Pool;
 
     /**
      * <p>
@@ -179,46 +179,6 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
-     * </p>
-     * 
-     * @param ipv6Pool
-     *        The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
-     */
-
-    public void setIpv6Pool(String ipv6Pool) {
-        this.ipv6Pool = ipv6Pool;
-    }
-
-    /**
-     * <p>
-     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
-     * </p>
-     * 
-     * @return The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
-     */
-
-    public String getIpv6Pool() {
-        return this.ipv6Pool;
-    }
-
-    /**
-     * <p>
-     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
-     * </p>
-     * 
-     * @param ipv6Pool
-     *        The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VpcIpv6CidrBlockAssociation withIpv6Pool(String ipv6Pool) {
-        setIpv6Pool(ipv6Pool);
-        return this;
-    }
-
-    /**
-     * <p>
      * The name of the location from which we advertise the IPV6 CIDR block.
      * </p>
      * 
@@ -258,6 +218,46 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+     * </p>
+     * 
+     * @param ipv6Pool
+     *        The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+     */
+
+    public void setIpv6Pool(String ipv6Pool) {
+        this.ipv6Pool = ipv6Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+     * </p>
+     * 
+     * @return The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+     */
+
+    public String getIpv6Pool() {
+        return this.ipv6Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+     * </p>
+     * 
+     * @param ipv6Pool
+     *        The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcIpv6CidrBlockAssociation withIpv6Pool(String ipv6Pool) {
+        setIpv6Pool(ipv6Pool);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,10 +275,10 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
             sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getIpv6CidrBlockState() != null)
             sb.append("Ipv6CidrBlockState: ").append(getIpv6CidrBlockState()).append(",");
-        if (getIpv6Pool() != null)
-            sb.append("Ipv6Pool: ").append(getIpv6Pool()).append(",");
         if (getNetworkBorderGroup() != null)
-            sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup());
+            sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup()).append(",");
+        if (getIpv6Pool() != null)
+            sb.append("Ipv6Pool: ").append(getIpv6Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -305,13 +305,13 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
             return false;
         if (other.getIpv6CidrBlockState() != null && other.getIpv6CidrBlockState().equals(this.getIpv6CidrBlockState()) == false)
             return false;
-        if (other.getIpv6Pool() == null ^ this.getIpv6Pool() == null)
-            return false;
-        if (other.getIpv6Pool() != null && other.getIpv6Pool().equals(this.getIpv6Pool()) == false)
-            return false;
         if (other.getNetworkBorderGroup() == null ^ this.getNetworkBorderGroup() == null)
             return false;
         if (other.getNetworkBorderGroup() != null && other.getNetworkBorderGroup().equals(this.getNetworkBorderGroup()) == false)
+            return false;
+        if (other.getIpv6Pool() == null ^ this.getIpv6Pool() == null)
+            return false;
+        if (other.getIpv6Pool() != null && other.getIpv6Pool().equals(this.getIpv6Pool()) == false)
             return false;
         return true;
     }
@@ -324,8 +324,8 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlockState() == null) ? 0 : getIpv6CidrBlockState().hashCode());
-        hashCode = prime * hashCode + ((getIpv6Pool() == null) ? 0 : getIpv6Pool().hashCode());
         hashCode = prime * hashCode + ((getNetworkBorderGroup() == null) ? 0 : getNetworkBorderGroup().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Pool() == null) ? 0 : getIpv6Pool().hashCode());
         return hashCode;
     }
 

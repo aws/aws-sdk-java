@@ -1,3 +1,20 @@
+# __1.11.724__ __2020-02-17__
+## __AWS Cloud9__
+  - ### Features
+    - AWS Cloud9 now supports the ability to tag Cloud9 development environments. 
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Amazon DynamoDB enables you to restore your DynamoDB backup or table data across AWS Regions such that the restored table is created in a different AWS Region from where the source table or backup resides. You can do cross-region restores between AWS commercial Regions, AWS China Regions, and AWS GovCloud (US) Regions. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Documentation updates for EC2
+
+## __Amazon Rekognition__
+  - ### Features
+    - This update adds the ability to detect text in videos and adds filters to image and video text detection.
+
 # __1.11.723__ __2020-02-14__
 ## __AWS MediaTailor__
   - ### Features

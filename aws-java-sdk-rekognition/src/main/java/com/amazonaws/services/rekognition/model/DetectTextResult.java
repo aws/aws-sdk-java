@@ -24,6 +24,12 @@ public class DetectTextResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private java.util.List<TextDetection> textDetections;
+    /**
+     * <p>
+     * The model version used to detect text.
+     * </p>
+     */
+    private String textModelVersion;
 
     /**
      * <p>
@@ -96,6 +102,46 @@ public class DetectTextResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The model version used to detect text.
+     * </p>
+     * 
+     * @param textModelVersion
+     *        The model version used to detect text.
+     */
+
+    public void setTextModelVersion(String textModelVersion) {
+        this.textModelVersion = textModelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version used to detect text.
+     * </p>
+     * 
+     * @return The model version used to detect text.
+     */
+
+    public String getTextModelVersion() {
+        return this.textModelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version used to detect text.
+     * </p>
+     * 
+     * @param textModelVersion
+     *        The model version used to detect text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectTextResult withTextModelVersion(String textModelVersion) {
+        setTextModelVersion(textModelVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -108,7 +154,9 @@ public class DetectTextResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTextDetections() != null)
-            sb.append("TextDetections: ").append(getTextDetections());
+            sb.append("TextDetections: ").append(getTextDetections()).append(",");
+        if (getTextModelVersion() != null)
+            sb.append("TextModelVersion: ").append(getTextModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -127,6 +175,10 @@ public class DetectTextResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getTextDetections() != null && other.getTextDetections().equals(this.getTextDetections()) == false)
             return false;
+        if (other.getTextModelVersion() == null ^ this.getTextModelVersion() == null)
+            return false;
+        if (other.getTextModelVersion() != null && other.getTextModelVersion().equals(this.getTextModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -136,6 +188,7 @@ public class DetectTextResult extends com.amazonaws.AmazonWebServiceResult<com.a
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTextDetections() == null) ? 0 : getTextDetections().hashCode());
+        hashCode = prime * hashCode + ((getTextModelVersion() == null) ? 0 : getTextModelVersion().hashCode());
         return hashCode;
     }
 

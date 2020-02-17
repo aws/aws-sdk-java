@@ -83,6 +83,21 @@ import com.amazonaws.services.cloud9.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListTagsForResource</code>: Gets the tags for an environment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TagResource</code>: Adds tags to an environment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UntagResource</code>: Removes tags from an environment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>UpdateEnvironment</code>: Changes the settings of an existing environment.
  * </p>
  * </li>
@@ -321,6 +336,69 @@ public interface AWSCloud9 {
      *      Documentation</a>
      */
     ListEnvironmentsResult listEnvironments(ListEnvironmentsRequest listEnvironmentsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the tags associated with an AWS Cloud9 development environment.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws NotFoundException
+     *         The target resource cannot be found.
+     * @throws InternalServerErrorException
+     *         An internal server error occurred.
+     * @throws BadRequestException
+     *         The target request is invalid.
+     * @sample AWSCloud9.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds tags to an AWS Cloud9 development environment.
+     * </p>
+     * <important>
+     * <p>
+     * Tags that you add to an AWS Cloud9 environment by using this method will NOT be automatically propagated to
+     * underlying resources.
+     * </p>
+     * </important>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The target resource cannot be found.
+     * @throws InternalServerErrorException
+     *         An internal server error occurred.
+     * @throws BadRequestException
+     *         The target request is invalid.
+     * @sample AWSCloud9.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from an AWS Cloud9 development environment.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The target resource cannot be found.
+     * @throws InternalServerErrorException
+     *         An internal server error occurred.
+     * @throws BadRequestException
+     *         The target request is invalid.
+     * @sample AWSCloud9.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

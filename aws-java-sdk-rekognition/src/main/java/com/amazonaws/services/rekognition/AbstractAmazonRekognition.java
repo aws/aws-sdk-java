@@ -159,6 +159,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public GetTextDetectionResult getTextDetection(GetTextDetectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public IndexFacesResult indexFaces(IndexFacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -230,6 +235,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public StartStreamProcessorResult startStreamProcessor(StartStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartTextDetectionResult startTextDetection(StartTextDetectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
