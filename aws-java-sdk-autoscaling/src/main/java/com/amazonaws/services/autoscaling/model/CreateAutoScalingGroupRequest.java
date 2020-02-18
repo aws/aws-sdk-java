@@ -274,6 +274,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
+     * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 604800.
      * </p>
      */
@@ -2080,11 +2085,21 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
+     * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 604800.
      * </p>
      * 
      * @param maxInstanceLifetime
      *        The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
+     *        Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
      *        <p>
      *        Valid Range: Minimum value of 604800.
      */
@@ -2098,10 +2113,21 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
+     * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 604800.
      * </p>
      * 
      * @return The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
+     *         Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.
+     *         </p>
      *         <p>
      *         Valid Range: Minimum value of 604800.
      */
@@ -2115,11 +2141,21 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * The maximum amount of time, in seconds, that an instance can be in service.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
+     * Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 604800.
      * </p>
      * 
      * @param maxInstanceLifetime
      *        The maximum amount of time, in seconds, that an instance can be in service.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto
+     *        Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
      *        <p>
      *        Valid Range: Minimum value of 604800.
      * @return Returns a reference to this object so that method calls can be chained together.

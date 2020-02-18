@@ -202,6 +202,14 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterFromS3Request.getCopyTagsToSnapshot()));
         }
 
+        if (restoreDBClusterFromS3Request.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(restoreDBClusterFromS3Request.getDomain()));
+        }
+
+        if (restoreDBClusterFromS3Request.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBClusterFromS3Request.getDomainIAMRoleName()));
+        }
+
         return request;
     }
 

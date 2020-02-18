@@ -36,6 +36,12 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
     private String audioHostUrl;
     /**
      * <p>
+     * The audio fallback URL.
+     * </p>
+     */
+    private String audioFallbackUrl;
+    /**
+     * <p>
      * The screen data URL.
      * </p>
      */
@@ -102,6 +108,46 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
 
     public MediaPlacement withAudioHostUrl(String audioHostUrl) {
         setAudioHostUrl(audioHostUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The audio fallback URL.
+     * </p>
+     * 
+     * @param audioFallbackUrl
+     *        The audio fallback URL.
+     */
+
+    public void setAudioFallbackUrl(String audioFallbackUrl) {
+        this.audioFallbackUrl = audioFallbackUrl;
+    }
+
+    /**
+     * <p>
+     * The audio fallback URL.
+     * </p>
+     * 
+     * @return The audio fallback URL.
+     */
+
+    public String getAudioFallbackUrl() {
+        return this.audioFallbackUrl;
+    }
+
+    /**
+     * <p>
+     * The audio fallback URL.
+     * </p>
+     * 
+     * @param audioFallbackUrl
+     *        The audio fallback URL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPlacement withAudioFallbackUrl(String audioFallbackUrl) {
+        setAudioFallbackUrl(audioFallbackUrl);
         return this;
     }
 
@@ -319,6 +365,8 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAudioHostUrl() != null)
             sb.append("AudioHostUrl: ").append(getAudioHostUrl()).append(",");
+        if (getAudioFallbackUrl() != null)
+            sb.append("AudioFallbackUrl: ").append(getAudioFallbackUrl()).append(",");
         if (getScreenDataUrl() != null)
             sb.append("ScreenDataUrl: ").append(getScreenDataUrl()).append(",");
         if (getScreenSharingUrl() != null)
@@ -346,6 +394,10 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
         if (other.getAudioHostUrl() == null ^ this.getAudioHostUrl() == null)
             return false;
         if (other.getAudioHostUrl() != null && other.getAudioHostUrl().equals(this.getAudioHostUrl()) == false)
+            return false;
+        if (other.getAudioFallbackUrl() == null ^ this.getAudioFallbackUrl() == null)
+            return false;
+        if (other.getAudioFallbackUrl() != null && other.getAudioFallbackUrl().equals(this.getAudioFallbackUrl()) == false)
             return false;
         if (other.getScreenDataUrl() == null ^ this.getScreenDataUrl() == null)
             return false;
@@ -376,6 +428,7 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAudioHostUrl() == null) ? 0 : getAudioHostUrl().hashCode());
+        hashCode = prime * hashCode + ((getAudioFallbackUrl() == null) ? 0 : getAudioFallbackUrl().hashCode());
         hashCode = prime * hashCode + ((getScreenDataUrl() == null) ? 0 : getScreenDataUrl().hashCode());
         hashCode = prime * hashCode + ((getScreenSharingUrl() == null) ? 0 : getScreenSharingUrl().hashCode());
         hashCode = prime * hashCode + ((getScreenViewingUrl() == null) ? 0 : getScreenViewingUrl().hashCode());

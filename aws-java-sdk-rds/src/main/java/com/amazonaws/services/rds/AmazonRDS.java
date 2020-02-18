@@ -1568,6 +1568,8 @@ public interface AmazonRDS {
      * @throws DBProxyNotFoundException
      *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DeregisterDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets" target="_top">AWS
      *      API Documentation</a>
@@ -2000,9 +2002,14 @@ public interface AmazonRDS {
      * 
      * @param describeDBProxyTargetGroupsRequest
      * @return Result of the DescribeDBProxyTargetGroups operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DescribeDBProxyTargetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups"
      *      target="_top">AWS API Documentation</a>
@@ -2030,6 +2037,8 @@ public interface AmazonRDS {
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DescribeDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets" target="_top">AWS API
      *      Documentation</a>
@@ -2943,6 +2952,8 @@ public interface AmazonRDS {
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.ModifyDBProxyTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup" target="_top">AWS
      *      API Documentation</a>
@@ -3229,6 +3240,8 @@ public interface AmazonRDS {
      *         The DB instance isn't in a valid state.
      * @throws InvalidDBClusterStateException
      *         The requested operation can't be performed while the cluster is in this state.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.RegisterDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
      *      Documentation</a>
@@ -3463,26 +3476,27 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This action only applies to Aurora DB
-     * clusters.
+     * Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
      * </p>
      * <p>
-     * The target DB cluster is created from the source snapshot with a default configuration. If you don't specify a
-     * security group, the new DB cluster is associated with the default security group.
+     * If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default
+     * configuration and default security group.
      * </p>
-     * <note>
      * <p>
-     * This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the
-     * <code>CreateDBInstance</code> action to create DB instances for the restored DB cluster, specifying the
-     * identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after
-     * the <code>RestoreDBClusterFromSnapshot</code> action has completed and the DB cluster is available.
+     * If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point
+     * with the same configuration as the original source DB cluster. If you don't specify a security group, the new DB
+     * cluster is associated with the default security group.
      * </p>
-     * </note>
      * <p>
      * For more information on Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
+     * <note>
+     * <p>
+     * This action only applies to Aurora DB clusters.
+     * </p>
+     * </note>
      * 
      * @param restoreDBClusterFromSnapshotRequest
      * @return Result of the RestoreDBClusterFromSnapshot operation returned by the service.

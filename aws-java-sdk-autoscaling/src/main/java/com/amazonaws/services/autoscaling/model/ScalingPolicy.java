@@ -118,6 +118,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
      */
     private TargetTrackingConfiguration targetTrackingConfiguration;
 
+    private Boolean enabled;
+
     /**
      * <p>
      * The name of the Auto Scaling group.
@@ -787,6 +789,40 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * @param enabled
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * @param enabled
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPolicy withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -825,7 +861,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
         if (getAlarms() != null)
             sb.append("Alarms: ").append(getAlarms()).append(",");
         if (getTargetTrackingConfiguration() != null)
-            sb.append("TargetTrackingConfiguration: ").append(getTargetTrackingConfiguration());
+            sb.append("TargetTrackingConfiguration: ").append(getTargetTrackingConfiguration()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -896,6 +934,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
             return false;
         if (other.getTargetTrackingConfiguration() != null && other.getTargetTrackingConfiguration().equals(this.getTargetTrackingConfiguration()) == false)
             return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -918,6 +960,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEstimatedInstanceWarmup() == null) ? 0 : getEstimatedInstanceWarmup().hashCode());
         hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         hashCode = prime * hashCode + ((getTargetTrackingConfiguration() == null) ? 0 : getTargetTrackingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         return hashCode;
     }
 

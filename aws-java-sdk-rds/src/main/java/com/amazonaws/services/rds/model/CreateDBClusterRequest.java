@@ -526,6 +526,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean copyTagsToSnapshot;
+    /**
+     * <p>
+     * The Active Directory directory ID to create the DB cluster in.
+     * </p>
+     * <p>
+     * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
+     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     */
+    private String domainIAMRoleName;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -3850,6 +3868,119 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The Active Directory directory ID to create the DB cluster in.
+     * </p>
+     * <p>
+     * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
+     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param domain
+     *        The Active Directory directory ID to create the DB cluster in.</p>
+     *        <p>
+     *        For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
+     *        connect to the DB cluster. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
+     *        Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * The Active Directory directory ID to create the DB cluster in.
+     * </p>
+     * <p>
+     * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
+     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return The Active Directory directory ID to create the DB cluster in.</p>
+     *         <p>
+     *         For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
+     *         connect to the DB cluster. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
+     *         Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * The Active Directory directory ID to create the DB cluster in.
+     * </p>
+     * <p>
+     * For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
+     * the DB cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
+     * Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param domain
+     *        The Active Directory directory ID to create the DB cluster in.</p>
+     *        <p>
+     *        For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
+     *        connect to the DB cluster. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using Kerberos
+     *        Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     * 
+     * @param domainIAMRoleName
+     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     */
+
+    public void setDomainIAMRoleName(String domainIAMRoleName) {
+        this.domainIAMRoleName = domainIAMRoleName;
+    }
+
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     * 
+     * @return Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     */
+
+    public String getDomainIAMRoleName() {
+        return this.domainIAMRoleName;
+    }
+
+    /**
+     * <p>
+     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * </p>
+     * 
+     * @param domainIAMRoleName
+     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withDomainIAMRoleName(String domainIAMRoleName) {
+        setDomainIAMRoleName(domainIAMRoleName);
+        return this;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -3955,6 +4086,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("EnableHttpEndpoint: ").append(getEnableHttpEndpoint()).append(",");
         if (getCopyTagsToSnapshot() != null)
             sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
+        if (getDomainIAMRoleName() != null)
+            sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -4092,6 +4227,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
             return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
+        if (other.getDomainIAMRoleName() == null ^ this.getDomainIAMRoleName() == null)
+            return false;
+        if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -4134,6 +4277,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getGlobalClusterIdentifier() == null) ? 0 : getGlobalClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getEnableHttpEndpoint() == null) ? 0 : getEnableHttpEndpoint().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

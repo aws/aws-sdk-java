@@ -183,6 +183,10 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
             }
         }
 
+        if (putScalingPolicyRequest.getEnabled() != null) {
+            request.addParameter("Enabled", StringUtils.fromBoolean(putScalingPolicyRequest.getEnabled()));
+        }
+
         return request;
     }
 

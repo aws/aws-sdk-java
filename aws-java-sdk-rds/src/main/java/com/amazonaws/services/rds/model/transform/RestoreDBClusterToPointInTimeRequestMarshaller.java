@@ -147,6 +147,14 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getCopyTagsToSnapshot()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDomain()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDomainIAMRoleName()));
+        }
+
         return request;
     }
 

@@ -1,3 +1,16 @@
+# __1.11.725__ __2020-02-18__
+## __Amazon Chime__
+  - ### Features
+    - Added AudioFallbackUrl to support Chime SDK client.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release supports Microsoft Active Directory authentication for Amazon Aurora.
+
+## __Auto Scaling__
+  - ### Features
+    - Amazon EC2 Auto Scaling now supports the ability to enable/disable target tracking, step scaling, and simple scaling policies.
+
 # __1.11.724__ __2020-02-17__
 ## __AWS Cloud9__
   - ### Features

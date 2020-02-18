@@ -191,6 +191,14 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getCopyTagsToSnapshot()));
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getDomain()));
+        }
+
+        if (restoreDBClusterFromSnapshotRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getDomainIAMRoleName()));
+        }
+
         return request;
     }
 
