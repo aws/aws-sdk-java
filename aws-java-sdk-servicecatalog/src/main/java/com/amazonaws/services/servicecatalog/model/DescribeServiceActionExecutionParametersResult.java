@@ -25,10 +25,19 @@ import javax.annotation.Generated;
 public class DescribeServiceActionExecutionParametersResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The parameters of the self-service action.
+     * </p>
+     */
     private java.util.List<ExecutionParameter> serviceActionParameters;
 
     /**
-     * @return
+     * <p>
+     * The parameters of the self-service action.
+     * </p>
+     * 
+     * @return The parameters of the self-service action.
      */
 
     public java.util.List<ExecutionParameter> getServiceActionParameters() {
@@ -36,7 +45,12 @@ public class DescribeServiceActionExecutionParametersResult extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The parameters of the self-service action.
+     * </p>
+     * 
      * @param serviceActionParameters
+     *        The parameters of the self-service action.
      */
 
     public void setServiceActionParameters(java.util.Collection<ExecutionParameter> serviceActionParameters) {
@@ -50,12 +64,16 @@ public class DescribeServiceActionExecutionParametersResult extends com.amazonaw
 
     /**
      * <p>
+     * The parameters of the self-service action.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setServiceActionParameters(java.util.Collection)} or
      * {@link #withServiceActionParameters(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param serviceActionParameters
+     *        The parameters of the self-service action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +88,12 @@ public class DescribeServiceActionExecutionParametersResult extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The parameters of the self-service action.
+     * </p>
+     * 
      * @param serviceActionParameters
+     *        The parameters of the self-service action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

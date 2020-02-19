@@ -47,7 +47,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String marker;
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      */
     private Integer maxItems;
@@ -219,11 +219,11 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      * 
      * @param maxItems
-     *        Specify a value between 1 and 50 to limit the number of functions in the response.
+     *        The maximum number of functions to return.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -232,10 +232,10 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      * 
-     * @return Specify a value between 1 and 50 to limit the number of functions in the response.
+     * @return The maximum number of functions to return.
      */
 
     public Integer getMaxItems() {
@@ -244,11 +244,11 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      * 
      * @param maxItems
-     *        Specify a value between 1 and 50 to limit the number of functions in the response.
+     *        The maximum number of functions to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

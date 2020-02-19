@@ -38,6 +38,7 @@ public enum Runtime {
     Nodejs43Edge("nodejs4.3-edge"),
     Go1X("go1.x"),
     Ruby25("ruby2.5"),
+    Ruby27("ruby2.7"),
     Provided("provided");
 
     private String value;

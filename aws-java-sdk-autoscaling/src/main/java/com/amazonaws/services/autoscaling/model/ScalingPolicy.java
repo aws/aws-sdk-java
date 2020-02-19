@@ -117,7 +117,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      */
     private TargetTrackingConfiguration targetTrackingConfiguration;
-
+    /**
+     * <p>
+     * Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
+     * </p>
+     */
     private Boolean enabled;
 
     /**
@@ -789,7 +793,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
+     * </p>
+     * 
      * @param enabled
+     *        Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
      */
 
     public void setEnabled(Boolean enabled) {
@@ -797,7 +806,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
+     * </p>
+     * 
+     * @return Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
      */
 
     public Boolean getEnabled() {
@@ -805,7 +818,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
+     * </p>
+     * 
      * @param enabled
+     *        Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -815,7 +833,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
+     * </p>
+     * 
+     * @return Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
      */
 
     public Boolean isEnabled() {

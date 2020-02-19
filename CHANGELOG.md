@@ -1,3 +1,16 @@
+# __1.11.726__ __2020-02-19__
+## __AWS Lambda__
+  - ### Features
+    - AWS Lambda now supports Ruby 2.7
+
+## __AWS Service Catalog__
+  - ### Features
+    - "ListPortfolioAccess" API now has a new optional parameter "OrganizationParentId". When it is provided and if the portfolio with the "PortfolioId" given was shared with an organization or organizational unit with "OrganizationParentId", all accounts in the organization sub-tree under parent which inherit an organizational portfolio share will be listed, rather than all accounts with external shares. To accommodate long lists returned from the new option, the API now supports pagination.
+
+## __Auto Scaling__
+  - ### Features
+    - Doc update for EC2 Auto Scaling: Add Enabled parameter for PutScalingPolicy
+
 # __1.11.725__ __2020-02-18__
 ## __Amazon Chime__
   - ### Features

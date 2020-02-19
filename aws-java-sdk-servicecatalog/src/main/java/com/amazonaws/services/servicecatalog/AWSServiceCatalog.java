@@ -878,6 +878,11 @@ public interface AWSServiceCatalog {
     DescribeServiceActionResult describeServiceAction(DescribeServiceActionRequest describeServiceActionRequest);
 
     /**
+     * <p>
+     * Finds the default parameters for a specific self-service action on a specific provisioned product and returns a
+     * map of the results to the user.
+     * </p>
+     * 
      * @param describeServiceActionExecutionParametersRequest
      * @return Result of the DescribeServiceActionExecutionParameters operation returned by the service.
      * @throws InvalidParametersException
@@ -1207,6 +1212,8 @@ public interface AWSServiceCatalog {
      * @return Result of the ListPortfolioAccess operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.ListPortfolioAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListPortfolioAccess"
      *      target="_top">AWS API Documentation</a>

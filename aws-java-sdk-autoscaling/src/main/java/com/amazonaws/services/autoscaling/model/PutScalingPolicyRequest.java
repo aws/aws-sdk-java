@@ -153,7 +153,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private TargetTrackingConfiguration targetTrackingConfiguration;
-
+    /**
+     * <p>
+     * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
+     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     */
     private Boolean enabled;
 
     /**
@@ -998,7 +1004,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
+     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
      * @param enabled
+     *        Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information,
+     *        see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">
+     *        Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -1006,7 +1021,17 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
+     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html"
+     *         >Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.
      */
 
     public Boolean getEnabled() {
@@ -1014,7 +1039,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
+     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
      * @param enabled
+     *        Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information,
+     *        see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">
+     *        Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1024,7 +1058,17 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
+     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html"
+     *         >Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.
      */
 
     public Boolean isEnabled() {

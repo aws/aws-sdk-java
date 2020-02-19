@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Details of an execution parameter value that is passed to a self-service action when executed on a provisioned
+ * product.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecutionParameter" target="_top">AWS
  *      API Documentation</a>
@@ -25,14 +29,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecutionParameter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the execution parameter.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The execution parameter type.
+     * </p>
+     */
     private String type;
-
+    /**
+     * <p>
+     * The default values for the execution parameter.
+     * </p>
+     */
     private java.util.List<String> defaultValues;
 
     /**
+     * <p>
+     * The name of the execution parameter.
+     * </p>
+     * 
      * @param name
+     *        The name of the execution parameter.
      */
 
     public void setName(String name) {
@@ -40,7 +62,11 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the execution parameter.
+     * </p>
+     * 
+     * @return The name of the execution parameter.
      */
 
     public String getName() {
@@ -48,7 +74,12 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The name of the execution parameter.
+     * </p>
+     * 
      * @param name
+     *        The name of the execution parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +89,12 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The execution parameter type.
+     * </p>
+     * 
      * @param type
+     *        The execution parameter type.
      */
 
     public void setType(String type) {
@@ -66,7 +102,11 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The execution parameter type.
+     * </p>
+     * 
+     * @return The execution parameter type.
      */
 
     public String getType() {
@@ -74,7 +114,12 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The execution parameter type.
+     * </p>
+     * 
      * @param type
+     *        The execution parameter type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +129,11 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The default values for the execution parameter.
+     * </p>
+     * 
+     * @return The default values for the execution parameter.
      */
 
     public java.util.List<String> getDefaultValues() {
@@ -92,7 +141,12 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The default values for the execution parameter.
+     * </p>
+     * 
      * @param defaultValues
+     *        The default values for the execution parameter.
      */
 
     public void setDefaultValues(java.util.Collection<String> defaultValues) {
@@ -106,12 +160,16 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The default values for the execution parameter.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDefaultValues(java.util.Collection)} or {@link #withDefaultValues(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param defaultValues
+     *        The default values for the execution parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +184,12 @@ public class ExecutionParameter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The default values for the execution parameter.
+     * </p>
+     * 
      * @param defaultValues
+     *        The default values for the execution parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
