@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SavingsPlanRateUnit {
 
-    Hrs("Hrs");
+    Hrs("Hrs"),
+    LambdaGBSecond("Lambda-GB-Second"),
+    Request("Request");
 
     private String value;
 

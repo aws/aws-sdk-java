@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SavingsPlanRateServiceCode {
 
     AmazonEC2("AmazonEC2"),
-    AmazonECS("AmazonECS");
+    AmazonECS("AmazonECS"),
+    AWSLambda("AWSLambda");
 
     private String value;
 

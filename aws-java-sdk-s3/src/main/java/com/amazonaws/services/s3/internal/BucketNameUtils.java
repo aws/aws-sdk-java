@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.internal;
 
+import com.amazonaws.services.s3.model.IllegalBucketNameException;
+
 import java.util.regex.Pattern;
 
 /**
@@ -39,7 +41,7 @@ public enum BucketNameUtils {
      * @param bucketName
      *            The bucket name to validate.
      *
-     * @throws IllegalArgumentException
+     * @throws IllegalBucketNameException
      *             If the specified bucket name doesn't follow Amazon S3's
      *             guidelines.
      */
@@ -177,7 +179,7 @@ public enum BucketNameUtils {
     }
 
     /**
-     * If 'exception' is true, throw an IllegalArgumentException with the given
+     * If 'exception' is true, throw an IllegalBucketNameException with the given
      * message. Otherwise, silently return false.
      *
      * @param exception true to throw an exception
@@ -186,7 +188,7 @@ public enum BucketNameUtils {
      */
     private static boolean exception(final boolean exception, final String message) {
         if (exception) {
-            throw new IllegalArgumentException(message);
+            throw new IllegalBucketNameException(message);
         }
         return false;
     }
