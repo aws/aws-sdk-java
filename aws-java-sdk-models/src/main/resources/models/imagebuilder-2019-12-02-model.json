@@ -1887,7 +1887,7 @@
           "documentation":"<p> The request ID that uniquely identifies this request. </p>"
         },
         "policy":{
-          "shape":"NonEmptyString",
+          "shape":"ResourcePolicyDocument",
           "documentation":"<p> The component policy. </p>"
         }
       }
@@ -1987,7 +1987,7 @@
           "documentation":"<p> The request ID that uniquely identifies this request. </p>"
         },
         "policy":{
-          "shape":"NonEmptyString",
+          "shape":"ResourcePolicyDocument",
           "documentation":"<p> The image policy object. </p>"
         }
       }
@@ -2012,7 +2012,7 @@
           "documentation":"<p> The request ID that uniquely identifies this request. </p>"
         },
         "policy":{
-          "shape":"NonEmptyString",
+          "shape":"ResourcePolicyDocument",
           "documentation":"<p> The image recipe policy object. </p>"
         }
       }
@@ -3181,7 +3181,7 @@
           "documentation":"<p> The Amazon Resource Name (ARN) of the component that this policy should be applied to. </p>"
         },
         "policy":{
-          "shape":"NonEmptyString",
+          "shape":"ResourcePolicyDocument",
           "documentation":"<p> The policy to apply. </p>"
         }
       }
@@ -3211,7 +3211,7 @@
           "documentation":"<p> The Amazon Resource Name (ARN) of the image that this policy should be applied to. </p>"
         },
         "policy":{
-          "shape":"NonEmptyString",
+          "shape":"ResourcePolicyDocument",
           "documentation":"<p> The policy to apply. </p>"
         }
       }
@@ -3241,7 +3241,7 @@
           "documentation":"<p> The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to. </p>"
         },
         "policy":{
-          "shape":"NonEmptyString",
+          "shape":"ResourcePolicyDocument",
           "documentation":"<p> The policy to apply. </p>"
         }
       }
@@ -3298,6 +3298,11 @@
       "documentation":"<p>At least one of the resources referenced by your request does not exist.</p>",
       "error":{"httpStatusCode":404},
       "exception":true
+    },
+    "ResourcePolicyDocument":{
+      "type":"string",
+      "max":30000,
+      "min":1
     },
     "RestrictedInteger":{
       "type":"integer",

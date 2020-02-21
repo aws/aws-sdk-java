@@ -26,8 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * </note>
  * <p>
- * In a <code>WebACL</code>, this is the action that you want AWS WAF to perform when a web request doesn't match any of
- * the rules in the <code>WebACL</code>. The default action must be a terminating action, so count is not allowed.
+ * In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web request doesn't match any of the
+ * rules in the <code>WebACL</code>. The default action must be a terminating action, so count is not allowed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DefaultAction" target="_top">AWS API

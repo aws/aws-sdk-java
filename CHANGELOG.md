@@ -1,3 +1,16 @@
+# __1.11.728__ __2020-02-21__
+## __AWS WAFV2__
+  - ### Features
+    - Documentation updates for AWS WAF (wafv2) to correct the guidance for associating a web ACL to a CloudFront distribution.
+
+## __Amazon Redshift__
+  - ### Features
+    - Extend elastic resize to support resizing clusters to different instance types.
+
+## __EC2 Image Builder__
+  - ### Features
+    - This release of EC2 Image Builder increases the maximum policy document size for Image Builder resource-based policy APIs.
+
 # __1.11.727__ __2020-02-20__
 ## __AWS Savings Plans__
   - ### Features

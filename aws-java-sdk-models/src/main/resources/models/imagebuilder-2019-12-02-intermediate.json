@@ -29350,7 +29350,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "policy",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "ResourcePolicyDocument",
         "deprecated" : false,
         "documentation" : "<p> The component policy. </p>",
         "enumType" : null,
@@ -29419,7 +29419,7 @@
       "membersAsMap" : {
         "Policy" : {
           "c2jName" : "policy",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "ResourcePolicyDocument",
           "deprecated" : false,
           "documentation" : "<p> The component policy. </p>",
           "enumType" : null,
@@ -31322,7 +31322,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "policy",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "ResourcePolicyDocument",
         "deprecated" : false,
         "documentation" : "<p> The image policy object. </p>",
         "enumType" : null,
@@ -31391,7 +31391,7 @@
       "membersAsMap" : {
         "Policy" : {
           "c2jName" : "policy",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "ResourcePolicyDocument",
           "deprecated" : false,
           "documentation" : "<p> The image policy object. </p>",
           "enumType" : null,
@@ -31815,7 +31815,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "policy",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "ResourcePolicyDocument",
         "deprecated" : false,
         "documentation" : "<p> The image recipe policy object. </p>",
         "enumType" : null,
@@ -31884,7 +31884,7 @@
       "membersAsMap" : {
         "Policy" : {
           "c2jName" : "policy",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "ResourcePolicyDocument",
           "deprecated" : false,
           "documentation" : "<p> The image recipe policy object. </p>",
           "enumType" : null,
@@ -64062,7 +64062,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "policy",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "ResourcePolicyDocument",
         "deprecated" : false,
         "documentation" : "<p> The policy to apply. </p>",
         "enumType" : null,
@@ -64199,7 +64199,7 @@
         },
         "Policy" : {
           "c2jName" : "policy",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "ResourcePolicyDocument",
           "deprecated" : false,
           "documentation" : "<p> The policy to apply. </p>",
           "enumType" : null,
@@ -64690,7 +64690,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "policy",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "ResourcePolicyDocument",
         "deprecated" : false,
         "documentation" : "<p> The policy to apply. </p>",
         "enumType" : null,
@@ -64827,7 +64827,7 @@
         },
         "Policy" : {
           "c2jName" : "policy",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "ResourcePolicyDocument",
           "deprecated" : false,
           "documentation" : "<p> The policy to apply. </p>",
           "enumType" : null,
@@ -65318,7 +65318,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "policy",
-        "c2jShape" : "NonEmptyString",
+        "c2jShape" : "ResourcePolicyDocument",
         "deprecated" : false,
         "documentation" : "<p> The policy to apply. </p>",
         "enumType" : null,
@@ -65455,7 +65455,7 @@
         },
         "Policy" : {
           "c2jName" : "policy",
-          "c2jShape" : "NonEmptyString",
+          "c2jShape" : "ResourcePolicyDocument",
           "deprecated" : false,
           "documentation" : "<p> The policy to apply. </p>",
           "enumType" : null,

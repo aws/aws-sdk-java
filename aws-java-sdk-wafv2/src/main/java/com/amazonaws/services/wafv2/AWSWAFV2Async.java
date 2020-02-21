@@ -117,7 +117,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * an Application Load Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can associate the Web ACL by providing the <code>Id</code> of the <a>WebACL</a> to the
+     * For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of the <a>WebACL</a> to the
      * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
@@ -144,7 +144,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * an Application Load Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can associate the Web ACL by providing the <code>Id</code> of the <a>WebACL</a> to the
+     * For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of the <a>WebACL</a> to the
      * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
@@ -282,7 +282,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Creates a <a>RegexPatternSet</a> per the specifications provided.
+     * Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS
+     * WAF inspect a web request component for the specified patterns.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -302,7 +303,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Creates a <a>RegexPatternSet</a> per the specifications provided.
+     * Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS
+     * WAF inspect a web request component for the specified patterns.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -721,8 +723,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty <code>WebACLId</code> in the
-     * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
+     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+     * <code>UpdateDistribution</code>. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
      * </p>
@@ -748,8 +750,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty <code>WebACLId</code> in the
-     * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
+     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+     * <code>UpdateDistribution</code>. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
      * </p>
@@ -1160,8 +1162,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS managed
-     * rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
+     * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS Managed
+     * Rules rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
      * </p>
      * 
      * @param listAvailableManagedRuleGroupsRequest
@@ -1183,8 +1185,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS managed
-     * rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
+     * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS Managed
+     * Rules rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
      * </p>
      * 
      * @param listAvailableManagedRuleGroupsRequest

@@ -35,20 +35,14 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i> /<i>load-balancer-id</i> </code>
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway stage:
-     * <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -65,20 +59,14 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i> /<i>load-balancer-id</i> </code>
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway stage:
-     * <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -91,20 +79,14 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        For a CloudFront distribution:
-     *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        For an Application Load Balancer:
-     *        <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i> /<i>load-balancer-id</i> </code>
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an Amazon API Gateway stage:
-     *        <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>
      */
@@ -123,20 +105,14 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i> /<i>load-balancer-id</i> </code>
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway stage:
-     * <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -148,20 +124,14 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         For a CloudFront distribution:
-     *         <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         For an Application Load Balancer:
-     *         <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i> /<i>load-balancer-id</i> </code>
+     *         <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For an Amazon API Gateway stage:
-     *         <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *         <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *         </p>
      *         </li>
      */
@@ -180,20 +150,14 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i> /<i>load-balancer-id</i> </code>
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
      * For an Amazon API Gateway stage:
-     * <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -206,20 +170,14 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        For a CloudFront distribution:
-     *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        For an Application Load Balancer:
-     *        <code>arn:aws:elasticloadbalancing: <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i> /<i>load-balancer-id</i> </code>
+     *        <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For an Amazon API Gateway stage:
-     *        <code>arn:aws:apigateway:<i>region</i> ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
