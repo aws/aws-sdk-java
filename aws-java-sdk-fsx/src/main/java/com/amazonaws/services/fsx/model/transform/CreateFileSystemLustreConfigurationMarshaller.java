@@ -35,6 +35,10 @@ public class CreateFileSystemLustreConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportPath").build();
     private static final MarshallingInfo<Integer> IMPORTEDFILECHUNKSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportedFileChunkSize").build();
+    private static final MarshallingInfo<String> DEPLOYMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentType").build();
+    private static final MarshallingInfo<Integer> PERUNITSTORAGETHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerUnitStorageThroughput").build();
 
     private static final CreateFileSystemLustreConfigurationMarshaller instance = new CreateFileSystemLustreConfigurationMarshaller();
 
@@ -56,6 +60,8 @@ public class CreateFileSystemLustreConfigurationMarshaller {
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getImportPath(), IMPORTPATH_BINDING);
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getExportPath(), EXPORTPATH_BINDING);
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getImportedFileChunkSize(), IMPORTEDFILECHUNKSIZE_BINDING);
+            protocolMarshaller.marshall(createFileSystemLustreConfiguration.getDeploymentType(), DEPLOYMENTTYPE_BINDING);
+            protocolMarshaller.marshall(createFileSystemLustreConfiguration.getPerUnitStorageThroughput(), PERUNITSTORAGETHROUGHPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

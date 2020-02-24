@@ -40,24 +40,24 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance
- * enters the running state
+ * enters the running state.
  * </p>
  * </li>
  * <li>
  * <p>
  * Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for detailed analysis of potential
- * security or availability risks
+ * security or availability risks.
  * </p>
  * </li>
  * <li>
  * <p>
- * Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume
+ * Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.
  * </p>
  * </li>
  * </ul>
  * <p>
  * For more information about the features of Amazon EventBridge, see the <a
- * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/">Amazon EventBridge User Guide</a>.
+ * href="https://docs.aws.amazon.com/eventbridge/latest/userguide">Amazon EventBridge User Guide</a>.
  * </p>
  */
 @ThreadSafe

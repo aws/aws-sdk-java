@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A key-value pair associated with an AWS resource. In EventBridge, rules support tagging.
+ * A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Tag" target="_top">AWS API
@@ -30,7 +30,7 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that you can use to assign a value. The combination of tag keys and values can help you organize and
+     * A string you can use to assign a value. The combination of tag keys and values can help you organize and
      * categorize your resources.
      * </p>
      */
@@ -44,13 +44,13 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that you can use to assign a value. The combination of tag keys and values can help you organize and
+     * A string you can use to assign a value. The combination of tag keys and values can help you organize and
      * categorize your resources.
      * </p>
      * 
      * @param key
-     *        A string that you can use to assign a value. The combination of tag keys and values can help you organize
-     *        and categorize your resources.
+     *        A string you can use to assign a value. The combination of tag keys and values can help you organize and
+     *        categorize your resources.
      */
 
     public void setKey(String key) {
@@ -59,12 +59,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that you can use to assign a value. The combination of tag keys and values can help you organize and
+     * A string you can use to assign a value. The combination of tag keys and values can help you organize and
      * categorize your resources.
      * </p>
      * 
-     * @return A string that you can use to assign a value. The combination of tag keys and values can help you organize
-     *         and categorize your resources.
+     * @return A string you can use to assign a value. The combination of tag keys and values can help you organize and
+     *         categorize your resources.
      */
 
     public String getKey() {
@@ -73,13 +73,13 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that you can use to assign a value. The combination of tag keys and values can help you organize and
+     * A string you can use to assign a value. The combination of tag keys and values can help you organize and
      * categorize your resources.
      * </p>
      * 
      * @param key
-     *        A string that you can use to assign a value. The combination of tag keys and values can help you organize
-     *        and categorize your resources.
+     *        A string you can use to assign a value. The combination of tag keys and values can help you organize and
+     *        categorize your resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

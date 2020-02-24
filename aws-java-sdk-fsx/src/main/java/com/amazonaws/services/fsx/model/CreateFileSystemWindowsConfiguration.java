@@ -103,7 +103,8 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
      * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
      * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
-     * tags are copied to backups.
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      */
     private Boolean copyTagsToBackups;
@@ -626,14 +627,16 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
      * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
      * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
-     * tags are copied to backups.
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
      * @param copyTagsToBackups
      *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
-     *        more tags, only the specified tags are copied to backups.
+     *        more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *        user-initiated backup, no tags are copied from the file system, regardless of this value.
      */
 
     public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
@@ -645,13 +648,15 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
      * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
      * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
-     * tags are copied to backups.
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
      * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
-     *         more tags, only the specified tags are copied to backups.
+     *         more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the file system, regardless of this value.
      */
 
     public Boolean getCopyTagsToBackups() {
@@ -663,14 +668,16 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
      * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
      * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
-     * tags are copied to backups.
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
      * @param copyTagsToBackups
      *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
-     *        more tags, only the specified tags are copied to backups.
+     *        more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *        user-initiated backup, no tags are copied from the file system, regardless of this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,13 +691,15 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * A boolean flag indicating whether tags for the file system should be copied to backups. This value defaults to
      * false. If it's set to true, all tags for the file system are copied to all automatic and user-initiated backups
      * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
-     * tags are copied to backups.
+     * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
+     * copied from the file system, regardless of this value.
      * </p>
      * 
      * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
-     *         more tags, only the specified tags are copied to backups.
+     *         more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the file system, regardless of this value.
      */
 
     public Boolean isCopyTagsToBackups() {

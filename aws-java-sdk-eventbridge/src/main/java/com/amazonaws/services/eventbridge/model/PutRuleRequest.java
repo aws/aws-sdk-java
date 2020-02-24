@@ -27,24 +27,21 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the rule that you're creating or updating.
-     * </p>
-     * <p>
-     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * The name of the rule that you are creating or updating.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      */
     private String scheduleExpression;
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      */
     private String eventPattern;
@@ -81,16 +78,11 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the rule that you're creating or updating.
-     * </p>
-     * <p>
-     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * The name of the rule that you are creating or updating.
      * </p>
      * 
      * @param name
-     *        The name of the rule that you're creating or updating.</p>
-     *        <p>
-     *        A rule can't have the same name as another rule in the same Region or on the same event bus.
+     *        The name of the rule that you are creating or updating.
      */
 
     public void setName(String name) {
@@ -99,15 +91,10 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the rule that you're creating or updating.
-     * </p>
-     * <p>
-     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * The name of the rule that you are creating or updating.
      * </p>
      * 
-     * @return The name of the rule that you're creating or updating.</p>
-     *         <p>
-     *         A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * @return The name of the rule that you are creating or updating.
      */
 
     public String getName() {
@@ -116,16 +103,11 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the rule that you're creating or updating.
-     * </p>
-     * <p>
-     * A rule can't have the same name as another rule in the same Region or on the same event bus.
+     * The name of the rule that you are creating or updating.
      * </p>
      * 
      * @param name
-     *        The name of the rule that you're creating or updating.</p>
-     *        <p>
-     *        A rule can't have the same name as another rule in the same Region or on the same event bus.
+     *        The name of the rule that you are creating or updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,12 +118,11 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
-     *        <code>"rate(5 minutes)"</code>.
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -150,11 +131,10 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      * 
-     * @return The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
-     *         <code>"rate(5 minutes)"</code>.
+     * @return The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      */
 
     public String getScheduleExpression() {
@@ -163,12 +143,11 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
-     *        <code>"rate(5 minutes)"</code>.
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,14 +159,14 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     *        Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
+     *        and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      */
 
     public void setEventPattern(String eventPattern) {
@@ -197,13 +176,13 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @return The event pattern. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     *         Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html"
+     *         >Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      */
 
     public String getEventPattern() {
@@ -213,14 +192,14 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     *        Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
+     *        and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

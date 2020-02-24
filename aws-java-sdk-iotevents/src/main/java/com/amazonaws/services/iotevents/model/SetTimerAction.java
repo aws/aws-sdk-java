@@ -36,7 +36,8 @@ public class SetTimerAction implements Serializable, Cloneable, StructuredPojo {
     private String timerName;
     /**
      * <p>
-     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
+     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum
+     * value is 31622400 seconds.
      * </p>
      */
     private Integer seconds;
@@ -83,11 +84,13 @@ public class SetTimerAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
+     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum
+     * value is 31622400 seconds.
      * </p>
      * 
      * @param seconds
-     *        The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
+     *        The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The
+     *        maximum value is 31622400 seconds.
      */
 
     public void setSeconds(Integer seconds) {
@@ -96,10 +99,12 @@ public class SetTimerAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
+     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum
+     * value is 31622400 seconds.
      * </p>
      * 
-     * @return The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
+     * @return The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The
+     *         maximum value is 31622400 seconds.
      */
 
     public Integer getSeconds() {
@@ -108,11 +113,13 @@ public class SetTimerAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
+     * The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum
+     * value is 31622400 seconds.
      * </p>
      * 
      * @param seconds
-     *        The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.
+     *        The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The
+     *        maximum value is 31622400 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

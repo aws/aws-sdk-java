@@ -30,48 +30,51 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the new event bus.
      * </p>
      * <p>
-     * The names of custom event buses can't contain the <code>/</code> character. You can't use the name
-     * <code>default</code> for a custom event bus because this name is already used for your account's default event
-     * bus.
+     * Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event
+     * bus, as this name is already used for your account's default event bus.
      * </p>
      * <p>
      * If this is a partner event bus, the name must exactly match the name of the partner event source that this event
-     * bus is matched to. This name will include the <code>/</code> character.
+     * bus is matched to.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * If you're creating a partner event bus, this specifies the partner event source that the new event bus will be
+     * If you are creating a partner event bus, this specifies the partner event source that the new event bus will be
      * matched with.
      * </p>
      */
     private String eventSourceName;
+    /**
+     * <p>
+     * Tags to associate with the event bus.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
      * The name of the new event bus.
      * </p>
      * <p>
-     * The names of custom event buses can't contain the <code>/</code> character. You can't use the name
-     * <code>default</code> for a custom event bus because this name is already used for your account's default event
-     * bus.
+     * Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event
+     * bus, as this name is already used for your account's default event bus.
      * </p>
      * <p>
      * If this is a partner event bus, the name must exactly match the name of the partner event source that this event
-     * bus is matched to. This name will include the <code>/</code> character.
+     * bus is matched to.
      * </p>
      * 
      * @param name
      *        The name of the new event bus. </p>
      *        <p>
-     *        The names of custom event buses can't contain the <code>/</code> character. You can't use the name
-     *        <code>default</code> for a custom event bus because this name is already used for your account's default
-     *        event bus.
+     *        Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom
+     *        event bus, as this name is already used for your account's default event bus.
      *        </p>
      *        <p>
      *        If this is a partner event bus, the name must exactly match the name of the partner event source that this
-     *        event bus is matched to. This name will include the <code>/</code> character.
+     *        event bus is matched to.
      */
 
     public void setName(String name) {
@@ -83,24 +86,22 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the new event bus.
      * </p>
      * <p>
-     * The names of custom event buses can't contain the <code>/</code> character. You can't use the name
-     * <code>default</code> for a custom event bus because this name is already used for your account's default event
-     * bus.
+     * Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event
+     * bus, as this name is already used for your account's default event bus.
      * </p>
      * <p>
      * If this is a partner event bus, the name must exactly match the name of the partner event source that this event
-     * bus is matched to. This name will include the <code>/</code> character.
+     * bus is matched to.
      * </p>
      * 
      * @return The name of the new event bus. </p>
      *         <p>
-     *         The names of custom event buses can't contain the <code>/</code> character. You can't use the name
-     *         <code>default</code> for a custom event bus because this name is already used for your account's default
-     *         event bus.
+     *         Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom
+     *         event bus, as this name is already used for your account's default event bus.
      *         </p>
      *         <p>
      *         If this is a partner event bus, the name must exactly match the name of the partner event source that
-     *         this event bus is matched to. This name will include the <code>/</code> character.
+     *         this event bus is matched to.
      */
 
     public String getName() {
@@ -112,25 +113,23 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
      * The name of the new event bus.
      * </p>
      * <p>
-     * The names of custom event buses can't contain the <code>/</code> character. You can't use the name
-     * <code>default</code> for a custom event bus because this name is already used for your account's default event
-     * bus.
+     * Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event
+     * bus, as this name is already used for your account's default event bus.
      * </p>
      * <p>
      * If this is a partner event bus, the name must exactly match the name of the partner event source that this event
-     * bus is matched to. This name will include the <code>/</code> character.
+     * bus is matched to.
      * </p>
      * 
      * @param name
      *        The name of the new event bus. </p>
      *        <p>
-     *        The names of custom event buses can't contain the <code>/</code> character. You can't use the name
-     *        <code>default</code> for a custom event bus because this name is already used for your account's default
-     *        event bus.
+     *        Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom
+     *        event bus, as this name is already used for your account's default event bus.
      *        </p>
      *        <p>
      *        If this is a partner event bus, the name must exactly match the name of the partner event source that this
-     *        event bus is matched to. This name will include the <code>/</code> character.
+     *        event bus is matched to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +140,12 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If you're creating a partner event bus, this specifies the partner event source that the new event bus will be
+     * If you are creating a partner event bus, this specifies the partner event source that the new event bus will be
      * matched with.
      * </p>
      * 
      * @param eventSourceName
-     *        If you're creating a partner event bus, this specifies the partner event source that the new event bus
+     *        If you are creating a partner event bus, this specifies the partner event source that the new event bus
      *        will be matched with.
      */
 
@@ -156,11 +155,11 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If you're creating a partner event bus, this specifies the partner event source that the new event bus will be
+     * If you are creating a partner event bus, this specifies the partner event source that the new event bus will be
      * matched with.
      * </p>
      * 
-     * @return If you're creating a partner event bus, this specifies the partner event source that the new event bus
+     * @return If you are creating a partner event bus, this specifies the partner event source that the new event bus
      *         will be matched with.
      */
 
@@ -170,18 +169,88 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If you're creating a partner event bus, this specifies the partner event source that the new event bus will be
+     * If you are creating a partner event bus, this specifies the partner event source that the new event bus will be
      * matched with.
      * </p>
      * 
      * @param eventSourceName
-     *        If you're creating a partner event bus, this specifies the partner event source that the new event bus
+     *        If you are creating a partner event bus, this specifies the partner event source that the new event bus
      *        will be matched with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateEventBusRequest withEventSourceName(String eventSourceName) {
         setEventSourceName(eventSourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to associate with the event bus.
+     * </p>
+     * 
+     * @return Tags to associate with the event bus.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags to associate with the event bus.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to associate with the event bus.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Tags to associate with the event bus.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to associate with the event bus.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventBusRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Tags to associate with the event bus.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to associate with the event bus.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventBusRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -200,7 +269,9 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getEventSourceName() != null)
-            sb.append("EventSourceName: ").append(getEventSourceName());
+            sb.append("EventSourceName: ").append(getEventSourceName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +294,10 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEventSourceName() != null && other.getEventSourceName().equals(this.getEventSourceName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +308,7 @@ public class CreateEventBusRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getEventSourceName() == null) ? 0 : getEventSourceName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

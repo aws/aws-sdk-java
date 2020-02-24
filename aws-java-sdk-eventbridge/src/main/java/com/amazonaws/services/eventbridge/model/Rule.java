@@ -43,8 +43,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      */
     private String eventPattern;
@@ -62,7 +62,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      */
     private String scheduleExpression;
@@ -74,8 +74,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * If an AWS service created the rule on behalf of your account, this field displays the principal name of the
-     * service that created the rule.
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
      * </p>
      */
     private String managedBy;
@@ -169,14 +169,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     *        Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
+     *        and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      */
 
     public void setEventPattern(String eventPattern) {
@@ -186,13 +186,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @return The event pattern of the rule. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     *         Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html"
+     *         >Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      */
 
     public String getEventPattern() {
@@ -202,14 +202,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     * Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
+     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Event
-     *        Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
+     *        and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,12 +319,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
-     *        <code>"rate(5 minutes)"</code>.
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -333,11 +332,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      * 
-     * @return The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
-     *         <code>"rate(5 minutes)"</code>.
+     * @return The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      */
 
     public String getScheduleExpression() {
@@ -346,12 +344,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or <code>"rate(5 minutes)"</code>.
+     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression: for example, <code>"cron(0 20 * * ? *)"</code> or
-     *        <code>"rate(5 minutes)"</code>.
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,13 +399,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If an AWS service created the rule on behalf of your account, this field displays the principal name of the
-     * service that created the rule.
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
      * </p>
      * 
      * @param managedBy
-     *        If an AWS service created the rule on behalf of your account, this field displays the principal name of
-     *        the service that created the rule.
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
      */
 
     public void setManagedBy(String managedBy) {
@@ -417,12 +414,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If an AWS service created the rule on behalf of your account, this field displays the principal name of the
-     * service that created the rule.
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
      * </p>
      * 
-     * @return If an AWS service created the rule on behalf of your account, this field displays the principal name of
-     *         the service that created the rule.
+     * @return If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *         name of the service that created the rule.
      */
 
     public String getManagedBy() {
@@ -431,13 +428,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If an AWS service created the rule on behalf of your account, this field displays the principal name of the
-     * service that created the rule.
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
      * </p>
      * 
      * @param managedBy
-     *        If an AWS service created the rule on behalf of your account, this field displays the principal name of
-     *        the service that created the rule.
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * File system configuration is required for this operation.
+ * A file system configuration is required for this operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

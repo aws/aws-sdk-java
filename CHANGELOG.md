@@ -1,3 +1,28 @@
+# __1.11.729__ __2020-02-24__
+## __AWS IoT Events__
+  - ### Features
+    - Documentation updates for iotcolumbo
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - This release allows you to create and manage tags for event buses.
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - Documentation updates for docdb
+
+## __Amazon EventBridge__
+  - ### Features
+    - This release allows you to create and manage tags for event buses.
+
+## __Amazon FSx__
+  - ### Features
+    - Announcing persistent file systems for Amazon FSx for Lustre that are ideal for longer-term storage and workloads, and a new generation of scratch file systems that offer higher burst throughput for spiky workloads.
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - AWS Snowball adds a field for entering your GSTIN when creating AWS Snowball jobs in the Asia Pacific (Mumbai) region. 
+
 # __1.11.728__ __2020-02-21__
 ## __AWS WAFV2__
   - ### Features

@@ -78,9 +78,9 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
     private String status;
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      */
@@ -433,17 +433,17 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      * 
      * @param key
-     *        The input attribute key used to identify a device or system in order to create a detector (an instance of
-     *        the detector model) and then to route each input received to the appropriate detector (instance). This
-     *        parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
-     *        input that is used to identify the device associated with the input.
+     *        The input attribute key used to identify a device or system to create a detector (an instance of the
+     *        detector model) and then to route each input received to the appropriate detector (instance). This
+     *        parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
+     *        pair that is used to identify the device associated with the input.
      */
 
     public void setKey(String key) {
@@ -452,16 +452,16 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      * 
-     * @return The input attribute key used to identify a device or system in order to create a detector (an instance of
-     *         the detector model) and then to route each input received to the appropriate detector (instance). This
-     *         parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
-     *         input that is used to identify the device associated with the input.
+     * @return The input attribute key used to identify a device or system to create a detector (an instance of the
+     *         detector model) and then to route each input received to the appropriate detector (instance). This
+     *         parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
+     *         pair that is used to identify the device associated with the input.
      */
 
     public String getKey() {
@@ -470,17 +470,17 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The input attribute key used to identify a device or system in order to create a detector (an instance of the
-     * detector model) and then to route each input received to the appropriate detector (instance). This parameter uses
-     * a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * The input attribute key used to identify a device or system to create a detector (an instance of the detector
+     * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      * 
      * @param key
-     *        The input attribute key used to identify a device or system in order to create a detector (an instance of
-     *        the detector model) and then to route each input received to the appropriate detector (instance). This
-     *        parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
-     *        input that is used to identify the device associated with the input.
+     *        The input attribute key used to identify a device or system to create a detector (an instance of the
+     *        detector model) and then to route each input received to the appropriate detector (instance). This
+     *        parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
+     *        pair that is used to identify the device associated with the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

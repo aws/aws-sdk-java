@@ -36,27 +36,26 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
     private java.util.Date time;
     /**
      * <p>
-     * The event source that is generating the evntry. This field is required.
+     * The event source that is generating the evntry.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      */
     private java.util.List<String> resources;
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail. This field is required.
+     * A free-form string used to decide what fields to expect in the event detail.
      * </p>
      */
     private String detailType;
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      */
     private String detail;
@@ -103,11 +102,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The event source that is generating the evntry. This field is required.
+     * The event source that is generating the evntry.
      * </p>
      * 
      * @param source
-     *        The event source that is generating the evntry. This field is required.
+     *        The event source that is generating the evntry.
      */
 
     public void setSource(String source) {
@@ -116,10 +115,10 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The event source that is generating the evntry. This field is required.
+     * The event source that is generating the evntry.
      * </p>
      * 
-     * @return The event source that is generating the evntry. This field is required.
+     * @return The event source that is generating the evntry.
      */
 
     public String getSource() {
@@ -128,11 +127,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The event source that is generating the evntry. This field is required.
+     * The event source that is generating the evntry.
      * </p>
      * 
      * @param source
-     *        The event source that is generating the evntry. This field is required.
+     *        The event source that is generating the evntry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,12 +142,12 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * 
-     * @return AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *         including zero, can be present.
+     * @return AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *         including zero, may be present.
      */
 
     public java.util.List<String> getResources() {
@@ -157,13 +156,13 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * 
      * @param resources
-     *        AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *        including zero, can be present.
+     *        AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *        including zero, may be present.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -177,8 +176,8 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,8 +186,8 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
      * </p>
      * 
      * @param resources
-     *        AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *        including zero, can be present.
+     *        AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *        including zero, may be present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,13 +203,13 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * 
      * @param resources
-     *        AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *        including zero, can be present.
+     *        AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *        including zero, may be present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +220,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail. This field is required.
+     * A free-form string used to decide what fields to expect in the event detail.
      * </p>
      * 
      * @param detailType
-     *        A free-form string used to decide which fields to expect in the event detail. This field is required.
+     *        A free-form string used to decide what fields to expect in the event detail.
      */
 
     public void setDetailType(String detailType) {
@@ -234,10 +233,10 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail. This field is required.
+     * A free-form string used to decide what fields to expect in the event detail.
      * </p>
      * 
-     * @return A free-form string used to decide which fields to expect in the event detail. This field is required.
+     * @return A free-form string used to decide what fields to expect in the event detail.
      */
 
     public String getDetailType() {
@@ -246,11 +245,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A free-form string used to decide which fields to expect in the event detail. This field is required.
+     * A free-form string used to decide what fields to expect in the event detail.
      * </p>
      * 
      * @param detailType
-     *        A free-form string used to decide which fields to expect in the event detail. This field is required.
+     *        A free-form string used to decide what fields to expect in the event detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,13 +260,12 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
      * @param detail
-     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
-     *        subobjects. This field is required.
+     *        A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *        subobjects.
      */
 
     public void setDetail(String detail) {
@@ -276,12 +274,11 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
-     * @return A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
-     *         subobjects. This field is required.
+     * @return A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *         subobjects.
      */
 
     public String getDetail() {
@@ -290,13 +287,12 @@ public class PutPartnerEventsRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
      * @param detail
-     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
-     *        subobjects. This field is required.
+     *        A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *        subobjects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified state isn't a valid state for an event source.
+ * The specified state is not a valid state for an event source.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

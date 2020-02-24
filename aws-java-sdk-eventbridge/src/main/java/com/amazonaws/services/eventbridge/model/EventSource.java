@@ -43,13 +43,13 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
     private String createdBy;
     /**
      * <p>
-     * The date and time when the event source was created.
+     * The date and time the event source was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The date and time when the event source will expire if the AWS account doesn't create a matching event bus for
+     * The date and time that the event source will expire, if the AWS account doesn't create a matching event bus for
      * it.
      * </p>
      */
@@ -62,10 +62,10 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus for
-     * this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet created a
-     * matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have created a matching
-     * event bus, but the event source has since been deleted.
+     * The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event
+     * source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or
+     * that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has
+     * since been deleted.
      * </p>
      */
     private String state;
@@ -152,11 +152,11 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the event source was created.
+     * The date and time the event source was created.
      * </p>
      * 
      * @param creationTime
-     *        The date and time when the event source was created.
+     *        The date and time the event source was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -165,10 +165,10 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the event source was created.
+     * The date and time the event source was created.
      * </p>
      * 
-     * @return The date and time when the event source was created.
+     * @return The date and time the event source was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -177,11 +177,11 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the event source was created.
+     * The date and time the event source was created.
      * </p>
      * 
      * @param creationTime
-     *        The date and time when the event source was created.
+     *        The date and time the event source was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,13 +192,13 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the event source will expire if the AWS account doesn't create a matching event bus for
+     * The date and time that the event source will expire, if the AWS account doesn't create a matching event bus for
      * it.
      * </p>
      * 
      * @param expirationTime
-     *        The date and time when the event source will expire if the AWS account doesn't create a matching event bus
-     *        for it.
+     *        The date and time that the event source will expire, if the AWS account doesn't create a matching event
+     *        bus for it.
      */
 
     public void setExpirationTime(java.util.Date expirationTime) {
@@ -207,11 +207,11 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the event source will expire if the AWS account doesn't create a matching event bus for
+     * The date and time that the event source will expire, if the AWS account doesn't create a matching event bus for
      * it.
      * </p>
      * 
-     * @return The date and time when the event source will expire if the AWS account doesn't create a matching event
+     * @return The date and time that the event source will expire, if the AWS account doesn't create a matching event
      *         bus for it.
      */
 
@@ -221,13 +221,13 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the event source will expire if the AWS account doesn't create a matching event bus for
+     * The date and time that the event source will expire, if the AWS account doesn't create a matching event bus for
      * it.
      * </p>
      * 
      * @param expirationTime
-     *        The date and time when the event source will expire if the AWS account doesn't create a matching event bus
-     *        for it.
+     *        The date and time that the event source will expire, if the AWS account doesn't create a matching event
+     *        bus for it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,17 +278,17 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus for
-     * this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet created a
-     * matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have created a matching
-     * event bus, but the event source has since been deleted.
+     * The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event
+     * source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or
+     * that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has
+     * since been deleted.
      * </p>
      * 
      * @param state
-     *        The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus
-     *        for this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet
-     *        created a matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have
-     *        created a matching event bus, but the event source has since been deleted.
+     *        The state of the event source. If it is ACTIVE, you have already created a matching event bus for this
+     *        event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching
+     *        event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but
+     *        the event source has since been deleted.
      * @see EventSourceState
      */
 
@@ -298,16 +298,16 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus for
-     * this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet created a
-     * matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have created a matching
-     * event bus, but the event source has since been deleted.
+     * The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event
+     * source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or
+     * that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has
+     * since been deleted.
      * </p>
      * 
-     * @return The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus
-     *         for this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet
-     *         created a matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have
-     *         created a matching event bus, but the event source has since been deleted.
+     * @return The state of the event source. If it is ACTIVE, you have already created a matching event bus for this
+     *         event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching
+     *         event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but
+     *         the event source has since been deleted.
      * @see EventSourceState
      */
 
@@ -317,17 +317,17 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus for
-     * this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet created a
-     * matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have created a matching
-     * event bus, but the event source has since been deleted.
+     * The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event
+     * source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or
+     * that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has
+     * since been deleted.
      * </p>
      * 
      * @param state
-     *        The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus
-     *        for this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet
-     *        created a matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have
-     *        created a matching event bus, but the event source has since been deleted.
+     *        The state of the event source. If it is ACTIVE, you have already created a matching event bus for this
+     *        event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching
+     *        event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but
+     *        the event source has since been deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSourceState
      */
@@ -339,17 +339,17 @@ public class EventSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus for
-     * this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet created a
-     * matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have created a matching
-     * event bus, but the event source has since been deleted.
+     * The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event
+     * source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or
+     * that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has
+     * since been deleted.
      * </p>
      * 
      * @param state
-     *        The state of the event source. If it's <code>ACTIVE</code>, you have already created a matching event bus
-     *        for this event source, and that event bus is active. If it's <code>PENDING</code>, either you haven't yet
-     *        created a matching event bus, or that event bus is deactivated. If it's <code>DELETED</code>, you have
-     *        created a matching event bus, but the event source has since been deleted.
+     *        The state of the event source. If it is ACTIVE, you have already created a matching event bus for this
+     *        event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching
+     *        event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but
+     *        the event source has since been deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventSourceState
      */

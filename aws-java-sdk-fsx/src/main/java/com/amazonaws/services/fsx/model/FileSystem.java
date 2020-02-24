@@ -134,8 +134,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private String dNSName;
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for
+     * Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In either case, if
+     * not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file systems are always
+     * encrypted at rest using Amazon FSx managed keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key
+     * Management Service API Reference</i>.
      * </p>
      */
     private String kmsKeyId;
@@ -1021,13 +1025,21 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for
+     * Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In either case, if
+     * not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file systems are always
+     * encrypted at rest using Amazon FSx managed keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key
+     * Management Service API Reference</i>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an
-     *        Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon
+     *        FSx for Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In
+     *        either case, if not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file
+     *        systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key
+     *        Management Service API Reference</i>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1036,12 +1048,20 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for
+     * Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In either case, if
+     * not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file systems are always
+     * encrypted at rest using Amazon FSx managed keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key
+     * Management Service API Reference</i>.
      * </p>
      * 
-     * @return The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an
-     *         Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+     * @return The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon
+     *         FSx for Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In
+     *         either case, if not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file
+     *         systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key
+     *         Management Service API Reference</i>.
      */
 
     public String getKmsKeyId() {
@@ -1050,13 +1070,21 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an Amazon FSx
-     * for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon FSx for
+     * Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In either case, if
+     * not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file systems are always
+     * encrypted at rest using Amazon FSx managed keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key
+     * Management Service API Reference</i>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for an
-     *        Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the file system's data for Amazon
+     *        FSx for Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In
+     *        either case, if not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file
+     *        systems are always encrypted at rest using Amazon FSx managed keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a> in the <i>AWS Key
+     *        Management Service API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

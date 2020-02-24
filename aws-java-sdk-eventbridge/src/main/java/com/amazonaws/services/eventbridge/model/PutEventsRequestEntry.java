@@ -30,56 +30,53 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      */
     private java.util.Date time;
     /**
      * <p>
-     * The source of the event. This field is required.
+     * The source of the event.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      */
     private java.util.List<String> resources;
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail. This field is required.
+     * Free-form string used to decide what fields to expect in the event detail.
      * </p>
      */
     private String detailType;
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * </p>
-     * <p>
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      */
     private String detail;
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus can match the
-     * event.
+     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
+     * match the event.
      * </p>
      */
     private String eventBusName;
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
      * @param time
-     *        The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
-     *        timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+     *        The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *        time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      */
 
     public void setTime(java.util.Date time) {
@@ -88,12 +85,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
-     * @return The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
-     *         timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * @return The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *         time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      */
 
     public java.util.Date getTime() {
@@ -102,13 +99,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.
+     * The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time
+     * stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
      * @param time
-     *        The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
-     *        timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
+     *        The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *        time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +116,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The source of the event. This field is required.
+     * The source of the event.
      * </p>
      * 
      * @param source
-     *        The source of the event. This field is required.
+     *        The source of the event.
      */
 
     public void setSource(String source) {
@@ -132,10 +129,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The source of the event. This field is required.
+     * The source of the event.
      * </p>
      * 
-     * @return The source of the event. This field is required.
+     * @return The source of the event.
      */
 
     public String getSource() {
@@ -144,11 +141,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The source of the event. This field is required.
+     * The source of the event.
      * </p>
      * 
      * @param source
-     *        The source of the event. This field is required.
+     *        The source of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,12 +156,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * 
-     * @return AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *         including zero, can be present.
+     * @return AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *         including zero, may be present.
      */
 
     public java.util.List<String> getResources() {
@@ -173,13 +170,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * 
      * @param resources
-     *        AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *        including zero, can be present.
+     *        AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *        including zero, may be present.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -193,8 +190,8 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -203,8 +200,8 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param resources
-     *        AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *        including zero, can be present.
+     *        AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *        including zero, may be present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,13 +217,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number, including
-     * zero, can be present.
+     * AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     * including zero, may be present.
      * </p>
      * 
      * @param resources
-     *        AWS resources, identified by Amazon Resource Name (ARN), that the event primarily concerns. Any number,
-     *        including zero, can be present.
+     *        AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number,
+     *        including zero, may be present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,11 +234,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail. This field is required.
+     * Free-form string used to decide what fields to expect in the event detail.
      * </p>
      * 
      * @param detailType
-     *        Free-form string used to decide which fields to expect in the event detail. This field is required.
+     *        Free-form string used to decide what fields to expect in the event detail.
      */
 
     public void setDetailType(String detailType) {
@@ -250,10 +247,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail. This field is required.
+     * Free-form string used to decide what fields to expect in the event detail.
      * </p>
      * 
-     * @return Free-form string used to decide which fields to expect in the event detail. This field is required.
+     * @return Free-form string used to decide what fields to expect in the event detail.
      */
 
     public String getDetailType() {
@@ -262,11 +259,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide which fields to expect in the event detail. This field is required.
+     * Free-form string used to decide what fields to expect in the event detail.
      * </p>
      * 
      * @param detailType
-     *        Free-form string used to decide which fields to expect in the event detail. This field is required.
+     *        Free-form string used to decide what fields to expect in the event detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,17 +274,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * </p>
-     * <p>
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
      * @param detail
-     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
-     *        subobjects.</p>
-     *        <p>
-     *        This field is required.
+     *        A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *        subobjects.
      */
 
     public void setDetail(String detail) {
@@ -296,16 +288,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * </p>
-     * <p>
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
-     * @return A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
-     *         subobjects.</p>
-     *         <p>
-     *         This field is required.
+     * @return A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *         subobjects.
      */
 
     public String getDetail() {
@@ -314,17 +301,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested subobjects.
-     * </p>
-     * <p>
-     * This field is required.
+     * A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.
      * </p>
      * 
      * @param detail
-     *        A valid JSON object. There is no other schema imposed. The JSON object can contain fields and nested
-     *        subobjects.</p>
-     *        <p>
-     *        This field is required.
+     *        A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested
+     *        subobjects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,13 +317,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus can match the
-     * event.
+     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
+     * match the event.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus that will receive the event. Only the rules that are associated with this event bus can
-     *        match the event.
+     *        The event bus that will receive the event. Only the rules that are associated with this event bus will be
+     *        able to match the event.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -350,12 +332,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus can match the
-     * event.
+     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
+     * match the event.
      * </p>
      * 
-     * @return The event bus that will receive the event. Only the rules that are associated with this event bus can
-     *         match the event.
+     * @return The event bus that will receive the event. Only the rules that are associated with this event bus will be
+     *         able to match the event.
      */
 
     public String getEventBusName() {
@@ -364,13 +346,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus can match the
-     * event.
+     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
+     * match the event.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus that will receive the event. Only the rules that are associated with this event bus can
-     *        match the event.
+     *        The event bus that will receive the event. Only the rules that are associated with this event bus will be
+     *        able to match the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

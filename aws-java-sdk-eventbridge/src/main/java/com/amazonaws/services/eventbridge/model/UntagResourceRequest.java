@@ -27,7 +27,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the rule that you're removing tags from.
+     * The ARN of the EventBridge resource from which you are removing tags.
      * </p>
      */
     private String resourceARN;
@@ -40,11 +40,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the rule that you're removing tags from.
+     * The ARN of the EventBridge resource from which you are removing tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the rule that you're removing tags from.
+     *        The ARN of the EventBridge resource from which you are removing tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the rule that you're removing tags from.
+     * The ARN of the EventBridge resource from which you are removing tags.
      * </p>
      * 
-     * @return The ARN of the rule that you're removing tags from.
+     * @return The ARN of the EventBridge resource from which you are removing tags.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the rule that you're removing tags from.
+     * The ARN of the EventBridge resource from which you are removing tags.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the rule that you're removing tags from.
+     *        The ARN of the EventBridge resource from which you are removing tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

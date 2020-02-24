@@ -38,7 +38,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing <code>DBClusterParameterGroup</code>.
+     * Must not match the name of an existing <code>DBClusterParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -78,7 +78,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing <code>DBClusterParameterGroup</code>.
+     * Must not match the name of an existing <code>DBClusterParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -96,7 +96,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing <code>DBClusterParameterGroup</code>.
+     *        Must not match the name of an existing <code>DBClusterParameterGroup</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -120,7 +120,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing <code>DBClusterParameterGroup</code>.
+     * Must not match the name of an existing <code>DBClusterParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -137,7 +137,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must match the name of an existing <code>DBClusterParameterGroup</code>.
+     *         Must not match the name of an existing <code>DBClusterParameterGroup</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -161,7 +161,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing <code>DBClusterParameterGroup</code>.
+     * Must not match the name of an existing <code>DBClusterParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -179,7 +179,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing <code>DBClusterParameterGroup</code>.
+     *        Must not match the name of an existing <code>DBClusterParameterGroup</code>.
      *        </p>
      *        </li>
      *        </ul>

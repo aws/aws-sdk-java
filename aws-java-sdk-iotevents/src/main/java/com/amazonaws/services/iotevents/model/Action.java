@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An action to be performed when the <code>"condition"</code> is TRUE.
+ * An action to be performed when the <code>condition</code> is TRUE.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/Action" target="_top">AWS API
@@ -73,8 +73,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private LambdaAction lambda;
     /**
      * <p>
-     * Sends an IoT Events input, passing in information about the detector model instance and the event that triggered
-     * the action.
+     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * triggered the action.
      * </p>
      */
     private IotEventsAction iotEvents;
@@ -87,8 +87,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private SqsAction sqs;
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to a Kinesis Data
-     * Firehose delivery stream.
+     * Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis
+     * Data Firehose delivery stream.
      * </p>
      */
     private FirehoseAction firehose;
@@ -381,12 +381,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends an IoT Events input, passing in information about the detector model instance and the event that triggered
-     * the action.
+     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * triggered the action.
      * </p>
      * 
      * @param iotEvents
-     *        Sends an IoT Events input, passing in information about the detector model instance and the event that
+     *        Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
      *        triggered the action.
      */
 
@@ -396,12 +396,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends an IoT Events input, passing in information about the detector model instance and the event that triggered
-     * the action.
+     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * triggered the action.
      * </p>
      * 
-     * @return Sends an IoT Events input, passing in information about the detector model instance and the event that
-     *         triggered the action.
+     * @return Sends an AWS IoT Events input, passing in information about the detector model instance and the event
+     *         that triggered the action.
      */
 
     public IotEventsAction getIotEvents() {
@@ -410,12 +410,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends an IoT Events input, passing in information about the detector model instance and the event that triggered
-     * the action.
+     * Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
+     * triggered the action.
      * </p>
      * 
      * @param iotEvents
-     *        Sends an IoT Events input, passing in information about the detector model instance and the event that
+     *        Sends an AWS IoT Events input, passing in information about the detector model instance and the event that
      *        triggered the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -473,13 +473,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to a Kinesis Data
-     * Firehose delivery stream.
+     * Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis
+     * Data Firehose delivery stream.
      * </p>
      * 
      * @param firehose
-     *        Sends information about the detector model instance and the event that triggered the action to a Kinesis
-     *        Data Firehose delivery stream.
+     *        Sends information about the detector model instance and the event that triggered the action to an Amazon
+     *        Kinesis Data Firehose delivery stream.
      */
 
     public void setFirehose(FirehoseAction firehose) {
@@ -488,12 +488,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to a Kinesis Data
-     * Firehose delivery stream.
+     * Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis
+     * Data Firehose delivery stream.
      * </p>
      * 
-     * @return Sends information about the detector model instance and the event that triggered the action to a Kinesis
-     *         Data Firehose delivery stream.
+     * @return Sends information about the detector model instance and the event that triggered the action to an Amazon
+     *         Kinesis Data Firehose delivery stream.
      */
 
     public FirehoseAction getFirehose() {
@@ -502,13 +502,13 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sends information about the detector model instance and the event that triggered the action to a Kinesis Data
-     * Firehose delivery stream.
+     * Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis
+     * Data Firehose delivery stream.
      * </p>
      * 
      * @param firehose
-     *        Sends information about the detector model instance and the event that triggered the action to a Kinesis
-     *        Data Firehose delivery stream.
+     *        Sends information about the detector model instance and the event that triggered the action to an Amazon
+     *        Kinesis Data Firehose delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

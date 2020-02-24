@@ -56,6 +56,18 @@ public class LustreFileSystemConfigurationJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     lustreFileSystemConfiguration.setDataRepositoryConfiguration(DataRepositoryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DeploymentType", targetDepth)) {
+                    context.nextToken();
+                    lustreFileSystemConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PerUnitStorageThroughput", targetDepth)) {
+                    context.nextToken();
+                    lustreFileSystemConfiguration.setPerUnitStorageThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MountName", targetDepth)) {
+                    context.nextToken();
+                    lustreFileSystemConfiguration.setMountName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -31,6 +31,12 @@ public class LustreFileSystemConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WeeklyMaintenanceStartTime").build();
     private static final MarshallingInfo<StructuredPojo> DATAREPOSITORYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataRepositoryConfiguration").build();
+    private static final MarshallingInfo<String> DEPLOYMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentType").build();
+    private static final MarshallingInfo<Integer> PERUNITSTORAGETHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerUnitStorageThroughput").build();
+    private static final MarshallingInfo<String> MOUNTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MountName").build();
 
     private static final LustreFileSystemConfigurationMarshaller instance = new LustreFileSystemConfigurationMarshaller();
 
@@ -50,6 +56,9 @@ public class LustreFileSystemConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(lustreFileSystemConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);
             protocolMarshaller.marshall(lustreFileSystemConfiguration.getDataRepositoryConfiguration(), DATAREPOSITORYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(lustreFileSystemConfiguration.getDeploymentType(), DEPLOYMENTTYPE_BINDING);
+            protocolMarshaller.marshall(lustreFileSystemConfiguration.getPerUnitStorageThroughput(), PERUNITSTORAGETHROUGHPUT_BINDING);
+            protocolMarshaller.marshall(lustreFileSystemConfiguration.getMountName(), MOUNTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
