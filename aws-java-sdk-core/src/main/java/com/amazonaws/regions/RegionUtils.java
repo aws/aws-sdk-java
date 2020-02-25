@@ -14,10 +14,9 @@
  */
 package com.amazonaws.regions;
 
-import com.amazonaws.SdkClientException;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.SdkHttpUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

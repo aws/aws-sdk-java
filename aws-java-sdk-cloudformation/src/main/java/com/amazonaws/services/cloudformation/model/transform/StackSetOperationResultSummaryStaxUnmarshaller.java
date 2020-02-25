@@ -67,6 +67,11 @@ public class StackSetOperationResultSummaryStaxUnmarshaller implements Unmarshal
                     stackSetOperationResultSummary.setAccountGateResult(AccountGateResultStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("OrganizationalUnitId", targetDepth)) {
+                    stackSetOperationResultSummary.setOrganizationalUnitId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSetOperationResultSummary;

@@ -27,18 +27,18 @@ public class GetComponentRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.
      * </p>
      */
     private String componentBuildVersionArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.
      * </p>
      * 
      * @param componentBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the component that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.
      */
 
     public void setComponentBuildVersionArn(String componentBuildVersionArn) {
@@ -47,10 +47,10 @@ public class GetComponentRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the component that you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.
      */
 
     public String getComponentBuildVersionArn() {
@@ -59,11 +59,11 @@ public class GetComponentRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the component that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.
      * </p>
      * 
      * @param componentBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the component that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

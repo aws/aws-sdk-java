@@ -48,6 +48,11 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public AssociateHealthCheckResult associateHealthCheck(AssociateHealthCheckRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateProtectionResult createProtection(CreateProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,6 +105,11 @@ public class AbstractAWSShield implements AWSShield {
 
     @Override
     public DisassociateDRTRoleResult disassociateDRTRole(DisassociateDRTRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateHealthCheckResult disassociateHealthCheck(DisassociateHealthCheckRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

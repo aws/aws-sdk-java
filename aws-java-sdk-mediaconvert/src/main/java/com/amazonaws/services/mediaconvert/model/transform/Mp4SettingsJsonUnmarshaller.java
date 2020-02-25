@@ -52,6 +52,10 @@ public class Mp4SettingsJsonUnmarshaller implements Unmarshaller<Mp4Settings, Js
                     context.nextToken();
                     mp4Settings.setCslgAtom(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cttsVersion", targetDepth)) {
+                    context.nextToken();
+                    mp4Settings.setCttsVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("freeSpaceBox", targetDepth)) {
                     context.nextToken();
                     mp4Settings.setFreeSpaceBox(context.getUnmarshaller(String.class).unmarshall(context));

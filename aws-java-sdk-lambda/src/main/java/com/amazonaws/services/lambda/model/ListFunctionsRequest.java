@@ -27,8 +27,9 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
-     * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code> filters the
+     * list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      */
     private String masterRegion;
@@ -46,20 +47,22 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String marker;
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      */
     private Integer maxItems;
 
     /**
      * <p>
-     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
-     * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code> filters the
+     * list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      * 
      * @param masterRegion
-     *        For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
-     *        <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+     *        For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code>
+     *        filters the list of functions to only include Lambda@Edge functions replicated from a master function in
+     *        US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      */
 
     public void setMasterRegion(String masterRegion) {
@@ -68,12 +71,14 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
-     * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code> filters the
+     * list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      * 
-     * @return For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
-     *         <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+     * @return For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code>
+     *         filters the list of functions to only include Lambda@Edge functions replicated from a master function in
+     *         US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      */
 
     public String getMasterRegion() {
@@ -82,13 +87,15 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
-     * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code> filters the
+     * list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      * 
      * @param masterRegion
-     *        For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
-     *        <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
+     *        For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code>
+     *        filters the list of functions to only include Lambda@Edge functions replicated from a master function in
+     *        US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +219,11 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      * 
      * @param maxItems
-     *        Specify a value between 1 and 50 to limit the number of functions in the response.
+     *        The maximum number of functions to return.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -225,10 +232,10 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      * 
-     * @return Specify a value between 1 and 50 to limit the number of functions in the response.
+     * @return The maximum number of functions to return.
      */
 
     public Integer getMaxItems() {
@@ -237,11 +244,11 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify a value between 1 and 50 to limit the number of functions in the response.
+     * The maximum number of functions to return.
      * </p>
      * 
      * @param maxItems
-     *        Specify a value between 1 and 50 to limit the number of functions in the response.
+     *        The maximum number of functions to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

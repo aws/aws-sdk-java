@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SavingsPlanProductType {
 
     EC2("EC2"),
-    Fargate("Fargate");
+    Fargate("Fargate"),
+    Lambda("Lambda");
 
     private String value;
 

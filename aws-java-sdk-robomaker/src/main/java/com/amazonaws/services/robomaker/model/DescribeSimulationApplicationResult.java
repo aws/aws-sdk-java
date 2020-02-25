@@ -56,7 +56,7 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
     private SimulationSoftwareSuite simulationSoftwareSuite;
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      */
     private RobotSoftwareSuite robotSoftwareSuite;
@@ -317,11 +317,11 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        Information about the robot software suite.
+     *        Information about the robot software suite (ROS distribution).
      */
 
     public void setRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
@@ -330,10 +330,10 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      * 
-     * @return Information about the robot software suite.
+     * @return Information about the robot software suite (ROS distribution).
      */
 
     public RobotSoftwareSuite getRobotSoftwareSuite() {
@@ -342,11 +342,11 @@ public class DescribeSimulationApplicationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about the robot software suite.
+     * Information about the robot software suite (ROS distribution).
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        Information about the robot software suite.
+     *        Information about the robot software suite (ROS distribution).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

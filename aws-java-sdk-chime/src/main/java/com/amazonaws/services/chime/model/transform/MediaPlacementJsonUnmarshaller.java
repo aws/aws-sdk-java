@@ -52,6 +52,10 @@ public class MediaPlacementJsonUnmarshaller implements Unmarshaller<MediaPlaceme
                     context.nextToken();
                     mediaPlacement.setAudioHostUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AudioFallbackUrl", targetDepth)) {
+                    context.nextToken();
+                    mediaPlacement.setAudioFallbackUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ScreenDataUrl", targetDepth)) {
                     context.nextToken();
                     mediaPlacement.setScreenDataUrl(context.getUnmarshaller(String.class).unmarshall(context));

@@ -34,6 +34,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocationName("HsmType").build();
     private static final MarshallingInfo<String> SOURCEBACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBackupId").build();
+    private static final MarshallingInfo<List> TAGLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagList").build();
 
     private static final CreateClusterRequestMarshaller instance = new CreateClusterRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class CreateClusterRequestMarshaller {
             protocolMarshaller.marshall(createClusterRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getHsmType(), HSMTYPE_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getSourceBackupId(), SOURCEBACKUPID_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getTagList(), TAGLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

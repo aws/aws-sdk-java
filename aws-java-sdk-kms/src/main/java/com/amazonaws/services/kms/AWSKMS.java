@@ -248,7 +248,10 @@ public interface AWSKMS {
      * number of active HSMs in a cluster, use the <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
      * operation. To add HSMs to the cluster, use the <a
-     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation. Also,
+     * the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This prevents AWS KMS from using
+     * this account to log in.
      * </p>
      * <p>
      * The connection process can take an extended amount of time to complete; up to 20 minutes. This operation starts
@@ -260,8 +263,7 @@ public interface AWSKMS {
      * <p>
      * During the connection process, AWS KMS finds the AWS CloudHSM cluster that is associated with the custom key
      * store, creates the connection infrastructure, connects to the cluster, logs into the AWS CloudHSM client as the
-     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user</a> (CU), and rotates its password.
+     * <code>kmsuser</code> CU, and rotates its password.
      * </p>
      * <p>
      * The <code>ConnectCustomKeyStore</code> operation might fail for various reasons. To find the reason, use the
@@ -472,8 +474,8 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws LimitExceededException
-     *         The request was rejected because a limit was exceeded. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
@@ -684,8 +686,8 @@ public interface AWSKMS {
      * @throws InvalidGrantTokenException
      *         The request was rejected because the specified grant token is not valid.
      * @throws LimitExceededException
-     *         The request was rejected because a limit was exceeded. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
@@ -714,8 +716,9 @@ public interface AWSKMS {
      * <b>Symmetric CMKs</b> contain a 256-bit symmetric key that never leaves AWS KMS unencrypted. To use the CMK, you
      * must call AWS KMS. You can use a symmetric CMK to encrypt and decrypt small amounts of data, but they are
      * typically used to generate <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data keys</a> or data key
-     * pairs. For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data keys</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data keys pairs</a>.
+     * For details, see <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.
      * </p>
      * </li>
      * <li>
@@ -802,8 +805,8 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws LimitExceededException
-     *         The request was rejected because a limit was exceeded. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
      * @throws TagException
      *         The request was rejected because one or more tags are not valid.
@@ -1483,8 +1486,8 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws LimitExceededException
-     *         The request was rejected because a limit was exceeded. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
@@ -1737,7 +1740,7 @@ public interface AWSKMS {
      * </p>
      * <p>
      * To generate a data key, specify the symmetric CMK that will be used to encrypt the data key. You cannot use an
-     * asymmetric CMK to generate data keys.
+     * asymmetric CMK to generate data keys. To get the type of your CMK, use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
      * You must also specify the length of the data key. Use either the <code>KeySpec</code> or
@@ -2062,13 +2065,11 @@ public interface AWSKMS {
      * <p>
      * To generate a data key, you must specify the symmetric customer master key (CMK) that is used to encrypt the data
      * key. You cannot use an asymmetric CMK to generate a data key. To get the type of your CMK, use the
-     * <code>KeySpec</code> field in the <a>DescribeKey</a> response. You must also specify the length of the data key
-     * using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field (but not both). For common key lengths
-     * (128-bit and 256-bit symmetric keys), use the <code>KeySpec</code> parameter.
+     * <a>DescribeKey</a> operation.
      * </p>
      * <p>
-     * If the operation succeeds, you will find the plaintext copy of the data key in the <code>Plaintext</code> field
-     * of the response, and the encrypted copy of the data key in the <code>CiphertextBlob</code> field.
+     * If the operation succeeds, you will find the encrypted copy of the data key in the <code>CiphertextBlob</code>
+     * field.
      * </p>
      * <p>
      * You can use the optional encryption context to add additional security to the encryption operation. If you
@@ -2591,7 +2592,7 @@ public interface AWSKMS {
      * The response might also include aliases that have no <code>TargetKeyId</code> field. These are predefined aliases
      * that AWS has created but has not yet associated with a CMK. Aliases that AWS creates in your account, including
      * predefined aliases, do not count against your <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS KMS aliases limit</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS KMS aliases quota</a>.
      * </p>
      * 
      * @param listAliasesRequest
@@ -2789,8 +2790,8 @@ public interface AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws LimitExceededException
-     *         The request was rejected because a limit was exceeded. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
@@ -3253,8 +3254,8 @@ public interface AWSKMS {
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of
      *         a Customer Master Key</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
      * @throws LimitExceededException
-     *         The request was rejected because a limit was exceeded. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
      * @throws TagException
      *         The request was rejected because one or more tags are not valid.

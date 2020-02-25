@@ -27,7 +27,7 @@ public class ListComponentBuildVersionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The component version arn whose versions you wish to list.
+     * The component version Amazon Resource Name (ARN) whose versions you want to list.
      * </p>
      */
     private String componentVersionArn;
@@ -46,11 +46,11 @@ public class ListComponentBuildVersionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The component version arn whose versions you wish to list.
+     * The component version Amazon Resource Name (ARN) whose versions you want to list.
      * </p>
      * 
      * @param componentVersionArn
-     *        The component version arn whose versions you wish to list.
+     *        The component version Amazon Resource Name (ARN) whose versions you want to list.
      */
 
     public void setComponentVersionArn(String componentVersionArn) {
@@ -59,10 +59,10 @@ public class ListComponentBuildVersionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The component version arn whose versions you wish to list.
+     * The component version Amazon Resource Name (ARN) whose versions you want to list.
      * </p>
      * 
-     * @return The component version arn whose versions you wish to list.
+     * @return The component version Amazon Resource Name (ARN) whose versions you want to list.
      */
 
     public String getComponentVersionArn() {
@@ -71,11 +71,11 @@ public class ListComponentBuildVersionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The component version arn whose versions you wish to list.
+     * The component version Amazon Resource Name (ARN) whose versions you want to list.
      * </p>
      * 
      * @param componentVersionArn
-     *        The component version arn whose versions you wish to list.
+     *        The component version Amazon Resource Name (ARN) whose versions you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

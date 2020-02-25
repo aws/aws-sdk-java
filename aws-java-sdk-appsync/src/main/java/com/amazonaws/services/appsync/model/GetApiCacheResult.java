@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetApiCacheResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>ApiCache</code> object.
+     * </p>
+     */
     private ApiCache apiCache;
 
     /**
+     * <p>
+     * The <code>ApiCache</code> object.
+     * </p>
+     * 
      * @param apiCache
+     *        The <code>ApiCache</code> object.
      */
 
     public void setApiCache(ApiCache apiCache) {
@@ -37,7 +47,11 @@ public class GetApiCacheResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>ApiCache</code> object.
+     * </p>
+     * 
+     * @return The <code>ApiCache</code> object.
      */
 
     public ApiCache getApiCache() {
@@ -45,7 +59,12 @@ public class GetApiCacheResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The <code>ApiCache</code> object.
+     * </p>
+     * 
      * @param apiCache
+     *        The <code>ApiCache</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

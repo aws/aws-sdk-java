@@ -25,30 +25,30 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe request ID that uniquely identifies this request.
+     * The request ID that uniquely identifies this request.
      * </p>
      */
     private String requestId;
     /**
      * <p>
-     * CThe idempotency token used to make this request idempotent.
+     * The idempotency token used to make this request idempotent.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * CThe Amazon Resource Name (ARN) of the component that was created by this request.
+     * The Amazon Resource Name (ARN) of the component that was created by this request.
      * </p>
      */
     private String componentBuildVersionArn;
 
     /**
      * <p>
-     * CThe request ID that uniquely identifies this request.
+     * The request ID that uniquely identifies this request.
      * </p>
      * 
      * @param requestId
-     *        CThe request ID that uniquely identifies this request.
+     *        The request ID that uniquely identifies this request.
      */
 
     public void setRequestId(String requestId) {
@@ -57,10 +57,10 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe request ID that uniquely identifies this request.
+     * The request ID that uniquely identifies this request.
      * </p>
      * 
-     * @return CThe request ID that uniquely identifies this request.
+     * @return The request ID that uniquely identifies this request.
      */
 
     public String getRequestId() {
@@ -69,11 +69,11 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe request ID that uniquely identifies this request.
+     * The request ID that uniquely identifies this request.
      * </p>
      * 
      * @param requestId
-     *        CThe request ID that uniquely identifies this request.
+     *        The request ID that uniquely identifies this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe idempotency token used to make this request idempotent.
+     * The idempotency token used to make this request idempotent.
      * </p>
      * 
      * @param clientToken
-     *        CThe idempotency token used to make this request idempotent.
+     *        The idempotency token used to make this request idempotent.
      */
 
     public void setClientToken(String clientToken) {
@@ -97,10 +97,10 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe idempotency token used to make this request idempotent.
+     * The idempotency token used to make this request idempotent.
      * </p>
      * 
-     * @return CThe idempotency token used to make this request idempotent.
+     * @return The idempotency token used to make this request idempotent.
      */
 
     public String getClientToken() {
@@ -109,11 +109,11 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe idempotency token used to make this request idempotent.
+     * The idempotency token used to make this request idempotent.
      * </p>
      * 
      * @param clientToken
-     *        CThe idempotency token used to make this request idempotent.
+     *        The idempotency token used to make this request idempotent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe Amazon Resource Name (ARN) of the component that was created by this request.
+     * The Amazon Resource Name (ARN) of the component that was created by this request.
      * </p>
      * 
      * @param componentBuildVersionArn
-     *        CThe Amazon Resource Name (ARN) of the component that was created by this request.
+     *        The Amazon Resource Name (ARN) of the component that was created by this request.
      */
 
     public void setComponentBuildVersionArn(String componentBuildVersionArn) {
@@ -137,10 +137,10 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe Amazon Resource Name (ARN) of the component that was created by this request.
+     * The Amazon Resource Name (ARN) of the component that was created by this request.
      * </p>
      * 
-     * @return CThe Amazon Resource Name (ARN) of the component that was created by this request.
+     * @return The Amazon Resource Name (ARN) of the component that was created by this request.
      */
 
     public String getComponentBuildVersionArn() {
@@ -149,11 +149,11 @@ public class CreateComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * CThe Amazon Resource Name (ARN) of the component that was created by this request.
+     * The Amazon Resource Name (ARN) of the component that was created by this request.
      * </p>
      * 
      * @param componentBuildVersionArn
-     *        CThe Amazon Resource Name (ARN) of the component that was created by this request.
+     *        The Amazon Resource Name (ARN) of the component that was created by this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

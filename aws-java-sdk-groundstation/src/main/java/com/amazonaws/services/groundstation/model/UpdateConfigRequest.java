@@ -28,7 +28,7 @@ public class UpdateConfigRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameters for a <code>Config</code>.
+     * Parameters of a <code>Config</code>.
      * </p>
      */
     private ConfigTypeData configData;
@@ -53,11 +53,11 @@ public class UpdateConfigRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameters for a <code>Config</code>.
+     * Parameters of a <code>Config</code>.
      * </p>
      * 
      * @param configData
-     *        Parameters for a <code>Config</code>.
+     *        Parameters of a <code>Config</code>.
      */
 
     public void setConfigData(ConfigTypeData configData) {
@@ -66,10 +66,10 @@ public class UpdateConfigRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameters for a <code>Config</code>.
+     * Parameters of a <code>Config</code>.
      * </p>
      * 
-     * @return Parameters for a <code>Config</code>.
+     * @return Parameters of a <code>Config</code>.
      */
 
     public ConfigTypeData getConfigData() {
@@ -78,11 +78,11 @@ public class UpdateConfigRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameters for a <code>Config</code>.
+     * Parameters of a <code>Config</code>.
      * </p>
      * 
      * @param configData
-     *        Parameters for a <code>Config</code>.
+     *        Parameters of a <code>Config</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

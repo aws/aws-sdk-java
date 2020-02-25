@@ -54,8 +54,8 @@ public class AwsElbv2LoadBalancerDetails implements Serializable, Cloneable, Str
     private String dNSName;
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 (for IPv4
-     * addresses) and dualstack (for IPv4 and IPv6 addresses).
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      */
     private String ipAddressType;
@@ -282,13 +282,13 @@ public class AwsElbv2LoadBalancerDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 (for IPv4
-     * addresses) and dualstack (for IPv4 and IPv6 addresses).
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 (for
-     *        IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      */
 
     public void setIpAddressType(String ipAddressType) {
@@ -297,12 +297,12 @@ public class AwsElbv2LoadBalancerDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 (for IPv4
-     * addresses) and dualstack (for IPv4 and IPv6 addresses).
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
-     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 (for
-     *         IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).
+     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *         <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      */
 
     public String getIpAddressType() {
@@ -311,13 +311,13 @@ public class AwsElbv2LoadBalancerDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 (for IPv4
-     * addresses) and dualstack (for IPv4 and IPv6 addresses).
+     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
+     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are ipv4 (for
-     *        IPv4 addresses) and dualstack (for IPv4 and IPv6 addresses).
+     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
+     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

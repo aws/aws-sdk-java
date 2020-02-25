@@ -86,6 +86,8 @@ public class BuildMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportedEnvironmentVariables").build();
     private static final MarshallingInfo<List> REPORTARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("reportArns").build();
+    private static final MarshallingInfo<List> FILESYSTEMLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileSystemLocations").build();
 
     private static final BuildMarshaller instance = new BuildMarshaller();
 
@@ -132,6 +134,7 @@ public class BuildMarshaller {
             protocolMarshaller.marshall(build.getEncryptionKey(), ENCRYPTIONKEY_BINDING);
             protocolMarshaller.marshall(build.getExportedEnvironmentVariables(), EXPORTEDENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(build.getReportArns(), REPORTARNS_BINDING);
+            protocolMarshaller.marshall(build.getFileSystemLocations(), FILESYSTEMLOCATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

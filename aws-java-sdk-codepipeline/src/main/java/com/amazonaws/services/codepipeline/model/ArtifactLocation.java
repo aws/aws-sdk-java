@@ -36,7 +36,7 @@ public class ArtifactLocation implements Serializable, Cloneable, StructuredPojo
     private String type;
     /**
      * <p>
-     * The Amazon S3 bucket that contains the artifact.
+     * The S3 bucket that contains the artifact.
      * </p>
      */
     private S3ArtifactLocation s3Location;
@@ -116,11 +116,11 @@ public class ArtifactLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains the artifact.
+     * The S3 bucket that contains the artifact.
      * </p>
      * 
      * @param s3Location
-     *        The Amazon S3 bucket that contains the artifact.
+     *        The S3 bucket that contains the artifact.
      */
 
     public void setS3Location(S3ArtifactLocation s3Location) {
@@ -129,10 +129,10 @@ public class ArtifactLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains the artifact.
+     * The S3 bucket that contains the artifact.
      * </p>
      * 
-     * @return The Amazon S3 bucket that contains the artifact.
+     * @return The S3 bucket that contains the artifact.
      */
 
     public S3ArtifactLocation getS3Location() {
@@ -141,11 +141,11 @@ public class ArtifactLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 bucket that contains the artifact.
+     * The S3 bucket that contains the artifact.
      * </p>
      * 
      * @param s3Location
-     *        The Amazon S3 bucket that contains the artifact.
+     *        The S3 bucket that contains the artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

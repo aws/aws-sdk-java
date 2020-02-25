@@ -50,10 +50,6 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
-     * Idempotency tokens time out after one hour. Therefore, if you call <code>StartBackupJob</code> multiple times
-     * with the same idempotency token within one hour, AWS Backup recognizes that you are requesting only one backup
-     * job and initiates only one. If you change the idempotency token for each call, AWS Backup recognizes that you are
-     * requesting to start multiple backups.
      * </p>
      */
     private String idempotencyToken;
@@ -236,18 +232,10 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
-     * Idempotency tokens time out after one hour. Therefore, if you call <code>StartBackupJob</code> multiple times
-     * with the same idempotency token within one hour, AWS Backup recognizes that you are requesting only one backup
-     * job and initiates only one. If you change the idempotency token for each call, AWS Backup recognizes that you are
-     * requesting to start multiple backups.
      * </p>
      * 
      * @param idempotencyToken
      *        A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
-     *        Idempotency tokens time out after one hour. Therefore, if you call <code>StartBackupJob</code> multiple
-     *        times with the same idempotency token within one hour, AWS Backup recognizes that you are requesting only
-     *        one backup job and initiates only one. If you change the idempotency token for each call, AWS Backup
-     *        recognizes that you are requesting to start multiple backups.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -257,17 +245,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
-     * Idempotency tokens time out after one hour. Therefore, if you call <code>StartBackupJob</code> multiple times
-     * with the same idempotency token within one hour, AWS Backup recognizes that you are requesting only one backup
-     * job and initiates only one. If you change the idempotency token for each call, AWS Backup recognizes that you are
-     * requesting to start multiple backups.
      * </p>
      * 
      * @return A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
-     *         Idempotency tokens time out after one hour. Therefore, if you call <code>StartBackupJob</code> multiple
-     *         times with the same idempotency token within one hour, AWS Backup recognizes that you are requesting only
-     *         one backup job and initiates only one. If you change the idempotency token for each call, AWS Backup
-     *         recognizes that you are requesting to start multiple backups.
      */
 
     public String getIdempotencyToken() {
@@ -277,18 +257,10 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
-     * Idempotency tokens time out after one hour. Therefore, if you call <code>StartBackupJob</code> multiple times
-     * with the same idempotency token within one hour, AWS Backup recognizes that you are requesting only one backup
-     * job and initiates only one. If you change the idempotency token for each call, AWS Backup recognizes that you are
-     * requesting to start multiple backups.
      * </p>
      * 
      * @param idempotencyToken
      *        A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>.
-     *        Idempotency tokens time out after one hour. Therefore, if you call <code>StartBackupJob</code> multiple
-     *        times with the same idempotency token within one hour, AWS Backup recognizes that you are requesting only
-     *        one backup job and initiates only one. If you change the idempotency token for each call, AWS Backup
-     *        recognizes that you are requesting to start multiple backups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

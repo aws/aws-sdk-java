@@ -45,7 +45,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
+     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
      * modified in a single request.
      * </p>
      * <p>
@@ -84,8 +84,8 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      * @param parameters
      *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
+     *        can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>
@@ -201,7 +201,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
+     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
      * modified in a single request.
      * </p>
      * <p>
@@ -215,8 +215,8 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * 
      * @return An array of parameter names, values, and the apply method for the parameter update. At least one
-     *         parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of
-     *         20 parameters can be modified in a single request.</p>
+     *         parameter name, value, and apply method must be supplied; later arguments are optional. A maximum of 20
+     *         parameters can be modified in a single request.</p>
      *         <p>
      *         Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *         </p>
@@ -238,7 +238,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
+     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
      * modified in a single request.
      * </p>
      * <p>
@@ -253,8 +253,8 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param parameters
      *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
+     *        can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>
@@ -278,7 +278,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
+     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
      * modified in a single request.
      * </p>
      * <p>
@@ -298,8 +298,8 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param parameters
      *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
+     *        can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>
@@ -325,7 +325,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be
+     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
      * modified in a single request.
      * </p>
      * <p>
@@ -340,8 +340,8 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param parameters
      *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20
-     *        parameters can be modified in a single request.</p>
+     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
+     *        can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>

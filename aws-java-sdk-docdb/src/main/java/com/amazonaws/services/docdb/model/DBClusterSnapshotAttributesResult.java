@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Detailed information about the attributes that are associated with a DB cluster snapshot.
+ * Detailed information about the attributes that are associated with a cluster snapshot.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterSnapshotAttributesResult"
@@ -28,24 +28,24 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot that the attributes apply to.
+     * The identifier of the cluster snapshot that the attributes apply to.
      * </p>
      */
     private String dBClusterSnapshotIdentifier;
     /**
      * <p>
-     * The list of attributes and values for the DB cluster snapshot.
+     * The list of attributes and values for the cluster snapshot.
      * </p>
      */
     private java.util.List<DBClusterSnapshotAttribute> dBClusterSnapshotAttributes;
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot that the attributes apply to.
+     * The identifier of the cluster snapshot that the attributes apply to.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot that the attributes apply to.
+     *        The identifier of the cluster snapshot that the attributes apply to.
      */
 
     public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
@@ -54,10 +54,10 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot that the attributes apply to.
+     * The identifier of the cluster snapshot that the attributes apply to.
      * </p>
      * 
-     * @return The identifier of the DB cluster snapshot that the attributes apply to.
+     * @return The identifier of the cluster snapshot that the attributes apply to.
      */
 
     public String getDBClusterSnapshotIdentifier() {
@@ -66,11 +66,11 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot that the attributes apply to.
+     * The identifier of the cluster snapshot that the attributes apply to.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot that the attributes apply to.
+     *        The identifier of the cluster snapshot that the attributes apply to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +81,10 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The list of attributes and values for the DB cluster snapshot.
+     * The list of attributes and values for the cluster snapshot.
      * </p>
      * 
-     * @return The list of attributes and values for the DB cluster snapshot.
+     * @return The list of attributes and values for the cluster snapshot.
      */
 
     public java.util.List<DBClusterSnapshotAttribute> getDBClusterSnapshotAttributes() {
@@ -93,11 +93,11 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The list of attributes and values for the DB cluster snapshot.
+     * The list of attributes and values for the cluster snapshot.
      * </p>
      * 
      * @param dBClusterSnapshotAttributes
-     *        The list of attributes and values for the DB cluster snapshot.
+     *        The list of attributes and values for the cluster snapshot.
      */
 
     public void setDBClusterSnapshotAttributes(java.util.Collection<DBClusterSnapshotAttribute> dBClusterSnapshotAttributes) {
@@ -111,7 +111,7 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The list of attributes and values for the DB cluster snapshot.
+     * The list of attributes and values for the cluster snapshot.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +120,7 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
      * </p>
      * 
      * @param dBClusterSnapshotAttributes
-     *        The list of attributes and values for the DB cluster snapshot.
+     *        The list of attributes and values for the cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The list of attributes and values for the DB cluster snapshot.
+     * The list of attributes and values for the cluster snapshot.
      * </p>
      * 
      * @param dBClusterSnapshotAttributes
-     *        The list of attributes and values for the DB cluster snapshot.
+     *        The list of attributes and values for the cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

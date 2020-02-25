@@ -27,6 +27,7 @@ import static org.unitils.reflectionassert.ReflectionAssert.assertReflectionEqua
 import com.amazonaws.http.SystemPropertyTlsKeyManagersProvider;
 import com.amazonaws.http.TlsKeyManagersProvider;
 import com.amazonaws.retry.PredefinedRetryPolicies;
+import com.amazonaws.retry.RetryMode;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.ImmutableMapParameter;
 import java.lang.reflect.Field;
@@ -577,6 +578,8 @@ public class ClientConfigurationTest {
                 }
             } else if (clzz.isAssignableFrom(TlsKeyManagersProvider.class)) {
                 field.set(customConfig, new SystemPropertyTlsKeyManagersProvider());
+            } else if (clzz.isAssignableFrom(RetryMode.class)) {
+                field.set(customConfig, RetryMode.LEGACY);
             } else {
                 throw new RuntimeException(
                         String.format("Field %s of type %s is not supported",

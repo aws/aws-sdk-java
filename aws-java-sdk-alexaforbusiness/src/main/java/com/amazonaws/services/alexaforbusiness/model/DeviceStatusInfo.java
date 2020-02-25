@@ -40,6 +40,12 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String connectionStatus;
+    /**
+     * <p>
+     * The time (in epoch) when the device connection status changed.
+     * </p>
+     */
+    private java.util.Date connectionStatusUpdatedTime;
 
     /**
      * <p>
@@ -171,6 +177,46 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The time (in epoch) when the device connection status changed.
+     * </p>
+     * 
+     * @param connectionStatusUpdatedTime
+     *        The time (in epoch) when the device connection status changed.
+     */
+
+    public void setConnectionStatusUpdatedTime(java.util.Date connectionStatusUpdatedTime) {
+        this.connectionStatusUpdatedTime = connectionStatusUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The time (in epoch) when the device connection status changed.
+     * </p>
+     * 
+     * @return The time (in epoch) when the device connection status changed.
+     */
+
+    public java.util.Date getConnectionStatusUpdatedTime() {
+        return this.connectionStatusUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The time (in epoch) when the device connection status changed.
+     * </p>
+     * 
+     * @param connectionStatusUpdatedTime
+     *        The time (in epoch) when the device connection status changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceStatusInfo withConnectionStatusUpdatedTime(java.util.Date connectionStatusUpdatedTime) {
+        setConnectionStatusUpdatedTime(connectionStatusUpdatedTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +231,9 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
         if (getDeviceStatusDetails() != null)
             sb.append("DeviceStatusDetails: ").append(getDeviceStatusDetails()).append(",");
         if (getConnectionStatus() != null)
-            sb.append("ConnectionStatus: ").append(getConnectionStatus());
+            sb.append("ConnectionStatus: ").append(getConnectionStatus()).append(",");
+        if (getConnectionStatusUpdatedTime() != null)
+            sb.append("ConnectionStatusUpdatedTime: ").append(getConnectionStatusUpdatedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
             return false;
+        if (other.getConnectionStatusUpdatedTime() == null ^ this.getConnectionStatusUpdatedTime() == null)
+            return false;
+        if (other.getConnectionStatusUpdatedTime() != null && other.getConnectionStatusUpdatedTime().equals(this.getConnectionStatusUpdatedTime()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +270,7 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getDeviceStatusDetails() == null) ? 0 : getDeviceStatusDetails().hashCode());
         hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
+        hashCode = prime * hashCode + ((getConnectionStatusUpdatedTime() == null) ? 0 : getConnectionStatusUpdatedTime().hashCode());
         return hashCode;
     }
 

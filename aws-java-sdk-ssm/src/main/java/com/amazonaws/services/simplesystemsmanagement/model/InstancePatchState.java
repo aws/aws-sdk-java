@@ -87,7 +87,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private Integer installedOtherCount;
     /**
      * <p>
-     * Reserved for future use.
+     * The number of patches installed by Patch Manager since the last time the instance was rebooted.
      * </p>
      */
     private Integer installedPendingRebootCount;
@@ -154,14 +154,35 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private String operation;
     /**
      * <p>
-     * Reserved for future use.
+     * The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot option.
      * </p>
      */
     private java.util.Date lastNoRebootInstallOperationTime;
     /**
      * <p>
-     * Reserved for future use.
+     * Indicates the reboot option specified in the patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * <code>Scan</code> operations.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
+     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
+     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
+     * be in effect until a reboot is performed.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String rebootOption;
 
@@ -529,11 +550,11 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The number of patches installed by Patch Manager since the last time the instance was rebooted.
      * </p>
      * 
      * @param installedPendingRebootCount
-     *        Reserved for future use.
+     *        The number of patches installed by Patch Manager since the last time the instance was rebooted.
      */
 
     public void setInstalledPendingRebootCount(Integer installedPendingRebootCount) {
@@ -542,10 +563,10 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The number of patches installed by Patch Manager since the last time the instance was rebooted.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The number of patches installed by Patch Manager since the last time the instance was rebooted.
      */
 
     public Integer getInstalledPendingRebootCount() {
@@ -554,11 +575,11 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The number of patches installed by Patch Manager since the last time the instance was rebooted.
      * </p>
      * 
      * @param installedPendingRebootCount
-     *        Reserved for future use.
+     *        The number of patches installed by Patch Manager since the last time the instance was rebooted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1001,11 +1022,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot option.
      * </p>
      * 
      * @param lastNoRebootInstallOperationTime
-     *        Reserved for future use.
+     *        The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot
+     *        option.
      */
 
     public void setLastNoRebootInstallOperationTime(java.util.Date lastNoRebootInstallOperationTime) {
@@ -1014,10 +1036,11 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot option.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot
+     *         option.
      */
 
     public java.util.Date getLastNoRebootInstallOperationTime() {
@@ -1026,11 +1049,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot option.
      * </p>
      * 
      * @param lastNoRebootInstallOperationTime
-     *        Reserved for future use.
+     *        The time of the last attempt to patch the instance with <code>NoReboot</code> specified as the reboot
+     *        option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1041,11 +1065,51 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * Indicates the reboot option specified in the patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * <code>Scan</code> operations.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
+     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
+     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
+     * be in effect until a reboot is performed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param rebootOption
-     *        Reserved for future use.
+     *        Indicates the reboot option specified in the patch baseline.</p> <note>
+     *        <p>
+     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        <code>Scan</code> operations.
+     *        </p>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
+     *        patches might not be in effect until a reboot is performed.
+     *        </p>
+     *        </li>
      * @see RebootOption
      */
 
@@ -1055,10 +1119,50 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * Indicates the reboot option specified in the patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * <code>Scan</code> operations.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
+     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
+     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
+     * be in effect until a reboot is performed.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Reserved for future use.
+     * @return Indicates the reboot option specified in the patch baseline.</p> <note>
+     *         <p>
+     *         Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *         <code>Scan</code> operations.
+     *         </p>
+     *         </note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     *         patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     *         Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
+     *         patches might not be in effect until a reboot is performed.
+     *         </p>
+     *         </li>
      * @see RebootOption
      */
 
@@ -1068,11 +1172,51 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * Indicates the reboot option specified in the patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * <code>Scan</code> operations.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
+     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
+     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
+     * be in effect until a reboot is performed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param rebootOption
-     *        Reserved for future use.
+     *        Indicates the reboot option specified in the patch baseline.</p> <note>
+     *        <p>
+     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        <code>Scan</code> operations.
+     *        </p>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
+     *        patches might not be in effect until a reboot is performed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RebootOption
      */
@@ -1084,11 +1228,51 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * Indicates the reboot option specified in the patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * <code>Scan</code> operations.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
+     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
+     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
+     * be in effect until a reboot is performed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param rebootOption
-     *        Reserved for future use.
+     *        Indicates the reboot option specified in the patch baseline.</p> <note>
+     *        <p>
+     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        <code>Scan</code> operations.
+     *        </p>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
+     *        patches might not be in effect until a reboot is performed.
+     *        </p>
+     *        </li>
      * @see RebootOption
      */
 
@@ -1098,11 +1282,51 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Reserved for future use.
+     * Indicates the reboot option specified in the patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     * <code>Scan</code> operations.
+     * </p>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any patches
+     * are detected with a status of <code>InstalledPendingReboot</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system. Patches
+     * installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These patches might not
+     * be in effect until a reboot is performed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param rebootOption
-     *        Reserved for future use.
+     *        Indicates the reboot option specified in the patch baseline.</p> <note>
+     *        <p>
+     *        Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for Patch Manager
+     *        <code>Scan</code> operations.
+     *        </p>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it installed any patches, or if any
+     *        patches are detected with a status of <code>InstalledPendingReboot</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NoReboot</b>: Patch Manager attempts to install missing packages without trying to reboot the system.
+     *        Patches installed with this option are assigned a status of <code>InstalledPendingReboot</code>. These
+     *        patches might not be in effect until a reboot is performed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RebootOption
      */

@@ -86,6 +86,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The ID of the network interface.
      * </p>
+     * <p>
+     * If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a
+     * launch specification.
+     * </p>
      */
     private String networkInterfaceId;
     /**
@@ -607,9 +611,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The ID of the network interface.
      * </p>
+     * <p>
+     * If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a
+     * launch specification.
+     * </p>
      * 
      * @param networkInterfaceId
-     *        The ID of the network interface.
+     *        The ID of the network interface.</p>
+     *        <p>
+     *        If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in
+     *        a launch specification.
      */
 
     public void setNetworkInterfaceId(String networkInterfaceId) {
@@ -620,8 +631,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The ID of the network interface.
      * </p>
+     * <p>
+     * If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a
+     * launch specification.
+     * </p>
      * 
-     * @return The ID of the network interface.
+     * @return The ID of the network interface.</p>
+     *         <p>
+     *         If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in
+     *         a launch specification.
      */
 
     public String getNetworkInterfaceId() {
@@ -632,9 +650,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * <p>
      * The ID of the network interface.
      * </p>
+     * <p>
+     * If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in a
+     * launch specification.
+     * </p>
      * 
      * @param networkInterfaceId
-     *        The ID of the network interface.
+     *        The ID of the network interface.</p>
+     *        <p>
+     *        If you are creating a Spot Fleet, omit this parameter because you can’t specify a network interface ID in
+     *        a launch specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

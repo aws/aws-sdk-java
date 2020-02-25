@@ -55,7 +55,8 @@ public enum ParameterExceptionField {
     RESOURCE_ARN("RESOURCE_ARN"),
     RESOURCE_TYPE("RESOURCE_TYPE"),
     TAGS("TAGS"),
-    TAG_KEYS("TAG_KEYS");
+    TAG_KEYS("TAG_KEYS"),
+    METRIC_NAME("METRIC_NAME");
 
     private String value;
 

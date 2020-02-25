@@ -29,7 +29,7 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount
      * targets.
      * </p>
      */
@@ -44,29 +44,38 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
-     * request if <code>MountTargetId</code> is not included.
+     * request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file
+     * system ID or ARN as input.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
      * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
-     * if <code>FileSystemId</code> is not included.
+     * if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
      * </p>
      */
     private String mountTargetId;
+    /**
+     * <p>
+     * (Optional) The ID of the access point whose mount targets that you want to list. It must be included in your
+     * request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts
+     * either an access point ID or ARN as input.
+     * </p>
+     */
+    private String accessPointId;
 
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount
      * targets.
      * </p>
      * 
      * @param maxItems
      *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
-     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
-     *        have more than 10 mount targets.
+     *        automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you
+     *        have more than 100 mount targets.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -76,13 +85,13 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount
      * targets.
      * </p>
      * 
      * @return (Optional) Maximum number of mount targets to return in the response. Currently, this number is
-     *         automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
-     *         have more than 10 mount targets.
+     *         automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you
+     *         have more than 100 mount targets.
      */
 
     public Integer getMaxItems() {
@@ -92,14 +101,14 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set
-     * to 10, and other values are ignored. The response is paginated at 10 per page if you have more than 10 mount
+     * to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount
      * targets.
      * </p>
      * 
      * @param maxItems
      *        (Optional) Maximum number of mount targets to return in the response. Currently, this number is
-     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
-     *        have more than 10 mount targets.
+     *        automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you
+     *        have more than 100 mount targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,12 +166,14 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
-     * request if <code>MountTargetId</code> is not included.
+     * request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file
+     * system ID or ARN as input.
      * </p>
      * 
      * @param fileSystemId
      *        (Optional) ID of the file system whose mount targets you want to list (String). It must be included in
-     *        your request if <code>MountTargetId</code> is not included.
+     *        your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts
+     *        either a file system ID or ARN as input.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -172,11 +183,13 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
-     * request if <code>MountTargetId</code> is not included.
+     * request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file
+     * system ID or ARN as input.
      * </p>
      * 
      * @return (Optional) ID of the file system whose mount targets you want to list (String). It must be included in
-     *         your request if <code>MountTargetId</code> is not included.
+     *         your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts
+     *         either a file system ID or ARN as input.
      */
 
     public String getFileSystemId() {
@@ -186,12 +199,14 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your
-     * request if <code>MountTargetId</code> is not included.
+     * request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts either a file
+     * system ID or ARN as input.
      * </p>
      * 
      * @param fileSystemId
      *        (Optional) ID of the file system whose mount targets you want to list (String). It must be included in
-     *        your request if <code>MountTargetId</code> is not included.
+     *        your request if an <code>AccessPointId</code> or <code>MountTargetId</code> is not included. Accepts
+     *        either a file system ID or ARN as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,12 +218,12 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
-     * if <code>FileSystemId</code> is not included.
+     * if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
      * </p>
      * 
      * @param mountTargetId
      *        (Optional) ID of the mount target that you want to have described (String). It must be included in your
-     *        request if <code>FileSystemId</code> is not included.
+     *        request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -218,11 +233,11 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
-     * if <code>FileSystemId</code> is not included.
+     * if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
      * </p>
      * 
      * @return (Optional) ID of the mount target that you want to have described (String). It must be included in your
-     *         request if <code>FileSystemId</code> is not included.
+     *         request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
      */
 
     public String getMountTargetId() {
@@ -232,17 +247,69 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) ID of the mount target that you want to have described (String). It must be included in your request
-     * if <code>FileSystemId</code> is not included.
+     * if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
      * </p>
      * 
      * @param mountTargetId
      *        (Optional) ID of the mount target that you want to have described (String). It must be included in your
-     *        request if <code>FileSystemId</code> is not included.
+     *        request if <code>FileSystemId</code> is not included. Accepts either a mount target ID or ARN as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeMountTargetsRequest withMountTargetId(String mountTargetId) {
         setMountTargetId(mountTargetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) The ID of the access point whose mount targets that you want to list. It must be included in your
+     * request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts
+     * either an access point ID or ARN as input.
+     * </p>
+     * 
+     * @param accessPointId
+     *        (Optional) The ID of the access point whose mount targets that you want to list. It must be included in
+     *        your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request.
+     *        Accepts either an access point ID or ARN as input.
+     */
+
+    public void setAccessPointId(String accessPointId) {
+        this.accessPointId = accessPointId;
+    }
+
+    /**
+     * <p>
+     * (Optional) The ID of the access point whose mount targets that you want to list. It must be included in your
+     * request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts
+     * either an access point ID or ARN as input.
+     * </p>
+     * 
+     * @return (Optional) The ID of the access point whose mount targets that you want to list. It must be included in
+     *         your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your
+     *         request. Accepts either an access point ID or ARN as input.
+     */
+
+    public String getAccessPointId() {
+        return this.accessPointId;
+    }
+
+    /**
+     * <p>
+     * (Optional) The ID of the access point whose mount targets that you want to list. It must be included in your
+     * request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request. Accepts
+     * either an access point ID or ARN as input.
+     * </p>
+     * 
+     * @param accessPointId
+     *        (Optional) The ID of the access point whose mount targets that you want to list. It must be included in
+     *        your request if a <code>FileSystemId</code> or <code>MountTargetId</code> is not included in your request.
+     *        Accepts either an access point ID or ARN as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeMountTargetsRequest withAccessPointId(String accessPointId) {
+        setAccessPointId(accessPointId);
         return this;
     }
 
@@ -265,7 +332,9 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
         if (getFileSystemId() != null)
             sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getMountTargetId() != null)
-            sb.append("MountTargetId: ").append(getMountTargetId());
+            sb.append("MountTargetId: ").append(getMountTargetId()).append(",");
+        if (getAccessPointId() != null)
+            sb.append("AccessPointId: ").append(getAccessPointId());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +365,10 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getMountTargetId() != null && other.getMountTargetId().equals(this.getMountTargetId()) == false)
             return false;
+        if (other.getAccessPointId() == null ^ this.getAccessPointId() == null)
+            return false;
+        if (other.getAccessPointId() != null && other.getAccessPointId().equals(this.getAccessPointId()) == false)
+            return false;
         return true;
     }
 
@@ -308,6 +381,7 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
         hashCode = prime * hashCode + ((getMountTargetId() == null) ? 0 : getMountTargetId().hashCode());
+        hashCode = prime * hashCode + ((getAccessPointId() == null) ? 0 : getAccessPointId().hashCode());
         return hashCode;
     }
 

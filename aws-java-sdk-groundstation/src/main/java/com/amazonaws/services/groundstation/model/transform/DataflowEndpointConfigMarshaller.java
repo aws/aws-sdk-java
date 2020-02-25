@@ -29,6 +29,8 @@ public class DataflowEndpointConfigMarshaller {
 
     private static final MarshallingInfo<String> DATAFLOWENDPOINTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataflowEndpointName").build();
+    private static final MarshallingInfo<String> DATAFLOWENDPOINTREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataflowEndpointRegion").build();
 
     private static final DataflowEndpointConfigMarshaller instance = new DataflowEndpointConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class DataflowEndpointConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(dataflowEndpointConfig.getDataflowEndpointName(), DATAFLOWENDPOINTNAME_BINDING);
+            protocolMarshaller.marshall(dataflowEndpointConfig.getDataflowEndpointRegion(), DATAFLOWENDPOINTREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

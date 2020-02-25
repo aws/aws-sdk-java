@@ -27,18 +27,18 @@ public class GetImageRecipePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
      * </p>
      */
     private String imageRecipeArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
      * </p>
      * 
      * @param imageRecipeArn
-     *        The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
      */
 
     public void setImageRecipeArn(String imageRecipeArn) {
@@ -47,10 +47,10 @@ public class GetImageRecipePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
      */
 
     public String getImageRecipeArn() {
@@ -59,11 +59,11 @@ public class GetImageRecipePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
      * </p>
      * 
      * @param imageRecipeArn
-     *        The Amazon Resource Name (ARN) of the image recipe whose policy you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

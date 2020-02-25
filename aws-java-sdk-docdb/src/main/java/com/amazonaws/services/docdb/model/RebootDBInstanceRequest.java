@@ -30,7 +30,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -56,7 +56,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -70,7 +70,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This parameter is stored as a lowercase string.</p>
+     *        The instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -88,7 +88,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -101,7 +101,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return The DB instance identifier. This parameter is stored as a lowercase string.</p>
+     * @return The instance identifier. This parameter is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -119,7 +119,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The DB instance identifier. This parameter is stored as a lowercase string.
+     * The instance identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -133,7 +133,7 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The DB instance identifier. This parameter is stored as a lowercase string.</p>
+     *        The instance identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>

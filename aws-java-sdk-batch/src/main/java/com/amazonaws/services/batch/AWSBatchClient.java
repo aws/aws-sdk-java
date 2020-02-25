@@ -672,7 +672,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Deregisters an AWS Batch job definition.
+     * Deregisters an AWS Batch job definition. Job definitions will be permanently deleted after 180 days.
      * </p>
      * 
      * @param deregisterJobDefinitionRequest

@@ -601,8 +601,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP
-     * addresses (BYOIP).
+     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through bring your
+     * own IP addresses (BYOIP).
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
@@ -870,6 +870,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per
      * Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You must specify either the IPv6 addresses or the IPv6 address count in the request.
+     * </p>
      * 
      * @param assignIpv6AddressesRequest
      * @return Result of the AssignIpv6Addresses operation returned by the service.
@@ -940,6 +943,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Remapping an IP address is an asynchronous operation. When you move an IP address from one network interface to
      * another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to confirm that the
      * remapping is complete.
+     * </p>
+     * <p>
+     * You must specify either the IP addresses or the IP address count in the request.
      * </p>
      * 
      * @param assignPrivateIpAddressesRequest
@@ -1479,8 +1485,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, or you can associate an
-     * Amazon-provided IPv6 CIDR block. The IPv6 CIDR block size is fixed at /56.
+     * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, an Amazon-provided IPv6
+     * CIDR block, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP
+     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>). The IPv6 CIDR
+     * block size is fixed at /56.
+     * </p>
+     * <p>
+     * You must specify one of the following in the request: an IPv4 CIDR block, an IPv6 pool, or an Amazon-provided
+     * IPv6 CIDR block.
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
@@ -5741,8 +5753,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6 CIDR block uses a /56 prefix
-     * length, and is allocated from Amazon's pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.
+     * You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block
+     * from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
+     * through bring your own IP addresses (<a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
      * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
@@ -9469,7 +9483,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * To describe the address pools that were created when you provisioned the address ranges, use
-     * <a>DescribePublicIpv4Pools</a>.
+     * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.
      * </p>
      * 
      * @param describeByoipCidrsRequest
@@ -11836,6 +11850,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes your IPv6 address pools.
+     * </p>
+     * 
+     * @param describeIpv6PoolsRequest
+     * @return Result of the DescribeIpv6Pools operation returned by the service.
+     * @sample AmazonEC2.DescribeIpv6Pools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeIpv6PoolsResult describeIpv6Pools(DescribeIpv6PoolsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIpv6Pools(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIpv6PoolsResult executeDescribeIpv6Pools(DescribeIpv6PoolsRequest describeIpv6PoolsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeIpv6PoolsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIpv6PoolsRequest> request = null;
+        Response<DescribeIpv6PoolsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIpv6PoolsRequestMarshaller().marshall(super.beforeMarshalling(describeIpv6PoolsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIpv6Pools");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeIpv6PoolsResult> responseHandler = new StaxResponseHandler<DescribeIpv6PoolsResult>(
+                    new DescribeIpv6PoolsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified key pairs or all of your key pairs.
      * </p>
      * <p>
@@ -13674,7 +13741,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * </ul>
      * <p>
-     * The list of snapshots returned can be modified by specifying snapshot IDs, snapshot owners, or AWS accounts with
+     * The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS accounts with
      * create volume permissions. If no options are specified, Amazon EC2 returns all snapshots for which you have
      * create volume permissions.
      * </p>
@@ -13700,6 +13767,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * results exceeds your <code>MaxResults</code> value, then that number of results is returned along with a
      * <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
      * retrieve the remaining results.
+     * </p>
+     * <p>
+     * To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
@@ -17028,6 +17098,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast snapshot
      * restores, use <a>DisableFastSnapshotRestores</a>.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS Fast
+     * Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
      * @param enableFastSnapshotRestoresRequest
      * @return Result of the EnableFastSnapshotRestores operation returned by the service.
@@ -17569,6 +17644,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportTransitGatewayRoutesResult> responseHandler = new StaxResponseHandler<ExportTransitGatewayRoutesResult>(
                     new ExportTransitGatewayRoutesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about the IPv6 CIDR block associations for a specified IPv6 address pool.
+     * </p>
+     * 
+     * @param getAssociatedIpv6PoolCidrsRequest
+     * @return Result of the GetAssociatedIpv6PoolCidrs operation returned by the service.
+     * @sample AmazonEC2.GetAssociatedIpv6PoolCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAssociatedIpv6PoolCidrsResult getAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAssociatedIpv6PoolCidrs(request);
+    }
+
+    @SdkInternalApi
+    final GetAssociatedIpv6PoolCidrsResult executeGetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest getAssociatedIpv6PoolCidrsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAssociatedIpv6PoolCidrsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAssociatedIpv6PoolCidrsRequest> request = null;
+        Response<GetAssociatedIpv6PoolCidrsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAssociatedIpv6PoolCidrsRequestMarshaller().marshall(super.beforeMarshalling(getAssociatedIpv6PoolCidrsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedIpv6PoolCidrs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult> responseHandler = new StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult>(
+                    new GetAssociatedIpv6PoolCidrsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21375,9 +21503,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Provisions an address range for use with your AWS resources through bring your own IP addresses (BYOIP) and
-     * creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using
-     * <a>AdvertiseByoipCidr</a>.
+     * Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP addresses
+     * (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be
+     * advertised using <a>AdvertiseByoipCidr</a>.
      * </p>
      * <p>
      * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
@@ -21390,8 +21518,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address
      * range is not ready to use until its status changes from <code>pending-provision</code> to
      * <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>. To allocate
-     * an Elastic IP address from your address pool, use <a>AllocateAddress</a> with either the specific address from
-     * the address pool or the ID of the address pool.
+     * an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a> with either the specific address
+     * from the address pool or the ID of the address pool.
      * </p>
      * 
      * @param provisionByoipCidrRequest
@@ -21719,7 +21847,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server
      * (SLES), use the EC2 billing product code associated with an AMI to verify the subscription status for package
-     * updates. To create a new AMI for operating systems that require a billing product code, do the following:
+     * updates. To create a new AMI for operating systems that require a billing product code, instead of registering
+     * the AMI, do the following to preserve the billing product code association:
      * </p>
      * <ol>
      * <li>
@@ -21734,7 +21863,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * <li>
      * <p>
-     * Create a new AMI from the instance using <a>CreateImage</a> to preserve the billing product code association.
+     * Create an AMI from the instance using <a>CreateImage</a>.
      * </p>
      * </li>
      * </ol>
@@ -21742,7 +21871,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * If you purchase a Reserved Instance to apply to an On-Demand Instance that was launched from an AMI with a
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
-     * On-Demand Instance.
+     * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
+     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance
@@ -22715,8 +22846,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * you can improve the availability of your fleet.
      * </p>
      * <p>
-     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request because
-     * only the <code>instance</code> resource type is supported.
+     * You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource types in a Spot Fleet
+     * request because only the <code>spot-fleet-request</code> and <code>instance</code> resource types are supported.
      * </p>
      * <p>
      * For more information, see <a
@@ -24015,8 +24146,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter charges per second for instance usage.
      * </p>
      * <p>
-     * You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-     * instances. For information about using hibernation for Spot Instances, see <a
+     * You can't hibernate Spot Instances, and you can't stop or hibernate instance store-backed instances. For
+     * information about using hibernation for Spot Instances, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
      * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -24506,7 +24637,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Stops advertising an IPv4 address range that is provisioned as an address pool.
+     * Stops advertising an address range that is provisioned as an address pool.
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each

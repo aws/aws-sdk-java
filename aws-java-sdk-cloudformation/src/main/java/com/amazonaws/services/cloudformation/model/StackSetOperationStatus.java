@@ -24,7 +24,8 @@ public enum StackSetOperationStatus {
     SUCCEEDED("SUCCEEDED"),
     FAILED("FAILED"),
     STOPPING("STOPPING"),
-    STOPPED("STOPPED");
+    STOPPED("STOPPED"),
+    QUEUED("QUEUED");
 
     private String value;
 

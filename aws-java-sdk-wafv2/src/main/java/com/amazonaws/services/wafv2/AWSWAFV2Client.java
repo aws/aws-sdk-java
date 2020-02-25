@@ -176,6 +176,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                             new JsonErrorShapeMetadata().withErrorCode("WAFTagOperationInternalErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFTagOperationInternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFSubscriptionNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.wafv2.model.transform.WAFSubscriptionNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFUnavailableEntityException").withExceptionUnmarshaller(
                                     com.amazonaws.services.wafv2.model.transform.WAFUnavailableEntityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -245,7 +248,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * an Application Load Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can associate the Web ACL by providing the <code>Id</code> of the <a>WebACL</a> to the
+     * For AWS CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of the <a>WebACL</a> to the
      * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
@@ -393,6 +396,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         resource, and try again.
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+     * @throws WAFSubscriptionNotFoundException
      * @sample AWSWAFV2.CheckCapacity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity" target="_top">AWS API
      *      Documentation</a>
@@ -554,7 +558,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Creates a <a>RegexPatternSet</a> per the specifications provided.
+     * Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS
+     * WAF inspect a web request component for the specified patterns.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -716,6 +721,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFSubscriptionNotFoundException
      * @sample AWSWAFV2.CreateRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -835,6 +841,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
+     * @throws WAFSubscriptionNotFoundException
      * @sample AWSWAFV2.CreateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -929,6 +936,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         AWS WAF couldn’t save your changes because you tried to update or delete a resource that has changed
      *         since you last retrieved it. Get the resource again, make any changes you need to make to the new copy,
      *         and retry your operation.
+     * @throws WAFAssociatedItemException
+     *         AWS WAF couldn’t perform the operation because your resource is being used by another resource or it’s
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
@@ -1098,6 +1108,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         AWS WAF couldn’t save your changes because you tried to update or delete a resource that has changed
      *         since you last retrieved it. Get the resource again, make any changes you need to make to the new copy,
      *         and retry your operation.
+     * @throws WAFAssociatedItemException
+     *         AWS WAF couldn’t perform the operation because your resource is being used by another resource or it’s
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
@@ -1197,6 +1210,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         AWS WAF couldn’t save your changes because you tried to update or delete a resource that has changed
      *         since you last retrieved it. Get the resource again, make any changes you need to make to the new copy,
      *         and retry your operation.
+     * @throws WAFAssociatedItemException
+     *         AWS WAF couldn’t perform the operation because your resource is being used by another resource or it’s
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
@@ -1456,8 +1472,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * Balancer (ALB) or an API Gateway stage.
      * </p>
      * <p>
-     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty <code>WebACLId</code> in the
-     * CloudFront API call <code>UpdateDistribution</code>. For information, see <a
+     * For AWS CloudFront, you can disassociate the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+     * <code>UpdateDistribution</code>. For information, see <a
      * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html"
      * >UpdateDistribution</a>.
      * </p>
@@ -2261,8 +2277,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </p>
      * </note>
      * <p>
-     * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS managed
-     * rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
+     * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS Managed
+     * Rules rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
      * </p>
      * 
      * @param listAvailableManagedRuleGroupsRequest
@@ -3572,6 +3588,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         Developer Guide</i>.
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+     * @throws WAFSubscriptionNotFoundException
      * @sample AWSWAFV2.UpdateRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -3687,6 +3704,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         resource, and try again.
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
+     * @throws WAFSubscriptionNotFoundException
      * @sample AWSWAFV2.UpdateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL" target="_top">AWS API
      *      Documentation</a>

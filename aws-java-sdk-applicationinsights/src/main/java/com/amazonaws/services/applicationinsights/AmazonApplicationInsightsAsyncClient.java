@@ -606,6 +606,39 @@ public class AmazonApplicationInsightsAsyncClient extends AmazonApplicationInsig
     }
 
     @Override
+    public java.util.concurrent.Future<ListConfigurationHistoryResult> listConfigurationHistoryAsync(ListConfigurationHistoryRequest request) {
+
+        return listConfigurationHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigurationHistoryResult> listConfigurationHistoryAsync(final ListConfigurationHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConfigurationHistoryRequest, ListConfigurationHistoryResult> asyncHandler) {
+        final ListConfigurationHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConfigurationHistoryResult>() {
+            @Override
+            public ListConfigurationHistoryResult call() throws Exception {
+                ListConfigurationHistoryResult result = null;
+
+                try {
+                    result = executeListConfigurationHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLogPatternSetsResult> listLogPatternSetsAsync(ListLogPatternSetsRequest request) {
 
         return listLogPatternSetsAsync(request, null);

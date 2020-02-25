@@ -18,12 +18,11 @@ package com.amazonaws.internal.auth;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
-import com.amazonaws.auth.SignerFactory;
-import com.amazonaws.auth.SignerTypeAware;
 import com.amazonaws.auth.Signer;
+import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.auth.SignerParams;
-import com.amazonaws.util.AwsHostNameUtils;
-
+import com.amazonaws.auth.SignerTypeAware;
+import com.amazonaws.regions.EndpointToRegion;
 import java.net.URI;
 
 public class DefaultSignerProvider extends SignerProvider {
@@ -63,7 +62,7 @@ public class DefaultSignerProvider extends SignerProvider {
     private String getSigningRegionForRequestURI(URI uri) {
         String regionName = awsClient.getSignerRegionOverride();
         if (regionName == null) {
-            regionName = AwsHostNameUtils.parseRegion(uri.getHost(), awsClient.getEndpointPrefix());
+            regionName = EndpointToRegion.guessRegionNameForEndpoint(uri.getHost(), awsClient.getEndpointPrefix());
         }
         return regionName;
     }

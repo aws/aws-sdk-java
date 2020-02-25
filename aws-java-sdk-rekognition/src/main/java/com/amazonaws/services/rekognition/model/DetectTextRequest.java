@@ -31,6 +31,12 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Image image;
+    /**
+     * <p>
+     * Optional parameters that let you set the criteria that the text must meet to be included in your response.
+     * </p>
+     */
+    private DetectTextFilters filters;
 
     /**
      * <p>
@@ -103,6 +109,47 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Optional parameters that let you set the criteria that the text must meet to be included in your response.
+     * </p>
+     * 
+     * @param filters
+     *        Optional parameters that let you set the criteria that the text must meet to be included in your response.
+     */
+
+    public void setFilters(DetectTextFilters filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * <p>
+     * Optional parameters that let you set the criteria that the text must meet to be included in your response.
+     * </p>
+     * 
+     * @return Optional parameters that let you set the criteria that the text must meet to be included in your
+     *         response.
+     */
+
+    public DetectTextFilters getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * <p>
+     * Optional parameters that let you set the criteria that the text must meet to be included in your response.
+     * </p>
+     * 
+     * @param filters
+     *        Optional parameters that let you set the criteria that the text must meet to be included in your response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectTextRequest withFilters(DetectTextFilters filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -115,7 +162,9 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImage() != null)
-            sb.append("Image: ").append(getImage());
+            sb.append("Image: ").append(getImage()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -134,6 +183,10 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -143,6 +196,7 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

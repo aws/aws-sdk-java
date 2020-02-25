@@ -30,7 +30,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.
+     * The identifier of the cluster snapshot. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -59,7 +59,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
     private String dBClusterSnapshotIdentifier;
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case sensitive.
+     * The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -78,14 +78,14 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The tags to be assigned to the DB cluster snapshot.
+     * The tags to be assigned to the cluster snapshot.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.
+     * The identifier of the cluster snapshot. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -112,7 +112,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+     *        The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -143,7 +143,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.
+     * The identifier of the cluster snapshot. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -169,7 +169,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>my-cluster-snapshot1</code>
      * </p>
      * 
-     * @return The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+     * @return The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -200,7 +200,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.
+     * The identifier of the cluster snapshot. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -227,7 +227,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+     *        The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -260,7 +260,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case sensitive.
+     * The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -277,7 +277,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster to create a snapshot for. This parameter is not case sensitive.</p>
+     *        The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -298,7 +298,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case sensitive.
+     * The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -314,7 +314,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>my-cluster</code>
      * </p>
      * 
-     * @return The identifier of the DB cluster to create a snapshot for. This parameter is not case sensitive.</p>
+     * @return The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -335,7 +335,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster to create a snapshot for. This parameter is not case sensitive.
+     * The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -352,7 +352,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The identifier of the DB cluster to create a snapshot for. This parameter is not case sensitive.</p>
+     *        The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -375,10 +375,10 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster snapshot.
+     * The tags to be assigned to the cluster snapshot.
      * </p>
      * 
-     * @return The tags to be assigned to the DB cluster snapshot.
+     * @return The tags to be assigned to the cluster snapshot.
      */
 
     public java.util.List<Tag> getTags() {
@@ -387,11 +387,11 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster snapshot.
+     * The tags to be assigned to the cluster snapshot.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster snapshot.
+     *        The tags to be assigned to the cluster snapshot.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -405,7 +405,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster snapshot.
+     * The tags to be assigned to the cluster snapshot.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -414,7 +414,7 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster snapshot.
+     *        The tags to be assigned to the cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,11 +430,11 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster snapshot.
+     * The tags to be assigned to the cluster snapshot.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster snapshot.
+     *        The tags to be assigned to the cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

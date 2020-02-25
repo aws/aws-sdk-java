@@ -93,6 +93,11 @@ public class StackSetOperationStaxUnmarshaller implements Unmarshaller<StackSetO
                     continue;
                 }
 
+                if (context.testExpression("DeploymentTargets", targetDepth)) {
+                    stackSetOperation.setDeploymentTargets(DeploymentTargetsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("StackSetDriftDetectionDetails", targetDepth)) {
                     stackSetOperation.setStackSetDriftDetectionDetails(StackSetDriftDetectionDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -93,6 +93,10 @@ public class PlaybackConfigurationJsonUnmarshaller implements Unmarshaller<Playb
                     context.nextToken();
                     playbackConfiguration.setTranscodeProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PersonalizationThresholdSeconds", targetDepth)) {
+                    context.nextToken();
+                    playbackConfiguration.setPersonalizationThresholdSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("VideoContentSourceUrl", targetDepth)) {
                     context.nextToken();
                     playbackConfiguration.setVideoContentSourceUrl(context.getUnmarshaller(String.class).unmarshall(context));

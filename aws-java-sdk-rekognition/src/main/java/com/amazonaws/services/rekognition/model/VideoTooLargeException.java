@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The file size or duration of the supplied media is too large. The maximum file size is 8GB. The maximum duration is 2
- * hours.
+ * The file size or duration of the supplied media is too large. The maximum file size is 10GB. The maximum duration is
+ * 6 hours.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

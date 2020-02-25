@@ -40,6 +40,8 @@ public class RestoreTableFromBackupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalSecondaryIndexOverride").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUTOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputOverride").build();
+    private static final MarshallingInfo<StructuredPojo> SSESPECIFICATIONOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SSESpecificationOverride").build();
 
     private static final RestoreTableFromBackupRequestMarshaller instance = new RestoreTableFromBackupRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class RestoreTableFromBackupRequestMarshaller {
             protocolMarshaller.marshall(restoreTableFromBackupRequest.getGlobalSecondaryIndexOverride(), GLOBALSECONDARYINDEXOVERRIDE_BINDING);
             protocolMarshaller.marshall(restoreTableFromBackupRequest.getLocalSecondaryIndexOverride(), LOCALSECONDARYINDEXOVERRIDE_BINDING);
             protocolMarshaller.marshall(restoreTableFromBackupRequest.getProvisionedThroughputOverride(), PROVISIONEDTHROUGHPUTOVERRIDE_BINDING);
+            protocolMarshaller.marshall(restoreTableFromBackupRequest.getSSESpecificationOverride(), SSESPECIFICATIONOVERRIDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

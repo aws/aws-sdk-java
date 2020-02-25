@@ -227,6 +227,14 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBClusterRequest.getCopyTagsToSnapshot()));
         }
 
+        if (createDBClusterRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(createDBClusterRequest.getDomain()));
+        }
+
+        if (createDBClusterRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(createDBClusterRequest.getDomainIAMRoleName()));
+        }
+
         if (createDBClusterRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
         }

@@ -51,34 +51,22 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * // KMS Key ID
-     * </p>
-     * <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) of a KMS Key
-     * </p>
-     * <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "alias/ExampleAlias"</code>
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
@@ -207,34 +195,22 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * // KMS Key ID
-     * </p>
-     * <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) of a KMS Key
-     * </p>
-     * <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "alias/ExampleAlias"</code>
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
@@ -246,34 +222,22 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        // KMS Key ID
-     *        </p>
-     *        <p>
-     *        <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        // Amazon Resource Name (ARN) of a KMS Key
-     *        </p>
-     *        <p>
-     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        // KMS Key Alias
-     *        </p>
-     *        <p>
-     *        <code> "alias/ExampleAlias"</code>
+     *        Alias name: <code>alias/ExampleAlias</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias
-     *        </p>
-     *        <p>
-     *        <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     *        Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
      *        </p>
      *        </li>
      */
@@ -291,34 +255,22 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * // KMS Key ID
-     * </p>
-     * <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) of a KMS Key
-     * </p>
-     * <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "alias/ExampleAlias"</code>
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
@@ -329,34 +281,22 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         // KMS Key ID
-     *         </p>
-     *         <p>
-     *         <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         // Amazon Resource Name (ARN) of a KMS Key
-     *         </p>
-     *         <p>
-     *         <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         // KMS Key Alias
-     *         </p>
-     *         <p>
-     *         <code> "alias/ExampleAlias"</code>
+     *         Alias name: <code>alias/ExampleAlias</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias
-     *         </p>
-     *         <p>
-     *         <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     *         Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
      *         </p>
      *         </li>
      */
@@ -374,34 +314,22 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * // KMS Key ID
-     * </p>
-     * <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) of a KMS Key
-     * </p>
-     * <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "alias/ExampleAlias"</code>
+     * Alias name: <code>alias/ExampleAlias</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias
-     * </p>
-     * <p>
-     * <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     * Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
      * </p>
      * </li>
      * </ul>
@@ -413,34 +341,22 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        // KMS Key ID
-     *        </p>
-     *        <p>
-     *        <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        // Amazon Resource Name (ARN) of a KMS Key
-     *        </p>
-     *        <p>
-     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        // KMS Key Alias
-     *        </p>
-     *        <p>
-     *        <code> "alias/ExampleAlias"</code>
+     *        Alias name: <code>alias/ExampleAlias</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias
-     *        </p>
-     *        <p>
-     *        <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+     *        Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

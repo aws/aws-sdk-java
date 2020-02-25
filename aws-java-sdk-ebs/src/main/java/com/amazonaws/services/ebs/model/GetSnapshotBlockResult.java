@@ -37,7 +37,7 @@ public class GetSnapshotBlockResult extends com.amazonaws.AmazonWebServiceResult
     private java.io.InputStream blockData;
     /**
      * <p>
-     * The checksum generated for the block.
+     * The checksum generated for the block, which is Base64 encoded.
      * </p>
      */
     private String checksum;
@@ -130,11 +130,11 @@ public class GetSnapshotBlockResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The checksum generated for the block.
+     * The checksum generated for the block, which is Base64 encoded.
      * </p>
      * 
      * @param checksum
-     *        The checksum generated for the block.
+     *        The checksum generated for the block, which is Base64 encoded.
      */
 
     public void setChecksum(String checksum) {
@@ -143,10 +143,10 @@ public class GetSnapshotBlockResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The checksum generated for the block.
+     * The checksum generated for the block, which is Base64 encoded.
      * </p>
      * 
-     * @return The checksum generated for the block.
+     * @return The checksum generated for the block, which is Base64 encoded.
      */
 
     public String getChecksum() {
@@ -155,11 +155,11 @@ public class GetSnapshotBlockResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The checksum generated for the block.
+     * The checksum generated for the block, which is Base64 encoded.
      * </p>
      * 
      * @param checksum
-     *        The checksum generated for the block.
+     *        The checksum generated for the block, which is Base64 encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

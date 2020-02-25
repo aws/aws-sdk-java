@@ -80,16 +80,14 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The input attribute key used to identify a device or system to create a detector (an instance of the detector
      * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      */
     private String evaluationMethod;
@@ -437,15 +435,15 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The input attribute key used to identify a device or system to create a detector (an instance of the detector
      * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      * 
      * @param key
      *        The input attribute key used to identify a device or system to create a detector (an instance of the
      *        detector model) and then to route each input received to the appropriate detector (instance). This
-     *        parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
-     *        input that is used to identify the device associated with the input.
+     *        parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
+     *        pair that is used to identify the device associated with the input.
      */
 
     public void setKey(String key) {
@@ -456,14 +454,14 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The input attribute key used to identify a device or system to create a detector (an instance of the detector
      * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      * 
      * @return The input attribute key used to identify a device or system to create a detector (an instance of the
      *         detector model) and then to route each input received to the appropriate detector (instance). This
-     *         parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
-     *         input that is used to identify the device associated with the input.
+     *         parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
+     *         pair that is used to identify the device associated with the input.
      */
 
     public String getKey() {
@@ -474,15 +472,15 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
      * <p>
      * The input attribute key used to identify a device or system to create a detector (an instance of the detector
      * model) and then to route each input received to the appropriate detector (instance). This parameter uses a
-     * JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to
+     * JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to
      * identify the device associated with the input.
      * </p>
      * 
      * @param key
      *        The input attribute key used to identify a device or system to create a detector (an instance of the
      *        detector model) and then to route each input received to the appropriate detector (instance). This
-     *        parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each
-     *        input that is used to identify the device associated with the input.
+     *        parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value
+     *        pair that is used to identify the device associated with the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,15 +491,11 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
      * @param evaluationMethod
-     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *        after all event conditions are evaluated.
+     *        Information about the order in which events are evaluated and how actions are executed.
      * @see EvaluationMethod
      */
 
@@ -511,14 +505,10 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
-     * @return When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *         the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *         after all event conditions are evaluated.
+     * @return Information about the order in which events are evaluated and how actions are executed.
      * @see EvaluationMethod
      */
 
@@ -528,15 +518,11 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
      * @param evaluationMethod
-     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *        after all event conditions are evaluated.
+     *        Information about the order in which events are evaluated and how actions are executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EvaluationMethod
      */
@@ -548,15 +534,11 @@ public class DetectorModelConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the
-     * events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all
-     * event conditions are evaluated.
+     * Information about the order in which events are evaluated and how actions are executed.
      * </p>
      * 
      * @param evaluationMethod
-     *        When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that
-     *        the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only
-     *        after all event conditions are evaluated.
+     *        Information about the order in which events are evaluated and how actions are executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EvaluationMethod
      */

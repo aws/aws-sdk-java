@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * When exiting this state, perform these <code>"actions"</code> if the specified <code>"condition"</code> is TRUE.
+ * When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/OnExitLifecycle" target="_top">AWS API
@@ -30,20 +30,20 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the <code>"actions"</code> that are performed when the state is exited and the <code>"condition"</code>
-     * is TRUE.
+     * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
+     * TRUE.
      * </p>
      */
     private java.util.List<Event> events;
 
     /**
      * <p>
-     * Specifies the <code>"actions"</code> that are performed when the state is exited and the <code>"condition"</code>
-     * is TRUE.
+     * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
+     * TRUE.
      * </p>
      * 
-     * @return Specifies the <code>"actions"</code> that are performed when the state is exited and the
-     *         <code>"condition"</code> is TRUE.
+     * @return Specifies the <code>actions</code> that are performed when the state is exited and the
+     *         <code>condition</code> is TRUE.
      */
 
     public java.util.List<Event> getEvents() {
@@ -52,13 +52,13 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the <code>"actions"</code> that are performed when the state is exited and the <code>"condition"</code>
-     * is TRUE.
+     * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
+     * TRUE.
      * </p>
      * 
      * @param events
-     *        Specifies the <code>"actions"</code> that are performed when the state is exited and the
-     *        <code>"condition"</code> is TRUE.
+     *        Specifies the <code>actions</code> that are performed when the state is exited and the
+     *        <code>condition</code> is TRUE.
      */
 
     public void setEvents(java.util.Collection<Event> events) {
@@ -72,8 +72,8 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the <code>"actions"</code> that are performed when the state is exited and the <code>"condition"</code>
-     * is TRUE.
+     * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
+     * TRUE.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,8 +82,8 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param events
-     *        Specifies the <code>"actions"</code> that are performed when the state is exited and the
-     *        <code>"condition"</code> is TRUE.
+     *        Specifies the <code>actions</code> that are performed when the state is exited and the
+     *        <code>condition</code> is TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,13 +99,13 @@ public class OnExitLifecycle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the <code>"actions"</code> that are performed when the state is exited and the <code>"condition"</code>
-     * is TRUE.
+     * Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is
+     * TRUE.
      * </p>
      * 
      * @param events
-     *        Specifies the <code>"actions"</code> that are performed when the state is exited and the
-     *        <code>"condition"</code> is TRUE.
+     *        Specifies the <code>actions</code> that are performed when the state is exited and the
+     *        <code>condition</code> is TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

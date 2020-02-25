@@ -74,6 +74,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public CancelExportTaskResult cancelExportTask(CancelExportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBClusterParameterGroup copyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -474,6 +479,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -755,6 +765,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBInstance startDBInstance(StartDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartExportTaskResult startExportTask(StartExportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

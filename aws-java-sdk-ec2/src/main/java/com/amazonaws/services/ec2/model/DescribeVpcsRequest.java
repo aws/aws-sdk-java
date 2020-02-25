@@ -65,6 +65,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR
+     * block is allocated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated
      * with the VPC.
      * </p>
@@ -174,6 +180,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR
+     * block is allocated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated
      * with the VPC.
      * </p>
@@ -252,6 +264,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *         <li>
      *         <p>
      *         <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6
+     *         CIDR block is allocated.
      *         </p>
      *         </li>
      *         <li>
@@ -348,6 +366,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR
+     * block is allocated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated
      * with the VPC.
      * </p>
@@ -427,6 +451,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6
+     *        CIDR block is allocated.
      *        </p>
      *        </li>
      *        <li>
@@ -525,6 +555,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR
+     * block is allocated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated
      * with the VPC.
      * </p>
@@ -609,6 +645,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6
+     *        CIDR block is allocated.
      *        </p>
      *        </li>
      *        <li>
@@ -709,6 +751,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR
+     * block is allocated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated
      * with the VPC.
      * </p>
@@ -788,6 +836,12 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6
+     *        CIDR block is allocated.
      *        </p>
      *        </li>
      *        <li>

@@ -159,9 +159,6 @@ public interface AmazonNeptune {
      * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster
      * snapshot.
      * </p>
-     * <p>
-     * You can't copy from one AWS Region to another.
-     * </p>
      * 
      * @param copyDBClusterSnapshotRequest
      * @return Result of the CopyDBClusterSnapshot operation returned by the service.
@@ -209,6 +206,12 @@ public interface AmazonNeptune {
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of
      * another DB cluster or Amazon Neptune DB instance.
+     * </p>
+     * <p>
+     * Note that when you create a new cluster using <code>CreateDBCluster</code> directly, deletion protection is
+     * disabled by default (when you create a new production cluster in the console, deletion protection is enabled by
+     * default). You can only delete a DB cluster if its <code>DeletionProtection</code> field is set to
+     * <code>false</code>.
      * </p>
      * 
      * @param createDBClusterRequest
@@ -476,6 +479,10 @@ public interface AmazonNeptune {
      * automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the
      * specified DB cluster are not deleted.
      * </p>
+     * <p>
+     * Note that the DB Cluster cannot be deleted if deletion protection is enabled. To delete it, you must first set
+     * its <code>DeletionProtection</code> field to <code>False</code>.
+     * </p>
      * 
      * @param deleteDBClusterRequest
      * @return Result of the DeleteDBCluster operation returned by the service.
@@ -553,7 +560,8 @@ public interface AmazonNeptune {
      * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
-     * You can't delete a DB instance if it is the only instance in the DB cluster.
+     * You can't delete a DB instance if it is the only instance in the DB cluster, or if it has deletion protection
+     * enabled.
      * </p>
      * 
      * @param deleteDBInstanceRequest
@@ -708,8 +716,13 @@ public interface AmazonNeptune {
 
     /**
      * <p>
-     * Returns information about provisioned DB clusters. This API supports pagination.
+     * Returns information about provisioned DB clusters, and supports pagination.
      * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
+     * </p>
+     * </note>
      * 
      * @param describeDBClustersRequest
      * @return Result of the DescribeDBClusters operation returned by the service.
@@ -736,8 +749,13 @@ public interface AmazonNeptune {
 
     /**
      * <p>
-     * Returns information about provisioned instances. This API supports pagination.
+     * Returns information about provisioned instances, and supports pagination.
      * </p>
+     * <note>
+     * <p>
+     * This operation can also return information for Amazon RDS instances and Amazon DocDB instances.
+     * </p>
+     * </note>
      * 
      * @param describeDBInstancesRequest
      * @return Result of the DescribeDBInstances operation returned by the service.
@@ -1480,6 +1498,49 @@ public interface AmazonNeptune {
      *      target="_top">AWS API Documentation</a>
      */
     DBCluster restoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest restoreDBClusterToPointInTimeRequest);
+
+    /**
+     * <p>
+     * Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the AWS CLI stop-db-cluster command,
+     * or the StopDBCluster API.
+     * </p>
+     * 
+     * @param startDBClusterRequest
+     * @return Result of the StartDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.StartDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBCluster startDBCluster(StartDBClusterRequest startDBClusterRequest);
+
+    /**
+     * <p>
+     * Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune retains the DB cluster's metadata,
+     * including its endpoints and DB parameter groups.
+     * </p>
+     * <p>
+     * Neptune also retains the transaction logs so you can do a point-in-time restore if necessary.
+     * </p>
+     * 
+     * @param stopDBClusterRequest
+     * @return Result of the StopDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @sample AmazonNeptune.StopDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBCluster stopDBCluster(StopDBClusterRequest stopDBClusterRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

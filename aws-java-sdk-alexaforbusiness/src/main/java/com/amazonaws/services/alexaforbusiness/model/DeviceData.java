@@ -100,6 +100,12 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DeviceStatusInfo deviceStatusInfo;
+    /**
+     * <p>
+     * The time (in epoch) when the device data was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
 
     /**
      * <p>
@@ -601,6 +607,46 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time (in epoch) when the device data was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        The time (in epoch) when the device data was created.
+     */
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * The time (in epoch) when the device data was created.
+     * </p>
+     * 
+     * @return The time (in epoch) when the device data was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * The time (in epoch) when the device data was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        The time (in epoch) when the device data was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceData withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -635,7 +681,9 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
         if (getRoomName() != null)
             sb.append("RoomName: ").append(getRoomName()).append(",");
         if (getDeviceStatusInfo() != null)
-            sb.append("DeviceStatusInfo: ").append(getDeviceStatusInfo());
+            sb.append("DeviceStatusInfo: ").append(getDeviceStatusInfo()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -698,6 +746,10 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceStatusInfo() != null && other.getDeviceStatusInfo().equals(this.getDeviceStatusInfo()) == false)
             return false;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
         return true;
     }
 
@@ -718,6 +770,7 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoomArn() == null) ? 0 : getRoomArn().hashCode());
         hashCode = prime * hashCode + ((getRoomName() == null) ? 0 : getRoomName().hashCode());
         hashCode = prime * hashCode + ((getDeviceStatusInfo() == null) ? 0 : getDeviceStatusInfo().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         return hashCode;
     }
 

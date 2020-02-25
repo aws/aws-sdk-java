@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information required to publish the MQTT message via the AWS IoT message broker.
+ * Information required to publish the MQTT message through the AWS IoT message broker.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotTopicPublishAction" target="_top">AWS
@@ -30,18 +30,24 @@ public class IotTopicPublishAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The MQTT topic of the message.
+     * The MQTT topic of the message. You can use a string expression that includes variables (
+     * <code>$variable.&lt;variable-name&gt;</code>) and input values (
+     * <code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.
      * </p>
      */
     private String mqttTopic;
 
     /**
      * <p>
-     * The MQTT topic of the message.
+     * The MQTT topic of the message. You can use a string expression that includes variables (
+     * <code>$variable.&lt;variable-name&gt;</code>) and input values (
+     * <code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.
      * </p>
      * 
      * @param mqttTopic
-     *        The MQTT topic of the message.
+     *        The MQTT topic of the message. You can use a string expression that includes variables (
+     *        <code>$variable.&lt;variable-name&gt;</code>) and input values (
+     *        <code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.
      */
 
     public void setMqttTopic(String mqttTopic) {
@@ -50,10 +56,14 @@ public class IotTopicPublishAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The MQTT topic of the message.
+     * The MQTT topic of the message. You can use a string expression that includes variables (
+     * <code>$variable.&lt;variable-name&gt;</code>) and input values (
+     * <code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.
      * </p>
      * 
-     * @return The MQTT topic of the message.
+     * @return The MQTT topic of the message. You can use a string expression that includes variables (
+     *         <code>$variable.&lt;variable-name&gt;</code>) and input values (
+     *         <code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.
      */
 
     public String getMqttTopic() {
@@ -62,11 +72,15 @@ public class IotTopicPublishAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The MQTT topic of the message.
+     * The MQTT topic of the message. You can use a string expression that includes variables (
+     * <code>$variable.&lt;variable-name&gt;</code>) and input values (
+     * <code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.
      * </p>
      * 
      * @param mqttTopic
-     *        The MQTT topic of the message.
+     *        The MQTT topic of the message. You can use a string expression that includes variables (
+     *        <code>$variable.&lt;variable-name&gt;</code>) and input values (
+     *        <code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

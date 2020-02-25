@@ -53,6 +53,10 @@ public class ProfileResourceLoader {
         return new ProfileResourceLoader("BasicProfile.tst");
     }
 
+    public static ProfileResourceLoader basicConfigProfile() {
+        return new ProfileResourceLoader("BasicConfig.tst");
+    }
+
     public static ProfileResourceLoader basicProfile2() {
         return new ProfileResourceLoader("BasicProfile2.tst");
     }

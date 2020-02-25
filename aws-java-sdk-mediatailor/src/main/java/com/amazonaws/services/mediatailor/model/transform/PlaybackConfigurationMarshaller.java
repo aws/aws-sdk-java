@@ -51,6 +51,8 @@ public class PlaybackConfigurationMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TRANSCODEPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TranscodeProfileName").build();
+    private static final MarshallingInfo<Integer> PERSONALIZATIONTHRESHOLDSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PersonalizationThresholdSeconds").build();
     private static final MarshallingInfo<String> VIDEOCONTENTSOURCEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VideoContentSourceUrl").build();
 
@@ -81,6 +83,7 @@ public class PlaybackConfigurationMarshaller {
             protocolMarshaller.marshall(playbackConfiguration.getSlateAdUrl(), SLATEADURL_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getTranscodeProfileName(), TRANSCODEPROFILENAME_BINDING);
+            protocolMarshaller.marshall(playbackConfiguration.getPersonalizationThresholdSeconds(), PERSONALIZATIONTHRESHOLDSECONDS_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getVideoContentSourceUrl(), VIDEOCONTENTSOURCEURL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

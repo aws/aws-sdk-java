@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request would cause you to exceed the allowed number of subnets in a DB subnet group.
+ * The request would cause you to exceed the allowed number of subnets in a subnet group.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

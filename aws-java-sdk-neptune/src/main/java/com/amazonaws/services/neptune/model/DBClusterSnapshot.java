@@ -37,7 +37,19 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private java.util.List<String> availabilityZones;
     /**
      * <p>
-     * Specifies the identifier for the DB cluster snapshot.
+     * Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.
+     * </p>
+     * <p>
+     * After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this property
+     * for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not
+     * changed.
+     * </p>
+     * <p>
+     * However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different from the previous snapshot
+     * restore property, the DB cluster is restored from the snapshot specified by the
+     * <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.
      * </p>
      */
     private String dBClusterSnapshotIdentifier;
@@ -224,11 +236,34 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier for the DB cluster snapshot.
+     * Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.
+     * </p>
+     * <p>
+     * After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this property
+     * for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not
+     * changed.
+     * </p>
+     * <p>
+     * However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different from the previous snapshot
+     * restore property, the DB cluster is restored from the snapshot specified by the
+     * <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        Specifies the identifier for the DB cluster snapshot.
+     *        Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.</p>
+     *        <p>
+     *        After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     *        <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this
+     *        property for an update, the DB cluster is not restored from the snapshot again, and the data in the
+     *        database is not changed.
+     *        </p>
+     *        <p>
+     *        However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is
+     *        created, and the original DB cluster is deleted. If you specify a property that is different from the
+     *        previous snapshot restore property, the DB cluster is restored from the snapshot specified by the
+     *        <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.
      */
 
     public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
@@ -237,10 +272,34 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier for the DB cluster snapshot.
+     * Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.
+     * </p>
+     * <p>
+     * After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this property
+     * for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not
+     * changed.
+     * </p>
+     * <p>
+     * However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different from the previous snapshot
+     * restore property, the DB cluster is restored from the snapshot specified by the
+     * <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.
      * </p>
      * 
-     * @return Specifies the identifier for the DB cluster snapshot.
+     * @return Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing
+     *         snapshot.</p>
+     *         <p>
+     *         After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the
+     *         same <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify
+     *         this property for an update, the DB cluster is not restored from the snapshot again, and the data in the
+     *         database is not changed.
+     *         </p>
+     *         <p>
+     *         However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is
+     *         created, and the original DB cluster is deleted. If you specify a property that is different from the
+     *         previous snapshot restore property, the DB cluster is restored from the snapshot specified by the
+     *         <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.
      */
 
     public String getDBClusterSnapshotIdentifier() {
@@ -249,11 +308,34 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the identifier for the DB cluster snapshot.
+     * Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.
+     * </p>
+     * <p>
+     * After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this property
+     * for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not
+     * changed.
+     * </p>
+     * <p>
+     * However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different from the previous snapshot
+     * restore property, the DB cluster is restored from the snapshot specified by the
+     * <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        Specifies the identifier for the DB cluster snapshot.
+     *        Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.</p>
+     *        <p>
+     *        After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     *        <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this
+     *        property for an update, the DB cluster is not restored from the snapshot again, and the data in the
+     *        database is not changed.
+     *        </p>
+     *        <p>
+     *        However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is
+     *        created, and the original DB cluster is deleted. If you specify a property that is different from the
+     *        previous snapshot restore property, the DB cluster is restored from the snapshot specified by the
+     *        <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

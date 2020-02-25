@@ -45,6 +45,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>PRIVATE</code>.
+     * </p>
      */
     private String visibility;
     /**
@@ -136,6 +139,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>PRIVATE</code>.
+     * </p>
      * 
      * @param visibility
      *        The scope at which the type is visible and usable in CloudFormation operations.</p>
@@ -154,6 +160,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>PRIVATE</code>.
      * @see Visibility
      */
 
@@ -181,6 +190,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>PRIVATE</code>.
+     * </p>
      * 
      * @return The scope at which the type is visible and usable in CloudFormation operations.</p>
      *         <p>
@@ -198,6 +210,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The default is <code>PRIVATE</code>.
      * @see Visibility
      */
 
@@ -225,6 +240,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>PRIVATE</code>.
+     * </p>
      * 
      * @param visibility
      *        The scope at which the type is visible and usable in CloudFormation operations.</p>
@@ -243,6 +261,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>PRIVATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Visibility
      */
@@ -272,6 +293,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>PRIVATE</code>.
+     * </p>
      * 
      * @param visibility
      *        The scope at which the type is visible and usable in CloudFormation operations.</p>
@@ -290,6 +314,9 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <code>PUBLIC</code>: The type is publically visible and usable within any Amazon account.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>PRIVATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Visibility
      */

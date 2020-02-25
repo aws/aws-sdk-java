@@ -26,14 +26,49 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeServiceActionExecutionParametersRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the provisioned product.
+     * </p>
+     */
     private String provisionedProductId;
-
+    /**
+     * <p>
+     * The self-service action identifier.
+     * </p>
+     */
     private String serviceActionId;
-
+    /**
+     * <p>
+     * The language code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>en</code> - English (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>jp</code> - Japanese
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zh</code> - Chinese
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String acceptLanguage;
 
     /**
+     * <p>
+     * The identifier of the provisioned product.
+     * </p>
+     * 
      * @param provisionedProductId
+     *        The identifier of the provisioned product.
      */
 
     public void setProvisionedProductId(String provisionedProductId) {
@@ -41,7 +76,11 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the provisioned product.
+     * </p>
+     * 
+     * @return The identifier of the provisioned product.
      */
 
     public String getProvisionedProductId() {
@@ -49,7 +88,12 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
+     * <p>
+     * The identifier of the provisioned product.
+     * </p>
+     * 
      * @param provisionedProductId
+     *        The identifier of the provisioned product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,7 +103,12 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
+     * <p>
+     * The self-service action identifier.
+     * </p>
+     * 
      * @param serviceActionId
+     *        The self-service action identifier.
      */
 
     public void setServiceActionId(String serviceActionId) {
@@ -67,7 +116,11 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
-     * @return
+     * <p>
+     * The self-service action identifier.
+     * </p>
+     * 
+     * @return The self-service action identifier.
      */
 
     public String getServiceActionId() {
@@ -75,7 +128,12 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
+     * <p>
+     * The self-service action identifier.
+     * </p>
+     * 
      * @param serviceActionId
+     *        The self-service action identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,7 +143,45 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
+     * <p>
+     * The language code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>en</code> - English (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>jp</code> - Japanese
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zh</code> - Chinese
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param acceptLanguage
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>en</code> - English (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>jp</code> - Japanese
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>zh</code> - Chinese
+     *        </p>
+     *        </li>
      */
 
     public void setAcceptLanguage(String acceptLanguage) {
@@ -93,7 +189,44 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
-     * @return
+     * <p>
+     * The language code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>en</code> - English (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>jp</code> - Japanese
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zh</code> - Chinese
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The language code.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>en</code> - English (default)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>jp</code> - Japanese
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>zh</code> - Chinese
+     *         </p>
+     *         </li>
      */
 
     public String getAcceptLanguage() {
@@ -101,7 +234,45 @@ public class DescribeServiceActionExecutionParametersRequest extends com.amazona
     }
 
     /**
+     * <p>
+     * The language code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>en</code> - English (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>jp</code> - Japanese
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>zh</code> - Chinese
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param acceptLanguage
+     *        The language code.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>en</code> - English (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>jp</code> - Japanese
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>zh</code> - Chinese
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -63,7 +63,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
     private String marker;
     /**
      * <p>
-     * Limit the number of versions that are returned.
+     * The maximum number of versions to return.
      * </p>
      */
     private Integer maxItems;
@@ -291,11 +291,11 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Limit the number of versions that are returned.
+     * The maximum number of versions to return.
      * </p>
      * 
      * @param maxItems
-     *        Limit the number of versions that are returned.
+     *        The maximum number of versions to return.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -304,10 +304,10 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Limit the number of versions that are returned.
+     * The maximum number of versions to return.
      * </p>
      * 
-     * @return Limit the number of versions that are returned.
+     * @return The maximum number of versions to return.
      */
 
     public Integer getMaxItems() {
@@ -316,11 +316,11 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Limit the number of versions that are returned.
+     * The maximum number of versions to return.
      * </p>
      * 
      * @param maxItems
-     *        Limit the number of versions that are returned.
+     *        The maximum number of versions to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

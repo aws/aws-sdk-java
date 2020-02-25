@@ -27,12 +27,13 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+     * The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
      * </p>
      */
     private String imagePipelineArn;
     /**
      * <p>
+     * The filters.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -51,11 +52,11 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+     * The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+     *        The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
      */
 
     public void setImagePipelineArn(String imagePipelineArn) {
@@ -64,10 +65,10 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+     * The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+     * @return The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
      */
 
     public String getImagePipelineArn() {
@@ -76,11 +77,11 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+     * The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline whose images you wish to view.
+     *        The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,9 +92,10 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
-     * @return
+     * @return The filters.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -102,9 +104,11 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
      * @param filters
+     *        The filters.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -118,6 +122,7 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The filters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,6 +131,7 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param filters
+     *        The filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,9 +147,11 @@ public class ListImagePipelineImagesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The filters.
      * </p>
      * 
      * @param filters
+     *        The filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

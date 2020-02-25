@@ -63,6 +63,49 @@ public class UpdateStackInstancesRequestMarshaller implements Marshaller<Request
             }
         }
 
+        {
+            DeploymentTargets deploymentTargets = updateStackInstancesRequest.getDeploymentTargets();
+            if (deploymentTargets != null) {
+
+                if (deploymentTargets.getAccounts().isEmpty()
+                        && !((com.amazonaws.internal.SdkInternalList<String>) deploymentTargets.getAccounts()).isAutoConstruct()) {
+                    request.addParameter("DeploymentTargets.Accounts", "");
+                }
+                if (!deploymentTargets.getAccounts().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) deploymentTargets.getAccounts()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> accountsList = (com.amazonaws.internal.SdkInternalList<String>) deploymentTargets
+                            .getAccounts();
+                    int accountsListIndex = 1;
+
+                    for (String accountsListValue : accountsList) {
+                        if (accountsListValue != null) {
+                            request.addParameter("DeploymentTargets.Accounts.member." + accountsListIndex, StringUtils.fromString(accountsListValue));
+                        }
+                        accountsListIndex++;
+                    }
+                }
+
+                if (deploymentTargets.getOrganizationalUnitIds().isEmpty()
+                        && !((com.amazonaws.internal.SdkInternalList<String>) deploymentTargets.getOrganizationalUnitIds()).isAutoConstruct()) {
+                    request.addParameter("DeploymentTargets.OrganizationalUnitIds", "");
+                }
+                if (!deploymentTargets.getOrganizationalUnitIds().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) deploymentTargets.getOrganizationalUnitIds()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> organizationalUnitIdsList = (com.amazonaws.internal.SdkInternalList<String>) deploymentTargets
+                            .getOrganizationalUnitIds();
+                    int organizationalUnitIdsListIndex = 1;
+
+                    for (String organizationalUnitIdsListValue : organizationalUnitIdsList) {
+                        if (organizationalUnitIdsListValue != null) {
+                            request.addParameter("DeploymentTargets.OrganizationalUnitIds.member." + organizationalUnitIdsListIndex,
+                                    StringUtils.fromString(organizationalUnitIdsListValue));
+                        }
+                        organizationalUnitIdsListIndex++;
+                    }
+                }
+            }
+        }
+
         if (updateStackInstancesRequest.getRegions().isEmpty()
                 && !((com.amazonaws.internal.SdkInternalList<String>) updateStackInstancesRequest.getRegions()).isAutoConstruct()) {
             request.addParameter("Regions", "");

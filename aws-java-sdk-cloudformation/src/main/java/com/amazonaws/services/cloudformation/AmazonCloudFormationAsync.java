@@ -257,8 +257,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
     /**
      * <p>
      * Creates stack instances for the specified accounts, within the specified regions. A stack instance refers to a
-     * stack in a specific account and region. <code>Accounts</code> and <code>Regions</code> are required
-     * parameters—you must specify at least one account and one region.
+     * stack in a specific account and region. You must specify at least one value for either <code>Accounts</code> or
+     * <code>DeploymentTargets</code>, and you must specify at least one value for <code>Regions</code>.
      * </p>
      * 
      * @param createStackInstancesRequest
@@ -272,8 +272,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
     /**
      * <p>
      * Creates stack instances for the specified accounts, within the specified regions. A stack instance refers to a
-     * stack in a specific account and region. <code>Accounts</code> and <code>Regions</code> are required
-     * parameters—you must specify at least one account and one region.
+     * stack in a specific account and region. You must specify at least one value for either <code>Accounts</code> or
+     * <code>DeploymentTargets</code>, and you must specify at least one value for <code>Regions</code>.
      * </p>
      * 
      * @param createStackInstancesRequest
@@ -1994,7 +1994,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns a list of registration tokens for the specified type.
+     * Returns a list of registration tokens for the specified type(s).
      * </p>
      * 
      * @param listTypeRegistrationsRequest
@@ -2007,7 +2007,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns a list of registration tokens for the specified type.
+     * Returns a list of registration tokens for the specified type(s).
      * </p>
      * 
      * @param listTypeRegistrationsRequest
@@ -2150,8 +2150,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </ul>
      * <p>
      * For more information on how to develop types and ready them for registeration, see <a
-     * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource Providers</a> in the
-     * <i>CloudFormation CLI User Guide</i>.
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+     * Providers</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
@@ -2190,8 +2190,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </ul>
      * <p>
      * For more information on how to develop types and ready them for registeration, see <a
-     * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource Providers</a> in the
-     * <i>CloudFormation CLI User Guide</i>.
+     * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+     * Providers</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use

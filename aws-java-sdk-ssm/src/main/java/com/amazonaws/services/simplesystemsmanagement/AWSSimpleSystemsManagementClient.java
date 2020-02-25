@@ -895,12 +895,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
-     * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
-     * instance. For more information about activations, see <a
+     * Generates an activation code and activation ID you can use to register your on-premises server or virtual machine
+     * (VM) with Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using
+     * Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your
+     * hybrid environment. For more information about requirements for managing on-premises instances and VMs using
+     * Systems Manager, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * Up AWS Systems Manager for Hybrid Environments</a>.
+     * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * On-premises servers or VMs that are registered with Systems Manager and Amazon EC2 instances that you manage with
+     * Systems Manager are all called <i>managed instances</i>.
+     * </p>
+     * </note>
      * 
      * @param createActivationRequest
      * @return Result of the CreateActivation operation returned by the service.
@@ -1450,11 +1458,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
-     * You can configure Systems Manager Explorer to use the <code>SyncToDestination</code> type to synchronize
-     * operational work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single Amazon S3
-     * bucket. You can also configure Explorer to use the <code>SyncFromSource</code> type. This type synchronizes
-     * OpsItems and OpsData from multiple AWS accounts and Regions by using AWS Organizations. For more information, see
-     * <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting Up
+     * You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize operational
+     * work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single Amazon S3 bucket. This
+     * type can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or
+     * <code>EntireOrganization</code> by using AWS Organizations. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting Up
      * Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
@@ -6122,7 +6130,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Lists the associations for the specified Systems Manager document or instance.
+     * Returns all State Manager associations in the current AWS account and Region. You can limit the results to a
+     * specific State Manager association document or instance by specifying a filter.
      * </p>
      * 
      * @param listAssociationsRequest
@@ -6519,7 +6528,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes one or more of your Systems Manager documents.
+     * Returns all Systems Manager (SSM) documents in the current AWS account and Region. You can limit the results of
+     * this request by using a filter.
      * </p>
      * 
      * @param listDocumentsRequest

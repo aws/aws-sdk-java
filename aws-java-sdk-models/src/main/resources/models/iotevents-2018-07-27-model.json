@@ -100,7 +100,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"ServiceUnavailableException"}
       ],
-      "documentation":"<p>Describes a detector model. If the <code>\"version\"</code> parameter is not specified, information about the latest version is returned.</p>"
+      "documentation":"<p>Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest version is returned.</p>"
     },
     "DescribeInput":{
       "name":"DescribeInput",
@@ -218,7 +218,7 @@
         {"shape":"UnsupportedOperationException"},
         {"shape":"ResourceInUseException"}
       ],
-      "documentation":"<p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the value of any <code>\"loggingOptions\"</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the <code>\"roleArn\"</code> field (for example, to correct an invalid policy) it takes up to five minutes for that change to take effect.</p>"
+      "documentation":"<p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. If you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect.</p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -322,22 +322,22 @@
         },
         "lambda":{
           "shape":"LambdaAction",
-          "documentation":"<p>Calls an AWS Lambda function, passing in information about the detector model instance and the event which triggered the action.</p>"
+          "documentation":"<p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>"
         },
         "iotEvents":{
           "shape":"IotEventsAction",
-          "documentation":"<p>Sends an IoT Events input, passing in information about the detector model instance and the event which triggered the action.</p>"
+          "documentation":"<p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>"
         },
         "sqs":{
           "shape":"SqsAction",
-          "documentation":"<p>Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.</p>"
+          "documentation":"<p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>"
         },
         "firehose":{
           "shape":"FirehoseAction",
-          "documentation":"<p>Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.</p>"
+          "documentation":"<p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>"
         }
       },
-      "documentation":"<p>An action to be performed when the <code>\"condition\"</code> is TRUE.</p>"
+      "documentation":"<p>An action to be performed when the <code>condition</code> is TRUE.</p>"
     },
     "Actions":{
       "type":"list",
@@ -354,10 +354,10 @@
       "members":{
         "jsonPath":{
           "shape":"AttributeJsonPath",
-          "documentation":"<p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to the AWS IoT Events system (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and the attribute (and its paired value) specified here are available for use in the <code>\"condition\"</code> expressions used by detectors. </p> <p>Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>"
+          "documentation":"<p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p> <p>Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code> </p>"
         }
       },
-      "documentation":"<p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>"
+      "documentation":"<p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>"
     },
     "AttributeJsonPath":{
       "type":"string",
@@ -408,7 +408,7 @@
         },
         "key":{
           "shape":"AttributeJsonPath",
-          "documentation":"<p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to identify the device associated with the input.</p>"
+          "documentation":"<p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>"
         },
         "roleArn":{
           "shape":"AmazonResourceName",
@@ -420,7 +420,7 @@
         },
         "evaluationMethod":{
           "shape":"EvaluationMethod",
-          "documentation":"<p>When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all event conditions are evaluated.</p>"
+          "documentation":"<p>Information about the order in which events are evaluated and how actions are executed. </p>"
         }
       }
     },
@@ -636,11 +636,11 @@
         },
         "key":{
           "shape":"AttributeJsonPath",
-          "documentation":"<p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression to specify the attribute-value pair in the message payload of each input that is used to identify the device associated with the input.</p>"
+          "documentation":"<p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>"
         },
         "evaluationMethod":{
           "shape":"EvaluationMethod",
-          "documentation":"<p>When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all event conditions are evaluated.</p>"
+          "documentation":"<p>Information about the order in which events are evaluated and how actions are executed. </p>"
         }
       },
       "documentation":"<p>Information about how the detector model is configured.</p>"
@@ -749,7 +749,7 @@
         },
         "evaluationMethod":{
           "shape":"EvaluationMethod",
-          "documentation":"<p>When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all event conditions are evaluated.</p>"
+          "documentation":"<p>Information about the order in which events are evaluated and how actions are executed. </p>"
         }
       },
       "documentation":"<p>Information about the detector model version.</p>"
@@ -771,14 +771,14 @@
         },
         "condition":{
           "shape":"Condition",
-          "documentation":"<p>[Optional] The Boolean expression that when TRUE causes the <code>\"actions\"</code> to be performed. If not present, the actions are performed (=TRUE); if the expression result is not a Boolean value, the actions are NOT performed (=FALSE).</p>"
+          "documentation":"<p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>"
         },
         "actions":{
           "shape":"Actions",
           "documentation":"<p>The actions to be performed.</p>"
         }
       },
-      "documentation":"<p>Specifies the <code>\"actions\"</code> to be performed when the <code>\"condition\"</code> evaluates to TRUE.</p>"
+      "documentation":"<p>Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE.</p>"
     },
     "EventName":{
       "type":"string",
@@ -801,7 +801,7 @@
           "documentation":"<p>A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: '\\n' (newline), '\\t' (tab), '\\r\\n' (Windows newline), ',' (comma).</p>"
         }
       },
-      "documentation":"<p>Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.</p>"
+      "documentation":"<p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>"
     },
     "FirehoseSeparator":{
       "type":"string",
@@ -865,7 +865,7 @@
       "members":{
         "attributes":{
           "shape":"Attributes",
-          "documentation":"<p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>\"condition\"</code> expressions used by detectors that monitor this input. </p>"
+          "documentation":"<p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors that monitor this input. </p>"
         }
       },
       "documentation":"<p>The definition of the input.</p>"
@@ -957,7 +957,7 @@
           "documentation":"<p>The name of the AWS IoT Events input where the data is sent.</p>"
         }
       },
-      "documentation":"<p>Sends an IoT Events input, passing in information about the detector model instance and the event which triggered the action.</p>"
+      "documentation":"<p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>"
     },
     "IotTopicPublishAction":{
       "type":"structure",
@@ -965,10 +965,10 @@
       "members":{
         "mqttTopic":{
           "shape":"MQTTTopic",
-          "documentation":"<p>The MQTT topic of the message.</p>"
+          "documentation":"<p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.&lt;variable-name&gt;</code>) and input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the topic string.</p>"
         }
       },
-      "documentation":"<p>Information required to publish the MQTT message via the AWS IoT message broker.</p>"
+      "documentation":"<p>Information required to publish the MQTT message through the AWS IoT message broker.</p>"
     },
     "KeyValue":{
       "type":"string",
@@ -982,10 +982,10 @@
       "members":{
         "functionArn":{
           "shape":"AmazonResourceName",
-          "documentation":"<p>The ARN of the AWS Lambda function which is executed.</p>"
+          "documentation":"<p>The ARN of the Lambda function that is executed.</p>"
         }
       },
-      "documentation":"<p>Calls an AWS Lambda function, passing in information about the detector model instance and the event which triggered the action.</p>"
+      "documentation":"<p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>"
     },
     "LimitExceededException":{
       "type":"structure",
@@ -1169,7 +1169,7 @@
       "members":{
         "events":{
           "shape":"Events",
-          "documentation":"<p>Specifies the actions that are performed when the state is entered and the <code>\"condition\"</code> is TRUE.</p>"
+          "documentation":"<p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.</p>"
         }
       },
       "documentation":"<p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>"
@@ -1179,24 +1179,24 @@
       "members":{
         "events":{
           "shape":"Events",
-          "documentation":"<p>Specifies the <code>\"actions\"</code> that are performed when the state is exited and the <code>\"condition\"</code> is TRUE.</p>"
+          "documentation":"<p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is TRUE.</p>"
         }
       },
-      "documentation":"<p>When exiting this state, perform these <code>\"actions\"</code> if the specified <code>\"condition\"</code> is TRUE.</p>"
+      "documentation":"<p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.</p>"
     },
     "OnInputLifecycle":{
       "type":"structure",
       "members":{
         "events":{
           "shape":"Events",
-          "documentation":"<p>Specifies the actions performed when the <code>\"condition\"</code> evaluates to TRUE.</p>"
+          "documentation":"<p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>"
         },
         "transitionEvents":{
           "shape":"TransitionEvents",
-          "documentation":"<p>Specifies the actions performed, and the next state entered, when a <code>\"condition\"</code> evaluates to TRUE.</p>"
+          "documentation":"<p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>"
         }
       },
-      "documentation":"<p>Specifies the actions performed when the <code>\"condition\"</code> evaluates to TRUE.</p>"
+      "documentation":"<p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>"
     },
     "PutLoggingOptionsRequest":{
       "type":"structure",
@@ -1302,7 +1302,7 @@
         },
         "seconds":{
           "shape":"Seconds",
-          "documentation":"<p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy.</p>"
+          "documentation":"<p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>"
         }
       },
       "documentation":"<p>Information needed to set the timer.</p>"
@@ -1331,14 +1331,14 @@
       "members":{
         "queueUrl":{
           "shape":"QueueUrl",
-          "documentation":"<p>The URL of the Amazon SQS queue where the data is written.</p>"
+          "documentation":"<p>The URL of the SQS queue where the data is written.</p>"
         },
         "useBase64":{
           "shape":"UseBase64",
-          "documentation":"<p>Set this to TRUE if you want the data to be Base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>"
+          "documentation":"<p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.</p>"
         }
       },
-      "documentation":"<p>Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.</p>"
+      "documentation":"<p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>"
     },
     "State":{
       "type":"structure",
@@ -1350,15 +1350,15 @@
         },
         "onInput":{
           "shape":"OnInputLifecycle",
-          "documentation":"<p>When an input is received and the <code>\"condition\"</code> is TRUE, perform the specified <code>\"actions\"</code>.</p>"
+          "documentation":"<p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>"
         },
         "onEnter":{
           "shape":"OnEnterLifecycle",
-          "documentation":"<p>When entering this state, perform these <code>\"actions\"</code> if the <code>\"condition\"</code> is TRUE.</p>"
+          "documentation":"<p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>"
         },
         "onExit":{
           "shape":"OnExitLifecycle",
-          "documentation":"<p>When exiting this state, perform these <code>\"actions\"</code> if the specified <code>\"condition\"</code> is TRUE.</p>"
+          "documentation":"<p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is TRUE.</p>"
         }
       },
       "documentation":"<p>Information that defines a state of a detector.</p>"
@@ -1465,7 +1465,7 @@
         },
         "condition":{
           "shape":"Condition",
-          "documentation":"<p>[Required] A Boolean expression that when TRUE causes the actions to be performed and the <code>\"nextState\"</code> to be entered.</p>"
+          "documentation":"<p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>"
         },
         "actions":{
           "shape":"Actions",
@@ -1476,7 +1476,7 @@
           "documentation":"<p>The next state to enter.</p>"
         }
       },
-      "documentation":"<p>Specifies the actions performed and the next state entered when a <code>\"condition\"</code> evaluates to TRUE.</p>"
+      "documentation":"<p>Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.</p>"
     },
     "TransitionEvents":{
       "type":"list",
@@ -1549,7 +1549,7 @@
         },
         "evaluationMethod":{
           "shape":"EvaluationMethod",
-          "documentation":"<p>When set to <code>SERIAL</code>, variables are updated and event conditions evaluated in the order that the events are defined. When set to <code>BATCH</code>, variables are updated and events performed only after all event conditions are evaluated.</p>"
+          "documentation":"<p>Information about the order in which events are evaluated and how actions are executed. </p>"
         }
       }
     },
@@ -1610,5 +1610,5 @@
     "resourceArn":{"type":"string"},
     "resourceId":{"type":"string"}
   },
-  "documentation":"<p>AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions when such events occur. AWS IoT Events API commands enable you to create, read, update and delete inputs and detector models, and to list their versions.</p>"
+  "documentation":"<p>AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions when such events occur. You can use AWS IoT Events API commands to create, read, update, and delete inputs and detector models, and to list their versions.</p>"
 }

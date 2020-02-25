@@ -23,11 +23,12 @@
       "input":{"shape":"CopyBackupToRegionRequest"},
       "output":{"shape":"CopyBackupToRegionResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Copy an AWS CloudHSM cluster backup to a different region.</p>"
     },
@@ -40,11 +41,12 @@
       "input":{"shape":"CreateClusterRequest"},
       "output":{"shape":"CreateClusterResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Creates a new AWS CloudHSM cluster.</p>"
     },
@@ -74,13 +76,13 @@
       "input":{"shape":"DeleteBackupRequest"},
       "output":{"shape":"DeleteBackupResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"}
       ],
-      "documentation":"<p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a> </p>"
+      "documentation":"<p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is made. For more information on restoring a backup, see <a>RestoreBackup</a>.</p>"
     },
     "DeleteCluster":{
       "name":"DeleteCluster",
@@ -91,11 +93,12 @@
       "input":{"shape":"DeleteClusterRequest"},
       "output":{"shape":"DeleteClusterResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <a>DescribeClusters</a>. To delete an HSM, use <a>DeleteHsm</a>.</p>"
     },
@@ -125,11 +128,12 @@
       "input":{"shape":"DescribeBackupsRequest"},
       "output":{"shape":"DescribeBackupsResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Gets information about backups of AWS CloudHSM clusters.</p> <p>This is a paginated operation, which means that each response might contain only a subset of all the backups. When the response contains only a subset of backups, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more backups to get.</p>"
     },
@@ -142,10 +146,11 @@
       "input":{"shape":"DescribeClustersRequest"},
       "output":{"shape":"DescribeClustersResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Gets information about AWS CloudHSM clusters.</p> <p>This is a paginated operation, which means that each response might contain only a subset of all the clusters. When the response contains only a subset of clusters, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more clusters to get.</p>"
     },
@@ -158,11 +163,11 @@
       "input":{"shape":"InitializeClusterRequest"},
       "output":{"shape":"InitializeClusterResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"}
       ],
       "documentation":"<p>Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your issuing certificate authority (CA) and the CA's root certificate. Before you can claim a cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA. To get the cluster's CSR, use <a>DescribeClusters</a>.</p>"
     },
@@ -175,11 +180,12 @@
       "input":{"shape":"ListTagsRequest"},
       "output":{"shape":"ListTagsResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Gets a list of tags for the specified AWS CloudHSM cluster.</p> <p>This is a paginated operation, which means that each response might contain only a subset of all the tags. When the response contains only a subset of tags, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code> request to get more tags. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more tags to get.</p>"
     },
@@ -192,13 +198,13 @@
       "input":{"shape":"RestoreBackupRequest"},
       "output":{"shape":"RestoreBackupResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"}
       ],
-      "documentation":"<p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information on deleting a backup, see <a>DeleteBackup</a>.</p>"
+      "documentation":"<p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information on deleting a backup, see <a>DeleteBackup</a>.</p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -209,11 +215,12 @@
       "input":{"shape":"TagResourceRequest"},
       "output":{"shape":"TagResourceResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Adds or overwrites one or more tags for the specified AWS CloudHSM cluster.</p>"
     },
@@ -226,11 +233,12 @@
       "input":{"shape":"UntagResourceRequest"},
       "output":{"shape":"UntagResourceResponse"},
       "errors":[
+        {"shape":"CloudHsmAccessDeniedException"},
         {"shape":"CloudHsmInternalFailureException"},
-        {"shape":"CloudHsmServiceException"},
-        {"shape":"CloudHsmResourceNotFoundException"},
         {"shape":"CloudHsmInvalidRequestException"},
-        {"shape":"CloudHsmAccessDeniedException"}
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmTagException"}
       ],
       "documentation":"<p>Removes the specified tag or tags from the specified AWS CloudHSM cluster.</p>"
     }
@@ -256,16 +264,29 @@
           "shape":"Timestamp",
           "documentation":"<p>The date and time when the backup was created.</p>"
         },
-        "CopyTimestamp":{"shape":"Timestamp"},
-        "SourceRegion":{"shape":"Region"},
-        "SourceBackup":{"shape":"BackupId"},
-        "SourceCluster":{"shape":"ClusterId"},
+        "CopyTimestamp":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time when the backup was copied from a source backup.</p>"
+        },
+        "SourceRegion":{
+          "shape":"Region",
+          "documentation":"<p>The AWS region that contains the source backup from which the new backup was copied.</p>"
+        },
+        "SourceBackup":{
+          "shape":"BackupId",
+          "documentation":"<p>The identifier (ID) of the source backup from which the new backup was copied.</p>"
+        },
+        "SourceCluster":{
+          "shape":"ClusterId",
+          "documentation":"<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>"
+        },
         "DeleteTimestamp":{
           "shape":"Timestamp",
           "documentation":"<p>The date and time when the backup will be permanently deleted.</p>"
-        }
+        },
+        "TagList":{"shape":"TagList"}
       },
-      "documentation":"<p>Contains information about a backup of an AWS CloudHSM cluster.</p>"
+      "documentation":"<p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter.</p>"
     },
     "BackupId":{
       "type":"string",
@@ -361,6 +382,13 @@
       "documentation":"<p>The request was rejected because an error occurred.</p>",
       "exception":true
     },
+    "CloudHsmTagException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
+      },
+      "exception":true
+    },
     "Cluster":{
       "type":"structure",
       "members":{
@@ -406,7 +434,7 @@
         },
         "SubnetMapping":{
           "shape":"ExternalSubnetMapping",
-          "documentation":"<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>"
+          "documentation":"<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>"
         },
         "VpcId":{
           "shape":"VpcId",
@@ -415,7 +443,8 @@
         "Certificates":{
           "shape":"Certificates",
           "documentation":"<p>Contains one or more certificates or a certificate signing request (CSR).</p>"
-        }
+        },
+        "TagList":{"shape":"TagList"}
       },
       "documentation":"<p>Contains information about an AWS CloudHSM cluster.</p>"
     },
@@ -455,7 +484,8 @@
         "BackupId":{
           "shape":"BackupId",
           "documentation":"<p>The ID of the backup that will be copied to the destination region. </p>"
-        }
+        },
+        "TagList":{"shape":"TagList"}
       }
     },
     "CopyBackupToRegionResponse":{
@@ -485,7 +515,8 @@
         "SourceBackupId":{
           "shape":"BackupId",
           "documentation":"<p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <a>DescribeBackups</a>.</p>"
-        }
+        },
+        "TagList":{"shape":"TagList"}
       }
     },
     "CreateClusterResponse":{
@@ -611,7 +642,10 @@
           "shape":"Filters",
           "documentation":"<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>"
         },
-        "SortAscending":{"shape":"Boolean"}
+        "SortAscending":{
+          "shape":"Boolean",
+          "documentation":"<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>"
+        }
       }
     },
     "DescribeBackupsResponse":{
@@ -660,11 +694,24 @@
     "DestinationBackup":{
       "type":"structure",
       "members":{
-        "CreateTimestamp":{"shape":"Timestamp"},
-        "SourceRegion":{"shape":"Region"},
-        "SourceBackup":{"shape":"BackupId"},
-        "SourceCluster":{"shape":"ClusterId"}
-      }
+        "CreateTimestamp":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time when both the source backup was created.</p>"
+        },
+        "SourceRegion":{
+          "shape":"Region",
+          "documentation":"<p>The AWS region that contains the source backup from which the new backup was copied.</p>"
+        },
+        "SourceBackup":{
+          "shape":"BackupId",
+          "documentation":"<p>The identifier (ID) of the source backup from which the new backup was copied.</p>"
+        },
+        "SourceCluster":{
+          "shape":"ClusterId",
+          "documentation":"<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.</p>"
     },
     "EniId":{
       "type":"string",
@@ -767,7 +814,7 @@
         },
         "TrustAnchor":{
           "shape":"Cert",
-          "documentation":"<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>"
+          "documentation":"<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>"
         }
       }
     },
@@ -793,7 +840,7 @@
       "required":["ResourceId"],
       "members":{
         "ResourceId":{
-          "shape":"ClusterId",
+          "shape":"ResourceId",
           "documentation":"<p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.</p>"
         },
         "NextToken":{
@@ -839,6 +886,10 @@
       "type":"string",
       "pattern":"[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d"
     },
+    "ResourceId":{
+      "type":"string",
+      "pattern":"(?:cluster|backup)-[2-7a-zA-Z]{11,16}"
+    },
     "RestoreBackupRequest":{
       "type":"structure",
       "required":["BackupId"],
@@ -860,7 +911,7 @@
     },
     "SecurityGroup":{
       "type":"string",
-      "pattern":"sg-[0-9a-fA-F]"
+      "pattern":"sg-[0-9a-fA-F]{8,17}"
     },
     "StateMessage":{
       "type":"string",
@@ -926,7 +977,7 @@
       ],
       "members":{
         "ResourceId":{
-          "shape":"ClusterId",
+          "shape":"ResourceId",
           "documentation":"<p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.</p>"
         },
         "TagList":{
@@ -955,7 +1006,7 @@
       ],
       "members":{
         "ResourceId":{
-          "shape":"ClusterId",
+          "shape":"ResourceId",
           "documentation":"<p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.</p>"
         },
         "TagKeyList":{
@@ -975,5 +1026,5 @@
     },
     "errorMessage":{"type":"string"}
   },
-  "documentation":"<p>For more information about AWS CloudHSM, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a> and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>.</p>"
+  "documentation":"<p>For more information about AWS CloudHSM, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a> and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>.</p>"
 }

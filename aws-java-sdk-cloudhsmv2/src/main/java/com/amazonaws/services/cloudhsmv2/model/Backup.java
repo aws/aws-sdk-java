@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about a backup of an AWS CloudHSM cluster.
+ * Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState,
+ * ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain
+ * the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will
+ * include the DeleteTimestamp parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Backup" target="_top">AWS API
@@ -52,13 +55,29 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createTimestamp;
-
+    /**
+     * <p>
+     * The date and time when the backup was copied from a source backup.
+     * </p>
+     */
     private java.util.Date copyTimestamp;
-
+    /**
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     */
     private String sourceRegion;
-
+    /**
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     */
     private String sourceBackup;
-
+    /**
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * </p>
+     */
     private String sourceCluster;
     /**
      * <p>
@@ -66,6 +85,8 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date deleteTimestamp;
+
+    private java.util.List<Tag> tagList;
 
     /**
      * <p>
@@ -247,7 +268,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The date and time when the backup was copied from a source backup.
+     * </p>
+     * 
      * @param copyTimestamp
+     *        The date and time when the backup was copied from a source backup.
      */
 
     public void setCopyTimestamp(java.util.Date copyTimestamp) {
@@ -255,7 +281,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The date and time when the backup was copied from a source backup.
+     * </p>
+     * 
+     * @return The date and time when the backup was copied from a source backup.
      */
 
     public java.util.Date getCopyTimestamp() {
@@ -263,7 +293,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The date and time when the backup was copied from a source backup.
+     * </p>
+     * 
      * @param copyTimestamp
+     *        The date and time when the backup was copied from a source backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,7 +308,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceRegion
+     *        The AWS region that contains the source backup from which the new backup was copied.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -281,7 +321,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     * 
+     * @return The AWS region that contains the source backup from which the new backup was copied.
      */
 
     public String getSourceRegion() {
@@ -289,7 +333,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The AWS region that contains the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceRegion
+     *        The AWS region that contains the source backup from which the new backup was copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,7 +348,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceBackup
+     *        The identifier (ID) of the source backup from which the new backup was copied.
      */
 
     public void setSourceBackup(String sourceBackup) {
@@ -307,7 +361,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     * 
+     * @return The identifier (ID) of the source backup from which the new backup was copied.
      */
 
     public String getSourceBackup() {
@@ -315,7 +373,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the source backup from which the new backup was copied.
+     * </p>
+     * 
      * @param sourceBackup
+     *        The identifier (ID) of the source backup from which the new backup was copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,7 +388,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * </p>
+     * 
      * @param sourceCluster
+     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
      */
 
     public void setSourceCluster(String sourceCluster) {
@@ -333,7 +401,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * </p>
+     * 
+     * @return The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
      */
 
     public String getSourceCluster() {
@@ -341,7 +413,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
+     * </p>
+     * 
      * @param sourceCluster
+     *        The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,6 +468,58 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new java.util.ArrayList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new java.util.ArrayList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -419,7 +548,9 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         if (getSourceCluster() != null)
             sb.append("SourceCluster: ").append(getSourceCluster()).append(",");
         if (getDeleteTimestamp() != null)
-            sb.append("DeleteTimestamp: ").append(getDeleteTimestamp());
+            sb.append("DeleteTimestamp: ").append(getDeleteTimestamp()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }
@@ -470,6 +601,10 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeleteTimestamp() != null && other.getDeleteTimestamp().equals(this.getDeleteTimestamp()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
         return true;
     }
 
@@ -487,6 +622,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSourceBackup() == null) ? 0 : getSourceBackup().hashCode());
         hashCode = prime * hashCode + ((getSourceCluster() == null) ? 0 : getSourceCluster().hashCode());
         hashCode = prime * hashCode + ((getDeleteTimestamp() == null) ? 0 : getDeleteTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         return hashCode;
     }
 

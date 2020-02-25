@@ -92,7 +92,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<SimulationApplicationConfig> simulationApplications;
     /**
      * <p>
-     * The data sources for the simulation job.
+     * Specify data sources to mount read-only files from S3 into your simulation. These files are available under
+     * <code>/opt/robomaker/datasources/data_source_name</code>.
      * </p>
      * <note>
      * <p>
@@ -643,7 +644,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The data sources for the simulation job.
+     * Specify data sources to mount read-only files from S3 into your simulation. These files are available under
+     * <code>/opt/robomaker/datasources/data_source_name</code>.
      * </p>
      * <note>
      * <p>
@@ -651,7 +653,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </note>
      * 
-     * @return The data sources for the simulation job.</p> <note>
+     * @return Specify data sources to mount read-only files from S3 into your simulation. These files are available
+     *         under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
      *         <p>
      *         There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.
      *         </p>
@@ -663,7 +666,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The data sources for the simulation job.
+     * Specify data sources to mount read-only files from S3 into your simulation. These files are available under
+     * <code>/opt/robomaker/datasources/data_source_name</code>.
      * </p>
      * <note>
      * <p>
@@ -672,7 +676,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param dataSources
-     *        The data sources for the simulation job.</p> <note>
+     *        Specify data sources to mount read-only files from S3 into your simulation. These files are available
+     *        under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
      *        <p>
      *        There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.
      *        </p>
@@ -689,7 +694,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The data sources for the simulation job.
+     * Specify data sources to mount read-only files from S3 into your simulation. These files are available under
+     * <code>/opt/robomaker/datasources/data_source_name</code>.
      * </p>
      * <note>
      * <p>
@@ -703,7 +709,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param dataSources
-     *        The data sources for the simulation job.</p> <note>
+     *        Specify data sources to mount read-only files from S3 into your simulation. These files are available
+     *        under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
      *        <p>
      *        There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.
      *        </p>
@@ -722,7 +729,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The data sources for the simulation job.
+     * Specify data sources to mount read-only files from S3 into your simulation. These files are available under
+     * <code>/opt/robomaker/datasources/data_source_name</code>.
      * </p>
      * <note>
      * <p>
@@ -731,7 +739,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param dataSources
-     *        The data sources for the simulation job.</p> <note>
+     *        Specify data sources to mount read-only files from S3 into your simulation. These files are available
+     *        under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
      *        <p>
      *        There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects.
      *        </p>

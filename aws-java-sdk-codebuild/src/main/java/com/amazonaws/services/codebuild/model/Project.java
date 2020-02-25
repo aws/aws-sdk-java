@@ -216,6 +216,15 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private LogsConfig logsConfig;
+    /**
+     * <p>
+     * An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     * <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>,
+     * <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon
+     * Elastic File System.
+     * </p>
+     */
+    private java.util.List<ProjectFileSystemLocation> fileSystemLocations;
 
     /**
      * <p>
@@ -1553,6 +1562,100 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     * <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>,
+     * <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon
+     * Elastic File System.
+     * </p>
+     * 
+     * @return An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     *         <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>,
+     *         <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a
+     *         file system created using Amazon Elastic File System.
+     */
+
+    public java.util.List<ProjectFileSystemLocation> getFileSystemLocations() {
+        return fileSystemLocations;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     * <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>,
+     * <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon
+     * Elastic File System.
+     * </p>
+     * 
+     * @param fileSystemLocations
+     *        An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     *        <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>
+     *        , <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using
+     *        Amazon Elastic File System.
+     */
+
+    public void setFileSystemLocations(java.util.Collection<ProjectFileSystemLocation> fileSystemLocations) {
+        if (fileSystemLocations == null) {
+            this.fileSystemLocations = null;
+            return;
+        }
+
+        this.fileSystemLocations = new java.util.ArrayList<ProjectFileSystemLocation>(fileSystemLocations);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     * <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>,
+     * <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon
+     * Elastic File System.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFileSystemLocations(java.util.Collection)} or {@link #withFileSystemLocations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param fileSystemLocations
+     *        An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     *        <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>
+     *        , <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using
+     *        Amazon Elastic File System.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withFileSystemLocations(ProjectFileSystemLocation... fileSystemLocations) {
+        if (this.fileSystemLocations == null) {
+            setFileSystemLocations(new java.util.ArrayList<ProjectFileSystemLocation>(fileSystemLocations.length));
+        }
+        for (ProjectFileSystemLocation ele : fileSystemLocations) {
+            this.fileSystemLocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     * <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>,
+     * <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon
+     * Elastic File System.
+     * </p>
+     * 
+     * @param fileSystemLocations
+     *        An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A
+     *        <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>
+     *        , <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using
+     *        Amazon Elastic File System.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Project withFileSystemLocations(java.util.Collection<ProjectFileSystemLocation> fileSystemLocations) {
+        setFileSystemLocations(fileSystemLocations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1607,7 +1710,9 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         if (getBadge() != null)
             sb.append("Badge: ").append(getBadge()).append(",");
         if (getLogsConfig() != null)
-            sb.append("LogsConfig: ").append(getLogsConfig());
+            sb.append("LogsConfig: ").append(getLogsConfig()).append(",");
+        if (getFileSystemLocations() != null)
+            sb.append("FileSystemLocations: ").append(getFileSystemLocations());
         sb.append("}");
         return sb.toString();
     }
@@ -1710,6 +1815,10 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogsConfig() != null && other.getLogsConfig().equals(this.getLogsConfig()) == false)
             return false;
+        if (other.getFileSystemLocations() == null ^ this.getFileSystemLocations() == null)
+            return false;
+        if (other.getFileSystemLocations() != null && other.getFileSystemLocations().equals(this.getFileSystemLocations()) == false)
+            return false;
         return true;
     }
 
@@ -1740,6 +1849,7 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getBadge() == null) ? 0 : getBadge().hashCode());
         hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
         return hashCode;
     }
 

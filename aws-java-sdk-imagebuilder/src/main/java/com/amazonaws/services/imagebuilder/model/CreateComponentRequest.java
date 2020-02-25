@@ -33,39 +33,42 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      */
     private String semanticVersion;
     /**
      * <p>
-     * CThe description of the component. Describes the contents of the component.
+     * The description of the component. Describes the contents of the component.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * CThe change description of the component. Describes what change has been made in this version. In other words
-     * what makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      */
     private String changeDescription;
     /**
      * <p>
-     * CThe platform of the component.
+     * The platform of the component.
      * </p>
      */
     private String platform;
     /**
      * <p>
-     * CThe data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      */
     private String data;
     /**
      * <p>
-     * CThe uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      */
     private String uri;
@@ -77,13 +80,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String kmsKeyId;
     /**
      * <p>
-     * CThe tags of the component.
+     * The tags of the component.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * CThe idempotency token of the component.
+     * The idempotency token of the component.
      * </p>
      */
     private String clientToken;
@@ -130,13 +133,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     *        major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     *        The semantic version of the component. This version follows the semantic version syntax. For example,
+     *        major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -145,12 +148,12 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      * 
-     * @return The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     *         major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * @return The semantic version of the component. This version follows the semantic version syntax. For example,
+     *         major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      */
 
     public String getSemanticVersion() {
@@ -159,13 +162,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     *        major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     *        The semantic version of the component. This version follows the semantic version syntax. For example,
+     *        major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +179,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe description of the component. Describes the contents of the component.
+     * The description of the component. Describes the contents of the component.
      * </p>
      * 
      * @param description
-     *        CThe description of the component. Describes the contents of the component.
+     *        The description of the component. Describes the contents of the component.
      */
 
     public void setDescription(String description) {
@@ -189,10 +192,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe description of the component. Describes the contents of the component.
+     * The description of the component. Describes the contents of the component.
      * </p>
      * 
-     * @return CThe description of the component. Describes the contents of the component.
+     * @return The description of the component. Describes the contents of the component.
      */
 
     public String getDescription() {
@@ -201,11 +204,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe description of the component. Describes the contents of the component.
+     * The description of the component. Describes the contents of the component.
      * </p>
      * 
      * @param description
-     *        CThe description of the component. Describes the contents of the component.
+     *        The description of the component. Describes the contents of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,13 +219,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe change description of the component. Describes what change has been made in this version. In other words
-     * what makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      * 
      * @param changeDescription
-     *        CThe change description of the component. Describes what change has been made in this version. In other
-     *        words what makes this version different from other versions of this component.
+     *        The change description of the component. Describes what change has been made in this version, or what
+     *        makes this version different from other versions of this component.
      */
 
     public void setChangeDescription(String changeDescription) {
@@ -231,12 +234,12 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe change description of the component. Describes what change has been made in this version. In other words
-     * what makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      * 
-     * @return CThe change description of the component. Describes what change has been made in this version. In other
-     *         words what makes this version different from other versions of this component.
+     * @return The change description of the component. Describes what change has been made in this version, or what
+     *         makes this version different from other versions of this component.
      */
 
     public String getChangeDescription() {
@@ -245,13 +248,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe change description of the component. Describes what change has been made in this version. In other words
-     * what makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      * 
      * @param changeDescription
-     *        CThe change description of the component. Describes what change has been made in this version. In other
-     *        words what makes this version different from other versions of this component.
+     *        The change description of the component. Describes what change has been made in this version, or what
+     *        makes this version different from other versions of this component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +265,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe platform of the component.
+     * The platform of the component.
      * </p>
      * 
      * @param platform
-     *        CThe platform of the component.
+     *        The platform of the component.
      * @see Platform
      */
 
@@ -276,10 +279,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe platform of the component.
+     * The platform of the component.
      * </p>
      * 
-     * @return CThe platform of the component.
+     * @return The platform of the component.
      * @see Platform
      */
 
@@ -289,11 +292,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe platform of the component.
+     * The platform of the component.
      * </p>
      * 
      * @param platform
-     *        CThe platform of the component.
+     *        The platform of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -305,11 +308,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe platform of the component.
+     * The platform of the component.
      * </p>
      * 
      * @param platform
-     *        CThe platform of the component.
+     *        The platform of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -321,11 +324,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      * 
      * @param data
-     *        CThe data of the component.
+     *        The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code>
+     *        can be used to specify the data within the component.
      */
 
     public void setData(String data) {
@@ -334,10 +339,12 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      * 
-     * @return CThe data of the component.
+     * @return The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code>
+     *         can be used to specify the data within the component.
      */
 
     public String getData() {
@@ -346,11 +353,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      * 
      * @param data
-     *        CThe data of the component.
+     *        The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code>
+     *        can be used to specify the data within the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,11 +370,15 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
      * @param uri
-     *        CThe uri of the component.
+     *        The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
+     *        bucket. If you use S3, you can specify component content up to your service quota. Either
+     *        <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      */
 
     public void setUri(String uri) {
@@ -374,10 +387,14 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
-     * @return CThe uri of the component.
+     * @return The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
+     *         bucket. If you use S3, you can specify component content up to your service quota. Either
+     *         <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      */
 
     public String getUri() {
@@ -386,11 +403,15 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
      * @param uri
-     *        CThe uri of the component.
+     *        The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
+     *        bucket. If you use S3, you can specify component content up to your service quota. Either
+     *        <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,10 +462,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe tags of the component.
+     * The tags of the component.
      * </p>
      * 
-     * @return CThe tags of the component.
+     * @return The tags of the component.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -453,11 +474,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe tags of the component.
+     * The tags of the component.
      * </p>
      * 
      * @param tags
-     *        CThe tags of the component.
+     *        The tags of the component.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -466,11 +487,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe tags of the component.
+     * The tags of the component.
      * </p>
      * 
      * @param tags
-     *        CThe tags of the component.
+     *        The tags of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,11 +523,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe idempotency token of the component.
+     * The idempotency token of the component.
      * </p>
      * 
      * @param clientToken
-     *        CThe idempotency token of the component.
+     *        The idempotency token of the component.
      */
 
     public void setClientToken(String clientToken) {
@@ -515,10 +536,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe idempotency token of the component.
+     * The idempotency token of the component.
      * </p>
      * 
-     * @return CThe idempotency token of the component.
+     * @return The idempotency token of the component.
      */
 
     public String getClientToken() {
@@ -527,11 +548,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * CThe idempotency token of the component.
+     * The idempotency token of the component.
      * </p>
      * 
      * @param clientToken
-     *        CThe idempotency token of the component.
+     *        The idempotency token of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

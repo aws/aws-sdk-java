@@ -1236,6 +1236,10 @@
         "State":{
           "shape":"CertificateState",
           "documentation":"<p>The state of the certificate.</p>"
+        },
+        "ExpiryDateTime":{
+          "shape":"CertificateExpiryDateTime",
+          "documentation":"<p>The date and time when the certificate will expire.</p>"
         }
       },
       "documentation":"<p>Contains general information about a certificate.</p>"
@@ -2007,7 +2011,7 @@
         },
         "Type":{
           "shape":"LDAPSType",
-          "documentation":"<p>The type of LDAP security the customer wants to enable, either server or client. Currently supports only <code>Client</code>, (the default).</p>"
+          "documentation":"<p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -2499,7 +2503,10 @@
     },
     "DisableLDAPSRequest":{
       "type":"structure",
-      "required":["DirectoryId"],
+      "required":[
+        "DirectoryId",
+        "Type"
+      ],
       "members":{
         "DirectoryId":{
           "shape":"DirectoryId",
@@ -2507,7 +2514,7 @@
         },
         "Type":{
           "shape":"LDAPSType",
-          "documentation":"<p>The type of LDAP security that the customer wants to enable. The security can be either server or client, but currently only the default <code>Client</code> is supported.</p>"
+          "documentation":"<p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>"
         }
       }
     },
@@ -2644,7 +2651,10 @@
     },
     "EnableLDAPSRequest":{
       "type":"structure",
-      "required":["DirectoryId"],
+      "required":[
+        "DirectoryId",
+        "Type"
+      ],
       "members":{
         "DirectoryId":{
           "shape":"DirectoryId",
@@ -2652,7 +2662,7 @@
         },
         "Type":{
           "shape":"LDAPSType",
-          "documentation":"<p>The type of LDAP security the customer wants to enable. The security can be either server or client, but currently only the default <code>Client</code> is supported.</p>"
+          "documentation":"<p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>"
         }
       }
     },

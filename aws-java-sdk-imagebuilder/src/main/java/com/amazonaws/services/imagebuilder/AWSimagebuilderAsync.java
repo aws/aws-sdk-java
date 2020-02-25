@@ -26,13 +26,9 @@ import com.amazonaws.services.imagebuilder.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Elastic Compute Cloud Image Builder provides a one-stop-shop to automate the image management processes. You
- * configure an automated pipeline that creates images for use on AWS. As software updates become available, Image
- * Builder automatically produces a new image based on a customizable schedule and distributes it to stipulated AWS
- * Regions after running tests on it. With the Image Builder, organizations can capture their internal or
- * industry-specific compliance policies as a vetted template that can be consistently applied to every new image.
- * Built-in integration with AWS Organizations provides customers with a centralized way to enforce image distribution
- * and access policies across their AWS accounts and Regions. Image Builder supports multiple image format AMIs on AWS.
+ * EC2 Image Builder is a fully managed AWS service that makes it easier to automate the creation, management, and
+ * deployment of customized, secure, and up-to-date “golden” server images that are pre-installed and pre-configured
+ * with software and settings to meet specific IT standards.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -40,7 +36,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * CancelImageCreation cancels the creation of Image. This operation may only be used on images in a non-terminal
+     * CancelImageCreation cancels the creation of Image. This operation can only be used on images in a non-terminal
      * state.
      * </p>
      * 
@@ -54,7 +50,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * CancelImageCreation cancels the creation of Image. This operation may only be used on images in a non-terminal
+     * CancelImageCreation cancels the creation of Image. This operation can only be used on images in a non-terminal
      * state.
      * </p>
      * 
@@ -73,7 +69,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Creates a new component that can be used to build, validate, test and assess your image.
+     * Creates a new component that can be used to build, validate, test, and assess your image.
      * </p>
      * 
      * @param createComponentRequest
@@ -86,7 +82,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Creates a new component that can be used to build, validate, test and assess your image.
+     * Creates a new component that can be used to build, validate, test, and assess your image.
      * </p>
      * 
      * @param createComponentRequest
@@ -205,7 +201,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Creates a new image recipe. Image Recipes defines how images are configured, tested and assessed.
+     * Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.
      * </p>
      * 
      * @param createImageRecipeRequest
@@ -218,7 +214,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Creates a new image recipe. Image Recipes defines how images are configured, tested and assessed.
+     * Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.
      * </p>
      * 
      * @param createImageRecipeRequest
@@ -719,7 +715,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Gets a infrastructure configuration.
+     * Gets an infrastructure configuration.
      * </p>
      * 
      * @param getInfrastructureConfigurationRequest
@@ -735,7 +731,7 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Gets a infrastructure configuration.
+     * Gets an infrastructure configuration.
      * </p>
      * 
      * @param getInfrastructureConfigurationRequest

@@ -43,7 +43,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
     private com.amazonaws.internal.SdkInternalList<String> values;
     /**
      * <p>
-     * The type of filter. Valid values include the following: "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     * The type of filter.
      * </p>
      */
     private String type;
@@ -171,12 +171,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of filter. Valid values include the following: "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     * The type of filter.
      * </p>
      * 
      * @param type
-     *        The type of filter. Valid values include the following:
-     *        "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     *        The type of filter.
      * @see InventoryQueryOperatorType
      */
 
@@ -186,11 +185,10 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of filter. Valid values include the following: "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     * The type of filter.
      * </p>
      * 
-     * @return The type of filter. Valid values include the following:
-     *         "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     * @return The type of filter.
      * @see InventoryQueryOperatorType
      */
 
@@ -200,12 +198,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of filter. Valid values include the following: "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     * The type of filter.
      * </p>
      * 
      * @param type
-     *        The type of filter. Valid values include the following:
-     *        "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     *        The type of filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryQueryOperatorType
      */
@@ -217,12 +214,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of filter. Valid values include the following: "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     * The type of filter.
      * </p>
      * 
      * @param type
-     *        The type of filter. Valid values include the following:
-     *        "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     *        The type of filter.
      * @see InventoryQueryOperatorType
      */
 
@@ -232,12 +228,11 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of filter. Valid values include the following: "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     * The type of filter.
      * </p>
      * 
      * @param type
-     *        The type of filter. Valid values include the following:
-     *        "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"
+     *        The type of filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InventoryQueryOperatorType
      */

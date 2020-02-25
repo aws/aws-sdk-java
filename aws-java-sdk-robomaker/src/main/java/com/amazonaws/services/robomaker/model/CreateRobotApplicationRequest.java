@@ -39,7 +39,7 @@ public class CreateRobotApplicationRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<SourceConfig> sources;
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribuition) used by the robot application.
      * </p>
      */
     private RobotSoftwareSuite robotSoftwareSuite;
@@ -162,11 +162,11 @@ public class CreateRobotApplicationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribuition) used by the robot application.
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        The robot software suite used by the robot application.
+     *        The robot software suite (ROS distribuition) used by the robot application.
      */
 
     public void setRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
@@ -175,10 +175,10 @@ public class CreateRobotApplicationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribuition) used by the robot application.
      * </p>
      * 
-     * @return The robot software suite used by the robot application.
+     * @return The robot software suite (ROS distribuition) used by the robot application.
      */
 
     public RobotSoftwareSuite getRobotSoftwareSuite() {
@@ -187,11 +187,11 @@ public class CreateRobotApplicationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribuition) used by the robot application.
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        The robot software suite used by the robot application.
+     *        The robot software suite (ROS distribuition) used by the robot application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

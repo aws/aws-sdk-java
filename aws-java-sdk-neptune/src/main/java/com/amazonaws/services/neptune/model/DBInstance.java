@@ -197,13 +197,13 @@ public class DBInstance implements Serializable, Cloneable {
     private Integer iops;
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private java.util.List<OptionGroupMembership> optionGroupMemberships;
     /**
      * <p>
-     * If present, specifies the name of the character set that this instance is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String characterSetName;
@@ -335,14 +335,13 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean iAMDatabaseAuthenticationEnabled;
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private Boolean performanceInsightsEnabled;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -352,6 +351,15 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> enabledCloudwatchLogsExports;
+    /**
+     * <p>
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -1641,10 +1649,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return Provides the list of option group memberships for this DB instance.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public java.util.List<OptionGroupMembership> getOptionGroupMemberships() {
@@ -1653,11 +1661,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupMemberships
-     *        Provides the list of option group memberships for this DB instance.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setOptionGroupMemberships(java.util.Collection<OptionGroupMembership> optionGroupMemberships) {
@@ -1671,7 +1679,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1680,7 +1688,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param optionGroupMemberships
-     *        Provides the list of option group memberships for this DB instance.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1696,11 +1704,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB instance.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupMemberships
-     *        Provides the list of option group memberships for this DB instance.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1711,11 +1719,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, specifies the name of the character set that this instance is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        If present, specifies the name of the character set that this instance is associated with.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setCharacterSetName(String characterSetName) {
@@ -1724,10 +1732,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, specifies the name of the character set that this instance is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return If present, specifies the name of the character set that this instance is associated with.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getCharacterSetName() {
@@ -1736,11 +1744,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, specifies the name of the character set that this instance is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        If present, specifies the name of the character set that this instance is associated with.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2696,11 +2704,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param performanceInsightsEnabled
-     *        True if Performance Insights is enabled for the DB instance, and otherwise false.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setPerformanceInsightsEnabled(Boolean performanceInsightsEnabled) {
@@ -2709,10 +2717,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public Boolean getPerformanceInsightsEnabled() {
@@ -2721,11 +2729,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param performanceInsightsEnabled
-     *        True if Performance Insights is enabled for the DB instance, and otherwise false.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2736,10 +2744,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return True if Performance Insights is enabled for the DB instance, and otherwise false.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public Boolean isPerformanceInsightsEnabled() {
@@ -2748,13 +2756,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -2763,12 +2769,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -2777,13 +2781,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2860,6 +2862,82 @@ public class DBInstance implements Serializable, Cloneable {
     public DBInstance withEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
         setEnabledCloudwatchLogsExports(enabledCloudwatchLogsExports);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *        when deletion protection is enabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @return Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *         when deletion protection is enabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *        when deletion protection is enabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when
+     * deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @return Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted
+     *         when deletion protection is enabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
     }
 
     /**
@@ -2977,7 +3055,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getPerformanceInsightsKMSKeyId() != null)
             sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
-            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -3205,6 +3285,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -3265,6 +3349,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPerformanceInsightsEnabled() == null) ? 0 : getPerformanceInsightsEnabled().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

@@ -54,4 +54,12 @@ public class RetryUtilsTest {
 
     }
 
+    @Test
+    public void isThrottlingExceptions_True_When_EC2ThrottledException() {
+        AmazonServiceException ase = new AmazonServiceException("msg");
+        ase.setErrorCode("EC2ThrottledException");
+
+        assertTrue(RetryUtils.isThrottlingException(ase));
+    }
+
 }

@@ -27,18 +27,18 @@ public class GetDistributionConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.
      * </p>
      */
     private String distributionConfigurationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.
      * </p>
      * 
      * @param distributionConfigurationArn
-     *        The Amazon Resource Name (ARN) of the distribution configuration that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.
      */
 
     public void setDistributionConfigurationArn(String distributionConfigurationArn) {
@@ -47,10 +47,10 @@ public class GetDistributionConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the distribution configuration that you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.
      */
 
     public String getDistributionConfigurationArn() {
@@ -59,11 +59,11 @@ public class GetDistributionConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the distribution configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.
      * </p>
      * 
      * @param distributionConfigurationArn
-     *        The Amazon Resource Name (ARN) of the distribution configuration that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

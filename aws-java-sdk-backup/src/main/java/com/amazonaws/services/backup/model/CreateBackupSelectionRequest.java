@@ -35,11 +35,6 @@ public class CreateBackupSelectionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Specifies the body of a request to assign a set of resources to a backup plan.
      * </p>
-     * <p>
-     * It includes an array of resources, an optional array of patterns to exclude resources, an optional role to
-     * provide access to the AWS service the resource belongs to, and an optional array of tags used to identify a set
-     * of resources.
-     * </p>
      */
     private BackupSelection backupSelection;
     /**
@@ -94,18 +89,9 @@ public class CreateBackupSelectionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Specifies the body of a request to assign a set of resources to a backup plan.
      * </p>
-     * <p>
-     * It includes an array of resources, an optional array of patterns to exclude resources, an optional role to
-     * provide access to the AWS service the resource belongs to, and an optional array of tags used to identify a set
-     * of resources.
-     * </p>
      * 
      * @param backupSelection
-     *        Specifies the body of a request to assign a set of resources to a backup plan.</p>
-     *        <p>
-     *        It includes an array of resources, an optional array of patterns to exclude resources, an optional role to
-     *        provide access to the AWS service the resource belongs to, and an optional array of tags used to identify
-     *        a set of resources.
+     *        Specifies the body of a request to assign a set of resources to a backup plan.
      */
 
     public void setBackupSelection(BackupSelection backupSelection) {
@@ -116,17 +102,8 @@ public class CreateBackupSelectionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Specifies the body of a request to assign a set of resources to a backup plan.
      * </p>
-     * <p>
-     * It includes an array of resources, an optional array of patterns to exclude resources, an optional role to
-     * provide access to the AWS service the resource belongs to, and an optional array of tags used to identify a set
-     * of resources.
-     * </p>
      * 
-     * @return Specifies the body of a request to assign a set of resources to a backup plan.</p>
-     *         <p>
-     *         It includes an array of resources, an optional array of patterns to exclude resources, an optional role
-     *         to provide access to the AWS service the resource belongs to, and an optional array of tags used to
-     *         identify a set of resources.
+     * @return Specifies the body of a request to assign a set of resources to a backup plan.
      */
 
     public BackupSelection getBackupSelection() {
@@ -137,18 +114,9 @@ public class CreateBackupSelectionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Specifies the body of a request to assign a set of resources to a backup plan.
      * </p>
-     * <p>
-     * It includes an array of resources, an optional array of patterns to exclude resources, an optional role to
-     * provide access to the AWS service the resource belongs to, and an optional array of tags used to identify a set
-     * of resources.
-     * </p>
      * 
      * @param backupSelection
-     *        Specifies the body of a request to assign a set of resources to a backup plan.</p>
-     *        <p>
-     *        It includes an array of resources, an optional array of patterns to exclude resources, an optional role to
-     *        provide access to the AWS service the resource belongs to, and an optional array of tags used to identify
-     *        a set of resources.
+     *        Specifies the body of a request to assign a set of resources to a backup plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

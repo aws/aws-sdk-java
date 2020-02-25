@@ -30,7 +30,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
+     * The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -46,8 +46,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase
-     * string.
+     * The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -77,8 +76,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that specifies whether the changes in this request and any pending changes are asynchronously applied as
-     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this
-     * parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.
+     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this
+     * parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -113,25 +112,25 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * The name of the DB cluster parameter group to use for the DB cluster.
+     * The name of the cluster parameter group to use for the cluster.
      * </p>
      */
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      * </p>
      */
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The port number on which the DB cluster accepts connections.
+     * The port number on which the cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      */
     private Integer port;
@@ -201,9 +200,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific DB
-     * instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which
-     * logs are exported (or not exported) to CloudWatch Logs.
+     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific
+     * instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs
+     * are exported (or not exported) to CloudWatch Logs.
      * </p>
      */
     private CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration;
@@ -226,7 +225,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
+     * The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -240,8 +239,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier for the cluster that is being modified. This parameter is not case
-     *        sensitive.</p>
+     *        The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -259,7 +257,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
+     * The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -272,8 +270,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The DB cluster identifier for the cluster that is being modified. This parameter is not case
-     *         sensitive.</p>
+     * @return The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -291,7 +288,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
+     * The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -305,8 +302,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier for the cluster that is being modified. This parameter is not case
-     *        sensitive.</p>
+     *        The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -326,8 +322,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase
-     * string.
+     * The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -354,8 +349,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param newDBClusterIdentifier
-     *        The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a
-     *        lowercase string.</p>
+     *        The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -386,8 +381,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase
-     * string.
+     * The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -413,8 +407,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Example: <code>my-cluster2</code>
      * </p>
      * 
-     * @return The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a
-     *         lowercase string.</p>
+     * @return The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase
+     *         string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -445,8 +439,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase
-     * string.
+     * The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -473,8 +466,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param newDBClusterIdentifier
-     *        The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a
-     *        lowercase string.</p>
+     *        The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -508,8 +501,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that specifies whether the changes in this request and any pending changes are asynchronously applied as
-     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this
-     * parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.
+     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this
+     * parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -524,8 +517,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param applyImmediately
      *        A value that specifies whether the changes in this request and any pending changes are asynchronously
-     *        applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *        cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the
+     *        applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the
+     *        cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the
      *        next maintenance window.</p>
      *        <p>
      *        The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -545,8 +538,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that specifies whether the changes in this request and any pending changes are asynchronously applied as
-     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this
-     * parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.
+     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this
+     * parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -560,8 +553,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return A value that specifies whether the changes in this request and any pending changes are asynchronously
-     *         applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *         cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the
+     *         applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the
+     *         cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the
      *         next maintenance window.</p>
      *         <p>
      *         The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -581,8 +574,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that specifies whether the changes in this request and any pending changes are asynchronously applied as
-     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this
-     * parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.
+     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this
+     * parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -597,8 +590,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param applyImmediately
      *        A value that specifies whether the changes in this request and any pending changes are asynchronously
-     *        applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *        cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the
+     *        applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the
+     *        cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the
      *        next maintenance window.</p>
      *        <p>
      *        The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -620,8 +613,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that specifies whether the changes in this request and any pending changes are asynchronously applied as
-     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this
-     * parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.
+     * soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster. If this
+     * parameter is set to <code>false</code>, changes to the cluster are applied during the next maintenance window.
      * </p>
      * <p>
      * The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -635,8 +628,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return A value that specifies whether the changes in this request and any pending changes are asynchronously
-     *         applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB
-     *         cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the
+     *         applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the
+     *         cluster. If this parameter is set to <code>false</code>, changes to the cluster are applied during the
      *         next maintenance window.</p>
      *         <p>
      *         The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code> and
@@ -770,11 +763,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to use for the DB cluster.
+     * The name of the cluster parameter group to use for the cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to use for the DB cluster.
+     *        The name of the cluster parameter group to use for the cluster.
      */
 
     public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
@@ -783,10 +776,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to use for the DB cluster.
+     * The name of the cluster parameter group to use for the cluster.
      * </p>
      * 
-     * @return The name of the DB cluster parameter group to use for the DB cluster.
+     * @return The name of the cluster parameter group to use for the cluster.
      */
 
     public String getDBClusterParameterGroupName() {
@@ -795,11 +788,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to use for the DB cluster.
+     * The name of the cluster parameter group to use for the cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to use for the DB cluster.
+     *        The name of the cluster parameter group to use for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -810,10 +803,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      * </p>
      * 
-     * @return A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     * @return A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -822,11 +815,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     *        A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      */
 
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -840,7 +833,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -849,7 +842,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     *        A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -865,11 +858,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups that the DB cluster will belong to.
+     *        A list of virtual private cloud (VPC) security groups that the cluster will belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -880,22 +873,22 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The port number on which the DB cluster accepts connections.
+     * The port number on which the cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      * 
      * @param port
-     *        The port number on which the DB cluster accepts connections.</p>
+     *        The port number on which the cluster accepts connections.</p>
      *        <p>
      *        Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *        </p>
      *        <p>
-     *        Default: The same port as the original DB cluster.
+     *        Default: The same port as the original cluster.
      */
 
     public void setPort(Integer port) {
@@ -904,21 +897,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The port number on which the DB cluster accepts connections.
+     * The port number on which the cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      * 
-     * @return The port number on which the DB cluster accepts connections.</p>
+     * @return The port number on which the cluster accepts connections.</p>
      *         <p>
      *         Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *         </p>
      *         <p>
-     *         Default: The same port as the original DB cluster.
+     *         Default: The same port as the original cluster.
      */
 
     public Integer getPort() {
@@ -927,22 +920,22 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The port number on which the DB cluster accepts connections.
+     * The port number on which the cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      * 
      * @param port
-     *        The port number on which the DB cluster accepts connections.</p>
+     *        The port number on which the cluster accepts connections.</p>
      *        <p>
      *        Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *        </p>
      *        <p>
-     *        Default: The same port as the original DB cluster.
+     *        Default: The same port as the original cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1340,15 +1333,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific DB
-     * instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which
-     * logs are exported (or not exported) to CloudWatch Logs.
+     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific
+     * instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs
+     * are exported (or not exported) to CloudWatch Logs.
      * </p>
      * 
      * @param cloudwatchLogsExportConfiguration
      *        The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a
-     *        specific DB instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code>
-     *        arrays determine which logs are exported (or not exported) to CloudWatch Logs.
+     *        specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays
+     *        determine which logs are exported (or not exported) to CloudWatch Logs.
      */
 
     public void setCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration) {
@@ -1357,14 +1350,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific DB
-     * instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which
-     * logs are exported (or not exported) to CloudWatch Logs.
+     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific
+     * instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs
+     * are exported (or not exported) to CloudWatch Logs.
      * </p>
      * 
      * @return The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a
-     *         specific DB instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code>
-     *         arrays determine which logs are exported (or not exported) to CloudWatch Logs.
+     *         specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays
+     *         determine which logs are exported (or not exported) to CloudWatch Logs.
      */
 
     public CloudwatchLogsExportConfiguration getCloudwatchLogsExportConfiguration() {
@@ -1373,15 +1366,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific DB
-     * instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which
-     * logs are exported (or not exported) to CloudWatch Logs.
+     * The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific
+     * instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs
+     * are exported (or not exported) to CloudWatch Logs.
      * </p>
      * 
      * @param cloudwatchLogsExportConfiguration
      *        The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a
-     *        specific DB instance or DB cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code>
-     *        arrays determine which logs are exported (or not exported) to CloudWatch Logs.
+     *        specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays
+     *        determine which logs are exported (or not exported) to CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

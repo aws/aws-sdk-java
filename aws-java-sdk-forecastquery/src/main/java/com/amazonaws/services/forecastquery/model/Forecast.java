@@ -33,14 +33,9 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * The forecast.
      * </p>
      * <p>
-     * The <i>string</i> of the string to array map is one of the following values:
+     * The <i>string</i> of the string-to-array map is one of the following values:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * mean
-     * </p>
-     * </li>
      * <li>
      * <p>
      * p10
@@ -65,14 +60,9 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * The forecast.
      * </p>
      * <p>
-     * The <i>string</i> of the string to array map is one of the following values:
+     * The <i>string</i> of the string-to-array map is one of the following values:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * mean
-     * </p>
-     * </li>
      * <li>
      * <p>
      * p10
@@ -92,14 +82,9 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The forecast.</p>
      *         <p>
-     *         The <i>string</i> of the string to array map is one of the following values:
+     *         The <i>string</i> of the string-to-array map is one of the following values:
      *         </p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         mean
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         p10
@@ -126,14 +111,9 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * The forecast.
      * </p>
      * <p>
-     * The <i>string</i> of the string to array map is one of the following values:
+     * The <i>string</i> of the string-to-array map is one of the following values:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * mean
-     * </p>
-     * </li>
      * <li>
      * <p>
      * p10
@@ -154,14 +134,9 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * @param predictions
      *        The forecast.</p>
      *        <p>
-     *        The <i>string</i> of the string to array map is one of the following values:
+     *        The <i>string</i> of the string-to-array map is one of the following values:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        mean
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        p10
@@ -188,14 +163,9 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * The forecast.
      * </p>
      * <p>
-     * The <i>string</i> of the string to array map is one of the following values:
+     * The <i>string</i> of the string-to-array map is one of the following values:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * mean
-     * </p>
-     * </li>
      * <li>
      * <p>
      * p10
@@ -216,14 +186,9 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
      * @param predictions
      *        The forecast.</p>
      *        <p>
-     *        The <i>string</i> of the string to array map is one of the following values:
+     *        The <i>string</i> of the string-to-array map is one of the following values:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        mean
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        p10

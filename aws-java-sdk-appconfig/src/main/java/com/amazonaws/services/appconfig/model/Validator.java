@@ -39,7 +39,7 @@ public class Validator implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * Either the JSON Schema content or an AWS Lambda function name.
+     * Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
      * </p>
      */
     private String content;
@@ -105,11 +105,11 @@ public class Validator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Either the JSON Schema content or an AWS Lambda function name.
+     * Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
      * </p>
      * 
      * @param content
-     *        Either the JSON Schema content or an AWS Lambda function name.
+     *        Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
      */
 
     public void setContent(String content) {
@@ -118,10 +118,10 @@ public class Validator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Either the JSON Schema content or an AWS Lambda function name.
+     * Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
      * </p>
      * 
-     * @return Either the JSON Schema content or an AWS Lambda function name.
+     * @return Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
      */
 
     public String getContent() {
@@ -130,11 +130,11 @@ public class Validator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Either the JSON Schema content or an AWS Lambda function name.
+     * Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
      * </p>
      * 
      * @param content
-     *        Either the JSON Schema content or an AWS Lambda function name.
+     *        Either the JSON Schema content or the Amazon Resource Name (ARN) of an AWS Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

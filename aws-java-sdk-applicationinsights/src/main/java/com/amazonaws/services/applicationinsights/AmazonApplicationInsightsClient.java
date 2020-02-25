@@ -1124,6 +1124,85 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
+     * Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights.
+     * Examples of events represented are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INFO: creating a new alarm or updating an alarm threshold.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARN: alarm not created due to insufficient data points used to predict thresholds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ERROR: alarm not created due to permission errors or exceeding quotas.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listConfigurationHistoryRequest
+     * @return Result of the ListConfigurationHistory operation returned by the service.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.ListConfigurationHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListConfigurationHistoryResult listConfigurationHistory(ListConfigurationHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConfigurationHistory(request);
+    }
+
+    @SdkInternalApi
+    final ListConfigurationHistoryResult executeListConfigurationHistory(ListConfigurationHistoryRequest listConfigurationHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConfigurationHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConfigurationHistoryRequest> request = null;
+        Response<ListConfigurationHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConfigurationHistoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listConfigurationHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConfigurationHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListConfigurationHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the log pattern sets in the specific application.
      * </p>
      * 

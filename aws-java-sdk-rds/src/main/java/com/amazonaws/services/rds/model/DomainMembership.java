@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An Active Directory Domain membership record associated with the DB instance.
+ * An Active Directory Domain membership record associated with the DB instance or cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DomainMembership" target="_top">AWS API
@@ -34,7 +34,8 @@ public class DomainMembership implements Serializable, Cloneable {
     private String domain;
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
+     * The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined,
+     * pending-join, failed, and so on.
      * </p>
      */
     private String status;
@@ -93,12 +94,13 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
+     * The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined,
+     * pending-join, failed, and so on.
      * </p>
      * 
      * @param status
-     *        The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed
-     *        etc).
+     *        The status of the Active Directory Domain membership for the DB instance or cluster. Values include
+     *        joined, pending-join, failed, and so on.
      */
 
     public void setStatus(String status) {
@@ -107,11 +109,12 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
+     * The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined,
+     * pending-join, failed, and so on.
      * </p>
      * 
-     * @return The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed
-     *         etc).
+     * @return The status of the Active Directory Domain membership for the DB instance or cluster. Values include
+     *         joined, pending-join, failed, and so on.
      */
 
     public String getStatus() {
@@ -120,12 +123,13 @@ public class DomainMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed etc).
+     * The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined,
+     * pending-join, failed, and so on.
      * </p>
      * 
      * @param status
-     *        The status of the DB instance's Active Directory Domain membership, such as joined, pending-join, failed
-     *        etc).
+     *        The status of the Active Directory Domain membership for the DB instance or cluster. Values include
+     *        joined, pending-join, failed, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -151,6 +151,14 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("DBInstanceParameterGroupName", StringUtils.fromString(modifyDBClusterRequest.getDBInstanceParameterGroupName()));
         }
 
+        if (modifyDBClusterRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(modifyDBClusterRequest.getDomain()));
+        }
+
+        if (modifyDBClusterRequest.getDomainIAMRoleName() != null) {
+            request.addParameter("DomainIAMRoleName", StringUtils.fromString(modifyDBClusterRequest.getDomainIAMRoleName()));
+        }
+
         {
             ScalingConfiguration scalingConfiguration = modifyDBClusterRequest.getScalingConfiguration();
             if (scalingConfiguration != null) {

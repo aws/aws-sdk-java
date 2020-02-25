@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB upgrade failed because a resource that the DB depends on can't be modified.
+ * The upgrade failed because a resource that the depends on can't be modified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

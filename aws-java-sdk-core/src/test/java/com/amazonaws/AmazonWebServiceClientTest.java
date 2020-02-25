@@ -18,12 +18,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.amazonaws.auth.AWS4Signer;
 import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.http.IdleConnectionReaper;
+import java.net.URI;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class AmazonWebServiceClientTest {
 
@@ -82,6 +82,11 @@ public class AmazonWebServiceClientTest {
         AmazonTestClient client = new AmazonTestClient();
         assertNotNull(client.getMonitoringListeners());
         assertEquals(0, client.getMonitoringListeners().size());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void badUriThrowsIllegalArgumentException() {
+        new AmazonTestClient().getSignerByURI(URI.create("https://s3.US_WEST_2.amazonaws.com"));
     }
 
     /**

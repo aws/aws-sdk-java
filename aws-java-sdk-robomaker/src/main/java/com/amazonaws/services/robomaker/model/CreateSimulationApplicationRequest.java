@@ -45,7 +45,7 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
     private SimulationSoftwareSuite simulationSoftwareSuite;
     /**
      * <p>
-     * The robot software suite of the simulation application.
+     * The robot software suite (ROS distribution) used by the simulation application.
      * </p>
      */
     private RobotSoftwareSuite robotSoftwareSuite;
@@ -214,11 +214,11 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The robot software suite of the simulation application.
+     * The robot software suite (ROS distribution) used by the simulation application.
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        The robot software suite of the simulation application.
+     *        The robot software suite (ROS distribution) used by the simulation application.
      */
 
     public void setRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
@@ -227,10 +227,10 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The robot software suite of the simulation application.
+     * The robot software suite (ROS distribution) used by the simulation application.
      * </p>
      * 
-     * @return The robot software suite of the simulation application.
+     * @return The robot software suite (ROS distribution) used by the simulation application.
      */
 
     public RobotSoftwareSuite getRobotSoftwareSuite() {
@@ -239,11 +239,11 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The robot software suite of the simulation application.
+     * The robot software suite (ROS distribution) used by the simulation application.
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        The robot software suite of the simulation application.
+     *        The robot software suite (ROS distribution) used by the simulation application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

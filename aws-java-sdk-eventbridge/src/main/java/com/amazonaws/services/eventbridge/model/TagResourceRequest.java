@@ -27,24 +27,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the rule that you're adding tags to.
+     * The ARN of the EventBridge resource that you're adding tags to.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * The list of key-value pairs to associate with the rule.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The ARN of the rule that you're adding tags to.
+     * The ARN of the EventBridge resource that you're adding tags to.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the rule that you're adding tags to.
+     *        The ARN of the EventBridge resource that you're adding tags to.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the rule that you're adding tags to.
+     * The ARN of the EventBridge resource that you're adding tags to.
      * </p>
      * 
-     * @return The ARN of the rule that you're adding tags to.
+     * @return The ARN of the EventBridge resource that you're adding tags to.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the rule that you're adding tags to.
+     * The ARN of the EventBridge resource that you're adding tags to.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the rule that you're adding tags to.
+     *        The ARN of the EventBridge resource that you're adding tags to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the rule.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      * 
-     * @return The list of key-value pairs to associate with the rule.
+     * @return The list of key-value pairs to associate with the resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +92,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the rule.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the rule.
+     *        The list of key-value pairs to associate with the resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +110,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the rule.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the rule.
+     *        The list of key-value pairs to associate with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of key-value pairs to associate with the rule.
+     * The list of key-value pairs to associate with the resource.
      * </p>
      * 
      * @param tags
-     *        The list of key-value pairs to associate with the rule.
+     *        The list of key-value pairs to associate with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String eventBusName;
     /**
      * <p>
-     * The action that you're enabling the other account to perform. Currently, this must be
+     * The action that you are enabling the other account to perform. Currently, this must be
      * <code>events:PutEvents</code>.
      * </p>
      */
@@ -44,16 +44,16 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * permit any account to put events to your default event bus.
      * </p>
      * <p>
-     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
+     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID from which to receive events. Rules with an account field
+     * do not match any events sent from other accounts.
      * </p>
      */
     private String principal;
     /**
      * <p>
-     * An identifier string for the external account that you're granting permissions to. If you later want to revoke
+     * An identifier string for the external account that you are granting permissions to. If you later want to revoke
      * the permission for this external account, specify this <code>StatementId</code> when you run
      * <a>RemovePermission</a>.
      * </p>
@@ -64,14 +64,14 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a
      * member of a certain AWS organization. For more information about AWS Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-     * Organizations?</a> in the <i>AWS Organizations User Guide</i>.
+     * Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * If you specify <code>Condition</code> with an AWS organization ID and specify "*" as the value for
+     * If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the value for
      * <code>Principal</code>, you grant permission to all the accounts in the named organization.
      * </p>
      * <p>
-     * The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>, and
+     * The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and
      * <code>Value</code> fields.
      * </p>
      */
@@ -119,12 +119,12 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The action that you're enabling the other account to perform. Currently, this must be
+     * The action that you are enabling the other account to perform. Currently, this must be
      * <code>events:PutEvents</code>.
      * </p>
      * 
      * @param action
-     *        The action that you're enabling the other account to perform. Currently, this must be
+     *        The action that you are enabling the other account to perform. Currently, this must be
      *        <code>events:PutEvents</code>.
      */
 
@@ -134,11 +134,11 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The action that you're enabling the other account to perform. Currently, this must be
+     * The action that you are enabling the other account to perform. Currently, this must be
      * <code>events:PutEvents</code>.
      * </p>
      * 
-     * @return The action that you're enabling the other account to perform. Currently, this must be
+     * @return The action that you are enabling the other account to perform. Currently, this must be
      *         <code>events:PutEvents</code>.
      */
 
@@ -148,12 +148,12 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The action that you're enabling the other account to perform. Currently, this must be
+     * The action that you are enabling the other account to perform. Currently, this must be
      * <code>events:PutEvents</code>.
      * </p>
      * 
      * @param action
-     *        The action that you're enabling the other account to perform. Currently, this must be
+     *        The action that you are enabling the other account to perform. Currently, this must be
      *        <code>events:PutEvents</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -169,20 +169,20 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * permit any account to put events to your default event bus.
      * </p>
      * <p>
-     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
+     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID from which to receive events. Rules with an account field
+     * do not match any events sent from other accounts.
      * </p>
      * 
      * @param principal
      *        The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify "*"
      *        to permit any account to put events to your default event bus.</p>
      *        <p>
-     *        If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match
+     *        If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match
      *        undesirable events. To create more secure rules, make sure that the event pattern for each rule contains
-     *        an <code>account</code> field with a specific account ID to receive events from. Rules with an account
-     *        field don't match any events sent from other accounts.
+     *        an <code>account</code> field with a specific account ID from which to receive events. Rules with an
+     *        account field do not match any events sent from other accounts.
      */
 
     public void setPrincipal(String principal) {
@@ -195,19 +195,19 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * permit any account to put events to your default event bus.
      * </p>
      * <p>
-     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
+     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID from which to receive events. Rules with an account field
+     * do not match any events sent from other accounts.
      * </p>
      * 
      * @return The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify "*"
      *         to permit any account to put events to your default event bus.</p>
      *         <p>
-     *         If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match
+     *         If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match
      *         undesirable events. To create more secure rules, make sure that the event pattern for each rule contains
-     *         an <code>account</code> field with a specific account ID to receive events from. Rules with an account
-     *         field don't match any events sent from other accounts.
+     *         an <code>account</code> field with a specific account ID from which to receive events. Rules with an
+     *         account field do not match any events sent from other accounts.
      */
 
     public String getPrincipal() {
@@ -220,20 +220,20 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * permit any account to put events to your default event bus.
      * </p>
      * <p>
-     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match undesirable
+     * If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable
      * events. To create more secure rules, make sure that the event pattern for each rule contains an
-     * <code>account</code> field with a specific account ID to receive events from. Rules with an account field don't
-     * match any events sent from other accounts.
+     * <code>account</code> field with a specific account ID from which to receive events. Rules with an account field
+     * do not match any events sent from other accounts.
      * </p>
      * 
      * @param principal
      *        The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify "*"
      *        to permit any account to put events to your default event bus.</p>
      *        <p>
-     *        If you specify "*" without specifying <code>Condition</code>, avoid creating rules that might match
+     *        If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match
      *        undesirable events. To create more secure rules, make sure that the event pattern for each rule contains
-     *        an <code>account</code> field with a specific account ID to receive events from. Rules with an account
-     *        field don't match any events sent from other accounts.
+     *        an <code>account</code> field with a specific account ID from which to receive events. Rules with an
+     *        account field do not match any events sent from other accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,13 +244,13 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An identifier string for the external account that you're granting permissions to. If you later want to revoke
+     * An identifier string for the external account that you are granting permissions to. If you later want to revoke
      * the permission for this external account, specify this <code>StatementId</code> when you run
      * <a>RemovePermission</a>.
      * </p>
      * 
      * @param statementId
-     *        An identifier string for the external account that you're granting permissions to. If you later want to
+     *        An identifier string for the external account that you are granting permissions to. If you later want to
      *        revoke the permission for this external account, specify this <code>StatementId</code> when you run
      *        <a>RemovePermission</a>.
      */
@@ -261,12 +261,12 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An identifier string for the external account that you're granting permissions to. If you later want to revoke
+     * An identifier string for the external account that you are granting permissions to. If you later want to revoke
      * the permission for this external account, specify this <code>StatementId</code> when you run
      * <a>RemovePermission</a>.
      * </p>
      * 
-     * @return An identifier string for the external account that you're granting permissions to. If you later want to
+     * @return An identifier string for the external account that you are granting permissions to. If you later want to
      *         revoke the permission for this external account, specify this <code>StatementId</code> when you run
      *         <a>RemovePermission</a>.
      */
@@ -277,13 +277,13 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An identifier string for the external account that you're granting permissions to. If you later want to revoke
+     * An identifier string for the external account that you are granting permissions to. If you later want to revoke
      * the permission for this external account, specify this <code>StatementId</code> when you run
      * <a>RemovePermission</a>.
      * </p>
      * 
      * @param statementId
-     *        An identifier string for the external account that you're granting permissions to. If you later want to
+     *        An identifier string for the external account that you are granting permissions to. If you later want to
      *        revoke the permission for this external account, specify this <code>StatementId</code> when you run
      *        <a>RemovePermission</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -299,14 +299,14 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a
      * member of a certain AWS organization. For more information about AWS Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-     * Organizations?</a> in the <i>AWS Organizations User Guide</i>.
+     * Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * If you specify <code>Condition</code> with an AWS organization ID and specify "*" as the value for
+     * If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the value for
      * <code>Principal</code>, you grant permission to all the accounts in the named organization.
      * </p>
      * <p>
-     * The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>, and
+     * The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and
      * <code>Value</code> fields.
      * </p>
      * 
@@ -314,13 +314,13 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as
      *        being a member of a certain AWS organization. For more information about AWS Organizations, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-     *        Organizations?</a> in the <i>AWS Organizations User Guide</i>.</p>
+     *        Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>
      *        <p>
-     *        If you specify <code>Condition</code> with an AWS organization ID and specify "*" as the value for
+     *        If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the value for
      *        <code>Principal</code>, you grant permission to all the accounts in the named organization.
      *        </p>
      *        <p>
-     *        The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>, and
+     *        The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and
      *        <code>Value</code> fields.
      */
 
@@ -333,27 +333,27 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a
      * member of a certain AWS organization. For more information about AWS Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-     * Organizations?</a> in the <i>AWS Organizations User Guide</i>.
+     * Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * If you specify <code>Condition</code> with an AWS organization ID and specify "*" as the value for
+     * If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the value for
      * <code>Principal</code>, you grant permission to all the accounts in the named organization.
      * </p>
      * <p>
-     * The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>, and
+     * The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and
      * <code>Value</code> fields.
      * </p>
      * 
      * @return This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as
      *         being a member of a certain AWS organization. For more information about AWS Organizations, see <a
      *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-     *         Organizations?</a> in the <i>AWS Organizations User Guide</i>.</p>
+     *         Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>
      *         <p>
-     *         If you specify <code>Condition</code> with an AWS organization ID and specify "*" as the value for
+     *         If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the value for
      *         <code>Principal</code>, you grant permission to all the accounts in the named organization.
      *         </p>
      *         <p>
-     *         The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>, and
+     *         The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and
      *         <code>Value</code> fields.
      */
 
@@ -366,14 +366,14 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a
      * member of a certain AWS organization. For more information about AWS Organizations, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-     * Organizations?</a> in the <i>AWS Organizations User Guide</i>.
+     * Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * If you specify <code>Condition</code> with an AWS organization ID and specify "*" as the value for
+     * If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the value for
      * <code>Principal</code>, you grant permission to all the accounts in the named organization.
      * </p>
      * <p>
-     * The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>, and
+     * The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and
      * <code>Value</code> fields.
      * </p>
      * 
@@ -381,13 +381,13 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as
      *        being a member of a certain AWS organization. For more information about AWS Organizations, see <a
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-     *        Organizations?</a> in the <i>AWS Organizations User Guide</i>.</p>
+     *        Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>
      *        <p>
-     *        If you specify <code>Condition</code> with an AWS organization ID and specify "*" as the value for
+     *        If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the value for
      *        <code>Principal</code>, you grant permission to all the accounts in the named organization.
      *        </p>
      *        <p>
-     *        The <code>Condition</code> is a JSON string that must contain <code>Type</code>, <code>Key</code>, and
+     *        The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and
      *        <code>Value</code> fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

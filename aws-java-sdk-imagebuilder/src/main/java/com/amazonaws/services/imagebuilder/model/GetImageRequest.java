@@ -27,18 +27,18 @@ public class GetImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image that you want to retrieve.
      * </p>
      */
     private String imageBuildVersionArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image that you want to retrieve.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image that you want to retrieve.
      */
 
     public void setImageBuildVersionArn(String imageBuildVersionArn) {
@@ -47,10 +47,10 @@ public class GetImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image that you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image that you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the image that you want to retrieve.
      */
 
     public String getImageBuildVersionArn() {
@@ -59,11 +59,11 @@ public class GetImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image that you want to retrieve.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image that you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

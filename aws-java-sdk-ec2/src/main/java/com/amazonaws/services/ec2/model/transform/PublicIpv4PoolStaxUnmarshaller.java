@@ -74,6 +74,17 @@ public class PublicIpv4PoolStaxUnmarshaller implements Unmarshaller<PublicIpv4Po
                     publicIpv4Pool.setTotalAvailableAddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    publicIpv4Pool.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    publicIpv4Pool.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return publicIpv4Pool;

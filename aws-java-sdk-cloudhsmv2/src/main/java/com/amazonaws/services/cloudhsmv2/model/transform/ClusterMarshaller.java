@@ -55,6 +55,8 @@ public class ClusterMarshaller {
             .marshallLocationName("VpcId").build();
     private static final MarshallingInfo<StructuredPojo> CERTIFICATES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Certificates").build();
+    private static final MarshallingInfo<List> TAGLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagList").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -85,6 +87,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getSubnetMapping(), SUBNETMAPPING_BINDING);
             protocolMarshaller.marshall(cluster.getVpcId(), VPCID_BINDING);
             protocolMarshaller.marshall(cluster.getCertificates(), CERTIFICATES_BINDING);
+            protocolMarshaller.marshall(cluster.getTagList(), TAGLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -2442,6 +2442,73 @@
           "variableSetterType" : "AnomalyDetectorConfiguration"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "StateValue",
+        "c2jShape" : "AnomalyDetectorStateValue",
+        "deprecated" : false,
+        "documentation" : "<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>",
+        "enumType" : "AnomalyDetectorStateValue",
+        "fluentSetterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@param stateValue The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@return Returns a reference to this object so that method calls can be chained together.\n@see AnomalyDetectorStateValue*/",
+        "fluentSetterMethodName" : "withStateValue",
+        "getterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@return The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@see AnomalyDetectorStateValue*/",
+        "getterMethodName" : "getStateValue",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "StateValue",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StateValue",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "StateValue",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@param stateValue The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@see AnomalyDetectorStateValue*/",
+        "setterMethodName" : "setStateValue",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "stateValue",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@param stateValue The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@return Returns a reference to this object so that method calls can be chained together.\n@see AnomalyDetectorStateValue*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "stateValue",
+          "variableType" : "String",
+          "documentation" : "<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Configuration" : {
@@ -2861,6 +2928,74 @@
             "variableName" : "stat",
             "variableType" : "String",
             "documentation" : "<p>The statistic associated with the anomaly detection model.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "StateValue" : {
+          "c2jName" : "StateValue",
+          "c2jShape" : "AnomalyDetectorStateValue",
+          "deprecated" : false,
+          "documentation" : "<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>",
+          "enumType" : "AnomalyDetectorStateValue",
+          "fluentSetterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@param stateValue The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@return Returns a reference to this object so that method calls can be chained together.\n@see AnomalyDetectorStateValue*/",
+          "fluentSetterMethodName" : "withStateValue",
+          "getterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@return The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@see AnomalyDetectorStateValue*/",
+          "getterMethodName" : "getStateValue",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "StateValue",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StateValue",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "StateValue",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@param stateValue The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@see AnomalyDetectorStateValue*/",
+          "setterMethodName" : "setStateValue",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "stateValue",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>\n@param stateValue The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>\n@return Returns a reference to this object so that method calls can be chained together.\n@see AnomalyDetectorStateValue*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "stateValue",
+            "variableType" : "String",
+            "documentation" : "<p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3361,6 +3496,56 @@
         "documentation" : null,
         "simpleType" : "AnomalyDetectorConfiguration",
         "variableSetterType" : "AnomalyDetectorConfiguration"
+      },
+      "wrapper" : false
+    },
+    "AnomalyDetectorStateValue" : {
+      "c2jName" : "AnomalyDetectorStateValue",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "PENDING_TRAINING",
+        "value" : "PENDING_TRAINING"
+      }, {
+        "name" : "TRAINED_INSUFFICIENT_DATA",
+        "value" : "TRAINED_INSUFFICIENT_DATA"
+      }, {
+        "name" : "TRAINED",
+        "value" : "TRAINED"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "AnomalyDetectorStateValue",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "AnomalyDetectorStateValue",
+        "variableName" : "anomalyDetectorStateValue",
+        "variableType" : "AnomalyDetectorStateValue",
+        "documentation" : null,
+        "simpleType" : "AnomalyDetectorStateValue",
+        "variableSetterType" : "AnomalyDetectorStateValue"
       },
       "wrapper" : false
     },

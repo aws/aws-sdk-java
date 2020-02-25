@@ -107,6 +107,10 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
             }
         }
 
+        if (createVolumeRequest.getMultiAttachEnabled() != null) {
+            request.addParameter("MultiAttachEnabled", StringUtils.fromBoolean(createVolumeRequest.getMultiAttachEnabled()));
+        }
+
         return request;
     }
 

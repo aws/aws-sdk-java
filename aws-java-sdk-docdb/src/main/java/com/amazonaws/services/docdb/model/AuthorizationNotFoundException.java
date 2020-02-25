@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified DB security group.
+ * The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.
  * </p>
  * <p>
  * Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.

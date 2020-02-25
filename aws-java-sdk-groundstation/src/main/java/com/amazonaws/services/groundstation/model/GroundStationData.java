@@ -30,7 +30,7 @@ public class GroundStationData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ID of a ground station.
+     * UUID of a ground station.
      * </p>
      */
     private String groundStationId;
@@ -49,11 +49,11 @@ public class GroundStationData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ID of a ground station.
+     * UUID of a ground station.
      * </p>
      * 
      * @param groundStationId
-     *        ID of a ground station.
+     *        UUID of a ground station.
      */
 
     public void setGroundStationId(String groundStationId) {
@@ -62,10 +62,10 @@ public class GroundStationData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ID of a ground station.
+     * UUID of a ground station.
      * </p>
      * 
-     * @return ID of a ground station.
+     * @return UUID of a ground station.
      */
 
     public String getGroundStationId() {
@@ -74,11 +74,11 @@ public class GroundStationData implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ID of a ground station.
+     * UUID of a ground station.
      * </p>
      * 
      * @param groundStationId
-     *        ID of a ground station.
+     *        UUID of a ground station.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

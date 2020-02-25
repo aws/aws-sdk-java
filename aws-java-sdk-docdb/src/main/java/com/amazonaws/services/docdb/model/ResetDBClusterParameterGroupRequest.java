@@ -30,21 +30,21 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to reset.
+     * The name of the cluster parameter group to reset.
      * </p>
      */
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
-     * default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter
-     * names specified for the <code>Parameters</code> parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default
+     * values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names
+     * specified for the <code>Parameters</code> parameter.
      * </p>
      */
     private Boolean resetAllParameters;
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this
+     * A list of parameter names in the cluster parameter group to reset to the default values. You can't use this
      * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      */
@@ -52,11 +52,11 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to reset.
+     * The name of the cluster parameter group to reset.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to reset.
+     *        The name of the cluster parameter group to reset.
      */
 
     public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
@@ -65,10 +65,10 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to reset.
+     * The name of the cluster parameter group to reset.
      * </p>
      * 
-     * @return The name of the DB cluster parameter group to reset.
+     * @return The name of the cluster parameter group to reset.
      */
 
     public String getDBClusterParameterGroupName() {
@@ -77,11 +77,11 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to reset.
+     * The name of the cluster parameter group to reset.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to reset.
+     *        The name of the cluster parameter group to reset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,14 +92,14 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
-     * default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter
-     * names specified for the <code>Parameters</code> parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default
+     * values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names
+     * specified for the <code>Parameters</code> parameter.
      * </p>
      * 
      * @param resetAllParameters
-     *        A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
-     *        their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of
+     *        A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their
+     *        default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of
      *        parameter names specified for the <code>Parameters</code> parameter.
      */
 
@@ -109,14 +109,14 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
-     * default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter
-     * names specified for the <code>Parameters</code> parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default
+     * values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names
+     * specified for the <code>Parameters</code> parameter.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
-     *         their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list
-     *         of parameter names specified for the <code>Parameters</code> parameter.
+     * @return A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their
+     *         default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of
+     *         parameter names specified for the <code>Parameters</code> parameter.
      */
 
     public Boolean getResetAllParameters() {
@@ -125,14 +125,14 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
-     * default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter
-     * names specified for the <code>Parameters</code> parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default
+     * values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names
+     * specified for the <code>Parameters</code> parameter.
      * </p>
      * 
      * @param resetAllParameters
-     *        A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
-     *        their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of
+     *        A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their
+     *        default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of
      *        parameter names specified for the <code>Parameters</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -144,14 +144,14 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their
-     * default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter
-     * names specified for the <code>Parameters</code> parameter.
+     * A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their default
+     * values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names
+     * specified for the <code>Parameters</code> parameter.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to
-     *         their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list
-     *         of parameter names specified for the <code>Parameters</code> parameter.
+     * @return A value that is set to <code>true</code> to reset all parameters in the cluster parameter group to their
+     *         default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of
+     *         parameter names specified for the <code>Parameters</code> parameter.
      */
 
     public Boolean isResetAllParameters() {
@@ -160,11 +160,11 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this
+     * A list of parameter names in the cluster parameter group to reset to the default values. You can't use this
      * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * 
-     * @return A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use
+     * @return A list of parameter names in the cluster parameter group to reset to the default values. You can't use
      *         this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      */
 
@@ -174,12 +174,12 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this
+     * A list of parameter names in the cluster parameter group to reset to the default values. You can't use this
      * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * 
      * @param parameters
-     *        A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use
+     *        A list of parameter names in the cluster parameter group to reset to the default values. You can't use
      *        this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      */
 
@@ -194,7 +194,7 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this
+     * A list of parameter names in the cluster parameter group to reset to the default values. You can't use this
      * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * <p>
@@ -204,7 +204,7 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param parameters
-     *        A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use
+     *        A list of parameter names in the cluster parameter group to reset to the default values. You can't use
      *        this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -221,12 +221,12 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this
+     * A list of parameter names in the cluster parameter group to reset to the default values. You can't use this
      * parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * </p>
      * 
      * @param parameters
-     *        A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use
+     *        A list of parameter names in the cluster parameter group to reset to the default values. You can't use
      *        this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

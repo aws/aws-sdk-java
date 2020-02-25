@@ -144,6 +144,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

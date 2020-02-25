@@ -28,6 +28,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Specifies that AWS WAF should allow requests.
  * </p>
+ * <p>
+ * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
+ * <a>DefaultAction</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AllowAction" target="_top">AWS API
  *      Documentation</a>

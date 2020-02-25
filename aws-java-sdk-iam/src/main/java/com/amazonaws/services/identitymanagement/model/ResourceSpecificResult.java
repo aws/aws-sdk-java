@@ -64,13 +64,19 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> missingContextValues;
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access.
+     * Additional details about the results of the evaluation decision on a single resource. This parameter is returned
+     * only for cross-account simulations. This parameter explains how each policy type contributes to the
+     * resource-specific evaluation decision.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> evalDecisionDetails;
+    /**
+     * <p>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when that boundary
+     * is applied to an IAM entity.
+     * </p>
+     */
+    private PermissionsBoundaryDecisionDetail permissionsBoundaryDecisionDetail;
 
     /**
      * <p>
@@ -411,16 +417,14 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access.
+     * Additional details about the results of the evaluation decision on a single resource. This parameter is returned
+     * only for cross-account simulations. This parameter explains how each policy type contributes to the
+     * resource-specific evaluation decision.
      * </p>
      * 
-     * @return Additional details about the results of the evaluation decision. When there are both IAM policies and
-     *         resource policies, this parameter explains how each set of policies contributes to the final evaluation
-     *         decision. When simulating cross-account access to a resource, both the resource-based policy and the
-     *         caller's IAM policy must grant access.
+     * @return Additional details about the results of the evaluation decision on a single resource. This parameter is
+     *         returned only for cross-account simulations. This parameter explains how each policy type contributes to
+     *         the resource-specific evaluation decision.
      */
 
     public java.util.Map<String, String> getEvalDecisionDetails() {
@@ -432,17 +436,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access.
+     * Additional details about the results of the evaluation decision on a single resource. This parameter is returned
+     * only for cross-account simulations. This parameter explains how each policy type contributes to the
+     * resource-specific evaluation decision.
      * </p>
      * 
      * @param evalDecisionDetails
-     *        Additional details about the results of the evaluation decision. When there are both IAM policies and
-     *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
-     *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
-     *        caller's IAM policy must grant access.
+     *        Additional details about the results of the evaluation decision on a single resource. This parameter is
+     *        returned only for cross-account simulations. This parameter explains how each policy type contributes to
+     *        the resource-specific evaluation decision.
      */
 
     public void setEvalDecisionDetails(java.util.Map<String, String> evalDecisionDetails) {
@@ -451,17 +453,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access.
+     * Additional details about the results of the evaluation decision on a single resource. This parameter is returned
+     * only for cross-account simulations. This parameter explains how each policy type contributes to the
+     * resource-specific evaluation decision.
      * </p>
      * 
      * @param evalDecisionDetails
-     *        Additional details about the results of the evaluation decision. When there are both IAM policies and
-     *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
-     *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
-     *        caller's IAM policy must grant access.
+     *        Additional details about the results of the evaluation decision on a single resource. This parameter is
+     *        returned only for cross-account simulations. This parameter explains how each policy type contributes to
+     *        the resource-specific evaluation decision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,6 +492,52 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when that boundary
+     * is applied to an IAM entity.
+     * </p>
+     * 
+     * @param permissionsBoundaryDecisionDetail
+     *        Contains information about the effect that a permissions boundary has on a policy simulation when that
+     *        boundary is applied to an IAM entity.
+     */
+
+    public void setPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail permissionsBoundaryDecisionDetail) {
+        this.permissionsBoundaryDecisionDetail = permissionsBoundaryDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when that boundary
+     * is applied to an IAM entity.
+     * </p>
+     * 
+     * @return Contains information about the effect that a permissions boundary has on a policy simulation when that
+     *         boundary is applied to an IAM entity.
+     */
+
+    public PermissionsBoundaryDecisionDetail getPermissionsBoundaryDecisionDetail() {
+        return this.permissionsBoundaryDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when that boundary
+     * is applied to an IAM entity.
+     * </p>
+     * 
+     * @param permissionsBoundaryDecisionDetail
+     *        Contains information about the effect that a permissions boundary has on a policy simulation when that
+     *        boundary is applied to an IAM entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceSpecificResult withPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail permissionsBoundaryDecisionDetail) {
+        setPermissionsBoundaryDecisionDetail(permissionsBoundaryDecisionDetail);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -512,7 +558,9 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
         if (getMissingContextValues() != null)
             sb.append("MissingContextValues: ").append(getMissingContextValues()).append(",");
         if (getEvalDecisionDetails() != null)
-            sb.append("EvalDecisionDetails: ").append(getEvalDecisionDetails());
+            sb.append("EvalDecisionDetails: ").append(getEvalDecisionDetails()).append(",");
+        if (getPermissionsBoundaryDecisionDetail() != null)
+            sb.append("PermissionsBoundaryDecisionDetail: ").append(getPermissionsBoundaryDecisionDetail());
         sb.append("}");
         return sb.toString();
     }
@@ -547,6 +595,11 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
             return false;
         if (other.getEvalDecisionDetails() != null && other.getEvalDecisionDetails().equals(this.getEvalDecisionDetails()) == false)
             return false;
+        if (other.getPermissionsBoundaryDecisionDetail() == null ^ this.getPermissionsBoundaryDecisionDetail() == null)
+            return false;
+        if (other.getPermissionsBoundaryDecisionDetail() != null
+                && other.getPermissionsBoundaryDecisionDetail().equals(this.getPermissionsBoundaryDecisionDetail()) == false)
+            return false;
         return true;
     }
 
@@ -560,6 +613,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMatchedStatements() == null) ? 0 : getMatchedStatements().hashCode());
         hashCode = prime * hashCode + ((getMissingContextValues() == null) ? 0 : getMissingContextValues().hashCode());
         hashCode = prime * hashCode + ((getEvalDecisionDetails() == null) ? 0 : getEvalDecisionDetails().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundaryDecisionDetail() == null) ? 0 : getPermissionsBoundaryDecisionDetail().hashCode());
         return hashCode;
     }
 

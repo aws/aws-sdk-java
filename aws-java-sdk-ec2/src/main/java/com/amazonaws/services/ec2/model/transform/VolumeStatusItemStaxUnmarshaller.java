@@ -84,6 +84,17 @@ public class VolumeStatusItemStaxUnmarshaller implements Unmarshaller<VolumeStat
                     volumeStatusItem.setVolumeStatus(VolumeStatusInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("attachmentStatuses", targetDepth)) {
+                    volumeStatusItem.withAttachmentStatuses(new ArrayList<VolumeStatusAttachmentStatus>());
+                    continue;
+                }
+
+                if (context.testExpression("attachmentStatuses/item", targetDepth)) {
+                    volumeStatusItem.withAttachmentStatuses(VolumeStatusAttachmentStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return volumeStatusItem;

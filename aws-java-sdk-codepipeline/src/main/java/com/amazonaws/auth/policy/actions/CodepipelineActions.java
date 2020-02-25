@@ -91,6 +91,8 @@ public enum CodepipelineActions implements Action {
     RetryStageExecution("codepipeline:RetryStageExecution"),
     /** Action for the StartPipelineExecution operation. */
     StartPipelineExecution("codepipeline:StartPipelineExecution"),
+    /** Action for the StopPipelineExecution operation. */
+    StopPipelineExecution("codepipeline:StopPipelineExecution"),
     /** Action for the TagResource operation. */
     TagResource("codepipeline:TagResource"),
     /** Action for the UntagResource operation. */

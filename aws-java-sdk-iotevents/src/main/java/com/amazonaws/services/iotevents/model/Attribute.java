@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to
- * the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload, and those
+ * the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those
  * attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions
  * used by detectors.
  * </p>
@@ -34,9 +34,9 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from
-     * the JSON payload that is made available by the input. Inputs are derived from messages sent to the AWS IoT Events
-     * system (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and the attribute (and its
-     * paired value) specified here are available for use in the <code>"condition"</code> expressions used by detectors.
+     * the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (
+     * <code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value)
+     * specified here are available for use in the <code>condition</code> expressions used by detectors.
      * </p>
      * <p>
      * Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code>
@@ -47,9 +47,9 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from
-     * the JSON payload that is made available by the input. Inputs are derived from messages sent to the AWS IoT Events
-     * system (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and the attribute (and its
-     * paired value) specified here are available for use in the <code>"condition"</code> expressions used by detectors.
+     * the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (
+     * <code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value)
+     * specified here are available for use in the <code>condition</code> expressions used by detectors.
      * </p>
      * <p>
      * Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code>
@@ -57,10 +57,10 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param jsonPath
      *        An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute
-     *        from the JSON payload that is made available by the input. Inputs are derived from messages sent to the
-     *        AWS IoT Events system (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and the
-     *        attribute (and its paired value) specified here are available for use in the <code>"condition"</code>
-     *        expressions used by detectors. </p>
+     *        from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS
+     *        IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and
+     *        its paired value) specified here are available for use in the <code>condition</code> expressions used by
+     *        detectors. </p>
      *        <p>
      *        Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code>
      */
@@ -72,9 +72,9 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from
-     * the JSON payload that is made available by the input. Inputs are derived from messages sent to the AWS IoT Events
-     * system (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and the attribute (and its
-     * paired value) specified here are available for use in the <code>"condition"</code> expressions used by detectors.
+     * the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (
+     * <code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value)
+     * specified here are available for use in the <code>condition</code> expressions used by detectors.
      * </p>
      * <p>
      * Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code>
@@ -82,9 +82,9 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an
      *         attribute from the JSON payload that is made available by the input. Inputs are derived from messages
-     *         sent to the AWS IoT Events system (<code>BatchPutMessage</code>). Each such message contains a JSON
-     *         payload, and the attribute (and its paired value) specified here are available for use in the
-     *         <code>"condition"</code> expressions used by detectors. </p>
+     *         sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The
+     *         attribute (and its paired value) specified here are available for use in the <code>condition</code>
+     *         expressions used by detectors. </p>
      *         <p>
      *         Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code>
      */
@@ -96,9 +96,9 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from
-     * the JSON payload that is made available by the input. Inputs are derived from messages sent to the AWS IoT Events
-     * system (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and the attribute (and its
-     * paired value) specified here are available for use in the <code>"condition"</code> expressions used by detectors.
+     * the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (
+     * <code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value)
+     * specified here are available for use in the <code>condition</code> expressions used by detectors.
      * </p>
      * <p>
      * Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code>
@@ -106,10 +106,10 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param jsonPath
      *        An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute
-     *        from the JSON payload that is made available by the input. Inputs are derived from messages sent to the
-     *        AWS IoT Events system (<code>BatchPutMessage</code>). Each such message contains a JSON payload, and the
-     *        attribute (and its paired value) specified here are available for use in the <code>"condition"</code>
-     *        expressions used by detectors. </p>
+     *        from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS
+     *        IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and
+     *        its paired value) specified here are available for use in the <code>condition</code> expressions used by
+     *        detectors. </p>
      *        <p>
      *        Syntax: <code>&lt;field-name&gt;.&lt;field-name&gt;...</code>
      * @return Returns a reference to this object so that method calls can be chained together.

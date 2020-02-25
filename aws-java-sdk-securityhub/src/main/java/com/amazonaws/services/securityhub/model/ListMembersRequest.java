@@ -27,44 +27,59 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies which member accounts the response includes based on their relationship status with the master account.
-     * The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>, the response
-     * includes member accounts whose relationship status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>. If <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-     * existing member accounts.
+     * Specifies which member accounts to include in the response based on their relationship status with the master
+     * account. The default value is <code>TRUE</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
      * </p>
      */
     private Boolean onlyAssociated;
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to <code>NULL</code> on your first call to the
-     * <code>ListMembers</code> operation. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the
+     * value of this parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value
+     * returned from the previous response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Specifies which member accounts the response includes based on their relationship status with the master account.
-     * The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>, the response
-     * includes member accounts whose relationship status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>. If <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-     * existing member accounts.
+     * Specifies which member accounts to include in the response based on their relationship status with the master
+     * account. The default value is <code>TRUE</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
      * </p>
      * 
      * @param onlyAssociated
-     *        Specifies which member accounts the response includes based on their relationship status with the master
-     *        account. The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to
-     *        <code>TRUE</code>, the response includes member accounts whose relationship status with the master is set
-     *        to <code>ENABLED</code> or <code>DISABLED</code>. If <code>onlyAssociated</code> is set to
-     *        <code>FALSE</code>, the response includes all existing member accounts.
+     *        Specifies which member accounts to include in the response based on their relationship status with the
+     *        master account. The default value is <code>TRUE</code>.</p>
+     *        <p>
+     *        If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     *        relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *        </p>
+     *        <p>
+     *        If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member
+     *        accounts.
      */
 
     public void setOnlyAssociated(Boolean onlyAssociated) {
@@ -73,18 +88,26 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies which member accounts the response includes based on their relationship status with the master account.
-     * The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>, the response
-     * includes member accounts whose relationship status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>. If <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-     * existing member accounts.
+     * Specifies which member accounts to include in the response based on their relationship status with the master
+     * account. The default value is <code>TRUE</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
      * </p>
      * 
-     * @return Specifies which member accounts the response includes based on their relationship status with the master
-     *         account. The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to
-     *         <code>TRUE</code>, the response includes member accounts whose relationship status with the master is set
-     *         to <code>ENABLED</code> or <code>DISABLED</code>. If <code>onlyAssociated</code> is set to
-     *         <code>FALSE</code>, the response includes all existing member accounts.
+     * @return Specifies which member accounts to include in the response based on their relationship status with the
+     *         master account. The default value is <code>TRUE</code>.</p>
+     *         <p>
+     *         If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     *         relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *         </p>
+     *         <p>
+     *         If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member
+     *         accounts.
      */
 
     public Boolean getOnlyAssociated() {
@@ -93,19 +116,27 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies which member accounts the response includes based on their relationship status with the master account.
-     * The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>, the response
-     * includes member accounts whose relationship status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>. If <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-     * existing member accounts.
+     * Specifies which member accounts to include in the response based on their relationship status with the master
+     * account. The default value is <code>TRUE</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
      * </p>
      * 
      * @param onlyAssociated
-     *        Specifies which member accounts the response includes based on their relationship status with the master
-     *        account. The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to
-     *        <code>TRUE</code>, the response includes member accounts whose relationship status with the master is set
-     *        to <code>ENABLED</code> or <code>DISABLED</code>. If <code>onlyAssociated</code> is set to
-     *        <code>FALSE</code>, the response includes all existing member accounts.
+     *        Specifies which member accounts to include in the response based on their relationship status with the
+     *        master account. The default value is <code>TRUE</code>.</p>
+     *        <p>
+     *        If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     *        relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *        </p>
+     *        <p>
+     *        If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member
+     *        accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,18 +147,26 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies which member accounts the response includes based on their relationship status with the master account.
-     * The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>, the response
-     * includes member accounts whose relationship status with the master is set to <code>ENABLED</code> or
-     * <code>DISABLED</code>. If <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-     * existing member accounts.
+     * Specifies which member accounts to include in the response based on their relationship status with the master
+     * account. The default value is <code>TRUE</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     * relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts.
      * </p>
      * 
-     * @return Specifies which member accounts the response includes based on their relationship status with the master
-     *         account. The default value is <code>TRUE</code>. If <code>onlyAssociated</code> is set to
-     *         <code>TRUE</code>, the response includes member accounts whose relationship status with the master is set
-     *         to <code>ENABLED</code> or <code>DISABLED</code>. If <code>onlyAssociated</code> is set to
-     *         <code>FALSE</code>, the response includes all existing member accounts.
+     * @return Specifies which member accounts to include in the response based on their relationship status with the
+     *         master account. The default value is <code>TRUE</code>.</p>
+     *         <p>
+     *         If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose
+     *         relationship status with the master is set to <code>ENABLED</code> or <code>DISABLED</code>.
+     *         </p>
+     *         <p>
+     *         If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member
+     *         accounts.
      */
 
     public Boolean isOnlyAssociated() {
@@ -136,11 +175,11 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of items to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -149,10 +188,10 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
-     * @return The maximum number of items that you want in the response.
+     * @return The maximum number of items to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -161,11 +200,11 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of items that you want in the response.
+     * The maximum number of items to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want in the response.
+     *        The maximum number of items to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,15 +215,20 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to <code>NULL</code> on your first call to the
-     * <code>ListMembers</code> operation. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the
+     * value of this parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value
+     * returned from the previous response.
      * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to <code>NULL</code> on your first call to the
-     *        <code>ListMembers</code> operation. For subsequent calls to the operation, fill <code>nextToken</code> in
-     *        the request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     *        The token that is required for pagination. On your first call to the <code>ListMembers</code> operation,
+     *        set the value of this parameter to <code>NULL</code>.</p>
+     *        <p>
+     *        For subsequent calls to the operation, to continue listing data, set the value of this parameter to the
+     *        value returned from the previous response.
      */
 
     public void setNextToken(String nextToken) {
@@ -193,14 +237,19 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to <code>NULL</code> on your first call to the
-     * <code>ListMembers</code> operation. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the
+     * value of this parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value
+     * returned from the previous response.
      * </p>
      * 
-     * @return Paginates results. Set the value of this parameter to <code>NULL</code> on your first call to the
-     *         <code>ListMembers</code> operation. For subsequent calls to the operation, fill <code>nextToken</code> in
-     *         the request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * @return The token that is required for pagination. On your first call to the <code>ListMembers</code> operation,
+     *         set the value of this parameter to <code>NULL</code>.</p>
+     *         <p>
+     *         For subsequent calls to the operation, to continue listing data, set the value of this parameter to the
+     *         value returned from the previous response.
      */
 
     public String getNextToken() {
@@ -209,15 +258,20 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Paginates results. Set the value of this parameter to <code>NULL</code> on your first call to the
-     * <code>ListMembers</code> operation. For subsequent calls to the operation, fill <code>nextToken</code> in the
-     * request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     * The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the
+     * value of this parameter to <code>NULL</code>.
+     * </p>
+     * <p>
+     * For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value
+     * returned from the previous response.
      * </p>
      * 
      * @param nextToken
-     *        Paginates results. Set the value of this parameter to <code>NULL</code> on your first call to the
-     *        <code>ListMembers</code> operation. For subsequent calls to the operation, fill <code>nextToken</code> in
-     *        the request with the value of <code>nextToken</code> from the previous response to continue listing data.
+     *        The token that is required for pagination. On your first call to the <code>ListMembers</code> operation,
+     *        set the value of this parameter to <code>NULL</code>.</p>
+     *        <p>
+     *        For subsequent calls to the operation, to continue listing data, set the value of this parameter to the
+     *        value returned from the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

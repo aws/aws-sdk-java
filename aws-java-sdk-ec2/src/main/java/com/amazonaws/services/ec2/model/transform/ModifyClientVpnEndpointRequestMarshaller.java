@@ -86,6 +86,10 @@ public class ModifyClientVpnEndpointRequestMarshaller implements Marshaller<Requ
             }
         }
 
+        if (modifyClientVpnEndpointRequest.getVpnPort() != null) {
+            request.addParameter("VpnPort", StringUtils.fromInteger(modifyClientVpnEndpointRequest.getVpnPort()));
+        }
+
         if (modifyClientVpnEndpointRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(modifyClientVpnEndpointRequest.getDescription()));
         }

@@ -84,7 +84,7 @@
         {"shape":"TooManyRequestsException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source and triggers the function.</p> <p>For details about each event source type, see the following topics.</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html\">Using AWS Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html\">Using AWS Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html\">Using AWS Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.</p> </li> <li> <p> <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.</p> </li> </ul>"
+      "documentation":"<p>Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source and triggers the function.</p> <p>For details about each event source type, see the following topics.</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html\">Using AWS Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html\">Using AWS Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html\">Using AWS Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.</p> </li> <li> <p> <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p> </li> </ul>"
     },
     "CreateFunction":{
       "name":"CreateFunction",
@@ -301,7 +301,7 @@
         {"shape":"TooManyRequestsException"},
         {"shape":"ServiceException"}
       ],
-      "documentation":"<p>Returns details about the concurrency configuration for a function. To set a concurrency limit for a function, use <a>PutFunctionConcurrency</a>.</p>"
+      "documentation":"<p>Returns details about the reserved concurrency configuration for a function. To set a concurrency limit for a function, use <a>PutFunctionConcurrency</a>.</p>"
     },
     "GetFunctionConfiguration":{
       "name":"GetFunctionConfiguration",
@@ -541,7 +541,7 @@
         {"shape":"TooManyRequestsException"},
         {"shape":"InvalidParameterValueException"}
       ],
-      "documentation":"<p>Returns a list of Lambda functions, with the version-specific configuration of each.</p> <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.</p>"
+      "documentation":"<p>Returns a list of Lambda functions, with the version-specific configuration of each. Lambda returns up to 50 functions per call.</p> <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.</p>"
     },
     "ListLayerVersions":{
       "name":"ListLayerVersions",
@@ -624,7 +624,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Returns a list of <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html\">versions</a>, with the version-specific configuration of each. </p>"
+      "documentation":"<p>Returns a list of <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html\">versions</a>, with the version-specific configuration of each. Lambda returns up to 50 versions per call.</p>"
     },
     "PublishLayerVersion":{
       "name":"PublishLayerVersion",
@@ -697,7 +697,7 @@
         {"shape":"InvalidParameterValueException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Configures options for <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html\">asynchronous invocation</a> on a function, version, or alias.</p> <p>By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events in a queue for up to six hours. When an event fails all processing attempts or stays in the asynchronous invocation queue for too long, Lambda discards it. To retain discarded events, configure a dead-letter queue with <a>UpdateFunctionConfiguration</a>.</p>"
+      "documentation":"<p>Configures options for <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html\">asynchronous invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without affecting existing settings for other options, use <a>PutFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events in a queue for up to six hours. When an event fails all processing attempts or stays in the asynchronous invocation queue for too long, Lambda discards it. To retain discarded events, configure a dead-letter queue with <a>UpdateFunctionConfiguration</a>.</p> <p>To send an invocation record to a queue, topic, function, or event bus, specify a <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations\">destination</a>. You can configure separate destinations for successful invocations (on-success) and events that fail all processing attempts (on-failure). You can configure destinations in addition to or instead of a dead-letter queue.</p>"
     },
     "PutProvisionedConcurrencyConfig":{
       "name":"PutProvisionedConcurrencyConfig",
@@ -763,7 +763,8 @@
         {"shape":"ServiceException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidParameterValueException"},
-        {"shape":"TooManyRequestsException"}
+        {"shape":"TooManyRequestsException"},
+        {"shape":"ResourceConflictException"}
       ],
       "documentation":"<p>Adds <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/tagging.html\">tags</a> to a function.</p>"
     },
@@ -779,7 +780,8 @@
         {"shape":"ServiceException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidParameterValueException"},
-        {"shape":"TooManyRequestsException"}
+        {"shape":"TooManyRequestsException"},
+        {"shape":"ResourceConflictException"}
       ],
       "documentation":"<p>Removes <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/tagging.html\">tags</a> from a function.</p>"
     },
@@ -819,7 +821,7 @@
         {"shape":"ResourceConflictException"},
         {"shape":"ResourceInUseException"}
       ],
-      "documentation":"<p>Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and resume later from the same location.</p> <p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.</p> </li> <li> <p> <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.</p> </li> </ul>"
+      "documentation":"<p>Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and resume later from the same location.</p> <p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.</p> </li> <li> <p> <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.</p> </li> <li> <p> <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p> </li> </ul>"
     },
     "UpdateFunctionCode":{
       "name":"UpdateFunctionCode",
@@ -1785,7 +1787,7 @@
         },
         "LastUpdateStatus":{
           "shape":"LastUpdateStatus",
-          "documentation":"<p>The status of the last update that was performed on the function.</p>"
+          "documentation":"<p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>"
         },
         "LastUpdateStatusReason":{
           "shape":"LastUpdateStatusReason",
@@ -2303,7 +2305,7 @@
         },
         "FunctionError":{
           "shape":"String",
-          "documentation":"<p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p> <ul> <li> <p> <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory or timed out.</p> </li> </ul>",
+          "documentation":"<p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>",
           "location":"header",
           "locationName":"X-Amz-Function-Error"
         },
@@ -2426,7 +2428,10 @@
         "EniLimitExceeded",
         "InsufficientRolePermissions",
         "InvalidConfiguration",
-        "InternalError"
+        "InternalError",
+        "SubnetOutOfIPAddresses",
+        "InvalidSubnet",
+        "InvalidSecurityGroup"
       ]
     },
     "Layer":{
@@ -2705,7 +2710,7 @@
       "members":{
         "MasterRegion":{
           "shape":"MasterRegion",
-          "documentation":"<p>For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>",
+          "documentation":"<p>For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>",
           "location":"querystring",
           "locationName":"MasterRegion"
         },
@@ -2723,7 +2728,7 @@
         },
         "MaxItems":{
           "shape":"MaxListItems",
-          "documentation":"<p>Specify a value between 1 and 50 to limit the number of functions in the response.</p>",
+          "documentation":"<p>The maximum number of functions to return.</p>",
           "location":"querystring",
           "locationName":"MaxItems"
         }
@@ -2898,7 +2903,7 @@
         },
         "MaxItems":{
           "shape":"MaxListItems",
-          "documentation":"<p>Limit the number of versions that are returned.</p>",
+          "documentation":"<p>The maximum number of versions to return.</p>",
           "location":"querystring",
           "locationName":"MaxItems"
         }
@@ -3482,6 +3487,7 @@
         "nodejs4.3-edge",
         "go1.x",
         "ruby2.5",
+        "ruby2.7",
         "provided"
       ]
     },
@@ -3545,7 +3551,9 @@
         "InsufficientRolePermissions",
         "InvalidConfiguration",
         "InternalError",
-        "SubnetOutOfIPAddresses"
+        "SubnetOutOfIPAddresses",
+        "InvalidSubnet",
+        "InvalidSecurityGroup"
       ]
     },
     "StatementId":{
@@ -3641,7 +3649,7 @@
           "documentation":"<p>The tracing mode.</p>"
         }
       },
-      "documentation":"<p>The function's AWS X-Ray tracing configuration.</p>"
+      "documentation":"<p>The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>"
     },
     "TracingConfigResponse":{
       "type":"structure",

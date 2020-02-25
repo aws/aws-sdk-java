@@ -48,13 +48,13 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
     private String documentVersion;
     /**
      * <p>
-     * The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     * The status of the execution.
      * </p>
      */
     private String automationExecutionStatus;
     /**
      * <p>
-     * The time the execution started.&gt;
+     * The time the execution started.
      * </p>
      */
     private java.util.Date executionStartTime;
@@ -286,11 +286,11 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     * The status of the execution.
      * </p>
      * 
      * @param automationExecutionStatus
-     *        The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     *        The status of the execution.
      * @see AutomationExecutionStatus
      */
 
@@ -300,10 +300,10 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     * The status of the execution.
      * </p>
      * 
-     * @return The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     * @return The status of the execution.
      * @see AutomationExecutionStatus
      */
 
@@ -313,11 +313,11 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     * The status of the execution.
      * </p>
      * 
      * @param automationExecutionStatus
-     *        The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     *        The status of the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionStatus
      */
@@ -329,11 +329,11 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     * The status of the execution.
      * </p>
      * 
      * @param automationExecutionStatus
-     *        The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     *        The status of the execution.
      * @see AutomationExecutionStatus
      */
 
@@ -343,11 +343,11 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     * The status of the execution.
      * </p>
      * 
      * @param automationExecutionStatus
-     *        The status of the execution. Valid values include: Running, Succeeded, Failed, Timed out, or Cancelled.
+     *        The status of the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionStatus
      */
@@ -359,11 +359,11 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The time the execution started.&gt;
+     * The time the execution started.
      * </p>
      * 
      * @param executionStartTime
-     *        The time the execution started.&gt;
+     *        The time the execution started.
      */
 
     public void setExecutionStartTime(java.util.Date executionStartTime) {
@@ -372,10 +372,10 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The time the execution started.&gt;
+     * The time the execution started.
      * </p>
      * 
-     * @return The time the execution started.&gt;
+     * @return The time the execution started.
      */
 
     public java.util.Date getExecutionStartTime() {
@@ -384,11 +384,11 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The time the execution started.&gt;
+     * The time the execution started.
      * </p>
      * 
      * @param executionStartTime
-     *        The time the execution started.&gt;
+     *        The time the execution started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

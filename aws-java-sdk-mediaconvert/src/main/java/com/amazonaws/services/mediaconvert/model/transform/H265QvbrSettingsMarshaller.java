@@ -31,6 +31,8 @@ public class H265QvbrSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxAverageBitrate").build();
     private static final MarshallingInfo<Integer> QVBRQUALITYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qvbrQualityLevel").build();
+    private static final MarshallingInfo<Double> QVBRQUALITYLEVELFINETUNE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qvbrQualityLevelFineTune").build();
 
     private static final H265QvbrSettingsMarshaller instance = new H265QvbrSettingsMarshaller();
 
@@ -50,6 +52,7 @@ public class H265QvbrSettingsMarshaller {
         try {
             protocolMarshaller.marshall(h265QvbrSettings.getMaxAverageBitrate(), MAXAVERAGEBITRATE_BINDING);
             protocolMarshaller.marshall(h265QvbrSettings.getQvbrQualityLevel(), QVBRQUALITYLEVEL_BINDING);
+            protocolMarshaller.marshall(h265QvbrSettings.getQvbrQualityLevelFineTune(), QVBRQUALITYLEVELFINETUNE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

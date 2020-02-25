@@ -61,6 +61,34 @@ public class DescribePublicIpv4PoolsRequestMarshaller implements Marshaller<Requ
             request.addParameter("MaxResults", StringUtils.fromInteger(describePublicIpv4PoolsRequest.getMaxResults()));
         }
 
+        com.amazonaws.internal.SdkInternalList<Filter> describePublicIpv4PoolsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePublicIpv4PoolsRequest
+                .getFilters();
+        if (!describePublicIpv4PoolsRequestFiltersList.isEmpty() || !describePublicIpv4PoolsRequestFiltersList.isAutoConstruct()) {
+            int filtersListIndex = 1;
+
+            for (Filter describePublicIpv4PoolsRequestFiltersListValue : describePublicIpv4PoolsRequestFiltersList) {
+
+                if (describePublicIpv4PoolsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name",
+                            StringUtils.fromString(describePublicIpv4PoolsRequestFiltersListValue.getName()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describePublicIpv4PoolsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
+                    int valuesListIndex = 1;
+
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+                filtersListIndex++;
+            }
+        }
+
         return request;
     }
 

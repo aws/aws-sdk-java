@@ -91,6 +91,10 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                     graphqlApi.setAdditionalAuthenticationProviders(new ListUnmarshaller<AdditionalAuthenticationProvider>(
                             AdditionalAuthenticationProviderJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("xrayEnabled", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setXrayEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

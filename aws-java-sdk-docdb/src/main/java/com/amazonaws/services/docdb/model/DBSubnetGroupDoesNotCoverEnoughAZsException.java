@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability
- * Zone.
+ * Subnets in the subnet group should cover at least two Availability Zones unless there is only one Availability Zone.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

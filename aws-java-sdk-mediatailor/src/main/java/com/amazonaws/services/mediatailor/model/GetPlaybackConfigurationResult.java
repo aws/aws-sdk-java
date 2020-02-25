@@ -65,6 +65,12 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private String name;
     /**
      * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     */
+    private Integer personalizationThresholdSeconds;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the playback configuration.
      * </p>
      */
@@ -373,6 +379,46 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     public GetPlaybackConfigurationResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     */
+
+    public void setPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        this.personalizationThresholdSeconds = personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @return The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     */
+
+    public Integer getPersonalizationThresholdSeconds() {
+        return this.personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlaybackConfigurationResult withPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        setPersonalizationThresholdSeconds(personalizationThresholdSeconds);
         return this;
     }
 
@@ -743,6 +789,8 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("LivePreRollConfiguration: ").append(getLivePreRollConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPersonalizationThresholdSeconds() != null)
+            sb.append("PersonalizationThresholdSeconds: ").append(getPersonalizationThresholdSeconds()).append(",");
         if (getPlaybackConfigurationArn() != null)
             sb.append("PlaybackConfigurationArn: ").append(getPlaybackConfigurationArn()).append(",");
         if (getPlaybackEndpointPrefix() != null)
@@ -795,6 +843,11 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPersonalizationThresholdSeconds() == null ^ this.getPersonalizationThresholdSeconds() == null)
+            return false;
+        if (other.getPersonalizationThresholdSeconds() != null
+                && other.getPersonalizationThresholdSeconds().equals(this.getPersonalizationThresholdSeconds()) == false)
+            return false;
         if (other.getPlaybackConfigurationArn() == null ^ this.getPlaybackConfigurationArn() == null)
             return false;
         if (other.getPlaybackConfigurationArn() != null && other.getPlaybackConfigurationArn().equals(this.getPlaybackConfigurationArn()) == false)
@@ -838,6 +891,7 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPersonalizationThresholdSeconds() == null) ? 0 : getPersonalizationThresholdSeconds().hashCode());
         hashCode = prime * hashCode + ((getPlaybackConfigurationArn() == null) ? 0 : getPlaybackConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getPlaybackEndpointPrefix() == null) ? 0 : getPlaybackEndpointPrefix().hashCode());
         hashCode = prime * hashCode + ((getSessionInitializationEndpointPrefix() == null) ? 0 : getSessionInitializationEndpointPrefix().hashCode());

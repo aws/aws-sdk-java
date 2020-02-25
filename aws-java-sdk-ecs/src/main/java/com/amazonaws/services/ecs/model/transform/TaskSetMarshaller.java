@@ -72,6 +72,8 @@ public class TaskSetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stabilityStatus").build();
     private static final MarshallingInfo<java.util.Date> STABILITYSTATUSAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stabilityStatusAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final TaskSetMarshaller instance = new TaskSetMarshaller();
 
@@ -111,6 +113,7 @@ public class TaskSetMarshaller {
             protocolMarshaller.marshall(taskSet.getScale(), SCALE_BINDING);
             protocolMarshaller.marshall(taskSet.getStabilityStatus(), STABILITYSTATUS_BINDING);
             protocolMarshaller.marshall(taskSet.getStabilityStatusAt(), STABILITYSTATUSAT_BINDING);
+            protocolMarshaller.marshall(taskSet.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

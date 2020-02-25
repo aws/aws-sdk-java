@@ -25,23 +25,23 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      */
     private java.util.List<String> productSubscriptions;
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * 
-     * @return A list of ARNs for the resources that represent your subscriptions to products.
+     * @return The list of ARNs for the resources that represent your subscriptions to products.
      */
 
     public java.util.List<String> getProductSubscriptions() {
@@ -50,11 +50,11 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * 
      * @param productSubscriptions
-     *        A list of ARNs for the resources that represent your subscriptions to products.
+     *        The list of ARNs for the resources that represent your subscriptions to products.
      */
 
     public void setProductSubscriptions(java.util.Collection<String> productSubscriptions) {
@@ -68,7 +68,7 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param productSubscriptions
-     *        A list of ARNs for the resources that represent your subscriptions to products.
+     *        The list of ARNs for the resources that represent your subscriptions to products.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of ARNs for the resources that represent your subscriptions to products.
+     * The list of ARNs for the resources that represent your subscriptions to products.
      * </p>
      * 
      * @param productSubscriptions
-     *        A list of ARNs for the resources that represent your subscriptions to products.
+     *        The list of ARNs for the resources that represent your subscriptions to products.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token that is required for pagination.
+     *        The pagination token to use to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
-     * @return The token that is required for pagination.
+     * @return The pagination token to use to request the next page of results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListEnabledProductsForImportResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token that is required for pagination.
+     *        The pagination token to use to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,7 +52,7 @@ import com.amazonaws.services.cloudhsmv2.model.transform.*;
  * <p>
  * <p>
  * For more information about AWS CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a> and the <a
- * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>.
+ * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -80,6 +80,9 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmInternalFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmInternalFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmTagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmTagExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmServiceExceptionUnmarshaller.getInstance()))
@@ -147,17 +150,18 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param copyBackupToRegionRequest
      * @return Result of the CopyBackupToRegion operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.CopyBackupToRegion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
      *      API Documentation</a>
@@ -211,17 +215,18 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param createClusterRequest
      * @return Result of the CreateCluster operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -334,23 +339,23 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request.
-     * For more information on restoring a backup, see <a>RestoreBackup</a>
+     * Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is
+     * made. For more information on restoring a backup, see <a>RestoreBackup</a>.
      * </p>
      * 
      * @param deleteBackupRequest
      * @return Result of the DeleteBackup operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
      * @sample AWSCloudHSMV2.DeleteBackup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup" target="_top">AWS API
      *      Documentation</a>
@@ -406,17 +411,18 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param deleteClusterRequest
      * @return Result of the DeleteCluster operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -542,17 +548,18 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param describeBackupsRequest
      * @return Result of the DescribeBackups operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.DescribeBackups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups" target="_top">AWS API
      *      Documentation</a>
@@ -612,15 +619,16 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param describeClustersRequest
      * @return Result of the DescribeClusters operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.DescribeClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters" target="_top">AWS
      *      API Documentation</a>
@@ -676,17 +684,17 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param initializeClusterRequest
      * @return Result of the InitializeCluster operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
      * @sample AWSCloudHSMV2.InitializeCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster" target="_top">AWS
      *      API Documentation</a>
@@ -746,17 +754,18 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param listTagsRequest
      * @return Result of the ListTags operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags" target="_top">AWS API
      *      Documentation</a>
@@ -805,23 +814,23 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information
+     * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information
      * on deleting a backup, see <a>DeleteBackup</a>.
      * </p>
      * 
      * @param restoreBackupRequest
      * @return Result of the RestoreBackup operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
      * @sample AWSCloudHSMV2.RestoreBackup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup" target="_top">AWS API
      *      Documentation</a>
@@ -875,17 +884,18 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -939,17 +949,18 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws CloudHsmInternalFailureException
-     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
-     * @throws CloudHsmServiceException
-     *         The request was rejected because an error occurred.
-     * @throws CloudHsmResourceNotFoundException
-     *         The request was rejected because it refers to a resource that cannot be found.
-     * @throws CloudHsmInvalidRequestException
-     *         The request was rejected because it is not a valid request.
      * @throws CloudHsmAccessDeniedException
      *         The request was rejected because the requester does not have permission to perform the requested
      *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmTagException
      * @sample AWSCloudHSMV2.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource" target="_top">AWS API
      *      Documentation</a>

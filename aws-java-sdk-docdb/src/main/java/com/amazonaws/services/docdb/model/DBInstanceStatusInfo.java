@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Provides a list of status information for a DB instance.
+ * Provides a list of status information for an instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBInstanceStatusInfo" target="_top">AWS API
@@ -41,8 +41,8 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
     private Boolean normal;
     /**
      * <p>
-     * Status of the DB instance. For a <code>StatusType</code> of read replica, the values can be
-     * <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
+     * Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>
+     * , error, <code>stopped</code>, or <code>terminated</code>.
      * </p>
      */
     private String status;
@@ -156,12 +156,12 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the DB instance. For a <code>StatusType</code> of read replica, the values can be
-     * <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
+     * Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>
+     * , error, <code>stopped</code>, or <code>terminated</code>.
      * </p>
      * 
      * @param status
-     *        Status of the DB instance. For a <code>StatusType</code> of read replica, the values can be
+     *        Status of the instance. For a <code>StatusType</code> of read replica, the values can be
      *        <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
      */
 
@@ -171,11 +171,11 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the DB instance. For a <code>StatusType</code> of read replica, the values can be
-     * <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
+     * Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>
+     * , error, <code>stopped</code>, or <code>terminated</code>.
      * </p>
      * 
-     * @return Status of the DB instance. For a <code>StatusType</code> of read replica, the values can be
+     * @return Status of the instance. For a <code>StatusType</code> of read replica, the values can be
      *         <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
      */
 
@@ -185,12 +185,12 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the DB instance. For a <code>StatusType</code> of read replica, the values can be
-     * <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
+     * Status of the instance. For a <code>StatusType</code> of read replica, the values can be <code>replicating</code>
+     * , error, <code>stopped</code>, or <code>terminated</code>.
      * </p>
      * 
      * @param status
-     *        Status of the DB instance. For a <code>StatusType</code> of read replica, the values can be
+     *        Status of the instance. For a <code>StatusType</code> of read replica, the values can be
      *        <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

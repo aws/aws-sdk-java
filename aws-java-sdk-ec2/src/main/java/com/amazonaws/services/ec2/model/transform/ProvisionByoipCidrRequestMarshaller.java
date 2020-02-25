@@ -56,6 +56,10 @@ public class ProvisionByoipCidrRequestMarshaller implements Marshaller<Request<P
             }
         }
 
+        if (provisionByoipCidrRequest.getPubliclyAdvertisable() != null) {
+            request.addParameter("PubliclyAdvertisable", StringUtils.fromBoolean(provisionByoipCidrRequest.getPubliclyAdvertisable()));
+        }
+
         if (provisionByoipCidrRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(provisionByoipCidrRequest.getDescription()));
         }

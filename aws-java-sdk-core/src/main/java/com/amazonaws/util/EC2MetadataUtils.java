@@ -20,6 +20,8 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.InstanceMetadataServiceResourceFetcher;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
+import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -397,25 +399,15 @@ public class EC2MetadataUtils {
         List<String> items;
         try {
             String hostAddress = getHostAddressForEC2MetadataService();
-            String response = InstanceMetadataServiceResourceFetcher.getInstance().readResource(new URI(hostAddress + path));
+            String response = InstanceMetadataServiceResourceFetcher.getInstance().readResource(new URI(hostAddress + path), EC2MetadataUtilsRetryPolicy.INSTANCE);
             if (slurp)
                 items = Collections.singletonList(response);
             else
                 items = Arrays.asList(response.split("\n"));
             return items;
-        } catch (AmazonClientException ace) {
+        } catch (Exception ace) {
             log.warn("Unable to retrieve the requested metadata (" + path + "). " + ace.getMessage(), ace);
             return null;
-        } catch (Exception e) {
-            // Retry on any other exceptions
-            int pause = (int) (Math.pow(2, DEFAULT_QUERY_RETRIES - tries) * MINIMUM_RETRY_WAIT_TIME_MILLISECONDS);
-            try {
-                Thread.sleep(pause < MINIMUM_RETRY_WAIT_TIME_MILLISECONDS ? MINIMUM_RETRY_WAIT_TIME_MILLISECONDS
-                        : pause);
-            } catch (InterruptedException e1) {
-                Thread.currentThread().interrupt();
-            }
-            return getItems(path, tries - 1, slurp);
         }
     }
 
@@ -750,6 +742,32 @@ public class EC2MetadataUtils {
             } else {
                 return new LinkedList<String>();
             }
+        }
+    }
+
+    private static final class EC2MetadataUtilsRetryPolicy implements CredentialsEndpointRetryPolicy {
+
+        private static final EC2MetadataUtilsRetryPolicy INSTANCE = new EC2MetadataUtilsRetryPolicy();
+
+        @Override
+        public boolean shouldRetry(int retriesAttempted, CredentialsEndpointRetryParameters retryParams) {
+            if (retriesAttempted >= DEFAULT_QUERY_RETRIES) {
+                return false;
+            }
+
+            if (retryParams.getException() instanceof AmazonClientException) {
+                return false;
+            }
+
+            // Retry on any other exceptions
+            int pause = (int) (Math.pow(2, DEFAULT_QUERY_RETRIES - retriesAttempted) * MINIMUM_RETRY_WAIT_TIME_MILLISECONDS);
+            try {
+                Thread.sleep(Math.max(pause, MINIMUM_RETRY_WAIT_TIME_MILLISECONDS));
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+
+            return true;
         }
     }
 }

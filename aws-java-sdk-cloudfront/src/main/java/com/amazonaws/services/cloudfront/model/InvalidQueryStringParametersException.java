@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Query string parameters specified in the response body are not valid.
+ * The query string parameters specified are not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

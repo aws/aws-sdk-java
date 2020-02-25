@@ -70,6 +70,42 @@ public class CreateVpcEndpointServiceConfigurationRequestMarshaller implements
             request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointServiceConfigurationRequest.getClientToken()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createVpcEndpointServiceConfigurationRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createVpcEndpointServiceConfigurationRequest
+                .getTagSpecifications();
+        if (!createVpcEndpointServiceConfigurationRequestTagSpecificationsList.isEmpty()
+                || !createVpcEndpointServiceConfigurationRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createVpcEndpointServiceConfigurationRequestTagSpecificationsListValue : createVpcEndpointServiceConfigurationRequestTagSpecificationsList) {
+
+                if (createVpcEndpointServiceConfigurationRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createVpcEndpointServiceConfigurationRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createVpcEndpointServiceConfigurationRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         return request;
     }
 

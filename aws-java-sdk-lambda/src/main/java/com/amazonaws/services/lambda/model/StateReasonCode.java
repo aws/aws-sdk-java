@@ -27,7 +27,9 @@ public enum StateReasonCode {
     InsufficientRolePermissions("InsufficientRolePermissions"),
     InvalidConfiguration("InvalidConfiguration"),
     InternalError("InternalError"),
-    SubnetOutOfIPAddresses("SubnetOutOfIPAddresses");
+    SubnetOutOfIPAddresses("SubnetOutOfIPAddresses"),
+    InvalidSubnet("InvalidSubnet"),
+    InvalidSecurityGroup("InvalidSecurityGroup");
 
     private String value;
 

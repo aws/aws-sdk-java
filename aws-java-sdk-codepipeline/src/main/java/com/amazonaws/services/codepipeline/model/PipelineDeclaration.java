@@ -43,7 +43,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     private String roleArn;
     /**
      * <p>
-     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * Represents information about the S3 bucket where artifacts are stored for the pipeline.
      * </p>
      * <note>
      * <p>
@@ -168,7 +168,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * Represents information about the S3 bucket where artifacts are stored for the pipeline.
      * </p>
      * <note>
      * <p>
@@ -178,7 +178,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param artifactStore
-     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *        Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
      *        <p>
      *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
      *        you cannot use both. If you create a cross-region action in your pipeline, you must use
@@ -192,7 +192,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * Represents information about the S3 bucket where artifacts are stored for the pipeline.
      * </p>
      * <note>
      * <p>
@@ -201,7 +201,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     * @return Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
      *         <p>
      *         You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
      *         you cannot use both. If you create a cross-region action in your pipeline, you must use
@@ -215,7 +215,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * Represents information about the S3 bucket where artifacts are stored for the pipeline.
      * </p>
      * <note>
      * <p>
@@ -225,7 +225,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param artifactStore
-     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *        Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
      *        <p>
      *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
      *        you cannot use both. If you create a cross-region action in your pipeline, you must use

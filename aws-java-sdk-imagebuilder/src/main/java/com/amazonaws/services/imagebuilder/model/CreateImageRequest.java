@@ -27,7 +27,7 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested and assessed.
+     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.
      * </p>
      */
     private String imageRecipeArn;
@@ -66,11 +66,11 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested and assessed.
+     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.
      * </p>
      * 
      * @param imageRecipeArn
-     *        The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested and
+     *        The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and
      *        assessed.
      */
 
@@ -80,10 +80,10 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested and assessed.
+     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested and
+     * @return The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and
      *         assessed.
      */
 
@@ -93,11 +93,11 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested and assessed.
+     * The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.
      * </p>
      * 
      * @param imageRecipeArn
-     *        The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested and
+     *        The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and
      *        assessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

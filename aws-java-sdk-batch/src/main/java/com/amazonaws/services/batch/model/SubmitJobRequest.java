@@ -60,8 +60,9 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.List<JobDependency> dependsOn;
     /**
      * <p>
-     * The job definition used by this job. This value can be either a <code>name:revision</code> or the Amazon Resource
-     * Name (ARN) for the job definition.
+     * The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
+     * the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then
+     * the latest active revision is used.
      * </p>
      */
     private String jobDefinition;
@@ -363,13 +364,15 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The job definition used by this job. This value can be either a <code>name:revision</code> or the Amazon Resource
-     * Name (ARN) for the job definition.
+     * The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
+     * the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then
+     * the latest active revision is used.
      * </p>
      * 
      * @param jobDefinition
-     *        The job definition used by this job. This value can be either a <code>name:revision</code> or the Amazon
-     *        Resource Name (ARN) for the job definition.
+     *        The job definition used by this job. This value can be one of <code>name</code>,
+     *        <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code>
+     *        is specified without a revision then the latest active revision is used.
      */
 
     public void setJobDefinition(String jobDefinition) {
@@ -378,12 +381,14 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The job definition used by this job. This value can be either a <code>name:revision</code> or the Amazon Resource
-     * Name (ARN) for the job definition.
+     * The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
+     * the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then
+     * the latest active revision is used.
      * </p>
      * 
-     * @return The job definition used by this job. This value can be either a <code>name:revision</code> or the Amazon
-     *         Resource Name (ARN) for the job definition.
+     * @return The job definition used by this job. This value can be one of <code>name</code>,
+     *         <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If
+     *         <code>name</code> is specified without a revision then the latest active revision is used.
      */
 
     public String getJobDefinition() {
@@ -392,13 +397,15 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The job definition used by this job. This value can be either a <code>name:revision</code> or the Amazon Resource
-     * Name (ARN) for the job definition.
+     * The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
+     * the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then
+     * the latest active revision is used.
      * </p>
      * 
      * @param jobDefinition
-     *        The job definition used by this job. This value can be either a <code>name:revision</code> or the Amazon
-     *        Resource Name (ARN) for the job definition.
+     *        The job definition used by this job. This value can be one of <code>name</code>,
+     *        <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code>
+     *        is specified without a revision then the latest active revision is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

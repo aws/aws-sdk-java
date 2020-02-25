@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object containing the parameters for a <code>Config</code>.
+ * Object containing the parameters of a <code>Config</code>.
  * </p>
  * <p>
  * See the subtype definitions for what each type of <code>Config</code> contains.

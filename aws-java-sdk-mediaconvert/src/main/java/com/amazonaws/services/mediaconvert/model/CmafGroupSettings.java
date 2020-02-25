@@ -108,6 +108,14 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     private String writeDashManifest;
     /** When set to ENABLED, an Apple HLS manifest will be generated for this output. */
     private String writeHlsManifest;
+    /**
+     * When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH
+     * manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment
+     * durations in your DASH manifest are approximate. The segment duration information appears in the duration
+     * attribute of the SegmentTemplate element.
+     */
+    private String writeSegmentTimelineInRepresentation;
 
     /**
      * By default, the service creates one top-level .m3u8 HLS manifest and one top -level .mpd DASH manifest for each
@@ -1090,6 +1098,89 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH
+     * manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment
+     * durations in your DASH manifest are approximate. The segment duration information appears in the duration
+     * attribute of the SegmentTemplate element.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your
+     *        DASH manifest shows precise segment durations. The segment duration information appears inside the
+     *        SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *        enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *        appears in the duration attribute of the SegmentTemplate element.
+     * @see CmafWriteSegmentTimelineInRepresentation
+     */
+
+    public void setWriteSegmentTimelineInRepresentation(String writeSegmentTimelineInRepresentation) {
+        this.writeSegmentTimelineInRepresentation = writeSegmentTimelineInRepresentation;
+    }
+
+    /**
+     * When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH
+     * manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment
+     * durations in your DASH manifest are approximate. The segment duration information appears in the duration
+     * attribute of the SegmentTemplate element.
+     * 
+     * @return When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your
+     *         DASH manifest shows precise segment durations. The segment duration information appears inside the
+     *         SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *         enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *         appears in the duration attribute of the SegmentTemplate element.
+     * @see CmafWriteSegmentTimelineInRepresentation
+     */
+
+    public String getWriteSegmentTimelineInRepresentation() {
+        return this.writeSegmentTimelineInRepresentation;
+    }
+
+    /**
+     * When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH
+     * manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment
+     * durations in your DASH manifest are approximate. The segment duration information appears in the duration
+     * attribute of the SegmentTemplate element.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your
+     *        DASH manifest shows precise segment durations. The segment duration information appears inside the
+     *        SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *        enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *        appears in the duration attribute of the SegmentTemplate element.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafWriteSegmentTimelineInRepresentation
+     */
+
+    public CmafGroupSettings withWriteSegmentTimelineInRepresentation(String writeSegmentTimelineInRepresentation) {
+        setWriteSegmentTimelineInRepresentation(writeSegmentTimelineInRepresentation);
+        return this;
+    }
+
+    /**
+     * When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH
+     * manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment
+     * durations in your DASH manifest are approximate. The segment duration information appears in the duration
+     * attribute of the SegmentTemplate element.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your
+     *        DASH manifest shows precise segment durations. The segment duration information appears inside the
+     *        SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *        enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *        appears in the duration attribute of the SegmentTemplate element.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafWriteSegmentTimelineInRepresentation
+     */
+
+    public CmafGroupSettings withWriteSegmentTimelineInRepresentation(CmafWriteSegmentTimelineInRepresentation writeSegmentTimelineInRepresentation) {
+        this.writeSegmentTimelineInRepresentation = writeSegmentTimelineInRepresentation.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1136,7 +1227,9 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         if (getWriteDashManifest() != null)
             sb.append("WriteDashManifest: ").append(getWriteDashManifest()).append(",");
         if (getWriteHlsManifest() != null)
-            sb.append("WriteHlsManifest: ").append(getWriteHlsManifest());
+            sb.append("WriteHlsManifest: ").append(getWriteHlsManifest()).append(",");
+        if (getWriteSegmentTimelineInRepresentation() != null)
+            sb.append("WriteSegmentTimelineInRepresentation: ").append(getWriteSegmentTimelineInRepresentation());
         sb.append("}");
         return sb.toString();
     }
@@ -1223,6 +1316,11 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getWriteHlsManifest() != null && other.getWriteHlsManifest().equals(this.getWriteHlsManifest()) == false)
             return false;
+        if (other.getWriteSegmentTimelineInRepresentation() == null ^ this.getWriteSegmentTimelineInRepresentation() == null)
+            return false;
+        if (other.getWriteSegmentTimelineInRepresentation() != null
+                && other.getWriteSegmentTimelineInRepresentation().equals(this.getWriteSegmentTimelineInRepresentation()) == false)
+            return false;
         return true;
     }
 
@@ -1249,6 +1347,7 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getStreamInfResolution() == null) ? 0 : getStreamInfResolution().hashCode());
         hashCode = prime * hashCode + ((getWriteDashManifest() == null) ? 0 : getWriteDashManifest().hashCode());
         hashCode = prime * hashCode + ((getWriteHlsManifest() == null) ? 0 : getWriteHlsManifest().hashCode());
+        hashCode = prime * hashCode + ((getWriteSegmentTimelineInRepresentation() == null) ? 0 : getWriteSegmentTimelineInRepresentation().hashCode());
         return hashCode;
     }
 

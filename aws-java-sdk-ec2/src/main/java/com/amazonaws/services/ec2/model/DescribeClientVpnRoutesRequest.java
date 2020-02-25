@@ -36,6 +36,24 @@ public class DescribeClientVpnRoutesRequest extends AmazonWebServiceRequest impl
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the route destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     * <code>add-route</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -96,8 +114,43 @@ public class DescribeClientVpnRoutesRequest extends AmazonWebServiceRequest impl
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the route destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     * <code>add-route</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters. Filter names and values are case-sensitive.
+     * @return One or more filters. Filter names and values are case-sensitive.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>destination-cidr</code> - The CIDR of the route destination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     *         <code>add-route</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -111,9 +164,44 @@ public class DescribeClientVpnRoutesRequest extends AmazonWebServiceRequest impl
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the route destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     * <code>add-route</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>destination-cidr</code> - The CIDR of the route destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     *        <code>add-route</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -129,6 +217,24 @@ public class DescribeClientVpnRoutesRequest extends AmazonWebServiceRequest impl
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the route destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     * <code>add-route</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -136,7 +242,24 @@ public class DescribeClientVpnRoutesRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>destination-cidr</code> - The CIDR of the route destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     *        <code>add-route</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,9 +277,44 @@ public class DescribeClientVpnRoutesRequest extends AmazonWebServiceRequest impl
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the route destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     * <code>add-route</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>destination-cidr</code> - The CIDR of the route destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>origin</code> - How the route was associated with the Client VPN endpoint (<code>associate</code> |
+     *        <code>add-route</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-subnet</code> - The ID of the subnet through which traffic is routed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

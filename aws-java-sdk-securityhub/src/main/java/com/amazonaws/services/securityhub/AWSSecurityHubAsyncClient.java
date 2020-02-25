@@ -27,10 +27,10 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Security Hub provides you with a comprehensive view of the security state of your AWS environment and resources. It
- * also provides you with the compliance status of your environment based on CIS AWS Foundations compliance checks.
- * Security Hub collects security data from AWS accounts, services, and integrated third-party products and helps you
- * analyze security trends in your environment to identify the highest priority security issues. For more information
- * about Security Hub, see the <i> <a
+ * also provides you with the compliance status of your environment based on controls from supported standards. Security
+ * Hub collects security data from AWS accounts, services, and integrated third-party products and helps you analyze
+ * security trends in your environment to identify the highest priority security issues. For more information about
+ * Security Hub, see the <i> <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
  * Guide</a> </i>.
  * </p>
@@ -38,28 +38,34 @@ import java.util.concurrent.ExecutorService;
  * When you use operations in the Security Hub API, the requests are executed only in the AWS Region that is currently
  * active or in the specific AWS Region that you specify in your request. Any configuration or settings change that
  * results from the operation is applied only to that Region. To make the same change in other Regions, execute the same
- * command for each Region to apply the change to. For example, if your Region is set to <code>us-west-2</code>, when
- * you use <code>CreateMembers</code> to add a member account to Security Hub, the association of the member account
- * with the master account is created only in the us-west-2 Region. Security Hub must be enabled for the member account
- * in the same Region that the invite was sent from.
+ * command for each Region to apply the change to.
  * </p>
  * <p>
- * The following throttling limits apply to using Security Hub API operations:
+ * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
+ * a member account to Security Hub, the association of the member account with the master account is created only in
+ * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
+ * invitation was sent from.
+ * </p>
+ * <p>
+ * The following throttling limits apply to using Security Hub API operations.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <code>GetFindings</code> - RateLimit of 3 requests per second, and a BurstLimit of 6 requests per second.
+ * <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>UpdateFindings</code> - RateLimit of 1 request per second, and a BurstLimit of 5 requests per second.
+ * <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * All other operations - RateLimit of 10 request per second, and a BurstLimit of 30 requests per second.
+ * All other operations - <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code> of 30 requests per
+ * second.
  * </p>
  * </li>
  * </ul>
@@ -576,6 +582,72 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeDescribeProducts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStandardsResult> describeStandardsAsync(DescribeStandardsRequest request) {
+
+        return describeStandardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStandardsResult> describeStandardsAsync(final DescribeStandardsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStandardsRequest, DescribeStandardsResult> asyncHandler) {
+        final DescribeStandardsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStandardsResult>() {
+            @Override
+            public DescribeStandardsResult call() throws Exception {
+                DescribeStandardsResult result = null;
+
+                try {
+                    result = executeDescribeStandards(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStandardsControlsResult> describeStandardsControlsAsync(DescribeStandardsControlsRequest request) {
+
+        return describeStandardsControlsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStandardsControlsResult> describeStandardsControlsAsync(final DescribeStandardsControlsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStandardsControlsRequest, DescribeStandardsControlsResult> asyncHandler) {
+        final DescribeStandardsControlsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStandardsControlsResult>() {
+            @Override
+            public DescribeStandardsControlsResult call() throws Exception {
+                DescribeStandardsControlsResult result = null;
+
+                try {
+                    result = executeDescribeStandardsControls(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1339,6 +1411,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
 
                 try {
                     result = executeUpdateInsight(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStandardsControlResult> updateStandardsControlAsync(UpdateStandardsControlRequest request) {
+
+        return updateStandardsControlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStandardsControlResult> updateStandardsControlAsync(final UpdateStandardsControlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStandardsControlRequest, UpdateStandardsControlResult> asyncHandler) {
+        final UpdateStandardsControlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStandardsControlResult>() {
+            @Override
+            public UpdateStandardsControlResult call() throws Exception {
+                UpdateStandardsControlResult result = null;
+
+                try {
+                    result = executeUpdateStandardsControl(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

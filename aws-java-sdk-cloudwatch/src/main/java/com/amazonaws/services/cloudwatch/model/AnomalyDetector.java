@@ -58,6 +58,13 @@ public class AnomalyDetector implements Serializable, Cloneable {
      * </p>
      */
     private AnomalyDetectorConfiguration configuration;
+    /**
+     * <p>
+     * The current status of the anomaly detector's training. The possible values are
+     * <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * </p>
+     */
+    private String stateValue;
 
     /**
      * <p>
@@ -299,6 +306,73 @@ public class AnomalyDetector implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current status of the anomaly detector's training. The possible values are
+     * <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * </p>
+     * 
+     * @param stateValue
+     *        The current status of the anomaly detector's training. The possible values are
+     *        <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * @see AnomalyDetectorStateValue
+     */
+
+    public void setStateValue(String stateValue) {
+        this.stateValue = stateValue;
+    }
+
+    /**
+     * <p>
+     * The current status of the anomaly detector's training. The possible values are
+     * <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * </p>
+     * 
+     * @return The current status of the anomaly detector's training. The possible values are
+     *         <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * @see AnomalyDetectorStateValue
+     */
+
+    public String getStateValue() {
+        return this.stateValue;
+    }
+
+    /**
+     * <p>
+     * The current status of the anomaly detector's training. The possible values are
+     * <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * </p>
+     * 
+     * @param stateValue
+     *        The current status of the anomaly detector's training. The possible values are
+     *        <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalyDetectorStateValue
+     */
+
+    public AnomalyDetector withStateValue(String stateValue) {
+        setStateValue(stateValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the anomaly detector's training. The possible values are
+     * <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * </p>
+     * 
+     * @param stateValue
+     *        The current status of the anomaly detector's training. The possible values are
+     *        <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnomalyDetectorStateValue
+     */
+
+    public AnomalyDetector withStateValue(AnomalyDetectorStateValue stateValue) {
+        this.stateValue = stateValue.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -319,7 +393,9 @@ public class AnomalyDetector implements Serializable, Cloneable {
         if (getStat() != null)
             sb.append("Stat: ").append(getStat()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getStateValue() != null)
+            sb.append("StateValue: ").append(getStateValue());
         sb.append("}");
         return sb.toString();
     }
@@ -354,6 +430,10 @@ public class AnomalyDetector implements Serializable, Cloneable {
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getStateValue() == null ^ this.getStateValue() == null)
+            return false;
+        if (other.getStateValue() != null && other.getStateValue().equals(this.getStateValue()) == false)
+            return false;
         return true;
     }
 
@@ -367,6 +447,7 @@ public class AnomalyDetector implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getStat() == null) ? 0 : getStat().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStateValue() == null) ? 0 : getStateValue().hashCode());
         return hashCode;
     }
 

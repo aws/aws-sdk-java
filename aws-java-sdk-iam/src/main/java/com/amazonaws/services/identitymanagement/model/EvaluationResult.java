@@ -75,12 +75,32 @@ public class EvaluationResult implements Serializable, Cloneable {
     private OrganizationsDecisionDetail organizationsDecisionDetail;
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
-     * Differ from Resource-based Policies</a>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is
+     * applied to an IAM entity.
+     * </p>
+     */
+    private PermissionsBoundaryDecisionDetail permissionsBoundaryDecisionDetail;
+    /**
+     * <p>
+     * Additional details about the results of the cross-account evaluation decision. This parameter is populated for
+     * only cross-account simulations. It contains a brief summary of how each policy type contributes to the final
+     * evaluation decision.
+     * </p>
+     * <p>
+     * If the simulation evaluates policies within the same account and includes a resource ARN, then the parameter is
+     * present but the response is empty. If the simulation evaluates policies within the same account and specifies all
+     * resources (<code>*</code>), then the parameter is not returned.
+     * </p>
+     * <p>
+     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
+     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
+     * are evaluated, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies Within a Single Account</a>.
+     * </p>
+     * <p>
+     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * evaluation does not proceed any further and this parameter is not returned.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> evalDecisionDetails;
@@ -494,20 +514,91 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
-     * Differ from Resource-based Policies</a>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is
+     * applied to an IAM entity.
      * </p>
      * 
-     * @return Additional details about the results of the evaluation decision. When there are both IAM policies and
-     *         resource policies, this parameter explains how each set of policies contributes to the final evaluation
-     *         decision. When simulating cross-account access to a resource, both the resource-based policy and the
-     *         caller's IAM policy must grant access. See <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
-     *         Roles Differ from Resource-based Policies</a>
+     * @param permissionsBoundaryDecisionDetail
+     *        Contains information about the effect that a permissions boundary has on a policy simulation when the
+     *        boundary is applied to an IAM entity.
+     */
+
+    public void setPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail permissionsBoundaryDecisionDetail) {
+        this.permissionsBoundaryDecisionDetail = permissionsBoundaryDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is
+     * applied to an IAM entity.
+     * </p>
+     * 
+     * @return Contains information about the effect that a permissions boundary has on a policy simulation when the
+     *         boundary is applied to an IAM entity.
+     */
+
+    public PermissionsBoundaryDecisionDetail getPermissionsBoundaryDecisionDetail() {
+        return this.permissionsBoundaryDecisionDetail;
+    }
+
+    /**
+     * <p>
+     * Contains information about the effect that a permissions boundary has on a policy simulation when the boundary is
+     * applied to an IAM entity.
+     * </p>
+     * 
+     * @param permissionsBoundaryDecisionDetail
+     *        Contains information about the effect that a permissions boundary has on a policy simulation when the
+     *        boundary is applied to an IAM entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EvaluationResult withPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail permissionsBoundaryDecisionDetail) {
+        setPermissionsBoundaryDecisionDetail(permissionsBoundaryDecisionDetail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional details about the results of the cross-account evaluation decision. This parameter is populated for
+     * only cross-account simulations. It contains a brief summary of how each policy type contributes to the final
+     * evaluation decision.
+     * </p>
+     * <p>
+     * If the simulation evaluates policies within the same account and includes a resource ARN, then the parameter is
+     * present but the response is empty. If the simulation evaluates policies within the same account and specifies all
+     * resources (<code>*</code>), then the parameter is not returned.
+     * </p>
+     * <p>
+     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
+     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
+     * are evaluated, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies Within a Single Account</a>.
+     * </p>
+     * <p>
+     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * evaluation does not proceed any further and this parameter is not returned.
+     * </p>
+     * 
+     * @return Additional details about the results of the cross-account evaluation decision. This parameter is
+     *         populated for only cross-account simulations. It contains a brief summary of how each policy type
+     *         contributes to the final evaluation decision.</p>
+     *         <p>
+     *         If the simulation evaluates policies within the same account and includes a resource ARN, then the
+     *         parameter is present but the response is empty. If the simulation evaluates policies within the same
+     *         account and specifies all resources (<code>*</code>), then the parameter is not returned.
+     *         </p>
+     *         <p>
+     *         When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted
+     *         account. The request is allowed only if both evaluations return <code>true</code>. For more information
+     *         about how policies are evaluated, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     *         >Evaluating Policies Within a Single Account</a>.
+     *         </p>
+     *         <p>
+     *         If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
+     *         policy evaluation does not proceed any further and this parameter is not returned.
      */
 
     public java.util.Map<String, String> getEvalDecisionDetails() {
@@ -519,21 +610,46 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
-     * Differ from Resource-based Policies</a>
+     * Additional details about the results of the cross-account evaluation decision. This parameter is populated for
+     * only cross-account simulations. It contains a brief summary of how each policy type contributes to the final
+     * evaluation decision.
+     * </p>
+     * <p>
+     * If the simulation evaluates policies within the same account and includes a resource ARN, then the parameter is
+     * present but the response is empty. If the simulation evaluates policies within the same account and specifies all
+     * resources (<code>*</code>), then the parameter is not returned.
+     * </p>
+     * <p>
+     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
+     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
+     * are evaluated, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies Within a Single Account</a>.
+     * </p>
+     * <p>
+     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * evaluation does not proceed any further and this parameter is not returned.
      * </p>
      * 
      * @param evalDecisionDetails
-     *        Additional details about the results of the evaluation decision. When there are both IAM policies and
-     *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
-     *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
-     *        caller's IAM policy must grant access. See <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
-     *        Roles Differ from Resource-based Policies</a>
+     *        Additional details about the results of the cross-account evaluation decision. This parameter is populated
+     *        for only cross-account simulations. It contains a brief summary of how each policy type contributes to the
+     *        final evaluation decision.</p>
+     *        <p>
+     *        If the simulation evaluates policies within the same account and includes a resource ARN, then the
+     *        parameter is present but the response is empty. If the simulation evaluates policies within the same
+     *        account and specifies all resources (<code>*</code>), then the parameter is not returned.
+     *        </p>
+     *        <p>
+     *        When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted
+     *        account. The request is allowed only if both evaluations return <code>true</code>. For more information
+     *        about how policies are evaluated, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     *        >Evaluating Policies Within a Single Account</a>.
+     *        </p>
+     *        <p>
+     *        If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
+     *        policy evaluation does not proceed any further and this parameter is not returned.
      */
 
     public void setEvalDecisionDetails(java.util.Map<String, String> evalDecisionDetails) {
@@ -542,21 +658,46 @@ public class EvaluationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional details about the results of the evaluation decision. When there are both IAM policies and resource
-     * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
-     * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
-     * grant access. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
-     * Differ from Resource-based Policies</a>
+     * Additional details about the results of the cross-account evaluation decision. This parameter is populated for
+     * only cross-account simulations. It contains a brief summary of how each policy type contributes to the final
+     * evaluation decision.
+     * </p>
+     * <p>
+     * If the simulation evaluates policies within the same account and includes a resource ARN, then the parameter is
+     * present but the response is empty. If the simulation evaluates policies within the same account and specifies all
+     * resources (<code>*</code>), then the parameter is not returned.
+     * </p>
+     * <p>
+     * When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted account.
+     * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
+     * are evaluated, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies Within a Single Account</a>.
+     * </p>
+     * <p>
+     * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
+     * evaluation does not proceed any further and this parameter is not returned.
      * </p>
      * 
      * @param evalDecisionDetails
-     *        Additional details about the results of the evaluation decision. When there are both IAM policies and
-     *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
-     *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
-     *        caller's IAM policy must grant access. See <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
-     *        Roles Differ from Resource-based Policies</a>
+     *        Additional details about the results of the cross-account evaluation decision. This parameter is populated
+     *        for only cross-account simulations. It contains a brief summary of how each policy type contributes to the
+     *        final evaluation decision.</p>
+     *        <p>
+     *        If the simulation evaluates policies within the same account and includes a resource ARN, then the
+     *        parameter is present but the response is empty. If the simulation evaluates policies within the same
+     *        account and specifies all resources (<code>*</code>), then the parameter is not returned.
+     *        </p>
+     *        <p>
+     *        When you make a cross-account request, AWS evaluates the request in the trusting account and the trusted
+     *        account. The request is allowed only if both evaluations return <code>true</code>. For more information
+     *        about how policies are evaluated, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     *        >Evaluating Policies Within a Single Account</a>.
+     *        </p>
+     *        <p>
+     *        If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
+     *        policy evaluation does not proceed any further and this parameter is not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,6 +828,8 @@ public class EvaluationResult implements Serializable, Cloneable {
             sb.append("MissingContextValues: ").append(getMissingContextValues()).append(",");
         if (getOrganizationsDecisionDetail() != null)
             sb.append("OrganizationsDecisionDetail: ").append(getOrganizationsDecisionDetail()).append(",");
+        if (getPermissionsBoundaryDecisionDetail() != null)
+            sb.append("PermissionsBoundaryDecisionDetail: ").append(getPermissionsBoundaryDecisionDetail()).append(",");
         if (getEvalDecisionDetails() != null)
             sb.append("EvalDecisionDetails: ").append(getEvalDecisionDetails()).append(",");
         if (getResourceSpecificResults() != null)
@@ -729,6 +872,11 @@ public class EvaluationResult implements Serializable, Cloneable {
             return false;
         if (other.getOrganizationsDecisionDetail() != null && other.getOrganizationsDecisionDetail().equals(this.getOrganizationsDecisionDetail()) == false)
             return false;
+        if (other.getPermissionsBoundaryDecisionDetail() == null ^ this.getPermissionsBoundaryDecisionDetail() == null)
+            return false;
+        if (other.getPermissionsBoundaryDecisionDetail() != null
+                && other.getPermissionsBoundaryDecisionDetail().equals(this.getPermissionsBoundaryDecisionDetail()) == false)
+            return false;
         if (other.getEvalDecisionDetails() == null ^ this.getEvalDecisionDetails() == null)
             return false;
         if (other.getEvalDecisionDetails() != null && other.getEvalDecisionDetails().equals(this.getEvalDecisionDetails()) == false)
@@ -751,6 +899,7 @@ public class EvaluationResult implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMatchedStatements() == null) ? 0 : getMatchedStatements().hashCode());
         hashCode = prime * hashCode + ((getMissingContextValues() == null) ? 0 : getMissingContextValues().hashCode());
         hashCode = prime * hashCode + ((getOrganizationsDecisionDetail() == null) ? 0 : getOrganizationsDecisionDetail().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundaryDecisionDetail() == null) ? 0 : getPermissionsBoundaryDecisionDetail().hashCode());
         hashCode = prime * hashCode + ((getEvalDecisionDetails() == null) ? 0 : getEvalDecisionDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceSpecificResults() == null) ? 0 : getResourceSpecificResults().hashCode());
         return hashCode;

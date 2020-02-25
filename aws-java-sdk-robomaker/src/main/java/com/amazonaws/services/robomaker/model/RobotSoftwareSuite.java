@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a robot software suite.
+ * Information about a robot software suite (ROS distribution).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RobotSoftwareSuite" target="_top">AWS API
@@ -30,24 +30,24 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the robot software suite.
+     * The name of the robot software suite (ROS distribution).
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The version of the robot software suite.
+     * The version of the robot software suite (ROS distribution).
      * </p>
      */
     private String version;
 
     /**
      * <p>
-     * The name of the robot software suite.
+     * The name of the robot software suite (ROS distribution).
      * </p>
      * 
      * @param name
-     *        The name of the robot software suite.
+     *        The name of the robot software suite (ROS distribution).
      * @see RobotSoftwareSuiteType
      */
 
@@ -57,10 +57,10 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the robot software suite.
+     * The name of the robot software suite (ROS distribution).
      * </p>
      * 
-     * @return The name of the robot software suite.
+     * @return The name of the robot software suite (ROS distribution).
      * @see RobotSoftwareSuiteType
      */
 
@@ -70,11 +70,11 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the robot software suite.
+     * The name of the robot software suite (ROS distribution).
      * </p>
      * 
      * @param name
-     *        The name of the robot software suite.
+     *        The name of the robot software suite (ROS distribution).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RobotSoftwareSuiteType
      */
@@ -86,11 +86,11 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the robot software suite.
+     * The name of the robot software suite (ROS distribution).
      * </p>
      * 
      * @param name
-     *        The name of the robot software suite.
+     *        The name of the robot software suite (ROS distribution).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RobotSoftwareSuiteType
      */
@@ -102,11 +102,11 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The version of the robot software suite.
+     * The version of the robot software suite (ROS distribution).
      * </p>
      * 
      * @param version
-     *        The version of the robot software suite.
+     *        The version of the robot software suite (ROS distribution).
      * @see RobotSoftwareSuiteVersionType
      */
 
@@ -116,10 +116,10 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The version of the robot software suite.
+     * The version of the robot software suite (ROS distribution).
      * </p>
      * 
-     * @return The version of the robot software suite.
+     * @return The version of the robot software suite (ROS distribution).
      * @see RobotSoftwareSuiteVersionType
      */
 
@@ -129,11 +129,11 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The version of the robot software suite.
+     * The version of the robot software suite (ROS distribution).
      * </p>
      * 
      * @param version
-     *        The version of the robot software suite.
+     *        The version of the robot software suite (ROS distribution).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RobotSoftwareSuiteVersionType
      */
@@ -145,11 +145,11 @@ public class RobotSoftwareSuite implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The version of the robot software suite.
+     * The version of the robot software suite (ROS distribution).
      * </p>
      * 
      * @param version
-     *        The version of the robot software suite.
+     *        The version of the robot software suite (ROS distribution).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RobotSoftwareSuiteVersionType
      */

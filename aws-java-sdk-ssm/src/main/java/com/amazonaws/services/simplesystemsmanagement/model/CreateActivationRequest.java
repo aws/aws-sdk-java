@@ -27,7 +27,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Systems Manager.
      * </p>
      * <important>
      * <p>
@@ -38,8 +38,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
     private String description;
     /**
      * <p>
-     * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
-     * command line tools to list EC2 resources.
+     * The name of the registered, managed instance as it will appear in the Systems Manager console or when you use the
+     * AWS command line tools to list Systems Manager resources.
      * </p>
      * <important>
      * <p>
@@ -50,7 +50,11 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
     private String defaultInstanceName;
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance.
+     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance. This IAM
+     * role must provide AssumeRole permissions for the Systems Manager service principal <code>ssm.amazonaws.com</code>
+     * . For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM Service
+     * Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String iamRole;
@@ -104,7 +108,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Systems Manager.
      * </p>
      * <important>
      * <p>
@@ -113,7 +117,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </important>
      * 
      * @param description
-     *        A user-defined description of the resource that you want to register with Amazon EC2. </p> <important>
+     *        A user-defined description of the resource that you want to register with Systems Manager. </p>
+     *        <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>
@@ -125,7 +130,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Systems Manager.
      * </p>
      * <important>
      * <p>
@@ -133,7 +138,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </important>
      * 
-     * @return A user-defined description of the resource that you want to register with Amazon EC2. </p> <important>
+     * @return A user-defined description of the resource that you want to register with Systems Manager. </p>
+     *         <important>
      *         <p>
      *         Do not enter personally identifiable information in this field.
      *         </p>
@@ -145,7 +151,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Systems Manager.
      * </p>
      * <important>
      * <p>
@@ -154,7 +160,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </important>
      * 
      * @param description
-     *        A user-defined description of the resource that you want to register with Amazon EC2. </p> <important>
+     *        A user-defined description of the resource that you want to register with Systems Manager. </p>
+     *        <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>
@@ -168,8 +175,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
-     * command line tools to list EC2 resources.
+     * The name of the registered, managed instance as it will appear in the Systems Manager console or when you use the
+     * AWS command line tools to list Systems Manager resources.
      * </p>
      * <important>
      * <p>
@@ -178,8 +185,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </important>
      * 
      * @param defaultInstanceName
-     *        The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use
-     *        the AWS command line tools to list EC2 resources.</p> <important>
+     *        The name of the registered, managed instance as it will appear in the Systems Manager console or when you
+     *        use the AWS command line tools to list Systems Manager resources.</p> <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>
@@ -191,8 +198,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
-     * command line tools to list EC2 resources.
+     * The name of the registered, managed instance as it will appear in the Systems Manager console or when you use the
+     * AWS command line tools to list Systems Manager resources.
      * </p>
      * <important>
      * <p>
@@ -200,8 +207,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </important>
      * 
-     * @return The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use
-     *         the AWS command line tools to list EC2 resources.</p> <important>
+     * @return The name of the registered, managed instance as it will appear in the Systems Manager console or when you
+     *         use the AWS command line tools to list Systems Manager resources.</p> <important>
      *         <p>
      *         Do not enter personally identifiable information in this field.
      *         </p>
@@ -213,8 +220,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
-     * command line tools to list EC2 resources.
+     * The name of the registered, managed instance as it will appear in the Systems Manager console or when you use the
+     * AWS command line tools to list Systems Manager resources.
      * </p>
      * <important>
      * <p>
@@ -223,8 +230,8 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </important>
      * 
      * @param defaultInstanceName
-     *        The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use
-     *        the AWS command line tools to list EC2 resources.</p> <important>
+     *        The name of the registered, managed instance as it will appear in the Systems Manager console or when you
+     *        use the AWS command line tools to list Systems Manager resources.</p> <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>
@@ -238,11 +245,19 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance.
+     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance. This IAM
+     * role must provide AssumeRole permissions for the Systems Manager service principal <code>ssm.amazonaws.com</code>
+     * . For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM Service
+     * Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param iamRole
-     *        The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance.
+     *        The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance. This
+     *        IAM role must provide AssumeRole permissions for the Systems Manager service principal
+     *        <code>ssm.amazonaws.com</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     *        Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setIamRole(String iamRole) {
@@ -251,10 +266,18 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance.
+     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance. This IAM
+     * role must provide AssumeRole permissions for the Systems Manager service principal <code>ssm.amazonaws.com</code>
+     * . For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM Service
+     * Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance.
+     *         This IAM role must provide AssumeRole permissions for the Systems Manager service principal
+     *         <code>ssm.amazonaws.com</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     *         Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public String getIamRole() {
@@ -263,11 +286,19 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance.
+     * The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance. This IAM
+     * role must provide AssumeRole permissions for the Systems Manager service principal <code>ssm.amazonaws.com</code>
+     * . For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM Service
+     * Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param iamRole
-     *        The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance.
+     *        The Amazon Identity and Access Management (IAM) role that you want to assign to the managed instance. This
+     *        IAM role must provide AssumeRole permissions for the Systems Manager service principal
+     *        <code>ssm.amazonaws.com</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     *        Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

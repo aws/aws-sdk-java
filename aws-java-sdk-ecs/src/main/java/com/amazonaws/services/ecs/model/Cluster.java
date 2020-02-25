@@ -46,10 +46,45 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String clusterName;
     /**
      * <p>
-     * The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     * indicates that you can register container instances with the cluster and the associated instances can accept
-     * tasks.
+     * The status of the cluster. The following are the possible states that will be returned.
      * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster is ready to accept tasks and if applicable you can register container instances with the cluster.
+     * </p>
+     * </dd>
+     * <dt>PROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being created.
+     * </p>
+     * </dd>
+     * <dt>DEPROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being deleted.
+     * </p>
+     * </dd>
+     * <dt>FAILED</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
+     * failed to create.
+     * </p>
+     * </dd>
+     * <dt>INACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
+     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
+     * on <code>INACTIVE</code> clusters persisting.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String status;
     /**
@@ -333,15 +368,85 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     * indicates that you can register container instances with the cluster and the associated instances can accept
-     * tasks.
+     * The status of the cluster. The following are the possible states that will be returned.
      * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster is ready to accept tasks and if applicable you can register container instances with the cluster.
+     * </p>
+     * </dd>
+     * <dt>PROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being created.
+     * </p>
+     * </dd>
+     * <dt>DEPROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being deleted.
+     * </p>
+     * </dd>
+     * <dt>FAILED</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
+     * failed to create.
+     * </p>
+     * </dd>
+     * <dt>INACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
+     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
+     * on <code>INACTIVE</code> clusters persisting.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     *        <code>ACTIVE</code> indicates that you can register container instances with the cluster and the
-     *        associated instances can accept tasks.
+     *        The status of the cluster. The following are the possible states that will be returned.</p>
+     *        <dl>
+     *        <dt>ACTIVE</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster is ready to accept tasks and if applicable you can register container instances with the
+     *        cluster.
+     *        </p>
+     *        </dd>
+     *        <dt>PROVISIONING</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *        are being created.
+     *        </p>
+     *        </dd>
+     *        <dt>DEPROVISIONING</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *        are being deleted.
+     *        </p>
+     *        </dd>
+     *        <dt>FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *        have failed to create.
+     *        </p>
+     *        </dd>
+     *        <dt>INACTIVE</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in
+     *        your account for a period of time. However, this behavior is subject to change in the future, so you
+     *        should not rely on <code>INACTIVE</code> clusters persisting.
+     *        </p>
+     *        </dd>
      */
 
     public void setStatus(String status) {
@@ -350,14 +455,84 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     * indicates that you can register container instances with the cluster and the associated instances can accept
-     * tasks.
+     * The status of the cluster. The following are the possible states that will be returned.
      * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster is ready to accept tasks and if applicable you can register container instances with the cluster.
+     * </p>
+     * </dd>
+     * <dt>PROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being created.
+     * </p>
+     * </dd>
+     * <dt>DEPROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being deleted.
+     * </p>
+     * </dd>
+     * <dt>FAILED</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
+     * failed to create.
+     * </p>
+     * </dd>
+     * <dt>INACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
+     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
+     * on <code>INACTIVE</code> clusters persisting.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     *         <code>ACTIVE</code> indicates that you can register container instances with the cluster and the
-     *         associated instances can accept tasks.
+     * @return The status of the cluster. The following are the possible states that will be returned.</p>
+     *         <dl>
+     *         <dt>ACTIVE</dt>
+     *         <dd>
+     *         <p>
+     *         The cluster is ready to accept tasks and if applicable you can register container instances with the
+     *         cluster.
+     *         </p>
+     *         </dd>
+     *         <dt>PROVISIONING</dt>
+     *         <dd>
+     *         <p>
+     *         The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *         are being created.
+     *         </p>
+     *         </dd>
+     *         <dt>DEPROVISIONING</dt>
+     *         <dd>
+     *         <p>
+     *         The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *         are being deleted.
+     *         </p>
+     *         </dd>
+     *         <dt>FAILED</dt>
+     *         <dd>
+     *         <p>
+     *         The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *         have failed to create.
+     *         </p>
+     *         </dd>
+     *         <dt>INACTIVE</dt>
+     *         <dd>
+     *         <p>
+     *         The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in
+     *         your account for a period of time. However, this behavior is subject to change in the future, so you
+     *         should not rely on <code>INACTIVE</code> clusters persisting.
+     *         </p>
+     *         </dd>
      */
 
     public String getStatus() {
@@ -366,15 +541,85 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>. <code>ACTIVE</code>
-     * indicates that you can register container instances with the cluster and the associated instances can accept
-     * tasks.
+     * The status of the cluster. The following are the possible states that will be returned.
      * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster is ready to accept tasks and if applicable you can register container instances with the cluster.
+     * </p>
+     * </dd>
+     * <dt>PROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being created.
+     * </p>
+     * </dd>
+     * <dt>DEPROVISIONING</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider are
+     * being deleted.
+     * </p>
+     * </dd>
+     * <dt>FAILED</dt>
+     * <dd>
+     * <p>
+     * The cluster has capacity providers associated with it and the resources needed for the capacity provider have
+     * failed to create.
+     * </p>
+     * </dd>
+     * <dt>INACTIVE</dt>
+     * <dd>
+     * <p>
+     * The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in your
+     * account for a period of time. However, this behavior is subject to change in the future, so you should not rely
+     * on <code>INACTIVE</code> clusters persisting.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        The status of the cluster. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     *        <code>ACTIVE</code> indicates that you can register container instances with the cluster and the
-     *        associated instances can accept tasks.
+     *        The status of the cluster. The following are the possible states that will be returned.</p>
+     *        <dl>
+     *        <dt>ACTIVE</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster is ready to accept tasks and if applicable you can register container instances with the
+     *        cluster.
+     *        </p>
+     *        </dd>
+     *        <dt>PROVISIONING</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *        are being created.
+     *        </p>
+     *        </dd>
+     *        <dt>DEPROVISIONING</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *        are being deleted.
+     *        </p>
+     *        </dd>
+     *        <dt>FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has capacity providers associated with it and the resources needed for the capacity provider
+     *        have failed to create.
+     *        </p>
+     *        </dd>
+     *        <dt>INACTIVE</dt>
+     *        <dd>
+     *        <p>
+     *        The cluster has been deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable in
+     *        your account for a period of time. However, this behavior is subject to change in the future, so you
+     *        should not rely on <code>INACTIVE</code> clusters persisting.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

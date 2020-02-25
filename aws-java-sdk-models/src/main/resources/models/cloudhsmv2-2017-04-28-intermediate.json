@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -55,7 +55,7 @@
     "defaultEndpoint" : "cloudhsmv2.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "cloudhsmv2.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>For more information about AWS CloudHSM, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a> and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>.</p>",
+    "documentation" : "<p>For more information about AWS CloudHSM, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a> and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>.</p>",
     "endpointPrefix" : "cloudhsmv2",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -96,24 +96,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -148,24 +152,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -247,29 +255,29 @@
       "asyncReturnType" : "DeleteBackupResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a> </p>",
+      "documentation" : "<p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is made. For more information on restoring a backup, see <a>RestoreBackup</a>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -304,24 +312,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -408,24 +420,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -460,20 +476,24 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "CloudHsmInternalFailureException",
-        "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "exceptionName" : "CloudHsmInternalFailureException",
+        "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -508,24 +528,24 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -560,24 +580,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -607,29 +631,29 @@
       "asyncReturnType" : "RestoreBackupResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information on deleting a backup, see <a>DeleteBackup</a>.</p>",
+      "documentation" : "<p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information on deleting a backup, see <a>DeleteBackup</a>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -664,24 +688,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -716,24 +744,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "CloudHsmAccessDeniedException",
+        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "CloudHsmInternalFailureException",
         "documentation" : "<p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmServiceException",
-        "documentation" : "<p>The request was rejected because an error occurred.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "CloudHsmResourceNotFoundException",
-        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "CloudHsmInvalidRequestException",
         "documentation" : "<p>The request was rejected because it is not a valid request.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "CloudHsmAccessDeniedException",
-        "documentation" : "<p>The request was rejected because the requester does not have permission to perform the requested operation.</p>",
+        "exceptionName" : "CloudHsmResourceNotFoundException",
+        "documentation" : "<p>The request was rejected because it refers to a resource that cannot be found.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmServiceException",
+        "documentation" : "<p>The request was rejected because an error occurred.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "CloudHsmTagException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -767,7 +799,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains information about a backup of an AWS CloudHSM cluster.</p>",
+      "documentation" : "<p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the BackupId, BackupState, ClusterId, and CreateTimestamp parameters. Backups that were copied into a destination region additionally contain the CopyTimestamp, SourceBackup, SourceCluster, and SourceRegion paramters. A backup that is pending deletion will include the DeleteTimestamp parameter.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1048,11 +1080,11 @@
         "c2jName" : "CopyTimestamp",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The date and time when the backup was copied from a source backup.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param copyTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCopyTimestamp",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@return The date and time when the backup was copied from a source backup.*/",
         "getterMethodName" : "getCopyTimestamp",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -1086,7 +1118,7 @@
         "marshallingType" : "DATE",
         "name" : "CopyTimestamp",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param copyTimestamp */",
+        "setterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.*/",
         "setterMethodName" : "setCopyTimestamp",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1100,13 +1132,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param copyTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "copyTimestamp",
           "variableType" : "java.util.Date",
-          "documentation" : "",
+          "documentation" : "<p>The date and time when the backup was copied from a source backup.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -1115,11 +1147,11 @@
         "c2jName" : "SourceRegion",
         "c2jShape" : "Region",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceRegion",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@return The AWS region that contains the source backup from which the new backup was copied.*/",
         "getterMethodName" : "getSourceRegion",
         "getterModel" : {
           "returnType" : "String",
@@ -1153,7 +1185,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceRegion",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param sourceRegion */",
+        "setterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.*/",
         "setterMethodName" : "setSourceRegion",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1167,13 +1199,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceRegion",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1182,11 +1214,11 @@
         "c2jName" : "SourceBackup",
         "c2jShape" : "BackupId",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceBackup",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the source backup from which the new backup was copied.*/",
         "getterMethodName" : "getSourceBackup",
         "getterModel" : {
           "returnType" : "String",
@@ -1220,7 +1252,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceBackup",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param sourceBackup */",
+        "setterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.*/",
         "setterMethodName" : "setSourceBackup",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1234,13 +1266,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceBackup",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1249,11 +1281,11 @@
         "c2jName" : "SourceCluster",
         "c2jShape" : "ClusterId",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceCluster",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
         "getterMethodName" : "getSourceCluster",
         "getterModel" : {
           "returnType" : "String",
@@ -1287,7 +1319,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceCluster",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param sourceCluster */",
+        "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
         "setterMethodName" : "setSourceCluster",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1301,13 +1333,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceCluster",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1377,6 +1409,155 @@
           "documentation" : "<p>The date and time when the backup will be permanently deleted.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "TagList",
+        "c2jShape" : "TagList",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTagList",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getTagList",
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "TagList",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TagList",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "requiresLength" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Tag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "TagList",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param tagList */",
+        "setterMethodName" : "setTagList",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "xmlNameSpaceUri" : null
       } ],
@@ -1589,11 +1770,11 @@
           "c2jName" : "CopyTimestamp",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The date and time when the backup was copied from a source backup.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param copyTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCopyTimestamp",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@return The date and time when the backup was copied from a source backup.*/",
           "getterMethodName" : "getCopyTimestamp",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -1627,7 +1808,7 @@
           "marshallingType" : "DATE",
           "name" : "CopyTimestamp",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param copyTimestamp */",
+          "setterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.*/",
           "setterMethodName" : "setCopyTimestamp",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1641,13 +1822,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param copyTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The date and time when the backup was copied from a source backup.</p>\n@param copyTimestamp The date and time when the backup was copied from a source backup.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "copyTimestamp",
             "variableType" : "java.util.Date",
-            "documentation" : "",
+            "documentation" : "<p>The date and time when the backup was copied from a source backup.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -1793,11 +1974,11 @@
           "c2jName" : "SourceBackup",
           "c2jShape" : "BackupId",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceBackup",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the source backup from which the new backup was copied.*/",
           "getterMethodName" : "getSourceBackup",
           "getterModel" : {
             "returnType" : "String",
@@ -1831,7 +2012,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceBackup",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param sourceBackup */",
+          "setterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.*/",
           "setterMethodName" : "setSourceBackup",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1845,13 +2026,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceBackup",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1861,11 +2042,11 @@
           "c2jName" : "SourceCluster",
           "c2jShape" : "ClusterId",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceCluster",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
           "getterMethodName" : "getSourceCluster",
           "getterModel" : {
             "returnType" : "String",
@@ -1899,7 +2080,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceCluster",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param sourceCluster */",
+          "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .*/",
           "setterMethodName" : "setSourceCluster",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1913,13 +2094,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceCluster",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied. .</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1929,11 +2110,11 @@
           "c2jName" : "SourceRegion",
           "c2jShape" : "Region",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceRegion",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@return The AWS region that contains the source backup from which the new backup was copied.*/",
           "getterMethodName" : "getSourceRegion",
           "getterModel" : {
             "returnType" : "String",
@@ -1967,7 +2148,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceRegion",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param sourceRegion */",
+          "setterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.*/",
           "setterMethodName" : "setSourceRegion",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1981,15 +2162,165 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceRegion",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TagList" : {
+          "c2jName" : "TagList",
+          "c2jShape" : "TagList",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTagList",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getTagList",
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "TagList",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TagList",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "requiresLength" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Tag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "TagList",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param tagList */",
+          "setterMethodName" : "setTagList",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
         }
@@ -3019,6 +3350,44 @@
       },
       "wrapper" : false
     },
+    "CloudHsmTagException" : {
+      "c2jName" : "CloudHsmTagException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : "CloudHsmTagException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "CloudHsmTagException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "CloudHsmTagException",
+        "variableName" : "cloudHsmTagException",
+        "variableType" : "CloudHsmTagException",
+        "documentation" : null,
+        "simpleType" : "CloudHsmTagException",
+        "variableSetterType" : "CloudHsmTagException"
+      },
+      "wrapper" : false
+    },
     "Cluster" : {
       "c2jName" : "Cluster",
       "customization" : {
@@ -3793,11 +4162,11 @@
         "c2jName" : "SubnetMapping",
         "c2jShape" : "ExternalSubnetMapping",
         "deprecated" : false,
-        "documentation" : "<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>",
+        "documentation" : "<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSubnetMapping",
-        "getterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@return A map of the cluster's subnets and their corresponding Availability Zones.*/",
+        "getterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@return A map from availability zone to the cluster’s subnet in that availability zone.*/",
         "getterMethodName" : "getSubnetMapping",
         "getterModel" : {
           "returnType" : "java.util.Map<String,String>",
@@ -3913,7 +4282,7 @@
         "marshallingType" : "MAP",
         "name" : "SubnetMapping",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.*/",
+        "setterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.*/",
         "setterMethodName" : "setSubnetMapping",
         "setterModel" : {
           "timestampFormat" : null,
@@ -3927,13 +4296,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.Map<String,String>",
           "variableName" : "subnetMapping",
           "variableType" : "java.util.Map<String,String>",
-          "documentation" : "<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>",
+          "documentation" : "<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>",
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
@@ -4070,6 +4439,155 @@
           "documentation" : "<p>Contains one or more certificates or a certificate signing request (CSR).</p>",
           "simpleType" : "Certificates",
           "variableSetterType" : "Certificates"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "TagList",
+        "c2jShape" : "TagList",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTagList",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getTagList",
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "TagList",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TagList",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "requiresLength" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Tag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "TagList",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param tagList */",
+        "setterMethodName" : "setTagList",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
         },
         "xmlNameSpaceUri" : null
       } ],
@@ -4908,11 +5426,11 @@
           "c2jName" : "SubnetMapping",
           "c2jShape" : "ExternalSubnetMapping",
           "deprecated" : false,
-          "documentation" : "<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>",
+          "documentation" : "<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSubnetMapping",
-          "getterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@return A map of the cluster's subnets and their corresponding Availability Zones.*/",
+          "getterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@return A map from availability zone to the cluster’s subnet in that availability zone.*/",
           "getterMethodName" : "getSubnetMapping",
           "getterModel" : {
             "returnType" : "java.util.Map<String,String>",
@@ -5028,7 +5546,7 @@
           "marshallingType" : "MAP",
           "name" : "SubnetMapping",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.*/",
+          "setterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.*/",
           "setterMethodName" : "setSubnetMapping",
           "setterModel" : {
             "timestampFormat" : null,
@@ -5042,15 +5560,165 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>\n@param subnetMapping A map of the cluster's subnets and their corresponding Availability Zones.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>\n@param subnetMapping A map from availability zone to the cluster’s subnet in that availability zone.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.Map<String,String>",
             "variableName" : "subnetMapping",
             "variableType" : "java.util.Map<String,String>",
-            "documentation" : "<p>A map of the cluster's subnets and their corresponding Availability Zones.</p>",
+            "documentation" : "<p>A map from availability zone to the cluster’s subnet in that availability zone.</p>",
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TagList" : {
+          "c2jName" : "TagList",
+          "c2jShape" : "TagList",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTagList",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getTagList",
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "TagList",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TagList",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "requiresLength" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Tag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "TagList",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param tagList */",
+          "setterMethodName" : "setTagList",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
         },
@@ -5371,6 +6039,155 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "TagList",
+        "c2jShape" : "TagList",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTagList",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getTagList",
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "TagList",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TagList",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "requiresLength" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Tag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "TagList",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param tagList */",
+        "setterMethodName" : "setTagList",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "BackupId" : {
@@ -5506,6 +6323,156 @@
             "documentation" : "<p>The AWS region that will contain your copied CloudHSM cluster backup.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TagList" : {
+          "c2jName" : "TagList",
+          "c2jShape" : "TagList",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTagList",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getTagList",
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "TagList",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TagList",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "requiresLength" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Tag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "TagList",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param tagList */",
+          "setterMethodName" : "setTagList",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
         }
@@ -6013,6 +6980,155 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "TagList",
+        "c2jShape" : "TagList",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTagList",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getTagList",
+        "getterModel" : {
+          "returnType" : "java.util.List<Tag>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "TagList",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TagList",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Tag",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "Tag",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "requiresLength" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
+            "name" : "Member",
+            "sensitive" : false,
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : false,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "timestampFormat" : null,
+              "variableDeclarationType" : "Tag",
+              "variableName" : "member",
+              "variableType" : "Tag",
+              "documentation" : "",
+              "simpleType" : "Tag",
+              "variableSetterType" : "Tag"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "Tag",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : false,
+          "simpleType" : "Tag",
+          "templateImplType" : "java.util.ArrayList<Tag>",
+          "templateType" : "java.util.List<Tag>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "TagList",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param tagList */",
+        "setterMethodName" : "setTagList",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.List<Tag>",
+          "variableName" : "tagList",
+          "variableType" : "java.util.List<Tag>",
+          "documentation" : "",
+          "simpleType" : "List<Tag>",
+          "variableSetterType" : "java.util.Collection<Tag>"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "HsmType" : {
@@ -6298,6 +7414,156 @@
             "documentation" : "<p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet per Availability Zone.</p> </li> </ul>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TagList" : {
+          "c2jName" : "TagList",
+          "c2jShape" : "TagList",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTagList",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getTagList",
+          "getterModel" : {
+            "returnType" : "java.util.List<Tag>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "TagList",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TagList",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Tag",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "Tag",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "requiresLength" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
+              "name" : "Member",
+              "sensitive" : false,
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : false,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "timestampFormat" : null,
+                "variableDeclarationType" : "Tag",
+                "variableName" : "member",
+                "variableType" : "Tag",
+                "documentation" : "",
+                "simpleType" : "Tag",
+                "variableSetterType" : "Tag"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "Tag",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : false,
+            "simpleType" : "Tag",
+            "templateImplType" : "java.util.ArrayList<Tag>",
+            "templateType" : "java.util.List<Tag>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "TagList",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param tagList */",
+          "setterMethodName" : "setTagList",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.List<Tag>",
+            "variableName" : "tagList",
+            "variableType" : "java.util.List<Tag>",
+            "documentation" : "",
+            "simpleType" : "List<Tag>",
+            "variableSetterType" : "java.util.Collection<Tag>"
           },
           "xmlNameSpaceUri" : null
         }
@@ -8998,11 +10264,11 @@
         "c2jName" : "SortAscending",
         "c2jShape" : "Boolean",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param sortAscending \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSortAscending",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@return Designates whether or not to sort the return backups by ascending chronological order of generation.*/",
         "getterMethodName" : "getSortAscending",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -9036,7 +10302,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "SortAscending",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param sortAscending */",
+        "setterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.*/",
         "setterMethodName" : "setSortAscending",
         "setterModel" : {
           "timestampFormat" : null,
@@ -9050,13 +10316,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param sortAscending \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "sortAscending",
           "variableType" : "Boolean",
-          "documentation" : "",
+          "documentation" : "<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -9435,11 +10701,11 @@
           "c2jName" : "SortAscending",
           "c2jShape" : "Boolean",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param sortAscending \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSortAscending",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@return Designates whether or not to sort the return backups by ascending chronological order of generation.*/",
           "getterMethodName" : "getSortAscending",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -9473,7 +10739,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "SortAscending",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param sortAscending */",
+          "setterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.*/",
           "setterMethodName" : "setSortAscending",
           "setterModel" : {
             "timestampFormat" : null,
@@ -9487,13 +10753,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param sortAscending \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>\n@param sortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "sortAscending",
             "variableType" : "Boolean",
-            "documentation" : "",
+            "documentation" : "<p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -11258,7 +12524,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p>Contains information about the backup that will be copied and created by the <a>CopyBackupToRegion</a> operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -11271,11 +12537,11 @@
         "c2jName" : "CreateTimestamp",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The date and time when both the source backup was created.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param createTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCreateTimestamp",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@return The date and time when both the source backup was created.*/",
         "getterMethodName" : "getCreateTimestamp",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -11309,7 +12575,7 @@
         "marshallingType" : "DATE",
         "name" : "CreateTimestamp",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param createTimestamp */",
+        "setterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.*/",
         "setterMethodName" : "setCreateTimestamp",
         "setterModel" : {
           "timestampFormat" : null,
@@ -11323,13 +12589,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param createTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "createTimestamp",
           "variableType" : "java.util.Date",
-          "documentation" : "",
+          "documentation" : "<p>The date and time when both the source backup was created.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -11338,11 +12604,11 @@
         "c2jName" : "SourceRegion",
         "c2jShape" : "Region",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceRegion",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@return The AWS region that contains the source backup from which the new backup was copied.*/",
         "getterMethodName" : "getSourceRegion",
         "getterModel" : {
           "returnType" : "String",
@@ -11376,7 +12642,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceRegion",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param sourceRegion */",
+        "setterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.*/",
         "setterMethodName" : "setSourceRegion",
         "setterModel" : {
           "timestampFormat" : null,
@@ -11390,13 +12656,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceRegion",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11405,11 +12671,11 @@
         "c2jName" : "SourceBackup",
         "c2jShape" : "BackupId",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceBackup",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the source backup from which the new backup was copied.*/",
         "getterMethodName" : "getSourceBackup",
         "getterModel" : {
           "returnType" : "String",
@@ -11443,7 +12709,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceBackup",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param sourceBackup */",
+        "setterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.*/",
         "setterMethodName" : "setSourceBackup",
         "setterModel" : {
           "timestampFormat" : null,
@@ -11457,13 +12723,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceBackup",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11472,11 +12738,11 @@
         "c2jName" : "SourceCluster",
         "c2jShape" : "ClusterId",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSourceCluster",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
         "getterMethodName" : "getSourceCluster",
         "getterModel" : {
           "returnType" : "String",
@@ -11510,7 +12776,7 @@
         "marshallingType" : "STRING",
         "name" : "SourceCluster",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param sourceCluster */",
+        "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
         "setterMethodName" : "setSourceCluster",
         "setterModel" : {
           "timestampFormat" : null,
@@ -11524,13 +12790,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "sourceCluster",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11541,11 +12807,11 @@
           "c2jName" : "CreateTimestamp",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The date and time when both the source backup was created.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param createTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCreateTimestamp",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@return The date and time when both the source backup was created.*/",
           "getterMethodName" : "getCreateTimestamp",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -11579,7 +12845,7 @@
           "marshallingType" : "DATE",
           "name" : "CreateTimestamp",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param createTimestamp */",
+          "setterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.*/",
           "setterMethodName" : "setCreateTimestamp",
           "setterModel" : {
             "timestampFormat" : null,
@@ -11593,13 +12859,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param createTimestamp \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The date and time when both the source backup was created.</p>\n@param createTimestamp The date and time when both the source backup was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "createTimestamp",
             "variableType" : "java.util.Date",
-            "documentation" : "",
+            "documentation" : "<p>The date and time when both the source backup was created.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -11609,11 +12875,11 @@
           "c2jName" : "SourceBackup",
           "c2jShape" : "BackupId",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceBackup",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the source backup from which the new backup was copied.*/",
           "getterMethodName" : "getSourceBackup",
           "getterModel" : {
             "returnType" : "String",
@@ -11647,7 +12913,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceBackup",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param sourceBackup */",
+          "setterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.*/",
           "setterMethodName" : "setSourceBackup",
           "setterModel" : {
             "timestampFormat" : null,
@@ -11661,13 +12927,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param sourceBackup \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier (ID) of the source backup from which the new backup was copied.</p>\n@param sourceBackup The identifier (ID) of the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceBackup",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The identifier (ID) of the source backup from which the new backup was copied.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11677,11 +12943,11 @@
           "c2jName" : "SourceCluster",
           "c2jShape" : "ClusterId",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceCluster",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@return The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
           "getterMethodName" : "getSourceCluster",
           "getterModel" : {
             "returnType" : "String",
@@ -11715,7 +12981,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceCluster",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param sourceCluster */",
+          "setterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.*/",
           "setterMethodName" : "setSourceCluster",
           "setterModel" : {
             "timestampFormat" : null,
@@ -11729,13 +12995,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param sourceCluster \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>\n@param sourceCluster The identifier (ID) of the cluster containing the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceCluster",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -11745,11 +13011,11 @@
           "c2jName" : "SourceRegion",
           "c2jShape" : "Region",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSourceRegion",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@return The AWS region that contains the source backup from which the new backup was copied.*/",
           "getterMethodName" : "getSourceRegion",
           "getterModel" : {
             "returnType" : "String",
@@ -11783,7 +13049,7 @@
           "marshallingType" : "STRING",
           "name" : "SourceRegion",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param sourceRegion */",
+          "setterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.*/",
           "setterMethodName" : "setSourceRegion",
           "setterModel" : {
             "timestampFormat" : null,
@@ -11797,13 +13063,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param sourceRegion \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The AWS region that contains the source backup from which the new backup was copied.</p>\n@param sourceRegion The AWS region that contains the source backup from which the new backup was copied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "sourceRegion",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The AWS region that contains the source backup from which the new backup was copied.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -13172,11 +14438,11 @@
         "c2jName" : "TrustAnchor",
         "c2jShape" : "Cert",
         "deprecated" : false,
-        "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>",
+        "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTrustAnchor",
-        "getterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@return The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.*/",
+        "getterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@return The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.*/",
         "getterMethodName" : "getTrustAnchor",
         "getterModel" : {
           "returnType" : "String",
@@ -13210,7 +14476,7 @@
         "marshallingType" : "STRING",
         "name" : "TrustAnchor",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.*/",
+        "setterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.*/",
         "setterMethodName" : "setTrustAnchor",
         "setterModel" : {
           "timestampFormat" : null,
@@ -13224,13 +14490,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "trustAnchor",
           "variableType" : "String",
-          "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>",
+          "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -13377,11 +14643,11 @@
           "c2jName" : "TrustAnchor",
           "c2jShape" : "Cert",
           "deprecated" : false,
-          "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>",
+          "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTrustAnchor",
-          "getterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@return The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.*/",
+          "getterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@return The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.*/",
           "getterMethodName" : "getTrustAnchor",
           "getterModel" : {
             "returnType" : "String",
@@ -13415,7 +14681,7 @@
           "marshallingType" : "STRING",
           "name" : "TrustAnchor",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.*/",
+          "setterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.*/",
           "setterMethodName" : "setTrustAnchor",
           "setterModel" : {
             "timestampFormat" : null,
@@ -13429,13 +14695,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>\n@param trustAnchor The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "trustAnchor",
             "variableType" : "String",
-            "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.</p>",
+            "documentation" : "<p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -13799,7 +15065,7 @@
       },
       "members" : [ {
         "c2jName" : "ResourceId",
-        "c2jShape" : "ClusterId",
+        "c2jShape" : "ResourceId",
         "deprecated" : false,
         "documentation" : "<p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.</p>",
         "enumType" : null,
@@ -14138,7 +15404,7 @@
         },
         "ResourceId" : {
           "c2jName" : "ResourceId",
-          "c2jShape" : "ClusterId",
+          "c2jShape" : "ResourceId",
           "deprecated" : false,
           "documentation" : "<p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <a>DescribeClusters</a>.</p>",
           "enumType" : null,
@@ -15396,7 +16662,7 @@
       },
       "members" : [ {
         "c2jName" : "ResourceId",
-        "c2jShape" : "ClusterId",
+        "c2jShape" : "ResourceId",
         "deprecated" : false,
         "documentation" : "<p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.</p>",
         "enumType" : null,
@@ -15614,7 +16880,7 @@
       "membersAsMap" : {
         "ResourceId" : {
           "c2jName" : "ResourceId",
-          "c2jShape" : "ClusterId",
+          "c2jShape" : "ResourceId",
           "deprecated" : false,
           "documentation" : "<p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <a>DescribeClusters</a>.</p>",
           "enumType" : null,
@@ -15917,7 +17183,7 @@
       },
       "members" : [ {
         "c2jName" : "ResourceId",
-        "c2jShape" : "ClusterId",
+        "c2jShape" : "ResourceId",
         "deprecated" : false,
         "documentation" : "<p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.</p>",
         "enumType" : null,
@@ -16135,7 +17401,7 @@
       "membersAsMap" : {
         "ResourceId" : {
           "c2jName" : "ResourceId",
-          "c2jShape" : "ClusterId",
+          "c2jShape" : "ResourceId",
           "deprecated" : false,
           "documentation" : "<p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <a>DescribeClusters</a>.</p>",
           "enumType" : null,

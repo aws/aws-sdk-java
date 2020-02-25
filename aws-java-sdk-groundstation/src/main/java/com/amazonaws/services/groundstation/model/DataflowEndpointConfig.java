@@ -34,6 +34,12 @@ public class DataflowEndpointConfig implements Serializable, Cloneable, Structur
      * </p>
      */
     private String dataflowEndpointName;
+    /**
+     * <p>
+     * Region of a dataflow endpoint.
+     * </p>
+     */
+    private String dataflowEndpointRegion;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class DataflowEndpointConfig implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Region of a dataflow endpoint.
+     * </p>
+     * 
+     * @param dataflowEndpointRegion
+     *        Region of a dataflow endpoint.
+     */
+
+    public void setDataflowEndpointRegion(String dataflowEndpointRegion) {
+        this.dataflowEndpointRegion = dataflowEndpointRegion;
+    }
+
+    /**
+     * <p>
+     * Region of a dataflow endpoint.
+     * </p>
+     * 
+     * @return Region of a dataflow endpoint.
+     */
+
+    public String getDataflowEndpointRegion() {
+        return this.dataflowEndpointRegion;
+    }
+
+    /**
+     * <p>
+     * Region of a dataflow endpoint.
+     * </p>
+     * 
+     * @param dataflowEndpointRegion
+     *        Region of a dataflow endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataflowEndpointConfig withDataflowEndpointRegion(String dataflowEndpointRegion) {
+        setDataflowEndpointRegion(dataflowEndpointRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class DataflowEndpointConfig implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataflowEndpointName() != null)
-            sb.append("DataflowEndpointName: ").append(getDataflowEndpointName());
+            sb.append("DataflowEndpointName: ").append(getDataflowEndpointName()).append(",");
+        if (getDataflowEndpointRegion() != null)
+            sb.append("DataflowEndpointRegion: ").append(getDataflowEndpointRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class DataflowEndpointConfig implements Serializable, Cloneable, Structur
             return false;
         if (other.getDataflowEndpointName() != null && other.getDataflowEndpointName().equals(this.getDataflowEndpointName()) == false)
             return false;
+        if (other.getDataflowEndpointRegion() == null ^ this.getDataflowEndpointRegion() == null)
+            return false;
+        if (other.getDataflowEndpointRegion() != null && other.getDataflowEndpointRegion().equals(this.getDataflowEndpointRegion()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class DataflowEndpointConfig implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDataflowEndpointName() == null) ? 0 : getDataflowEndpointName().hashCode());
+        hashCode = prime * hashCode + ((getDataflowEndpointRegion() == null) ? 0 : getDataflowEndpointRegion().hashCode());
         return hashCode;
     }
 

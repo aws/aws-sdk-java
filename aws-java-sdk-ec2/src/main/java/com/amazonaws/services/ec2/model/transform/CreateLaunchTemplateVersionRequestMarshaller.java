@@ -315,6 +315,10 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                 if (placement.getHostResourceGroupArn() != null) {
                     request.addParameter("LaunchTemplateData.Placement.HostResourceGroupArn", StringUtils.fromString(placement.getHostResourceGroupArn()));
                 }
+
+                if (placement.getPartitionNumber() != null) {
+                    request.addParameter("LaunchTemplateData.Placement.PartitionNumber", StringUtils.fromInteger(placement.getPartitionNumber()));
+                }
             }
 
             if (launchTemplateData.getRamDiskId() != null) {
@@ -527,6 +531,23 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
 
                 if (hibernationOptions.getConfigured() != null) {
                     request.addParameter("LaunchTemplateData.HibernationOptions.Configured", StringUtils.fromBoolean(hibernationOptions.getConfigured()));
+                }
+            }
+
+            LaunchTemplateInstanceMetadataOptionsRequest metadataOptions = launchTemplateData.getMetadataOptions();
+            if (metadataOptions != null) {
+
+                if (metadataOptions.getHttpTokens() != null) {
+                    request.addParameter("LaunchTemplateData.MetadataOptions.HttpTokens", StringUtils.fromString(metadataOptions.getHttpTokens()));
+                }
+
+                if (metadataOptions.getHttpPutResponseHopLimit() != null) {
+                    request.addParameter("LaunchTemplateData.MetadataOptions.HttpPutResponseHopLimit",
+                            StringUtils.fromInteger(metadataOptions.getHttpPutResponseHopLimit()));
+                }
+
+                if (metadataOptions.getHttpEndpoint() != null) {
+                    request.addParameter("LaunchTemplateData.MetadataOptions.HttpEndpoint", StringUtils.fromString(metadataOptions.getHttpEndpoint()));
                 }
             }
         }

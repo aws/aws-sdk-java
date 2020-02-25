@@ -23,9 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * can be set as a target, see <a>PutTargets</a>.
  * </p>
  * <p>
- * If you're setting the event bus of another account as the target and that account granted permission to your account
- * through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper
- * permissions in the <code>Target</code> structure. For more information, see <a
+ * If you are setting the event bus of another account as the target, and that account granted permission to your
+ * account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code>
+ * with proper permissions in the <code>Target</code> structure. For more information, see <a
  * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
  * and Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User Guide</i>.
  * </p>
@@ -38,8 +38,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
-     * must have an <code>Id</code> unique for that rule.
+     * The ID of the target.
      * </p>
      */
     private String id;
@@ -81,8 +80,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private InputTransformer inputTransformer;
     /**
      * <p>
-     * The custom parameter that you can use to control the shard assignment when the target is a Kinesis data stream.
-     * If you don't include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      */
     private KinesisParameters kinesisParameters;
@@ -94,7 +93,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private RunCommandParameters runCommandParameters;
     /**
      * <p>
-     * Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon ECS task. For
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
@@ -121,13 +120,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
-     * must have an <code>Id</code> unique for that rule.
+     * The ID of the target.
      * </p>
      * 
      * @param id
-     *        A name for the target. Use a string that will help you identify the target. Each target associated with a
-     *        rule must have an <code>Id</code> unique for that rule.
+     *        The ID of the target.
      */
 
     public void setId(String id) {
@@ -136,12 +133,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
-     * must have an <code>Id</code> unique for that rule.
+     * The ID of the target.
      * </p>
      * 
-     * @return A name for the target. Use a string that will help you identify the target. Each target associated with a
-     *         rule must have an <code>Id</code> unique for that rule.
+     * @return The ID of the target.
      */
 
     public String getId() {
@@ -150,13 +145,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A name for the target. Use a string that will help you identify the target. Each target associated with a rule
-     * must have an <code>Id</code> unique for that rule.
+     * The ID of the target.
      * </p>
      * 
      * @param id
-     *        A name for the target. Use a string that will help you identify the target. Each target associated with a
-     *        rule must have an <code>Id</code> unique for that rule.
+     *        The ID of the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,13 +396,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The custom parameter that you can use to control the shard assignment when the target is a Kinesis data stream.
-     * If you don't include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      * 
      * @param kinesisParameters
-     *        The custom parameter that you can use to control the shard assignment when the target is a Kinesis data
-     *        stream. If you don't include this parameter, the default is to use the <code>eventId</code> as the
+     *        The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
+     *        stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the
      *        partition key.
      */
 
@@ -419,12 +412,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The custom parameter that you can use to control the shard assignment when the target is a Kinesis data stream.
-     * If you don't include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      * 
-     * @return The custom parameter that you can use to control the shard assignment when the target is a Kinesis data
-     *         stream. If you don't include this parameter, the default is to use the <code>eventId</code> as the
+     * @return The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
+     *         stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the
      *         partition key.
      */
 
@@ -434,13 +427,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The custom parameter that you can use to control the shard assignment when the target is a Kinesis data stream.
-     * If you don't include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      * 
      * @param kinesisParameters
-     *        The custom parameter that you can use to control the shard assignment when the target is a Kinesis data
-     *        stream. If you don't include this parameter, the default is to use the <code>eventId</code> as the
+     *        The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
+     *        stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the
      *        partition key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -492,14 +485,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon ECS task. For
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param ecsParameters
-     *        Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon ECS
+     *        Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
      *        task. For more information about Amazon ECS tasks, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
      *        </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
@@ -511,13 +504,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon ECS task. For
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon ECS
+     * @return Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
      *         task. For more information about Amazon ECS tasks, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
      *         </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
@@ -529,14 +522,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon ECS task. For
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param ecsParameters
-     *        Contains the Amazon ECS task definition and task count to be used if the event target is an Amazon ECS
+     *        Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
      *        task. For more information about Amazon ECS tasks, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
      *        </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.

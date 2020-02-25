@@ -53,7 +53,11 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     private String audioTrackType;
     /** When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest */
     private String iFrameOnlyManifest;
-    /** String concatenated to end of segment filenames. Accepts "Format Identifiers":#format_identifier_parameters. */
+    /**
+     * Use this setting to add an identifying string to the filename of each segment. The service adds this string
+     * between the name modifier and segment index number. You can use format identifiers in the string. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
+     */
     private String segmentModifier;
 
     /**
@@ -364,11 +368,15 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment. The service adds this string
+     * between the name modifier and segment index number. You can use format identifiers in the string. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      * 
      * @param segmentModifier
-     *        String concatenated to end of segment filenames. Accepts
-     *        "Format Identifiers":#format_identifier_parameters.
+     *        Use this setting to add an identifying string to the filename of each segment. The service adds this
+     *        string between the name modifier and segment index number. You can use format identifiers in the string.
+     *        For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
 
     public void setSegmentModifier(String segmentModifier) {
@@ -376,10 +384,14 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment. The service adds this string
+     * between the name modifier and segment index number. You can use format identifiers in the string. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      * 
-     * @return String concatenated to end of segment filenames. Accepts
-     *         "Format Identifiers":#format_identifier_parameters.
+     * @return Use this setting to add an identifying string to the filename of each segment. The service adds this
+     *         string between the name modifier and segment index number. You can use format identifiers in the string.
+     *         For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
 
     public String getSegmentModifier() {
@@ -387,11 +399,15 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment. The service adds this string
+     * between the name modifier and segment index number. You can use format identifiers in the string. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      * 
      * @param segmentModifier
-     *        String concatenated to end of segment filenames. Accepts
-     *        "Format Identifiers":#format_identifier_parameters.
+     *        Use this setting to add an identifying string to the filename of each segment. The service adds this
+     *        string between the name modifier and segment index number. You can use format identifiers in the string.
+     *        For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

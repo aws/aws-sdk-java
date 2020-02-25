@@ -38,6 +38,55 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
+     * Creates an EFS access point. An access point is an application-specific view into an EFS file system that applies
+     * an operating system user and group, and a file system path, to any file system request made through the access
+     * point. The operating system user and group override any identity information provided by the NFS client. The file
+     * system path is exposed as the access point's root directory. Applications using the access point can only access
+     * data in its own directory and below. To learn more, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a File System Using EFS Access
+     * Points</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
+     * </p>
+     * 
+     * @param createAccessPointRequest
+     * @return A Java Future containing the result of the CreateAccessPoint operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.CreateAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPointResult> createAccessPointAsync(CreateAccessPointRequest createAccessPointRequest);
+
+    /**
+     * <p>
+     * Creates an EFS access point. An access point is an application-specific view into an EFS file system that applies
+     * an operating system user and group, and a file system path, to any file system request made through the access
+     * point. The operating system user and group override any identity information provided by the NFS client. The file
+     * system path is exposed as the access point's root directory. Applications using the access point can only access
+     * data in its own directory and below. To learn more, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a File System Using EFS Access
+     * Points</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
+     * </p>
+     * 
+     * @param createAccessPointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessPoint operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.CreateAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPointResult> createAccessPointAsync(CreateAccessPointRequest createAccessPointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessPointRequest, CreateAccessPointResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new, empty file system. The operation requires a creation token in the request that Amazon EFS uses to
      * ensure idempotent creation (calling the operation with same creation token has no effect). If a file system does
      * not currently exist that is owned by the caller's AWS account with the specified creation token, this operation
@@ -533,6 +582,7 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest createTagsRequest);
 
     /**
@@ -556,8 +606,50 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest createTagsRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified access point. After deletion is complete, new clients can no longer connect to the access
+     * points. Clients connected to the access point at the time of deletion will continue to function until they
+     * terminate their connection.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteAccessPoint</code> action.
+     * </p>
+     * 
+     * @param deleteAccessPointRequest
+     * @return A Java Future containing the result of the DeleteAccessPoint operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.DeleteAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointResult> deleteAccessPointAsync(DeleteAccessPointRequest deleteAccessPointRequest);
+
+    /**
+     * <p>
+     * Deletes the specified access point. After deletion is complete, new clients can no longer connect to the access
+     * points. Clients connected to the access point at the time of deletion will continue to function until they
+     * terminate their connection.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteAccessPoint</code> action.
+     * </p>
+     * 
+     * @param deleteAccessPointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessPoint operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.DeleteAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointResult> deleteAccessPointAsync(DeleteAccessPointRequest deleteAccessPointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessPointRequest, DeleteAccessPointResult> asyncHandler);
 
     /**
      * <p>
@@ -621,6 +713,51 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      */
     java.util.concurrent.Future<DeleteFileSystemResult> deleteFileSystemAsync(DeleteFileSystemRequest deleteFileSystemRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFileSystemRequest, DeleteFileSystemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
+     * <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted. For more information about
+     * the default file system policy, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using Resource-based Policies with
+     * EFS</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param deleteFileSystemPolicyRequest
+     * @return A Java Future containing the result of the DeleteFileSystemPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.DeleteFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFileSystemPolicyResult> deleteFileSystemPolicyAsync(DeleteFileSystemPolicyRequest deleteFileSystemPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
+     * <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted. For more information about
+     * the default file system policy, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using Resource-based Policies with
+     * EFS</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param deleteFileSystemPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFileSystemPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.DeleteFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFileSystemPolicyResult> deleteFileSystemPolicyAsync(DeleteFileSystemPolicyRequest deleteFileSystemPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFileSystemPolicyRequest, DeleteFileSystemPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -742,6 +879,7 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest);
 
     /**
@@ -765,8 +903,87 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code> is provided. If
+     * you provide an EFS <code>FileSystemId</code>, it returns descriptions of all access points for that file system.
+     * You can provide either an <code>AccessPointId</code> or a <code>FileSystemId</code> in the request, but not both.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.
+     * </p>
+     * 
+     * @param describeAccessPointsRequest
+     * @return A Java Future containing the result of the DescribeAccessPoints operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.DescribeAccessPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccessPointsResult> describeAccessPointsAsync(DescribeAccessPointsRequest describeAccessPointsRequest);
+
+    /**
+     * <p>
+     * Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code> is provided. If
+     * you provide an EFS <code>FileSystemId</code>, it returns descriptions of all access points for that file system.
+     * You can provide either an <code>AccessPointId</code> or a <code>FileSystemId</code> in the request, but not both.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.
+     * </p>
+     * 
+     * @param describeAccessPointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccessPoints operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.DescribeAccessPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccessPointsResult> describeAccessPointsAsync(DescribeAccessPointsRequest describeAccessPointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccessPointsRequest, DescribeAccessPointsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param describeFileSystemPolicyRequest
+     * @return A Java Future containing the result of the DescribeFileSystemPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.DescribeFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFileSystemPolicyResult> describeFileSystemPolicyAsync(DescribeFileSystemPolicyRequest describeFileSystemPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param describeFileSystemPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFileSystemPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.DescribeFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFileSystemPolicyResult> describeFileSystemPolicyAsync(DescribeFileSystemPolicyRequest describeFileSystemPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFileSystemPolicyRequest, DescribeFileSystemPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1037,6 +1254,7 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest);
 
     /**
@@ -1059,8 +1277,48 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all tags for a top-level EFS resource. You must provide the ID of the resource that you want to retrieve
+     * the tags for.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all tags for a top-level EFS resource. You must provide the ID of the resource that you want to retrieve
+     * the tags for.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1142,6 +1400,53 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
     java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system. A file system policy is an IAM
+     * resource-based policy and can contain multiple policy statements. A file system always has exactly one file
+     * system policy, which can be the default policy or an explicit policy set or updated using this API operation.
+     * When an explicit policy is set, it overrides the default policy. For more information about the default file
+     * system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+     * Resource-based Policies with EFS</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param putFileSystemPolicyRequest
+     * @return A Java Future containing the result of the PutFileSystemPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.PutFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFileSystemPolicyResult> putFileSystemPolicyAsync(PutFileSystemPolicyRequest putFileSystemPolicyRequest);
+
+    /**
+     * <p>
+     * Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system. A file system policy is an IAM
+     * resource-based policy and can contain multiple policy statements. A file system always has exactly one file
+     * system policy, which can be the default policy or an explicit policy set or updated using this API operation.
+     * When an explicit policy is set, it overrides the default policy. For more information about the default file
+     * system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+     * Resource-based Policies with EFS</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param putFileSystemPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFileSystemPolicy operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.PutFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFileSystemPolicyResult> putFileSystemPolicyAsync(PutFileSystemPolicyRequest putFileSystemPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFileSystemPolicyRequest, PutFileSystemPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1241,6 +1546,84 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
     java.util.concurrent.Future<PutLifecycleConfigurationResult> putLifecycleConfigurationAsync(
             PutLifecycleConfigurationRequest putLifecycleConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutLifecycleConfigurationRequest, PutLifecycleConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a tag for an EFS resource. You can create tags for EFS file systems and access points using this API
+     * operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:TagResource</code> action.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Creates a tag for an EFS resource. You can create tags for EFS file systems and access points using this API
+     * operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:TagResource</code> action.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from an EFS resource. You can remove tags from EFS file systems and access points using this API
+     * operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:UntagResource</code> action.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from an EFS resource. You can remove tags from EFS file systems and access points using this API
+     * operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:UntagResource</code> action.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

@@ -36,6 +36,32 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     private String weeklyMaintenanceStartTime;
 
     private DataRepositoryConfiguration dataRepositoryConfiguration;
+    /**
+     * <p>
+     * The deployment type of the FSX for Lustre file system.
+     * </p>
+     */
+    private String deploymentType;
+    /**
+     * <p>
+     * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
+     * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
+     * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
+     * Valid values are 50, 100, 200.
+     * </p>
+     */
+    private Integer perUnitStorageThroughput;
+    /**
+     * <p>
+     * You use the <code>MountName</code> value when mounting the file system.
+     * </p>
+     * <p>
+     * For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For
+     * <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value is a string that is unique
+     * within an AWS Region.
+     * </p>
+     */
+    private String mountName;
 
     /**
      * <p>
@@ -104,6 +130,190 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The deployment type of the FSX for Lustre file system.
+     * </p>
+     * 
+     * @param deploymentType
+     *        The deployment type of the FSX for Lustre file system.
+     * @see LustreDeploymentType
+     */
+
+    public void setDeploymentType(String deploymentType) {
+        this.deploymentType = deploymentType;
+    }
+
+    /**
+     * <p>
+     * The deployment type of the FSX for Lustre file system.
+     * </p>
+     * 
+     * @return The deployment type of the FSX for Lustre file system.
+     * @see LustreDeploymentType
+     */
+
+    public String getDeploymentType() {
+        return this.deploymentType;
+    }
+
+    /**
+     * <p>
+     * The deployment type of the FSX for Lustre file system.
+     * </p>
+     * 
+     * @param deploymentType
+     *        The deployment type of the FSX for Lustre file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LustreDeploymentType
+     */
+
+    public LustreFileSystemConfiguration withDeploymentType(String deploymentType) {
+        setDeploymentType(deploymentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deployment type of the FSX for Lustre file system.
+     * </p>
+     * 
+     * @param deploymentType
+     *        The deployment type of the FSX for Lustre file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LustreDeploymentType
+     */
+
+    public LustreFileSystemConfiguration withDeploymentType(LustreDeploymentType deploymentType) {
+        this.deploymentType = deploymentType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
+     * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
+     * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
+     * Valid values are 50, 100, 200.
+     * </p>
+     * 
+     * @param perUnitStorageThroughput
+     *        Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte
+     *        of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
+     *        PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
+     *        types. Valid values are 50, 100, 200.
+     */
+
+    public void setPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
+        this.perUnitStorageThroughput = perUnitStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
+     * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
+     * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
+     * Valid values are 50, 100, 200.
+     * </p>
+     * 
+     * @return Per unit storage throughput represents the megabytes per second of read or write throughput per 1
+     *         tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
+     *         PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
+     *         types. Valid values are 50, 100, 200.
+     */
+
+    public Integer getPerUnitStorageThroughput() {
+        return this.perUnitStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
+     * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
+     * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
+     * Valid values are 50, 100, 200.
+     * </p>
+     * 
+     * @param perUnitStorageThroughput
+     *        Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte
+     *        of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
+     *        PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
+     *        types. Valid values are 50, 100, 200.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
+        setPerUnitStorageThroughput(perUnitStorageThroughput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You use the <code>MountName</code> value when mounting the file system.
+     * </p>
+     * <p>
+     * For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For
+     * <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value is a string that is unique
+     * within an AWS Region.
+     * </p>
+     * 
+     * @param mountName
+     *        You use the <code>MountName</code> value when mounting the file system.</p>
+     *        <p>
+     *        For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For
+     *        <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value is a string that is
+     *        unique within an AWS Region.
+     */
+
+    public void setMountName(String mountName) {
+        this.mountName = mountName;
+    }
+
+    /**
+     * <p>
+     * You use the <code>MountName</code> value when mounting the file system.
+     * </p>
+     * <p>
+     * For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For
+     * <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value is a string that is unique
+     * within an AWS Region.
+     * </p>
+     * 
+     * @return You use the <code>MountName</code> value when mounting the file system.</p>
+     *         <p>
+     *         For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For
+     *         <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value is a string that is
+     *         unique within an AWS Region.
+     */
+
+    public String getMountName() {
+        return this.mountName;
+    }
+
+    /**
+     * <p>
+     * You use the <code>MountName</code> value when mounting the file system.
+     * </p>
+     * <p>
+     * For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For
+     * <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value is a string that is unique
+     * within an AWS Region.
+     * </p>
+     * 
+     * @param mountName
+     *        You use the <code>MountName</code> value when mounting the file system.</p>
+     *        <p>
+     *        For the <code>SCRATCH_1</code> deployment type, this value is always "<code>fsx</code>". For
+     *        <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, this value is a string that is
+     *        unique within an AWS Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withMountName(String mountName) {
+        setMountName(mountName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +328,13 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         if (getWeeklyMaintenanceStartTime() != null)
             sb.append("WeeklyMaintenanceStartTime: ").append(getWeeklyMaintenanceStartTime()).append(",");
         if (getDataRepositoryConfiguration() != null)
-            sb.append("DataRepositoryConfiguration: ").append(getDataRepositoryConfiguration());
+            sb.append("DataRepositoryConfiguration: ").append(getDataRepositoryConfiguration()).append(",");
+        if (getDeploymentType() != null)
+            sb.append("DeploymentType: ").append(getDeploymentType()).append(",");
+        if (getPerUnitStorageThroughput() != null)
+            sb.append("PerUnitStorageThroughput: ").append(getPerUnitStorageThroughput()).append(",");
+        if (getMountName() != null)
+            sb.append("MountName: ").append(getMountName());
         sb.append("}");
         return sb.toString();
     }
@@ -141,6 +357,18 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
             return false;
         if (other.getDataRepositoryConfiguration() != null && other.getDataRepositoryConfiguration().equals(this.getDataRepositoryConfiguration()) == false)
             return false;
+        if (other.getDeploymentType() == null ^ this.getDeploymentType() == null)
+            return false;
+        if (other.getDeploymentType() != null && other.getDeploymentType().equals(this.getDeploymentType()) == false)
+            return false;
+        if (other.getPerUnitStorageThroughput() == null ^ this.getPerUnitStorageThroughput() == null)
+            return false;
+        if (other.getPerUnitStorageThroughput() != null && other.getPerUnitStorageThroughput().equals(this.getPerUnitStorageThroughput()) == false)
+            return false;
+        if (other.getMountName() == null ^ this.getMountName() == null)
+            return false;
+        if (other.getMountName() != null && other.getMountName().equals(this.getMountName()) == false)
+            return false;
         return true;
     }
 
@@ -151,6 +379,9 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
         hashCode = prime * hashCode + ((getDataRepositoryConfiguration() == null) ? 0 : getDataRepositoryConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
+        hashCode = prime * hashCode + ((getPerUnitStorageThroughput() == null) ? 0 : getPerUnitStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getMountName() == null) ? 0 : getMountName().hashCode());
         return hashCode;
     }
 

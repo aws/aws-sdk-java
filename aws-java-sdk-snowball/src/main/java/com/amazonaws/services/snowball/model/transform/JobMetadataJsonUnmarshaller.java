@@ -116,6 +116,10 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                     context.nextToken();
                     jobMetadata.setForwardingAddressId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TaxDocuments", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setTaxDocuments(TaxDocumentsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

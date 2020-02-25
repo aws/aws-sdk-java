@@ -41,6 +41,8 @@ public class AudioCodecSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eac3Settings").build();
     private static final MarshallingInfo<StructuredPojo> MP2SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mp2Settings").build();
+    private static final MarshallingInfo<StructuredPojo> MP3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mp3Settings").build();
     private static final MarshallingInfo<StructuredPojo> WAVSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("wavSettings").build();
 
@@ -67,6 +69,7 @@ public class AudioCodecSettingsMarshaller {
             protocolMarshaller.marshall(audioCodecSettings.getEac3AtmosSettings(), EAC3ATMOSSETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getEac3Settings(), EAC3SETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getMp2Settings(), MP2SETTINGS_BINDING);
+            protocolMarshaller.marshall(audioCodecSettings.getMp3Settings(), MP3SETTINGS_BINDING);
             protocolMarshaller.marshall(audioCodecSettings.getWavSettings(), WAVSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

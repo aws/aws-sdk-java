@@ -35,6 +35,20 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Engine attributes that are specific to the server on which you want to run maintenance.
      * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this
+     * engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the
+     * server to Chef Automate 2. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for
+     * Chef Automate Server to Chef Automate 2</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<EngineAttribute> engineAttributes;
 
@@ -82,8 +96,35 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Engine attributes that are specific to the server on which you want to run maintenance.
      * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this
+     * engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the
+     * server to Chef Automate 2. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for
+     * Chef Automate Server to Chef Automate 2</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Engine attributes that are specific to the server on which you want to run maintenance.
+     * @return Engine attributes that are specific to the server on which you want to run maintenance.</p>
+     *         <p class="title">
+     *         <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2,
+     *         add this engine attribute to a <code>StartMaintenance</code> request and set the value to
+     *         <code>true</code> to upgrade the server to Chef Automate 2. For more information, see <a
+     *         href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks
+     *         for Chef Automate Server to Chef Automate 2</a>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<EngineAttribute> getEngineAttributes() {
@@ -94,9 +135,36 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Engine attributes that are specific to the server on which you want to run maintenance.
      * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this
+     * engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the
+     * server to Chef Automate 2. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for
+     * Chef Automate Server to Chef Automate 2</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineAttributes
-     *        Engine attributes that are specific to the server on which you want to run maintenance.
+     *        Engine attributes that are specific to the server on which you want to run maintenance.</p>
+     *        <p class="title">
+     *        <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add
+     *        this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to
+     *        upgrade the server to Chef Automate 2. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks
+     *        for Chef Automate Server to Chef Automate 2</a>.
+     *        </p>
+     *        </li>
      */
 
     public void setEngineAttributes(java.util.Collection<EngineAttribute> engineAttributes) {
@@ -112,6 +180,20 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Engine attributes that are specific to the server on which you want to run maintenance.
      * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this
+     * engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the
+     * server to Chef Automate 2. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for
+     * Chef Automate Server to Chef Automate 2</a>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEngineAttributes(java.util.Collection)} or {@link #withEngineAttributes(java.util.Collection)} if you
@@ -119,7 +201,20 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param engineAttributes
-     *        Engine attributes that are specific to the server on which you want to run maintenance.
+     *        Engine attributes that are specific to the server on which you want to run maintenance.</p>
+     *        <p class="title">
+     *        <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add
+     *        this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to
+     *        upgrade the server to Chef Automate 2. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks
+     *        for Chef Automate Server to Chef Automate 2</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,9 +232,36 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Engine attributes that are specific to the server on which you want to run maintenance.
      * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add this
+     * engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to upgrade the
+     * server to Chef Automate 2. For more information, see <a
+     * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks for
+     * Chef Automate Server to Chef Automate 2</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engineAttributes
-     *        Engine attributes that are specific to the server on which you want to run maintenance.
+     *        Engine attributes that are specific to the server on which you want to run maintenance.</p>
+     *        <p class="title">
+     *        <b>Attributes accepted in a StartMaintenance request for Chef</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_MAJOR_UPGRADE</code>: If a Chef Automate server is eligible for upgrade to Chef Automate 2, add
+     *        this engine attribute to a <code>StartMaintenance</code> request and set the value to <code>true</code> to
+     *        upgrade the server to Chef Automate 2. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opsworks/latest/userguide/opscm-a2upgrade.html">Upgrade an AWS OpsWorks
+     *        for Chef Automate Server to Chef Automate 2</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

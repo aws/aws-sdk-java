@@ -30,7 +30,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
@@ -43,26 +43,26 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     private String dBSubnetGroupName;
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      */
     private String dBSubnetGroupDescription;
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The tags to be assigned to the DB subnet group.
+     * The tags to be assigned to the subnet group.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
@@ -73,7 +73,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name for the DB subnet group. This value is stored as a lowercase string.</p>
+     *        The name for the subnet group. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.
      *        Must not be default.
@@ -88,7 +88,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
@@ -98,7 +98,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The name for the DB subnet group. This value is stored as a lowercase string.</p>
+     * @return The name for the subnet group. This value is stored as a lowercase string.</p>
      *         <p>
      *         Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.
      *         Must not be default.
@@ -113,7 +113,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the DB subnet group. This value is stored as a lowercase string.
+     * The name for the subnet group. This value is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not
@@ -124,7 +124,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name for the DB subnet group. This value is stored as a lowercase string.</p>
+     *        The name for the subnet group. This value is stored as a lowercase string.</p>
      *        <p>
      *        Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.
      *        Must not be default.
@@ -141,11 +141,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      * 
      * @param dBSubnetGroupDescription
-     *        The description for the DB subnet group.
+     *        The description for the subnet group.
      */
 
     public void setDBSubnetGroupDescription(String dBSubnetGroupDescription) {
@@ -154,10 +154,10 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      * 
-     * @return The description for the DB subnet group.
+     * @return The description for the subnet group.
      */
 
     public String getDBSubnetGroupDescription() {
@@ -166,11 +166,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The description for the DB subnet group.
+     * The description for the subnet group.
      * </p>
      * 
      * @param dBSubnetGroupDescription
-     *        The description for the DB subnet group.
+     *        The description for the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,10 +181,10 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * 
-     * @return The Amazon EC2 subnet IDs for the DB subnet group.
+     * @return The Amazon EC2 subnet IDs for the subnet group.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -193,11 +193,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * 
      * @param subnetIds
-     *        The Amazon EC2 subnet IDs for the DB subnet group.
+     *        The Amazon EC2 subnet IDs for the subnet group.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -211,7 +211,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -220,7 +220,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param subnetIds
-     *        The Amazon EC2 subnet IDs for the DB subnet group.
+     *        The Amazon EC2 subnet IDs for the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon EC2 subnet IDs for the DB subnet group.
+     * The Amazon EC2 subnet IDs for the subnet group.
      * </p>
      * 
      * @param subnetIds
-     *        The Amazon EC2 subnet IDs for the DB subnet group.
+     *        The Amazon EC2 subnet IDs for the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +251,10 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to be assigned to the DB subnet group.
+     * The tags to be assigned to the subnet group.
      * </p>
      * 
-     * @return The tags to be assigned to the DB subnet group.
+     * @return The tags to be assigned to the subnet group.
      */
 
     public java.util.List<Tag> getTags() {
@@ -263,11 +263,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to be assigned to the DB subnet group.
+     * The tags to be assigned to the subnet group.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB subnet group.
+     *        The tags to be assigned to the subnet group.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -281,7 +281,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to be assigned to the DB subnet group.
+     * The tags to be assigned to the subnet group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -290,7 +290,7 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB subnet group.
+     *        The tags to be assigned to the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +306,11 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to be assigned to the DB subnet group.
+     * The tags to be assigned to the subnet group.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB subnet group.
+     *        The tags to be assigned to the subnet group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

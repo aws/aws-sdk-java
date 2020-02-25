@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum GrowthType {
 
-    LINEAR("LINEAR");
+    LINEAR("LINEAR"),
+    EXPONENTIAL("EXPONENTIAL");
 
     private String value;
 

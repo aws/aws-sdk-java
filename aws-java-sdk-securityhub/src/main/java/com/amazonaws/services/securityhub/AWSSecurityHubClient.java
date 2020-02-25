@@ -52,10 +52,10 @@ import com.amazonaws.services.securityhub.model.transform.*;
  * <p>
  * <p>
  * Security Hub provides you with a comprehensive view of the security state of your AWS environment and resources. It
- * also provides you with the compliance status of your environment based on CIS AWS Foundations compliance checks.
- * Security Hub collects security data from AWS accounts, services, and integrated third-party products and helps you
- * analyze security trends in your environment to identify the highest priority security issues. For more information
- * about Security Hub, see the <i> <a
+ * also provides you with the compliance status of your environment based on controls from supported standards. Security
+ * Hub collects security data from AWS accounts, services, and integrated third-party products and helps you analyze
+ * security trends in your environment to identify the highest priority security issues. For more information about
+ * Security Hub, see the <i> <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
  * Guide</a> </i>.
  * </p>
@@ -63,28 +63,34 @@ import com.amazonaws.services.securityhub.model.transform.*;
  * When you use operations in the Security Hub API, the requests are executed only in the AWS Region that is currently
  * active or in the specific AWS Region that you specify in your request. Any configuration or settings change that
  * results from the operation is applied only to that Region. To make the same change in other Regions, execute the same
- * command for each Region to apply the change to. For example, if your Region is set to <code>us-west-2</code>, when
- * you use <code>CreateMembers</code> to add a member account to Security Hub, the association of the member account
- * with the master account is created only in the us-west-2 Region. Security Hub must be enabled for the member account
- * in the same Region that the invite was sent from.
+ * command for each Region to apply the change to.
  * </p>
  * <p>
- * The following throttling limits apply to using Security Hub API operations:
+ * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
+ * a member account to Security Hub, the association of the member account with the master account is created only in
+ * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
+ * invitation was sent from.
+ * </p>
+ * <p>
+ * The following throttling limits apply to using Security Hub API operations.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <code>GetFindings</code> - RateLimit of 3 requests per second, and a BurstLimit of 6 requests per second.
+ * <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>UpdateFindings</code> - RateLimit of 1 request per second, and a BurstLimit of 5 requests per second.
+ * <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
+ * requests per second.
  * </p>
  * </li>
  * <li>
  * <p>
- * All other operations - RateLimit of 10 request per second, and a BurstLimit of 30 requests per second.
+ * All other operations - <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code> of 30 requests per
+ * second.
  * </p>
  * </li>
  * </ul>
@@ -116,23 +122,23 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securityhub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAccessException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.InvalidAccessExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securityhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.InternalExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.securityhub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.securityhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.securityhub.model.AWSSecurityHubException.class));
 
     public static AWSSecurityHubClientBuilder builder() {
@@ -184,8 +190,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Accepts the invitation to be a member account and be monitored by the Security Hub master account that the
-     * invitation was sent from. When the member account accepts the invitation, permission is granted to the master
-     * account to view findings generated in the member account.
+     * invitation was sent from.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the master account to view findings
+     * generated in the member account.
      * </p>
      * 
      * @param acceptInvitationRequest
@@ -249,9 +258,12 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>. For more information,
-     * see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-     * Supported in AWS Security Hub</a>.
+     * Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+     * Standards</a> section of the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchDisableStandardsRequest
@@ -314,10 +326,13 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Enables the standards specified by the provided <code>standardsArn</code>. In this release, only CIS AWS
-     * Foundations standards are supported. For more information, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards Supported in
-     * AWS Security Hub</a>.
+     * Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the ARN for a standard, use
+     * the <code> <a>DescribeStandards</a> </code> operation.
+     * </p>
+     * <p>
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+     * Standards</a> section of the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchEnableStandardsRequest
@@ -380,8 +395,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Imports security findings generated from an integrated third-party product into Security Hub. This action is
-     * requested by the integrated product to import its findings into Security Hub. The maximum allowed size for a
-     * finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
+     * requested by the integrated product to import its findings into Security Hub.
+     * </p>
+     * <p>
+     * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
      * </p>
      * 
      * @param batchImportFindingsRequest
@@ -443,8 +460,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Creates a custom action target in Security Hub. You can use custom actions on findings and insights in Security
-     * Hub to trigger target actions in Amazon CloudWatch Events.
+     * Creates a custom action target in Security Hub.
+     * </p>
+     * <p>
+     * You can use custom actions on findings and insights in Security Hub to trigger target actions in Amazon
+     * CloudWatch Events.
      * </p>
      * 
      * @param createActionTargetRequest
@@ -509,8 +529,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Creates a custom insight in Security Hub. An insight is a consolidation of findings that relate to a security
-     * issue that requires attention or remediation. Use the <code>GroupByAttribute</code> to group the related findings
-     * in the insight.
+     * issue that requires attention or remediation.
+     * </p>
+     * <p>
+     * To group the related findings in the insight, use the <code>GroupByAttribute</code>.
      * </p>
      * 
      * @param createInsightRequest
@@ -576,19 +598,23 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
      * request, which is the master account. To successfully create a member, you must use this action from an account
-     * that already has Security Hub enabled. You can use the <a>EnableSecurityHub</a> to enable Security Hub.
+     * that already has Security Hub enabled. To enable Security Hub, you can use the
+     * <code> <a>EnableSecurityHub</a> </code> operation.
      * </p>
      * <p>
-     * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you need to use
-     * the <a>InviteMembers</a> action, which invites the accounts to enable Security Hub and become member accounts in
-     * Security Hub. If the invitation is accepted by the account owner, the account becomes a member account in
-     * Security Hub, and a permission policy is added that permits the master account to view the findings generated in
-     * the member account. When Security Hub is enabled in the invited account, findings start being sent to both the
-     * member and master accounts.
+     * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you must use the
+     * <code> <a>InviteMembers</a> </code> operation to invite the accounts to enable Security Hub and become member
+     * accounts in Security Hub.
      * </p>
      * <p>
-     * You can remove the association between the master and member accounts by using the
-     * <a>DisassociateFromMasterAccount</a> or <a>DisassociateMembers</a> operation.
+     * If the account owner accepts the invitation, the account becomes a member account in Security Hub, and a
+     * permission policy is added that permits the master account to view the findings generated in the member account.
+     * When Security Hub is enabled in the invited account, findings start to be sent to both the member and master
+     * accounts.
+     * </p>
+     * <p>
+     * To remove the association between the master and member accounts, use the
+     * <code> <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a> </code> operation.
      * </p>
      * 
      * @param createMembersRequest
@@ -713,8 +739,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Deletes a custom action target from Security Hub. Deleting a custom action target doesn't affect any findings or
-     * insights that were already sent to Amazon CloudWatch Events using the custom action.
+     * Deletes a custom action target from Security Hub.
+     * </p>
+     * <p>
+     * Deleting a custom action target does not affect any findings or insights that were already sent to Amazon
+     * CloudWatch Events using the custom action.
      * </p>
      * 
      * @param deleteActionTargetRequest
@@ -1094,8 +1123,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Returns information about the products available that you can subscribe to and integrate with Security Hub to
-     * consolidate findings.
+     * Returns information about the available products that you can subscribe to and integrate with Security Hub in
+     * order to consolidate findings.
      * </p>
      * 
      * @param describeProductsRequest
@@ -1157,8 +1186,137 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Disables the integration of the specified product with Security Hub. Findings from that product are no longer
-     * sent to Security Hub after the integration is disabled.
+     * Returns a list of the available standards in Security Hub.
+     * </p>
+     * <p>
+     * For each standard, the results include the standard ARN, the name, and a description.
+     * </p>
+     * 
+     * @param describeStandardsRequest
+     * @return Result of the DescribeStandards operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @sample AWSSecurityHub.DescribeStandards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeStandardsResult describeStandards(DescribeStandardsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStandards(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStandardsResult executeDescribeStandards(DescribeStandardsRequest describeStandardsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStandardsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStandardsRequest> request = null;
+        Response<DescribeStandardsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStandardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStandardsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStandards");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStandardsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeStandardsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of compliance standards controls.
+     * </p>
+     * <p>
+     * For each control, the results include information about whether it is currently enabled, the severity, and a link
+     * to remediation information.
+     * </p>
+     * 
+     * @param describeStandardsControlsRequest
+     * @return Result of the DescribeStandardsControls operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.DescribeStandardsControls
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeStandardsControlsResult describeStandardsControls(DescribeStandardsControlsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStandardsControls(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStandardsControlsResult executeDescribeStandardsControls(DescribeStandardsControlsRequest describeStandardsControlsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStandardsControlsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStandardsControlsRequest> request = null;
+        Response<DescribeStandardsControlsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStandardsControlsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeStandardsControlsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStandardsControls");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStandardsControlsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeStandardsControlsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables the integration of the specified product with Security Hub. After the integration is disabled, findings
+     * from that product are no longer sent to Security Hub.
      * </p>
      * 
      * @param disableImportFindingsForProductRequest
@@ -1226,14 +1384,19 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Disables Security Hub in your account only in the current Region. To disable Security Hub in all Regions, you
-     * must submit one request per Region where you have enabled Security Hub. When you disable Security Hub for a
-     * master account, it doesn't disable Security Hub for any associated member accounts.
+     * must submit one request per Region where you have enabled Security Hub.
+     * </p>
+     * <p>
+     * When you disable Security Hub for a master account, it doesn't disable Security Hub for any associated member
+     * accounts.
      * </p>
      * <p>
      * When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings
-     * are deleted after 90 days and can't be recovered. Any standards that were enabled are disabled, and your master
-     * and member account associations are removed. If you want to save your existing findings, you must export them
-     * before you disable Security Hub.
+     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your master
+     * and member account associations are removed.
+     * </p>
+     * <p>
+     * If you want to save your existing findings, you must export them before you disable Security Hub.
      * </p>
      * 
      * @param disableSecurityHubRequest
@@ -1426,7 +1589,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Enables the integration of a partner product with Security Hub. Integrated products send findings to Security
-     * Hub. When you enable a product integration, a permission policy that grants permission for the product to send
+     * Hub.
+     * </p>
+     * <p>
+     * When you enable a product integration, a permission policy that grants permission for the product to send
      * findings to Security Hub is applied.
      * </p>
      * 
@@ -1493,12 +1659,22 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Enables Security Hub for your account in the current Region or the Region you specify in the request. Enabling
-     * Security Hub also enables the CIS AWS Foundations standard. When you enable Security Hub, you grant to Security
-     * Hub the permissions necessary to gather findings from AWS Config, Amazon GuardDuty, Amazon Inspector, and Amazon
-     * Macie. To learn more, see <a
+     * Enables Security Hub for your account in the current Region or the Region you specify in the request.
+     * </p>
+     * <p>
+     * When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings from AWS
+     * Config, Amazon GuardDuty, Amazon Inspector, and Amazon Macie.
+     * </p>
+     * <p>
+     * When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also automatically enable
+     * the CIS AWS Foundations standard. You do not enable the Payment Card Industry Data Security Standard (PCI DSS)
+     * standard. To enable a standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
+     * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.
+     * </p>
+     * <p>
+     * To learn more, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting Up AWS
-     * Security Hub</a>.
+     * Security Hub</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param enableSecurityHubRequest
@@ -1686,7 +1862,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Lists the results of the Security Hub insight that the insight ARN specifies.
+     * Lists the results of the Security Hub insight specified by the insight ARN.
      * </p>
      * 
      * @param getInsightResultsRequest
@@ -1750,7 +1926,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Lists and describes insights that insight ARNs specify.
+     * Lists and describes insights for the specified insight ARNs.
      * </p>
      * 
      * @param getInsightsRequest
@@ -1877,7 +2053,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Provides the details for the Security Hub master account to the current member account.
+     * Provides the details for the Security Hub master account for the current member account.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -1941,7 +2117,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Returns the details on the Security Hub member accounts that the account IDs specify.
+     * Returns the details for the Security Hub member accounts for the specified account IDs.
      * </p>
      * 
      * @param getMembersRequest
@@ -2006,9 +2182,15 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Invites other AWS accounts to become member accounts for the Security Hub master account that the invitation is
-     * sent from. Before you can use this action to invite a member, you must first create the member account in
-     * Security Hub by using the <a>CreateMembers</a> action. When the account owner accepts the invitation to become a
-     * member account and enables Security Hub, the master account can view the findings generated from member account.
+     * sent from.
+     * </p>
+     * <p>
+     * Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a> </code>
+     * action to create the member account in Security Hub.
+     * </p>
+     * <p>
+     * When the account owner accepts the invitation to become a member account and enables Security Hub, the master
+     * account can view the findings generated from the member account.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -2072,7 +2254,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Lists all findings-generating solutions (products) whose findings you have subscribed to receive in Security Hub.
+     * Lists all findings-generating solutions (products) that you are subscribed to receive findings from in Security
+     * Hub.
      * </p>
      * 
      * @param listEnabledProductsForImportRequest
@@ -2563,7 +2746,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Updates the Security Hub insight that the insight ARN specifies.
+     * Updates the Security Hub insight identified by the specified insight ARN.
      * </p>
      * 
      * @param updateInsightRequest
@@ -2615,6 +2798,68 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateInsightResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateInsightResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used to control whether an individual compliance standard control is enabled or disabled.
+     * </p>
+     * 
+     * @param updateStandardsControlRequest
+     * @return Result of the UpdateStandardsControl operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.UpdateStandardsControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateStandardsControlResult updateStandardsControl(UpdateStandardsControlRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStandardsControl(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStandardsControlResult executeUpdateStandardsControl(UpdateStandardsControlRequest updateStandardsControlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateStandardsControlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateStandardsControlRequest> request = null;
+        Response<UpdateStandardsControlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateStandardsControlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStandardsControlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStandardsControl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateStandardsControlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateStandardsControlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

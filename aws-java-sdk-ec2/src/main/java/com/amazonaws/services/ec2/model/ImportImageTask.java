@@ -113,7 +113,7 @@ public class ImportImageTask implements Serializable, Cloneable {
     private String statusMessage;
     /**
      * <p>
-     * Any tags applied to the import image task.
+     * The tags for the import image task.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -727,10 +727,10 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags applied to the import image task.
+     * The tags for the import image task.
      * </p>
      * 
-     * @return Any tags applied to the import image task.
+     * @return The tags for the import image task.
      */
 
     public java.util.List<Tag> getTags() {
@@ -742,11 +742,11 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags applied to the import image task.
+     * The tags for the import image task.
      * </p>
      * 
      * @param tags
-     *        Any tags applied to the import image task.
+     *        The tags for the import image task.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -760,7 +760,7 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags applied to the import image task.
+     * The tags for the import image task.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -769,7 +769,7 @@ public class ImportImageTask implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        Any tags applied to the import image task.
+     *        The tags for the import image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -785,11 +785,11 @@ public class ImportImageTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags applied to the import image task.
+     * The tags for the import image task.
      * </p>
      * 
      * @param tags
-     *        Any tags applied to the import image task.
+     *        The tags for the import image task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

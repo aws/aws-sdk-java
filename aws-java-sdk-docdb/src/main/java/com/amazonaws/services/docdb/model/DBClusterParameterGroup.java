@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Detailed information about a DB cluster parameter group.
+ * Detailed information about a cluster parameter group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterParameterGroup" target="_top">AWS API
@@ -28,36 +28,36 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * Provides the name of the cluster parameter group.
      * </p>
      */
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * Provides the name of the parameter group family that this cluster parameter group is compatible with.
      * </p>
      */
     private String dBParameterGroupFamily;
     /**
      * <p>
-     * Provides the customer-specified description for this DB cluster parameter group.
+     * Provides the customer-specified description for this cluster parameter group.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * The Amazon Resource Name (ARN) for the cluster parameter group.
      * </p>
      */
     private String dBClusterParameterGroupArn;
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * Provides the name of the cluster parameter group.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        Provides the name of the DB cluster parameter group.
+     *        Provides the name of the cluster parameter group.
      */
 
     public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
@@ -66,10 +66,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * Provides the name of the cluster parameter group.
      * </p>
      * 
-     * @return Provides the name of the DB cluster parameter group.
+     * @return Provides the name of the cluster parameter group.
      */
 
     public String getDBClusterParameterGroupName() {
@@ -78,11 +78,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * Provides the name of the cluster parameter group.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        Provides the name of the DB cluster parameter group.
+     *        Provides the name of the cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,12 +93,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * Provides the name of the parameter group family that this cluster parameter group is compatible with.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        Provides the name of the DB parameter group family that this DB cluster parameter group is compatible
-     *        with.
+     *        Provides the name of the parameter group family that this cluster parameter group is compatible with.
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -107,11 +106,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * Provides the name of the parameter group family that this cluster parameter group is compatible with.
      * </p>
      * 
-     * @return Provides the name of the DB parameter group family that this DB cluster parameter group is compatible
-     *         with.
+     * @return Provides the name of the parameter group family that this cluster parameter group is compatible with.
      */
 
     public String getDBParameterGroupFamily() {
@@ -120,12 +118,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * Provides the name of the parameter group family that this cluster parameter group is compatible with.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        Provides the name of the DB parameter group family that this DB cluster parameter group is compatible
-     *        with.
+     *        Provides the name of the parameter group family that this cluster parameter group is compatible with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +133,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the customer-specified description for this DB cluster parameter group.
+     * Provides the customer-specified description for this cluster parameter group.
      * </p>
      * 
      * @param description
-     *        Provides the customer-specified description for this DB cluster parameter group.
+     *        Provides the customer-specified description for this cluster parameter group.
      */
 
     public void setDescription(String description) {
@@ -149,10 +146,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the customer-specified description for this DB cluster parameter group.
+     * Provides the customer-specified description for this cluster parameter group.
      * </p>
      * 
-     * @return Provides the customer-specified description for this DB cluster parameter group.
+     * @return Provides the customer-specified description for this cluster parameter group.
      */
 
     public String getDescription() {
@@ -161,11 +158,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the customer-specified description for this DB cluster parameter group.
+     * Provides the customer-specified description for this cluster parameter group.
      * </p>
      * 
      * @param description
-     *        Provides the customer-specified description for this DB cluster parameter group.
+     *        Provides the customer-specified description for this cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +173,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * The Amazon Resource Name (ARN) for the cluster parameter group.
      * </p>
      * 
      * @param dBClusterParameterGroupArn
-     *        The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     *        The Amazon Resource Name (ARN) for the cluster parameter group.
      */
 
     public void setDBClusterParameterGroupArn(String dBClusterParameterGroupArn) {
@@ -189,10 +186,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * The Amazon Resource Name (ARN) for the cluster parameter group.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * @return The Amazon Resource Name (ARN) for the cluster parameter group.
      */
 
     public String getDBClusterParameterGroupArn() {
@@ -201,11 +198,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     * The Amazon Resource Name (ARN) for the cluster parameter group.
      * </p>
      * 
      * @param dBClusterParameterGroupArn
-     *        The Amazon Resource Name (ARN) for the DB cluster parameter group.
+     *        The Amazon Resource Name (ARN) for the cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

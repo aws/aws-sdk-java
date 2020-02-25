@@ -32,6 +32,9 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      */
     private String type;
     /**
@@ -39,7 +42,7 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String typeName;
@@ -48,7 +51,7 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      */
     private String arn;
@@ -71,11 +74,17 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of type. </p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -90,10 +99,16 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @return The kind of type. </p>
      *         <p>
      *         Currently the only valid value is <code>RESOURCE</code>.
+     *         </p>
+     *         <p>
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
      */
 
@@ -108,11 +123,17 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of type. </p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -129,11 +150,17 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Currently the only valid value is <code>RESOURCE</code>.
      * </p>
+     * <p>
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
+     * </p>
      * 
      * @param type
      *        The kind of type. </p>
      *        <p>
      *        Currently the only valid value is <code>RESOURCE</code>.
+     *        </p>
+     *        <p>
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -148,13 +175,13 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -166,12 +193,12 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The name of the type.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getTypeName() {
@@ -183,13 +210,13 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The name of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
      *        The name of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,13 +230,13 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public void setArn(String arn) {
@@ -221,12 +248,12 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the type.</p>
      *         <p>
-     *         Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
 
     public String getArn() {
@@ -238,13 +265,13 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the type.
      * </p>
      * <p>
-     * Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the type.</p>
      *        <p>
-     *        Conditional: You must specify <code>TypeName</code> or <code>Arn</code>.
+     *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

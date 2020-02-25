@@ -54,6 +54,25 @@ public class ListPortfolioAccessRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String portfolioId;
+    /**
+     * <p>
+     * The ID of an organization node the portfolio is shared with. All children of this node with an inherited
+     * portfolio share will be returned.
+     * </p>
+     */
+    private String organizationParentId;
+    /**
+     * <p>
+     * The page token for the next set of results. To retrieve the first set of results, use null.
+     * </p>
+     */
+    private String pageToken;
+    /**
+     * <p>
+     * The maximum number of items to return with this call.
+     * </p>
+     */
+    private Integer pageSize;
 
     /**
      * <p>
@@ -235,6 +254,132 @@ public class ListPortfolioAccessRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ID of an organization node the portfolio is shared with. All children of this node with an inherited
+     * portfolio share will be returned.
+     * </p>
+     * 
+     * @param organizationParentId
+     *        The ID of an organization node the portfolio is shared with. All children of this node with an inherited
+     *        portfolio share will be returned.
+     */
+
+    public void setOrganizationParentId(String organizationParentId) {
+        this.organizationParentId = organizationParentId;
+    }
+
+    /**
+     * <p>
+     * The ID of an organization node the portfolio is shared with. All children of this node with an inherited
+     * portfolio share will be returned.
+     * </p>
+     * 
+     * @return The ID of an organization node the portfolio is shared with. All children of this node with an inherited
+     *         portfolio share will be returned.
+     */
+
+    public String getOrganizationParentId() {
+        return this.organizationParentId;
+    }
+
+    /**
+     * <p>
+     * The ID of an organization node the portfolio is shared with. All children of this node with an inherited
+     * portfolio share will be returned.
+     * </p>
+     * 
+     * @param organizationParentId
+     *        The ID of an organization node the portfolio is shared with. All children of this node with an inherited
+     *        portfolio share will be returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPortfolioAccessRequest withOrganizationParentId(String organizationParentId) {
+        setOrganizationParentId(organizationParentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The page token for the next set of results. To retrieve the first set of results, use null.
+     * </p>
+     * 
+     * @param pageToken
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
+     */
+
+    public void setPageToken(String pageToken) {
+        this.pageToken = pageToken;
+    }
+
+    /**
+     * <p>
+     * The page token for the next set of results. To retrieve the first set of results, use null.
+     * </p>
+     * 
+     * @return The page token for the next set of results. To retrieve the first set of results, use null.
+     */
+
+    public String getPageToken() {
+        return this.pageToken;
+    }
+
+    /**
+     * <p>
+     * The page token for the next set of results. To retrieve the first set of results, use null.
+     * </p>
+     * 
+     * @param pageToken
+     *        The page token for the next set of results. To retrieve the first set of results, use null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPortfolioAccessRequest withPageToken(String pageToken) {
+        setPageToken(pageToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return with this call.
+     * </p>
+     * 
+     * @param pageSize
+     *        The maximum number of items to return with this call.
+     */
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return with this call.
+     * </p>
+     * 
+     * @return The maximum number of items to return with this call.
+     */
+
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return with this call.
+     * </p>
+     * 
+     * @param pageSize
+     *        The maximum number of items to return with this call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPortfolioAccessRequest withPageSize(Integer pageSize) {
+        setPageSize(pageSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -249,7 +394,13 @@ public class ListPortfolioAccessRequest extends com.amazonaws.AmazonWebServiceRe
         if (getAcceptLanguage() != null)
             sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: ").append(getPortfolioId());
+            sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
+        if (getOrganizationParentId() != null)
+            sb.append("OrganizationParentId: ").append(getOrganizationParentId()).append(",");
+        if (getPageToken() != null)
+            sb.append("PageToken: ").append(getPageToken()).append(",");
+        if (getPageSize() != null)
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }
@@ -272,6 +423,18 @@ public class ListPortfolioAccessRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getPortfolioId() != null && other.getPortfolioId().equals(this.getPortfolioId()) == false)
             return false;
+        if (other.getOrganizationParentId() == null ^ this.getOrganizationParentId() == null)
+            return false;
+        if (other.getOrganizationParentId() != null && other.getOrganizationParentId().equals(this.getOrganizationParentId()) == false)
+            return false;
+        if (other.getPageToken() == null ^ this.getPageToken() == null)
+            return false;
+        if (other.getPageToken() != null && other.getPageToken().equals(this.getPageToken()) == false)
+            return false;
+        if (other.getPageSize() == null ^ this.getPageSize() == null)
+            return false;
+        if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +445,9 @@ public class ListPortfolioAccessRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getPortfolioId() == null) ? 0 : getPortfolioId().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationParentId() == null) ? 0 : getOrganizationParentId().hashCode());
+        hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
+        hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         return hashCode;
     }
 

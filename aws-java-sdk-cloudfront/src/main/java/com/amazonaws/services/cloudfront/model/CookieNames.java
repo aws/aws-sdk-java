@@ -31,25 +31,44 @@ public class CookieNames implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior. The
+     * value must equal the number of items that are in the <code>Items</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this value must be
+     * <code>1</code> or higher.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
      * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
-     * the origin for this cache behavior.
+     * the origin for this cache behavior. It must contain the same number of items that is specified in the
+     * <code>Quantity</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field must
+     * contain at least one item.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
      * <p>
-     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior. The
+     * value must equal the number of items that are in the <code>Items</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this value must be
+     * <code>1</code> or higher.
      * </p>
      * 
      * @param quantity
      *        The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     *        The value must equal the number of items that are in the <code>Items</code> field.</p>
+     *        <p>
+     *        When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this value
+     *        must be <code>1</code> or higher.
      */
 
     public void setQuantity(Integer quantity) {
@@ -58,11 +77,19 @@ public class CookieNames implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior. The
+     * value must equal the number of items that are in the <code>Items</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this value must be
+     * <code>1</code> or higher.
      * </p>
      * 
      * @return The number of different cookies that you want CloudFront to forward to the origin for this cache
-     *         behavior.
+     *         behavior. The value must equal the number of items that are in the <code>Items</code> field.</p>
+     *         <p>
+     *         When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this value
+     *         must be <code>1</code> or higher.
      */
 
     public Integer getQuantity() {
@@ -71,11 +98,20 @@ public class CookieNames implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     * The number of different cookies that you want CloudFront to forward to the origin for this cache behavior. The
+     * value must equal the number of items that are in the <code>Items</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this value must be
+     * <code>1</code> or higher.
      * </p>
      * 
      * @param quantity
      *        The number of different cookies that you want CloudFront to forward to the origin for this cache behavior.
+     *        The value must equal the number of items that are in the <code>Items</code> field.</p>
+     *        <p>
+     *        When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this value
+     *        must be <code>1</code> or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +123,20 @@ public class CookieNames implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
-     * the origin for this cache behavior.
+     * the origin for this cache behavior. It must contain the same number of items that is specified in the
+     * <code>Quantity</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field must
+     * contain at least one item.
      * </p>
      * 
      * @return A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
-     *         forward to the origin for this cache behavior.
+     *         forward to the origin for this cache behavior. It must contain the same number of items that is specified
+     *         in the <code>Quantity</code> field.</p>
+     *         <p>
+     *         When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field
+     *         must contain at least one item.
      */
 
     public java.util.List<String> getItems() {
@@ -104,12 +149,21 @@ public class CookieNames implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
-     * the origin for this cache behavior.
+     * the origin for this cache behavior. It must contain the same number of items that is specified in the
+     * <code>Quantity</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field must
+     * contain at least one item.
      * </p>
      * 
      * @param items
      *        A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
-     *        forward to the origin for this cache behavior.
+     *        forward to the origin for this cache behavior. It must contain the same number of items that is specified
+     *        in the <code>Quantity</code> field.</p>
+     *        <p>
+     *        When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field
+     *        must contain at least one item.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -124,7 +178,12 @@ public class CookieNames implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
-     * the origin for this cache behavior.
+     * the origin for this cache behavior. It must contain the same number of items that is specified in the
+     * <code>Quantity</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field must
+     * contain at least one item.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +193,11 @@ public class CookieNames implements Serializable, Cloneable {
      * 
      * @param items
      *        A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
-     *        forward to the origin for this cache behavior.
+     *        forward to the origin for this cache behavior. It must contain the same number of items that is specified
+     *        in the <code>Quantity</code> field.</p>
+     *        <p>
+     *        When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field
+     *        must contain at least one item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,12 +214,21 @@ public class CookieNames implements Serializable, Cloneable {
     /**
      * <p>
      * A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to forward to
-     * the origin for this cache behavior.
+     * the origin for this cache behavior. It must contain the same number of items that is specified in the
+     * <code>Quantity</code> field.
+     * </p>
+     * <p>
+     * When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field must
+     * contain at least one item.
      * </p>
      * 
      * @param items
      *        A complex type that contains one <code>Name</code> element for each cookie that you want CloudFront to
-     *        forward to the origin for this cache behavior.
+     *        forward to the origin for this cache behavior. It must contain the same number of items that is specified
+     *        in the <code>Quantity</code> field.</p>
+     *        <p>
+     *        When you set <code>Forward = whitelist</code> (in the <code>CookiePreferences</code> object), this field
+     *        must contain at least one item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

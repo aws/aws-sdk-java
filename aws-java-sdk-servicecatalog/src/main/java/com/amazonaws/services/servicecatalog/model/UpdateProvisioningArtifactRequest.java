@@ -76,6 +76,10 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Indicates whether the product version is active.
      * </p>
+     * <p>
+     * Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned
+     * product from an inactive provisioning artifact.
+     * </p>
      */
     private Boolean active;
     /**
@@ -396,9 +400,16 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Indicates whether the product version is active.
      * </p>
+     * <p>
+     * Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned
+     * product from an inactive provisioning artifact.
+     * </p>
      * 
      * @param active
-     *        Indicates whether the product version is active.
+     *        Indicates whether the product version is active.</p>
+     *        <p>
+     *        Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a
+     *        provisioned product from an inactive provisioning artifact.
      */
 
     public void setActive(Boolean active) {
@@ -409,8 +420,15 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Indicates whether the product version is active.
      * </p>
+     * <p>
+     * Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned
+     * product from an inactive provisioning artifact.
+     * </p>
      * 
-     * @return Indicates whether the product version is active.
+     * @return Indicates whether the product version is active.</p>
+     *         <p>
+     *         Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a
+     *         provisioned product from an inactive provisioning artifact.
      */
 
     public Boolean getActive() {
@@ -421,9 +439,16 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Indicates whether the product version is active.
      * </p>
+     * <p>
+     * Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned
+     * product from an inactive provisioning artifact.
+     * </p>
      * 
      * @param active
-     *        Indicates whether the product version is active.
+     *        Indicates whether the product version is active.</p>
+     *        <p>
+     *        Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a
+     *        provisioned product from an inactive provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,8 +461,15 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * Indicates whether the product version is active.
      * </p>
+     * <p>
+     * Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned
+     * product from an inactive provisioning artifact.
+     * </p>
      * 
-     * @return Indicates whether the product version is active.
+     * @return Indicates whether the product version is active.</p>
+     *         <p>
+     *         Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a
+     *         provisioned product from an inactive provisioning artifact.
      */
 
     public Boolean isActive() {

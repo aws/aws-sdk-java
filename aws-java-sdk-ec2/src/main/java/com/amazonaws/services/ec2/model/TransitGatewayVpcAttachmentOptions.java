@@ -34,7 +34,7 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
     private String dnsSupport;
     /**
      * <p>
-     * Indicates whether IPv6 support is enabled.
+     * Indicates whether IPv6 support is disabled.
      * </p>
      */
     private String ipv6Support;
@@ -100,11 +100,11 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether IPv6 support is enabled.
+     * Indicates whether IPv6 support is disabled.
      * </p>
      * 
      * @param ipv6Support
-     *        Indicates whether IPv6 support is enabled.
+     *        Indicates whether IPv6 support is disabled.
      * @see Ipv6SupportValue
      */
 
@@ -114,10 +114,10 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether IPv6 support is enabled.
+     * Indicates whether IPv6 support is disabled.
      * </p>
      * 
-     * @return Indicates whether IPv6 support is enabled.
+     * @return Indicates whether IPv6 support is disabled.
      * @see Ipv6SupportValue
      */
 
@@ -127,11 +127,11 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether IPv6 support is enabled.
+     * Indicates whether IPv6 support is disabled.
      * </p>
      * 
      * @param ipv6Support
-     *        Indicates whether IPv6 support is enabled.
+     *        Indicates whether IPv6 support is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ipv6SupportValue
      */
@@ -143,11 +143,11 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
 
     /**
      * <p>
-     * Indicates whether IPv6 support is enabled.
+     * Indicates whether IPv6 support is disabled.
      * </p>
      * 
      * @param ipv6Support
-     *        Indicates whether IPv6 support is enabled.
+     *        Indicates whether IPv6 support is disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ipv6SupportValue
      */

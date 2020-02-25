@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.securityhub.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class ComplianceMarshaller {
 
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<List> RELATEDREQUIREMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedRequirements").build();
 
     private static final ComplianceMarshaller instance = new ComplianceMarshaller();
 
@@ -47,6 +50,7 @@ public class ComplianceMarshaller {
 
         try {
             protocolMarshaller.marshall(compliance.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(compliance.getRelatedRequirements(), RELATEDREQUIREMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

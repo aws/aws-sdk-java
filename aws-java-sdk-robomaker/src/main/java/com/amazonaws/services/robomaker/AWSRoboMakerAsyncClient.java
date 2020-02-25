@@ -161,6 +161,39 @@ public class AWSRoboMakerAsyncClient extends AWSRoboMakerClient implements AWSRo
     }
 
     @Override
+    public java.util.concurrent.Future<CancelSimulationJobBatchResult> cancelSimulationJobBatchAsync(CancelSimulationJobBatchRequest request) {
+
+        return cancelSimulationJobBatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelSimulationJobBatchResult> cancelSimulationJobBatchAsync(final CancelSimulationJobBatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelSimulationJobBatchRequest, CancelSimulationJobBatchResult> asyncHandler) {
+        final CancelSimulationJobBatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelSimulationJobBatchResult>() {
+            @Override
+            public CancelSimulationJobBatchResult call() throws Exception {
+                CancelSimulationJobBatchResult result = null;
+
+                try {
+                    result = executeCancelSimulationJobBatch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDeploymentJobResult> createDeploymentJobAsync(CreateDeploymentJobRequest request) {
 
         return createDeploymentJobAsync(request, null);
@@ -792,6 +825,39 @@ public class AWSRoboMakerAsyncClient extends AWSRoboMakerClient implements AWSRo
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSimulationJobBatchResult> describeSimulationJobBatchAsync(DescribeSimulationJobBatchRequest request) {
+
+        return describeSimulationJobBatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSimulationJobBatchResult> describeSimulationJobBatchAsync(final DescribeSimulationJobBatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSimulationJobBatchRequest, DescribeSimulationJobBatchResult> asyncHandler) {
+        final DescribeSimulationJobBatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSimulationJobBatchResult>() {
+            @Override
+            public DescribeSimulationJobBatchResult call() throws Exception {
+                DescribeSimulationJobBatchResult result = null;
+
+                try {
+                    result = executeDescribeSimulationJobBatch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeploymentJobsResult> listDeploymentJobsAsync(ListDeploymentJobsRequest request) {
 
         return listDeploymentJobsAsync(request, null);
@@ -957,6 +1023,39 @@ public class AWSRoboMakerAsyncClient extends AWSRoboMakerClient implements AWSRo
     }
 
     @Override
+    public java.util.concurrent.Future<ListSimulationJobBatchesResult> listSimulationJobBatchesAsync(ListSimulationJobBatchesRequest request) {
+
+        return listSimulationJobBatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSimulationJobBatchesResult> listSimulationJobBatchesAsync(final ListSimulationJobBatchesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSimulationJobBatchesRequest, ListSimulationJobBatchesResult> asyncHandler) {
+        final ListSimulationJobBatchesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSimulationJobBatchesResult>() {
+            @Override
+            public ListSimulationJobBatchesResult call() throws Exception {
+                ListSimulationJobBatchesResult result = null;
+
+                try {
+                    result = executeListSimulationJobBatches(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSimulationJobsResult> listSimulationJobsAsync(ListSimulationJobsRequest request) {
 
         return listSimulationJobsAsync(request, null);
@@ -1073,6 +1172,39 @@ public class AWSRoboMakerAsyncClient extends AWSRoboMakerClient implements AWSRo
 
                 try {
                     result = executeRestartSimulationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSimulationJobBatchResult> startSimulationJobBatchAsync(StartSimulationJobBatchRequest request) {
+
+        return startSimulationJobBatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSimulationJobBatchResult> startSimulationJobBatchAsync(final StartSimulationJobBatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSimulationJobBatchRequest, StartSimulationJobBatchResult> asyncHandler) {
+        final StartSimulationJobBatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSimulationJobBatchResult>() {
+            @Override
+            public StartSimulationJobBatchResult call() throws Exception {
+                StartSimulationJobBatchResult result = null;
+
+                try {
+                    result = executeStartSimulationJobBatch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

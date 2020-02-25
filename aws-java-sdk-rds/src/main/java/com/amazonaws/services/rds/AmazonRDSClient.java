@@ -70,9 +70,9 @@ import com.amazonaws.services.rds.model.transform.*;
  * </p>
  * <p>
  * This interface reference for Amazon RDS contains documentation for a programming or command line interface you can
- * use to manage Amazon RDS. Note that Amazon RDS is asynchronous, which means that some interfaces might require
- * techniques such as polling or callback functions to determine when a command has been applied. In this reference, the
- * parameter descriptions indicate whether a command is applied immediately, on the next instance reboot, or during the
+ * use to manage Amazon RDS. Amazon RDS is asynchronous, which means that some interfaces might require techniques such
+ * as polling or callback functions to determine when a command has been applied. In this reference, the parameter
+ * descriptions indicate whether a command is applied immediately, on the next instance reboot, or during the
  * maintenance window. The reference structure is as follows, and we list following some related topics from the user
  * guide.
  * </p>
@@ -336,9 +336,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new IamRoleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterRoleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InstallationMediaAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ExportTaskNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidExportOnlyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
@@ -393,6 +396,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidExportSourceStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBProxyTargetGroupNotFoundExceptionUnmarshaller());
@@ -405,6 +409,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBSubnetGroupNotAllowedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSnapshotStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidExportTaskStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3BucketExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupQuotaExceededExceptionUnmarshaller());
@@ -425,9 +430,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBProxyQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ExportTaskAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new GlobalClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterEndpointStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidGlobalClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new IamRoleMissingPermissionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBProxyStateExceptionUnmarshaller());
@@ -915,6 +922,64 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
+     * Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any data that has already been
+     * written to the S3 bucket isn't removed.
+     * </p>
+     * 
+     * @param cancelExportTaskRequest
+     * @return Result of the CancelExportTask operation returned by the service.
+     * @throws ExportTaskNotFoundException
+     *         The export task doesn't exist.
+     * @throws InvalidExportTaskStateException
+     *         You can't cancel an export task that has completed.
+     * @sample AmazonRDS.CancelExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelExportTaskResult cancelExportTask(CancelExportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelExportTask(request);
+    }
+
+    @SdkInternalApi
+    final CancelExportTaskResult executeCancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelExportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelExportTaskRequest> request = null;
+        Response<CancelExportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelExportTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelExportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelExportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CancelExportTaskResult> responseHandler = new StaxResponseHandler<CancelExportTaskResult>(
+                    new CancelExportTaskResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Copies the specified DB cluster parameter group.
      * </p>
      * <note>
@@ -1019,7 +1084,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
      * </p>
      * </li>
      * <li>
@@ -2262,7 +2327,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created
+     * Creates an RDS event notification subscription. This action requires a topic Amazon Resource Name (ARN) created
      * by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in
      * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
@@ -2276,8 +2341,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
      * myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a
      * SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all
-     * your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of
-     * events generated from all RDS sources belonging to your customer account.
+     * your RDS sources. If you don't specify either the SourceType or the SourceIdentifier, you are notified of events
+     * generated from all RDS sources belonging to your customer account.
      * </p>
      * <note>
      * <p>
@@ -2831,7 +2896,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * operation. The action can't be canceled or reverted once submitted.
      * </p>
      * <p>
-     * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
+     * When a DB instance is in a failure state and has a status of <code>failed</code>,
      * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when you skip
      * creation of the final snapshot with the <code>SkipFinalSnapshot</code> parameter.
      * </p>
@@ -3536,6 +3601,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBProxyNotFoundException
      *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DeregisterDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets" target="_top">AWS
      *      API Documentation</a>
@@ -4677,9 +4744,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * 
      * @param describeDBProxyTargetGroupsRequest
      * @return Result of the DescribeDBProxyTargetGroups operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DescribeDBProxyTargetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups"
      *      target="_top">AWS API Documentation</a>
@@ -4747,6 +4819,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DescribeDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets" target="_top">AWS API
      *      Documentation</a>
@@ -5343,6 +5417,61 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     @Override
     public DescribeEventsResult describeEvents() {
         return describeEvents(new DescribeEventsRequest());
+    }
+
+    /**
+     * <p>
+     * Returns information about a snapshot export to Amazon S3. This API operation supports pagination.
+     * </p>
+     * 
+     * @param describeExportTasksRequest
+     * @return Result of the DescribeExportTasks operation returned by the service.
+     * @throws ExportTaskNotFoundException
+     *         The export task doesn't exist.
+     * @sample AmazonRDS.DescribeExportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExportTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExportTasksResult executeDescribeExportTasks(DescribeExportTasksRequest describeExportTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeExportTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeExportTasksRequest> request = null;
+        Response<DescribeExportTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeExportTasksRequestMarshaller().marshall(super.beforeMarshalling(describeExportTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExportTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeExportTasksResult> responseHandler = new StaxResponseHandler<DescribeExportTasksResult>(
+                    new DescribeExportTasksResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -6195,7 +6324,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS
-     * for new DB instances, or remove the override.
+     * for new DB instances temporarily, or remove the override.
      * </p>
      * <p>
      * By using this operation, you can specify an RDS-approved SSL/TLS certificate for new DB instances that is
@@ -6941,6 +7070,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.ModifyDBProxyTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup" target="_top">AWS
      *      API Documentation</a>
@@ -7183,9 +7314,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Modifies an existing RDS event notification subscription. Note that you can't modify the source identifiers using
-     * this call; to change source identifiers for a subscription, use the
-     * <code>AddSourceIdentifierToSubscription</code> and <code>RemoveSourceIdentifierFromSubscription</code> calls.
+     * Modifies an existing RDS event notification subscription. You can't modify the source identifiers using this
+     * call. To change source identifiers for a subscription, use the <code>AddSourceIdentifierToSubscription</code> and
+     * <code>RemoveSourceIdentifierFromSubscription</code> calls.
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
@@ -7659,6 +7790,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The DB instance isn't in a valid state.
      * @throws InvalidDBClusterStateException
      *         The requested operation can't be performed while the cluster is in this state.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.RegisterDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
      *      Documentation</a>
@@ -9084,6 +9217,79 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an export of a snapshot to Amazon S3. The provided IAM role must have access to the S3 bucket.
+     * </p>
+     * 
+     * @param startExportTaskRequest
+     * @return Result of the StartExportTask operation returned by the service.
+     * @throws DBSnapshotNotFoundException
+     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+     * @throws DBClusterSnapshotNotFoundException
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     * @throws ExportTaskAlreadyExistsException
+     *         You can't start an export task that's already running.
+     * @throws InvalidS3BucketException
+     *         The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized to access the specified
+     *         Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try
+     *         again.
+     * @throws IamRoleNotFoundException
+     *         The IAM role is missing for exporting to an Amazon S3 bucket.
+     * @throws IamRoleMissingPermissionsException
+     *         The IAM role requires additional permissions to export to an Amazon S3 bucket.
+     * @throws InvalidExportOnlyException
+     *         The export is invalid for exporting to an Amazon S3 bucket.
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an AWS KMS key.
+     * @throws InvalidExportSourceStateException
+     *         The state of the export snapshot is invalid for exporting to an Amazon S3 bucket.
+     * @sample AmazonRDS.StartExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartExportTaskResult startExportTask(StartExportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartExportTask(request);
+    }
+
+    @SdkInternalApi
+    final StartExportTaskResult executeStartExportTask(StartExportTaskRequest startExportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startExportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartExportTaskRequest> request = null;
+        Response<StartExportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartExportTaskRequestMarshaller().marshall(super.beforeMarshalling(startExportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartExportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StartExportTaskResult> responseHandler = new StaxResponseHandler<StartExportTaskResult>(
+                    new StartExportTaskResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

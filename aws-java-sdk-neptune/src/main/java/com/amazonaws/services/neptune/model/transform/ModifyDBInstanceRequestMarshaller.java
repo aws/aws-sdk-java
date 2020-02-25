@@ -248,6 +248,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             }
         }
 
+        if (modifyDBInstanceRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(modifyDBInstanceRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

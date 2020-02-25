@@ -35,7 +35,7 @@ public class DescribeDBInstancesResult extends com.amazonaws.AmazonWebServiceRes
     private String marker;
     /**
      * <p>
-     * Detailed information about one or more DB instances.
+     * Detailed information about one or more instances.
      * </p>
      */
     private java.util.List<DBInstance> dBInstances;
@@ -88,10 +88,10 @@ public class DescribeDBInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Detailed information about one or more DB instances.
+     * Detailed information about one or more instances.
      * </p>
      * 
-     * @return Detailed information about one or more DB instances.
+     * @return Detailed information about one or more instances.
      */
 
     public java.util.List<DBInstance> getDBInstances() {
@@ -100,11 +100,11 @@ public class DescribeDBInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Detailed information about one or more DB instances.
+     * Detailed information about one or more instances.
      * </p>
      * 
      * @param dBInstances
-     *        Detailed information about one or more DB instances.
+     *        Detailed information about one or more instances.
      */
 
     public void setDBInstances(java.util.Collection<DBInstance> dBInstances) {
@@ -118,7 +118,7 @@ public class DescribeDBInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Detailed information about one or more DB instances.
+     * Detailed information about one or more instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +127,7 @@ public class DescribeDBInstancesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param dBInstances
-     *        Detailed information about one or more DB instances.
+     *        Detailed information about one or more instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class DescribeDBInstancesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Detailed information about one or more DB instances.
+     * Detailed information about one or more instances.
      * </p>
      * 
      * @param dBInstances
-     *        Detailed information about one or more DB instances.
+     *        Detailed information about one or more instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

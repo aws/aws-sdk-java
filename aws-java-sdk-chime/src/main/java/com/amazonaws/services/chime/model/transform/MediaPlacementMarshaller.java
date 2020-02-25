@@ -29,6 +29,8 @@ public class MediaPlacementMarshaller {
 
     private static final MarshallingInfo<String> AUDIOHOSTURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AudioHostUrl").build();
+    private static final MarshallingInfo<String> AUDIOFALLBACKURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AudioFallbackUrl").build();
     private static final MarshallingInfo<String> SCREENDATAURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScreenDataUrl").build();
     private static final MarshallingInfo<String> SCREENSHARINGURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,7 @@ public class MediaPlacementMarshaller {
 
         try {
             protocolMarshaller.marshall(mediaPlacement.getAudioHostUrl(), AUDIOHOSTURL_BINDING);
+            protocolMarshaller.marshall(mediaPlacement.getAudioFallbackUrl(), AUDIOFALLBACKURL_BINDING);
             protocolMarshaller.marshall(mediaPlacement.getScreenDataUrl(), SCREENDATAURL_BINDING);
             protocolMarshaller.marshall(mediaPlacement.getScreenSharingUrl(), SCREENSHARINGURL_BINDING);
             protocolMarshaller.marshall(mediaPlacement.getScreenViewingUrl(), SCREENVIEWINGURL_BINDING);

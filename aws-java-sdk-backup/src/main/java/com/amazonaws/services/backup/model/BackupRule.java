@@ -87,6 +87,12 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ruleId;
+    /**
+     * <p>
+     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * </p>
+     */
+    private java.util.List<CopyAction> copyActions;
 
     /**
      * <p>
@@ -496,6 +502,76 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * </p>
+     * 
+     * @return An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     */
+
+    public java.util.List<CopyAction> getCopyActions() {
+        return copyActions;
+    }
+
+    /**
+     * <p>
+     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * </p>
+     * 
+     * @param copyActions
+     *        An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     */
+
+    public void setCopyActions(java.util.Collection<CopyAction> copyActions) {
+        if (copyActions == null) {
+            this.copyActions = null;
+            return;
+        }
+
+        this.copyActions = new java.util.ArrayList<CopyAction>(copyActions);
+    }
+
+    /**
+     * <p>
+     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCopyActions(java.util.Collection)} or {@link #withCopyActions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param copyActions
+     *        An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupRule withCopyActions(CopyAction... copyActions) {
+        if (this.copyActions == null) {
+            setCopyActions(new java.util.ArrayList<CopyAction>(copyActions.length));
+        }
+        for (CopyAction ele : copyActions) {
+            this.copyActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * </p>
+     * 
+     * @param copyActions
+     *        An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupRule withCopyActions(java.util.Collection<CopyAction> copyActions) {
+        setCopyActions(copyActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -522,7 +598,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         if (getRecoveryPointTags() != null)
             sb.append("RecoveryPointTags: ").append("***Sensitive Data Redacted***").append(",");
         if (getRuleId() != null)
-            sb.append("RuleId: ").append(getRuleId());
+            sb.append("RuleId: ").append(getRuleId()).append(",");
+        if (getCopyActions() != null)
+            sb.append("CopyActions: ").append(getCopyActions());
         sb.append("}");
         return sb.toString();
     }
@@ -569,6 +647,10 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRuleId() != null && other.getRuleId().equals(this.getRuleId()) == false)
             return false;
+        if (other.getCopyActions() == null ^ this.getCopyActions() == null)
+            return false;
+        if (other.getCopyActions() != null && other.getCopyActions().equals(this.getCopyActions()) == false)
+            return false;
         return true;
     }
 
@@ -585,6 +667,7 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointTags() == null) ? 0 : getRecoveryPointTags().hashCode());
         hashCode = prime * hashCode + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
+        hashCode = prime * hashCode + ((getCopyActions() == null) ? 0 : getCopyActions().hashCode());
         return hashCode;
     }
 

@@ -70,6 +70,13 @@ public class LaunchTemplatePlacementRequest implements Serializable, Cloneable {
      * </p>
      */
     private String hostResourceGroupArn;
+    /**
+     * <p>
+     * The number of the partition the instance should launch in. Valid only if the placement group strategy is set to
+     * <code>partition</code>.
+     * </p>
+     */
+    private Integer partitionNumber;
 
     /**
      * <p>
@@ -385,6 +392,52 @@ public class LaunchTemplatePlacementRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of the partition the instance should launch in. Valid only if the placement group strategy is set to
+     * <code>partition</code>.
+     * </p>
+     * 
+     * @param partitionNumber
+     *        The number of the partition the instance should launch in. Valid only if the placement group strategy is
+     *        set to <code>partition</code>.
+     */
+
+    public void setPartitionNumber(Integer partitionNumber) {
+        this.partitionNumber = partitionNumber;
+    }
+
+    /**
+     * <p>
+     * The number of the partition the instance should launch in. Valid only if the placement group strategy is set to
+     * <code>partition</code>.
+     * </p>
+     * 
+     * @return The number of the partition the instance should launch in. Valid only if the placement group strategy is
+     *         set to <code>partition</code>.
+     */
+
+    public Integer getPartitionNumber() {
+        return this.partitionNumber;
+    }
+
+    /**
+     * <p>
+     * The number of the partition the instance should launch in. Valid only if the placement group strategy is set to
+     * <code>partition</code>.
+     * </p>
+     * 
+     * @param partitionNumber
+     *        The number of the partition the instance should launch in. Valid only if the placement group strategy is
+     *        set to <code>partition</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplatePlacementRequest withPartitionNumber(Integer partitionNumber) {
+        setPartitionNumber(partitionNumber);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -409,7 +462,9 @@ public class LaunchTemplatePlacementRequest implements Serializable, Cloneable {
         if (getSpreadDomain() != null)
             sb.append("SpreadDomain: ").append(getSpreadDomain()).append(",");
         if (getHostResourceGroupArn() != null)
-            sb.append("HostResourceGroupArn: ").append(getHostResourceGroupArn());
+            sb.append("HostResourceGroupArn: ").append(getHostResourceGroupArn()).append(",");
+        if (getPartitionNumber() != null)
+            sb.append("PartitionNumber: ").append(getPartitionNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -452,6 +507,10 @@ public class LaunchTemplatePlacementRequest implements Serializable, Cloneable {
             return false;
         if (other.getHostResourceGroupArn() != null && other.getHostResourceGroupArn().equals(this.getHostResourceGroupArn()) == false)
             return false;
+        if (other.getPartitionNumber() == null ^ this.getPartitionNumber() == null)
+            return false;
+        if (other.getPartitionNumber() != null && other.getPartitionNumber().equals(this.getPartitionNumber()) == false)
+            return false;
         return true;
     }
 
@@ -467,6 +526,7 @@ public class LaunchTemplatePlacementRequest implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         hashCode = prime * hashCode + ((getSpreadDomain() == null) ? 0 : getSpreadDomain().hashCode());
         hashCode = prime * hashCode + ((getHostResourceGroupArn() == null) ? 0 : getHostResourceGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getPartitionNumber() == null) ? 0 : getPartitionNumber().hashCode());
         return hashCode;
     }
 

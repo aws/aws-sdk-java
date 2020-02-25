@@ -30,7 +30,7 @@ public class DescribeDBSubnetGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB subnet group to return details for.
+     * The name of the subnet group to return details for.
      * </p>
      */
     private String dBSubnetGroupName;
@@ -64,11 +64,11 @@ public class DescribeDBSubnetGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB subnet group to return details for.
+     * The name of the subnet group to return details for.
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the DB subnet group to return details for.
+     *        The name of the subnet group to return details for.
      */
 
     public void setDBSubnetGroupName(String dBSubnetGroupName) {
@@ -77,10 +77,10 @@ public class DescribeDBSubnetGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB subnet group to return details for.
+     * The name of the subnet group to return details for.
      * </p>
      * 
-     * @return The name of the DB subnet group to return details for.
+     * @return The name of the subnet group to return details for.
      */
 
     public String getDBSubnetGroupName() {
@@ -89,11 +89,11 @@ public class DescribeDBSubnetGroupsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the DB subnet group to return details for.
+     * The name of the subnet group to return details for.
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the DB subnet group to return details for.
+     *        The name of the subnet group to return details for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

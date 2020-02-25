@@ -342,6 +342,71 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
 
     /**
      * <p>
+     * Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active
+     * simulation jobs created as part of the batch.
+     * </p>
+     * 
+     * @param cancelSimulationJobBatchRequest
+     * @return Result of the CancelSimulationJobBatch operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.CancelSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelSimulationJobBatchResult cancelSimulationJobBatch(CancelSimulationJobBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelSimulationJobBatch(request);
+    }
+
+    @SdkInternalApi
+    final CancelSimulationJobBatchResult executeCancelSimulationJobBatch(CancelSimulationJobBatchRequest cancelSimulationJobBatchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelSimulationJobBatchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelSimulationJobBatchRequest> request = null;
+        Response<CancelSimulationJobBatchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelSimulationJobBatchRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelSimulationJobBatchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSimulationJobBatch");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelSimulationJobBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelSimulationJobBatchResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deploys a specific version of a robot application to robots in a fleet.
      * </p>
      * <p>
@@ -1585,13 +1650,71 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
 
     /**
      * <p>
+     * Describes a simulation job batch.
+     * </p>
+     * 
+     * @param describeSimulationJobBatchRequest
+     * @return Result of the DescribeSimulationJobBatch operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @sample AWSRoboMaker.DescribeSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSimulationJobBatchResult describeSimulationJobBatch(DescribeSimulationJobBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSimulationJobBatch(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSimulationJobBatchResult executeDescribeSimulationJobBatch(DescribeSimulationJobBatchRequest describeSimulationJobBatchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSimulationJobBatchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSimulationJobBatchRequest> request = null;
+        Response<DescribeSimulationJobBatchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSimulationJobBatchRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeSimulationJobBatchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSimulationJobBatch");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSimulationJobBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSimulationJobBatchResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
-     * <note>
-     * <p>
-     * </p>
-     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @return Result of the ListDeploymentJobs operation returned by the service.
@@ -1900,6 +2023,67 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
 
     /**
      * <p>
+     * Returns a list simulation job batches. You can optionally provide filters to retrieve specific simulation batch
+     * jobs.
+     * </p>
+     * 
+     * @param listSimulationJobBatchesRequest
+     * @return Result of the ListSimulationJobBatches operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @sample AWSRoboMaker.ListSimulationJobBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSimulationJobBatchesResult listSimulationJobBatches(ListSimulationJobBatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSimulationJobBatches(request);
+    }
+
+    @SdkInternalApi
+    final ListSimulationJobBatchesResult executeListSimulationJobBatches(ListSimulationJobBatchesRequest listSimulationJobBatchesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSimulationJobBatchesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSimulationJobBatchesRequest> request = null;
+        Response<ListSimulationJobBatchesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSimulationJobBatchesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSimulationJobBatchesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSimulationJobBatches");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSimulationJobBatchesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSimulationJobBatchesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs.
      * </p>
      * 
@@ -2140,6 +2324,75 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
 
             HttpResponseHandler<AmazonWebServiceResponse<RestartSimulationJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestartSimulationJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+     * objects.
+     * </p>
+     * 
+     * @param startSimulationJobBatchRequest
+     * @return Result of the StartSimulationJobBatch operation returned by the service.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         The request uses the same client token as a previous, but non-identical request. Do not reuse a client
+     *         token with different requests, unless the requests are identical.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @sample AWSRoboMaker.StartSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartSimulationJobBatchResult startSimulationJobBatch(StartSimulationJobBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSimulationJobBatch(request);
+    }
+
+    @SdkInternalApi
+    final StartSimulationJobBatchResult executeStartSimulationJobBatch(StartSimulationJobBatchRequest startSimulationJobBatchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSimulationJobBatchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSimulationJobBatchRequest> request = null;
+        Response<StartSimulationJobBatchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSimulationJobBatchRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSimulationJobBatchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSimulationJobBatch");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSimulationJobBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartSimulationJobBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

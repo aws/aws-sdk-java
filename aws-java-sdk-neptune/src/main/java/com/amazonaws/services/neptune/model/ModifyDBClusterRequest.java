@@ -145,15 +145,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String masterUserPassword;
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
-     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String optionGroupName;
@@ -230,15 +222,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration;
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
-     * true.
+     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
+     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
      * </p>
      * <p>
      * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      */
     private String engineVersion;
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -1031,27 +1029,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
-     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *        this parameter doesn't result in an outage except in the following case, and the change is applied during
-     *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     *        for this request. If the parameter change results in an option group that enables OEM, this change can
-     *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
-     *        not interrupted.</p>
-     *        <p>
-     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
-     *        cluster once it is associated with a DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1060,26 +1042,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
-     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *         this parameter doesn't result in an outage except in the following case, and the change is applied during
-     *         the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     *         <code>true</code> for this request. If the parameter change results in an option group that enables OEM,
-     *         this change can cause a brief (sub-second) period during which new connections are rejected but existing
-     *         connections are not interrupted.</p>
-     *         <p>
-     *         Permanent options can't be removed from an option group. The option group can't be removed from a DB
-     *         cluster once it is associated with a DB cluster.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getOptionGroupName() {
@@ -1088,27 +1054,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
-     * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
-     * </p>
-     * <p>
-     * Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once
-     * it is associated with a DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *        this parameter doesn't result in an outage except in the following case, and the change is applied during
-     *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     *        for this request. If the parameter change results in an option group that enables OEM, this change can
-     *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
-     *        not interrupted.</p>
-     *        <p>
-     *        Permanent options can't be removed from an option group. The option group can't be removed from a DB
-     *        cluster once it is associated with a DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1571,18 +1521,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
-     * true.
+     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
+     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
      * </p>
      * <p>
      * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
-     *        is set to true.</p>
+     *        The version number of the database engine. Currently, setting this parameter has no effect. To upgrade
+     *        your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      *        <p>
      *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      */
@@ -1593,17 +1541,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
-     * true.
+     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
+     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
      * </p>
      * <p>
      * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
-     * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
-     *         in an outage. The change is applied during the next maintenance window unless the ApplyImmediately
-     *         parameter is set to true.</p>
+     * @return The version number of the database engine. Currently, setting this parameter has no effect. To upgrade
+     *         your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      *         <p>
      *         For a list of valid engine versions, see <a>CreateDBInstance</a>, or call
      *         <a>DescribeDBEngineVersions</a>.
@@ -1615,18 +1561,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
-     * true.
+     * The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your
+     * database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.
      * </p>
      * <p>
      * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
-     *        is set to true.</p>
+     *        The version number of the database engine. Currently, setting this parameter has no effect. To upgrade
+     *        your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      *        <p>
      *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1635,6 +1579,66 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     public ModifyDBClusterRequest withEngineVersion(String engineVersion) {
         setEngineVersion(engineVersion);
         return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled. By default, deletion protection is disabled.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
     }
 
     /**
@@ -1676,7 +1680,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getCloudwatchLogsExportConfiguration() != null)
             sb.append("CloudwatchLogsExportConfiguration: ").append(getCloudwatchLogsExportConfiguration()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -1749,6 +1755,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -1771,6 +1781,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchLogsExportConfiguration() == null) ? 0 : getCloudwatchLogsExportConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

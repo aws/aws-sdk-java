@@ -69,6 +69,21 @@
  * </li>
  * <li>
  * <p>
+ * <code>ListTagsForResource</code>: Gets the tags for an environment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TagResource</code>: Adds tags to an environment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UntagResource</code>: Removes tags from an environment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>UpdateEnvironment</code>: Changes the settings of an existing environment.
  * </p>
  * </li>

@@ -102,7 +102,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private Long stoppedAt;
     /**
      * <p>
-     * A list of job names or IDs on which this job depends.
+     * A list of job IDs on which this job depends.
      * </p>
      */
     private java.util.List<JobDependency> dependsOn;
@@ -708,10 +708,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends.
+     * A list of job IDs on which this job depends.
      * </p>
      * 
-     * @return A list of job names or IDs on which this job depends.
+     * @return A list of job IDs on which this job depends.
      */
 
     public java.util.List<JobDependency> getDependsOn() {
@@ -720,11 +720,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends.
+     * A list of job IDs on which this job depends.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job names or IDs on which this job depends.
+     *        A list of job IDs on which this job depends.
      */
 
     public void setDependsOn(java.util.Collection<JobDependency> dependsOn) {
@@ -738,7 +738,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends.
+     * A list of job IDs on which this job depends.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -747,7 +747,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dependsOn
-     *        A list of job names or IDs on which this job depends.
+     *        A list of job IDs on which this job depends.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -763,11 +763,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of job names or IDs on which this job depends.
+     * A list of job IDs on which this job depends.
      * </p>
      * 
      * @param dependsOn
-     *        A list of job names or IDs on which this job depends.
+     *        A list of job IDs on which this job depends.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

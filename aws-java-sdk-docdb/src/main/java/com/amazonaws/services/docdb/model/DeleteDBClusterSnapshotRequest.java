@@ -30,26 +30,26 @@ public class DeleteDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to delete.
+     * The identifier of the cluster snapshot to delete.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.
+     * Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.
      * </p>
      */
     private String dBClusterSnapshotIdentifier;
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to delete.
+     * The identifier of the cluster snapshot to delete.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.
+     * Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot to delete.</p>
+     *        The identifier of the cluster snapshot to delete.</p>
      *        <p>
-     *        Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.
+     *        Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.
      */
 
     public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
@@ -58,15 +58,15 @@ public class DeleteDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to delete.
+     * The identifier of the cluster snapshot to delete.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.
+     * Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.
      * </p>
      * 
-     * @return The identifier of the DB cluster snapshot to delete.</p>
+     * @return The identifier of the cluster snapshot to delete.</p>
      *         <p>
-     *         Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.
+     *         Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.
      */
 
     public String getDBClusterSnapshotIdentifier() {
@@ -75,16 +75,16 @@ public class DeleteDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the DB cluster snapshot to delete.
+     * The identifier of the cluster snapshot to delete.
      * </p>
      * <p>
-     * Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.
+     * Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.
      * </p>
      * 
      * @param dBClusterSnapshotIdentifier
-     *        The identifier of the DB cluster snapshot to delete.</p>
+     *        The identifier of the cluster snapshot to delete.</p>
      *        <p>
-     *        Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.
+     *        Constraints: Must be the name of an existing cluster snapshot in the <code>available</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

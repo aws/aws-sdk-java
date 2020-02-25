@@ -63,6 +63,12 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private ProvisionedThroughput provisionedThroughputOverride;
+    /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     */
+    private SSESpecification sSESpecificationOverride;
 
     /**
      * <p>
@@ -400,6 +406,46 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     * 
+     * @param sSESpecificationOverride
+     *        The new server-side encryption settings for the restored table.
+     */
+
+    public void setSSESpecificationOverride(SSESpecification sSESpecificationOverride) {
+        this.sSESpecificationOverride = sSESpecificationOverride;
+    }
+
+    /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     * 
+     * @return The new server-side encryption settings for the restored table.
+     */
+
+    public SSESpecification getSSESpecificationOverride() {
+        return this.sSESpecificationOverride;
+    }
+
+    /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     * 
+     * @param sSESpecificationOverride
+     *        The new server-side encryption settings for the restored table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableFromBackupRequest withSSESpecificationOverride(SSESpecification sSESpecificationOverride) {
+        setSSESpecificationOverride(sSESpecificationOverride);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -422,7 +468,9 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
         if (getLocalSecondaryIndexOverride() != null)
             sb.append("LocalSecondaryIndexOverride: ").append(getLocalSecondaryIndexOverride()).append(",");
         if (getProvisionedThroughputOverride() != null)
-            sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride());
+            sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride()).append(",");
+        if (getSSESpecificationOverride() != null)
+            sb.append("SSESpecificationOverride: ").append(getSSESpecificationOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +510,10 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
         if (other.getProvisionedThroughputOverride() != null
                 && other.getProvisionedThroughputOverride().equals(this.getProvisionedThroughputOverride()) == false)
             return false;
+        if (other.getSSESpecificationOverride() == null ^ this.getSSESpecificationOverride() == null)
+            return false;
+        if (other.getSSESpecificationOverride() != null && other.getSSESpecificationOverride().equals(this.getSSESpecificationOverride()) == false)
+            return false;
         return true;
     }
 
@@ -476,6 +528,7 @@ public class RestoreTableFromBackupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexOverride() == null) ? 0 : getGlobalSecondaryIndexOverride().hashCode());
         hashCode = prime * hashCode + ((getLocalSecondaryIndexOverride() == null) ? 0 : getLocalSecondaryIndexOverride().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputOverride() == null) ? 0 : getProvisionedThroughputOverride().hashCode());
+        hashCode = prime * hashCode + ((getSSESpecificationOverride() == null) ? 0 : getSSESpecificationOverride().hashCode());
         return hashCode;
     }
 

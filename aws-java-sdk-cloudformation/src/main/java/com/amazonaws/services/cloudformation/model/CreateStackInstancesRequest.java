@@ -33,10 +33,24 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
     private String stackSetName;
     /**
      * <p>
-     * The names of one or more AWS accounts that you want to create stack instances in the specified region(s) for.
+     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
+     * specified region(s) for.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accounts;
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts for which to create stack instances in
+     * the specified Regions.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+     * </p>
+     */
+    private DeploymentTargets deploymentTargets;
     /**
      * <p>
      * The names of one or more regions where you want to create stack instances using the specified AWS account(s).
@@ -167,11 +181,17 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more AWS accounts that you want to create stack instances in the specified region(s) for.
+     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
+     * specified region(s) for.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
-     * @return The names of one or more AWS accounts that you want to create stack instances in the specified region(s)
-     *         for.
+     * @return [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
+     *         in the specified region(s) for.</p>
+     *         <p>
+     *         You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      */
 
     public java.util.List<String> getAccounts() {
@@ -183,12 +203,18 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more AWS accounts that you want to create stack instances in the specified region(s) for.
+     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
+     * specified region(s) for.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
      * @param accounts
-     *        The names of one or more AWS accounts that you want to create stack instances in the specified region(s)
-     *        for.
+     *        [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
+     *        in the specified region(s) for.</p>
+     *        <p>
+     *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      */
 
     public void setAccounts(java.util.Collection<String> accounts) {
@@ -202,7 +228,11 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more AWS accounts that you want to create stack instances in the specified region(s) for.
+     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
+     * specified region(s) for.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,8 +241,10 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param accounts
-     *        The names of one or more AWS accounts that you want to create stack instances in the specified region(s)
-     *        for.
+     *        [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
+     *        in the specified region(s) for.</p>
+     *        <p>
+     *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,17 +260,84 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The names of one or more AWS accounts that you want to create stack instances in the specified region(s) for.
+     * [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
+     * specified region(s) for.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * </p>
      * 
      * @param accounts
-     *        The names of one or more AWS accounts that you want to create stack instances in the specified region(s)
-     *        for.
+     *        [Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances
+     *        in the specified region(s) for.</p>
+     *        <p>
+     *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateStackInstancesRequest withAccounts(java.util.Collection<String> accounts) {
         setAccounts(accounts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts for which to create stack instances in
+     * the specified Regions.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+     * </p>
+     * 
+     * @param deploymentTargets
+     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts for which to create stack
+     *        instances in the specified Regions.</p>
+     *        <p>
+     *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+     */
+
+    public void setDeploymentTargets(DeploymentTargets deploymentTargets) {
+        this.deploymentTargets = deploymentTargets;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts for which to create stack instances in
+     * the specified Regions.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+     * </p>
+     * 
+     * @return [<code>Service-managed</code> permissions] The AWS Organizations accounts for which to create stack
+     *         instances in the specified Regions.</p>
+     *         <p>
+     *         You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+     */
+
+    public DeploymentTargets getDeploymentTargets() {
+        return this.deploymentTargets;
+    }
+
+    /**
+     * <p>
+     * [<code>Service-managed</code> permissions] The AWS Organizations accounts for which to create stack instances in
+     * the specified Regions.
+     * </p>
+     * <p>
+     * You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+     * </p>
+     * 
+     * @param deploymentTargets
+     *        [<code>Service-managed</code> permissions] The AWS Organizations accounts for which to create stack
+     *        instances in the specified Regions.</p>
+     *        <p>
+     *        You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackInstancesRequest withDeploymentTargets(DeploymentTargets deploymentTargets) {
+        setDeploymentTargets(deploymentTargets);
         return this;
     }
 
@@ -961,6 +1060,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("StackSetName: ").append(getStackSetName()).append(",");
         if (getAccounts() != null)
             sb.append("Accounts: ").append(getAccounts()).append(",");
+        if (getDeploymentTargets() != null)
+            sb.append("DeploymentTargets: ").append(getDeploymentTargets()).append(",");
         if (getRegions() != null)
             sb.append("Regions: ").append(getRegions()).append(",");
         if (getParameterOverrides() != null)
@@ -991,6 +1092,10 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getAccounts() != null && other.getAccounts().equals(this.getAccounts()) == false)
             return false;
+        if (other.getDeploymentTargets() == null ^ this.getDeploymentTargets() == null)
+            return false;
+        if (other.getDeploymentTargets() != null && other.getDeploymentTargets().equals(this.getDeploymentTargets()) == false)
+            return false;
         if (other.getRegions() == null ^ this.getRegions() == null)
             return false;
         if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
@@ -1017,6 +1122,7 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentTargets() == null) ? 0 : getDeploymentTargets().hashCode());
         hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
         hashCode = prime * hashCode + ((getParameterOverrides() == null) ? 0 : getParameterOverrides().hashCode());
         hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Tagging specified in the response body is not valid.
+ * The tagging specified is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

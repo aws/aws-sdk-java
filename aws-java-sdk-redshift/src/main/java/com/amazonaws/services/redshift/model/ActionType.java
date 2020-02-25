@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ActionType {
 
     RestoreCluster("restore-cluster"),
-    RecommendNodeConfig("recommend-node-config");
+    RecommendNodeConfig("recommend-node-config"),
+    ResizeCluster("resize-cluster");
 
     private String value;
 

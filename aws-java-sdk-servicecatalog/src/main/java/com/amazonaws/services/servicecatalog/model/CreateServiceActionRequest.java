@@ -70,7 +70,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * The list of parameters in JSON format.
      * </p>
      * <p>
-     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
      * </p>
      * </dd>
      * </dl>
@@ -245,7 +246,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * The list of parameters in JSON format.
      * </p>
      * <p>
-     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
      * </p>
      * </dd>
      * </dl>
@@ -280,7 +282,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *         The list of parameters in JSON format.
      *         </p>
      *         <p>
-     *         For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+     *         For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     *         <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
      *         </p>
      *         </dd>
      */
@@ -322,7 +325,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * The list of parameters in JSON format.
      * </p>
      * <p>
-     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
      * </p>
      * </dd>
      * </dl>
@@ -358,7 +362,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        The list of parameters in JSON format.
      *        </p>
      *        <p>
-     *        For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+     *        For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     *        <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
      *        </p>
      *        </dd>
      */
@@ -400,7 +405,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * The list of parameters in JSON format.
      * </p>
      * <p>
-     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+     * For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
      * </p>
      * </dd>
      * </dl>
@@ -436,7 +442,8 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        The list of parameters in JSON format.
      *        </p>
      *        <p>
-     *        For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.
+     *        For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     *        <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

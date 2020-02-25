@@ -30,24 +30,24 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to modify.
+     * The name of the cluster parameter group to modify.
      * </p>
      */
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A list of parameters in the DB cluster parameter group to modify.
+     * A list of parameters in the cluster parameter group to modify.
      * </p>
      */
     private java.util.List<Parameter> parameters;
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to modify.
+     * The name of the cluster parameter group to modify.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to modify.
+     *        The name of the cluster parameter group to modify.
      */
 
     public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
@@ -56,10 +56,10 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to modify.
+     * The name of the cluster parameter group to modify.
      * </p>
      * 
-     * @return The name of the DB cluster parameter group to modify.
+     * @return The name of the cluster parameter group to modify.
      */
 
     public String getDBClusterParameterGroupName() {
@@ -68,11 +68,11 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to modify.
+     * The name of the cluster parameter group to modify.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to modify.
+     *        The name of the cluster parameter group to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of parameters in the DB cluster parameter group to modify.
+     * A list of parameters in the cluster parameter group to modify.
      * </p>
      * 
-     * @return A list of parameters in the DB cluster parameter group to modify.
+     * @return A list of parameters in the cluster parameter group to modify.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -95,11 +95,11 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of parameters in the DB cluster parameter group to modify.
+     * A list of parameters in the cluster parameter group to modify.
      * </p>
      * 
      * @param parameters
-     *        A list of parameters in the DB cluster parameter group to modify.
+     *        A list of parameters in the cluster parameter group to modify.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -113,7 +113,7 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of parameters in the DB cluster parameter group to modify.
+     * A list of parameters in the cluster parameter group to modify.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param parameters
-     *        A list of parameters in the DB cluster parameter group to modify.
+     *        A list of parameters in the cluster parameter group to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of parameters in the DB cluster parameter group to modify.
+     * A list of parameters in the cluster parameter group to modify.
      * </p>
      * 
      * @param parameters
-     *        A list of parameters in the DB cluster parameter group to modify.
+     *        A list of parameters in the cluster parameter group to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

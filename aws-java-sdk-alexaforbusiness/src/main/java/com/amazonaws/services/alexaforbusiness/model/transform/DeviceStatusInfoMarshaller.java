@@ -32,6 +32,8 @@ public class DeviceStatusInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceStatusDetails").build();
     private static final MarshallingInfo<String> CONNECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatus").build();
+    private static final MarshallingInfo<java.util.Date> CONNECTIONSTATUSUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatusUpdatedTime").timestampFormat("unixTimestamp").build();
 
     private static final DeviceStatusInfoMarshaller instance = new DeviceStatusInfoMarshaller();
 
@@ -51,6 +53,7 @@ public class DeviceStatusInfoMarshaller {
         try {
             protocolMarshaller.marshall(deviceStatusInfo.getDeviceStatusDetails(), DEVICESTATUSDETAILS_BINDING);
             protocolMarshaller.marshall(deviceStatusInfo.getConnectionStatus(), CONNECTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(deviceStatusInfo.getConnectionStatusUpdatedTime(), CONNECTIONSTATUSUPDATEDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

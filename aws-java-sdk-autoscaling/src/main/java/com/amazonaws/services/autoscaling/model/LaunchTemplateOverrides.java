@@ -45,6 +45,11 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * memory, or I/O.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
+     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
      * </p>
      */
@@ -125,6 +130,11 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * memory, or I/O.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
+     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
      * </p>
      * 
@@ -133,6 +143,11 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        For example, larger instance types are generally weighted more than smaller instance types. These are the
      *        same units that you chose to set the desired capacity in terms of instances, or a performance attribute
      *        such as vCPUs, memory, or I/O.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+     *        Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
      *        <p>
      *        Valid Range: Minimum value of 1. Maximum value of 999.
      */
@@ -149,6 +164,11 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * memory, or I/O.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
+     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
      * </p>
      * 
@@ -156,6 +176,11 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *         types. For example, larger instance types are generally weighted more than smaller instance types. These
      *         are the same units that you chose to set the desired capacity in terms of instances, or a performance
      *         attribute such as vCPUs, memory, or I/O.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+     *         Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         </p>
      *         <p>
      *         Valid Range: Minimum value of 1. Maximum value of 999.
      */
@@ -172,6 +197,11 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * memory, or I/O.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance Weighting for
+     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
      * Valid Range: Minimum value of 1. Maximum value of 999.
      * </p>
      * 
@@ -180,6 +210,11 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        For example, larger instance types are generally weighted more than smaller instance types. These are the
      *        same units that you chose to set the desired capacity in terms of instances, or a performance attribute
      *        such as vCPUs, memory, or I/O.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+     *        Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
      *        <p>
      *        Valid Range: Minimum value of 1. Maximum value of 999.
      * @return Returns a reference to this object so that method calls can be chained together.

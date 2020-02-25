@@ -73,6 +73,11 @@ public class StackInstanceSummaryStaxUnmarshaller implements Unmarshaller<StackI
                     continue;
                 }
 
+                if (context.testExpression("OrganizationalUnitId", targetDepth)) {
+                    stackInstanceSummary.setOrganizationalUnitId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DriftStatus", targetDepth)) {
                     stackInstanceSummary.setDriftStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -52,6 +52,8 @@ public class CreateTaskSetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scale").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateTaskSetRequestMarshaller instance = new CreateTaskSetRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class CreateTaskSetRequestMarshaller {
             protocolMarshaller.marshall(createTaskSetRequest.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(createTaskSetRequest.getScale(), SCALE_BINDING);
             protocolMarshaller.marshall(createTaskSetRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createTaskSetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

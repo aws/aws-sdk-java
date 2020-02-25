@@ -250,6 +250,19 @@ public class AWS4SignerTest {
                 request.getHeaders().get("Authorization"));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void invalidEndpointResultsInIllegalArgumentException() throws Exception {
+        SignableRequest<?> request =
+            MockRequestBuilder.create()
+                              .withContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()))
+                              .withHeader("Host", "s3.US_WEST_2.amazonaws.com")
+                              .withHeader("x-amz-archive-description", "test  test")
+                              .withPath("/")
+                              .withEndpoint("https://s3.US_WEST_2.amazonaws.com")
+                              .build();
+        signer.sign(request, new BasicAWSCredentials("akid", "skid"));
+    }
+
     private SignableRequest<?> generateBasicRequest() {
         return MockRequestBuilder.create()
                 .withContent(new ByteArrayInputStream("{\"TableName\": \"foo\"}".getBytes()))

@@ -30,7 +30,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -38,17 +38,17 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB cluster parameter group.
+     * Must be the name of an existing cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can't delete a default DB cluster parameter group.
+     * You can't delete a default cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Cannot be associated with any clusters.
      * </p>
      * </li>
      * </ul>
@@ -57,7 +57,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -65,40 +65,40 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB cluster parameter group.
+     * Must be the name of an existing cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can't delete a default DB cluster parameter group.
+     * You can't delete a default cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Cannot be associated with any clusters.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group.</p>
+     *        The name of the cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the name of an existing DB cluster parameter group.
+     *        Must be the name of an existing cluster parameter group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        You can't delete a default DB cluster parameter group.
+     *        You can't delete a default cluster parameter group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be associated with any DB clusters.
+     *        Cannot be associated with any clusters.
      *        </p>
      *        </li>
      */
@@ -109,7 +109,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -117,39 +117,39 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB cluster parameter group.
+     * Must be the name of an existing cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can't delete a default DB cluster parameter group.
+     * You can't delete a default cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Cannot be associated with any clusters.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the DB cluster parameter group.</p>
+     * @return The name of the cluster parameter group.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be the name of an existing DB cluster parameter group.
+     *         Must be the name of an existing cluster parameter group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         You can't delete a default DB cluster parameter group.
+     *         You can't delete a default cluster parameter group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot be associated with any DB clusters.
+     *         Cannot be associated with any clusters.
      *         </p>
      *         </li>
      */
@@ -160,7 +160,7 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group.
+     * The name of the cluster parameter group.
      * </p>
      * <p>
      * Constraints:
@@ -168,40 +168,40 @@ public class DeleteDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be the name of an existing DB cluster parameter group.
+     * Must be the name of an existing cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You can't delete a default DB cluster parameter group.
+     * You can't delete a default cluster parameter group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cannot be associated with any DB clusters.
+     * Cannot be associated with any clusters.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group.</p>
+     *        The name of the cluster parameter group.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the name of an existing DB cluster parameter group.
+     *        Must be the name of an existing cluster parameter group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        You can't delete a default DB cluster parameter group.
+     *        You can't delete a default cluster parameter group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot be associated with any DB clusters.
+     *        Cannot be associated with any clusters.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -22,6 +22,7 @@ public enum AudioCodec {
 
     AAC("AAC"),
     MP2("MP2"),
+    MP3("MP3"),
     WAV("WAV"),
     AIFF("AIFF"),
     AC3("AC3"),

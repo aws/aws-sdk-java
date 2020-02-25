@@ -42,6 +42,23 @@ public class DescribeClientVpnAuthorizationRulesRequest extends AmazonWebService
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>description</code> - The description of the authorization rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -136,8 +153,42 @@ public class DescribeClientVpnAuthorizationRulesRequest extends AmazonWebService
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>description</code> - The description of the authorization rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters. Filter names and values are case-sensitive.
+     * @return One or more filters. Filter names and values are case-sensitive.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>description</code> - The description of the authorization rule.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants
+     *         access.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -151,9 +202,43 @@ public class DescribeClientVpnAuthorizationRulesRequest extends AmazonWebService
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>description</code> - The description of the authorization rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>description</code> - The description of the authorization rule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants
+     *        access.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -169,6 +254,23 @@ public class DescribeClientVpnAuthorizationRulesRequest extends AmazonWebService
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>description</code> - The description of the authorization rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -176,7 +278,24 @@ public class DescribeClientVpnAuthorizationRulesRequest extends AmazonWebService
      * </p>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>description</code> - The description of the authorization rule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants
+     *        access.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,9 +313,43 @@ public class DescribeClientVpnAuthorizationRulesRequest extends AmazonWebService
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>description</code> - The description of the authorization rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>description</code> - The description of the authorization rule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants
+     *        access.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

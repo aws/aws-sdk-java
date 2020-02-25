@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request would cause you to exceed the allowed amount of storage available across all DB instances.
+ * The request would cause you to exceed the allowed amount of storage available across all instances.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

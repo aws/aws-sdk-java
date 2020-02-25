@@ -27,13 +27,9 @@ import com.amazonaws.services.imagebuilder.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Elastic Compute Cloud Image Builder provides a one-stop-shop to automate the image management processes. You
- * configure an automated pipeline that creates images for use on AWS. As software updates become available, Image
- * Builder automatically produces a new image based on a customizable schedule and distributes it to stipulated AWS
- * Regions after running tests on it. With the Image Builder, organizations can capture their internal or
- * industry-specific compliance policies as a vetted template that can be consistently applied to every new image.
- * Built-in integration with AWS Organizations provides customers with a centralized way to enforce image distribution
- * and access policies across their AWS accounts and Regions. Image Builder supports multiple image format AMIs on AWS.
+ * EC2 Image Builder is a fully managed AWS service that makes it easier to automate the creation, management, and
+ * deployment of customized, secure, and up-to-date “golden” server images that are pre-installed and pre-configured
+ * with software and settings to meet specific IT standards.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -49,7 +45,7 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
-     * CancelImageCreation cancels the creation of Image. This operation may only be used on images in a non-terminal
+     * CancelImageCreation cancels the creation of Image. This operation can only be used on images in a non-terminal
      * state.
      * </p>
      * 
@@ -66,14 +62,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @sample AWSimagebuilder.CancelImageCreation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation"
@@ -83,7 +79,7 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
-     * Creates a new component that can be used to build, validate, test and assess your image.
+     * Creates a new component that can be used to build, validate, test, and assess your image.
      * </p>
      * 
      * @param createComponentRequest
@@ -99,7 +95,7 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
@@ -108,7 +104,7 @@ public interface AWSimagebuilder {
      * @throws InvalidVersionNumberException
      *         Your version number is out of bounds or does not follow the required syntax.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @throws InvalidParameterCombinationException
      *         You have specified two or more mutually exclusive parameters. Review the error message for details.
@@ -137,14 +133,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @throws ResourceAlreadyExistsException
      *         The resource that you are trying to create already exists.
@@ -175,14 +171,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @sample AWSimagebuilder.CreateImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage" target="_top">AWS API
@@ -208,14 +204,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @throws ResourceAlreadyExistsException
      *         The resource that you are trying to create already exists.
@@ -227,7 +223,7 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
-     * Creates a new image recipe. Image Recipes defines how images are configured, tested and assessed.
+     * Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.
      * </p>
      * 
      * @param createImageRecipeRequest
@@ -243,7 +239,7 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
@@ -252,7 +248,7 @@ public interface AWSimagebuilder {
      * @throws InvalidVersionNumberException
      *         Your version number is out of bounds or does not follow the required syntax.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @throws ResourceAlreadyExistsException
      *         The resource that you are trying to create already exists.
@@ -281,14 +277,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @throws ResourceAlreadyExistsException
      *         The resource that you are trying to create already exists.
@@ -320,8 +316,8 @@ public interface AWSimagebuilder {
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceDependencyException
-     *         You have attempted to mutate or delete a resource with a dependency that is prohibitting this action. See
-     *         the error message for more details.
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
      * @sample AWSimagebuilder.DeleteComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent" target="_top">AWS
      *      API Documentation</a>
@@ -350,8 +346,8 @@ public interface AWSimagebuilder {
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceDependencyException
-     *         You have attempted to mutate or delete a resource with a dependency that is prohibitting this action. See
-     *         the error message for more details.
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
      * @sample AWSimagebuilder.DeleteDistributionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -380,8 +376,8 @@ public interface AWSimagebuilder {
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceDependencyException
-     *         You have attempted to mutate or delete a resource with a dependency that is prohibitting this action. See
-     *         the error message for more details.
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
      * @sample AWSimagebuilder.DeleteImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImage" target="_top">AWS API
      *      Documentation</a>
@@ -410,8 +406,8 @@ public interface AWSimagebuilder {
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceDependencyException
-     *         You have attempted to mutate or delete a resource with a dependency that is prohibitting this action. See
-     *         the error message for more details.
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
      * @sample AWSimagebuilder.DeleteImagePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline"
      *      target="_top">AWS API Documentation</a>
@@ -440,8 +436,8 @@ public interface AWSimagebuilder {
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceDependencyException
-     *         You have attempted to mutate or delete a resource with a dependency that is prohibitting this action. See
-     *         the error message for more details.
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
      * @sample AWSimagebuilder.DeleteImageRecipe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImageRecipe" target="_top">AWS
      *      API Documentation</a>
@@ -470,8 +466,8 @@ public interface AWSimagebuilder {
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceDependencyException
-     *         You have attempted to mutate or delete a resource with a dependency that is prohibitting this action. See
-     *         the error message for more details.
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
      * @sample AWSimagebuilder.DeleteInfrastructureConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -690,7 +686,7 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
-     * Gets a infrastructure configuration.
+     * Gets an infrastructure configuration.
      * </p>
      * 
      * @param getInfrastructureConfigurationRequest
@@ -734,7 +730,7 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
@@ -743,7 +739,7 @@ public interface AWSimagebuilder {
      * @throws InvalidVersionNumberException
      *         Your version number is out of bounds or does not follow the required syntax.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @throws InvalidParameterCombinationException
      *         You have specified two or more mutually exclusive parameters. Review the error message for details.
@@ -1148,14 +1144,14 @@ public interface AWSimagebuilder {
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @sample AWSimagebuilder.StartImagePipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution"
@@ -1220,14 +1216,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @throws InvalidParameterCombinationException
      *         You have specified two or more mutually exclusive parameters. Review the error message for details.
@@ -1255,14 +1251,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @sample AWSimagebuilder.UpdateImagePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline"
@@ -1289,14 +1285,14 @@ public interface AWSimagebuilder {
      * @throws InvalidRequestException
      *         You have made a request for an action that is not supported by the service.
      * @throws IdempotentParameterMismatchException
-     *         You have specified an client token for an operation using parameter values that differ from a previous
+     *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
      *         You have exceeded the permitted request rate for the specific operation.
      * @throws ResourceInUseException
-     *         The resource that you are trying to operate on is currently in use. Review the message details, and retry
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
      *         later.
      * @sample AWSimagebuilder.UpdateInfrastructureConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration"

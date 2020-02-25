@@ -249,13 +249,16 @@ public interface AmazonFSx {
      *         list of IDs for subnets that are either invalid or not part of the VPC specified.
      *         <code>InvalidSecurityGroupIds</code> returns the list of IDs for security groups that are either invalid
      *         or not part of the VPC specified.
+     * @throws InvalidPerUnitStorageThroughputException
+     *         An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system
+     *         again, using a valid value.
      * @throws ServiceLimitExceededException
      *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
      *         contacting AWS Support.
      * @throws InternalServerErrorException
      *         A generic error indicating a server-side failure.
      * @throws MissingFileSystemConfigurationException
-     *         File system configuration is required for this operation.
+     *         A file system configuration is required for this operation.
      * @sample AmazonFSx.CreateFileSystem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystem" target="_top">AWS API
      *      Documentation</a>
@@ -328,7 +331,7 @@ public interface AmazonFSx {
      * @throws InternalServerErrorException
      *         A generic error indicating a server-side failure.
      * @throws MissingFileSystemConfigurationException
-     *         File system configuration is required for this operation.
+     *         A file system configuration is required for this operation.
      * @sample AmazonFSx.CreateFileSystemFromBackup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackup" target="_top">AWS
      *      API Documentation</a>
@@ -679,7 +682,7 @@ public interface AmazonFSx {
      * @throws FileSystemNotFoundException
      *         No Amazon FSx file systems were found based upon supplied parameters.
      * @throws MissingFileSystemConfigurationException
-     *         File system configuration is required for this operation.
+     *         A file system configuration is required for this operation.
      * @sample AmazonFSx.UpdateFileSystem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem" target="_top">AWS API
      *      Documentation</a>

@@ -112,7 +112,7 @@
         {"shape":"SnapshotQuotaExceededFault"},
         {"shape":"KMSKeyNotAccessibleFault"}
       ],
-      "documentation":"<p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.</p> <p>You can't copy from one AWS Region to another.</p>"
+      "documentation":"<p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.</p>"
     },
     "CopyDBParameterGroup":{
       "name":"CopyDBParameterGroup",
@@ -160,7 +160,7 @@
         {"shape":"DBInstanceNotFoundFault"},
         {"shape":"DBSubnetGroupDoesNotCoverEnoughAZs"}
       ],
-      "documentation":"<p>Creates a new Amazon Neptune DB cluster.</p> <p>You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.</p>"
+      "documentation":"<p>Creates a new Amazon Neptune DB cluster.</p> <p>You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.</p> <p>Note that when you create a new cluster using <code>CreateDBCluster</code> directly, deletion protection is disabled by default (when you create a new production cluster in the console, deletion protection is enabled by default). You can only delete a DB cluster if its <code>DeletionProtection</code> field is set to <code>false</code>.</p>"
     },
     "CreateDBClusterParameterGroup":{
       "name":"CreateDBClusterParameterGroup",
@@ -309,7 +309,7 @@
         {"shape":"SnapshotQuotaExceededFault"},
         {"shape":"InvalidDBClusterSnapshotStateFault"}
       ],
-      "documentation":"<p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.</p>"
+      "documentation":"<p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.</p> <p>Note that the DB Cluster cannot be deleted if deletion protection is enabled. To delete it, you must first set its <code>DeletionProtection</code> field to <code>False</code>.</p>"
     },
     "DeleteDBClusterParameterGroup":{
       "name":"DeleteDBClusterParameterGroup",
@@ -359,7 +359,7 @@
         {"shape":"SnapshotQuotaExceededFault"},
         {"shape":"InvalidDBClusterStateFault"}
       ],
-      "documentation":"<p>The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request a final DB snapshot the status of the Amazon Neptune DB instance is <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this operation. The action can't be canceled or reverted once submitted.</p> <p>Note that when a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p> <p>You can't delete a DB instance if it is the only instance in the DB cluster.</p>"
+      "documentation":"<p>The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request a final DB snapshot the status of the Amazon Neptune DB instance is <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this operation. The action can't be canceled or reverted once submitted.</p> <p>Note that when a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p> <p>You can't delete a DB instance if it is the only instance in the DB cluster, or if it has deletion protection enabled.</p>"
     },
     "DeleteDBParameterGroup":{
       "name":"DeleteDBParameterGroup",
@@ -483,7 +483,7 @@
       "errors":[
         {"shape":"DBClusterNotFoundFault"}
       ],
-      "documentation":"<p>Returns information about provisioned DB clusters. This API supports pagination.</p>"
+      "documentation":"<p>Returns information about provisioned DB clusters, and supports pagination.</p> <note> <p>This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.</p> </note>"
     },
     "DescribeDBEngineVersions":{
       "name":"DescribeDBEngineVersions",
@@ -512,7 +512,7 @@
       "errors":[
         {"shape":"DBInstanceNotFoundFault"}
       ],
-      "documentation":"<p>Returns information about provisioned instances. This API supports pagination.</p>"
+      "documentation":"<p>Returns information about provisioned instances, and supports pagination.</p> <note> <p>This operation can also return information for Amazon RDS instances and Amazon DocDB instances.</p> </note>"
     },
     "DescribeDBParameterGroups":{
       "name":"DescribeDBParameterGroups",
@@ -1039,6 +1039,42 @@
         {"shape":"DBClusterParameterGroupNotFoundFault"}
       ],
       "documentation":"<p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.</p> <note> <p>This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <a>CreateDBInstance</a> action to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code> action has completed and the DB cluster is available.</p> </note>"
+    },
+    "StartDBCluster":{
+      "name":"StartDBCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartDBClusterMessage"},
+      "output":{
+        "shape":"StartDBClusterResult",
+        "resultWrapper":"StartDBClusterResult"
+      },
+      "errors":[
+        {"shape":"DBClusterNotFoundFault"},
+        {"shape":"InvalidDBClusterStateFault"},
+        {"shape":"InvalidDBInstanceStateFault"}
+      ],
+      "documentation":"<p>Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the AWS CLI stop-db-cluster command, or the StopDBCluster API.</p>"
+    },
+    "StopDBCluster":{
+      "name":"StopDBCluster",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopDBClusterMessage"},
+      "output":{
+        "shape":"StopDBClusterResult",
+        "resultWrapper":"StopDBClusterResult"
+      },
+      "errors":[
+        {"shape":"DBClusterNotFoundFault"},
+        {"shape":"InvalidDBClusterStateFault"},
+        {"shape":"InvalidDBInstanceStateFault"}
+      ],
+      "documentation":"<p>Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune retains the DB cluster's metadata, including its endpoints and DB parameter groups.</p> <p>Neptune also retains the transaction logs so you can do a point-in-time restore if necessary.</p>"
     }
   },
   "shapes":{
@@ -1269,7 +1305,7 @@
         },
         "KmsKeyId":{
           "shape":"String",
-          "documentation":"<p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p> <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon Neptune encrypts the target DB cluster snapshot using the specified KMS encryption key.</p> <p>If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a value for <code>KmsKeyId</code>.</p> <p> KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption keys from one AWS Region in another AWS Region.</p>"
+          "documentation":"<p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p> <p>If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p> <p>If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a value for <code>KmsKeyId</code>.</p> <p> KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption keys from one AWS Region in another AWS Region.</p> <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>"
         },
         "PreSignedUrl":{
           "shape":"String",
@@ -1340,7 +1376,7 @@
         },
         "CharacterSetName":{
           "shape":"String",
-          "documentation":"<p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "DatabaseName":{
           "shape":"String",
@@ -1368,7 +1404,7 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p>The version number of the database engine to use.</p> <p>Example: <code>1.0.1</code> </p>"
+          "documentation":"<p>The version number of the database engine to use. Currently, setting this parameter has no effect.</p> <p>Example: <code>1.0.1</code> </p>"
         },
         "Port":{
           "shape":"IntegerOptional",
@@ -1384,7 +1420,7 @@
         },
         "OptionGroupName":{
           "shape":"String",
-          "documentation":"<p>A value that indicates that the DB cluster should be associated with the specified option group.</p> <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "PreferredBackupWindow":{
           "shape":"String",
@@ -1421,6 +1457,10 @@
         "EnableCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>"
         }
       }
     },
@@ -1567,7 +1607,7 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p>The version number of the database engine to use.</p>"
+          "documentation":"<p>The version number of the database engine to use. Currently, setting this parameter has no effect.</p>"
         },
         "AutoMinorVersionUpgrade":{
           "shape":"BooleanOptional",
@@ -1583,11 +1623,11 @@
         },
         "OptionGroupName":{
           "shape":"String",
-          "documentation":"<p>Indicates that the DB instance should be associated with the specified option group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "CharacterSetName":{
           "shape":"String",
-          "documentation":"<p>Indicates that the DB instance should be associated with the specified CharacterSet.</p> <p>Not applicable. The character set is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "PubliclyAccessible":{
           "shape":"BooleanOptional",
@@ -1656,15 +1696,19 @@
         },
         "EnablePerformanceInsights":{
           "shape":"BooleanOptional",
-          "documentation":"<p>True to enable Performance Insights for the DB instance, and otherwise false.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
-          "documentation":"<p>The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "EnableCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html\">Deleting a DB Instance</a>.</p> <p>DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.</p>"
         }
       }
     },
@@ -1798,7 +1842,7 @@
         },
         "CharacterSetName":{
           "shape":"String",
-          "documentation":"<p>If present, specifies the name of the character set that this cluster is associated with.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "DatabaseName":{
           "shape":"String",
@@ -1862,7 +1906,7 @@
         },
         "DBClusterOptionGroupMemberships":{
           "shape":"DBClusterOptionGroupMemberships",
-          "documentation":"<p>Provides the list of option group memberships for this DB cluster.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "PreferredBackupWindow":{
           "shape":"String",
@@ -1927,6 +1971,10 @@
         "EnabledCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled.</p>"
         }
       },
       "documentation":"<p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p>",
@@ -2182,7 +2230,7 @@
         },
         "DBClusterSnapshotIdentifier":{
           "shape":"String",
-          "documentation":"<p>Specifies the identifier for the DB cluster snapshot.</p>"
+          "documentation":"<p>Specifies the identifier for a DB cluster snapshot. Must match the identifier of an existing snapshot.</p> <p>After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you must specify the same <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB cluster. When you specify this property for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not changed.</p> <p>However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and the original DB cluster is deleted. If you specify a property that is different from the previous snapshot restore property, the DB cluster is restored from the snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the original DB cluster is deleted.</p>"
         },
         "DBClusterIdentifier":{
           "shape":"String",
@@ -2365,11 +2413,11 @@
         },
         "DefaultCharacterSet":{
           "shape":"CharacterSet",
-          "documentation":"<p> The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API is not specified.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "SupportedCharacterSets":{
           "shape":"SupportedCharacterSetsList",
-          "documentation":"<p> A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> action.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "ValidUpgradeTarget":{
           "shape":"ValidUpgradeTargetList",
@@ -2527,11 +2575,11 @@
         },
         "OptionGroupMemberships":{
           "shape":"OptionGroupMembershipList",
-          "documentation":"<p>Provides the list of option group memberships for this DB instance.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "CharacterSetName":{
           "shape":"String",
-          "documentation":"<p>If present, specifies the name of the character set that this instance is associated with.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "SecondaryAvailabilityZone":{
           "shape":"String",
@@ -2616,15 +2664,19 @@
         },
         "PerformanceInsightsEnabled":{
           "shape":"BooleanOptional",
-          "documentation":"<p>True if Performance Insights is enabled for the DB instance, and otherwise false.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
-          "documentation":"<p>The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "EnabledCloudwatchLogsExports":{
           "shape":"LogTypeList",
           "documentation":"<p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Indicates whether or not the DB instance has deletion protection enabled. The instance can't be deleted when deletion protection is enabled. See <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html\">Deleting a DB Instance</a>.</p>"
         }
       },
       "documentation":"<p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p>",
@@ -3231,7 +3283,7 @@
         },
         "Filters":{
           "shape":"FilterList",
-          "documentation":"<p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p> </li> </ul>"
+          "documentation":"<p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>"
         },
         "MaxRecords":{
           "shape":"IntegerOptional",
@@ -3293,7 +3345,7 @@
         },
         "Filters":{
           "shape":"FilterList",
-          "documentation":"<p>A filter that specifies one or more DB instances to describe.</p> <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list will only include information about the DB instances identified by these ARNs.</p> </li> </ul>"
+          "documentation":"<p>A filter that specifies one or more DB instances to describe.</p> <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li> <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>"
         },
         "MaxRecords":{
           "shape":"IntegerOptional",
@@ -4164,7 +4216,7 @@
         },
         "OptionGroupName":{
           "shape":"String",
-          "documentation":"<p>A value that indicates that the DB cluster should be associated with the specified option group. Changing this parameter doesn't result in an outage except in the following case, and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request. If the parameter change results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new connections are rejected but existing connections are not interrupted.</p> <p>Permanent options can't be removed from an option group. The option group can't be removed from a DB cluster once it is associated with a DB cluster.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "PreferredBackupWindow":{
           "shape":"String",
@@ -4184,7 +4236,11 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>"
+          "documentation":"<p>The version number of the database engine. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.</p>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>"
         }
       }
     },
@@ -4300,11 +4356,11 @@
         },
         "EngineVersion":{
           "shape":"String",
-          "documentation":"<p> The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p> <p>For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the default for that DB parameter group family.</p>"
+          "documentation":"<p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>"
         },
         "AllowMajorVersionUpgrade":{
           "shape":"Boolean",
-          "documentation":"<p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p> <p>Constraints: This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>"
+          "documentation":"<p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>"
         },
         "AutoMinorVersionUpgrade":{
           "shape":"BooleanOptional",
@@ -4320,7 +4376,7 @@
         },
         "OptionGroupName":{
           "shape":"String",
-          "documentation":"<p> Indicates that the DB instance should be associated with the specified option group. Changing this parameter doesn't result in an outage except in the following case and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request. If the parameter change results in an option group that enables OEM, this change can cause a brief (sub-second) period during which new connections are rejected but existing connections are not interrupted.</p> <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "NewDBInstanceIdentifier":{
           "shape":"String",
@@ -4381,15 +4437,19 @@
         },
         "EnablePerformanceInsights":{
           "shape":"BooleanOptional",
-          "documentation":"<p>Not supported.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "PerformanceInsightsKMSKeyId":{
           "shape":"String",
-          "documentation":"<p>Not supported.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "CloudwatchLogsExportConfiguration":{
           "shape":"CloudwatchLogsExportConfiguration",
           "documentation":"<p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href=\"https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html\">Deleting a DB Instance</a>.</p>"
         }
       }
     },
@@ -4565,7 +4625,7 @@
         },
         "SupportsPerformanceInsights":{
           "shape":"Boolean",
-          "documentation":"<p>True if a DB instance supports Performance Insights, otherwise false.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "MinStorageSize":{
           "shape":"IntegerOptional",
@@ -4796,7 +4856,7 @@
         },
         "PendingCloudwatchLogsExports":{
           "shape":"PendingCloudwatchLogsExports",
-          "documentation":"<p>Specifies the CloudWatch logs to be exported.</p>"
+          "documentation":"<p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are enabled and which are disabled.</p>"
         }
       },
       "documentation":"<p> This data type is used as a response element in the <a>ModifyDBInstance</a> action.</p>"
@@ -5057,7 +5117,7 @@
         },
         "OptionGroupName":{
           "shape":"String",
-          "documentation":"<p>The name of the option group to use for the restored DB cluster.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "VpcSecurityGroupIds":{
           "shape":"VpcSecurityGroupIdList",
@@ -5082,6 +5142,10 @@
         "DBClusterParameterGroupName":{
           "shape":"String",
           "documentation":"<p>The name of the DB cluster parameter group to associate with the new DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>"
         }
       }
     },
@@ -5128,7 +5192,7 @@
         },
         "OptionGroupName":{
           "shape":"String",
-          "documentation":"<p>The name of the option group for the new DB cluster.</p>"
+          "documentation":"<p> <i>(Not supported by Neptune)</i> </p>"
         },
         "VpcSecurityGroupIds":{
           "shape":"VpcSecurityGroupIdList",
@@ -5153,6 +5217,10 @@
         "DBClusterParameterGroupName":{
           "shape":"String",
           "documentation":"<p>The name of the DB cluster parameter group to associate with the new DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li> </ul>"
+        },
+        "DeletionProtection":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>"
         }
       }
     },
@@ -5251,6 +5319,38 @@
         "db-cluster",
         "db-cluster-snapshot"
       ]
+    },
+    "StartDBClusterMessage":{
+      "type":"structure",
+      "required":["DBClusterIdentifier"],
+      "members":{
+        "DBClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>"
+        }
+      }
+    },
+    "StartDBClusterResult":{
+      "type":"structure",
+      "members":{
+        "DBCluster":{"shape":"DBCluster"}
+      }
+    },
+    "StopDBClusterMessage":{
+      "type":"structure",
+      "required":["DBClusterIdentifier"],
+      "members":{
+        "DBClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>"
+        }
+      }
+    },
+    "StopDBClusterResult":{
+      "type":"structure",
+      "members":{
+        "DBCluster":{"shape":"DBCluster"}
+      }
     },
     "StorageQuotaExceededFault":{
       "type":"structure",

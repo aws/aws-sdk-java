@@ -73,6 +73,18 @@ public class CreateSlotTypeVersionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String valueSelectionStrategy;
+    /**
+     * <p>
+     * The built-in slot type used a the parent of the slot type.
+     * </p>
+     */
+    private String parentSlotTypeSignature;
+    /**
+     * <p>
+     * Configuration information that extends the parent built-in slot type.
+     * </p>
+     */
+    private java.util.List<SlotTypeConfiguration> slotTypeConfigurations;
 
     /**
      * <p>
@@ -458,6 +470,116 @@ public class CreateSlotTypeVersionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The built-in slot type used a the parent of the slot type.
+     * </p>
+     * 
+     * @param parentSlotTypeSignature
+     *        The built-in slot type used a the parent of the slot type.
+     */
+
+    public void setParentSlotTypeSignature(String parentSlotTypeSignature) {
+        this.parentSlotTypeSignature = parentSlotTypeSignature;
+    }
+
+    /**
+     * <p>
+     * The built-in slot type used a the parent of the slot type.
+     * </p>
+     * 
+     * @return The built-in slot type used a the parent of the slot type.
+     */
+
+    public String getParentSlotTypeSignature() {
+        return this.parentSlotTypeSignature;
+    }
+
+    /**
+     * <p>
+     * The built-in slot type used a the parent of the slot type.
+     * </p>
+     * 
+     * @param parentSlotTypeSignature
+     *        The built-in slot type used a the parent of the slot type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSlotTypeVersionResult withParentSlotTypeSignature(String parentSlotTypeSignature) {
+        setParentSlotTypeSignature(parentSlotTypeSignature);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information that extends the parent built-in slot type.
+     * </p>
+     * 
+     * @return Configuration information that extends the parent built-in slot type.
+     */
+
+    public java.util.List<SlotTypeConfiguration> getSlotTypeConfigurations() {
+        return slotTypeConfigurations;
+    }
+
+    /**
+     * <p>
+     * Configuration information that extends the parent built-in slot type.
+     * </p>
+     * 
+     * @param slotTypeConfigurations
+     *        Configuration information that extends the parent built-in slot type.
+     */
+
+    public void setSlotTypeConfigurations(java.util.Collection<SlotTypeConfiguration> slotTypeConfigurations) {
+        if (slotTypeConfigurations == null) {
+            this.slotTypeConfigurations = null;
+            return;
+        }
+
+        this.slotTypeConfigurations = new java.util.ArrayList<SlotTypeConfiguration>(slotTypeConfigurations);
+    }
+
+    /**
+     * <p>
+     * Configuration information that extends the parent built-in slot type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSlotTypeConfigurations(java.util.Collection)} or
+     * {@link #withSlotTypeConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param slotTypeConfigurations
+     *        Configuration information that extends the parent built-in slot type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSlotTypeVersionResult withSlotTypeConfigurations(SlotTypeConfiguration... slotTypeConfigurations) {
+        if (this.slotTypeConfigurations == null) {
+            setSlotTypeConfigurations(new java.util.ArrayList<SlotTypeConfiguration>(slotTypeConfigurations.length));
+        }
+        for (SlotTypeConfiguration ele : slotTypeConfigurations) {
+            this.slotTypeConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information that extends the parent built-in slot type.
+     * </p>
+     * 
+     * @param slotTypeConfigurations
+     *        Configuration information that extends the parent built-in slot type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSlotTypeVersionResult withSlotTypeConfigurations(java.util.Collection<SlotTypeConfiguration> slotTypeConfigurations) {
+        setSlotTypeConfigurations(slotTypeConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -484,7 +606,11 @@ public class CreateSlotTypeVersionResult extends com.amazonaws.AmazonWebServiceR
         if (getChecksum() != null)
             sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getValueSelectionStrategy() != null)
-            sb.append("ValueSelectionStrategy: ").append(getValueSelectionStrategy());
+            sb.append("ValueSelectionStrategy: ").append(getValueSelectionStrategy()).append(",");
+        if (getParentSlotTypeSignature() != null)
+            sb.append("ParentSlotTypeSignature: ").append(getParentSlotTypeSignature()).append(",");
+        if (getSlotTypeConfigurations() != null)
+            sb.append("SlotTypeConfigurations: ").append(getSlotTypeConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -531,6 +657,14 @@ public class CreateSlotTypeVersionResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getValueSelectionStrategy() != null && other.getValueSelectionStrategy().equals(this.getValueSelectionStrategy()) == false)
             return false;
+        if (other.getParentSlotTypeSignature() == null ^ this.getParentSlotTypeSignature() == null)
+            return false;
+        if (other.getParentSlotTypeSignature() != null && other.getParentSlotTypeSignature().equals(this.getParentSlotTypeSignature()) == false)
+            return false;
+        if (other.getSlotTypeConfigurations() == null ^ this.getSlotTypeConfigurations() == null)
+            return false;
+        if (other.getSlotTypeConfigurations() != null && other.getSlotTypeConfigurations().equals(this.getSlotTypeConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -547,6 +681,8 @@ public class CreateSlotTypeVersionResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
         hashCode = prime * hashCode + ((getValueSelectionStrategy() == null) ? 0 : getValueSelectionStrategy().hashCode());
+        hashCode = prime * hashCode + ((getParentSlotTypeSignature() == null) ? 0 : getParentSlotTypeSignature().hashCode());
+        hashCode = prime * hashCode + ((getSlotTypeConfigurations() == null) ? 0 : getSlotTypeConfigurations().hashCode());
         return hashCode;
     }
 

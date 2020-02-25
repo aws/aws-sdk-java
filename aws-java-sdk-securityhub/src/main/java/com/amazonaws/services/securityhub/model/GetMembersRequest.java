@@ -27,17 +27,17 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     * The list of account IDs for the Security Hub member accounts to return the details for.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     * The list of account IDs for the Security Hub member accounts to return the details for.
      * </p>
      * 
-     * @return A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     * @return The list of account IDs for the Security Hub member accounts to return the details for.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -46,11 +46,11 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     * The list of account IDs for the Security Hub member accounts to return the details for.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     *        The list of account IDs for the Security Hub member accounts to return the details for.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -64,7 +64,7 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     * The list of account IDs for the Security Hub member accounts to return the details for.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     *        The list of account IDs for the Security Hub member accounts to return the details for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     * The list of account IDs for the Security Hub member accounts to return the details for.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs for the Security Hub member accounts that you want to return the details for.
+     *        The list of account IDs for the Security Hub member accounts to return the details for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

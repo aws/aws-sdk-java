@@ -36,8 +36,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private java.util.List<String> availabilityZones;
     /**
      * <p>
-     * The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case
-     * sensitive.
+     * The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -66,11 +65,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The identifier for the DB snapshot or DB cluster snapshot to restore from.
+     * The identifier for the snapshot or cluster snapshot to restore from.
      * </p>
      * <p>
-     * You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can
-     * use only the ARN to specify a DB snapshot.
+     * You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you can use
+     * only the ARN to specify a snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -86,7 +85,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private String snapshotIdentifier;
     /**
      * <p>
-     * The database engine to use for the new DB cluster.
+     * The database engine to use for the new cluster.
      * </p>
      * <p>
      * Default: The same as source.
@@ -98,25 +97,25 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private String engine;
     /**
      * <p>
-     * The version of the database engine to use for the new DB cluster.
+     * The version of the database engine to use for the new cluster.
      * </p>
      */
     private String engineVersion;
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * The name of the DB subnet group to use for the new DB cluster.
+     * The name of the subnet group to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -128,25 +127,24 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private String dBSubnetGroupName;
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      * </p>
      */
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
-     * snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -154,14 +152,14 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB
-     * cluster is encrypted using the AWS KMS key that was used to encrypt the DB snapshot or the DB cluster snapshot.
+     * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
+     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
-     * restored DB cluster is not encrypted.
+     * If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB
+     * cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
@@ -258,8 +256,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case
-     * sensitive.
+     * The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -286,8 +283,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't
-     *        case sensitive.</p>
+     *        The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case
+     *        sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -318,8 +315,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case
-     * sensitive.
+     * The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -345,8 +341,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * Example: <code>my-snapshot-id</code>
      * </p>
      * 
-     * @return The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't
-     *         case sensitive.</p>
+     * @return The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case
+     *         sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -377,8 +373,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case
-     * sensitive.
+     * The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -405,8 +400,8 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't
-     *        case sensitive.</p>
+     *        The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case
+     *        sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -439,11 +434,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier for the DB snapshot or DB cluster snapshot to restore from.
+     * The identifier for the snapshot or cluster snapshot to restore from.
      * </p>
      * <p>
-     * You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can
-     * use only the ARN to specify a DB snapshot.
+     * You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you can use
+     * only the ARN to specify a snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -457,10 +452,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param snapshotIdentifier
-     *        The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
+     *        The identifier for the snapshot or cluster snapshot to restore from.</p>
      *        <p>
-     *        You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However,
-     *        you can use only the ARN to specify a DB snapshot.
+     *        You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you
+     *        can use only the ARN to specify a snapshot.
      *        </p>
      *        <p>
      *        Constraints:
@@ -479,11 +474,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier for the DB snapshot or DB cluster snapshot to restore from.
+     * The identifier for the snapshot or cluster snapshot to restore from.
      * </p>
      * <p>
-     * You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can
-     * use only the ARN to specify a DB snapshot.
+     * You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you can use
+     * only the ARN to specify a snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -496,10 +491,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </li>
      * </ul>
      * 
-     * @return The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
+     * @return The identifier for the snapshot or cluster snapshot to restore from.</p>
      *         <p>
-     *         You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However,
-     *         you can use only the ARN to specify a DB snapshot.
+     *         You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you
+     *         can use only the ARN to specify a snapshot.
      *         </p>
      *         <p>
      *         Constraints:
@@ -518,11 +513,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier for the DB snapshot or DB cluster snapshot to restore from.
+     * The identifier for the snapshot or cluster snapshot to restore from.
      * </p>
      * <p>
-     * You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can
-     * use only the ARN to specify a DB snapshot.
+     * You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you can use
+     * only the ARN to specify a snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -536,10 +531,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param snapshotIdentifier
-     *        The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
+     *        The identifier for the snapshot or cluster snapshot to restore from.</p>
      *        <p>
-     *        You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However,
-     *        you can use only the ARN to specify a DB snapshot.
+     *        You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you
+     *        can use only the ARN to specify a snapshot.
      *        </p>
      *        <p>
      *        Constraints:
@@ -560,7 +555,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The database engine to use for the new DB cluster.
+     * The database engine to use for the new cluster.
      * </p>
      * <p>
      * Default: The same as source.
@@ -570,7 +565,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param engine
-     *        The database engine to use for the new DB cluster.</p>
+     *        The database engine to use for the new cluster.</p>
      *        <p>
      *        Default: The same as source.
      *        </p>
@@ -584,7 +579,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The database engine to use for the new DB cluster.
+     * The database engine to use for the new cluster.
      * </p>
      * <p>
      * Default: The same as source.
@@ -593,7 +588,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * Constraint: Must be compatible with the engine of the source.
      * </p>
      * 
-     * @return The database engine to use for the new DB cluster.</p>
+     * @return The database engine to use for the new cluster.</p>
      *         <p>
      *         Default: The same as source.
      *         </p>
@@ -607,7 +602,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The database engine to use for the new DB cluster.
+     * The database engine to use for the new cluster.
      * </p>
      * <p>
      * Default: The same as source.
@@ -617,7 +612,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param engine
-     *        The database engine to use for the new DB cluster.</p>
+     *        The database engine to use for the new cluster.</p>
      *        <p>
      *        Default: The same as source.
      *        </p>
@@ -633,11 +628,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version of the database engine to use for the new DB cluster.
+     * The version of the database engine to use for the new cluster.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the database engine to use for the new DB cluster.
+     *        The version of the database engine to use for the new cluster.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -646,10 +641,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version of the database engine to use for the new DB cluster.
+     * The version of the database engine to use for the new cluster.
      * </p>
      * 
-     * @return The version of the database engine to use for the new DB cluster.
+     * @return The version of the database engine to use for the new cluster.
      */
 
     public String getEngineVersion() {
@@ -658,11 +653,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The version of the database engine to use for the new DB cluster.
+     * The version of the database engine to use for the new cluster.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the database engine to use for the new DB cluster.
+     *        The version of the database engine to use for the new cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -673,22 +668,22 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.</p>
+     *        The port number on which the new cluster accepts connections.</p>
      *        <p>
      *        Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *        </p>
      *        <p>
-     *        Default: The same port as the original DB cluster.
+     *        Default: The same port as the original cluster.
      */
 
     public void setPort(Integer port) {
@@ -697,21 +692,21 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      * 
-     * @return The port number on which the new DB cluster accepts connections.</p>
+     * @return The port number on which the new cluster accepts connections.</p>
      *         <p>
      *         Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *         </p>
      *         <p>
-     *         Default: The same port as the original DB cluster.
+     *         Default: The same port as the original cluster.
      */
 
     public Integer getPort() {
@@ -720,22 +715,22 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The same port as the original cluster.
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.</p>
+     *        The port number on which the new cluster accepts connections.</p>
      *        <p>
      *        Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *        </p>
      *        <p>
-     *        Default: The same port as the original DB cluster.
+     *        Default: The same port as the original cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -746,7 +741,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB subnet group to use for the new DB cluster.
+     * The name of the subnet group to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -756,7 +751,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the DB subnet group to use for the new DB cluster.</p>
+     *        The name of the subnet group to use for the new cluster.</p>
      *        <p>
      *        Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
      *        </p>
@@ -770,7 +765,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB subnet group to use for the new DB cluster.
+     * The name of the subnet group to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -779,7 +774,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The name of the DB subnet group to use for the new DB cluster.</p>
+     * @return The name of the subnet group to use for the new cluster.</p>
      *         <p>
      *         Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
      *         </p>
@@ -793,7 +788,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the DB subnet group to use for the new DB cluster.
+     * The name of the subnet group to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -803,7 +798,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The name of the DB subnet group to use for the new DB cluster.</p>
+     *        The name of the subnet group to use for the new cluster.</p>
      *        <p>
      *        Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
      *        </p>
@@ -819,10 +814,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      * </p>
      * 
-     * @return A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     * @return A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -831,11 +826,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     *        A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      */
 
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -849,7 +844,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -858,7 +853,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     *        A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -874,11 +869,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     * A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups that the new DB cluster will belong to.
+     *        A list of virtual private cloud (VPC) security groups that the new cluster will belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -889,10 +884,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * 
-     * @return The tags to be assigned to the restored DB cluster.
+     * @return The tags to be assigned to the restored cluster.
      */
 
     public java.util.List<Tag> getTags() {
@@ -901,11 +896,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the restored DB cluster.
+     *        The tags to be assigned to the restored cluster.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -919,7 +914,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -928,7 +923,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the restored DB cluster.
+     *        The tags to be assigned to the restored cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -944,11 +939,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the restored DB cluster.
+     *        The tags to be assigned to the restored cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -959,13 +954,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
-     * snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -973,25 +967,25 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB
-     * cluster is encrypted using the AWS KMS key that was used to encrypt the DB snapshot or the DB cluster snapshot.
+     * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
+     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
-     * restored DB cluster is not encrypted.
+     * If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB
+     * cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     *        The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
      *        snapshot.</p>
      *        <p>
      *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        restoring a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
-     *        new DB cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *        restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new
+     *        cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *        </p>
      *        <p>
      *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -999,15 +993,14 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the
-     *        restored DB cluster is encrypted using the AWS KMS key that was used to encrypt the DB snapshot or the DB
-     *        cluster snapshot.
+     *        If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored
+     *        cluster is encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then
-     *        the restored DB cluster is not encrypted.
+     *        If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
+     *        restored DB cluster is not encrypted.
      *        </p>
      *        </li>
      */
@@ -1018,13 +1011,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
-     * snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1032,24 +1024,24 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB
-     * cluster is encrypted using the AWS KMS key that was used to encrypt the DB snapshot or the DB cluster snapshot.
+     * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
+     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
-     * restored DB cluster is not encrypted.
+     * If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB
+     * cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     * @return The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
      *         snapshot.</p>
      *         <p>
      *         The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *         restoring a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
-     *         new DB cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *         restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
+     *         new cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *         </p>
      *         <p>
      *         If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1057,15 +1049,14 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         <ul>
      *         <li>
      *         <p>
-     *         If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the
-     *         restored DB cluster is encrypted using the AWS KMS key that was used to encrypt the DB snapshot or the DB
-     *         cluster snapshot.
+     *         If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored
+     *         cluster is encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then
-     *         the restored DB cluster is not encrypted.
+     *         If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
+     *         restored DB cluster is not encrypted.
      *         </p>
      *         </li>
      */
@@ -1076,13 +1067,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
-     * snapshot.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1090,25 +1080,25 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB
-     * cluster is encrypted using the AWS KMS key that was used to encrypt the DB snapshot or the DB cluster snapshot.
+     * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
+     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
-     * restored DB cluster is not encrypted.
+     * If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB
+     * cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster
+     *        The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
      *        snapshot.</p>
      *        <p>
      *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        restoring a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
-     *        new DB cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *        restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new
+     *        cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *        </p>
      *        <p>
      *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1116,15 +1106,14 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the
-     *        restored DB cluster is encrypted using the AWS KMS key that was used to encrypt the DB snapshot or the DB
-     *        cluster snapshot.
+     *        If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored
+     *        cluster is encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB snapshot or the DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then
-     *        the restored DB cluster is not encrypted.
+     *        If the snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the
+     *        restored DB cluster is not encrypted.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

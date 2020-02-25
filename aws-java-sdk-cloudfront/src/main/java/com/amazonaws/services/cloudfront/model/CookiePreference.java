@@ -42,14 +42,15 @@ public class CookiePreference implements Serializable, Cloneable {
     private String forward;
     /**
      * <p>
-     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
      * you want to forward selected cookies, the names of those cookies.
      * </p>
      * <p>
-     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
-     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
-     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
+     * <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to
+     * <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its
+     * child elements, CloudFront deletes them automatically.
      * </p>
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
@@ -179,14 +180,15 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
      * you want to forward selected cookies, the names of those cookies.
      * </p>
      * <p>
-     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
-     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
-     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
+     * <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to
+     * <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its
+     * child elements, CloudFront deletes them automatically.
      * </p>
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
@@ -195,14 +197,14 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param whitelistedNames
-     *        Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     *        Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      *        specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
      *        and, if you want to forward selected cookies, the names of those cookies.</p>
      *        <p>
-     *        If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
+     *        If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
      *        <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code>
-     *        to all or none and you don't delete the <code>WhitelistedNames</code> element and its child elements,
-     *        CloudFront deletes them automatically.
+     *        to <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element
+     *        and its child elements, CloudFront deletes them automatically.
      *        </p>
      *        <p>
      *        For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
@@ -216,14 +218,15 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
      * you want to forward selected cookies, the names of those cookies.
      * </p>
      * <p>
-     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
-     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
-     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
+     * <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to
+     * <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its
+     * child elements, CloudFront deletes them automatically.
      * </p>
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
@@ -231,14 +234,14 @@ public class CookiePreference implements Serializable, Cloneable {
      * Limits</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type
-     *         that specifies how many different cookies you want CloudFront to forward to the origin for this cache
-     *         behavior and, if you want to forward selected cookies, the names of those cookies.</p>
+     * @return Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
+     *         specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
+     *         and, if you want to forward selected cookies, the names of those cookies.</p>
      *         <p>
-     *         If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
+     *         If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
      *         <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from
-     *         <code>whitelist</code> to all or none and you don't delete the <code>WhitelistedNames</code> element and
-     *         its child elements, CloudFront deletes them automatically.
+     *         <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't delete the
+     *         <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
      *         </p>
      *         <p>
      *         For the current limit on the number of cookie names that you can whitelist for each cache behavior, see
@@ -252,14 +255,15 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
      * you want to forward selected cookies, the names of those cookies.
      * </p>
      * <p>
-     * If you specify <code>all</code> or none for the value of <code>Forward</code>, omit <code>WhitelistedNames</code>
-     * . If you change the value of <code>Forward</code> from <code>whitelist</code> to all or none and you don't delete
-     * the <code>WhitelistedNames</code> element and its child elements, CloudFront deletes them automatically.
+     * If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
+     * <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code> to
+     * <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element and its
+     * child elements, CloudFront deletes them automatically.
      * </p>
      * <p>
      * For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a
@@ -268,14 +272,14 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param whitelistedNames
-     *        Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>. A complex type that
+     *        Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      *        specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
      *        and, if you want to forward selected cookies, the names of those cookies.</p>
      *        <p>
-     *        If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
+     *        If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
      *        <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code>
-     *        to all or none and you don't delete the <code>WhitelistedNames</code> element and its child elements,
-     *        CloudFront deletes them automatically.
+     *        to <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code> element
+     *        and its child elements, CloudFront deletes them automatically.
      *        </p>
      *        <p>
      *        For the current limit on the number of cookie names that you can whitelist for each cache behavior, see <a

@@ -481,7 +481,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers don't exist.
      * @throws InvalidViewerCertificateException
-     *         A viewer certificate specified in the response body is not valid.
+     *         A viewer certificate specified is not valid.
      * @throws InvalidMinimumProtocolVersionException
      *         The minimum protocol version specified is not valid.
      * @throws MissingBodyException
@@ -498,7 +498,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidErrorCodeException
      *         An invalid error code was specified.
      * @throws InvalidResponseCodeException
-     *         A response code specified in the response body is not valid.
+     *         A response code is not valid.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidRequiredProtocolException
@@ -534,10 +534,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that
      *         support Server Name Indication (SNI).
      * @throws InvalidTTLOrderException
-     *         TTL order specified in the response body is not valid.
+     *         The TTL order specified is not valid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified in the response body is not valid. To specify a web ACL created using the latest
-     *         version of AWS WAF, use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
+     *         use the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
      *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
@@ -546,7 +546,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyQueryStringParametersException
      *         Your request contains too many query string parameters.
      * @throws InvalidQueryStringParametersException
-     *         Query string parameters specified in the response body are not valid.
+     *         The query string parameters specified are not valid.
      * @throws TooManyDistributionsWithLambdaAssociationsException
      *         Processing your request would cause the maximum number of distributions with Lambda function associations
      *         per owner to be exceeded.
@@ -636,7 +636,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers don't exist.
      * @throws InvalidViewerCertificateException
-     *         A viewer certificate specified in the response body is not valid.
+     *         A viewer certificate specified is not valid.
      * @throws InvalidMinimumProtocolVersionException
      *         The minimum protocol version specified is not valid.
      * @throws MissingBodyException
@@ -653,7 +653,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidErrorCodeException
      *         An invalid error code was specified.
      * @throws InvalidResponseCodeException
-     *         A response code specified in the response body is not valid.
+     *         A response code is not valid.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidRequiredProtocolException
@@ -689,21 +689,21 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that
      *         support Server Name Indication (SNI).
      * @throws InvalidTTLOrderException
-     *         TTL order specified in the response body is not valid.
+     *         The TTL order specified is not valid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified in the response body is not valid. To specify a web ACL created using the latest
-     *         version of AWS WAF, use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
+     *         use the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
      *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
      * @throws TooManyOriginCustomHeadersException
      *         Your request contains too many origin custom headers.
      * @throws InvalidTaggingException
-     *         Tagging specified in the response body is not valid.
+     *         The tagging specified is not valid.
      * @throws TooManyQueryStringParametersException
      *         Your request contains too many query string parameters.
      * @throws InvalidQueryStringParametersException
-     *         Query string parameters specified in the response body are not valid.
+     *         The query string parameters specified are not valid.
      * @throws TooManyDistributionsWithLambdaAssociationsException
      *         Processing your request would cause the maximum number of distributions with Lambda function associations
      *         per owner to be exceeded.
@@ -1183,7 +1183,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidTaggingException
-     *         Tagging specified in the response body is not valid.
+     *         The tagging specified is not valid.
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -2622,8 +2622,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified in the response body is not valid. To specify a web ACL created using the latest
-     *         version of AWS WAF, use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
+     *         use the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
      *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
@@ -2969,7 +2969,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         Tagging specified in the response body is not valid.
+     *         The tagging specified is not valid.
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @sample AmazonCloudFront.ListTagsForResource
@@ -3031,7 +3031,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         Tagging specified in the response body is not valid.
+     *         The tagging specified is not valid.
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @sample AmazonCloudFront.TagResource
@@ -3092,7 +3092,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidTaggingException
-     *         Tagging specified in the response body is not valid.
+     *         The tagging specified is not valid.
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @sample AmazonCloudFront.UntagResource
@@ -3353,7 +3353,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidErrorCodeException
      *         An invalid error code was specified.
      * @throws InvalidResponseCodeException
-     *         A response code specified in the response body is not valid.
+     *         A response code is not valid.
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @throws InvalidOriginAccessIdentityException
@@ -3363,7 +3363,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TrustedSignerDoesNotExistException
      *         One or more of your trusted signers don't exist.
      * @throws InvalidViewerCertificateException
-     *         A viewer certificate specified in the response body is not valid.
+     *         A viewer certificate specified is not valid.
      * @throws InvalidMinimumProtocolVersionException
      *         The minimum protocol version specified is not valid.
      * @throws InvalidRequiredProtocolException
@@ -3396,10 +3396,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidGeoRestrictionParameterException
      *         The specified geo restriction parameter is not valid.
      * @throws InvalidTTLOrderException
-     *         TTL order specified in the response body is not valid.
+     *         The TTL order specified is not valid.
      * @throws InvalidWebACLIdException
-     *         A web ACL ID specified in the response body is not valid. To specify a web ACL created using the latest
-     *         version of AWS WAF, use the ACL ARN, for example
+     *         A web ACL ID specified is not valid. To specify a web ACL created using the latest version of AWS WAF,
+     *         use the ACL ARN, for example
      *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>
      *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
@@ -3408,7 +3408,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyQueryStringParametersException
      *         Your request contains too many query string parameters.
      * @throws InvalidQueryStringParametersException
-     *         Query string parameters specified in the response body are not valid.
+     *         The query string parameters specified are not valid.
      * @throws TooManyDistributionsWithLambdaAssociationsException
      *         Processing your request would cause the maximum number of distributions with Lambda function associations
      *         per owner to be exceeded.

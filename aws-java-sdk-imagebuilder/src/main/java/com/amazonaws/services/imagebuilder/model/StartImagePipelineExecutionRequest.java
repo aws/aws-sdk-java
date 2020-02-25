@@ -27,7 +27,7 @@ public class StartImagePipelineExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to manually invoke.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
      * </p>
      */
     private String imagePipelineArn;
@@ -40,11 +40,11 @@ public class StartImagePipelineExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to manually invoke.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline that you wish to manually invoke.
+     *        The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
      */
 
     public void setImagePipelineArn(String imagePipelineArn) {
@@ -53,10 +53,10 @@ public class StartImagePipelineExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to manually invoke.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image pipeline that you wish to manually invoke.
+     * @return The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
      */
 
     public String getImagePipelineArn() {
@@ -65,11 +65,11 @@ public class StartImagePipelineExecutionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to manually invoke.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline that you wish to manually invoke.
+     *        The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

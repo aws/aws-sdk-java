@@ -30,7 +30,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the new DB cluster to be created.
+     * The name of the new cluster to be created.
      * </p>
      * <p>
      * Constraints:
@@ -56,7 +56,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The identifier of the source DB cluster from which to restore.
+     * The identifier of the source cluster from which to restore.
      * </p>
      * <p>
      * Constraints:
@@ -72,7 +72,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String sourceDBClusterIdentifier;
     /**
      * <p>
-     * The date and time to restore the DB cluster to.
+     * The date and time to restore the cluster to.
      * </p>
      * <p>
      * Valid values: A time in Universal Coordinated Time (UTC) format.
@@ -83,7 +83,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be before the latest restorable time for the DB instance.
+     * Must be before the latest restorable time for the instance.
      * </p>
      * </li>
      * <li>
@@ -109,7 +109,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private java.util.Date restoreToTime;
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
      * <code>false</code> otherwise.
      * </p>
      * <p>
@@ -122,7 +122,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private Boolean useLatestRestorableTime;
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
@@ -134,7 +134,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private Integer port;
     /**
      * <p>
-     * The DB subnet group name to use for the new DB cluster.
+     * The subnet group name to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -146,29 +146,29 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBSubnetGroupName;
     /**
      * <p>
-     * A list of VPC security groups that the new DB cluster belongs to.
+     * A list of VPC security groups that the new cluster belongs to.
      * </p>
      */
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS key that is different from the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS key
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that is different from the AWS
+     * KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the AWS KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -176,18 +176,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS key that was used to
-     * encrypt the source DB cluster.
+     * If the cluster is encrypted, then the restored cluster is encrypted using the AWS KMS key that was used to
+     * encrypt the source cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the cluster is not encrypted, then the restored cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is
      * rejected.
      * </p>
      */
@@ -209,7 +209,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the new DB cluster to be created.
+     * The name of the new cluster to be created.
      * </p>
      * <p>
      * Constraints:
@@ -233,7 +233,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The name of the new DB cluster to be created.</p>
+     *        The name of the new cluster to be created.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -261,7 +261,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the new DB cluster to be created.
+     * The name of the new cluster to be created.
      * </p>
      * <p>
      * Constraints:
@@ -284,7 +284,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * 
-     * @return The name of the new DB cluster to be created.</p>
+     * @return The name of the new cluster to be created.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -312,7 +312,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the new DB cluster to be created.
+     * The name of the new cluster to be created.
      * </p>
      * <p>
      * Constraints:
@@ -336,7 +336,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        The name of the new DB cluster to be created.</p>
+     *        The name of the new cluster to be created.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -366,7 +366,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier of the source DB cluster from which to restore.
+     * The identifier of the source cluster from which to restore.
      * </p>
      * <p>
      * Constraints:
@@ -380,7 +380,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param sourceDBClusterIdentifier
-     *        The identifier of the source DB cluster from which to restore.</p>
+     *        The identifier of the source cluster from which to restore.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -398,7 +398,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier of the source DB cluster from which to restore.
+     * The identifier of the source cluster from which to restore.
      * </p>
      * <p>
      * Constraints:
@@ -411,7 +411,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * 
-     * @return The identifier of the source DB cluster from which to restore.</p>
+     * @return The identifier of the source cluster from which to restore.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -429,7 +429,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier of the source DB cluster from which to restore.
+     * The identifier of the source cluster from which to restore.
      * </p>
      * <p>
      * Constraints:
@@ -443,7 +443,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </ul>
      * 
      * @param sourceDBClusterIdentifier
-     *        The identifier of the source DB cluster from which to restore.</p>
+     *        The identifier of the source cluster from which to restore.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -463,7 +463,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time to restore the DB cluster to.
+     * The date and time to restore the cluster to.
      * </p>
      * <p>
      * Valid values: A time in Universal Coordinated Time (UTC) format.
@@ -474,7 +474,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be before the latest restorable time for the DB instance.
+     * Must be before the latest restorable time for the instance.
      * </p>
      * </li>
      * <li>
@@ -498,7 +498,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param restoreToTime
-     *        The date and time to restore the DB cluster to.</p>
+     *        The date and time to restore the cluster to.</p>
      *        <p>
      *        Valid values: A time in Universal Coordinated Time (UTC) format.
      *        </p>
@@ -508,7 +508,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be before the latest restorable time for the DB instance.
+     *        Must be before the latest restorable time for the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -537,7 +537,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time to restore the DB cluster to.
+     * The date and time to restore the cluster to.
      * </p>
      * <p>
      * Valid values: A time in Universal Coordinated Time (UTC) format.
@@ -548,7 +548,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be before the latest restorable time for the DB instance.
+     * Must be before the latest restorable time for the instance.
      * </p>
      * </li>
      * <li>
@@ -571,7 +571,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Example: <code>2015-03-07T23:45:00Z</code>
      * </p>
      * 
-     * @return The date and time to restore the DB cluster to.</p>
+     * @return The date and time to restore the cluster to.</p>
      *         <p>
      *         Valid values: A time in Universal Coordinated Time (UTC) format.
      *         </p>
@@ -581,7 +581,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be before the latest restorable time for the DB instance.
+     *         Must be before the latest restorable time for the instance.
      *         </p>
      *         </li>
      *         <li>
@@ -610,7 +610,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time to restore the DB cluster to.
+     * The date and time to restore the cluster to.
      * </p>
      * <p>
      * Valid values: A time in Universal Coordinated Time (UTC) format.
@@ -621,7 +621,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * Must be before the latest restorable time for the DB instance.
+     * Must be before the latest restorable time for the instance.
      * </p>
      * </li>
      * <li>
@@ -645,7 +645,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param restoreToTime
-     *        The date and time to restore the DB cluster to.</p>
+     *        The date and time to restore the cluster to.</p>
      *        <p>
      *        Valid values: A time in Universal Coordinated Time (UTC) format.
      *        </p>
@@ -655,7 +655,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be before the latest restorable time for the DB instance.
+     *        Must be before the latest restorable time for the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -686,7 +686,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
      * <code>false</code> otherwise.
      * </p>
      * <p>
@@ -697,8 +697,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *        and <code>false</code> otherwise. </p>
+     *        A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
+     *        <code>false</code> otherwise. </p>
      *        <p>
      *        Default: <code>false</code>
      *        </p>
@@ -712,7 +712,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
      * <code>false</code> otherwise.
      * </p>
      * <p>
@@ -722,8 +722,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Constraints: Cannot be specified if the <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *         and <code>false</code> otherwise. </p>
+     * @return A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
+     *         <code>false</code> otherwise. </p>
      *         <p>
      *         Default: <code>false</code>
      *         </p>
@@ -737,7 +737,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
      * <code>false</code> otherwise.
      * </p>
      * <p>
@@ -748,8 +748,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *        and <code>false</code> otherwise. </p>
+     *        A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
+     *        <code>false</code> otherwise. </p>
      *        <p>
      *        Default: <code>false</code>
      *        </p>
@@ -765,7 +765,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and
+     * A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
      * <code>false</code> otherwise.
      * </p>
      * <p>
@@ -775,8 +775,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Constraints: Cannot be specified if the <code>RestoreToTime</code> parameter is provided.
      * </p>
      * 
-     * @return A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time,
-     *         and <code>false</code> otherwise. </p>
+     * @return A value that is set to <code>true</code> to restore the cluster to the latest restorable backup time, and
+     *         <code>false</code> otherwise. </p>
      *         <p>
      *         Default: <code>false</code>
      *         </p>
@@ -790,7 +790,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
@@ -800,7 +800,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.</p>
+     *        The port number on which the new cluster accepts connections.</p>
      *        <p>
      *        Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *        </p>
@@ -814,7 +814,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
@@ -823,7 +823,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Default: The default port for the engine.
      * </p>
      * 
-     * @return The port number on which the new DB cluster accepts connections.</p>
+     * @return The port number on which the new cluster accepts connections.</p>
      *         <p>
      *         Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *         </p>
@@ -837,7 +837,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The port number on which the new DB cluster accepts connections.
+     * The port number on which the new cluster accepts connections.
      * </p>
      * <p>
      * Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
@@ -847,7 +847,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param port
-     *        The port number on which the new DB cluster accepts connections.</p>
+     *        The port number on which the new cluster accepts connections.</p>
      *        <p>
      *        Constraints: Must be a value from <code>1150</code> to <code>65535</code>.
      *        </p>
@@ -863,7 +863,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The DB subnet group name to use for the new DB cluster.
+     * The subnet group name to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -873,7 +873,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The DB subnet group name to use for the new DB cluster.</p>
+     *        The subnet group name to use for the new cluster.</p>
      *        <p>
      *        Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
      *        </p>
@@ -887,7 +887,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The DB subnet group name to use for the new DB cluster.
+     * The subnet group name to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -896,7 +896,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return The DB subnet group name to use for the new DB cluster.</p>
+     * @return The subnet group name to use for the new cluster.</p>
      *         <p>
      *         Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
      *         </p>
@@ -910,7 +910,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The DB subnet group name to use for the new DB cluster.
+     * The subnet group name to use for the new cluster.
      * </p>
      * <p>
      * Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
@@ -920,7 +920,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        The DB subnet group name to use for the new DB cluster.</p>
+     *        The subnet group name to use for the new cluster.</p>
      *        <p>
      *        Constraints: If provided, must match the name of an existing <code>DBSubnetGroup</code>.
      *        </p>
@@ -936,10 +936,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of VPC security groups that the new DB cluster belongs to.
+     * A list of VPC security groups that the new cluster belongs to.
      * </p>
      * 
-     * @return A list of VPC security groups that the new DB cluster belongs to.
+     * @return A list of VPC security groups that the new cluster belongs to.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -948,11 +948,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of VPC security groups that the new DB cluster belongs to.
+     * A list of VPC security groups that the new cluster belongs to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of VPC security groups that the new DB cluster belongs to.
+     *        A list of VPC security groups that the new cluster belongs to.
      */
 
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -966,7 +966,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of VPC security groups that the new DB cluster belongs to.
+     * A list of VPC security groups that the new cluster belongs to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -975,7 +975,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of VPC security groups that the new DB cluster belongs to.
+     *        A list of VPC security groups that the new cluster belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -991,11 +991,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of VPC security groups that the new DB cluster belongs to.
+     * A list of VPC security groups that the new cluster belongs to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of VPC security groups that the new DB cluster belongs to.
+     *        A list of VPC security groups that the new cluster belongs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1006,10 +1006,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * 
-     * @return The tags to be assigned to the restored DB cluster.
+     * @return The tags to be assigned to the restored cluster.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1018,11 +1018,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the restored DB cluster.
+     *        The tags to be assigned to the restored cluster.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1036,7 +1036,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1045,7 +1045,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the restored DB cluster.
+     *        The tags to be assigned to the restored cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1061,11 +1061,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The tags to be assigned to the restored DB cluster.
+     * The tags to be assigned to the restored cluster.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the restored DB cluster.
+     *        The tags to be assigned to the restored cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1076,17 +1076,17 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS key that is different from the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS key
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that is different from the AWS
+     * KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the AWS KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1094,32 +1094,32 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS key that was used to
-     * encrypt the source DB cluster.
+     * If the cluster is encrypted, then the restored cluster is encrypted using the AWS KMS key that was used to
+     * encrypt the source cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the cluster is not encrypted, then the restored cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is
      * rejected.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
      *        <p>
      *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        restoring a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
-     *        new DB cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *        restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new
+     *        cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *        </p>
      *        <p>
-     *        You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS key that is different
-     *        from the AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS
-     *        KMS key identified by the <code>KmsKeyId</code> parameter.
+     *        You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that is different from
+     *        the AWS KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the AWS KMS key
+     *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>
      *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1127,19 +1127,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS key that was
-     *        used to encrypt the source DB cluster.
+     *        If the cluster is encrypted, then the restored cluster is encrypted using the AWS KMS key that was used to
+     *        encrypt the source cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     *        If the cluster is not encrypted, then the restored cluster is not encrypted.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request
-     *        is rejected.
+     *        If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is
+     *        rejected.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1148,17 +1148,17 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS key that is different from the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS key
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that is different from the AWS
+     * KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the AWS KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1166,32 +1166,31 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS key that was used to
-     * encrypt the source DB cluster.
+     * If the cluster is encrypted, then the restored cluster is encrypted using the AWS KMS key that was used to
+     * encrypt the source cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the cluster is not encrypted, then the restored cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is
      * rejected.
      * </p>
      * 
-     * @return The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
-     *         cluster.</p>
+     * @return The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
      *         <p>
      *         The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *         restoring a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
-     *         new DB cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *         restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
+     *         new cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *         </p>
      *         <p>
-     *         You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS key that is different
-     *         from the AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS
-     *         KMS key identified by the <code>KmsKeyId</code> parameter.
+     *         You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that is different from
+     *         the AWS KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the AWS KMS key
+     *         identified by the <code>KmsKeyId</code> parameter.
      *         </p>
      *         <p>
      *         If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1199,19 +1198,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS key that was
-     *         used to encrypt the source DB cluster.
+     *         If the cluster is encrypted, then the restored cluster is encrypted using the AWS KMS key that was used
+     *         to encrypt the source cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     *         If the cluster is not encrypted, then the restored cluster is not encrypted.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore
-     *         request is rejected.
+     *         If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request
+     *         is rejected.
      */
 
     public String getKmsKeyId() {
@@ -1220,17 +1219,17 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new DB cluster,
-     * then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
+     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS key that is different from the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS key
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that is different from the AWS
+     * KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the AWS KMS key identified by
+     * the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1238,32 +1237,32 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS key that was used to
-     * encrypt the source DB cluster.
+     * If the cluster is encrypted, then the restored cluster is encrypted using the AWS KMS key that was used to
+     * encrypt the source cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     * If the cluster is not encrypted, then the restored cluster is not encrypted.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is
+     * If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is
      * rejected.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier to use when restoring an encrypted cluster from an encrypted cluster.</p>
      *        <p>
      *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        restoring a DB cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
-     *        new DB cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *        restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new
+     *        cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *        </p>
      *        <p>
-     *        You can restore to a new DB cluster and encrypt the new DB cluster with an AWS KMS key that is different
-     *        from the AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS
-     *        KMS key identified by the <code>KmsKeyId</code> parameter.
+     *        You can restore to a new cluster and encrypt the new cluster with an AWS KMS key that is different from
+     *        the AWS KMS key used to encrypt the source cluster. The new DB cluster is encrypted with the AWS KMS key
+     *        identified by the <code>KmsKeyId</code> parameter.
      *        </p>
      *        <p>
      *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1271,19 +1270,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS key that was
-     *        used to encrypt the source DB cluster.
+     *        If the cluster is encrypted, then the restored cluster is encrypted using the AWS KMS key that was used to
+     *        encrypt the source cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
+     *        If the cluster is not encrypted, then the restored cluster is not encrypted.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request
-     *        is rejected.
+     *        If <code>DBClusterIdentifier</code> refers to a cluster that is not encrypted, then the restore request is
+     *        rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
     private Boolean imageTestsEnabled;
     /**
      * <p>
-     * The maximum time in minutes that tests are permitted to run for.
+     * The maximum time in minutes that tests are permitted to run.
      * </p>
      */
     private Integer timeoutMinutes;
@@ -95,11 +95,11 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The maximum time in minutes that tests are permitted to run for.
+     * The maximum time in minutes that tests are permitted to run.
      * </p>
      * 
      * @param timeoutMinutes
-     *        The maximum time in minutes that tests are permitted to run for.
+     *        The maximum time in minutes that tests are permitted to run.
      */
 
     public void setTimeoutMinutes(Integer timeoutMinutes) {
@@ -108,10 +108,10 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The maximum time in minutes that tests are permitted to run for.
+     * The maximum time in minutes that tests are permitted to run.
      * </p>
      * 
-     * @return The maximum time in minutes that tests are permitted to run for.
+     * @return The maximum time in minutes that tests are permitted to run.
      */
 
     public Integer getTimeoutMinutes() {
@@ -120,11 +120,11 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The maximum time in minutes that tests are permitted to run for.
+     * The maximum time in minutes that tests are permitted to run.
      * </p>
      * 
      * @param timeoutMinutes
-     *        The maximum time in minutes that tests are permitted to run for.
+     *        The maximum time in minutes that tests are permitted to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

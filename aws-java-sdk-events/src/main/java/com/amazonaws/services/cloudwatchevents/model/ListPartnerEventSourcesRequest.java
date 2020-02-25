@@ -40,8 +40,8 @@ public class ListPartnerEventSourcesRequest extends com.amazonaws.AmazonWebServi
     private String nextToken;
     /**
      * <p>
-     * pecifying this limits the number of results returned by this operation. The operation also returns a
-     * <code>NextToken</code> that you can use in a subsequent operation to retrieve the next set of results.
+     * pecifying this limits the number of results returned by this operation. The operation also returns a NextToken
+     * which you can use in a subsequent operation to retrieve the next set of results.
      * </p>
      */
     private Integer limit;
@@ -137,13 +137,13 @@ public class ListPartnerEventSourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * pecifying this limits the number of results returned by this operation. The operation also returns a
-     * <code>NextToken</code> that you can use in a subsequent operation to retrieve the next set of results.
+     * pecifying this limits the number of results returned by this operation. The operation also returns a NextToken
+     * which you can use in a subsequent operation to retrieve the next set of results.
      * </p>
      * 
      * @param limit
      *        pecifying this limits the number of results returned by this operation. The operation also returns a
-     *        <code>NextToken</code> that you can use in a subsequent operation to retrieve the next set of results.
+     *        NextToken which you can use in a subsequent operation to retrieve the next set of results.
      */
 
     public void setLimit(Integer limit) {
@@ -152,12 +152,12 @@ public class ListPartnerEventSourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * pecifying this limits the number of results returned by this operation. The operation also returns a
-     * <code>NextToken</code> that you can use in a subsequent operation to retrieve the next set of results.
+     * pecifying this limits the number of results returned by this operation. The operation also returns a NextToken
+     * which you can use in a subsequent operation to retrieve the next set of results.
      * </p>
      * 
      * @return pecifying this limits the number of results returned by this operation. The operation also returns a
-     *         <code>NextToken</code> that you can use in a subsequent operation to retrieve the next set of results.
+     *         NextToken which you can use in a subsequent operation to retrieve the next set of results.
      */
 
     public Integer getLimit() {
@@ -166,13 +166,13 @@ public class ListPartnerEventSourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * pecifying this limits the number of results returned by this operation. The operation also returns a
-     * <code>NextToken</code> that you can use in a subsequent operation to retrieve the next set of results.
+     * pecifying this limits the number of results returned by this operation. The operation also returns a NextToken
+     * which you can use in a subsequent operation to retrieve the next set of results.
      * </p>
      * 
      * @param limit
      *        pecifying this limits the number of results returned by this operation. The operation also returns a
-     *        <code>NextToken</code> that you can use in a subsequent operation to retrieve the next set of results.
+     *        NextToken which you can use in a subsequent operation to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -109,6 +109,8 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String state;
+
+    private StateInfo stateInfo;
     /**
      * <p>
      * Tags attached to the cluster.
@@ -783,6 +785,32 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param stateInfo
+     */
+
+    public void setStateInfo(StateInfo stateInfo) {
+        this.stateInfo = stateInfo;
+    }
+
+    /**
+     * @return
+     */
+
+    public StateInfo getStateInfo() {
+        return this.stateInfo;
+    }
+
+    /**
+     * @param stateInfo
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterInfo withStateInfo(StateInfo stateInfo) {
+        setStateInfo(stateInfo);
+        return this;
+    }
+
+    /**
      * <p>
      * Tags attached to the cluster.
      * </p>
@@ -933,6 +961,8 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
             sb.append("NumberOfBrokerNodes: ").append(getNumberOfBrokerNodes()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getStateInfo() != null)
+            sb.append("StateInfo: ").append(getStateInfo()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getZookeeperConnectString() != null)
@@ -1003,6 +1033,10 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getStateInfo() == null ^ this.getStateInfo() == null)
+            return false;
+        if (other.getStateInfo() != null && other.getStateInfo().equals(this.getStateInfo()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1032,6 +1066,7 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOpenMonitoring() == null) ? 0 : getOpenMonitoring().hashCode());
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getStateInfo() == null) ? 0 : getStateInfo().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getZookeeperConnectString() == null) ? 0 : getZookeeperConnectString().hashCode());
         return hashCode;

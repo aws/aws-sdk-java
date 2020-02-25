@@ -28,20 +28,21 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter that returns only components that are part of the specified experiment. If you specify
-     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.
      * </p>
      */
     private String experimentName;
     /**
      * <p>
      * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
-     * , you can't specify <code>ExperimentName</code>.
+     * , you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.
      * </p>
      */
     private String trialName;
     /**
      * <p>
-     * A filter that returns only components that have the specified source Amazon Resource Name (ARN).
+     * A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify
+     * <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.
      * </p>
      */
     private String sourceArn;
@@ -86,12 +87,12 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter that returns only components that are part of the specified experiment. If you specify
-     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.
      * </p>
      * 
      * @param experimentName
      *        A filter that returns only components that are part of the specified experiment. If you specify
-     *        <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     *        <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.
      */
 
     public void setExperimentName(String experimentName) {
@@ -101,11 +102,11 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter that returns only components that are part of the specified experiment. If you specify
-     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.
      * </p>
      * 
      * @return A filter that returns only components that are part of the specified experiment. If you specify
-     *         <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     *         <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.
      */
 
     public String getExperimentName() {
@@ -115,12 +116,12 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter that returns only components that are part of the specified experiment. If you specify
-     * <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     * <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.
      * </p>
      * 
      * @param experimentName
      *        A filter that returns only components that are part of the specified experiment. If you specify
-     *        <code>ExperimentName</code>, you can't specify <code>TrialName</code>.
+     *        <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,12 +133,12 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
-     * , you can't specify <code>ExperimentName</code>.
+     * , you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.
      * </p>
      * 
      * @param trialName
      *        A filter that returns only components that are part of the specified trial. If you specify
-     *        <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+     *        <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.
      */
 
     public void setTrialName(String trialName) {
@@ -147,11 +148,11 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
-     * , you can't specify <code>ExperimentName</code>.
+     * , you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.
      * </p>
      * 
      * @return A filter that returns only components that are part of the specified trial. If you specify
-     *         <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+     *         <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.
      */
 
     public String getTrialName() {
@@ -161,12 +162,12 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>
-     * , you can't specify <code>ExperimentName</code>.
+     * , you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.
      * </p>
      * 
      * @param trialName
      *        A filter that returns only components that are part of the specified trial. If you specify
-     *        <code>TrialName</code>, you can't specify <code>ExperimentName</code>.
+     *        <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +178,13 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that returns only components that have the specified source Amazon Resource Name (ARN).
+     * A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify
+     * <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.
      * </p>
      * 
      * @param sourceArn
-     *        A filter that returns only components that have the specified source Amazon Resource Name (ARN).
+     *        A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you
+     *        specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -190,10 +193,13 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that returns only components that have the specified source Amazon Resource Name (ARN).
+     * A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify
+     * <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.
      * </p>
      * 
-     * @return A filter that returns only components that have the specified source Amazon Resource Name (ARN).
+     * @return A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you
+     *         specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>
+     *         .
      */
 
     public String getSourceArn() {
@@ -202,11 +208,13 @@ public class ListTrialComponentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that returns only components that have the specified source Amazon Resource Name (ARN).
+     * A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify
+     * <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.
      * </p>
      * 
      * @param sourceArn
-     *        A filter that returns only components that have the specified source Amazon Resource Name (ARN).
+     *        A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you
+     *        specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,18 +30,18 @@ public class GetInfrastructureConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.
      * </p>
      */
     private String infrastructureConfigurationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.
      */
 
     public void setInfrastructureConfigurationArn(String infrastructureConfigurationArn) {
@@ -50,10 +50,10 @@ public class GetInfrastructureConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.
      */
 
     public String getInfrastructureConfigurationArn() {
@@ -62,11 +62,11 @@ public class GetInfrastructureConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

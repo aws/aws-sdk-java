@@ -29,12 +29,24 @@ public class ListChangedBlocksRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ID of the first snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      */
     private String firstSnapshotId;
     /**
      * <p>
      * The ID of the second snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      */
     private String secondSnapshotId;
     /**
@@ -63,9 +75,19 @@ public class ListChangedBlocksRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ID of the first snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      * 
      * @param firstSnapshotId
-     *        The ID of the first snapshot to use for the comparison.
+     *        The ID of the first snapshot to use for the comparison.</p> <important>
+     *        <p>
+     *        The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code>
+     *        parameter; otherwise, an error occurs.
+     *        </p>
      */
 
     public void setFirstSnapshotId(String firstSnapshotId) {
@@ -76,8 +98,18 @@ public class ListChangedBlocksRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ID of the first snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      * 
-     * @return The ID of the first snapshot to use for the comparison.
+     * @return The ID of the first snapshot to use for the comparison.</p> <important>
+     *         <p>
+     *         The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code>
+     *         parameter; otherwise, an error occurs.
+     *         </p>
      */
 
     public String getFirstSnapshotId() {
@@ -88,9 +120,19 @@ public class ListChangedBlocksRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ID of the first snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      * 
      * @param firstSnapshotId
-     *        The ID of the first snapshot to use for the comparison.
+     *        The ID of the first snapshot to use for the comparison.</p> <important>
+     *        <p>
+     *        The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code>
+     *        parameter; otherwise, an error occurs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,9 +145,19 @@ public class ListChangedBlocksRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ID of the second snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      * 
      * @param secondSnapshotId
-     *        The ID of the second snapshot to use for the comparison.
+     *        The ID of the second snapshot to use for the comparison.</p> <important>
+     *        <p>
+     *        The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code>
+     *        parameter; otherwise, an error occurs.
+     *        </p>
      */
 
     public void setSecondSnapshotId(String secondSnapshotId) {
@@ -116,8 +168,18 @@ public class ListChangedBlocksRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ID of the second snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      * 
-     * @return The ID of the second snapshot to use for the comparison.
+     * @return The ID of the second snapshot to use for the comparison.</p> <important>
+     *         <p>
+     *         The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code>
+     *         parameter; otherwise, an error occurs.
+     *         </p>
      */
 
     public String getSecondSnapshotId() {
@@ -128,9 +190,19 @@ public class ListChangedBlocksRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ID of the second snapshot to use for the comparison.
      * </p>
+     * <important>
+     * <p>
+     * The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter;
+     * otherwise, an error occurs.
+     * </p>
+     * </important>
      * 
      * @param secondSnapshotId
-     *        The ID of the second snapshot to use for the comparison.
+     *        The ID of the second snapshot to use for the comparison.</p> <important>
+     *        <p>
+     *        The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code>
+     *        parameter; otherwise, an error occurs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

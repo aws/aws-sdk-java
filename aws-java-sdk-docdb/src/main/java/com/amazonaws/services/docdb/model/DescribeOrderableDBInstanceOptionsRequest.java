@@ -30,7 +30,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the engine to retrieve DB instance options for.
+     * The name of the engine to retrieve instance options for.
      * </p>
      */
     private String engine;
@@ -43,8 +43,8 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
     private String engineVersion;
     /**
      * <p>
-     * The DB instance class filter value. Specify this parameter to show only the available offerings that match the
-     * specified DB instance class.
+     * The instance class filter value. Specify this parameter to show only the available offerings that match the
+     * specified instance class.
      * </p>
      */
     private String dBInstanceClass;
@@ -92,11 +92,11 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the engine to retrieve DB instance options for.
+     * The name of the engine to retrieve instance options for.
      * </p>
      * 
      * @param engine
-     *        The name of the engine to retrieve DB instance options for.
+     *        The name of the engine to retrieve instance options for.
      */
 
     public void setEngine(String engine) {
@@ -105,10 +105,10 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the engine to retrieve DB instance options for.
+     * The name of the engine to retrieve instance options for.
      * </p>
      * 
-     * @return The name of the engine to retrieve DB instance options for.
+     * @return The name of the engine to retrieve instance options for.
      */
 
     public String getEngine() {
@@ -117,11 +117,11 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the engine to retrieve DB instance options for.
+     * The name of the engine to retrieve instance options for.
      * </p>
      * 
      * @param engine
-     *        The name of the engine to retrieve DB instance options for.
+     *        The name of the engine to retrieve instance options for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,13 +178,13 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The DB instance class filter value. Specify this parameter to show only the available offerings that match the
-     * specified DB instance class.
+     * The instance class filter value. Specify this parameter to show only the available offerings that match the
+     * specified instance class.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The DB instance class filter value. Specify this parameter to show only the available offerings that match
-     *        the specified DB instance class.
+     *        The instance class filter value. Specify this parameter to show only the available offerings that match
+     *        the specified instance class.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -193,12 +193,12 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The DB instance class filter value. Specify this parameter to show only the available offerings that match the
-     * specified DB instance class.
+     * The instance class filter value. Specify this parameter to show only the available offerings that match the
+     * specified instance class.
      * </p>
      * 
-     * @return The DB instance class filter value. Specify this parameter to show only the available offerings that
-     *         match the specified DB instance class.
+     * @return The instance class filter value. Specify this parameter to show only the available offerings that match
+     *         the specified instance class.
      */
 
     public String getDBInstanceClass() {
@@ -207,13 +207,13 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The DB instance class filter value. Specify this parameter to show only the available offerings that match the
-     * specified DB instance class.
+     * The instance class filter value. Specify this parameter to show only the available offerings that match the
+     * specified instance class.
      * </p>
      * 
      * @param dBInstanceClass
-     *        The DB instance class filter value. Specify this parameter to show only the available offerings that match
-     *        the specified DB instance class.
+     *        The instance class filter value. Specify this parameter to show only the available offerings that match
+     *        the specified instance class.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image semantic verion.
+     * The Amazon Resource Name (ARN) of the image semantic version.
      * </p>
      */
     private String arn;
@@ -67,11 +67,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image semantic verion.
+     * The Amazon Resource Name (ARN) of the image semantic version.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the image semantic verion.
+     *        The Amazon Resource Name (ARN) of the image semantic version.
      */
 
     public void setArn(String arn) {
@@ -80,10 +80,10 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image semantic verion.
+     * The Amazon Resource Name (ARN) of the image semantic version.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image semantic verion.
+     * @return The Amazon Resource Name (ARN) of the image semantic version.
      */
 
     public String getArn() {
@@ -92,11 +92,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image semantic verion.
+     * The Amazon Resource Name (ARN) of the image semantic version.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the image semantic verion.
+     *        The Amazon Resource Name (ARN) of the image semantic version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

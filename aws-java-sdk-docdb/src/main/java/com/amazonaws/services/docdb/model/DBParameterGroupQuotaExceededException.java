@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This request would cause you to exceed the allowed number of DB parameter groups.
+ * This request would cause you to exceed the allowed number of parameter groups.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

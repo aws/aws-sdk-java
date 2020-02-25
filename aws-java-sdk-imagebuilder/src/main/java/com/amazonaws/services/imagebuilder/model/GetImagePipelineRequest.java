@@ -27,18 +27,18 @@ public class GetImagePipelineRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.
      * </p>
      */
     private String imagePipelineArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.
      */
 
     public void setImagePipelineArn(String imagePipelineArn) {
@@ -47,10 +47,10 @@ public class GetImagePipelineRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image pipeline that you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.
      */
 
     public String getImagePipelineArn() {
@@ -59,11 +59,11 @@ public class GetImagePipelineRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image pipeline that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.
      * </p>
      * 
      * @param imagePipelineArn
-     *        The Amazon Resource Name (ARN) of the image pipeline that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

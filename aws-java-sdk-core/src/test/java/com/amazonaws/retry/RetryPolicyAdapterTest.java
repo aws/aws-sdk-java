@@ -17,6 +17,7 @@ package com.amazonaws.retry;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.retry.v2.RetryPolicyContext;
 import com.amazonaws.retry.v2.RetryPolicyContexts;
 
@@ -26,6 +27,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import static com.amazonaws.SDKGlobalConfiguration.AWS_MAX_ATTEMPTS_SYSTEM_PROPERTY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -54,6 +56,7 @@ public class RetryPolicyAdapterTest {
     public void setup() {
         legacyPolicy = new RetryPolicy(retryCondition, backoffStrategy, 3, false);
         adapter = new RetryPolicyAdapter(legacyPolicy, clientConfiguration);
+        System.clearProperty(AWS_MAX_ATTEMPTS_SYSTEM_PROPERTY);
     }
 
     @Test
@@ -95,6 +98,17 @@ public class RetryPolicyAdapterTest {
         adapter = new RetryPolicyAdapter(legacyPolicy, clientConfiguration);
         assertTrue(adapter.shouldRetry(RetryPolicyContexts.withRetriesAttempted(3)));
         assertFalse(adapter.shouldRetry(RetryPolicyContexts.withRetriesAttempted(10)));
+    }
+
+    @Test
+    public void shouldRetry_MaxErrorSpecifiedInSystemProperty_DoesNotUseMaxErrorInPolicy() {
+        when(retryCondition.shouldRetry(any(AmazonWebServiceRequest.class), any(AmazonClientException.class), anyInt()))
+            .thenReturn(true);
+        System.setProperty(AWS_MAX_ATTEMPTS_SYSTEM_PROPERTY, "10");
+        legacyPolicy = new RetryPolicy(retryCondition, backoffStrategy, 3, false);
+        adapter = new RetryPolicyAdapter(legacyPolicy, clientConfiguration);
+        assertTrue(adapter.shouldRetry(RetryPolicyContexts.withRetriesAttempted(3)));
+        assertFalse(adapter.shouldRetry(RetryPolicyContexts.withRetriesAttempted(9)));
     }
 
     @Test

@@ -41,9 +41,9 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
-     * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
-     * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format and can contain a maximum of 5000 characters.
+     * You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and
+     * thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.
      * </p>
      */
     private String trustAnchor;
@@ -140,16 +140,16 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
-     * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
-     * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format and can contain a maximum of 5000 characters.
+     * You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and
+     * thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.
      * </p>
      * 
      * @param trustAnchor
      *        The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster
-     *        certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the
-     *        certificate that issued the cluster certificate and ends with a root certificate. The certificate or
-     *        certificate chain must be in PEM format and can contain a maximum of 5000 characters.
+     *        certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be
+     *        directly available, and thus must be the root certificate. The certificate must be in PEM format and can
+     *        contain a maximum of 5000 characters.
      */
 
     public void setTrustAnchor(String trustAnchor) {
@@ -159,15 +159,15 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
-     * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
-     * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format and can contain a maximum of 5000 characters.
+     * You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and
+     * thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.
      * </p>
      * 
      * @return The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster
-     *         certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the
-     *         certificate that issued the cluster certificate and ends with a root certificate. The certificate or
-     *         certificate chain must be in PEM format and can contain a maximum of 5000 characters.
+     *         certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be
+     *         directly available, and thus must be the root certificate. The certificate must be in PEM format and can
+     *         contain a maximum of 5000 characters.
      */
 
     public String getTrustAnchor() {
@@ -177,16 +177,16 @@ public class InitializeClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate.
-     * This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued
-     * the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM
-     * format and can contain a maximum of 5000 characters.
+     * You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and
+     * thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.
      * </p>
      * 
      * @param trustAnchor
      *        The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster
-     *        certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the
-     *        certificate that issued the cluster certificate and ends with a root certificate. The certificate or
-     *        certificate chain must be in PEM format and can contain a maximum of 5000 characters.
+     *        certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be
+     *        directly available, and thus must be the root certificate. The certificate must be in PEM format and can
+     *        contain a maximum of 5000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

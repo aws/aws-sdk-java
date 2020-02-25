@@ -45,7 +45,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
     private String engineVersion;
     /**
      * <p>
-     * The name of a specific DB parameter group family to return details for.
+     * The name of a specific parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -205,7 +205,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of a specific DB parameter group family to return details for.
+     * The name of a specific parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -219,7 +219,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param dBParameterGroupFamily
-     *        The name of a specific DB parameter group family to return details for.</p>
+     *        The name of a specific parameter group family to return details for.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -237,7 +237,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of a specific DB parameter group family to return details for.
+     * The name of a specific parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -250,7 +250,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The name of a specific DB parameter group family to return details for.</p>
+     * @return The name of a specific parameter group family to return details for.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -268,7 +268,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of a specific DB parameter group family to return details for.
+     * The name of a specific parameter group family to return details for.
      * </p>
      * <p>
      * Constraints:
@@ -282,7 +282,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param dBParameterGroupFamily
-     *        The name of a specific DB parameter group family to return details for.</p>
+     *        The name of a specific parameter group family to return details for.</p>
      *        <p>
      *        Constraints:
      *        </p>

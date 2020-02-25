@@ -161,6 +161,10 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
             request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName()));
         }
 
+        if (restoreDBClusterFromSnapshotRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

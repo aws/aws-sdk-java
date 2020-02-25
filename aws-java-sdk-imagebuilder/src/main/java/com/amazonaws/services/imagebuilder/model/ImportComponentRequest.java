@@ -33,8 +33,8 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      */
     private String semanticVersion;
@@ -46,8 +46,8 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String description;
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version. In other words what
-     * makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      */
     private String changeDescription;
@@ -59,7 +59,7 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String type;
     /**
      * <p>
-     * The format of the resource that you wish to import as a component.
+     * The format of the resource that you want to import as a component.
      * </p>
      */
     private String format;
@@ -71,13 +71,16 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String platform;
     /**
      * <p>
-     * The data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      */
     private String data;
     /**
      * <p>
-     * The uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      */
     private String uri;
@@ -142,13 +145,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     *        major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     *        The semantic version of the component. This version follows the semantic version syntax. For example,
+     *        major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -157,12 +160,12 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      * 
-     * @return The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     *         major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * @return The semantic version of the component. This version follows the semantic version syntax. For example,
+     *         major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      */
 
     public String getSemanticVersion() {
@@ -171,13 +174,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     * major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     * The semantic version of the component. This version follows the semantic version syntax. For example,
+     * major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the component. This version to follow the semantic version syntax. i.e.
-     *        major.minor.patch. This could be versioned like software 2.0.1 or date like 2019.12.01.
+     *        The semantic version of the component. This version follows the semantic version syntax. For example,
+     *        major.minor.patch. This could be versioned like software (2.0.1) or like a date (2019.12.01).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,13 +231,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version. In other words what
-     * makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component. Describes what change has been made in this version. In other
-     *        words what makes this version different from other versions of this component.
+     *        The change description of the component. Describes what change has been made in this version, or what
+     *        makes this version different from other versions of this component.
      */
 
     public void setChangeDescription(String changeDescription) {
@@ -243,12 +246,12 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version. In other words what
-     * makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      * 
-     * @return The change description of the component. Describes what change has been made in this version. In other
-     *         words what makes this version different from other versions of this component.
+     * @return The change description of the component. Describes what change has been made in this version, or what
+     *         makes this version different from other versions of this component.
      */
 
     public String getChangeDescription() {
@@ -257,13 +260,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The change description of the component. Describes what change has been made in this version. In other words what
-     * makes this version different from other versions of this component.
+     * The change description of the component. Describes what change has been made in this version, or what makes this
+     * version different from other versions of this component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component. Describes what change has been made in this version. In other
-     *        words what makes this version different from other versions of this component.
+     *        The change description of the component. Describes what change has been made in this version, or what
+     *        makes this version different from other versions of this component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,11 +336,11 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The format of the resource that you wish to import as a component.
+     * The format of the resource that you want to import as a component.
      * </p>
      * 
      * @param format
-     *        The format of the resource that you wish to import as a component.
+     *        The format of the resource that you want to import as a component.
      * @see ComponentFormat
      */
 
@@ -347,10 +350,10 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The format of the resource that you wish to import as a component.
+     * The format of the resource that you want to import as a component.
      * </p>
      * 
-     * @return The format of the resource that you wish to import as a component.
+     * @return The format of the resource that you want to import as a component.
      * @see ComponentFormat
      */
 
@@ -360,11 +363,11 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The format of the resource that you wish to import as a component.
+     * The format of the resource that you want to import as a component.
      * </p>
      * 
      * @param format
-     *        The format of the resource that you wish to import as a component.
+     *        The format of the resource that you want to import as a component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComponentFormat
      */
@@ -376,11 +379,11 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The format of the resource that you wish to import as a component.
+     * The format of the resource that you want to import as a component.
      * </p>
      * 
      * @param format
-     *        The format of the resource that you wish to import as a component.
+     *        The format of the resource that you want to import as a component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComponentFormat
      */
@@ -451,11 +454,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      * 
      * @param data
-     *        The data of the component.
+     *        The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code>
+     *        can be used to specify the data within the component.
      */
 
     public void setData(String data) {
@@ -464,10 +469,12 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      * 
-     * @return The data of the component.
+     * @return The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code>
+     *         can be used to specify the data within the component.
      */
 
     public String getData() {
@@ -476,11 +483,13 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The data of the component.
+     * The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be
+     * used to specify the data within the component.
      * </p>
      * 
      * @param data
-     *        The data of the component.
+     *        The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code>
+     *        can be used to specify the data within the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,11 +500,15 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
      * @param uri
-     *        The uri of the component.
+     *        The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
+     *        bucket. If you use S3, you can specify component content up to your service quota. Either
+     *        <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      */
 
     public void setUri(String uri) {
@@ -504,10 +517,14 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
-     * @return The uri of the component.
+     * @return The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
+     *         bucket. If you use S3, you can specify component content up to your service quota. Either
+     *         <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      */
 
     public String getUri() {
@@ -516,11 +533,15 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The uri of the component.
+     * The uri of the component. Must be an S3 URL and the requester must have permission to access the S3 bucket. If
+     * you use S3, you can specify component content up to your service quota. Either <code>data</code> or
+     * <code>uri</code> can be used to specify the data within the component.
      * </p>
      * 
      * @param uri
-     *        The uri of the component.
+     *        The uri of the component. Must be an S3 URL and the requester must have permission to access the S3
+     *        bucket. If you use S3, you can specify component content up to your service quota. Either
+     *        <code>data</code> or <code>uri</code> can be used to specify the data within the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

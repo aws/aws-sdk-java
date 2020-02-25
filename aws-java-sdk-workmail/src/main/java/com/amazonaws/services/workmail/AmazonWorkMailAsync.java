@@ -265,6 +265,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Deletes an access control rule for the specified WorkMail organization.
+     * </p>
+     * 
+     * @param deleteAccessControlRuleRequest
+     * @return A Java Future containing the result of the DeleteAccessControlRule operation returned by the service.
+     * @sample AmazonWorkMailAsync.DeleteAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessControlRuleResult> deleteAccessControlRuleAsync(DeleteAccessControlRuleRequest deleteAccessControlRuleRequest);
+
+    /**
+     * <p>
+     * Deletes an access control rule for the specified WorkMail organization.
+     * </p>
+     * 
+     * @param deleteAccessControlRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessControlRule operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessControlRuleResult> deleteAccessControlRuleAsync(DeleteAccessControlRuleRequest deleteAccessControlRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessControlRuleRequest, DeleteAccessControlRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Remove one or more specified aliases from a set of aliases for a given user.
      * </p>
      * 
@@ -657,6 +688,39 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
+     * protocol action, or user ID.
+     * </p>
+     * 
+     * @param getAccessControlEffectRequest
+     * @return A Java Future containing the result of the GetAccessControlEffect operation returned by the service.
+     * @sample AmazonWorkMailAsync.GetAccessControlEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessControlEffectResult> getAccessControlEffectAsync(GetAccessControlEffectRequest getAccessControlEffectRequest);
+
+    /**
+     * <p>
+     * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
+     * protocol action, or user ID.
+     * </p>
+     * 
+     * @param getAccessControlEffectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessControlEffect operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.GetAccessControlEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessControlEffectResult> getAccessControlEffectAsync(GetAccessControlEffectRequest getAccessControlEffectRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessControlEffectRequest, GetAccessControlEffectResult> asyncHandler);
+
+    /**
+     * <p>
      * Requests a user's mailbox details for a specified organization and user.
      * </p>
      * 
@@ -685,6 +749,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<GetMailboxDetailsResult> getMailboxDetailsAsync(GetMailboxDetailsRequest getMailboxDetailsRequest,
             com.amazonaws.handlers.AsyncHandler<GetMailboxDetailsRequest, GetMailboxDetailsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the access control rules for the specified organization.
+     * </p>
+     * 
+     * @param listAccessControlRulesRequest
+     * @return A Java Future containing the result of the ListAccessControlRules operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListAccessControlRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessControlRulesResult> listAccessControlRulesAsync(ListAccessControlRulesRequest listAccessControlRulesRequest);
+
+    /**
+     * <p>
+     * Lists the access control rules for the specified organization.
+     * </p>
+     * 
+     * @param listAccessControlRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessControlRules operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListAccessControlRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessControlRulesResult> listAccessControlRulesAsync(ListAccessControlRulesRequest listAccessControlRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessControlRulesRequest, ListAccessControlRulesResult> asyncHandler);
 
     /**
      * <p>
@@ -907,6 +1002,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the tags applied to an Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags applied to an Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns summaries of the organization's users.
      * </p>
      * 
@@ -935,6 +1061,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a new access control rule for the specified organization. The rule allows or denies access to the
+     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
+     * same name as an existing rule replaces the older rule.
+     * </p>
+     * 
+     * @param putAccessControlRuleRequest
+     * @return A Java Future containing the result of the PutAccessControlRule operation returned by the service.
+     * @sample AmazonWorkMailAsync.PutAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessControlRuleResult> putAccessControlRuleAsync(PutAccessControlRuleRequest putAccessControlRuleRequest);
+
+    /**
+     * <p>
+     * Adds a new access control rule for the specified organization. The rule allows or denies access to the
+     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
+     * same name as an existing rule replaces the older rule.
+     * </p>
+     * 
+     * @param putAccessControlRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccessControlRule operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.PutAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessControlRuleResult> putAccessControlRuleAsync(PutAccessControlRuleRequest putAccessControlRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccessControlRuleRequest, PutAccessControlRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -972,7 +1133,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
-     * href="https://aws.amazon.com//workmail/pricing">Pricing</a>. The equivalent console functionality for this
+     * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
      * operation is <i>Enable</i>.
      * </p>
      * <p>
@@ -993,7 +1154,7 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
-     * href="https://aws.amazon.com//workmail/pricing">Pricing</a>. The equivalent console functionality for this
+     * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
      * operation is <i>Enable</i>.
      * </p>
      * <p>
@@ -1044,6 +1205,68 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<ResetPasswordResult> resetPasswordAsync(ResetPasswordRequest resetPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ResetPasswordRequest, ResetPasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonWorkMailAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonWorkMailAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

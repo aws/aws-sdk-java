@@ -21,6 +21,7 @@ import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.EndpointPrefixAwareSigner;
 import com.amazonaws.auth.RegionAwareSigner;
+import com.amazonaws.auth.RegionFromEndpointResolverAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.client.AwsSyncClientParams;
@@ -42,11 +43,12 @@ import com.amazonaws.monitoring.DefaultCsmConfigurationProviderChain;
 import com.amazonaws.monitoring.MonitoringListener;
 import com.amazonaws.monitoring.internal.AgentMonitoringListener;
 import com.amazonaws.monitoring.internal.ClientSideMonitoringRequestHandler;
+import com.amazonaws.regions.EndpointToRegion;
+import com.amazonaws.regions.MetadataSupportedRegionFromEndpointProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
 import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.StringUtils;
@@ -318,7 +320,7 @@ public abstract class AmazonWebServiceClient {
             this.isEndpointOverridden = true;
             this.endpoint = uri;
             this.signerProvider = createSignerProvider(signer);
-            this.signingRegion = AwsHostNameUtils.parseRegion(endpoint, getEndpointPrefix());
+            this.signingRegion = EndpointToRegion.guessRegionNameForEndpoint(endpoint, getEndpointPrefix());
         }
     }
 
@@ -420,8 +422,11 @@ public abstract class AmazonWebServiceClient {
             throw new IllegalArgumentException(
                     "Endpoint is not set. Use setEndpoint to set an endpoint before performing any request.");
         }
+        if (uri.getHost() == null) {
+            throw new IllegalArgumentException("Endpoint does not contain a valid host name: " + uri);
+        }
         String service = getServiceNameIntern();
-        String region = AwsHostNameUtils.parseRegionName(uri.getHost(), getEndpointPrefix());
+        String region = EndpointToRegion.guessRegionNameForEndpointWithDefault(uri.getHost(), getEndpointPrefix(), "us-east-1");
         return computeSignerByServiceRegion(
                 service, region, signerRegionOverride, isRegionIdAsSignerParam);
     }
@@ -475,6 +480,12 @@ public abstract class AmazonWebServiceClient {
              endpointPrefixAwareSigner.setEndpointPrefix(endpointPrefix);
          }
 
+         if (signer instanceof RegionFromEndpointResolverAwareSigner) {
+             // Allow the signer to assess the endpoints.json file for regions
+             RegionFromEndpointResolverAwareSigner awareSigner = (RegionFromEndpointResolverAwareSigner) signer;
+             awareSigner.setRegionFromEndpointResolver(new MetadataSupportedRegionFromEndpointProvider());
+         }
+
          return signer;
     }
 
@@ -517,7 +528,7 @@ public abstract class AmazonWebServiceClient {
             this.isEndpointOverridden = false;
             this.endpoint = uri;
             this.signerProvider = createSignerProvider(signer);
-            this.signingRegion = AwsHostNameUtils.parseRegion(endpoint.toString(), getEndpointPrefix());
+            this.signingRegion = EndpointToRegion.guessRegionNameForEndpoint(endpoint.toString(), getEndpointPrefix());
         }
     }
 

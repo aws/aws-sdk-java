@@ -129,6 +129,39 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
+     * Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active
+     * simulation jobs created as part of the batch.
+     * </p>
+     * 
+     * @param cancelSimulationJobBatchRequest
+     * @return A Java Future containing the result of the CancelSimulationJobBatch operation returned by the service.
+     * @sample AWSRoboMakerAsync.CancelSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelSimulationJobBatchResult> cancelSimulationJobBatchAsync(CancelSimulationJobBatchRequest cancelSimulationJobBatchRequest);
+
+    /**
+     * <p>
+     * Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active
+     * simulation jobs created as part of the batch.
+     * </p>
+     * 
+     * @param cancelSimulationJobBatchRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelSimulationJobBatch operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.CancelSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelSimulationJobBatchResult> cancelSimulationJobBatchAsync(CancelSimulationJobBatchRequest cancelSimulationJobBatchRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelSimulationJobBatchRequest, CancelSimulationJobBatchResult> asyncHandler);
+
+    /**
+     * <p>
      * Deploys a specific version of a robot application to robots in a fleet.
      * </p>
      * <p>
@@ -766,13 +799,42 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
+     * Describes a simulation job batch.
+     * </p>
+     * 
+     * @param describeSimulationJobBatchRequest
+     * @return A Java Future containing the result of the DescribeSimulationJobBatch operation returned by the service.
+     * @sample AWSRoboMakerAsync.DescribeSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSimulationJobBatchResult> describeSimulationJobBatchAsync(
+            DescribeSimulationJobBatchRequest describeSimulationJobBatchRequest);
+
+    /**
+     * <p>
+     * Describes a simulation job batch.
+     * </p>
+     * 
+     * @param describeSimulationJobBatchRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSimulationJobBatch operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.DescribeSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSimulationJobBatchResult> describeSimulationJobBatchAsync(
+            DescribeSimulationJobBatchRequest describeSimulationJobBatchRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSimulationJobBatchRequest, DescribeSimulationJobBatchResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
-     * <note>
-     * <p>
-     * </p>
-     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @return A Java Future containing the result of the ListDeploymentJobs operation returned by the service.
@@ -787,10 +849,6 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
-     * <note>
-     * <p>
-     * </p>
-     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @param asyncHandler
@@ -935,6 +993,39 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
+     * Returns a list simulation job batches. You can optionally provide filters to retrieve specific simulation batch
+     * jobs.
+     * </p>
+     * 
+     * @param listSimulationJobBatchesRequest
+     * @return A Java Future containing the result of the ListSimulationJobBatches operation returned by the service.
+     * @sample AWSRoboMakerAsync.ListSimulationJobBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSimulationJobBatchesResult> listSimulationJobBatchesAsync(ListSimulationJobBatchesRequest listSimulationJobBatchesRequest);
+
+    /**
+     * <p>
+     * Returns a list simulation job batches. You can optionally provide filters to retrieve specific simulation batch
+     * jobs.
+     * </p>
+     * 
+     * @param listSimulationJobBatchesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSimulationJobBatches operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.ListSimulationJobBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSimulationJobBatchesResult> listSimulationJobBatchesAsync(ListSimulationJobBatchesRequest listSimulationJobBatchesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSimulationJobBatchesRequest, ListSimulationJobBatchesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs.
      * </p>
      * 
@@ -1056,6 +1147,39 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
      */
     java.util.concurrent.Future<RestartSimulationJobResult> restartSimulationJobAsync(RestartSimulationJobRequest restartSimulationJobRequest,
             com.amazonaws.handlers.AsyncHandler<RestartSimulationJobRequest, RestartSimulationJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+     * objects.
+     * </p>
+     * 
+     * @param startSimulationJobBatchRequest
+     * @return A Java Future containing the result of the StartSimulationJobBatch operation returned by the service.
+     * @sample AWSRoboMakerAsync.StartSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSimulationJobBatchResult> startSimulationJobBatchAsync(StartSimulationJobBatchRequest startSimulationJobBatchRequest);
+
+    /**
+     * <p>
+     * Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+     * objects.
+     * </p>
+     * 
+     * @param startSimulationJobBatchRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSimulationJobBatch operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.StartSimulationJobBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSimulationJobBatchResult> startSimulationJobBatchAsync(StartSimulationJobBatchRequest startSimulationJobBatchRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSimulationJobBatchRequest, StartSimulationJobBatchResult> asyncHandler);
 
     /**
      * <p>

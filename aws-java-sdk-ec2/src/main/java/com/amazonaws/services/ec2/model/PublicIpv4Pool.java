@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an address pool.
+ * Describes an IPv4 address pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PublicIpv4Pool" target="_top">AWS API
@@ -28,7 +28,7 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      */
     private String poolId;
@@ -56,14 +56,20 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
      * </p>
      */
     private Integer totalAvailableAddressCount;
+    /**
+     * <p>
+     * Any tags for the address pool.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      * 
      * @param poolId
-     *        The ID of the IPv4 address pool.
+     *        The ID of the address pool.
      */
 
     public void setPoolId(String poolId) {
@@ -72,10 +78,10 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      * 
-     * @return The ID of the IPv4 address pool.
+     * @return The ID of the address pool.
      */
 
     public String getPoolId() {
@@ -84,11 +90,11 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the IPv4 address pool.
+     * The ID of the address pool.
      * </p>
      * 
      * @param poolId
-     *        The ID of the IPv4 address pool.
+     *        The ID of the address pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,6 +297,79 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Any tags for the address pool.
+     * </p>
+     * 
+     * @return Any tags for the address pool.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags for the address pool.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags for the address pool.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags for the address pool.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags for the address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublicIpv4Pool withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags for the address pool.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags for the address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublicIpv4Pool withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -311,7 +390,9 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
         if (getTotalAddressCount() != null)
             sb.append("TotalAddressCount: ").append(getTotalAddressCount()).append(",");
         if (getTotalAvailableAddressCount() != null)
-            sb.append("TotalAvailableAddressCount: ").append(getTotalAvailableAddressCount());
+            sb.append("TotalAvailableAddressCount: ").append(getTotalAvailableAddressCount()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -346,6 +427,10 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
             return false;
         if (other.getTotalAvailableAddressCount() != null && other.getTotalAvailableAddressCount().equals(this.getTotalAvailableAddressCount()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +444,7 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPoolAddressRanges() == null) ? 0 : getPoolAddressRanges().hashCode());
         hashCode = prime * hashCode + ((getTotalAddressCount() == null) ? 0 : getTotalAddressCount().hashCode());
         hashCode = prime * hashCode + ((getTotalAvailableAddressCount() == null) ? 0 : getTotalAvailableAddressCount().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

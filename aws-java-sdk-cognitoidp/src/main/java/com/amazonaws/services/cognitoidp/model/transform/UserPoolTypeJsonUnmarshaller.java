@@ -162,6 +162,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setUserPoolAddOns(UserPoolAddOnsTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UsernameConfiguration", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setUsernameConfiguration(UsernameConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     userPoolType.setArn(context.getUnmarshaller(String.class).unmarshall(context));

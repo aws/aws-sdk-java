@@ -27,18 +27,18 @@ public class GetImagePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
      * </p>
      */
     private String imageArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
      * </p>
      * 
      * @param imageArn
-     *        The Amazon Resource Name (ARN) of the image whose policy you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
      */
 
     public void setImageArn(String imageArn) {
@@ -47,10 +47,10 @@ public class GetImagePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image whose policy you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
      */
 
     public String getImageArn() {
@@ -59,11 +59,11 @@ public class GetImagePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose policy you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
      * </p>
      * 
      * @param imageArn
-     *        The Amazon Resource Name (ARN) of the image whose policy you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

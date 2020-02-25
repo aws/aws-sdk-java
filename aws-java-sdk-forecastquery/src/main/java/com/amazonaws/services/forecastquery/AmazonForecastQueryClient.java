@@ -143,7 +143,7 @@ public class AmazonForecastQueryClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Retrieves a forecast filtered by the supplied criteria.
+     * Retrieves a forecast for a single item, filtered by the supplied criteria.
      * </p>
      * <p>
      * The criteria is a key-value pair. The key is either <code>item_id</code> (or the equivalent non-timestamp,
@@ -151,8 +151,13 @@ public class AmazonForecastQueryClient extends AmazonWebServiceClient implements
      * as part of the <code>FeaturizationConfig</code> object.
      * </p>
      * <p>
-     * By default, the complete date range of the filtered forecast is returned. Optionally, you can request a specific
-     * date range within the forecast.
+     * By default, <code>QueryForecast</code> returns the complete date range for the filtered forecast. You can request
+     * a specific date range.
+     * </p>
+     * <p>
+     * To get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     * >CreateForecastExportJob</a> operation.
      * </p>
      * <note>
      * <p>
@@ -168,7 +173,7 @@ public class AmazonForecastQueryClient extends AmazonWebServiceClient implements
      * @throws ResourceInUseException
      *         The specified resource is in use.
      * @throws InvalidInputException
-     *         The value that you provided was invalid or too long.
+     *         The value is invalid or is too long.
      * @throws LimitExceededException
      *         The limit on the number of requests per second has been exceeded.
      * @throws InvalidNextTokenException

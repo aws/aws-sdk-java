@@ -266,6 +266,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             }
         }
 
+        if (createDBInstanceRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBInstanceRequest.getDeletionProtection()));
+        }
+
         return request;
     }
 

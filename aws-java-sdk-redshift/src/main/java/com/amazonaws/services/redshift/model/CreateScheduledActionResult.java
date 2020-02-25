@@ -55,9 +55,9 @@ public class CreateScheduledActionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>
-     * ". For example, "<code>cron(0, 10, *, *, MON, *)</code>
-     * ". For more information, see <a href="https://docs.aws.amazon
-     * .com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
+     * ". For example, "<code>cron(0 10 ? * MON *)</code>
+     * ". For more information, see <a href="https://docs.aws.amazon.com
+     * /AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
      * CloudWatch Events User Guide</i>.
      * </p>
      */
@@ -223,9 +223,9 @@ public class CreateScheduledActionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>
-     * ". For example, "<code>cron(0, 10, *, *, MON, *)</code>
-     * ". For more information, see <a href="https://docs.aws.amazon
-     * .com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
+     * ". For example, "<code>cron(0 10 ? * MON *)</code>
+     * ". For more information, see <a href="https://docs.aws.amazon.com
+     * /AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
      * CloudWatch Events User Guide</i>.
      * </p>
      * 
@@ -238,10 +238,10 @@ public class CreateScheduledActionResult extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>
-     *        ". For example, "<code>cron(0, 10, *, *, MON, *)</code>
-     *        ". For more information, see <a href="https://docs.aws
-     *        .amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in
-     *        the <i>Amazon CloudWatch Events User Guide</i>.
+     *        ". For example, "<code>cron(0 10 ? * MON *)</code>
+     *        ". For more information, see <a href="https://docs.aws.amazon
+     *        .com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the
+     *        <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public void setSchedule(String schedule) {
@@ -259,9 +259,9 @@ public class CreateScheduledActionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>
-     * ". For example, "<code>cron(0, 10, *, *, MON, *)</code>
-     * ". For more information, see <a href="https://docs.aws.amazon
-     * .com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
+     * ". For example, "<code>cron(0 10 ? * MON *)</code>
+     * ". For more information, see <a href="https://docs.aws.amazon.com
+     * /AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
      * CloudWatch Events User Guide</i>.
      * </p>
      * 
@@ -273,10 +273,10 @@ public class CreateScheduledActionResult extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>
-     *         ". For example, "<code>cron(0, 10, *, *, MON, *)</code>
-     *         ". For more information, see <a href="https://docs.
-     *         aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a>
-     *         in the <i>Amazon CloudWatch Events User Guide</i>.
+     *         ". For example, "<code>cron(0 10 ? * MON *)</code>
+     *         ". For more information, see <a href="https://docs.aws.amazon
+     *         .com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the
+     *         <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public String getSchedule() {
@@ -294,9 +294,9 @@ public class CreateScheduledActionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>
-     * ". For example, "<code>cron(0, 10, *, *, MON, *)</code>
-     * ". For more information, see <a href="https://docs.aws.amazon
-     * .com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
+     * ". For example, "<code>cron(0 10 ? * MON *)</code>
+     * ". For more information, see <a href="https://docs.aws.amazon.com
+     * /AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon
      * CloudWatch Events User Guide</i>.
      * </p>
      * 
@@ -309,10 +309,10 @@ public class CreateScheduledActionResult extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>
-     *        ". For example, "<code>cron(0, 10, *, *, MON, *)</code>
-     *        ". For more information, see <a href="https://docs.aws
-     *        .amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in
-     *        the <i>Amazon CloudWatch Events User Guide</i>.
+     *        ". For example, "<code>cron(0 10 ? * MON *)</code>
+     *        ". For more information, see <a href="https://docs.aws.amazon
+     *        .com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the
+     *        <i>Amazon CloudWatch Events User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

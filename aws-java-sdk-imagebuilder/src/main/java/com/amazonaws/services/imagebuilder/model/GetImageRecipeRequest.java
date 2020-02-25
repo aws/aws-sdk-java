@@ -27,18 +27,18 @@ public class GetImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
      * </p>
      */
     private String imageRecipeArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
      * </p>
      * 
      * @param imageRecipeArn
-     *        The Amazon Resource Name (ARN) of the image recipe that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
      */
 
     public void setImageRecipeArn(String imageRecipeArn) {
@@ -47,10 +47,10 @@ public class GetImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image recipe that you wish to retrieve.
+     * @return The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
      */
 
     public String getImageRecipeArn() {
@@ -59,11 +59,11 @@ public class GetImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image recipe that you wish to retrieve.
+     * The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
      * </p>
      * 
      * @param imageRecipeArn
-     *        The Amazon Resource Name (ARN) of the image recipe that you wish to retrieve.
+     *        The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

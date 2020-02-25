@@ -41,6 +41,10 @@ public class MountTargetDescriptionMarshaller {
             .marshallLocationName("IpAddress").build();
     private static final MarshallingInfo<String> NETWORKINTERFACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkInterfaceId").build();
+    private static final MarshallingInfo<String> AVAILABILITYZONEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZoneId").build();
+    private static final MarshallingInfo<String> AVAILABILITYZONENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZoneName").build();
 
     private static final MountTargetDescriptionMarshaller instance = new MountTargetDescriptionMarshaller();
 
@@ -65,6 +69,8 @@ public class MountTargetDescriptionMarshaller {
             protocolMarshaller.marshall(mountTargetDescription.getLifeCycleState(), LIFECYCLESTATE_BINDING);
             protocolMarshaller.marshall(mountTargetDescription.getIpAddress(), IPADDRESS_BINDING);
             protocolMarshaller.marshall(mountTargetDescription.getNetworkInterfaceId(), NETWORKINTERFACEID_BINDING);
+            protocolMarshaller.marshall(mountTargetDescription.getAvailabilityZoneId(), AVAILABILITYZONEID_BINDING);
+            protocolMarshaller.marshall(mountTargetDescription.getAvailabilityZoneName(), AVAILABILITYZONENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

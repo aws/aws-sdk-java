@@ -49,7 +49,7 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
     private java.util.List<Source> sources;
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribution) used by the robot application.
      * </p>
      */
     private RobotSoftwareSuite robotSoftwareSuite;
@@ -264,11 +264,11 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribution) used by the robot application.
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        The robot software suite used by the robot application.
+     *        The robot software suite (ROS distribution) used by the robot application.
      */
 
     public void setRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
@@ -277,10 +277,10 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribution) used by the robot application.
      * </p>
      * 
-     * @return The robot software suite used by the robot application.
+     * @return The robot software suite (ROS distribution) used by the robot application.
      */
 
     public RobotSoftwareSuite getRobotSoftwareSuite() {
@@ -289,11 +289,11 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The robot software suite used by the robot application.
+     * The robot software suite (ROS distribution) used by the robot application.
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        The robot software suite used by the robot application.
+     *        The robot software suite (ROS distribution) used by the robot application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

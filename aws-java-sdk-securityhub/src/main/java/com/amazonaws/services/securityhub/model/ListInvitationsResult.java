@@ -31,7 +31,7 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.List<Invitation> invitations;
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token that is required for pagination.
+     *        The pagination token to use to request the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
-     * @return The token that is required for pagination.
+     * @return The pagination token to use to request the next page of results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListInvitationsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The token that is required for pagination.
+     * The pagination token to use to request the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token that is required for pagination.
+     *        The pagination token to use to request the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

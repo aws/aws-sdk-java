@@ -87,7 +87,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the build spec (for example,
+     * code and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
      * </p>
      * </li>
@@ -113,7 +113,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * buildspec file. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
      * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
      * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
      * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
@@ -125,10 +125,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
-     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
-     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
-     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * buildspec file. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to
+     * start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the
+     * Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to
+     * your Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
      * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
@@ -150,10 +150,17 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private GitSubmodulesConfig gitSubmodulesConfig;
     /**
      * <p>
-     * The build spec declaration to use for the builds in this build project.
+     * The buildspec file declaration to use for the builds in this build project.
      * </p>
      * <p>
-     * If this value is not specified, a build spec must be included along with the source code to be built.
+     * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
+     * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
+     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
+     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
+     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
+     * >Buildspec File Name and Storage Location</a>.
      * </p>
      */
     private String buildspec;
@@ -656,7 +663,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the build spec (for example,
+     * code and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
      * </p>
      * </li>
@@ -682,7 +689,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * buildspec file. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
      * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
      * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
      * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
@@ -694,10 +701,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
-     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
-     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
-     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * buildspec file. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to
+     * start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the
+     * Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to
+     * your Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
      * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
@@ -717,7 +724,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
-     *        source code and the build spec (for example,
+     *        source code and the buildspec file (for example,
      *        <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
      *        </p>
      *        </li>
@@ -743,20 +750,20 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
-     *        the build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to
-     *        start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
-     *        GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b>
-     *        next to each repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize
-     *        application</b>. (After you have connected to your GitHub account, you do not need to finish creating the
-     *        build project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection,
-     *        in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
-     *        <code>OAUTH</code>.
+     *        the buildspec file. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild
+     *        console to start creating a build project. When you use the console to connect (or reconnect) with GitHub,
+     *        on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request
+     *        access</b> next to each repository you want to allow AWS CodeBuild to have access to, and then choose
+     *        <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish
+     *        creating the build project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use
+     *        this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code>
+     *        value to <code>OAUTH</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *        and the build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
+     *        and the buildspec file. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
      *        console to start creating a build project. When you use the console to connect (or reconnect) with
      *        Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
      *        you have connected to your Bitbucket account, you do not need to finish creating the build project. You
@@ -786,7 +793,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the build spec (for example,
+     * code and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
      * </p>
      * </li>
@@ -812,7 +819,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * buildspec file. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
      * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
      * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
      * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
@@ -824,10 +831,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
-     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
-     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
-     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * buildspec file. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to
+     * start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the
+     * Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to
+     * your Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
      * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
@@ -846,7 +853,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
-     *         source code and the build spec (for example,
+     *         source code and the buildspec file (for example,
      *         <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
      *         </p>
      *         </li>
@@ -872,7 +879,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source
-     *         and the build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild
+     *         and the buildspec file. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      *         console to start creating a build project. When you use the console to connect (or reconnect) with
      *         GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose
      *         <b>Request access</b> next to each repository you want to allow AWS CodeBuild to have access to, and then
@@ -885,9 +892,9 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *         and the build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
-     *         console to start creating a build project. When you use the console to connect (or reconnect) with
-     *         Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>.
+     *         and the buildspec file. You must connect your AWS account to your Bitbucket account. Use the AWS
+     *         CodeBuild console to start creating a build project. When you use the console to connect (or reconnect)
+     *         with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>.
      *         (After you have connected to your Bitbucket account, you do not need to finish creating the build
      *         project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in
      *         the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
@@ -915,7 +922,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
-     * code and the build spec (for example,
+     * code and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
      * </p>
      * </li>
@@ -941,7 +948,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * buildspec file. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
      * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
      * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
      * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
@@ -953,10 +960,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
-     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
-     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
-     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * buildspec file. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to
+     * start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the
+     * Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to
+     * your Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
      * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
@@ -976,7 +983,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
-     *        source code and the build spec (for example,
+     *        source code and the buildspec file (for example,
      *        <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
      *        </p>
      *        </li>
@@ -1002,20 +1009,20 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
-     *        the build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to
-     *        start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
-     *        GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b>
-     *        next to each repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize
-     *        application</b>. (After you have connected to your GitHub account, you do not need to finish creating the
-     *        build project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection,
-     *        in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
-     *        <code>OAUTH</code>.
+     *        the buildspec file. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild
+     *        console to start creating a build project. When you use the console to connect (or reconnect) with GitHub,
+     *        on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request
+     *        access</b> next to each repository you want to allow AWS CodeBuild to have access to, and then choose
+     *        <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish
+     *        creating the build project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use
+     *        this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code>
+     *        value to <code>OAUTH</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *        and the build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
+     *        and the buildspec file. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
      *        console to start creating a build project. When you use the console to connect (or reconnect) with
      *        Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
      *        you have connected to your Bitbucket account, you do not need to finish creating the build project. You
@@ -1114,16 +1121,30 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The build spec declaration to use for the builds in this build project.
+     * The buildspec file declaration to use for the builds in this build project.
      * </p>
      * <p>
-     * If this value is not specified, a build spec must be included along with the source code to be built.
+     * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
+     * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
+     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
+     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
+     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
+     * >Buildspec File Name and Storage Location</a>.
      * </p>
      * 
      * @param buildspec
-     *        The build spec declaration to use for the builds in this build project.</p>
+     *        The buildspec file declaration to use for the builds in this build project.</p>
      *        <p>
-     *        If this value is not specified, a build spec must be included along with the source code to be built.
+     *        If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
+     *        file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
+     *        path to an S3 bucket. The bucket must be in the same AWS Region as the build project. Specify the
+     *        buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>).
+     *        If this value is not provided or is set to an empty string, the source code must contain a buildspec file
+     *        in its root directory. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
+     *        >Buildspec File Name and Storage Location</a>.
      */
 
     public void setBuildspec(String buildspec) {
@@ -1132,15 +1153,29 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The build spec declaration to use for the builds in this build project.
+     * The buildspec file declaration to use for the builds in this build project.
      * </p>
      * <p>
-     * If this value is not specified, a build spec must be included along with the source code to be built.
+     * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
+     * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
+     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
+     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
+     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
+     * >Buildspec File Name and Storage Location</a>.
      * </p>
      * 
-     * @return The build spec declaration to use for the builds in this build project.</p>
+     * @return The buildspec file declaration to use for the builds in this build project.</p>
      *         <p>
-     *         If this value is not specified, a build spec must be included along with the source code to be built.
+     *         If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
+     *         file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
+     *         path to an S3 bucket. The bucket must be in the same AWS Region as the build project. Specify the
+     *         buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>).
+     *         If this value is not provided or is set to an empty string, the source code must contain a buildspec file
+     *         in its root directory. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
+     *         >Buildspec File Name and Storage Location</a>.
      */
 
     public String getBuildspec() {
@@ -1149,16 +1184,30 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The build spec declaration to use for the builds in this build project.
+     * The buildspec file declaration to use for the builds in this build project.
      * </p>
      * <p>
-     * If this value is not specified, a build spec must be included along with the source code to be built.
+     * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
+     * relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3
+     * bucket. The bucket must be in the same AWS Region as the build project. Specify the buildspec file using its ARN
+     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is
+     * set to an empty string, the source code must contain a buildspec file in its root directory. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
+     * >Buildspec File Name and Storage Location</a>.
      * </p>
      * 
      * @param buildspec
-     *        The build spec declaration to use for the builds in this build project.</p>
+     *        The buildspec file declaration to use for the builds in this build project.</p>
      *        <p>
-     *        If this value is not specified, a build spec must be included along with the source code to be built.
+     *        If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
+     *        file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
+     *        path to an S3 bucket. The bucket must be in the same AWS Region as the build project. Specify the
+     *        buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>).
+     *        If this value is not provided or is set to an empty string, the source code must contain a buildspec file
+     *        in its root directory. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
+     *        >Buildspec File Name and Storage Location</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

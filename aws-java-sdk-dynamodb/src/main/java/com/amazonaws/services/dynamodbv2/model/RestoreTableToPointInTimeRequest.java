@@ -27,6 +27,12 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+     * </p>
+     */
+    private String sourceTableArn;
+    /**
+     * <p>
      * Name of the source table that is being restored.
      * </p>
      */
@@ -76,6 +82,52 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private ProvisionedThroughput provisionedThroughputOverride;
+    /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     */
+    private SSESpecification sSESpecificationOverride;
+
+    /**
+     * <p>
+     * The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param sourceTableArn
+     *        The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+     */
+
+    public void setSourceTableArn(String sourceTableArn) {
+        this.sourceTableArn = sourceTableArn;
+    }
+
+    /**
+     * <p>
+     * The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @return The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+     */
+
+    public String getSourceTableArn() {
+        return this.sourceTableArn;
+    }
+
+    /**
+     * <p>
+     * The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param sourceTableArn
+     *        The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableToPointInTimeRequest withSourceTableArn(String sourceTableArn) {
+        setSourceTableArn(sourceTableArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -513,6 +565,46 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     * 
+     * @param sSESpecificationOverride
+     *        The new server-side encryption settings for the restored table.
+     */
+
+    public void setSSESpecificationOverride(SSESpecification sSESpecificationOverride) {
+        this.sSESpecificationOverride = sSESpecificationOverride;
+    }
+
+    /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     * 
+     * @return The new server-side encryption settings for the restored table.
+     */
+
+    public SSESpecification getSSESpecificationOverride() {
+        return this.sSESpecificationOverride;
+    }
+
+    /**
+     * <p>
+     * The new server-side encryption settings for the restored table.
+     * </p>
+     * 
+     * @param sSESpecificationOverride
+     *        The new server-side encryption settings for the restored table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableToPointInTimeRequest withSSESpecificationOverride(SSESpecification sSESpecificationOverride) {
+        setSSESpecificationOverride(sSESpecificationOverride);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -524,6 +616,8 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getSourceTableArn() != null)
+            sb.append("SourceTableArn: ").append(getSourceTableArn()).append(",");
         if (getSourceTableName() != null)
             sb.append("SourceTableName: ").append(getSourceTableName()).append(",");
         if (getTargetTableName() != null)
@@ -539,7 +633,9 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
         if (getLocalSecondaryIndexOverride() != null)
             sb.append("LocalSecondaryIndexOverride: ").append(getLocalSecondaryIndexOverride()).append(",");
         if (getProvisionedThroughputOverride() != null)
-            sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride());
+            sb.append("ProvisionedThroughputOverride: ").append(getProvisionedThroughputOverride()).append(",");
+        if (getSSESpecificationOverride() != null)
+            sb.append("SSESpecificationOverride: ").append(getSSESpecificationOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -554,6 +650,10 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
         if (obj instanceof RestoreTableToPointInTimeRequest == false)
             return false;
         RestoreTableToPointInTimeRequest other = (RestoreTableToPointInTimeRequest) obj;
+        if (other.getSourceTableArn() == null ^ this.getSourceTableArn() == null)
+            return false;
+        if (other.getSourceTableArn() != null && other.getSourceTableArn().equals(this.getSourceTableArn()) == false)
+            return false;
         if (other.getSourceTableName() == null ^ this.getSourceTableName() == null)
             return false;
         if (other.getSourceTableName() != null && other.getSourceTableName().equals(this.getSourceTableName()) == false)
@@ -587,6 +687,10 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
         if (other.getProvisionedThroughputOverride() != null
                 && other.getProvisionedThroughputOverride().equals(this.getProvisionedThroughputOverride()) == false)
             return false;
+        if (other.getSSESpecificationOverride() == null ^ this.getSSESpecificationOverride() == null)
+            return false;
+        if (other.getSSESpecificationOverride() != null && other.getSSESpecificationOverride().equals(this.getSSESpecificationOverride()) == false)
+            return false;
         return true;
     }
 
@@ -595,6 +699,7 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getSourceTableArn() == null) ? 0 : getSourceTableArn().hashCode());
         hashCode = prime * hashCode + ((getSourceTableName() == null) ? 0 : getSourceTableName().hashCode());
         hashCode = prime * hashCode + ((getTargetTableName() == null) ? 0 : getTargetTableName().hashCode());
         hashCode = prime * hashCode + ((getUseLatestRestorableTime() == null) ? 0 : getUseLatestRestorableTime().hashCode());
@@ -603,6 +708,7 @@ public class RestoreTableToPointInTimeRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexOverride() == null) ? 0 : getGlobalSecondaryIndexOverride().hashCode());
         hashCode = prime * hashCode + ((getLocalSecondaryIndexOverride() == null) ? 0 : getLocalSecondaryIndexOverride().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputOverride() == null) ? 0 : getProvisionedThroughputOverride().hashCode());
+        hashCode = prime * hashCode + ((getSSESpecificationOverride() == null) ? 0 : getSSESpecificationOverride().hashCode());
         return hashCode;
     }
 

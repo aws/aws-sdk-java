@@ -43,6 +43,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public CancelSimulationJobBatchResult cancelSimulationJobBatch(CancelSimulationJobBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDeploymentJobResult createDeploymentJob(CreateDeploymentJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -138,6 +143,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public DescribeSimulationJobBatchResult describeSimulationJobBatch(DescribeSimulationJobBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDeploymentJobsResult listDeploymentJobs(ListDeploymentJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -163,6 +173,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public ListSimulationJobBatchesResult listSimulationJobBatches(ListSimulationJobBatchesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSimulationJobsResult listSimulationJobs(ListSimulationJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +194,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
 
     @Override
     public RestartSimulationJobResult restartSimulationJob(RestartSimulationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartSimulationJobBatchResult startSimulationJobBatch(StartSimulationJobBatchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

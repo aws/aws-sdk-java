@@ -30,17 +30,17 @@ public class OnEnterLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is TRUE.
+     * Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      * </p>
      */
     private java.util.List<Event> events;
 
     /**
      * <p>
-     * Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is TRUE.
+     * Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      * </p>
      * 
-     * @return Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is
+     * @return Specifies the actions that are performed when the state is entered and the <code>condition</code> is
      *         TRUE.
      */
 
@@ -50,12 +50,11 @@ public class OnEnterLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is TRUE.
+     * Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      * </p>
      * 
      * @param events
-     *        Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is
-     *        TRUE.
+     *        Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      */
 
     public void setEvents(java.util.Collection<Event> events) {
@@ -69,7 +68,7 @@ public class OnEnterLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is TRUE.
+     * Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,8 +77,7 @@ public class OnEnterLifecycle implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param events
-     *        Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is
-     *        TRUE.
+     *        Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,12 +93,11 @@ public class OnEnterLifecycle implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is TRUE.
+     * Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      * </p>
      * 
      * @param events
-     *        Specifies the actions that are performed when the state is entered and the <code>"condition"</code> is
-     *        TRUE.
+     *        Specifies the actions that are performed when the state is entered and the <code>condition</code> is TRUE.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

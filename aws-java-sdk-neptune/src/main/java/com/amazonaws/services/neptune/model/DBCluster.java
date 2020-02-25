@@ -50,7 +50,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * If present, specifies the name of the character set that this cluster is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String characterSetName;
@@ -156,7 +156,7 @@ public class DBCluster implements Serializable, Cloneable {
     private String masterUsername;
     /**
      * <p>
-     * Provides the list of option group memberships for this DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private java.util.List<DBClusterOptionGroupStatus> dBClusterOptionGroupMemberships;
@@ -261,6 +261,13 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> enabledCloudwatchLogsExports;
+    /**
+     * <p>
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -420,11 +427,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, specifies the name of the character set that this cluster is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        If present, specifies the name of the character set that this cluster is associated with.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setCharacterSetName(String characterSetName) {
@@ -433,10 +440,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, specifies the name of the character set that this cluster is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return If present, specifies the name of the character set that this cluster is associated with.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getCharacterSetName() {
@@ -445,11 +452,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If present, specifies the name of the character set that this cluster is associated with.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        If present, specifies the name of the character set that this cluster is associated with.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1135,10 +1142,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return Provides the list of option group memberships for this DB cluster.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public java.util.List<DBClusterOptionGroupStatus> getDBClusterOptionGroupMemberships() {
@@ -1147,11 +1154,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param dBClusterOptionGroupMemberships
-     *        Provides the list of option group memberships for this DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setDBClusterOptionGroupMemberships(java.util.Collection<DBClusterOptionGroupStatus> dBClusterOptionGroupMemberships) {
@@ -1165,7 +1172,7 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1174,7 +1181,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBClusterOptionGroupMemberships
-     *        Provides the list of option group memberships for this DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1190,11 +1197,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the list of option group memberships for this DB cluster.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param dBClusterOptionGroupMemberships
-     *        Provides the list of option group memberships for this DB cluster.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2057,6 +2064,66 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *        when deletion protection is enabled.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
+     * </p>
+     * 
+     * @return Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *         when deletion protection is enabled.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *        when deletion protection is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted when
+     * deletion protection is enabled.
+     * </p>
+     * 
+     * @return Indicates whether or not the DB cluster has deletion protection enabled. The database can't be deleted
+     *         when deletion protection is enabled.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2139,7 +2206,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getClusterCreateTime() != null)
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
-            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -2300,6 +2369,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -2344,6 +2417,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCloneGroupId() == null) ? 0 : getCloneGroupId().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

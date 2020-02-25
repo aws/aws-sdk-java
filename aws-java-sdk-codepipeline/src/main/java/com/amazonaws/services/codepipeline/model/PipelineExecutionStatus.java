@@ -21,6 +21,8 @@ import javax.annotation.Generated;
 public enum PipelineExecutionStatus {
 
     InProgress("InProgress"),
+    Stopped("Stopped"),
+    Stopping("Stopping"),
     Succeeded("Succeeded"),
     Superseded("Superseded"),
     Failed("Failed");

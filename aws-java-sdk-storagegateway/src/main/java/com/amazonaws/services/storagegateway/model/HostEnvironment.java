@@ -23,6 +23,7 @@ public enum HostEnvironment {
     VMWARE("VMWARE"),
     HYPERV("HYPER-V"),
     EC2("EC2"),
+    KVM("KVM"),
     OTHER("OTHER");
 
     private String value;

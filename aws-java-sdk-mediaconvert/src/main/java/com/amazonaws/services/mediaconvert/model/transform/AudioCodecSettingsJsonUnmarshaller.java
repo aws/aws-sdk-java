@@ -76,6 +76,10 @@ public class AudioCodecSettingsJsonUnmarshaller implements Unmarshaller<AudioCod
                     context.nextToken();
                     audioCodecSettings.setMp2Settings(Mp2SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("mp3Settings", targetDepth)) {
+                    context.nextToken();
+                    audioCodecSettings.setMp3Settings(Mp3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("wavSettings", targetDepth)) {
                     context.nextToken();
                     audioCodecSettings.setWavSettings(WavSettingsJsonUnmarshaller.getInstance().unmarshall(context));

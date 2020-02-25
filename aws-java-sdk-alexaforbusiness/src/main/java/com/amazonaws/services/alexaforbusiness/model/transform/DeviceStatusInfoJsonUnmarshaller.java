@@ -57,6 +57,10 @@ public class DeviceStatusInfoJsonUnmarshaller implements Unmarshaller<DeviceStat
                     context.nextToken();
                     deviceStatusInfo.setConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConnectionStatusUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    deviceStatusInfo.setConnectionStatusUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

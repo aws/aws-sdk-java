@@ -32,7 +32,7 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lowercase letters or digits.
+     * from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).
      * </p>
      */
     private String policyId;
@@ -44,7 +44,7 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lowercase letters or digits.
+     * from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).
      * </p>
      * 
      * @param policyId
@@ -52,7 +52,7 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
-     *        followed by from 8 to 128 lowercase letters or digits.
+     *        followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).
      */
 
     public void setPolicyId(String policyId) {
@@ -66,14 +66,14 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lowercase letters or digits.
+     * from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).
      * </p>
      * 
      * @return The unique identifier (ID) of the policy that you want to delete. You can get the ID from the
      *         <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
-     *         followed by from 8 to 128 lowercase letters or digits.
+     *         followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).
      */
 
     public String getPolicyId() {
@@ -87,7 +87,7 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by
-     * from 8 to 128 lowercase letters or digits.
+     * from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).
      * </p>
      * 
      * @param policyId
@@ -95,7 +95,7 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-"
-     *        followed by from 8 to 128 lowercase letters or digits.
+     *        followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

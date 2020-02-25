@@ -28,7 +28,7 @@ public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the DB cluster parameter group family to return the engine parameter information for.
+     * The name of the cluster parameter group family to return the engine parameter information for.
      * </p>
      */
     private String dBParameterGroupFamily;
@@ -41,18 +41,18 @@ public class EngineDefaults implements Serializable, Cloneable {
     private String marker;
     /**
      * <p>
-     * The parameters of a particular DB cluster parameter group family.
+     * The parameters of a particular cluster parameter group family.
      * </p>
      */
     private java.util.List<Parameter> parameters;
 
     /**
      * <p>
-     * The name of the DB cluster parameter group family to return the engine parameter information for.
+     * The name of the cluster parameter group family to return the engine parameter information for.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        The name of the DB cluster parameter group family to return the engine parameter information for.
+     *        The name of the cluster parameter group family to return the engine parameter information for.
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -61,10 +61,10 @@ public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the DB cluster parameter group family to return the engine parameter information for.
+     * The name of the cluster parameter group family to return the engine parameter information for.
      * </p>
      * 
-     * @return The name of the DB cluster parameter group family to return the engine parameter information for.
+     * @return The name of the cluster parameter group family to return the engine parameter information for.
      */
 
     public String getDBParameterGroupFamily() {
@@ -73,11 +73,11 @@ public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the DB cluster parameter group family to return the engine parameter information for.
+     * The name of the cluster parameter group family to return the engine parameter information for.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        The name of the DB cluster parameter group family to return the engine parameter information for.
+     *        The name of the cluster parameter group family to return the engine parameter information for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,10 +134,10 @@ public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parameters of a particular DB cluster parameter group family.
+     * The parameters of a particular cluster parameter group family.
      * </p>
      * 
-     * @return The parameters of a particular DB cluster parameter group family.
+     * @return The parameters of a particular cluster parameter group family.
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -146,11 +146,11 @@ public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parameters of a particular DB cluster parameter group family.
+     * The parameters of a particular cluster parameter group family.
      * </p>
      * 
      * @param parameters
-     *        The parameters of a particular DB cluster parameter group family.
+     *        The parameters of a particular cluster parameter group family.
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -164,7 +164,7 @@ public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parameters of a particular DB cluster parameter group family.
+     * The parameters of a particular cluster parameter group family.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -173,7 +173,7 @@ public class EngineDefaults implements Serializable, Cloneable {
      * </p>
      * 
      * @param parameters
-     *        The parameters of a particular DB cluster parameter group family.
+     *        The parameters of a particular cluster parameter group family.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +189,11 @@ public class EngineDefaults implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The parameters of a particular DB cluster parameter group family.
+     * The parameters of a particular cluster parameter group family.
      * </p>
      * 
      * @param parameters
-     *        The parameters of a particular DB cluster parameter group family.
+     *        The parameters of a particular cluster parameter group family.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

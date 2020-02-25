@@ -167,6 +167,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
      *         organization or its members.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
      * @sample AmazonWorkMail.CreateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -263,6 +265,24 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     CreateUserResult createUser(CreateUserRequest createUserRequest);
+
+    /**
+     * <p>
+     * Deletes an access control rule for the specified WorkMail organization.
+     * </p>
+     * 
+     * @param deleteAccessControlRuleRequest
+     * @return Result of the DeleteAccessControlRule operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.DeleteAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAccessControlRuleResult deleteAccessControlRule(DeleteAccessControlRuleRequest deleteAccessControlRuleRequest);
 
     /**
      * <p>
@@ -568,6 +588,29 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
+     * protocol action, or user ID.
+     * </p>
+     * 
+     * @param getAccessControlEffectRequest
+     * @return Result of the GetAccessControlEffect operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.GetAccessControlEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAccessControlEffectResult getAccessControlEffect(GetAccessControlEffectRequest getAccessControlEffectRequest);
+
+    /**
+     * <p>
      * Requests a user's mailbox details for a specified organization and user.
      * </p>
      * 
@@ -585,6 +628,24 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     GetMailboxDetailsResult getMailboxDetails(GetMailboxDetailsRequest getMailboxDetailsRequest);
+
+    /**
+     * <p>
+     * Lists the access control rules for the specified organization.
+     * </p>
+     * 
+     * @param listAccessControlRulesRequest
+     * @return Result of the ListAccessControlRules operation returned by the service.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.ListAccessControlRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAccessControlRulesResult listAccessControlRules(ListAccessControlRulesRequest listAccessControlRulesRequest);
 
     /**
      * <p>
@@ -743,6 +804,21 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the tags applied to an Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AmazonWorkMail.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Returns summaries of the organization's users.
      * </p>
      * 
@@ -760,6 +836,32 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
+     * Adds a new access control rule for the specified organization. The rule allows or denies access to the
+     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
+     * same name as an existing rule replaces the older rule.
+     * </p>
+     * 
+     * @param putAccessControlRuleRequest
+     * @return Result of the PutAccessControlRule operation returned by the service.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.PutAccessControlRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutAccessControlRuleResult putAccessControlRule(PutAccessControlRuleRequest putAccessControlRuleRequest);
 
     /**
      * <p>
@@ -791,7 +893,7 @@ public interface AmazonWorkMail {
      * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
-     * href="https://aws.amazon.com//workmail/pricing">Pricing</a>. The equivalent console functionality for this
+     * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
      * operation is <i>Enable</i>.
      * </p>
      * <p>
@@ -866,6 +968,41 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     ResetPasswordResult resetPassword(ResetPasswordRequest resetPasswordRequest);
+
+    /**
+     * <p>
+     * Applies the specified tags to the specified Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws TooManyTagsException
+     *         The resource can have up to 50 user-applied tags.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Untags the specified tags from the specified Amazon WorkMail organization resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AmazonWorkMail.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

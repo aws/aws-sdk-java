@@ -84,6 +84,14 @@ public class SDKDefaultRetryConditionTest {
         Assert.assertTrue("Status code 429 should be retryable", shouldRetry(getAse(429, "BogusException")));
     }
 
+    @Test
+    public void shouldRetry_EC2ThrottledException() {
+        AmazonServiceException ase = new AmazonServiceException("msg");
+        ase.setErrorCode("EC2ThrottledException");
+
+        Assert.assertTrue(shouldRetry(ase));
+    }
+
     private boolean shouldRetry(AmazonClientException ace) {
         return defaultRetryCondition.shouldRetry(null, ace, 0);
     }

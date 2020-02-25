@@ -96,6 +96,10 @@ public class DeviceDataJsonUnmarshaller implements Unmarshaller<DeviceData, Json
                     context.nextToken();
                     deviceData.setDeviceStatusInfo(DeviceStatusInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CreatedTime", targetDepth)) {
+                    context.nextToken();
+                    deviceData.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

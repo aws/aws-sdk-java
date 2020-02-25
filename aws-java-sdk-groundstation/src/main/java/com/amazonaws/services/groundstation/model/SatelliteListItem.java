@@ -30,6 +30,12 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * A list of ground stations to which the satellite is on-boarded.
+     * </p>
+     */
+    private java.util.List<String> groundStations;
+    /**
+     * <p>
      * NORAD satellite ID number.
      * </p>
      */
@@ -42,10 +48,80 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
     private String satelliteArn;
     /**
      * <p>
-     * ID of a satellite.
+     * UUID of a satellite.
      * </p>
      */
     private String satelliteId;
+
+    /**
+     * <p>
+     * A list of ground stations to which the satellite is on-boarded.
+     * </p>
+     * 
+     * @return A list of ground stations to which the satellite is on-boarded.
+     */
+
+    public java.util.List<String> getGroundStations() {
+        return groundStations;
+    }
+
+    /**
+     * <p>
+     * A list of ground stations to which the satellite is on-boarded.
+     * </p>
+     * 
+     * @param groundStations
+     *        A list of ground stations to which the satellite is on-boarded.
+     */
+
+    public void setGroundStations(java.util.Collection<String> groundStations) {
+        if (groundStations == null) {
+            this.groundStations = null;
+            return;
+        }
+
+        this.groundStations = new java.util.ArrayList<String>(groundStations);
+    }
+
+    /**
+     * <p>
+     * A list of ground stations to which the satellite is on-boarded.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroundStations(java.util.Collection)} or {@link #withGroundStations(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param groundStations
+     *        A list of ground stations to which the satellite is on-boarded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SatelliteListItem withGroundStations(String... groundStations) {
+        if (this.groundStations == null) {
+            setGroundStations(new java.util.ArrayList<String>(groundStations.length));
+        }
+        for (String ele : groundStations) {
+            this.groundStations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of ground stations to which the satellite is on-boarded.
+     * </p>
+     * 
+     * @param groundStations
+     *        A list of ground stations to which the satellite is on-boarded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SatelliteListItem withGroundStations(java.util.Collection<String> groundStations) {
+        setGroundStations(groundStations);
+        return this;
+    }
 
     /**
      * <p>
@@ -129,11 +205,11 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ID of a satellite.
+     * UUID of a satellite.
      * </p>
      * 
      * @param satelliteId
-     *        ID of a satellite.
+     *        UUID of a satellite.
      */
 
     public void setSatelliteId(String satelliteId) {
@@ -142,10 +218,10 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ID of a satellite.
+     * UUID of a satellite.
      * </p>
      * 
-     * @return ID of a satellite.
+     * @return UUID of a satellite.
      */
 
     public String getSatelliteId() {
@@ -154,11 +230,11 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ID of a satellite.
+     * UUID of a satellite.
      * </p>
      * 
      * @param satelliteId
-     *        ID of a satellite.
+     *        UUID of a satellite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,6 +255,8 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getGroundStations() != null)
+            sb.append("GroundStations: ").append(getGroundStations()).append(",");
         if (getNoradSatelliteID() != null)
             sb.append("NoradSatelliteID: ").append(getNoradSatelliteID()).append(",");
         if (getSatelliteArn() != null)
@@ -199,6 +277,10 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof SatelliteListItem == false)
             return false;
         SatelliteListItem other = (SatelliteListItem) obj;
+        if (other.getGroundStations() == null ^ this.getGroundStations() == null)
+            return false;
+        if (other.getGroundStations() != null && other.getGroundStations().equals(this.getGroundStations()) == false)
+            return false;
         if (other.getNoradSatelliteID() == null ^ this.getNoradSatelliteID() == null)
             return false;
         if (other.getNoradSatelliteID() != null && other.getNoradSatelliteID().equals(this.getNoradSatelliteID()) == false)
@@ -219,6 +301,7 @@ public class SatelliteListItem implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getGroundStations() == null) ? 0 : getGroundStations().hashCode());
         hashCode = prime * hashCode + ((getNoradSatelliteID() == null) ? 0 : getNoradSatelliteID().hashCode());
         hashCode = prime * hashCode + ((getSatelliteArn() == null) ? 0 : getSatelliteArn().hashCode());
         hashCode = prime * hashCode + ((getSatelliteId() == null) ? 0 : getSatelliteId().hashCode());

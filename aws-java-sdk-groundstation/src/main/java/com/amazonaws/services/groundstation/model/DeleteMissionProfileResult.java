@@ -26,18 +26,18 @@ public class DeleteMissionProfileResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * ID of a mission profile.
+     * UUID of a mission profile.
      * </p>
      */
     private String missionProfileId;
 
     /**
      * <p>
-     * ID of a mission profile.
+     * UUID of a mission profile.
      * </p>
      * 
      * @param missionProfileId
-     *        ID of a mission profile.
+     *        UUID of a mission profile.
      */
 
     public void setMissionProfileId(String missionProfileId) {
@@ -46,10 +46,10 @@ public class DeleteMissionProfileResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * ID of a mission profile.
+     * UUID of a mission profile.
      * </p>
      * 
-     * @return ID of a mission profile.
+     * @return UUID of a mission profile.
      */
 
     public String getMissionProfileId() {
@@ -58,11 +58,11 @@ public class DeleteMissionProfileResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * ID of a mission profile.
+     * UUID of a mission profile.
      * </p>
      * 
      * @param missionProfileId
-     *        ID of a mission profile.
+     *        UUID of a mission profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

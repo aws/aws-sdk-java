@@ -91,7 +91,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String stateMessage;
     /**
      * <p>
-     * A map of the cluster's subnets and their corresponding Availability Zones.
+     * A map from availability zone to the cluster’s subnet in that availability zone.
      * </p>
      */
     private java.util.Map<String, String> subnetMapping;
@@ -107,6 +107,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Certificates certificates;
+
+    private java.util.List<Tag> tagList;
 
     /**
      * <p>
@@ -584,10 +586,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map of the cluster's subnets and their corresponding Availability Zones.
+     * A map from availability zone to the cluster’s subnet in that availability zone.
      * </p>
      * 
-     * @return A map of the cluster's subnets and their corresponding Availability Zones.
+     * @return A map from availability zone to the cluster’s subnet in that availability zone.
      */
 
     public java.util.Map<String, String> getSubnetMapping() {
@@ -596,11 +598,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map of the cluster's subnets and their corresponding Availability Zones.
+     * A map from availability zone to the cluster’s subnet in that availability zone.
      * </p>
      * 
      * @param subnetMapping
-     *        A map of the cluster's subnets and their corresponding Availability Zones.
+     *        A map from availability zone to the cluster’s subnet in that availability zone.
      */
 
     public void setSubnetMapping(java.util.Map<String, String> subnetMapping) {
@@ -609,11 +611,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map of the cluster's subnets and their corresponding Availability Zones.
+     * A map from availability zone to the cluster’s subnet in that availability zone.
      * </p>
      * 
      * @param subnetMapping
-     *        A map of the cluster's subnets and their corresponding Availability Zones.
+     *        A map from availability zone to the cluster’s subnet in that availability zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -724,6 +726,58 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new java.util.ArrayList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new java.util.ArrayList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -760,7 +814,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getCertificates() != null)
-            sb.append("Certificates: ").append(getCertificates());
+            sb.append("Certificates: ").append(getCertificates()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }
@@ -827,6 +883,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCertificates() != null && other.getCertificates().equals(this.getCertificates()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
         return true;
     }
 
@@ -848,6 +908,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSubnetMapping() == null) ? 0 : getSubnetMapping().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         return hashCode;
     }
 

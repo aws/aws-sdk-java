@@ -36,8 +36,7 @@ public class CreatePartnerEventSourceRequest extends com.amazonaws.AmazonWebServ
     private String name;
     /**
      * <p>
-     * The AWS account ID of the customer who is permitted to create a matching partner event bus for this partner event
-     * source.
+     * The AWS account ID that is permitted to create a matching partner event bus for this partner event source.
      * </p>
      */
     private String account;
@@ -102,13 +101,11 @@ public class CreatePartnerEventSourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS account ID of the customer who is permitted to create a matching partner event bus for this partner event
-     * source.
+     * The AWS account ID that is permitted to create a matching partner event bus for this partner event source.
      * </p>
      * 
      * @param account
-     *        The AWS account ID of the customer who is permitted to create a matching partner event bus for this
-     *        partner event source.
+     *        The AWS account ID that is permitted to create a matching partner event bus for this partner event source.
      */
 
     public void setAccount(String account) {
@@ -117,12 +114,11 @@ public class CreatePartnerEventSourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS account ID of the customer who is permitted to create a matching partner event bus for this partner event
-     * source.
+     * The AWS account ID that is permitted to create a matching partner event bus for this partner event source.
      * </p>
      * 
-     * @return The AWS account ID of the customer who is permitted to create a matching partner event bus for this
-     *         partner event source.
+     * @return The AWS account ID that is permitted to create a matching partner event bus for this partner event
+     *         source.
      */
 
     public String getAccount() {
@@ -131,13 +127,11 @@ public class CreatePartnerEventSourceRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The AWS account ID of the customer who is permitted to create a matching partner event bus for this partner event
-     * source.
+     * The AWS account ID that is permitted to create a matching partner event bus for this partner event source.
      * </p>
      * 
      * @param account
-     *        The AWS account ID of the customer who is permitted to create a matching partner event bus for this
-     *        partner event source.
+     *        The AWS account ID that is permitted to create a matching partner event bus for this partner event source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

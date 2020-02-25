@@ -53,6 +53,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateHealthCheckResult> associateHealthCheckAsync(AssociateHealthCheckRequest request) {
+
+        return associateHealthCheckAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateHealthCheckResult> associateHealthCheckAsync(AssociateHealthCheckRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateHealthCheckRequest, AssociateHealthCheckResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest request) {
 
         return createProtectionAsync(request, null);
@@ -195,6 +208,19 @@ public class AbstractAWSShieldAsync extends AbstractAWSShield implements AWSShie
     @Override
     public java.util.concurrent.Future<DisassociateDRTRoleResult> disassociateDRTRoleAsync(DisassociateDRTRoleRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateDRTRoleRequest, DisassociateDRTRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateHealthCheckResult> disassociateHealthCheckAsync(DisassociateHealthCheckRequest request) {
+
+        return disassociateHealthCheckAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateHealthCheckResult> disassociateHealthCheckAsync(DisassociateHealthCheckRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateHealthCheckRequest, DisassociateHealthCheckResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

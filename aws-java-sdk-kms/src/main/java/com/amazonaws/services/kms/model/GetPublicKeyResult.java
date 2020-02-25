@@ -34,11 +34,11 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * The exported public key.
      * </p>
      * <p>
-     * This value is returned as a binary <a
-     * href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished Encoding Rules</a>
-     * (DER)-encoded object. To decode it, use an ASN.1 parsing tool, such as <a
-     * href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL asn1parse</a>.
+     * The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined
+     * in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.
      * </p>
+     * <p/>
      */
     private java.nio.ByteBuffer publicKey;
     /**
@@ -127,11 +127,11 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * The exported public key.
      * </p>
      * <p>
-     * This value is returned as a binary <a
-     * href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished Encoding Rules</a>
-     * (DER)-encoded object. To decode it, use an ASN.1 parsing tool, such as <a
-     * href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL asn1parse</a>.
+     * The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined
+     * in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.
      * </p>
+     * <p/>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -146,10 +146,10 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * @param publicKey
      *        The exported public key. </p>
      *        <p>
-     *        This value is returned as a binary <a
-     *        href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished Encoding
-     *        Rules</a> (DER)-encoded object. To decode it, use an ASN.1 parsing tool, such as <a
-     *        href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL asn1parse</a>.
+     *        The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as
+     *        defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the
+     *        AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.
+     *        </p>
      */
 
     public void setPublicKey(java.nio.ByteBuffer publicKey) {
@@ -161,11 +161,11 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * The exported public key.
      * </p>
      * <p>
-     * This value is returned as a binary <a
-     * href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished Encoding Rules</a>
-     * (DER)-encoded object. To decode it, use an ASN.1 parsing tool, such as <a
-     * href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL asn1parse</a>.
+     * The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined
+     * in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.
      * </p>
+     * <p/>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
@@ -176,10 +176,10 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @return The exported public key. </p>
      *         <p>
-     *         This value is returned as a binary <a
-     *         href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished Encoding
-     *         Rules</a> (DER)-encoded object. To decode it, use an ASN.1 parsing tool, such as <a
-     *         href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL asn1parse</a>.
+     *         The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as
+     *         defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the
+     *         AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.
+     *         </p>
      */
 
     public java.nio.ByteBuffer getPublicKey() {
@@ -191,11 +191,11 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * The exported public key.
      * </p>
      * <p>
-     * This value is returned as a binary <a
-     * href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished Encoding Rules</a>
-     * (DER)-encoded object. To decode it, use an ASN.1 parsing tool, such as <a
-     * href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL asn1parse</a>.
+     * The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as defined
+     * in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.
      * </p>
+     * <p/>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -210,10 +210,10 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * @param publicKey
      *        The exported public key. </p>
      *        <p>
-     *        This value is returned as a binary <a
-     *        href="https://www.itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf">Distinguished Encoding
-     *        Rules</a> (DER)-encoded object. To decode it, use an ASN.1 parsing tool, such as <a
-     *        href="https://www.openssl.org/docs/man1.0.2/man1/asn1parse.html">OpenSSL asn1parse</a>.
+     *        The value is a DER-encoded X.509 public key, also known as <code>SubjectPublicKeyInfo</code> (SPKI), as
+     *        defined in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. When you use the HTTP API or the
+     *        AWS CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,54 +33,30 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String forecastArn;
     /**
      * <p>
-     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format)
-     * For example, "1970-01-01T00:00:00Z."
+     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T08:00:00.
      * </p>
      */
     private String startDate;
     /**
      * <p>
-     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format).
-     * For example, "1970-01-01T00:00:00Z."
+     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T20:00:00.
      * </p>
      */
     private String endDate;
     /**
      * <p>
-     * The filtering criteria to apply when retrieving the forecast. For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item specify the following:
+     * The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for
+     * <code>client_21</code> in the electricity usage dataset, specify the following:
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item sold in a specific location, specify the following:
+     * <code>{"item_id" : "client_21"}</code>
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1", "location" : "ny"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for all blue items sold in a specific location, specify the following:
-     * </p>
-     * <p>
-     * <code>{ "location" : "ny", "color":"blue"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the full forecast, use the operation.
+     * To get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     * >CreateForecastExportJob</a> operation.
      * </p>
      */
     private java.util.Map<String, String> filters;
@@ -134,13 +110,13 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format)
-     * For example, "1970-01-01T00:00:00Z."
+     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T08:00:00.
      * </p>
      * 
      * @param startDate
-     *        The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601
-     *        format) For example, "1970-01-01T00:00:00Z."
+     *        The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601
+     *        format). For example, 2015-01-01T08:00:00.
      */
 
     public void setStartDate(String startDate) {
@@ -149,12 +125,12 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format)
-     * For example, "1970-01-01T00:00:00Z."
+     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T08:00:00.
      * </p>
      * 
-     * @return The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601
-     *         format) For example, "1970-01-01T00:00:00Z."
+     * @return The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601
+     *         format). For example, 2015-01-01T08:00:00.
      */
 
     public String getStartDate() {
@@ -163,13 +139,13 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format)
-     * For example, "1970-01-01T00:00:00Z."
+     * The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T08:00:00.
      * </p>
      * 
      * @param startDate
-     *        The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601
-     *        format) For example, "1970-01-01T00:00:00Z."
+     *        The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601
+     *        format). For example, 2015-01-01T08:00:00.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,13 +156,13 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format).
-     * For example, "1970-01-01T00:00:00Z."
+     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T20:00:00.
      * </p>
      * 
      * @param endDate
-     *        The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601
-     *        format). For example, "1970-01-01T00:00:00Z."
+     *        The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601
+     *        format). For example, 2015-01-01T20:00:00.
      */
 
     public void setEndDate(String endDate) {
@@ -195,12 +171,12 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format).
-     * For example, "1970-01-01T00:00:00Z."
+     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T20:00:00.
      * </p>
      * 
-     * @return The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601
-     *         format). For example, "1970-01-01T00:00:00Z."
+     * @return The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601
+     *         format). For example, 2015-01-01T20:00:00.
      */
 
     public String getEndDate() {
@@ -209,13 +185,13 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format).
-     * For example, "1970-01-01T00:00:00Z."
+     * The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For
+     * example, 2015-01-01T20:00:00.
      * </p>
      * 
      * @param endDate
-     *        The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601
-     *        format). For example, "1970-01-01T00:00:00Z."
+     *        The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601
+     *        format). For example, 2015-01-01T20:00:00.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,75 +202,27 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The filtering criteria to apply when retrieving the forecast. For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item specify the following:
+     * The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for
+     * <code>client_21</code> in the electricity usage dataset, specify the following:
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item sold in a specific location, specify the following:
+     * <code>{"item_id" : "client_21"}</code>
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1", "location" : "ny"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for all blue items sold in a specific location, specify the following:
-     * </p>
-     * <p>
-     * <code>{ "location" : "ny", "color":"blue"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the full forecast, use the operation.
+     * To get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     * >CreateForecastExportJob</a> operation.
      * </p>
      * 
-     * @return The filtering criteria to apply when retrieving the forecast. For example:</p>
-     *         <ul>
-     *         <li>
+     * @return The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for
+     *         <code>client_21</code> in the electricity usage dataset, specify the following:</p>
      *         <p>
-     *         To get a forecast for a specific item specify the following:
+     *         <code>{"item_id" : "client_21"}</code>
      *         </p>
      *         <p>
-     *         <code>{"item_id" : "client_1"}</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         To get a forecast for a specific item sold in a specific location, specify the following:
-     *         </p>
-     *         <p>
-     *         <code>{"item_id" : "client_1", "location" : "ny"}</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         To get a forecast for all blue items sold in a specific location, specify the following:
-     *         </p>
-     *         <p>
-     *         <code>{ "location" : "ny", "color":"blue"}</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         To get the full forecast, use the operation.
+     *         To get the full forecast, use the <a
+     *         href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     *         >CreateForecastExportJob</a> operation.
      */
 
     public java.util.Map<String, String> getFilters() {
@@ -303,76 +231,28 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The filtering criteria to apply when retrieving the forecast. For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item specify the following:
+     * The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for
+     * <code>client_21</code> in the electricity usage dataset, specify the following:
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item sold in a specific location, specify the following:
+     * <code>{"item_id" : "client_21"}</code>
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1", "location" : "ny"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for all blue items sold in a specific location, specify the following:
-     * </p>
-     * <p>
-     * <code>{ "location" : "ny", "color":"blue"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the full forecast, use the operation.
+     * To get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     * >CreateForecastExportJob</a> operation.
      * </p>
      * 
      * @param filters
-     *        The filtering criteria to apply when retrieving the forecast. For example:</p>
-     *        <ul>
-     *        <li>
+     *        The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for
+     *        <code>client_21</code> in the electricity usage dataset, specify the following:</p>
      *        <p>
-     *        To get a forecast for a specific item specify the following:
+     *        <code>{"item_id" : "client_21"}</code>
      *        </p>
      *        <p>
-     *        <code>{"item_id" : "client_1"}</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        To get a forecast for a specific item sold in a specific location, specify the following:
-     *        </p>
-     *        <p>
-     *        <code>{"item_id" : "client_1", "location" : "ny"}</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        To get a forecast for all blue items sold in a specific location, specify the following:
-     *        </p>
-     *        <p>
-     *        <code>{ "location" : "ny", "color":"blue"}</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        To get the full forecast, use the operation.
+     *        To get the full forecast, use the <a
+     *        href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     *        >CreateForecastExportJob</a> operation.
      */
 
     public void setFilters(java.util.Map<String, String> filters) {
@@ -381,76 +261,28 @@ public class QueryForecastRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The filtering criteria to apply when retrieving the forecast. For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item specify the following:
+     * The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for
+     * <code>client_21</code> in the electricity usage dataset, specify the following:
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for a specific item sold in a specific location, specify the following:
+     * <code>{"item_id" : "client_21"}</code>
      * </p>
      * <p>
-     * <code>{"item_id" : "client_1", "location" : "ny"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * To get a forecast for all blue items sold in a specific location, specify the following:
-     * </p>
-     * <p>
-     * <code>{ "location" : "ny", "color":"blue"}</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the full forecast, use the operation.
+     * To get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     * >CreateForecastExportJob</a> operation.
      * </p>
      * 
      * @param filters
-     *        The filtering criteria to apply when retrieving the forecast. For example:</p>
-     *        <ul>
-     *        <li>
+     *        The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for
+     *        <code>client_21</code> in the electricity usage dataset, specify the following:</p>
      *        <p>
-     *        To get a forecast for a specific item specify the following:
+     *        <code>{"item_id" : "client_21"}</code>
      *        </p>
      *        <p>
-     *        <code>{"item_id" : "client_1"}</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        To get a forecast for a specific item sold in a specific location, specify the following:
-     *        </p>
-     *        <p>
-     *        <code>{"item_id" : "client_1", "location" : "ny"}</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        To get a forecast for all blue items sold in a specific location, specify the following:
-     *        </p>
-     *        <p>
-     *        <code>{ "location" : "ny", "color":"blue"}</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        To get the full forecast, use the operation.
+     *        To get the full forecast, use the <a
+     *        href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html"
+     *        >CreateForecastExportJob</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

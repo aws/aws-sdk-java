@@ -99,6 +99,41 @@ public interface AmazonElasticFileSystem {
 
     /**
      * <p>
+     * Creates an EFS access point. An access point is an application-specific view into an EFS file system that applies
+     * an operating system user and group, and a file system path, to any file system request made through the access
+     * point. The operating system user and group override any identity information provided by the NFS client. The file
+     * system path is exposed as the access point's root directory. Applications using the access point can only access
+     * data in its own directory and below. To learn more, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a File System Using EFS Access
+     * Points</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
+     * </p>
+     * 
+     * @param createAccessPointRequest
+     * @return Result of the CreateAccessPoint operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws AccessPointAlreadyExistsException
+     *         Returned if the access point you are trying to create already exists, with the creation token you
+     *         provided in the request.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws AccessPointLimitExceededException
+     *         Returned if the AWS account has already created the maximum number of access points allowed per file
+     *         system.
+     * @sample AmazonElasticFileSystem.CreateAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAccessPointResult createAccessPoint(CreateAccessPointRequest createAccessPointRequest);
+
+    /**
+     * <p>
      * Creates a new, empty file system. The operation requires a creation token in the request that Amazon EFS uses to
      * ensure idempotent creation (calling the operation with same creation token has no effect). If a file system does
      * not currently exist that is owned by the caller's AWS account with the specified creation token, this operation
@@ -404,7 +439,33 @@ public interface AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
+
+    /**
+     * <p>
+     * Deletes the specified access point. After deletion is complete, new clients can no longer connect to the access
+     * points. Clients connected to the access point at the time of deletion will continue to function until they
+     * terminate their connection.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteAccessPoint</code> action.
+     * </p>
+     * 
+     * @param deleteAccessPointRequest
+     * @return Result of the DeleteAccessPoint operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws AccessPointNotFoundException
+     *         Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DeleteAccessPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAccessPointResult deleteAccessPoint(DeleteAccessPointRequest deleteAccessPointRequest);
 
     /**
      * <p>
@@ -443,6 +504,32 @@ public interface AmazonElasticFileSystem {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteFileSystemResult deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest);
+
+    /**
+     * <p>
+     * Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
+     * <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted. For more information about
+     * the default file system policy, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using Resource-based Policies with
+     * EFS</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param deleteFileSystemPolicyRequest
+     * @return Result of the DeleteFileSystemPolicy operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws IncorrectFileSystemLifeCycleStateException
+     *         Returned if the file system's lifecycle state is not "available".
+     * @sample AmazonElasticFileSystem.DeleteFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFileSystemPolicyResult deleteFileSystemPolicy(DeleteFileSystemPolicyRequest deleteFileSystemPolicyRequest);
 
     /**
      * <p>
@@ -526,7 +613,57 @@ public interface AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
+
+    /**
+     * <p>
+     * Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code> is provided. If
+     * you provide an EFS <code>FileSystemId</code>, it returns descriptions of all access points for that file system.
+     * You can provide either an <code>AccessPointId</code> or a <code>FileSystemId</code> in the request, but not both.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.
+     * </p>
+     * 
+     * @param describeAccessPointsRequest
+     * @return Result of the DescribeAccessPoints operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws AccessPointNotFoundException
+     *         Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.DescribeAccessPoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccessPointsResult describeAccessPoints(DescribeAccessPointsRequest describeAccessPointsRequest);
+
+    /**
+     * <p>
+     * Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param describeFileSystemPolicyRequest
+     * @return Result of the DescribeFileSystemPolicy operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws PolicyNotFoundException
+     *         Returned if the default file system policy is in effect for the EFS file system specified.
+     * @sample AmazonElasticFileSystem.DescribeFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFileSystemPolicyResult describeFileSystemPolicy(DescribeFileSystemPolicyRequest describeFileSystemPolicyRequest);
 
     /**
      * <p>
@@ -666,6 +803,8 @@ public interface AmazonElasticFileSystem {
      *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
      * @throws MountTargetNotFoundException
      *         Returned if there is no mount target with the specified ID found in the caller's account.
+     * @throws AccessPointNotFoundException
+     *         Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's AWS account.
      * @sample AmazonElasticFileSystem.DescribeMountTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets"
      *      target="_top">AWS API Documentation</a>
@@ -695,7 +834,34 @@ public interface AmazonElasticFileSystem {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest);
+
+    /**
+     * <p>
+     * Lists all tags for a top-level EFS resource. You must provide the ID of the resource that you want to retrieve
+     * the tags for.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws AccessPointNotFoundException
+     *         Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -745,6 +911,37 @@ public interface AmazonElasticFileSystem {
      *      target="_top">AWS API Documentation</a>
      */
     ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);
+
+    /**
+     * <p>
+     * Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system. A file system policy is an IAM
+     * resource-based policy and can contain multiple policy statements. A file system always has exactly one file
+     * system policy, which can be the default policy or an explicit policy set or updated using this API operation.
+     * When an explicit policy is set, it overrides the default policy. For more information about the default file
+     * system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+     * Resource-based Policies with EFS</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.
+     * </p>
+     * 
+     * @param putFileSystemPolicyRequest
+     * @return Result of the PutFileSystemPolicy operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws InvalidPolicyException
+     *         Returned if the <code>FileSystemPolicy</code> is is malformed or contains an error such as an invalid
+     *         parameter value or a missing required parameter. Returned in the case of a policy lockout safety check
+     *         error.
+     * @throws IncorrectFileSystemLifeCycleStateException
+     *         Returned if the file system's lifecycle state is not "available".
+     * @sample AmazonElasticFileSystem.PutFileSystemPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutFileSystemPolicyResult putFileSystemPolicy(PutFileSystemPolicyRequest putFileSystemPolicyRequest);
 
     /**
      * <p>
@@ -800,6 +997,58 @@ public interface AmazonElasticFileSystem {
      *      target="_top">AWS API Documentation</a>
      */
     PutLifecycleConfigurationResult putLifecycleConfiguration(PutLifecycleConfigurationRequest putLifecycleConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a tag for an EFS resource. You can create tags for EFS file systems and access points using this API
+     * operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:TagResource</code> action.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws AccessPointNotFoundException
+     *         Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from an EFS resource. You can remove tags from EFS file systems and access points using this API
+     * operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:UntagResource</code> action.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Returned if the request is malformed or contains an error such as an invalid parameter value or a missing
+     *         required parameter.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @throws FileSystemNotFoundException
+     *         Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's AWS account.
+     * @throws AccessPointNotFoundException
+     *         Returned if the specified <code>AccessPointId</code> value doesn't exist in the requester's AWS account.
+     * @sample AmazonElasticFileSystem.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

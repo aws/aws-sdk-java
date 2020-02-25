@@ -241,7 +241,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
      * </p>
      * <p>
-     * Example: <code>us-east-1d</code>
+     * Example: <code>us-east-2d</code>
      * </p>
      * <p>
      * Constraint: The specified Availability Zone must be in the same region as the current endpoint.
@@ -1823,7 +1823,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
      * </p>
      * <p>
-     * Example: <code>us-east-1d</code>
+     * Example: <code>us-east-2d</code>
      * </p>
      * <p>
      * Constraint: The specified Availability Zone must be in the same region as the current endpoint.
@@ -1837,7 +1837,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
      *        </p>
      *        <p>
-     *        Example: <code>us-east-1d</code>
+     *        Example: <code>us-east-2d</code>
      *        </p>
      *        <p>
      *        Constraint: The specified Availability Zone must be in the same region as the current endpoint.
@@ -1857,7 +1857,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
      * </p>
      * <p>
-     * Example: <code>us-east-1d</code>
+     * Example: <code>us-east-2d</code>
      * </p>
      * <p>
      * Constraint: The specified Availability Zone must be in the same region as the current endpoint.
@@ -1870,7 +1870,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
      *         </p>
      *         <p>
-     *         Example: <code>us-east-1d</code>
+     *         Example: <code>us-east-2d</code>
      *         </p>
      *         <p>
      *         Constraint: The specified Availability Zone must be in the same region as the current endpoint.
@@ -1890,7 +1890,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
      * </p>
      * <p>
-     * Example: <code>us-east-1d</code>
+     * Example: <code>us-east-2d</code>
      * </p>
      * <p>
      * Constraint: The specified Availability Zone must be in the same region as the current endpoint.
@@ -1904,7 +1904,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
      *        </p>
      *        <p>
-     *        Example: <code>us-east-1d</code>
+     *        Example: <code>us-east-2d</code>
      *        </p>
      *        <p>
      *        Constraint: The specified Availability Zone must be in the same region as the current endpoint.

@@ -39,6 +39,8 @@ public class PutPlaybackConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LivePreRollConfiguration").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<Integer> PERSONALIZATIONTHRESHOLDSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PersonalizationThresholdSeconds").build();
     private static final MarshallingInfo<String> SLATEADURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SlateAdUrl").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -69,6 +71,7 @@ public class PutPlaybackConfigurationRequestMarshaller {
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getDashConfiguration(), DASHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getLivePreRollConfiguration(), LIVEPREROLLCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(putPlaybackConfigurationRequest.getPersonalizationThresholdSeconds(), PERSONALIZATIONTHRESHOLDSECONDS_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getSlateAdUrl(), SLATEADURL_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getTranscodeProfileName(), TRANSCODEPROFILENAME_BINDING);

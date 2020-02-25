@@ -54,7 +54,7 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
-     * Information about a robot software suite.
+     * Information about a robot software suite (ROS distribution).
      * </p>
      */
     private RobotSoftwareSuite robotSoftwareSuite;
@@ -221,11 +221,11 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Information about a robot software suite.
+     * Information about a robot software suite (ROS distribution).
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        Information about a robot software suite.
+     *        Information about a robot software suite (ROS distribution).
      */
 
     public void setRobotSoftwareSuite(RobotSoftwareSuite robotSoftwareSuite) {
@@ -234,10 +234,10 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Information about a robot software suite.
+     * Information about a robot software suite (ROS distribution).
      * </p>
      * 
-     * @return Information about a robot software suite.
+     * @return Information about a robot software suite (ROS distribution).
      */
 
     public RobotSoftwareSuite getRobotSoftwareSuite() {
@@ -246,11 +246,11 @@ public class RobotApplicationSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Information about a robot software suite.
+     * Information about a robot software suite (ROS distribution).
      * </p>
      * 
      * @param robotSoftwareSuite
-     *        Information about a robot software suite.
+     *        Information about a robot software suite (ROS distribution).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

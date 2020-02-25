@@ -60,6 +60,10 @@ public class ProtectionJsonUnmarshaller implements Unmarshaller<Protection, Json
                     context.nextToken();
                     protection.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HealthCheckIds", targetDepth)) {
+                    context.nextToken();
+                    protection.setHealthCheckIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

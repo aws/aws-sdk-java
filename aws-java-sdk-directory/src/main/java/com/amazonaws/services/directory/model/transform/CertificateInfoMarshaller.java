@@ -33,6 +33,8 @@ public class CertificateInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CommonName").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
+    private static final MarshallingInfo<java.util.Date> EXPIRYDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpiryDateTime").timestampFormat("unixTimestamp").build();
 
     private static final CertificateInfoMarshaller instance = new CertificateInfoMarshaller();
 
@@ -53,6 +55,7 @@ public class CertificateInfoMarshaller {
             protocolMarshaller.marshall(certificateInfo.getCertificateId(), CERTIFICATEID_BINDING);
             protocolMarshaller.marshall(certificateInfo.getCommonName(), COMMONNAME_BINDING);
             protocolMarshaller.marshall(certificateInfo.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(certificateInfo.getExpiryDateTime(), EXPIRYDATETIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

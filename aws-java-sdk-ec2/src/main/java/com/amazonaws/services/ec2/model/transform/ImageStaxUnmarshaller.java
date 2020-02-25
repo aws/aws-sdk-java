@@ -90,6 +90,16 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("platformDetails", targetDepth)) {
+                    image.setPlatformDetails(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("usageOperation", targetDepth)) {
+                    image.setUsageOperation(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("productCodes", targetDepth)) {
                     image.withProductCodes(new ArrayList<ProductCode>());
                     continue;

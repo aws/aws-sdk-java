@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -21592,6 +21592,9 @@
       }, {
         "name" : "Fargate",
         "value" : "Fargate"
+      }, {
+        "name" : "Lambda",
+        "value" : "Lambda"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -23893,6 +23896,9 @@
       }, {
         "name" : "AmazonECS",
         "value" : "AmazonECS"
+      }, {
+        "name" : "AWSLambda",
+        "value" : "AWSLambda"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -23937,6 +23943,12 @@
       "enums" : [ {
         "name" : "Hrs",
         "value" : "Hrs"
+      }, {
+        "name" : "LambdaGBSecond",
+        "value" : "Lambda-GB-Second"
+      }, {
+        "name" : "Request",
+        "value" : "Request"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

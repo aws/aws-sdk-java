@@ -1840,7 +1840,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getAuthFlow() != null)
             sb.append("AuthFlow: ").append(getAuthFlow()).append(",");
         if (getAuthParameters() != null)
-            sb.append("AuthParameters: ").append(getAuthParameters()).append(",");
+            sb.append("AuthParameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientMetadata() != null)
             sb.append("ClientMetadata: ").append(getClientMetadata()).append(",");
         if (getClientId() != null)

@@ -30,7 +30,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     * A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      * </p>
      */
     private java.util.List<String> availabilityZones;
@@ -55,7 +55,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * The DB cluster identifier. This parameter is stored as a lowercase string.
+     * The cluster identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -84,19 +84,19 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String dBClusterIdentifier;
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * The name of the cluster parameter group to associate with this cluster.
      * </p>
      */
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB cluster.
+     * A list of EC2 VPC security groups to associate with this cluster.
      * </p>
      */
     private java.util.List<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * A DB subnet group to associate with this DB cluster.
+     * A subnet group to associate with this cluster.
      * </p>
      * <p>
      * Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
@@ -108,7 +108,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String dBSubnetGroupName;
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this cluster.
      * </p>
      * <p>
      * Valid values: <code>docdb</code>
@@ -123,13 +123,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String engineVersion;
     /**
      * <p>
-     * The port number on which the instances in the DB cluster accept connections.
+     * The port number on which the instances in the cluster accept connections.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * The name of the master user for the cluster.
      * </p>
      * <p>
      * Constraints:
@@ -219,23 +219,23 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The tags to be assigned to the DB cluster.
+     * The tags to be assigned to the cluster.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * Specifies whether the cluster is encrypted.
      * </p>
      */
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are creating
-     * a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new DB
+     * a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new
      * cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
@@ -260,7 +260,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
      * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
      * Region.
      * </p>
@@ -283,10 +283,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     * A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      * </p>
      * 
-     * @return A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     * @return A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -295,11 +295,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     * A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      * </p>
      * 
      * @param availabilityZones
-     *        A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     *        A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -313,7 +313,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     * A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -322,7 +322,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param availabilityZones
-     *        A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     *        A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +338,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     * A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      * </p>
      * 
      * @param availabilityZones
-     *        A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+     *        A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,7 +468,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier. This parameter is stored as a lowercase string.
+     * The cluster identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -495,7 +495,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+     *        The cluster identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -526,7 +526,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier. This parameter is stored as a lowercase string.
+     * The cluster identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -552,7 +552,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Example: <code>my-cluster</code>
      * </p>
      * 
-     * @return The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+     * @return The cluster identifier. This parameter is stored as a lowercase string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -583,7 +583,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The DB cluster identifier. This parameter is stored as a lowercase string.
+     * The cluster identifier. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -610,7 +610,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param dBClusterIdentifier
-     *        The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+     *        The cluster identifier. This parameter is stored as a lowercase string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -643,11 +643,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * The name of the cluster parameter group to associate with this cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to associate with this DB cluster.
+     *        The name of the cluster parameter group to associate with this cluster.
      */
 
     public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
@@ -656,10 +656,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * The name of the cluster parameter group to associate with this cluster.
      * </p>
      * 
-     * @return The name of the DB cluster parameter group to associate with this DB cluster.
+     * @return The name of the cluster parameter group to associate with this cluster.
      */
 
     public String getDBClusterParameterGroupName() {
@@ -668,11 +668,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * The name of the cluster parameter group to associate with this cluster.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to associate with this DB cluster.
+     *        The name of the cluster parameter group to associate with this cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,10 +683,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB cluster.
+     * A list of EC2 VPC security groups to associate with this cluster.
      * </p>
      * 
-     * @return A list of EC2 VPC security groups to associate with this DB cluster.
+     * @return A list of EC2 VPC security groups to associate with this cluster.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -695,11 +695,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB cluster.
+     * A list of EC2 VPC security groups to associate with this cluster.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB cluster.
+     *        A list of EC2 VPC security groups to associate with this cluster.
      */
 
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -713,7 +713,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB cluster.
+     * A list of EC2 VPC security groups to associate with this cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -722,7 +722,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB cluster.
+     *        A list of EC2 VPC security groups to associate with this cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -738,11 +738,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of EC2 VPC security groups to associate with this DB cluster.
+     * A list of EC2 VPC security groups to associate with this cluster.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of EC2 VPC security groups to associate with this DB cluster.
+     *        A list of EC2 VPC security groups to associate with this cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -753,7 +753,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A DB subnet group to associate with this DB cluster.
+     * A subnet group to associate with this cluster.
      * </p>
      * <p>
      * Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
@@ -763,7 +763,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        A DB subnet group to associate with this DB cluster.</p>
+     *        A subnet group to associate with this cluster.</p>
      *        <p>
      *        Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
      *        </p>
@@ -777,7 +777,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A DB subnet group to associate with this DB cluster.
+     * A subnet group to associate with this cluster.
      * </p>
      * <p>
      * Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
@@ -786,7 +786,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Example: <code>mySubnetgroup</code>
      * </p>
      * 
-     * @return A DB subnet group to associate with this DB cluster.</p>
+     * @return A subnet group to associate with this cluster.</p>
      *         <p>
      *         Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
      *         </p>
@@ -800,7 +800,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A DB subnet group to associate with this DB cluster.
+     * A subnet group to associate with this cluster.
      * </p>
      * <p>
      * Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
@@ -810,7 +810,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param dBSubnetGroupName
-     *        A DB subnet group to associate with this DB cluster.</p>
+     *        A subnet group to associate with this cluster.</p>
      *        <p>
      *        Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.
      *        </p>
@@ -826,14 +826,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this cluster.
      * </p>
      * <p>
      * Valid values: <code>docdb</code>
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB cluster.</p>
+     *        The name of the database engine to be used for this cluster.</p>
      *        <p>
      *        Valid values: <code>docdb</code>
      */
@@ -844,13 +844,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this cluster.
      * </p>
      * <p>
      * Valid values: <code>docdb</code>
      * </p>
      * 
-     * @return The name of the database engine to be used for this DB cluster.</p>
+     * @return The name of the database engine to be used for this cluster.</p>
      *         <p>
      *         Valid values: <code>docdb</code>
      */
@@ -861,14 +861,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this cluster.
      * </p>
      * <p>
      * Valid values: <code>docdb</code>
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for this DB cluster.</p>
+     *        The name of the database engine to be used for this cluster.</p>
      *        <p>
      *        Valid values: <code>docdb</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -921,11 +921,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The port number on which the instances in the DB cluster accept connections.
+     * The port number on which the instances in the cluster accept connections.
      * </p>
      * 
      * @param port
-     *        The port number on which the instances in the DB cluster accept connections.
+     *        The port number on which the instances in the cluster accept connections.
      */
 
     public void setPort(Integer port) {
@@ -934,10 +934,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The port number on which the instances in the DB cluster accept connections.
+     * The port number on which the instances in the cluster accept connections.
      * </p>
      * 
-     * @return The port number on which the instances in the DB cluster accept connections.
+     * @return The port number on which the instances in the cluster accept connections.
      */
 
     public Integer getPort() {
@@ -946,11 +946,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The port number on which the instances in the DB cluster accept connections.
+     * The port number on which the instances in the cluster accept connections.
      * </p>
      * 
      * @param port
-     *        The port number on which the instances in the DB cluster accept connections.
+     *        The port number on which the instances in the cluster accept connections.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -961,7 +961,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * The name of the master user for the cluster.
      * </p>
      * <p>
      * Constraints:
@@ -985,7 +985,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the DB cluster.</p>
+     *        The name of the master user for the cluster.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1013,7 +1013,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * The name of the master user for the cluster.
      * </p>
      * <p>
      * Constraints:
@@ -1036,7 +1036,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The name of the master user for the DB cluster.</p>
+     * @return The name of the master user for the cluster.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1064,7 +1064,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * The name of the master user for the cluster.
      * </p>
      * <p>
      * Constraints:
@@ -1088,7 +1088,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the DB cluster.</p>
+     *        The name of the master user for the cluster.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1505,10 +1505,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster.
+     * The tags to be assigned to the cluster.
      * </p>
      * 
-     * @return The tags to be assigned to the DB cluster.
+     * @return The tags to be assigned to the cluster.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1517,11 +1517,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster.
+     * The tags to be assigned to the cluster.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster.
+     *        The tags to be assigned to the cluster.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1535,7 +1535,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster.
+     * The tags to be assigned to the cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1544,7 +1544,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster.
+     *        The tags to be assigned to the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1560,11 +1560,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to be assigned to the DB cluster.
+     * The tags to be assigned to the cluster.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the DB cluster.
+     *        The tags to be assigned to the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1575,11 +1575,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * Specifies whether the cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB cluster is encrypted.
+     *        Specifies whether the cluster is encrypted.
      */
 
     public void setStorageEncrypted(Boolean storageEncrypted) {
@@ -1588,10 +1588,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * Specifies whether the cluster is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB cluster is encrypted.
+     * @return Specifies whether the cluster is encrypted.
      */
 
     public Boolean getStorageEncrypted() {
@@ -1600,11 +1600,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * Specifies whether the cluster is encrypted.
      * </p>
      * 
      * @param storageEncrypted
-     *        Specifies whether the DB cluster is encrypted.
+     *        Specifies whether the cluster is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1615,10 +1615,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether the DB cluster is encrypted.
+     * Specifies whether the cluster is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB cluster is encrypted.
+     * @return Specifies whether the cluster is encrypted.
      */
 
     public Boolean isStorageEncrypted() {
@@ -1627,11 +1627,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are creating
-     * a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new DB
+     * a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new
      * cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
@@ -1656,18 +1656,17 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
      * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
      * Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier for an encrypted cluster.</p>
      *        <p>
      *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        creating a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to
-     *        encrypt the new DB cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS
-     *        encryption key.
+     *        creating a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt
+     *        the new cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *        </p>
      *        <p>
      *        If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -1693,9 +1692,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        encryption key for each AWS Region.
      *        </p>
      *        <p>
-     *        If you create a replica of an encrypted DB cluster in another AWS Region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the replica in that AWS Region.
+     *        If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     *        to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
+     *        that AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1704,11 +1703,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are creating
-     * a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new DB
+     * a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new
      * cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
@@ -1733,17 +1732,17 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
      * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
      * Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for an encrypted DB cluster.</p>
+     * @return The AWS KMS key identifier for an encrypted cluster.</p>
      *         <p>
      *         The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *         creating a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to
-     *         encrypt the new DB cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS
-     *         encryption key.
+     *         creating a cluster using the same AWS account that owns the AWS KMS encryption key that is used to
+     *         encrypt the new cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption
+     *         key.
      *         </p>
      *         <p>
      *         If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -1769,9 +1768,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         encryption key for each AWS Region.
      *         </p>
      *         <p>
-     *         If you create a replica of an encrypted DB cluster in another AWS Region, you must set
-     *         <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *         encrypt the replica in that AWS Region.
+     *         If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     *         to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
+     *         that AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -1780,11 +1779,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The AWS KMS key identifier for an encrypted cluster.
      * </p>
      * <p>
      * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are creating
-     * a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new DB
+     * a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new
      * cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      * </p>
      * <p>
@@ -1809,18 +1808,17 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * encryption key for each AWS Region.
      * </p>
      * <p>
-     * If you create a replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
      * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
      * Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
+     *        The AWS KMS key identifier for an encrypted cluster.</p>
      *        <p>
      *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        creating a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to
-     *        encrypt the new DB cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS
-     *        encryption key.
+     *        creating a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt
+     *        the new cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
      *        </p>
      *        <p>
      *        If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -1846,9 +1844,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        encryption key for each AWS Region.
      *        </p>
      *        <p>
-     *        If you create a replica of an encrypted DB cluster in another AWS Region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the replica in that AWS Region.
+     *        If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     *        to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
+     *        that AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

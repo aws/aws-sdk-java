@@ -49,6 +49,8 @@ public class OptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BytesPerSecond").build();
     private static final MarshallingInfo<String> TASKQUEUEING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskQueueing").build();
+    private static final MarshallingInfo<String> LOGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogLevel").build();
 
     private static final OptionsMarshaller instance = new OptionsMarshaller();
 
@@ -77,6 +79,7 @@ public class OptionsMarshaller {
             protocolMarshaller.marshall(options.getPosixPermissions(), POSIXPERMISSIONS_BINDING);
             protocolMarshaller.marshall(options.getBytesPerSecond(), BYTESPERSECOND_BINDING);
             protocolMarshaller.marshall(options.getTaskQueueing(), TASKQUEUEING_BINDING);
+            protocolMarshaller.marshall(options.getLogLevel(), LOGLEVEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

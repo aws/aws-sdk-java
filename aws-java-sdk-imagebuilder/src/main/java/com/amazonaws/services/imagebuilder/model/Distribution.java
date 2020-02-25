@@ -19,6 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
+ * Defines the settings for a specific Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Distribution" target="_top">AWS API
@@ -29,25 +30,30 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The target Region.
      * </p>
      */
     private String region;
     /**
      * <p>
+     * The specific AMI settings (for example, launch permissions, AMI tags).
      * </p>
      */
     private AmiDistributionConfiguration amiDistributionConfiguration;
     /**
      * <p>
+     * The License Manager Configuration to associate with the AMI in the specified Region.
      * </p>
      */
     private java.util.List<String> licenseConfigurationArns;
 
     /**
      * <p>
+     * The target Region.
      * </p>
      * 
      * @param region
+     *        The target Region.
      */
 
     public void setRegion(String region) {
@@ -56,9 +62,10 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The target Region.
      * </p>
      * 
-     * @return
+     * @return The target Region.
      */
 
     public String getRegion() {
@@ -67,9 +74,11 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The target Region.
      * </p>
      * 
      * @param region
+     *        The target Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,9 +89,11 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The specific AMI settings (for example, launch permissions, AMI tags).
      * </p>
      * 
      * @param amiDistributionConfiguration
+     *        The specific AMI settings (for example, launch permissions, AMI tags).
      */
 
     public void setAmiDistributionConfiguration(AmiDistributionConfiguration amiDistributionConfiguration) {
@@ -91,9 +102,10 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The specific AMI settings (for example, launch permissions, AMI tags).
      * </p>
      * 
-     * @return
+     * @return The specific AMI settings (for example, launch permissions, AMI tags).
      */
 
     public AmiDistributionConfiguration getAmiDistributionConfiguration() {
@@ -102,9 +114,11 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The specific AMI settings (for example, launch permissions, AMI tags).
      * </p>
      * 
      * @param amiDistributionConfiguration
+     *        The specific AMI settings (for example, launch permissions, AMI tags).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,9 +129,10 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The License Manager Configuration to associate with the AMI in the specified Region.
      * </p>
      * 
-     * @return
+     * @return The License Manager Configuration to associate with the AMI in the specified Region.
      */
 
     public java.util.List<String> getLicenseConfigurationArns() {
@@ -126,9 +141,11 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The License Manager Configuration to associate with the AMI in the specified Region.
      * </p>
      * 
      * @param licenseConfigurationArns
+     *        The License Manager Configuration to associate with the AMI in the specified Region.
      */
 
     public void setLicenseConfigurationArns(java.util.Collection<String> licenseConfigurationArns) {
@@ -142,6 +159,7 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The License Manager Configuration to associate with the AMI in the specified Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -150,6 +168,7 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param licenseConfigurationArns
+     *        The License Manager Configuration to associate with the AMI in the specified Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,9 +184,11 @@ public class Distribution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The License Manager Configuration to associate with the AMI in the specified Region.
      * </p>
      * 
      * @param licenseConfigurationArns
+     *        The License Manager Configuration to associate with the AMI in the specified Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

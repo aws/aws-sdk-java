@@ -44,6 +44,13 @@ public class DescribeTaskSetsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> taskSets;
+    /**
+     * <p>
+     * Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> include;
 
     /**
      * <p>
@@ -205,6 +212,117 @@ public class DescribeTaskSetsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @return Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags
+     *         are included in the response. If this field is omitted, tags are not included in the response.
+     * @see TaskSetField
+     */
+
+    public java.util.List<String> getInclude() {
+        if (include == null) {
+            include = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return include;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags
+     *        are included in the response. If this field is omitted, tags are not included in the response.
+     * @see TaskSetField
+     */
+
+    public void setInclude(java.util.Collection<String> include) {
+        if (include == null) {
+            this.include = null;
+            return;
+        }
+
+        this.include = new com.amazonaws.internal.SdkInternalList<String>(include);
+    }
+
+    /**
+     * <p>
+     * Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInclude(java.util.Collection)} or {@link #withInclude(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags
+     *        are included in the response. If this field is omitted, tags are not included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskSetField
+     */
+
+    public DescribeTaskSetsRequest withInclude(String... include) {
+        if (this.include == null) {
+            setInclude(new com.amazonaws.internal.SdkInternalList<String>(include.length));
+        }
+        for (String ele : include) {
+            this.include.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags
+     *        are included in the response. If this field is omitted, tags are not included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskSetField
+     */
+
+    public DescribeTaskSetsRequest withInclude(java.util.Collection<String> include) {
+        setInclude(include);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether to see the resource tags for the task set. If <code>TAGS</code> is specified, the tags
+     *        are included in the response. If this field is omitted, tags are not included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskSetField
+     */
+
+    public DescribeTaskSetsRequest withInclude(TaskSetField... include) {
+        com.amazonaws.internal.SdkInternalList<String> includeCopy = new com.amazonaws.internal.SdkInternalList<String>(include.length);
+        for (TaskSetField value : include) {
+            includeCopy.add(value.toString());
+        }
+        if (getInclude() == null) {
+            setInclude(includeCopy);
+        } else {
+            getInclude().addAll(includeCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -221,7 +339,9 @@ public class DescribeTaskSetsRequest extends com.amazonaws.AmazonWebServiceReque
         if (getService() != null)
             sb.append("Service: ").append(getService()).append(",");
         if (getTaskSets() != null)
-            sb.append("TaskSets: ").append(getTaskSets());
+            sb.append("TaskSets: ").append(getTaskSets()).append(",");
+        if (getInclude() != null)
+            sb.append("Include: ").append(getInclude());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +368,10 @@ public class DescribeTaskSetsRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTaskSets() != null && other.getTaskSets().equals(this.getTaskSets()) == false)
             return false;
+        if (other.getInclude() == null ^ this.getInclude() == null)
+            return false;
+        if (other.getInclude() != null && other.getInclude().equals(this.getInclude()) == false)
+            return false;
         return true;
     }
 
@@ -259,6 +383,7 @@ public class DescribeTaskSetsRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
         hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
         hashCode = prime * hashCode + ((getTaskSets() == null) ? 0 : getTaskSets().hashCode());
+        hashCode = prime * hashCode + ((getInclude() == null) ? 0 : getInclude().hashCode());
         return hashCode;
     }
 

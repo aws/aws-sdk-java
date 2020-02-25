@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have attempted to mutate or delete a resource with a dependency that is prohibitting this action. See the error
- * message for more details.
+ * You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the error message
+ * for more details.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

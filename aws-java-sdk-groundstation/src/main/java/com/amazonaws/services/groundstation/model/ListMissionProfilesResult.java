@@ -26,7 +26,7 @@ public class ListMissionProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of mission profiles
+     * List of mission profiles.
      * </p>
      */
     private java.util.List<MissionProfileListItem> missionProfileList;
@@ -40,10 +40,10 @@ public class ListMissionProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of mission profiles
+     * List of mission profiles.
      * </p>
      * 
-     * @return List of mission profiles
+     * @return List of mission profiles.
      */
 
     public java.util.List<MissionProfileListItem> getMissionProfileList() {
@@ -52,11 +52,11 @@ public class ListMissionProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of mission profiles
+     * List of mission profiles.
      * </p>
      * 
      * @param missionProfileList
-     *        List of mission profiles
+     *        List of mission profiles.
      */
 
     public void setMissionProfileList(java.util.Collection<MissionProfileListItem> missionProfileList) {
@@ -70,7 +70,7 @@ public class ListMissionProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of mission profiles
+     * List of mission profiles.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListMissionProfilesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param missionProfileList
-     *        List of mission profiles
+     *        List of mission profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ListMissionProfilesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of mission profiles
+     * List of mission profiles.
      * </p>
      * 
      * @param missionProfileList
-     *        List of mission profiles
+     *        List of mission profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

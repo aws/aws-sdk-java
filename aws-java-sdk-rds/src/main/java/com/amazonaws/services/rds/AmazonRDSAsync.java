@@ -44,9 +44,9 @@ import com.amazonaws.services.rds.model.*;
  * </p>
  * <p>
  * This interface reference for Amazon RDS contains documentation for a programming or command line interface you can
- * use to manage Amazon RDS. Note that Amazon RDS is asynchronous, which means that some interfaces might require
- * techniques such as polling or callback functions to determine when a command has been applied. In this reference, the
- * parameter descriptions indicate whether a command is applied immediately, on the next instance reboot, or during the
+ * use to manage Amazon RDS. Amazon RDS is asynchronous, which means that some interfaces might require techniques such
+ * as polling or callback functions to determine when a command has been applied. In this reference, the parameter
+ * descriptions indicate whether a command is applied immediately, on the next instance reboot, or during the
  * maintenance window. The reference structure is as follows, and we list following some related topics from the user
  * guide.
  * </p>
@@ -420,6 +420,39 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any data that has already been
+     * written to the S3 bucket isn't removed.
+     * </p>
+     * 
+     * @param cancelExportTaskRequest
+     * @return A Java Future containing the result of the CancelExportTask operation returned by the service.
+     * @sample AmazonRDSAsync.CancelExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(CancelExportTaskRequest cancelExportTaskRequest);
+
+    /**
+     * <p>
+     * Cancels an export task in progress that is exporting a snapshot to Amazon S3. Any data that has already been
+     * written to the S3 bucket isn't removed.
+     * </p>
+     * 
+     * @param cancelExportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelExportTask operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.CancelExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(CancelExportTaskRequest cancelExportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Copies the specified DB cluster parameter group.
      * </p>
      * <note>
@@ -502,7 +535,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
      * </p>
      * </li>
      * <li>
@@ -614,7 +647,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
      * </p>
      * </li>
      * <li>
@@ -1414,7 +1447,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created
+     * Creates an RDS event notification subscription. This action requires a topic Amazon Resource Name (ARN) created
      * by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in
      * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
@@ -1428,8 +1461,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
      * myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a
      * SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all
-     * your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of
-     * events generated from all RDS sources belonging to your customer account.
+     * your RDS sources. If you don't specify either the SourceType or the SourceIdentifier, you are notified of events
+     * generated from all RDS sources belonging to your customer account.
      * </p>
      * <note>
      * <p>
@@ -1448,7 +1481,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created
+     * Creates an RDS event notification subscription. This action requires a topic Amazon Resource Name (ARN) created
      * by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in
      * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
@@ -1462,8 +1495,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
      * myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a
      * SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all
-     * your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of
-     * events generated from all RDS sources belonging to your customer account.
+     * your RDS sources. If you don't specify either the SourceType or the SourceIdentifier, you are notified of events
+     * generated from all RDS sources belonging to your customer account.
      * </p>
      * <note>
      * <p>
@@ -1854,7 +1887,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * operation. The action can't be canceled or reverted once submitted.
      * </p>
      * <p>
-     * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
+     * When a DB instance is in a failure state and has a status of <code>failed</code>,
      * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when you skip
      * creation of the final snapshot with the <code>SkipFinalSnapshot</code> parameter.
      * </p>
@@ -1900,7 +1933,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * operation. The action can't be canceled or reverted once submitted.
      * </p>
      * <p>
-     * Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
+     * When a DB instance is in a failure state and has a status of <code>failed</code>,
      * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when you skip
      * creation of the final snapshot with the <code>SkipFinalSnapshot</code> parameter.
      * </p>
@@ -3782,6 +3815,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Returns information about a snapshot export to Amazon S3. This API operation supports pagination.
+     * </p>
+     * 
+     * @param describeExportTasksRequest
+     * @return A Java Future containing the result of the DescribeExportTasks operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeExportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest);
+
+    /**
+     * <p>
+     * Returns information about a snapshot export to Amazon S3. This API operation supports pagination.
+     * </p>
+     * 
+     * @param describeExportTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExportTasks operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeExportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about Aurora global database clusters. This API supports pagination.
      * </p>
      * <p>
@@ -4393,7 +4457,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS
-     * for new DB instances, or remove the override.
+     * for new DB instances temporarily, or remove the override.
      * </p>
      * <p>
      * By using this operation, you can specify an RDS-approved SSL/TLS certificate for new DB instances that is
@@ -4440,7 +4504,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS
-     * for new DB instances, or remove the override.
+     * for new DB instances temporarily, or remove the override.
      * </p>
      * <p>
      * By using this operation, you can specify an RDS-approved SSL/TLS certificate for new DB instances that is
@@ -5155,9 +5219,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modifies an existing RDS event notification subscription. Note that you can't modify the source identifiers using
-     * this call; to change source identifiers for a subscription, use the
-     * <code>AddSourceIdentifierToSubscription</code> and <code>RemoveSourceIdentifierFromSubscription</code> calls.
+     * Modifies an existing RDS event notification subscription. You can't modify the source identifiers using this
+     * call. To change source identifiers for a subscription, use the <code>AddSourceIdentifierToSubscription</code> and
+     * <code>RemoveSourceIdentifierFromSubscription</code> calls.
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
@@ -5175,9 +5239,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Modifies an existing RDS event notification subscription. Note that you can't modify the source identifiers using
-     * this call; to change source identifiers for a subscription, use the
-     * <code>AddSourceIdentifierToSubscription</code> and <code>RemoveSourceIdentifierFromSubscription</code> calls.
+     * Modifies an existing RDS event notification subscription. You can't modify the source identifiers using this
+     * call. To change source identifiers for a subscription, use the <code>AddSourceIdentifierToSubscription</code> and
+     * <code>RemoveSourceIdentifierFromSubscription</code> calls.
      * </p>
      * <p>
      * You can see a list of the event categories for a given SourceType in the <a
@@ -6379,6 +6443,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DBInstance> startDBInstanceAsync(StartDBInstanceRequest startDBInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<StartDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an export of a snapshot to Amazon S3. The provided IAM role must have access to the S3 bucket.
+     * </p>
+     * 
+     * @param startExportTaskRequest
+     * @return A Java Future containing the result of the StartExportTask operation returned by the service.
+     * @sample AmazonRDSAsync.StartExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest startExportTaskRequest);
+
+    /**
+     * <p>
+     * Starts an export of a snapshot to Amazon S3. The provided IAM role must have access to the S3 bucket.
+     * </p>
+     * 
+     * @param startExportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartExportTask operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.StartExportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest startExportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartExportTaskRequest, StartExportTaskResult> asyncHandler);
 
     /**
      * <p>

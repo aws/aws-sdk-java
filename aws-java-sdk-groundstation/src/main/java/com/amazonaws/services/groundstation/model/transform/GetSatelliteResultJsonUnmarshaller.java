@@ -48,13 +48,9 @@ public class GetSatelliteResultJsonUnmarshaller implements Unmarshaller<GetSatel
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("dateCreated", targetDepth)) {
+                if (context.testExpression("groundStations", targetDepth)) {
                     context.nextToken();
-                    getSatelliteResult.setDateCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("lastUpdated", targetDepth)) {
-                    context.nextToken();
-                    getSatelliteResult.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    getSatelliteResult.setGroundStations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("noradSatelliteID", targetDepth)) {
                     context.nextToken();
@@ -67,12 +63,6 @@ public class GetSatelliteResultJsonUnmarshaller implements Unmarshaller<GetSatel
                 if (context.testExpression("satelliteId", targetDepth)) {
                     context.nextToken();
                     getSatelliteResult.setSatelliteId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("tags", targetDepth)) {
-                    context.nextToken();
-                    getSatelliteResult
-                            .setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
-                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

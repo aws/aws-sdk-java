@@ -109,6 +109,11 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public ListConfigurationHistoryResult listConfigurationHistory(ListConfigurationHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListLogPatternSetsResult listLogPatternSets(ListLogPatternSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

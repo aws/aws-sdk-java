@@ -189,6 +189,37 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
+     * Creates an endpoint for an Amazon FSx for Windows file system.
+     * </p>
+     * 
+     * @param createLocationFsxWindowsRequest
+     * @return A Java Future containing the result of the CreateLocationFsxWindows operation returned by the service.
+     * @sample AWSDataSyncAsync.CreateLocationFsxWindows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationFsxWindowsResult> createLocationFsxWindowsAsync(CreateLocationFsxWindowsRequest createLocationFsxWindowsRequest);
+
+    /**
+     * <p>
+     * Creates an endpoint for an Amazon FSx for Windows file system.
+     * </p>
+     * 
+     * @param createLocationFsxWindowsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLocationFsxWindows operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.CreateLocationFsxWindows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxWindows"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationFsxWindowsResult> createLocationFsxWindowsAsync(CreateLocationFsxWindowsRequest createLocationFsxWindowsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLocationFsxWindowsRequest, CreateLocationFsxWindowsResult> asyncHandler);
+
+    /**
+     * <p>
      * Defines a file system on a Network File System (NFS) server that can be read from or written to
      * </p>
      * 
@@ -539,6 +570,39 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      */
     java.util.concurrent.Future<DescribeLocationEfsResult> describeLocationEfsAsync(DescribeLocationEfsRequest describeLocationEfsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationEfsRequest, DescribeLocationEfsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns metadata, such as the path information about an Amazon FSx for Windows location.
+     * </p>
+     * 
+     * @param describeLocationFsxWindowsRequest
+     * @return A Java Future containing the result of the DescribeLocationFsxWindows operation returned by the service.
+     * @sample AWSDataSyncAsync.DescribeLocationFsxWindows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationFsxWindowsResult> describeLocationFsxWindowsAsync(
+            DescribeLocationFsxWindowsRequest describeLocationFsxWindowsRequest);
+
+    /**
+     * <p>
+     * Returns metadata, such as the path information about an Amazon FSx for Windows location.
+     * </p>
+     * 
+     * @param describeLocationFsxWindowsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLocationFsxWindows operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.DescribeLocationFsxWindows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxWindows"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationFsxWindowsResult> describeLocationFsxWindowsAsync(
+            DescribeLocationFsxWindowsRequest describeLocationFsxWindowsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLocationFsxWindowsRequest, DescribeLocationFsxWindowsResult> asyncHandler);
 
     /**
      * <p>

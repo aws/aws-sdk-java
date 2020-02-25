@@ -30,7 +30,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-provided instance identifier. If this parameter is specified, information from only the specific DB
+     * The user-provided instance identifier. If this parameter is specified, information from only the specific
      * instance is returned. This parameter isn't case sensitive.
      * </p>
      * <p>
@@ -47,7 +47,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * A filter that specifies one or more DB instances to describe.
+     * A filter that specifies one or more instances to describe.
      * </p>
      * <p>
      * Supported filters:
@@ -55,15 +55,15 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list includes only the information about the DB instances that are associated with the DB clusters that
-     * are identified by these ARNs.
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results
+     * list includes only the information about the instances that are associated with the clusters that are identified
+     * by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list includes
-     * only the information about the DB instances that are identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only the
+     * information about the instances that are identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -93,7 +93,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-provided instance identifier. If this parameter is specified, information from only the specific DB
+     * The user-provided instance identifier. If this parameter is specified, information from only the specific
      * instance is returned. This parameter isn't case sensitive.
      * </p>
      * <p>
@@ -109,7 +109,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dBInstanceIdentifier
      *        The user-provided instance identifier. If this parameter is specified, information from only the specific
-     *        DB instance is returned. This parameter isn't case sensitive.</p>
+     *        instance is returned. This parameter isn't case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -127,7 +127,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-provided instance identifier. If this parameter is specified, information from only the specific DB
+     * The user-provided instance identifier. If this parameter is specified, information from only the specific
      * instance is returned. This parameter isn't case sensitive.
      * </p>
      * <p>
@@ -142,7 +142,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @return The user-provided instance identifier. If this parameter is specified, information from only the specific
-     *         DB instance is returned. This parameter isn't case sensitive.</p>
+     *         instance is returned. This parameter isn't case sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -160,7 +160,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-provided instance identifier. If this parameter is specified, information from only the specific DB
+     * The user-provided instance identifier. If this parameter is specified, information from only the specific
      * instance is returned. This parameter isn't case sensitive.
      * </p>
      * <p>
@@ -176,7 +176,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param dBInstanceIdentifier
      *        The user-provided instance identifier. If this parameter is specified, information from only the specific
-     *        DB instance is returned. This parameter isn't case sensitive.</p>
+     *        instance is returned. This parameter isn't case sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -196,7 +196,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that specifies one or more DB instances to describe.
+     * A filter that specifies one or more instances to describe.
      * </p>
      * <p>
      * Supported filters:
@@ -204,35 +204,35 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list includes only the information about the DB instances that are associated with the DB clusters that
-     * are identified by these ARNs.
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results
+     * list includes only the information about the instances that are associated with the clusters that are identified
+     * by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list includes
-     * only the information about the DB instances that are identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only the
+     * information about the instances that are identified by these ARNs.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A filter that specifies one or more DB instances to describe.</p>
+     * @return A filter that specifies one or more instances to describe.</p>
      *         <p>
      *         Supported filters:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *         The results list includes only the information about the DB instances that are associated with the DB
-     *         clusters that are identified by these ARNs.
+     *         <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The
+     *         results list includes only the information about the instances that are associated with the clusters that
+     *         are identified by these ARNs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list
-     *         includes only the information about the DB instances that are identified by these ARNs.
+     *         <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes
+     *         only the information about the instances that are identified by these ARNs.
      *         </p>
      *         </li>
      */
@@ -243,7 +243,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that specifies one or more DB instances to describe.
+     * A filter that specifies one or more instances to describe.
      * </p>
      * <p>
      * Supported filters:
@@ -251,36 +251,36 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list includes only the information about the DB instances that are associated with the DB clusters that
-     * are identified by these ARNs.
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results
+     * list includes only the information about the instances that are associated with the clusters that are identified
+     * by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list includes
-     * only the information about the DB instances that are identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only the
+     * information about the instances that are identified by these ARNs.
      * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        A filter that specifies one or more DB instances to describe.</p>
+     *        A filter that specifies one or more instances to describe.</p>
      *        <p>
      *        Supported filters:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list includes only the information about the DB instances that are associated with the DB
-     *        clusters that are identified by these ARNs.
+     *        <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The
+     *        results list includes only the information about the instances that are associated with the clusters that
+     *        are identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list
-     *        includes only the information about the DB instances that are identified by these ARNs.
+     *        <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes
+     *        only the information about the instances that are identified by these ARNs.
      *        </p>
      *        </li>
      */
@@ -296,7 +296,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that specifies one or more DB instances to describe.
+     * A filter that specifies one or more instances to describe.
      * </p>
      * <p>
      * Supported filters:
@@ -304,15 +304,15 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list includes only the information about the DB instances that are associated with the DB clusters that
-     * are identified by these ARNs.
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results
+     * list includes only the information about the instances that are associated with the clusters that are identified
+     * by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list includes
-     * only the information about the DB instances that are identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only the
+     * information about the instances that are identified by these ARNs.
      * </p>
      * </li>
      * </ul>
@@ -323,22 +323,22 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param filters
-     *        A filter that specifies one or more DB instances to describe.</p>
+     *        A filter that specifies one or more instances to describe.</p>
      *        <p>
      *        Supported filters:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list includes only the information about the DB instances that are associated with the DB
-     *        clusters that are identified by these ARNs.
+     *        <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The
+     *        results list includes only the information about the instances that are associated with the clusters that
+     *        are identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list
-     *        includes only the information about the DB instances that are identified by these ARNs.
+     *        <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes
+     *        only the information about the instances that are identified by these ARNs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -356,7 +356,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that specifies one or more DB instances to describe.
+     * A filter that specifies one or more instances to describe.
      * </p>
      * <p>
      * Supported filters:
@@ -364,36 +364,36 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The
-     * results list includes only the information about the DB instances that are associated with the DB clusters that
-     * are identified by these ARNs.
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results
+     * list includes only the information about the instances that are associated with the clusters that are identified
+     * by these ARNs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list includes
-     * only the information about the DB instances that are identified by these ARNs.
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes only the
+     * information about the instances that are identified by these ARNs.
      * </p>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        A filter that specifies one or more DB instances to describe.</p>
+     *        A filter that specifies one or more instances to describe.</p>
      *        <p>
      *        Supported filters:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
-     *        The results list includes only the information about the DB instances that are associated with the DB
-     *        clusters that are identified by these ARNs.
+     *        <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The
+     *        results list includes only the information about the instances that are associated with the clusters that
+     *        are identified by these ARNs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list
-     *        includes only the information about the DB instances that are identified by these ARNs.
+     *        <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The results list includes
+     *        only the information about the instances that are identified by these ARNs.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

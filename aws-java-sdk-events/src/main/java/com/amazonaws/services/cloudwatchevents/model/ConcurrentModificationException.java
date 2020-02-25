@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There is concurrent modification on a resource.
+ * There is concurrent modification on a rule or target.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

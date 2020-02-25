@@ -128,6 +128,21 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String logFormat;
+    /**
+     * <p>
+     * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
+     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * </p>
+     * <p>
+     * When a network interface is attached to a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
+     * </p>
+     * <p>
+     * Default: 600
+     * </p>
+     */
+    private Integer maxAggregationInterval;
 
     /**
      * <p>
@@ -948,6 +963,100 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
+     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * </p>
+     * <p>
+     * When a network interface is attached to a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
+     * </p>
+     * <p>
+     * Default: 600
+     * </p>
+     * 
+     * @param maxAggregationInterval
+     *        The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
+     *        record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
+     *        <p>
+     *        When a network interface is attached to a <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value
+     *        that you specify.
+     *        </p>
+     *        <p>
+     *        Default: 600
+     */
+
+    public void setMaxAggregationInterval(Integer maxAggregationInterval) {
+        this.maxAggregationInterval = maxAggregationInterval;
+    }
+
+    /**
+     * <p>
+     * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
+     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * </p>
+     * <p>
+     * When a network interface is attached to a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
+     * </p>
+     * <p>
+     * Default: 600
+     * </p>
+     * 
+     * @return The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
+     *         record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
+     *         <p>
+     *         When a network interface is attached to a <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *         >Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value
+     *         that you specify.
+     *         </p>
+     *         <p>
+     *         Default: 600
+     */
+
+    public Integer getMaxAggregationInterval() {
+        return this.maxAggregationInterval;
+    }
+
+    /**
+     * <p>
+     * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
+     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * </p>
+     * <p>
+     * When a network interface is attached to a <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.
+     * </p>
+     * <p>
+     * Default: 600
+     * </p>
+     * 
+     * @param maxAggregationInterval
+     *        The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
+     *        record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
+     *        <p>
+     *        When a network interface is attached to a <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value
+     *        that you specify.
+     *        </p>
+     *        <p>
+     *        Default: 600
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowLogsRequest withMaxAggregationInterval(Integer maxAggregationInterval) {
+        setMaxAggregationInterval(maxAggregationInterval);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -987,7 +1096,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         if (getLogDestination() != null)
             sb.append("LogDestination: ").append(getLogDestination()).append(",");
         if (getLogFormat() != null)
-            sb.append("LogFormat: ").append(getLogFormat());
+            sb.append("LogFormat: ").append(getLogFormat()).append(",");
+        if (getMaxAggregationInterval() != null)
+            sb.append("MaxAggregationInterval: ").append(getMaxAggregationInterval());
         sb.append("}");
         return sb.toString();
     }
@@ -1038,6 +1149,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getLogFormat() != null && other.getLogFormat().equals(this.getLogFormat()) == false)
             return false;
+        if (other.getMaxAggregationInterval() == null ^ this.getMaxAggregationInterval() == null)
+            return false;
+        if (other.getMaxAggregationInterval() != null && other.getMaxAggregationInterval().equals(this.getMaxAggregationInterval()) == false)
+            return false;
         return true;
     }
 
@@ -1055,6 +1170,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getLogDestinationType() == null) ? 0 : getLogDestinationType().hashCode());
         hashCode = prime * hashCode + ((getLogDestination() == null) ? 0 : getLogDestination().hashCode());
         hashCode = prime * hashCode + ((getLogFormat() == null) ? 0 : getLogFormat().hashCode());
+        hashCode = prime * hashCode + ((getMaxAggregationInterval() == null) ? 0 : getMaxAggregationInterval().hashCode());
         return hashCode;
     }
 

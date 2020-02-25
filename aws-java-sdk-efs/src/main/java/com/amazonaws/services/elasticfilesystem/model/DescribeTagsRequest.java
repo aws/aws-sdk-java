@@ -29,8 +29,8 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
-     * automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 tags.
+     * automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have
+     * more than 100 tags.
      * </p>
      */
     private Integer maxItems;
@@ -51,14 +51,14 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
-     * automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 tags.
+     * automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have
+     * more than 100 tags.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of file system tags to return in the response. Currently, this number is
-     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
-     *        have more than 10 tags.
+     *        automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you
+     *        have more than 100 tags.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -68,13 +68,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
-     * automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 tags.
+     * automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have
+     * more than 100 tags.
      * </p>
      * 
      * @return (Optional) The maximum number of file system tags to return in the response. Currently, this number is
-     *         automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
-     *         have more than 10 tags.
+     *         automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you
+     *         have more than 100 tags.
      */
 
     public Integer getMaxItems() {
@@ -84,14 +84,14 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
-     * automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 tags.
+     * automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you have
+     * more than 100 tags.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of file system tags to return in the response. Currently, this number is
-     *        automatically set to 10, and other values are ignored. The response is paginated at 10 per page if you
-     *        have more than 10 tags.
+     *        automatically set to 100, and other values are ignored. The response is paginated at 100 per page if you
+     *        have more than 100 tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

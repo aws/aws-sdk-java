@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Network information for accessing a DB cluster or DB instance. Client programs must specify a valid endpoint to
- * access these Amazon DocumentDB resources.
+ * Network information for accessing a cluster or instance. Client programs must specify a valid endpoint to access
+ * these Amazon DocumentDB resources.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/Endpoint" target="_top">AWS API
@@ -29,7 +29,7 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the DNS address of the DB instance.
+     * Specifies the DNS address of the instance.
      * </p>
      */
     private String address;
@@ -48,11 +48,11 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the DNS address of the DB instance.
+     * Specifies the DNS address of the instance.
      * </p>
      * 
      * @param address
-     *        Specifies the DNS address of the DB instance.
+     *        Specifies the DNS address of the instance.
      */
 
     public void setAddress(String address) {
@@ -61,10 +61,10 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the DNS address of the DB instance.
+     * Specifies the DNS address of the instance.
      * </p>
      * 
-     * @return Specifies the DNS address of the DB instance.
+     * @return Specifies the DNS address of the instance.
      */
 
     public String getAddress() {
@@ -73,11 +73,11 @@ public class Endpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the DNS address of the DB instance.
+     * Specifies the DNS address of the instance.
      * </p>
      * 
      * @param address
-     *        Specifies the DNS address of the DB instance.
+     *        Specifies the DNS address of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AwsCodeBuildProject", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsCodeBuildProject(AwsCodeBuildProjectDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsCloudFrontDistribution", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsCloudFrontDistribution(AwsCloudFrontDistributionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -56,9 +60,21 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsEc2Instance(AwsEc2InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsEc2NetworkInterface", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEc2SecurityGroup", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2SecurityGroup(AwsEc2SecurityGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsElbv2LoadBalancer", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsElasticsearchDomain", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsElasticsearchDomain(AwsElasticsearchDomainDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AwsS3Bucket", targetDepth)) {
                     context.nextToken();
@@ -80,6 +96,14 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsLambdaFunction(AwsLambdaFunctionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsLambdaLayerVersion", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsLambdaLayerVersion(AwsLambdaLayerVersionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsRdsDbInstance", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsRdsDbInstance(AwsRdsDbInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsSnsTopic", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsSnsTopic(AwsSnsTopicDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -87,6 +111,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 if (context.testExpression("AwsSqsQueue", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsSqsQueue(AwsSqsQueueDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafWebAcl", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafWebAcl(AwsWafWebAclDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Container", targetDepth)) {
                     context.nextToken();

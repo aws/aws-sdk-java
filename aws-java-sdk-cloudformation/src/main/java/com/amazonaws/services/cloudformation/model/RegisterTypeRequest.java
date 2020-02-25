@@ -91,6 +91,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
+     * contains the schema handler package for that resource provider. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </note>
      */
     private String schemaHandlerPackage;
     /**
@@ -490,6 +498,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
+     * contains the schema handler package for that resource provider. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param schemaHandlerPackage
      *        A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
@@ -498,6 +514,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        For information on generating a schema handler package for the type you want to register, see <a
      *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html"
      *        >submit</a> in the <i>CloudFormation CLI User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
+     *        contains the schema handler package for that resource provider. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions"
+     *        >IAM Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
      */
 
     public void setSchemaHandlerPackage(String schemaHandlerPackage) {
@@ -514,6 +538,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
+     * contains the schema handler package for that resource provider. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @return A url to the S3 bucket containing the schema handler package that contains the schema, event handlers,
      *         and associated files for the type you want to register.</p>
@@ -521,6 +553,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         For information on generating a schema handler package for the type you want to register, see <a
      *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html"
      *         >submit</a> in the <i>CloudFormation CLI User Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket
+     *         which contains the schema handler package for that resource provider. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions"
+     *         >IAM Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         </p>
      */
 
     public String getSchemaHandlerPackage() {
@@ -537,6 +577,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
+     * contains the schema handler package for that resource provider. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param schemaHandlerPackage
      *        A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
@@ -545,6 +593,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        For information on generating a schema handler package for the type you want to register, see <a
      *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html"
      *        >submit</a> in the <i>CloudFormation CLI User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
+     *        contains the schema handler package for that resource provider. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions"
+     *        >IAM Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

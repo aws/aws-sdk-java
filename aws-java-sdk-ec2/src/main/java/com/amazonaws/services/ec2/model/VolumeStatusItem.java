@@ -62,6 +62,12 @@ public class VolumeStatusItem implements Serializable, Cloneable {
      * </p>
      */
     private VolumeStatusInfo volumeStatus;
+    /**
+     * <p>
+     * Information about the instances to which the volume is attached.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<VolumeStatusAttachmentStatus> attachmentStatuses;
 
     /**
      * <p>
@@ -370,6 +376,79 @@ public class VolumeStatusItem implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Information about the instances to which the volume is attached.
+     * </p>
+     * 
+     * @return Information about the instances to which the volume is attached.
+     */
+
+    public java.util.List<VolumeStatusAttachmentStatus> getAttachmentStatuses() {
+        if (attachmentStatuses == null) {
+            attachmentStatuses = new com.amazonaws.internal.SdkInternalList<VolumeStatusAttachmentStatus>();
+        }
+        return attachmentStatuses;
+    }
+
+    /**
+     * <p>
+     * Information about the instances to which the volume is attached.
+     * </p>
+     * 
+     * @param attachmentStatuses
+     *        Information about the instances to which the volume is attached.
+     */
+
+    public void setAttachmentStatuses(java.util.Collection<VolumeStatusAttachmentStatus> attachmentStatuses) {
+        if (attachmentStatuses == null) {
+            this.attachmentStatuses = null;
+            return;
+        }
+
+        this.attachmentStatuses = new com.amazonaws.internal.SdkInternalList<VolumeStatusAttachmentStatus>(attachmentStatuses);
+    }
+
+    /**
+     * <p>
+     * Information about the instances to which the volume is attached.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachmentStatuses(java.util.Collection)} or {@link #withAttachmentStatuses(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param attachmentStatuses
+     *        Information about the instances to which the volume is attached.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeStatusItem withAttachmentStatuses(VolumeStatusAttachmentStatus... attachmentStatuses) {
+        if (this.attachmentStatuses == null) {
+            setAttachmentStatuses(new com.amazonaws.internal.SdkInternalList<VolumeStatusAttachmentStatus>(attachmentStatuses.length));
+        }
+        for (VolumeStatusAttachmentStatus ele : attachmentStatuses) {
+            this.attachmentStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the instances to which the volume is attached.
+     * </p>
+     * 
+     * @param attachmentStatuses
+     *        Information about the instances to which the volume is attached.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeStatusItem withAttachmentStatuses(java.util.Collection<VolumeStatusAttachmentStatus> attachmentStatuses) {
+        setAttachmentStatuses(attachmentStatuses);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -392,7 +471,9 @@ public class VolumeStatusItem implements Serializable, Cloneable {
         if (getVolumeId() != null)
             sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getVolumeStatus() != null)
-            sb.append("VolumeStatus: ").append(getVolumeStatus());
+            sb.append("VolumeStatus: ").append(getVolumeStatus()).append(",");
+        if (getAttachmentStatuses() != null)
+            sb.append("AttachmentStatuses: ").append(getAttachmentStatuses());
         sb.append("}");
         return sb.toString();
     }
@@ -431,6 +512,10 @@ public class VolumeStatusItem implements Serializable, Cloneable {
             return false;
         if (other.getVolumeStatus() != null && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
             return false;
+        if (other.getAttachmentStatuses() == null ^ this.getAttachmentStatuses() == null)
+            return false;
+        if (other.getAttachmentStatuses() != null && other.getAttachmentStatuses().equals(this.getAttachmentStatuses()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +530,7 @@ public class VolumeStatusItem implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentStatuses() == null) ? 0 : getAttachmentStatuses().hashCode());
         return hashCode;
     }
 

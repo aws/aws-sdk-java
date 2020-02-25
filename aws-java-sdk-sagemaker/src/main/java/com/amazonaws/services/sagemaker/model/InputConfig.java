@@ -86,6 +86,50 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected data inputs using a dictionary
+     * format for your trained model. Note that while Keras model artifacts should be uploaded in NHWC (channel-last)
+     * format, <code>DataInputConfig</code> should be specified in NCHW (channel-first) format. The dictionary formats
+     * required for the console and CLI are different.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Examples for one input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Examples for two inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
      * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
      * different.
@@ -292,6 +336,50 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected data inputs using a dictionary
+     * format for your trained model. Note that while Keras model artifacts should be uploaded in NHWC (channel-last)
+     * format, <code>DataInputConfig</code> should be specified in NCHW (channel-first) format. The dictionary formats
+     * required for the console and CLI are different.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Examples for one input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Examples for two inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
      * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
      * different.
@@ -435,6 +523,50 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected data inputs using a
+     *        dictionary format for your trained model. Note that while Keras model artifacts should be uploaded in NHWC
+     *        (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW (channel-first) format.
+     *        The dictionary formats required for the console and CLI are different.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Examples for one input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If using the console, <code>{"input_1":[1,3,224,224]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Examples for two inputs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -599,6 +731,50 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected data inputs using a dictionary
+     * format for your trained model. Note that while Keras model artifacts should be uploaded in NHWC (channel-last)
+     * format, <code>DataInputConfig</code> should be specified in NCHW (channel-first) format. The dictionary formats
+     * required for the console and CLI are different.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Examples for one input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Examples for two inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
      * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
      * different.
@@ -741,6 +917,50 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected data inputs using a
+     *         dictionary format for your trained model. Note that while Keras model artifacts should be uploaded in
+     *         NHWC (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW (channel-first)
+     *         format. The dictionary formats required for the console and CLI are different.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Examples for one input:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If using the console, <code>{"input_1":[1,3,224,224]}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Examples for two inputs:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -905,6 +1125,50 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected data inputs using a dictionary
+     * format for your trained model. Note that while Keras model artifacts should be uploaded in NHWC (channel-last)
+     * format, <code>DataInputConfig</code> should be specified in NCHW (channel-first) format. The dictionary formats
+     * required for the console and CLI are different.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Examples for one input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Examples for two inputs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
      * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
      * different.
@@ -1048,6 +1312,50 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected data inputs using a
+     *        dictionary format for your trained model. Note that while Keras model artifacts should be uploaded in NHWC
+     *        (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW (channel-first) format.
+     *        The dictionary formats required for the console and CLI are different.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Examples for one input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If using the console, <code>{"input_1":[1,3,224,224]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Examples for two inputs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
      *        </p>
      *        </li>
      *        </ul>

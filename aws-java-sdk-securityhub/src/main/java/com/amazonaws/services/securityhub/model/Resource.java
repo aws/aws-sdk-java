@@ -30,7 +30,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource that details are provided for.
+     * The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
+     * supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.
+     * </p>
+     * <p>
+     * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
      */
     private String type;
@@ -67,11 +72,20 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource that details are provided for.
+     * The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
+     * supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.
+     * </p>
+     * <p>
+     * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
      * 
      * @param type
-     *        The type of the resource that details are provided for.
+     *        The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
+     *        supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
+     *        <code>AwsEc2Instance</code>.</p>
+     *        <p>
+     *        If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      */
 
     public void setType(String type) {
@@ -80,10 +94,20 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource that details are provided for.
+     * The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
+     * supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.
+     * </p>
+     * <p>
+     * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
      * 
-     * @return The type of the resource that details are provided for.
+     * @return The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
+     *         supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
+     *         <code>AwsEc2Instance</code>.</p>
+     *         <p>
+     *         If the resource does not match any of the provided types, then set <code>Type</code> to
+     *         <code>Other</code>.
      */
 
     public String getType() {
@@ -92,11 +116,20 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource that details are provided for.
+     * The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
+     * supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.
+     * </p>
+     * <p>
+     * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
      * 
      * @param type
-     *        The type of the resource that details are provided for.
+     *        The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
+     *        supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
+     *        <code>AwsEc2Instance</code>.</p>
+     *        <p>
+     *        If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

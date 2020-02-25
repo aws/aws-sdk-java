@@ -27,17 +27,17 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     * The list of account IDs of the AWS accounts to invite to Security Hub as members.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     * The list of account IDs of the AWS accounts to invite to Security Hub as members.
      * </p>
      * 
-     * @return A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     * @return The list of account IDs of the AWS accounts to invite to Security Hub as members.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -46,11 +46,11 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     * The list of account IDs of the AWS accounts to invite to Security Hub as members.
      * </p>
      * 
      * @param accountIds
-     *        A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     *        The list of account IDs of the AWS accounts to invite to Security Hub as members.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -64,7 +64,7 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     * The list of account IDs of the AWS accounts to invite to Security Hub as members.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param accountIds
-     *        A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     *        The list of account IDs of the AWS accounts to invite to Security Hub as members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     * The list of account IDs of the AWS accounts to invite to Security Hub as members.
      * </p>
      * 
      * @param accountIds
-     *        A list of IDs of the AWS accounts that you want to invite to Security Hub as members.
+     *        The list of account IDs of the AWS accounts to invite to Security Hub as members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

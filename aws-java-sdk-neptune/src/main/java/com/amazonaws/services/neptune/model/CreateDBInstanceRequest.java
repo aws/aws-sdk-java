@@ -259,7 +259,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean multiAZ;
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      */
     private String engineVersion;
@@ -291,20 +291,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer iops;
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String optionGroupName;
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified CharacterSet.
-     * </p>
-     * <p>
-     * Not applicable. The character set is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String characterSetName;
@@ -462,14 +455,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -479,6 +471,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<String> enableCloudwatchLogsExports;
+    /**
+     * <p>
+     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * <p>
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
+     * </p>
+     */
+    private Boolean deletionProtection;
 
     /**
      * <p>
@@ -2002,11 +2006,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.
+     *        The version number of the database engine to use. Currently, setting this parameter has no effect.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -2015,10 +2019,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      * 
-     * @return The version number of the database engine to use.
+     * @return The version number of the database engine to use. Currently, setting this parameter has no effect.
      */
 
     public String getEngineVersion() {
@@ -2027,11 +2031,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. Currently, setting this parameter has no effect.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.
+     *        The version number of the database engine to use. Currently, setting this parameter has no effect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2225,19 +2229,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group.</p>
-     *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
-     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
-     *        instance
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -2246,18 +2242,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return Indicates that the DB instance should be associated with the specified option group.</p>
-     *         <p>
-     *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
-     *         option group, and that option group can't be removed from a DB instance once it is associated with a DB
-     *         instance
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getOptionGroupName() {
@@ -2266,19 +2254,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
-     * </p>
-     * <p>
-     * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
-     * group, and that option group can't be removed from a DB instance once it is associated with a DB instance
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group.</p>
-     *        <p>
-     *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
-     *        option group, and that option group can't be removed from a DB instance once it is associated with a DB
-     *        instance
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2289,17 +2269,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified CharacterSet.
-     * </p>
-     * <p>
-     * Not applicable. The character set is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        Indicates that the DB instance should be associated with the specified CharacterSet.</p>
-     *        <p>
-     *        Not applicable. The character set is managed by the DB cluster. For more information, see
-     *        <a>CreateDBCluster</a>.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setCharacterSetName(String characterSetName) {
@@ -2308,16 +2282,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified CharacterSet.
-     * </p>
-     * <p>
-     * Not applicable. The character set is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return Indicates that the DB instance should be associated with the specified CharacterSet.</p>
-     *         <p>
-     *         Not applicable. The character set is managed by the DB cluster. For more information, see
-     *         <a>CreateDBCluster</a>.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getCharacterSetName() {
@@ -2326,17 +2294,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified CharacterSet.
-     * </p>
-     * <p>
-     * Not applicable. The character set is managed by the DB cluster. For more information, see <a>CreateDBCluster</a>.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param characterSetName
-     *        Indicates that the DB instance should be associated with the specified CharacterSet.</p>
-     *        <p>
-     *        Not applicable. The character set is managed by the DB cluster. For more information, see
-     *        <a>CreateDBCluster</a>.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3391,11 +3353,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance, and otherwise false.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -3404,10 +3366,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance, and otherwise false.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -3416,11 +3378,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance, and otherwise false.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3431,10 +3393,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable Performance Insights for the DB instance, and otherwise false.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance, and otherwise false.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -3443,13 +3405,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        <i>(Not supported by Neptune)</i>
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3458,12 +3418,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return <i>(Not supported by Neptune)</i>
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3472,13 +3430,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * <i>(Not supported by Neptune)</i>
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        <i>(Not supported by Neptune)</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3555,6 +3511,106 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateDBInstanceRequest withEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
         setEnableCloudwatchLogsExports(enableCloudwatchLogsExports);
         return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * <p>
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.</p>
+     *        <p>
+     *        DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *        cluster.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * <p>
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.</p>
+     *         <p>
+     *         DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *         cluster.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * <p>
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        A value that indicates whether the DB instance has deletion protection enabled. The database can't be
+     *        deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *        a DB Instance</a>.</p>
+     *        <p>
+     *        DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *        cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted
+     * when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB
+     * Instance</a>.
+     * </p>
+     * <p>
+     * DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
+     * </p>
+     * 
+     * @return A value that indicates whether the DB instance has deletion protection enabled. The database can't be
+     *         deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     *         a DB Instance</a>.</p>
+     *         <p>
+     *         DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB
+     *         cluster.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
     }
 
     /**
@@ -3652,7 +3708,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getPerformanceInsightsKMSKeyId() != null)
             sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
-            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports());
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -3836,6 +3894,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
             return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
         return true;
     }
 
@@ -3886,6 +3948,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEnablePerformanceInsights() == null) ? 0 : getEnablePerformanceInsights().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }
 

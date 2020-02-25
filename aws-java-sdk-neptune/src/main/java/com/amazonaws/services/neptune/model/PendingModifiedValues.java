@@ -113,7 +113,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String dBSubnetGroupName;
     /**
      * <p>
-     * Specifies the CloudWatch logs to be exported.
+     * This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are
+     * enabled and which are disabled.
      * </p>
      */
     private PendingCloudwatchLogsExports pendingCloudwatchLogsExports;
@@ -694,11 +695,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the CloudWatch logs to be exported.
+     * This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are
+     * enabled and which are disabled.
      * </p>
      * 
      * @param pendingCloudwatchLogsExports
-     *        Specifies the CloudWatch logs to be exported.
+     *        This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch
+     *        logs are enabled and which are disabled.
      */
 
     public void setPendingCloudwatchLogsExports(PendingCloudwatchLogsExports pendingCloudwatchLogsExports) {
@@ -707,10 +710,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the CloudWatch logs to be exported.
+     * This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are
+     * enabled and which are disabled.
      * </p>
      * 
-     * @return Specifies the CloudWatch logs to be exported.
+     * @return This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch
+     *         logs are enabled and which are disabled.
      */
 
     public PendingCloudwatchLogsExports getPendingCloudwatchLogsExports() {
@@ -719,11 +724,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the CloudWatch logs to be exported.
+     * This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch logs are
+     * enabled and which are disabled.
      * </p>
      * 
      * @param pendingCloudwatchLogsExports
-     *        Specifies the CloudWatch logs to be exported.
+     *        This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes to which CloudWatch
+     *        logs are enabled and which are disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class DBProxyAlreadyExistsExceptionUnmarshaller extends StandardErrorUnma
         // Bail out if this isn't the right error code that this
         // marshaller understands
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBProxyAlreadyExistsFault"))
+        if (errorCode == null || !errorCode.equals("DBProxyTargetExistsFault"))
             return null;
 
         DBProxyAlreadyExistsException e = (DBProxyAlreadyExistsException) super.unmarshall(node);

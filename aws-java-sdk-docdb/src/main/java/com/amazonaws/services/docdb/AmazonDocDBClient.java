@@ -182,11 +182,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>AddTagsToResource</a>.
      * @return Result of the AddTagsToResource operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @throws DBSnapshotNotFoundException
-     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @sample AmazonDocDB.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -244,9 +244,9 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * @throws ResourceNotFoundException
      *         The specified resource ID was not found.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @sample AmazonDocDB.ApplyPendingMaintenanceAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ApplyPendingMaintenanceAction"
      *      target="_top">AWS API Documentation</a>
@@ -295,18 +295,18 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Copies the specified DB cluster parameter group.
+     * Copies the specified cluster parameter group.
      * </p>
      * 
      * @param copyDBClusterParameterGroupRequest
      *        Represents the input to <a>CopyDBClusterParameterGroup</a>.
      * @return Result of the CopyDBClusterParameterGroup operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @throws DBParameterGroupQuotaExceededException
-     *         This request would cause you to exceed the allowed number of DB parameter groups.
+     *         This request would cause you to exceed the allowed number of parameter groups.
      * @throws DBParameterGroupAlreadyExistsException
-     *         A DB parameter group with the same name already exists.
+     *         A parameter group with the same name already exists.
      * @sample AmazonDocDB.CopyDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -355,15 +355,14 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Copies a snapshot of a DB cluster.
+     * Copies a snapshot of a cluster.
      * </p>
      * <p>
-     * To copy a DB cluster snapshot from a shared manual DB cluster snapshot,
-     * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB cluster
-     * snapshot.
+     * To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+     * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.
      * </p>
      * <p>
-     * To cancel the copy operation after it is in progress, delete the target DB cluster snapshot identified by
+     * To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by
      * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in the <i>copying</i> status.
      * </p>
      * 
@@ -371,15 +370,15 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>CopyDBClusterSnapshot</a>.
      * @return Result of the CopyDBClusterSnapshot operation returned by the service.
      * @throws DBClusterSnapshotAlreadyExistsException
-     *         You already have a DB cluster snapshot with the given identifier.
+     *         You already have a cluster snapshot with the given identifier.
      * @throws DBClusterSnapshotNotFoundException
-     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The provided value isn't a valid DB cluster snapshot state.
+     *         The provided value isn't a valid cluster snapshot state.
      * @throws SnapshotQuotaExceededException
-     *         The request would cause you to exceed the allowed number of DB snapshots.
+     *         The request would cause you to exceed the allowed number of snapshots.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred when accessing an AWS KMS key.
      * @sample AmazonDocDB.CopyDBClusterSnapshot
@@ -429,45 +428,45 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Creates a new Amazon DocumentDB DB cluster.
+     * Creates a new Amazon DocumentDB cluster.
      * </p>
      * 
      * @param createDBClusterRequest
      *        Represents the input to <a>CreateDBCluster</a>.
      * @return Result of the CreateDBCluster operation returned by the service.
      * @throws DBClusterAlreadyExistsException
-     *         You already have a DB cluster with the given identifier.
+     *         You already have a cluster with the given identifier.
      * @throws InsufficientStorageClusterCapacityException
      *         There is not enough storage available for the current action. You might be able to resolve this error by
      *         updating your subnet group to use different Availability Zones that have more storage available.
      * @throws DBClusterQuotaExceededException
-     *         The DB cluster can't be created because you have reached the maximum allowed quota of DB clusters.
+     *         The cluster can't be created because you have reached the maximum allowed quota of clusters.
      * @throws StorageQuotaExceededException
-     *         The request would cause you to exceed the allowed amount of storage available across all DB instances.
+     *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @throws InvalidVPCNetworkStateException
-     *         The DB subnet group doesn't cover all Availability Zones after it is created because of changes that were
+     *         The subnet group doesn't cover all Availability Zones after it is created because of changes that were
      *         made.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidDBSubnetGroupStateException
-     *         The DB subnet group can't be deleted because it's in use.
+     *         The subnet group can't be deleted because it's in use.
      * @throws InvalidSubnetException
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
      *         virtual private cloud (VPC).
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @throws DBClusterParameterGroupNotFoundException
-     *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
+     *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred when accessing an AWS KMS key.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
-     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Subnets in the subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @sample AmazonDocDB.CreateDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster" target="_top">AWS API
@@ -516,26 +515,25 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Creates a new DB cluster parameter group.
+     * Creates a new cluster parameter group.
      * </p>
      * <p>
-     * Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
+     * Parameters in a cluster parameter group apply to all of the instances in a DB cluster.
      * </p>
      * <p>
-     * A DB cluster parameter group is initially created with the default parameters for the database engine used by
-     * instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after
-     * you create it. After you create a DB cluster parameter group, you must associate it with your DB cluster. For the
-     * new DB cluster parameter group and associated settings to take effect, you must then reboot the DB instances in
-     * the DB cluster without failover.
+     * A cluster parameter group is initially created with the default parameters for the database engine used by
+     * instances in the cluster. To provide custom values for any of the parameters, you must modify the group after you
+     * create it. After you create a DB cluster parameter group, you must associate it with your cluster. For the new DB
+     * cluster parameter group and associated settings to take effect, you must then reboot the instances in the cluster
+     * without failover.
      * </p>
      * <important>
      * <p>
-     * After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB
-     * cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB
-     * to fully complete the create action before the DB cluster parameter group is used as the default for a new DB
-     * cluster. This step is especially important for parameters that are critical when creating the default database
-     * for a DB cluster, such as the character set for the default database defined by the
-     * <code>character_set_database</code> parameter.
+     * After you create a cluster parameter group, you should wait at least 5 minutes before creating your first cluster
+     * that uses that cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully
+     * complete the create action before the cluster parameter group is used as the default for a new cluster. This step
+     * is especially important for parameters that are critical when creating the default database for a cluster, such
+     * as the character set for the default database defined by the <code>character_set_database</code> parameter.
      * </p>
      * </important>
      * 
@@ -543,9 +541,9 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input of <a>CreateDBClusterParameterGroup</a>.
      * @return Result of the CreateDBClusterParameterGroup operation returned by the service.
      * @throws DBParameterGroupQuotaExceededException
-     *         This request would cause you to exceed the allowed number of DB parameter groups.
+     *         This request would cause you to exceed the allowed number of parameter groups.
      * @throws DBParameterGroupAlreadyExistsException
-     *         A DB parameter group with the same name already exists.
+     *         A parameter group with the same name already exists.
      * @sample AmazonDocDB.CreateDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -594,22 +592,22 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Creates a snapshot of a DB cluster.
+     * Creates a snapshot of a cluster.
      * </p>
      * 
      * @param createDBClusterSnapshotRequest
      *        Represents the input of <a>CreateDBClusterSnapshot</a>.
      * @return Result of the CreateDBClusterSnapshot operation returned by the service.
      * @throws DBClusterSnapshotAlreadyExistsException
-     *         You already have a DB cluster snapshot with the given identifier.
+     *         You already have a cluster snapshot with the given identifier.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws SnapshotQuotaExceededException
-     *         The request would cause you to exceed the allowed number of DB snapshots.
+     *         The request would cause you to exceed the allowed number of snapshots.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The provided value isn't a valid DB cluster snapshot state.
+     *         The provided value isn't a valid cluster snapshot state.
      * @sample AmazonDocDB.CreateDBClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -657,44 +655,43 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Creates a new DB instance.
+     * Creates a new instance.
      * </p>
      * 
      * @param createDBInstanceRequest
      *        Represents the input to <a>CreateDBInstance</a>.
      * @return Result of the CreateDBInstance operation returned by the service.
      * @throws DBInstanceAlreadyExistsException
-     *         You already have a DB instance with the given identifier.
+     *         You already have a instance with the given identifier.
      * @throws InsufficientDBInstanceCapacityException
-     *         The specified DB instance class isn't available in the specified Availability Zone.
+     *         The specified instance class isn't available in the specified Availability Zone.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @throws DBSecurityGroupNotFoundException
-     *         <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
+     *         <code>DBSecurityGroupName</code> doesn't refer to an existing security group.
      * @throws InstanceQuotaExceededException
-     *         The request would cause you to exceed the allowed number of DB instances.
+     *         The request would cause you to exceed the allowed number of instances.
      * @throws StorageQuotaExceededException
-     *         The request would cause you to exceed the allowed amount of storage available across all DB instances.
+     *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
-     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Subnets in the subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidSubnetException
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
      *         virtual private cloud (VPC).
      * @throws InvalidVPCNetworkStateException
-     *         The DB subnet group doesn't cover all Availability Zones after it is created because of changes that were
+     *         The subnet group doesn't cover all Availability Zones after it is created because of changes that were
      *         made.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws StorageTypeNotSupportedException
      *         Storage of the specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
-     *         The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified DB security
-     *         group.</p>
+     *         The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.</p>
      *         <p>
      *         Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.
      * @throws KMSKeyNotAccessibleException
@@ -746,21 +743,21 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two Availability
-     * Zones in the AWS Region.
+     * Creates a new subnet group. subnet groups must contain at least one subnet in at least two Availability Zones in
+     * the AWS Region.
      * </p>
      * 
      * @param createDBSubnetGroupRequest
      *        Represents the input to <a>CreateDBSubnetGroup</a>.
      * @return Result of the CreateDBSubnetGroup operation returned by the service.
      * @throws DBSubnetGroupAlreadyExistsException
-     *         <code>DBSubnetGroupName</code> is already being used by an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> is already being used by an existing subnet group.
      * @throws DBSubnetGroupQuotaExceededException
-     *         The request would cause you to exceed the allowed number of DB subnet groups.
+     *         The request would cause you to exceed the allowed number of subnet groups.
      * @throws DBSubnetQuotaExceededException
-     *         The request would cause you to exceed the allowed number of subnets in a DB subnet group.
+     *         The request would cause you to exceed the allowed number of subnets in a subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
-     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Subnets in the subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidSubnetException
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
@@ -812,9 +809,8 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB
-     * cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not
-     * deleted.
+     * Deletes a previously provisioned cluster. When you delete a cluster, all automated backups for that cluster are
+     * deleted and can't be recovered. Manual DB cluster snapshots of the specified cluster are not deleted.
      * </p>
      * <p/>
      * 
@@ -822,15 +818,15 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>DeleteDBCluster</a>.
      * @return Result of the DeleteDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws DBClusterSnapshotAlreadyExistsException
-     *         You already have a DB cluster snapshot with the given identifier.
+     *         You already have a cluster snapshot with the given identifier.
      * @throws SnapshotQuotaExceededException
-     *         The request would cause you to exceed the allowed number of DB snapshots.
+     *         The request would cause you to exceed the allowed number of snapshots.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The provided value isn't a valid DB cluster snapshot state.
+     *         The provided value isn't a valid cluster snapshot state.
      * @sample AmazonDocDB.DeleteDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -878,18 +874,18 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated
-     * with any DB clusters.
+     * Deletes a specified cluster parameter group. The cluster parameter group to be deleted can't be associated with
+     * any clusters.
      * </p>
      * 
      * @param deleteDBClusterParameterGroupRequest
      *        Represents the input to <a>DeleteDBClusterParameterGroup</a>.
      * @return Result of the DeleteDBClusterParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group is in use, or it is in a state that is not valid. If you are trying to delete the
+     *         The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the
      *         parameter group, you can't delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @sample AmazonDocDB.DeleteDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -938,11 +934,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.
+     * Deletes a cluster snapshot. If the snapshot is being copied, the copy operation is terminated.
      * </p>
      * <note>
      * <p>
-     * The DB cluster snapshot must be in the <code>available</code> state to be deleted.
+     * The cluster snapshot must be in the <code>available</code> state to be deleted.
      * </p>
      * </note>
      * 
@@ -950,9 +946,9 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>DeleteDBClusterSnapshot</a>.
      * @return Result of the DeleteDBClusterSnapshot operation returned by the service.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The provided value isn't a valid DB cluster snapshot state.
+     *         The provided value isn't a valid cluster snapshot state.
      * @throws DBClusterSnapshotNotFoundException
-     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
      * @sample AmazonDocDB.DeleteDBClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -1000,22 +996,22 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Deletes a previously provisioned DB instance.
+     * Deletes a previously provisioned instance.
      * </p>
      * 
      * @param deleteDBInstanceRequest
      *        Represents the input to <a>DeleteDBInstance</a>.
      * @return Result of the DeleteDBInstance operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @throws DBSnapshotAlreadyExistsException
      *         <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot.
      * @throws SnapshotQuotaExceededException
-     *         The request would cause you to exceed the allowed number of DB snapshots.
+     *         The request would cause you to exceed the allowed number of snapshots.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @sample AmazonDocDB.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -1063,7 +1059,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Deletes a DB subnet group.
+     * Deletes a subnet group.
      * </p>
      * <note>
      * <p>
@@ -1075,11 +1071,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>DeleteDBSubnetGroup</a>.
      * @return Result of the DeleteDBSubnetGroup operation returned by the service.
      * @throws InvalidDBSubnetGroupStateException
-     *         The DB subnet group can't be deleted because it's in use.
+     *         The subnet group can't be deleted because it's in use.
      * @throws InvalidDBSubnetStateException
-     *         The DB subnet isn't in the <i>available</i> state.
+     *         The subnet isn't in the <i>available</i> state.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @sample AmazonDocDB.DeleteDBSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1128,7 +1124,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns a list of certificate authority (CA) certificates provided by Amazon RDS for this AWS account.
+     * Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB for this AWS account.
      * </p>
      * 
      * @param describeCertificatesRequest
@@ -1185,14 +1181,14 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * <p>
      * Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
      * <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the
-     * specified DB cluster parameter group.
+     * specified cluster parameter group.
      * </p>
      * 
      * @param describeDBClusterParameterGroupsRequest
      *        Represents the input to <a>DescribeDBClusterParameterGroups</a>.
      * @return Result of the DescribeDBClusterParameterGroups operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @sample AmazonDocDB.DescribeDBClusterParameterGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameterGroups"
      *      target="_top">AWS API Documentation</a>
@@ -1242,14 +1238,14 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns the detailed parameter list for a particular DB cluster parameter group.
+     * Returns the detailed parameter list for a particular cluster parameter group.
      * </p>
      * 
      * @param describeDBClusterParametersRequest
      *        Represents the input to <a>DescribeDBClusterParameters</a>.
      * @return Result of the DescribeDBClusterParameters operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @sample AmazonDocDB.DescribeDBClusterParameters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameters"
      *      target="_top">AWS API Documentation</a>
@@ -1298,20 +1294,20 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.
+     * Returns a list of cluster snapshot attribute names and values for a manual DB cluster snapshot.
      * </p>
      * <p>
      * When you share snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
      * <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the
-     * manual DB cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code>
-     * attribute, then the manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.
+     * manual cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code>
+     * attribute, then the manual cluster snapshot is public and can be copied or restored by all AWS accounts.
      * </p>
      * 
      * @param describeDBClusterSnapshotAttributesRequest
      *        Represents the input to <a>DescribeDBClusterSnapshotAttributes</a>.
      * @return Result of the DescribeDBClusterSnapshotAttributes operation returned by the service.
      * @throws DBClusterSnapshotNotFoundException
-     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
      * @sample AmazonDocDB.DescribeDBClusterSnapshotAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -1362,14 +1358,14 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns information about DB cluster snapshots. This API operation supports pagination.
+     * Returns information about cluster snapshots. This API operation supports pagination.
      * </p>
      * 
      * @param describeDBClusterSnapshotsRequest
      *        Represents the input to <a>DescribeDBClusterSnapshots</a>.
      * @return Result of the DescribeDBClusterSnapshots operation returned by the service.
      * @throws DBClusterSnapshotNotFoundException
-     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
      * @sample AmazonDocDB.DescribeDBClusterSnapshots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshots"
      *      target="_top">AWS API Documentation</a>
@@ -1418,14 +1414,17 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns information about provisioned Amazon DocumentDB DB clusters. This API operation supports pagination.
+     * Returns information about provisioned Amazon DocumentDB clusters. This API operation supports pagination. For
+     * certain management features such as cluster and instance lifecycle management, Amazon DocumentDB leverages
+     * operational technology that is shared with Amazon RDS and Amazon Neptune. Use the
+     * <code>filterName=engine,Values=docdb</code> filter parameter to return only Amazon DocumentDB clusters.
      * </p>
      * 
      * @param describeDBClustersRequest
      *        Represents the input to <a>DescribeDBClusters</a>.
      * @return Result of the DescribeDBClusters operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @sample AmazonDocDB.DescribeDBClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusters" target="_top">AWS API
      *      Documentation</a>
@@ -1474,7 +1473,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns a list of the available DB engines.
+     * Returns a list of the available engines.
      * </p>
      * 
      * @param describeDBEngineVersionsRequest
@@ -1535,7 +1534,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>DescribeDBInstances</a>.
      * @return Result of the DescribeDBInstances operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @sample AmazonDocDB.DescribeDBInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBInstances" target="_top">AWS API
      *      Documentation</a>
@@ -1592,7 +1591,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>DescribeDBSubnetGroups</a>.
      * @return Result of the DescribeDBSubnetGroups operation returned by the service.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @sample AmazonDocDB.DescribeDBSubnetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBSubnetGroups" target="_top">AWS
      *      API Documentation</a>
@@ -1750,9 +1749,9 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14
-     * days. You can obtain events specific to a particular DB instance, DB security group, DB snapshot, or DB parameter
-     * group by providing the name as a parameter. By default, the events of the past hour are returned.
+     * Returns events related to instances, security groups, snapshots, and DB parameter groups for the past 14 days.
+     * You can obtain events specific to a particular DB instance, security group, snapshot, or parameter group by
+     * providing the name as a parameter. By default, the events of the past hour are returned.
      * </p>
      * 
      * @param describeEventsRequest
@@ -1806,7 +1805,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns a list of orderable DB instance options for the specified engine.
+     * Returns a list of orderable instance options for the specified engine.
      * </p>
      * 
      * @param describeOrderableDBInstanceOptionsRequest
@@ -1862,7 +1861,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.
+     * Returns a list of resources (for example, instances) that have at least one pending maintenance action.
      * </p>
      * 
      * @param describePendingMaintenanceActionsRequest
@@ -1919,11 +1918,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Forces a failover for a DB cluster.
+     * Forces a failover for a cluster.
      * </p>
      * <p>
-     * A failover for a DB cluster promotes one of the Amazon DocumentDB replicas (read-only instances) in the DB
-     * cluster to be the primary instance (the cluster writer).
+     * A failover for a cluster promotes one of the Amazon DocumentDB replicas (read-only instances) in the cluster to
+     * be the primary instance (the cluster writer).
      * </p>
      * <p>
      * If the primary instance fails, Amazon DocumentDB automatically fails over to an Amazon DocumentDB replica, if one
@@ -1934,11 +1933,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>FailoverDBCluster</a>.
      * @return Result of the FailoverDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @sample AmazonDocDB.FailoverDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1993,11 +1992,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>ListTagsForResource</a>.
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @throws DBSnapshotNotFoundException
-     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @sample AmazonDocDB.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -2046,37 +2045,37 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or more database configuration
-     * parameters by specifying these parameters and the new values in the request.
+     * Modifies a setting for an Amazon DocumentDB cluster. You can change one or more database configuration parameters
+     * by specifying these parameters and the new values in the request.
      * </p>
      * 
      * @param modifyDBClusterRequest
      *        Represents the input to <a>ModifyDBCluster</a>.
      * @return Result of the ModifyDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws StorageQuotaExceededException
-     *         The request would cause you to exceed the allowed amount of storage available across all DB instances.
+     *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @throws InvalidVPCNetworkStateException
-     *         The DB subnet group doesn't cover all Availability Zones after it is created because of changes that were
+     *         The subnet group doesn't cover all Availability Zones after it is created because of changes that were
      *         made.
      * @throws InvalidDBSubnetGroupStateException
-     *         The DB subnet group can't be deleted because it's in use.
+     *         The subnet group can't be deleted because it's in use.
      * @throws InvalidSubnetException
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
      *         virtual private cloud (VPC).
      * @throws DBClusterParameterGroupNotFoundException
-     *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
+     *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group.
      * @throws InvalidDBSecurityGroupStateException
-     *         The state of the DB security group doesn't allow deletion.
+     *         The state of the security group doesn't allow deletion.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @throws DBClusterAlreadyExistsException
-     *         You already have a DB cluster with the given identifier.
+     *         You already have a cluster with the given identifier.
      * @sample AmazonDocDB.ModifyDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -2124,7 +2123,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the
+     * Modifies the parameters of a cluster parameter group. To modify more than one parameter, submit a list of the
      * following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
      * parameters can be modified in a single request.
      * </p>
@@ -2135,12 +2134,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * </p>
      * </note> <important>
      * <p>
-     * After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB
-     * cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon DocumentDB
-     * to fully complete the create action before the parameter group is used as the default for a new DB cluster. This
-     * step is especially important for parameters that are critical when creating the default database for a DB
-     * cluster, such as the character set for the default database defined by the <code>character_set_database</code>
-     * parameter.
+     * After you create a cluster parameter group, you should wait at least 5 minutes before creating your first cluster
+     * that uses that cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully
+     * complete the create action before the parameter group is used as the default for a new cluster. This step is
+     * especially important for parameters that are critical when creating the default database for a cluster, such as
+     * the character set for the default database defined by the <code>character_set_database</code> parameter.
      * </p>
      * </important>
      * 
@@ -2148,9 +2146,9 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>ModifyDBClusterParameterGroup</a>.
      * @return Result of the ModifyDBClusterParameterGroup operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group is in use, or it is in a state that is not valid. If you are trying to delete the
+     *         The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the
      *         parameter group, you can't delete it when the parameter group is in this state.
      * @sample AmazonDocDB.ModifyDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup"
@@ -2203,13 +2201,13 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.
      * </p>
      * <p>
-     * To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the
+     * To share a manual cluster snapshot with other AWS accounts, specify <code>restore</code> as the
      * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
-     * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
-     * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not
-     * add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
-     * don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
-     * only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
+     * accounts that are authorized to restore the manual cluster snapshot. Use the value <code>all</code> to make the
+     * manual cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not add the
+     * <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want
+     * available to all AWS accounts. If a manual cluster snapshot is encrypted, it can be shared, but only by
+     * specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
      * <code>all</code> as a value for that parameter in this case.
      * </p>
      * 
@@ -2217,9 +2215,9 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>ModifyDBClusterSnapshotAttribute</a>.
      * @return Result of the ModifyDBClusterSnapshotAttribute operation returned by the service.
      * @throws DBClusterSnapshotNotFoundException
-     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The provided value isn't a valid DB cluster snapshot state.
+     *         The provided value isn't a valid cluster snapshot state.
      * @throws SharedSnapshotQuotaExceededException
      *         You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
      * @sample AmazonDocDB.ModifyDBClusterSnapshotAttribute
@@ -2271,7 +2269,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying
+     * Modifies settings for an instance. You can change one or more database configuration parameters by specifying
      * these parameters and the new values in the request.
      * </p>
      * 
@@ -2279,31 +2277,30 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>ModifyDBInstance</a>.
      * @return Result of the ModifyDBInstance operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @throws InvalidDBSecurityGroupStateException
-     *         The state of the DB security group doesn't allow deletion.
+     *         The state of the security group doesn't allow deletion.
      * @throws DBInstanceAlreadyExistsException
-     *         You already have a DB instance with the given identifier.
+     *         You already have a instance with the given identifier.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @throws DBSecurityGroupNotFoundException
-     *         <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
+     *         <code>DBSecurityGroupName</code> doesn't refer to an existing security group.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @throws InsufficientDBInstanceCapacityException
-     *         The specified DB instance class isn't available in the specified Availability Zone.
+     *         The specified instance class isn't available in the specified Availability Zone.
      * @throws StorageQuotaExceededException
-     *         The request would cause you to exceed the allowed amount of storage available across all DB instances.
+     *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @throws InvalidVPCNetworkStateException
-     *         The DB subnet group doesn't cover all Availability Zones after it is created because of changes that were
+     *         The subnet group doesn't cover all Availability Zones after it is created because of changes that were
      *         made.
      * @throws DBUpgradeDependencyFailureException
-     *         The DB upgrade failed because a resource that the DB depends on can't be modified.
+     *         The upgrade failed because a resource that the depends on can't be modified.
      * @throws StorageTypeNotSupportedException
      *         Storage of the specified <code>StorageType</code> can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
-     *         The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified DB security
-     *         group.</p>
+     *         The specified CIDR IP or Amazon EC2 security group isn't authorized for the specified security group.</p>
      *         <p>
      *         Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.
      * @throws CertificateNotFoundException
@@ -2355,21 +2352,21 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two
-     * Availability Zones in the AWS Region.
+     * Modifies an existing subnet group. subnet groups must contain at least one subnet in at least two Availability
+     * Zones in the AWS Region.
      * </p>
      * 
      * @param modifyDBSubnetGroupRequest
      *        Represents the input to <a>ModifyDBSubnetGroup</a>.
      * @return Result of the ModifyDBSubnetGroup operation returned by the service.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @throws DBSubnetQuotaExceededException
-     *         The request would cause you to exceed the allowed number of subnets in a DB subnet group.
+     *         The request would cause you to exceed the allowed number of subnets in a subnet group.
      * @throws SubnetAlreadyInUseException
-     *         The DB subnet is already in use in the Availability Zone.
+     *         The subnet is already in use in the Availability Zone.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
-     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Subnets in the subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidSubnetException
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
@@ -2421,22 +2418,22 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain
-     * changes, or if you change the DB cluster parameter group that is associated with the DB instance, you must reboot
-     * the instance for the changes to take effect.
+     * You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain
+     * changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the
+     * instance for the changes to take effect.
      * </p>
      * <p>
-     * Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary
-     * outage, during which the DB instance status is set to <i>rebooting</i>.
+     * Rebooting an instance restarts the database engine service. Rebooting an instance results in a momentary outage,
+     * during which the instance status is set to <i>rebooting</i>.
      * </p>
      * 
      * @param rebootDBInstanceRequest
      *        Represents the input to <a>RebootDBInstance</a>.
      * @return Result of the RebootDBInstance operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @sample AmazonDocDB.RebootDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RebootDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2491,11 +2488,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>RemoveTagsFromResource</a>.
      * @return Result of the RemoveTagsFromResource operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
      * @throws DBSnapshotNotFoundException
-     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @sample AmazonDocDB.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveTagsFromResource" target="_top">AWS
      *      API Documentation</a>
@@ -2544,9 +2541,9 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Modifies the parameters of a DB cluster parameter group to the default value. To reset specific parameters,
-     * submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
-     * cluster parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code>
+     * Modifies the parameters of a cluster parameter group to the default value. To reset specific parameters, submit a
+     * list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire cluster
+     * parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code>
      * parameters.
      * </p>
      * <p>
@@ -2558,10 +2555,10 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *        Represents the input to <a>ResetDBClusterParameterGroup</a>.
      * @return Result of the ResetDBClusterParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
-     *         The DB parameter group is in use, or it is in a state that is not valid. If you are trying to delete the
+     *         The parameter group is in use, or it is in a state that is not valid. If you are trying to delete the
      *         parameter group, you can't delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
-     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
      * @sample AmazonDocDB.ResetDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ResetDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -2610,51 +2607,51 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
+     * Creates a new cluster from a snapshot or cluster snapshot.
      * </p>
      * <p>
-     * If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default
+     * If a snapshot is specified, the target cluster is created from the source DB snapshot with a default
      * configuration and default security group.
      * </p>
      * <p>
-     * If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point
-     * with the same configuration as the original source DB cluster, except that the new DB cluster is created with the
-     * default security group.
+     * If a cluster snapshot is specified, the target cluster is created from the source cluster restore point with the
+     * same configuration as the original source DB cluster, except that the new cluster is created with the default
+     * security group.
      * </p>
      * 
      * @param restoreDBClusterFromSnapshotRequest
      *        Represents the input to <a>RestoreDBClusterFromSnapshot</a>.
      * @return Result of the RestoreDBClusterFromSnapshot operation returned by the service.
      * @throws DBClusterAlreadyExistsException
-     *         You already have a DB cluster with the given identifier.
+     *         You already have a cluster with the given identifier.
      * @throws DBClusterQuotaExceededException
-     *         The DB cluster can't be created because you have reached the maximum allowed quota of DB clusters.
+     *         The cluster can't be created because you have reached the maximum allowed quota of clusters.
      * @throws StorageQuotaExceededException
-     *         The request would cause you to exceed the allowed amount of storage available across all DB instances.
+     *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @throws DBSnapshotNotFoundException
-     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+     *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
      * @throws DBClusterSnapshotNotFoundException
-     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
      * @throws InsufficientDBClusterCapacityException
-     *         The DB cluster doesn't have enough capacity for the current operation.
+     *         The cluster doesn't have enough capacity for the current operation.
      * @throws InsufficientStorageClusterCapacityException
      *         There is not enough storage available for the current action. You might be able to resolve this error by
      *         updating your subnet group to use different Availability Zones that have more storage available.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot doesn't allow deletion.
+     *         The state of the snapshot doesn't allow deletion.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The provided value isn't a valid DB cluster snapshot state.
+     *         The provided value isn't a valid cluster snapshot state.
      * @throws StorageQuotaExceededException
-     *         The request would cause you to exceed the allowed amount of storage available across all DB instances.
+     *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @throws InvalidVPCNetworkStateException
-     *         The DB subnet group doesn't cover all Availability Zones after it is created because of changes that were
+     *         The subnet group doesn't cover all Availability Zones after it is created because of changes that were
      *         made.
      * @throws InvalidRestoreException
      *         You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB instance.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @throws InvalidSubnetException
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
      *         virtual private cloud (VPC).
@@ -2707,48 +2704,48 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before
-     * <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is
-     * created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB
-     * cluster is created with the default DB security group.
+     * Restores a cluster to an arbitrary point in time. Users can restore to any point in time before
+     * <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target cluster is
+     * created from the source cluster with the same configuration as the original cluster, except that the new cluster
+     * is created with the default security group.
      * </p>
      * 
      * @param restoreDBClusterToPointInTimeRequest
      *        Represents the input to <a>RestoreDBClusterToPointInTime</a>.
      * @return Result of the RestoreDBClusterToPointInTime operation returned by the service.
      * @throws DBClusterAlreadyExistsException
-     *         You already have a DB cluster with the given identifier.
+     *         You already have a cluster with the given identifier.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws DBClusterQuotaExceededException
-     *         The DB cluster can't be created because you have reached the maximum allowed quota of DB clusters.
+     *         The cluster can't be created because you have reached the maximum allowed quota of clusters.
      * @throws DBClusterSnapshotNotFoundException
-     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing cluster snapshot.
      * @throws DBSubnetGroupNotFoundException
-     *         <code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.
+     *         <code>DBSubnetGroupName</code> doesn't refer to an existing subnet group.
      * @throws InsufficientDBClusterCapacityException
-     *         The DB cluster doesn't have enough capacity for the current operation.
+     *         The cluster doesn't have enough capacity for the current operation.
      * @throws InsufficientStorageClusterCapacityException
      *         There is not enough storage available for the current action. You might be able to resolve this error by
      *         updating your subnet group to use different Availability Zones that have more storage available.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The provided value isn't a valid DB cluster snapshot state.
+     *         The provided value isn't a valid cluster snapshot state.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot doesn't allow deletion.
+     *         The state of the snapshot doesn't allow deletion.
      * @throws InvalidRestoreException
      *         You cannot restore from a virtual private cloud (VPC) backup to a non-VPC DB instance.
      * @throws InvalidSubnetException
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
      *         virtual private cloud (VPC).
      * @throws InvalidVPCNetworkStateException
-     *         The DB subnet group doesn't cover all Availability Zones after it is created because of changes that were
+     *         The subnet group doesn't cover all Availability Zones after it is created because of changes that were
      *         made.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred when accessing an AWS KMS key.
      * @throws StorageQuotaExceededException
-     *         The request would cause you to exceed the allowed amount of storage available across all DB instances.
+     *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @sample AmazonDocDB.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -2804,11 +2801,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * @param startDBClusterRequest
      * @return Result of the StartDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @sample AmazonDocDB.StartDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StartDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -2865,11 +2862,11 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * @param stopDBClusterRequest
      * @return Result of the StopDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster isn't in a valid state.
+     *         The cluster isn't in a valid state.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance isn't in the <i>available</i> state.
+     *         The specified instance isn't in the <i>available</i> state.
      * @sample AmazonDocDB.StopDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/StopDBCluster" target="_top">AWS API
      *      Documentation</a>

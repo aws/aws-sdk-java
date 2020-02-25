@@ -56,6 +56,12 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date notBefore;
+    /**
+     * <p>
+     * The ID of the instance associated with the event.
+     * </p>
+     */
+    private String instanceId;
 
     /**
      * <p>
@@ -258,6 +264,46 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the instance associated with the event.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance associated with the event.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance associated with the event.
+     * </p>
+     * 
+     * @return The ID of the instance associated with the event.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance associated with the event.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance associated with the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeStatusEvent withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -278,7 +324,9 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
         if (getNotAfter() != null)
             sb.append("NotAfter: ").append(getNotAfter()).append(",");
         if (getNotBefore() != null)
-            sb.append("NotBefore: ").append(getNotBefore());
+            sb.append("NotBefore: ").append(getNotBefore()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -313,6 +361,10 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
             return false;
         if (other.getNotBefore() != null && other.getNotBefore().equals(this.getNotBefore()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -326,6 +378,7 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getNotAfter() == null) ? 0 : getNotAfter().hashCode());
         hashCode = prime * hashCode + ((getNotBefore() == null) ? 0 : getNotBefore().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

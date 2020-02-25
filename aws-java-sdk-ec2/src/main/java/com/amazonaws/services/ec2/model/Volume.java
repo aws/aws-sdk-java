@@ -127,6 +127,12 @@ public class Volume implements Serializable, Cloneable {
      * </p>
      */
     private Boolean fastRestored;
+    /**
+     * <p>
+     * Indicates whether Amazon EBS Multi-Attach is enabled.
+     * </p>
+     */
+    private Boolean multiAttachEnabled;
 
     /**
      * <p>
@@ -962,6 +968,58 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether Amazon EBS Multi-Attach is enabled.
+     * </p>
+     * 
+     * @param multiAttachEnabled
+     *        Indicates whether Amazon EBS Multi-Attach is enabled.
+     */
+
+    public void setMultiAttachEnabled(Boolean multiAttachEnabled) {
+        this.multiAttachEnabled = multiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EBS Multi-Attach is enabled.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EBS Multi-Attach is enabled.
+     */
+
+    public Boolean getMultiAttachEnabled() {
+        return this.multiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EBS Multi-Attach is enabled.
+     * </p>
+     * 
+     * @param multiAttachEnabled
+     *        Indicates whether Amazon EBS Multi-Attach is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withMultiAttachEnabled(Boolean multiAttachEnabled) {
+        setMultiAttachEnabled(multiAttachEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EBS Multi-Attach is enabled.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EBS Multi-Attach is enabled.
+     */
+
+    public Boolean isMultiAttachEnabled() {
+        return this.multiAttachEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1000,7 +1058,9 @@ public class Volume implements Serializable, Cloneable {
         if (getVolumeType() != null)
             sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getFastRestored() != null)
-            sb.append("FastRestored: ").append(getFastRestored());
+            sb.append("FastRestored: ").append(getFastRestored()).append(",");
+        if (getMultiAttachEnabled() != null)
+            sb.append("MultiAttachEnabled: ").append(getMultiAttachEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -1071,6 +1131,10 @@ public class Volume implements Serializable, Cloneable {
             return false;
         if (other.getFastRestored() != null && other.getFastRestored().equals(this.getFastRestored()) == false)
             return false;
+        if (other.getMultiAttachEnabled() == null ^ this.getMultiAttachEnabled() == null)
+            return false;
+        if (other.getMultiAttachEnabled() != null && other.getMultiAttachEnabled().equals(this.getMultiAttachEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -1093,6 +1157,7 @@ public class Volume implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getFastRestored() == null) ? 0 : getFastRestored().hashCode());
+        hashCode = prime * hashCode + ((getMultiAttachEnabled() == null) ? 0 : getMultiAttachEnabled().hashCode());
         return hashCode;
     }
 

@@ -138,6 +138,25 @@ public class CreateStackSetRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("ExecutionRoleName", StringUtils.fromString(createStackSetRequest.getExecutionRoleName()));
         }
 
+        if (createStackSetRequest.getPermissionModel() != null) {
+            request.addParameter("PermissionModel", StringUtils.fromString(createStackSetRequest.getPermissionModel()));
+        }
+
+        {
+            AutoDeployment autoDeployment = createStackSetRequest.getAutoDeployment();
+            if (autoDeployment != null) {
+
+                if (autoDeployment.getEnabled() != null) {
+                    request.addParameter("AutoDeployment.Enabled", StringUtils.fromBoolean(autoDeployment.getEnabled()));
+                }
+
+                if (autoDeployment.getRetainStacksOnAccountRemoval() != null) {
+                    request.addParameter("AutoDeployment.RetainStacksOnAccountRemoval",
+                            StringUtils.fromBoolean(autoDeployment.getRetainStacksOnAccountRemoval()));
+                }
+            }
+        }
+
         request.addParameter("ClientRequestToken", IdempotentUtils.resolveString(createStackSetRequest.getClientRequestToken()));
 
         return request;

@@ -56,6 +56,9 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * cluster as this user to manage key material on your behalf.
      * </p>
      * <p>
+     * The password must be a string of 7 to 32 characters. Its value is case sensitive.
+     * </p>
+     * <p>
      * This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change the password in the
      * AWS CloudHSM cluster.
      * </p>
@@ -223,6 +226,9 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * cluster as this user to manage key material on your behalf.
      * </p>
      * <p>
+     * The password must be a string of 7 to 32 characters. Its value is case sensitive.
+     * </p>
+     * <p>
      * This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change the password in the
      * AWS CloudHSM cluster.
      * </p>
@@ -232,6 +238,9 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      *        <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into
      *        the cluster as this user to manage key material on your behalf.</p>
+     *        <p>
+     *        The password must be a string of 7 to 32 characters. Its value is case sensitive.
+     *        </p>
      *        <p>
      *        This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change the password in
      *        the AWS CloudHSM cluster.
@@ -249,6 +258,9 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * cluster as this user to manage key material on your behalf.
      * </p>
      * <p>
+     * The password must be a string of 7 to 32 characters. Its value is case sensitive.
+     * </p>
+     * <p>
      * This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change the password in the
      * AWS CloudHSM cluster.
      * </p>
@@ -257,6 +269,9 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      *         <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs
      *         into the cluster as this user to manage key material on your behalf.</p>
+     *         <p>
+     *         The password must be a string of 7 to 32 characters. Its value is case sensitive.
+     *         </p>
      *         <p>
      *         This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change the password
      *         in the AWS CloudHSM cluster.
@@ -274,6 +289,9 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      * cluster as this user to manage key material on your behalf.
      * </p>
      * <p>
+     * The password must be a string of 7 to 32 characters. Its value is case sensitive.
+     * </p>
+     * <p>
      * This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change the password in the
      * AWS CloudHSM cluster.
      * </p>
@@ -283,6 +301,9 @@ public class CreateCustomKeyStoreRequest extends com.amazonaws.AmazonWebServiceR
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      *        <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into
      *        the cluster as this user to manage key material on your behalf.</p>
+     *        <p>
+     *        The password must be a string of 7 to 32 characters. Its value is case sensitive.
+     *        </p>
      *        <p>
      *        This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change the password in
      *        the AWS CloudHSM cluster.

@@ -25,23 +25,24 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of details about the Security Hub member accounts.
+     * The list of details about the Security Hub member accounts.
      * </p>
      */
     private java.util.List<Member> members;
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * The list of AWS accounts that could not be processed. For each account, the list includes the account ID and the
+     * email address.
      * </p>
      */
     private java.util.List<Result> unprocessedAccounts;
 
     /**
      * <p>
-     * A list of details about the Security Hub member accounts.
+     * The list of details about the Security Hub member accounts.
      * </p>
      * 
-     * @return A list of details about the Security Hub member accounts.
+     * @return The list of details about the Security Hub member accounts.
      */
 
     public java.util.List<Member> getMembers() {
@@ -50,11 +51,11 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of details about the Security Hub member accounts.
+     * The list of details about the Security Hub member accounts.
      * </p>
      * 
      * @param members
-     *        A list of details about the Security Hub member accounts.
+     *        The list of details about the Security Hub member accounts.
      */
 
     public void setMembers(java.util.Collection<Member> members) {
@@ -68,7 +69,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of details about the Security Hub member accounts.
+     * The list of details about the Security Hub member accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +78,7 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param members
-     *        A list of details about the Security Hub member accounts.
+     *        The list of details about the Security Hub member accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +94,11 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of details about the Security Hub member accounts.
+     * The list of details about the Security Hub member accounts.
      * </p>
      * 
      * @param members
-     *        A list of details about the Security Hub member accounts.
+     *        The list of details about the Security Hub member accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,10 +109,12 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * The list of AWS accounts that could not be processed. For each account, the list includes the account ID and the
+     * email address.
      * </p>
      * 
-     * @return A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * @return The list of AWS accounts that could not be processed. For each account, the list includes the account ID
+     *         and the email address.
      */
 
     public java.util.List<Result> getUnprocessedAccounts() {
@@ -120,11 +123,13 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * The list of AWS accounts that could not be processed. For each account, the list includes the account ID and the
+     * email address.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     *        The list of AWS accounts that could not be processed. For each account, the list includes the account ID
+     *        and the email address.
      */
 
     public void setUnprocessedAccounts(java.util.Collection<Result> unprocessedAccounts) {
@@ -138,7 +143,8 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * The list of AWS accounts that could not be processed. For each account, the list includes the account ID and the
+     * email address.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +153,8 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     *        The list of AWS accounts that could not be processed. For each account, the list includes the account ID
+     *        and the email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +170,13 @@ public class GetMembersResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     * The list of AWS accounts that could not be processed. For each account, the list includes the account ID and the
+     * email address.
      * </p>
      * 
      * @param unprocessedAccounts
-     *        A list of account ID and email address pairs of the AWS accounts that couldn't be processed.
+     *        The list of AWS accounts that could not be processed. For each account, the list includes the account ID
+     *        and the email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

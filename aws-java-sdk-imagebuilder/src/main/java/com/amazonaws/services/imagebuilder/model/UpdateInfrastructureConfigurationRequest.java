@@ -27,7 +27,7 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to update.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
      * </p>
      */
     private String infrastructureConfigurationArn;
@@ -39,8 +39,8 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
     private String description;
     /**
      * <p>
-     * The instance types of the infrastructure configuration. You may specify one or more instance types to use for
-     * this build, the service will pick one of these instance types based on availability.
+     * The instance types of the infrastructure configuration. You can specify one or more instance types to use for
+     * this build. The service will pick one of these instance types based on availability.
      * </p>
      */
     private java.util.List<String> instanceTypes;
@@ -70,16 +70,15 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
     private Logging logging;
     /**
      * <p>
-     * The key pair of the infrastructure configuration. This can be used to log onto and debug the instance used to
+     * The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to
      * create your image.
      * </p>
      */
     private String keyPair;
     /**
      * <p>
-     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish for Image
-     * Builder to retain the instance used to configure your AMI in the event that the build or test phase of your
-     * workflow failed.
+     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image
+     * Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.
      * </p>
      */
     private Boolean terminateInstanceOnFailure;
@@ -98,11 +97,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to update.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to update.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
      */
 
     public void setInfrastructureConfigurationArn(String infrastructureConfigurationArn) {
@@ -111,10 +110,10 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to update.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to update.
+     * @return The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
      */
 
     public String getInfrastructureConfigurationArn() {
@@ -123,11 +122,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to update.
+     * The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
      * </p>
      * 
      * @param infrastructureConfigurationArn
-     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you wish to update.
+     *        The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,12 +177,12 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The instance types of the infrastructure configuration. You may specify one or more instance types to use for
-     * this build, the service will pick one of these instance types based on availability.
+     * The instance types of the infrastructure configuration. You can specify one or more instance types to use for
+     * this build. The service will pick one of these instance types based on availability.
      * </p>
      * 
-     * @return The instance types of the infrastructure configuration. You may specify one or more instance types to use
-     *         for this build, the service will pick one of these instance types based on availability.
+     * @return The instance types of the infrastructure configuration. You can specify one or more instance types to use
+     *         for this build. The service will pick one of these instance types based on availability.
      */
 
     public java.util.List<String> getInstanceTypes() {
@@ -192,13 +191,13 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The instance types of the infrastructure configuration. You may specify one or more instance types to use for
-     * this build, the service will pick one of these instance types based on availability.
+     * The instance types of the infrastructure configuration. You can specify one or more instance types to use for
+     * this build. The service will pick one of these instance types based on availability.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types of the infrastructure configuration. You may specify one or more instance types to use
-     *        for this build, the service will pick one of these instance types based on availability.
+     *        The instance types of the infrastructure configuration. You can specify one or more instance types to use
+     *        for this build. The service will pick one of these instance types based on availability.
      */
 
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -212,8 +211,8 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The instance types of the infrastructure configuration. You may specify one or more instance types to use for
-     * this build, the service will pick one of these instance types based on availability.
+     * The instance types of the infrastructure configuration. You can specify one or more instance types to use for
+     * this build. The service will pick one of these instance types based on availability.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -222,8 +221,8 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types of the infrastructure configuration. You may specify one or more instance types to use
-     *        for this build, the service will pick one of these instance types based on availability.
+     *        The instance types of the infrastructure configuration. You can specify one or more instance types to use
+     *        for this build. The service will pick one of these instance types based on availability.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,13 +238,13 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The instance types of the infrastructure configuration. You may specify one or more instance types to use for
-     * this build, the service will pick one of these instance types based on availability.
+     * The instance types of the infrastructure configuration. You can specify one or more instance types to use for
+     * this build. The service will pick one of these instance types based on availability.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types of the infrastructure configuration. You may specify one or more instance types to use
-     *        for this build, the service will pick one of these instance types based on availability.
+     *        The instance types of the infrastructure configuration. You can specify one or more instance types to use
+     *        for this build. The service will pick one of these instance types based on availability.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,13 +445,13 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The key pair of the infrastructure configuration. This can be used to log onto and debug the instance used to
+     * The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to
      * create your image.
      * </p>
      * 
      * @param keyPair
-     *        The key pair of the infrastructure configuration. This can be used to log onto and debug the instance used
-     *        to create your image.
+     *        The key pair of the infrastructure configuration. This can be used to log on to and debug the instance
+     *        used to create your image.
      */
 
     public void setKeyPair(String keyPair) {
@@ -461,11 +460,11 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The key pair of the infrastructure configuration. This can be used to log onto and debug the instance used to
+     * The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to
      * create your image.
      * </p>
      * 
-     * @return The key pair of the infrastructure configuration. This can be used to log onto and debug the instance
+     * @return The key pair of the infrastructure configuration. This can be used to log on to and debug the instance
      *         used to create your image.
      */
 
@@ -475,13 +474,13 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The key pair of the infrastructure configuration. This can be used to log onto and debug the instance used to
+     * The key pair of the infrastructure configuration. This can be used to log on to and debug the instance used to
      * create your image.
      * </p>
      * 
      * @param keyPair
-     *        The key pair of the infrastructure configuration. This can be used to log onto and debug the instance used
-     *        to create your image.
+     *        The key pair of the infrastructure configuration. This can be used to log on to and debug the instance
+     *        used to create your image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,15 +491,14 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish for Image
-     * Builder to retain the instance used to configure your AMI in the event that the build or test phase of your
-     * workflow failed.
+     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image
+     * Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.
      * </p>
      * 
      * @param terminateInstanceOnFailure
-     *        The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish
-     *        for Image Builder to retain the instance used to configure your AMI in the event that the build or test
-     *        phase of your workflow failed.
+     *        The terminate instance on failure setting of the infrastructure configuration. Set to false if you want
+     *        Image Builder to retain the instance used to configure your AMI if the build or test phase of your
+     *        workflow fails.
      */
 
     public void setTerminateInstanceOnFailure(Boolean terminateInstanceOnFailure) {
@@ -509,14 +507,13 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish for Image
-     * Builder to retain the instance used to configure your AMI in the event that the build or test phase of your
-     * workflow failed.
+     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image
+     * Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.
      * </p>
      * 
-     * @return The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish
-     *         for Image Builder to retain the instance used to configure your AMI in the event that the build or test
-     *         phase of your workflow failed.
+     * @return The terminate instance on failure setting of the infrastructure configuration. Set to false if you want
+     *         Image Builder to retain the instance used to configure your AMI if the build or test phase of your
+     *         workflow fails.
      */
 
     public Boolean getTerminateInstanceOnFailure() {
@@ -525,15 +522,14 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish for Image
-     * Builder to retain the instance used to configure your AMI in the event that the build or test phase of your
-     * workflow failed.
+     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image
+     * Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.
      * </p>
      * 
      * @param terminateInstanceOnFailure
-     *        The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish
-     *        for Image Builder to retain the instance used to configure your AMI in the event that the build or test
-     *        phase of your workflow failed.
+     *        The terminate instance on failure setting of the infrastructure configuration. Set to false if you want
+     *        Image Builder to retain the instance used to configure your AMI if the build or test phase of your
+     *        workflow fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,14 +540,13 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish for Image
-     * Builder to retain the instance used to configure your AMI in the event that the build or test phase of your
-     * workflow failed.
+     * The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image
+     * Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.
      * </p>
      * 
-     * @return The terminate instance on failure setting of the infrastructure configuration. Set to false if you wish
-     *         for Image Builder to retain the instance used to configure your AMI in the event that the build or test
-     *         phase of your workflow failed.
+     * @return The terminate instance on failure setting of the infrastructure configuration. Set to false if you want
+     *         Image Builder to retain the instance used to configure your AMI if the build or test phase of your
+     *         workflow fails.
      */
 
     public Boolean isTerminateInstanceOnFailure() {

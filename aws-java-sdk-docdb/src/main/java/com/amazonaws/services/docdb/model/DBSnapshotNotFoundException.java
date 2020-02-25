@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
+ * <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

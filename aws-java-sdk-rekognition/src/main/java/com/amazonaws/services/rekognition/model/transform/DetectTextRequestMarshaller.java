@@ -29,6 +29,8 @@ public class DetectTextRequestMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> IMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Image").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filters").build();
 
     private static final DetectTextRequestMarshaller instance = new DetectTextRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DetectTextRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(detectTextRequest.getImage(), IMAGE_BINDING);
+            protocolMarshaller.marshall(detectTextRequest.getFilters(), FILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

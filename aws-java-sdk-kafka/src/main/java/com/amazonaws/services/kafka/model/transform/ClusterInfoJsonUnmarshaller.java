@@ -100,6 +100,10 @@ public class ClusterInfoJsonUnmarshaller implements Unmarshaller<ClusterInfo, Js
                     context.nextToken();
                     clusterInfo.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stateInfo", targetDepth)) {
+                    context.nextToken();
+                    clusterInfo.setStateInfo(StateInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     clusterInfo.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

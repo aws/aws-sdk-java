@@ -21,6 +21,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Additional details about a resource related to a finding.
  * </p>
+ * <p>
+ * To provide the details, use the object that corresponds to the resource type. For example, if the resource type is
+ * <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code> object to provide the details.
+ * </p>
+ * <p>
+ * If the type-specific object does not contain all of the fields you want to populate, then you use the
+ * <code>Other</code> object to populate those additional fields.
+ * </p>
+ * <p>
+ * You also use the <code>Other</code> object to populate the details when the selected type does not have a
+ * corresponding object.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ResourceDetails" target="_top">AWS API
  *      Documentation</a>
@@ -28,6 +40,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceDetails implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Details for an AWS CodeBuild project.
+     * </p>
+     */
+    private AwsCodeBuildProjectDetails awsCodeBuildProject;
     /**
      * <p>
      * Details about a CloudFront distribution.
@@ -42,10 +60,28 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsEc2InstanceDetails awsEc2Instance;
     /**
      * <p>
+     * Details for an AWS EC2 network interface.
+     * </p>
+     */
+    private AwsEc2NetworkInterfaceDetails awsEc2NetworkInterface;
+    /**
+     * <p>
+     * Details for an EC2 security group.
+     * </p>
+     */
+    private AwsEc2SecurityGroupDetails awsEc2SecurityGroup;
+    /**
+     * <p>
      * Details about a load balancer.
      * </p>
      */
     private AwsElbv2LoadBalancerDetails awsElbv2LoadBalancer;
+    /**
+     * <p>
+     * Details for an Elasticsearch domain.
+     * </p>
+     */
+    private AwsElasticsearchDomainDetails awsElasticsearchDomain;
     /**
      * <p>
      * Details about an Amazon S3 Bucket related to a finding.
@@ -78,6 +114,18 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsLambdaFunctionDetails awsLambdaFunction;
     /**
      * <p>
+     * Details for a Lambda layer version.
+     * </p>
+     */
+    private AwsLambdaLayerVersionDetails awsLambdaLayerVersion;
+    /**
+     * <p>
+     * Details for an RDS database instance.
+     * </p>
+     */
+    private AwsRdsDbInstanceDetails awsRdsDbInstance;
+    /**
+     * <p>
      * Details about an SNS topic.
      * </p>
      */
@@ -90,16 +138,78 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsSqsQueueDetails awsSqsQueue;
     /**
      * <p>
+     * Details for a WAF WebACL.
+     * </p>
+     */
+    private AwsWafWebAclDetails awsWafWebAcl;
+    /**
+     * <p>
      * Details about a container resource related to a finding.
      * </p>
      */
     private ContainerDetails container;
     /**
      * <p>
-     * Details about a resource that doesn't have a specific type defined.
+     * Details about a resource that are not available in a type-specific details object. Use the <code>Other</code>
+     * object in the following cases.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The type-specific object does not contain all of the fields that you want to populate. In this case, first use
+     * the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that
+     * are missing from the type-specific object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resource type does not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Map<String, String> other;
+
+    /**
+     * <p>
+     * Details for an AWS CodeBuild project.
+     * </p>
+     * 
+     * @param awsCodeBuildProject
+     *        Details for an AWS CodeBuild project.
+     */
+
+    public void setAwsCodeBuildProject(AwsCodeBuildProjectDetails awsCodeBuildProject) {
+        this.awsCodeBuildProject = awsCodeBuildProject;
+    }
+
+    /**
+     * <p>
+     * Details for an AWS CodeBuild project.
+     * </p>
+     * 
+     * @return Details for an AWS CodeBuild project.
+     */
+
+    public AwsCodeBuildProjectDetails getAwsCodeBuildProject() {
+        return this.awsCodeBuildProject;
+    }
+
+    /**
+     * <p>
+     * Details for an AWS CodeBuild project.
+     * </p>
+     * 
+     * @param awsCodeBuildProject
+     *        Details for an AWS CodeBuild project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsCodeBuildProject(AwsCodeBuildProjectDetails awsCodeBuildProject) {
+        setAwsCodeBuildProject(awsCodeBuildProject);
+        return this;
+    }
 
     /**
      * <p>
@@ -183,6 +293,86 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details for an AWS EC2 network interface.
+     * </p>
+     * 
+     * @param awsEc2NetworkInterface
+     *        Details for an AWS EC2 network interface.
+     */
+
+    public void setAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails awsEc2NetworkInterface) {
+        this.awsEc2NetworkInterface = awsEc2NetworkInterface;
+    }
+
+    /**
+     * <p>
+     * Details for an AWS EC2 network interface.
+     * </p>
+     * 
+     * @return Details for an AWS EC2 network interface.
+     */
+
+    public AwsEc2NetworkInterfaceDetails getAwsEc2NetworkInterface() {
+        return this.awsEc2NetworkInterface;
+    }
+
+    /**
+     * <p>
+     * Details for an AWS EC2 network interface.
+     * </p>
+     * 
+     * @param awsEc2NetworkInterface
+     *        Details for an AWS EC2 network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails awsEc2NetworkInterface) {
+        setAwsEc2NetworkInterface(awsEc2NetworkInterface);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 security group.
+     * </p>
+     * 
+     * @param awsEc2SecurityGroup
+     *        Details for an EC2 security group.
+     */
+
+    public void setAwsEc2SecurityGroup(AwsEc2SecurityGroupDetails awsEc2SecurityGroup) {
+        this.awsEc2SecurityGroup = awsEc2SecurityGroup;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 security group.
+     * </p>
+     * 
+     * @return Details for an EC2 security group.
+     */
+
+    public AwsEc2SecurityGroupDetails getAwsEc2SecurityGroup() {
+        return this.awsEc2SecurityGroup;
+    }
+
+    /**
+     * <p>
+     * Details for an EC2 security group.
+     * </p>
+     * 
+     * @param awsEc2SecurityGroup
+     *        Details for an EC2 security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2SecurityGroup(AwsEc2SecurityGroupDetails awsEc2SecurityGroup) {
+        setAwsEc2SecurityGroup(awsEc2SecurityGroup);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about a load balancer.
      * </p>
      * 
@@ -218,6 +408,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetails awsElbv2LoadBalancer) {
         setAwsElbv2LoadBalancer(awsElbv2LoadBalancer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details for an Elasticsearch domain.
+     * </p>
+     * 
+     * @param awsElasticsearchDomain
+     *        Details for an Elasticsearch domain.
+     */
+
+    public void setAwsElasticsearchDomain(AwsElasticsearchDomainDetails awsElasticsearchDomain) {
+        this.awsElasticsearchDomain = awsElasticsearchDomain;
+    }
+
+    /**
+     * <p>
+     * Details for an Elasticsearch domain.
+     * </p>
+     * 
+     * @return Details for an Elasticsearch domain.
+     */
+
+    public AwsElasticsearchDomainDetails getAwsElasticsearchDomain() {
+        return this.awsElasticsearchDomain;
+    }
+
+    /**
+     * <p>
+     * Details for an Elasticsearch domain.
+     * </p>
+     * 
+     * @param awsElasticsearchDomain
+     *        Details for an Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsElasticsearchDomain(AwsElasticsearchDomainDetails awsElasticsearchDomain) {
+        setAwsElasticsearchDomain(awsElasticsearchDomain);
         return this;
     }
 
@@ -423,6 +653,86 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details for a Lambda layer version.
+     * </p>
+     * 
+     * @param awsLambdaLayerVersion
+     *        Details for a Lambda layer version.
+     */
+
+    public void setAwsLambdaLayerVersion(AwsLambdaLayerVersionDetails awsLambdaLayerVersion) {
+        this.awsLambdaLayerVersion = awsLambdaLayerVersion;
+    }
+
+    /**
+     * <p>
+     * Details for a Lambda layer version.
+     * </p>
+     * 
+     * @return Details for a Lambda layer version.
+     */
+
+    public AwsLambdaLayerVersionDetails getAwsLambdaLayerVersion() {
+        return this.awsLambdaLayerVersion;
+    }
+
+    /**
+     * <p>
+     * Details for a Lambda layer version.
+     * </p>
+     * 
+     * @param awsLambdaLayerVersion
+     *        Details for a Lambda layer version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsLambdaLayerVersion(AwsLambdaLayerVersionDetails awsLambdaLayerVersion) {
+        setAwsLambdaLayerVersion(awsLambdaLayerVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details for an RDS database instance.
+     * </p>
+     * 
+     * @param awsRdsDbInstance
+     *        Details for an RDS database instance.
+     */
+
+    public void setAwsRdsDbInstance(AwsRdsDbInstanceDetails awsRdsDbInstance) {
+        this.awsRdsDbInstance = awsRdsDbInstance;
+    }
+
+    /**
+     * <p>
+     * Details for an RDS database instance.
+     * </p>
+     * 
+     * @return Details for an RDS database instance.
+     */
+
+    public AwsRdsDbInstanceDetails getAwsRdsDbInstance() {
+        return this.awsRdsDbInstance;
+    }
+
+    /**
+     * <p>
+     * Details for an RDS database instance.
+     * </p>
+     * 
+     * @param awsRdsDbInstance
+     *        Details for an RDS database instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsRdsDbInstance(AwsRdsDbInstanceDetails awsRdsDbInstance) {
+        setAwsRdsDbInstance(awsRdsDbInstance);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about an SNS topic.
      * </p>
      * 
@@ -503,6 +813,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details for a WAF WebACL.
+     * </p>
+     * 
+     * @param awsWafWebAcl
+     *        Details for a WAF WebACL.
+     */
+
+    public void setAwsWafWebAcl(AwsWafWebAclDetails awsWafWebAcl) {
+        this.awsWafWebAcl = awsWafWebAcl;
+    }
+
+    /**
+     * <p>
+     * Details for a WAF WebACL.
+     * </p>
+     * 
+     * @return Details for a WAF WebACL.
+     */
+
+    public AwsWafWebAclDetails getAwsWafWebAcl() {
+        return this.awsWafWebAcl;
+    }
+
+    /**
+     * <p>
+     * Details for a WAF WebACL.
+     * </p>
+     * 
+     * @param awsWafWebAcl
+     *        Details for a WAF WebACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafWebAcl(AwsWafWebAclDetails awsWafWebAcl) {
+        setAwsWafWebAcl(awsWafWebAcl);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about a container resource related to a finding.
      * </p>
      * 
@@ -543,10 +893,41 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about a resource that doesn't have a specific type defined.
+     * Details about a resource that are not available in a type-specific details object. Use the <code>Other</code>
+     * object in the following cases.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The type-specific object does not contain all of the fields that you want to populate. In this case, first use
+     * the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that
+     * are missing from the type-specific object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resource type does not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Details about a resource that doesn't have a specific type defined.
+     * @return Details about a resource that are not available in a type-specific details object. Use the
+     *         <code>Other</code> object in the following cases.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The type-specific object does not contain all of the fields that you want to populate. In this case,
+     *         first use the type-specific object to populate those fields. Use the <code>Other</code> object to
+     *         populate the fields that are missing from the type-specific object.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The resource type does not have a corresponding object. This includes resources for which the type is
+     *         <code>Other</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getOther() {
@@ -555,11 +936,42 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about a resource that doesn't have a specific type defined.
+     * Details about a resource that are not available in a type-specific details object. Use the <code>Other</code>
+     * object in the following cases.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The type-specific object does not contain all of the fields that you want to populate. In this case, first use
+     * the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that
+     * are missing from the type-specific object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resource type does not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param other
-     *        Details about a resource that doesn't have a specific type defined.
+     *        Details about a resource that are not available in a type-specific details object. Use the
+     *        <code>Other</code> object in the following cases.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The type-specific object does not contain all of the fields that you want to populate. In this case, first
+     *        use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the
+     *        fields that are missing from the type-specific object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The resource type does not have a corresponding object. This includes resources for which the type is
+     *        <code>Other</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setOther(java.util.Map<String, String> other) {
@@ -568,11 +980,42 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details about a resource that doesn't have a specific type defined.
+     * Details about a resource that are not available in a type-specific details object. Use the <code>Other</code>
+     * object in the following cases.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The type-specific object does not contain all of the fields that you want to populate. In this case, first use
+     * the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that
+     * are missing from the type-specific object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resource type does not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param other
-     *        Details about a resource that doesn't have a specific type defined.
+     *        Details about a resource that are not available in a type-specific details object. Use the
+     *        <code>Other</code> object in the following cases.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The type-specific object does not contain all of the fields that you want to populate. In this case, first
+     *        use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the
+     *        fields that are missing from the type-specific object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The resource type does not have a corresponding object. This includes resources for which the type is
+     *        <code>Other</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,12 +1057,20 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAwsCodeBuildProject() != null)
+            sb.append("AwsCodeBuildProject: ").append(getAwsCodeBuildProject()).append(",");
         if (getAwsCloudFrontDistribution() != null)
             sb.append("AwsCloudFrontDistribution: ").append(getAwsCloudFrontDistribution()).append(",");
         if (getAwsEc2Instance() != null)
             sb.append("AwsEc2Instance: ").append(getAwsEc2Instance()).append(",");
+        if (getAwsEc2NetworkInterface() != null)
+            sb.append("AwsEc2NetworkInterface: ").append(getAwsEc2NetworkInterface()).append(",");
+        if (getAwsEc2SecurityGroup() != null)
+            sb.append("AwsEc2SecurityGroup: ").append(getAwsEc2SecurityGroup()).append(",");
         if (getAwsElbv2LoadBalancer() != null)
             sb.append("AwsElbv2LoadBalancer: ").append(getAwsElbv2LoadBalancer()).append(",");
+        if (getAwsElasticsearchDomain() != null)
+            sb.append("AwsElasticsearchDomain: ").append(getAwsElasticsearchDomain()).append(",");
         if (getAwsS3Bucket() != null)
             sb.append("AwsS3Bucket: ").append(getAwsS3Bucket()).append(",");
         if (getAwsIamAccessKey() != null)
@@ -630,10 +1081,16 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsKmsKey: ").append(getAwsKmsKey()).append(",");
         if (getAwsLambdaFunction() != null)
             sb.append("AwsLambdaFunction: ").append(getAwsLambdaFunction()).append(",");
+        if (getAwsLambdaLayerVersion() != null)
+            sb.append("AwsLambdaLayerVersion: ").append(getAwsLambdaLayerVersion()).append(",");
+        if (getAwsRdsDbInstance() != null)
+            sb.append("AwsRdsDbInstance: ").append(getAwsRdsDbInstance()).append(",");
         if (getAwsSnsTopic() != null)
             sb.append("AwsSnsTopic: ").append(getAwsSnsTopic()).append(",");
         if (getAwsSqsQueue() != null)
             sb.append("AwsSqsQueue: ").append(getAwsSqsQueue()).append(",");
+        if (getAwsWafWebAcl() != null)
+            sb.append("AwsWafWebAcl: ").append(getAwsWafWebAcl()).append(",");
         if (getContainer() != null)
             sb.append("Container: ").append(getContainer()).append(",");
         if (getOther() != null)
@@ -652,6 +1109,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof ResourceDetails == false)
             return false;
         ResourceDetails other = (ResourceDetails) obj;
+        if (other.getAwsCodeBuildProject() == null ^ this.getAwsCodeBuildProject() == null)
+            return false;
+        if (other.getAwsCodeBuildProject() != null && other.getAwsCodeBuildProject().equals(this.getAwsCodeBuildProject()) == false)
+            return false;
         if (other.getAwsCloudFrontDistribution() == null ^ this.getAwsCloudFrontDistribution() == null)
             return false;
         if (other.getAwsCloudFrontDistribution() != null && other.getAwsCloudFrontDistribution().equals(this.getAwsCloudFrontDistribution()) == false)
@@ -660,9 +1121,21 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsEc2Instance() != null && other.getAwsEc2Instance().equals(this.getAwsEc2Instance()) == false)
             return false;
+        if (other.getAwsEc2NetworkInterface() == null ^ this.getAwsEc2NetworkInterface() == null)
+            return false;
+        if (other.getAwsEc2NetworkInterface() != null && other.getAwsEc2NetworkInterface().equals(this.getAwsEc2NetworkInterface()) == false)
+            return false;
+        if (other.getAwsEc2SecurityGroup() == null ^ this.getAwsEc2SecurityGroup() == null)
+            return false;
+        if (other.getAwsEc2SecurityGroup() != null && other.getAwsEc2SecurityGroup().equals(this.getAwsEc2SecurityGroup()) == false)
+            return false;
         if (other.getAwsElbv2LoadBalancer() == null ^ this.getAwsElbv2LoadBalancer() == null)
             return false;
         if (other.getAwsElbv2LoadBalancer() != null && other.getAwsElbv2LoadBalancer().equals(this.getAwsElbv2LoadBalancer()) == false)
+            return false;
+        if (other.getAwsElasticsearchDomain() == null ^ this.getAwsElasticsearchDomain() == null)
+            return false;
+        if (other.getAwsElasticsearchDomain() != null && other.getAwsElasticsearchDomain().equals(this.getAwsElasticsearchDomain()) == false)
             return false;
         if (other.getAwsS3Bucket() == null ^ this.getAwsS3Bucket() == null)
             return false;
@@ -684,6 +1157,14 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsLambdaFunction() != null && other.getAwsLambdaFunction().equals(this.getAwsLambdaFunction()) == false)
             return false;
+        if (other.getAwsLambdaLayerVersion() == null ^ this.getAwsLambdaLayerVersion() == null)
+            return false;
+        if (other.getAwsLambdaLayerVersion() != null && other.getAwsLambdaLayerVersion().equals(this.getAwsLambdaLayerVersion()) == false)
+            return false;
+        if (other.getAwsRdsDbInstance() == null ^ this.getAwsRdsDbInstance() == null)
+            return false;
+        if (other.getAwsRdsDbInstance() != null && other.getAwsRdsDbInstance().equals(this.getAwsRdsDbInstance()) == false)
+            return false;
         if (other.getAwsSnsTopic() == null ^ this.getAwsSnsTopic() == null)
             return false;
         if (other.getAwsSnsTopic() != null && other.getAwsSnsTopic().equals(this.getAwsSnsTopic()) == false)
@@ -691,6 +1172,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (other.getAwsSqsQueue() == null ^ this.getAwsSqsQueue() == null)
             return false;
         if (other.getAwsSqsQueue() != null && other.getAwsSqsQueue().equals(this.getAwsSqsQueue()) == false)
+            return false;
+        if (other.getAwsWafWebAcl() == null ^ this.getAwsWafWebAcl() == null)
+            return false;
+        if (other.getAwsWafWebAcl() != null && other.getAwsWafWebAcl().equals(this.getAwsWafWebAcl()) == false)
             return false;
         if (other.getContainer() == null ^ this.getContainer() == null)
             return false;
@@ -708,16 +1193,23 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAwsCodeBuildProject() == null) ? 0 : getAwsCodeBuildProject().hashCode());
         hashCode = prime * hashCode + ((getAwsCloudFrontDistribution() == null) ? 0 : getAwsCloudFrontDistribution().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2Instance() == null) ? 0 : getAwsEc2Instance().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2NetworkInterface() == null) ? 0 : getAwsEc2NetworkInterface().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2SecurityGroup() == null) ? 0 : getAwsEc2SecurityGroup().hashCode());
         hashCode = prime * hashCode + ((getAwsElbv2LoadBalancer() == null) ? 0 : getAwsElbv2LoadBalancer().hashCode());
+        hashCode = prime * hashCode + ((getAwsElasticsearchDomain() == null) ? 0 : getAwsElasticsearchDomain().hashCode());
         hashCode = prime * hashCode + ((getAwsS3Bucket() == null) ? 0 : getAwsS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getAwsIamAccessKey() == null) ? 0 : getAwsIamAccessKey().hashCode());
         hashCode = prime * hashCode + ((getAwsIamRole() == null) ? 0 : getAwsIamRole().hashCode());
         hashCode = prime * hashCode + ((getAwsKmsKey() == null) ? 0 : getAwsKmsKey().hashCode());
         hashCode = prime * hashCode + ((getAwsLambdaFunction() == null) ? 0 : getAwsLambdaFunction().hashCode());
+        hashCode = prime * hashCode + ((getAwsLambdaLayerVersion() == null) ? 0 : getAwsLambdaLayerVersion().hashCode());
+        hashCode = prime * hashCode + ((getAwsRdsDbInstance() == null) ? 0 : getAwsRdsDbInstance().hashCode());
         hashCode = prime * hashCode + ((getAwsSnsTopic() == null) ? 0 : getAwsSnsTopic().hashCode());
         hashCode = prime * hashCode + ((getAwsSqsQueue() == null) ? 0 : getAwsSqsQueue().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafWebAcl() == null) ? 0 : getAwsWafWebAcl().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getOther() == null) ? 0 : getOther().hashCode());
         return hashCode;

@@ -37,7 +37,7 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
     private Integer successCount;
     /**
      * <p>
-     * The list of the findings that failed to import.
+     * The list of findings that failed to import.
      * </p>
      */
     private java.util.List<ImportFindingsError> failedFindings;
@@ -124,10 +124,10 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that failed to import.
+     * The list of findings that failed to import.
      * </p>
      * 
-     * @return The list of the findings that failed to import.
+     * @return The list of findings that failed to import.
      */
 
     public java.util.List<ImportFindingsError> getFailedFindings() {
@@ -136,11 +136,11 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that failed to import.
+     * The list of findings that failed to import.
      * </p>
      * 
      * @param failedFindings
-     *        The list of the findings that failed to import.
+     *        The list of findings that failed to import.
      */
 
     public void setFailedFindings(java.util.Collection<ImportFindingsError> failedFindings) {
@@ -154,7 +154,7 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that failed to import.
+     * The list of findings that failed to import.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param failedFindings
-     *        The list of the findings that failed to import.
+     *        The list of findings that failed to import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class BatchImportFindingsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of the findings that failed to import.
+     * The list of findings that failed to import.
      * </p>
      * 
      * @param failedFindings
-     *        The list of the findings that failed to import.
+     *        The list of findings that failed to import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

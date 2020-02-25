@@ -49,6 +49,18 @@ public class DescribeClientVpnEndpointsRequest extends AmazonWebServiceRequest i
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
 
@@ -215,8 +227,31 @@ public class DescribeClientVpnEndpointsRequest extends AmazonWebServiceRequest i
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters. Filter names and values are case-sensitive.
+     * @return One or more filters. Filter names and values are case-sensitive.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -230,9 +265,32 @@ public class DescribeClientVpnEndpointsRequest extends AmazonWebServiceRequest i
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -248,6 +306,18 @@ public class DescribeClientVpnEndpointsRequest extends AmazonWebServiceRequest i
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -255,7 +325,18 @@ public class DescribeClientVpnEndpointsRequest extends AmazonWebServiceRequest i
      * </p>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,9 +354,32 @@ public class DescribeClientVpnEndpointsRequest extends AmazonWebServiceRequest i
      * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Filter names and values are case-sensitive.
+     *        One or more filters. Filter names and values are case-sensitive.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,10 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or
      * <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
      * </p>
+     * <p>
+     * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
+     * specification.
+     * </p>
      */
     private SingleQueryArgument singleQueryArgument;
     /**
@@ -76,12 +80,12 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * a form.
      * </p>
      * <p>
-     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection. If you
-     * don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-     * statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or
-     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit
-     * on the body of the request. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies
-     * exceed the 8 KB limit.
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
      * </p>
      */
     private Body body;
@@ -144,10 +148,18 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or
      * <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
      * </p>
+     * <p>
+     * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
+     * specification.
+     * </p>
      * 
      * @param singleQueryArgument
      *        Inspect a single query argument. Provide the name of the query argument to inspect, such as
      *        <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
+     *        </p>
+     *        <p>
+     *        This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
+     *        specification.
      */
 
     public void setSingleQueryArgument(SingleQueryArgument singleQueryArgument) {
@@ -159,9 +171,17 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or
      * <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
      * </p>
+     * <p>
+     * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
+     * specification.
+     * </p>
      * 
      * @return Inspect a single query argument. Provide the name of the query argument to inspect, such as
      *         <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
+     *         </p>
+     *         <p>
+     *         This is used only to indicate the web request component for AWS WAF to inspect, in the
+     *         <a>FieldToMatch</a> specification.
      */
 
     public SingleQueryArgument getSingleQueryArgument() {
@@ -173,10 +193,18 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single query argument. Provide the name of the query argument to inspect, such as <i>UserName</i> or
      * <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
      * </p>
+     * <p>
+     * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
+     * specification.
+     * </p>
      * 
      * @param singleQueryArgument
      *        Inspect a single query argument. Provide the name of the query argument to inspect, such as
      *        <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
+     *        </p>
+     *        <p>
+     *        This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
+     *        specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,12 +347,12 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * a form.
      * </p>
      * <p>
-     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection. If you
-     * don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-     * statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or
-     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit
-     * on the body of the request. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies
-     * exceed the 8 KB limit.
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
      * </p>
      * 
      * @param body
@@ -332,12 +360,12 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        that contains any additional data that you want to send to your web server as the HTTP request body, such
      *        as data from a form. </p>
      *        <p>
-     *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection. If
-     *        you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by
-     *        combining a statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or
-     *        <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that enforces an 8 KB size
-     *        limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of web requests
-     *        whose bodies exceed the 8 KB limit.
+     *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
+     *        the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't
+     *        allow additional bytes in by combining a statement that inspects the body of the web request, such as
+     *        <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
+     *        <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of the request. AWS WAF
+     *        doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
      */
 
     public void setBody(Body body) {
@@ -351,24 +379,24 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * a form.
      * </p>
      * <p>
-     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection. If you
-     * don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-     * statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or
-     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit
-     * on the body of the request. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies
-     * exceed the 8 KB limit.
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
      * </p>
      * 
      * @return Inspect the request body, which immediately follows the request headers. This is the part of a request
      *         that contains any additional data that you want to send to your web server as the HTTP request body, such
      *         as data from a form. </p>
      *         <p>
-     *         Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection.
-     *         If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in
-     *         by combining a statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or
-     *         <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that enforces an 8 KB
-     *         size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of web
-     *         requests whose bodies exceed the 8 KB limit.
+     *         Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
+     *         the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     *         don't allow additional bytes in by combining a statement that inspects the body of the web request, such
+     *         as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
+     *         <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of the request. AWS WAF
+     *         doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
      */
 
     public Body getBody() {
@@ -382,12 +410,12 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * a form.
      * </p>
      * <p>
-     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection. If you
-     * don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining a
-     * statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or
-     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that enforces an 8 KB size limit
-     * on the body of the request. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies
-     * exceed the 8 KB limit.
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
      * </p>
      * 
      * @param body
@@ -395,12 +423,12 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        that contains any additional data that you want to send to your web server as the HTTP request body, such
      *        as data from a form. </p>
      *        <p>
-     *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection. If
-     *        you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by
-     *        combining a statement that inspects the body of the web request, such as <a>ByteMatchStatement</a> or
-     *        <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that enforces an 8 KB size
-     *        limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of web requests
-     *        whose bodies exceed the 8 KB limit.
+     *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
+     *        the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't
+     *        allow additional bytes in by combining a statement that inspects the body of the web request, such as
+     *        <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
+     *        <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of the request. AWS WAF
+     *        doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
