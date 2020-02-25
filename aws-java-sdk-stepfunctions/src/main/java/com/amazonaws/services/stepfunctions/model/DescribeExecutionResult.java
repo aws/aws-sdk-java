@@ -25,7 +25,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the execution.
+     * The Amazon Resource Name (ARN) that id entifies the execution.
      * </p>
      */
     private String executionArn;
@@ -69,6 +69,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      */
     private String name;
     /**
@@ -109,11 +112,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the execution.
+     * The Amazon Resource Name (ARN) that id entifies the execution.
      * </p>
      * 
      * @param executionArn
-     *        The Amazon Resource Name (ARN) that identifies the execution.
+     *        The Amazon Resource Name (ARN) that id entifies the execution.
      */
 
     public void setExecutionArn(String executionArn) {
@@ -122,10 +125,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the execution.
+     * The Amazon Resource Name (ARN) that id entifies the execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the execution.
+     * @return The Amazon Resource Name (ARN) that id entifies the execution.
      */
 
     public String getExecutionArn() {
@@ -134,11 +137,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the execution.
+     * The Amazon Resource Name (ARN) that id entifies the execution.
      * </p>
      * 
      * @param executionArn
-     *        The Amazon Resource Name (ARN) that identifies the execution.
+     *        The Amazon Resource Name (ARN) that id entifies the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,6 +224,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @param name
      *        The name of the execution.</p>
@@ -253,6 +259,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      */
 
     public void setName(String name) {
@@ -293,6 +302,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @return The name of the execution.</p>
      *         <p>
@@ -324,6 +336,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      */
 
     public String getName() {
@@ -364,6 +379,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @param name
      *        The name of the execution.</p>
@@ -396,6 +414,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,20 @@
+# __1.11.730__ __2020-02-25__
+## __AWS Outposts__
+  - ### Features
+    - This release adds DeleteSite and DeleteOutpost. 
+
+## __AWS Secrets Manager__
+  - ### Features
+    - This release increases the maximum allowed size of SecretString or SecretBinary from 10KB to 64KB in the CreateSecret, UpdateSecret, PutSecretValue and GetSecretValue APIs.
+
+## __AWS Step Functions__
+  - ### Features
+    - This release adds support for CloudWatch Logs for Standard Workflows.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Amazon MSK has added support for Broker Log delivery to CloudWatch, S3, and Firehose.
+
 # __1.11.729__ __2020-02-24__
 ## __AWS IoT Events__
   - ### Features

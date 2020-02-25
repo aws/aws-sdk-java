@@ -41,6 +41,32 @@ public class AbstractAWSOutpostsAsync extends AbstractAWSOutposts implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOutpostResult> deleteOutpostAsync(DeleteOutpostRequest request) {
+
+        return deleteOutpostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutpostResult> deleteOutpostAsync(DeleteOutpostRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteOutpostRequest, DeleteOutpostResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest request) {
+
+        return deleteSiteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSiteRequest, DeleteSiteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOutpostResult> getOutpostAsync(GetOutpostRequest request) {
 
         return getOutpostAsync(request, null);

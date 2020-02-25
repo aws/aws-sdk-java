@@ -45,7 +45,11 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String roleArn;
-    /** <p/> */
+    /**
+     * <p>
+     * The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+     * </p>
+     */
     private LoggingConfiguration loggingConfiguration;
 
     /**
@@ -181,9 +185,12 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+     * </p>
      * 
      * @param loggingConfiguration
+     *        The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
      */
 
     public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
@@ -191,9 +198,11 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+     * </p>
      * 
-     * @return
+     * @return The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
      */
 
     public LoggingConfiguration getLoggingConfiguration() {
@@ -201,9 +210,12 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+     * </p>
      * 
      * @param loggingConfiguration
+     *        The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

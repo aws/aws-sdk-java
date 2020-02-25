@@ -69,6 +69,10 @@ public class MutableClusterInfoJsonUnmarshaller implements Unmarshaller<MutableC
                     context.nextToken();
                     mutableClusterInfo.setOpenMonitoring(OpenMonitoringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("loggingInfo", targetDepth)) {
+                    context.nextToken();
+                    mutableClusterInfo.setLoggingInfo(LoggingInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

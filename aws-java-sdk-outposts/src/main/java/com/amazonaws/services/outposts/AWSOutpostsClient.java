@@ -208,6 +208,128 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
 
     /**
      * <p>
+     * Deletes the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostRequest
+     * @return Result of the DeleteOutpost operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.DeleteOutpost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteOutpostResult deleteOutpost(DeleteOutpostRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOutpost(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOutpostResult executeDeleteOutpost(DeleteOutpostRequest deleteOutpostRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOutpostRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOutpostRequest> request = null;
+        Response<DeleteOutpostResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOutpostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOutpostRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOutpost");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOutpostResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteOutpostResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the site.
+     * </p>
+     * 
+     * @param deleteSiteRequest
+     * @return Result of the DeleteSite operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.DeleteSite
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSiteResult deleteSite(DeleteSiteRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSite(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSiteResult executeDeleteSite(DeleteSiteRequest deleteSiteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSiteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSiteRequest> request = null;
+        Response<DeleteSiteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSiteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSiteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSite");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSiteResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSiteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the specified Outpost.
      * </p>
      * 

@@ -68,6 +68,68 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
+     * Deletes the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostRequest
+     * @return A Java Future containing the result of the DeleteOutpost operation returned by the service.
+     * @sample AWSOutpostsAsync.DeleteOutpost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOutpostResult> deleteOutpostAsync(DeleteOutpostRequest deleteOutpostRequest);
+
+    /**
+     * <p>
+     * Deletes the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOutpost operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.DeleteOutpost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOutpostResult> deleteOutpostAsync(DeleteOutpostRequest deleteOutpostRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOutpostRequest, DeleteOutpostResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the site.
+     * </p>
+     * 
+     * @param deleteSiteRequest
+     * @return A Java Future containing the result of the DeleteSite operation returned by the service.
+     * @sample AWSOutpostsAsync.DeleteSite
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest deleteSiteRequest);
+
+    /**
+     * <p>
+     * Deletes the site.
+     * </p>
+     * 
+     * @param deleteSiteRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSite operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.DeleteSite
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest deleteSiteRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSiteRequest, DeleteSiteResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified Outpost.
      * </p>
      * 

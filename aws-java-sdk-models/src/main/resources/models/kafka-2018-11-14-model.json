@@ -831,6 +831,23 @@
         "KafkaBrokerNodeId"
       ]
     },
+    "BrokerLogs": {
+      "type": "structure",
+      "members": {
+        "CloudWatchLogs": {
+          "shape": "CloudWatchLogs",
+          "locationName": "cloudWatchLogs"
+        },
+        "Firehose": {
+          "shape": "Firehose",
+          "locationName": "firehose"
+        },
+        "S3": {
+          "shape": "S3",
+          "locationName": "s3"
+        }
+      }
+    },
     "BrokerNodeGroupInfo": {
       "type": "structure",
       "members": {
@@ -943,6 +960,20 @@
         "PLAINTEXT"
       ]
     },
+    "CloudWatchLogs" : {
+      "type" : "structure",
+      "members" : {
+        "Enabled" : {
+          "shape" : "__boolean",
+          "locationName" : "enabled"
+        },
+        "LogGroup" : {
+          "shape" : "__string",
+          "locationName" : "logGroup"
+        }
+      },
+      "required" : [ "Enabled" ]
+    },
     "ClusterInfo": {
       "type": "structure",
       "members": {
@@ -1001,6 +1032,10 @@
           "locationName" : "openMonitoring",
           "documentation" : "\n            <p>Settings for open monitoring using Prometheus.</p>\n         "
         },
+        "LoggingInfo": {
+          "shape": "LoggingInfo",
+          "locationName": "loggingInfo"
+         },
         "NumberOfBrokerNodes": {
           "shape": "__integer",
           "locationName": "numberOfBrokerNodes",
@@ -1247,6 +1282,10 @@
           "locationName": "kafkaVersion",
           "documentation": "\n            <p>The version of Apache Kafka.</p>\n         "
         },
+        "LoggingInfo": {
+          "shape": "LoggingInfo",
+          "locationName": "loggingInfo"
+         },
         "NumberOfBrokerNodes": {
           "shape": "__integerMin1Max15",
           "locationName": "numberOfBrokerNodes",
@@ -1621,6 +1660,20 @@
       },
       "documentation": "\n            <p>Returns information about an error state of the cluster.</p>\n         "
     },
+    "Firehose" : {
+      "type" : "structure",
+      "members" : {
+        "DeliveryStream" : {
+          "shape" : "__string",
+          "locationName" : "deliveryStream"
+        },
+        "Enabled" : {
+          "shape" : "__boolean",
+          "locationName" : "enabled"
+        }
+      },
+      "required" : [ "Enabled" ]
+    },
     "ForbiddenException": {
       "type": "structure",
       "members": {
@@ -1962,6 +2015,16 @@
       "min": 1,
       "max": 100
     },
+    "LoggingInfo": {
+      "type": "structure",
+      "members": {
+        "BrokerLogs": {
+          "shape": "BrokerLogs",
+          "locationName": "brokerLogs"
+        }
+      },
+      "required": [ "BrokerLogs" ]
+    },
     "MutableClusterInfo": {
       "type": "structure",
       "members": {
@@ -1989,7 +2052,11 @@
           "shape" : "OpenMonitoring",
           "locationName" : "openMonitoring",
           "documentation" : "\n            <p>The settings for open monitoring.</p>\n         "
-        }
+        },
+        "LoggingInfo": {
+          "shape": "LoggingInfo",
+          "locationName": "loggingInfo"
+         }
       },
       "documentation": "\n            <p>Information about cluster attributes that can be updated via update APIs.</p>\n         "
     },
@@ -2096,6 +2163,24 @@
         }
       },
       "documentation" : "\n            <p>Prometheus settings.</p>\n         "
+    },
+    "S3" : {
+      "type" : "structure",
+      "members" : {
+        "Bucket" : {
+          "shape" : "__string",
+          "locationName" : "bucket"
+        },
+        "Enabled" : {
+          "shape" : "__boolean",
+          "locationName" : "enabled"
+        },
+        "Prefix" : {
+          "shape" : "__string",
+          "locationName" : "prefix"
+        }
+      },
+      "required" : [ "Enabled" ]
     },
     "NodeInfo": {
       "type": "structure",
@@ -2442,6 +2527,10 @@
           "shape" : "OpenMonitoringInfo",
           "locationName" : "openMonitoring",
           "documentation" : "\n            <p>The settings for open monitoring.</p>\n         "
+        },
+        "LoggingInfo": {
+          "shape": "LoggingInfo",
+          "locationName": "loggingInfo"
         }
       },
       "documentation" : "Request body for UpdateMonitoring.",

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LoggingConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -34,15 +36,14 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     private String level;
     /**
      * <p>
-     * Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is
-     * excluded.
+     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
      * </p>
      */
     private Boolean includeExecutionData;
     /**
      * <p>
-     * An object that describes where your execution history events will be logged. Limited to size 1. Required, if your
-     * log level is not set to <code>OFF</code>.
+     * An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     * Required, if your log level is not set to <code>OFF</code>.
      * </p>
      */
     private java.util.List<LogDestination> destinations;
@@ -108,12 +109,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is
-     * excluded.
+     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
      * </p>
      * 
      * @param includeExecutionData
-     *        Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is
+     *        Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
      *        excluded.
      */
 
@@ -123,12 +123,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is
-     * excluded.
+     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
      * </p>
      * 
-     * @return Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data
-     *         is excluded.
+     * @return Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
+     *         excluded.
      */
 
     public Boolean getIncludeExecutionData() {
@@ -137,12 +136,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is
-     * excluded.
+     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
      * </p>
      * 
      * @param includeExecutionData
-     *        Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is
+     *        Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
      *        excluded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -154,12 +152,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data is
-     * excluded.
+     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
      * </p>
      * 
-     * @return Determines whether execution history data is included in your log. When set to <code>FALSE</code>, data
-     *         is excluded.
+     * @return Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
+     *         excluded.
      */
 
     public Boolean isIncludeExecutionData() {
@@ -168,12 +165,12 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that describes where your execution history events will be logged. Limited to size 1. Required, if your
-     * log level is not set to <code>OFF</code>.
+     * An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     * Required, if your log level is not set to <code>OFF</code>.
      * </p>
      * 
-     * @return An object that describes where your execution history events will be logged. Limited to size 1. Required,
-     *         if your log level is not set to <code>OFF</code>.
+     * @return An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     *         Required, if your log level is not set to <code>OFF</code>.
      */
 
     public java.util.List<LogDestination> getDestinations() {
@@ -182,13 +179,13 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that describes where your execution history events will be logged. Limited to size 1. Required, if your
-     * log level is not set to <code>OFF</code>.
+     * An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     * Required, if your log level is not set to <code>OFF</code>.
      * </p>
      * 
      * @param destinations
-     *        An object that describes where your execution history events will be logged. Limited to size 1. Required,
-     *        if your log level is not set to <code>OFF</code>.
+     *        An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     *        Required, if your log level is not set to <code>OFF</code>.
      */
 
     public void setDestinations(java.util.Collection<LogDestination> destinations) {
@@ -202,8 +199,8 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that describes where your execution history events will be logged. Limited to size 1. Required, if your
-     * log level is not set to <code>OFF</code>.
+     * An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     * Required, if your log level is not set to <code>OFF</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -212,8 +209,8 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param destinations
-     *        An object that describes where your execution history events will be logged. Limited to size 1. Required,
-     *        if your log level is not set to <code>OFF</code>.
+     *        An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     *        Required, if your log level is not set to <code>OFF</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,13 +226,13 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * An object that describes where your execution history events will be logged. Limited to size 1. Required, if your
-     * log level is not set to <code>OFF</code>.
+     * An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     * Required, if your log level is not set to <code>OFF</code>.
      * </p>
      * 
      * @param destinations
-     *        An object that describes where your execution history events will be logged. Limited to size 1. Required,
-     *        if your log level is not set to <code>OFF</code>.
+     *        An array of objects that describes where your execution history events will be logged. Limited to size 1.
+     *        Required, if your log level is not set to <code>OFF</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

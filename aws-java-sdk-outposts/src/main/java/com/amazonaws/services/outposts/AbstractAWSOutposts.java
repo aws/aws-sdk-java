@@ -33,6 +33,16 @@ public class AbstractAWSOutposts implements AWSOutposts {
     }
 
     @Override
+    public DeleteOutpostResult deleteOutpost(DeleteOutpostRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSiteResult deleteSite(DeleteSiteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetOutpostResult getOutpost(GetOutpostRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

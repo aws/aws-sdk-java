@@ -63,6 +63,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      */
     private String name;
     /**
@@ -86,7 +89,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String roleArn;
-    /** <p/> */
+    /**
+     * <p>
+     * The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
+     * </p>
+     */
     private String type;
     /**
      * <p>
@@ -94,7 +101,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Date creationDate;
-    /** <p/> */
+
     private LoggingConfiguration loggingConfiguration;
 
     /**
@@ -171,6 +178,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @param name
      *        The name of the state machine.</p>
@@ -203,6 +213,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      */
 
     public void setName(String name) {
@@ -243,6 +256,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @return The name of the state machine.</p>
      *         <p>
@@ -274,6 +290,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      */
 
     public String getName() {
@@ -314,6 +333,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @param name
      *        The name of the state machine.</p>
@@ -346,6 +368,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,9 +551,12 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
+     * </p>
      * 
      * @param type
+     *        The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
      * @see StateMachineType
      */
 
@@ -537,9 +565,11 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
+     * </p>
      * 
-     * @return
+     * @return The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
      * @see StateMachineType
      */
 
@@ -548,9 +578,12 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
+     * </p>
      * 
      * @param type
+     *        The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateMachineType
      */
@@ -561,9 +594,12 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
+     * </p>
      * 
      * @param type
+     *        The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
      * @see StateMachineType
      */
 
@@ -572,9 +608,12 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
+     * </p>
      * 
      * @param type
+     *        The <code>type</code> of the state machine (<code>STANDARD</code> or <code>EXPRESS</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateMachineType
      */
@@ -625,8 +664,6 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
-     * 
      * @param loggingConfiguration
      */
 
@@ -635,8 +672,6 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
-     * 
      * @return
      */
 
@@ -645,8 +680,6 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
-     * 
      * @param loggingConfiguration
      * @return Returns a reference to this object so that method calls can be chained together.
      */

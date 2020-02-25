@@ -58,6 +58,8 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
      */
     private java.util.Date updateDate;
 
+    private LoggingConfiguration loggingConfiguration;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the state machine associated with the execution.
@@ -277,6 +279,32 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     }
 
     /**
+     * @param loggingConfiguration
+     */
+
+    public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        this.loggingConfiguration = loggingConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public LoggingConfiguration getLoggingConfiguration() {
+        return this.loggingConfiguration;
+    }
+
+    /**
+     * @param loggingConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineForExecutionResult withLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
+        setLoggingConfiguration(loggingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +325,9 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getUpdateDate() != null)
-            sb.append("UpdateDate: ").append(getUpdateDate());
+            sb.append("UpdateDate: ").append(getUpdateDate()).append(",");
+        if (getLoggingConfiguration() != null)
+            sb.append("LoggingConfiguration: ").append(getLoggingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +362,10 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
             return false;
         if (other.getUpdateDate() != null && other.getUpdateDate().equals(this.getUpdateDate()) == false)
             return false;
+        if (other.getLoggingConfiguration() == null ^ this.getLoggingConfiguration() == null)
+            return false;
+        if (other.getLoggingConfiguration() != null && other.getLoggingConfiguration().equals(this.getLoggingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +379,7 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         return hashCode;
     }
 

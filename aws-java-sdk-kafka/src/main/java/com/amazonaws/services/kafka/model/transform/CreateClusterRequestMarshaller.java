@@ -45,6 +45,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("openMonitoring").build();
     private static final MarshallingInfo<String> KAFKAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kafkaVersion").build();
+    private static final MarshallingInfo<StructuredPojo> LOGGINGINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingInfo").build();
     private static final MarshallingInfo<Integer> NUMBEROFBROKERNODES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfBrokerNodes").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -74,6 +76,7 @@ public class CreateClusterRequestMarshaller {
             protocolMarshaller.marshall(createClusterRequest.getEnhancedMonitoring(), ENHANCEDMONITORING_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getOpenMonitoring(), OPENMONITORING_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getKafkaVersion(), KAFKAVERSION_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getLoggingInfo(), LOGGINGINFO_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getNumberOfBrokerNodes(), NUMBEROFBROKERNODES_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

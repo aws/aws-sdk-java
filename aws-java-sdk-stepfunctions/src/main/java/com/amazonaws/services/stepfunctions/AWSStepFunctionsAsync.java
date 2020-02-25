@@ -119,7 +119,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code>
      * states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
-     * language.
+     * language. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a> in the AWS Step Functions User Guide.
      * </p>
      * <note>
      * <p>
@@ -130,10 +132,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code> and <code>definition</code>. If a following request has a different <code>roleArn</code> or
-     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
-     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
-     * different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
+     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
+     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
+     * <code>tags</code> will not be updated, even if they are different.
      * </p>
      * </note>
      * 
@@ -150,7 +152,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code>
      * states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
-     * language.
+     * language. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a> in the AWS Step Functions User Guide.
      * </p>
      * <note>
      * <p>
@@ -161,10 +165,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code> and <code>definition</code>. If a following request has a different <code>roleArn</code> or
-     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
-     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
-     * different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
+     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
+     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
+     * <code>tags</code> will not be updated, even if they are different.
      * </p>
      * </note>
      * 
@@ -215,12 +219,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to
-     * <code>DELETING</code> and begins the deletion process. Each state machine execution is deleted the next time it
-     * makes a state transition.
+     * <code>DELETING</code> and begins the deletion process.
      * </p>
      * <note>
      * <p>
-     * The state machine itself is deleted after all executions are completed or deleted.
+     * For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually less than a minute). Running
+     * executions may emit logs after <code>DeleteStateMachine</code> API is called.
      * </p>
      * </note>
      * 
@@ -235,12 +239,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to
-     * <code>DELETING</code> and begins the deletion process. Each state machine execution is deleted the next time it
-     * makes a state transition.
+     * <code>DELETING</code> and begins the deletion process.
      * </p>
      * <note>
      * <p>
-     * The state machine itself is deleted after all executions are completed or deleted.
+     * For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually less than a minute). Running
+     * executions may emit logs after <code>DeleteStateMachine</code> API is called.
      * </p>
      * </note>
      * 
@@ -310,6 +314,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * changes.
      * </p>
      * </note>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param describeExecutionRequest
      * @return A Java Future containing the result of the DescribeExecution operation returned by the service.
@@ -329,6 +336,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * changes.
      * </p>
      * </note>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param describeExecutionRequest
      * @param asyncHandler
@@ -396,6 +406,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * changes.
      * </p>
      * </note>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param describeStateMachineForExecutionRequest
      * @return A Java Future containing the result of the DescribeStateMachineForExecution operation returned by the
@@ -417,6 +430,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * changes.
      * </p>
      * </note>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param describeStateMachineForExecutionRequest
      * @param asyncHandler
@@ -506,6 +522,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param getExecutionHistoryRequest
      * @return A Java Future containing the result of the GetExecutionHistory operation returned by the service.
@@ -526,6 +545,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
+     * </p>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -613,6 +635,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * changes.
      * </p>
      * </note>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param listExecutionsRequest
      * @return A Java Future containing the result of the ListExecutions operation returned by the service.
@@ -639,6 +664,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * changes.
      * </p>
      * </note>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param listExecutionsRequest
      * @param asyncHandler
@@ -931,6 +959,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * Stops an execution.
      * </p>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * </p>
      * 
      * @param stopExecutionRequest
      * @return A Java Future containing the result of the StopExecution operation returned by the service.
@@ -943,6 +974,9 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
     /**
      * <p>
      * Stops an execution.
+     * </p>
+     * <p>
+     * This API action is not supported by <code>EXPRESS</code> state machines.
      * </p>
      * 
      * @param stopExecutionRequest
@@ -1042,10 +1076,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
-     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include
-     * at least one of <code>definition</code> or <code>roleArn</code> or you will receive a
-     * <code>MissingRequiredParameter</code> error.
+     * Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or
+     * <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code>
+     * and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you
+     * will receive a <code>MissingRequiredParameter</code> error.
      * </p>
      * <note>
      * <p>
@@ -1065,10 +1099,10 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
 
     /**
      * <p>
-     * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
-     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include
-     * at least one of <code>definition</code> or <code>roleArn</code> or you will receive a
-     * <code>MissingRequiredParameter</code> error.
+     * Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or
+     * <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code>
+     * and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you
+     * will receive a <code>MissingRequiredParameter</code> error.
      * </p>
      * <note>
      * <p>
