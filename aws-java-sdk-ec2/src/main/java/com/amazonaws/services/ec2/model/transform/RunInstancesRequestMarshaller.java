@@ -21,6 +21,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * RunInstancesRequest Marshaller
@@ -227,9 +228,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             request.addParameter("AdditionalInfo", StringUtils.fromString(runInstancesRequest.getAdditionalInfo()));
         }
 
-        if (runInstancesRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(runInstancesRequest.getClientToken()));
-        }
+        request.addParameter("ClientToken", IdempotentUtils.resolveString(runInstancesRequest.getClientToken()));
 
         if (runInstancesRequest.getDisableApiTermination() != null) {
             request.addParameter("DisableApiTermination", StringUtils.fromBoolean(runInstancesRequest.getDisableApiTermination()));

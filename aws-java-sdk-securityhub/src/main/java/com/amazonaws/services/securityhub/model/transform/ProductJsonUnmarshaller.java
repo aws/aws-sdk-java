@@ -68,6 +68,10 @@ public class ProductJsonUnmarshaller implements Unmarshaller<Product, JsonUnmars
                     context.nextToken();
                     product.setCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("IntegrationTypes", targetDepth)) {
+                    context.nextToken();
+                    product.setIntegrationTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("MarketplaceUrl", targetDepth)) {
                     context.nextToken();
                     product.setMarketplaceUrl(context.getUnmarshaller(String.class).unmarshall(context));

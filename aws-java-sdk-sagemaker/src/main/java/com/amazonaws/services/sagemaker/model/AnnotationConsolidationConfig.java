@@ -292,7 +292,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <li>
      * <p>
      * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
-     * the true class of verification judgement for semantic segmentation labels based on annotations from individual
+     * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
      * <p>
@@ -689,7 +689,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <li>
      * <p>
      * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
-     * the true class of verification judgement for semantic segmentation labels based on annotations from individual
+     * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
      * <p>
@@ -1082,7 +1082,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <li>
      *        <p>
      *        <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to
-     *        estimate the true class of verification judgement for semantic segmentation labels based on annotations
+     *        estimate the true class of verification judgment for semantic segmentation labels based on annotations
      *        from individual workers.
      *        </p>
      *        <p>
@@ -1481,7 +1481,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <li>
      * <p>
      * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
-     * the true class of verification judgement for semantic segmentation labels based on annotations from individual
+     * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
      * <p>
@@ -1875,7 +1875,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <li>
      *         <p>
      *         <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to
-     *         estimate the true class of verification judgement for semantic segmentation labels based on annotations
+     *         estimate the true class of verification judgment for semantic segmentation labels based on annotations
      *         from individual workers.
      *         </p>
      *         <p>
@@ -2274,7 +2274,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <li>
      * <p>
      * <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to estimate
-     * the true class of verification judgement for semantic segmentation labels based on annotations from individual
+     * the true class of verification judgment for semantic segmentation labels based on annotations from individual
      * workers.
      * </p>
      * <p>
@@ -2667,7 +2667,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <li>
      *        <p>
      *        <i>Semantic segmentation verification</i> - Uses a variant of the Expectation Maximization approach to
-     *        estimate the true class of verification judgement for semantic segmentation labels based on annotations
+     *        estimate the true class of verification judgment for semantic segmentation labels based on annotations
      *        from individual workers.
      *        </p>
      *        <p>

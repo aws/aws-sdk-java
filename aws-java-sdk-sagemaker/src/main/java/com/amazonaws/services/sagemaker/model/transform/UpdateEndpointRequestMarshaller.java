@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class UpdateEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointName").build();
     private static final MarshallingInfo<String> ENDPOINTCONFIGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointConfigName").build();
+    private static final MarshallingInfo<Boolean> RETAINALLVARIANTPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetainAllVariantProperties").build();
+    private static final MarshallingInfo<List> EXCLUDERETAINEDVARIANTPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExcludeRetainedVariantProperties").build();
 
     private static final UpdateEndpointRequestMarshaller instance = new UpdateEndpointRequestMarshaller();
 
@@ -50,6 +55,8 @@ public class UpdateEndpointRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateEndpointRequest.getEndpointName(), ENDPOINTNAME_BINDING);
             protocolMarshaller.marshall(updateEndpointRequest.getEndpointConfigName(), ENDPOINTCONFIGNAME_BINDING);
+            protocolMarshaller.marshall(updateEndpointRequest.getRetainAllVariantProperties(), RETAINALLVARIANTPROPERTIES_BINDING);
+            protocolMarshaller.marshall(updateEndpointRequest.getExcludeRetainedVariantProperties(), EXCLUDERETAINEDVARIANTPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

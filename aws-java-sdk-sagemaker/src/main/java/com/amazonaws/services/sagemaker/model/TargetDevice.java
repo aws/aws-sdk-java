@@ -31,14 +31,17 @@ public enum TargetDevice {
     Jetson_tx1("jetson_tx1"),
     Jetson_tx2("jetson_tx2"),
     Jetson_nano("jetson_nano"),
+    Jetson_xavier("jetson_xavier"),
     Rasp3b("rasp3b"),
+    Imx8qm("imx8qm"),
     Deeplens("deeplens"),
     Rk3399("rk3399"),
     Rk3288("rk3288"),
     Aisage("aisage"),
     Sbe_c("sbe_c"),
     Qcs605("qcs605"),
-    Qcs603("qcs603");
+    Qcs603("qcs603"),
+    Amba_cv22("amba_cv22");
 
     private String value;
 

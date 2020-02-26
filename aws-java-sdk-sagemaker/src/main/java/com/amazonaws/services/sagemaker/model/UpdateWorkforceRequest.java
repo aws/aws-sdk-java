@@ -28,7 +28,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      */
     private String workforceName;
@@ -39,7 +39,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      */
     private SourceIpConfig sourceIpConfig;
@@ -47,12 +47,12 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
      */
 
     public void setWorkforceName(String workforceName) {
@@ -62,11 +62,11 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @return The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *         automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *         automatically set to <code>default</code> when a workforce is created and cannot be modified.
      */
 
     public String getWorkforceName() {
@@ -76,12 +76,12 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,7 +97,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * 
      * @param sourceIpConfig
@@ -105,7 +105,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *        access tasks assigned to this workforce.</p>
      *        <p>
-     *        Maximum: 4 CIDR values
+     *        Maximum: Four CIDR values
      */
 
     public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
@@ -119,14 +119,14 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * 
      * @return A list of one to four worker IP address ranges (<a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *         access tasks assigned to this workforce.</p>
      *         <p>
-     *         Maximum: 4 CIDR values
+     *         Maximum: Four CIDR values
      */
 
     public SourceIpConfig getSourceIpConfig() {
@@ -140,7 +140,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * 
      * @param sourceIpConfig
@@ -148,7 +148,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *        access tasks assigned to this workforce.</p>
      *        <p>
-     *        Maximum: 4 CIDR values
+     *        Maximum: Four CIDR values
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

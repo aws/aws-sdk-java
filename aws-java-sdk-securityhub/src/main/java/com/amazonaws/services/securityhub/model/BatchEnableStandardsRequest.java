@@ -27,17 +27,17 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of standards compliance checks to enable.
+     * The list of standards checks to enable.
      * </p>
      */
     private java.util.List<StandardsSubscriptionRequest> standardsSubscriptionRequests;
 
     /**
      * <p>
-     * The list of standards compliance checks to enable.
+     * The list of standards checks to enable.
      * </p>
      * 
-     * @return The list of standards compliance checks to enable.
+     * @return The list of standards checks to enable.
      */
 
     public java.util.List<StandardsSubscriptionRequest> getStandardsSubscriptionRequests() {
@@ -46,11 +46,11 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of standards compliance checks to enable.
+     * The list of standards checks to enable.
      * </p>
      * 
      * @param standardsSubscriptionRequests
-     *        The list of standards compliance checks to enable.
+     *        The list of standards checks to enable.
      */
 
     public void setStandardsSubscriptionRequests(java.util.Collection<StandardsSubscriptionRequest> standardsSubscriptionRequests) {
@@ -64,7 +64,7 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of standards compliance checks to enable.
+     * The list of standards checks to enable.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param standardsSubscriptionRequests
-     *        The list of standards compliance checks to enable.
+     *        The list of standards checks to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchEnableStandardsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The list of standards compliance checks to enable.
+     * The list of standards checks to enable.
      * </p>
      * 
      * @param standardsSubscriptionRequests
-     *        The list of standards compliance checks to enable.
+     *        The list of standards checks to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

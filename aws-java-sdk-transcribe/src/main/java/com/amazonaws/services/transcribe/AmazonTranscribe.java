@@ -174,7 +174,8 @@ public interface AmazonTranscribe {
      * <p>
      * Returns information about a transcription job. To see the status of the job, check the
      * <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you
-     * can find the results at the location specified in the <code>TranscriptionFileUri</code> field.
+     * can find the results at the location specified in the <code>TranscriptFileUri</code> field. If you enable content
+     * redaction, the redacted transcript appears in <code>RedactedTranscriptFileUri</code>.
      * </p>
      * 
      * @param getTranscriptionJobRequest

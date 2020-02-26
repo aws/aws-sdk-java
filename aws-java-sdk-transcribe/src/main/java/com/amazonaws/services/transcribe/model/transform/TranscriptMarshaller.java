@@ -29,6 +29,8 @@ public class TranscriptMarshaller {
 
     private static final MarshallingInfo<String> TRANSCRIPTFILEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TranscriptFileUri").build();
+    private static final MarshallingInfo<String> REDACTEDTRANSCRIPTFILEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedactedTranscriptFileUri").build();
 
     private static final TranscriptMarshaller instance = new TranscriptMarshaller();
 
@@ -47,6 +49,7 @@ public class TranscriptMarshaller {
 
         try {
             protocolMarshaller.marshall(transcript.getTranscriptFileUri(), TRANSCRIPTFILEURI_BINDING);
+            protocolMarshaller.marshall(transcript.getRedactedTranscriptFileUri(), REDACTEDTRANSCRIPTFILEURI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

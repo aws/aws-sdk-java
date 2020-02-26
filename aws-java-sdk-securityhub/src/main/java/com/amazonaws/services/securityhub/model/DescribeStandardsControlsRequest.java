@@ -44,7 +44,7 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
     private String nextToken;
     /**
      * <p>
-     * The maximum number of compliance standard controls to return.
+     * The maximum number of security standard controls to return.
      * </p>
      */
     private Integer maxResults;
@@ -161,11 +161,11 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of compliance standard controls to return.
+     * The maximum number of security standard controls to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of compliance standard controls to return.
+     *        The maximum number of security standard controls to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -174,10 +174,10 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of compliance standard controls to return.
+     * The maximum number of security standard controls to return.
      * </p>
      * 
-     * @return The maximum number of compliance standard controls to return.
+     * @return The maximum number of security standard controls to return.
      */
 
     public Integer getMaxResults() {
@@ -186,11 +186,11 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of compliance standard controls to return.
+     * The maximum number of security standard controls to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of compliance standard controls to return.
+     *        The maximum number of security standard controls to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

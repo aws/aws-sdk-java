@@ -30,20 +30,20 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:
+     * The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you
+     * are calling. The general form is:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code>
+     * <code>s3://examplebucket/example.mp4</code>
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -55,20 +55,20 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:
+     * The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you
+     * are calling. The general form is:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code>
+     * <code>s3://examplebucket/example.mp4</code>
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -77,19 +77,19 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param mediaFileUri
-     *        The S3 location of the input media file. The URI must be in the same region as the API endpoint that you
-     *        are calling. The general form is:</p>
+     *        The S3 object location of the input media file. The URI must be in the same region as the API endpoint
+     *        that you are calling. The general form is:</p>
      *        <p>
-     *        <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *        <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      *        </p>
      *        <p>
      *        For example:
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code>
+     *        <code>s3://examplebucket/example.mp4</code>
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+     *        <code>s3://examplebucket/mediadocs/example.mp4</code>
      *        </p>
      *        <p>
      *        For more information about S3 object names, see <a
@@ -103,20 +103,20 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:
+     * The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you
+     * are calling. The general form is:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code>
+     * <code>s3://examplebucket/example.mp4</code>
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -124,19 +124,19 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * <i>Amazon S3 Developer Guide</i>.
      * </p>
      * 
-     * @return The S3 location of the input media file. The URI must be in the same region as the API endpoint that you
-     *         are calling. The general form is:</p>
+     * @return The S3 object location of the input media file. The URI must be in the same region as the API endpoint
+     *         that you are calling. The general form is:</p>
      *         <p>
-     *         <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *         <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      *         </p>
      *         <p>
      *         For example:
      *         </p>
      *         <p>
-     *         <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code>
+     *         <code>s3://examplebucket/example.mp4</code>
      *         </p>
      *         <p>
-     *         <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+     *         <code>s3://examplebucket/mediadocs/example.mp4</code>
      *         </p>
      *         <p>
      *         For more information about S3 object names, see <a
@@ -150,20 +150,20 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location of the input media file. The URI must be in the same region as the API endpoint that you are
-     * calling. The general form is:
+     * The S3 object location of the input media file. The URI must be in the same region as the API endpoint that you
+     * are calling. The general form is:
      * </p>
      * <p>
-     * <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code>
+     * <code>s3://examplebucket/example.mp4</code>
      * </p>
      * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code>
      * </p>
      * <p>
      * For more information about S3 object names, see <a
@@ -172,19 +172,19 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param mediaFileUri
-     *        The S3 location of the input media file. The URI must be in the same region as the API endpoint that you
-     *        are calling. The general form is:</p>
+     *        The S3 object location of the input media file. The URI must be in the same region as the API endpoint
+     *        that you are calling. The general form is:</p>
      *        <p>
-     *        <code> https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *        <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      *        </p>
      *        <p>
      *        For example:
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code>
+     *        <code>s3://examplebucket/example.mp4</code>
      *        </p>
      *        <p>
-     *        <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
+     *        <code>s3://examplebucket/mediadocs/example.mp4</code>
      *        </p>
      *        <p>
      *        For more information about S3 object names, see <a

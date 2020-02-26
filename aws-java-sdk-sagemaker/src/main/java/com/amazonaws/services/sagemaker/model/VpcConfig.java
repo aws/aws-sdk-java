@@ -41,15 +41,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The ID of the subnets in the VPC to which you want to connect your training job or model.
+     * The ID of the subnets in the VPC to which you want to connect your training job or model. For information about
+     * the availability of specific instance types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     * Availability Zones</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     * us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create subnets in
-     * a/b/f availability zones instead.
-     * </p>
-     * </note>
      */
     private java.util.List<String> subnets;
 
@@ -133,22 +129,16 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnets in the VPC to which you want to connect your training job or model.
+     * The ID of the subnets in the VPC to which you want to connect your training job or model. For information about
+     * the availability of specific instance types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     * Availability Zones</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     * us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create subnets in
-     * a/b/f availability zones instead.
-     * </p>
-     * </note>
      * 
-     * @return The ID of the subnets in the VPC to which you want to connect your training job or model. </p> <note>
-     *         <p>
-     *         Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     *         us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create
-     *         subnets in a/b/f availability zones instead.
-     *         </p>
+     * @return The ID of the subnets in the VPC to which you want to connect your training job or model. For information
+     *         about the availability of specific instance types, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types
+     *         and Availability Zones</a>.
      */
 
     public java.util.List<String> getSubnets() {
@@ -157,23 +147,17 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnets in the VPC to which you want to connect your training job or model.
+     * The ID of the subnets in the VPC to which you want to connect your training job or model. For information about
+     * the availability of specific instance types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     * Availability Zones</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     * us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create subnets in
-     * a/b/f availability zones instead.
-     * </p>
-     * </note>
      * 
      * @param subnets
-     *        The ID of the subnets in the VPC to which you want to connect your training job or model. </p> <note>
-     *        <p>
-     *        Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     *        us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create
-     *        subnets in a/b/f availability zones instead.
-     *        </p>
+     *        The ID of the subnets in the VPC to which you want to connect your training job or model. For information
+     *        about the availability of specific instance types, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     *        Availability Zones</a>.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -187,15 +171,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnets in the VPC to which you want to connect your training job or model.
+     * The ID of the subnets in the VPC to which you want to connect your training job or model. For information about
+     * the availability of specific instance types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     * Availability Zones</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     * us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create subnets in
-     * a/b/f availability zones instead.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
@@ -203,12 +183,10 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnets
-     *        The ID of the subnets in the VPC to which you want to connect your training job or model. </p> <note>
-     *        <p>
-     *        Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     *        us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create
-     *        subnets in a/b/f availability zones instead.
-     *        </p>
+     *        The ID of the subnets in the VPC to which you want to connect your training job or model. For information
+     *        about the availability of specific instance types, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     *        Availability Zones</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,23 +202,17 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the subnets in the VPC to which you want to connect your training job or model.
+     * The ID of the subnets in the VPC to which you want to connect your training job or model. For information about
+     * the availability of specific instance types, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     * Availability Zones</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     * us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create subnets in
-     * a/b/f availability zones instead.
-     * </p>
-     * </note>
      * 
      * @param subnets
-     *        The ID of the subnets in the VPC to which you want to connect your training job or model. </p> <note>
-     *        <p>
-     *        Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region
-     *        us-east-1. If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create
-     *        subnets in a/b/f availability zones instead.
-     *        </p>
+     *        The ID of the subnets in the VPC to which you want to connect your training job or model. For information
+     *        about the availability of specific instance types, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html">Supported Instance Types and
+     *        Availability Zones</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

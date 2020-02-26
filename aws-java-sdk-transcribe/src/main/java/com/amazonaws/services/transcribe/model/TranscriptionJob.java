@@ -157,6 +157,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private JobExecutionSettings jobExecutionSettings;
+    /**
+     * <p>
+     * An object that describes content redaction settings for the transcription job.
+     * </p>
+     */
+    private ContentRedaction contentRedaction;
 
     /**
      * <p>
@@ -1042,6 +1048,46 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * An object that describes content redaction settings for the transcription job.
+     * </p>
+     * 
+     * @param contentRedaction
+     *        An object that describes content redaction settings for the transcription job.
+     */
+
+    public void setContentRedaction(ContentRedaction contentRedaction) {
+        this.contentRedaction = contentRedaction;
+    }
+
+    /**
+     * <p>
+     * An object that describes content redaction settings for the transcription job.
+     * </p>
+     * 
+     * @return An object that describes content redaction settings for the transcription job.
+     */
+
+    public ContentRedaction getContentRedaction() {
+        return this.contentRedaction;
+    }
+
+    /**
+     * <p>
+     * An object that describes content redaction settings for the transcription job.
+     * </p>
+     * 
+     * @param contentRedaction
+     *        An object that describes content redaction settings for the transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withContentRedaction(ContentRedaction contentRedaction) {
+        setContentRedaction(contentRedaction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1078,7 +1124,9 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
         if (getJobExecutionSettings() != null)
-            sb.append("JobExecutionSettings: ").append(getJobExecutionSettings());
+            sb.append("JobExecutionSettings: ").append(getJobExecutionSettings()).append(",");
+        if (getContentRedaction() != null)
+            sb.append("ContentRedaction: ").append(getContentRedaction());
         sb.append("}");
         return sb.toString();
     }
@@ -1145,6 +1193,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getJobExecutionSettings() != null && other.getJobExecutionSettings().equals(this.getJobExecutionSettings()) == false)
             return false;
+        if (other.getContentRedaction() == null ^ this.getContentRedaction() == null)
+            return false;
+        if (other.getContentRedaction() != null && other.getContentRedaction().equals(this.getContentRedaction()) == false)
+            return false;
         return true;
     }
 
@@ -1166,6 +1218,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionSettings() == null) ? 0 : getJobExecutionSettings().hashCode());
+        hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
         return hashCode;
     }
 

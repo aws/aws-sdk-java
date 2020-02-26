@@ -28,7 +28,7 @@ public class DescribeWorkforceRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      */
     private String workforceName;
@@ -36,12 +36,12 @@ public class DescribeWorkforceRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
      */
 
     public void setWorkforceName(String workforceName) {
@@ -51,11 +51,11 @@ public class DescribeWorkforceRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @return The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *         automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *         automatically set to <code>default</code> when a workforce is created and cannot be modified.
      */
 
     public String getWorkforceName() {
@@ -65,12 +65,12 @@ public class DescribeWorkforceRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

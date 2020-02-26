@@ -35,7 +35,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      * Inter-Domain Routing</a> (CIDR) values.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * <note>
      * <p>
@@ -51,7 +51,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      * Inter-Domain Routing</a> (CIDR) values.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * <note>
      * <p>
@@ -63,7 +63,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain
      *         Routing</a> (CIDR) values.</p>
      *         <p>
-     *         Maximum: 4 CIDR values
+     *         Maximum: Four CIDR values
      *         </p>
      *         <note>
      *         <p>
@@ -81,7 +81,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      * Inter-Domain Routing</a> (CIDR) values.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * <note>
      * <p>
@@ -94,7 +94,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain
      *        Routing</a> (CIDR) values.</p>
      *        <p>
-     *        Maximum: 4 CIDR values
+     *        Maximum: Four CIDR values
      *        </p>
      *        <note>
      *        <p>
@@ -117,7 +117,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      * Inter-Domain Routing</a> (CIDR) values.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * <note>
      * <p>
@@ -135,7 +135,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain
      *        Routing</a> (CIDR) values.</p>
      *        <p>
-     *        Maximum: 4 CIDR values
+     *        Maximum: Four CIDR values
      *        </p>
      *        <note>
      *        <p>
@@ -160,7 +160,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      * Inter-Domain Routing</a> (CIDR) values.
      * </p>
      * <p>
-     * Maximum: 4 CIDR values
+     * Maximum: Four CIDR values
      * </p>
      * <note>
      * <p>
@@ -173,7 +173,7 @@ public class SourceIpConfig implements Serializable, Cloneable, StructuredPojo {
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Classless Inter-Domain
      *        Routing</a> (CIDR) values.</p>
      *        <p>
-     *        Maximum: 4 CIDR values
+     *        Maximum: Four CIDR values
      *        </p>
      *        <note>
      *        <p>

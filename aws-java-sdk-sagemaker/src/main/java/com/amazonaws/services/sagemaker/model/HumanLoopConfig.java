@@ -54,7 +54,9 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
     private String taskDescription;
     /**
      * <p>
-     * The number of human tasks.
+     * The number of distinct workers who will perform the same task on each object. For example, if
+     * <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will
+     * classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.
      * </p>
      */
     private Integer taskCount;
@@ -241,11 +243,15 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of human tasks.
+     * The number of distinct workers who will perform the same task on each object. For example, if
+     * <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will
+     * classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.
      * </p>
      * 
      * @param taskCount
-     *        The number of human tasks.
+     *        The number of distinct workers who will perform the same task on each object. For example, if
+     *        <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers
+     *        will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.
      */
 
     public void setTaskCount(Integer taskCount) {
@@ -254,10 +260,14 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of human tasks.
+     * The number of distinct workers who will perform the same task on each object. For example, if
+     * <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will
+     * classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.
      * </p>
      * 
-     * @return The number of human tasks.
+     * @return The number of distinct workers who will perform the same task on each object. For example, if
+     *         <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers
+     *         will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.
      */
 
     public Integer getTaskCount() {
@@ -266,11 +276,15 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of human tasks.
+     * The number of distinct workers who will perform the same task on each object. For example, if
+     * <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers will
+     * classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.
      * </p>
      * 
      * @param taskCount
-     *        The number of human tasks.
+     *        The number of distinct workers who will perform the same task on each object. For example, if
+     *        <code>TaskCount</code> is set to <code>3</code> for an image classification labeling job, three workers
+     *        will classify each input image. Increasing <code>TaskCount</code> can improve label accuracy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

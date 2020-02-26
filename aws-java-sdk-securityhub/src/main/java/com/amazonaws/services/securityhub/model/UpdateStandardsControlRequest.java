@@ -27,30 +27,30 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the compliance standard control to enable or disable.
+     * The ARN of the security standard control to enable or disable.
      * </p>
      */
     private String standardsControlArn;
     /**
      * <p>
-     * The updated status of the compliance standard control.
+     * The updated status of the security standard control.
      * </p>
      */
     private String controlStatus;
     /**
      * <p>
-     * A description of the reason why you are disabling a compliance standard control.
+     * A description of the reason why you are disabling a security standard control.
      * </p>
      */
     private String disabledReason;
 
     /**
      * <p>
-     * The ARN of the compliance standard control to enable or disable.
+     * The ARN of the security standard control to enable or disable.
      * </p>
      * 
      * @param standardsControlArn
-     *        The ARN of the compliance standard control to enable or disable.
+     *        The ARN of the security standard control to enable or disable.
      */
 
     public void setStandardsControlArn(String standardsControlArn) {
@@ -59,10 +59,10 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the compliance standard control to enable or disable.
+     * The ARN of the security standard control to enable or disable.
      * </p>
      * 
-     * @return The ARN of the compliance standard control to enable or disable.
+     * @return The ARN of the security standard control to enable or disable.
      */
 
     public String getStandardsControlArn() {
@@ -71,11 +71,11 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of the compliance standard control to enable or disable.
+     * The ARN of the security standard control to enable or disable.
      * </p>
      * 
      * @param standardsControlArn
-     *        The ARN of the compliance standard control to enable or disable.
+     *        The ARN of the security standard control to enable or disable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The updated status of the compliance standard control.
+     * The updated status of the security standard control.
      * </p>
      * 
      * @param controlStatus
-     *        The updated status of the compliance standard control.
+     *        The updated status of the security standard control.
      * @see ControlStatus
      */
 
@@ -100,10 +100,10 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The updated status of the compliance standard control.
+     * The updated status of the security standard control.
      * </p>
      * 
-     * @return The updated status of the compliance standard control.
+     * @return The updated status of the security standard control.
      * @see ControlStatus
      */
 
@@ -113,11 +113,11 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The updated status of the compliance standard control.
+     * The updated status of the security standard control.
      * </p>
      * 
      * @param controlStatus
-     *        The updated status of the compliance standard control.
+     *        The updated status of the security standard control.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlStatus
      */
@@ -129,11 +129,11 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The updated status of the compliance standard control.
+     * The updated status of the security standard control.
      * </p>
      * 
      * @param controlStatus
-     *        The updated status of the compliance standard control.
+     *        The updated status of the security standard control.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlStatus
      */
@@ -145,11 +145,11 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description of the reason why you are disabling a compliance standard control.
+     * A description of the reason why you are disabling a security standard control.
      * </p>
      * 
      * @param disabledReason
-     *        A description of the reason why you are disabling a compliance standard control.
+     *        A description of the reason why you are disabling a security standard control.
      */
 
     public void setDisabledReason(String disabledReason) {
@@ -158,10 +158,10 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description of the reason why you are disabling a compliance standard control.
+     * A description of the reason why you are disabling a security standard control.
      * </p>
      * 
-     * @return A description of the reason why you are disabling a compliance standard control.
+     * @return A description of the reason why you are disabling a security standard control.
      */
 
     public String getDisabledReason() {
@@ -170,11 +170,11 @@ public class UpdateStandardsControlRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A description of the reason why you are disabling a compliance standard control.
+     * A description of the reason why you are disabling a security standard control.
      * </p>
      * 
      * @param disabledReason
-     *        A description of the reason why you are disabling a compliance standard control.
+     *        A description of the reason why you are disabling a security standard control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
