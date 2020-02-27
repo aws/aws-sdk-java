@@ -26,7 +26,8 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object representing the API operations.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
@@ -37,14 +38,16 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object representing the API operations.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
      * for another purpose.
      * </p>
      * 
-     * @return An object representing the API operations.</p>
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.</p>
      *         <p>
      *         These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
      *         use it for another purpose.
@@ -56,7 +59,8 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object representing the API operations.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
@@ -64,7 +68,8 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param operations
-     *        An object representing the API operations.</p>
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.</p>
      *        <p>
      *        These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
      *        use it for another purpose.
@@ -81,7 +86,8 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object representing the API operations.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
@@ -94,7 +100,8 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param operations
-     *        An object representing the API operations.</p>
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.</p>
      *        <p>
      *        These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
      *        use it for another purpose.
@@ -113,7 +120,8 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * An object representing the API operations.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
@@ -121,7 +129,8 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param operations
-     *        An object representing the API operations.</p>
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.</p>
      *        <p>
      *        These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
      *        use it for another purpose.

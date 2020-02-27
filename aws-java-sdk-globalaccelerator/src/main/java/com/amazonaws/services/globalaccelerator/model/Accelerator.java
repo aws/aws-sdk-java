@@ -69,13 +69,13 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
      * addresses.
      * </p>
      * <p>
-     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
-     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
      * </p>
      * <p>
      * For more information about the default DNS name, see <a href=
      * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
-     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      */
     private String dnsName;
@@ -395,26 +395,27 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
      * addresses.
      * </p>
      * <p>
-     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
-     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
      * </p>
      * <p>
      * For more information about the default DNS name, see <a href=
      * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
-     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param dnsName
      *        The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static
      *        IP addresses. </p>
      *        <p>
-     *        The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
-     *        followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     *        The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random
+     *        hex string, followed by .awsglobalaccelerator.com. For example:
+     *        a1234567890abcdef.awsglobalaccelerator.com.
      *        </p>
      *        <p>
      *        For more information about the default DNS name, see <a href=
      *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
-     *        >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *        > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
      *        Guide</i>.
      */
 
@@ -428,25 +429,26 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
      * addresses.
      * </p>
      * <p>
-     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
-     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
      * </p>
      * <p>
      * For more information about the default DNS name, see <a href=
      * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
-     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @return The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's
      *         static IP addresses. </p>
      *         <p>
-     *         The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
-     *         followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     *         The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit
+     *         random hex string, followed by .awsglobalaccelerator.com. For example:
+     *         a1234567890abcdef.awsglobalaccelerator.com.
      *         </p>
      *         <p>
      *         For more information about the default DNS name, see <a href=
      *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
-     *         >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *         > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
      *         Guide</i>.
      */
 
@@ -460,26 +462,27 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
      * addresses.
      * </p>
      * <p>
-     * The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
-     * followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
      * </p>
      * <p>
      * For more information about the default DNS name, see <a href=
      * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
-     * >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param dnsName
      *        The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static
      *        IP addresses. </p>
      *        <p>
-     *        The naming convention for the DNS name is: a lower case letter a, followed by a 16-bit random hex string,
-     *        followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     *        The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random
+     *        hex string, followed by .awsglobalaccelerator.com. For example:
+     *        a1234567890abcdef.awsglobalaccelerator.com.
      *        </p>
      *        <p>
      *        For more information about the default DNS name, see <a href=
      *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
-     *        >Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *        > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

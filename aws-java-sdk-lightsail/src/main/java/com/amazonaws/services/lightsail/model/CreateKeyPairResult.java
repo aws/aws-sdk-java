@@ -43,7 +43,8 @@ public class CreateKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
     private String privateKeyBase64;
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your create key pair request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private Operation operation;
@@ -170,11 +171,13 @@ public class CreateKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your create key pair request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        An array of key-value pairs containing information about the results of your create key pair request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperation(Operation operation) {
@@ -183,10 +186,12 @@ public class CreateKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your create key pair request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the results of your create key pair request.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public Operation getOperation() {
@@ -195,11 +200,13 @@ public class CreateKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your create key pair request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        An array of key-value pairs containing information about the results of your create key pair request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

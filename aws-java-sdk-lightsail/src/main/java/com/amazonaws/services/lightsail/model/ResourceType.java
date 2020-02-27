@@ -33,7 +33,9 @@ public enum ResourceType {
     RelationalDatabase("RelationalDatabase"),
     RelationalDatabaseSnapshot("RelationalDatabaseSnapshot"),
     ExportSnapshotRecord("ExportSnapshotRecord"),
-    CloudFormationStackRecord("CloudFormationStackRecord");
+    CloudFormationStackRecord("CloudFormationStackRecord"),
+    Alarm("Alarm"),
+    ContactMethod("ContactMethod");
 
     private String value;
 

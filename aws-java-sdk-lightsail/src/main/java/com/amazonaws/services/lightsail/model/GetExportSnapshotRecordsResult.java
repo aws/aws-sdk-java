@@ -31,7 +31,14 @@ public class GetExportSnapshotRecordsResult extends com.amazonaws.AmazonWebServi
     private java.util.List<ExportSnapshotRecord> exportSnapshotRecords;
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      */
     private String nextPageToken;
@@ -108,11 +115,24 @@ public class GetExportSnapshotRecordsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results of your get relational database bundles request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify
+     *        the next page token using the <code>pageToken</code> parameter.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -121,10 +141,23 @@ public class GetExportSnapshotRecordsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return A token used for advancing to the next page of results of your get relational database bundles request.
+     * @return The token to advance to the next page of resutls from your request.</p>
+     *         <p>
+     *         A next page token is not returned if there are no more results to display.
+     *         </p>
+     *         <p>
+     *         To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and
+     *         specify the next page token using the <code>pageToken</code> parameter.
      */
 
     public String getNextPageToken() {
@@ -133,11 +166,24 @@ public class GetExportSnapshotRecordsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results of your get relational database bundles request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetExportSnapshotRecords</code> request and specify
+     *        the next page token using the <code>pageToken</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -181,15 +181,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * Once you create and validate your certificate, you can attach it to your load balancer. You can also use this API
-     * to rotate the certificates on your account. Use the <code>attach load balancer tls certificate</code> operation
-     * with the non-attached certificate, and it will replace the existing one and become the attached certificate.
+     * to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> action with the
+     * non-attached certificate, and it will replace the existing one and become the attached certificate.
      * </p>
      * <p>
-     * The <code>attach load balancer tls certificate</code> operation supports tag-based access control via resource
-     * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -209,15 +208,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * Once you create and validate your certificate, you can attach it to your load balancer. You can also use this API
-     * to rotate the certificates on your account. Use the <code>attach load balancer tls certificate</code> operation
-     * with the non-attached certificate, and it will replace the existing one and become the attached certificate.
+     * to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> action with the
+     * non-attached certificate, and it will replace the existing one and become the attached certificate.
      * </p>
      * <p>
-     * The <code>attach load balancer tls certificate</code> operation supports tag-based access control via resource
-     * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -412,6 +410,53 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     java.util.concurrent.Future<CreateCloudFormationStackResult> createCloudFormationStackAsync(
             CreateCloudFormationStackRequest createCloudFormationStackRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCloudFormationStackRequest, CreateCloudFormationStackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an email or SMS text message contact method.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param createContactMethodRequest
+     * @return A Java Future containing the result of the CreateContactMethod operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateContactMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactMethodResult> createContactMethodAsync(CreateContactMethodRequest createContactMethodRequest);
+
+    /**
+     * <p>
+     * Creates an email or SMS text message contact method.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param createContactMethodRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateContactMethod operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateContactMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateContactMethodResult> createContactMethodAsync(CreateContactMethodRequest createContactMethodRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateContactMethodRequest, CreateContactMethodResult> asyncHandler);
 
     /**
      * <p>
@@ -915,11 +960,10 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
      * </p>
      * <p>
-     * The <code>create load balancer tls certificate</code> operation supports tag-based access control via resource
-     * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerTlsCertificateRequest
@@ -940,11 +984,10 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
      * </p>
      * <p>
-     * The <code>create load balancer tls certificate</code> operation supports tag-based access control via resource
-     * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerTlsCertificateRequest
@@ -1113,6 +1156,49 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Deletes an alarm.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param deleteAlarmRequest
+     * @return A Java Future containing the result of the DeleteAlarm operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAlarmResult> deleteAlarmAsync(DeleteAlarmRequest deleteAlarmRequest);
+
+    /**
+     * <p>
+     * Deletes an alarm.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param deleteAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAlarm operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAlarmResult> deleteAlarmAsync(DeleteAlarmRequest deleteAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAlarmRequest, DeleteAlarmResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an automatic snapshot of an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
@@ -1145,6 +1231,53 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<DeleteAutoSnapshotResult> deleteAutoSnapshotAsync(DeleteAutoSnapshotRequest deleteAutoSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAutoSnapshotRequest, DeleteAutoSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a contact method.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param deleteContactMethodRequest
+     * @return A Java Future containing the result of the DeleteContactMethod operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteContactMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactMethodResult> deleteContactMethodAsync(DeleteContactMethodRequest deleteContactMethodRequest);
+
+    /**
+     * <p>
+     * Deletes a contact method.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param deleteContactMethodRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteContactMethod operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteContactMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteContactMethodResult> deleteContactMethodAsync(DeleteContactMethodRequest deleteContactMethodRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteContactMethodRequest, DeleteContactMethodResult> asyncHandler);
 
     /**
      * <p>
@@ -1572,11 +1705,10 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
      * </p>
      * <p>
-     * The <code>delete load balancer tls certificate</code> operation supports tag-based access control via resource
-     * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -1594,11 +1726,10 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
      * </p>
      * <p>
-     * The <code>delete load balancer tls certificate</code> operation supports tag-based access control via resource
-     * tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
-     * href=
-     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
-     * Dev Guide</a>.
+     * The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by <code>load balancer name</code>. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -2044,6 +2175,53 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Returns information about the configured alarms. Specify an alarm name in your request to return information
+     * about a specific alarm, or specify a monitored resource name to return information about all alarms for a
+     * specific resource.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param getAlarmsRequest
+     * @return A Java Future containing the result of the GetAlarms operation returned by the service.
+     * @sample AmazonLightsailAsync.GetAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAlarmsResult> getAlarmsAsync(GetAlarmsRequest getAlarmsRequest);
+
+    /**
+     * <p>
+     * Returns information about the configured alarms. Specify an alarm name in your request to return information
+     * about a specific alarm, or specify a monitored resource name to return information about all alarms for a
+     * specific resource.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param getAlarmsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAlarms operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAlarmsResult> getAlarmsAsync(GetAlarmsRequest getAlarmsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAlarmsRequest, GetAlarmsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the available automatic snapshots for an instance or disk. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots"
      * >Lightsail Dev Guide</a>.
@@ -2204,6 +2382,55 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Returns information about the configured contact methods. Specify a protocol in your request to return
+     * information about a specific contact method.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param getContactMethodsRequest
+     * @return A Java Future containing the result of the GetContactMethods operation returned by the service.
+     * @sample AmazonLightsailAsync.GetContactMethods
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactMethodsResult> getContactMethodsAsync(GetContactMethodsRequest getContactMethodsRequest);
+
+    /**
+     * <p>
+     * Returns information about the configured contact methods. Specify a protocol in your request to return
+     * information about a specific contact method.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param getContactMethodsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetContactMethods operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetContactMethods
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetContactMethodsResult> getContactMethodsAsync(GetContactMethodsRequest getContactMethodsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContactMethodsRequest, GetContactMethodsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a specific block storage disk.
      * </p>
      * 
@@ -2268,10 +2495,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Returns information about all block storage disk snapshots in your AWS account and region.
      * </p>
-     * <p>
-     * If you are describing a long list of disk snapshots, you can paginate the output to make the list more
-     * manageable. You can use the pageToken and nextPageToken values to retrieve the next items in the list.
-     * </p>
      * 
      * @param getDiskSnapshotsRequest
      * @return A Java Future containing the result of the GetDiskSnapshots operation returned by the service.
@@ -2284,10 +2507,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns information about all block storage disk snapshots in your AWS account and region.
-     * </p>
-     * <p>
-     * If you are describing a long list of disk snapshots, you can paginate the output to make the list more
-     * manageable. You can use the pageToken and nextPageToken values to retrieve the next items in the list.
      * </p>
      * 
      * @param getDiskSnapshotsRequest
@@ -2307,10 +2526,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Returns information about all block storage disks in your AWS account and region.
      * </p>
-     * <p>
-     * If you are describing a long list of disks, you can paginate the output to make the list more manageable. You can
-     * use the pageToken and nextPageToken values to retrieve the next items in the list.
-     * </p>
      * 
      * @param getDisksRequest
      * @return A Java Future containing the result of the GetDisks operation returned by the service.
@@ -2323,10 +2538,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns information about all block storage disks in your AWS account and region.
-     * </p>
-     * <p>
-     * If you are describing a long list of disks, you can paginate the output to make the list more manageable. You can
-     * use the pageToken and nextPageToken values to retrieve the next items in the list.
      * </p>
      * 
      * @param getDisksRequest
@@ -2882,10 +3093,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Returns information about all load balancers in an account.
      * </p>
-     * <p>
-     * If you are describing a long list of load balancers, you can paginate the output to make the list more
-     * manageable. You can use the pageToken and nextPageToken values to retrieve the next items in the list.
-     * </p>
      * 
      * @param getLoadBalancersRequest
      * @return A Java Future containing the result of the GetLoadBalancers operation returned by the service.
@@ -2898,10 +3105,6 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns information about all load balancers in an account.
-     * </p>
-     * <p>
-     * If you are describing a long list of load balancers, you can paginate the output to make the list more
-     * manageable. You can use the pageToken and nextPageToken values to retrieve the next items in the list.
      * </p>
      * 
      * @param getLoadBalancersRequest
@@ -3703,6 +3906,67 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Creates or updates an alarm, and associates it with the specified metric.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * <p>
+     * When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+     * alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then
+     * executed.
+     * </p>
+     * <p>
+     * When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous
+     * configuration of the alarm. The alarm is then evaluated with the updated configuration.
+     * </p>
+     * 
+     * @param putAlarmRequest
+     * @return A Java Future containing the result of the PutAlarm operation returned by the service.
+     * @sample AmazonLightsailAsync.PutAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAlarmResult> putAlarmAsync(PutAlarmRequest putAlarmRequest);
+
+    /**
+     * <p>
+     * Creates or updates an alarm, and associates it with the specified metric.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * <p>
+     * When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+     * alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then
+     * executed.
+     * </p>
+     * <p>
+     * When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous
+     * configuration of the alarm. The alarm is then evaluated with the updated configuration.
+     * </p>
+     * 
+     * @param putAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAlarm operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.PutAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAlarmResult> putAlarmAsync(PutAlarmRequest putAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAlarmRequest, PutAlarmResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not
      * included in the current request.
      * </p>
@@ -3862,6 +4126,77 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<ReleaseStaticIpResult> releaseStaticIpAsync(ReleaseStaticIpRequest releaseStaticIpRequest,
             com.amazonaws.handlers.AsyncHandler<ReleaseStaticIpRequest, ReleaseStaticIpResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sends a verification request to an email contact method to ensure it’s owned by the requester. SMS contact
+     * methods don’t need to be verified.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * <p>
+     * A verification request is sent to the contact method when you initially create it. Use this action to send
+     * another verification request if a previous verification request was deleted, or has expired.
+     * </p>
+     * <important>
+     * <p>
+     * Notifications are not sent to an email contact method until after it is verified, and confirmed as valid.
+     * </p>
+     * </important>
+     * 
+     * @param sendContactMethodVerificationRequest
+     * @return A Java Future containing the result of the SendContactMethodVerification operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.SendContactMethodVerification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendContactMethodVerificationResult> sendContactMethodVerificationAsync(
+            SendContactMethodVerificationRequest sendContactMethodVerificationRequest);
+
+    /**
+     * <p>
+     * Sends a verification request to an email contact method to ensure it’s owned by the requester. SMS contact
+     * methods don’t need to be verified.
+     * </p>
+     * <p>
+     * A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email
+     * address and one mobile phone number contact method in each AWS Region. However, SMS text messaging is not
+     * supported in some AWS Regions, and SMS text messages cannot be sent to some countries/regions. For more
+     * information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in
+     * Amazon Lightsail</a>.
+     * </p>
+     * <p>
+     * A verification request is sent to the contact method when you initially create it. Use this action to send
+     * another verification request if a previous verification request was deleted, or has expired.
+     * </p>
+     * <important>
+     * <p>
+     * Notifications are not sent to an email contact method until after it is verified, and confirmed as valid.
+     * </p>
+     * </important>
+     * 
+     * @param sendContactMethodVerificationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendContactMethodVerification operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.SendContactMethodVerification
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendContactMethodVerificationResult> sendContactMethodVerificationAsync(
+            SendContactMethodVerificationRequest sendContactMethodVerificationRequest,
+            com.amazonaws.handlers.AsyncHandler<SendContactMethodVerificationRequest, SendContactMethodVerificationResult> asyncHandler);
 
     /**
      * <p>
@@ -4119,6 +4454,53 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification trigger is configured
+     * for the specified alarm, the test also sends a notification to the notification protocol (<code>Email</code>
+     * and/or <code>SMS</code>) configured for the alarm.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param testAlarmRequest
+     * @return A Java Future containing the result of the TestAlarm operation returned by the service.
+     * @sample AmazonLightsailAsync.TestAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TestAlarmResult> testAlarmAsync(TestAlarmRequest testAlarmRequest);
+
+    /**
+     * <p>
+     * Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification trigger is configured
+     * for the specified alarm, the test also sends a notification to the notification protocol (<code>Email</code>
+     * and/or <code>SMS</code>) configured for the alarm.
+     * </p>
+     * <p>
+     * An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm
+     * can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more
+     * information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+     * in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param testAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestAlarm operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.TestAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TestAlarmResult> testAlarmAsync(TestAlarmRequest testAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<TestAlarmRequest, TestAlarmResult> asyncHandler);
 
     /**
      * <p>

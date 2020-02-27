@@ -1,3 +1,12 @@
+# __1.11.732__ __2020-02-27__
+## __AWS Global Accelerator__
+  - ### Features
+    - This release adds support for adding tags to accelerators and bringing your own IP address to AWS Global Accelerator (BYOIP).
+
+## __Amazon Lightsail__
+  - ### Features
+    - Adds support to create notification contacts in Amazon Lightsail, and to create instance, database, and load balancer metric alarms that notify you based on the value of a metric relative to a threshold that you specify.
+
 # __1.11.731__ __2020-02-26__
 ## __AWS SecurityHub__
   - ### Features

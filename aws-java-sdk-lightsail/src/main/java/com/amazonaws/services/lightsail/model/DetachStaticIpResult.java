@@ -25,17 +25,20 @@ public class DetachStaticIpResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your detach static IP request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private java.util.List<Operation> operations;
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your detach static IP request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the results of your detach static IP request.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -44,11 +47,13 @@ public class DetachStaticIpResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your detach static IP request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your detach static IP request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -62,7 +67,8 @@ public class DetachStaticIpResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your detach static IP request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +77,8 @@ public class DetachStaticIpResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your detach static IP request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +94,13 @@ public class DetachStaticIpResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your detach static IP request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your detach static IP request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

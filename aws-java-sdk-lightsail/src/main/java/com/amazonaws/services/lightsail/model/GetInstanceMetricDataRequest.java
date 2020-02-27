@@ -33,13 +33,105 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
     private String instanceName;
     /**
      * <p>
-     * The metric name to get data about.
+     * The metric for which you want to return information.
      * </p>
+     * <p>
+     * Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in
+     * your request, and the published <code>unit</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
+     * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
+     * core.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Percent</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
+     * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
+     * number by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
+     * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
+     * by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
+     * seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String metricName;
     /**
      * <p>
      * The granularity, in seconds, of the returned data points.
+     * </p>
+     * <p>
+     * The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All
+     * other instance metric data is available in 5-minute (300 seconds) granularity.
      * </p>
      */
     private Integer period;
@@ -57,14 +149,51 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
     private java.util.Date endTime;
     /**
      * <p>
-     * The unit. The list of valid values is below.
+     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      */
     private String unit;
     /**
      * <p>
-     * The instance statistics.
+     * The statistic for the metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * determine the total volume of a metric.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
+     * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
+     * resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> statistics;
 
@@ -110,11 +239,184 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metric name to get data about.
+     * The metric for which you want to return information.
      * </p>
+     * <p>
+     * Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in
+     * your request, and the published <code>unit</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
+     * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
+     * core.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Percent</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
+     * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
+     * number by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
+     * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
+     * by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
+     * seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param metricName
-     *        The metric name to get data about.
+     *        The metric for which you want to return information.</p>
+     *        <p>
+     *        Valid instance metric names are listed below, along with the most useful <code>statistics</code> to
+     *        include in your request, and the published <code>unit</code> value.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        on the instance. This metric identifies the processing power to run the applications on the instance.
+     *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
+     *        allocated a full processor core.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Percent</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
+     *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
+     *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
+     *        data is available in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
+     *        in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
+     *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
      * @see InstanceMetricName
      */
 
@@ -124,10 +426,183 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metric name to get data about.
+     * The metric for which you want to return information.
      * </p>
+     * <p>
+     * Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in
+     * your request, and the published <code>unit</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
+     * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
+     * core.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Percent</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
+     * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
+     * number by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
+     * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
+     * by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
+     * seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The metric name to get data about.
+     * @return The metric for which you want to return information.</p>
+     *         <p>
+     *         Valid instance metric names are listed below, along with the most useful <code>statistics</code> to
+     *         include in your request, and the published <code>unit</code> value.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in
+     *         use on the instance. This metric identifies the processing power to run the applications on the instance.
+     *         Tools in your operating system can show a lower percentage than Lightsail when the instance is not
+     *         allocated a full processor core.
+     *         </p>
+     *         <p>
+     *         <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     *         </p>
+     *         <p>
+     *         <code>Unit</code>: The published unit is <code>Percent</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *         This metric identifies the volume of incoming network traffic to the instance. The number reported is the
+     *         number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
+     *         the reported number by 300 to find Bytes/second.
+     *         </p>
+     *         <p>
+     *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *         </p>
+     *         <p>
+     *         <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the
+     *         instance. This metric identifies the volume of outgoing network traffic from the instance. The number
+     *         reported is the number of bytes sent during the period. Because this metric is reported in 5-minute
+     *         intervals, divide the reported number by 300 to find Bytes/second.
+     *         </p>
+     *         <p>
+     *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *         </p>
+     *         <p>
+     *         <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *         status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
+     *         data is available in 1-minute (60 seconds) granularity.
+     *         </p>
+     *         <p>
+     *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *         </p>
+     *         <p>
+     *         <code>Unit</code>: The published unit is <code>Count</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *         instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
+     *         in 1-minute (60 seconds) granularity.
+     *         </p>
+     *         <p>
+     *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *         </p>
+     *         <p>
+     *         <code>Unit</code>: The published unit is <code>Count</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *         status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
+     *         1-minute (60 seconds) granularity.
+     *         </p>
+     *         <p>
+     *         <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *         </p>
+     *         <p>
+     *         <code>Unit</code>: The published unit is <code>Count</code>.
+     *         </p>
+     *         </li>
      * @see InstanceMetricName
      */
 
@@ -137,11 +612,184 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metric name to get data about.
+     * The metric for which you want to return information.
      * </p>
+     * <p>
+     * Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in
+     * your request, and the published <code>unit</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
+     * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
+     * core.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Percent</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
+     * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
+     * number by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
+     * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
+     * by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
+     * seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param metricName
-     *        The metric name to get data about.
+     *        The metric for which you want to return information.</p>
+     *        <p>
+     *        Valid instance metric names are listed below, along with the most useful <code>statistics</code> to
+     *        include in your request, and the published <code>unit</code> value.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        on the instance. This metric identifies the processing power to run the applications on the instance.
+     *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
+     *        allocated a full processor core.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Percent</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
+     *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
+     *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
+     *        data is available in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
+     *        in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
+     *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceMetricName
      */
@@ -153,11 +801,184 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metric name to get data about.
+     * The metric for which you want to return information.
      * </p>
+     * <p>
+     * Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in
+     * your request, and the published <code>unit</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
+     * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
+     * core.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Percent</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
+     * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
+     * number by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
+     * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
+     * by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
+     * seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param metricName
-     *        The metric name to get data about.
+     *        The metric for which you want to return information.</p>
+     *        <p>
+     *        Valid instance metric names are listed below, along with the most useful <code>statistics</code> to
+     *        include in your request, and the published <code>unit</code> value.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        on the instance. This metric identifies the processing power to run the applications on the instance.
+     *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
+     *        allocated a full processor core.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Percent</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
+     *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
+     *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
+     *        data is available in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
+     *        in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
+     *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
      * @see InstanceMetricName
      */
 
@@ -167,11 +988,184 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The metric name to get data about.
+     * The metric for which you want to return information.
      * </p>
+     * <p>
+     * Valid instance metric names are listed below, along with the most useful <code>statistics</code> to include in
+     * your request, and the published <code>unit</code> value.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on the instance. Tools in your
+     * operating system can show a lower percentage than Lightsail when the instance is not allocated a full processor
+     * core.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Percent</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance. This
+     * metric identifies the volume of incoming network traffic to the instance. The number reported is the number of
+     * bytes received during the period. Because this metric is reported in 5-minute intervals, divide the reported
+     * number by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance. This
+     * metric identifies the volume of outgoing network traffic from the instance. The number reported is the number of
+     * bytes sent during the period. Because this metric is reported in 5-minute intervals, divide the reported number
+     * by 300 to find Bytes/second.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Bytes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance status
+     * check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the instance
+     * status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60
+     * seconds) granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system status
+     * check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.
+     * </p>
+     * <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     * </p>
+     * <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param metricName
-     *        The metric name to get data about.
+     *        The metric for which you want to return information.</p>
+     *        <p>
+     *        Valid instance metric names are listed below, along with the most useful <code>statistics</code> to
+     *        include in your request, and the published <code>unit</code> value.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUUtilization</code> </b> — The percentage of allocated compute units that are currently in use
+     *        on the instance. This metric identifies the processing power to run the applications on the instance.
+     *        Tools in your operating system can show a lower percentage than Lightsail when the instance is not
+     *        allocated a full processor core.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Percent</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkIn</code> </b> — The number of bytes received on all network interfaces by the instance.
+     *        This metric identifies the volume of incoming network traffic to the instance. The number reported is the
+     *        number of bytes received during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkOut</code> </b> — The number of bytes sent out on all network interfaces by the instance.
+     *        This metric identifies the volume of outgoing network traffic from the instance. The number reported is
+     *        the number of bytes sent during the period. Because this metric is reported in 5-minute intervals, divide
+     *        the reported number by 300 to find Bytes/second.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Bytes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed</code> </b> — Reports whether the instance passed or failed both the instance
+     *        status check and the system status check. This metric can be either 0 (passed) or 1 (failed). This metric
+     *        data is available in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance passed or failed the
+     *        instance status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available
+     *        in 1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StatusCheckFailed_System</code> </b> — Reports whether the instance passed or failed the system
+     *        status check. This metric can be either 0 (passed) or 1 (failed). This metric data is available in
+     *        1-minute (60 seconds) granularity.
+     *        </p>
+     *        <p>
+     *        <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+     *        </p>
+     *        <p>
+     *        <code>Unit</code>: The published unit is <code>Count</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceMetricName
      */
@@ -185,9 +1179,18 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The granularity, in seconds, of the returned data points.
      * </p>
+     * <p>
+     * The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All
+     * other instance metric data is available in 5-minute (300 seconds) granularity.
+     * </p>
      * 
      * @param period
-     *        The granularity, in seconds, of the returned data points.
+     *        The granularity, in seconds, of the returned data points.</p>
+     *        <p>
+     *        The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     *        <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds)
+     *        granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.
      */
 
     public void setPeriod(Integer period) {
@@ -198,8 +1201,17 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The granularity, in seconds, of the returned data points.
      * </p>
+     * <p>
+     * The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All
+     * other instance metric data is available in 5-minute (300 seconds) granularity.
+     * </p>
      * 
-     * @return The granularity, in seconds, of the returned data points.
+     * @return The granularity, in seconds, of the returned data points.</p>
+     *         <p>
+     *         The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     *         <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds)
+     *         granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.
      */
 
     public Integer getPeriod() {
@@ -210,9 +1222,18 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The granularity, in seconds, of the returned data points.
      * </p>
+     * <p>
+     * The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All
+     * other instance metric data is available in 5-minute (300 seconds) granularity.
+     * </p>
      * 
      * @param period
-     *        The granularity, in seconds, of the returned data points.
+     *        The granularity, in seconds, of the returned data points.</p>
+     *        <p>
+     *        The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     *        <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds)
+     *        granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,11 +1324,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit. The list of valid values is below.
+     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit. The list of valid values is below.
+     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        units with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -317,10 +1340,12 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit. The list of valid values is below.
+     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
-     * @return The unit. The list of valid values is below.
+     * @return The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *         units with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -330,11 +1355,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit. The list of valid values is below.
+     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit. The list of valid values is below.
+     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        units with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit
      */
@@ -346,11 +1373,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit. The list of valid values is below.
+     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit. The list of valid values is below.
+     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        units with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -360,11 +1389,13 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unit. The list of valid values is below.
+     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit. The list of valid values is below.
+     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        units with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit
      */
@@ -376,10 +1407,81 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The instance statistics.
+     * The statistic for the metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * determine the total volume of a metric.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
+     * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
+     * resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The instance statistics.
+     * @return The statistic for the metric.</p>
+     *         <p>
+     *         The following statistics are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *         low volumes of activity for your application.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Maximum</code> — The highest value observed during the specified period. Use this value to
+     *         determine high volumes of activity for your application.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Sum</code> — All values submitted for the matching metric added together. You can use this
+     *         statistic to determine the total volume of a metric.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *         statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
+     *         the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
+     *         or decrease your resources.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *         </p>
+     *         </li>
      * @see MetricStatistic
      */
 
@@ -389,11 +1491,82 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The instance statistics.
+     * The statistic for the metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * determine the total volume of a metric.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
+     * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
+     * resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statistics
-     *        The instance statistics.
+     *        The statistic for the metric.</p>
+     *        <p>
+     *        The following statistics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        low volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        high volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        to determine the total volume of a metric.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
+     *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
+     *        or decrease your resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        </p>
+     *        </li>
      * @see MetricStatistic
      */
 
@@ -408,8 +1581,44 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The instance statistics.
+     * The statistic for the metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * determine the total volume of a metric.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
+     * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
+     * resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStatistics(java.util.Collection)} or {@link #withStatistics(java.util.Collection)} if you want to
@@ -417,7 +1626,42 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param statistics
-     *        The instance statistics.
+     *        The statistic for the metric.</p>
+     *        <p>
+     *        The following statistics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        low volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        high volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        to determine the total volume of a metric.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
+     *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
+     *        or decrease your resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */
@@ -434,11 +1678,82 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The instance statistics.
+     * The statistic for the metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * determine the total volume of a metric.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
+     * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
+     * resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statistics
-     *        The instance statistics.
+     *        The statistic for the metric.</p>
+     *        <p>
+     *        The following statistics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        low volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        high volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        to determine the total volume of a metric.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
+     *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
+     *        or decrease your resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */
@@ -450,11 +1765,82 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The instance statistics.
+     * The statistic for the metric.
      * </p>
+     * <p>
+     * The following statistics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine low
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic to
+     * determine the total volume of a metric.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this statistic
+     * with the Minimum and Maximum values, you can determine the full scope of a metric and how close the average use
+     * is to the Minimum and Maximum values. This comparison helps you to know when to increase or decrease your
+     * resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param statistics
-     *        The instance statistics.
+     *        The statistic for the metric.</p>
+     *        <p>
+     *        The following statistics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Minimum</code> — The lowest value observed during the specified period. Use this value to determine
+     *        low volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Maximum</code> — The highest value observed during the specified period. Use this value to determine
+     *        high volumes of activity for your application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Sum</code> — All values submitted for the matching metric added together. You can use this statistic
+     *        to determine the total volume of a metric.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Average</code> — The value of Sum / SampleCount during the specified period. By comparing this
+     *        statistic with the Minimum and Maximum values, you can determine the full scope of a metric and how close
+     *        the average use is to the Minimum and Maximum values. This comparison helps you to know when to increase
+     *        or decrease your resources.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SampleCount</code> — The count, or number, of data points used for the statistical calculation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */

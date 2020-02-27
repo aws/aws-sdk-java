@@ -54,8 +54,14 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
-     * root of the bucket.
+     * <code>FlowLogsEnabled</code> is <code>true</code>.
+     * </p>
+     * <p>
+     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
+     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * </p>
+     * <p>
+     * s3-bucket_name//AWSLogs/aws_account_id
      * </p>
      */
     private String flowLogsS3Prefix;
@@ -251,14 +257,26 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
-     * root of the bucket.
+     * <code>FlowLogsEnabled</code> is <code>true</code>.
+     * </p>
+     * <p>
+     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
+     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * </p>
+     * <p>
+     * s3-bucket_name//AWSLogs/aws_account_id
      * </p>
      * 
      * @param flowLogsS3Prefix
      *        Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-     *        <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored
-     *        in the root of the bucket.
+     *        <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+     *        <p>
+     *        If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash
+     *        (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like
+     *        the following:
+     *        </p>
+     *        <p>
+     *        s3-bucket_name//AWSLogs/aws_account_id
      */
 
     public void setFlowLogsS3Prefix(String flowLogsS3Prefix) {
@@ -268,13 +286,25 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
-     * root of the bucket.
+     * <code>FlowLogsEnabled</code> is <code>true</code>.
+     * </p>
+     * <p>
+     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
+     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * </p>
+     * <p>
+     * s3-bucket_name//AWSLogs/aws_account_id
      * </p>
      * 
      * @return Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-     *         <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are
-     *         stored in the root of the bucket.
+     *         <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+     *         <p>
+     *         If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash
+     *         (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like
+     *         the following:
+     *         </p>
+     *         <p>
+     *         s3-bucket_name//AWSLogs/aws_account_id
      */
 
     public String getFlowLogsS3Prefix() {
@@ -284,14 +314,26 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
-     * root of the bucket.
+     * <code>FlowLogsEnabled</code> is <code>true</code>.
+     * </p>
+     * <p>
+     * If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for
+     * the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
+     * </p>
+     * <p>
+     * s3-bucket_name//AWSLogs/aws_account_id
      * </p>
      * 
      * @param flowLogsS3Prefix
      *        Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
-     *        <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored
-     *        in the root of the bucket.
+     *        <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+     *        <p>
+     *        If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash
+     *        (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like
+     *        the following:
+     *        </p>
+     *        <p>
+     *        s3-bucket_name//AWSLogs/aws_account_id
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

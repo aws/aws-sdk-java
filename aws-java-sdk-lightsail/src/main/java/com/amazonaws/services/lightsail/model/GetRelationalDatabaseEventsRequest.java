@@ -46,7 +46,12 @@ public class GetRelationalDatabaseEventsRequest extends com.amazonaws.AmazonWebS
     private Integer durationInMinutes;
     /**
      * <p>
-     * A token used for advancing to a specific page of results from for get relational database events request.
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are
+     * paginated, the response will return a next page token that you can specify as the page token in a subsequent
+     * request.
      * </p>
      */
     private String pageToken;
@@ -172,11 +177,20 @@ public class GetRelationalDatabaseEventsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results from for get relational database events request.
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are
+     * paginated, the response will return a next page token that you can specify as the page token in a subsequent
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results from for get relational database events request.
+     *        The token to advance to the next page of results from your request.</p>
+     *        <p>
+     *        To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results
+     *        are paginated, the response will return a next page token that you can specify as the page token in a
+     *        subsequent request.
      */
 
     public void setPageToken(String pageToken) {
@@ -185,10 +199,19 @@ public class GetRelationalDatabaseEventsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results from for get relational database events request.
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are
+     * paginated, the response will return a next page token that you can specify as the page token in a subsequent
+     * request.
      * </p>
      * 
-     * @return A token used for advancing to a specific page of results from for get relational database events request.
+     * @return The token to advance to the next page of results from your request.</p>
+     *         <p>
+     *         To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results
+     *         are paginated, the response will return a next page token that you can specify as the page token in a
+     *         subsequent request.
      */
 
     public String getPageToken() {
@@ -197,11 +220,20 @@ public class GetRelationalDatabaseEventsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A token used for advancing to a specific page of results from for get relational database events request.
+     * The token to advance to the next page of results from your request.
+     * </p>
+     * <p>
+     * To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results are
+     * paginated, the response will return a next page token that you can specify as the page token in a subsequent
+     * request.
      * </p>
      * 
      * @param pageToken
-     *        A token used for advancing to a specific page of results from for get relational database events request.
+     *        The token to advance to the next page of results from your request.</p>
+     *        <p>
+     *        To get a page token, perform an initial <code>GetRelationalDatabaseEvents</code> request. If your results
+     *        are paginated, the response will return a next page token that you can specify as the page token in a
+     *        subsequent request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

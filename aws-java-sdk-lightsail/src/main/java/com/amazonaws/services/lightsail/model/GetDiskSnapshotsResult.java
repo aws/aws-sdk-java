@@ -31,7 +31,14 @@ public class GetDiskSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.List<DiskSnapshot> diskSnapshots;
     /**
      * <p>
-     * A token used for advancing to the next page of results from your GetDiskSnapshots request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      */
     private String nextPageToken;
@@ -108,11 +115,24 @@ public class GetDiskSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A token used for advancing to the next page of results from your GetDiskSnapshots request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results from your GetDiskSnapshots request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the
+     *        next page token using the <code>pageToken</code> parameter.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -121,10 +141,23 @@ public class GetDiskSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A token used for advancing to the next page of results from your GetDiskSnapshots request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return A token used for advancing to the next page of results from your GetDiskSnapshots request.
+     * @return The token to advance to the next page of resutls from your request.</p>
+     *         <p>
+     *         A next page token is not returned if there are no more results to display.
+     *         </p>
+     *         <p>
+     *         To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the
+     *         next page token using the <code>pageToken</code> parameter.
      */
 
     public String getNextPageToken() {
@@ -133,11 +166,24 @@ public class GetDiskSnapshotsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A token used for advancing to the next page of results from your GetDiskSnapshots request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results from your GetDiskSnapshots request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetDiskSnapshots</code> request and specify the
+     *        next page token using the <code>pageToken</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

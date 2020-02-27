@@ -12,10 +12,13 @@
  */
 package com.amazonaws.services.globalaccelerator.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.globalaccelerator.model.*;
+
+import com.amazonaws.util.IdempotentUtils;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
@@ -31,10 +34,15 @@ public class CreateAcceleratorRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IpAddressType").build();
+    private static final MarshallingInfo<List> IPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IpAddresses").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateAcceleratorRequestMarshaller instance = new CreateAcceleratorRequestMarshaller();
 
@@ -54,8 +62,10 @@ public class CreateAcceleratorRequestMarshaller {
         try {
             protocolMarshaller.marshall(createAcceleratorRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createAcceleratorRequest.getIpAddressType(), IPADDRESSTYPE_BINDING);
+            protocolMarshaller.marshall(createAcceleratorRequest.getIpAddresses(), IPADDRESSES_BINDING);
             protocolMarshaller.marshall(createAcceleratorRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(createAcceleratorRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
+            protocolMarshaller.marshall(createAcceleratorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

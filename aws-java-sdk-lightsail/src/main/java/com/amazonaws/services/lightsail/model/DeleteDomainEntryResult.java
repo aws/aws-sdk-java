@@ -25,18 +25,21 @@ public class DeleteDomainEntryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your delete domain entry request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private Operation operation;
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your delete domain entry request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        An array of key-value pairs containing information about the results of your delete domain entry request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperation(Operation operation) {
@@ -45,10 +48,12 @@ public class DeleteDomainEntryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your delete domain entry request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the results of your delete domain entry request.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public Operation getOperation() {
@@ -57,11 +62,13 @@ public class DeleteDomainEntryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your delete domain entry request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        An array of key-value pairs containing information about the results of your delete domain entry request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
