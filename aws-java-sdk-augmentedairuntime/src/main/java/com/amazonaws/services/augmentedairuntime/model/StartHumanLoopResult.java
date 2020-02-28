@@ -29,12 +29,6 @@ public class StartHumanLoopResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String humanLoopArn;
-    /**
-     * <p>
-     * An object containing information about the human loop activation.
-     * </p>
-     */
-    private HumanLoopActivationResults humanLoopActivationResults;
 
     /**
      * <p>
@@ -77,46 +71,6 @@ public class StartHumanLoopResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p>
-     * An object containing information about the human loop activation.
-     * </p>
-     * 
-     * @param humanLoopActivationResults
-     *        An object containing information about the human loop activation.
-     */
-
-    public void setHumanLoopActivationResults(HumanLoopActivationResults humanLoopActivationResults) {
-        this.humanLoopActivationResults = humanLoopActivationResults;
-    }
-
-    /**
-     * <p>
-     * An object containing information about the human loop activation.
-     * </p>
-     * 
-     * @return An object containing information about the human loop activation.
-     */
-
-    public HumanLoopActivationResults getHumanLoopActivationResults() {
-        return this.humanLoopActivationResults;
-    }
-
-    /**
-     * <p>
-     * An object containing information about the human loop activation.
-     * </p>
-     * 
-     * @param humanLoopActivationResults
-     *        An object containing information about the human loop activation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartHumanLoopResult withHumanLoopActivationResults(HumanLoopActivationResults humanLoopActivationResults) {
-        setHumanLoopActivationResults(humanLoopActivationResults);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -129,9 +83,7 @@ public class StartHumanLoopResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHumanLoopArn() != null)
-            sb.append("HumanLoopArn: ").append(getHumanLoopArn()).append(",");
-        if (getHumanLoopActivationResults() != null)
-            sb.append("HumanLoopActivationResults: ").append(getHumanLoopActivationResults());
+            sb.append("HumanLoopArn: ").append(getHumanLoopArn());
         sb.append("}");
         return sb.toString();
     }
@@ -150,10 +102,6 @@ public class StartHumanLoopResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getHumanLoopArn() != null && other.getHumanLoopArn().equals(this.getHumanLoopArn()) == false)
             return false;
-        if (other.getHumanLoopActivationResults() == null ^ this.getHumanLoopActivationResults() == null)
-            return false;
-        if (other.getHumanLoopActivationResults() != null && other.getHumanLoopActivationResults().equals(this.getHumanLoopActivationResults()) == false)
-            return false;
         return true;
     }
 
@@ -163,7 +111,6 @@ public class StartHumanLoopResult extends com.amazonaws.AmazonWebServiceResult<c
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHumanLoopArn() == null) ? 0 : getHumanLoopArn().hashCode());
-        hashCode = prime * hashCode + ((getHumanLoopActivationResults() == null) ? 0 : getHumanLoopActivationResults().hashCode());
         return hashCode;
     }
 

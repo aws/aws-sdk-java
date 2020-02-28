@@ -22,30 +22,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Information about where the human output will be stored.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopOutputContent"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopOutput"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HumanLoopOutputContent implements Serializable, Cloneable, StructuredPojo {
+public class HumanLoopOutput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output. The output is
-     * stored at the following location: <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.
+     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.
      * </p>
      */
     private String outputS3Uri;
 
     /**
      * <p>
-     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output. The output is
-     * stored at the following location: <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.
+     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.
      * </p>
      * 
      * @param outputS3Uri
-     *        The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output. The output
-     *        is stored at the following location: <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>
-     *        .
+     *        The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.
      */
 
     public void setOutputS3Uri(String outputS3Uri) {
@@ -54,13 +50,10 @@ public class HumanLoopOutputContent implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output. The output is
-     * stored at the following location: <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.
+     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.
      * </p>
      * 
-     * @return The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output. The output
-     *         is stored at the following location:
-     *         <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.
+     * @return The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.
      */
 
     public String getOutputS3Uri() {
@@ -69,18 +62,15 @@ public class HumanLoopOutputContent implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output. The output is
-     * stored at the following location: <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.
+     * The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.
      * </p>
      * 
      * @param outputS3Uri
-     *        The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output. The output
-     *        is stored at the following location: <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>
-     *        .
+     *        The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HumanLoopOutputContent withOutputS3Uri(String outputS3Uri) {
+    public HumanLoopOutput withOutputS3Uri(String outputS3Uri) {
         setOutputS3Uri(outputS3Uri);
         return this;
     }
@@ -110,9 +100,9 @@ public class HumanLoopOutputContent implements Serializable, Cloneable, Structur
         if (obj == null)
             return false;
 
-        if (obj instanceof HumanLoopOutputContent == false)
+        if (obj instanceof HumanLoopOutput == false)
             return false;
-        HumanLoopOutputContent other = (HumanLoopOutputContent) obj;
+        HumanLoopOutput other = (HumanLoopOutput) obj;
         if (other.getOutputS3Uri() == null ^ this.getOutputS3Uri() == null)
             return false;
         if (other.getOutputS3Uri() != null && other.getOutputS3Uri().equals(this.getOutputS3Uri()) == false)
@@ -130,9 +120,9 @@ public class HumanLoopOutputContent implements Serializable, Cloneable, Structur
     }
 
     @Override
-    public HumanLoopOutputContent clone() {
+    public HumanLoopOutput clone() {
         try {
-            return (HumanLoopOutputContent) super.clone();
+            return (HumanLoopOutput) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
@@ -141,6 +131,6 @@ public class HumanLoopOutputContent implements Serializable, Cloneable, Structur
     @com.amazonaws.annotation.SdkInternalApi
     @Override
     public void marshall(ProtocolMarshaller protocolMarshaller) {
-        com.amazonaws.services.augmentedairuntime.model.transform.HumanLoopOutputContentMarshaller.getInstance().marshall(this, protocolMarshaller);
+        com.amazonaws.services.augmentedairuntime.model.transform.HumanLoopOutputMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

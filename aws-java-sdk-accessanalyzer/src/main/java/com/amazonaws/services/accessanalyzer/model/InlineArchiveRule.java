@@ -81,6 +81,13 @@ public class InlineArchiveRule implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single Filter entry
+     *
+     * @see InlineArchiveRule#withFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public InlineArchiveRule addFilterEntry(String key, Criterion value) {
         if (null == this.filter) {
             this.filter = new java.util.HashMap<String, Criterion>();

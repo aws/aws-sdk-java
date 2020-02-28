@@ -79,7 +79,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names
+     * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
      * </ul>
@@ -156,7 +157,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names
+     * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
      * </ul>
@@ -223,7 +225,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
-     *        or <code>false</code>. The default is <code>true</code>.
+     *        or <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message
+     *        header names contain only alphanumeric characters and hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -296,7 +299,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names
+     * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
      * </ul>
@@ -362,7 +366,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
-     *         or <code>false</code>. The default is <code>true</code>.
+     *         or <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message
+     *         header names contain only alphanumeric characters and hyphens.
      *         </p>
      *         </li>
      *         </ul>
@@ -435,7 +440,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message header names
+     * contain only alphanumeric characters and hyphens.
      * </p>
      * </li>
      * </ul>
@@ -502,7 +508,8 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
-     *        or <code>false</code>. The default is <code>true</code>.
+     *        or <code>false</code>. The default is <code>true</code>. Elastic Load Balancing requires that message
+     *        header names contain only alphanumeric characters and hyphens.
      *        </p>
      *        </li>
      *        </ul>

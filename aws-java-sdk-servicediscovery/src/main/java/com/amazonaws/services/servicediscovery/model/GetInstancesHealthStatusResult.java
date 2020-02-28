@@ -85,6 +85,13 @@ public class GetInstancesHealthStatusResult extends com.amazonaws.AmazonWebServi
         return this;
     }
 
+    /**
+     * Add a single Status entry
+     *
+     * @see GetInstancesHealthStatusResult#withStatus
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetInstancesHealthStatusResult addStatusEntry(String key, String value) {
         if (null == this.status) {
             this.status = new java.util.HashMap<String, String>();

@@ -80,6 +80,8 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.Date firstActivatedTime;
+
+    private java.util.Date lastDeactivatedTime;
     /**
      * <p>
      * The error code that AWS Config returned when the rule last failed.
@@ -432,6 +434,32 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
     }
 
     /**
+     * @param lastDeactivatedTime
+     */
+
+    public void setLastDeactivatedTime(java.util.Date lastDeactivatedTime) {
+        this.lastDeactivatedTime = lastDeactivatedTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getLastDeactivatedTime() {
+        return this.lastDeactivatedTime;
+    }
+
+    /**
+     * @param lastDeactivatedTime
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigRuleEvaluationStatus withLastDeactivatedTime(java.util.Date lastDeactivatedTime) {
+        setLastDeactivatedTime(lastDeactivatedTime);
+        return this;
+    }
+
+    /**
      * <p>
      * The error code that AWS Config returned when the rule last failed.
      * </p>
@@ -683,6 +711,8 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
             sb.append("LastFailedEvaluationTime: ").append(getLastFailedEvaluationTime()).append(",");
         if (getFirstActivatedTime() != null)
             sb.append("FirstActivatedTime: ").append(getFirstActivatedTime()).append(",");
+        if (getLastDeactivatedTime() != null)
+            sb.append("LastDeactivatedTime: ").append(getLastDeactivatedTime()).append(",");
         if (getLastErrorCode() != null)
             sb.append("LastErrorCode: ").append(getLastErrorCode()).append(",");
         if (getLastErrorMessage() != null)
@@ -735,6 +765,10 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
             return false;
         if (other.getFirstActivatedTime() != null && other.getFirstActivatedTime().equals(this.getFirstActivatedTime()) == false)
             return false;
+        if (other.getLastDeactivatedTime() == null ^ this.getLastDeactivatedTime() == null)
+            return false;
+        if (other.getLastDeactivatedTime() != null && other.getLastDeactivatedTime().equals(this.getLastDeactivatedTime()) == false)
+            return false;
         if (other.getLastErrorCode() == null ^ this.getLastErrorCode() == null)
             return false;
         if (other.getLastErrorCode() != null && other.getLastErrorCode().equals(this.getLastErrorCode()) == false)
@@ -763,6 +797,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getLastSuccessfulEvaluationTime() == null) ? 0 : getLastSuccessfulEvaluationTime().hashCode());
         hashCode = prime * hashCode + ((getLastFailedEvaluationTime() == null) ? 0 : getLastFailedEvaluationTime().hashCode());
         hashCode = prime * hashCode + ((getFirstActivatedTime() == null) ? 0 : getFirstActivatedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastDeactivatedTime() == null) ? 0 : getLastDeactivatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastErrorCode() == null) ? 0 : getLastErrorCode().hashCode());
         hashCode = prime * hashCode + ((getLastErrorMessage() == null) ? 0 : getLastErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getFirstEvaluationStarted() == null) ? 0 : getFirstEvaluationStarted().hashCode());

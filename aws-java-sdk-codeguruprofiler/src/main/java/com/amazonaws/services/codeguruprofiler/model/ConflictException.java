@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Request can can cause an inconsistent state for the resource.
+ * The requested operation would cause a conflict with the current state of a service resource associated with the
+ * request. Resolve the conflict before retrying this request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

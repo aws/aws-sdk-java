@@ -509,6 +509,13 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Slots entry
+     *
+     * @see DialogAction#withSlots
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DialogAction addSlotsEntry(String key, String value) {
         if (null == this.slots) {
             this.slots = new java.util.HashMap<String, String>();

@@ -184,6 +184,13 @@ public class StartAuditMitigationActionsTaskRequest extends com.amazonaws.Amazon
         return this;
     }
 
+    /**
+     * Add a single AuditCheckToActionsMapping entry
+     *
+     * @see StartAuditMitigationActionsTaskRequest#withAuditCheckToActionsMapping
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StartAuditMitigationActionsTaskRequest addAuditCheckToActionsMappingEntry(String key, java.util.List<String> value) {
         if (null == this.auditCheckToActionsMapping) {
             this.auditCheckToActionsMapping = new java.util.HashMap<String, java.util.List<String>>();

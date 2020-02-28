@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The status of profiling of a profiling group.
+ * Information about the profiling status.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfilingStatus" target="_top">AWS
@@ -30,30 +30,30 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+     * The time, in milliseconds since the epoch, when the latest agent was orchestrated.
      * </p>
      */
     private java.util.Date latestAgentOrchestratedAt;
     /**
      * <p>
-     * Timestamp of when the latest agent profile was successfully reported.
+     * The time, in milliseconds since the epoch, when the latest agent was reported..
      * </p>
      */
     private java.util.Date latestAgentProfileReportedAt;
     /**
      * <p>
-     * The time range of latest aggregated profile available.
+     * The latest aggregated profile
      * </p>
      */
     private AggregatedProfileTime latestAggregatedProfile;
 
     /**
      * <p>
-     * Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+     * The time, in milliseconds since the epoch, when the latest agent was orchestrated.
      * </p>
      * 
      * @param latestAgentOrchestratedAt
-     *        Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+     *        The time, in milliseconds since the epoch, when the latest agent was orchestrated.
      */
 
     public void setLatestAgentOrchestratedAt(java.util.Date latestAgentOrchestratedAt) {
@@ -62,10 +62,10 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+     * The time, in milliseconds since the epoch, when the latest agent was orchestrated.
      * </p>
      * 
-     * @return Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+     * @return The time, in milliseconds since the epoch, when the latest agent was orchestrated.
      */
 
     public java.util.Date getLatestAgentOrchestratedAt() {
@@ -74,11 +74,11 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+     * The time, in milliseconds since the epoch, when the latest agent was orchestrated.
      * </p>
      * 
      * @param latestAgentOrchestratedAt
-     *        Timestamp of when the last interaction of the agent with configureAgent API for orchestration.
+     *        The time, in milliseconds since the epoch, when the latest agent was orchestrated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Timestamp of when the latest agent profile was successfully reported.
+     * The time, in milliseconds since the epoch, when the latest agent was reported..
      * </p>
      * 
      * @param latestAgentProfileReportedAt
-     *        Timestamp of when the latest agent profile was successfully reported.
+     *        The time, in milliseconds since the epoch, when the latest agent was reported..
      */
 
     public void setLatestAgentProfileReportedAt(java.util.Date latestAgentProfileReportedAt) {
@@ -102,10 +102,10 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Timestamp of when the latest agent profile was successfully reported.
+     * The time, in milliseconds since the epoch, when the latest agent was reported..
      * </p>
      * 
-     * @return Timestamp of when the latest agent profile was successfully reported.
+     * @return The time, in milliseconds since the epoch, when the latest agent was reported..
      */
 
     public java.util.Date getLatestAgentProfileReportedAt() {
@@ -114,11 +114,11 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Timestamp of when the latest agent profile was successfully reported.
+     * The time, in milliseconds since the epoch, when the latest agent was reported..
      * </p>
      * 
      * @param latestAgentProfileReportedAt
-     *        Timestamp of when the latest agent profile was successfully reported.
+     *        The time, in milliseconds since the epoch, when the latest agent was reported..
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time range of latest aggregated profile available.
+     * The latest aggregated profile
      * </p>
      * 
      * @param latestAggregatedProfile
-     *        The time range of latest aggregated profile available.
+     *        The latest aggregated profile
      */
 
     public void setLatestAggregatedProfile(AggregatedProfileTime latestAggregatedProfile) {
@@ -142,10 +142,10 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time range of latest aggregated profile available.
+     * The latest aggregated profile
      * </p>
      * 
-     * @return The time range of latest aggregated profile available.
+     * @return The latest aggregated profile
      */
 
     public AggregatedProfileTime getLatestAggregatedProfile() {
@@ -154,11 +154,11 @@ public class ProfilingStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time range of latest aggregated profile available.
+     * The latest aggregated profile
      * </p>
      * 
      * @param latestAggregatedProfile
-     *        The time range of latest aggregated profile available.
+     *        The latest aggregated profile
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

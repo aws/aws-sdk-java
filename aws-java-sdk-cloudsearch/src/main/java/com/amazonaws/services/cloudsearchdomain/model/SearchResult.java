@@ -172,6 +172,13 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         return this;
     }
 
+    /**
+     * Add a single Facets entry
+     *
+     * @see SearchResult#withFacets
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SearchResult addFacetsEntry(String key, BucketInfo value) {
         if (null == this.facets) {
             this.facets = new com.amazonaws.internal.SdkInternalMap<String, BucketInfo>();
@@ -235,6 +242,13 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         setStats(stats);
         return this;
     }
+
+    /**
+     * Add a single Stats entry
+     *
+     * @see SearchResult#withStats
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public SearchResult addStatsEntry(String key, FieldStats value) {
         if (null == this.stats) {

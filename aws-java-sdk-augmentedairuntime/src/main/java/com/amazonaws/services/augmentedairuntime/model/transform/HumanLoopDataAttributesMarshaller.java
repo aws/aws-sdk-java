@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.augmentedairuntime.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -21,32 +22,32 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * HumanLoopOutputContentMarshaller
+ * HumanLoopDataAttributesMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class HumanLoopOutputContentMarshaller {
+public class HumanLoopDataAttributesMarshaller {
 
-    private static final MarshallingInfo<String> OUTPUTS3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputS3Uri").build();
+    private static final MarshallingInfo<List> CONTENTCLASSIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentClassifiers").build();
 
-    private static final HumanLoopOutputContentMarshaller instance = new HumanLoopOutputContentMarshaller();
+    private static final HumanLoopDataAttributesMarshaller instance = new HumanLoopDataAttributesMarshaller();
 
-    public static HumanLoopOutputContentMarshaller getInstance() {
+    public static HumanLoopDataAttributesMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(HumanLoopOutputContent humanLoopOutputContent, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(HumanLoopDataAttributes humanLoopDataAttributes, ProtocolMarshaller protocolMarshaller) {
 
-        if (humanLoopOutputContent == null) {
+        if (humanLoopDataAttributes == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(humanLoopOutputContent.getOutputS3Uri(), OUTPUTS3URI_BINDING);
+            protocolMarshaller.marshall(humanLoopDataAttributes.getContentClassifiers(), CONTENTCLASSIFIERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

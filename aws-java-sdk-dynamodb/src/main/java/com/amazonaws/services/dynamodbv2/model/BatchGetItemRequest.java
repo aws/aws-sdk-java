@@ -1255,6 +1255,13 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
         return this;
     }
 
+    /**
+     * Add a single RequestItems entry
+     *
+     * @see BatchGetItemRequest#withRequestItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BatchGetItemRequest addRequestItemsEntry(String key, KeysAndAttributes value) {
         if (null == this.requestItems) {
             this.requestItems = new java.util.HashMap<String, KeysAndAttributes>();

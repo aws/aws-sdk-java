@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.augmentedairuntime.model;
+package com.amazonaws.services.appmesh.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
@@ -19,59 +19,59 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object containing the input.
+ * An object that represents a client policy.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopInputContent"
- *      target="_top">AWS API Documentation</a>
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ClientPolicy" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HumanLoopInputContent implements Serializable, Cloneable, StructuredPojo {
+public class ClientPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Serialized input from the human loop.
+     * A reference to an object that represents a Transport Layer Security (TLS) client policy.
      * </p>
      */
-    private String inputContent;
+    private ClientPolicyTls tls;
 
     /**
      * <p>
-     * Serialized input from the human loop.
+     * A reference to an object that represents a Transport Layer Security (TLS) client policy.
      * </p>
      * 
-     * @param inputContent
-     *        Serialized input from the human loop.
+     * @param tls
+     *        A reference to an object that represents a Transport Layer Security (TLS) client policy.
      */
 
-    public void setInputContent(String inputContent) {
-        this.inputContent = inputContent;
+    public void setTls(ClientPolicyTls tls) {
+        this.tls = tls;
     }
 
     /**
      * <p>
-     * Serialized input from the human loop.
+     * A reference to an object that represents a Transport Layer Security (TLS) client policy.
      * </p>
      * 
-     * @return Serialized input from the human loop.
+     * @return A reference to an object that represents a Transport Layer Security (TLS) client policy.
      */
 
-    public String getInputContent() {
-        return this.inputContent;
+    public ClientPolicyTls getTls() {
+        return this.tls;
     }
 
     /**
      * <p>
-     * Serialized input from the human loop.
+     * A reference to an object that represents a Transport Layer Security (TLS) client policy.
      * </p>
      * 
-     * @param inputContent
-     *        Serialized input from the human loop.
+     * @param tls
+     *        A reference to an object that represents a Transport Layer Security (TLS) client policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HumanLoopInputContent withInputContent(String inputContent) {
-        setInputContent(inputContent);
+    public ClientPolicy withTls(ClientPolicyTls tls) {
+        setTls(tls);
         return this;
     }
 
@@ -87,8 +87,8 @@ public class HumanLoopInputContent implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInputContent() != null)
-            sb.append("InputContent: ").append(getInputContent());
+        if (getTls() != null)
+            sb.append("Tls: ").append(getTls());
         sb.append("}");
         return sb.toString();
     }
@@ -100,12 +100,12 @@ public class HumanLoopInputContent implements Serializable, Cloneable, Structure
         if (obj == null)
             return false;
 
-        if (obj instanceof HumanLoopInputContent == false)
+        if (obj instanceof ClientPolicy == false)
             return false;
-        HumanLoopInputContent other = (HumanLoopInputContent) obj;
-        if (other.getInputContent() == null ^ this.getInputContent() == null)
+        ClientPolicy other = (ClientPolicy) obj;
+        if (other.getTls() == null ^ this.getTls() == null)
             return false;
-        if (other.getInputContent() != null && other.getInputContent().equals(this.getInputContent()) == false)
+        if (other.getTls() != null && other.getTls().equals(this.getTls()) == false)
             return false;
         return true;
     }
@@ -115,14 +115,14 @@ public class HumanLoopInputContent implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInputContent() == null) ? 0 : getInputContent().hashCode());
+        hashCode = prime * hashCode + ((getTls() == null) ? 0 : getTls().hashCode());
         return hashCode;
     }
 
     @Override
-    public HumanLoopInputContent clone() {
+    public ClientPolicy clone() {
         try {
-            return (HumanLoopInputContent) super.clone();
+            return (ClientPolicy) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
@@ -131,6 +131,6 @@ public class HumanLoopInputContent implements Serializable, Cloneable, Structure
     @com.amazonaws.annotation.SdkInternalApi
     @Override
     public void marshall(ProtocolMarshaller protocolMarshaller) {
-        com.amazonaws.services.augmentedairuntime.model.transform.HumanLoopInputContentMarshaller.getInstance().marshall(this, protocolMarshaller);
+        com.amazonaws.services.appmesh.model.transform.ClientPolicyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

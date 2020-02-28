@@ -278,6 +278,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public SearchDashboardsResult searchDashboards(SearchDashboardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

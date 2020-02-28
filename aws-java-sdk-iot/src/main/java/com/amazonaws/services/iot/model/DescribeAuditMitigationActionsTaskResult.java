@@ -249,6 +249,13 @@ public class DescribeAuditMitigationActionsTaskResult extends com.amazonaws.Amaz
         return this;
     }
 
+    /**
+     * Add a single TaskStatistics entry
+     *
+     * @see DescribeAuditMitigationActionsTaskResult#withTaskStatistics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeAuditMitigationActionsTaskResult addTaskStatisticsEntry(String key, TaskStatisticsForAuditCheck value) {
         if (null == this.taskStatistics) {
             this.taskStatistics = new java.util.HashMap<String, TaskStatisticsForAuditCheck>();
@@ -355,6 +362,13 @@ public class DescribeAuditMitigationActionsTaskResult extends com.amazonaws.Amaz
         setAuditCheckToActionsMapping(auditCheckToActionsMapping);
         return this;
     }
+
+    /**
+     * Add a single AuditCheckToActionsMapping entry
+     *
+     * @see DescribeAuditMitigationActionsTaskResult#withAuditCheckToActionsMapping
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DescribeAuditMitigationActionsTaskResult addAuditCheckToActionsMappingEntry(String key, java.util.List<String> value) {
         if (null == this.auditCheckToActionsMapping) {

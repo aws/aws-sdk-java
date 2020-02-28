@@ -156,6 +156,13 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single LabelMapper entry
+     *
+     * @see LabelSchema#withLabelMapper
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public LabelSchema addLabelMapperEntry(String key, java.util.List<String> value) {
         if (null == this.labelMapper) {
             this.labelMapper = new java.util.HashMap<String, java.util.List<String>>();

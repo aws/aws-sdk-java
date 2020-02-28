@@ -419,6 +419,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single ResourceMethods entry
+     *
+     * @see Resource#withResourceMethods
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Resource addResourceMethodsEntry(String key, Method value) {
         if (null == this.resourceMethods) {
             this.resourceMethods = new java.util.HashMap<String, Method>();

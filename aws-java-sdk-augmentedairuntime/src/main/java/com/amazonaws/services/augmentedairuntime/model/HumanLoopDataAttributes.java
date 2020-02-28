@@ -22,28 +22,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Attributes of the data specified by the customer. Use these to describe the data to be labeled.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanReviewDataAttributes"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopDataAttributes"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HumanReviewDataAttributes implements Serializable, Cloneable, StructuredPojo {
+public class HumanLoopDataAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
-     * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
+     * Declares that your content is free of personally identifiable information or adult content.
+     * </p>
+     * <p>
+     * Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
+     * information.
      * </p>
      */
     private java.util.List<String> contentClassifiers;
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
-     * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
+     * Declares that your content is free of personally identifiable information or adult content.
+     * </p>
+     * <p>
+     * Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
+     * information.
      * </p>
      * 
-     * @return Declares that your content is free of personally identifiable information or adult content. Amazon
-     *         SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
+     * @return Declares that your content is free of personally identifiable information or adult content.</p>
+     *         <p>
+     *         Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
      *         information.
      * @see ContentClassifier
      */
@@ -54,13 +61,17 @@ public class HumanReviewDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
-     * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
+     * Declares that your content is free of personally identifiable information or adult content.
+     * </p>
+     * <p>
+     * Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
+     * information.
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
+     *        Declares that your content is free of personally identifiable information or adult content.</p>
+     *        <p>
+     *        Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
      *        information.
      * @see ContentClassifier
      */
@@ -76,8 +87,11 @@ public class HumanReviewDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
-     * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
+     * Declares that your content is free of personally identifiable information or adult content.
+     * </p>
+     * <p>
+     * Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
+     * information.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -86,14 +100,15 @@ public class HumanReviewDataAttributes implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
+     *        Declares that your content is free of personally identifiable information or adult content.</p>
+     *        <p>
+     *        Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
      *        information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentClassifier
      */
 
-    public HumanReviewDataAttributes withContentClassifiers(String... contentClassifiers) {
+    public HumanLoopDataAttributes withContentClassifiers(String... contentClassifiers) {
         if (this.contentClassifiers == null) {
             setContentClassifiers(new java.util.ArrayList<String>(contentClassifiers.length));
         }
@@ -105,38 +120,46 @@ public class HumanReviewDataAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
-     * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
+     * Declares that your content is free of personally identifiable information or adult content.
+     * </p>
+     * <p>
+     * Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
+     * information.
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
+     *        Declares that your content is free of personally identifiable information or adult content.</p>
+     *        <p>
+     *        Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
      *        information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentClassifier
      */
 
-    public HumanReviewDataAttributes withContentClassifiers(java.util.Collection<String> contentClassifiers) {
+    public HumanLoopDataAttributes withContentClassifiers(java.util.Collection<String> contentClassifiers) {
         setContentClassifiers(contentClassifiers);
         return this;
     }
 
     /**
      * <p>
-     * Declares that your content is free of personally identifiable information or adult content. Amazon SageMaker may
-     * restrict the Amazon Mechanical Turk workers that can view your task based on this information.
+     * Declares that your content is free of personally identifiable information or adult content.
+     * </p>
+     * <p>
+     * Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
+     * information.
      * </p>
      * 
      * @param contentClassifiers
-     *        Declares that your content is free of personally identifiable information or adult content. Amazon
-     *        SageMaker may restrict the Amazon Mechanical Turk workers that can view your task based on this
+     *        Declares that your content is free of personally identifiable information or adult content.</p>
+     *        <p>
+     *        Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this
      *        information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentClassifier
      */
 
-    public HumanReviewDataAttributes withContentClassifiers(ContentClassifier... contentClassifiers) {
+    public HumanLoopDataAttributes withContentClassifiers(ContentClassifier... contentClassifiers) {
         java.util.ArrayList<String> contentClassifiersCopy = new java.util.ArrayList<String>(contentClassifiers.length);
         for (ContentClassifier value : contentClassifiers) {
             contentClassifiersCopy.add(value.toString());
@@ -174,9 +197,9 @@ public class HumanReviewDataAttributes implements Serializable, Cloneable, Struc
         if (obj == null)
             return false;
 
-        if (obj instanceof HumanReviewDataAttributes == false)
+        if (obj instanceof HumanLoopDataAttributes == false)
             return false;
-        HumanReviewDataAttributes other = (HumanReviewDataAttributes) obj;
+        HumanLoopDataAttributes other = (HumanLoopDataAttributes) obj;
         if (other.getContentClassifiers() == null ^ this.getContentClassifiers() == null)
             return false;
         if (other.getContentClassifiers() != null && other.getContentClassifiers().equals(this.getContentClassifiers()) == false)
@@ -194,9 +217,9 @@ public class HumanReviewDataAttributes implements Serializable, Cloneable, Struc
     }
 
     @Override
-    public HumanReviewDataAttributes clone() {
+    public HumanLoopDataAttributes clone() {
         try {
-            return (HumanReviewDataAttributes) super.clone();
+            return (HumanLoopDataAttributes) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
@@ -205,6 +228,6 @@ public class HumanReviewDataAttributes implements Serializable, Cloneable, Struc
     @com.amazonaws.annotation.SdkInternalApi
     @Override
     public void marshall(ProtocolMarshaller protocolMarshaller) {
-        com.amazonaws.services.augmentedairuntime.model.transform.HumanReviewDataAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
+        com.amazonaws.services.augmentedairuntime.model.transform.HumanLoopDataAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -304,6 +304,13 @@ public class UpdateSecurityProfileResult extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single AlertTargets entry
+     *
+     * @see UpdateSecurityProfileResult#withAlertTargets
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateSecurityProfileResult addAlertTargetsEntry(String key, AlertTarget value) {
         if (null == this.alertTargets) {
             this.alertTargets = new java.util.HashMap<String, AlertTarget>();

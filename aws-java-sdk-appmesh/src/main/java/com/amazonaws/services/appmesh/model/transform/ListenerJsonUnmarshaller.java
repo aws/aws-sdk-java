@@ -56,6 +56,10 @@ public class ListenerJsonUnmarshaller implements Unmarshaller<Listener, JsonUnma
                     context.nextToken();
                     listener.setPortMapping(PortMappingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("tls", targetDepth)) {
+                    context.nextToken();
+                    listener.setTls(ListenerTlsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

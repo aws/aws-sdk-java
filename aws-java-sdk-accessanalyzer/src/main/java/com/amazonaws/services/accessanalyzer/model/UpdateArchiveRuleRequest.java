@@ -173,6 +173,13 @@ public class UpdateArchiveRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single Filter entry
+     *
+     * @see UpdateArchiveRuleRequest#withFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateArchiveRuleRequest addFilterEntry(String key, Criterion value) {
         if (null == this.filter) {
             this.filter = new java.util.HashMap<String, Criterion>();

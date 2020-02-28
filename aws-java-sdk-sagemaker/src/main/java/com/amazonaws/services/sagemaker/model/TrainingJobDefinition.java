@@ -233,6 +233,13 @@ public class TrainingJobDefinition implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single HyperParameters entry
+     *
+     * @see TrainingJobDefinition#withHyperParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TrainingJobDefinition addHyperParametersEntry(String key, String value) {
         if (null == this.hyperParameters) {
             this.hyperParameters = new java.util.HashMap<String, String>();

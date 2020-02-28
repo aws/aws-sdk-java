@@ -111,6 +111,13 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
         return this;
     }
 
+    /**
+     * Add a single ResourceArns entry
+     *
+     * @see RegisterThingResult#withResourceArns
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public RegisterThingResult addResourceArnsEntry(String key, String value) {
         if (null == this.resourceArns) {
             this.resourceArns = new java.util.HashMap<String, String>();

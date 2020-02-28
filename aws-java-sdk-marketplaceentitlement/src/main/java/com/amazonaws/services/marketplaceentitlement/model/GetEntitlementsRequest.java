@@ -155,6 +155,13 @@ public class GetEntitlementsRequest extends com.amazonaws.AmazonWebServiceReques
         return this;
     }
 
+    /**
+     * Add a single Filter entry
+     *
+     * @see GetEntitlementsRequest#withFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetEntitlementsRequest addFilterEntry(String key, java.util.List<String> value) {
         if (null == this.filter) {
             this.filter = new java.util.HashMap<String, java.util.List<String>>();

@@ -212,6 +212,13 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Properties entry
+     *
+     * @see Configuration#withProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Configuration addPropertiesEntry(String key, String value) {
         if (null == this.properties) {
             this.properties = new com.amazonaws.internal.SdkInternalMap<String, String>();

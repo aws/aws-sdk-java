@@ -164,6 +164,13 @@ public class PutWorkflowRunPropertiesRequest extends com.amazonaws.AmazonWebServ
         return this;
     }
 
+    /**
+     * Add a single RunProperties entry
+     *
+     * @see PutWorkflowRunPropertiesRequest#withRunProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutWorkflowRunPropertiesRequest addRunPropertiesEntry(String key, String value) {
         if (null == this.runProperties) {
             this.runProperties = new java.util.HashMap<String, String>();

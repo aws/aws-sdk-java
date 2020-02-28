@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for DeleteProfilingGroup operation.
+ * The structure representing the deleteProfilingGroupRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroup"
@@ -28,10 +28,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The profiling group name to delete.
+     * </p>
+     */
     private String profilingGroupName;
 
     /**
+     * <p>
+     * The profiling group name to delete.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The profiling group name to delete.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -39,7 +49,11 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The profiling group name to delete.
+     * </p>
+     * 
+     * @return The profiling group name to delete.
      */
 
     public String getProfilingGroupName() {
@@ -47,7 +61,12 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The profiling group name to delete.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The profiling group name to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

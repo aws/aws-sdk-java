@@ -908,6 +908,13 @@ public class AssessmentRun implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single FindingCounts entry
+     *
+     * @see AssessmentRun#withFindingCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AssessmentRun addFindingCountsEntry(String key, Integer value) {
         if (null == this.findingCounts) {
             this.findingCounts = new java.util.HashMap<String, Integer>();

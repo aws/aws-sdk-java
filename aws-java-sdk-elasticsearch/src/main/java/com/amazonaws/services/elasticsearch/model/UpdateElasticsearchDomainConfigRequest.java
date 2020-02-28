@@ -429,6 +429,13 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         return this;
     }
 
+    /**
+     * Add a single AdvancedOptions entry
+     *
+     * @see UpdateElasticsearchDomainConfigRequest#withAdvancedOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateElasticsearchDomainConfigRequest addAdvancedOptionsEntry(String key, String value) {
         if (null == this.advancedOptions) {
             this.advancedOptions = new java.util.HashMap<String, String>();
@@ -535,6 +542,13 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         setLogPublishingOptions(logPublishingOptions);
         return this;
     }
+
+    /**
+     * Add a single LogPublishingOptions entry
+     *
+     * @see UpdateElasticsearchDomainConfigRequest#withLogPublishingOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateElasticsearchDomainConfigRequest addLogPublishingOptionsEntry(String key, LogPublishingOption value) {
         if (null == this.logPublishingOptions) {

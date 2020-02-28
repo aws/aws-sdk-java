@@ -129,6 +129,13 @@ public class CreateRouteResponseResult extends com.amazonaws.AmazonWebServiceRes
         return this;
     }
 
+    /**
+     * Add a single ResponseModels entry
+     *
+     * @see CreateRouteResponseResult#withResponseModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateRouteResponseResult addResponseModelsEntry(String key, String value) {
         if (null == this.responseModels) {
             this.responseModels = new java.util.HashMap<String, String>();
@@ -189,6 +196,13 @@ public class CreateRouteResponseResult extends com.amazonaws.AmazonWebServiceRes
         setResponseParameters(responseParameters);
         return this;
     }
+
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see CreateRouteResponseResult#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateRouteResponseResult addResponseParametersEntry(String key, ParameterConstraints value) {
         if (null == this.responseParameters) {

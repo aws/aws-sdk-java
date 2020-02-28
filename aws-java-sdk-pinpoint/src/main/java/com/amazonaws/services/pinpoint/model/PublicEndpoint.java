@@ -192,6 +192,13 @@ public class PublicEndpoint implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see PublicEndpoint#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PublicEndpoint addAttributesEntry(String key, java.util.List<String> value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, java.util.List<String>>();
@@ -504,6 +511,13 @@ public class PublicEndpoint implements Serializable, Cloneable, StructuredPojo {
         setMetrics(metrics);
         return this;
     }
+
+    /**
+     * Add a single Metrics entry
+     *
+     * @see PublicEndpoint#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public PublicEndpoint addMetricsEntry(String key, Double value) {
         if (null == this.metrics) {

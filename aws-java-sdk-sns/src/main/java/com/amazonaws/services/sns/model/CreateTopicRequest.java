@@ -455,6 +455,13 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see CreateTopicRequest#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateTopicRequest addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();

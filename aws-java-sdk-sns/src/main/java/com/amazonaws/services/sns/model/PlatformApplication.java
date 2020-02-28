@@ -122,6 +122,13 @@ public class PlatformApplication implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see PlatformApplication#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PlatformApplication addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();

@@ -485,6 +485,13 @@ public class CreateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateOriginEndpointRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateOriginEndpointRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Periods of time used for aggregation of profiles, represented using ISO 8601 format.
+ * Information about the profile time.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfileTime" target="_top">AWS API

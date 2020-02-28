@@ -232,6 +232,13 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single SigningParameters entry
+     *
+     * @see SigningProfile#withSigningParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SigningProfile addSigningParametersEntry(String key, String value) {
         if (null == this.signingParameters) {
             this.signingParameters = new java.util.HashMap<String, String>();
@@ -391,6 +398,13 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see SigningProfile#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public SigningProfile addTagsEntry(String key, String value) {
         if (null == this.tags) {

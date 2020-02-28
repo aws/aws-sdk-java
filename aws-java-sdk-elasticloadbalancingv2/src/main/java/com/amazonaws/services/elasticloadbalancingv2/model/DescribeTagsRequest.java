@@ -27,17 +27,17 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      * </p>
      */
     private java.util.List<String> resourceArns;
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the resources.
+     * @return The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -46,11 +46,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARN) of the resources.
+     *        The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -64,7 +64,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARN) of the resources.
+     *        The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resources.
+     * The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Names (ARN) of the resources.
+     *        The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

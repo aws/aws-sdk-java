@@ -717,6 +717,13 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see DescribeTrialComponentResult#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeTrialComponentResult addParametersEntry(String key, TrialComponentParameterValue value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, TrialComponentParameterValue>();
@@ -778,6 +785,13 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single InputArtifacts entry
+     *
+     * @see DescribeTrialComponentResult#withInputArtifacts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeTrialComponentResult addInputArtifactsEntry(String key, TrialComponentArtifact value) {
         if (null == this.inputArtifacts) {
             this.inputArtifacts = new java.util.HashMap<String, TrialComponentArtifact>();
@@ -838,6 +852,13 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
         setOutputArtifacts(outputArtifacts);
         return this;
     }
+
+    /**
+     * Add a single OutputArtifacts entry
+     *
+     * @see DescribeTrialComponentResult#withOutputArtifacts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DescribeTrialComponentResult addOutputArtifactsEntry(String key, TrialComponentArtifact value) {
         if (null == this.outputArtifacts) {

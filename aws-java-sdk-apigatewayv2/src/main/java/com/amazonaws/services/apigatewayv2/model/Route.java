@@ -571,6 +571,13 @@ public class Route implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single RequestModels entry
+     *
+     * @see Route#withRequestModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Route addRequestModelsEntry(String key, String value) {
         if (null == this.requestModels) {
             this.requestModels = new java.util.HashMap<String, String>();
@@ -631,6 +638,13 @@ public class Route implements Serializable, Cloneable, StructuredPojo {
         setRequestParameters(requestParameters);
         return this;
     }
+
+    /**
+     * Add a single RequestParameters entry
+     *
+     * @see Route#withRequestParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Route addRequestParametersEntry(String key, ParameterConstraints value) {
         if (null == this.requestParameters) {

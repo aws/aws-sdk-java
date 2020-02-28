@@ -153,6 +153,13 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
         return this;
     }
 
+    /**
+     * Add a single ProductViewAggregations entry
+     *
+     * @see SearchProductsResult#withProductViewAggregations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SearchProductsResult addProductViewAggregationsEntry(String key, java.util.List<ProductViewAggregationValue> value) {
         if (null == this.productViewAggregations) {
             this.productViewAggregations = new java.util.HashMap<String, java.util.List<ProductViewAggregationValue>>();

@@ -81,6 +81,13 @@ public class UpdateLabelsPayload implements Serializable, Cloneable, StructuredP
         return this;
     }
 
+    /**
+     * Add a single AddOrUpdateLabels entry
+     *
+     * @see UpdateLabelsPayload#withAddOrUpdateLabels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateLabelsPayload addAddOrUpdateLabelsEntry(String key, String value) {
         if (null == this.addOrUpdateLabels) {
             this.addOrUpdateLabels = new java.util.HashMap<String, String>();

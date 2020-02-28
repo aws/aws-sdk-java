@@ -979,6 +979,13 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single OperationalData entry
+     *
+     * @see OpsItem#withOperationalData
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public OpsItem addOperationalDataEntry(String key, OpsItemDataValue value) {
         if (null == this.operationalData) {
             this.operationalData = new java.util.HashMap<String, OpsItemDataValue>();

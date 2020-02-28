@@ -168,6 +168,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see Resource#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Resource addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, String>();

@@ -579,6 +579,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         return this;
     }
 
+    /**
+     * Add a single DefaultArguments entry
+     *
+     * @see CreateJobRequest#withDefaultArguments
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateJobRequest addDefaultArgumentsEntry(String key, String value) {
         if (null == this.defaultArguments) {
             this.defaultArguments = new java.util.HashMap<String, String>();
@@ -639,6 +646,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         setNonOverridableArguments(nonOverridableArguments);
         return this;
     }
+
+    /**
+     * Add a single NonOverridableArguments entry
+     *
+     * @see CreateJobRequest#withNonOverridableArguments
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateJobRequest addNonOverridableArgumentsEntry(String key, String value) {
         if (null == this.nonOverridableArguments) {
@@ -1127,6 +1141,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateJobRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateJobRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {

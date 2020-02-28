@@ -307,6 +307,13 @@ public class DescribeSecurityProfileResult extends com.amazonaws.AmazonWebServic
         return this;
     }
 
+    /**
+     * Add a single AlertTargets entry
+     *
+     * @see DescribeSecurityProfileResult#withAlertTargets
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeSecurityProfileResult addAlertTargetsEntry(String key, AlertTarget value) {
         if (null == this.alertTargets) {
             this.alertTargets = new java.util.HashMap<String, AlertTarget>();

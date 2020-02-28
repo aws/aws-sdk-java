@@ -1050,6 +1050,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         return this;
     }
 
+    /**
+     * Add a single AuthParameters entry
+     *
+     * @see InitiateAuthRequest#withAuthParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public InitiateAuthRequest addAuthParametersEntry(String key, String value) {
         if (null == this.authParameters) {
             this.authParameters = new java.util.HashMap<String, String>();
@@ -1677,6 +1684,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         setClientMetadata(clientMetadata);
         return this;
     }
+
+    /**
+     * Add a single ClientMetadata entry
+     *
+     * @see InitiateAuthRequest#withClientMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public InitiateAuthRequest addClientMetadataEntry(String key, String value) {
         if (null == this.clientMetadata) {

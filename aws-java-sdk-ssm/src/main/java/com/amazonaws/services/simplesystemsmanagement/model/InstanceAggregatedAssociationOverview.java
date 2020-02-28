@@ -122,6 +122,13 @@ public class InstanceAggregatedAssociationOverview implements Serializable, Clon
         return this;
     }
 
+    /**
+     * Add a single InstanceAssociationStatusAggregatedCount entry
+     *
+     * @see InstanceAggregatedAssociationOverview#withInstanceAssociationStatusAggregatedCount
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public InstanceAggregatedAssociationOverview addInstanceAssociationStatusAggregatedCountEntry(String key, Integer value) {
         if (null == this.instanceAssociationStatusAggregatedCount) {
             this.instanceAssociationStatusAggregatedCount = new java.util.HashMap<String, Integer>();

@@ -126,6 +126,13 @@ public class Put implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Item entry
+     *
+     * @see Put#withItem
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Put addItemEntry(String key, AttributeValue value) {
         if (null == this.item) {
             this.item = new java.util.HashMap<String, AttributeValue>();
@@ -267,6 +274,13 @@ public class Put implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single ExpressionAttributeNames entry
+     *
+     * @see Put#withExpressionAttributeNames
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Put addExpressionAttributeNamesEntry(String key, String value) {
         if (null == this.expressionAttributeNames) {
             this.expressionAttributeNames = new java.util.HashMap<String, String>();
@@ -327,6 +341,13 @@ public class Put implements Serializable, Cloneable, StructuredPojo {
         setExpressionAttributeValues(expressionAttributeValues);
         return this;
     }
+
+    /**
+     * Add a single ExpressionAttributeValues entry
+     *
+     * @see Put#withExpressionAttributeValues
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Put addExpressionAttributeValuesEntry(String key, AttributeValue value) {
         if (null == this.expressionAttributeValues) {

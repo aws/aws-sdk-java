@@ -1474,6 +1474,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         return this;
     }
 
+    /**
+     * Add a single KeyConditions entry
+     *
+     * @see QueryRequest#withKeyConditions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public QueryRequest addKeyConditionsEntry(String key, Condition value) {
         if (null == this.keyConditions) {
             this.keyConditions = new java.util.HashMap<String, Condition>();
@@ -1546,6 +1553,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         setQueryFilter(queryFilter);
         return this;
     }
+
+    /**
+     * Add a single QueryFilter entry
+     *
+     * @see QueryRequest#withQueryFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public QueryRequest addQueryFilterEntry(String key, Condition value) {
         if (null == this.queryFilter) {
@@ -1871,6 +1885,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         setExclusiveStartKey(exclusiveStartKey);
         return this;
     }
+
+    /**
+     * Add a single ExclusiveStartKey entry
+     *
+     * @see QueryRequest#withExclusiveStartKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public QueryRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
         if (null == this.exclusiveStartKey) {
@@ -3299,6 +3320,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         return this;
     }
 
+    /**
+     * Add a single ExpressionAttributeNames entry
+     *
+     * @see QueryRequest#withExpressionAttributeNames
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public QueryRequest addExpressionAttributeNamesEntry(String key, String value) {
         if (null == this.expressionAttributeNames) {
             this.expressionAttributeNames = new java.util.HashMap<String, String>();
@@ -3503,6 +3531,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         setExpressionAttributeValues(expressionAttributeValues);
         return this;
     }
+
+    /**
+     * Add a single ExpressionAttributeValues entry
+     *
+     * @see QueryRequest#withExpressionAttributeValues
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public QueryRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
         if (null == this.expressionAttributeValues) {

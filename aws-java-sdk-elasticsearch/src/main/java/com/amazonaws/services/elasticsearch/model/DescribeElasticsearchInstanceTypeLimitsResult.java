@@ -52,6 +52,13 @@ public class DescribeElasticsearchInstanceTypeLimitsResult extends com.amazonaws
         return this;
     }
 
+    /**
+     * Add a single LimitsByRole entry
+     *
+     * @see DescribeElasticsearchInstanceTypeLimitsResult#withLimitsByRole
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeElasticsearchInstanceTypeLimitsResult addLimitsByRoleEntry(String key, Limits value) {
         if (null == this.limitsByRole) {
             this.limitsByRole = new java.util.HashMap<String, Limits>();

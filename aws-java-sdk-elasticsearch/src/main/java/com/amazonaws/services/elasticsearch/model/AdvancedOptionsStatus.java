@@ -92,6 +92,13 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single Options entry
+     *
+     * @see AdvancedOptionsStatus#withOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AdvancedOptionsStatus addOptionsEntry(String key, String value) {
         if (null == this.options) {
             this.options = new java.util.HashMap<String, String>();

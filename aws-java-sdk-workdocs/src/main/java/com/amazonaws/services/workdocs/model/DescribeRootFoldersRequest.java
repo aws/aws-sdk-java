@@ -27,8 +27,7 @@ public class DescribeRootFoldersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token.
      * </p>
      */
     private String authenticationToken;
@@ -47,13 +46,11 @@ public class DescribeRootFoldersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *        accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token.
      */
 
     public void setAuthenticationToken(String authenticationToken) {
@@ -62,12 +59,10 @@ public class DescribeRootFoldersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token.
      * </p>
      * 
-     * @return Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *         accessing the API using AWS credentials.
+     * @return Amazon WorkDocs authentication token.
      */
 
     public String getAuthenticationToken() {
@@ -76,13 +71,11 @@ public class DescribeRootFoldersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *        accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

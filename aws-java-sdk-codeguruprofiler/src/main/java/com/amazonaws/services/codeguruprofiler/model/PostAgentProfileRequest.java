@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for PostAgentProfile operation.
+ * The structure representing the postAgentProfileRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfile" target="_top">AWS
@@ -28,25 +28,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** <p/> */
     private java.nio.ByteBuffer agentProfile;
-    /**
-     * <p>
-     * The content type of the agent profile in the payload. Recommended to send the profile gzipped with content-type
-     * application/octet-stream. Other accepted values are application/x-amzn-ion and application/json for unzipped Ion
-     * and JSON respectively.
-     * </p>
-     */
+    /** <p/> */
     private String contentType;
-    /**
-     * <p>
-     * Client generated token to deduplicate the agent profile during aggregation.
-     * </p>
-     */
+    /** <p/> */
     private String profileToken;
-
+    /** <p/> */
     private String profilingGroupName;
 
     /**
+     * <p/>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -66,11 +58,12 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p/>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
-     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}
-     * . Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
      * {@code position}.
      * </p>
      * 
@@ -82,6 +75,7 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p/>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -103,16 +97,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p>
-     * The content type of the agent profile in the payload. Recommended to send the profile gzipped with content-type
-     * application/octet-stream. Other accepted values are application/x-amzn-ion and application/json for unzipped Ion
-     * and JSON respectively.
-     * </p>
+     * <p/>
      * 
      * @param contentType
-     *        The content type of the agent profile in the payload. Recommended to send the profile gzipped with
-     *        content-type application/octet-stream. Other accepted values are application/x-amzn-ion and
-     *        application/json for unzipped Ion and JSON respectively.
      */
 
     public void setContentType(String contentType) {
@@ -120,15 +107,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p>
-     * The content type of the agent profile in the payload. Recommended to send the profile gzipped with content-type
-     * application/octet-stream. Other accepted values are application/x-amzn-ion and application/json for unzipped Ion
-     * and JSON respectively.
-     * </p>
+     * <p/>
      * 
-     * @return The content type of the agent profile in the payload. Recommended to send the profile gzipped with
-     *         content-type application/octet-stream. Other accepted values are application/x-amzn-ion and
-     *         application/json for unzipped Ion and JSON respectively.
+     * @return
      */
 
     public String getContentType() {
@@ -136,16 +117,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p>
-     * The content type of the agent profile in the payload. Recommended to send the profile gzipped with content-type
-     * application/octet-stream. Other accepted values are application/x-amzn-ion and application/json for unzipped Ion
-     * and JSON respectively.
-     * </p>
+     * <p/>
      * 
      * @param contentType
-     *        The content type of the agent profile in the payload. Recommended to send the profile gzipped with
-     *        content-type application/octet-stream. Other accepted values are application/x-amzn-ion and
-     *        application/json for unzipped Ion and JSON respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,12 +129,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p>
-     * Client generated token to deduplicate the agent profile during aggregation.
-     * </p>
+     * <p/>
      * 
      * @param profileToken
-     *        Client generated token to deduplicate the agent profile during aggregation.
      */
 
     public void setProfileToken(String profileToken) {
@@ -168,11 +139,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p>
-     * Client generated token to deduplicate the agent profile during aggregation.
-     * </p>
+     * <p/>
      * 
-     * @return Client generated token to deduplicate the agent profile during aggregation.
+     * @return
      */
 
     public String getProfileToken() {
@@ -180,12 +149,9 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p>
-     * Client generated token to deduplicate the agent profile during aggregation.
-     * </p>
+     * <p/>
      * 
      * @param profileToken
-     *        Client generated token to deduplicate the agent profile during aggregation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,6 +161,8 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p/>
+     * 
      * @param profilingGroupName
      */
 
@@ -203,6 +171,8 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -211,6 +181,8 @@ public class PostAgentProfileRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p/>
+     * 
      * @param profilingGroupName
      * @return Returns a reference to this object so that method calls can be chained together.
      */

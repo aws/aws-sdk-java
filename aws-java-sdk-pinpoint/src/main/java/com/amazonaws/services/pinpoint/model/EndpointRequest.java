@@ -258,6 +258,13 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see EndpointRequest#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EndpointRequest addAttributesEntry(String key, java.util.List<String> value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, java.util.List<String>>();
@@ -584,6 +591,13 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
         setMetrics(metrics);
         return this;
     }
+
+    /**
+     * Add a single Metrics entry
+     *
+     * @see EndpointRequest#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public EndpointRequest addMetricsEntry(String key, Double value) {
         if (null == this.metrics) {

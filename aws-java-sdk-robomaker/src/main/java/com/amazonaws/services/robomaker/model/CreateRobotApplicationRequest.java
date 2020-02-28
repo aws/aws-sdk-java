@@ -240,6 +240,13 @@ public class CreateRobotApplicationRequest extends com.amazonaws.AmazonWebServic
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateRobotApplicationRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateRobotApplicationRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

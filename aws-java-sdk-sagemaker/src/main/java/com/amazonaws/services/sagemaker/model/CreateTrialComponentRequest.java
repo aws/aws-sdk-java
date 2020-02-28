@@ -444,6 +444,13 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see CreateTrialComponentRequest#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateTrialComponentRequest addParametersEntry(String key, TrialComponentParameterValue value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, TrialComponentParameterValue>();
@@ -511,6 +518,13 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single InputArtifacts entry
+     *
+     * @see CreateTrialComponentRequest#withInputArtifacts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateTrialComponentRequest addInputArtifactsEntry(String key, TrialComponentArtifact value) {
         if (null == this.inputArtifacts) {
             this.inputArtifacts = new java.util.HashMap<String, TrialComponentArtifact>();
@@ -574,6 +588,13 @@ public class CreateTrialComponentRequest extends com.amazonaws.AmazonWebServiceR
         setOutputArtifacts(outputArtifacts);
         return this;
     }
+
+    /**
+     * Add a single OutputArtifacts entry
+     *
+     * @see CreateTrialComponentRequest#withOutputArtifacts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateTrialComponentRequest addOutputArtifactsEntry(String key, TrialComponentArtifact value) {
         if (null == this.outputArtifacts) {

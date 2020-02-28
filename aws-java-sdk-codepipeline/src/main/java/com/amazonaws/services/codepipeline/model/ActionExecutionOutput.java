@@ -197,6 +197,13 @@ public class ActionExecutionOutput implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single OutputVariables entry
+     *
+     * @see ActionExecutionOutput#withOutputVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ActionExecutionOutput addOutputVariablesEntry(String key, String value) {
         if (null == this.outputVariables) {
             this.outputVariables = new java.util.HashMap<String, String>();

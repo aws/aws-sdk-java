@@ -244,6 +244,13 @@ public class DiscoverInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single QueryParameters entry
+     *
+     * @see DiscoverInstancesRequest#withQueryParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DiscoverInstancesRequest addQueryParametersEntry(String key, String value) {
         if (null == this.queryParameters) {
             this.queryParameters = new java.util.HashMap<String, String>();

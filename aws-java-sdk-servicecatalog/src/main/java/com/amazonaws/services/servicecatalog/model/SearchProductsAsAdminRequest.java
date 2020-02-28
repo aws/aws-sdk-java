@@ -317,6 +317,13 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single Filters entry
+     *
+     * @see SearchProductsAsAdminRequest#withFilters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SearchProductsAsAdminRequest addFiltersEntry(String key, java.util.List<String> value) {
         if (null == this.filters) {
             this.filters = new java.util.HashMap<String, java.util.List<String>>();

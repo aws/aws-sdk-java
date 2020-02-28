@@ -100,6 +100,13 @@ public class PredictRequest extends com.amazonaws.AmazonWebServiceRequest implem
         return this;
     }
 
+    /**
+     * Add a single Record entry
+     *
+     * @see PredictRequest#withRecord
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PredictRequest addRecordEntry(String key, String value) {
         if (null == this.record) {
             this.record = new com.amazonaws.internal.SdkInternalMap<String, String>();

@@ -328,6 +328,13 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
         return this;
     }
 
+    /**
+     * Add a single Headers entry
+     *
+     * @see TestInvokeMethodRequest#withHeaders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TestInvokeMethodRequest addHeadersEntry(String key, String value) {
         if (null == this.headers) {
             this.headers = new java.util.HashMap<String, String>();
@@ -388,6 +395,13 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
         setMultiValueHeaders(multiValueHeaders);
         return this;
     }
+
+    /**
+     * Add a single MultiValueHeaders entry
+     *
+     * @see TestInvokeMethodRequest#withMultiValueHeaders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public TestInvokeMethodRequest addMultiValueHeadersEntry(String key, java.util.List<String> value) {
         if (null == this.multiValueHeaders) {
@@ -495,6 +509,13 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
         setStageVariables(stageVariables);
         return this;
     }
+
+    /**
+     * Add a single StageVariables entry
+     *
+     * @see TestInvokeMethodRequest#withStageVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public TestInvokeMethodRequest addStageVariablesEntry(String key, String value) {
         if (null == this.stageVariables) {

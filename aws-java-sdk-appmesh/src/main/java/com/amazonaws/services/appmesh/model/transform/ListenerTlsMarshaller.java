@@ -10,43 +10,46 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.augmentedairuntime.model.transform;
+package com.amazonaws.services.appmesh.model.transform;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.services.augmentedairuntime.model.*;
+import com.amazonaws.services.appmesh.model.*;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * HumanLoopInputContentMarshaller
+ * ListenerTlsMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class HumanLoopInputContentMarshaller {
+public class ListenerTlsMarshaller {
 
-    private static final MarshallingInfo<String> INPUTCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputContent").build();
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificate").build();
+    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mode").build();
 
-    private static final HumanLoopInputContentMarshaller instance = new HumanLoopInputContentMarshaller();
+    private static final ListenerTlsMarshaller instance = new ListenerTlsMarshaller();
 
-    public static HumanLoopInputContentMarshaller getInstance() {
+    public static ListenerTlsMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(HumanLoopInputContent humanLoopInputContent, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(ListenerTls listenerTls, ProtocolMarshaller protocolMarshaller) {
 
-        if (humanLoopInputContent == null) {
+        if (listenerTls == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(humanLoopInputContent.getInputContent(), INPUTCONTENT_BINDING);
+            protocolMarshaller.marshall(listenerTls.getCertificate(), CERTIFICATE_BINDING);
+            protocolMarshaller.marshall(listenerTls.getMode(), MODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -198,6 +198,13 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single WorkflowRunProperties entry
+     *
+     * @see WorkflowRun#withWorkflowRunProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public WorkflowRun addWorkflowRunPropertiesEntry(String key, String value) {
         if (null == this.workflowRunProperties) {
             this.workflowRunProperties = new java.util.HashMap<String, String>();

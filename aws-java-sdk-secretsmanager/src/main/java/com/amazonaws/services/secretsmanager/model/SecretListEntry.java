@@ -830,6 +830,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single SecretVersionsToStages entry
+     *
+     * @see SecretListEntry#withSecretVersionsToStages
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SecretListEntry addSecretVersionsToStagesEntry(String key, java.util.List<String> value) {
         if (null == this.secretVersionsToStages) {
             this.secretVersionsToStages = new java.util.HashMap<String, java.util.List<String>>();

@@ -545,6 +545,13 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
         return this;
     }
 
+    /**
+     * Add a single RequestParameters entry
+     *
+     * @see GetMethodResult#withRequestParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetMethodResult addRequestParametersEntry(String key, Boolean value) {
         if (null == this.requestParameters) {
             this.requestParameters = new java.util.HashMap<String, Boolean>();
@@ -611,6 +618,13 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
         setRequestModels(requestModels);
         return this;
     }
+
+    /**
+     * Add a single RequestModels entry
+     *
+     * @see GetMethodResult#withRequestModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GetMethodResult addRequestModelsEntry(String key, String value) {
         if (null == this.requestModels) {
@@ -819,6 +833,13 @@ public class GetMethodResult extends com.amazonaws.AmazonWebServiceResult<com.am
         setMethodResponses(methodResponses);
         return this;
     }
+
+    /**
+     * Add a single MethodResponses entry
+     *
+     * @see GetMethodResult#withMethodResponses
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GetMethodResult addMethodResponsesEntry(String key, MethodResponse value) {
         if (null == this.methodResponses) {

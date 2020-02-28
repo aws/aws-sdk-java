@@ -363,6 +363,13 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Tagging entry
+     *
+     * @see S3Location#withTagging
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public S3Location addTaggingEntry(String key, String value) {
         if (null == this.tagging) {
             this.tagging = new java.util.HashMap<String, String>();
@@ -423,6 +430,13 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
         setUserMetadata(userMetadata);
         return this;
     }
+
+    /**
+     * Add a single UserMetadata entry
+     *
+     * @see S3Location#withUserMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public S3Location addUserMetadataEntry(String key, String value) {
         if (null == this.userMetadata) {

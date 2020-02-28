@@ -259,6 +259,13 @@ public class ProvisioningArtifactSummary implements Serializable, Cloneable, Str
         return this;
     }
 
+    /**
+     * Add a single ProvisioningArtifactMetadata entry
+     *
+     * @see ProvisioningArtifactSummary#withProvisioningArtifactMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ProvisioningArtifactSummary addProvisioningArtifactMetadataEntry(String key, String value) {
         if (null == this.provisioningArtifactMetadata) {
             this.provisioningArtifactMetadata = new java.util.HashMap<String, String>();

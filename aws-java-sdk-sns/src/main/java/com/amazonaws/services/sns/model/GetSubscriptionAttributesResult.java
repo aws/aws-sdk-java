@@ -489,6 +489,13 @@ public class GetSubscriptionAttributesResult extends com.amazonaws.AmazonWebServ
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see GetSubscriptionAttributesResult#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetSubscriptionAttributesResult addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();

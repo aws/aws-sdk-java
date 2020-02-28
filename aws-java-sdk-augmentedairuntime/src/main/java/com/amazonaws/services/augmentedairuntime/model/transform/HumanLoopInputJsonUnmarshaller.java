@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * HumanLoopActivationReason JSON Unmarshaller
+ * HumanLoopInput JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HumanLoopActivationReasonJsonUnmarshaller implements Unmarshaller<HumanLoopActivationReason, JsonUnmarshallerContext> {
+public class HumanLoopInputJsonUnmarshaller implements Unmarshaller<HumanLoopInput, JsonUnmarshallerContext> {
 
-    public HumanLoopActivationReason unmarshall(JsonUnmarshallerContext context) throws Exception {
-        HumanLoopActivationReason humanLoopActivationReason = new HumanLoopActivationReason();
+    public HumanLoopInput unmarshall(JsonUnmarshallerContext context) throws Exception {
+        HumanLoopInput humanLoopInput = new HumanLoopInput();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,9 +48,9 @@ public class HumanLoopActivationReasonJsonUnmarshaller implements Unmarshaller<H
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ConditionsMatched", targetDepth)) {
+                if (context.testExpression("InputContent", targetDepth)) {
                     context.nextToken();
-                    humanLoopActivationReason.setConditionsMatched(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    humanLoopInput.setInputContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -61,14 +61,14 @@ public class HumanLoopActivationReasonJsonUnmarshaller implements Unmarshaller<H
             token = context.nextToken();
         }
 
-        return humanLoopActivationReason;
+        return humanLoopInput;
     }
 
-    private static HumanLoopActivationReasonJsonUnmarshaller instance;
+    private static HumanLoopInputJsonUnmarshaller instance;
 
-    public static HumanLoopActivationReasonJsonUnmarshaller getInstance() {
+    public static HumanLoopInputJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new HumanLoopActivationReasonJsonUnmarshaller();
+            instance = new HumanLoopInputJsonUnmarshaller();
         return instance;
     }
 }

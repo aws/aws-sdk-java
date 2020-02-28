@@ -1067,6 +1067,13 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
         return this;
     }
 
+    /**
+     * Add a single TrainingParameters entry
+     *
+     * @see GetMLModelResult#withTrainingParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetMLModelResult addTrainingParametersEntry(String key, String value) {
         if (null == this.trainingParameters) {
             this.trainingParameters = new com.amazonaws.internal.SdkInternalMap<String, String>();

@@ -486,6 +486,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
         return this;
     }
 
+    /**
+     * Add a single Metadata entry
+     *
+     * @see StartRestoreJobRequest#withMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StartRestoreJobRequest addMetadataEntry(String key, String value) {
         if (null == this.metadata) {
             this.metadata = new java.util.HashMap<String, String>();

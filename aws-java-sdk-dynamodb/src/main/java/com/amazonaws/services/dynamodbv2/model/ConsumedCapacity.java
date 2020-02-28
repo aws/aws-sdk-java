@@ -315,6 +315,13 @@ public class ConsumedCapacity implements Serializable, Cloneable, StructuredPojo
         return this;
     }
 
+    /**
+     * Add a single LocalSecondaryIndexes entry
+     *
+     * @see ConsumedCapacity#withLocalSecondaryIndexes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ConsumedCapacity addLocalSecondaryIndexesEntry(String key, Capacity value) {
         if (null == this.localSecondaryIndexes) {
             this.localSecondaryIndexes = new java.util.HashMap<String, Capacity>();
@@ -375,6 +382,13 @@ public class ConsumedCapacity implements Serializable, Cloneable, StructuredPojo
         setGlobalSecondaryIndexes(globalSecondaryIndexes);
         return this;
     }
+
+    /**
+     * Add a single GlobalSecondaryIndexes entry
+     *
+     * @see ConsumedCapacity#withGlobalSecondaryIndexes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ConsumedCapacity addGlobalSecondaryIndexesEntry(String key, Capacity value) {
         if (null == this.globalSecondaryIndexes) {

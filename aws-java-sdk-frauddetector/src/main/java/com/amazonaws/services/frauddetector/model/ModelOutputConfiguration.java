@@ -146,6 +146,13 @@ public class ModelOutputConfiguration implements Serializable, Cloneable, Struct
         return this;
     }
 
+    /**
+     * Add a single JsonKeyToVariableMap entry
+     *
+     * @see ModelOutputConfiguration#withJsonKeyToVariableMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ModelOutputConfiguration addJsonKeyToVariableMapEntry(String key, String value) {
         if (null == this.jsonKeyToVariableMap) {
             this.jsonKeyToVariableMap = new java.util.HashMap<String, String>();
@@ -206,6 +213,13 @@ public class ModelOutputConfiguration implements Serializable, Cloneable, Struct
         setCsvIndexToVariableMap(csvIndexToVariableMap);
         return this;
     }
+
+    /**
+     * Add a single CsvIndexToVariableMap entry
+     *
+     * @see ModelOutputConfiguration#withCsvIndexToVariableMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ModelOutputConfiguration addCsvIndexToVariableMapEntry(String key, String value) {
         if (null == this.csvIndexToVariableMap) {

@@ -1719,6 +1719,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<SearchDashboardsResult> searchDashboardsAsync(SearchDashboardsRequest request) {
+
+        return searchDashboardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDashboardsResult> searchDashboardsAsync(final SearchDashboardsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchDashboardsRequest, SearchDashboardsResult> asyncHandler) {
+        final SearchDashboardsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchDashboardsResult>() {
+            @Override
+            public SearchDashboardsResult call() throws Exception {
+                SearchDashboardsResult result = null;
+
+                try {
+                    result = executeSearchDashboards(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

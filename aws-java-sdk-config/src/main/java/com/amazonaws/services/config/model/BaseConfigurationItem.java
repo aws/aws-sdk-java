@@ -718,6 +718,13 @@ public class BaseConfigurationItem implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single SupplementaryConfiguration entry
+     *
+     * @see BaseConfigurationItem#withSupplementaryConfiguration
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BaseConfigurationItem addSupplementaryConfigurationEntry(String key, String value) {
         if (null == this.supplementaryConfiguration) {
             this.supplementaryConfiguration = new java.util.HashMap<String, String>();

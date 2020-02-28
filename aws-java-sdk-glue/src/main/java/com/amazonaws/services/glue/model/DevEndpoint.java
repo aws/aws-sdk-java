@@ -1957,6 +1957,13 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Arguments entry
+     *
+     * @see DevEndpoint#withArguments
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DevEndpoint addArgumentsEntry(String key, String value) {
         if (null == this.arguments) {
             this.arguments = new java.util.HashMap<String, String>();

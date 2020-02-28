@@ -48,6 +48,10 @@ public class VirtualNodeSpecJsonUnmarshaller implements Unmarshaller<VirtualNode
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("backendDefaults", targetDepth)) {
+                    context.nextToken();
+                    virtualNodeSpec.setBackendDefaults(BackendDefaultsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("backends", targetDepth)) {
                     context.nextToken();
                     virtualNodeSpec.setBackends(new ListUnmarshaller<Backend>(BackendJsonUnmarshaller.getInstance()).unmarshall(context));

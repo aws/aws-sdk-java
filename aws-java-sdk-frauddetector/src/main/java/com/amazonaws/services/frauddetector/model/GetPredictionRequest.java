@@ -223,6 +223,13 @@ public class GetPredictionRequest extends com.amazonaws.AmazonWebServiceRequest 
         return this;
     }
 
+    /**
+     * Add a single EventAttributes entry
+     *
+     * @see GetPredictionRequest#withEventAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetPredictionRequest addEventAttributesEntry(String key, String value) {
         if (null == this.eventAttributes) {
             this.eventAttributes = new java.util.HashMap<String, String>();
@@ -283,6 +290,13 @@ public class GetPredictionRequest extends com.amazonaws.AmazonWebServiceRequest 
         setExternalModelEndpointDataBlobs(externalModelEndpointDataBlobs);
         return this;
     }
+
+    /**
+     * Add a single ExternalModelEndpointDataBlobs entry
+     *
+     * @see GetPredictionRequest#withExternalModelEndpointDataBlobs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GetPredictionRequest addExternalModelEndpointDataBlobsEntry(String key, ModelEndpointDataBlob value) {
         if (null == this.externalModelEndpointDataBlobs) {

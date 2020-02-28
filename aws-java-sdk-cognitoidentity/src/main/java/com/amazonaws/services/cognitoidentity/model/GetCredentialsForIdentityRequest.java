@@ -196,6 +196,13 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
         return this;
     }
 
+    /**
+     * Add a single Logins entry
+     *
+     * @see GetCredentialsForIdentityRequest#withLogins
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetCredentialsForIdentityRequest addLoginsEntry(String key, String value) {
         if (null == this.logins) {
             this.logins = new java.util.HashMap<String, String>();

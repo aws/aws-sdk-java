@@ -217,6 +217,13 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
         return this;
     }
 
+    /**
+     * Add a single TokenSigningPublicKeys entry
+     *
+     * @see CreateAuthorizerRequest#withTokenSigningPublicKeys
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateAuthorizerRequest addTokenSigningPublicKeysEntry(String key, String value) {
         if (null == this.tokenSigningPublicKeys) {
             this.tokenSigningPublicKeys = new java.util.HashMap<String, String>();

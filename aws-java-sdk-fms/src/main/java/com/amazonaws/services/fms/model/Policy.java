@@ -718,6 +718,13 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single IncludeMap entry
+     *
+     * @see Policy#withIncludeMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Policy addIncludeMapEntry(String key, java.util.List<String> value) {
         if (null == this.includeMap) {
             this.includeMap = new java.util.HashMap<String, java.util.List<String>>();
@@ -811,6 +818,13 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
         setExcludeMap(excludeMap);
         return this;
     }
+
+    /**
+     * Add a single ExcludeMap entry
+     *
+     * @see Policy#withExcludeMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Policy addExcludeMapEntry(String key, java.util.List<String> value) {
         if (null == this.excludeMap) {

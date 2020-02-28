@@ -564,6 +564,13 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         return this;
     }
 
+    /**
+     * Add a single RequestModels entry
+     *
+     * @see GetRouteResult#withRequestModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetRouteResult addRequestModelsEntry(String key, String value) {
         if (null == this.requestModels) {
             this.requestModels = new java.util.HashMap<String, String>();
@@ -624,6 +631,13 @@ public class GetRouteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         setRequestParameters(requestParameters);
         return this;
     }
+
+    /**
+     * Add a single RequestParameters entry
+     *
+     * @see GetRouteResult#withRequestParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GetRouteResult addRequestParametersEntry(String key, ParameterConstraints value) {
         if (null == this.requestParameters) {

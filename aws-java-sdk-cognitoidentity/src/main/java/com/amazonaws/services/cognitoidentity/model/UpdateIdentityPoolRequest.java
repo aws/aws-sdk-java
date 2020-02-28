@@ -332,6 +332,13 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
         return this;
     }
 
+    /**
+     * Add a single SupportedLoginProviders entry
+     *
+     * @see UpdateIdentityPoolRequest#withSupportedLoginProviders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateIdentityPoolRequest addSupportedLoginProvidersEntry(String key, String value) {
         if (null == this.supportedLoginProviders) {
             this.supportedLoginProviders = new java.util.HashMap<String, String>();
@@ -648,6 +655,13 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
         setIdentityPoolTags(identityPoolTags);
         return this;
     }
+
+    /**
+     * Add a single IdentityPoolTags entry
+     *
+     * @see UpdateIdentityPoolRequest#withIdentityPoolTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateIdentityPoolRequest addIdentityPoolTagsEntry(String key, String value) {
         if (null == this.identityPoolTags) {

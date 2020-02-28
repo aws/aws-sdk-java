@@ -922,6 +922,13 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
         return this;
     }
 
+    /**
+     * Add a single ChallengeParameters entry
+     *
+     * @see AdminInitiateAuthResult#withChallengeParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AdminInitiateAuthResult addChallengeParametersEntry(String key, String value) {
         if (null == this.challengeParameters) {
             this.challengeParameters = new java.util.HashMap<String, String>();

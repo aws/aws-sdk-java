@@ -620,6 +620,13 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
         return this;
     }
 
+    /**
+     * Add a single Thumbnail entry
+     *
+     * @see DocumentVersionMetadata#withThumbnail
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DocumentVersionMetadata addThumbnailEntry(String key, String value) {
         if (null == this.thumbnail) {
             this.thumbnail = new java.util.HashMap<String, String>();
@@ -680,6 +687,13 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
         setSource(source);
         return this;
     }
+
+    /**
+     * Add a single Source entry
+     *
+     * @see DocumentVersionMetadata#withSource
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DocumentVersionMetadata addSourceEntry(String key, String value) {
         if (null == this.source) {

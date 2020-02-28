@@ -150,6 +150,13 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Metrics entry
+     *
+     * @see Group#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Group addMetricsEntry(String key, MetricValue value) {
         if (null == this.metrics) {
             this.metrics = new java.util.HashMap<String, MetricValue>();

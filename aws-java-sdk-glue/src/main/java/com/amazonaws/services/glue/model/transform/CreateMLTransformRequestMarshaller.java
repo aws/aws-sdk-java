@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -50,6 +51,8 @@ public class CreateMLTransformRequestMarshaller {
             .marshallLocationName("Timeout").build();
     private static final MarshallingInfo<Integer> MAXRETRIES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRetries").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateMLTransformRequestMarshaller instance = new CreateMLTransformRequestMarshaller();
 
@@ -78,6 +81,7 @@ public class CreateMLTransformRequestMarshaller {
             protocolMarshaller.marshall(createMLTransformRequest.getNumberOfWorkers(), NUMBEROFWORKERS_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(createMLTransformRequest.getMaxRetries(), MAXRETRIES_BINDING);
+            protocolMarshaller.marshall(createMLTransformRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

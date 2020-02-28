@@ -128,6 +128,13 @@ public class StandardsSubscriptionRequest implements Serializable, Cloneable, St
         return this;
     }
 
+    /**
+     * Add a single StandardsInput entry
+     *
+     * @see StandardsSubscriptionRequest#withStandardsInput
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StandardsSubscriptionRequest addStandardsInputEntry(String key, String value) {
         if (null == this.standardsInput) {
             this.standardsInput = new java.util.HashMap<String, String>();

@@ -494,6 +494,13 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         return this;
     }
 
+    /**
+     * Add a single EnvironmentVariables entry
+     *
+     * @see CreateBranchRequest#withEnvironmentVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateBranchRequest addEnvironmentVariablesEntry(String key, String value) {
         if (null == this.environmentVariables) {
             this.environmentVariables = new java.util.HashMap<String, String>();
@@ -646,6 +653,13 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateBranchRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateBranchRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {

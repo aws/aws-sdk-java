@@ -79,6 +79,13 @@ public class PerformanceMetrics implements Serializable, Cloneable, StructuredPo
         return this;
     }
 
+    /**
+     * Add a single Properties entry
+     *
+     * @see PerformanceMetrics#withProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PerformanceMetrics addPropertiesEntry(String key, String value) {
         if (null == this.properties) {
             this.properties = new com.amazonaws.internal.SdkInternalMap<String, String>();

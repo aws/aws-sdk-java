@@ -905,6 +905,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see CreateStackRequest#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateStackRequest addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();

@@ -79,6 +79,13 @@ public class GetIdentityVerificationAttributesResult extends com.amazonaws.Amazo
         return this;
     }
 
+    /**
+     * Add a single VerificationAttributes entry
+     *
+     * @see GetIdentityVerificationAttributesResult#withVerificationAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetIdentityVerificationAttributesResult addVerificationAttributesEntry(String key, IdentityVerificationAttributes value) {
         if (null == this.verificationAttributes) {
             this.verificationAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityVerificationAttributes>();

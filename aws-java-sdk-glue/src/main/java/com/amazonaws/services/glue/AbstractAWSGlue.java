@@ -473,6 +473,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public ListMLTransformsResult listMLTransforms(ListMLTransformsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTriggersResult listTriggers(ListTriggersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

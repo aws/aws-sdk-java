@@ -434,6 +434,13 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Uris entry
+     *
+     * @see GraphqlApi#withUris
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GraphqlApi addUrisEntry(String key, String value) {
         if (null == this.uris) {
             this.uris = new java.util.HashMap<String, String>();
@@ -494,6 +501,13 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see GraphqlApi#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GraphqlApi addTagsEntry(String key, String value) {
         if (null == this.tags) {

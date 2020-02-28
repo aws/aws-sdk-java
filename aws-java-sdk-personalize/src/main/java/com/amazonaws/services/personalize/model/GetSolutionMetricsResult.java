@@ -116,6 +116,13 @@ public class GetSolutionMetricsResult extends com.amazonaws.AmazonWebServiceResu
         return this;
     }
 
+    /**
+     * Add a single Metrics entry
+     *
+     * @see GetSolutionMetricsResult#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetSolutionMetricsResult addMetricsEntry(String key, Double value) {
         if (null == this.metrics) {
             this.metrics = new java.util.HashMap<String, Double>();

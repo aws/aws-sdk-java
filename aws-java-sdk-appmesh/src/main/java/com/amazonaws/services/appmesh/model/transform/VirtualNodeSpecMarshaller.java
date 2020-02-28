@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VirtualNodeSpecMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> BACKENDDEFAULTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backendDefaults").build();
     private static final MarshallingInfo<List> BACKENDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("backends").build();
     private static final MarshallingInfo<List> LISTENERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class VirtualNodeSpecMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(virtualNodeSpec.getBackendDefaults(), BACKENDDEFAULTS_BINDING);
             protocolMarshaller.marshall(virtualNodeSpec.getBackends(), BACKENDS_BINDING);
             protocolMarshaller.marshall(virtualNodeSpec.getListeners(), LISTENERS_BINDING);
             protocolMarshaller.marshall(virtualNodeSpec.getLogging(), LOGGING_BINDING);

@@ -282,6 +282,13 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
         return this;
     }
 
+    /**
+     * Add a single Filters entry
+     *
+     * @see DescribeBackupsRequest#withFilters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeBackupsRequest addFiltersEntry(String key, java.util.List<String> value) {
         if (null == this.filters) {
             this.filters = new java.util.HashMap<String, java.util.List<String>>();

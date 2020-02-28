@@ -3768,6 +3768,55 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS
+     * resources across multiple accounts and regions, performs the corresponding search, and returns resource
+     * configurations matching the properties.
+     * </p>
+     * <p>
+     * For more information about query components, see the <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
+     * </a> section in the AWS Config Developer Guide.
+     * </p>
+     * 
+     * @param selectAggregateResourceConfigRequest
+     * @return A Java Future containing the result of the SelectAggregateResourceConfig operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.SelectAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SelectAggregateResourceConfigResult> selectAggregateResourceConfigAsync(
+            SelectAggregateResourceConfigRequest selectAggregateResourceConfigRequest);
+
+    /**
+     * <p>
+     * Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of AWS
+     * resources across multiple accounts and regions, performs the corresponding search, and returns resource
+     * configurations matching the properties.
+     * </p>
+     * <p>
+     * For more information about query components, see the <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b>
+     * </a> section in the AWS Config Developer Guide.
+     * </p>
+     * 
+     * @param selectAggregateResourceConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SelectAggregateResourceConfig operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.SelectAggregateResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SelectAggregateResourceConfigResult> selectAggregateResourceConfigAsync(
+            SelectAggregateResourceConfigRequest selectAggregateResourceConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<SelectAggregateResourceConfigRequest, SelectAggregateResourceConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Accepts a structured query language (SQL) <code>SELECT</code> command, performs the corresponding search, and
      * returns resource configurations matching the properties.
      * </p>

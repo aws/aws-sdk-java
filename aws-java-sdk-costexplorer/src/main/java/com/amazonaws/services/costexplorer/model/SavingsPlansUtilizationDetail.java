@@ -144,6 +144,13 @@ public class SavingsPlansUtilizationDetail implements Serializable, Cloneable, S
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see SavingsPlansUtilizationDetail#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SavingsPlansUtilizationDetail addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, String>();

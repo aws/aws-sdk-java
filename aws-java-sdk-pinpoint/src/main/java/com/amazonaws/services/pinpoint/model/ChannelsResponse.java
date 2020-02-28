@@ -83,6 +83,13 @@ public class ChannelsResponse implements Serializable, Cloneable, StructuredPojo
         return this;
     }
 
+    /**
+     * Add a single Channels entry
+     *
+     * @see ChannelsResponse#withChannels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ChannelsResponse addChannelsEntry(String key, ChannelResponse value) {
         if (null == this.channels) {
             this.channels = new java.util.HashMap<String, ChannelResponse>();

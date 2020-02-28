@@ -206,6 +206,13 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
         return this;
     }
 
+    /**
+     * Add a single Activities entry
+     *
+     * @see WriteJourneyRequest#withActivities
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public WriteJourneyRequest addActivitiesEntry(String key, Activity value) {
         if (null == this.activities) {
             this.activities = new java.util.HashMap<String, Activity>();

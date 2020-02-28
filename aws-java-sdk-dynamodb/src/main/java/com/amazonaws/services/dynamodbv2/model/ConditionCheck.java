@@ -115,6 +115,13 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Key entry
+     *
+     * @see ConditionCheck#withKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ConditionCheck addKeyEntry(String key, AttributeValue value) {
         if (null == this.key) {
             this.key = new java.util.HashMap<String, AttributeValue>();
@@ -256,6 +263,13 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single ExpressionAttributeNames entry
+     *
+     * @see ConditionCheck#withExpressionAttributeNames
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ConditionCheck addExpressionAttributeNamesEntry(String key, String value) {
         if (null == this.expressionAttributeNames) {
             this.expressionAttributeNames = new java.util.HashMap<String, String>();
@@ -316,6 +330,13 @@ public class ConditionCheck implements Serializable, Cloneable, StructuredPojo {
         setExpressionAttributeValues(expressionAttributeValues);
         return this;
     }
+
+    /**
+     * Add a single ExpressionAttributeValues entry
+     *
+     * @see ConditionCheck#withExpressionAttributeValues
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ConditionCheck addExpressionAttributeValuesEntry(String key, AttributeValue value) {
         if (null == this.expressionAttributeValues) {

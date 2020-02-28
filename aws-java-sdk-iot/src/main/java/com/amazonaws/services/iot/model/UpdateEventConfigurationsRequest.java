@@ -67,6 +67,13 @@ public class UpdateEventConfigurationsRequest extends com.amazonaws.AmazonWebSer
         return this;
     }
 
+    /**
+     * Add a single EventConfigurations entry
+     *
+     * @see UpdateEventConfigurationsRequest#withEventConfigurations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateEventConfigurationsRequest addEventConfigurationsEntry(String key, Configuration value) {
         if (null == this.eventConfigurations) {
             this.eventConfigurations = new java.util.HashMap<String, Configuration>();

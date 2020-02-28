@@ -42,13 +42,13 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
      * An object containing information about the human loop.
      * </p>
      */
-    private HumanLoopInputContent humanLoopInput;
+    private HumanLoopInput humanLoopInput;
     /**
      * <p>
      * Attributes of the data specified by the customer.
      * </p>
      */
-    private HumanReviewDataAttributes dataAttributes;
+    private HumanLoopDataAttributes dataAttributes;
 
     /**
      * <p>
@@ -139,7 +139,7 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
      *        An object containing information about the human loop.
      */
 
-    public void setHumanLoopInput(HumanLoopInputContent humanLoopInput) {
+    public void setHumanLoopInput(HumanLoopInput humanLoopInput) {
         this.humanLoopInput = humanLoopInput;
     }
 
@@ -151,7 +151,7 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return An object containing information about the human loop.
      */
 
-    public HumanLoopInputContent getHumanLoopInput() {
+    public HumanLoopInput getHumanLoopInput() {
         return this.humanLoopInput;
     }
 
@@ -165,7 +165,7 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartHumanLoopRequest withHumanLoopInput(HumanLoopInputContent humanLoopInput) {
+    public StartHumanLoopRequest withHumanLoopInput(HumanLoopInput humanLoopInput) {
         setHumanLoopInput(humanLoopInput);
         return this;
     }
@@ -179,7 +179,7 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Attributes of the data specified by the customer.
      */
 
-    public void setDataAttributes(HumanReviewDataAttributes dataAttributes) {
+    public void setDataAttributes(HumanLoopDataAttributes dataAttributes) {
         this.dataAttributes = dataAttributes;
     }
 
@@ -191,7 +191,7 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Attributes of the data specified by the customer.
      */
 
-    public HumanReviewDataAttributes getDataAttributes() {
+    public HumanLoopDataAttributes getDataAttributes() {
         return this.dataAttributes;
     }
 
@@ -205,7 +205,7 @@ public class StartHumanLoopRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public StartHumanLoopRequest withDataAttributes(HumanReviewDataAttributes dataAttributes) {
+    public StartHumanLoopRequest withDataAttributes(HumanLoopDataAttributes dataAttributes) {
         setDataAttributes(dataAttributes);
         return this;
     }

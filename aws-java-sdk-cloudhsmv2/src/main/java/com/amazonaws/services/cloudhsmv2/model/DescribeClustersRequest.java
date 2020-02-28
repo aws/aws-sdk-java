@@ -159,6 +159,13 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
         return this;
     }
 
+    /**
+     * Add a single Filters entry
+     *
+     * @see DescribeClustersRequest#withFilters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeClustersRequest addFiltersEntry(String key, java.util.List<String> value) {
         if (null == this.filters) {
             this.filters = new java.util.HashMap<String, java.util.List<String>>();

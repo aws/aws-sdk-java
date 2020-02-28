@@ -2910,6 +2910,40 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<SelectAggregateResourceConfigResult> selectAggregateResourceConfigAsync(SelectAggregateResourceConfigRequest request) {
+
+        return selectAggregateResourceConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SelectAggregateResourceConfigResult> selectAggregateResourceConfigAsync(
+            final SelectAggregateResourceConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SelectAggregateResourceConfigRequest, SelectAggregateResourceConfigResult> asyncHandler) {
+        final SelectAggregateResourceConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SelectAggregateResourceConfigResult>() {
+            @Override
+            public SelectAggregateResourceConfigResult call() throws Exception {
+                SelectAggregateResourceConfigResult result = null;
+
+                try {
+                    result = executeSelectAggregateResourceConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SelectResourceConfigResult> selectResourceConfigAsync(SelectResourceConfigRequest request) {
 
         return selectResourceConfigAsync(request, null);

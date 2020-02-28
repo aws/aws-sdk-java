@@ -455,6 +455,13 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single BotConfiguration entry
+     *
+     * @see BotChannelAssociation#withBotConfiguration
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BotChannelAssociation addBotConfigurationEntry(String key, String value) {
         if (null == this.botConfiguration) {
             this.botConfiguration = new java.util.HashMap<String, String>();

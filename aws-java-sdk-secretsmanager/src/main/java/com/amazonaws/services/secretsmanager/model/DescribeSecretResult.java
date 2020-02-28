@@ -835,6 +835,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         return this;
     }
 
+    /**
+     * Add a single VersionIdsToStages entry
+     *
+     * @see DescribeSecretResult#withVersionIdsToStages
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeSecretResult addVersionIdsToStagesEntry(String key, java.util.List<String> value) {
         if (null == this.versionIdsToStages) {
             this.versionIdsToStages = new java.util.HashMap<String, java.util.List<String>>();

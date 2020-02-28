@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * HumanLoopActivationResults JSON Unmarshaller
+ * HumanLoopOutput JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HumanLoopActivationResultsJsonUnmarshaller implements Unmarshaller<HumanLoopActivationResults, JsonUnmarshallerContext> {
+public class HumanLoopOutputJsonUnmarshaller implements Unmarshaller<HumanLoopOutput, JsonUnmarshallerContext> {
 
-    public HumanLoopActivationResults unmarshall(JsonUnmarshallerContext context) throws Exception {
-        HumanLoopActivationResults humanLoopActivationResults = new HumanLoopActivationResults();
+    public HumanLoopOutput unmarshall(JsonUnmarshallerContext context) throws Exception {
+        HumanLoopOutput humanLoopOutput = new HumanLoopOutput();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,13 +48,9 @@ public class HumanLoopActivationResultsJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("HumanLoopActivationReason", targetDepth)) {
+                if (context.testExpression("OutputS3Uri", targetDepth)) {
                     context.nextToken();
-                    humanLoopActivationResults.setHumanLoopActivationReason(HumanLoopActivationReasonJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("HumanLoopActivationConditionsEvaluationResults", targetDepth)) {
-                    context.nextToken();
-                    humanLoopActivationResults.setHumanLoopActivationConditionsEvaluationResults(context.getUnmarshaller(String.class).unmarshall(context));
+                    humanLoopOutput.setOutputS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -65,14 +61,14 @@ public class HumanLoopActivationResultsJsonUnmarshaller implements Unmarshaller<
             token = context.nextToken();
         }
 
-        return humanLoopActivationResults;
+        return humanLoopOutput;
     }
 
-    private static HumanLoopActivationResultsJsonUnmarshaller instance;
+    private static HumanLoopOutputJsonUnmarshaller instance;
 
-    public static HumanLoopActivationResultsJsonUnmarshaller getInstance() {
+    public static HumanLoopOutputJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new HumanLoopActivationResultsJsonUnmarshaller();
+            instance = new HumanLoopOutputJsonUnmarshaller();
         return instance;
     }
 }

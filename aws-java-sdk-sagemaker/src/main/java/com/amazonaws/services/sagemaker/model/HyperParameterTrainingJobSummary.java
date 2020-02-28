@@ -525,6 +525,13 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
         return this;
     }
 
+    /**
+     * Add a single TunedHyperParameters entry
+     *
+     * @see HyperParameterTrainingJobSummary#withTunedHyperParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public HyperParameterTrainingJobSummary addTunedHyperParametersEntry(String key, String value) {
         if (null == this.tunedHyperParameters) {
             this.tunedHyperParameters = new java.util.HashMap<String, String>();

@@ -132,6 +132,13 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
         return this;
     }
 
+    /**
+     * Add a single FileUploadUrls entry
+     *
+     * @see CreateDeploymentResult#withFileUploadUrls
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateDeploymentResult addFileUploadUrlsEntry(String key, String value) {
         if (null == this.fileUploadUrls) {
             this.fileUploadUrls = new java.util.HashMap<String, String>();

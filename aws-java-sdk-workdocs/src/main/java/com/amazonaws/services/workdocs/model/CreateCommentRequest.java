@@ -27,8 +27,7 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
      * </p>
      */
     private String authenticationToken;
@@ -79,13 +78,12 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *        accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the
+     *        API.
      */
 
     public void setAuthenticationToken(String authenticationToken) {
@@ -94,12 +92,11 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
      * </p>
      * 
-     * @return Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *         accessing the API using AWS credentials.
+     * @return Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the
+     *         API.
      */
 
     public String getAuthenticationToken() {
@@ -108,13 +105,12 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     * accessing the API using AWS credentials.
+     * Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.
      * </p>
      * 
      * @param authenticationToken
-     *        Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in
-     *        accessing the API using AWS credentials.
+     *        Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

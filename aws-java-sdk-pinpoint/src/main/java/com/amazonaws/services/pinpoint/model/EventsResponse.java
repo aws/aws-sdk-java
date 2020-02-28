@@ -92,6 +92,13 @@ public class EventsResponse implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Results entry
+     *
+     * @see EventsResponse#withResults
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EventsResponse addResultsEntry(String key, ItemResponse value) {
         if (null == this.results) {
             this.results = new java.util.HashMap<String, ItemResponse>();

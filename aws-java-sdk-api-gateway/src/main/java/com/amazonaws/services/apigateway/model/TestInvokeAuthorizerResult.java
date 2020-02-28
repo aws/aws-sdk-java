@@ -289,6 +289,13 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
         return this;
     }
 
+    /**
+     * Add a single Authorization entry
+     *
+     * @see TestInvokeAuthorizerResult#withAuthorization
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TestInvokeAuthorizerResult addAuthorizationEntry(String key, java.util.List<String> value) {
         if (null == this.authorization) {
             this.authorization = new java.util.HashMap<String, java.util.List<String>>();
@@ -358,6 +365,13 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
         setClaims(claims);
         return this;
     }
+
+    /**
+     * Add a single Claims entry
+     *
+     * @see TestInvokeAuthorizerResult#withClaims
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public TestInvokeAuthorizerResult addClaimsEntry(String key, String value) {
         if (null == this.claims) {

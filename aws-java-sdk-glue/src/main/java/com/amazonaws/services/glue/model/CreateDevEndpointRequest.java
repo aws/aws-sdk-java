@@ -1249,6 +1249,13 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateDevEndpointRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateDevEndpointRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();
@@ -1309,6 +1316,13 @@ public class CreateDevEndpointRequest extends com.amazonaws.AmazonWebServiceRequ
         setArguments(arguments);
         return this;
     }
+
+    /**
+     * Add a single Arguments entry
+     *
+     * @see CreateDevEndpointRequest#withArguments
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateDevEndpointRequest addArgumentsEntry(String key, String value) {
         if (null == this.arguments) {

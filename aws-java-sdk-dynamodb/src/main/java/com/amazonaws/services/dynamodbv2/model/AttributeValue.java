@@ -741,6 +741,13 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single M entry
+     *
+     * @see AttributeValue#withM
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AttributeValue addMEntry(String key, AttributeValue value) {
         if (null == this.m) {
             this.m = new java.util.HashMap<String, AttributeValue>();

@@ -76,6 +76,13 @@ public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResul
         return this;
     }
 
+    /**
+     * Add a single SummaryMap entry
+     *
+     * @see GetAccountSummaryResult#withSummaryMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetAccountSummaryResult addSummaryMapEntry(String key, Integer value) {
         if (null == this.summaryMap) {
             this.summaryMap = new com.amazonaws.internal.SdkInternalMap<String, Integer>();

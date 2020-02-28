@@ -405,6 +405,13 @@ public class UpdateProvisionedProductPropertiesRequest extends com.amazonaws.Ama
         return this;
     }
 
+    /**
+     * Add a single ProvisionedProductProperties entry
+     *
+     * @see UpdateProvisionedProductPropertiesRequest#withProvisionedProductProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateProvisionedProductPropertiesRequest addProvisionedProductPropertiesEntry(String key, String value) {
         if (null == this.provisionedProductProperties) {
             this.provisionedProductProperties = new java.util.HashMap<String, String>();

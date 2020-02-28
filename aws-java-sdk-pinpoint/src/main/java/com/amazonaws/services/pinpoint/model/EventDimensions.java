@@ -98,6 +98,13 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see EventDimensions#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EventDimensions addAttributesEntry(String key, AttributeDimension value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, AttributeDimension>();
@@ -216,6 +223,13 @@ public class EventDimensions implements Serializable, Cloneable, StructuredPojo 
         setMetrics(metrics);
         return this;
     }
+
+    /**
+     * Add a single Metrics entry
+     *
+     * @see EventDimensions#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public EventDimensions addMetricsEntry(String key, MetricDimension value) {
         if (null == this.metrics) {

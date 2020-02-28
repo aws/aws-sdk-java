@@ -325,6 +325,13 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         return this;
     }
 
+    /**
+     * Add a single Slots entry
+     *
+     * @see PostTextResult#withSlots
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PostTextResult addSlotsEntry(String key, String value) {
         if (null == this.slots) {
             this.slots = new java.util.HashMap<String, String>();
@@ -385,6 +392,13 @@ public class PostTextResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         setSessionAttributes(sessionAttributes);
         return this;
     }
+
+    /**
+     * Add a single SessionAttributes entry
+     *
+     * @see PostTextResult#withSessionAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public PostTextResult addSessionAttributesEntry(String key, String value) {
         if (null == this.sessionAttributes) {

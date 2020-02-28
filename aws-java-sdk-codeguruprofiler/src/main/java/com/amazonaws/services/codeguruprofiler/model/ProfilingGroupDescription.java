@@ -28,27 +28,42 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProfilingGroupDescription implements Serializable, Cloneable, StructuredPojo {
 
+    /** <p/> */
     private AgentOrchestrationConfig agentOrchestrationConfig;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * </p>
+     */
     private String arn;
     /**
      * <p>
-     * The timestamp of when the profiling group was created.
+     * The time, in milliseconds since the epoch, when the profiling group was created.
      * </p>
      */
     private java.util.Date createdAt;
-
+    /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The status of the profiling group.
+     * </p>
+     */
     private ProfilingStatus profilingStatus;
     /**
      * <p>
-     * The timestamp of when the profiling group was last updated.
+     * The time, in milliseconds since the epoch, when the profiling group was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
 
     /**
+     * <p/>
+     * 
      * @param agentOrchestrationConfig
      */
 
@@ -57,6 +72,8 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -65,6 +82,8 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p/>
+     * 
      * @param agentOrchestrationConfig
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -75,7 +94,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * </p>
+     * 
      * @param arn
+     *        The Amazon Resource Name (ARN) identifying the profiling group.
      */
 
     public void setArn(String arn) {
@@ -83,7 +107,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) identifying the profiling group.
      */
 
     public String getArn() {
@@ -91,7 +119,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) identifying the profiling group.
+     * </p>
+     * 
      * @param arn
+     *        The Amazon Resource Name (ARN) identifying the profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +135,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of when the profiling group was created.
+     * The time, in milliseconds since the epoch, when the profiling group was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp of when the profiling group was created.
+     *        The time, in milliseconds since the epoch, when the profiling group was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -115,10 +148,10 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of when the profiling group was created.
+     * The time, in milliseconds since the epoch, when the profiling group was created.
      * </p>
      * 
-     * @return The timestamp of when the profiling group was created.
+     * @return The time, in milliseconds since the epoch, when the profiling group was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -127,11 +160,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of when the profiling group was created.
+     * The time, in milliseconds since the epoch, when the profiling group was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp of when the profiling group was created.
+     *        The time, in milliseconds since the epoch, when the profiling group was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +174,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
      * @param name
+     *        The name of the profiling group.
      */
 
     public void setName(String name) {
@@ -149,7 +187,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
+     * @return The name of the profiling group.
      */
 
     public String getName() {
@@ -157,7 +199,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
      * @param name
+     *        The name of the profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,7 +214,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The status of the profiling group.
+     * </p>
+     * 
      * @param profilingStatus
+     *        The status of the profiling group.
      */
 
     public void setProfilingStatus(ProfilingStatus profilingStatus) {
@@ -175,7 +227,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the profiling group.
+     * </p>
+     * 
+     * @return The status of the profiling group.
      */
 
     public ProfilingStatus getProfilingStatus() {
@@ -183,7 +239,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The status of the profiling group.
+     * </p>
+     * 
      * @param profilingStatus
+     *        The status of the profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +255,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of when the profiling group was last updated.
+     * The time, in milliseconds since the epoch, when the profiling group was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The timestamp of when the profiling group was last updated.
+     *        The time, in milliseconds since the epoch, when the profiling group was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -207,10 +268,10 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of when the profiling group was last updated.
+     * The time, in milliseconds since the epoch, when the profiling group was last updated.
      * </p>
      * 
-     * @return The timestamp of when the profiling group was last updated.
+     * @return The time, in milliseconds since the epoch, when the profiling group was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -219,11 +280,11 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of when the profiling group was last updated.
+     * The time, in milliseconds since the epoch, when the profiling group was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The timestamp of when the profiling group was last updated.
+     *        The time, in milliseconds since the epoch, when the profiling group was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

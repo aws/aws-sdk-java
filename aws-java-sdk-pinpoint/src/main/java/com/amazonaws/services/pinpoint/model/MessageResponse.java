@@ -141,6 +141,13 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single EndpointResult entry
+     *
+     * @see MessageResponse#withEndpointResult
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public MessageResponse addEndpointResultEntry(String key, EndpointMessageResult value) {
         if (null == this.endpointResult) {
             this.endpointResult = new java.util.HashMap<String, EndpointMessageResult>();
@@ -250,6 +257,13 @@ public class MessageResponse implements Serializable, Cloneable, StructuredPojo 
         setResult(result);
         return this;
     }
+
+    /**
+     * Add a single Result entry
+     *
+     * @see MessageResponse#withResult
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public MessageResponse addResultEntry(String key, MessageResult value) {
         if (null == this.result) {

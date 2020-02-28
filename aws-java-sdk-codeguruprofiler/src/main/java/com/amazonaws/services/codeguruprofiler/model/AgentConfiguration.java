@@ -18,9 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * The configuration for the agent to use.
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AgentConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -28,27 +26,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AgentConfiguration implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * Specifies the period to follow the configuration (to profile or not) and call back to get a new configuration.
-     * </p>
-     */
+    /** <p/> */
     private Integer periodInSeconds;
-    /**
-     * <p>
-     * Specifies if the profiling should be enabled by the agent.
-     * </p>
-     */
+    /** <p/> */
     private Boolean shouldProfile;
 
     /**
-     * <p>
-     * Specifies the period to follow the configuration (to profile or not) and call back to get a new configuration.
-     * </p>
+     * <p/>
      * 
      * @param periodInSeconds
-     *        Specifies the period to follow the configuration (to profile or not) and call back to get a new
-     *        configuration.
      */
 
     public void setPeriodInSeconds(Integer periodInSeconds) {
@@ -56,12 +42,9 @@ public class AgentConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p>
-     * Specifies the period to follow the configuration (to profile or not) and call back to get a new configuration.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies the period to follow the configuration (to profile or not) and call back to get a new
-     *         configuration.
+     * @return
      */
 
     public Integer getPeriodInSeconds() {
@@ -69,13 +52,9 @@ public class AgentConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p>
-     * Specifies the period to follow the configuration (to profile or not) and call back to get a new configuration.
-     * </p>
+     * <p/>
      * 
      * @param periodInSeconds
-     *        Specifies the period to follow the configuration (to profile or not) and call back to get a new
-     *        configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,12 +64,9 @@ public class AgentConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p>
-     * Specifies if the profiling should be enabled by the agent.
-     * </p>
+     * <p/>
      * 
      * @param shouldProfile
-     *        Specifies if the profiling should be enabled by the agent.
      */
 
     public void setShouldProfile(Boolean shouldProfile) {
@@ -98,11 +74,9 @@ public class AgentConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p>
-     * Specifies if the profiling should be enabled by the agent.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies if the profiling should be enabled by the agent.
+     * @return
      */
 
     public Boolean getShouldProfile() {
@@ -110,12 +84,9 @@ public class AgentConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p>
-     * Specifies if the profiling should be enabled by the agent.
-     * </p>
+     * <p/>
      * 
      * @param shouldProfile
-     *        Specifies if the profiling should be enabled by the agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,11 +96,9 @@ public class AgentConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p>
-     * Specifies if the profiling should be enabled by the agent.
-     * </p>
+     * <p/>
      * 
-     * @return Specifies if the profiling should be enabled by the agent.
+     * @return
      */
 
     public Boolean isShouldProfile() {

@@ -1401,6 +1401,13 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
         return this;
     }
 
+    /**
+     * Add a single MessageAttributes entry
+     *
+     * @see PublishRequest#withMessageAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PublishRequest addMessageAttributesEntry(String key, MessageAttributeValue value) {
         if (null == this.messageAttributes) {
             this.messageAttributes = new com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue>();

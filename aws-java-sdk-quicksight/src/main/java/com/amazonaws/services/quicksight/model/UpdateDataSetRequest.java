@@ -235,6 +235,13 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
         return this;
     }
 
+    /**
+     * Add a single PhysicalTableMap entry
+     *
+     * @see UpdateDataSetRequest#withPhysicalTableMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateDataSetRequest addPhysicalTableMapEntry(String key, PhysicalTable value) {
         if (null == this.physicalTableMap) {
             this.physicalTableMap = new java.util.HashMap<String, PhysicalTable>();
@@ -295,6 +302,13 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
         setLogicalTableMap(logicalTableMap);
         return this;
     }
+
+    /**
+     * Add a single LogicalTableMap entry
+     *
+     * @see UpdateDataSetRequest#withLogicalTableMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateDataSetRequest addLogicalTableMapEntry(String key, LogicalTable value) {
         if (null == this.logicalTableMap) {

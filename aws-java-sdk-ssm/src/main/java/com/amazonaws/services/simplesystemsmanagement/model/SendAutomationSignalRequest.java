@@ -323,6 +323,13 @@ public class SendAutomationSignalRequest extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single Payload entry
+     *
+     * @see SendAutomationSignalRequest#withPayload
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SendAutomationSignalRequest addPayloadEntry(String key, java.util.List<String> value) {
         if (null == this.payload) {
             this.payload = new java.util.HashMap<String, java.util.List<String>>();

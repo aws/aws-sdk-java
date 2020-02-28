@@ -255,6 +255,13 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single AlertTargets entry
+     *
+     * @see CreateSecurityProfileRequest#withAlertTargets
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateSecurityProfileRequest addAlertTargetsEntry(String key, AlertTarget value) {
         if (null == this.alertTargets) {
             this.alertTargets = new java.util.HashMap<String, AlertTarget>();

@@ -121,6 +121,13 @@ public class UploadMetadata implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single SignedHeaders entry
+     *
+     * @see UploadMetadata#withSignedHeaders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UploadMetadata addSignedHeadersEntry(String key, String value) {
         if (null == this.signedHeaders) {
             this.signedHeaders = new java.util.HashMap<String, String>();

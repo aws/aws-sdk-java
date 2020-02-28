@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Request references a resource which does not exist.
+ * The resource specified in the request does not exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

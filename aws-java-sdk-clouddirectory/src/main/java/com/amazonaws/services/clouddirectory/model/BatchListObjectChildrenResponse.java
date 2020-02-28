@@ -88,6 +88,13 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable,
         return this;
     }
 
+    /**
+     * Add a single Children entry
+     *
+     * @see BatchListObjectChildrenResponse#withChildren
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BatchListObjectChildrenResponse addChildrenEntry(String key, String value) {
         if (null == this.children) {
             this.children = new java.util.HashMap<String, String>();

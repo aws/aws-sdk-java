@@ -30,13 +30,13 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the specification of a GRPC route.
+     * An object that represents the specification of a gRPC route.
      * </p>
      */
     private GrpcRoute grpcRoute;
     /**
      * <p>
-     * An object that represents the specification of an HTTP2 route.
+     * An object that represents the specification of an HTTP/2 route.
      * </p>
      */
     private HttpRoute http2Route;
@@ -61,11 +61,11 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the specification of a GRPC route.
+     * An object that represents the specification of a gRPC route.
      * </p>
      * 
      * @param grpcRoute
-     *        An object that represents the specification of a GRPC route.
+     *        An object that represents the specification of a gRPC route.
      */
 
     public void setGrpcRoute(GrpcRoute grpcRoute) {
@@ -74,10 +74,10 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the specification of a GRPC route.
+     * An object that represents the specification of a gRPC route.
      * </p>
      * 
-     * @return An object that represents the specification of a GRPC route.
+     * @return An object that represents the specification of a gRPC route.
      */
 
     public GrpcRoute getGrpcRoute() {
@@ -86,11 +86,11 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the specification of a GRPC route.
+     * An object that represents the specification of a gRPC route.
      * </p>
      * 
      * @param grpcRoute
-     *        An object that represents the specification of a GRPC route.
+     *        An object that represents the specification of a gRPC route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the specification of an HTTP2 route.
+     * An object that represents the specification of an HTTP/2 route.
      * </p>
      * 
      * @param http2Route
-     *        An object that represents the specification of an HTTP2 route.
+     *        An object that represents the specification of an HTTP/2 route.
      */
 
     public void setHttp2Route(HttpRoute http2Route) {
@@ -114,10 +114,10 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the specification of an HTTP2 route.
+     * An object that represents the specification of an HTTP/2 route.
      * </p>
      * 
-     * @return An object that represents the specification of an HTTP2 route.
+     * @return An object that represents the specification of an HTTP/2 route.
      */
 
     public HttpRoute getHttp2Route() {
@@ -126,11 +126,11 @@ public class RouteSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the specification of an HTTP2 route.
+     * An object that represents the specification of an HTTP/2 route.
      * </p>
      * 
      * @param http2Route
-     *        An object that represents the specification of an HTTP2 route.
+     *        An object that represents the specification of an HTTP/2 route.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

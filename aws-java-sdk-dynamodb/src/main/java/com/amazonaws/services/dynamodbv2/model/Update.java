@@ -121,6 +121,13 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Key entry
+     *
+     * @see Update#withKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Update addKeyEntry(String key, AttributeValue value) {
         if (null == this.key) {
             this.key = new java.util.HashMap<String, AttributeValue>();
@@ -308,6 +315,13 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single ExpressionAttributeNames entry
+     *
+     * @see Update#withExpressionAttributeNames
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Update addExpressionAttributeNamesEntry(String key, String value) {
         if (null == this.expressionAttributeNames) {
             this.expressionAttributeNames = new java.util.HashMap<String, String>();
@@ -368,6 +382,13 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
         setExpressionAttributeValues(expressionAttributeValues);
         return this;
     }
+
+    /**
+     * Add a single ExpressionAttributeValues entry
+     *
+     * @see Update#withExpressionAttributeValues
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Update addExpressionAttributeValuesEntry(String key, AttributeValue value) {
         if (null == this.expressionAttributeValues) {

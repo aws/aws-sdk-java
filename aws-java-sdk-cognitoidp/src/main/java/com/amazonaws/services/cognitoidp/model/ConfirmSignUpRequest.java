@@ -724,6 +724,13 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
         return this;
     }
 
+    /**
+     * Add a single ClientMetadata entry
+     *
+     * @see ConfirmSignUpRequest#withClientMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ConfirmSignUpRequest addClientMetadataEntry(String key, String value) {
         if (null == this.clientMetadata) {
             this.clientMetadata = new java.util.HashMap<String, String>();

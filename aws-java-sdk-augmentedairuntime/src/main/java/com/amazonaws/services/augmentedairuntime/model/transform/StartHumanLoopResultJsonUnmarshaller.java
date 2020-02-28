@@ -52,10 +52,6 @@ public class StartHumanLoopResultJsonUnmarshaller implements Unmarshaller<StartH
                     context.nextToken();
                     startHumanLoopResult.setHumanLoopArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("HumanLoopActivationResults", targetDepth)) {
-                    context.nextToken();
-                    startHumanLoopResult.setHumanLoopActivationResults(HumanLoopActivationResultsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

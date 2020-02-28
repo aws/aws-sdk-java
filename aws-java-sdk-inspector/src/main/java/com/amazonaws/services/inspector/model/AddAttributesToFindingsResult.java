@@ -70,6 +70,13 @@ public class AddAttributesToFindingsResult extends com.amazonaws.AmazonWebServic
         return this;
     }
 
+    /**
+     * Add a single FailedItems entry
+     *
+     * @see AddAttributesToFindingsResult#withFailedItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AddAttributesToFindingsResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {
             this.failedItems = new java.util.HashMap<String, FailedItemDetails>();

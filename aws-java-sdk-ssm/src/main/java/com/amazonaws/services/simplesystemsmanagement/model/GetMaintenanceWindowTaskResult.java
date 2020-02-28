@@ -520,6 +520,13 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
         return this;
     }
 
+    /**
+     * Add a single TaskParameters entry
+     *
+     * @see GetMaintenanceWindowTaskResult#withTaskParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetMaintenanceWindowTaskResult addTaskParametersEntry(String key, MaintenanceWindowTaskParameterValueExpression value) {
         if (null == this.taskParameters) {
             this.taskParameters = new java.util.HashMap<String, MaintenanceWindowTaskParameterValueExpression>();

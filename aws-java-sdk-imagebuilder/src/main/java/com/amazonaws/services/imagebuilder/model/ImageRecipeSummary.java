@@ -370,6 +370,13 @@ public class ImageRecipeSummary implements Serializable, Cloneable, StructuredPo
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see ImageRecipeSummary#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ImageRecipeSummary addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

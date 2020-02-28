@@ -610,6 +610,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateJobRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateJobRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();
@@ -670,6 +677,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         setUserMetadata(userMetadata);
         return this;
     }
+
+    /**
+     * Add a single UserMetadata entry
+     *
+     * @see CreateJobRequest#withUserMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateJobRequest addUserMetadataEntry(String key, String value) {
         if (null == this.userMetadata) {

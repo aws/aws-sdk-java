@@ -24,13 +24,18 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * HumanReviewDataAttributes JSON Unmarshaller
+ * ConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HumanReviewDataAttributesJsonUnmarshaller implements Unmarshaller<HumanReviewDataAttributes, JsonUnmarshallerContext> {
+public class ConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
+    private ConflictExceptionUnmarshaller() {
+        super(com.amazonaws.services.augmentedairuntime.model.ConflictException.class, "ConflictException");
+    }
 
-    public HumanReviewDataAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
-        HumanReviewDataAttributes humanReviewDataAttributes = new HumanReviewDataAttributes();
+    @Override
+    public com.amazonaws.services.augmentedairuntime.model.ConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
+        com.amazonaws.services.augmentedairuntime.model.ConflictException conflictException = new com.amazonaws.services.augmentedairuntime.model.ConflictException(
+                null);
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,10 +53,6 @@ public class HumanReviewDataAttributesJsonUnmarshaller implements Unmarshaller<H
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("ContentClassifiers", targetDepth)) {
-                    context.nextToken();
-                    humanReviewDataAttributes.setContentClassifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
@@ -60,15 +61,14 @@ public class HumanReviewDataAttributesJsonUnmarshaller implements Unmarshaller<H
             }
             token = context.nextToken();
         }
-
-        return humanReviewDataAttributes;
+        return conflictException;
     }
 
-    private static HumanReviewDataAttributesJsonUnmarshaller instance;
+    private static ConflictExceptionUnmarshaller instance;
 
-    public static HumanReviewDataAttributesJsonUnmarshaller getInstance() {
+    public static ConflictExceptionUnmarshaller getInstance() {
         if (instance == null)
-            instance = new HumanReviewDataAttributesJsonUnmarshaller();
+            instance = new ConflictExceptionUnmarshaller();
         return instance;
     }
 }

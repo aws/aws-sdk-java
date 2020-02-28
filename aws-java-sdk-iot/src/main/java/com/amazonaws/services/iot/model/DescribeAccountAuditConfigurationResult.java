@@ -144,6 +144,13 @@ public class DescribeAccountAuditConfigurationResult extends com.amazonaws.Amazo
         return this;
     }
 
+    /**
+     * Add a single AuditNotificationTargetConfigurations entry
+     *
+     * @see DescribeAccountAuditConfigurationResult#withAuditNotificationTargetConfigurations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeAccountAuditConfigurationResult addAuditNotificationTargetConfigurationsEntry(String key, AuditNotificationTarget value) {
         if (null == this.auditNotificationTargetConfigurations) {
             this.auditNotificationTargetConfigurations = new java.util.HashMap<String, AuditNotificationTarget>();
@@ -204,6 +211,13 @@ public class DescribeAccountAuditConfigurationResult extends com.amazonaws.Amazo
         setAuditCheckConfigurations(auditCheckConfigurations);
         return this;
     }
+
+    /**
+     * Add a single AuditCheckConfigurations entry
+     *
+     * @see DescribeAccountAuditConfigurationResult#withAuditCheckConfigurations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DescribeAccountAuditConfigurationResult addAuditCheckConfigurationsEntry(String key, AuditCheckConfiguration value) {
         if (null == this.auditCheckConfigurations) {

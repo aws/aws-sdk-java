@@ -155,6 +155,13 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single PlayerAttributes entry
+     *
+     * @see Player#withPlayerAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Player addPlayerAttributesEntry(String key, AttributeValue value) {
         if (null == this.playerAttributes) {
             this.playerAttributes = new java.util.HashMap<String, AttributeValue>();
@@ -297,6 +304,13 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
         setLatencyInMs(latencyInMs);
         return this;
     }
+
+    /**
+     * Add a single LatencyInMs entry
+     *
+     * @see Player#withLatencyInMs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Player addLatencyInMsEntry(String key, Integer value) {
         if (null == this.latencyInMs) {

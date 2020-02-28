@@ -394,6 +394,13 @@ public class ExecuteProvisionedProductServiceActionRequest extends com.amazonaws
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see ExecuteProvisionedProductServiceActionRequest#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ExecuteProvisionedProductServiceActionRequest addParametersEntry(String key, java.util.List<String> value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, java.util.List<String>>();

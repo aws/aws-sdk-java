@@ -212,6 +212,13 @@ public class Forecast implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Predictions entry
+     *
+     * @see Forecast#withPredictions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Forecast addPredictionsEntry(String key, java.util.List<DataPoint> value) {
         if (null == this.predictions) {
             this.predictions = new java.util.HashMap<String, java.util.List<DataPoint>>();

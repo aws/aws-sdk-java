@@ -79,6 +79,13 @@ public class GetIdentityMailFromDomainAttributesResult extends com.amazonaws.Ama
         return this;
     }
 
+    /**
+     * Add a single MailFromDomainAttributes entry
+     *
+     * @see GetIdentityMailFromDomainAttributesResult#withMailFromDomainAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetIdentityMailFromDomainAttributesResult addMailFromDomainAttributesEntry(String key, IdentityMailFromDomainAttributes value) {
         if (null == this.mailFromDomainAttributes) {
             this.mailFromDomainAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityMailFromDomainAttributes>();

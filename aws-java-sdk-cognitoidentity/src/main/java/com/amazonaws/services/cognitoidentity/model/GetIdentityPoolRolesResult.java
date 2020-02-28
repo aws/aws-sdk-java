@@ -130,6 +130,13 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
         return this;
     }
 
+    /**
+     * Add a single Roles entry
+     *
+     * @see GetIdentityPoolRolesResult#withRoles
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetIdentityPoolRolesResult addRolesEntry(String key, String value) {
         if (null == this.roles) {
             this.roles = new java.util.HashMap<String, String>();
@@ -202,6 +209,13 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
         setRoleMappings(roleMappings);
         return this;
     }
+
+    /**
+     * Add a single RoleMappings entry
+     *
+     * @see GetIdentityPoolRolesResult#withRoleMappings
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GetIdentityPoolRolesResult addRoleMappingsEntry(String key, RoleMapping value) {
         if (null == this.roleMappings) {

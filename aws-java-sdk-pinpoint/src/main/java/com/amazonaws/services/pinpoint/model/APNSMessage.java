@@ -1102,6 +1102,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Data entry
+     *
+     * @see APNSMessage#withData
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public APNSMessage addDataEntry(String key, String value) {
         if (null == this.data) {
             this.data = new java.util.HashMap<String, String>();
@@ -1794,6 +1801,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
         setSubstitutions(substitutions);
         return this;
     }
+
+    /**
+     * Add a single Substitutions entry
+     *
+     * @see APNSMessage#withSubstitutions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public APNSMessage addSubstitutionsEntry(String key, java.util.List<String> value) {
         if (null == this.substitutions) {

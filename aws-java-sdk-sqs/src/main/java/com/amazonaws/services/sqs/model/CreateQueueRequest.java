@@ -1608,6 +1608,13 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see CreateQueueRequest#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateQueueRequest addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -1932,6 +1939,13 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateQueueRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateQueueRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {

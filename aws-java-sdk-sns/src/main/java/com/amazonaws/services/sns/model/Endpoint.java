@@ -121,6 +121,13 @@ public class Endpoint implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see Endpoint#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Endpoint addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();

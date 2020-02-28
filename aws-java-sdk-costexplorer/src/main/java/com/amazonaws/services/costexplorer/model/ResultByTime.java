@@ -133,6 +133,13 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Total entry
+     *
+     * @see ResultByTime#withTotal
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ResultByTime addTotalEntry(String key, MetricValue value) {
         if (null == this.total) {
             this.total = new java.util.HashMap<String, MetricValue>();

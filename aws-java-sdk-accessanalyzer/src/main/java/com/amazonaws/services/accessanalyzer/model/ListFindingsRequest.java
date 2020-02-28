@@ -139,6 +139,13 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
         return this;
     }
 
+    /**
+     * Add a single Filter entry
+     *
+     * @see ListFindingsRequest#withFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ListFindingsRequest addFilterEntry(String key, Criterion value) {
         if (null == this.filter) {
             this.filter = new java.util.HashMap<String, Criterion>();

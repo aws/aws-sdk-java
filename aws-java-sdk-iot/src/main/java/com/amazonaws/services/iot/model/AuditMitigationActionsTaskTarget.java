@@ -218,6 +218,13 @@ public class AuditMitigationActionsTaskTarget implements Serializable, Cloneable
         return this;
     }
 
+    /**
+     * Add a single AuditCheckToReasonCodeFilter entry
+     *
+     * @see AuditMitigationActionsTaskTarget#withAuditCheckToReasonCodeFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AuditMitigationActionsTaskTarget addAuditCheckToReasonCodeFilterEntry(String key, java.util.List<String> value) {
         if (null == this.auditCheckToReasonCodeFilter) {
             this.auditCheckToReasonCodeFilter = new java.util.HashMap<String, java.util.List<String>>();

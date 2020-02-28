@@ -46,10 +46,62 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String protocol;
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
-     * information, see <a href=
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
+     * following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-2016-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      */
     private String sslPolicy;
@@ -256,17 +308,120 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
-     * information, see <a href=
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
+     * following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-2016-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
-     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For
-     *        more information, see <a href=
+     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
+     *        following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-2016-08</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-2018-06</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     *        >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
      */
 
     public void setSslPolicy(String sslPolicy) {
@@ -275,16 +430,119 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
-     * information, see <a href=
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
+     * following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-2016-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
-     * @return [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For
-     *         more information, see <a href=
+     * @return [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
+     *         following are the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-2016-08</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-FS-2018-06</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     *         >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     *         >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     *         >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
      */
 
     public String getSslPolicy() {
@@ -293,17 +551,120 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
-     * information, see <a href=
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
+     * following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-2016-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-2018-06</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
-     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For
-     *        more information, see <a href=
+     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
+     *        following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-2016-08</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-2018-06</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     *        >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

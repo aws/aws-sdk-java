@@ -280,6 +280,13 @@ public class AuthorizerDescription implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single TokenSigningPublicKeys entry
+     *
+     * @see AuthorizerDescription#withTokenSigningPublicKeys
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AuthorizerDescription addTokenSigningPublicKeysEntry(String key, String value) {
         if (null == this.tokenSigningPublicKeys) {
             this.tokenSigningPublicKeys = new java.util.HashMap<String, String>();

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for CreateProfilingGroup operation.
+ * The structure representing the createProfiliingGroupRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup"
@@ -28,14 +28,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The agent orchestration configuration.
+     * </p>
+     */
     private AgentOrchestrationConfig agentOrchestrationConfig;
-
+    /**
+     * <p>
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     * <p>
+     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * </p>
+     */
     private String clientToken;
-
+    /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     */
     private String profilingGroupName;
 
     /**
+     * <p>
+     * The agent orchestration configuration.
+     * </p>
+     * 
      * @param agentOrchestrationConfig
+     *        The agent orchestration configuration.
      */
 
     public void setAgentOrchestrationConfig(AgentOrchestrationConfig agentOrchestrationConfig) {
@@ -43,7 +64,11 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The agent orchestration configuration.
+     * </p>
+     * 
+     * @return The agent orchestration configuration.
      */
 
     public AgentOrchestrationConfig getAgentOrchestrationConfig() {
@@ -51,7 +76,12 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The agent orchestration configuration.
+     * </p>
+     * 
      * @param agentOrchestrationConfig
+     *        The agent orchestration configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -61,7 +91,17 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     * <p>
+     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * </p>
+     * 
      * @param clientToken
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+     *        <p>
+     *        This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -69,7 +109,16 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     * <p>
+     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * </p>
+     * 
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+     *         <p>
+     *         This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
      */
 
     public String getClientToken() {
@@ -77,7 +126,17 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     * <p>
+     * This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
+     * </p>
+     * 
      * @param clientToken
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+     *        <p>
+     *        This parameter specifies a unique identifier for the new profiling group that helps ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,7 +146,12 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -95,7 +159,11 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
+     * @return The name of the profiling group.
      */
 
     public String getProfilingGroupName() {
@@ -103,7 +171,12 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -135,6 +135,13 @@ public class CollectionConfiguration implements Serializable, Cloneable, Structu
         return this;
     }
 
+    /**
+     * Add a single CollectionParameters entry
+     *
+     * @see CollectionConfiguration#withCollectionParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CollectionConfiguration addCollectionParametersEntry(String key, String value) {
         if (null == this.collectionParameters) {
             this.collectionParameters = new java.util.HashMap<String, String>();

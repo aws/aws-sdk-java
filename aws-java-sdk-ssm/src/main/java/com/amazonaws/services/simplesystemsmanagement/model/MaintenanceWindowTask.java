@@ -510,6 +510,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single TaskParameters entry
+     *
+     * @see MaintenanceWindowTask#withTaskParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public MaintenanceWindowTask addTaskParametersEntry(String key, MaintenanceWindowTaskParameterValueExpression value) {
         if (null == this.taskParameters) {
             this.taskParameters = new java.util.HashMap<String, MaintenanceWindowTaskParameterValueExpression>();

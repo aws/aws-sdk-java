@@ -985,6 +985,12 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      * Retrieves details of the current user for whom the authentication token was generated. This is not a valid action
      * for SigV4 (administrative API) clients.
      * </p>
+     * <p>
+     * This action requires an authentication token. To get an authentication token, register an application with Amazon
+     * WorkDocs. For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access
+     * Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+     * </p>
      * 
      * @param getCurrentUserRequest
      * @return A Java Future containing the result of the GetCurrentUser operation returned by the service.
@@ -998,6 +1004,12 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      * <p>
      * Retrieves details of the current user for whom the authentication token was generated. This is not a valid action
      * for SigV4 (administrative API) clients.
+     * </p>
+     * <p>
+     * This action requires an authentication token. To get an authentication token, register an application with Amazon
+     * WorkDocs. For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access
+     * Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param getCurrentUserRequest

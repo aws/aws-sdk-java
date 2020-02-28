@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The time range of an aggregated profile.
+ * Information about the time range of the latest available aggregated profile.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AggregatedProfileTime"
@@ -30,24 +30,24 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The aggregation period of the aggregated profile.
+     * The time period.
      * </p>
      */
     private String period;
     /**
      * <p>
-     * The start time of the aggregated profile.
+     * The start time.
      * </p>
      */
     private java.util.Date start;
 
     /**
      * <p>
-     * The aggregation period of the aggregated profile.
+     * The time period.
      * </p>
      * 
      * @param period
-     *        The aggregation period of the aggregated profile.
+     *        The time period.
      * @see AggregationPeriod
      */
 
@@ -57,10 +57,10 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The aggregation period of the aggregated profile.
+     * The time period.
      * </p>
      * 
-     * @return The aggregation period of the aggregated profile.
+     * @return The time period.
      * @see AggregationPeriod
      */
 
@@ -70,11 +70,11 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The aggregation period of the aggregated profile.
+     * The time period.
      * </p>
      * 
      * @param period
-     *        The aggregation period of the aggregated profile.
+     *        The time period.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */
@@ -86,11 +86,11 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The aggregation period of the aggregated profile.
+     * The time period.
      * </p>
      * 
      * @param period
-     *        The aggregation period of the aggregated profile.
+     *        The time period.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */
@@ -102,11 +102,11 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The start time of the aggregated profile.
+     * The start time.
      * </p>
      * 
      * @param start
-     *        The start time of the aggregated profile.
+     *        The start time.
      */
 
     public void setStart(java.util.Date start) {
@@ -115,10 +115,10 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The start time of the aggregated profile.
+     * The start time.
      * </p>
      * 
-     * @return The start time of the aggregated profile.
+     * @return The start time.
      */
 
     public java.util.Date getStart() {
@@ -127,11 +127,11 @@ public class AggregatedProfileTime implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The start time of the aggregated profile.
+     * The start time.
      * </p>
      * 
      * @param start
-     *        The start time of the aggregated profile.
+     *        The start time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

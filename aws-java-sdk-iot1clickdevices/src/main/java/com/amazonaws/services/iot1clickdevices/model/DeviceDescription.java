@@ -148,6 +148,13 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see DeviceDescription#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DeviceDescription addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, String>();
@@ -380,6 +387,13 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DeviceDescription#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DeviceDescription addTagsEntry(String key, String value) {
         if (null == this.tags) {

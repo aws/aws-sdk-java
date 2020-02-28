@@ -221,6 +221,13 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single ChallengeParameters entry
+     *
+     * @see RespondToAuthChallengeResult#withChallengeParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public RespondToAuthChallengeResult addChallengeParametersEntry(String key, String value) {
         if (null == this.challengeParameters) {
             this.challengeParameters = new java.util.HashMap<String, String>();

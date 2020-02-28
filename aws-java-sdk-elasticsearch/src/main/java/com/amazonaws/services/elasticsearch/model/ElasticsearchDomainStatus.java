@@ -548,6 +548,13 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single Endpoints entry
+     *
+     * @see ElasticsearchDomainStatus#withEndpoints
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ElasticsearchDomainStatus addEndpointsEntry(String key, String value) {
         if (null == this.endpoints) {
             this.endpoints = new java.util.HashMap<String, String>();
@@ -1111,6 +1118,13 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single AdvancedOptions entry
+     *
+     * @see ElasticsearchDomainStatus#withAdvancedOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ElasticsearchDomainStatus addAdvancedOptionsEntry(String key, String value) {
         if (null == this.advancedOptions) {
             this.advancedOptions = new java.util.HashMap<String, String>();
@@ -1171,6 +1185,13 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         setLogPublishingOptions(logPublishingOptions);
         return this;
     }
+
+    /**
+     * Add a single LogPublishingOptions entry
+     *
+     * @see ElasticsearchDomainStatus#withLogPublishingOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ElasticsearchDomainStatus addLogPublishingOptionsEntry(String key, LogPublishingOption value) {
         if (null == this.logPublishingOptions) {

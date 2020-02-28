@@ -133,6 +133,13 @@ public class ArchiveRuleSummary implements Serializable, Cloneable, StructuredPo
         return this;
     }
 
+    /**
+     * Add a single Filter entry
+     *
+     * @see ArchiveRuleSummary#withFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ArchiveRuleSummary addFilterEntry(String key, Criterion value) {
         if (null == this.filter) {
             this.filter = new java.util.HashMap<String, Criterion>();

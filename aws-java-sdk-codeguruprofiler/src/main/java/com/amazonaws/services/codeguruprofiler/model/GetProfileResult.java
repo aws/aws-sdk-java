@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for GetProfile operation.
+ * The structure representing the getProfileResponse.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile" target="_top">AWS API
@@ -28,27 +28,31 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The content encoding of the profile in the payload.
+     * The content encoding of the profile.
      * </p>
      */
     private String contentEncoding;
     /**
      * <p>
-     * The content type of the profile in the payload. Will be application/json or application/x-amzn-ion based on
-     * Accept header in the request.
+     * The content type of the profile in the payload. It is either <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      */
     private String contentType;
-
+    /**
+     * <p>
+     * Information about the profile.
+     * </p>
+     */
     private java.nio.ByteBuffer profile;
 
     /**
      * <p>
-     * The content encoding of the profile in the payload.
+     * The content encoding of the profile.
      * </p>
      * 
      * @param contentEncoding
-     *        The content encoding of the profile in the payload.
+     *        The content encoding of the profile.
      */
 
     public void setContentEncoding(String contentEncoding) {
@@ -57,10 +61,10 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The content encoding of the profile in the payload.
+     * The content encoding of the profile.
      * </p>
      * 
-     * @return The content encoding of the profile in the payload.
+     * @return The content encoding of the profile.
      */
 
     public String getContentEncoding() {
@@ -69,11 +73,11 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The content encoding of the profile in the payload.
+     * The content encoding of the profile.
      * </p>
      * 
      * @param contentEncoding
-     *        The content encoding of the profile in the payload.
+     *        The content encoding of the profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,13 +88,13 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The content type of the profile in the payload. Will be application/json or application/x-amzn-ion based on
-     * Accept header in the request.
+     * The content type of the profile in the payload. It is either <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      * 
      * @param contentType
-     *        The content type of the profile in the payload. Will be application/json or application/x-amzn-ion based
-     *        on Accept header in the request.
+     *        The content type of the profile in the payload. It is either <code>application/json</code> or the default
+     *        <code>application/x-amzn-ion</code>.
      */
 
     public void setContentType(String contentType) {
@@ -99,12 +103,12 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The content type of the profile in the payload. Will be application/json or application/x-amzn-ion based on
-     * Accept header in the request.
+     * The content type of the profile in the payload. It is either <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      * 
-     * @return The content type of the profile in the payload. Will be application/json or application/x-amzn-ion based
-     *         on Accept header in the request.
+     * @return The content type of the profile in the payload. It is either <code>application/json</code> or the default
+     *         <code>application/x-amzn-ion</code>.
      */
 
     public String getContentType() {
@@ -113,13 +117,13 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The content type of the profile in the payload. Will be application/json or application/x-amzn-ion based on
-     * Accept header in the request.
+     * The content type of the profile in the payload. It is either <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      * 
      * @param contentType
-     *        The content type of the profile in the payload. Will be application/json or application/x-amzn-ion based
-     *        on Accept header in the request.
+     *        The content type of the profile in the payload. It is either <code>application/json</code> or the default
+     *        <code>application/x-amzn-ion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,6 +134,9 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * Information about the profile.
+     * </p>
+     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -141,6 +148,7 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param profile
+     *        Information about the profile.
      */
 
     public void setProfile(java.nio.ByteBuffer profile) {
@@ -149,14 +157,17 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * Information about the profile.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
-     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}
-     * . Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
      * {@code position}.
      * </p>
      * 
-     * @return
+     * @return Information about the profile.
      */
 
     public java.nio.ByteBuffer getProfile() {
@@ -164,6 +175,9 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * Information about the profile.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -176,6 +190,7 @@ public class GetProfileResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param profile
+     *        Information about the profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

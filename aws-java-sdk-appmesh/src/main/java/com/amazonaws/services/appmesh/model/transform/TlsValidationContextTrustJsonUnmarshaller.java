@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.augmentedairuntime.model.transform;
+package com.amazonaws.services.appmesh.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.augmentedairuntime.model.*;
+import com.amazonaws.services.appmesh.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * HumanLoopOutputContent JSON Unmarshaller
+ * TlsValidationContextTrust JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HumanLoopOutputContentJsonUnmarshaller implements Unmarshaller<HumanLoopOutputContent, JsonUnmarshallerContext> {
+public class TlsValidationContextTrustJsonUnmarshaller implements Unmarshaller<TlsValidationContextTrust, JsonUnmarshallerContext> {
 
-    public HumanLoopOutputContent unmarshall(JsonUnmarshallerContext context) throws Exception {
-        HumanLoopOutputContent humanLoopOutputContent = new HumanLoopOutputContent();
+    public TlsValidationContextTrust unmarshall(JsonUnmarshallerContext context) throws Exception {
+        TlsValidationContextTrust tlsValidationContextTrust = new TlsValidationContextTrust();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,9 +48,13 @@ public class HumanLoopOutputContentJsonUnmarshaller implements Unmarshaller<Huma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("OutputS3Uri", targetDepth)) {
+                if (context.testExpression("acm", targetDepth)) {
                     context.nextToken();
-                    humanLoopOutputContent.setOutputS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
+                    tlsValidationContextTrust.setAcm(TlsValidationContextAcmTrustJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("file", targetDepth)) {
+                    context.nextToken();
+                    tlsValidationContextTrust.setFile(TlsValidationContextFileTrustJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -61,14 +65,14 @@ public class HumanLoopOutputContentJsonUnmarshaller implements Unmarshaller<Huma
             token = context.nextToken();
         }
 
-        return humanLoopOutputContent;
+        return tlsValidationContextTrust;
     }
 
-    private static HumanLoopOutputContentJsonUnmarshaller instance;
+    private static TlsValidationContextTrustJsonUnmarshaller instance;
 
-    public static HumanLoopOutputContentJsonUnmarshaller getInstance() {
+    public static TlsValidationContextTrustJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new HumanLoopOutputContentJsonUnmarshaller();
+            instance = new TlsValidationContextTrustJsonUnmarshaller();
         return instance;
     }
 }

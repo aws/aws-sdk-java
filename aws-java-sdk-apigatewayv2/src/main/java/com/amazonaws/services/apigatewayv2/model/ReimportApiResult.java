@@ -688,6 +688,13 @@ public class ReimportApiResult extends com.amazonaws.AmazonWebServiceResult<com.
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see ReimportApiResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ReimportApiResult addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

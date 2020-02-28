@@ -2046,6 +2046,30 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms in this AWS account, or
+     * the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can
+     * use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag
+     * filtering, only resources with the tags are retrieved.
+     * </p>
+     * 
+     * @param listMLTransformsRequest
+     * @return Result of the ListMLTransforms operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListMLTransforms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListMLTransformsResult listMLTransforms(ListMLTransformsRequest listMLTransformsRequest);
+
+    /**
+     * <p>
      * Retrieves the names of all trigger resources in this AWS account, or the resources with the specified tag. This
      * operation allows you to see which resources are available in your account, and their names.
      * </p>

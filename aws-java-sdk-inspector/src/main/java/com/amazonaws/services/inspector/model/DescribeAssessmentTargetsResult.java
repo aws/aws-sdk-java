@@ -146,6 +146,13 @@ public class DescribeAssessmentTargetsResult extends com.amazonaws.AmazonWebServ
         return this;
     }
 
+    /**
+     * Add a single FailedItems entry
+     *
+     * @see DescribeAssessmentTargetsResult#withFailedItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeAssessmentTargetsResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {
             this.failedItems = new java.util.HashMap<String, FailedItemDetails>();

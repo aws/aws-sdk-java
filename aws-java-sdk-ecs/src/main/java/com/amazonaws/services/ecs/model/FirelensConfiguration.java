@@ -192,6 +192,13 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single Options entry
+     *
+     * @see FirelensConfiguration#withOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public FirelensConfiguration addOptionsEntry(String key, String value) {
         if (null == this.options) {
             this.options = new java.util.HashMap<String, String>();

@@ -72,6 +72,13 @@ public class JobExecutionStatusDetails implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single DetailsMap entry
+     *
+     * @see JobExecutionStatusDetails#withDetailsMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public JobExecutionStatusDetails addDetailsMapEntry(String key, String value) {
         if (null == this.detailsMap) {
             this.detailsMap = new java.util.HashMap<String, String>();

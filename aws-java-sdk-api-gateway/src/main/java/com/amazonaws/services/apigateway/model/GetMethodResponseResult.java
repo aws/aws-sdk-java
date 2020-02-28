@@ -213,6 +213,13 @@ public class GetMethodResponseResult extends com.amazonaws.AmazonWebServiceResul
         return this;
     }
 
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see GetMethodResponseResult#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetMethodResponseResult addResponseParametersEntry(String key, Boolean value) {
         if (null == this.responseParameters) {
             this.responseParameters = new java.util.HashMap<String, Boolean>();
@@ -279,6 +286,13 @@ public class GetMethodResponseResult extends com.amazonaws.AmazonWebServiceResul
         setResponseModels(responseModels);
         return this;
     }
+
+    /**
+     * Add a single ResponseModels entry
+     *
+     * @see GetMethodResponseResult#withResponseModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GetMethodResponseResult addResponseModelsEntry(String key, String value) {
         if (null == this.responseModels) {

@@ -314,6 +314,13 @@ public class StartContinuousExportResult extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single SchemaStorageConfig entry
+     *
+     * @see StartContinuousExportResult#withSchemaStorageConfig
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StartContinuousExportResult addSchemaStorageConfigEntry(String key, String value) {
         if (null == this.schemaStorageConfig) {
             this.schemaStorageConfig = new java.util.HashMap<String, String>();

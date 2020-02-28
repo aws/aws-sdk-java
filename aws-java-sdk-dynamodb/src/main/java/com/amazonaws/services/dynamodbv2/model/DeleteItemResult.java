@@ -129,6 +129,13 @@ public class DeleteItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see DeleteItemResult#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DeleteItemResult addAttributesEntry(String key, AttributeValue value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, AttributeValue>();

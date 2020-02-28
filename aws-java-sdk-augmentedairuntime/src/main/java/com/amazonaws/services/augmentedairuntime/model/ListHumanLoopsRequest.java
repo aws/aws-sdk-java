@@ -27,18 +27,24 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The timestamp of the date when you want the human loops to begin. For example, <code>1551000000</code>
-     * .
+     * (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example,
+     * <code>2020-02-24</code>.
      * </p>
      */
     private java.util.Date creationTimeAfter;
     /**
      * <p>
-     * (Optional) The timestamp of the date before which you want the human loops to begin. For example,
-     * <code>1550000000</code>.
+     * (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For
+     * example, <code>2020-02-24</code>.
      * </p>
      */
     private java.util.Date creationTimeBefore;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a flow definition.
+     * </p>
+     */
+    private String flowDefinitionArn;
     /**
      * <p>
      * An optional value that specifies whether you want the results sorted in <code>Ascending</code> or
@@ -63,13 +69,13 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The timestamp of the date when you want the human loops to begin. For example, <code>1551000000</code>
-     * .
+     * (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example,
+     * <code>2020-02-24</code>.
      * </p>
      * 
      * @param creationTimeAfter
-     *        (Optional) The timestamp of the date when you want the human loops to begin. For example,
-     *        <code>1551000000</code>.
+     *        (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For
+     *        example, <code>2020-02-24</code>.
      */
 
     public void setCreationTimeAfter(java.util.Date creationTimeAfter) {
@@ -78,12 +84,12 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The timestamp of the date when you want the human loops to begin. For example, <code>1551000000</code>
-     * .
+     * (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example,
+     * <code>2020-02-24</code>.
      * </p>
      * 
-     * @return (Optional) The timestamp of the date when you want the human loops to begin. For example,
-     *         <code>1551000000</code>.
+     * @return (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For
+     *         example, <code>2020-02-24</code>.
      */
 
     public java.util.Date getCreationTimeAfter() {
@@ -92,13 +98,13 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The timestamp of the date when you want the human loops to begin. For example, <code>1551000000</code>
-     * .
+     * (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example,
+     * <code>2020-02-24</code>.
      * </p>
      * 
      * @param creationTimeAfter
-     *        (Optional) The timestamp of the date when you want the human loops to begin. For example,
-     *        <code>1551000000</code>.
+     *        (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For
+     *        example, <code>2020-02-24</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +115,13 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The timestamp of the date before which you want the human loops to begin. For example,
-     * <code>1550000000</code>.
+     * (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For
+     * example, <code>2020-02-24</code>.
      * </p>
      * 
      * @param creationTimeBefore
-     *        (Optional) The timestamp of the date before which you want the human loops to begin. For example,
-     *        <code>1550000000</code>.
+     *        (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format.
+     *        For example, <code>2020-02-24</code>.
      */
 
     public void setCreationTimeBefore(java.util.Date creationTimeBefore) {
@@ -124,12 +130,12 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The timestamp of the date before which you want the human loops to begin. For example,
-     * <code>1550000000</code>.
+     * (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For
+     * example, <code>2020-02-24</code>.
      * </p>
      * 
-     * @return (Optional) The timestamp of the date before which you want the human loops to begin. For example,
-     *         <code>1550000000</code>.
+     * @return (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format.
+     *         For example, <code>2020-02-24</code>.
      */
 
     public java.util.Date getCreationTimeBefore() {
@@ -138,18 +144,58 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Optional) The timestamp of the date before which you want the human loops to begin. For example,
-     * <code>1550000000</code>.
+     * (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For
+     * example, <code>2020-02-24</code>.
      * </p>
      * 
      * @param creationTimeBefore
-     *        (Optional) The timestamp of the date before which you want the human loops to begin. For example,
-     *        <code>1550000000</code>.
+     *        (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format.
+     *        For example, <code>2020-02-24</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListHumanLoopsRequest withCreationTimeBefore(java.util.Date creationTimeBefore) {
         setCreationTimeBefore(creationTimeBefore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a flow definition.
+     * </p>
+     * 
+     * @param flowDefinitionArn
+     *        The Amazon Resource Name (ARN) of a flow definition.
+     */
+
+    public void setFlowDefinitionArn(String flowDefinitionArn) {
+        this.flowDefinitionArn = flowDefinitionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a flow definition.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a flow definition.
+     */
+
+    public String getFlowDefinitionArn() {
+        return this.flowDefinitionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a flow definition.
+     * </p>
+     * 
+     * @param flowDefinitionArn
+     *        The Amazon Resource Name (ARN) of a flow definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListHumanLoopsRequest withFlowDefinitionArn(String flowDefinitionArn) {
+        setFlowDefinitionArn(flowDefinitionArn);
         return this;
     }
 
@@ -328,6 +374,8 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("CreationTimeAfter: ").append(getCreationTimeAfter()).append(",");
         if (getCreationTimeBefore() != null)
             sb.append("CreationTimeBefore: ").append(getCreationTimeBefore()).append(",");
+        if (getFlowDefinitionArn() != null)
+            sb.append("FlowDefinitionArn: ").append(getFlowDefinitionArn()).append(",");
         if (getSortOrder() != null)
             sb.append("SortOrder: ").append(getSortOrder()).append(",");
         if (getNextToken() != null)
@@ -356,6 +404,10 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getCreationTimeBefore() != null && other.getCreationTimeBefore().equals(this.getCreationTimeBefore()) == false)
             return false;
+        if (other.getFlowDefinitionArn() == null ^ this.getFlowDefinitionArn() == null)
+            return false;
+        if (other.getFlowDefinitionArn() != null && other.getFlowDefinitionArn().equals(this.getFlowDefinitionArn()) == false)
+            return false;
         if (other.getSortOrder() == null ^ this.getSortOrder() == null)
             return false;
         if (other.getSortOrder() != null && other.getSortOrder().equals(this.getSortOrder()) == false)
@@ -378,6 +430,7 @@ public class ListHumanLoopsRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getCreationTimeAfter() == null) ? 0 : getCreationTimeAfter().hashCode());
         hashCode = prime * hashCode + ((getCreationTimeBefore() == null) ? 0 : getCreationTimeBefore().hashCode());
+        hashCode = prime * hashCode + ((getFlowDefinitionArn() == null) ? 0 : getFlowDefinitionArn().hashCode());
         hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());

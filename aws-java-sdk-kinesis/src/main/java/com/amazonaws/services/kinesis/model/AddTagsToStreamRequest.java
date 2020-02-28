@@ -124,6 +124,13 @@ public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceReques
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see AddTagsToStreamRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AddTagsToStreamRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new com.amazonaws.internal.SdkInternalMap<String, String>();

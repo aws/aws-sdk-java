@@ -75,6 +75,13 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Item entry
+     *
+     * @see ItemResponse#withItem
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ItemResponse addItemEntry(String key, AttributeValue value) {
         if (null == this.item) {
             this.item = new java.util.HashMap<String, AttributeValue>();

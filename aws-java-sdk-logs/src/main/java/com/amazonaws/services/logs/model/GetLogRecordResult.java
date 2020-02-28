@@ -73,6 +73,13 @@ public class GetLogRecordResult extends com.amazonaws.AmazonWebServiceResult<com
         return this;
     }
 
+    /**
+     * Add a single LogRecord entry
+     *
+     * @see GetLogRecordResult#withLogRecord
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetLogRecordResult addLogRecordEntry(String key, String value) {
         if (null == this.logRecord) {
             this.logRecord = new com.amazonaws.internal.SdkInternalMap<String, String>();

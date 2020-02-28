@@ -155,6 +155,13 @@ public class BudgetPerformanceHistory implements Serializable, Cloneable, Struct
         return this;
     }
 
+    /**
+     * Add a single CostFilters entry
+     *
+     * @see BudgetPerformanceHistory#withCostFilters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BudgetPerformanceHistory addCostFiltersEntry(String key, java.util.List<String> value) {
         if (null == this.costFilters) {
             this.costFilters = new java.util.HashMap<String, java.util.List<String>>();

@@ -116,6 +116,13 @@ public class GetFolderResult extends com.amazonaws.AmazonWebServiceResult<com.am
         return this;
     }
 
+    /**
+     * Add a single CustomMetadata entry
+     *
+     * @see GetFolderResult#withCustomMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetFolderResult addCustomMetadataEntry(String key, String value) {
         if (null == this.customMetadata) {
             this.customMetadata = new java.util.HashMap<String, String>();

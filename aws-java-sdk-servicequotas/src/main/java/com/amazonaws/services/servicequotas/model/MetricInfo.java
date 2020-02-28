@@ -198,6 +198,13 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single MetricDimensions entry
+     *
+     * @see MetricInfo#withMetricDimensions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public MetricInfo addMetricDimensionsEntry(String key, String value) {
         if (null == this.metricDimensions) {
             this.metricDimensions = new java.util.HashMap<String, String>();

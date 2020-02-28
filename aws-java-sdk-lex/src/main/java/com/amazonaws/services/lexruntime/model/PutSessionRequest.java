@@ -319,6 +319,13 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
         return this;
     }
 
+    /**
+     * Add a single SessionAttributes entry
+     *
+     * @see PutSessionRequest#withSessionAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutSessionRequest addSessionAttributesEntry(String key, String value) {
         if (null == this.sessionAttributes) {
             this.sessionAttributes = new java.util.HashMap<String, String>();

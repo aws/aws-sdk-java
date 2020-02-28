@@ -164,6 +164,13 @@ public class ApiStage implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Throttle entry
+     *
+     * @see ApiStage#withThrottle
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ApiStage addThrottleEntry(String key, ThrottleSettings value) {
         if (null == this.throttle) {
             this.throttle = new java.util.HashMap<String, ThrottleSettings>();

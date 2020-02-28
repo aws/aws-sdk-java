@@ -688,6 +688,12 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Options entry
+     *
+     * @see DomainEntry#withOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
     @Deprecated
     public DomainEntry addOptionsEntry(String key, String value) {
         if (null == this.options) {

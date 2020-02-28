@@ -377,6 +377,13 @@ public class CreateIntegrationResponseResult extends com.amazonaws.AmazonWebServ
         return this;
     }
 
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see CreateIntegrationResponseResult#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateIntegrationResponseResult addResponseParametersEntry(String key, String value) {
         if (null == this.responseParameters) {
             this.responseParameters = new java.util.HashMap<String, String>();
@@ -449,6 +456,13 @@ public class CreateIntegrationResponseResult extends com.amazonaws.AmazonWebServ
         setResponseTemplates(responseTemplates);
         return this;
     }
+
+    /**
+     * Add a single ResponseTemplates entry
+     *
+     * @see CreateIntegrationResponseResult#withResponseTemplates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateIntegrationResponseResult addResponseTemplatesEntry(String key, String value) {
         if (null == this.responseTemplates) {

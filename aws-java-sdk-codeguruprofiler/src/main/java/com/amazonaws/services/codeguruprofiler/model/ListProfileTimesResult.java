@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for ListProfileTimes operation.
+ * The structure representing the listProfileTimesResponse.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfileTimes" target="_top">AWS
@@ -26,16 +26,33 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results
+     * of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
+     * next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     */
     private String nextToken;
     /**
      * <p>
-     * List of start times of the available profiles for the aggregation period in the specified time range.
+     * The list of start times of the available profiles for the aggregation period in the specified time range.
      * </p>
      */
     private java.util.List<ProfileTime> profileTimes;
 
     /**
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results
+     * of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
+     * next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the
+     *        results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used
+     *        to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+     *        return.
      */
 
     public void setNextToken(String nextToken) {
@@ -43,7 +60,16 @@ public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results
+     * of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
+     * next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     * 
+     * @return The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the
+     *         results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used
+     *         to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+     *         return.
      */
 
     public String getNextToken() {
@@ -51,7 +77,17 @@ public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results
+     * of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
+     * next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the
+     *        results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used
+     *        to retrieve the next page of results. This value is <code>null</code> when there are no more results to
+     *        return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,10 +98,10 @@ public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * List of start times of the available profiles for the aggregation period in the specified time range.
+     * The list of start times of the available profiles for the aggregation period in the specified time range.
      * </p>
      * 
-     * @return List of start times of the available profiles for the aggregation period in the specified time range.
+     * @return The list of start times of the available profiles for the aggregation period in the specified time range.
      */
 
     public java.util.List<ProfileTime> getProfileTimes() {
@@ -74,11 +110,11 @@ public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * List of start times of the available profiles for the aggregation period in the specified time range.
+     * The list of start times of the available profiles for the aggregation period in the specified time range.
      * </p>
      * 
      * @param profileTimes
-     *        List of start times of the available profiles for the aggregation period in the specified time range.
+     *        The list of start times of the available profiles for the aggregation period in the specified time range.
      */
 
     public void setProfileTimes(java.util.Collection<ProfileTime> profileTimes) {
@@ -92,7 +128,7 @@ public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * List of start times of the available profiles for the aggregation period in the specified time range.
+     * The list of start times of the available profiles for the aggregation period in the specified time range.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -101,7 +137,7 @@ public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param profileTimes
-     *        List of start times of the available profiles for the aggregation period in the specified time range.
+     *        The list of start times of the available profiles for the aggregation period in the specified time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +153,11 @@ public class ListProfileTimesResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * List of start times of the available profiles for the aggregation period in the specified time range.
+     * The list of start times of the available profiles for the aggregation period in the specified time range.
      * </p>
      * 
      * @param profileTimes
-     *        List of start times of the available profiles for the aggregation period in the specified time range.
+     *        The list of start times of the available profiles for the aggregation period in the specified time range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

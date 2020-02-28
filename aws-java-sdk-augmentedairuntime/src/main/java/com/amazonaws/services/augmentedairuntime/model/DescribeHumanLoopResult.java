@@ -25,10 +25,10 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The timestamp when Amazon Augmented AI created the human loop.
+     * The creation time when Amazon Augmented AI created the human loop.
      * </p>
      */
-    private java.util.Date creationTimestamp;
+    private java.util.Date creationTime;
     /**
      * <p>
      * The reason why a human loop has failed. The failure reason is returned when the human loop status is
@@ -68,54 +68,48 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
     private String flowDefinitionArn;
     /**
      * <p>
-     * An object containing information about the human loop input.
-     * </p>
-     */
-    private HumanLoopInputContent humanLoopInput;
-    /**
-     * <p>
      * An object containing information about the output of the human loop.
      * </p>
      */
-    private HumanLoopOutputContent humanLoopOutput;
+    private HumanLoopOutput humanLoopOutput;
 
     /**
      * <p>
-     * The timestamp when Amazon Augmented AI created the human loop.
+     * The creation time when Amazon Augmented AI created the human loop.
      * </p>
      * 
-     * @param creationTimestamp
-     *        The timestamp when Amazon Augmented AI created the human loop.
+     * @param creationTime
+     *        The creation time when Amazon Augmented AI created the human loop.
      */
 
-    public void setCreationTimestamp(java.util.Date creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
     }
 
     /**
      * <p>
-     * The timestamp when Amazon Augmented AI created the human loop.
+     * The creation time when Amazon Augmented AI created the human loop.
      * </p>
      * 
-     * @return The timestamp when Amazon Augmented AI created the human loop.
+     * @return The creation time when Amazon Augmented AI created the human loop.
      */
 
-    public java.util.Date getCreationTimestamp() {
-        return this.creationTimestamp;
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
     }
 
     /**
      * <p>
-     * The timestamp when Amazon Augmented AI created the human loop.
+     * The creation time when Amazon Augmented AI created the human loop.
      * </p>
      * 
-     * @param creationTimestamp
-     *        The timestamp when Amazon Augmented AI created the human loop.
+     * @param creationTime
+     *        The creation time when Amazon Augmented AI created the human loop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeHumanLoopResult withCreationTimestamp(java.util.Date creationTimestamp) {
-        setCreationTimestamp(creationTimestamp);
+    public DescribeHumanLoopResult withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
         return this;
     }
 
@@ -386,46 +380,6 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An object containing information about the human loop input.
-     * </p>
-     * 
-     * @param humanLoopInput
-     *        An object containing information about the human loop input.
-     */
-
-    public void setHumanLoopInput(HumanLoopInputContent humanLoopInput) {
-        this.humanLoopInput = humanLoopInput;
-    }
-
-    /**
-     * <p>
-     * An object containing information about the human loop input.
-     * </p>
-     * 
-     * @return An object containing information about the human loop input.
-     */
-
-    public HumanLoopInputContent getHumanLoopInput() {
-        return this.humanLoopInput;
-    }
-
-    /**
-     * <p>
-     * An object containing information about the human loop input.
-     * </p>
-     * 
-     * @param humanLoopInput
-     *        An object containing information about the human loop input.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHumanLoopResult withHumanLoopInput(HumanLoopInputContent humanLoopInput) {
-        setHumanLoopInput(humanLoopInput);
-        return this;
-    }
-
-    /**
-     * <p>
      * An object containing information about the output of the human loop.
      * </p>
      * 
@@ -433,7 +387,7 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
      *        An object containing information about the output of the human loop.
      */
 
-    public void setHumanLoopOutput(HumanLoopOutputContent humanLoopOutput) {
+    public void setHumanLoopOutput(HumanLoopOutput humanLoopOutput) {
         this.humanLoopOutput = humanLoopOutput;
     }
 
@@ -445,7 +399,7 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
      * @return An object containing information about the output of the human loop.
      */
 
-    public HumanLoopOutputContent getHumanLoopOutput() {
+    public HumanLoopOutput getHumanLoopOutput() {
         return this.humanLoopOutput;
     }
 
@@ -459,7 +413,7 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeHumanLoopResult withHumanLoopOutput(HumanLoopOutputContent humanLoopOutput) {
+    public DescribeHumanLoopResult withHumanLoopOutput(HumanLoopOutput humanLoopOutput) {
         setHumanLoopOutput(humanLoopOutput);
         return this;
     }
@@ -476,8 +430,8 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreationTimestamp() != null)
-            sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getFailureCode() != null)
@@ -490,8 +444,6 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("HumanLoopArn: ").append(getHumanLoopArn()).append(",");
         if (getFlowDefinitionArn() != null)
             sb.append("FlowDefinitionArn: ").append(getFlowDefinitionArn()).append(",");
-        if (getHumanLoopInput() != null)
-            sb.append("HumanLoopInput: ").append(getHumanLoopInput()).append(",");
         if (getHumanLoopOutput() != null)
             sb.append("HumanLoopOutput: ").append(getHumanLoopOutput());
         sb.append("}");
@@ -508,9 +460,9 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof DescribeHumanLoopResult == false)
             return false;
         DescribeHumanLoopResult other = (DescribeHumanLoopResult) obj;
-        if (other.getCreationTimestamp() == null ^ this.getCreationTimestamp() == null)
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
-        if (other.getCreationTimestamp() != null && other.getCreationTimestamp().equals(this.getCreationTimestamp()) == false)
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
@@ -536,10 +488,6 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getFlowDefinitionArn() != null && other.getFlowDefinitionArn().equals(this.getFlowDefinitionArn()) == false)
             return false;
-        if (other.getHumanLoopInput() == null ^ this.getHumanLoopInput() == null)
-            return false;
-        if (other.getHumanLoopInput() != null && other.getHumanLoopInput().equals(this.getHumanLoopInput()) == false)
-            return false;
         if (other.getHumanLoopOutput() == null ^ this.getHumanLoopOutput() == null)
             return false;
         if (other.getHumanLoopOutput() != null && other.getHumanLoopOutput().equals(this.getHumanLoopOutput()) == false)
@@ -552,14 +500,13 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopStatus() == null) ? 0 : getHumanLoopStatus().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopName() == null) ? 0 : getHumanLoopName().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopArn() == null) ? 0 : getHumanLoopArn().hashCode());
         hashCode = prime * hashCode + ((getFlowDefinitionArn() == null) ? 0 : getFlowDefinitionArn().hashCode());
-        hashCode = prime * hashCode + ((getHumanLoopInput() == null) ? 0 : getHumanLoopInput().hashCode());
         hashCode = prime * hashCode + ((getHumanLoopOutput() == null) ? 0 : getHumanLoopOutput().hashCode());
         return hashCode;
     }

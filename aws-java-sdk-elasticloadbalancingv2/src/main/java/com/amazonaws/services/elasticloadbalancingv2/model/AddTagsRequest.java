@@ -33,7 +33,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private java.util.List<String> resourceArns;
     /**
      * <p>
-     * The tags. Each resource can have a maximum of 10 tags.
+     * The tags.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -110,10 +110,10 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The tags. Each resource can have a maximum of 10 tags.
+     * The tags.
      * </p>
      * 
-     * @return The tags. Each resource can have a maximum of 10 tags.
+     * @return The tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -122,11 +122,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The tags. Each resource can have a maximum of 10 tags.
+     * The tags.
      * </p>
      * 
      * @param tags
-     *        The tags. Each resource can have a maximum of 10 tags.
+     *        The tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -140,7 +140,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The tags. Each resource can have a maximum of 10 tags.
+     * The tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -149,7 +149,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param tags
-     *        The tags. Each resource can have a maximum of 10 tags.
+     *        The tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +165,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The tags. Each resource can have a maximum of 10 tags.
+     * The tags.
      * </p>
      * 
      * @param tags
-     *        The tags. Each resource can have a maximum of 10 tags.
+     *        The tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -73,6 +73,13 @@ public class GetBlacklistReportsResult extends com.amazonaws.AmazonWebServiceRes
         return this;
     }
 
+    /**
+     * Add a single BlacklistReport entry
+     *
+     * @see GetBlacklistReportsResult#withBlacklistReport
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetBlacklistReportsResult addBlacklistReportEntry(String key, java.util.List<BlacklistEntry> value) {
         if (null == this.blacklistReport) {
             this.blacklistReport = new java.util.HashMap<String, java.util.List<BlacklistEntry>>();

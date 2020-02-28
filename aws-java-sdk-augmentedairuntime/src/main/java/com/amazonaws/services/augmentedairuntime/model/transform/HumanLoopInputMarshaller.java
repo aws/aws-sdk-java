@@ -12,7 +12,6 @@
  */
 package com.amazonaws.services.augmentedairuntime.model.transform;
 
-import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -22,32 +21,32 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * HumanReviewDataAttributesMarshaller
+ * HumanLoopInputMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class HumanReviewDataAttributesMarshaller {
+public class HumanLoopInputMarshaller {
 
-    private static final MarshallingInfo<List> CONTENTCLASSIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentClassifiers").build();
+    private static final MarshallingInfo<String> INPUTCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InputContent").build();
 
-    private static final HumanReviewDataAttributesMarshaller instance = new HumanReviewDataAttributesMarshaller();
+    private static final HumanLoopInputMarshaller instance = new HumanLoopInputMarshaller();
 
-    public static HumanReviewDataAttributesMarshaller getInstance() {
+    public static HumanLoopInputMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(HumanReviewDataAttributes humanReviewDataAttributes, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(HumanLoopInput humanLoopInput, ProtocolMarshaller protocolMarshaller) {
 
-        if (humanReviewDataAttributes == null) {
+        if (humanLoopInput == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(humanReviewDataAttributes.getContentClassifiers(), CONTENTCLASSIFIERS_BINDING);
+            protocolMarshaller.marshall(humanLoopInput.getInputContent(), INPUTCONTENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

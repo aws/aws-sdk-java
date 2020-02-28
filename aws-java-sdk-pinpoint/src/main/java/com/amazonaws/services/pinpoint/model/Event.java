@@ -249,6 +249,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see Event#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Event addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, String>();
@@ -389,6 +396,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         setMetrics(metrics);
         return this;
     }
+
+    /**
+     * Add a single Metrics entry
+     *
+     * @see Event#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Event addMetricsEntry(String key, Double value) {
         if (null == this.metrics) {

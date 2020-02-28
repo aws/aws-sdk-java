@@ -680,6 +680,13 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single ClientMetadata entry
+     *
+     * @see ConfirmForgotPasswordRequest#withClientMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ConfirmForgotPasswordRequest addClientMetadataEntry(String key, String value) {
         if (null == this.clientMetadata) {
             this.clientMetadata = new java.util.HashMap<String, String>();

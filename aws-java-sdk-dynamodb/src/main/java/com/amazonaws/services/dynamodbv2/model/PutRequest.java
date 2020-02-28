@@ -117,6 +117,13 @@ public class PutRequest implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Item entry
+     *
+     * @see PutRequest#withItem
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutRequest addItemEntry(String key, AttributeValue value) {
         if (null == this.item) {
             this.item = new java.util.HashMap<String, AttributeValue>();

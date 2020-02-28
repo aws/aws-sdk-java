@@ -243,6 +243,13 @@ public class UpdateIAMPolicyAssignmentResult extends com.amazonaws.AmazonWebServ
         return this;
     }
 
+    /**
+     * Add a single Identities entry
+     *
+     * @see UpdateIAMPolicyAssignmentResult#withIdentities
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateIAMPolicyAssignmentResult addIdentitiesEntry(String key, java.util.List<String> value) {
         if (null == this.identities) {
             this.identities = new java.util.HashMap<String, java.util.List<String>>();

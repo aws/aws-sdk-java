@@ -184,6 +184,13 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
         return this;
     }
 
+    /**
+     * Add a single RestoreMetadata entry
+     *
+     * @see GetRecoveryPointRestoreMetadataResult#withRestoreMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetRecoveryPointRestoreMetadataResult addRestoreMetadataEntry(String key, String value) {
         if (null == this.restoreMetadata) {
             this.restoreMetadata = new java.util.HashMap<String, String>();

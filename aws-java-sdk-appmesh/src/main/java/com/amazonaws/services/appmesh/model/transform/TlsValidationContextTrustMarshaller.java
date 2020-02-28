@@ -10,43 +10,46 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.augmentedairuntime.model.transform;
+package com.amazonaws.services.appmesh.model.transform;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.services.augmentedairuntime.model.*;
+import com.amazonaws.services.appmesh.model.*;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * HumanLoopActivationReasonMarshaller
+ * TlsValidationContextTrustMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class HumanLoopActivationReasonMarshaller {
+public class TlsValidationContextTrustMarshaller {
 
-    private static final MarshallingInfo<Boolean> CONDITIONSMATCHED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionsMatched").build();
+    private static final MarshallingInfo<StructuredPojo> ACM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("acm").build();
+    private static final MarshallingInfo<StructuredPojo> FILE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("file").build();
 
-    private static final HumanLoopActivationReasonMarshaller instance = new HumanLoopActivationReasonMarshaller();
+    private static final TlsValidationContextTrustMarshaller instance = new TlsValidationContextTrustMarshaller();
 
-    public static HumanLoopActivationReasonMarshaller getInstance() {
+    public static TlsValidationContextTrustMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(HumanLoopActivationReason humanLoopActivationReason, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(TlsValidationContextTrust tlsValidationContextTrust, ProtocolMarshaller protocolMarshaller) {
 
-        if (humanLoopActivationReason == null) {
+        if (tlsValidationContextTrust == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(humanLoopActivationReason.getConditionsMatched(), CONDITIONSMATCHED_BINDING);
+            protocolMarshaller.marshall(tlsValidationContextTrust.getAcm(), ACM_BINDING);
+            protocolMarshaller.marshall(tlsValidationContextTrust.getFile(), FILE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

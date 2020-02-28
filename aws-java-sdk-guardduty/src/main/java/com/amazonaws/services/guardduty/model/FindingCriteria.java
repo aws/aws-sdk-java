@@ -75,6 +75,13 @@ public class FindingCriteria implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single Criterion entry
+     *
+     * @see FindingCriteria#withCriterion
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public FindingCriteria addCriterionEntry(String key, Condition value) {
         if (null == this.criterion) {
             this.criterion = new java.util.HashMap<String, Condition>();

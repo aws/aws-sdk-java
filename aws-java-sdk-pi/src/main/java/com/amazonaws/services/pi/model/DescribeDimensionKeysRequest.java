@@ -1014,6 +1014,13 @@ public class DescribeDimensionKeysRequest extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single Filter entry
+     *
+     * @see DescribeDimensionKeysRequest#withFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeDimensionKeysRequest addFilterEntry(String key, String value) {
         if (null == this.filter) {
             this.filter = new java.util.HashMap<String, String>();

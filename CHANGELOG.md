@@ -1,3 +1,40 @@
+# __1.11.733__ __2020-02-28__
+## __AWS App Mesh__
+  - ### Features
+    - App Mesh now supports Transport Layer Security (TLS) between Virtual Nodes in a Mesh. Customers can use managed certificates from an AWS Certificate Manager Private Certificate Authority or bring their own certificates from the local file system to encrypt traffic between their workloads. See https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html for details.
+
+## __AWS Config__
+  - ### Features
+    - Accepts a structured query language (SQL) SELECT command and an aggregator name, performs the corresponding search on resources aggregated by the aggregator, and returns resource configurations matching the properties.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue adds resource tagging support for Machine Learning Transforms and adds a new API, ListMLTransforms to support tag filtering.  With this feature, customers can use tags in AWS Glue to organize and control access to Machine Learning Transforms. 
+
+## __Access Analyzer__
+  - ### Features
+    - This release includes improvements and fixes bugs for the IAM Access Analyzer feature.
+
+## __Amazon Augmented AI Runtime__
+  - ### Features
+    - This release updates Amazon Augmented AI ListHumanLoops API, DescribeHumanLoop response, StartHumanLoop response and type names of SDK fields. 
+
+## __Amazon CodeGuru Profiler__
+  - ### Features
+    - Documentation updates for Amazon CodeGuru Profiler
+
+## __Amazon QuickSight__
+  - ### Features
+    - Added SearchDashboards API that allows listing of dashboards that a specific user has access to.
+
+## __Amazon WorkDocs__
+  - ### Features
+    - Documentation updates for workdocs
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Added a target group attribute to support sticky sessions for Network Load Balancers.
+
 # __1.11.732__ __2020-02-27__
 ## __AWS Global Accelerator__
   - ### Features
