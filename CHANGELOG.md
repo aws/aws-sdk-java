@@ -1,3 +1,8 @@
+# __1.11.734__ __2020-02-29__
+## __AWS Config__
+  - ### Features
+    - Correcting list of supported resource types.
+
 # __1.11.733__ __2020-02-28__
 ## __AWS App Mesh__
   - ### Features
