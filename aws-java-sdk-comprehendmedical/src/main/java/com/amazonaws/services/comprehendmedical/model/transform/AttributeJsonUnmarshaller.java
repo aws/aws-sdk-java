@@ -60,6 +60,10 @@ public class AttributeJsonUnmarshaller implements Unmarshaller<Attribute, JsonUn
                     context.nextToken();
                     attribute.setRelationshipScore(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
+                if (context.testExpression("RelationshipType", targetDepth)) {
+                    context.nextToken();
+                    attribute.setRelationshipType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     attribute.setId(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class AttributeJsonUnmarshaller implements Unmarshaller<Attribute, JsonUn
                 if (context.testExpression("Text", targetDepth)) {
                     context.nextToken();
                     attribute.setText(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Category", targetDepth)) {
+                    context.nextToken();
+                    attribute.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Traits", targetDepth)) {
                     context.nextToken();

@@ -20,7 +20,9 @@ import javax.annotation.Generated;
  * One data point from the metric time series returned in a Contributor Insights rule report.
  * </p>
  * <p>
- * For more information, see <a>GetInsightRuleReport</a>.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html"
+ * >GetInsightRuleReport</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleMetricDatapoint"

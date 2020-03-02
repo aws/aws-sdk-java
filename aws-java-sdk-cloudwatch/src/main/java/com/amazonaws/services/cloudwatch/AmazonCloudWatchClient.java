@@ -306,9 +306,29 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes the specified alarms. You can delete up to 50 alarms in one operation. In the event of an error, no
-     * alarms are deleted.
+     * Deletes the specified alarms. You can delete up to 100 alarms in one operation. However, this total can include
+     * no more than one composite alarm. For example, you could delete 99 metric alarms and one composite alarms with
+     * one operation, but you can't delete two composite alarms with one operation.
      * </p>
+     * <p>
+     * In the event of an error, no alarms are deleted.
+     * </p>
+     * <note>
+     * <p>
+     * It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm
+     * B, and composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite
+     * alarm that is part of the cycle because there is always still a composite alarm that depends on that alarm that
+     * you want to delete.
+     * </p>
+     * <p>
+     * To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in
+     * the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to
+     * change the <code>AlarmRule</code> of one of the alarms to <code>False</code>.
+     * </p>
+     * <p>
+     * Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
+     * </p>
+     * </note>
      * 
      * @param deleteAlarmsRequest
      * @return Result of the DeleteAlarms operation returned by the service.
@@ -544,7 +564,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm
-     * name is not specified, the histories for all alarms are returned.
+     * name is not specified, the histories for either all metric alarms or all composite alarms are returned.
      * </p>
      * <p>
      * CloudWatch retains the history of an alarm even if you delete the alarm.
@@ -607,8 +627,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Retrieves the specified alarms. If no alarms are specified, all alarms are returned. Alarms can be retrieved by
-     * using only a prefix for the alarm name, the alarm state, or a prefix for any action.
+     * Retrieves the specified alarms. You can filter the results by specifying a a prefix for the alarm name, the alarm
+     * state, or a prefix for any action.
      * </p>
      * 
      * @param describeAlarmsRequest
@@ -1242,7 +1262,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * You can use the <code>GetMetricData</code> API to retrieve as many as 100 different metrics in a single request,
+     * You can use the <code>GetMetricData</code> API to retrieve as many as 500 different metrics in a single request,
      * with a total of as many as 100,800 data points. You can also optionally perform math expressions on the values of
      * the returned statistics, to create new time series that represent new insights into your data. For example, using
      * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
@@ -1618,8 +1638,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * List the specified metrics. You can use the returned metrics with <a>GetMetricData</a> or
-     * <a>GetMetricStatistics</a> to obtain statistical data.
+     * List the specified metrics. You can use the returned metrics with <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
+     * GetMetricStatistics</a> to obtain statistical data.
      * </p>
      * <p>
      * Up to 500 results are returned for any one call. To retrieve additional results, use the returned token with
@@ -1627,7 +1649,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * After you create a metric, allow up to fifteen minutes before the metric appears. Statistics about the metric,
-     * however, are available sooner using <a>GetMetricData</a> or <a>GetMetricStatistics</a>.
+     * however, are available sooner using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
+     * GetMetricStatistics</a>.
      * </p>
      * 
      * @param listMetricsRequest
@@ -1802,6 +1827,100 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<PutAnomalyDetectorResult> responseHandler = new StaxResponseHandler<PutAnomalyDetectorResult>(
                     new PutAnomalyDetectorResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates a <i>composite alarm</i>. When you create a composite alarm, you specify a rule expression for
+     * the alarm that takes into account the alarm states of other alarms that you have created. The composite alarm
+     * goes into ALARM state only if all conditions of the rule are met.
+     * </p>
+     * <p>
+     * The alarms specified in a composite alarm's rule expression can include metric alarms and other composite alarms.
+     * </p>
+     * <p>
+     * Using composite alarms can reduce alarm noise. You can create multiple metric alarms, and also create a composite
+     * alarm and set up alerts only for the composite alarm. For example, you could create a composite alarm that goes
+     * into ALARM state only when more than one of the underlying metric alarms are in ALARM state.
+     * </p>
+     * <p>
+     * Currently, the only alarm actions that can be taken by composite alarms are notifying SNS topics.
+     * </p>
+     * <note>
+     * <p>
+     * It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm
+     * B, and composite alarm B also depends on composite alarm A. In this scenario, you can't delete any composite
+     * alarm that is part of the cycle because there is always still a composite alarm that depends on that alarm that
+     * you want to delete.
+     * </p>
+     * <p>
+     * To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in
+     * the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to
+     * change the <code>AlarmRule</code> of one of the alarms to <code>False</code>.
+     * </p>
+     * <p>
+     * Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
+     * </p>
+     * </note>
+     * <p>
+     * When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
+     * alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then
+     * executed. For a composite alarm, this initial time after creation is the only time that the alarm can be in
+     * <code>INSUFFICIENT_DATA</code> state.
+     * </p>
+     * <p>
+     * When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous
+     * configuration of the alarm.
+     * </p>
+     * 
+     * @param putCompositeAlarmRequest
+     * @return Result of the PutCompositeAlarm operation returned by the service.
+     * @throws LimitExceededException
+     *         The quota for alarms for this customer has already been reached.
+     * @sample AmazonCloudWatch.PutCompositeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutCompositeAlarmResult putCompositeAlarm(PutCompositeAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executePutCompositeAlarm(request);
+    }
+
+    @SdkInternalApi
+    final PutCompositeAlarmResult executePutCompositeAlarm(PutCompositeAlarmRequest putCompositeAlarmRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putCompositeAlarmRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutCompositeAlarmRequest> request = null;
+        Response<PutCompositeAlarmResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutCompositeAlarmRequestMarshaller().marshall(super.beforeMarshalling(putCompositeAlarmRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCompositeAlarm");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutCompositeAlarmResult> responseHandler = new StaxResponseHandler<PutCompositeAlarmResult>(
+                    new PutCompositeAlarmResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2075,7 +2194,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <p>
      * Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified
      * metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric,
-     * it can take up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.
+     * it can take up to fifteen minutes for the metric to appear in calls to <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
      * </p>
      * <p>
      * You can publish either individual data points in the <code>Value</code> field, or arrays of values and the number
@@ -2100,8 +2220,14 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * <p>
-     * Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for
-     * <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time they are submitted.
+     * Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
+     * GetMetricStatistics</a> from the time they are submitted. Data points with time stamps between 3 and 24 hours ago
+     * can take as much as 2 hours to become available for for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
+     * GetMetricStatistics</a>.
      * </p>
      * <p>
      * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
@@ -2182,9 +2308,23 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous
      * value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to
      * send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
-     * sends an SNS message. The alarm returns to its actual state (often within seconds). Because the alarm state
-     * change happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch
-     * console or through <a>DescribeAlarmHistory</a>.
+     * sends an SNS message.
+     * </p>
+     * <p>
+     * Metric alarms returns to their actual state quickly, often within seconds. Because the metric alarm state change
+     * happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch console
+     * or through <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html"
+     * >DescribeAlarmHistory</a>.
+     * </p>
+     * <p>
+     * If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is not guaranteed to return to
+     * its actual state. It will return to its actual state only once any of its children alarms change state. It is
+     * also re-evaluated if you update its configuration.
+     * </p>
+     * <p>
+     * If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies, you must include information
+     * in the <code>StateReasonData</code> parameter to enable the policy to take the correct action.
      * </p>
      * 
      * @param setAlarmStateRequest

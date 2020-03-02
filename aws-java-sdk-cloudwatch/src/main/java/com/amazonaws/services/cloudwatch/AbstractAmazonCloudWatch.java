@@ -164,6 +164,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public PutCompositeAlarmResult putCompositeAlarm(PutCompositeAlarmRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDashboardResult putDashboard(PutDashboardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

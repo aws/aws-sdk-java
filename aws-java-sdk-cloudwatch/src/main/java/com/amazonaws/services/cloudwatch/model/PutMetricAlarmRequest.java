@@ -54,7 +54,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -74,7 +74,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -94,7 +94,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -272,8 +272,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
+     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -457,7 +458,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -474,7 +475,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
      *         <p>
      *         Valid Values (for use with IAM roles):
@@ -500,7 +501,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -518,7 +519,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -546,7 +547,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -569,7 +570,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -599,7 +600,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -617,7 +618,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -642,7 +643,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -659,7 +660,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
      *         <p>
      *         Valid Values (for use with IAM roles):
@@ -685,7 +686,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -703,7 +704,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -731,7 +732,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -754,7 +755,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -784,7 +785,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -802,7 +803,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -827,7 +828,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -844,7 +845,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
      *         <p>
      *         Valid Values (for use with IAM roles):
@@ -870,7 +871,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -888,7 +889,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -916,7 +917,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -939,7 +940,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -969,7 +970,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
      * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      * </p>
      * <p>
      * Valid Values (for use with IAM roles):
@@ -987,7 +988,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
      *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
      *        <p>
      *        Valid Values (for use with IAM roles):
@@ -2213,8 +2214,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
+     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2232,7 +2234,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
      *         expression by setting <code>ReturnValue</code> to true for this object in the array. For more
-     *         information, see <a>MetricDataQuery</a>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html"
+     *         >MetricDataQuery</a>.
      *         </p>
      *         <p>
      *         If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2259,8 +2263,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
+     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2279,7 +2284,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
      *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
-     *        see <a>MetricDataQuery</a>.
+     *        see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">
+     *        MetricDataQuery</a>.
      *        </p>
      *        <p>
      *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2308,8 +2314,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
+     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2333,7 +2340,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
      *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
-     *        see <a>MetricDataQuery</a>.
+     *        see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">
+     *        MetricDataQuery</a>.
      *        </p>
      *        <p>
      *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2364,8 +2372,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
-     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see
-     * <a>MetricDataQuery</a>.
+     * expression by setting <code>ReturnValue</code> to true for this object in the array. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
      * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
@@ -2384,7 +2393,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this
      *        expression by setting <code>ReturnValue</code> to true for this object in the array. For more information,
-     *        see <a>MetricDataQuery</a>.
+     *        see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">
+     *        MetricDataQuery</a>.
      *        </p>
      *        <p>
      *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,

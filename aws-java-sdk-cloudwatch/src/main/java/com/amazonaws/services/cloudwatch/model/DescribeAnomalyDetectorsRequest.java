@@ -33,7 +33,7 @@ public class DescribeAnomalyDetectorsRequest extends com.amazonaws.AmazonWebServ
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in one operation. The maximum value you can specify is 10.
+     * The maximum number of results to return in one operation. The maximum value that you can specify is 100.
      * </p>
      * <p>
      * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
@@ -105,14 +105,15 @@ public class DescribeAnomalyDetectorsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of results to return in one operation. The maximum value you can specify is 10.
+     * The maximum number of results to return in one operation. The maximum value that you can specify is 100.
      * </p>
      * <p>
      * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in one operation. The maximum value you can specify is 10.</p>
+     *        The maximum number of results to return in one operation. The maximum value that you can specify is
+     *        100.</p>
      *        <p>
      *        To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      */
@@ -123,13 +124,14 @@ public class DescribeAnomalyDetectorsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of results to return in one operation. The maximum value you can specify is 10.
+     * The maximum number of results to return in one operation. The maximum value that you can specify is 100.
      * </p>
      * <p>
      * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return in one operation. The maximum value you can specify is 10.</p>
+     * @return The maximum number of results to return in one operation. The maximum value that you can specify is
+     *         100.</p>
      *         <p>
      *         To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      */
@@ -140,14 +142,15 @@ public class DescribeAnomalyDetectorsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of results to return in one operation. The maximum value you can specify is 10.
+     * The maximum number of results to return in one operation. The maximum value that you can specify is 100.
      * </p>
      * <p>
      * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in one operation. The maximum value you can specify is 10.</p>
+     *        The maximum number of results to return in one operation. The maximum value that you can specify is
+     *        100.</p>
      *        <p>
      *        To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.

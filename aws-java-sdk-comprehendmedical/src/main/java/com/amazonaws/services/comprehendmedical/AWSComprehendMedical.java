@@ -130,7 +130,8 @@ public interface AWSComprehendMedical {
     /**
      * <p>
      * Inspects the clinical text for a variety of medical entities and returns specific information about them such as
-     * entity category, location, and confidence score on that information.
+     * entity category, location, and confidence score on that information. Amazon Comprehend Medical only detects
+     * medical entities in English language texts.
      * </p>
      * <p>
      * The <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a> operation. This new action uses a
@@ -168,8 +169,9 @@ public interface AWSComprehendMedical {
 
     /**
      * <p>
-     * Inspects the clinical text for protected health information (PHI) entities and entity category, location, and
-     * confidence score on that information.
+     * Inspects the clinical text for protected health information (PHI) entities and returns the entity category,
+     * location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English
+     * language texts.
      * </p>
      * 
      * @param detectPHIRequest
@@ -199,7 +201,8 @@ public interface AWSComprehendMedical {
     /**
      * <p>
      * InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to
-     * normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control.
+     * normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon
+     * Comprehend Medical only detects medical entities in English language texts.
      * </p>
      * 
      * @param inferICD10CMRequest
@@ -229,7 +232,8 @@ public interface AWSComprehendMedical {
     /**
      * <p>
      * InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept
-     * identifiers in the RxNorm database from the National Library of Medicine.
+     * identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects
+     * medical entities in English language texts.
      * </p>
      * 
      * @param inferRxNormRequest

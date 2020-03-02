@@ -69,6 +69,8 @@ public enum CloudWatchActions implements Action {
     ListTagsForResource("cloudwatch:ListTagsForResource"),
     /** Action for the PutAnomalyDetector operation. */
     PutAnomalyDetector("cloudwatch:PutAnomalyDetector"),
+    /** Action for the PutCompositeAlarm operation. */
+    PutCompositeAlarm("cloudwatch:PutCompositeAlarm"),
     /** Action for the PutDashboard operation. */
     PutDashboard("cloudwatch:PutDashboard"),
     /** Action for the PutInsightRule operation. */

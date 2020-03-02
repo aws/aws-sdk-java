@@ -47,6 +47,10 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The reason that this alarm is set to this specific state, in JSON format.
      * </p>
+     * <p>
+     * For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling
+     * alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.
+     * </p>
      */
     private String stateReasonData;
 
@@ -210,9 +214,17 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The reason that this alarm is set to this specific state, in JSON format.
      * </p>
+     * <p>
+     * For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling
+     * alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.
+     * </p>
      * 
      * @param stateReasonData
-     *        The reason that this alarm is set to this specific state, in JSON format.
+     *        The reason that this alarm is set to this specific state, in JSON format.</p>
+     *        <p>
+     *        For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto
+     *        Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct
+     *        action.
      */
 
     public void setStateReasonData(String stateReasonData) {
@@ -223,8 +235,16 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The reason that this alarm is set to this specific state, in JSON format.
      * </p>
+     * <p>
+     * For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling
+     * alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.
+     * </p>
      * 
-     * @return The reason that this alarm is set to this specific state, in JSON format.
+     * @return The reason that this alarm is set to this specific state, in JSON format.</p>
+     *         <p>
+     *         For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto
+     *         Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct
+     *         action.
      */
 
     public String getStateReasonData() {
@@ -235,9 +255,17 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The reason that this alarm is set to this specific state, in JSON format.
      * </p>
+     * <p>
+     * For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling
+     * alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.
+     * </p>
      * 
      * @param stateReasonData
-     *        The reason that this alarm is set to this specific state, in JSON format.
+     *        The reason that this alarm is set to this specific state, in JSON format.</p>
+     *        <p>
+     *        For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto
+     *        Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct
+     *        action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

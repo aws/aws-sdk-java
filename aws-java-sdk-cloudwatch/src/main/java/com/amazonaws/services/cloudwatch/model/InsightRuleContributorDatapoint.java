@@ -20,7 +20,11 @@ import javax.annotation.Generated;
  * One data point related to one contributor.
  * </p>
  * <p>
- * For more information, see <a>GetInsightRuleReport</a> and <a>InsightRuleContributor</a>.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html"
+ * >GetInsightRuleReport</a> and <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html"
+ * >InsightRuleContributor</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleContributorDatapoint"

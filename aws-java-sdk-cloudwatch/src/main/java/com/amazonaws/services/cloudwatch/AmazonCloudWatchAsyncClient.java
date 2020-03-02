@@ -1052,6 +1052,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<PutCompositeAlarmResult> putCompositeAlarmAsync(PutCompositeAlarmRequest request) {
+
+        return putCompositeAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCompositeAlarmResult> putCompositeAlarmAsync(final PutCompositeAlarmRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutCompositeAlarmRequest, PutCompositeAlarmResult> asyncHandler) {
+        final PutCompositeAlarmRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutCompositeAlarmResult>() {
+            @Override
+            public PutCompositeAlarmResult call() throws Exception {
+                PutCompositeAlarmResult result = null;
+
+                try {
+                    result = executePutCompositeAlarm(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest request) {
 
         return putDashboardAsync(request, null);

@@ -39,7 +39,9 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * on the dashboard. This parameter is required.
      * </p>
      * <p>
-     * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * For more information about the syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      */
     private String dashboardBody;
@@ -102,14 +104,18 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * on the dashboard. This parameter is required.
      * </p>
      * <p>
-     * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * For more information about the syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      * 
      * @param dashboardBody
      *        The detailed information about the dashboard in JSON format, including the widgets to include and their
      *        location on the dashboard. This parameter is required.</p>
      *        <p>
-     *        For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+     *        For more information about the syntax, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     *        >Dashboard Body Structure and Syntax</a>.
      */
 
     public void setDashboardBody(String dashboardBody) {
@@ -122,13 +128,17 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * on the dashboard. This parameter is required.
      * </p>
      * <p>
-     * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * For more information about the syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      * 
      * @return The detailed information about the dashboard in JSON format, including the widgets to include and their
      *         location on the dashboard. This parameter is required.</p>
      *         <p>
-     *         For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+     *         For more information about the syntax, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     *         >Dashboard Body Structure and Syntax</a>.
      */
 
     public String getDashboardBody() {
@@ -141,14 +151,18 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * on the dashboard. This parameter is required.
      * </p>
      * <p>
-     * For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * For more information about the syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      * 
      * @param dashboardBody
      *        The detailed information about the dashboard in JSON format, including the widgets to include and their
      *        location on the dashboard. This parameter is required.</p>
      *        <p>
-     *        For more information about the syntax, see <a>CloudWatch-Dashboard-Body-Structure</a>.
+     *        For more information about the syntax, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     *        >Dashboard Body Structure and Syntax</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

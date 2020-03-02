@@ -25,7 +25,13 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information for the specified alarms.
+     * The information about any composite alarms returned by the operation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CompositeAlarm> compositeAlarms;
+    /**
+     * <p>
+     * The information about any metric alarms returned by the operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricAlarm> metricAlarms;
@@ -38,10 +44,83 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information for the specified alarms.
+     * The information about any composite alarms returned by the operation.
      * </p>
      * 
-     * @return The information for the specified alarms.
+     * @return The information about any composite alarms returned by the operation.
+     */
+
+    public java.util.List<CompositeAlarm> getCompositeAlarms() {
+        if (compositeAlarms == null) {
+            compositeAlarms = new com.amazonaws.internal.SdkInternalList<CompositeAlarm>();
+        }
+        return compositeAlarms;
+    }
+
+    /**
+     * <p>
+     * The information about any composite alarms returned by the operation.
+     * </p>
+     * 
+     * @param compositeAlarms
+     *        The information about any composite alarms returned by the operation.
+     */
+
+    public void setCompositeAlarms(java.util.Collection<CompositeAlarm> compositeAlarms) {
+        if (compositeAlarms == null) {
+            this.compositeAlarms = null;
+            return;
+        }
+
+        this.compositeAlarms = new com.amazonaws.internal.SdkInternalList<CompositeAlarm>(compositeAlarms);
+    }
+
+    /**
+     * <p>
+     * The information about any composite alarms returned by the operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCompositeAlarms(java.util.Collection)} or {@link #withCompositeAlarms(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param compositeAlarms
+     *        The information about any composite alarms returned by the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAlarmsResult withCompositeAlarms(CompositeAlarm... compositeAlarms) {
+        if (this.compositeAlarms == null) {
+            setCompositeAlarms(new com.amazonaws.internal.SdkInternalList<CompositeAlarm>(compositeAlarms.length));
+        }
+        for (CompositeAlarm ele : compositeAlarms) {
+            this.compositeAlarms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The information about any composite alarms returned by the operation.
+     * </p>
+     * 
+     * @param compositeAlarms
+     *        The information about any composite alarms returned by the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAlarmsResult withCompositeAlarms(java.util.Collection<CompositeAlarm> compositeAlarms) {
+        setCompositeAlarms(compositeAlarms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The information about any metric alarms returned by the operation.
+     * </p>
+     * 
+     * @return The information about any metric alarms returned by the operation.
      */
 
     public java.util.List<MetricAlarm> getMetricAlarms() {
@@ -53,11 +132,11 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information for the specified alarms.
+     * The information about any metric alarms returned by the operation.
      * </p>
      * 
      * @param metricAlarms
-     *        The information for the specified alarms.
+     *        The information about any metric alarms returned by the operation.
      */
 
     public void setMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {
@@ -71,7 +150,7 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information for the specified alarms.
+     * The information about any metric alarms returned by the operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +159,7 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param metricAlarms
-     *        The information for the specified alarms.
+     *        The information about any metric alarms returned by the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +175,11 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The information for the specified alarms.
+     * The information about any metric alarms returned by the operation.
      * </p>
      * 
      * @param metricAlarms
-     *        The information for the specified alarms.
+     *        The information about any metric alarms returned by the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,6 +240,8 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCompositeAlarms() != null)
+            sb.append("CompositeAlarms: ").append(getCompositeAlarms()).append(",");
         if (getMetricAlarms() != null)
             sb.append("MetricAlarms: ").append(getMetricAlarms()).append(",");
         if (getNextToken() != null)
@@ -179,6 +260,10 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof DescribeAlarmsResult == false)
             return false;
         DescribeAlarmsResult other = (DescribeAlarmsResult) obj;
+        if (other.getCompositeAlarms() == null ^ this.getCompositeAlarms() == null)
+            return false;
+        if (other.getCompositeAlarms() != null && other.getCompositeAlarms().equals(this.getCompositeAlarms()) == false)
+            return false;
         if (other.getMetricAlarms() == null ^ this.getMetricAlarms() == null)
             return false;
         if (other.getMetricAlarms() != null && other.getMetricAlarms().equals(this.getMetricAlarms()) == false)
@@ -195,6 +280,7 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCompositeAlarms() == null) ? 0 : getCompositeAlarms().hashCode());
         hashCode = prime * hashCode + ((getMetricAlarms() == null) ? 0 : getMetricAlarms().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

@@ -52,6 +52,13 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     private Float relationshipScore;
     /**
      * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>,
+     * indicating that the entity occurred at the same time as the <code>Date_Expression</code>.
+     * </p>
+     */
+    private String relationshipType;
+    /**
+     * <p>
      * The numeric identifier for this attribute. This is a monotonically increasing id unique within this response
      * rather than a global unique identifier.
      * </p>
@@ -77,6 +84,12 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String text;
+    /**
+     * <p>
+     * The category of attribute.
+     * </p>
+     */
+    private String category;
     /**
      * <p>
      * Contextual information for this attribute.
@@ -232,6 +245,77 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     public Attribute withRelationshipScore(Float relationshipScore) {
         setRelationshipScore(relationshipScore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>,
+     * indicating that the entity occurred at the same time as the <code>Date_Expression</code>.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of relationship between the entity and attribute. Type for the relationship is
+     *        <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
+     *        <code>Date_Expression</code>.
+     * @see RelationshipType
+     */
+
+    public void setRelationshipType(String relationshipType) {
+        this.relationshipType = relationshipType;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>,
+     * indicating that the entity occurred at the same time as the <code>Date_Expression</code>.
+     * </p>
+     * 
+     * @return The type of relationship between the entity and attribute. Type for the relationship is
+     *         <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
+     *         <code>Date_Expression</code>.
+     * @see RelationshipType
+     */
+
+    public String getRelationshipType() {
+        return this.relationshipType;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>,
+     * indicating that the entity occurred at the same time as the <code>Date_Expression</code>.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of relationship between the entity and attribute. Type for the relationship is
+     *        <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
+     *        <code>Date_Expression</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RelationshipType
+     */
+
+    public Attribute withRelationshipType(String relationshipType) {
+        setRelationshipType(relationshipType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>,
+     * indicating that the entity occurred at the same time as the <code>Date_Expression</code>.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of relationship between the entity and attribute. Type for the relationship is
+     *        <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
+     *        <code>Date_Expression</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RelationshipType
+     */
+
+    public Attribute withRelationshipType(RelationshipType relationshipType) {
+        this.relationshipType = relationshipType.toString();
         return this;
     }
 
@@ -415,6 +499,65 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The category of attribute.
+     * </p>
+     * 
+     * @param category
+     *        The category of attribute.
+     * @see EntityType
+     */
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * <p>
+     * The category of attribute.
+     * </p>
+     * 
+     * @return The category of attribute.
+     * @see EntityType
+     */
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * <p>
+     * The category of attribute.
+     * </p>
+     * 
+     * @param category
+     *        The category of attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntityType
+     */
+
+    public Attribute withCategory(String category) {
+        setCategory(category);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The category of attribute.
+     * </p>
+     * 
+     * @param category
+     *        The category of attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntityType
+     */
+
+    public Attribute withCategory(EntityType category) {
+        this.category = category.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Contextual information for this attribute.
      * </p>
      * 
@@ -501,6 +644,8 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
             sb.append("Score: ").append(getScore()).append(",");
         if (getRelationshipScore() != null)
             sb.append("RelationshipScore: ").append(getRelationshipScore()).append(",");
+        if (getRelationshipType() != null)
+            sb.append("RelationshipType: ").append(getRelationshipType()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getBeginOffset() != null)
@@ -509,6 +654,8 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
             sb.append("EndOffset: ").append(getEndOffset()).append(",");
         if (getText() != null)
             sb.append("Text: ").append(getText()).append(",");
+        if (getCategory() != null)
+            sb.append("Category: ").append(getCategory()).append(",");
         if (getTraits() != null)
             sb.append("Traits: ").append(getTraits());
         sb.append("}");
@@ -537,6 +684,10 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRelationshipScore() != null && other.getRelationshipScore().equals(this.getRelationshipScore()) == false)
             return false;
+        if (other.getRelationshipType() == null ^ this.getRelationshipType() == null)
+            return false;
+        if (other.getRelationshipType() != null && other.getRelationshipType().equals(this.getRelationshipType()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -553,6 +704,10 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getText() != null && other.getText().equals(this.getText()) == false)
             return false;
+        if (other.getCategory() == null ^ this.getCategory() == null)
+            return false;
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
+            return false;
         if (other.getTraits() == null ^ this.getTraits() == null)
             return false;
         if (other.getTraits() != null && other.getTraits().equals(this.getTraits()) == false)
@@ -568,10 +723,12 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getScore() == null) ? 0 : getScore().hashCode());
         hashCode = prime * hashCode + ((getRelationshipScore() == null) ? 0 : getRelationshipScore().hashCode());
+        hashCode = prime * hashCode + ((getRelationshipType() == null) ? 0 : getRelationshipType().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getBeginOffset() == null) ? 0 : getBeginOffset().hashCode());
         hashCode = prime * hashCode + ((getEndOffset() == null) ? 0 : getEndOffset().hashCode());
         hashCode = prime * hashCode + ((getText() == null) ? 0 : getText().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getTraits() == null) ? 0 : getTraits().hashCode());
         return hashCode;
     }

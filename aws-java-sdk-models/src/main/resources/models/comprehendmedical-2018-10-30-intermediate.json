@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -243,7 +243,7 @@
       "asyncReturnType" : "DetectEntitiesV2Result",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information.</p> <p>The <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a> operation. This new action uses a different model for determining the entities in your medical text and changes the way that some entities are returned in the output. You should use the <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities as attributes instead of types. </p>",
+      "documentation" : "<p>Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information. Amazon Comprehend Medical only detects medical entities in English language texts.</p> <p>The <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a> operation. This new action uses a different model for determining the entities in your medical text and changes the way that some entities are returned in the output. You should use the <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities as attributes instead of types. </p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -299,7 +299,7 @@
       "asyncReturnType" : "DetectPHIResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p> Inspects the clinical text for protected health information (PHI) entities and entity category, location, and confidence score on that information.</p>",
+      "documentation" : "<p> Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -355,7 +355,7 @@
       "asyncReturnType" : "InferICD10CMResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control.</p>",
+      "documentation" : "<p>InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in English language texts.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -411,7 +411,7 @@
       "asyncReturnType" : "InferRxNormResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine.</p>",
+      "documentation" : "<p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -962,6 +962,73 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "RelationshipType",
+        "c2jShape" : "RelationshipType",
+        "deprecated" : false,
+        "documentation" : "<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>",
+        "enumType" : "RelationshipType",
+        "fluentSetterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@param relationshipType The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+        "fluentSetterMethodName" : "withRelationshipType",
+        "getterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@return The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@see RelationshipType*/",
+        "getterMethodName" : "getRelationshipType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "RelationshipType",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "RelationshipType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "RelationshipType",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@param relationshipType The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@see RelationshipType*/",
+        "setterMethodName" : "setRelationshipType",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "relationshipType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@param relationshipType The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "relationshipType",
+          "variableType" : "String",
+          "documentation" : "<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Id",
         "c2jShape" : "Integer",
         "deprecated" : false,
@@ -1230,6 +1297,73 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "Category",
+        "c2jShape" : "EntityType",
+        "deprecated" : false,
+        "documentation" : "<p> The category of attribute. </p>",
+        "enumType" : "EntityType",
+        "fluentSetterDocumentation" : "/**<p> The category of attribute. </p>\n@param category The category of attribute.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityType*/",
+        "fluentSetterMethodName" : "withCategory",
+        "getterDocumentation" : "/**<p> The category of attribute. </p>\n@return The category of attribute.\n@see EntityType*/",
+        "getterMethodName" : "getCategory",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Category",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Category",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Category",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> The category of attribute. </p>\n@param category The category of attribute.\n@see EntityType*/",
+        "setterMethodName" : "setCategory",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "category",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> The category of attribute. </p>\n@param category The category of attribute.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "category",
+          "variableType" : "String",
+          "documentation" : "<p> The category of attribute. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Traits",
         "c2jShape" : "TraitList",
         "deprecated" : false,
@@ -1448,6 +1582,74 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "Category" : {
+          "c2jName" : "Category",
+          "c2jShape" : "EntityType",
+          "deprecated" : false,
+          "documentation" : "<p> The category of attribute. </p>",
+          "enumType" : "EntityType",
+          "fluentSetterDocumentation" : "/**<p> The category of attribute. </p>\n@param category The category of attribute.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityType*/",
+          "fluentSetterMethodName" : "withCategory",
+          "getterDocumentation" : "/**<p> The category of attribute. </p>\n@return The category of attribute.\n@see EntityType*/",
+          "getterMethodName" : "getCategory",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Category",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Category",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Category",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> The category of attribute. </p>\n@param category The category of attribute.\n@see EntityType*/",
+          "setterMethodName" : "setCategory",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "category",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> The category of attribute. </p>\n@param category The category of attribute.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "category",
+            "variableType" : "String",
+            "documentation" : "<p> The category of attribute. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "EndOffset" : {
           "c2jName" : "EndOffset",
           "c2jShape" : "Integer",
@@ -1649,6 +1851,74 @@
             "documentation" : "<p> The level of confidence that Amazon Comprehend Medical has that this attribute is correctly related to this entity. </p>",
             "simpleType" : "Float",
             "variableSetterType" : "Float"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "RelationshipType" : {
+          "c2jName" : "RelationshipType",
+          "c2jShape" : "RelationshipType",
+          "deprecated" : false,
+          "documentation" : "<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>",
+          "enumType" : "RelationshipType",
+          "fluentSetterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@param relationshipType The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+          "fluentSetterMethodName" : "withRelationshipType",
+          "getterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@return The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@see RelationshipType*/",
+          "getterMethodName" : "getRelationshipType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "RelationshipType",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "RelationshipType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "RelationshipType",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@param relationshipType The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@see RelationshipType*/",
+          "setterMethodName" : "setRelationshipType",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "relationshipType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>\n@param relationshipType The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "relationshipType",
+            "variableType" : "String",
+            "documentation" : "<p>The type of relationship between the entity and attribute. Type for the relationship is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the <code>Date_Expression</code>. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -9964,6 +10234,24 @@
       }, {
         "name" : "QUANTITY",
         "value" : "QUANTITY"
+      }, {
+        "name" : "TIME_EXPRESSION",
+        "value" : "TIME_EXPRESSION"
+      }, {
+        "name" : "TIME_TO_MEDICATION_NAME",
+        "value" : "TIME_TO_MEDICATION_NAME"
+      }, {
+        "name" : "TIME_TO_DX_NAME",
+        "value" : "TIME_TO_DX_NAME"
+      }, {
+        "name" : "TIME_TO_TEST_NAME",
+        "value" : "TIME_TO_TEST_NAME"
+      }, {
+        "name" : "TIME_TO_PROCEDURE_NAME",
+        "value" : "TIME_TO_PROCEDURE_NAME"
+      }, {
+        "name" : "TIME_TO_TREATMENT_NAME",
+        "value" : "TIME_TO_TREATMENT_NAME"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10020,6 +10308,9 @@
       }, {
         "name" : "ANATOMY",
         "value" : "ANATOMY"
+      }, {
+        "name" : "TIME_EXPRESSION",
+        "value" : "TIME_EXPRESSION"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15770,7 +16061,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The input properties for an entities detection job</p>",
+      "documentation" : "<p>The input properties for an entities detection job.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -18456,6 +18747,98 @@
         "documentation" : null,
         "simpleType" : "OutputDataConfig",
         "variableSetterType" : "OutputDataConfig"
+      },
+      "wrapper" : false
+    },
+    "RelationshipType" : {
+      "c2jName" : "RelationshipType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "EVERY",
+        "value" : "EVERY"
+      }, {
+        "name" : "WITH_DOSAGE",
+        "value" : "WITH_DOSAGE"
+      }, {
+        "name" : "ADMINISTERED_VIA",
+        "value" : "ADMINISTERED_VIA"
+      }, {
+        "name" : "FOR",
+        "value" : "FOR"
+      }, {
+        "name" : "NEGATIVE",
+        "value" : "NEGATIVE"
+      }, {
+        "name" : "OVERLAP",
+        "value" : "OVERLAP"
+      }, {
+        "name" : "DOSAGE",
+        "value" : "DOSAGE"
+      }, {
+        "name" : "ROUTE_OR_MODE",
+        "value" : "ROUTE_OR_MODE"
+      }, {
+        "name" : "FORM",
+        "value" : "FORM"
+      }, {
+        "name" : "FREQUENCY",
+        "value" : "FREQUENCY"
+      }, {
+        "name" : "DURATION",
+        "value" : "DURATION"
+      }, {
+        "name" : "STRENGTH",
+        "value" : "STRENGTH"
+      }, {
+        "name" : "RATE",
+        "value" : "RATE"
+      }, {
+        "name" : "ACUITY",
+        "value" : "ACUITY"
+      }, {
+        "name" : "TEST_VALUE",
+        "value" : "TEST_VALUE"
+      }, {
+        "name" : "TEST_UNITS",
+        "value" : "TEST_UNITS"
+      }, {
+        "name" : "DIRECTION",
+        "value" : "DIRECTION"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "RelationshipType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "RelationshipType",
+        "variableName" : "relationshipType",
+        "variableType" : "RelationshipType",
+        "documentation" : null,
+        "simpleType" : "RelationshipType",
+        "variableSetterType" : "RelationshipType"
       },
       "wrapper" : false
     },

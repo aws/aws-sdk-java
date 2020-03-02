@@ -33,6 +33,13 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
     private String alarmName;
     /**
      * <p>
+     * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
+     * omit this parameter, only metric alarms are returned.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> alarmTypes;
+    /**
+     * <p>
      * The type of alarm histories to retrieve.
      * </p>
      */
@@ -61,6 +68,14 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to
+     * have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest
+     * history returned first.
+     * </p>
+     */
+    private String scanBy;
 
     /**
      * <p>
@@ -99,6 +114,117 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
 
     public DescribeAlarmHistoryRequest withAlarmName(String alarmName) {
         setAlarmName(alarmName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
+     * omit this parameter, only metric alarms are returned.
+     * </p>
+     * 
+     * @return Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
+     *         If you omit this parameter, only metric alarms are returned.
+     * @see AlarmType
+     */
+
+    public java.util.List<String> getAlarmTypes() {
+        if (alarmTypes == null) {
+            alarmTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return alarmTypes;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
+     * omit this parameter, only metric alarms are returned.
+     * </p>
+     * 
+     * @param alarmTypes
+     *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
+     *        If you omit this parameter, only metric alarms are returned.
+     * @see AlarmType
+     */
+
+    public void setAlarmTypes(java.util.Collection<String> alarmTypes) {
+        if (alarmTypes == null) {
+            this.alarmTypes = null;
+            return;
+        }
+
+        this.alarmTypes = new com.amazonaws.internal.SdkInternalList<String>(alarmTypes);
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
+     * omit this parameter, only metric alarms are returned.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlarmTypes(java.util.Collection)} or {@link #withAlarmTypes(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param alarmTypes
+     *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
+     *        If you omit this parameter, only metric alarms are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlarmType
+     */
+
+    public DescribeAlarmHistoryRequest withAlarmTypes(String... alarmTypes) {
+        if (this.alarmTypes == null) {
+            setAlarmTypes(new com.amazonaws.internal.SdkInternalList<String>(alarmTypes.length));
+        }
+        for (String ele : alarmTypes) {
+            this.alarmTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
+     * omit this parameter, only metric alarms are returned.
+     * </p>
+     * 
+     * @param alarmTypes
+     *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
+     *        If you omit this parameter, only metric alarms are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlarmType
+     */
+
+    public DescribeAlarmHistoryRequest withAlarmTypes(java.util.Collection<String> alarmTypes) {
+        setAlarmTypes(alarmTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
+     * omit this parameter, only metric alarms are returned.
+     * </p>
+     * 
+     * @param alarmTypes
+     *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
+     *        If you omit this parameter, only metric alarms are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlarmType
+     */
+
+    public DescribeAlarmHistoryRequest withAlarmTypes(AlarmType... alarmTypes) {
+        com.amazonaws.internal.SdkInternalList<String> alarmTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(alarmTypes.length);
+        for (AlarmType value : alarmTypes) {
+            alarmTypesCopy.add(value.toString());
+        }
+        if (getAlarmTypes() == null) {
+            setAlarmTypes(alarmTypesCopy);
+        } else {
+            getAlarmTypes().addAll(alarmTypesCopy);
+        }
         return this;
     }
 
@@ -336,6 +462,99 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to
+     * have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest
+     * history returned first.
+     * </p>
+     * 
+     * @param scanBy
+     *        Specified whether to return the newest or oldest alarm history first. Specify
+     *        <code>TimestampDescending</code> to have the newest event history returned first, and specify
+     *        <code>TimestampAscending</code> to have the oldest history returned first.
+     * @see ScanBy
+     */
+
+    public void setScanBy(String scanBy) {
+        this.scanBy = scanBy;
+    }
+
+    /**
+     * <p>
+     * Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to
+     * have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest
+     * history returned first.
+     * </p>
+     * 
+     * @return Specified whether to return the newest or oldest alarm history first. Specify
+     *         <code>TimestampDescending</code> to have the newest event history returned first, and specify
+     *         <code>TimestampAscending</code> to have the oldest history returned first.
+     * @see ScanBy
+     */
+
+    public String getScanBy() {
+        return this.scanBy;
+    }
+
+    /**
+     * <p>
+     * Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to
+     * have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest
+     * history returned first.
+     * </p>
+     * 
+     * @param scanBy
+     *        Specified whether to return the newest or oldest alarm history first. Specify
+     *        <code>TimestampDescending</code> to have the newest event history returned first, and specify
+     *        <code>TimestampAscending</code> to have the oldest history returned first.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanBy
+     */
+
+    public DescribeAlarmHistoryRequest withScanBy(String scanBy) {
+        setScanBy(scanBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to
+     * have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest
+     * history returned first.
+     * </p>
+     * 
+     * @param scanBy
+     *        Specified whether to return the newest or oldest alarm history first. Specify
+     *        <code>TimestampDescending</code> to have the newest event history returned first, and specify
+     *        <code>TimestampAscending</code> to have the oldest history returned first.
+     * @see ScanBy
+     */
+
+    public void setScanBy(ScanBy scanBy) {
+        withScanBy(scanBy);
+    }
+
+    /**
+     * <p>
+     * Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to
+     * have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest
+     * history returned first.
+     * </p>
+     * 
+     * @param scanBy
+     *        Specified whether to return the newest or oldest alarm history first. Specify
+     *        <code>TimestampDescending</code> to have the newest event history returned first, and specify
+     *        <code>TimestampAscending</code> to have the oldest history returned first.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanBy
+     */
+
+    public DescribeAlarmHistoryRequest withScanBy(ScanBy scanBy) {
+        this.scanBy = scanBy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -349,6 +568,8 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getAlarmName() != null)
             sb.append("AlarmName: ").append(getAlarmName()).append(",");
+        if (getAlarmTypes() != null)
+            sb.append("AlarmTypes: ").append(getAlarmTypes()).append(",");
         if (getHistoryItemType() != null)
             sb.append("HistoryItemType: ").append(getHistoryItemType()).append(",");
         if (getStartDate() != null)
@@ -358,7 +579,9 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getScanBy() != null)
+            sb.append("ScanBy: ").append(getScanBy());
         sb.append("}");
         return sb.toString();
     }
@@ -376,6 +599,10 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getAlarmName() == null ^ this.getAlarmName() == null)
             return false;
         if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false)
+            return false;
+        if (other.getAlarmTypes() == null ^ this.getAlarmTypes() == null)
+            return false;
+        if (other.getAlarmTypes() != null && other.getAlarmTypes().equals(this.getAlarmTypes()) == false)
             return false;
         if (other.getHistoryItemType() == null ^ this.getHistoryItemType() == null)
             return false;
@@ -397,6 +624,10 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getScanBy() == null ^ this.getScanBy() == null)
+            return false;
+        if (other.getScanBy() != null && other.getScanBy().equals(this.getScanBy()) == false)
+            return false;
         return true;
     }
 
@@ -406,11 +637,13 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime * hashCode + ((getAlarmTypes() == null) ? 0 : getAlarmTypes().hashCode());
         hashCode = prime * hashCode + ((getHistoryItemType() == null) ? 0 : getHistoryItemType().hashCode());
         hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getScanBy() == null) ? 0 : getScanBy().hashCode());
         return hashCode;
     }
 

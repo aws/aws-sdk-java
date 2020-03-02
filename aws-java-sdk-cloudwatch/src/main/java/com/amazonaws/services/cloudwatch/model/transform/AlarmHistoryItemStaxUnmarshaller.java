@@ -48,6 +48,11 @@ public class AlarmHistoryItemStaxUnmarshaller implements Unmarshaller<AlarmHisto
                     continue;
                 }
 
+                if (context.testExpression("AlarmType", targetDepth)) {
+                    alarmHistoryItem.setAlarmType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Timestamp", targetDepth)) {
                     alarmHistoryItem.setTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;

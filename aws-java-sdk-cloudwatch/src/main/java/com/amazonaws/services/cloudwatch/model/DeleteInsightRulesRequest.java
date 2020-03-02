@@ -27,20 +27,23 @@ public class DeleteInsightRulesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of the rule names to delete. If you need to find out the names of your rules, use
-     * <a>DescribeInsightRules</a>.
+     * An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     * >DescribeInsightRules</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ruleNames;
 
     /**
      * <p>
-     * An array of the rule names to delete. If you need to find out the names of your rules, use
-     * <a>DescribeInsightRules</a>.
+     * An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     * >DescribeInsightRules</a>.
      * </p>
      * 
-     * @return An array of the rule names to delete. If you need to find out the names of your rules, use
-     *         <a>DescribeInsightRules</a>.
+     * @return An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     *         >DescribeInsightRules</a>.
      */
 
     public java.util.List<String> getRuleNames() {
@@ -52,13 +55,15 @@ public class DeleteInsightRulesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of the rule names to delete. If you need to find out the names of your rules, use
-     * <a>DescribeInsightRules</a>.
+     * An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     * >DescribeInsightRules</a>.
      * </p>
      * 
      * @param ruleNames
-     *        An array of the rule names to delete. If you need to find out the names of your rules, use
-     *        <a>DescribeInsightRules</a>.
+     *        An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     *        >DescribeInsightRules</a>.
      */
 
     public void setRuleNames(java.util.Collection<String> ruleNames) {
@@ -72,8 +77,9 @@ public class DeleteInsightRulesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of the rule names to delete. If you need to find out the names of your rules, use
-     * <a>DescribeInsightRules</a>.
+     * An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     * >DescribeInsightRules</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,8 +88,9 @@ public class DeleteInsightRulesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param ruleNames
-     *        An array of the rule names to delete. If you need to find out the names of your rules, use
-     *        <a>DescribeInsightRules</a>.
+     *        An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     *        >DescribeInsightRules</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,13 +106,15 @@ public class DeleteInsightRulesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of the rule names to delete. If you need to find out the names of your rules, use
-     * <a>DescribeInsightRules</a>.
+     * An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     * >DescribeInsightRules</a>.
      * </p>
      * 
      * @param ruleNames
-     *        An array of the rule names to delete. If you need to find out the names of your rules, use
-     *        <a>DescribeInsightRules</a>.
+     *        An array of the rule names to delete. If you need to find out the names of your rules, use <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html"
+     *        >DescribeInsightRules</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

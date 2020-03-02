@@ -24,7 +24,9 @@ import javax.annotation.Generated;
  * If the rule contains a single key, then each unique contributor is each unique value for this key.
  * </p>
  * <p>
- * For more information, see <a>GetInsightRuleReport</a>.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html"
+ * >GetInsightRuleReport</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleContributor" target="_top">AWS

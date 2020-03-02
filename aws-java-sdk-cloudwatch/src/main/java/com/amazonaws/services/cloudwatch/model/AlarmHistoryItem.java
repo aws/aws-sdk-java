@@ -34,6 +34,12 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
     private String alarmName;
     /**
      * <p>
+     * The type of alarm, either metric alarm or composite alarm.
+     * </p>
+     */
+    private String alarmType;
+    /**
+     * <p>
      * The time stamp for the alarm history item.
      * </p>
      */
@@ -94,6 +100,79 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
 
     public AlarmHistoryItem withAlarmName(String alarmName) {
         setAlarmName(alarmName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of alarm, either metric alarm or composite alarm.
+     * </p>
+     * 
+     * @param alarmType
+     *        The type of alarm, either metric alarm or composite alarm.
+     * @see AlarmType
+     */
+
+    public void setAlarmType(String alarmType) {
+        this.alarmType = alarmType;
+    }
+
+    /**
+     * <p>
+     * The type of alarm, either metric alarm or composite alarm.
+     * </p>
+     * 
+     * @return The type of alarm, either metric alarm or composite alarm.
+     * @see AlarmType
+     */
+
+    public String getAlarmType() {
+        return this.alarmType;
+    }
+
+    /**
+     * <p>
+     * The type of alarm, either metric alarm or composite alarm.
+     * </p>
+     * 
+     * @param alarmType
+     *        The type of alarm, either metric alarm or composite alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlarmType
+     */
+
+    public AlarmHistoryItem withAlarmType(String alarmType) {
+        setAlarmType(alarmType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of alarm, either metric alarm or composite alarm.
+     * </p>
+     * 
+     * @param alarmType
+     *        The type of alarm, either metric alarm or composite alarm.
+     * @see AlarmType
+     */
+
+    public void setAlarmType(AlarmType alarmType) {
+        withAlarmType(alarmType);
+    }
+
+    /**
+     * <p>
+     * The type of alarm, either metric alarm or composite alarm.
+     * </p>
+     * 
+     * @param alarmType
+     *        The type of alarm, either metric alarm or composite alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AlarmType
+     */
+
+    public AlarmHistoryItem withAlarmType(AlarmType alarmType) {
+        this.alarmType = alarmType.toString();
         return this;
     }
 
@@ -304,6 +383,8 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
         sb.append("{");
         if (getAlarmName() != null)
             sb.append("AlarmName: ").append(getAlarmName()).append(",");
+        if (getAlarmType() != null)
+            sb.append("AlarmType: ").append(getAlarmType()).append(",");
         if (getTimestamp() != null)
             sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getHistoryItemType() != null)
@@ -330,6 +411,10 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
             return false;
         if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false)
             return false;
+        if (other.getAlarmType() == null ^ this.getAlarmType() == null)
+            return false;
+        if (other.getAlarmType() != null && other.getAlarmType().equals(this.getAlarmType()) == false)
+            return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
         if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
@@ -355,6 +440,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode());
+        hashCode = prime * hashCode + ((getAlarmType() == null) ? 0 : getAlarmType().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getHistoryItemType() == null) ? 0 : getHistoryItemType().hashCode());
         hashCode = prime * hashCode + ((getHistorySummary() == null) ? 0 : getHistorySummary().hashCode());

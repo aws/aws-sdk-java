@@ -58,6 +58,28 @@ public class DescribeAlarmsRequestMarshaller implements Marshaller<Request<Descr
             request.addParameter("AlarmNamePrefix", StringUtils.fromString(describeAlarmsRequest.getAlarmNamePrefix()));
         }
 
+        if (!describeAlarmsRequest.getAlarmTypes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeAlarmsRequest.getAlarmTypes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> alarmTypesList = (com.amazonaws.internal.SdkInternalList<String>) describeAlarmsRequest
+                    .getAlarmTypes();
+            int alarmTypesListIndex = 1;
+
+            for (String alarmTypesListValue : alarmTypesList) {
+                if (alarmTypesListValue != null) {
+                    request.addParameter("AlarmTypes.member." + alarmTypesListIndex, StringUtils.fromString(alarmTypesListValue));
+                }
+                alarmTypesListIndex++;
+            }
+        }
+
+        if (describeAlarmsRequest.getChildrenOfAlarmName() != null) {
+            request.addParameter("ChildrenOfAlarmName", StringUtils.fromString(describeAlarmsRequest.getChildrenOfAlarmName()));
+        }
+
+        if (describeAlarmsRequest.getParentsOfAlarmName() != null) {
+            request.addParameter("ParentsOfAlarmName", StringUtils.fromString(describeAlarmsRequest.getParentsOfAlarmName()));
+        }
+
         if (describeAlarmsRequest.getStateValue() != null) {
             request.addParameter("StateValue", StringUtils.fromString(describeAlarmsRequest.getStateValue()));
         }

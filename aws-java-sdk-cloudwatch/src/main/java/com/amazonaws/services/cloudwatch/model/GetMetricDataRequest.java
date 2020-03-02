@@ -27,7 +27,7 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      * <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a
      * math expression to perform on retrieved data.
      * </p>
@@ -117,12 +117,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      * <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a
      * math expression to perform on retrieved data.
      * </p>
      * 
-     * @return The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     * @return The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      *         <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to
      *         retrieve, or a math expression to perform on retrieved data.
      */
@@ -136,13 +136,13 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      * <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a
      * math expression to perform on retrieved data.
      * </p>
      * 
      * @param metricDataQueries
-     *        The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     *        The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      *        <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve,
      *        or a math expression to perform on retrieved data.
      */
@@ -158,7 +158,7 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      * <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a
      * math expression to perform on retrieved data.
      * </p>
@@ -169,7 +169,7 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param metricDataQueries
-     *        The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     *        The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      *        <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve,
      *        or a math expression to perform on retrieved data.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -187,13 +187,13 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     * The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      * <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a
      * math expression to perform on retrieved data.
      * </p>
      * 
      * @param metricDataQueries
-     *        The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 100
+     *        The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500
      *        <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve,
      *        or a math expression to perform on retrieved data.
      * @return Returns a reference to this object so that method calls can be chained together.

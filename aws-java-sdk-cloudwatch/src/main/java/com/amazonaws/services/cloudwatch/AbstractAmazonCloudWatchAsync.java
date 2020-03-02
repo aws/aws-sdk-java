@@ -383,6 +383,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<PutCompositeAlarmResult> putCompositeAlarmAsync(PutCompositeAlarmRequest request) {
+
+        return putCompositeAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCompositeAlarmResult> putCompositeAlarmAsync(PutCompositeAlarmRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutCompositeAlarmRequest, PutCompositeAlarmResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest request) {
 
         return putDashboardAsync(request, null);

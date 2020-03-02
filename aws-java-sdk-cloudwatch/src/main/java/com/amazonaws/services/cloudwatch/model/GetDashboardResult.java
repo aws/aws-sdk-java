@@ -32,8 +32,9 @@ public class GetDashboardResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The detailed information about the dashboard, including what widgets are included and their location on the
-     * dashboard. For more information about the <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      */
     private String dashboardBody;
@@ -87,14 +88,16 @@ public class GetDashboardResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The detailed information about the dashboard, including what widgets are included and their location on the
-     * dashboard. For more information about the <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      * 
      * @param dashboardBody
      *        The detailed information about the dashboard, including what widgets are included and their location on
-     *        the dashboard. For more information about the <code>DashboardBody</code> syntax, see
-     *        <a>CloudWatch-Dashboard-Body-Structure</a>.
+     *        the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     *        >Dashboard Body Structure and Syntax</a>.
      */
 
     public void setDashboardBody(String dashboardBody) {
@@ -104,13 +107,15 @@ public class GetDashboardResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The detailed information about the dashboard, including what widgets are included and their location on the
-     * dashboard. For more information about the <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      * 
      * @return The detailed information about the dashboard, including what widgets are included and their location on
-     *         the dashboard. For more information about the <code>DashboardBody</code> syntax, see
-     *         <a>CloudWatch-Dashboard-Body-Structure</a>.
+     *         the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     *         >Dashboard Body Structure and Syntax</a>.
      */
 
     public String getDashboardBody() {
@@ -120,14 +125,16 @@ public class GetDashboardResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The detailed information about the dashboard, including what widgets are included and their location on the
-     * dashboard. For more information about the <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.
+     * dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     * >Dashboard Body Structure and Syntax</a>.
      * </p>
      * 
      * @param dashboardBody
      *        The detailed information about the dashboard, including what widgets are included and their location on
-     *        the dashboard. For more information about the <code>DashboardBody</code> syntax, see
-     *        <a>CloudWatch-Dashboard-Body-Structure</a>.
+     *        the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html"
+     *        >Dashboard Body Structure and Syntax</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

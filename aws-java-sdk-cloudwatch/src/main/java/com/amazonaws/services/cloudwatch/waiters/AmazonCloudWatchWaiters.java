@@ -55,6 +55,19 @@ public class AmazonCloudWatchWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a CompositeAlarmExists waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeAlarmsRequest> compositeAlarmExists() {
+
+        return new WaiterBuilder<DescribeAlarmsRequest, DescribeAlarmsResult>().withSdkFunction(new DescribeAlarmsFunction(client))
+                .withAcceptors(new CompositeAlarmExists.IsTrueMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
     public void shutdown() {
         executorService.shutdown();
     }
