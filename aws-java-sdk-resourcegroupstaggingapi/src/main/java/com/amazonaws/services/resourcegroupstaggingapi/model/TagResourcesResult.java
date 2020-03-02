@@ -84,6 +84,13 @@ public class TagResourcesResult extends com.amazonaws.AmazonWebServiceResult<com
         return this;
     }
 
+    /**
+     * Add a single FailedResourcesMap entry
+     *
+     * @see TagResourcesResult#withFailedResourcesMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TagResourcesResult addFailedResourcesMapEntry(String key, FailureInfo value) {
         if (null == this.failedResourcesMap) {
             this.failedResourcesMap = new java.util.HashMap<String, FailureInfo>();

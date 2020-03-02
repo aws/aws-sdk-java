@@ -28,6 +28,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
     }
 
     @Override
+    public AdvertiseByoipCidrResult advertiseByoipCidr(AdvertiseByoipCidrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAcceleratorResult createAccelerator(CreateAcceleratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,6 +63,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
     }
 
     @Override
+    public DeprovisionByoipCidrResult deprovisionByoipCidr(DeprovisionByoipCidrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAcceleratorResult describeAccelerator(DescribeAcceleratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -83,12 +93,37 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
     }
 
     @Override
+    public ListByoipCidrsResult listByoipCidrs(ListByoipCidrsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEndpointGroupsResult listEndpointGroups(ListEndpointGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListListenersResult listListeners(ListListenersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ProvisionByoipCidrResult provisionByoipCidr(ProvisionByoipCidrRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,6 +144,11 @@ public class AbstractAWSGlobalAccelerator implements AWSGlobalAccelerator {
 
     @Override
     public UpdateListenerResult updateListener(UpdateListenerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public WithdrawByoipCidrResult withdrawByoipCidr(WithdrawByoipCidrRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

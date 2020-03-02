@@ -1145,6 +1145,13 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single Args entry
+     *
+     * @see DeploymentCommand#withArgs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DeploymentCommand addArgsEntry(String key, java.util.List<String> value) {
         if (null == this.args) {
             this.args = new com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>>();

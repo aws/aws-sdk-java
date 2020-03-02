@@ -92,6 +92,13 @@ public class ItemCollectionMetrics implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single ItemCollectionKey entry
+     *
+     * @see ItemCollectionMetrics#withItemCollectionKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ItemCollectionMetrics addItemCollectionKeyEntry(String key, AttributeValue value) {
         if (null == this.itemCollectionKey) {
             this.itemCollectionKey = new java.util.HashMap<String, AttributeValue>();

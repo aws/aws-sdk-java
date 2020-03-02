@@ -146,6 +146,13 @@ public class DescribeAssessmentTemplatesResult extends com.amazonaws.AmazonWebSe
         return this;
     }
 
+    /**
+     * Add a single FailedItems entry
+     *
+     * @see DescribeAssessmentTemplatesResult#withFailedItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeAssessmentTemplatesResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {
             this.failedItems = new java.util.HashMap<String, FailedItemDetails>();

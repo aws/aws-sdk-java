@@ -141,6 +141,13 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
         return this;
     }
 
+    /**
+     * Add a single AuditNotificationTargetConfigurations entry
+     *
+     * @see UpdateAccountAuditConfigurationRequest#withAuditNotificationTargetConfigurations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateAccountAuditConfigurationRequest addAuditNotificationTargetConfigurationsEntry(String key, AuditNotificationTarget value) {
         if (null == this.auditNotificationTargetConfigurations) {
             this.auditNotificationTargetConfigurations = new java.util.HashMap<String, AuditNotificationTarget>();
@@ -282,6 +289,13 @@ public class UpdateAccountAuditConfigurationRequest extends com.amazonaws.Amazon
         setAuditCheckConfigurations(auditCheckConfigurations);
         return this;
     }
+
+    /**
+     * Add a single AuditCheckConfigurations entry
+     *
+     * @see UpdateAccountAuditConfigurationRequest#withAuditCheckConfigurations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateAccountAuditConfigurationRequest addAuditCheckConfigurationsEntry(String key, AuditCheckConfiguration value) {
         if (null == this.auditCheckConfigurations) {

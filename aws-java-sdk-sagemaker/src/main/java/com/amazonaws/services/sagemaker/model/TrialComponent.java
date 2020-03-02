@@ -553,6 +553,13 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see TrialComponent#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TrialComponent addParametersEntry(String key, TrialComponentParameterValue value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, TrialComponentParameterValue>();
@@ -614,6 +621,13 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single InputArtifacts entry
+     *
+     * @see TrialComponent#withInputArtifacts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TrialComponent addInputArtifactsEntry(String key, TrialComponentArtifact value) {
         if (null == this.inputArtifacts) {
             this.inputArtifacts = new java.util.HashMap<String, TrialComponentArtifact>();
@@ -674,6 +688,13 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
         setOutputArtifacts(outputArtifacts);
         return this;
     }
+
+    /**
+     * Add a single OutputArtifacts entry
+     *
+     * @see TrialComponent#withOutputArtifacts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public TrialComponent addOutputArtifactsEntry(String key, TrialComponentArtifact value) {
         if (null == this.outputArtifacts) {

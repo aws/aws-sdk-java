@@ -76,6 +76,13 @@ public class DescribeExclusionsResult extends com.amazonaws.AmazonWebServiceResu
         return this;
     }
 
+    /**
+     * Add a single Exclusions entry
+     *
+     * @see DescribeExclusionsResult#withExclusions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeExclusionsResult addExclusionsEntry(String key, Exclusion value) {
         if (null == this.exclusions) {
             this.exclusions = new java.util.HashMap<String, Exclusion>();
@@ -136,6 +143,13 @@ public class DescribeExclusionsResult extends com.amazonaws.AmazonWebServiceResu
         setFailedItems(failedItems);
         return this;
     }
+
+    /**
+     * Add a single FailedItems entry
+     *
+     * @see DescribeExclusionsResult#withFailedItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DescribeExclusionsResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {

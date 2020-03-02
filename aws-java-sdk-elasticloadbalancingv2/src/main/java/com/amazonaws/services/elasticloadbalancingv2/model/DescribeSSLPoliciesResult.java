@@ -25,7 +25,7 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the policies.
+     * Information about the security policies.
      * </p>
      */
     private java.util.List<SslPolicy> sslPolicies;
@@ -38,10 +38,10 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the policies.
+     * Information about the security policies.
      * </p>
      * 
-     * @return Information about the policies.
+     * @return Information about the security policies.
      */
 
     public java.util.List<SslPolicy> getSslPolicies() {
@@ -50,11 +50,11 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the policies.
+     * Information about the security policies.
      * </p>
      * 
      * @param sslPolicies
-     *        Information about the policies.
+     *        Information about the security policies.
      */
 
     public void setSslPolicies(java.util.Collection<SslPolicy> sslPolicies) {
@@ -68,7 +68,7 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the policies.
+     * Information about the security policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param sslPolicies
-     *        Information about the policies.
+     *        Information about the security policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the policies.
+     * Information about the security policies.
      * </p>
      * 
      * @param sslPolicies
-     *        Information about the policies.
+     *        Information about the security policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

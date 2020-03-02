@@ -470,6 +470,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Add a single EvalDecisionDetails entry
+     *
+     * @see ResourceSpecificResult#withEvalDecisionDetails
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ResourceSpecificResult addEvalDecisionDetailsEntry(String key, String value) {
         if (null == this.evalDecisionDetails) {
             this.evalDecisionDetails = new com.amazonaws.internal.SdkInternalMap<String, String>();

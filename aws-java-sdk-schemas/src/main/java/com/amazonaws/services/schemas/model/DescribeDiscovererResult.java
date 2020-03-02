@@ -319,6 +319,13 @@ public class DescribeDiscovererResult extends com.amazonaws.AmazonWebServiceResu
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribeDiscovererResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeDiscovererResult addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

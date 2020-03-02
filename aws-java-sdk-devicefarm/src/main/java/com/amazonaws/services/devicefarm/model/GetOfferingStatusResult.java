@@ -86,6 +86,13 @@ public class GetOfferingStatusResult extends com.amazonaws.AmazonWebServiceResul
         return this;
     }
 
+    /**
+     * Add a single Current entry
+     *
+     * @see GetOfferingStatusResult#withCurrent
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetOfferingStatusResult addCurrentEntry(String key, OfferingStatus value) {
         if (null == this.current) {
             this.current = new java.util.HashMap<String, OfferingStatus>();
@@ -146,6 +153,13 @@ public class GetOfferingStatusResult extends com.amazonaws.AmazonWebServiceResul
         setNextPeriod(nextPeriod);
         return this;
     }
+
+    /**
+     * Add a single NextPeriod entry
+     *
+     * @see GetOfferingStatusResult#withNextPeriod
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GetOfferingStatusResult addNextPeriodEntry(String key, OfferingStatus value) {
         if (null == this.nextPeriod) {

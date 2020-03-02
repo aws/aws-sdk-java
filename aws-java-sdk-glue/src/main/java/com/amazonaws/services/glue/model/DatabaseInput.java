@@ -237,6 +237,13 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see DatabaseInput#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DatabaseInput addParametersEntry(String key, String value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, String>();

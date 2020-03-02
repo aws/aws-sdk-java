@@ -1035,6 +1035,13 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Targets entry
+     *
+     * @see Operation#withTargets
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Operation addTargetsEntry(String key, String value) {
         if (null == this.targets) {
             this.targets = new java.util.HashMap<String, String>();

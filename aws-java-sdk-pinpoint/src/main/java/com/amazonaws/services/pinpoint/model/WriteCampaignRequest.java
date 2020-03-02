@@ -666,6 +666,13 @@ public class WriteCampaignRequest implements Serializable, Cloneable, Structured
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see WriteCampaignRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public WriteCampaignRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

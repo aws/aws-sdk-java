@@ -75,6 +75,13 @@ public class FindingStatistics implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single CountBySeverity entry
+     *
+     * @see FindingStatistics#withCountBySeverity
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public FindingStatistics addCountBySeverityEntry(String key, Integer value) {
         if (null == this.countBySeverity) {
             this.countBySeverity = new java.util.HashMap<String, Integer>();

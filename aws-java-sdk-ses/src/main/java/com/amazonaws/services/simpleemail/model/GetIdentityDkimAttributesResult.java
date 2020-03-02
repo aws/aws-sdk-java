@@ -78,6 +78,13 @@ public class GetIdentityDkimAttributesResult extends com.amazonaws.AmazonWebServ
         return this;
     }
 
+    /**
+     * Add a single DkimAttributes entry
+     *
+     * @see GetIdentityDkimAttributesResult#withDkimAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetIdentityDkimAttributesResult addDkimAttributesEntry(String key, IdentityDkimAttributes value) {
         if (null == this.dkimAttributes) {
             this.dkimAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityDkimAttributes>();

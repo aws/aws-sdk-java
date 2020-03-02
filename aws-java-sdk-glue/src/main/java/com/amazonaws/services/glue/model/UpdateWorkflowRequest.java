@@ -164,6 +164,13 @@ public class UpdateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         return this;
     }
 
+    /**
+     * Add a single DefaultRunProperties entry
+     *
+     * @see UpdateWorkflowRequest#withDefaultRunProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateWorkflowRequest addDefaultRunPropertiesEntry(String key, String value) {
         if (null == this.defaultRunProperties) {
             this.defaultRunProperties = new java.util.HashMap<String, String>();

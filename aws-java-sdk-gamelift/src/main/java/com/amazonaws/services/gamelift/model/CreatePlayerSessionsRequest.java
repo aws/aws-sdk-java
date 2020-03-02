@@ -211,6 +211,13 @@ public class CreatePlayerSessionsRequest extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single PlayerDataMap entry
+     *
+     * @see CreatePlayerSessionsRequest#withPlayerDataMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreatePlayerSessionsRequest addPlayerDataMapEntry(String key, String value) {
         if (null == this.playerDataMap) {
             this.playerDataMap = new java.util.HashMap<String, String>();

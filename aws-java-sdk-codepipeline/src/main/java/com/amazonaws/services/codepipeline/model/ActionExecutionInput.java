@@ -135,6 +135,13 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
         return this;
     }
 
+    /**
+     * Add a single Configuration entry
+     *
+     * @see ActionExecutionInput#withConfiguration
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ActionExecutionInput addConfigurationEntry(String key, String value) {
         if (null == this.configuration) {
             this.configuration = new java.util.HashMap<String, String>();
@@ -201,6 +208,13 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
         setResolvedConfiguration(resolvedConfiguration);
         return this;
     }
+
+    /**
+     * Add a single ResolvedConfiguration entry
+     *
+     * @see ActionExecutionInput#withResolvedConfiguration
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ActionExecutionInput addResolvedConfigurationEntry(String key, String value) {
         if (null == this.resolvedConfiguration) {

@@ -26,19 +26,17 @@ import com.amazonaws.services.codeguruprofiler.model.*;
  * </p>
  * <p>
  * <p>
- * Example service documentation.
+ * This section provides documentation for the Amazon CodeGuru Profiler API operations.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
-     * <p>
-     * Provides the configuration to use for an agent of the profiling group.
-     * </p>
+     * <p/>
      * 
      * @param configureAgentRequest
-     *        Request for ConfigureAgent operation.
+     *        The structure representing the configureAgentRequest.
      * @return A Java Future containing the result of the ConfigureAgent operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.ConfigureAgent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent"
@@ -47,12 +45,10 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
     java.util.concurrent.Future<ConfigureAgentResult> configureAgentAsync(ConfigureAgentRequest configureAgentRequest);
 
     /**
-     * <p>
-     * Provides the configuration to use for an agent of the profiling group.
-     * </p>
+     * <p/>
      * 
      * @param configureAgentRequest
-     *        Request for ConfigureAgent operation.
+     *        The structure representing the configureAgentRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -67,11 +63,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Create a profiling group.
+     * Creates a profiling group.
      * </p>
      * 
      * @param createProfilingGroupRequest
-     *        Request for CreateProfilingGroup operation.
+     *        The structure representing the createProfiliingGroupRequest.
      * @return A Java Future containing the result of the CreateProfilingGroup operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.CreateProfilingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup"
@@ -81,11 +77,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Create a profiling group.
+     * Creates a profiling group.
      * </p>
      * 
      * @param createProfilingGroupRequest
-     *        Request for CreateProfilingGroup operation.
+     *        The structure representing the createProfiliingGroupRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -100,11 +96,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Delete a profiling group.
+     * Deletes a profiling group.
      * </p>
      * 
      * @param deleteProfilingGroupRequest
-     *        Request for DeleteProfilingGroup operation.
+     *        The structure representing the deleteProfilingGroupRequest.
      * @return A Java Future containing the result of the DeleteProfilingGroup operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.DeleteProfilingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroup"
@@ -114,11 +110,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Delete a profiling group.
+     * Deletes a profiling group.
      * </p>
      * 
      * @param deleteProfilingGroupRequest
-     *        Request for DeleteProfilingGroup operation.
+     *        The structure representing the deleteProfilingGroupRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -133,11 +129,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Describe a profiling group.
+     * Describes a profiling group.
      * </p>
      * 
      * @param describeProfilingGroupRequest
-     *        Request for DescribeProfilingGroup operation.
+     *        The structure representing the describeProfilingGroupRequest.
      * @return A Java Future containing the result of the DescribeProfilingGroup operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.DescribeProfilingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup"
@@ -147,11 +143,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Describe a profiling group.
+     * Describes a profiling group.
      * </p>
      * 
      * @param describeProfilingGroupRequest
-     *        Request for DescribeProfilingGroup operation.
+     *        The structure representing the describeProfilingGroupRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -166,15 +162,22 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Get the aggregated profile of a profiling group for the specified time range. If the requested time range does
-     * not align with the available aggregated profiles, it will be expanded to attain alignment. If aggregated profiles
-     * are available only for part of the period requested, the profile is returned from the earliest available to the
-     * latest within the requested time range. For instance, if the requested time range is from 00:00 to 00:20 and the
-     * available profiles are from 00:15 to 00:25, then the returned profile will be from 00:15 to 00:20.
+     * Gets the aggregated profile of a profiling group for the specified time range. If the requested time range does
+     * not align with the available aggregated profiles, it is expanded to attain alignment. If aggregated profiles are
+     * available only for part of the period requested, the profile is returned from the earliest available to the
+     * latest within the requested time range.
+     * </p>
+     * <p>
+     * For example, if the requested time range is from 00:00 to 00:20 and the available profiles are from 00:15 to
+     * 00:25, the returned profile will be from 00:15 to 00:20.
+     * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
      * @param getProfileRequest
-     *        Request for GetProfile operation.
+     *        The structure representing the getProfileRequest.
      * @return A Java Future containing the result of the GetProfile operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.GetProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile" target="_top">AWS
@@ -184,15 +187,22 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Get the aggregated profile of a profiling group for the specified time range. If the requested time range does
-     * not align with the available aggregated profiles, it will be expanded to attain alignment. If aggregated profiles
-     * are available only for part of the period requested, the profile is returned from the earliest available to the
-     * latest within the requested time range. For instance, if the requested time range is from 00:00 to 00:20 and the
-     * available profiles are from 00:15 to 00:25, then the returned profile will be from 00:15 to 00:20.
+     * Gets the aggregated profile of a profiling group for the specified time range. If the requested time range does
+     * not align with the available aggregated profiles, it is expanded to attain alignment. If aggregated profiles are
+     * available only for part of the period requested, the profile is returned from the earliest available to the
+     * latest within the requested time range.
+     * </p>
+     * <p>
+     * For example, if the requested time range is from 00:00 to 00:20 and the available profiles are from 00:15 to
+     * 00:25, the returned profile will be from 00:15 to 00:20.
+     * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
      * @param getProfileRequest
-     *        Request for GetProfile operation.
+     *        The structure representing the getProfileRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -212,7 +222,7 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
      * </p>
      * 
      * @param listProfileTimesRequest
-     *        Request for ListProfileTimes operation.
+     *        The structure representing the listProfileTimesRequest.
      * @return A Java Future containing the result of the ListProfileTimes operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.ListProfileTimes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfileTimes"
@@ -227,7 +237,7 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
      * </p>
      * 
      * @param listProfileTimesRequest
-     *        Request for ListProfileTimes operation.
+     *        The structure representing the listProfileTimesRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -242,11 +252,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * List profiling groups in the account.
+     * Lists profiling groups.
      * </p>
      * 
      * @param listProfilingGroupsRequest
-     *        Request for ListProfilingGroups operation.
+     *        The structure representing the listProfilingGroupsRequest.
      * @return A Java Future containing the result of the ListProfilingGroups operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.ListProfilingGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups"
@@ -256,11 +266,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * List profiling groups in the account.
+     * Lists profiling groups.
      * </p>
      * 
      * @param listProfilingGroupsRequest
-     *        Request for ListProfilingGroups operation.
+     *        The structure representing the listProfilingGroupsRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -274,12 +284,10 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
             com.amazonaws.handlers.AsyncHandler<ListProfilingGroupsRequest, ListProfilingGroupsResult> asyncHandler);
 
     /**
-     * <p>
-     * Submit profile collected by an agent belonging to a profiling group for aggregation.
-     * </p>
+     * <p/>
      * 
      * @param postAgentProfileRequest
-     *        Request for PostAgentProfile operation.
+     *        The structure representing the postAgentProfileRequest.
      * @return A Java Future containing the result of the PostAgentProfile operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.PostAgentProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfile"
@@ -288,12 +296,10 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
     java.util.concurrent.Future<PostAgentProfileResult> postAgentProfileAsync(PostAgentProfileRequest postAgentProfileRequest);
 
     /**
-     * <p>
-     * Submit profile collected by an agent belonging to a profiling group for aggregation.
-     * </p>
+     * <p/>
      * 
      * @param postAgentProfileRequest
-     *        Request for PostAgentProfile operation.
+     *        The structure representing the postAgentProfileRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -308,11 +314,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Update a profiling group.
+     * Updates a profiling group.
      * </p>
      * 
      * @param updateProfilingGroupRequest
-     *        Request for UpdateProfilingGroup operation.
+     *        The structure representing the updateProfilingGroupRequest.
      * @return A Java Future containing the result of the UpdateProfilingGroup operation returned by the service.
      * @sample AmazonCodeGuruProfilerAsync.UpdateProfilingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup"
@@ -322,11 +328,11 @@ public interface AmazonCodeGuruProfilerAsync extends AmazonCodeGuruProfiler {
 
     /**
      * <p>
-     * Update a profiling group.
+     * Updates a profiling group.
      * </p>
      * 
      * @param updateProfilingGroupRequest
-     *        Request for UpdateProfilingGroup operation.
+     *        The structure representing the updateProfilingGroupRequest.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

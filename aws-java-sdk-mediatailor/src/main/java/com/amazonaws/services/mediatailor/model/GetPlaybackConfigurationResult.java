@@ -649,6 +649,13 @@ public class GetPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see GetPlaybackConfigurationResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetPlaybackConfigurationResult addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

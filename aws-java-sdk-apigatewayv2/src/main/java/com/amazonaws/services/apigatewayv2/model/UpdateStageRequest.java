@@ -420,6 +420,13 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         return this;
     }
 
+    /**
+     * Add a single RouteSettings entry
+     *
+     * @see UpdateStageRequest#withRouteSettings
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateStageRequest addRouteSettingsEntry(String key, RouteSettings value) {
         if (null == this.routeSettings) {
             this.routeSettings = new java.util.HashMap<String, RouteSettings>();
@@ -532,6 +539,13 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         setStageVariables(stageVariables);
         return this;
     }
+
+    /**
+     * Add a single StageVariables entry
+     *
+     * @see UpdateStageRequest#withStageVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateStageRequest addStageVariablesEntry(String key, String value) {
         if (null == this.stageVariables) {

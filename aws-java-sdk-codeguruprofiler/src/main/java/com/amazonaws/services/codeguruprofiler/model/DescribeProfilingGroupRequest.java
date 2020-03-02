@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for DescribeProfilingGroup operation.
+ * The structure representing the describeProfilingGroupRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup"
@@ -28,10 +28,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The profiling group name.
+     * </p>
+     */
     private String profilingGroupName;
 
     /**
+     * <p>
+     * The profiling group name.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The profiling group name.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -39,7 +49,11 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The profiling group name.
+     * </p>
+     * 
+     * @return The profiling group name.
      */
 
     public String getProfilingGroupName() {
@@ -47,7 +61,12 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The profiling group name.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The profiling group name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

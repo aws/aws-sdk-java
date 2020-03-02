@@ -121,6 +121,13 @@ public class ModelScores implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Scores entry
+     *
+     * @see ModelScores#withScores
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ModelScores addScoresEntry(String key, Float value) {
         if (null == this.scores) {
             this.scores = new java.util.HashMap<String, Float>();

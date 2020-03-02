@@ -91,6 +91,13 @@ public class GetItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         return this;
     }
 
+    /**
+     * Add a single Item entry
+     *
+     * @see GetItemResult#withItem
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetItemResult addItemEntry(String key, AttributeValue value) {
         if (null == this.item) {
             this.item = new java.util.HashMap<String, AttributeValue>();

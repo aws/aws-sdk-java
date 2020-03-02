@@ -43,7 +43,7 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
     private String compressionType;
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. ‘y’.
+     * The name of the target variable in supervised learning, a.k.a. 'y'.
      * </p>
      */
     private String targetAttributeName;
@@ -149,11 +149,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. ‘y’.
+     * The name of the target variable in supervised learning, a.k.a. 'y'.
      * </p>
      * 
      * @param targetAttributeName
-     *        The name of the target variable in supervised learning, a.k.a. ‘y’.
+     *        The name of the target variable in supervised learning, a.k.a. 'y'.
      */
 
     public void setTargetAttributeName(String targetAttributeName) {
@@ -162,10 +162,10 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. ‘y’.
+     * The name of the target variable in supervised learning, a.k.a. 'y'.
      * </p>
      * 
-     * @return The name of the target variable in supervised learning, a.k.a. ‘y’.
+     * @return The name of the target variable in supervised learning, a.k.a. 'y'.
      */
 
     public String getTargetAttributeName() {
@@ -174,11 +174,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. ‘y’.
+     * The name of the target variable in supervised learning, a.k.a. 'y'.
      * </p>
      * 
      * @param targetAttributeName
-     *        The name of the target variable in supervised learning, a.k.a. ‘y’.
+     *        The name of the target variable in supervised learning, a.k.a. 'y'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

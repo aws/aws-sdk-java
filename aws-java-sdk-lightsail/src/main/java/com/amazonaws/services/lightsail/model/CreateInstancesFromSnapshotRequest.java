@@ -301,6 +301,13 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         return this;
     }
 
+    /**
+     * Add a single AttachedDiskMapping entry
+     *
+     * @see CreateInstancesFromSnapshotRequest#withAttachedDiskMapping
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateInstancesFromSnapshotRequest addAttachedDiskMappingEntry(String key, java.util.List<DiskMap> value) {
         if (null == this.attachedDiskMapping) {
             this.attachedDiskMapping = new java.util.HashMap<String, java.util.List<DiskMap>>();

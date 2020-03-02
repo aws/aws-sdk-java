@@ -487,6 +487,13 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see GatewayResponse#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GatewayResponse addResponseParametersEntry(String key, String value) {
         if (null == this.responseParameters) {
             this.responseParameters = new java.util.HashMap<String, String>();
@@ -547,6 +554,13 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
         setResponseTemplates(responseTemplates);
         return this;
     }
+
+    /**
+     * Add a single ResponseTemplates entry
+     *
+     * @see GatewayResponse#withResponseTemplates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GatewayResponse addResponseTemplatesEntry(String key, String value) {
         if (null == this.responseTemplates) {

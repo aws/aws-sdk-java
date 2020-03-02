@@ -82,6 +82,13 @@ public class EventsRequest implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single BatchItem entry
+     *
+     * @see EventsRequest#withBatchItem
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EventsRequest addBatchItemEntry(String key, EventsBatch value) {
         if (null == this.batchItem) {
             this.batchItem = new java.util.HashMap<String, EventsBatch>();

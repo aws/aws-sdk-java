@@ -731,6 +731,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         return this;
     }
 
+    /**
+     * Add a single TaskParameters entry
+     *
+     * @see RegisterTaskWithMaintenanceWindowRequest#withTaskParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public RegisterTaskWithMaintenanceWindowRequest addTaskParametersEntry(String key, MaintenanceWindowTaskParameterValueExpression value) {
         if (null == this.taskParameters) {
             this.taskParameters = new java.util.HashMap<String, MaintenanceWindowTaskParameterValueExpression>();

@@ -590,6 +590,13 @@ public class JourneyExecutionActivityMetricsResponse implements Serializable, Cl
         return this;
     }
 
+    /**
+     * Add a single Metrics entry
+     *
+     * @see JourneyExecutionActivityMetricsResponse#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public JourneyExecutionActivityMetricsResponse addMetricsEntry(String key, String value) {
         if (null == this.metrics) {
             this.metrics = new java.util.HashMap<String, String>();

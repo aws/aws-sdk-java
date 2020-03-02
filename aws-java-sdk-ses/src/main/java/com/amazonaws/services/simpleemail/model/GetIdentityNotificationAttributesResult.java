@@ -78,6 +78,13 @@ public class GetIdentityNotificationAttributesResult extends com.amazonaws.Amazo
         return this;
     }
 
+    /**
+     * Add a single NotificationAttributes entry
+     *
+     * @see GetIdentityNotificationAttributesResult#withNotificationAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetIdentityNotificationAttributesResult addNotificationAttributesEntry(String key, IdentityNotificationAttributes value) {
         if (null == this.notificationAttributes) {
             this.notificationAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityNotificationAttributes>();

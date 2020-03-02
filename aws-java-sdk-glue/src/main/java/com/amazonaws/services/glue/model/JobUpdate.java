@@ -526,6 +526,13 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single DefaultArguments entry
+     *
+     * @see JobUpdate#withDefaultArguments
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public JobUpdate addDefaultArgumentsEntry(String key, String value) {
         if (null == this.defaultArguments) {
             this.defaultArguments = new java.util.HashMap<String, String>();
@@ -586,6 +593,13 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
         setNonOverridableArguments(nonOverridableArguments);
         return this;
     }
+
+    /**
+     * Add a single NonOverridableArguments entry
+     *
+     * @see JobUpdate#withNonOverridableArguments
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public JobUpdate addNonOverridableArgumentsEntry(String key, String value) {
         if (null == this.nonOverridableArguments) {

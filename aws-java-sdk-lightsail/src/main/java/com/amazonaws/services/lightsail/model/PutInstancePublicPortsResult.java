@@ -25,18 +25,21 @@ public class PutInstancePublicPortsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Describes metadata about the operation you just executed.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private Operation operation;
 
     /**
      * <p>
-     * Describes metadata about the operation you just executed.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        Describes metadata about the operation you just executed.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperation(Operation operation) {
@@ -45,10 +48,12 @@ public class PutInstancePublicPortsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Describes metadata about the operation you just executed.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return Describes metadata about the operation you just executed.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public Operation getOperation() {
@@ -57,11 +62,13 @@ public class PutInstancePublicPortsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Describes metadata about the operation you just executed.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        Describes metadata about the operation you just executed.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

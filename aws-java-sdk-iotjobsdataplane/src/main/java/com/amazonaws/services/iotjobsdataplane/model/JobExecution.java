@@ -285,6 +285,13 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single StatusDetails entry
+     *
+     * @see JobExecution#withStatusDetails
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public JobExecution addStatusDetailsEntry(String key, String value) {
         if (null == this.statusDetails) {
             this.statusDetails = new java.util.HashMap<String, String>();

@@ -65,7 +65,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     private String kmsKeyId;
     /**
      * <p>
-     * Indicated whether automatic, scheduled rotation is enabled for this secret.
+     * Indicates whether automatic, scheduled rotation is enabled for this secret.
      * </p>
      */
     private Boolean rotationEnabled;
@@ -130,7 +130,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </note>
      */
     private java.util.Map<String, java.util.List<String>> secretVersionsToStages;
-
+    /**
+     * <p>
+     * Returns the name of the service that created the secret.
+     * </p>
+     */
     private String owningService;
 
     /**
@@ -352,11 +356,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicated whether automatic, scheduled rotation is enabled for this secret.
+     * Indicates whether automatic, scheduled rotation is enabled for this secret.
      * </p>
      * 
      * @param rotationEnabled
-     *        Indicated whether automatic, scheduled rotation is enabled for this secret.
+     *        Indicates whether automatic, scheduled rotation is enabled for this secret.
      */
 
     public void setRotationEnabled(Boolean rotationEnabled) {
@@ -365,10 +369,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicated whether automatic, scheduled rotation is enabled for this secret.
+     * Indicates whether automatic, scheduled rotation is enabled for this secret.
      * </p>
      * 
-     * @return Indicated whether automatic, scheduled rotation is enabled for this secret.
+     * @return Indicates whether automatic, scheduled rotation is enabled for this secret.
      */
 
     public Boolean getRotationEnabled() {
@@ -377,11 +381,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicated whether automatic, scheduled rotation is enabled for this secret.
+     * Indicates whether automatic, scheduled rotation is enabled for this secret.
      * </p>
      * 
      * @param rotationEnabled
-     *        Indicated whether automatic, scheduled rotation is enabled for this secret.
+     *        Indicates whether automatic, scheduled rotation is enabled for this secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,10 +396,10 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicated whether automatic, scheduled rotation is enabled for this secret.
+     * Indicates whether automatic, scheduled rotation is enabled for this secret.
      * </p>
      * 
-     * @return Indicated whether automatic, scheduled rotation is enabled for this secret.
+     * @return Indicates whether automatic, scheduled rotation is enabled for this secret.
      */
 
     public Boolean isRotationEnabled() {
@@ -826,6 +830,13 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single SecretVersionsToStages entry
+     *
+     * @see SecretListEntry#withSecretVersionsToStages
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SecretListEntry addSecretVersionsToStagesEntry(String key, java.util.List<String> value) {
         if (null == this.secretVersionsToStages) {
             this.secretVersionsToStages = new java.util.HashMap<String, java.util.List<String>>();
@@ -848,7 +859,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Returns the name of the service that created the secret.
+     * </p>
+     * 
      * @param owningService
+     *        Returns the name of the service that created the secret.
      */
 
     public void setOwningService(String owningService) {
@@ -856,7 +872,11 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * Returns the name of the service that created the secret.
+     * </p>
+     * 
+     * @return Returns the name of the service that created the secret.
      */
 
     public String getOwningService() {
@@ -864,7 +884,12 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Returns the name of the service that created the secret.
+     * </p>
+     * 
      * @param owningService
+     *        Returns the name of the service that created the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

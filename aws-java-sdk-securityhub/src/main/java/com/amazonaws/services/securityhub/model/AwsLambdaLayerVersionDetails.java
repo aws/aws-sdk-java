@@ -39,10 +39,10 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * The layer's compatible runtimes. Maximum number of 5 items.
      * </p>
      * <p>
-     * Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
-     * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> |
-     * <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> |
-     * <code>ruby2.5</code> | <code>provided</code>
+     * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
+     * <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     * <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     * <code>provided</code>
      * </p>
      */
     private java.util.List<String> compatibleRuntimes;
@@ -98,18 +98,18 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * The layer's compatible runtimes. Maximum number of 5 items.
      * </p>
      * <p>
-     * Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
-     * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> |
-     * <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> |
-     * <code>ruby2.5</code> | <code>provided</code>
+     * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
+     * <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     * <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     * <code>provided</code>
      * </p>
      * 
      * @return The layer's compatible runtimes. Maximum number of 5 items.</p>
      *         <p>
-     *         Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> |
-     *         <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
-     *         <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code>
-     *         | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code>
+     *         Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
+     *         <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> |
+     *         <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> |
+     *         <code>ruby2.5</code> | <code>provided</code>
      */
 
     public java.util.List<String> getCompatibleRuntimes() {
@@ -121,19 +121,19 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * The layer's compatible runtimes. Maximum number of 5 items.
      * </p>
      * <p>
-     * Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
-     * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> |
-     * <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> |
-     * <code>ruby2.5</code> | <code>provided</code>
+     * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
+     * <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     * <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     * <code>provided</code>
      * </p>
      * 
      * @param compatibleRuntimes
      *        The layer's compatible runtimes. Maximum number of 5 items.</p>
      *        <p>
-     *        Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> |
-     *        <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
-     *        <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code>
-     *        | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code>
+     *        Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code>
+     *        | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     *        <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     *        <code>provided</code>
      */
 
     public void setCompatibleRuntimes(java.util.Collection<String> compatibleRuntimes) {
@@ -150,10 +150,10 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * The layer's compatible runtimes. Maximum number of 5 items.
      * </p>
      * <p>
-     * Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
-     * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> |
-     * <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> |
-     * <code>ruby2.5</code> | <code>provided</code>
+     * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
+     * <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     * <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     * <code>provided</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,10 +164,10 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * @param compatibleRuntimes
      *        The layer's compatible runtimes. Maximum number of 5 items.</p>
      *        <p>
-     *        Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> |
-     *        <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
-     *        <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code>
-     *        | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code>
+     *        Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code>
+     *        | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     *        <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     *        <code>provided</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,19 +186,19 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
      * The layer's compatible runtimes. Maximum number of 5 items.
      * </p>
      * <p>
-     * Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
-     * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> |
-     * <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> |
-     * <code>ruby2.5</code> | <code>provided</code>
+     * Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> |
+     * <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     * <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     * <code>provided</code>
      * </p>
      * 
      * @param compatibleRuntimes
      *        The layer's compatible runtimes. Maximum number of 5 items.</p>
      *        <p>
-     *        Valid values: <code>nodejs8.10</code> | <code>nodejs10.x</code> | <code>nodejs12.x</code> |
-     *        <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
-     *        <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code>
-     *        | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code>
+     *        Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code>
+     *        | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> |
+     *        <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> |
+     *        <code>provided</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

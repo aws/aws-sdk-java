@@ -146,6 +146,13 @@ public class DescribeFindingsResult extends com.amazonaws.AmazonWebServiceResult
         return this;
     }
 
+    /**
+     * Add a single FailedItems entry
+     *
+     * @see DescribeFindingsResult#withFailedItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeFindingsResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {
             this.failedItems = new java.util.HashMap<String, FailedItemDetails>();

@@ -146,6 +146,13 @@ public class DescribeRulesPackagesResult extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single FailedItems entry
+     *
+     * @see DescribeRulesPackagesResult#withFailedItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeRulesPackagesResult addFailedItemsEntry(String key, FailedItemDetails value) {
         if (null == this.failedItems) {
             this.failedItems = new java.util.HashMap<String, FailedItemDetails>();

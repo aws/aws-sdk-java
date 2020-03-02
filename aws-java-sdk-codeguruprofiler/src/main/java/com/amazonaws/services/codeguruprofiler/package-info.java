@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * Example service documentation.
+ * This section provides documentation for the Amazon CodeGuru Profiler API operations.
  * </p>
  */
 package com.amazonaws.services.codeguruprofiler;

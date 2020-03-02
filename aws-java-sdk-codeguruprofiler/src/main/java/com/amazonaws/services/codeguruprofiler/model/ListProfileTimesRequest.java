@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for ListProfileTimes operation.
+ * The structure representing the listProfileTimesRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfileTimes" target="_top">AWS
@@ -30,43 +30,66 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The end time of the time range to list profiles until.
+     * The end time of the time range from which to list the profiles.
      * </p>
      */
     private java.util.Date endTime;
-
+    /**
+     * <p>
+     * The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When
+     * this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single
+     * page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     */
     private String nextToken;
     /**
      * <p>
-     * The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     * TIMESTAMP_DESCENDING.
+     * The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     * <code>TIMESTAMP_DESCENDING</code>.
      * </p>
      */
     private String orderBy;
     /**
      * <p>
-     * The aggregation period to list the profiles for.
+     * The aggregation period.
      * </p>
      */
     private String period;
-
+    /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     */
     private String profilingGroupName;
     /**
      * <p>
-     * The start time of the time range to list the profiles from.
+     * The start time of the time range from which to list the profiles.
      * </p>
      */
     private java.util.Date startTime;
 
     /**
      * <p>
-     * The end time of the time range to list profiles until.
+     * The end time of the time range from which to list the profiles.
      * </p>
      * 
      * @param endTime
-     *        The end time of the time range to list profiles until.
+     *        The end time of the time range from which to list the profiles.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -75,10 +98,10 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The end time of the time range to list profiles until.
+     * The end time of the time range from which to list the profiles.
      * </p>
      * 
-     * @return The end time of the time range to list profiles until.
+     * @return The end time of the time range from which to list the profiles.
      */
 
     public java.util.Date getEndTime() {
@@ -87,11 +110,11 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The end time of the time range to list profiles until.
+     * The end time of the time range from which to list the profiles.
      * </p>
      * 
      * @param endTime
-     *        The end time of the time range to list profiles until.
+     *        The end time of the time range from which to list the profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +124,19 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When
+     * this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single
+     * page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output.
+     *        When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in
+     *        a single page with a <code>nextToken</code> response element. The remaining results of the initial request
+     *        can be seen by sending another <code>ListProfileTimes</code> request with the returned
+     *        <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -109,7 +144,18 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When
+     * this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single
+     * page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value.
+     * </p>
+     * 
+     * @return The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output.
+     *         When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results
+     *         in a single page with a <code>nextToken</code> response element. The remaining results of the initial
+     *         request can be seen by sending another <code>ListProfileTimes</code> request with the returned
+     *         <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -117,7 +163,19 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When
+     * this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single
+     * page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output.
+     *        When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in
+     *        a single page with a <code>nextToken</code> response element. The remaining results of the initial request
+     *        can be seen by sending another <code>ListProfileTimes</code> request with the returned
+     *        <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,7 +185,26 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request
+     *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -135,7 +212,26 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     * 
+     * @return The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request
+     *         where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the <code>nextToken</code> value. </p>
+     *         <note>
+     *         <p>
+     *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *         list and not for other programmatic purposes.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -143,7 +239,26 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where
+     * <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request
+     *        where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *        continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,13 +269,13 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     * TIMESTAMP_DESCENDING.
+     * The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     * <code>TIMESTAMP_DESCENDING</code>.
      * </p>
      * 
      * @param orderBy
-     *        The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     *        TIMESTAMP_DESCENDING.
+     *        The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     *        <code>TIMESTAMP_DESCENDING</code>.
      * @see OrderBy
      */
 
@@ -170,12 +285,12 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     * TIMESTAMP_DESCENDING.
+     * The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     * <code>TIMESTAMP_DESCENDING</code>.
      * </p>
      * 
-     * @return The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     *         TIMESTAMP_DESCENDING.
+     * @return The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults
+     *         to <code>TIMESTAMP_DESCENDING</code>.
      * @see OrderBy
      */
 
@@ -185,13 +300,13 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     * TIMESTAMP_DESCENDING.
+     * The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     * <code>TIMESTAMP_DESCENDING</code>.
      * </p>
      * 
      * @param orderBy
-     *        The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     *        TIMESTAMP_DESCENDING.
+     *        The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     *        <code>TIMESTAMP_DESCENDING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
@@ -203,13 +318,13 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     * TIMESTAMP_DESCENDING.
+     * The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     * <code>TIMESTAMP_DESCENDING</code>.
      * </p>
      * 
      * @param orderBy
-     *        The order (ascending or descending by start time of the profile) to list the profiles by. Defaults to
-     *        TIMESTAMP_DESCENDING.
+     *        The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to
+     *        <code>TIMESTAMP_DESCENDING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderBy
      */
@@ -221,11 +336,11 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period to list the profiles for.
+     * The aggregation period.
      * </p>
      * 
      * @param period
-     *        The aggregation period to list the profiles for.
+     *        The aggregation period.
      * @see AggregationPeriod
      */
 
@@ -235,10 +350,10 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period to list the profiles for.
+     * The aggregation period.
      * </p>
      * 
-     * @return The aggregation period to list the profiles for.
+     * @return The aggregation period.
      * @see AggregationPeriod
      */
 
@@ -248,11 +363,11 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period to list the profiles for.
+     * The aggregation period.
      * </p>
      * 
      * @param period
-     *        The aggregation period to list the profiles for.
+     *        The aggregation period.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */
@@ -264,11 +379,11 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The aggregation period to list the profiles for.
+     * The aggregation period.
      * </p>
      * 
      * @param period
-     *        The aggregation period to list the profiles for.
+     *        The aggregation period.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AggregationPeriod
      */
@@ -279,7 +394,12 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -287,7 +407,11 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
+     * @return The name of the profiling group.
      */
 
     public String getProfilingGroupName() {
@@ -295,7 +419,12 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the profiling group.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +435,11 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start time of the time range to list the profiles from.
+     * The start time of the time range from which to list the profiles.
      * </p>
      * 
      * @param startTime
-     *        The start time of the time range to list the profiles from.
+     *        The start time of the time range from which to list the profiles.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -319,10 +448,10 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start time of the time range to list the profiles from.
+     * The start time of the time range from which to list the profiles.
      * </p>
      * 
-     * @return The start time of the time range to list the profiles from.
+     * @return The start time of the time range from which to list the profiles.
      */
 
     public java.util.Date getStartTime() {
@@ -331,11 +460,11 @@ public class ListProfileTimesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The start time of the time range to list the profiles from.
+     * The start time of the time range from which to list the profiles.
      * </p>
      * 
      * @param startTime
-     *        The start time of the time range to list the profiles from.
+     *        The start time of the time range from which to list the profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

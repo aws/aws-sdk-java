@@ -237,6 +237,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
         return this;
     }
 
+    /**
+     * Add a single Context entry
+     *
+     * @see AddressConfiguration#withContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AddressConfiguration addContextEntry(String key, String value) {
         if (null == this.context) {
             this.context = new java.util.HashMap<String, String>();
@@ -349,6 +356,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
         setSubstitutions(substitutions);
         return this;
     }
+
+    /**
+     * Add a single Substitutions entry
+     *
+     * @see AddressConfiguration#withSubstitutions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public AddressConfiguration addSubstitutionsEntry(String key, java.util.List<String> value) {
         if (null == this.substitutions) {

@@ -18,10 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * Configuration to orchestrate agents to create and report agent profiles of the profiling group. Agents are
- * orchestrated if they follow the agent orchestration protocol.
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AgentOrchestrationConfig"
  *      target="_top">AWS API Documentation</a>
@@ -29,20 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AgentOrchestrationConfig implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * If the agents should be enabled to create and report profiles.
-     * </p>
-     */
+    /** <p/> */
     private Boolean profilingEnabled;
 
     /**
-     * <p>
-     * If the agents should be enabled to create and report profiles.
-     * </p>
+     * <p/>
      * 
      * @param profilingEnabled
-     *        If the agents should be enabled to create and report profiles.
      */
 
     public void setProfilingEnabled(Boolean profilingEnabled) {
@@ -50,11 +40,9 @@ public class AgentOrchestrationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p>
-     * If the agents should be enabled to create and report profiles.
-     * </p>
+     * <p/>
      * 
-     * @return If the agents should be enabled to create and report profiles.
+     * @return
      */
 
     public Boolean getProfilingEnabled() {
@@ -62,12 +50,9 @@ public class AgentOrchestrationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p>
-     * If the agents should be enabled to create and report profiles.
-     * </p>
+     * <p/>
      * 
      * @param profilingEnabled
-     *        If the agents should be enabled to create and report profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,11 +62,9 @@ public class AgentOrchestrationConfig implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p>
-     * If the agents should be enabled to create and report profiles.
-     * </p>
+     * <p/>
      * 
-     * @return If the agents should be enabled to create and report profiles.
+     * @return
      */
 
     public Boolean isProfilingEnabled() {

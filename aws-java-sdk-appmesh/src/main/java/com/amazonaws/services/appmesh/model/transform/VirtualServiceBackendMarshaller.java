@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VirtualServiceBackendMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CLIENTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientPolicy").build();
     private static final MarshallingInfo<String> VIRTUALSERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualServiceName").build();
 
@@ -46,6 +48,7 @@ public class VirtualServiceBackendMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(virtualServiceBackend.getClientPolicy(), CLIENTPOLICY_BINDING);
             protocolMarshaller.marshall(virtualServiceBackend.getVirtualServiceName(), VIRTUALSERVICENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

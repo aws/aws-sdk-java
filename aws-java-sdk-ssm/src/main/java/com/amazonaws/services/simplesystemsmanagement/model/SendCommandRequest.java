@@ -820,6 +820,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see SendCommandRequest#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SendCommandRequest addParametersEntry(String key, java.util.List<String> value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, java.util.List<String>>();

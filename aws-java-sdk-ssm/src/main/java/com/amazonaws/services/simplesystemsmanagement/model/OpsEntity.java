@@ -121,6 +121,13 @@ public class OpsEntity implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Data entry
+     *
+     * @see OpsEntity#withData
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public OpsEntity addDataEntry(String key, OpsEntityItem value) {
         if (null == this.data) {
             this.data = new java.util.HashMap<String, OpsEntityItem>();

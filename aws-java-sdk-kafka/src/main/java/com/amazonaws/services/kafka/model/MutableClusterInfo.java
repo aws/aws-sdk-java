@@ -60,6 +60,8 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
      */
     private OpenMonitoring openMonitoring;
 
+    private LoggingInfo loggingInfo;
+
     /**
      * <p>
      * Specifies the size of the EBS volume and the ID of the associated broker.
@@ -345,6 +347,32 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param loggingInfo
+     */
+
+    public void setLoggingInfo(LoggingInfo loggingInfo) {
+        this.loggingInfo = loggingInfo;
+    }
+
+    /**
+     * @return
+     */
+
+    public LoggingInfo getLoggingInfo() {
+        return this.loggingInfo;
+    }
+
+    /**
+     * @param loggingInfo
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MutableClusterInfo withLoggingInfo(LoggingInfo loggingInfo) {
+        setLoggingInfo(loggingInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -365,7 +393,9 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         if (getEnhancedMonitoring() != null)
             sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring()).append(",");
         if (getOpenMonitoring() != null)
-            sb.append("OpenMonitoring: ").append(getOpenMonitoring());
+            sb.append("OpenMonitoring: ").append(getOpenMonitoring()).append(",");
+        if (getLoggingInfo() != null)
+            sb.append("LoggingInfo: ").append(getLoggingInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -400,6 +430,10 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getOpenMonitoring() != null && other.getOpenMonitoring().equals(this.getOpenMonitoring()) == false)
             return false;
+        if (other.getLoggingInfo() == null ^ this.getLoggingInfo() == null)
+            return false;
+        if (other.getLoggingInfo() != null && other.getLoggingInfo().equals(this.getLoggingInfo()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +447,7 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getNumberOfBrokerNodes() == null) ? 0 : getNumberOfBrokerNodes().hashCode());
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
         hashCode = prime * hashCode + ((getOpenMonitoring() == null) ? 0 : getOpenMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getLoggingInfo() == null) ? 0 : getLoggingInfo().hashCode());
         return hashCode;
     }
 

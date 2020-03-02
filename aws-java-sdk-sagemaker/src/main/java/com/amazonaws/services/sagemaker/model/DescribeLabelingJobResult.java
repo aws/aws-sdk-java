@@ -112,7 +112,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * Box bounding labeling jobs (all): 10 lables
+     * Box bounding labeling jobs (all): 10 labels
      * </p>
      * </li>
      * </ul>
@@ -736,7 +736,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * Box bounding labeling jobs (all): 10 lables
+     * Box bounding labeling jobs (all): 10 labels
      * </p>
      * </li>
      * </ul>
@@ -800,7 +800,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        Box bounding labeling jobs (all): 10 lables
+     *        Box bounding labeling jobs (all): 10 labels
      *        </p>
      *        </li>
      *        </ul>
@@ -870,7 +870,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * Box bounding labeling jobs (all): 10 lables
+     * Box bounding labeling jobs (all): 10 labels
      * </p>
      * </li>
      * </ul>
@@ -933,7 +933,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         Box bounding labeling jobs (all): 10 lables
+     *         Box bounding labeling jobs (all): 10 labels
      *         </p>
      *         </li>
      *         </ul>
@@ -1003,7 +1003,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * Box bounding labeling jobs (all): 10 lables
+     * Box bounding labeling jobs (all): 10 labels
      * </p>
      * </li>
      * </ul>
@@ -1067,7 +1067,7 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        Box bounding labeling jobs (all): 10 lables
+     *        Box bounding labeling jobs (all): 10 labels
      *        </p>
      *        </li>
      *        </ul>

@@ -530,6 +530,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
         return this;
     }
 
+    /**
+     * Add a single Options entry
+     *
+     * @see LogConfiguration#withOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public LogConfiguration addOptionsEntry(String key, String value) {
         if (null == this.options) {
             this.options = new java.util.HashMap<String, String>();

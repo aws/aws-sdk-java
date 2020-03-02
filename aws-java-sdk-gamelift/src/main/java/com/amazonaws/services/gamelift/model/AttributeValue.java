@@ -254,6 +254,13 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single SDM entry
+     *
+     * @see AttributeValue#withSDM
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AttributeValue addSDMEntry(String key, Double value) {
         if (null == this.sDM) {
             this.sDM = new java.util.HashMap<String, Double>();

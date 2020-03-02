@@ -417,6 +417,13 @@ public class GetResourceResult extends com.amazonaws.AmazonWebServiceResult<com.
         return this;
     }
 
+    /**
+     * Add a single ResourceMethods entry
+     *
+     * @see GetResourceResult#withResourceMethods
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetResourceResult addResourceMethodsEntry(String key, Method value) {
         if (null == this.resourceMethods) {
             this.resourceMethods = new java.util.HashMap<String, Method>();

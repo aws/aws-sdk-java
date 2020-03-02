@@ -58,19 +58,21 @@ import com.amazonaws.services.globalaccelerator.model.transform.*;
  * Accelerator Developer Guide</a>.
  * </p>
  * <p>
- * AWS Global Accelerator is a network layer service in which you create accelerators to improve availability and
- * performance for internet applications used by a global audience.
+ * AWS Global Accelerator is a service in which you create accelerators to improve availability and performance of your
+ * applications for local and global users.
  * </p>
  * <important>
  * <p>
- * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+ * You must specify the US West (Oregon) Region to create or update accelerators.
  * </p>
  * </important>
  * <p>
- * Global Accelerator provides you with static IP addresses that you associate with your accelerator. These IP addresses
- * are anycast from the AWS edge network and distribute incoming application traffic across multiple endpoint resources
- * in multiple AWS Regions, which increases the availability of your applications. Endpoints can be Elastic IP
- * addresses, Network Load Balancers, and Application Load Balancers that are located in one AWS Region or multiple
+ * By default, Global Accelerator provides you with static IP addresses that you associate with your accelerator.
+ * (Instead of using the IP addresses that Global Accelerator provides, you can configure these entry points to be IPv4
+ * addresses from your own IP address ranges that you bring to Global Accelerator.) The static IP addresses are anycast
+ * from the AWS edge network and distribute incoming application traffic across multiple endpoint resources in multiple
+ * AWS Regions, which increases the availability of your applications. Endpoints can be Network Load Balancers,
+ * Application Load Balancers, EC2 instances, or Elastic IP addresses that are located in one AWS Region or multiple
  * Regions.
  * </p>
  * <p>
@@ -86,12 +88,25 @@ import com.amazonaws.services.globalaccelerator.model.transform.*;
  * <dt>Static IP address</dt>
  * <dd>
  * <p>
- * AWS Global Accelerator provides you with a set of static IP addresses which are anycast from the AWS edge network and
- * serve as the single fixed entry points for your clients. If you already have Elastic Load Balancing or Elastic IP
- * address resources set up for your applications, you can easily add those to Global Accelerator to allow the resources
- * to be accessed by a Global Accelerator static IP address.
+ * By default, AWS Global Accelerator provides you with a set of static IP addresses that are anycast from the AWS edge
+ * network and serve as the single fixed entry points for your clients. Or you can configure these entry points to be
+ * IPv4 addresses from your own IP address ranges that you bring to Global Accelerator (BYOIP). For more information,
+ * see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses
+ * (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>. If you already have load balancers, EC2 instances,
+ * or Elastic IP addresses set up for your applications, you can easily add those to Global Accelerator to allow the
+ * resources to be accessed by the static IP addresses.
  * </p>
- * </dd>
+ * <important>
+ * <p>
+ * The static IP addresses remain assigned to your accelerator for as long as it exists, even if you disable the
+ * accelerator and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the
+ * static IP addresses that are assigned to it, so you can no longer route traffic by using them. You can use IAM
+ * policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more
+ * information, see <a
+ * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and
+ * Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+ * </p>
+ * </important></dd>
  * <dt>Accelerator</dt>
  * <dd>
  * <p>
@@ -100,14 +115,23 @@ import com.amazonaws.services.globalaccelerator.model.transform.*;
  * listeners.
  * </p>
  * </dd>
+ * <dt>DNS name</dt>
+ * <dd>
+ * <p>
+ * Global Accelerator assigns each accelerator a default Domain Name System (DNS) name, similar to
+ * <code>a1234567890abcdef.awsglobalaccelerator.com</code>, that points to your Global Accelerator static IP addresses.
+ * Depending on the use case, you can use your accelerator's static IP addresses or DNS name to route traffic to your
+ * accelerator, or set up DNS records to route traffic using your own custom domain name.
+ * </p>
+ * </dd>
  * <dt>Network zone</dt>
  * <dd>
  * <p>
  * A network zone services the static IP addresses for your accelerator from a unique IP subnet. Similar to an AWS
  * Availability Zone, a network zone is an isolated unit with its own set of physical infrastructure. When you configure
- * an accelerator, Global Accelerator allocates two IPv4 addresses for it. If one IP address from a network zone becomes
- * unavailable due to IP address blocking by certain client networks, or network disruptions, then client applications
- * can retry on the healthy static IP address from the other isolated network zone.
+ * an accelerator, by default, Global Accelerator allocates two IPv4 addresses for it. If one IP address from a network
+ * zone becomes unavailable due to IP address blocking by certain client networks, or network disruptions, then client
+ * applications can retry on the healthy static IP address from the other isolated network zone.
  * </p>
  * </dd>
  * <dt>Listener</dt>
@@ -131,11 +155,11 @@ import com.amazonaws.services.globalaccelerator.model.transform.*;
  * <dt>Endpoint</dt>
  * <dd>
  * <p>
- * An endpoint is an Elastic IP address, Network Load Balancer, or Application Load Balancer. Traffic is routed to
- * endpoints based on several factors, including the geo-proximity to the user, the health of the endpoint, and the
- * configuration options that you choose, such as endpoint weights. For each endpoint, you can configure weights, which
- * are numbers that you can use to specify the proportion of traffic to route to each one. This can be useful, for
- * example, to do performance testing within a Region.
+ * An endpoint is a Network Load Balancer, Application Load Balancer, EC2 instance, or Elastic IP address. Traffic is
+ * routed to endpoints based on several factors, including the geo-proximity to the user, the health of the endpoint,
+ * and the configuration options that you choose, such as endpoint weights. For each endpoint, you can configure
+ * weights, which are numbers that you can use to specify the proportion of traffic to route to each one. This can be
+ * useful, for example, to do performance testing within a Region.
  * </p>
  * </dd>
  * </dl>
@@ -175,8 +199,14 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                             new JsonErrorShapeMetadata().withErrorCode("AcceleratorNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.globalaccelerator.model.transform.AcceleratorNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncorrectCidrStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.IncorrectCidrStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AssociatedListenerFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.globalaccelerator.model.transform.AssociatedListenerFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ByoipCidrNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.ByoipCidrNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.globalaccelerator.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
@@ -251,13 +281,94 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Advertises an IPv4 address range that is provisioned for use with your AWS resources through bring your own IP
+     * addresses (BYOIP). It can take a few minutes before traffic to the specified addresses starts routing to AWS
+     * because of propagation delays. To see an AWS CLI example of advertising an address range, scroll down to
+     * <b>Example</b>.
+     * </p>
+     * <p>
+     * To stop advertising the BYOIP address range, use <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html"> WithdrawByoipCidr</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses
+     * (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param advertiseByoipCidrRequest
+     * @return Result of the AdvertiseByoipCidr operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @throws ByoipCidrNotFoundException
+     *         The CIDR that you specified was not found or is incorrect.
+     * @throws IncorrectCidrStateException
+     *         The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
+     *         incorrect for this action.
+     * @sample AWSGlobalAccelerator.AdvertiseByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AdvertiseByoipCidr"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AdvertiseByoipCidrResult advertiseByoipCidr(AdvertiseByoipCidrRequest request) {
+        request = beforeClientExecution(request);
+        return executeAdvertiseByoipCidr(request);
+    }
+
+    @SdkInternalApi
+    final AdvertiseByoipCidrResult executeAdvertiseByoipCidr(AdvertiseByoipCidrRequest advertiseByoipCidrRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(advertiseByoipCidrRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdvertiseByoipCidrRequest> request = null;
+        Response<AdvertiseByoipCidrResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdvertiseByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(advertiseByoipCidrRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdvertiseByoipCidr");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdvertiseByoipCidrResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdvertiseByoipCidrResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct
      * traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. To see
      * an AWS CLI example of creating an accelerator, scroll down to <b>Example</b>.
      * </p>
+     * <p>
+     * If you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can assign IP addresses from your
+     * own pool to your accelerator as the static IP address entry points. Only one IP address from each of your IP
+     * address ranges can be used for each accelerator.
+     * </p>
      * <important>
      * <p>
-     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * You must specify the US West (Oregon) Region to create or update accelerators.
      * </p>
      * </important>
      * 
@@ -450,9 +561,27 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Delete an accelerator. Note: before you can delete an accelerator, you must disable it and remove all dependent
-     * resources (listeners and endpoint groups).
+     * Delete an accelerator. Before you can delete an accelerator, you must disable it and remove all dependent
+     * resources (listeners and endpoint groups). To disable the accelerator, update the accelerator to set
+     * <code>Enabled</code> to false.
      * </p>
+     * <important>
+     * <p>
+     * When you create an accelerator, by default, Global Accelerator provides you with a set of two static IP
+     * addresses. Alternatively, you can bring your own IP address ranges to Global Accelerator and assign IP addresses
+     * from those ranges.
+     * </p>
+     * <p>
+     * The IP addresses are assigned to your accelerator for as long as it exists, even if you disable the accelerator
+     * and it no longer accepts or routes traffic. However, when you <i>delete</i> an accelerator, you lose the static
+     * IP addresses that are assigned to the accelerator, so you can no longer route traffic by using them. As a best
+     * practice, ensure that you have permissions in place to avoid inadvertently deleting accelerators. You can use IAM
+     * policies with Global Accelerator to limit the users who have permissions to delete an accelerator. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Authentication and
+     * Access Control</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteAcceleratorRequest
      * @return Result of the DeleteAccelerator operation returned by the service.
@@ -636,6 +765,82 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Releases the specified address range that you provisioned to use with your AWS resources through bring your own
+     * IP addresses (BYOIP) and deletes the corresponding address pool. To see an AWS CLI example of deprovisioning an
+     * address range, scroll down to <b>Example</b>.
+     * </p>
+     * <p>
+     * Before you can release an address range, you must stop advertising it by using <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html">WithdrawByoipCidr</a> and
+     * you must not have any accelerators that are using static IP addresses allocated from its address range.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses
+     * (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param deprovisionByoipCidrRequest
+     * @return Result of the DeprovisionByoipCidr operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @throws ByoipCidrNotFoundException
+     *         The CIDR that you specified was not found or is incorrect.
+     * @throws IncorrectCidrStateException
+     *         The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
+     *         incorrect for this action.
+     * @sample AWSGlobalAccelerator.DeprovisionByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeprovisionByoipCidr"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeprovisionByoipCidrResult deprovisionByoipCidr(DeprovisionByoipCidrRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeprovisionByoipCidr(request);
+    }
+
+    @SdkInternalApi
+    final DeprovisionByoipCidrResult executeDeprovisionByoipCidr(DeprovisionByoipCidrRequest deprovisionByoipCidrRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deprovisionByoipCidrRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeprovisionByoipCidrRequest> request = null;
+        Response<DeprovisionByoipCidrResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeprovisionByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deprovisionByoipCidrRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeprovisionByoipCidr");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeprovisionByoipCidrResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeprovisionByoipCidrResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describe an accelerator. To see an AWS CLI example of describing an accelerator, scroll down to <b>Example</b>.
      * </p>
      * 
@@ -695,7 +900,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Describe the attributes of an accelerator.
+     * Describe the attributes of an accelerator. To see an AWS CLI example of describing the attributes of an
+     * accelerator, scroll down to <b>Example</b>.
      * </p>
      * 
      * @param describeAcceleratorAttributesRequest
@@ -816,7 +1022,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Describe a listener.
+     * Describe a listener. To see an AWS CLI example of describing a listener, scroll down to <b>Example</b>.
      * </p>
      * 
      * @param describeListenerRequest
@@ -875,7 +1081,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * List the accelerators for an AWS account.
+     * List the accelerators for an AWS account. To see an AWS CLI example of listing the accelerators for an AWS
+     * account, scroll down to <b>Example</b>.
      * </p>
      * 
      * @param listAcceleratorsRequest
@@ -934,7 +1141,73 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * List the endpoint groups that are associated with a listener.
+     * Lists the IP address ranges that were specified in calls to <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>.
+     * </p>
+     * <p>
+     * To see an AWS CLI example of listing BYOIP CIDR addresses, scroll down to <b>Example</b>.
+     * </p>
+     * 
+     * @param listByoipCidrsRequest
+     * @return Result of the ListByoipCidrs operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @throws InvalidNextTokenException
+     *         There isn't another item to return.
+     * @sample AWSGlobalAccelerator.ListByoipCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListByoipCidrs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListByoipCidrsResult listByoipCidrs(ListByoipCidrsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListByoipCidrs(request);
+    }
+
+    @SdkInternalApi
+    final ListByoipCidrsResult executeListByoipCidrs(ListByoipCidrsRequest listByoipCidrsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listByoipCidrsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListByoipCidrsRequest> request = null;
+        Response<ListByoipCidrsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListByoipCidrsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listByoipCidrsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListByoipCidrs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListByoipCidrsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListByoipCidrsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the endpoint groups that are associated with a listener. To see an AWS CLI example of listing the endpoint
+     * groups for listener, scroll down to <b>Example</b>.
      * </p>
      * 
      * @param listEndpointGroupsRequest
@@ -995,7 +1268,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * List the listeners for an accelerator.
+     * List the listeners for an accelerator. To see an AWS CLI example of listing the listeners for an accelerator,
+     * scroll down to <b>Example</b>.
      * </p>
      * 
      * @param listListenersRequest
@@ -1056,11 +1330,283 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * List all tags for an accelerator. To see an AWS CLI example of listing tags for an accelerator, scroll down to
+     * <b>Example</b>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS
+     * Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws AcceleratorNotFoundException
+     *         The accelerator that you specified doesn't exist.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @sample AWSGlobalAccelerator.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provisions an IP address range to use with your AWS resources through bring your own IP addresses (BYOIP) and
+     * creates a corresponding address pool. After the address range is provisioned, it is ready to be advertised using
+     * <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
+     * AdvertiseByoipCidr</a>.
+     * </p>
+     * <p>
+     * To see an AWS CLI example of provisioning an address range for BYOIP, scroll down to <b>Example</b>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses
+     * (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param provisionByoipCidrRequest
+     * @return Result of the ProvisionByoipCidr operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws LimitExceededException
+     *         Processing your request would cause you to exceed an AWS Global Accelerator limit.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @throws IncorrectCidrStateException
+     *         The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
+     *         incorrect for this action.
+     * @sample AWSGlobalAccelerator.ProvisionByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ProvisionByoipCidr"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ProvisionByoipCidrResult provisionByoipCidr(ProvisionByoipCidrRequest request) {
+        request = beforeClientExecution(request);
+        return executeProvisionByoipCidr(request);
+    }
+
+    @SdkInternalApi
+    final ProvisionByoipCidrResult executeProvisionByoipCidr(ProvisionByoipCidrRequest provisionByoipCidrRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(provisionByoipCidrRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ProvisionByoipCidrRequest> request = null;
+        Response<ProvisionByoipCidrResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ProvisionByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provisionByoipCidrRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvisionByoipCidr");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ProvisionByoipCidrResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ProvisionByoipCidrResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add tags to an accelerator resource. To see an AWS CLI example of adding tags to an accelerator, scroll down to
+     * <b>Example</b>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS
+     * Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws AcceleratorNotFoundException
+     *         The accelerator that you specified doesn't exist.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @sample AWSGlobalAccelerator.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove tags from a Global Accelerator resource. When you specify a tag key, the action removes both that key and
+     * its associated value. To see an AWS CLI example of removing tags from an accelerator, scroll down to
+     * <b>Example</b>. The operation succeeds even if you attempt to remove tags from an accelerator that was already
+     * removed.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS
+     * Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws AcceleratorNotFoundException
+     *         The accelerator that you specified doesn't exist.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @sample AWSGlobalAccelerator.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Update an accelerator. To see an AWS CLI example of updating an accelerator, scroll down to <b>Example</b>.
      * </p>
      * <important>
      * <p>
-     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * You must specify the US West (Oregon) Region to create or update accelerators.
      * </p>
      * </important>
      * 
@@ -1247,7 +1793,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Update a listener.
+     * Update a listener. To see an AWS CLI example of updating listener, scroll down to <b>Example</b>.
      * </p>
      * 
      * @param updateListenerRequest
@@ -1298,6 +1844,81 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateListenerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateListenerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops advertising an address range that is provisioned as an address pool. You can perform this operation at most
+     * once every 10 seconds, even if you specify different address ranges each time. To see an AWS CLI example of
+     * withdrawing an address range for BYOIP so it will no longer be advertised by AWS, scroll down to <b>Example</b>.
+     * </p>
+     * <p>
+     * It can take a few minutes before traffic to the specified addresses stops routing to AWS because of propagation
+     * delays.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses
+     * (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param withdrawByoipCidrRequest
+     * @return Result of the WithdrawByoipCidr operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for AWS Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @throws ByoipCidrNotFoundException
+     *         The CIDR that you specified was not found or is incorrect.
+     * @throws IncorrectCidrStateException
+     *         The CIDR that you specified is not valid for this action. For example, the state of the CIDR might be
+     *         incorrect for this action.
+     * @sample AWSGlobalAccelerator.WithdrawByoipCidr
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/WithdrawByoipCidr"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public WithdrawByoipCidrResult withdrawByoipCidr(WithdrawByoipCidrRequest request) {
+        request = beforeClientExecution(request);
+        return executeWithdrawByoipCidr(request);
+    }
+
+    @SdkInternalApi
+    final WithdrawByoipCidrResult executeWithdrawByoipCidr(WithdrawByoipCidrRequest withdrawByoipCidrRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(withdrawByoipCidrRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<WithdrawByoipCidrRequest> request = null;
+        Response<WithdrawByoipCidrResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new WithdrawByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(withdrawByoipCidrRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "WithdrawByoipCidr");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<WithdrawByoipCidrResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new WithdrawByoipCidrResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

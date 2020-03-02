@@ -971,6 +971,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Labels entry
+     *
+     * @see Nodegroup#withLabels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Nodegroup addLabelsEntry(String key, String value) {
         if (null == this.labels) {
             this.labels = new java.util.HashMap<String, String>();
@@ -1169,6 +1176,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Nodegroup#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Nodegroup addTagsEntry(String key, String value) {
         if (null == this.tags) {

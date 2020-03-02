@@ -130,6 +130,13 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Addresses entry
+     *
+     * @see MessageRequest#withAddresses
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public MessageRequest addAddressesEntry(String key, AddressConfiguration value) {
         if (null == this.addresses) {
             this.addresses = new java.util.HashMap<String, AddressConfiguration>();
@@ -203,6 +210,13 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Context entry
+     *
+     * @see MessageRequest#withContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public MessageRequest addContextEntry(String key, String value) {
         if (null == this.context) {
             this.context = new java.util.HashMap<String, String>();
@@ -275,6 +289,13 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
         setEndpoints(endpoints);
         return this;
     }
+
+    /**
+     * Add a single Endpoints entry
+     *
+     * @see MessageRequest#withEndpoints
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public MessageRequest addEndpointsEntry(String key, EndpointSendConfiguration value) {
         if (null == this.endpoints) {

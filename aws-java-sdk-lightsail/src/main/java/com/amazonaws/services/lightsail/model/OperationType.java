@@ -66,7 +66,15 @@ public enum OperationType {
     RebootRelationalDatabase("RebootRelationalDatabase"),
     StopRelationalDatabase("StopRelationalDatabase"),
     EnableAddOn("EnableAddOn"),
-    DisableAddOn("DisableAddOn");
+    DisableAddOn("DisableAddOn"),
+    PutAlarm("PutAlarm"),
+    GetAlarms("GetAlarms"),
+    DeleteAlarm("DeleteAlarm"),
+    TestAlarm("TestAlarm"),
+    CreateContactMethod("CreateContactMethod"),
+    GetContactMethods("GetContactMethods"),
+    SendContactMethodVerification("SendContactMethodVerification"),
+    DeleteContactMethod("DeleteContactMethod");
 
     private String value;
 

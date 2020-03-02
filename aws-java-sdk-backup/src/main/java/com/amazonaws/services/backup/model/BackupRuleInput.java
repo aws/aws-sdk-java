@@ -417,6 +417,13 @@ public class BackupRuleInput implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single RecoveryPointTags entry
+     *
+     * @see BackupRuleInput#withRecoveryPointTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BackupRuleInput addRecoveryPointTagsEntry(String key, String value) {
         if (null == this.recoveryPointTags) {
             this.recoveryPointTags = new java.util.HashMap<String, String>();

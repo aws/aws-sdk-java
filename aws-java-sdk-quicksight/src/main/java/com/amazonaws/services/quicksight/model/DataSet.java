@@ -342,6 +342,13 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single PhysicalTableMap entry
+     *
+     * @see DataSet#withPhysicalTableMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DataSet addPhysicalTableMapEntry(String key, PhysicalTable value) {
         if (null == this.physicalTableMap) {
             this.physicalTableMap = new java.util.HashMap<String, PhysicalTable>();
@@ -402,6 +409,13 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
         setLogicalTableMap(logicalTableMap);
         return this;
     }
+
+    /**
+     * Add a single LogicalTableMap entry
+     *
+     * @see DataSet#withLogicalTableMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DataSet addLogicalTableMapEntry(String key, LogicalTable value) {
         if (null == this.logicalTableMap) {

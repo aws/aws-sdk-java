@@ -136,6 +136,102 @@
       },
       "syncReturnType" : "CreateOutpostResult"
     },
+    "DeleteOutpost" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteOutpostResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteOutpostResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteOutpostRequest, DeleteOutpostResult>",
+      "asyncReturnType" : "DeleteOutpostResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes the Outpost.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>A parameter is not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The specified request is not valid.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>You do not have permission to perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p>An internal error has occurred.</p>",
+        "httpStatusCode" : 500
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteOutpostRequest",
+        "variableName" : "deleteOutpostRequest",
+        "variableType" : "DeleteOutpostRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteOutpostRequest",
+        "variableSetterType" : "DeleteOutpostRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteOutpost",
+      "operationName" : "DeleteOutpost",
+      "returnType" : {
+        "returnType" : "DeleteOutpostResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteOutpostResult"
+    },
+    "DeleteSite" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteSiteResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteSiteResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteSiteRequest, DeleteSiteResult>",
+      "asyncReturnType" : "DeleteSiteResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes the site.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>A parameter is not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The specified request is not valid.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>You do not have permission to perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p>An internal error has occurred.</p>",
+        "httpStatusCode" : 500
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteSiteRequest",
+        "variableName" : "deleteSiteRequest",
+        "variableType" : "DeleteSiteRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteSiteRequest",
+        "variableSetterType" : "DeleteSiteRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteSite",
+      "operationName" : "DeleteSite",
+      "returnType" : {
+        "returnType" : "DeleteSiteResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteSiteResult"
+    },
     "GetOutpost" : {
       "asyncCallableType" : "java.util.concurrent.Callable<GetOutpostResult>",
       "asyncFutureType" : "java.util.concurrent.Future<GetOutpostResult>",
@@ -1255,6 +1351,450 @@
         "documentation" : null,
         "simpleType" : "CreateOutpostResult",
         "variableSetterType" : "CreateOutpostResult"
+      },
+      "wrapper" : false
+    },
+    "DeleteOutpostRequest" : {
+      "c2jName" : "DeleteOutpostInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteOutpost",
+        "locationName" : null,
+        "requestUri" : "/outposts/{OutpostId}",
+        "target" : null,
+        "verb" : "DELETE",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "OutpostId",
+        "c2jShape" : "OutpostId",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param outpostId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOutpostId",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getOutpostId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "OutpostId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OutpostId",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OutpostId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param outpostId */",
+        "setterMethodName" : "setOutpostId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "outpostId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param outpostId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "outpostId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "OutpostId" : {
+          "c2jName" : "OutpostId",
+          "c2jShape" : "OutpostId",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param outpostId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOutpostId",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getOutpostId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "OutpostId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OutpostId",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OutpostId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param outpostId */",
+          "setterMethodName" : "setOutpostId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "outpostId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param outpostId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "outpostId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "OutpostId" ],
+      "shapeName" : "DeleteOutpostRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteOutpostRequest",
+        "variableName" : "deleteOutpostRequest",
+        "variableType" : "DeleteOutpostRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteOutpostRequest",
+        "variableSetterType" : "DeleteOutpostRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteOutpostResult" : {
+      "c2jName" : "DeleteOutpostOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteOutpostResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteOutpostResult",
+        "variableName" : "deleteOutpostResult",
+        "variableType" : "DeleteOutpostResult",
+        "documentation" : null,
+        "simpleType" : "DeleteOutpostResult",
+        "variableSetterType" : "DeleteOutpostResult"
+      },
+      "wrapper" : false
+    },
+    "DeleteSiteRequest" : {
+      "c2jName" : "DeleteSiteInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteSite",
+        "locationName" : null,
+        "requestUri" : "/sites/{SiteId}",
+        "target" : null,
+        "verb" : "DELETE",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "SiteId",
+        "c2jShape" : "SiteId",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param siteId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withSiteId",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getSiteId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "SiteId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SiteId",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "SiteId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param siteId */",
+        "setterMethodName" : "setSiteId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "siteId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param siteId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "siteId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "SiteId" : {
+          "c2jName" : "SiteId",
+          "c2jShape" : "SiteId",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param siteId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withSiteId",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getSiteId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "SiteId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SiteId",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "SiteId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param siteId */",
+          "setterMethodName" : "setSiteId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "siteId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param siteId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "siteId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "SiteId" ],
+      "shapeName" : "DeleteSiteRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteSiteRequest",
+        "variableName" : "deleteSiteRequest",
+        "variableType" : "DeleteSiteRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteSiteRequest",
+        "variableSetterType" : "DeleteSiteRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteSiteResult" : {
+      "c2jName" : "DeleteSiteOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteSiteResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteSiteResult",
+        "variableName" : "deleteSiteResult",
+        "variableType" : "DeleteSiteResult",
+        "documentation" : null,
+        "simpleType" : "DeleteSiteResult",
+        "variableSetterType" : "DeleteSiteResult"
       },
       "wrapper" : false
     },

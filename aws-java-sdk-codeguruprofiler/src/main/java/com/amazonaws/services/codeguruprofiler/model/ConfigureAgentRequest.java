@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for ConfigureAgent operation.
+ * The structure representing the configureAgentRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent" target="_top">AWS
@@ -28,11 +28,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** <p/> */
     private String fleetInstanceId;
-
+    /** <p/> */
     private String profilingGroupName;
 
     /**
+     * <p/>
+     * 
      * @param fleetInstanceId
      */
 
@@ -41,6 +44,8 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -49,6 +54,8 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p/>
+     * 
      * @param fleetInstanceId
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -59,6 +66,8 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p/>
+     * 
      * @param profilingGroupName
      */
 
@@ -67,6 +76,8 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -75,6 +86,8 @@ public class ConfigureAgentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p/>
+     * 
      * @param profilingGroupName
      * @return Returns a reference to this object so that method calls can be chained together.
      */

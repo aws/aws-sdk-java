@@ -226,6 +226,13 @@ public class OpsAggregator implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Values entry
+     *
+     * @see OpsAggregator#withValues
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public OpsAggregator addValuesEntry(String key, String value) {
         if (null == this.values) {
             this.values = new java.util.HashMap<String, String>();

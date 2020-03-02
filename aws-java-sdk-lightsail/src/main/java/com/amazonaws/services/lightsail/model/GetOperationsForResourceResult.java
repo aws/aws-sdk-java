@@ -25,7 +25,8 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations for resource request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private java.util.List<Operation> operations;
@@ -44,19 +45,26 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
     private String nextPageCount;
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations for resource request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the results of your get operations for resource
-     *         request.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -65,12 +73,13 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations for resource request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your get operations for resource
-     *        request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -84,7 +93,8 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations for resource request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -93,8 +103,8 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your get operations for resource
-     *        request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,12 +120,13 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations for resource request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your get operations for resource
-     *        request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,13 +207,24 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify
+     *        the next page token using the <code>pageToken</code> parameter.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -211,12 +233,23 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
-     *         next set of items in the list.
+     * @return The token to advance to the next page of resutls from your request.</p>
+     *         <p>
+     *         A next page token is not returned if there are no more results to display.
+     *         </p>
+     *         <p>
+     *         To get the next page of results, perform another <code>GetOperationsForResource</code> request and
+     *         specify the next page token using the <code>pageToken</code> parameter.
      */
 
     public String getNextPageToken() {
@@ -225,13 +258,24 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify the
+     * next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetOperationsForResource</code> request and specify
+     *        the next page token using the <code>pageToken</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for UpdateProfilingGroup operation.
+ * The structure representing the updateProfilingGroupRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup"
@@ -28,22 +28,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** <p/> */
+    private AgentOrchestrationConfig agentOrchestrationConfig;
     /**
      * <p>
-     * Remote configuration to configure the agents of the profiling group.
+     * The name of the profiling group to update.
      * </p>
      */
-    private AgentOrchestrationConfig agentOrchestrationConfig;
-
     private String profilingGroupName;
 
     /**
-     * <p>
-     * Remote configuration to configure the agents of the profiling group.
-     * </p>
+     * <p/>
      * 
      * @param agentOrchestrationConfig
-     *        Remote configuration to configure the agents of the profiling group.
      */
 
     public void setAgentOrchestrationConfig(AgentOrchestrationConfig agentOrchestrationConfig) {
@@ -51,11 +48,9 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p>
-     * Remote configuration to configure the agents of the profiling group.
-     * </p>
+     * <p/>
      * 
-     * @return Remote configuration to configure the agents of the profiling group.
+     * @return
      */
 
     public AgentOrchestrationConfig getAgentOrchestrationConfig() {
@@ -63,12 +58,9 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p>
-     * Remote configuration to configure the agents of the profiling group.
-     * </p>
+     * <p/>
      * 
      * @param agentOrchestrationConfig
-     *        Remote configuration to configure the agents of the profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +70,12 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The name of the profiling group to update.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group to update.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -86,7 +83,11 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the profiling group to update.
+     * </p>
+     * 
+     * @return The name of the profiling group to update.
      */
 
     public String getProfilingGroupName() {
@@ -94,7 +95,12 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The name of the profiling group to update.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

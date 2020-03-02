@@ -205,8 +205,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String additionalInfo;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a
+     * client token, a randomly generated token is used for the request to ensure idempotency.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
@@ -1743,8 +1747,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a
+     * client token, a randomly generated token is used for the request to ensure idempotency.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
@@ -1752,10 +1760,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *        information, see <a
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not
+     *        specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.</p>
+     *        Idempotency</a>.
+     *        </p>
      *        <p>
      *        Constraints: Maximum 64 ASCII characters
      */
@@ -1766,18 +1777,25 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a
+     * client token, a randomly generated token is used for the request to ensure idempotency.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
      * Constraints: Maximum 64 ASCII characters
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *         information, see <a
+     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not
+     *         specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+     *         <p>
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a>.</p>
+     *         Idempotency</a>.
+     *         </p>
      *         <p>
      *         Constraints: Maximum 64 ASCII characters
      */
@@ -1788,8 +1806,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a
+     * client token, a randomly generated token is used for the request to ensure idempotency.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * <p>
@@ -1797,10 +1819,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *        information, see <a
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not
+     *        specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.</p>
+     *        Idempotency</a>.
+     *        </p>
      *        <p>
      *        Constraints: Maximum 64 ASCII characters
      * @return Returns a reference to this object so that method calls can be chained together.

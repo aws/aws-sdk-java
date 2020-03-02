@@ -192,6 +192,13 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single DefaultRunProperties entry
+     *
+     * @see Workflow#withDefaultRunProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Workflow addDefaultRunPropertiesEntry(String key, String value) {
         if (null == this.defaultRunProperties) {
             this.defaultRunProperties = new java.util.HashMap<String, String>();

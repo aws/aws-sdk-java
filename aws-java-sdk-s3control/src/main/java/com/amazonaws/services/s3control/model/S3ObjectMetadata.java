@@ -207,6 +207,13 @@ public class S3ObjectMetadata implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Add a single UserMetadata entry
+     *
+     * @see S3ObjectMetadata#withUserMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public S3ObjectMetadata addUserMetadataEntry(String key, String value) {
         if (null == this.userMetadata) {
             this.userMetadata = new java.util.HashMap<String, String>();

@@ -73,6 +73,13 @@ public class ListDomainNamesResult extends com.amazonaws.AmazonWebServiceResult<
         return this;
     }
 
+    /**
+     * Add a single DomainNames entry
+     *
+     * @see ListDomainNamesResult#withDomainNames
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ListDomainNamesResult addDomainNamesEntry(String key, String value) {
         if (null == this.domainNames) {
             this.domainNames = new com.amazonaws.internal.SdkInternalMap<String, String>();

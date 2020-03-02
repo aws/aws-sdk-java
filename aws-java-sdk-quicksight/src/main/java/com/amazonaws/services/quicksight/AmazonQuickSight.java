@@ -1538,6 +1538,33 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Searchs for dashboards that belong to a user.
+     * </p>
+     * 
+     * @param searchDashboardsRequest
+     * @return Result of the SearchDashboards operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.SearchDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SearchDashboardsResult searchDashboards(SearchDashboardsRequest searchDashboardsRequest);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified QuickSight resource.
      * </p>
      * <p>

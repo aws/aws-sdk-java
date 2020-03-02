@@ -121,6 +121,13 @@ public class EventsBatch implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Events entry
+     *
+     * @see EventsBatch#withEvents
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EventsBatch addEventsEntry(String key, Event value) {
         if (null == this.events) {
             this.events = new java.util.HashMap<String, Event>();

@@ -196,6 +196,13 @@ public class FeatureTransformation implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single DefaultParameters entry
+     *
+     * @see FeatureTransformation#withDefaultParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public FeatureTransformation addDefaultParametersEntry(String key, String value) {
         if (null == this.defaultParameters) {
             this.defaultParameters = new java.util.HashMap<String, String>();

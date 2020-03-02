@@ -52,6 +52,10 @@ public class TranscriptJsonUnmarshaller implements Unmarshaller<Transcript, Json
                     context.nextToken();
                     transcript.setTranscriptFileUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RedactedTranscriptFileUri", targetDepth)) {
+                    context.nextToken();
+                    transcript.setRedactedTranscriptFileUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -43,6 +43,8 @@ public class ConfigRuleEvaluationStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastFailedEvaluationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> FIRSTACTIVATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirstActivatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTDEACTIVATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastDeactivatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LASTERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastErrorCode").build();
     private static final MarshallingInfo<String> LASTERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -74,6 +76,7 @@ public class ConfigRuleEvaluationStatusMarshaller {
             protocolMarshaller.marshall(configRuleEvaluationStatus.getLastSuccessfulEvaluationTime(), LASTSUCCESSFULEVALUATIONTIME_BINDING);
             protocolMarshaller.marshall(configRuleEvaluationStatus.getLastFailedEvaluationTime(), LASTFAILEDEVALUATIONTIME_BINDING);
             protocolMarshaller.marshall(configRuleEvaluationStatus.getFirstActivatedTime(), FIRSTACTIVATEDTIME_BINDING);
+            protocolMarshaller.marshall(configRuleEvaluationStatus.getLastDeactivatedTime(), LASTDEACTIVATEDTIME_BINDING);
             protocolMarshaller.marshall(configRuleEvaluationStatus.getLastErrorCode(), LASTERRORCODE_BINDING);
             protocolMarshaller.marshall(configRuleEvaluationStatus.getLastErrorMessage(), LASTERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(configRuleEvaluationStatus.getFirstEvaluationStarted(), FIRSTEVALUATIONSTARTED_BINDING);

@@ -187,7 +187,7 @@ public class Instance implements Serializable, Cloneable {
     private Boolean enaSupport;
     /**
      * <p>
-     * The hypervisor type of the instance.
+     * The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.
      * </p>
      */
     private String hypervisor;
@@ -1582,11 +1582,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the instance.
+     * The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the instance.
+     *        The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro
+     *        hypervisors.
      * @see HypervisorType
      */
 
@@ -1596,10 +1597,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the instance.
+     * The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.
      * </p>
      * 
-     * @return The hypervisor type of the instance.
+     * @return The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro
+     *         hypervisors.
      * @see HypervisorType
      */
 
@@ -1609,11 +1611,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the instance.
+     * The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the instance.
+     *        The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro
+     *        hypervisors.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */
@@ -1625,11 +1628,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the instance.
+     * The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the instance.
+     *        The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro
+     *        hypervisors.
      * @see HypervisorType
      */
 
@@ -1639,11 +1643,12 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the instance.
+     * The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the instance.
+     *        The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro
+     *        hypervisors.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */

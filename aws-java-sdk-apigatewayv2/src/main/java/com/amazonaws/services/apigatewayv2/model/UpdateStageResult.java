@@ -581,6 +581,13 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         return this;
     }
 
+    /**
+     * Add a single RouteSettings entry
+     *
+     * @see UpdateStageResult#withRouteSettings
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateStageResult addRouteSettingsEntry(String key, RouteSettings value) {
         if (null == this.routeSettings) {
             this.routeSettings = new java.util.HashMap<String, RouteSettings>();
@@ -691,6 +698,13 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         return this;
     }
 
+    /**
+     * Add a single StageVariables entry
+     *
+     * @see UpdateStageResult#withStageVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateStageResult addStageVariablesEntry(String key, String value) {
         if (null == this.stageVariables) {
             this.stageVariables = new java.util.HashMap<String, String>();
@@ -751,6 +765,13 @@ public class UpdateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see UpdateStageResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateStageResult addTagsEntry(String key, String value) {
         if (null == this.tags) {

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details for an individual compliance standard control.
+ * Details for an individual security standard control.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsControl" target="_top">AWS API
@@ -30,13 +30,13 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the compliance standard control.
+     * The ARN of the security standard control.
      * </p>
      */
     private String standardsControlArn;
     /**
      * <p>
-     * The current status of the compliance standard control. Indicates whether the control is enabled or disabled.
+     * The current status of the security standard control. Indicates whether the control is enabled or disabled.
      * Security Hub does not check against disabled controls.
      * </p>
      */
@@ -49,26 +49,26 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
     private String disabledReason;
     /**
      * <p>
-     * The date and time that the status of the compliance standard control was most recently updated.
+     * The date and time that the status of the security standard control was most recently updated.
      * </p>
      */
     private java.util.Date controlStatusUpdatedAt;
     /**
      * <p>
-     * The identifier of the compliance standard control.
+     * The identifier of the security standard control.
      * </p>
      */
     private String controlId;
     /**
      * <p>
-     * The title of the compliance standard control.
+     * The title of the security standard control.
      * </p>
      */
     private String title;
     /**
      * <p>
-     * The longer description of the compliance standard control. Provides information about what the control is
-     * checking for.
+     * The longer description of the security standard control. Provides information about what the control is checking
+     * for.
      * </p>
      */
     private String description;
@@ -80,11 +80,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
     private String remediationUrl;
     /**
      * <p>
-     * The severity of findings generated from this compliance standard control.
+     * The severity of findings generated from this security standard control.
      * </p>
      * <p>
-     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     * compliance issue is detected.
+     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the issue
+     * is detected.
      * </p>
      */
     private String severityRating;
@@ -97,11 +97,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the compliance standard control.
+     * The ARN of the security standard control.
      * </p>
      * 
      * @param standardsControlArn
-     *        The ARN of the compliance standard control.
+     *        The ARN of the security standard control.
      */
 
     public void setStandardsControlArn(String standardsControlArn) {
@@ -110,10 +110,10 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the compliance standard control.
+     * The ARN of the security standard control.
      * </p>
      * 
-     * @return The ARN of the compliance standard control.
+     * @return The ARN of the security standard control.
      */
 
     public String getStandardsControlArn() {
@@ -122,11 +122,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the compliance standard control.
+     * The ARN of the security standard control.
      * </p>
      * 
      * @param standardsControlArn
-     *        The ARN of the compliance standard control.
+     *        The ARN of the security standard control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,13 +137,13 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current status of the compliance standard control. Indicates whether the control is enabled or disabled.
+     * The current status of the security standard control. Indicates whether the control is enabled or disabled.
      * Security Hub does not check against disabled controls.
      * </p>
      * 
      * @param controlStatus
-     *        The current status of the compliance standard control. Indicates whether the control is enabled or
-     *        disabled. Security Hub does not check against disabled controls.
+     *        The current status of the security standard control. Indicates whether the control is enabled or disabled.
+     *        Security Hub does not check against disabled controls.
      * @see ControlStatus
      */
 
@@ -153,11 +153,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current status of the compliance standard control. Indicates whether the control is enabled or disabled.
+     * The current status of the security standard control. Indicates whether the control is enabled or disabled.
      * Security Hub does not check against disabled controls.
      * </p>
      * 
-     * @return The current status of the compliance standard control. Indicates whether the control is enabled or
+     * @return The current status of the security standard control. Indicates whether the control is enabled or
      *         disabled. Security Hub does not check against disabled controls.
      * @see ControlStatus
      */
@@ -168,13 +168,13 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current status of the compliance standard control. Indicates whether the control is enabled or disabled.
+     * The current status of the security standard control. Indicates whether the control is enabled or disabled.
      * Security Hub does not check against disabled controls.
      * </p>
      * 
      * @param controlStatus
-     *        The current status of the compliance standard control. Indicates whether the control is enabled or
-     *        disabled. Security Hub does not check against disabled controls.
+     *        The current status of the security standard control. Indicates whether the control is enabled or disabled.
+     *        Security Hub does not check against disabled controls.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlStatus
      */
@@ -186,13 +186,13 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The current status of the compliance standard control. Indicates whether the control is enabled or disabled.
+     * The current status of the security standard control. Indicates whether the control is enabled or disabled.
      * Security Hub does not check against disabled controls.
      * </p>
      * 
      * @param controlStatus
-     *        The current status of the compliance standard control. Indicates whether the control is enabled or
-     *        disabled. Security Hub does not check against disabled controls.
+     *        The current status of the security standard control. Indicates whether the control is enabled or disabled.
+     *        Security Hub does not check against disabled controls.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ControlStatus
      */
@@ -244,11 +244,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time that the status of the compliance standard control was most recently updated.
+     * The date and time that the status of the security standard control was most recently updated.
      * </p>
      * 
      * @param controlStatusUpdatedAt
-     *        The date and time that the status of the compliance standard control was most recently updated.
+     *        The date and time that the status of the security standard control was most recently updated.
      */
 
     public void setControlStatusUpdatedAt(java.util.Date controlStatusUpdatedAt) {
@@ -257,10 +257,10 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time that the status of the compliance standard control was most recently updated.
+     * The date and time that the status of the security standard control was most recently updated.
      * </p>
      * 
-     * @return The date and time that the status of the compliance standard control was most recently updated.
+     * @return The date and time that the status of the security standard control was most recently updated.
      */
 
     public java.util.Date getControlStatusUpdatedAt() {
@@ -269,11 +269,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time that the status of the compliance standard control was most recently updated.
+     * The date and time that the status of the security standard control was most recently updated.
      * </p>
      * 
      * @param controlStatusUpdatedAt
-     *        The date and time that the status of the compliance standard control was most recently updated.
+     *        The date and time that the status of the security standard control was most recently updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,11 +284,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the compliance standard control.
+     * The identifier of the security standard control.
      * </p>
      * 
      * @param controlId
-     *        The identifier of the compliance standard control.
+     *        The identifier of the security standard control.
      */
 
     public void setControlId(String controlId) {
@@ -297,10 +297,10 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the compliance standard control.
+     * The identifier of the security standard control.
      * </p>
      * 
-     * @return The identifier of the compliance standard control.
+     * @return The identifier of the security standard control.
      */
 
     public String getControlId() {
@@ -309,11 +309,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier of the compliance standard control.
+     * The identifier of the security standard control.
      * </p>
      * 
      * @param controlId
-     *        The identifier of the compliance standard control.
+     *        The identifier of the security standard control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,11 +324,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The title of the compliance standard control.
+     * The title of the security standard control.
      * </p>
      * 
      * @param title
-     *        The title of the compliance standard control.
+     *        The title of the security standard control.
      */
 
     public void setTitle(String title) {
@@ -337,10 +337,10 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The title of the compliance standard control.
+     * The title of the security standard control.
      * </p>
      * 
-     * @return The title of the compliance standard control.
+     * @return The title of the security standard control.
      */
 
     public String getTitle() {
@@ -349,11 +349,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The title of the compliance standard control.
+     * The title of the security standard control.
      * </p>
      * 
      * @param title
-     *        The title of the compliance standard control.
+     *        The title of the security standard control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,12 +364,12 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The longer description of the compliance standard control. Provides information about what the control is
-     * checking for.
+     * The longer description of the security standard control. Provides information about what the control is checking
+     * for.
      * </p>
      * 
      * @param description
-     *        The longer description of the compliance standard control. Provides information about what the control is
+     *        The longer description of the security standard control. Provides information about what the control is
      *        checking for.
      */
 
@@ -379,11 +379,11 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The longer description of the compliance standard control. Provides information about what the control is
-     * checking for.
+     * The longer description of the security standard control. Provides information about what the control is checking
+     * for.
      * </p>
      * 
-     * @return The longer description of the compliance standard control. Provides information about what the control is
+     * @return The longer description of the security standard control. Provides information about what the control is
      *         checking for.
      */
 
@@ -393,12 +393,12 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The longer description of the compliance standard control. Provides information about what the control is
-     * checking for.
+     * The longer description of the security standard control. Provides information about what the control is checking
+     * for.
      * </p>
      * 
      * @param description
-     *        The longer description of the compliance standard control. Provides information about what the control is
+     *        The longer description of the security standard control. Provides information about what the control is
      *        checking for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -450,18 +450,18 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The severity of findings generated from this compliance standard control.
+     * The severity of findings generated from this security standard control.
      * </p>
      * <p>
-     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     * compliance issue is detected.
+     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the issue
+     * is detected.
      * </p>
      * 
      * @param severityRating
-     *        The severity of findings generated from this compliance standard control.</p>
+     *        The severity of findings generated from this security standard control.</p>
      *        <p>
      *        The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     *        compliance issue is detected.
+     *        issue is detected.
      * @see SeverityRating
      */
 
@@ -471,17 +471,17 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The severity of findings generated from this compliance standard control.
+     * The severity of findings generated from this security standard control.
      * </p>
      * <p>
-     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     * compliance issue is detected.
+     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the issue
+     * is detected.
      * </p>
      * 
-     * @return The severity of findings generated from this compliance standard control.</p>
+     * @return The severity of findings generated from this security standard control.</p>
      *         <p>
      *         The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     *         compliance issue is detected.
+     *         issue is detected.
      * @see SeverityRating
      */
 
@@ -491,18 +491,18 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The severity of findings generated from this compliance standard control.
+     * The severity of findings generated from this security standard control.
      * </p>
      * <p>
-     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     * compliance issue is detected.
+     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the issue
+     * is detected.
      * </p>
      * 
      * @param severityRating
-     *        The severity of findings generated from this compliance standard control.</p>
+     *        The severity of findings generated from this security standard control.</p>
      *        <p>
      *        The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     *        compliance issue is detected.
+     *        issue is detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SeverityRating
      */
@@ -514,18 +514,18 @@ public class StandardsControl implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The severity of findings generated from this compliance standard control.
+     * The severity of findings generated from this security standard control.
      * </p>
      * <p>
-     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     * compliance issue is detected.
+     * The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the issue
+     * is detected.
      * </p>
      * 
      * @param severityRating
-     *        The severity of findings generated from this compliance standard control.</p>
+     *        The severity of findings generated from this security standard control.</p>
      *        <p>
      *        The finding severity is based on an assessment of how easy it would be to compromise AWS resources if the
-     *        compliance issue is detected.
+     *        issue is detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SeverityRating
      */

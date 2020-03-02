@@ -124,6 +124,13 @@ public class DeviceTemplate implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single CallbackOverrides entry
+     *
+     * @see DeviceTemplate#withCallbackOverrides
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DeviceTemplate addCallbackOverridesEntry(String key, String value) {
         if (null == this.callbackOverrides) {
             this.callbackOverrides = new java.util.HashMap<String, String>();

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for ListProfilingGroups operation.
+ * The structure representing the listProfilingGroupsResponse.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups"
@@ -26,14 +26,39 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the
+     * results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * Information about profiling group names.
+     * </p>
+     */
     private java.util.List<String> profilingGroupNames;
-
+    /**
+     * <p>
+     * Information about profiling groups.
+     * </p>
+     */
     private java.util.List<ProfilingGroupDescription> profilingGroups;
 
     /**
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the
+     * results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the
+     *        results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be
+     *        used to retrieve the next page of results. This value is <code>null</code> when there are no more results
+     *        to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -41,7 +66,16 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the
+     * results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     * 
+     * @return The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When
+     *         the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can
+     *         be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+     *         results to return.
      */
 
     public String getNextToken() {
@@ -49,7 +83,17 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the
+     * results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be used to
+     * retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request. When the
+     *        results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this value can be
+     *        used to retrieve the next page of results. This value is <code>null</code> when there are no more results
+     *        to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -59,7 +103,11 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * Information about profiling group names.
+     * </p>
+     * 
+     * @return Information about profiling group names.
      */
 
     public java.util.List<String> getProfilingGroupNames() {
@@ -67,7 +115,12 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Information about profiling group names.
+     * </p>
+     * 
      * @param profilingGroupNames
+     *        Information about profiling group names.
      */
 
     public void setProfilingGroupNames(java.util.Collection<String> profilingGroupNames) {
@@ -81,12 +134,16 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * Information about profiling group names.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProfilingGroupNames(java.util.Collection)} or {@link #withProfilingGroupNames(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param profilingGroupNames
+     *        Information about profiling group names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +158,12 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Information about profiling group names.
+     * </p>
+     * 
      * @param profilingGroupNames
+     *        Information about profiling group names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,7 +173,11 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * Information about profiling groups.
+     * </p>
+     * 
+     * @return Information about profiling groups.
      */
 
     public java.util.List<ProfilingGroupDescription> getProfilingGroups() {
@@ -119,7 +185,12 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Information about profiling groups.
+     * </p>
+     * 
      * @param profilingGroups
+     *        Information about profiling groups.
      */
 
     public void setProfilingGroups(java.util.Collection<ProfilingGroupDescription> profilingGroups) {
@@ -133,12 +204,16 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * Information about profiling groups.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProfilingGroups(java.util.Collection)} or {@link #withProfilingGroups(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param profilingGroups
+     *        Information about profiling groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,7 +228,12 @@ public class ListProfilingGroupsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Information about profiling groups.
+     * </p>
+     * 
      * @param profilingGroups
+     *        Information about profiling groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

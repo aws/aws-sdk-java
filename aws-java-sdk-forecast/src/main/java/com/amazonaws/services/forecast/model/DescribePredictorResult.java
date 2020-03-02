@@ -491,6 +491,13 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
         return this;
     }
 
+    /**
+     * Add a single TrainingParameters entry
+     *
+     * @see DescribePredictorResult#withTrainingParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribePredictorResult addTrainingParametersEntry(String key, String value) {
         if (null == this.trainingParameters) {
             this.trainingParameters = new java.util.HashMap<String, String>();

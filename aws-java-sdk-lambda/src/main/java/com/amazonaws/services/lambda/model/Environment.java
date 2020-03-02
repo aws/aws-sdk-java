@@ -78,6 +78,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Variables entry
+     *
+     * @see Environment#withVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Environment addVariablesEntry(String key, String value) {
         if (null == this.variables) {
             this.variables = new com.amazonaws.internal.SdkInternalMap<String, String>();

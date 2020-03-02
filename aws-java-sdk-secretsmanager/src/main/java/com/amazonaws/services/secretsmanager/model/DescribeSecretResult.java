@@ -125,7 +125,11 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * </note>
      */
     private java.util.Map<String, java.util.List<String>> versionIdsToStages;
-
+    /**
+     * <p>
+     * Returns the name of the service that created this secret.
+     * </p>
+     */
     private String owningService;
 
     /**
@@ -831,6 +835,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         return this;
     }
 
+    /**
+     * Add a single VersionIdsToStages entry
+     *
+     * @see DescribeSecretResult#withVersionIdsToStages
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeSecretResult addVersionIdsToStagesEntry(String key, java.util.List<String> value) {
         if (null == this.versionIdsToStages) {
             this.versionIdsToStages = new java.util.HashMap<String, java.util.List<String>>();
@@ -853,7 +864,12 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Returns the name of the service that created this secret.
+     * </p>
+     * 
      * @param owningService
+     *        Returns the name of the service that created this secret.
      */
 
     public void setOwningService(String owningService) {
@@ -861,7 +877,11 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * Returns the name of the service that created this secret.
+     * </p>
+     * 
+     * @return Returns the name of the service that created this secret.
      */
 
     public String getOwningService() {
@@ -869,7 +889,12 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Returns the name of the service that created this secret.
+     * </p>
+     * 
      * @param owningService
+     *        Returns the name of the service that created this secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

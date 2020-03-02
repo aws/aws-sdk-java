@@ -183,6 +183,13 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
         return this;
     }
 
+    /**
+     * Add a single Headers entry
+     *
+     * @see TestInvokeMethodResult#withHeaders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TestInvokeMethodResult addHeadersEntry(String key, String value) {
         if (null == this.headers) {
             this.headers = new java.util.HashMap<String, String>();
@@ -243,6 +250,13 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
         setMultiValueHeaders(multiValueHeaders);
         return this;
     }
+
+    /**
+     * Add a single MultiValueHeaders entry
+     *
+     * @see TestInvokeMethodResult#withMultiValueHeaders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public TestInvokeMethodResult addMultiValueHeadersEntry(String key, java.util.List<String> value) {
         if (null == this.multiValueHeaders) {

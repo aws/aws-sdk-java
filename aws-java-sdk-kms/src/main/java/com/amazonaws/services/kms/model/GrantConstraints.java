@@ -159,6 +159,13 @@ public class GrantConstraints implements Serializable, Cloneable, StructuredPojo
         return this;
     }
 
+    /**
+     * Add a single EncryptionContextSubset entry
+     *
+     * @see GrantConstraints#withEncryptionContextSubset
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GrantConstraints addEncryptionContextSubsetEntry(String key, String value) {
         if (null == this.encryptionContextSubset) {
             this.encryptionContextSubset = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -235,6 +242,13 @@ public class GrantConstraints implements Serializable, Cloneable, StructuredPojo
         setEncryptionContextEquals(encryptionContextEquals);
         return this;
     }
+
+    /**
+     * Add a single EncryptionContextEquals entry
+     *
+     * @see GrantConstraints#withEncryptionContextEquals
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public GrantConstraints addEncryptionContextEqualsEntry(String key, String value) {
         if (null == this.encryptionContextEquals) {

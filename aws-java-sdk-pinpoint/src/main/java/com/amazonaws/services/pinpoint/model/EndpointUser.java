@@ -127,6 +127,13 @@ public class EndpointUser implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single UserAttributes entry
+     *
+     * @see EndpointUser#withUserAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EndpointUser addUserAttributesEntry(String key, java.util.List<String> value) {
         if (null == this.userAttributes) {
             this.userAttributes = new java.util.HashMap<String, java.util.List<String>>();

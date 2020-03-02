@@ -464,6 +464,13 @@ public class GenerateDataKeyRequest extends com.amazonaws.AmazonWebServiceReques
         return this;
     }
 
+    /**
+     * Add a single EncryptionContext entry
+     *
+     * @see GenerateDataKeyRequest#withEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GenerateDataKeyRequest addEncryptionContextEntry(String key, String value) {
         if (null == this.encryptionContext) {
             this.encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();

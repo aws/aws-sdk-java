@@ -506,6 +506,13 @@ public class Relevance implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single ValueImportanceMap entry
+     *
+     * @see Relevance#withValueImportanceMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Relevance addValueImportanceMapEntry(String key, Integer value) {
         if (null == this.valueImportanceMap) {
             this.valueImportanceMap = new java.util.HashMap<String, Integer>();

@@ -170,6 +170,13 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         return this;
     }
 
+    /**
+     * Add a single DefaultRunProperties entry
+     *
+     * @see CreateWorkflowRequest#withDefaultRunProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateWorkflowRequest addDefaultRunPropertiesEntry(String key, String value) {
         if (null == this.defaultRunProperties) {
             this.defaultRunProperties = new java.util.HashMap<String, String>();
@@ -230,6 +237,13 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateWorkflowRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateWorkflowRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {

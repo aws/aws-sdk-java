@@ -103,6 +103,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * If your route matches a request, you can distribute traffic to one or more target virtual nodes with relative
      * weighting.
      * </p>
+     * <p>
+     * For more information about routes, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
+     * </p>
      * 
      * @param createRouteRequest
      * @return A Java Future containing the result of the CreateRoute operation returned by the service.
@@ -124,6 +128,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * <p>
      * If your route matches a request, you can distribute traffic to one or more target virtual nodes with relative
      * weighting.
+     * </p>
+     * <p>
+     * For more information about routes, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.
      * </p>
      * 
      * @param createRouteRequest
@@ -166,6 +174,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
      * </p>
      * </note>
+     * <p>
+     * For more information about virtual nodes, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual Nodes</a>.
+     * </p>
      * 
      * @param createVirtualNodeRequest
      * @return A Java Future containing the result of the CreateVirtualNode operation returned by the service.
@@ -202,6 +214,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
      * </p>
      * </note>
+     * <p>
+     * For more information about virtual nodes, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual Nodes</a>.
+     * </p>
      * 
      * @param createVirtualNodeRequest
      * @param asyncHandler
@@ -228,6 +244,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * router, create and associate routes for your virtual router that direct incoming requests to different virtual
      * nodes.
      * </p>
+     * <p>
+     * For more information about virtual routers, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual Routers</a>.
+     * </p>
      * 
      * @param createVirtualRouterRequest
      * @return A Java Future containing the result of the CreateVirtualRouter operation returned by the service.
@@ -248,6 +268,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual
      * router, create and associate routes for your virtual router that direct incoming requests to different virtual
      * nodes.
+     * </p>
+     * <p>
+     * For more information about virtual routers, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual Routers</a>.
      * </p>
      * 
      * @param createVirtualRouterRequest
@@ -273,6 +297,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * , and those requests are routed to the virtual node or virtual router that is specified as the provider for the
      * virtual service.
      * </p>
+     * <p>
+     * For more information about virtual services, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual Services</a>.
+     * </p>
      * 
      * @param createVirtualServiceRequest
      * @return A Java Future containing the result of the CreateVirtualService operation returned by the service.
@@ -291,6 +319,10 @@ public interface AWSAppMeshAsync extends AWSAppMesh {
      * by means of a virtual router. Dependent services call your virtual service by its <code>virtualServiceName</code>
      * , and those requests are routed to the virtual node or virtual router that is specified as the provider for the
      * virtual service.
+     * </p>
+     * <p>
+     * For more information about virtual services, see <a
+     * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual Services</a>.
      * </p>
      * 
      * @param createVirtualServiceRequest

@@ -145,6 +145,13 @@ public class HadoopStepConfig implements Serializable, Cloneable, StructuredPojo
         return this;
     }
 
+    /**
+     * Add a single Properties entry
+     *
+     * @see HadoopStepConfig#withProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public HadoopStepConfig addPropertiesEntry(String key, String value) {
         if (null == this.properties) {
             this.properties = new com.amazonaws.internal.SdkInternalMap<String, String>();

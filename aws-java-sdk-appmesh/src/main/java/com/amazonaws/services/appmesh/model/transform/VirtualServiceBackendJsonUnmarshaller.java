@@ -48,6 +48,10 @@ public class VirtualServiceBackendJsonUnmarshaller implements Unmarshaller<Virtu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("clientPolicy", targetDepth)) {
+                    context.nextToken();
+                    virtualServiceBackend.setClientPolicy(ClientPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("virtualServiceName", targetDepth)) {
                     context.nextToken();
                     virtualServiceBackend.setVirtualServiceName(context.getUnmarshaller(String.class).unmarshall(context));

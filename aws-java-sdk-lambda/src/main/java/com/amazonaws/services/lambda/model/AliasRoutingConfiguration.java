@@ -81,6 +81,13 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single AdditionalVersionWeights entry
+     *
+     * @see AliasRoutingConfiguration#withAdditionalVersionWeights
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AliasRoutingConfiguration addAdditionalVersionWeightsEntry(String key, Double value) {
         if (null == this.additionalVersionWeights) {
             this.additionalVersionWeights = new com.amazonaws.internal.SdkInternalMap<String, Double>();

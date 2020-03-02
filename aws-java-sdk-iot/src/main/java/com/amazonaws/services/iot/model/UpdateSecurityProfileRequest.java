@@ -271,6 +271,13 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single AlertTargets entry
+     *
+     * @see UpdateSecurityProfileRequest#withAlertTargets
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateSecurityProfileRequest addAlertTargetsEntry(String key, AlertTarget value) {
         if (null == this.alertTargets) {
             this.alertTargets = new java.util.HashMap<String, AlertTarget>();

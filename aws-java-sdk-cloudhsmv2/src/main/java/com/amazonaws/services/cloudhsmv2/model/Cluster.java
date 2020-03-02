@@ -624,6 +624,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single SubnetMapping entry
+     *
+     * @see Cluster#withSubnetMapping
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Cluster addSubnetMappingEntry(String key, String value) {
         if (null == this.subnetMapping) {
             this.subnetMapping = new java.util.HashMap<String, String>();

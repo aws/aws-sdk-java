@@ -178,6 +178,13 @@ public class OrganizationEventDetails implements Serializable, Cloneable, Struct
         return this;
     }
 
+    /**
+     * Add a single EventMetadata entry
+     *
+     * @see OrganizationEventDetails#withEventMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public OrganizationEventDetails addEventMetadataEntry(String key, String value) {
         if (null == this.eventMetadata) {
             this.eventMetadata = new java.util.HashMap<String, String>();

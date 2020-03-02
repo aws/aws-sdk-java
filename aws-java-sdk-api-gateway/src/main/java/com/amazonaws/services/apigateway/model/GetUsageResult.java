@@ -265,6 +265,13 @@ public class GetUsageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         return this;
     }
 
+    /**
+     * Add a single Items entry
+     *
+     * @see GetUsageResult#withItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetUsageResult addItemsEntry(String key, java.util.List<java.util.List<Long>> value) {
         if (null == this.items) {
             this.items = new java.util.HashMap<String, java.util.List<java.util.List<Long>>>();

@@ -139,6 +139,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single Monday entry
+     *
+     * @see WeeklyAutoScalingSchedule#withMonday
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public WeeklyAutoScalingSchedule addMondayEntry(String key, String value) {
         if (null == this.monday) {
             this.monday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -202,6 +209,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable, Struc
         setTuesday(tuesday);
         return this;
     }
+
+    /**
+     * Add a single Tuesday entry
+     *
+     * @see WeeklyAutoScalingSchedule#withTuesday
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public WeeklyAutoScalingSchedule addTuesdayEntry(String key, String value) {
         if (null == this.tuesday) {
@@ -267,6 +281,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single Wednesday entry
+     *
+     * @see WeeklyAutoScalingSchedule#withWednesday
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public WeeklyAutoScalingSchedule addWednesdayEntry(String key, String value) {
         if (null == this.wednesday) {
             this.wednesday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -330,6 +351,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable, Struc
         setThursday(thursday);
         return this;
     }
+
+    /**
+     * Add a single Thursday entry
+     *
+     * @see WeeklyAutoScalingSchedule#withThursday
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public WeeklyAutoScalingSchedule addThursdayEntry(String key, String value) {
         if (null == this.thursday) {
@@ -395,6 +423,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single Friday entry
+     *
+     * @see WeeklyAutoScalingSchedule#withFriday
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public WeeklyAutoScalingSchedule addFridayEntry(String key, String value) {
         if (null == this.friday) {
             this.friday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -459,6 +494,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single Saturday entry
+     *
+     * @see WeeklyAutoScalingSchedule#withSaturday
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public WeeklyAutoScalingSchedule addSaturdayEntry(String key, String value) {
         if (null == this.saturday) {
             this.saturday = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -522,6 +564,13 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable, Struc
         setSunday(sunday);
         return this;
     }
+
+    /**
+     * Add a single Sunday entry
+     *
+     * @see WeeklyAutoScalingSchedule#withSunday
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public WeeklyAutoScalingSchedule addSundayEntry(String key, String value) {
         if (null == this.sunday) {

@@ -134,6 +134,13 @@ public class TestReportSummary implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single StatusCounts entry
+     *
+     * @see TestReportSummary#withStatusCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TestReportSummary addStatusCountsEntry(String key, Integer value) {
         if (null == this.statusCounts) {
             this.statusCounts = new java.util.HashMap<String, Integer>();

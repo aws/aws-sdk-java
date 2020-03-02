@@ -249,6 +249,13 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
         return this;
     }
 
+    /**
+     * Add a single Variables entry
+     *
+     * @see FunctionConfigurationEnvironment#withVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public FunctionConfigurationEnvironment addVariablesEntry(String key, String value) {
         if (null == this.variables) {
             this.variables = new java.util.HashMap<String, String>();

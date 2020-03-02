@@ -180,6 +180,13 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Keys entry
+     *
+     * @see StreamRecord#withKeys
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StreamRecord addKeysEntry(String key, AttributeValue value) {
         if (null == this.keys) {
             this.keys = new java.util.HashMap<String, AttributeValue>();
@@ -241,6 +248,13 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single NewImage entry
+     *
+     * @see StreamRecord#withNewImage
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StreamRecord addNewImageEntry(String key, AttributeValue value) {
         if (null == this.newImage) {
             this.newImage = new java.util.HashMap<String, AttributeValue>();
@@ -301,6 +315,13 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
         setOldImage(oldImage);
         return this;
     }
+
+    /**
+     * Add a single OldImage entry
+     *
+     * @see StreamRecord#withOldImage
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public StreamRecord addOldImageEntry(String key, AttributeValue value) {
         if (null == this.oldImage) {

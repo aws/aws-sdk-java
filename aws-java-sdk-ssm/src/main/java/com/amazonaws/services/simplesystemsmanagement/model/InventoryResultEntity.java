@@ -128,6 +128,13 @@ public class InventoryResultEntity implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single Data entry
+     *
+     * @see InventoryResultEntity#withData
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public InventoryResultEntity addDataEntry(String key, InventoryResultItem value) {
         if (null == this.data) {
             this.data = new java.util.HashMap<String, InventoryResultItem>();

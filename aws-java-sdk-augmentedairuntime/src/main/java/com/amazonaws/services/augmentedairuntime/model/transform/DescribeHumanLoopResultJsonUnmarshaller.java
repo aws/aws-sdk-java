@@ -48,9 +48,9 @@ public class DescribeHumanLoopResultJsonUnmarshaller implements Unmarshaller<Des
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("CreationTimestamp", targetDepth)) {
+                if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    describeHumanLoopResult.setCreationTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    describeHumanLoopResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
@@ -76,13 +76,9 @@ public class DescribeHumanLoopResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeHumanLoopResult.setFlowDefinitionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("HumanLoopInput", targetDepth)) {
-                    context.nextToken();
-                    describeHumanLoopResult.setHumanLoopInput(HumanLoopInputContentJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("HumanLoopOutput", targetDepth)) {
                     context.nextToken();
-                    describeHumanLoopResult.setHumanLoopOutput(HumanLoopOutputContentJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeHumanLoopResult.setHumanLoopOutput(HumanLoopOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

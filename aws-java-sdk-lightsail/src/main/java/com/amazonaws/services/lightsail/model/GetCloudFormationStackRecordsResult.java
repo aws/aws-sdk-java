@@ -32,7 +32,14 @@ public class GetCloudFormationStackRecordsResult extends com.amazonaws.AmazonWeb
     private java.util.List<CloudFormationStackRecord> cloudFormationStackRecords;
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify
+     * the next page token using the <code>pageToken</code> parameter.
      * </p>
      */
     private String nextPageToken;
@@ -109,11 +116,24 @@ public class GetCloudFormationStackRecordsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify
+     * the next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results of your get relational database bundles request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and
+     *        specify the next page token using the <code>pageToken</code> parameter.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -122,10 +142,23 @@ public class GetCloudFormationStackRecordsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify
+     * the next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return A token used for advancing to the next page of results of your get relational database bundles request.
+     * @return The token to advance to the next page of resutls from your request.</p>
+     *         <p>
+     *         A next page token is not returned if there are no more results to display.
+     *         </p>
+     *         <p>
+     *         To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and
+     *         specify the next page token using the <code>pageToken</code> parameter.
      */
 
     public String getNextPageToken() {
@@ -134,11 +167,24 @@ public class GetCloudFormationStackRecordsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A token used for advancing to the next page of results of your get relational database bundles request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and specify
+     * the next page token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results of your get relational database bundles request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetCloudFormationStackRecords</code> request and
+     *        specify the next page token using the <code>pageToken</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

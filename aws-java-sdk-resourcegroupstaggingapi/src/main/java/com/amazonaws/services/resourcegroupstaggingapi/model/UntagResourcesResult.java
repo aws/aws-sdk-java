@@ -77,6 +77,13 @@ public class UntagResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
         return this;
     }
 
+    /**
+     * Add a single FailedResourcesMap entry
+     *
+     * @see UntagResourcesResult#withFailedResourcesMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UntagResourcesResult addFailedResourcesMapEntry(String key, FailureInfo value) {
         if (null == this.failedResourcesMap) {
             this.failedResourcesMap = new java.util.HashMap<String, FailureInfo>();

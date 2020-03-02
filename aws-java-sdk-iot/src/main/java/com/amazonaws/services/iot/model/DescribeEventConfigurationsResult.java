@@ -77,6 +77,13 @@ public class DescribeEventConfigurationsResult extends com.amazonaws.AmazonWebSe
         return this;
     }
 
+    /**
+     * Add a single EventConfigurations entry
+     *
+     * @see DescribeEventConfigurationsResult#withEventConfigurations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeEventConfigurationsResult addEventConfigurationsEntry(String key, Configuration value) {
         if (null == this.eventConfigurations) {
             this.eventConfigurations = new java.util.HashMap<String, Configuration>();

@@ -183,6 +183,13 @@ public class RelatedResource implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single AdditionalInfo entry
+     *
+     * @see RelatedResource#withAdditionalInfo
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public RelatedResource addAdditionalInfoEntry(String key, String value) {
         if (null == this.additionalInfo) {
             this.additionalInfo = new java.util.HashMap<String, String>();

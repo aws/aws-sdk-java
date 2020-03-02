@@ -29,6 +29,8 @@ public class ListTrialsRequestMarshaller {
 
     private static final MarshallingInfo<String> EXPERIMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExperimentName").build();
+    private static final MarshallingInfo<String> TRIALCOMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrialComponentName").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAfter").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -59,6 +61,7 @@ public class ListTrialsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listTrialsRequest.getExperimentName(), EXPERIMENTNAME_BINDING);
+            protocolMarshaller.marshall(listTrialsRequest.getTrialComponentName(), TRIALCOMPONENTNAME_BINDING);
             protocolMarshaller.marshall(listTrialsRequest.getCreatedAfter(), CREATEDAFTER_BINDING);
             protocolMarshaller.marshall(listTrialsRequest.getCreatedBefore(), CREATEDBEFORE_BINDING);
             protocolMarshaller.marshall(listTrialsRequest.getSortBy(), SORTBY_BINDING);

@@ -1307,6 +1307,13 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
         return this;
     }
 
+    /**
+     * Add a single RequestParameters entry
+     *
+     * @see UpdateIntegrationResult#withRequestParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateIntegrationResult addRequestParametersEntry(String key, String value) {
         if (null == this.requestParameters) {
             this.requestParameters = new java.util.HashMap<String, String>();
@@ -1379,6 +1386,13 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
         setRequestTemplates(requestTemplates);
         return this;
     }
+
+    /**
+     * Add a single RequestTemplates entry
+     *
+     * @see UpdateIntegrationResult#withRequestTemplates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateIntegrationResult addRequestTemplatesEntry(String key, String value) {
         if (null == this.requestTemplates) {

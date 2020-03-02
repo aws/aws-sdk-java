@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for ConfigureAgent operation.
+ * The structure representing the configureAgentResponse.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent" target="_top">AWS
@@ -26,20 +26,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigureAgentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The configuration for the agent to use.
-     * </p>
-     */
+    /** <p/> */
     private AgentConfiguration configuration;
 
     /**
-     * <p>
-     * The configuration for the agent to use.
-     * </p>
+     * <p/>
      * 
      * @param configuration
-     *        The configuration for the agent to use.
      */
 
     public void setConfiguration(AgentConfiguration configuration) {
@@ -47,11 +40,9 @@ public class ConfigureAgentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p>
-     * The configuration for the agent to use.
-     * </p>
+     * <p/>
      * 
-     * @return The configuration for the agent to use.
+     * @return
      */
 
     public AgentConfiguration getConfiguration() {
@@ -59,12 +50,9 @@ public class ConfigureAgentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p>
-     * The configuration for the agent to use.
-     * </p>
+     * <p/>
      * 
      * @param configuration
-     *        The configuration for the agent to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

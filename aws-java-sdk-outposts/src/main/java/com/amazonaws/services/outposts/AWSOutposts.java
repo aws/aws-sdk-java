@@ -69,6 +69,48 @@ public interface AWSOutposts {
 
     /**
      * <p>
+     * Deletes the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostRequest
+     * @return Result of the DeleteOutpost operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.DeleteOutpost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteOutpostResult deleteOutpost(DeleteOutpostRequest deleteOutpostRequest);
+
+    /**
+     * <p>
+     * Deletes the site.
+     * </p>
+     * 
+     * @param deleteSiteRequest
+     * @return Result of the DeleteSite operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.DeleteSite
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSiteResult deleteSite(DeleteSiteRequest deleteSiteRequest);
+
+    /**
+     * <p>
      * Gets information about the specified Outpost.
      * </p>
      * 

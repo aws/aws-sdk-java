@@ -527,6 +527,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single MethodSettings entry
+     *
+     * @see Stage#withMethodSettings
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Stage addMethodSettingsEntry(String key, MethodSetting value) {
         if (null == this.methodSettings) {
             this.methodSettings = new java.util.HashMap<String, MethodSetting>();
@@ -593,6 +600,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         setVariables(variables);
         return this;
     }
+
+    /**
+     * Add a single Variables entry
+     *
+     * @see Stage#withVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Stage addVariablesEntry(String key, String value) {
         if (null == this.variables) {
@@ -866,6 +880,13 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Stage#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Stage addTagsEntry(String key, String value) {
         if (null == this.tags) {

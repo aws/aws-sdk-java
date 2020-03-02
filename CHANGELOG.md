@@ -1,3 +1,88 @@
+# __1.11.734__ __2020-02-29__
+## __AWS Config__
+  - ### Features
+    - Correcting list of supported resource types.
+
+# __1.11.733__ __2020-02-28__
+## __AWS App Mesh__
+  - ### Features
+    - App Mesh now supports Transport Layer Security (TLS) between Virtual Nodes in a Mesh. Customers can use managed certificates from an AWS Certificate Manager Private Certificate Authority or bring their own certificates from the local file system to encrypt traffic between their workloads. See https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html for details.
+
+## __AWS Config__
+  - ### Features
+    - Accepts a structured query language (SQL) SELECT command and an aggregator name, performs the corresponding search on resources aggregated by the aggregator, and returns resource configurations matching the properties.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue adds resource tagging support for Machine Learning Transforms and adds a new API, ListMLTransforms to support tag filtering.  With this feature, customers can use tags in AWS Glue to organize and control access to Machine Learning Transforms. 
+
+## __Access Analyzer__
+  - ### Features
+    - This release includes improvements and fixes bugs for the IAM Access Analyzer feature.
+
+## __Amazon Augmented AI Runtime__
+  - ### Features
+    - This release updates Amazon Augmented AI ListHumanLoops API, DescribeHumanLoop response, StartHumanLoop response and type names of SDK fields. 
+
+## __Amazon CodeGuru Profiler__
+  - ### Features
+    - Documentation updates for Amazon CodeGuru Profiler
+
+## __Amazon QuickSight__
+  - ### Features
+    - Added SearchDashboards API that allows listing of dashboards that a specific user has access to.
+
+## __Amazon WorkDocs__
+  - ### Features
+    - Documentation updates for workdocs
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Added a target group attribute to support sticky sessions for Network Load Balancers.
+
+# __1.11.732__ __2020-02-27__
+## __AWS Global Accelerator__
+  - ### Features
+    - This release adds support for adding tags to accelerators and bringing your own IP address to AWS Global Accelerator (BYOIP).
+
+## __Amazon Lightsail__
+  - ### Features
+    - Adds support to create notification contacts in Amazon Lightsail, and to create instance, database, and load balancer metric alarms that notify you based on the value of a metric relative to a threshold that you specify.
+
+# __1.11.731__ __2020-02-26__
+## __AWS SecurityHub__
+  - ### Features
+    - Security Hub has added to the DescribeProducts API operation a new response field called IntegrationTypes. The IntegrationTypes field lists the types of actions that a product performs relative to Security Hub such as send findings to Security Hub and receive findings from Security Hub.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release changes the RunInstances CLI and SDK's so that if you do not specify a client token, a randomly generated token is used for the request to ensure idempotency.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker UpdateEndpoint API now supports retained variant properties, e.g., instance count, variant weight. SageMaker ListTrials API filter by TrialComponentName. Make ExperimentConfig name length limits consistent with CreateExperiment, CreateTrial, and CreateTrialComponent APIs.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Amazon Transcribe's Automatic Content Redaction feature enables you to automatically redact sensitive personally identifiable information (PII) from transcription results. It replaces each instance of an identified PII utterance with a [PII] tag in the transcript.
+
+# __1.11.730__ __2020-02-25__
+## __AWS Outposts__
+  - ### Features
+    - This release adds DeleteSite and DeleteOutpost. 
+
+## __AWS Secrets Manager__
+  - ### Features
+    - This release increases the maximum allowed size of SecretString or SecretBinary from 10KB to 64KB in the CreateSecret, UpdateSecret, PutSecretValue and GetSecretValue APIs.
+
+## __AWS Step Functions__
+  - ### Features
+    - This release adds support for CloudWatch Logs for Standard Workflows.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Amazon MSK has added support for Broker Log delivery to CloudWatch, S3, and Firehose.
+
 # __1.11.729__ __2020-02-24__
 ## __AWS IoT Events__
   - ### Features

@@ -60,6 +60,25 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> categories;
     /**
      * <p>
+     * The types of integration that the product supports. Available values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
+     * Hub.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<String> integrationTypes;
+    /**
+     * <p>
      * The URL for the page that contains more information about the product.
      * </p>
      */
@@ -309,6 +328,234 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The types of integration that the product supports. Available values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
+     * Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The types of integration that the product supports. Available values are the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
+     *         Hub.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
+     *         Security Hub.
+     *         </p>
+     *         </li>
+     * @see IntegrationType
+     */
+
+    public java.util.List<String> getIntegrationTypes() {
+        return integrationTypes;
+    }
+
+    /**
+     * <p>
+     * The types of integration that the product supports. Available values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
+     * Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param integrationTypes
+     *        The types of integration that the product supports. Available values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
+     *        Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
+     *        Security Hub.
+     *        </p>
+     *        </li>
+     * @see IntegrationType
+     */
+
+    public void setIntegrationTypes(java.util.Collection<String> integrationTypes) {
+        if (integrationTypes == null) {
+            this.integrationTypes = null;
+            return;
+        }
+
+        this.integrationTypes = new java.util.ArrayList<String>(integrationTypes);
+    }
+
+    /**
+     * <p>
+     * The types of integration that the product supports. Available values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
+     * Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIntegrationTypes(java.util.Collection)} or {@link #withIntegrationTypes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param integrationTypes
+     *        The types of integration that the product supports. Available values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
+     *        Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
+     *        Security Hub.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IntegrationType
+     */
+
+    public Product withIntegrationTypes(String... integrationTypes) {
+        if (this.integrationTypes == null) {
+            setIntegrationTypes(new java.util.ArrayList<String>(integrationTypes.length));
+        }
+        for (String ele : integrationTypes) {
+            this.integrationTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The types of integration that the product supports. Available values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
+     * Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param integrationTypes
+     *        The types of integration that the product supports. Available values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
+     *        Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
+     *        Security Hub.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IntegrationType
+     */
+
+    public Product withIntegrationTypes(java.util.Collection<String> integrationTypes) {
+        setIntegrationTypes(integrationTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The types of integration that the product supports. Available values are the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
+     * Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param integrationTypes
+     *        The types of integration that the product supports. Available values are the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
+     *        Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
+     *        Security Hub.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IntegrationType
+     */
+
+    public Product withIntegrationTypes(IntegrationType... integrationTypes) {
+        java.util.ArrayList<String> integrationTypesCopy = new java.util.ArrayList<String>(integrationTypes.length);
+        for (IntegrationType value : integrationTypes) {
+            integrationTypesCopy.add(value.toString());
+        }
+        if (getIntegrationTypes() == null) {
+            setIntegrationTypes(integrationTypesCopy);
+        } else {
+            getIntegrationTypes().addAll(integrationTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The URL for the page that contains more information about the product.
      * </p>
      * 
@@ -449,6 +696,8 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append(getDescription()).append(",");
         if (getCategories() != null)
             sb.append("Categories: ").append(getCategories()).append(",");
+        if (getIntegrationTypes() != null)
+            sb.append("IntegrationTypes: ").append(getIntegrationTypes()).append(",");
         if (getMarketplaceUrl() != null)
             sb.append("MarketplaceUrl: ").append(getMarketplaceUrl()).append(",");
         if (getActivationUrl() != null)
@@ -489,6 +738,10 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCategories() != null && other.getCategories().equals(this.getCategories()) == false)
             return false;
+        if (other.getIntegrationTypes() == null ^ this.getIntegrationTypes() == null)
+            return false;
+        if (other.getIntegrationTypes() != null && other.getIntegrationTypes().equals(this.getIntegrationTypes()) == false)
+            return false;
         if (other.getMarketplaceUrl() == null ^ this.getMarketplaceUrl() == null)
             return false;
         if (other.getMarketplaceUrl() != null && other.getMarketplaceUrl().equals(this.getMarketplaceUrl()) == false)
@@ -515,6 +768,7 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCompanyName() == null) ? 0 : getCompanyName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCategories() == null) ? 0 : getCategories().hashCode());
+        hashCode = prime * hashCode + ((getIntegrationTypes() == null) ? 0 : getIntegrationTypes().hashCode());
         hashCode = prime * hashCode + ((getMarketplaceUrl() == null) ? 0 : getMarketplaceUrl().hashCode());
         hashCode = prime * hashCode + ((getActivationUrl() == null) ? 0 : getActivationUrl().hashCode());
         hashCode = prime * hashCode + ((getProductSubscriptionResourcePolicy() == null) ? 0 : getProductSubscriptionResourcePolicy().hashCode());

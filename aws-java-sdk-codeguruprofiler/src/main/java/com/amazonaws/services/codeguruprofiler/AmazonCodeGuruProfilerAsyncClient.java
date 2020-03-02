@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Example service documentation.
+ * This section provides documentation for the Amazon CodeGuru Profiler API operations.
  * </p>
  */
 @ThreadSafe

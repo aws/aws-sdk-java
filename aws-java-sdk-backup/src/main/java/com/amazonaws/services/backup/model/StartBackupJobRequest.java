@@ -471,6 +471,13 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
         return this;
     }
 
+    /**
+     * Add a single RecoveryPointTags entry
+     *
+     * @see StartBackupJobRequest#withRecoveryPointTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StartBackupJobRequest addRecoveryPointTagsEntry(String key, String value) {
         if (null == this.recoveryPointTags) {
             this.recoveryPointTags = new java.util.HashMap<String, String>();

@@ -129,6 +129,13 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see PutItemResult#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutItemResult addAttributesEntry(String key, AttributeValue value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, AttributeValue>();

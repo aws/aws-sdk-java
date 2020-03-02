@@ -273,6 +273,13 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single SigningParameters entry
+     *
+     * @see PutSigningProfileRequest#withSigningParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutSigningProfileRequest addSigningParametersEntry(String key, String value) {
         if (null == this.signingParameters) {
             this.signingParameters = new java.util.HashMap<String, String>();
@@ -333,6 +340,13 @@ public class PutSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see PutSigningProfileRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public PutSigningProfileRequest addTagsEntry(String key, String value) {
         if (null == this.tags) {

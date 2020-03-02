@@ -418,6 +418,13 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
         return this;
     }
 
+    /**
+     * Add a single IssueInfoMap entry
+     *
+     * @see PolicyComplianceDetail#withIssueInfoMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PolicyComplianceDetail addIssueInfoMapEntry(String key, String value) {
         if (null == this.issueInfoMap) {
             this.issueInfoMap = new java.util.HashMap<String, String>();

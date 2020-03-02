@@ -560,6 +560,13 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single PlannedBudgetLimits entry
+     *
+     * @see Budget#withPlannedBudgetLimits
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Budget addPlannedBudgetLimitsEntry(String key, Spend value) {
         if (null == this.plannedBudgetLimits) {
             this.plannedBudgetLimits = new java.util.HashMap<String, Spend>();
@@ -797,6 +804,13 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
         setCostFilters(costFilters);
         return this;
     }
+
+    /**
+     * Add a single CostFilters entry
+     *
+     * @see Budget#withCostFilters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Budget addCostFiltersEntry(String key, java.util.List<String> value) {
         if (null == this.costFilters) {

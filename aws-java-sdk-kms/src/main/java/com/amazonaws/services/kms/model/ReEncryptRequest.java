@@ -378,6 +378,13 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
         return this;
     }
 
+    /**
+     * Add a single SourceEncryptionContext entry
+     *
+     * @see ReEncryptRequest#withSourceEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ReEncryptRequest addSourceEncryptionContextEntry(String key, String value) {
         if (null == this.sourceEncryptionContext) {
             this.sourceEncryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -1083,6 +1090,13 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
         setDestinationEncryptionContext(destinationEncryptionContext);
         return this;
     }
+
+    /**
+     * Add a single DestinationEncryptionContext entry
+     *
+     * @see ReEncryptRequest#withDestinationEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ReEncryptRequest addDestinationEncryptionContextEntry(String key, String value) {
         if (null == this.destinationEncryptionContext) {

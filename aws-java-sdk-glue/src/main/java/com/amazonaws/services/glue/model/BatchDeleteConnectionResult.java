@@ -146,6 +146,13 @@ public class BatchDeleteConnectionResult extends com.amazonaws.AmazonWebServiceR
         return this;
     }
 
+    /**
+     * Add a single Errors entry
+     *
+     * @see BatchDeleteConnectionResult#withErrors
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BatchDeleteConnectionResult addErrorsEntry(String key, ErrorDetail value) {
         if (null == this.errors) {
             this.errors = new java.util.HashMap<String, ErrorDetail>();

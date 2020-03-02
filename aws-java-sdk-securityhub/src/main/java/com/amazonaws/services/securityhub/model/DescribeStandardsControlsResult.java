@@ -25,7 +25,7 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of compliance standards controls.
+     * A list of security standards controls.
      * </p>
      */
     private java.util.List<StandardsControl> controls;
@@ -38,10 +38,10 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of compliance standards controls.
+     * A list of security standards controls.
      * </p>
      * 
-     * @return A list of compliance standards controls.
+     * @return A list of security standards controls.
      */
 
     public java.util.List<StandardsControl> getControls() {
@@ -50,11 +50,11 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of compliance standards controls.
+     * A list of security standards controls.
      * </p>
      * 
      * @param controls
-     *        A list of compliance standards controls.
+     *        A list of security standards controls.
      */
 
     public void setControls(java.util.Collection<StandardsControl> controls) {
@@ -68,7 +68,7 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of compliance standards controls.
+     * A list of security standards controls.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param controls
-     *        A list of compliance standards controls.
+     *        A list of security standards controls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class DescribeStandardsControlsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of compliance standards controls.
+     * A list of security standards controls.
      * </p>
      * 
      * @param controls
-     *        A list of compliance standards controls.
+     *        A list of security standards controls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

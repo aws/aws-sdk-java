@@ -530,6 +530,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         return this;
     }
 
+    /**
+     * Add a single Environment entry
+     *
+     * @see ContainerDefinition#withEnvironment
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ContainerDefinition addEnvironmentEntry(String key, String value) {
         if (null == this.environment) {
             this.environment = new java.util.HashMap<String, String>();

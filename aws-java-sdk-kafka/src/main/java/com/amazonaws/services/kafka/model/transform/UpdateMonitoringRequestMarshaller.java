@@ -35,6 +35,8 @@ public class UpdateMonitoringRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedMonitoring").build();
     private static final MarshallingInfo<StructuredPojo> OPENMONITORING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("openMonitoring").build();
+    private static final MarshallingInfo<StructuredPojo> LOGGINGINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingInfo").build();
 
     private static final UpdateMonitoringRequestMarshaller instance = new UpdateMonitoringRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateMonitoringRequestMarshaller {
             protocolMarshaller.marshall(updateMonitoringRequest.getCurrentVersion(), CURRENTVERSION_BINDING);
             protocolMarshaller.marshall(updateMonitoringRequest.getEnhancedMonitoring(), ENHANCEDMONITORING_BINDING);
             protocolMarshaller.marshall(updateMonitoringRequest.getOpenMonitoring(), OPENMONITORING_BINDING);
+            protocolMarshaller.marshall(updateMonitoringRequest.getLoggingInfo(), LOGGINGINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -162,6 +162,13 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single AudioSelectorGroups entry
+     *
+     * @see InputTemplate#withAudioSelectorGroups
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public InputTemplate addAudioSelectorGroupsEntry(String key, AudioSelectorGroup value) {
         if (null == this.audioSelectorGroups) {
             this.audioSelectorGroups = new java.util.HashMap<String, AudioSelectorGroup>();
@@ -223,6 +230,13 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single AudioSelectors entry
+     *
+     * @see InputTemplate#withAudioSelectors
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public InputTemplate addAudioSelectorsEntry(String key, AudioSelector value) {
         if (null == this.audioSelectors) {
             this.audioSelectors = new java.util.HashMap<String, AudioSelector>();
@@ -283,6 +297,13 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         setCaptionSelectors(captionSelectors);
         return this;
     }
+
+    /**
+     * Add a single CaptionSelectors entry
+     *
+     * @see InputTemplate#withCaptionSelectors
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public InputTemplate addCaptionSelectorsEntry(String key, CaptionSelector value) {
         if (null == this.captionSelectors) {

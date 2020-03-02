@@ -578,6 +578,13 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Annotations entry
+     *
+     * @see TraceSummary#withAnnotations
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TraceSummary addAnnotationsEntry(String key, java.util.List<ValueWithServiceIds> value) {
         if (null == this.annotations) {
             this.annotations = new java.util.HashMap<String, java.util.List<ValueWithServiceIds>>();

@@ -377,6 +377,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Filter entry
+     *
+     * @see MetricQuery#withFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public MetricQuery addFilterEntry(String key, String value) {
         if (null == this.filter) {
             this.filter = new java.util.HashMap<String, String>();

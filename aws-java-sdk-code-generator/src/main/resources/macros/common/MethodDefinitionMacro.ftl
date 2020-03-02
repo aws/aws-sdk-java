@@ -123,6 +123,12 @@
         return this;
     }
 
+    /**
+     * Add a single ${member.name} entry
+     *
+     * @see ${shapeName}#${fluentSetterMethodName}
+     * @returns a reference to this object so that method calls can be chained together.
+     */
     ${deprecated}
     public ${shapeName} add${member.name}Entry(${mapKeyType} ${keyVariableName}, ${mapValueType} ${valueVariableName}) {
         if (null == this.${variableName}) {

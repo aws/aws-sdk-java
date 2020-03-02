@@ -1169,6 +1169,13 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
         return this;
     }
 
+    /**
+     * Add a single ProviderDetails entry
+     *
+     * @see CreateIdentityProviderRequest#withProviderDetails
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateIdentityProviderRequest addProviderDetailsEntry(String key, String value) {
         if (null == this.providerDetails) {
             this.providerDetails = new java.util.HashMap<String, String>();
@@ -1229,6 +1236,13 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
         setAttributeMapping(attributeMapping);
         return this;
     }
+
+    /**
+     * Add a single AttributeMapping entry
+     *
+     * @see CreateIdentityProviderRequest#withAttributeMapping
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateIdentityProviderRequest addAttributeMappingEntry(String key, String value) {
         if (null == this.attributeMapping) {

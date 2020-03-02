@@ -391,6 +391,13 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
         return this;
     }
 
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see PutIntegrationResponseRequest#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutIntegrationResponseRequest addResponseParametersEntry(String key, String value) {
         if (null == this.responseParameters) {
             this.responseParameters = new java.util.HashMap<String, String>();
@@ -451,6 +458,13 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
         setResponseTemplates(responseTemplates);
         return this;
     }
+
+    /**
+     * Add a single ResponseTemplates entry
+     *
+     * @see PutIntegrationResponseRequest#withResponseTemplates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public PutIntegrationResponseRequest addResponseTemplatesEntry(String key, String value) {
         if (null == this.responseTemplates) {

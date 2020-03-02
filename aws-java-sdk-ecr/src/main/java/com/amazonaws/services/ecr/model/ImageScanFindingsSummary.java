@@ -167,6 +167,13 @@ public class ImageScanFindingsSummary implements Serializable, Cloneable, Struct
         return this;
     }
 
+    /**
+     * Add a single FindingSeverityCounts entry
+     *
+     * @see ImageScanFindingsSummary#withFindingSeverityCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ImageScanFindingsSummary addFindingSeverityCountsEntry(String key, Integer value) {
         if (null == this.findingSeverityCounts) {
             this.findingSeverityCounts = new java.util.HashMap<String, Integer>();

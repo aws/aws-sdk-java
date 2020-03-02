@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for CreateProfilingGroup operation.
+ * The structure representing the createProfilingGroupResponse.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup"
@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateProfilingGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the new profiling group
+     * </p>
+     */
     private ProfilingGroupDescription profilingGroup;
 
     /**
+     * <p>
+     * Information about the new profiling group
+     * </p>
+     * 
      * @param profilingGroup
+     *        Information about the new profiling group
      */
 
     public void setProfilingGroup(ProfilingGroupDescription profilingGroup) {
@@ -37,7 +47,11 @@ public class CreateProfilingGroupResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the new profiling group
+     * </p>
+     * 
+     * @return Information about the new profiling group
      */
 
     public ProfilingGroupDescription getProfilingGroup() {
@@ -45,7 +59,12 @@ public class CreateProfilingGroupResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Information about the new profiling group
+     * </p>
+     * 
      * @param profilingGroup
+     *        Information about the new profiling group
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,23 +25,33 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private java.util.List<Operation> operations;
     /**
      * <p>
-     * A token used for advancing to the next page of results from your get operations request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperations</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      */
     private String nextPageToken;
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the results of your get operations request.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -50,11 +60,13 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your get operations request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -68,7 +80,8 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +90,8 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your get operations request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +107,13 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the results of your get operations request.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the results of your get operations request.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +124,24 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A token used for advancing to the next page of results from your get operations request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperations</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results from your get operations request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetOperations</code> request and specify the next
+     *        page token using the <code>pageToken</code> parameter.
      */
 
     public void setNextPageToken(String nextPageToken) {
@@ -121,10 +150,23 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A token used for advancing to the next page of results from your get operations request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperations</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return A token used for advancing to the next page of results from your get operations request.
+     * @return The token to advance to the next page of resutls from your request.</p>
+     *         <p>
+     *         A next page token is not returned if there are no more results to display.
+     *         </p>
+     *         <p>
+     *         To get the next page of results, perform another <code>GetOperations</code> request and specify the next
+     *         page token using the <code>pageToken</code> parameter.
      */
 
     public String getNextPageToken() {
@@ -133,11 +175,24 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A token used for advancing to the next page of results from your get operations request.
+     * The token to advance to the next page of resutls from your request.
+     * </p>
+     * <p>
+     * A next page token is not returned if there are no more results to display.
+     * </p>
+     * <p>
+     * To get the next page of results, perform another <code>GetOperations</code> request and specify the next page
+     * token using the <code>pageToken</code> parameter.
      * </p>
      * 
      * @param nextPageToken
-     *        A token used for advancing to the next page of results from your get operations request.
+     *        The token to advance to the next page of resutls from your request.</p>
+     *        <p>
+     *        A next page token is not returned if there are no more results to display.
+     *        </p>
+     *        <p>
+     *        To get the next page of results, perform another <code>GetOperations</code> request and specify the next
+     *        page token using the <code>pageToken</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

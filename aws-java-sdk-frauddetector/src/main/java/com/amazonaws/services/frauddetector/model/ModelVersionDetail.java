@@ -510,6 +510,13 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
         return this;
     }
 
+    /**
+     * Add a single ValidationMetrics entry
+     *
+     * @see ModelVersionDetail#withValidationMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ModelVersionDetail addValidationMetricsEntry(String key, String value) {
         if (null == this.validationMetrics) {
             this.validationMetrics = new java.util.HashMap<String, String>();
@@ -570,6 +577,13 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
         setTrainingMetrics(trainingMetrics);
         return this;
     }
+
+    /**
+     * Add a single TrainingMetrics entry
+     *
+     * @see ModelVersionDetail#withTrainingMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ModelVersionDetail addTrainingMetricsEntry(String key, String value) {
         if (null == this.trainingMetrics) {

@@ -404,6 +404,13 @@ public class EmailMessage implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Substitutions entry
+     *
+     * @see EmailMessage#withSubstitutions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EmailMessage addSubstitutionsEntry(String key, java.util.List<String> value) {
         if (null == this.substitutions) {
             this.substitutions = new java.util.HashMap<String, java.util.List<String>>();

@@ -123,6 +123,13 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see DescribeStackProvisioningParametersResult#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeStackProvisioningParametersResult addParametersEntry(String key, String value) {
         if (null == this.parameters) {
             this.parameters = new com.amazonaws.internal.SdkInternalMap<String, String>();

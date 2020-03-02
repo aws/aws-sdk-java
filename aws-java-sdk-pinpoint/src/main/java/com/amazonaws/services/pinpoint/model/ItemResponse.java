@@ -128,6 +128,13 @@ public class ItemResponse implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single EventsItemResponse entry
+     *
+     * @see ItemResponse#withEventsItemResponse
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ItemResponse addEventsItemResponseEntry(String key, EventItemResponse value) {
         if (null == this.eventsItemResponse) {
             this.eventsItemResponse = new java.util.HashMap<String, EventItemResponse>();

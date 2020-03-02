@@ -398,6 +398,13 @@ public class AuthenticateCognitoActionConfig implements Serializable, Cloneable 
         return this;
     }
 
+    /**
+     * Add a single AuthenticationRequestExtraParams entry
+     *
+     * @see AuthenticateCognitoActionConfig#withAuthenticationRequestExtraParams
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AuthenticateCognitoActionConfig addAuthenticationRequestExtraParamsEntry(String key, String value) {
         if (null == this.authenticationRequestExtraParams) {
             this.authenticationRequestExtraParams = new java.util.HashMap<String, String>();

@@ -59,6 +59,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      */
     private String name;
     /**
@@ -77,7 +80,8 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     private String roleArn;
     /**
      * <p>
-     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You
+     * cannot update the <code>type</code> of a state machine once it has been created.
      * </p>
      */
     private String type;
@@ -85,6 +89,13 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Defines what execution history events are logged and where they are logged.
      * </p>
+     * <note>
+     * <p>
+     * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
+     * Step Functions User Guide.
+     * </p>
+     * </note>
      */
     private LoggingConfiguration loggingConfiguration;
     /**
@@ -138,6 +149,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @param name
      *        The name of the state machine. </p>
@@ -170,6 +184,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      */
 
     public void setName(String name) {
@@ -210,6 +227,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @return The name of the state machine. </p>
      *         <p>
@@ -241,6 +261,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *         control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      */
 
     public String getName() {
@@ -281,6 +304,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+     * </p>
      * 
      * @param name
      *        The name of the state machine. </p>
@@ -313,6 +339,9 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,11 +478,13 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You
+     * cannot update the <code>type</code> of a state machine once it has been created.
      * </p>
      * 
      * @param type
-     *        Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     *        Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>.
+     *        You cannot update the <code>type</code> of a state machine once it has been created.
      * @see StateMachineType
      */
 
@@ -463,10 +494,12 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You
+     * cannot update the <code>type</code> of a state machine once it has been created.
      * </p>
      * 
-     * @return Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * @return Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>.
+     *         You cannot update the <code>type</code> of a state machine once it has been created.
      * @see StateMachineType
      */
 
@@ -476,11 +509,13 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You
+     * cannot update the <code>type</code> of a state machine once it has been created.
      * </p>
      * 
      * @param type
-     *        Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     *        Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>.
+     *        You cannot update the <code>type</code> of a state machine once it has been created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateMachineType
      */
@@ -492,11 +527,13 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     * Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You
+     * cannot update the <code>type</code> of a state machine once it has been created.
      * </p>
      * 
      * @param type
-     *        Determines whether a Standard or Express state machine is created. If not set, Standard is created.
+     *        Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>.
+     *        You cannot update the <code>type</code> of a state machine once it has been created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StateMachineType
      */
@@ -510,9 +547,21 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Defines what execution history events are logged and where they are logged.
      * </p>
+     * <note>
+     * <p>
+     * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
+     * Step Functions User Guide.
+     * </p>
+     * </note>
      * 
      * @param loggingConfiguration
-     *        Defines what execution history events are logged and where they are logged.
+     *        Defines what execution history events are logged and where they are logged.</p> <note>
+     *        <p>
+     *        By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in
+     *        the AWS Step Functions User Guide.
+     *        </p>
      */
 
     public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
@@ -523,8 +572,20 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Defines what execution history events are logged and where they are logged.
      * </p>
+     * <note>
+     * <p>
+     * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
+     * Step Functions User Guide.
+     * </p>
+     * </note>
      * 
-     * @return Defines what execution history events are logged and where they are logged.
+     * @return Defines what execution history events are logged and where they are logged.</p> <note>
+     *         <p>
+     *         By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in
+     *         the AWS Step Functions User Guide.
+     *         </p>
      */
 
     public LoggingConfiguration getLoggingConfiguration() {
@@ -535,9 +596,21 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Defines what execution history events are logged and where they are logged.
      * </p>
+     * <note>
+     * <p>
+     * By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the AWS
+     * Step Functions User Guide.
+     * </p>
+     * </note>
      * 
      * @param loggingConfiguration
-     *        Defines what execution history events are logged and where they are logged.
+     *        Defines what execution history events are logged and where they are logged.</p> <note>
+     *        <p>
+     *        By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in
+     *        the AWS Step Functions User Guide.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

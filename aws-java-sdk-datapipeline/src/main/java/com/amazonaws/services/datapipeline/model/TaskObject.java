@@ -227,6 +227,13 @@ public class TaskObject implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Objects entry
+     *
+     * @see TaskObject#withObjects
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TaskObject addObjectsEntry(String key, PipelineObject value) {
         if (null == this.objects) {
             this.objects = new java.util.HashMap<String, PipelineObject>();

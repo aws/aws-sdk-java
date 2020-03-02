@@ -557,6 +557,13 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
         return this;
     }
 
+    /**
+     * Add a single Outputs entry
+     *
+     * @see AutomationExecutionMetadata#withOutputs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AutomationExecutionMetadata addOutputsEntry(String key, java.util.List<String> value) {
         if (null == this.outputs) {
             this.outputs = new java.util.HashMap<String, java.util.List<String>>();

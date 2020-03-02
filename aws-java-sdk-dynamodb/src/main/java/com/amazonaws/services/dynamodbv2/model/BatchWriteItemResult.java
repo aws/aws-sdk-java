@@ -445,6 +445,13 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
         return this;
     }
 
+    /**
+     * Add a single UnprocessedItems entry
+     *
+     * @see BatchWriteItemResult#withUnprocessedItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BatchWriteItemResult addUnprocessedItemsEntry(String key, java.util.List<WriteRequest> value) {
         if (null == this.unprocessedItems) {
             this.unprocessedItems = new java.util.HashMap<String, java.util.List<WriteRequest>>();
@@ -649,6 +656,13 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
         setItemCollectionMetrics(itemCollectionMetrics);
         return this;
     }
+
+    /**
+     * Add a single ItemCollectionMetrics entry
+     *
+     * @see BatchWriteItemResult#withItemCollectionMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public BatchWriteItemResult addItemCollectionMetricsEntry(String key, java.util.List<ItemCollectionMetrics> value) {
         if (null == this.itemCollectionMetrics) {

@@ -428,6 +428,13 @@ public class Datapoint implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Add a single ExtendedStatistics entry
+     *
+     * @see Datapoint#withExtendedStatistics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Datapoint addExtendedStatisticsEntry(String key, Double value) {
         if (null == this.extendedStatistics) {
             this.extendedStatistics = new java.util.HashMap<String, Double>();

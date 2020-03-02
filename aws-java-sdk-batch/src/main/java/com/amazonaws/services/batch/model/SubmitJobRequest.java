@@ -466,6 +466,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see SubmitJobRequest#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SubmitJobRequest addParametersEntry(String key, String value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, String>();

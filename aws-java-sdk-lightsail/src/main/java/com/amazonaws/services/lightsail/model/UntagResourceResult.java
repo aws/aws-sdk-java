@@ -25,17 +25,20 @@ public class UntagResourceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects describing the API operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private java.util.List<Operation> operations;
 
     /**
      * <p>
-     * A list of objects describing the API operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return A list of objects describing the API operation.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -44,11 +47,13 @@ public class UntagResourceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects describing the API operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        A list of objects describing the API operation.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -62,7 +67,8 @@ public class UntagResourceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects describing the API operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +77,8 @@ public class UntagResourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param operations
-     *        A list of objects describing the API operation.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +94,13 @@ public class UntagResourceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of objects describing the API operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operations
-     *        A list of objects describing the API operation.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

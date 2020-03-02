@@ -333,6 +333,13 @@ public class DescribeAuditTaskResult extends com.amazonaws.AmazonWebServiceResul
         return this;
     }
 
+    /**
+     * Add a single AuditDetails entry
+     *
+     * @see DescribeAuditTaskResult#withAuditDetails
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeAuditTaskResult addAuditDetailsEntry(String key, AuditCheckDetails value) {
         if (null == this.auditDetails) {
             this.auditDetails = new java.util.HashMap<String, AuditCheckDetails>();

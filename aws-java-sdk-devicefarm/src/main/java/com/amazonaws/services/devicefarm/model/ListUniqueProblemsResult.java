@@ -357,6 +357,13 @@ public class ListUniqueProblemsResult extends com.amazonaws.AmazonWebServiceResu
         return this;
     }
 
+    /**
+     * Add a single UniqueProblems entry
+     *
+     * @see ListUniqueProblemsResult#withUniqueProblems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ListUniqueProblemsResult addUniqueProblemsEntry(String key, java.util.List<UniqueProblem> value) {
         if (null == this.uniqueProblems) {
             this.uniqueProblems = new java.util.HashMap<String, java.util.List<UniqueProblem>>();

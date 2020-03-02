@@ -14,10 +14,10 @@
 /**
  * <p>
  * Security Hub provides you with a comprehensive view of the security state of your AWS environment and resources. It
- * also provides you with the compliance status of your environment based on controls from supported standards. Security
- * Hub collects security data from AWS accounts, services, and integrated third-party products and helps you analyze
- * security trends in your environment to identify the highest priority security issues. For more information about
- * Security Hub, see the <i> <a
+ * also provides you with the readiness status of your environment based on controls from supported security standards.
+ * Security Hub collects security data from AWS accounts, services, and integrated third-party products and helps you
+ * analyze security trends in your environment to identify the highest priority security issues. For more information
+ * about Security Hub, see the <i> <a
  * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">AWS Security Hub User
  * Guide</a> </i>.
  * </p>

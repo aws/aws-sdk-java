@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for ListProfilingGroups operation.
+ * The structure representing the listProfilingGroupsRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups"
@@ -30,23 +30,42 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If set to true, returns the full description of the profiling groups instead of the names. Defaults to false.
+     * A Boolean value indicating whether to include a description.
      * </p>
      */
     private Boolean includeDescription;
-
+    /**
+     * <p>
+     * The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output.
+     * When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code>
+     * value.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     */
     private String nextToken;
 
     /**
      * <p>
-     * If set to true, returns the full description of the profiling groups instead of the names. Defaults to false.
+     * A Boolean value indicating whether to include a description.
      * </p>
      * 
      * @param includeDescription
-     *        If set to true, returns the full description of the profiling groups instead of the names. Defaults to
-     *        false.
+     *        A Boolean value indicating whether to include a description.
      */
 
     public void setIncludeDescription(Boolean includeDescription) {
@@ -55,11 +74,10 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If set to true, returns the full description of the profiling groups instead of the names. Defaults to false.
+     * A Boolean value indicating whether to include a description.
      * </p>
      * 
-     * @return If set to true, returns the full description of the profiling groups instead of the names. Defaults to
-     *         false.
+     * @return A Boolean value indicating whether to include a description.
      */
 
     public Boolean getIncludeDescription() {
@@ -68,12 +86,11 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If set to true, returns the full description of the profiling groups instead of the names. Defaults to false.
+     * A Boolean value indicating whether to include a description.
      * </p>
      * 
      * @param includeDescription
-     *        If set to true, returns the full description of the profiling groups instead of the names. Defaults to
-     *        false.
+     *        A Boolean value indicating whether to include a description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +101,10 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If set to true, returns the full description of the profiling groups instead of the names. Defaults to false.
+     * A Boolean value indicating whether to include a description.
      * </p>
      * 
-     * @return If set to true, returns the full description of the profiling groups instead of the names. Defaults to
-     *         false.
+     * @return A Boolean value indicating whether to include a description.
      */
 
     public Boolean isIncludeDescription() {
@@ -96,7 +112,20 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output.
+     * When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code>
+     * value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated
+     *        output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code>
+     *        results in a single page along with a <code>nextToken</code> response element. The remaining results of
+     *        the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the
+     *        returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -104,7 +133,19 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output.
+     * When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code>
+     * value.
+     * </p>
+     * 
+     * @return The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated
+     *         output. When this parameter is used, <code>ListProfilingGroups</code> only returns
+     *         <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.
+     *         The remaining results of the initial request can be seen by sending another
+     *         <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -112,7 +153,20 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output.
+     * When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a
+     * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
+     * can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code>
+     * value.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated
+     *        output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code>
+     *        results in a single page along with a <code>nextToken</code> response element. The remaining results of
+     *        the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the
+     *        returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +176,27 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code>
+     *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+     *        </p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -130,7 +204,26 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     * 
+     * @return The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code>
+     *         request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+     *         Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+     *         </p> <note>
+     *         <p>
+     *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *         list and not for other programmatic purposes.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -138,7 +231,27 @@ public class ListProfilingGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request
+     * where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
+     * from the end of the previous results that returned the <code>nextToken</code> value.
+     * </p>
+     * <note>
+     * <p>
+     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * not for other programmatic purposes.
+     * </p>
+     * </note>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code>
+     *        request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+     *        Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+     *        </p> <note>
+     *        <p>
+     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *        list and not for other programmatic purposes.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

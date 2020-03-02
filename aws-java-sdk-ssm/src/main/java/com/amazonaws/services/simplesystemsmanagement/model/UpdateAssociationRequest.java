@@ -233,6 +233,13 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see UpdateAssociationRequest#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateAssociationRequest addParametersEntry(String key, java.util.List<String> value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, java.util.List<String>>();

@@ -591,6 +591,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         return this;
     }
 
+    /**
+     * Add a single UserMetadata entry
+     *
+     * @see CreateJobRequest#withUserMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateJobRequest addUserMetadataEntry(String key, String value) {
         if (null == this.userMetadata) {
             this.userMetadata = new com.amazonaws.internal.SdkInternalMap<String, String>();

@@ -181,6 +181,13 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Details entry
+     *
+     * @see FailureDetails#withDetails
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public FailureDetails addDetailsEntry(String key, java.util.List<String> value) {
         if (null == this.details) {
             this.details = new java.util.HashMap<String, java.util.List<String>>();

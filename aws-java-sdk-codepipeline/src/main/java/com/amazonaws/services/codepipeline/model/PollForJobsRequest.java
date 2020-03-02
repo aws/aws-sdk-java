@@ -181,6 +181,13 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
         return this;
     }
 
+    /**
+     * Add a single QueryParam entry
+     *
+     * @see PollForJobsRequest#withQueryParam
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PollForJobsRequest addQueryParamEntry(String key, String value) {
         if (null == this.queryParam) {
             this.queryParam = new java.util.HashMap<String, String>();

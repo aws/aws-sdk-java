@@ -79,6 +79,13 @@ public class LogPublishingOptionsStatus implements Serializable, Cloneable, Stru
         return this;
     }
 
+    /**
+     * Add a single Options entry
+     *
+     * @see LogPublishingOptionsStatus#withOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public LogPublishingOptionsStatus addOptionsEntry(String key, LogPublishingOption value) {
         if (null == this.options) {
             this.options = new java.util.HashMap<String, LogPublishingOption>();

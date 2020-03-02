@@ -243,6 +243,13 @@ public class ImageScanFindings implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single FindingSeverityCounts entry
+     *
+     * @see ImageScanFindings#withFindingSeverityCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ImageScanFindings addFindingSeverityCountsEntry(String key, Integer value) {
         if (null == this.findingSeverityCounts) {
             this.findingSeverityCounts = new java.util.HashMap<String, Integer>();

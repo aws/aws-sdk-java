@@ -230,6 +230,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single Activities entry
+     *
+     * @see JourneyResponse#withActivities
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public JourneyResponse addActivitiesEntry(String key, Activity value) {
         if (null == this.activities) {
             this.activities = new java.util.HashMap<String, Activity>();
@@ -1274,6 +1281,13 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see JourneyResponse#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public JourneyResponse addTagsEntry(String key, String value) {
         if (null == this.tags) {

@@ -1304,6 +1304,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
         return this;
     }
 
+    /**
+     * Add a single ScanFilter entry
+     *
+     * @see ScanRequest#withScanFilter
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ScanRequest addScanFilterEntry(String key, Condition value) {
         if (null == this.scanFilter) {
             this.scanFilter = new java.util.HashMap<String, Condition>();
@@ -1508,6 +1515,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
         setExclusiveStartKey(exclusiveStartKey);
         return this;
     }
+
+    /**
+     * Add a single ExclusiveStartKey entry
+     *
+     * @see ScanRequest#withExclusiveStartKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ScanRequest addExclusiveStartKeyEntry(String key, AttributeValue value) {
         if (null == this.exclusiveStartKey) {
@@ -2458,6 +2472,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
         return this;
     }
 
+    /**
+     * Add a single ExpressionAttributeNames entry
+     *
+     * @see ScanRequest#withExpressionAttributeNames
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ScanRequest addExpressionAttributeNamesEntry(String key, String value) {
         if (null == this.expressionAttributeNames) {
             this.expressionAttributeNames = new java.util.HashMap<String, String>();
@@ -2662,6 +2683,13 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
         setExpressionAttributeValues(expressionAttributeValues);
         return this;
     }
+
+    /**
+     * Add a single ExpressionAttributeValues entry
+     *
+     * @see ScanRequest#withExpressionAttributeValues
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ScanRequest addExpressionAttributeValuesEntry(String key, AttributeValue value) {
         if (null == this.expressionAttributeValues) {

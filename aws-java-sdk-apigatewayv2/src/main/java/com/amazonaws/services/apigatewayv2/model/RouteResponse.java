@@ -136,6 +136,13 @@ public class RouteResponse implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single ResponseModels entry
+     *
+     * @see RouteResponse#withResponseModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public RouteResponse addResponseModelsEntry(String key, String value) {
         if (null == this.responseModels) {
             this.responseModels = new java.util.HashMap<String, String>();
@@ -196,6 +203,13 @@ public class RouteResponse implements Serializable, Cloneable, StructuredPojo {
         setResponseParameters(responseParameters);
         return this;
     }
+
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see RouteResponse#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public RouteResponse addResponseParametersEntry(String key, ParameterConstraints value) {
         if (null == this.responseParameters) {

@@ -216,6 +216,13 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
         return this;
     }
 
+    /**
+     * Add a single ApiSummary entry
+     *
+     * @see CreateDeploymentResult#withApiSummary
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateDeploymentResult addApiSummaryEntry(String key, java.util.Map<String, MethodSnapshot> value) {
         if (null == this.apiSummary) {
             this.apiSummary = new java.util.HashMap<String, java.util.Map<String, MethodSnapshot>>();

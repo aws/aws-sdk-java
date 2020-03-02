@@ -169,6 +169,13 @@ public class TransactWriteItemsResult extends com.amazonaws.AmazonWebServiceResu
         return this;
     }
 
+    /**
+     * Add a single ItemCollectionMetrics entry
+     *
+     * @see TransactWriteItemsResult#withItemCollectionMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TransactWriteItemsResult addItemCollectionMetricsEntry(String key, java.util.List<ItemCollectionMetrics> value) {
         if (null == this.itemCollectionMetrics) {
             this.itemCollectionMetrics = new java.util.HashMap<String, java.util.List<ItemCollectionMetrics>>();

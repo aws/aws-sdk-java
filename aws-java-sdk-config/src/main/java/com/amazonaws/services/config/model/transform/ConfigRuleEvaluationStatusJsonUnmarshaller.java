@@ -80,6 +80,10 @@ public class ConfigRuleEvaluationStatusJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     configRuleEvaluationStatus.setFirstActivatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LastDeactivatedTime", targetDepth)) {
+                    context.nextToken();
+                    configRuleEvaluationStatus.setLastDeactivatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("LastErrorCode", targetDepth)) {
                     context.nextToken();
                     configRuleEvaluationStatus.setLastErrorCode(context.getUnmarshaller(String.class).unmarshall(context));

@@ -133,6 +133,13 @@ public class Hit implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Fields entry
+     *
+     * @see Hit#withFields
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Hit addFieldsEntry(String key, java.util.List<String> value) {
         if (null == this.fields) {
             this.fields = new com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>>();
@@ -197,6 +204,13 @@ public class Hit implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Exprs entry
+     *
+     * @see Hit#withExprs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Hit addExprsEntry(String key, String value) {
         if (null == this.exprs) {
             this.exprs = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -260,6 +274,13 @@ public class Hit implements Serializable, Cloneable, StructuredPojo {
         setHighlights(highlights);
         return this;
     }
+
+    /**
+     * Add a single Highlights entry
+     *
+     * @see Hit#withHighlights
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Hit addHighlightsEntry(String key, String value) {
         if (null == this.highlights) {

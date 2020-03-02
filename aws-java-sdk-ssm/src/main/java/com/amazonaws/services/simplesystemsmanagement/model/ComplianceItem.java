@@ -522,6 +522,13 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Details entry
+     *
+     * @see ComplianceItem#withDetails
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ComplianceItem addDetailsEntry(String key, String value) {
         if (null == this.details) {
             this.details = new java.util.HashMap<String, String>();

@@ -1707,6 +1707,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Searchs for dashboards that belong to a user.
+     * </p>
+     * 
+     * @param searchDashboardsRequest
+     * @return A Java Future containing the result of the SearchDashboards operation returned by the service.
+     * @sample AmazonQuickSightAsync.SearchDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDashboardsResult> searchDashboardsAsync(SearchDashboardsRequest searchDashboardsRequest);
+
+    /**
+     * <p>
+     * Searchs for dashboards that belong to a user.
+     * </p>
+     * 
+     * @param searchDashboardsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchDashboards operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.SearchDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDashboardsResult> searchDashboardsAsync(SearchDashboardsRequest searchDashboardsRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchDashboardsRequest, SearchDashboardsResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified QuickSight resource.
      * </p>
      * <p>

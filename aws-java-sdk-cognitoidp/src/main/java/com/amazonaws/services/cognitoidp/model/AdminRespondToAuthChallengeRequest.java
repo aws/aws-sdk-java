@@ -545,6 +545,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
         return this;
     }
 
+    /**
+     * Add a single ChallengeResponses entry
+     *
+     * @see AdminRespondToAuthChallengeRequest#withChallengeResponses
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AdminRespondToAuthChallengeRequest addChallengeResponsesEntry(String key, String value) {
         if (null == this.challengeResponses) {
             this.challengeResponses = new java.util.HashMap<String, String>();
@@ -995,6 +1002,13 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
         setClientMetadata(clientMetadata);
         return this;
     }
+
+    /**
+     * Add a single ClientMetadata entry
+     *
+     * @see AdminRespondToAuthChallengeRequest#withClientMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public AdminRespondToAuthChallengeRequest addClientMetadataEntry(String key, String value) {
         if (null == this.clientMetadata) {

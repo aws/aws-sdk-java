@@ -310,6 +310,13 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
         return this;
     }
 
+    /**
+     * Add a single Rules entry
+     *
+     * @see TypedLinkAttributeDefinition#withRules
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TypedLinkAttributeDefinition addRulesEntry(String key, Rule value) {
         if (null == this.rules) {
             this.rules = new java.util.HashMap<String, Rule>();

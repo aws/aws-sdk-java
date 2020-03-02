@@ -166,6 +166,13 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single PredictedScores entry
+     *
+     * @see Prediction#withPredictedScores
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Prediction addPredictedScoresEntry(String key, Float value) {
         if (null == this.predictedScores) {
             this.predictedScores = new com.amazonaws.internal.SdkInternalMap<String, Float>();
@@ -215,6 +222,13 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
         setDetails(details);
         return this;
     }
+
+    /**
+     * Add a single Details entry
+     *
+     * @see Prediction#withDetails
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Prediction addDetailsEntry(String key, String value) {
         if (null == this.details) {

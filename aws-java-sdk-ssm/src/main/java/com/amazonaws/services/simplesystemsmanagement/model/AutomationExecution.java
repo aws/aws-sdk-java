@@ -636,6 +636,13 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see AutomationExecution#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AutomationExecution addParametersEntry(String key, java.util.List<String> value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, java.util.List<String>>();
@@ -696,6 +703,13 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         setOutputs(outputs);
         return this;
     }
+
+    /**
+     * Add a single Outputs entry
+     *
+     * @see AutomationExecution#withOutputs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public AutomationExecution addOutputsEntry(String key, java.util.List<String> value) {
         if (null == this.outputs) {

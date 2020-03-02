@@ -322,6 +322,13 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see PutMethodResponseRequest#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutMethodResponseRequest addResponseParametersEntry(String key, Boolean value) {
         if (null == this.responseParameters) {
             this.responseParameters = new java.util.HashMap<String, Boolean>();
@@ -388,6 +395,13 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
         setResponseModels(responseModels);
         return this;
     }
+
+    /**
+     * Add a single ResponseModels entry
+     *
+     * @see PutMethodResponseRequest#withResponseModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public PutMethodResponseRequest addResponseModelsEntry(String key, String value) {
         if (null == this.responseModels) {

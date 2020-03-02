@@ -387,6 +387,13 @@ public class Partition implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see Partition#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Partition addParametersEntry(String key, String value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, String>();

@@ -95,6 +95,13 @@ public class ArrayPropertiesDetail implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single StatusSummary entry
+     *
+     * @see ArrayPropertiesDetail#withStatusSummary
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ArrayPropertiesDetail addStatusSummaryEntry(String key, Integer value) {
         if (null == this.statusSummary) {
             this.statusSummary = new java.util.HashMap<String, Integer>();

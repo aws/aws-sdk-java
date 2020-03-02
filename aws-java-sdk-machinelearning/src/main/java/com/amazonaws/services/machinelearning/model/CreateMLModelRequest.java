@@ -739,6 +739,13 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see CreateMLModelRequest#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateMLModelRequest addParametersEntry(String key, String value) {
         if (null == this.parameters) {
             this.parameters = new com.amazonaws.internal.SdkInternalMap<String, String>();

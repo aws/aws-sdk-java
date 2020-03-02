@@ -573,6 +573,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see AssociationDescription#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AssociationDescription addParametersEntry(String key, java.util.List<String> value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, java.util.List<String>>();

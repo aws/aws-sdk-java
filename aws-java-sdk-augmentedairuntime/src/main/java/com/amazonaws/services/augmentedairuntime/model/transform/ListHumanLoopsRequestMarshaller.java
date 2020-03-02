@@ -31,6 +31,8 @@ public class ListHumanLoopsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("CreationTimeAfter").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIMEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("CreationTimeBefore").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> FLOWDEFINITIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("FlowDefinitionArn").build();
     private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("SortOrder").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class ListHumanLoopsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listHumanLoopsRequest.getCreationTimeAfter(), CREATIONTIMEAFTER_BINDING);
             protocolMarshaller.marshall(listHumanLoopsRequest.getCreationTimeBefore(), CREATIONTIMEBEFORE_BINDING);
+            protocolMarshaller.marshall(listHumanLoopsRequest.getFlowDefinitionArn(), FLOWDEFINITIONARN_BINDING);
             protocolMarshaller.marshall(listHumanLoopsRequest.getSortOrder(), SORTORDER_BINDING);
             protocolMarshaller.marshall(listHumanLoopsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listHumanLoopsRequest.getMaxResults(), MAXRESULTS_BINDING);

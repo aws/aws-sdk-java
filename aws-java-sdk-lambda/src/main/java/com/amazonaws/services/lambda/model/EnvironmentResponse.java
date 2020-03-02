@@ -85,6 +85,13 @@ public class EnvironmentResponse implements Serializable, Cloneable, StructuredP
         return this;
     }
 
+    /**
+     * Add a single Variables entry
+     *
+     * @see EnvironmentResponse#withVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public EnvironmentResponse addVariablesEntry(String key, String value) {
         if (null == this.variables) {
             this.variables = new com.amazonaws.internal.SdkInternalMap<String, String>();

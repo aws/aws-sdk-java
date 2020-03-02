@@ -265,6 +265,13 @@ public class IAMPolicyAssignment implements Serializable, Cloneable, StructuredP
         return this;
     }
 
+    /**
+     * Add a single Identities entry
+     *
+     * @see IAMPolicyAssignment#withIdentities
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public IAMPolicyAssignment addIdentitiesEntry(String key, java.util.List<String> value) {
         if (null == this.identities) {
             this.identities = new java.util.HashMap<String, java.util.List<String>>();

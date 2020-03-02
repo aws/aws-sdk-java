@@ -181,6 +181,13 @@ public class SendUsersMessageResponse implements Serializable, Cloneable, Struct
         return this;
     }
 
+    /**
+     * Add a single Result entry
+     *
+     * @see SendUsersMessageResponse#withResult
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SendUsersMessageResponse addResultEntry(String key, java.util.Map<String, EndpointMessageResult> value) {
         if (null == this.result) {
             this.result = new java.util.HashMap<String, java.util.Map<String, EndpointMessageResult>>();

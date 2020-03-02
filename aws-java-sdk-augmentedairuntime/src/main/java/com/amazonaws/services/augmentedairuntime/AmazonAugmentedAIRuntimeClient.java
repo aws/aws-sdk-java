@@ -77,9 +77,9 @@ import com.amazonaws.services.augmentedairuntime.model.transform.*;
  * </p>
  * <p>
  * You can find additional Augmented AI API documentation in the following reference guides: <a
- * href="https://aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon Rekognition</a>, <a
- * href="https://aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon SageMaker</a>, and <a
- * href="https://aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon Textract</a>.
+ * href="https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon Rekognition</a>, <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon SageMaker</a>, and <a
+ * href="https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon Textract</a>.
  * </p>
  */
 @ThreadSafe
@@ -108,6 +108,9 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.augmentedairuntime.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.augmentedairuntime.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.augmentedairuntime.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
@@ -292,7 +295,8 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about human loops, given the specified parameters.
+     * Returns information about human loops, given the specified parameters. If a human loop was deleted, it will not
+     * be included.
      * </p>
      * 
      * @param listHumanLoopsRequest
@@ -365,6 +369,9 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
      *         resources, or request a service quota increase.
      * @throws InternalServerException
      *         Your request could not be processed.
+     * @throws ConflictException
+     *         Your request has the same name as another active human loop but has different input data. You cannot
+     *         start two human loops with the same name and different input data.
      * @sample AmazonAugmentedAIRuntime.StartHumanLoop
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StartHumanLoop"
      *      target="_top">AWS API Documentation</a>

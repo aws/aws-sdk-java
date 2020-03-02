@@ -1485,6 +1485,13 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
         return this;
     }
 
+    /**
+     * Add a single ClientMetadata entry
+     *
+     * @see AdminCreateUserRequest#withClientMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AdminCreateUserRequest addClientMetadataEntry(String key, String value) {
         if (null == this.clientMetadata) {
             this.clientMetadata = new java.util.HashMap<String, String>();

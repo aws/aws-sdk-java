@@ -121,6 +121,13 @@ public class PropertyGroup implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single PropertyMap entry
+     *
+     * @see PropertyGroup#withPropertyMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PropertyGroup addPropertyMapEntry(String key, String value) {
         if (null == this.propertyMap) {
             this.propertyMap = new java.util.HashMap<String, String>();

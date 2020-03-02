@@ -525,6 +525,13 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         return this;
     }
 
+    /**
+     * Add a single MethodSettings entry
+     *
+     * @see CreateStageResult#withMethodSettings
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateStageResult addMethodSettingsEntry(String key, MethodSetting value) {
         if (null == this.methodSettings) {
             this.methodSettings = new java.util.HashMap<String, MethodSetting>();
@@ -591,6 +598,13 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         setVariables(variables);
         return this;
     }
+
+    /**
+     * Add a single Variables entry
+     *
+     * @see CreateStageResult#withVariables
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateStageResult addVariablesEntry(String key, String value) {
         if (null == this.variables) {
@@ -864,6 +878,13 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         setTags(tags);
         return this;
     }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateStageResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateStageResult addTagsEntry(String key, String value) {
         if (null == this.tags) {

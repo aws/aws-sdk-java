@@ -1176,6 +1176,13 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single RequestParameters entry
+     *
+     * @see CreateIntegrationRequest#withRequestParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateIntegrationRequest addRequestParametersEntry(String key, String value) {
         if (null == this.requestParameters) {
             this.requestParameters = new java.util.HashMap<String, String>();
@@ -1248,6 +1255,13 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
         setRequestTemplates(requestTemplates);
         return this;
     }
+
+    /**
+     * Add a single RequestTemplates entry
+     *
+     * @see CreateIntegrationRequest#withRequestTemplates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public CreateIntegrationRequest addRequestTemplatesEntry(String key, String value) {
         if (null == this.requestTemplates) {

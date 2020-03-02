@@ -433,6 +433,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
         return this;
     }
 
+    /**
+     * Add a single LastEvaluatedKey entry
+     *
+     * @see QueryResult#withLastEvaluatedKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public QueryResult addLastEvaluatedKeyEntry(String key, AttributeValue value) {
         if (null == this.lastEvaluatedKey) {
             this.lastEvaluatedKey = new java.util.HashMap<String, AttributeValue>();

@@ -866,6 +866,13 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see CloneStackRequest#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CloneStackRequest addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();

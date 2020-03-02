@@ -105,6 +105,13 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see SegmentDimensions#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SegmentDimensions addAttributesEntry(String key, AttributeDimension value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, AttributeDimension>();
@@ -286,6 +293,13 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
         return this;
     }
 
+    /**
+     * Add a single Metrics entry
+     *
+     * @see SegmentDimensions#withMetrics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SegmentDimensions addMetricsEntry(String key, MetricDimension value) {
         if (null == this.metrics) {
             this.metrics = new java.util.HashMap<String, MetricDimension>();
@@ -346,6 +360,13 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
         setUserAttributes(userAttributes);
         return this;
     }
+
+    /**
+     * Add a single UserAttributes entry
+     *
+     * @see SegmentDimensions#withUserAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public SegmentDimensions addUserAttributesEntry(String key, AttributeDimension value) {
         if (null == this.userAttributes) {

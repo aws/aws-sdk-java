@@ -283,6 +283,13 @@ public class IntentSummary implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Slots entry
+     *
+     * @see IntentSummary#withSlots
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public IntentSummary addSlotsEntry(String key, String value) {
         if (null == this.slots) {
             this.slots = new java.util.HashMap<String, String>();

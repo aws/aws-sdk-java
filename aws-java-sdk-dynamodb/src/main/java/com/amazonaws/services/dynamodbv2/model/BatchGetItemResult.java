@@ -135,6 +135,13 @@ public class BatchGetItemResult extends com.amazonaws.AmazonWebServiceResult<com
         return this;
     }
 
+    /**
+     * Add a single Responses entry
+     *
+     * @see BatchGetItemResult#withResponses
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BatchGetItemResult addResponsesEntry(String key, java.util.List<java.util.Map<String, AttributeValue>> value) {
         if (null == this.responses) {
             this.responses = new java.util.HashMap<String, java.util.List<java.util.Map<String, AttributeValue>>>();
@@ -366,6 +373,13 @@ public class BatchGetItemResult extends com.amazonaws.AmazonWebServiceResult<com
         setUnprocessedKeys(unprocessedKeys);
         return this;
     }
+
+    /**
+     * Add a single UnprocessedKeys entry
+     *
+     * @see BatchGetItemResult#withUnprocessedKeys
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public BatchGetItemResult addUnprocessedKeysEntry(String key, KeysAndAttributes value) {
         if (null == this.unprocessedKeys) {

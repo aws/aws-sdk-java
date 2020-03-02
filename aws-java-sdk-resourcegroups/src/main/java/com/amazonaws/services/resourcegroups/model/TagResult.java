@@ -116,6 +116,13 @@ public class TagResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaw
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see TagResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public TagResult addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

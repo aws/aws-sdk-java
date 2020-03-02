@@ -25,18 +25,21 @@ public class CloseInstancePublicPortsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs that contains information about the operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      */
     private Operation operation;
 
     /**
      * <p>
-     * An array of key-value pairs that contains information about the operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        An array of key-value pairs that contains information about the operation.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      */
 
     public void setOperation(Operation operation) {
@@ -45,10 +48,12 @@ public class CloseInstancePublicPortsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs that contains information about the operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
-     * @return An array of key-value pairs that contains information about the operation.
+     * @return An array of objects that describe the result of the action, such as the status of the request, the time
+     *         stamp of the request, and the resources affected by the request.
      */
 
     public Operation getOperation() {
@@ -57,11 +62,13 @@ public class CloseInstancePublicPortsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An array of key-value pairs that contains information about the operation.
+     * An array of objects that describe the result of the action, such as the status of the request, the time stamp of
+     * the request, and the resources affected by the request.
      * </p>
      * 
      * @param operation
-     *        An array of key-value pairs that contains information about the operation.
+     *        An array of objects that describe the result of the action, such as the status of the request, the time
+     *        stamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

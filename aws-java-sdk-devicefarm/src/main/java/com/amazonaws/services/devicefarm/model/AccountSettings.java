@@ -165,6 +165,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         return this;
     }
 
+    /**
+     * Add a single UnmeteredDevices entry
+     *
+     * @see AccountSettings#withUnmeteredDevices
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AccountSettings addUnmeteredDevicesEntry(String key, Integer value) {
         if (null == this.unmeteredDevices) {
             this.unmeteredDevices = new java.util.HashMap<String, Integer>();
@@ -225,6 +232,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         setUnmeteredRemoteAccessDevices(unmeteredRemoteAccessDevices);
         return this;
     }
+
+    /**
+     * Add a single UnmeteredRemoteAccessDevices entry
+     *
+     * @see AccountSettings#withUnmeteredRemoteAccessDevices
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public AccountSettings addUnmeteredRemoteAccessDevicesEntry(String key, Integer value) {
         if (null == this.unmeteredRemoteAccessDevices) {
@@ -378,6 +392,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         setMaxSlots(maxSlots);
         return this;
     }
+
+    /**
+     * Add a single MaxSlots entry
+     *
+     * @see AccountSettings#withMaxSlots
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public AccountSettings addMaxSlotsEntry(String key, Integer value) {
         if (null == this.maxSlots) {

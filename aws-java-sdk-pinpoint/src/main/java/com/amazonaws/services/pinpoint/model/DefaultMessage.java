@@ -128,6 +128,13 @@ public class DefaultMessage implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Substitutions entry
+     *
+     * @see DefaultMessage#withSubstitutions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DefaultMessage addSubstitutionsEntry(String key, java.util.List<String> value) {
         if (null == this.substitutions) {
             this.substitutions = new java.util.HashMap<String, java.util.List<String>>();

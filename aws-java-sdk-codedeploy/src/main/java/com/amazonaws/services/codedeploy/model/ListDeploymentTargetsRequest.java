@@ -273,6 +273,13 @@ public class ListDeploymentTargetsRequest extends com.amazonaws.AmazonWebService
         return this;
     }
 
+    /**
+     * Add a single TargetFilters entry
+     *
+     * @see ListDeploymentTargetsRequest#withTargetFilters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ListDeploymentTargetsRequest addTargetFiltersEntry(String key, java.util.List<String> value) {
         if (null == this.targetFilters) {
             this.targetFilters = new java.util.HashMap<String, java.util.List<String>>();

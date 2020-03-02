@@ -419,6 +419,13 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
         return this;
     }
 
+    /**
+     * Add a single RequestItems entry
+     *
+     * @see BatchWriteItemRequest#withRequestItems
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public BatchWriteItemRequest addRequestItemsEntry(String key, java.util.List<WriteRequest> value) {
         if (null == this.requestItems) {
             this.requestItems = new java.util.HashMap<String, java.util.List<WriteRequest>>();

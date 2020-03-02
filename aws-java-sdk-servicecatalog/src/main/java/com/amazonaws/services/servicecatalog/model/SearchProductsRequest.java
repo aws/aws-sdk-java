@@ -265,6 +265,13 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
         return this;
     }
 
+    /**
+     * Add a single Filters entry
+     *
+     * @see SearchProductsRequest#withFilters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SearchProductsRequest addFiltersEntry(String key, java.util.List<String> value) {
         if (null == this.filters) {
             this.filters = new java.util.HashMap<String, java.util.List<String>>();

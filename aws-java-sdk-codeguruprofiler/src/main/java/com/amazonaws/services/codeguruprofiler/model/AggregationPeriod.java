@@ -15,9 +15,7 @@ package com.amazonaws.services.codeguruprofiler.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Periods of time used for aggregation of profiles, represented using ISO 8601 format.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AggregationPeriod {

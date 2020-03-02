@@ -433,6 +433,13 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
         return this;
     }
 
+    /**
+     * Add a single LastEvaluatedKey entry
+     *
+     * @see ScanResult#withLastEvaluatedKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ScanResult addLastEvaluatedKeyEntry(String key, AttributeValue value) {
         if (null == this.lastEvaluatedKey) {
             this.lastEvaluatedKey = new java.util.HashMap<String, AttributeValue>();

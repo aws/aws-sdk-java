@@ -33,6 +33,12 @@ public class ListTrialsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String experimentName;
     /**
      * <p>
+     * A filter that returns only trials that are associated with the specified trial component.
+     * </p>
+     */
+    private String trialComponentName;
+    /**
+     * <p>
      * A filter that returns only trials created after the specified time.
      * </p>
      */
@@ -106,6 +112,46 @@ public class ListTrialsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public ListTrialsRequest withExperimentName(String experimentName) {
         setExperimentName(experimentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only trials that are associated with the specified trial component.
+     * </p>
+     * 
+     * @param trialComponentName
+     *        A filter that returns only trials that are associated with the specified trial component.
+     */
+
+    public void setTrialComponentName(String trialComponentName) {
+        this.trialComponentName = trialComponentName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only trials that are associated with the specified trial component.
+     * </p>
+     * 
+     * @return A filter that returns only trials that are associated with the specified trial component.
+     */
+
+    public String getTrialComponentName() {
+        return this.trialComponentName;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only trials that are associated with the specified trial component.
+     * </p>
+     * 
+     * @param trialComponentName
+     *        A filter that returns only trials that are associated with the specified trial component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTrialsRequest withTrialComponentName(String trialComponentName) {
+        setTrialComponentName(trialComponentName);
         return this;
     }
 
@@ -407,6 +453,8 @@ public class ListTrialsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getExperimentName() != null)
             sb.append("ExperimentName: ").append(getExperimentName()).append(",");
+        if (getTrialComponentName() != null)
+            sb.append("TrialComponentName: ").append(getTrialComponentName()).append(",");
         if (getCreatedAfter() != null)
             sb.append("CreatedAfter: ").append(getCreatedAfter()).append(",");
         if (getCreatedBefore() != null)
@@ -436,6 +484,10 @@ public class ListTrialsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getExperimentName() == null ^ this.getExperimentName() == null)
             return false;
         if (other.getExperimentName() != null && other.getExperimentName().equals(this.getExperimentName()) == false)
+            return false;
+        if (other.getTrialComponentName() == null ^ this.getTrialComponentName() == null)
+            return false;
+        if (other.getTrialComponentName() != null && other.getTrialComponentName().equals(this.getTrialComponentName()) == false)
             return false;
         if (other.getCreatedAfter() == null ^ this.getCreatedAfter() == null)
             return false;
@@ -470,6 +522,7 @@ public class ListTrialsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getExperimentName() == null) ? 0 : getExperimentName().hashCode());
+        hashCode = prime * hashCode + ((getTrialComponentName() == null) ? 0 : getTrialComponentName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());

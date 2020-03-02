@@ -179,6 +179,13 @@ public class ResourceToImport implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Add a single ResourceIdentifier entry
+     *
+     * @see ResourceToImport#withResourceIdentifier
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ResourceToImport addResourceIdentifierEntry(String key, String value) {
         if (null == this.resourceIdentifier) {
             this.resourceIdentifier = new java.util.HashMap<String, String>();

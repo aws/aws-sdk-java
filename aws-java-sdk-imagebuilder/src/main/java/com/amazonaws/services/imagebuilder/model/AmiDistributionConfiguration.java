@@ -173,6 +173,13 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
         return this;
     }
 
+    /**
+     * Add a single AmiTags entry
+     *
+     * @see AmiDistributionConfiguration#withAmiTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AmiDistributionConfiguration addAmiTagsEntry(String key, String value) {
         if (null == this.amiTags) {
             this.amiTags = new java.util.HashMap<String, String>();

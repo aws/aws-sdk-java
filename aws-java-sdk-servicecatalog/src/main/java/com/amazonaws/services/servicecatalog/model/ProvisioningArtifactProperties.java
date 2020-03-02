@@ -217,6 +217,13 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
         return this;
     }
 
+    /**
+     * Add a single Info entry
+     *
+     * @see ProvisioningArtifactProperties#withInfo
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ProvisioningArtifactProperties addInfoEntry(String key, String value) {
         if (null == this.info) {
             this.info = new java.util.HashMap<String, String>();

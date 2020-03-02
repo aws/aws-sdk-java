@@ -669,6 +669,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
         return this;
     }
 
+    /**
+     * Add a single TaskParameters entry
+     *
+     * @see UpdateMaintenanceWindowTaskRequest#withTaskParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateMaintenanceWindowTaskRequest addTaskParametersEntry(String key, MaintenanceWindowTaskParameterValueExpression value) {
         if (null == this.taskParameters) {
             this.taskParameters = new java.util.HashMap<String, MaintenanceWindowTaskParameterValueExpression>();

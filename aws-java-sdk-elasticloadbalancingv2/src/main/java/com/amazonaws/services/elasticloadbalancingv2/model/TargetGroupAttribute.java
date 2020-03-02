@@ -31,7 +31,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -40,6 +40,18 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
      * not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -60,17 +72,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
      * default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
@@ -120,7 +121,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -129,6 +130,18 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
      * not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -149,17 +162,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
      * default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
@@ -199,7 +201,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -208,6 +210,18 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
      *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      *        Lambda function, this attribute is not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code>
+     *        for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      *        </p>
      *        </li>
      *        </ul>
@@ -229,17 +243,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        target receives a linearly increasing share of the traffic to the target group. After this time period
      *        ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
      *        mode is disabled by default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
-     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -286,7 +289,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -295,6 +298,18 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
      * not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -315,17 +330,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
      * default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
@@ -364,7 +368,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * 
      * @return The name of the attribute.</p>
      *         <p>
-     *         The following attribute is supported by both Application Load Balancers and Network Load Balancers:
+     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      *         </p>
      *         <ul>
      *         <li>
@@ -373,6 +377,19 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
      *         <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      *         Lambda function, this attribute is not supported.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stickiness.type</code> - The type of sticky sessions. The possible values are
+     *         <code>lb_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load
+     *         Balancers.
      *         </p>
      *         </li>
      *         </ul>
@@ -394,17 +411,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         target receives a linearly increasing share of the traffic to the target group. After this time period
      *         ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
      *         mode is disabled by default.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
-     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -451,7 +457,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by both Application Load Balancers and Network Load Balancers:
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      * </p>
      * <ul>
      * <li>
@@ -460,6 +466,18 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a Lambda function, this attribute is
      * not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -480,17 +498,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
      * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
      * default.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
@@ -530,7 +537,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -539,6 +546,18 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
      *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds. If the target is a
      *        Lambda function, this attribute is not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code>
+     *        for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      *        </p>
      *        </li>
      *        </ul>
@@ -560,17 +579,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        target receives a linearly increasing share of the traffic to the target group. After this time period
      *        ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
      *        mode is disabled by default.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
-     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      *        </p>
      *        </li>
      *        <li>

@@ -3050,6 +3050,43 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms in this AWS account, or
+     * the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can
+     * use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag
+     * filtering, only resources with the tags are retrieved.
+     * </p>
+     * 
+     * @param listMLTransformsRequest
+     * @return A Java Future containing the result of the ListMLTransforms operation returned by the service.
+     * @sample AWSGlueAsync.ListMLTransforms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMLTransformsResult> listMLTransformsAsync(ListMLTransformsRequest listMLTransformsRequest);
+
+    /**
+     * <p>
+     * Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms in this AWS account, or
+     * the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can
+     * use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag
+     * filtering, only resources with the tags are retrieved.
+     * </p>
+     * 
+     * @param listMLTransformsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMLTransforms operation returned by the service.
+     * @sample AWSGlueAsyncHandler.ListMLTransforms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListMLTransformsResult> listMLTransformsAsync(ListMLTransformsRequest listMLTransformsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMLTransformsRequest, ListMLTransformsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the names of all trigger resources in this AWS account, or the resources with the specified tag. This
      * operation allows you to see which resources are available in your account, and their names.
      * </p>

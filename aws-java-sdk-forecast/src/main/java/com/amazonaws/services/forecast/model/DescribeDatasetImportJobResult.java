@@ -522,6 +522,13 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
         return this;
     }
 
+    /**
+     * Add a single FieldStatistics entry
+     *
+     * @see DescribeDatasetImportJobResult#withFieldStatistics
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DescribeDatasetImportJobResult addFieldStatisticsEntry(String key, Statistics value) {
         if (null == this.fieldStatistics) {
             this.fieldStatistics = new java.util.HashMap<String, Statistics>();

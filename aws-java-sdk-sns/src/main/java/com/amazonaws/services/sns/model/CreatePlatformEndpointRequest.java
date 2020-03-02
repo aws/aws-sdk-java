@@ -254,6 +254,13 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see CreatePlatformEndpointRequest#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreatePlatformEndpointRequest addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();

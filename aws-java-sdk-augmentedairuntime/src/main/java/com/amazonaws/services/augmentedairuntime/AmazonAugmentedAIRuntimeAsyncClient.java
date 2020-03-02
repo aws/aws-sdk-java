@@ -52,9 +52,9 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <p>
  * You can find additional Augmented AI API documentation in the following reference guides: <a
- * href="https://aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon Rekognition</a>, <a
- * href="https://aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon SageMaker</a>, and <a
- * href="https://aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon Textract</a>.
+ * href="https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon Rekognition</a>, <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon SageMaker</a>, and <a
+ * href="https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon Textract</a>.
  * </p>
  */
 @ThreadSafe

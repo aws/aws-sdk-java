@@ -147,6 +147,13 @@ public class CreateBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single BackupVaultTags entry
+     *
+     * @see CreateBackupVaultRequest#withBackupVaultTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CreateBackupVaultRequest addBackupVaultTagsEntry(String key, String value) {
         if (null == this.backupVaultTags) {
             this.backupVaultTags = new java.util.HashMap<String, String>();

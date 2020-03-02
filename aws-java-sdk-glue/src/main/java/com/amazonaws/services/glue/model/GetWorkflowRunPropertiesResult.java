@@ -70,6 +70,13 @@ public class GetWorkflowRunPropertiesResult extends com.amazonaws.AmazonWebServi
         return this;
     }
 
+    /**
+     * Add a single RunProperties entry
+     *
+     * @see GetWorkflowRunPropertiesResult#withRunProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GetWorkflowRunPropertiesResult addRunPropertiesEntry(String key, String value) {
         if (null == this.runProperties) {
             this.runProperties = new java.util.HashMap<String, String>();

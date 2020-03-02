@@ -1211,6 +1211,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
         return this;
     }
 
+    /**
+     * Add a single AuthParameters entry
+     *
+     * @see AdminInitiateAuthRequest#withAuthParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AdminInitiateAuthRequest addAuthParametersEntry(String key, String value) {
         if (null == this.authParameters) {
             this.authParameters = new java.util.HashMap<String, String>();
@@ -1841,6 +1848,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
         setClientMetadata(clientMetadata);
         return this;
     }
+
+    /**
+     * Add a single ClientMetadata entry
+     *
+     * @see AdminInitiateAuthRequest#withClientMetadata
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public AdminInitiateAuthRequest addClientMetadataEntry(String key, String value) {
         if (null == this.clientMetadata) {

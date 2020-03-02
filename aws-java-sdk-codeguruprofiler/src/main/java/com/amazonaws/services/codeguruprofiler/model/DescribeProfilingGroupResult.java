@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response for DescribeProfilingGroup operation.
+ * The structure representing the describeProfilingGroupResponse.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup"
@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeProfilingGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about a profiling group.
+     * </p>
+     */
     private ProfilingGroupDescription profilingGroup;
 
     /**
+     * <p>
+     * Information about a profiling group.
+     * </p>
+     * 
      * @param profilingGroup
+     *        Information about a profiling group.
      */
 
     public void setProfilingGroup(ProfilingGroupDescription profilingGroup) {
@@ -37,7 +47,11 @@ public class DescribeProfilingGroupResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * Information about a profiling group.
+     * </p>
+     * 
+     * @return Information about a profiling group.
      */
 
     public ProfilingGroupDescription getProfilingGroup() {
@@ -45,7 +59,12 @@ public class DescribeProfilingGroupResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Information about a profiling group.
+     * </p>
+     * 
      * @param profilingGroup
+     *        Information about a profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

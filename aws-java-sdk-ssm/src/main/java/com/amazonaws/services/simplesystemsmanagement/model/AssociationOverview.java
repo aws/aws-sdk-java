@@ -174,6 +174,13 @@ public class AssociationOverview implements Serializable, Cloneable, StructuredP
         return this;
     }
 
+    /**
+     * Add a single AssociationStatusAggregatedCount entry
+     *
+     * @see AssociationOverview#withAssociationStatusAggregatedCount
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public AssociationOverview addAssociationStatusAggregatedCountEntry(String key, Integer value) {
         if (null == this.associationStatusAggregatedCount) {
             this.associationStatusAggregatedCount = new java.util.HashMap<String, Integer>();

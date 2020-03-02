@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A single private workforce, which is automatically created when you create your first private work team. You can
- * create one private work force in each AWS Region. By default, any workforce related API operation used in a specific
+ * create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific
  * region will apply to the workforce created in that region. To learn how to create a private workforce, see <a
  * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private
  * Workforce</a>.
@@ -35,7 +35,7 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      */
     private String workforceName;
@@ -65,12 +65,12 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
      */
 
     public void setWorkforceName(String workforceName) {
@@ -80,11 +80,11 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @return The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *         automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *         automatically set to <code>default</code> when a workforce is created and cannot be modified.
      */
 
     public String getWorkforceName() {
@@ -94,12 +94,12 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>"default"</code> when a workforce is created and cannot be modified.
+     * set to <code>default</code> when a workforce is created and cannot be modified.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>"default"</code> when a workforce is created and cannot be modified.
+     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -473,6 +473,13 @@ public class Step implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Screenshots entry
+     *
+     * @see Step#withScreenshots
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Step addScreenshotsEntry(String key, String value) {
         if (null == this.screenshots) {
             this.screenshots = new java.util.HashMap<String, String>();

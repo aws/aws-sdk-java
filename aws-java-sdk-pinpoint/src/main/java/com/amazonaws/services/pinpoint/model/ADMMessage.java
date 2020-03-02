@@ -504,6 +504,13 @@ public class ADMMessage implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Data entry
+     *
+     * @see ADMMessage#withData
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ADMMessage addDataEntry(String key, String value) {
         if (null == this.data) {
             this.data = new java.util.HashMap<String, String>();
@@ -994,6 +1001,13 @@ public class ADMMessage implements Serializable, Cloneable, StructuredPojo {
         setSubstitutions(substitutions);
         return this;
     }
+
+    /**
+     * Add a single Substitutions entry
+     *
+     * @see ADMMessage#withSubstitutions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public ADMMessage addSubstitutionsEntry(String key, java.util.List<String> value) {
         if (null == this.substitutions) {

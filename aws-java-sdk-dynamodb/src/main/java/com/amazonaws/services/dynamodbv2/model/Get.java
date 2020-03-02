@@ -101,6 +101,13 @@ public class Get implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Key entry
+     *
+     * @see Get#withKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Get addKeyEntry(String key, AttributeValue value) {
         if (null == this.key) {
             this.key = new java.util.HashMap<String, AttributeValue>();
@@ -256,6 +263,13 @@ public class Get implements Serializable, Cloneable, StructuredPojo {
         setExpressionAttributeNames(expressionAttributeNames);
         return this;
     }
+
+    /**
+     * Add a single ExpressionAttributeNames entry
+     *
+     * @see Get#withExpressionAttributeNames
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public Get addExpressionAttributeNamesEntry(String key, String value) {
         if (null == this.expressionAttributeNames) {

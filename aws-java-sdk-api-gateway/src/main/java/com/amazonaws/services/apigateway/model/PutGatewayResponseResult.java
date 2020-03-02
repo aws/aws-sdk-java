@@ -485,6 +485,13 @@ public class PutGatewayResponseResult extends com.amazonaws.AmazonWebServiceResu
         return this;
     }
 
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see PutGatewayResponseResult#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public PutGatewayResponseResult addResponseParametersEntry(String key, String value) {
         if (null == this.responseParameters) {
             this.responseParameters = new java.util.HashMap<String, String>();
@@ -545,6 +552,13 @@ public class PutGatewayResponseResult extends com.amazonaws.AmazonWebServiceResu
         setResponseTemplates(responseTemplates);
         return this;
     }
+
+    /**
+     * Add a single ResponseTemplates entry
+     *
+     * @see PutGatewayResponseResult#withResponseTemplates
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public PutGatewayResponseResult addResponseTemplatesEntry(String key, String value) {
         if (null == this.responseTemplates) {

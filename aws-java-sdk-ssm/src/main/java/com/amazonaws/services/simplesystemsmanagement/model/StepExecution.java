@@ -610,6 +610,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Inputs entry
+     *
+     * @see StepExecution#withInputs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public StepExecution addInputsEntry(String key, String value) {
         if (null == this.inputs) {
             this.inputs = new java.util.HashMap<String, String>();
@@ -670,6 +677,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         setOutputs(outputs);
         return this;
     }
+
+    /**
+     * Add a single Outputs entry
+     *
+     * @see StepExecution#withOutputs
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public StepExecution addOutputsEntry(String key, java.util.List<String> value) {
         if (null == this.outputs) {
@@ -891,6 +905,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         setOverriddenParameters(overriddenParameters);
         return this;
     }
+
+    /**
+     * Add a single OverriddenParameters entry
+     *
+     * @see StepExecution#withOverriddenParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public StepExecution addOverriddenParametersEntry(String key, java.util.List<String> value) {
         if (null == this.overriddenParameters) {

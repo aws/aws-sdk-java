@@ -76,6 +76,13 @@ public class ResponsePartitionKey implements Serializable, Cloneable, Structured
         return this;
     }
 
+    /**
+     * Add a single Dimensions entry
+     *
+     * @see ResponsePartitionKey#withDimensions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public ResponsePartitionKey addDimensionsEntry(String key, String value) {
         if (null == this.dimensions) {
             this.dimensions = new java.util.HashMap<String, String>();

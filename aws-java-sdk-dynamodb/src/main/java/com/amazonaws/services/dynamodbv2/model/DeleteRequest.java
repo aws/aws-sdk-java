@@ -109,6 +109,13 @@ public class DeleteRequest implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Key entry
+     *
+     * @see DeleteRequest#withKey
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DeleteRequest addKeyEntry(String key, AttributeValue value) {
         if (null == this.key) {
             this.key = new java.util.HashMap<String, AttributeValue>();

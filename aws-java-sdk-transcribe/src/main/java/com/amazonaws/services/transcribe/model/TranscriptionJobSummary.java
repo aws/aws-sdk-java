@@ -86,6 +86,12 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
      * </p>
      */
     private String outputLocationType;
+    /**
+     * <p>
+     * The content redaction settings of the transcription job.
+     * </p>
+     */
+    private ContentRedaction contentRedaction;
 
     /**
      * <p>
@@ -545,6 +551,46 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The content redaction settings of the transcription job.
+     * </p>
+     * 
+     * @param contentRedaction
+     *        The content redaction settings of the transcription job.
+     */
+
+    public void setContentRedaction(ContentRedaction contentRedaction) {
+        this.contentRedaction = contentRedaction;
+    }
+
+    /**
+     * <p>
+     * The content redaction settings of the transcription job.
+     * </p>
+     * 
+     * @return The content redaction settings of the transcription job.
+     */
+
+    public ContentRedaction getContentRedaction() {
+        return this.contentRedaction;
+    }
+
+    /**
+     * <p>
+     * The content redaction settings of the transcription job.
+     * </p>
+     * 
+     * @param contentRedaction
+     *        The content redaction settings of the transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJobSummary withContentRedaction(ContentRedaction contentRedaction) {
+        setContentRedaction(contentRedaction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -571,7 +617,9 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getOutputLocationType() != null)
-            sb.append("OutputLocationType: ").append(getOutputLocationType());
+            sb.append("OutputLocationType: ").append(getOutputLocationType()).append(",");
+        if (getContentRedaction() != null)
+            sb.append("ContentRedaction: ").append(getContentRedaction());
         sb.append("}");
         return sb.toString();
     }
@@ -618,6 +666,10 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getOutputLocationType() != null && other.getOutputLocationType().equals(this.getOutputLocationType()) == false)
             return false;
+        if (other.getContentRedaction() == null ^ this.getContentRedaction() == null)
+            return false;
+        if (other.getContentRedaction() != null && other.getContentRedaction().equals(this.getContentRedaction()) == false)
+            return false;
         return true;
     }
 
@@ -634,6 +686,7 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getTranscriptionJobStatus() == null) ? 0 : getTranscriptionJobStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getOutputLocationType() == null) ? 0 : getOutputLocationType().hashCode());
+        hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
         return hashCode;
     }
 

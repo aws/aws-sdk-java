@@ -98,6 +98,72 @@ public class AWSOutpostsAsyncClient extends AWSOutpostsClient implements AWSOutp
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOutpostResult> deleteOutpostAsync(DeleteOutpostRequest request) {
+
+        return deleteOutpostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOutpostResult> deleteOutpostAsync(final DeleteOutpostRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteOutpostRequest, DeleteOutpostResult> asyncHandler) {
+        final DeleteOutpostRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteOutpostResult>() {
+            @Override
+            public DeleteOutpostResult call() throws Exception {
+                DeleteOutpostResult result = null;
+
+                try {
+                    result = executeDeleteOutpost(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(DeleteSiteRequest request) {
+
+        return deleteSiteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSiteResult> deleteSiteAsync(final DeleteSiteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSiteRequest, DeleteSiteResult> asyncHandler) {
+        final DeleteSiteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSiteResult>() {
+            @Override
+            public DeleteSiteResult call() throws Exception {
+                DeleteSiteResult result = null;
+
+                try {
+                    result = executeDeleteSite(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOutpostResult> getOutpostAsync(GetOutpostRequest request) {
 
         return getOutpostAsync(request, null);

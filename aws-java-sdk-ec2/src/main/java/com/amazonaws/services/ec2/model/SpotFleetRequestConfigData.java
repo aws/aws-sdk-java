@@ -228,7 +228,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a>. For information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -1868,7 +1871,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a>. For information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -1877,7 +1883,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *         <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request
      *         fails. To tag instances at launch, specify the tags in the <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *         >launch template</a>. For information about tagging after launch, see <a
+     *         >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     *         <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>).
+     *         For information about tagging after launch, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *         Resources</a>.
      */
@@ -1895,7 +1904,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a>. For information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -1905,7 +1917,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at
      *        launch, specify the tags in the <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a>. For information about tagging after launch, see <a
+     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     *        <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     *        information about tagging after launch, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      */
@@ -1925,7 +1940,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a>. For information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -1940,7 +1958,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at
      *        launch, specify the tags in the <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a>. For information about tagging after launch, see <a
+     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     *        <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     *        information about tagging after launch, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1962,7 +1983,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify
      * the tags in the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     * >launch template</a>. For information about tagging after launch, see <a
+     * >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
@@ -1972,7 +1996,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      *        must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at
      *        launch, specify the tags in the <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
-     *        >launch template</a>. For information about tagging after launch, see <a
+     *        >launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
+     *        <code>SpotFleetTagSpecification</code> </a> (valid only if you use <code>LaunchSpecifications</code>). For
+     *        information about tagging after launch, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

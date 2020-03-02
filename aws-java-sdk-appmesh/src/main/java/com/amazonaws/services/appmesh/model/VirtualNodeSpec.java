@@ -30,13 +30,19 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * A reference to an object that represents the defaults for backends.
+     * </p>
+     */
+    private BackendDefaults backendDefaults;
+    /**
+     * <p>
      * The backends that the virtual node is expected to send outbound traffic to.
      * </p>
      */
     private java.util.List<Backend> backends;
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
+     * The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      */
     private java.util.List<Listener> listeners;
@@ -49,10 +55,51 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
-     * can omit this parameter.
+     * can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery
+     * information.
      * </p>
      */
     private ServiceDiscovery serviceDiscovery;
+
+    /**
+     * <p>
+     * A reference to an object that represents the defaults for backends.
+     * </p>
+     * 
+     * @param backendDefaults
+     *        A reference to an object that represents the defaults for backends.
+     */
+
+    public void setBackendDefaults(BackendDefaults backendDefaults) {
+        this.backendDefaults = backendDefaults;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents the defaults for backends.
+     * </p>
+     * 
+     * @return A reference to an object that represents the defaults for backends.
+     */
+
+    public BackendDefaults getBackendDefaults() {
+        return this.backendDefaults;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents the defaults for backends.
+     * </p>
+     * 
+     * @param backendDefaults
+     *        A reference to an object that represents the defaults for backends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualNodeSpec withBackendDefaults(BackendDefaults backendDefaults) {
+        setBackendDefaults(backendDefaults);
+        return this;
+    }
 
     /**
      * <p>
@@ -126,10 +173,10 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
+     * The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
-     * @return The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     * @return The listener that the virtual node is expected to receive inbound traffic from. You can specify one
      *         listener.
      */
 
@@ -139,11 +186,11 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
+     * The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     *        The listener that the virtual node is expected to receive inbound traffic from. You can specify one
      *        listener.
      */
 
@@ -158,7 +205,7 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
+     * The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -167,7 +214,7 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     *        The listener that the virtual node is expected to receive inbound traffic from. You can specify one
      *        listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -184,11 +231,11 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The listeners that the virtual node is expected to receive inbound traffic from. You can specify one listener.
+     * The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.
      * </p>
      * 
      * @param listeners
-     *        The listeners that the virtual node is expected to receive inbound traffic from. You can specify one
+     *        The listener that the virtual node is expected to receive inbound traffic from. You can specify one
      *        listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -241,12 +288,14 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
-     * can omit this parameter.
+     * can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery
+     * information.
      * </p>
      * 
      * @param serviceDiscovery
      *        The service discovery information for the virtual node. If your virtual node does not expect ingress
-     *        traffic, you can omit this parameter.
+     *        traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify
+     *        service discovery information.
      */
 
     public void setServiceDiscovery(ServiceDiscovery serviceDiscovery) {
@@ -256,11 +305,13 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
-     * can omit this parameter.
+     * can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery
+     * information.
      * </p>
      * 
      * @return The service discovery information for the virtual node. If your virtual node does not expect ingress
-     *         traffic, you can omit this parameter.
+     *         traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify
+     *         service discovery information.
      */
 
     public ServiceDiscovery getServiceDiscovery() {
@@ -270,12 +321,14 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you
-     * can omit this parameter.
+     * can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery
+     * information.
      * </p>
      * 
      * @param serviceDiscovery
      *        The service discovery information for the virtual node. If your virtual node does not expect ingress
-     *        traffic, you can omit this parameter.
+     *        traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify
+     *        service discovery information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,6 +349,8 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getBackendDefaults() != null)
+            sb.append("BackendDefaults: ").append(getBackendDefaults()).append(",");
         if (getBackends() != null)
             sb.append("Backends: ").append(getBackends()).append(",");
         if (getListeners() != null)
@@ -318,6 +373,10 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof VirtualNodeSpec == false)
             return false;
         VirtualNodeSpec other = (VirtualNodeSpec) obj;
+        if (other.getBackendDefaults() == null ^ this.getBackendDefaults() == null)
+            return false;
+        if (other.getBackendDefaults() != null && other.getBackendDefaults().equals(this.getBackendDefaults()) == false)
+            return false;
         if (other.getBackends() == null ^ this.getBackends() == null)
             return false;
         if (other.getBackends() != null && other.getBackends().equals(this.getBackends()) == false)
@@ -342,6 +401,7 @@ public class VirtualNodeSpec implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getBackendDefaults() == null) ? 0 : getBackendDefaults().hashCode());
         hashCode = prime * hashCode + ((getBackends() == null) ? 0 : getBackends().hashCode());
         hashCode = prime * hashCode + ((getListeners() == null) ? 0 : getListeners().hashCode());
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());

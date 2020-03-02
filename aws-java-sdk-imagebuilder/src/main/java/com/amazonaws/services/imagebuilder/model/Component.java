@@ -677,6 +677,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
         return this;
     }
 
+    /**
+     * Add a single Tags entry
+     *
+     * @see Component#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public Component addTagsEntry(String key, String value) {
         if (null == this.tags) {
             this.tags = new java.util.HashMap<String, String>();

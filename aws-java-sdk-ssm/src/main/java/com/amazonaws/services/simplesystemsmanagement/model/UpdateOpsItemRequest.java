@@ -359,6 +359,13 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         return this;
     }
 
+    /**
+     * Add a single OperationalData entry
+     *
+     * @see UpdateOpsItemRequest#withOperationalData
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateOpsItemRequest addOperationalDataEntry(String key, OpsItemDataValue value) {
         if (null == this.operationalData) {
             this.operationalData = new java.util.HashMap<String, OpsItemDataValue>();

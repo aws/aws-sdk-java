@@ -393,6 +393,13 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
         return this;
     }
 
+    /**
+     * Add a single DriverOpts entry
+     *
+     * @see DockerVolumeConfiguration#withDriverOpts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public DockerVolumeConfiguration addDriverOptsEntry(String key, String value) {
         if (null == this.driverOpts) {
             this.driverOpts = new java.util.HashMap<String, String>();
@@ -474,6 +481,13 @@ public class DockerVolumeConfiguration implements Serializable, Cloneable, Struc
         setLabels(labels);
         return this;
     }
+
+    /**
+     * Add a single Labels entry
+     *
+     * @see DockerVolumeConfiguration#withLabels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public DockerVolumeConfiguration addLabelsEntry(String key, String value) {
         if (null == this.labels) {

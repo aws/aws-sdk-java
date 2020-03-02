@@ -510,6 +510,13 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
         return this;
     }
 
+    /**
+     * Add a single RequestModels entry
+     *
+     * @see UpdateRouteRequest#withRequestModels
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public UpdateRouteRequest addRequestModelsEntry(String key, String value) {
         if (null == this.requestModels) {
             this.requestModels = new java.util.HashMap<String, String>();
@@ -570,6 +577,13 @@ public class UpdateRouteRequest extends com.amazonaws.AmazonWebServiceRequest im
         setRequestParameters(requestParameters);
         return this;
     }
+
+    /**
+     * Add a single RequestParameters entry
+     *
+     * @see UpdateRouteRequest#withRequestParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
 
     public UpdateRouteRequest addRequestParametersEntry(String key, ParameterConstraints value) {
         if (null == this.requestParameters) {

@@ -215,6 +215,13 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
         return this;
     }
 
+    /**
+     * Add a single EncryptionContext entry
+     *
+     * @see GenerateDataKeyPairRequest#withEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public GenerateDataKeyPairRequest addEncryptionContextEntry(String key, String value) {
         if (null == this.encryptionContext) {
             this.encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();

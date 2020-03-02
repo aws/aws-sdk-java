@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request for GetProfile operation.
+ * The structure representing the getProfileRequest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile" target="_top">AWS API
@@ -30,46 +30,61 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format of the profile to return. Supports application/json or application/x-amzn-ion. Defaults to
-     * application/x-amzn-ion.
+     * The format of the profile to return. You can choose <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      */
     private String accept;
     /**
+     * <p/>
      * <p>
-     * The end time of the profile to get. Either period or endTime must be specified. Must be greater than start and
-     * the overall time range to be in the past and not larger than a week.
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      */
     private java.util.Date endTime;
-
+    /**
+     * <p>
+     * The maximum depth of the graph.
+     * </p>
+     */
     private Integer maxDepth;
     /**
      * <p>
-     * The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code> and
-     * <code>endTime</code> must be specified. Must be positive and the overall time range to be in the past and not
-     * larger than a week.
+     * The period of the profile to get. The time range must be in the past and not longer than one week.
+     * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      */
     private String period;
-
+    /**
+     * <p>
+     * The name of the profiling group to get.
+     * </p>
+     */
     private String profilingGroupName;
     /**
      * <p>
      * The start time of the profile to get.
+     * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      */
     private java.util.Date startTime;
 
     /**
      * <p>
-     * The format of the profile to return. Supports application/json or application/x-amzn-ion. Defaults to
-     * application/x-amzn-ion.
+     * The format of the profile to return. You can choose <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      * 
      * @param accept
-     *        The format of the profile to return. Supports application/json or application/x-amzn-ion. Defaults to
-     *        application/x-amzn-ion.
+     *        The format of the profile to return. You can choose <code>application/json</code> or the default
+     *        <code>application/x-amzn-ion</code>.
      */
 
     public void setAccept(String accept) {
@@ -78,12 +93,12 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format of the profile to return. Supports application/json or application/x-amzn-ion. Defaults to
-     * application/x-amzn-ion.
+     * The format of the profile to return. You can choose <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      * 
-     * @return The format of the profile to return. Supports application/json or application/x-amzn-ion. Defaults to
-     *         application/x-amzn-ion.
+     * @return The format of the profile to return. You can choose <code>application/json</code> or the default
+     *         <code>application/x-amzn-ion</code>.
      */
 
     public String getAccept() {
@@ -92,13 +107,13 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format of the profile to return. Supports application/json or application/x-amzn-ion. Defaults to
-     * application/x-amzn-ion.
+     * The format of the profile to return. You can choose <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.
      * </p>
      * 
      * @param accept
-     *        The format of the profile to return. Supports application/json or application/x-amzn-ion. Defaults to
-     *        application/x-amzn-ion.
+     *        The format of the profile to return. You can choose <code>application/json</code> or the default
+     *        <code>application/x-amzn-ion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,14 +123,16 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p/>
      * <p>
-     * The end time of the profile to get. Either period or endTime must be specified. Must be greater than start and
-     * the overall time range to be in the past and not larger than a week.
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
      * @param endTime
-     *        The end time of the profile to get. Either period or endTime must be specified. Must be greater than start
-     *        and the overall time range to be in the past and not larger than a week.
+     *        <p>
+     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     *        <code>endTime</code>.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -123,13 +140,15 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p/>
      * <p>
-     * The end time of the profile to get. Either period or endTime must be specified. Must be greater than start and
-     * the overall time range to be in the past and not larger than a week.
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
-     * @return The end time of the profile to get. Either period or endTime must be specified. Must be greater than
-     *         start and the overall time range to be in the past and not larger than a week.
+     * @return <p>
+     *         You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>,
+     *         and <code>endTime</code>.
      */
 
     public java.util.Date getEndTime() {
@@ -137,14 +156,16 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p/>
      * <p>
-     * The end time of the profile to get. Either period or endTime must be specified. Must be greater than start and
-     * the overall time range to be in the past and not larger than a week.
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
      * @param endTime
-     *        The end time of the profile to get. Either period or endTime must be specified. Must be greater than start
-     *        and the overall time range to be in the past and not larger than a week.
+     *        <p>
+     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     *        <code>endTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +175,12 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The maximum depth of the graph.
+     * </p>
+     * 
      * @param maxDepth
+     *        The maximum depth of the graph.
      */
 
     public void setMaxDepth(Integer maxDepth) {
@@ -162,7 +188,11 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum depth of the graph.
+     * </p>
+     * 
+     * @return The maximum depth of the graph.
      */
 
     public Integer getMaxDepth() {
@@ -170,7 +200,12 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The maximum depth of the graph.
+     * </p>
+     * 
      * @param maxDepth
+     *        The maximum depth of the graph.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,15 +216,18 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code> and
-     * <code>endTime</code> must be specified. Must be positive and the overall time range to be in the past and not
-     * larger than a week.
+     * The period of the profile to get. The time range must be in the past and not longer than one week.
+     * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
      * @param period
-     *        The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code> and
-     *        <code>endTime</code> must be specified. Must be positive and the overall time range to be in the past and
-     *        not larger than a week.
+     *        The period of the profile to get. The time range must be in the past and not longer than one week. </p>
+     *        <p>
+     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     *        <code>endTime</code>.
      */
 
     public void setPeriod(String period) {
@@ -198,14 +236,17 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code> and
-     * <code>endTime</code> must be specified. Must be positive and the overall time range to be in the past and not
-     * larger than a week.
+     * The period of the profile to get. The time range must be in the past and not longer than one week.
+     * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
-     * @return The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code> and
-     *         <code>endTime</code> must be specified. Must be positive and the overall time range to be in the past and
-     *         not larger than a week.
+     * @return The period of the profile to get. The time range must be in the past and not longer than one week. </p>
+     *         <p>
+     *         You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>,
+     *         and <code>endTime</code>.
      */
 
     public String getPeriod() {
@@ -214,15 +255,18 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code> and
-     * <code>endTime</code> must be specified. Must be positive and the overall time range to be in the past and not
-     * larger than a week.
+     * The period of the profile to get. The time range must be in the past and not longer than one week.
+     * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
      * </p>
      * 
      * @param period
-     *        The period of the profile to get. Exactly two of <code>startTime</code>, <code>period</code> and
-     *        <code>endTime</code> must be specified. Must be positive and the overall time range to be in the past and
-     *        not larger than a week.
+     *        The period of the profile to get. The time range must be in the past and not longer than one week. </p>
+     *        <p>
+     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     *        <code>endTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,7 +276,12 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The name of the profiling group to get.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group to get.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -240,7 +289,11 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the profiling group to get.
+     * </p>
+     * 
+     * @return The name of the profiling group to get.
      */
 
     public String getProfilingGroupName() {
@@ -248,7 +301,12 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The name of the profiling group to get.
+     * </p>
+     * 
      * @param profilingGroupName
+     *        The name of the profiling group to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,9 +319,16 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The start time of the profile to get.
      * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
+     * </p>
      * 
      * @param startTime
-     *        The start time of the profile to get.
+     *        The start time of the profile to get.</p>
+     *        <p>
+     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     *        <code>endTime</code>.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -274,8 +339,15 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The start time of the profile to get.
      * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
+     * </p>
      * 
-     * @return The start time of the profile to get.
+     * @return The start time of the profile to get.</p>
+     *         <p>
+     *         You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>,
+     *         and <code>endTime</code>.
      */
 
     public java.util.Date getStartTime() {
@@ -286,9 +358,16 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The start time of the profile to get.
      * </p>
+     * <p>
+     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     * <code>endTime</code>.
+     * </p>
      * 
      * @param startTime
-     *        The start time of the profile to get.
+     *        The start time of the profile to get.</p>
+     *        <p>
+     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
+     *        <code>endTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

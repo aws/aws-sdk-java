@@ -111,6 +111,13 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
         return this;
     }
 
+    /**
+     * Add a single ChannelCounts entry
+     *
+     * @see SegmentImportResource#withChannelCounts
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SegmentImportResource addChannelCountsEntry(String key, Integer value) {
         if (null == this.channelCounts) {
             this.channelCounts = new java.util.HashMap<String, Integer>();

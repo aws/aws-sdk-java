@@ -89,6 +89,13 @@ public class CancellationReason implements Serializable, Cloneable, StructuredPo
         return this;
     }
 
+    /**
+     * Add a single Item entry
+     *
+     * @see CancellationReason#withItem
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public CancellationReason addItemEntry(String key, AttributeValue value) {
         if (null == this.item) {
             this.item = new java.util.HashMap<String, AttributeValue>();

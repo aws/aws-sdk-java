@@ -53,9 +53,9 @@ import com.amazonaws.services.augmentedairuntime.model.*;
  * </p>
  * <p>
  * You can find additional Augmented AI API documentation in the following reference guides: <a
- * href="https://aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon Rekognition</a>, <a
- * href="https://aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon SageMaker</a>, and <a
- * href="https://aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon Textract</a>.
+ * href="https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon Rekognition</a>, <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon SageMaker</a>, and <a
+ * href="https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon Textract</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -113,7 +113,8 @@ public interface AmazonAugmentedAIRuntime {
 
     /**
      * <p>
-     * Returns information about human loops, given the specified parameters.
+     * Returns information about human loops, given the specified parameters. If a human loop was deleted, it will not
+     * be included.
      * </p>
      * 
      * @param listHumanLoopsRequest
@@ -146,6 +147,9 @@ public interface AmazonAugmentedAIRuntime {
      *         resources, or request a service quota increase.
      * @throws InternalServerException
      *         Your request could not be processed.
+     * @throws ConflictException
+     *         Your request has the same name as another active human loop but has different input data. You cannot
+     *         start two human loops with the same name and different input data.
      * @sample AmazonAugmentedAIRuntime.StartHumanLoop
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/StartHumanLoop"
      *      target="_top">AWS API Documentation</a>

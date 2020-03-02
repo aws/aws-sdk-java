@@ -330,6 +330,13 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
         return this;
     }
 
+    /**
+     * Add a single Parameters entry
+     *
+     * @see RemediationConfiguration#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public RemediationConfiguration addParametersEntry(String key, RemediationParameterValue value) {
         if (null == this.parameters) {
             this.parameters = new java.util.HashMap<String, RemediationParameterValue>();

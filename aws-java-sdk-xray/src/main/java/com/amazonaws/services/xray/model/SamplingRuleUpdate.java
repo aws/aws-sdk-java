@@ -588,6 +588,13 @@ public class SamplingRuleUpdate implements Serializable, Cloneable, StructuredPo
         return this;
     }
 
+    /**
+     * Add a single Attributes entry
+     *
+     * @see SamplingRuleUpdate#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
     public SamplingRuleUpdate addAttributesEntry(String key, String value) {
         if (null == this.attributes) {
             this.attributes = new java.util.HashMap<String, String>();
