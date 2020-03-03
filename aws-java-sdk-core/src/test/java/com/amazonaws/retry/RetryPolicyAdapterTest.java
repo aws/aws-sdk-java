@@ -28,8 +28,10 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static com.amazonaws.SDKGlobalConfiguration.AWS_MAX_ATTEMPTS_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.AWS_RETRY_MODE_SYSTEM_PROPERTY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
@@ -57,6 +59,7 @@ public class RetryPolicyAdapterTest {
         legacyPolicy = new RetryPolicy(retryCondition, backoffStrategy, 3, false);
         adapter = new RetryPolicyAdapter(legacyPolicy, clientConfiguration);
         System.clearProperty(AWS_MAX_ATTEMPTS_SYSTEM_PROPERTY);
+        System.clearProperty(AWS_RETRY_MODE_SYSTEM_PROPERTY);
     }
 
     @Test
@@ -108,6 +111,7 @@ public class RetryPolicyAdapterTest {
         legacyPolicy = new RetryPolicy(retryCondition, backoffStrategy, 3, false);
         adapter = new RetryPolicyAdapter(legacyPolicy, clientConfiguration);
         assertTrue(adapter.shouldRetry(RetryPolicyContexts.withRetriesAttempted(3)));
+        assertTrue(adapter.shouldRetry(RetryPolicyContexts.withRetriesAttempted(8)));
         assertFalse(adapter.shouldRetry(RetryPolicyContexts.withRetriesAttempted(9)));
     }
 
@@ -122,4 +126,70 @@ public class RetryPolicyAdapterTest {
                 eq(context.retriesAttempted()));
     }
 
+    @Test
+    public void standardModeAndDefaultLegacyMaxError_shouldUseStandardDefaultModeMaxError() {
+        when(retryCondition.shouldRetry(any(AmazonWebServiceRequest.class), any(AmazonClientException.class), anyInt()))
+            .thenReturn(true);
+        System.setProperty(AWS_RETRY_MODE_SYSTEM_PROPERTY, "standard");
+        legacyPolicy = new RetryPolicy(retryCondition, backoffStrategy, 5, false, RetryMode.STANDARD, true);
+        adapter = new RetryPolicyAdapter(legacyPolicy, new ClientConfiguration());
+
+        assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(2)));
+    }
+
+    @Test
+    public void nonStandardMode_shouldUseLegacyDefaultModeMaxError() {
+        when(retryCondition.shouldRetry(any(AmazonWebServiceRequest.class), any(AmazonClientException.class), anyInt()))
+            .thenReturn(true);
+        legacyPolicy = new RetryPolicy(retryCondition, backoffStrategy, 5, false, true);
+        adapter = new RetryPolicyAdapter(legacyPolicy, new ClientConfiguration());
+
+        assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
+        assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(4)));
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(5)));
+    }
+
+    @Test
+    public void standardModePredefinedDynamodbPolicy_shouldUseDefaultStandardModeMaxError() {
+        when(retryCondition.shouldRetry(any(AmazonWebServiceRequest.class), any(AmazonClientException.class), anyInt()))
+            .thenReturn(true);
+        RetryPolicy dynamoDBDefaultRetryPolicy = PredefinedRetryPolicies.getDynamoDBDefaultRetryPolicy();
+        adapter = new RetryPolicyAdapter(dynamoDBDefaultRetryPolicy, new ClientConfiguration().withRetryMode(RetryMode.STANDARD));
+
+        assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(2)));
+    }
+
+    @Test
+    public void standardModePredefinedDefaultPolicy_shouldUseDefaultStandardModeMaxError() {
+        when(retryCondition.shouldRetry(any(AmazonWebServiceRequest.class), any(AmazonClientException.class), anyInt()))
+            .thenReturn(true);
+        RetryPolicy dynamoDBDefaultRetryPolicy = PredefinedRetryPolicies.getDefaultRetryPolicy();
+        adapter = new RetryPolicyAdapter(dynamoDBDefaultRetryPolicy, new ClientConfiguration().withRetryMode(RetryMode.STANDARD));
+
+        assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(2)));
+    }
+
+    @Test
+    public void nonStandardModePredefinedDynamodbDefaultPolicy_shouldUseDefaultStandardModeMaxError() {
+        when(retryCondition.shouldRetry(any(AmazonWebServiceRequest.class), any(AmazonClientException.class), anyInt()))
+            .thenReturn(true);
+        RetryPolicy dynamoDBDefaultRetryPolicy = PredefinedRetryPolicies.getDynamoDBDefaultRetryPolicy();
+        adapter = new RetryPolicyAdapter(dynamoDBDefaultRetryPolicy, new ClientConfiguration());
+
+        assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(10)));
+    }
+
+    @Test
+    public void standardModePredefinedDefaultPolicyWithCustomMaxError_shouldHonor() {
+        when(retryCondition.shouldRetry(any(AmazonWebServiceRequest.class), any(AmazonClientException.class), anyInt()))
+            .thenReturn(true);
+        RetryPolicy dynamoDBDefaultRetryPolicy = PredefinedRetryPolicies.getDefaultRetryPolicyWithCustomMaxRetries(1);
+        adapter = new RetryPolicyAdapter(dynamoDBDefaultRetryPolicy, new ClientConfiguration().withRetryMode(RetryMode.STANDARD));
+
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
+    }
 }

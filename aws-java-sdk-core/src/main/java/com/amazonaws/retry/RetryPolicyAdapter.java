@@ -21,6 +21,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.retry.internal.MaxAttemptsResolver;
 import com.amazonaws.retry.v2.RetryPolicyContext;
 
+import static com.amazonaws.retry.PredefinedRetryPolicies.DEFAULT_MAX_ERROR_RETRY_STANDARD_MODE;
 import static com.amazonaws.util.ValidationUtils.assertNotNull;
 
 /**
@@ -29,7 +30,6 @@ import static com.amazonaws.util.ValidationUtils.assertNotNull;
  */
 @SdkInternalApi
 public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
-
     private final RetryPolicy legacyRetryPolicy;
     private final ClientConfiguration clientConfiguration;
     private final int maxErrorRetry;
@@ -72,9 +72,27 @@ public class RetryPolicyAdapter implements com.amazonaws.retry.v2.RetryPolicy {
 
         Integer resolvedMaxAttempts = new MaxAttemptsResolver().maxAttempts();
 
-        // default to use legacyRetryPolicy.getMaxErrorRetry() because it's always be "present" and there is no
-        // way to tell if it's unset(using the default) or provided.
-        return resolvedMaxAttempts != null ? resolvedMaxAttempts - 1 : legacyRetryPolicy.getMaxErrorRetry();
+        if (resolvedMaxAttempts != null) {
+            return resolvedMaxAttempts - 1;
+        }
+
+        if (shouldUseStandardModeDefaultMaxRetry()) {
+            return DEFAULT_MAX_ERROR_RETRY_STANDARD_MODE;
+        }
+
+        // default to use legacyRetryPolicy.getMaxErrorRetry() because it's always present
+        return legacyRetryPolicy.getMaxErrorRetry();
+    }
+
+    /**
+     * We should use the default standard maxErrorRetry for standard mode if the maxErrorRetry is not from sdk
+     * default predefined retry policies.
+     */
+    private boolean shouldUseStandardModeDefaultMaxRetry() {
+        RetryMode retryMode = clientConfiguration.getRetryMode() == null ? legacyRetryPolicy.getRetryMode()
+                                                                         : clientConfiguration.getRetryMode();
+
+        return retryMode.equals(RetryMode.STANDARD) && legacyRetryPolicy.isDefaultMaxErrorRetryInRetryModeHonored();
     }
 
     public boolean maxRetriesExceeded(RetryPolicyContext context) {

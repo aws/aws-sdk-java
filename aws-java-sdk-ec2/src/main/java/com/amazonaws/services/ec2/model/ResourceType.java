@@ -55,7 +55,8 @@ public enum ResourceType {
     Vpc("vpc"),
     VpcPeeringConnection("vpc-peering-connection"),
     VpnConnection("vpn-connection"),
-    VpnGateway("vpn-gateway");
+    VpnGateway("vpn-gateway"),
+    VpcFlowLog("vpc-flow-log");
 
     private String value;
 

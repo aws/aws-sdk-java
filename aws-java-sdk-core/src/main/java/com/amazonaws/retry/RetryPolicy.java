@@ -18,6 +18,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.annotation.Immutable;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.retry.internal.RetryModeResolver;
 
 /**
@@ -31,6 +32,7 @@ import com.amazonaws.retry.internal.RetryModeResolver;
 @Immutable
 public final class RetryPolicy {
 
+    private static final RetryModeResolver RETRY_MODE_RESOLVER = new RetryModeResolver();
     /**
      * Condition on whether a request should be retried. This field
      * should not be null.
@@ -60,6 +62,11 @@ public final class RetryPolicy {
     private final RetryMode retryMode;
 
     /**
+     * Whether it should honor the default max error retry in {@link RetryMode}
+     */
+    private final boolean honorDefaultMaxErrorRetryInRetryMode;
+
+    /**
      * Constructs a new retry policy. See {@link PredefinedRetryPolicies} for
      * some pre-defined policy components, and also the default policies used by
      * SDK.
@@ -84,7 +91,16 @@ public final class RetryPolicy {
                        BackoffStrategy backoffStrategy,
                        int maxErrorRetry,
                        boolean honorMaxErrorRetryInClientConfig) {
-        this(retryCondition, backoffStrategy, maxErrorRetry, honorMaxErrorRetryInClientConfig, null);
+        this(retryCondition, backoffStrategy, maxErrorRetry, honorMaxErrorRetryInClientConfig, false);
+    }
+
+    @SdkInternalApi
+    public RetryPolicy(RetryCondition retryCondition,
+                       BackoffStrategy backoffStrategy,
+                       int maxErrorRetry,
+                       boolean honorMaxErrorRetryInClientConfig,
+                       boolean honorDefaultMaxErrorRetryInRetryMode) {
+        this(retryCondition, backoffStrategy, maxErrorRetry, honorMaxErrorRetryInClientConfig, null, honorDefaultMaxErrorRetryInRetryMode);
     }
 
     public RetryPolicy(RetryCondition retryCondition,
@@ -92,6 +108,16 @@ public final class RetryPolicy {
                        int maxErrorRetry,
                        boolean honorMaxErrorRetryInClientConfig,
                        RetryMode retryMode) {
+        this(retryCondition, backoffStrategy, maxErrorRetry, honorMaxErrorRetryInClientConfig, retryMode, false);
+    }
+
+    @SdkInternalApi
+    RetryPolicy(RetryCondition retryCondition,
+                BackoffStrategy backoffStrategy,
+                int maxErrorRetry,
+                boolean honorMaxErrorRetryInClientConfig,
+                RetryMode retryMode,
+                boolean honorDefaultMaxErrorRetryInRetryMode) {
         if (retryCondition == null) {
             retryCondition = PredefinedRetryPolicies.DEFAULT_RETRY_CONDITION;
         }
@@ -102,11 +128,12 @@ public final class RetryPolicy {
             throw new IllegalArgumentException("Please provide a non-negative value for maxErrorRetry.");
         }
 
+        this.honorDefaultMaxErrorRetryInRetryMode = honorDefaultMaxErrorRetryInRetryMode;
         this.retryCondition = retryCondition;
         this.backoffStrategy = backoffStrategy;
         this.maxErrorRetry = maxErrorRetry;
         this.honorMaxErrorRetryInClientConfig = honorMaxErrorRetryInClientConfig;
-        this.retryMode = retryMode != null ? retryMode : new RetryModeResolver().retryMode();
+        this.retryMode = retryMode != null ? retryMode : RETRY_MODE_RESOLVER.retryMode();
     }
 
     /**
@@ -155,6 +182,13 @@ public final class RetryPolicy {
      */
     public RetryMode getRetryMode() {
         return retryMode;
+    }
+
+    /**
+     * @return Whether the default max error in retry mode should be honored.
+     */
+    boolean isDefaultMaxErrorRetryInRetryModeHonored() {
+        return honorDefaultMaxErrorRetryInRetryMode;
     }
     
     /**

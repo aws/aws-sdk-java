@@ -7910,9 +7910,8 @@ public interface AmazonEC2 {
      * you can improve the availability of your fleet.
      * </p>
      * <p>
-     * You can specify tags for the Spot Fleet request and instances launched by the fleet. You cannot tag other
-     * resource types in a Spot Fleet request because only the <code>spot-fleet-request</code> and <code>instance</code>
-     * resource types are supported.
+     * You can specify tags for the Spot Fleet and Spot Instances. You cannot tag other resource types in a Spot Fleet
+     * request because only the <code>spot-fleet-request</code> and <code>instance</code> resource types are supported.
      * </p>
      * <p>
      * For more information, see <a

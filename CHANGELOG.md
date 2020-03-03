@@ -1,3 +1,8 @@
+# __1.11.736__ __2020-03-03__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon VPC Flow Logs adds support for tags and tagging on resource creation.
+
 # __1.11.735__ __2020-03-02__
 ## __AWS Comprehend Medical__
   - ### Features

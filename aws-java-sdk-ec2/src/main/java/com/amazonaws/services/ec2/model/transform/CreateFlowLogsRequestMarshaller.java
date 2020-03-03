@@ -85,6 +85,41 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("LogFormat", StringUtils.fromString(createFlowLogsRequest.getLogFormat()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createFlowLogsRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createFlowLogsRequest
+                .getTagSpecifications();
+        if (!createFlowLogsRequestTagSpecificationsList.isEmpty() || !createFlowLogsRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createFlowLogsRequestTagSpecificationsListValue : createFlowLogsRequestTagSpecificationsList) {
+
+                if (createFlowLogsRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createFlowLogsRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createFlowLogsRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         if (createFlowLogsRequest.getMaxAggregationInterval() != null) {
             request.addParameter("MaxAggregationInterval", StringUtils.fromInteger(createFlowLogsRequest.getMaxAggregationInterval()));
         }

@@ -108,6 +108,12 @@ public class FlowLog implements Serializable, Cloneable {
     private String logFormat;
     /**
      * <p>
+     * The tags for the flow log.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
      * The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow
      * log record.
      * </p>
@@ -729,6 +735,79 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The tags for the flow log.
+     * </p>
+     * 
+     * @return The tags for the flow log.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags for the flow log.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the flow log.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags for the flow log.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the flow log.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FlowLog withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags for the flow log.
+     * </p>
+     * 
+     * @param tags
+     *        The tags for the flow log.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FlowLog withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum interval of time, in seconds, during which a flow of packets is captured and aggregated into a flow
      * log record.
      * </p>
@@ -860,6 +939,8 @@ public class FlowLog implements Serializable, Cloneable {
             sb.append("LogDestination: ").append(getLogDestination()).append(",");
         if (getLogFormat() != null)
             sb.append("LogFormat: ").append(getLogFormat()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getMaxAggregationInterval() != null)
             sb.append("MaxAggregationInterval: ").append(getMaxAggregationInterval());
         sb.append("}");
@@ -924,6 +1005,10 @@ public class FlowLog implements Serializable, Cloneable {
             return false;
         if (other.getLogFormat() != null && other.getLogFormat().equals(this.getLogFormat()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getMaxAggregationInterval() == null ^ this.getMaxAggregationInterval() == null)
             return false;
         if (other.getMaxAggregationInterval() != null && other.getMaxAggregationInterval().equals(this.getMaxAggregationInterval()) == false)
@@ -948,6 +1033,7 @@ public class FlowLog implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLogDestinationType() == null) ? 0 : getLogDestinationType().hashCode());
         hashCode = prime * hashCode + ((getLogDestination() == null) ? 0 : getLogDestination().hashCode());
         hashCode = prime * hashCode + ((getLogFormat() == null) ? 0 : getLogFormat().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getMaxAggregationInterval() == null) ? 0 : getMaxAggregationInterval().hashCode());
         return hashCode;
     }

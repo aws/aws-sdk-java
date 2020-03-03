@@ -35,8 +35,11 @@ public class PredefinedRetryPolicies {
 
     /* SDK default */
 
-    /** SDK default max retry count **/
+    /** SDK default max retry count for legacy retry mode **/
     public static final int DEFAULT_MAX_ERROR_RETRY = 3;
+
+    /** SDK default max retry count for standard retry mode **/
+    public static final int DEFAULT_MAX_ERROR_RETRY_STANDARD_MODE = 2;
 
     /**
      * SDK default retry policy. Amazon DynamoDB has a custom retry policy that is used when no
@@ -106,6 +109,7 @@ public class PredefinedRetryPolicies {
         return new RetryPolicy(DEFAULT_RETRY_CONDITION,
                                DEFAULT_BACKOFF_STRATEGY,
                                DEFAULT_MAX_ERROR_RETRY,
+                               true,
                                true);
     }
 
@@ -119,6 +123,7 @@ public class PredefinedRetryPolicies {
         return new RetryPolicy(DEFAULT_RETRY_CONDITION,
                                DYNAMODB_DEFAULT_BACKOFF_STRATEGY,
                                DYNAMODB_DEFAULT_MAX_ERROR_RETRY,
+                               true,
                                true);
     }
 

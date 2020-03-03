@@ -109,8 +109,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.
+     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -628,8 +627,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.
+     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -1119,8 +1117,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The
-     *         value <code>xen</code> is used for both Xen and Nitro hypervisors.
+     *         <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1628,8 +1625,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.
+     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -2120,8 +2116,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The
-     *        value <code>xen</code> is used for both Xen and Nitro hypervisors.
+     *        <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2630,8 +2625,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.
+     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -3127,8 +3121,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The
-     *        value <code>xen</code> is used for both Xen and Nitro hypervisors.
+     *        <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -3639,8 +3632,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.
+     * <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -4131,8 +4123,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The
-     *        value <code>xen</code> is used for both Xen and Nitro hypervisors.
+     *        <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
